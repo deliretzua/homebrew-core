@@ -1,8 +1,8 @@
 class Babeld < Formula
   desc "Loop-avoiding distance-vector routing protocol"
   homepage "https://www.irif.fr/~jch/software/babel/"
-  url "https://www.irif.fr/~jch/software/files/babeld-1.10.tar.gz"
-  sha256 "a5f54a08322640e97399bf4d1411a34319e6e277fbb6fc4966f38a17d72a8dea"
+  url "https://www.irif.fr/~jch/software/files/babeld-1.12.1.tar.gz"
+  sha256 "9ab59d7ac741f3630df23f9c3b67c60294d8b34ab622398f9b89773a878ecb1e"
   license "MIT"
   head "https://github.com/jech/babeld.git", branch: "master"
 
@@ -21,6 +21,12 @@ class Babeld < Formula
     sha256 cellar: :any_skip_relocation, catalina:       "b6906565df2c7862dd7979ef3599414bc59f0b78b05b0e3a9dbf411ab29fad83"
     sha256 cellar: :any_skip_relocation, mojave:         "a59602b1643b95845ab9d1b6ecd68d1231ee825ac68fadb577e93d85b9b99ac9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b16202cbd6574ce354938e5e66b47efcb0b0b33e53a9b3affbce2c419efa9725"
+  end
+
+  # patch IN6_IS_ADDR_MULTICAST is not defined on macOS
+  patch do
+    url "https://github.com/jech/babeld/commit/fbb31080862aca1d0afb599edbcb2b25ac79b79c.patch?full_index=1"
+    sha256 "0f1308c2f21b64ec38b79f37782217ff21e8de85e1eaabd047fdd801b83dfa3f"
   end
 
   def install
