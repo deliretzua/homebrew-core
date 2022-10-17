@@ -5,6 +5,7 @@ class Gnunet < Formula
   mirror "https://ftpmirror.gnu.org/gnunet/gnunet-0.17.5.tar.gz"
   sha256 "8a744ff7a95d1e83215cce118050640f6c12261abe4c60a56bcf88e500f0023d"
   license "AGPL-3.0-or-later"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_monterey: "c67f46ea10a8286ff92e72ea4613635e8acc7e4df8900aa40faad0c733571997"
@@ -15,6 +16,8 @@ class Gnunet < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad6d518e300932c28f367ca5e340677ac064bcb592944bb9d0928cadbaafa5cb"
   end
 
+  # macOS `ld64` does not like the `.la` files created during the build.
+  depends_on "llvm" => :build if DevelopmentTools.clang_build_version >= 1400
   depends_on "pkg-config" => :build
   depends_on "gettext"
   depends_on "gnutls"
@@ -31,6 +34,9 @@ class Gnunet < Formula
 
   def install
     ENV.deparallelize if OS.linux?
+    # Workaround for Xcode 14 ld until Makefile is fixed
+    # Ref: https://github.com/Homebrew/homebrew-core/pull/113789#issuecomment-1288125182
+    ENV.append_to_cflags "-fuse-ld=lld" if DevelopmentTools.clang_build_version >= 1400
     system "./configure", *std_configure_args, "--disable-documentation"
     system "make", "install"
   end
