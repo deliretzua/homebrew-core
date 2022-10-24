@@ -1,8 +1,9 @@
 class TrezorBridge < Formula
   desc "Trezor Communication Daemon"
   homepage "https://github.com/trezor/trezord-go"
-  url "https://github.com/trezor/trezord-go/archive/refs/tags/v2.0.31.tar.gz"
-  sha256 "fd834a5bf04417cc50ed4a418d40de4c257cbc86edca01b07aa01a9cf818e60e"
+  url "https://github.com/trezor/trezord-go.git",
+      tag:      "v2.0.32",
+      revision: "9aa6576af6fabd557bc298d1a12b73170f467a07"
   license "LGPL-3.0-only"
 
   bottle do
@@ -34,8 +35,10 @@ class TrezorBridge < Formula
     # start the server with the USB disabled and enable UDP interface instead
     server = IO.popen("#{bin}/trezord-go -u=false -e 21324")
     sleep 1
-    assert_match '{"version":"2.0.31","githash":"unknown"}',
-        shell_output("curl -s -X POST -H 'Origin: https://test.trezor.io' http://localhost:21325/")
+
+    output = shell_output("curl -s -X POST -H 'Origin: https://test.trezor.io' http://localhost:21325/")
+    assert_equal version.to_s, JSON.parse(output)["version"]
+
     assert_match "[]",
         shell_output("curl -s -X POST -H 'Origin: https://test.trezor.io' http://localhost:21325/enumerate")
   ensure
