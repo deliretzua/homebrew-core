@@ -1,10 +1,10 @@
 class Mlpack < Formula
   desc "Scalable C++ machine learning library"
   homepage "https://www.mlpack.org"
-  url "https://mlpack.org/files/mlpack-3.4.2.tar.gz"
-  sha256 "9e5c4af5c276c86a0dcc553289f6fe7b1b340d61c1e59844b53da0debedbb171"
+  url "https://mlpack.org/files/mlpack-4.0.0.tar.gz"
+  sha256 "041d9eee96445667d2f7b970d2a799592027f1f8818cd96a65dcce1ac0745773"
   license all_of: ["BSD-3-Clause", "MPL-2.0", "BSL-1.0", "MIT"]
-  revision 8
+  head "https://github.com/mlpack/mlpack.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "5293e16fd5e4a768188d45f985a9b259837cfdc7d306c5eae9f4511393f55a9e"
@@ -17,17 +17,13 @@ class Mlpack < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "01f0246ce3d77bf1ce07f6dbd325a9128d530346405a19391679a2f47e397107"
   end
 
-  head do
-    url "https://github.com/mlpack/mlpack.git", branch: "master"
-
-    depends_on "cereal"
-  end
-
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "pkg-config" => :build
+
   depends_on "armadillo"
   depends_on "boost"
+  depends_on "cereal"
   depends_on "ensmallen"
   depends_on "graphviz"
 
@@ -49,11 +45,11 @@ class Mlpack < Formula
         (include/"stb").install "#{r.name}.h"
       end
     end
-    cmake_args = std_cmake_args + %W[
+
+    args = %W[
       -DDEBUG=OFF
       -DPROFILE=OFF
       -DBUILD_TESTS=OFF
-      -DDISABLE_DOWNLOADS=ON
       -DUSE_OPENMP=OFF
       -DARMADILLO_INCLUDE_DIR=#{Formula["armadillo"].opt_include}
       -DENSMALLEN_INCLUDE_DIR=#{Formula["ensmallen"].opt_include}
@@ -61,10 +57,11 @@ class Mlpack < Formula
       -DSTB_IMAGE_INCLUDE_DIR=#{include/"stb"}
       -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
-    mkdir "build" do
-      system "cmake", "..", *cmake_args
-      system "make", "install"
-    end
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+
     doc.install Dir["doc/*"]
     (pkgshare/"tests").install "src/mlpack/tests/data" # Includes test data.
   end
@@ -87,8 +84,8 @@ class Mlpack < Formula
         Log::Warn << "A false alarm!" << std::endl;
       }
     EOS
-    system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-L#{Formula["armadillo"].opt_lib}",
-                    "-larmadillo", "-L#{lib}", "-lmlpack", "-o", "test"
+    system ENV.cxx, "test.cpp", "-std=c++14", "-I#{include}", "-L#{Formula["armadillo"].opt_lib}",
+                    "-larmadillo", "-L#{lib}", "-o", "test"
     system "./test", "--verbose"
   end
 end
