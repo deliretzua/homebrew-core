@@ -1,10 +1,9 @@
 class Root < Formula
   desc "Object oriented framework for large scale data analysis"
   homepage "https://root.cern.ch/"
-  url "https://root.cern.ch/download/root_v6.26.06.source.tar.gz"
-  sha256 "b1f73c976a580a5c56c8c8a0152582a1dfc560b4dd80e1b7545237b65e6c89cb"
+  url "https://root.cern.ch/download/root_v6.28.04.source.tar.gz"
+  sha256 "70f7f86a0cd5e3f2a0befdc59942dd50140d990ab264e8e56c7f17f6bfe9c965"
   license "LGPL-2.1-or-later"
-  revision 2
   head "https://github.com/root-project/root.git", branch: "master"
 
   livecheck do
@@ -26,10 +25,12 @@ class Root < Formula
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
+  depends_on "pkg-config" => :build
   depends_on "cfitsio"
   depends_on "davix"
   depends_on "fftw"
   depends_on "freetype"
+  depends_on "ftgl"
   depends_on "gcc" # for gfortran
   depends_on "gl2ps"
   depends_on "glew"
@@ -37,15 +38,17 @@ class Root < Formula
   depends_on "gsl"
   depends_on "lz4"
   depends_on "mysql-client"
+  depends_on "nlohmann-json"
   depends_on "numpy" # for tmva
   depends_on "openblas"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pcre"
-  depends_on "python@3.10"
+  depends_on "python@3.11"
   depends_on "sqlite"
   depends_on "tbb"
   depends_on :xcode
   depends_on "xrootd"
+  depends_on "xxhash"
   depends_on "xz" # for LZMA
   depends_on "zstd"
 
@@ -62,10 +65,13 @@ class Root < Formula
 
   fails_with gcc: "5"
 
-  def install
-    python = Formula["python@3.10"].opt_bin/"python3.10"
+  def python3
+    "python3.11"
+  end
 
+  def install
     ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}/root"
+    ENV.remove "HOMEBREW_INCLUDE_PATHS", Formula["util-linux"].opt_include if OS.mac?
 
     inreplace "cmake/modules/SearchInstalledSoftware.cmake" do |s|
       # Enforce secure downloads of vendored dependencies. These are
@@ -77,27 +83,64 @@ class Root < Formula
 
     args = std_cmake_args + %W[
       -DCLING_CXX_PATH=clang++
-      -DCMAKE_INSTALL_ELISPDIR=#{elisp}
-      -DPYTHON_EXECUTABLE=#{python}
       -DCMAKE_CXX_STANDARD=17
+      -DCMAKE_INSTALL_ELISPDIR=#{elisp}
+      -DPYTHON_EXECUTABLE=#{python3}
+      -DXROOTD_ROOT_DIR=#{Formula["xrootd"].opt_prefix}
+      -Dbuiltin_afterimage=ON
       -Dbuiltin_cfitsio=OFF
+      -Dbuiltin_clang=ON
+      -Dbuiltin_cling=ON
+      -Dbuiltin_cppzmq=OFF
+      -Dbuiltin_davix=OFF
+      -Dbuiltin_fftw3=OFF
       -Dbuiltin_freetype=OFF
+      -Dbuiltin_ftgl=OFF
+      -Dbuiltin_gl2ps=OFF
       -Dbuiltin_glew=OFF
+      -Dbuiltin_gsl=OFF
+      -Dbuiltin_llvm=ON
+      -Dbuiltin_lz4=OFF
+      -Dbuiltin_lzma=OFF
+      -Dbuiltin_nlohmannjson=OFF
+      -Dbuiltin_openssl=OFF
+      -Dbuiltin_openui5=ON
+      -Dbuiltin_pcre=OFF
+      -Dbuiltin_tbb=OFF
+      -Dbuiltin_unuran=OFF
+      -Dbuiltin_vc=OFF
+      -Dbuiltin_vdt=ON
+      -Dbuiltin_veccore=OFF
+      -Dbuiltin_xrootd=OFF
+      -Dbuiltin_xxhash=OFF
+      -Dbuiltin_zeromq=OFF
+      -Dbuiltin_zlib=OFF
+      -Dbuiltin_zstd=OFF
+      -Dcfitsio=ON
       -Ddavix=ON
+      -Ddev=OFF
+      -Dfail-on-missing=ON
       -Dfftw3=ON
       -Dfitsio=ON
       -Dfortran=ON
+      -Dfreetype=ON
       -Dgdml=ON
+      -Dgfal=OFF
       -Dgnuinstall=ON
       -Dimt=ON
       -Dmathmore=ON
       -Dminuit2=ON
       -Dmysql=ON
+      -Docaml=OFF
+      -Doracle=OFF
       -Dpgsql=OFF
       -Dpyroot=ON
+      -Dpythia6=OFF
+      -Dpythia8=OFF
       -Droofit=ON
       -Dssl=ON
       -Dtmva=ON
+      -Dvdt=ON
       -Dxrootd=ON
       -GNinja
     ]
@@ -109,12 +152,13 @@ class Root < Formula
     # for ROOT with gnuinstall, so we set it back here.
     system "cmake", "-S", ".", "-B", "builddir", *args, *std_cmake_args(install_libdir: "lib/root")
     system "cmake", "--build", "builddir"
+    system "ctest", "-R", "tutorial-tree", "--verbose", "--parallel", ENV.make_jobs, "--test-dir", "builddir"
     system "cmake", "--install", "builddir"
 
     chmod 0755, bin.glob("*.*sh")
 
     pth_contents = "import site; site.addsitedir('#{lib}/root')\n"
-    (prefix/Language::Python.site_packages(python)/"homebrew-root.pth").write pth_contents
+    (prefix/Language::Python.site_packages(python3)/"homebrew-root.pth").write pth_contents
   end
 
   def caveats
@@ -148,6 +192,10 @@ class Root < Formula
     assert_equal "\nProcessing test.C...\nHello, world!\n",
                  shell_output("#{bin}/root -l -b -n -q test.C")
 
+    # Test ACLiC
+    assert_equal "\nProcessing test.C+...\nHello, world!\n",
+                 shell_output("#{bin}/root -l -b -n -q test.C+")
+
     # Test linking
     (testpath/"test.cpp").write <<~EOS
       #include <iostream>
@@ -163,6 +211,6 @@ class Root < Formula
     assert_equal "Hello, world!\n", shell_output("./a.out")
 
     # Test Python module
-    system Formula["python@3.10"].opt_bin/"python3.10", "-c", "import ROOT; ROOT.gSystem.LoadAllLibraries()"
+    system python3, "-c", "import ROOT; ROOT.gSystem.LoadAllLibraries()"
   end
 end
