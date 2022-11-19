@@ -24,14 +24,23 @@ class Kore < Formula
 
   depends_on "pkg-config" => :build
   depends_on macos: :sierra # needs clock_gettime
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
+    openssl = Formula["openssl@3"]
+
+    # We modify Makefile variables to save OpenSSL paths which get used at runtime.
+    # We don't directly override FEATURES_INC as Makefile uses 'FEATURES_INC+='.
+    # This is not needed on macOS where the Makefile already saves pkg-config output.
+    unless OS.mac?
+      inreplace "Makefile", /^FEATURES_INC=$/, "FEATURES_INC=-I#{openssl.opt_include}"
+      ENV["OPENSSL_PATH"] = openssl.opt_prefix
+    end
+
     ENV.deparallelize { system "make", "PREFIX=#{prefix}", "TASKS=1" }
     system "make", "install", "PREFIX=#{prefix}"
 
     # Remove openssl cellar references, which breaks kore on openssl updates
-    openssl = Formula["openssl@1.1"]
     inreplace [pkgshare/"features", pkgshare/"linker"], openssl.prefix.realpath, openssl.opt_prefix if OS.mac?
   end
 
