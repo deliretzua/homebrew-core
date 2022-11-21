@@ -1,8 +1,8 @@
 class Tesseract < Formula
   desc "OCR (Optical Character Recognition) engine"
   homepage "https://github.com/tesseract-ocr/"
-  url "https://github.com/tesseract-ocr/tesseract/archive/5.2.0.tar.gz"
-  sha256 "eba4deb2f92a3f89a6623812074af8c53b772079525b3c263aa70bbf7b748b3c"
+  url "https://github.com/tesseract-ocr/tesseract/archive/5.3.0.tar.gz"
+  sha256 "7e70870f8341e5ea228af2836ce79a36eefa11b01b56177b4a8997f330c014b8"
   license "Apache-2.0"
   head "https://github.com/tesseract-ocr/tesseract.git", branch: "main"
 
@@ -27,8 +27,11 @@ class Tesseract < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
+  depends_on "cairo"
+  depends_on "icu4c"
   depends_on "leptonica"
   depends_on "libarchive"
+  depends_on "pango"
 
   fails_with gcc: "5"
 
@@ -64,10 +67,10 @@ class Tesseract < Formula
                           "--disable-dependency-tracking",
                           "--datarootdir=#{HOMEBREW_PREFIX}/share"
 
-    system "make"
+    system "make", "training"
 
     # make install in the local share folder to avoid permission errors
-    system "make", "install", "datarootdir=#{share}"
+    system "make", "install", "training-install", "datarootdir=#{share}"
 
     resource("snum").stage { mv "snum.traineddata", share/"tessdata" }
     resource("eng").stage { mv "eng.traineddata", share/"tessdata" }
