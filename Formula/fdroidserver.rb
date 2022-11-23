@@ -26,7 +26,7 @@ class Fdroidserver < Formula
   depends_on "openssl@1.1"
   depends_on "pillow"
   depends_on "pygments"
-  depends_on "python@3.10"
+  depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "s3cmd"
   depends_on "six"
@@ -227,7 +227,7 @@ class Fdroidserver < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.10")
+    venv = virtualenv_create(libexec, "python3.11")
 
     venv.pip_install resource("lxml")
     venv.pip_install resource("cffi") # or bcrypt fails to build
@@ -243,7 +243,7 @@ class Fdroidserver < Formula
     bash_completion.install "completion/bash-completion" => "fdroid"
     doc.install "examples"
 
-    site_packages = Language::Python.site_packages("python3.10")
+    site_packages = Language::Python.site_packages("python3.11")
     %w[fonttools ipython pygments yamllint].each do |package_name|
       package = Formula[package_name].opt_libexec
       (libexec/site_packages/"homebrew-#{package_name}.pth").write package/site_packages
