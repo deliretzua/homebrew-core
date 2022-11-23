@@ -298,8 +298,7 @@
     "exclude_packages": [
       "ipython", "appnope", "asttokens", "backcall", "decorator", "executing", "jedi",
       "matplotlib-inline", "parso", "pexpect", "pickleshare", "prompt-toolkit", "ptyprocess",
-      "pure-eval", "Pygments", "six", "stack-data", "traitlets", "wcwidth",
-      "jsonschema", "attrs", "pyrsistent"
+      "pure-eval", "Pygments", "six", "stack-data", "traitlets", "wcwidth"
     ]
   },
   "keepkey-agent": {
