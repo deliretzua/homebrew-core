@@ -10,6 +10,7 @@ class Pdftoipe < Formula
     sha256 cellar: :any,                 arm64_ventura:  "89bdc7d7cf94348a8e37fd8bf848b6584c06fa06253d616f65645946ba95d824"
     sha256 cellar: :any,                 arm64_monterey: "67e60fd70b646bfee7f712201342ee3525fe4ff0deccb886f090d2d4affc7210"
     sha256 cellar: :any,                 arm64_big_sur:  "35533b40392914bc8eb499664229805a122009a29ac1126654ecc97f4226a466"
+    sha256 cellar: :any,                 ventura:        "e6cdd50b02c6a806c1edb151234a3b5353b48a0dd5f36cd22f4d3c0c9e48203c"
     sha256 cellar: :any,                 monterey:       "b665c9d20c474c2edeabb5106c2fe84ca608196f5f267dcae731585a70e47362"
     sha256 cellar: :any,                 big_sur:        "75fa2e1ca5154dce02791b194a2feee0884dcd5191c1dffc547df1ddb36ad234"
     sha256 cellar: :any,                 catalina:       "379925a0153ff09be01d80b95522f1ded4282f79f72e5a943c381d0998d6376c"
