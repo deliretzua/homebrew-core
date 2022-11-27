@@ -21,6 +21,7 @@ class Pdal < Formula
     sha256                               arm64_ventura:  "9f266bc1f0655e3cf6f3e970b0fd869716ab969fdebd1fad0d8c3c35b25fc5c3"
     sha256                               arm64_monterey: "dc51e691abc1addb783ccef70b006726157aaa7caa273915c510786a84308f0b"
     sha256                               arm64_big_sur:  "b0d6b2aa4949d66291d466da7825cd5e7d30563b7e3d8382c54e2b3a2b2f3b20"
+    sha256                               ventura:        "5f55e06253c50aecceebfa7f7cfbbbe1539d90919293d14d479562962e643c85"
     sha256                               monterey:       "a905636f17a9e1ee38779d5a9c4150c08d83fab77c0df2f88719bec1b169694c"
     sha256                               big_sur:        "6733756720845ac0549083d287557fc2653290e0e8e51a4f963f31f34d5bdbf1"
     sha256                               catalina:       "893847c0127b8c653bca869f62f1da1b7dc3fe96d92eec64adc563c3448316b0"
