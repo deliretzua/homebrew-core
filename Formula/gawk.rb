@@ -11,6 +11,7 @@ class Gawk < Formula
     sha256 arm64_ventura:  "75f5cc7303e2233b14c8d75c1bd030aedecb3805108246b7645b42e5716bd712"
     sha256 arm64_monterey: "0223f5e5d69c3b8ae50f9665e567e7f2462c947b74955b3d8fb7895d5d73c197"
     sha256 arm64_big_sur:  "7fd916fd9dc7f70c89ec1d280e5ffb0aec94e4a1329abca92a9b1c44b9b6e3c0"
+    sha256 ventura:        "cb1d3cad74dcca71069e401acc140c51d4192803b073d97e230559acc31c1626"
     sha256 monterey:       "4c4b1b9becee9835568dc513ded2c4046a3f07a2a9c576ab04ff21a758e7e78b"
     sha256 big_sur:        "ba37e5dce0545e3c84d40c9610f1a4a633c4732fac6c8619a030d19b1b2070b5"
     sha256 catalina:       "ff65adfdd73bbfb3636a840ccf1a0c6a904f9779660836378f8719c46e27d184"
