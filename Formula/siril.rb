@@ -4,6 +4,7 @@ class Siril < Formula
   url "https://free-astro.org/download/siril-1.0.6.tar.bz2"
   sha256 "f89604697ffcd43f009f8b4474daafdef220a4f786636545833be1236f38b561"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://gitlab.com/free-astro/siril.git", branch: "master"
 
   bottle do
@@ -39,6 +40,7 @@ class Siril < Formula
   depends_on "netpbm"
   depends_on "opencv"
   depends_on "openjpeg"
+  depends_on "wcslib"
 
   uses_from_macos "perl" => :build
 
