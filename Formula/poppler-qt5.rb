@@ -14,6 +14,7 @@ class PopplerQt5 < Formula
     sha256                               arm64_ventura:  "1d5275f07fd5ad6485f4f214f63b2d3beaeaf2bdd56a0bee14864e002ee86bd1"
     sha256                               arm64_monterey: "45b6c11b08ff9a5062d3747655a7acae9f0ab2aa3452ec9fd8666fe6f6dd9ff2"
     sha256                               arm64_big_sur:  "d9b931a09b565905fb8a4aae101ff7bfdab61331dbfa9bd2ffc7d8d1c550e539"
+    sha256                               ventura:        "759593a094a79793b0f68008c688f5b078ca76701109b32f43d87ad9ad00d0b1"
     sha256                               monterey:       "28460bbca33afdd26220227e2381940d8ddab1c8c8d3b7ddcc9cb9871a88d821"
     sha256                               big_sur:        "3f7993d818d06b99b4bdb645903456406d122e751109a3b6202ec0e13224f9f9"
     sha256                               catalina:       "b85866d008eccdb21aba389cb18e5bfc79f3cd992aac92531a923e99425f42ef"
