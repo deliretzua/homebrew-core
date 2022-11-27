@@ -15,6 +15,7 @@ class Gdal < Formula
     sha256 arm64_ventura:  "83f367c19f674d25c52503411a9c3dea7e02f23c5e99e6c88f6f95e346ab932b"
     sha256 arm64_monterey: "ef47b0e5e1bad278bc5d3f5ede681ea8d8eb6762c0375d878c6652000689494a"
     sha256 arm64_big_sur:  "917941befc974aa577bd36c3ee46f9ec24647bb6fe4bc3f3baf0296d9f4c573f"
+    sha256 ventura:        "26f86935564440039da8c9475b25f3681c018c670ed20b7811e92c1b6b376d5d"
     sha256 monterey:       "e47e20562bb781ede28ef658469704b0dbad79efde926877c6dcc8eface483f8"
     sha256 big_sur:        "ae11ce23af8350df5fe2cbf5e28520ed94822a0e2b15031b8db0eecbdd83d15b"
     sha256 catalina:       "3b411d441661ee370377e4708061eca2f958133291721020680adc6d8d1b8ddf"
