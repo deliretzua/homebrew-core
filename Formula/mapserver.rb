@@ -15,6 +15,7 @@ class Mapserver < Formula
     sha256 cellar: :any,                 arm64_ventura:  "bd051875a34c400c2d1492f02f1e523492f8afe5509e969516aadbf2561ebae5"
     sha256 cellar: :any,                 arm64_monterey: "3adf61a1e151096fc0b17c24eb42ef124c46e26e7d27a2c797b74c14267eccb6"
     sha256 cellar: :any,                 arm64_big_sur:  "96ce7713be52a3a374d6bd6deeff00e298b8940f0afc30bff1558e436dd85a18"
+    sha256 cellar: :any,                 ventura:        "a83b90215c5df6edd4d92b742eb556f11f5bbe111259c4a3f2c67d141183f800"
     sha256 cellar: :any,                 monterey:       "8c8c5f8d2f3f186f6bbc6377f80f649c00b6596f2031c0b92abb530aedd5011a"
     sha256 cellar: :any,                 big_sur:        "4d4e9fb039c5bab0a06facb9831c3bba35fbf89d8820ac71da2e84fadb2e9920"
     sha256 cellar: :any,                 catalina:       "1255ef28197145dc8ff7f04f85f8a8d60a7818c6e8de7d9bea3416a8b28d74cd"
