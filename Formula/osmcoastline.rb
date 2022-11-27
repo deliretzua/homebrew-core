@@ -10,6 +10,7 @@ class Osmcoastline < Formula
     sha256 cellar: :any,                 arm64_ventura:  "2f0c753f2e7cd3a17ae026ecf3142a32569a59688443060ece97724351b5ff37"
     sha256 cellar: :any,                 arm64_monterey: "919661bc941352bb6f746bc3367ef76e040606476343b3e42dc64f26731af86c"
     sha256 cellar: :any,                 arm64_big_sur:  "047dfe40dfdafad2bad1efc9ba381fb84d32ece1bffe06d6aa80b43afa59bdbf"
+    sha256 cellar: :any,                 ventura:        "105fd62c6c4fb5d00c86126c832157ca3b7b003399fb97fa7de78640d3da8460"
     sha256 cellar: :any,                 monterey:       "dfa1ccb730b7f016ea605649215ec81e60f3be9c45ae9b7f89d95e67a7620e3a"
     sha256 cellar: :any,                 big_sur:        "de5039e0d2887b441a1a8dc4f624369af8e1d4123fe60c961a7fec14bff631ef"
     sha256 cellar: :any,                 catalina:       "5e0de9d461e7c3ea17ebb01e1fe7b058c5a828b2eca77bb2a8ab4fdb304f8da0"
