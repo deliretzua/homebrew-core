@@ -13,6 +13,7 @@ class HomeassistantCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "cf6165a9a90f7b13a489bf3c98d689dee07d8cb2cb984509992044bba592154c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1c632f4da7ad76fe9de8141967020fae08aa66f868c044946fc1b4fd8657402c"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7afbfb7d53d12290ded09a7ea7cbb5186968593126e55f8840330465b5ed99a7"
+    sha256 cellar: :any_skip_relocation, ventura:        "f141bdaf32616d816fa56c7449d5232c40a5ba2d219023c5eb7b72ceb88249e5"
     sha256 cellar: :any_skip_relocation, monterey:       "a1b88b06b115fa7d65b76ba030a38bd1c12a27dfaf08fb4af74a7e68e4f4d574"
     sha256 cellar: :any_skip_relocation, big_sur:        "370e4e57e5acfcdce31cfc8f5b2eb6a71b348541b4cd69393a47b9754f9ffd67"
     sha256 cellar: :any_skip_relocation, catalina:       "9b04e38925cb9c654ce73893a183830aac138969747bf658a4375c7ef3ed73a1"
