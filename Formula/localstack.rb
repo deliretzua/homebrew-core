@@ -12,6 +12,7 @@ class Localstack < Formula
     sha256 cellar: :any,                 arm64_ventura:  "e9a2df48f5ca23dc7c8fac54c792a6a960df223d5c0e2782279b061250f01f74"
     sha256 cellar: :any,                 arm64_monterey: "473e08001caa16e100a173d9250046c58a69713319e1091c6a969dcaf5f92db9"
     sha256 cellar: :any,                 arm64_big_sur:  "2b41bafcff1413e2fe7afb0bc52fb64180565811d88c21c92db218f3f3e147d2"
+    sha256 cellar: :any,                 ventura:        "2bdeaf7a354b6d8888b537f4930764423359cc5b7461fbb3b5f53a723c143535"
     sha256 cellar: :any,                 monterey:       "632aec69c86bc956c6fd8491d0018ca76298aedf41e6d2acf1a7ffcead216097"
     sha256 cellar: :any,                 big_sur:        "863fff53633a2c229e7c3452e4d363b88c0c8f32919253843f163ae8c4924cb6"
     sha256 cellar: :any,                 catalina:       "a5b1b02aa59506246a5aaaaaaa76acacbf10de919a09eef631b5df07081a65ef"
