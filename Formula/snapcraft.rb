@@ -18,6 +18,7 @@ class Snapcraft < Formula
     sha256 cellar: :any,                 arm64_ventura:  "845319b08db4581a39a65f4e6f30996a6c672901f891b3d95386dae0da7f13f4"
     sha256 cellar: :any,                 arm64_monterey: "9bdbc58c8d11219482bc0809d01d4c3efd9b576c000db2b83540a04e8f08a86e"
     sha256 cellar: :any,                 arm64_big_sur:  "434228fc44ef70b7cc9f1f4fde250e5fe6b59dd81e5bd00d4419b54eb8b68b7d"
+    sha256 cellar: :any,                 ventura:        "20674e060a8f9a398fa614fc95c05120fc4c30639b621eac8083a2ac047cc46d"
     sha256 cellar: :any,                 monterey:       "25a606cd974a4417375383de7d6da9b48e1a36baf0aef24ec562522bb1703cf0"
     sha256 cellar: :any,                 big_sur:        "387b1f2486836bacbc84529d2876b8c266a41d60c3a99d7d28494bd8be199eb6"
     sha256 cellar: :any,                 catalina:       "e0b8b6d7a4865d904f85602852a6509bc9c36d9399977aea2fdf92b7beb25b66"
