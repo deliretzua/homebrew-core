@@ -11,6 +11,7 @@ class Asyncapi < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c54530e88dc23b384cf8680aa05c116ebfdaf5142b0dbd0964ccdf6b2a2b1bf0"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "347898f5c849ef5fb0d109eb23b975843bc3bd9bdcc01770fd5d0e158ed406de"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "347898f5c849ef5fb0d109eb23b975843bc3bd9bdcc01770fd5d0e158ed406de"
+    sha256 cellar: :any_skip_relocation, ventura:        "e4c2bdcfe78821c52171fbff49172ddfef7c2e1cae87c974ab8ead4a528da333"
     sha256 cellar: :any_skip_relocation, monterey:       "ff28b5d3faf456fede94c30ef451c451981ceb2aa4d22f6f3609e1f0677031d5"
     sha256 cellar: :any_skip_relocation, big_sur:        "ff28b5d3faf456fede94c30ef451c451981ceb2aa4d22f6f3609e1f0677031d5"
     sha256 cellar: :any_skip_relocation, catalina:       "ff28b5d3faf456fede94c30ef451c451981ceb2aa4d22f6f3609e1f0677031d5"
