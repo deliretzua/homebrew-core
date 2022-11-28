@@ -10,6 +10,7 @@ class Ruff < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "cde0f4392a143655ce91491b045af2aef6f04469c2e2fd07bef016deff3de16b"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "485e29a5c62744f081680b2917d42f92def10fdfb924d479893612a75a0b5b59"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "22b1654166dc4da42fd2addd0e24ae05c488310f6eec32093111d95bdd5ee738"
+    sha256 cellar: :any_skip_relocation, ventura:        "ed082327dd5b9a5414aff74aef692b27b5e50c8e2a3cea4b61a95adff353a6f6"
     sha256 cellar: :any_skip_relocation, monterey:       "9e66c117d81552799eb00cd677467a43d909c49658bc5cbfa09e74f3f83b55b3"
     sha256 cellar: :any_skip_relocation, big_sur:        "05a42ce406847b7516a818e4022f24930c5e67ec858b4fa390c9e0cf65360bb1"
     sha256 cellar: :any_skip_relocation, catalina:       "8d399eb85329b5cf0dabc850511cab27b4f43498a677ea5e9db59a15107a58d5"
