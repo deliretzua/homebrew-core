@@ -17,6 +17,7 @@ class C7n < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "58f85de6348fad65f2a3d329727dcb46a94791364f42790d289ffc57e9cfb510"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "652dcf3db4194e1c014e063a2e060346f34813b1c070e097566131a50e215ba2"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3f3ea2a1b1e98cdb6fdb23ce8ca087247ddff8d6adf2e1c47291f4fad9005f73"
+    sha256 cellar: :any_skip_relocation, ventura:        "ddb00204004e512159f8e21ffd3550390511d2eb8cb92279354b2675138da378"
     sha256 cellar: :any_skip_relocation, monterey:       "a38a35d2d1f0172db66bb8e96483dcf4cf0a35aaeef29be4b1ad15cde933b702"
     sha256 cellar: :any_skip_relocation, big_sur:        "4380e4f60f109390dbbd35f7513279ba7c7a604122255aedfabf1dec5daa80ef"
     sha256 cellar: :any_skip_relocation, catalina:       "fa1668eddb00c86e89e1711a7ba2942c9dc2977fcf28e2028caef47097c0f3ea"
