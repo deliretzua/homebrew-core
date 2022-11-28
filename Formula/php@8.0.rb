@@ -16,6 +16,7 @@ class PhpAT80 < Formula
     sha256 arm64_ventura:  "c199d7d93ecce56bc52f05c06d8c01d362bdc9989177687c8274c6f25cdf64be"
     sha256 arm64_monterey: "3211fdc214983eb1eadb57f237e9095e87c85e74ce5f9e79f1c9230148edeb8c"
     sha256 arm64_big_sur:  "0db5bc644a6ffd9451e9aca4098167e0018714a01ee89cc2db3dee6f4d6ef188"
+    sha256 ventura:        "85457a49595add83643ccd8ef09c551578143cc80aee47d9fbc7e202947e37fe"
     sha256 monterey:       "29395f23a26f925787fcf3be98f51266f8ae4e454c7567d31779a8dab783f50a"
     sha256 big_sur:        "768bf7dc8937c9da628a67d80fb0c47e301456e61bf9d644c214f9f0b860c0ee"
     sha256 catalina:       "d5f058e987041d8de8489a2ebf91aa185dcc10e1ef9e69887812a5d89254e45f"
