@@ -9,6 +9,7 @@ class SignalCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3f9c5f5fc19f195d908700fdcf99adf36d339553ab5ee16c1f6e1681b1956d1f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "4285a73cebdba6dfe268f6a6cfebb26e789717b678ad18bd012a5cb25abbcc0e"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bc4f92f39e35f7d485db6a83bf958e4009933f8fbc43179fd0685a51fdf25d99"
+    sha256 cellar: :any_skip_relocation, ventura:        "07e9642942d3857da15e5e7708c19cd934dbd0d20e048d9f9c5ab2b7d1d1de98"
     sha256 cellar: :any_skip_relocation, monterey:       "23ab83d137735b3a07bf28d04ff62e20a607202819c61c5bc159f703c347e8c0"
     sha256 cellar: :any_skip_relocation, big_sur:        "cbd97f6ae258cede6733698da8ff79df73cd96419d2144baf6e77e76eef78c31"
     sha256 cellar: :any_skip_relocation, catalina:       "9d64b9f69593d0d0b359d6d1e67b244eb2ad5934eb63661d6211db90192be46e"
