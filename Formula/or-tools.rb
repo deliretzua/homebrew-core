@@ -1,8 +1,8 @@
 class OrTools < Formula
   desc "Google's Operations Research tools"
   homepage "https://developers.google.com/optimization/"
-  url "https://github.com/google/or-tools/archive/v9.4.tar.gz"
-  sha256 "180fbc45f6e5ce5ff153bea2df0df59b15346f2a7f8ffbd7cb4aed0fb484b8f6"
+  url "https://github.com/google/or-tools/archive/v9.5.tar.gz"
+  sha256 "57f81b94949d35dc042690db3fa3f53245cffbf6824656e1a03f103a3623c939"
   license "Apache-2.0"
   head "https://github.com/google/or-tools.git", branch: "stable"
 
@@ -40,6 +40,9 @@ class OrTools < Formula
 
   fails_with gcc: "5"
 
+  # Add missing <errno.h> include to numbers.cc
+  patch :DATA
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
                     "-DUSE_SCIP=OFF",
@@ -72,3 +75,17 @@ class OrTools < Formula
     system "./simple_sat_program"
   end
 end
+
+__END__
+diff --git a/ortools/base/numbers.cc b/ortools/base/numbers.cc
+index e9f5a57..e49182c 100644
+--- a/ortools/base/numbers.cc
++++ b/ortools/base/numbers.cc
+@@ -16,6 +16,7 @@
+ 
+ #include "ortools/base/numbers.h"
+ 
++#include <errno.h>
+ #include <cfloat>
+ #include <cstdint>
+ #include <cstdlib>
