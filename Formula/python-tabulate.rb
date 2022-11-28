@@ -6,8 +6,13 @@ class PythonTabulate < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "61e7d23a6d7de917886da888949aef4363ee874ce4d1f153344992b6f2e2c9e5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cb133399eb9eac5597456ff97ad2998098d51b92a306f2ac69b6ddab10b1d7a6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "59b5698b0f1d90ce0f4db412cfbe18173a9ff1c07bbce8b7e32f9618f3eeddb6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3ac5018fabca43b5fda8c0c527152a0dc305b5f6ea13146a0e15a0b74e417880"
+    sha256 cellar: :any_skip_relocation, monterey:       "3e58adc3d2ab1940c6ee27404186fbc871fb9c5cf246039c7309e06430083322"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b4ac8f5dc44de25a24a0ee597e7fef637e40f7f9d0490142769a5142f95762a2"
+    sha256 cellar: :any_skip_relocation, catalina:       "31f07e4ef0661c4da765fbca3f8c6bf8571996a6cf2b661c0dff8f18cb9e6c40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83dbafc2f1d09361907a7746347f6dfe0c3a0add8dc66710ea50ff39abe3725b"
   end
 
   depends_on "python@3.10" => [:build, :test]
