@@ -10,6 +10,7 @@ class Wasmer < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a1b6e729d809eb85a8c22a56eb46c43c9c715e610413ce7fae0a771eba5559bb"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5b07745a6e10bf065644f85472fc9c70266de94f102d503dfcdfbf9525bf68a0"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4b2cb17959c9ae8b8793c3a103ea6a19a06077e96bfb66e90850170cbb92afdc"
+    sha256 cellar: :any_skip_relocation, ventura:        "92463d9ffcd179376cc4dda522e3e2cb4635498b8ebe44fff4859f493515f626"
     sha256 cellar: :any_skip_relocation, monterey:       "467b08831da6b30bb8a03a78521c06b7ceb6046da04b3481fdd35d00a16b4e2f"
     sha256 cellar: :any_skip_relocation, big_sur:        "8e824d6ce85c008580959caa1e76679b58602658b84a52d9384b3d120e6c4816"
     sha256 cellar: :any_skip_relocation, catalina:       "0d45a7864398ceda12d108c90fae226ada24fb2e6bf670d29aaee84fae0c6714"
