@@ -13,6 +13,7 @@ class Platformio < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "7e83b78fe185f3a29ea2a7b986cd92da6c816c9560b0a56cc185623f5abac650"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "5bb4219a7f01399639edfc79aee73f71150a9be4820bfc88ee90a058788098f8"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a33359e7ef26c1e57181ebe69e57551d9bcb764c775644cc8889f6c858bf3e3f"
+    sha256 cellar: :any_skip_relocation, ventura:        "86b3aae281c5ce090caa754629b99bbf34bdb76f846a3a564a291dd7c162006f"
     sha256 cellar: :any_skip_relocation, monterey:       "00f0bd6c2515e198a6889ac2600a81fa3e03fdbb4b06ea88c12e285d1d60c8ca"
     sha256 cellar: :any_skip_relocation, big_sur:        "372389abf12e2fb7f731ec56d764d789460adea8dfc9d3eed1ff3d8cd2c1c975"
     sha256 cellar: :any_skip_relocation, catalina:       "d888197010fd1d25d36e78281925562d0311960ce15054450af55906b7d50686"
