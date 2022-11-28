@@ -9,6 +9,7 @@ class PythonTabulate < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "cb133399eb9eac5597456ff97ad2998098d51b92a306f2ac69b6ddab10b1d7a6"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "59b5698b0f1d90ce0f4db412cfbe18173a9ff1c07bbce8b7e32f9618f3eeddb6"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3ac5018fabca43b5fda8c0c527152a0dc305b5f6ea13146a0e15a0b74e417880"
+    sha256 cellar: :any_skip_relocation, ventura:        "340787a971287aee2cb7419e2a1c5b8dbc5361e1ccd943efe0e6202b6933e5c3"
     sha256 cellar: :any_skip_relocation, monterey:       "3e58adc3d2ab1940c6ee27404186fbc871fb9c5cf246039c7309e06430083322"
     sha256 cellar: :any_skip_relocation, big_sur:        "b4ac8f5dc44de25a24a0ee597e7fef637e40f7f9d0490142769a5142f95762a2"
     sha256 cellar: :any_skip_relocation, catalina:       "31f07e4ef0661c4da765fbca3f8c6bf8571996a6cf2b661c0dff8f18cb9e6c40"
