@@ -13,6 +13,7 @@ class AwsGoogleAuth < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "799829315c71753d67eb9d92650da7cb68c7e6d20e61aa9b8e240c016924c4c2"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f258e73f9cbb4abe057479be9eb1765e611e15a5710ecc5153932a8f2c305007"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "de22101e3a0c9c24d5a0e50fc9f43530cfbe97c6bd25ec22d3d9218079bccc66"
+    sha256 cellar: :any_skip_relocation, ventura:        "a267b7c8886e0a76c6300401f3d5d6c494b2416b23559121d9549e1bf574a9d3"
     sha256 cellar: :any_skip_relocation, monterey:       "8e96617684541aaec30cafe198c7add06d7d7c309f14f705fa2b4a179c8783cf"
     sha256 cellar: :any_skip_relocation, big_sur:        "118d86ec1b2ea50f34cfde2d83914386c4e4bf265cc90013eade023522f21bcc"
     sha256 cellar: :any_skip_relocation, catalina:       "85f36f110ca30bc18ccfaabf6896fa81d135ecb304afb02e1f4ad9ffffbe6a8d"
