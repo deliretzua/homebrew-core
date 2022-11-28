@@ -11,6 +11,7 @@ class GitDeleteMergedBranches < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f085406ade421796ea438f07cef7b923557b5795e860228febbdca50aa734a9d"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3370a41dedece6620672ec30c5fe81d62e4458d21f9652fcd56759fec1a6b99c"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "72e1080b9dc267df0214abfb2a96c9cacb0516cb41434621ccbdc9657dfe8273"
+    sha256 cellar: :any_skip_relocation, ventura:        "5f87c155899fbd9f257afa0f72d57275bf2e1d5491b32251ff2b10ebfc653f2e"
     sha256 cellar: :any_skip_relocation, monterey:       "785b91e16293929ba5e4cc5453bdf17ee8a40ede01e1bfe4cf875541cb4328c6"
     sha256 cellar: :any_skip_relocation, big_sur:        "d58bd1000d84446017e93d826c6363f84633544b561eb79e3ced119732898857"
     sha256 cellar: :any_skip_relocation, catalina:       "a0e74a5a2d472033e7c4a1d81f5f767f52b5bedc72e48e36cf5b417a4bbd2d40"
