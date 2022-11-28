@@ -6,13 +6,12 @@ class Fastnetmon < Formula
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "cb74138117b205fd0785e4326277fa4a5be02f604a242782b7096b30395c4528"
-    sha256 cellar: :any,                 arm64_monterey: "1c543c1dbbf305b10bd06392467592c4ec1119253a72420a0fe6a8b239c1548d"
-    sha256 cellar: :any,                 arm64_big_sur:  "30ffcbd99102b8d0b4c93ab3030bc5004c5d1739097ae7b50c0f7ef72f92ad69"
-    sha256 cellar: :any,                 ventura:        "deccaa34c8f4a5a563b77d523804cbdd347f46be7e1d77552343b98f395e06e6"
-    sha256 cellar: :any,                 monterey:       "a34b6feb8327ee0a96a144e547343c348a57945e8e765b600c501e96802ccc19"
-    sha256 cellar: :any,                 big_sur:        "f7c18f84a8b233949d71c8a382aec8f9493cb033320e82b2e1e8fb199ea8e056"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae301c6886451f615f0791b76a5cfa67ef5688432411e1c02bf99f2142d2bee8"
+    sha256 cellar: :any,                 arm64_ventura:  "0b288a48afbb57ee5bc4594278228ed4c05384f76565e66f666a90ef97c4661f"
+    sha256 cellar: :any,                 arm64_monterey: "d5b0f4ad6d5e5720c245289927fcf61728a3a98e276ab847babadf8dbae5be3f"
+    sha256 cellar: :any,                 arm64_big_sur:  "9425630b68df30662fbea586bcecf1032916839f6358d14efddc4749faede471"
+    sha256 cellar: :any,                 monterey:       "ef602f5be49d0f0b0a3dcc64921722cf77226aebb057929dbf7c4891ca4f69be"
+    sha256 cellar: :any,                 big_sur:        "9b656b4517c983bec8e5d61e19c7cf14087a00c23069ea0f0a71103e63cd3769"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d522a002ffc40b83e3a478f66421c666b3cb3da56d4bc1b75cc63603febc827f"
   end
 
   depends_on "cmake" => :build
