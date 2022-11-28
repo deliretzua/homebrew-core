@@ -12,6 +12,7 @@ class Charmcraft < Formula
     sha256 cellar: :any,                 arm64_ventura:  "2b0934f501c8e1178ddfcca7f2a283901c2be0fee135787de3c7923b9b3310ce"
     sha256 cellar: :any,                 arm64_monterey: "4b2fa932dbc2629130a973a8d959bcb4aea519840f77ef74648fc7ad5a24b01e"
     sha256 cellar: :any,                 arm64_big_sur:  "7d7ff3e326378816c63e359cc584e03438f04e5a8f6787d17442f51e59741a7f"
+    sha256 cellar: :any,                 ventura:        "474c3a1a97365a8ace015a4937bc165929a2bafddee2c3bf8ef1e7acbc6b5e99"
     sha256 cellar: :any,                 monterey:       "4b2b15e6406937b8b3c18544a0ad7ae3642e4ac035f3ed8e615d4640f6faf9f3"
     sha256 cellar: :any,                 big_sur:        "73bbdf53745f413711a119878b04a413db70ea2587829cccfebb280b9ba178bf"
     sha256 cellar: :any,                 catalina:       "0213567260cddd82d31bbd93c55cb46e25f45c1b87ba168a72ccb63f7f43373f"
