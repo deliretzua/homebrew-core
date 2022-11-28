@@ -9,7 +9,7 @@ class Babel < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e6c36d9e587fe5baabeecd6dc3d7c1d5a1aba510a9526addff58a2a12ecee9d2"
+    sha256 cellar: :any_skip_relocation, all: "b4e286e27b7c6c5ee747b229d23a5f6976a7d30b080997a7003d6eeafebd226b"
   end
 
   depends_on "node"
