@@ -11,6 +11,7 @@ class Esbuild < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b781cea016c205daeb9b65992224e0e7cc6b162be76b9711fecb4e3a7eff471"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "0b781cea016c205daeb9b65992224e0e7cc6b162be76b9711fecb4e3a7eff471"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0b781cea016c205daeb9b65992224e0e7cc6b162be76b9711fecb4e3a7eff471"
+    sha256 cellar: :any_skip_relocation, ventura:        "26cedb4e40b63ef7479c02057fe29526b658e79c580246f26da347c998571b9b"
     sha256 cellar: :any_skip_relocation, monterey:       "26cedb4e40b63ef7479c02057fe29526b658e79c580246f26da347c998571b9b"
     sha256 cellar: :any_skip_relocation, big_sur:        "26cedb4e40b63ef7479c02057fe29526b658e79c580246f26da347c998571b9b"
     sha256 cellar: :any_skip_relocation, catalina:       "26cedb4e40b63ef7479c02057fe29526b658e79c580246f26da347c998571b9b"
