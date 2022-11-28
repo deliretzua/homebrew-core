@@ -10,6 +10,7 @@ class Qsv < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d66599722505e5a27616a5feaea5829ac0ca8d93b93d08548cb245124a2e15b3"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "40bb87111b5505c7b24a207e8e8294146472f32f2e49bebdf232931badffbbbb"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "23e33694a89d33f3da28868566e1573df2faba7dd6dcc7db83a836e0f1bfc868"
+    sha256 cellar: :any_skip_relocation, ventura:        "214039d66c7899047277449a00693e64c09f8b27ba73fc4ae17094e2c7eb3b4e"
     sha256 cellar: :any_skip_relocation, monterey:       "14807c24e8a9af2fc565719075a65c7e1815ad36dee09d11d9fc44259aad67ca"
     sha256 cellar: :any_skip_relocation, big_sur:        "1e052bebf449ca848ef5133f9514ce08f78f224c28bb78c8b3b37da4a2bb5e8a"
     sha256 cellar: :any_skip_relocation, catalina:       "678e3068a0d2c6421bf7800533a7a1ed8839db7a689fa1bf9cf43679026f43ce"
