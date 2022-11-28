@@ -12,6 +12,7 @@ class Virtualenv < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "54d3bb49f11c7b0ede94e9f620dd29eced7026e08559123e763bd37d70bbc3b9"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3241f3fb376ba1142166c1bed03c4fd4b622c3adb7c05ea77ad39d5bfd7d182c"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "208783d8b0de470141988a332ffbed5cb0f55d482a1c3db91750e184d0e6fcb5"
+    sha256 cellar: :any_skip_relocation, ventura:        "6c4fb1042b4c6919bd17984694e1bf4b520db257b21e91343ae06cff654291a8"
     sha256 cellar: :any_skip_relocation, monterey:       "e7e14d6e58ea206e811ade9ab9f4266bb20bb14248861f894435a8c3eb8199ad"
     sha256 cellar: :any_skip_relocation, big_sur:        "283bf18cd948ea937c14ce3af5db8aa4012ed6e7f81c8ff2e23630a044ff3e66"
     sha256 cellar: :any_skip_relocation, catalina:       "21335f1b50bbfe14eaeb8025a7138537d4e158168293cc9bc0a7ef85c658aba2"
