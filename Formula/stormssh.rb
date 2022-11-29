@@ -14,6 +14,7 @@ class Stormssh < Formula
     sha256 cellar: :any,                 arm64_ventura:  "1a52f812dc26af292eb286347a38a1b2d1530ff6dba1b87bdfcfc6fd5ed00576"
     sha256 cellar: :any,                 arm64_monterey: "b946e40a8b373e97d11f4f9f71e07bc4a9d550e2c44372eb8b5f44b4bec6cb02"
     sha256 cellar: :any,                 arm64_big_sur:  "730ee4ca3a5f5b6c31f8f13da068b1a930688a5b59b05aeeeb7ca3cb7f3bac9f"
+    sha256 cellar: :any,                 ventura:        "66600c88a01a9afb40233fad01f83852cfb195c94b20834ffd4b4756efc9c589"
     sha256 cellar: :any,                 monterey:       "026e5179db5a2dfab9c92106cc06965503ca796aef68030390df4599f1b25037"
     sha256 cellar: :any,                 big_sur:        "1a7c8cffd920f3f01fea0b079e55c4fc40a1841b4367812f0c555e08954091ee"
     sha256 cellar: :any,                 catalina:       "bab62435b3dfac2c01663a99e632bd0c04ff3c299676d40fe94d27508c748466"
