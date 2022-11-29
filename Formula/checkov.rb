@@ -9,14 +9,13 @@ class Checkov < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e42b4d09ac67475fcb47ca21315c08ecd4ae8995fc9b3d6d5bf1fc513718868c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8f90958802c45825dee714c8ab9efbd2a1a982223b3861e5faddcfcb788d5147"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c53cfaaad253b997e9151b26ff9618c71a3f29ec9637d6ed4d74d8b2bb20b9f6"
-    sha256 cellar: :any_skip_relocation, ventura:        "a923d3ea3af1a2a1d86a9ea113fcd543e647983b49fd543ef8ffa24532c3c7c1"
-    sha256 cellar: :any_skip_relocation, monterey:       "61514e5ef6d0027e9da0d703d63aab5215cb4fe9a7db7c222533d0a303408ecc"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7af414c1a1e2c94051222b111431f5981d19d4f21a1da950cf49331b34556e52"
-    sha256 cellar: :any_skip_relocation, catalina:       "edad721fa1fe89fdf383f6a2e99be33b6facad02f36dda00d521090b3e943f4a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa3cb3c06bae108786e35ab26db65003dfce953195b233b296e18978646bc6bb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6ff376979dd782c15f94dca8546c2a1b7560f19c3443acc4c5edeabcec6310f7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1d6a59c33841758aa207fc827b9dbea7441fac758fede1848947f54f9c67fc4e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b52a60bbcc938ab53432b30bafc41be28e76031a6df407928e11a3af39285942"
+    sha256 cellar: :any_skip_relocation, monterey:       "a3993c3a534193e46f61ae758aa0c96263976a5bf160b6a964403d144695f2b0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3b6d666b182b49bd73b17cb2bd01ffb8225fdce2b47940bf0475a8c8bc779c46"
+    sha256 cellar: :any_skip_relocation, catalina:       "8184b4f363616a1574b27b918e23280ee9cb84a7da7409564a29c595c4efdde4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9429cb8261ac87c880fca2c3c5ec835bdbb014b7bac474a6a10a2eaeb4402ea"
   end
 
   depends_on "python-tabulate"
