@@ -10,6 +10,7 @@ class Acl2 < Formula
     sha256 arm64_ventura:  "9a20ffff1c34e7390c77fd9027b3d629b285203fae80bda7990912f70fdc49fa"
     sha256 arm64_monterey: "d2b4968172ce96301f6ed766eb751ee0151121c456eab0867521e7db12a79ca9"
     sha256 arm64_big_sur:  "1ce6fd880cdefa123ba6310d2b48bdc48635fdc928b3d5f0718ef16317132a7e"
+    sha256 ventura:        "84603075ad8f6c8ec77a5537ddee2addcfcf494b609311f1d2ab0d48a3ba868b"
     sha256 monterey:       "264e84666fd09704371b19a99a0920cf2143de55a14ec9a9d5595c2df5a39190"
     sha256 big_sur:        "54be57b40b5516d3e9a2d1a22131ab6a59f8dd9a0963dbf073fd637e51b24f20"
     sha256 catalina:       "1b6b47f7379ae6cc89abec107a51647493466fb6cbf2b170eeae0bf957e42484"
