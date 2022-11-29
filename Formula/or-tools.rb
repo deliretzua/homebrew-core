@@ -15,6 +15,7 @@ class OrTools < Formula
     sha256 cellar: :any,                 arm64_ventura:  "baddd8d5c3eb20f166a85d795b67b60e5c75945d738f3cb0137147be10bab316"
     sha256 cellar: :any,                 arm64_monterey: "8f605dba57dd4850ad32e4d95285e44d0ae192abc6728167ee9fd5c24b988928"
     sha256 cellar: :any,                 arm64_big_sur:  "c7326590c08eefb95b73f5230a6394e0bebd57938bb2cee99798a334a8caedc9"
+    sha256 cellar: :any,                 ventura:        "9dc38d19ceb0b1bb05716723077181b3a160d8c3e9a51be03f9a49564608c083"
     sha256 cellar: :any,                 monterey:       "220d96540bdf2ff9cab1ad92f5155c9e7998d1b5422442fba6074bea8c503c47"
     sha256 cellar: :any,                 big_sur:        "b3a9688ad478dd85dd31fbe799d8485a36fa0433708bb4302f9861c5963cc9c7"
     sha256 cellar: :any,                 catalina:       "7306e6af086762473674045332bcc76c4db17e3c198c0f26632b2f5727eface0"
