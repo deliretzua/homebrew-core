@@ -15,6 +15,7 @@ class Maxima < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "61ba66f0e484b4aaa1115bd28188c64e2eab6827530b0927aeaf47bff1e31a6c"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b56557a4d3a27cceb548fa4341885fb15c28c9df21987a2e8ae8b81495309720"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "85b39fa1a991853758490bbbe500b94a243145bd14e87a8aaac64e73f45272e1"
+    sha256 cellar: :any_skip_relocation, ventura:        "483fbe0a31d79ee37da05e597a5c97d177b377f5d6fa1e304b089b2277f69f93"
     sha256 cellar: :any_skip_relocation, monterey:       "e8112c54d0f612c0a406b15e32a25e6bb14aa5fa209383822cc69da24b9e722b"
     sha256 cellar: :any_skip_relocation, big_sur:        "c800d29837cf469187752ddfa92c1bd4c5309c5b135c2a07d0283c0e46f47767"
     sha256 cellar: :any_skip_relocation, catalina:       "140e327eb5177416f846bd132435e5b294f75879cfed65acd7fa005b42312fa7"
