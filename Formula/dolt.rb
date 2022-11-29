@@ -14,6 +14,7 @@ class Dolt < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "f7eedfe1ec368b12a3d700cfe0f6a00ee6f76dee6d02421c6e2e8ee69ac051a6"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "439671e9470c0904a2b184474c55c1551b3e408c88c5f0d7979c3b1a197b9ebd"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8c9f7b3287e0acf4c193ab8bbb7f2f04da52a359763548541332922523581a86"
+    sha256 cellar: :any_skip_relocation, ventura:        "b1e40ccc4385a2acee4682d9eeae7b5c390a6e1ae6cd6494490178a8d9203dfd"
     sha256 cellar: :any_skip_relocation, monterey:       "a9fc019482c568c068c11b2331fa4307758193dc367b6706a03e1b66695f7256"
     sha256 cellar: :any_skip_relocation, big_sur:        "fb37b28ab79e19a42e4200d0daec12c02e2b4ab00626d5fe6039e1cb2ecb2434"
     sha256 cellar: :any_skip_relocation, catalina:       "fbf04f16db11a6bd751efee22bf03ebc24483c67ca09c135d0be63a60c3bba48"
