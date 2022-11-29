@@ -11,6 +11,7 @@ class Goreleaser < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "b1c3c7a5420b6b437800ea39fe42c26a491d927415dd37eba6c3c6893997a3c4"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "17fb3c062a4c718cab43e6584e1939c0d77c82be17d9e892058241a1c09a5d6f"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a58042ad59f93c6c6a041e1a75aa4d793aa69528e94e43d0117ab69d9d3d1058"
+    sha256 cellar: :any_skip_relocation, ventura:        "f3ff8ec1e83f285b05337e9a6567966fd0db08aa25c1b0d44865626b00451107"
     sha256 cellar: :any_skip_relocation, monterey:       "845583622cbe3f37c648466e6c0d05beeffd9235350b44c359ca23820b5740c0"
     sha256 cellar: :any_skip_relocation, big_sur:        "5f9081b895786caef324c88804547e971d5d87256a27089b00205beb8728fe78"
     sha256 cellar: :any_skip_relocation, catalina:       "7fc0c536b29c237b5c4ce5b270adb6bd435700a8b99184b951038a4712b0dc64"
