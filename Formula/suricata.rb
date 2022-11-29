@@ -14,6 +14,7 @@ class Suricata < Formula
     sha256 arm64_ventura:  "0e132e5120dab6747abdab31c098d14afe7fb4372e8639a2d0c9e9b71033f19b"
     sha256 arm64_monterey: "f6bba507bece50bc56d8995bc00369c4e30d85156bbf5cbb7fe95af7f5105126"
     sha256 arm64_big_sur:  "32d9efc6fb46f897b9fa19909faa2fa57bc41fd821413ea7de7fcfa82622f6bb"
+    sha256 ventura:        "01f4f4eb7ea55be7c66ea4c45f30be5d7d5aa52434c9e45a820b4f4bfdb0bfcb"
     sha256 monterey:       "8600dfa9367fa03e9a6fafeeb308e1e231fb5e3be79add2aa8cf40e3ce367b5c"
     sha256 big_sur:        "e1b683285578bce6e93bbdfc0ff7943f3be2d12295af4974becfdee77d004fe6"
     sha256 catalina:       "ced864e6364efecb07fe97dce1f5cb4efcf17db57c97d6c141df7a95aa71d513"
