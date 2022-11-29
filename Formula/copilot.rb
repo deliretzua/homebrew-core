@@ -4,8 +4,8 @@ class Copilot < Formula
   desc "CLI tool for Amazon ECS and AWS Fargate"
   homepage "https://aws.github.io/copilot-cli/"
   url "https://github.com/aws/copilot-cli.git",
-      tag:      "v1.23.0",
-      revision: "31385c0140800d2a54da6a9bfc78499f5e1cb90f"
+      tag:      "v1.24.0",
+      revision: "3313b1d4a73bc7871720b9936805361b0bc717f3"
   license "Apache-2.0"
   head "https://github.com/aws/copilot-cli.git", branch: "mainline"
 
@@ -50,7 +50,7 @@ class Copilot < Formula
       Process.kill 9, wait_thr.pid
     end
 
-    assert_match "could not find an application attached to this workspace, please run `app init` first",
+    assert_match "Run `copilot app init` to create an application",
       shell_output("AWS_REGION=eu-west-1 #{bin}/copilot pipeline init 2>&1", 1)
   end
 end
