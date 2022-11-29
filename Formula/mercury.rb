@@ -14,6 +14,7 @@ class Mercury < Formula
     sha256 cellar: :any,                 arm64_ventura:  "a5db345a7f91984e9453a5eb0ecf8dd607fb94b9a0c223fc468c24de1900d831"
     sha256 cellar: :any,                 arm64_monterey: "dba557568c01b9133e3468ca27b9a1b64087a21345bc61b1c060e8999f1dc105"
     sha256 cellar: :any,                 arm64_big_sur:  "ad6fcd4d465d6633392227ea1388d7f7d37df2d51f5f20657b919fa1f8823d9c"
+    sha256 cellar: :any,                 ventura:        "1dcbd0c77ec09e80866a9d28152901b09b9d77bad76926866aac70b83c9e950c"
     sha256 cellar: :any,                 monterey:       "007f5a1b58e2c6033e3300b0f8241a60de14a63e4c26eba650e823dd59f465e7"
     sha256 cellar: :any,                 big_sur:        "877d19a286015dcf5ea72d8633022ff83ffe7662b1ced07cdede3d751b7f0fc4"
     sha256 cellar: :any,                 catalina:       "a294e12fed0a1752bac9f139f47dfe2676dfb871123a32bd03a3fad000a4d52c"
