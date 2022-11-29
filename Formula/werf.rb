@@ -18,6 +18,7 @@ class Werf < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2fae118edf0f0f26c519bbff123cc9e40e8d922b3da6218fbddb3ee1d18ac3ab"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b798fd502e59e290d3c6ee28ee1ecb8fdc034ae424da7466a095a135551559d1"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "78cc9c588d6cee237bea1a5e658732d4d259d1412bc2a5dfe03f51d83b616ab6"
+    sha256 cellar: :any_skip_relocation, ventura:        "c48540b0975458448fda5dd26cf3edc26bf4bf3bb1d5d93c8a9e5647f968d481"
     sha256 cellar: :any_skip_relocation, monterey:       "0b7c3f58b5b55b447e387012ca3af18b4ae9b9e1383e248e8aeecb0e87e88703"
     sha256 cellar: :any_skip_relocation, big_sur:        "c512776af744d3a0a60ade6d3119e2ee2db6a212053dfba35431f5f7df50dee7"
     sha256 cellar: :any_skip_relocation, catalina:       "6a7c9e39e8ec0bab64e581bce537f310f05a387e262e4c98962f90ef12aa4f2c"
