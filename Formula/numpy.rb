@@ -10,6 +10,7 @@ class Numpy < Formula
     sha256 cellar: :any,                 arm64_ventura:  "42d0612e7a303db93173338f8c6427b7ba287b9b1401cef64e20c778f50898e9"
     sha256 cellar: :any,                 arm64_monterey: "0ecd3124146d911a9445fbb1da7465ea88d29a5402cc8e8ebc9da6205f91d070"
     sha256 cellar: :any,                 arm64_big_sur:  "c2d13e032774ce3d8c9303fb5b370b167b42e0f84db616952d2c54c452f8d981"
+    sha256 cellar: :any,                 ventura:        "64e324362bff60f9c9fa643dcbfb34bebdab029b5c8ef2774c8207591b0fa0c4"
     sha256 cellar: :any,                 monterey:       "238f9537081d326725b4ae8b3558fa9d0522a7657089e5ace04f49edfc2d06cb"
     sha256 cellar: :any,                 big_sur:        "60098a279a6e9d2efbe7068c53e343a0eacdb0d3cf6910f51060f3df05cdf333"
     sha256 cellar: :any,                 catalina:       "ce22b454a56f09a724ea33277b8981bd1256bdbf7614f8fdeffe0c2cc2b7d3c9"
