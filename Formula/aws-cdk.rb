@@ -11,6 +11,7 @@ class AwsCdk < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1876049a6492a49cf1390268b6bcb6bfb4a5f10328cd3f07f27bed93d2112508"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "1876049a6492a49cf1390268b6bcb6bfb4a5f10328cd3f07f27bed93d2112508"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1876049a6492a49cf1390268b6bcb6bfb4a5f10328cd3f07f27bed93d2112508"
+    sha256 cellar: :any_skip_relocation, ventura:        "055b01ae28e7ce0b03cd015a8bb19febc879df9ad8015167014ecb3b2f372011"
     sha256 cellar: :any_skip_relocation, monterey:       "055b01ae28e7ce0b03cd015a8bb19febc879df9ad8015167014ecb3b2f372011"
     sha256 cellar: :any_skip_relocation, big_sur:        "055b01ae28e7ce0b03cd015a8bb19febc879df9ad8015167014ecb3b2f372011"
     sha256 cellar: :any_skip_relocation, catalina:       "055b01ae28e7ce0b03cd015a8bb19febc879df9ad8015167014ecb3b2f372011"
