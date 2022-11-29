@@ -14,6 +14,7 @@ class Libxmlsec1 < Formula
     sha256 cellar: :any,                 arm64_ventura:  "26d6ebddf4e97431819583ad699228360886d81786b332084693d0ad34aa2c72"
     sha256 cellar: :any,                 arm64_monterey: "66646e0a3c47fe21b5d6257d2940c1cbaddd68fd71845ae21eb34275b2913db4"
     sha256 cellar: :any,                 arm64_big_sur:  "6520bff7f714071fc7a5925dc2335c5482ce59383386500e1f51680bf3e69850"
+    sha256 cellar: :any,                 ventura:        "15faa359429f324b4d18e49c70b0832cf93eb052ad0ef74ccddf1a2db0a4aad5"
     sha256 cellar: :any,                 monterey:       "dfc4528593b38556559a49053f7b5e3a46ae07d844ad3412a65c22214624a932"
     sha256 cellar: :any,                 big_sur:        "d428a24cc5c8165e84718292cd4a7a21519b1ce1f46c82ffff0bc27216b8a573"
     sha256 cellar: :any,                 catalina:       "b67b572409b3d79387f621c9f28338d0ec99342477f50643ff3a6032b58133c6"
