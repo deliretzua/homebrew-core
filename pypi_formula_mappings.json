@@ -656,7 +656,7 @@
     "exclude_packages": ["six", "virtualenv"]
   },
   "volatility": {
-    "extra_packages": ["capstone", "pycryptodome", "yara-python"]
+    "extra_packages": ["capstone", "pycryptodome", "yara-python", "jsonschema"]
   },
   "watson": {
     "exclude_packages": ["six"]
