@@ -12,6 +12,7 @@ class Circleci < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "03f000fe253b9876261f9815e340c699e4f9a83792633b55d8c4757a13b8c2cc"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8d36c3d607556fb8b616ee6de3e1fcfba884fa09c3b560418d4c0ede7a13e3c6"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "13a7701d65a203c2047011f55569f737d7bdcf528aeae85fad8b1660eff5dbe2"
+    sha256 cellar: :any_skip_relocation, ventura:        "8f5ff89a262387b5a137984af7aea36384a6ce36631675dd445a2b88ab19e0c0"
     sha256 cellar: :any_skip_relocation, monterey:       "430083664d5ba0e939c8467d45a7e4e1e08c28ecb146bda07f47dc7d5d0eecf7"
     sha256 cellar: :any_skip_relocation, big_sur:        "4bbe76587580dfa769057653fe93250fcd060ff0c91abe89ffabb0177654f642"
     sha256 cellar: :any_skip_relocation, catalina:       "7e0744fa2863bcba4841701c412da69abfc7b7f03988f9d605529374baa2e251"
