@@ -9,6 +9,7 @@ class Nco < Formula
     sha256 cellar: :any,                 arm64_ventura:  "389883ef4fb37faff1ad6c4905020711657ae7343b9484d103b663fcca5244f1"
     sha256 cellar: :any,                 arm64_monterey: "42a2b6cd03ece6ee1cf465a90714c00c06c884fe641881a515a0f448f9eec513"
     sha256 cellar: :any,                 arm64_big_sur:  "1e7f040a59934b09dab40ecf9e8d5ef7570e77a912498eedb924cd173c0843b1"
+    sha256 cellar: :any,                 ventura:        "6319d31b0d2b1ccf2af0aad08210be9f2d83ad8af2b80f055cc50e9d0875ad45"
     sha256 cellar: :any,                 monterey:       "b15593fbad57f6fb2088611b0011c37f054b29a88c024e66a30c491e488bb8fe"
     sha256 cellar: :any,                 big_sur:        "57361533668d2c0e1a3b1e1670ba3209d65314fe13892c0fd71af5d2e14e04ed"
     sha256 cellar: :any,                 catalina:       "2a7ca86db0c657c36b12038b23faf11d78becc31398229cf4daee4092893d8de"
