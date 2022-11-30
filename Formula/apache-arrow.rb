@@ -12,6 +12,7 @@ class ApacheArrow < Formula
     sha256 cellar: :any, arm64_ventura:  "71648738648c4f2bdd313a96104681350e1348300142dfff48abc7bd4924b617"
     sha256 cellar: :any, arm64_monterey: "7dad2dbbf62cd61d9cd1de3d33b5a8ad0345da966b21692a62ee797e460ece92"
     sha256 cellar: :any, arm64_big_sur:  "acdec572a4acd1ffa427736360395b99d3cf486b251940dc086a7e820fcc4ece"
+    sha256 cellar: :any, ventura:        "5c3acebaea21e272dfe2afee731f8e6f547d793b368c2d60cf8cb4e5c3d0526a"
     sha256 cellar: :any, monterey:       "21bb0f18f769c285321f21b9970373767cb57105e4e8a0abbcb944111c1ab298"
     sha256 cellar: :any, big_sur:        "05fdb3dfdfb1b2463b275ce18ec5701ab1ae5841214dbf331cfa45f84f369150"
     sha256 cellar: :any, catalina:       "ad13d5977455cd14c0b06498289bbd4d42d5c29f4ec91c88d339ac4cd4083b32"
