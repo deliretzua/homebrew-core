@@ -12,6 +12,7 @@ class ContentfulCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ae5ec195731791dfbb40e6c8da7bd9beb4e817305804792a2282df5464cba116"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "ae5ec195731791dfbb40e6c8da7bd9beb4e817305804792a2282df5464cba116"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ae5ec195731791dfbb40e6c8da7bd9beb4e817305804792a2282df5464cba116"
+    sha256 cellar: :any_skip_relocation, ventura:        "f69551f6a0e161c1a7fdc981da2673f920604d86aa996df9d42e8f5063422cf3"
     sha256 cellar: :any_skip_relocation, monterey:       "f69551f6a0e161c1a7fdc981da2673f920604d86aa996df9d42e8f5063422cf3"
     sha256 cellar: :any_skip_relocation, big_sur:        "f69551f6a0e161c1a7fdc981da2673f920604d86aa996df9d42e8f5063422cf3"
     sha256 cellar: :any_skip_relocation, catalina:       "f69551f6a0e161c1a7fdc981da2673f920604d86aa996df9d42e8f5063422cf3"
