@@ -11,6 +11,7 @@ class Pferd < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ad0e48fcfe3f20c7a5d598e45b5f3d0c1593d2273baf2ce87a67c1133d2b42a0"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "91b3677725348a95a3138bfde9f1b780f43850fbbacaa611558649bb8f391462"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "87fade3f6ca8ddf7739f91ebb516701e72387aed0f4e354f98aa0fb881f60d1d"
+    sha256 cellar: :any_skip_relocation, ventura:        "2e2cd59c072fb5b2d9ae20083c7fe4d63794d4d026ee8d585dd3d41c57cb122a"
     sha256 cellar: :any_skip_relocation, monterey:       "b803237164bc4c56f729ee2e169022f5e63c609a278acd4b024e1ffe5f35877f"
     sha256 cellar: :any_skip_relocation, big_sur:        "2222cc6708bbf77d20bd07a5c50d8f6a59998c005e22eda8f60a75c8e5d5a548"
     sha256 cellar: :any_skip_relocation, catalina:       "bb634719e12de6e602558bb4e0eaea9f9489311f9979943e779d743704309fb6"
