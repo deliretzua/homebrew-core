@@ -25,14 +25,13 @@ class Ldns < Formula
 
   depends_on "swig" => :build
   depends_on "openssl@1.1"
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   conflicts_with "drill", because: "both install a `drill` binary"
 
   def install
-    python3 = "python3.10"
-    args = %W[
-      --prefix=#{prefix}
+    python3 = "python3.11"
+    args = *std_configure_args + %W[
       --with-drill
       --with-examples
       --with-ssl=#{Formula["openssl@1.1"].opt_prefix}
