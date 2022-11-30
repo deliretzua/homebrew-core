@@ -9,6 +9,7 @@ class Eget < Formula
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c12b5e607e4d55fb6c65d895b32b22828d58f5b824b3c0a6e67998f989438312"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8cb94b85450d94bd30b303c05a3627a25f19b6827f315f68e18370d924c798b6"
+    sha256 cellar: :any_skip_relocation, ventura:        "4853bd40ba4656ed3922dae58c31679666eca4bc5187581637570043aa76eb75"
     sha256 cellar: :any_skip_relocation, monterey:       "7e3d445c82f7e3974f1c302f74d9663250826bd082931580d8308e3c155c5d71"
     sha256 cellar: :any_skip_relocation, big_sur:        "a02c420db63e1a2103d15ae0b9df3037f5ec660dc79ea63701f3f959274dc353"
     sha256 cellar: :any_skip_relocation, catalina:       "32e90a815abd4608b66ab65eaeb7d02c48ada09dfa82105d50e020a8418c8a55"
