@@ -7,14 +7,13 @@ class Snowflake < Formula
   head "https://git.torproject.org/pluggable-transports/snowflake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5358d95caeb519fd52064300cc6c03075764f965498a640dbcd37b334bef2c23"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca274c6678b71d1ea47f0e5b6ee0b873a6a2826da634186225f0f0d37f2459f3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a2836b655208a177b5459630bab88560aed22b704d5bf2f621ddcaeec9838fb9"
-    sha256 cellar: :any_skip_relocation, ventura:        "b0b242255b7355454dedfccea870eb5f3d95ff3a2bb8bee760968c20a133fcb4"
-    sha256 cellar: :any_skip_relocation, monterey:       "383ca25f5e69b9f5aa9458816c4eb1730a5907de5e7fc1a55d65089cfff5224b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "61a06facc6a248c6590ac9d82d5ce1165cf8313a131e3c825442b7a882d0bd2b"
-    sha256 cellar: :any_skip_relocation, catalina:       "bf26de9c93dfd2f49a9d9e8a37c785b41cf42eb460e786e51d4cbeec86828f12"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f20ca5db9a0d6d3e1fa6906a1d91622367b3d8306dd36c767a2da5a00efe0c6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6b1b386f296fbcd63130cf79858ddcb3a7e573ae260f925ecf26e6b21c8e8116"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "14c92d54bdf129eb17d407188606e6817a88473ad0d35fb90bd124a1b4e1aec8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "398f5436e61a3655a5b1b62a7c6a98e2b37b071f4c11ee270068208eb9805ddf"
+    sha256 cellar: :any_skip_relocation, monterey:       "aca68cb7a4a3043e882b48df8de88b9700b1fb12817807acd948d1a4c90459e9"
+    sha256 cellar: :any_skip_relocation, big_sur:        "47a412bf90a26a22f62a0ceefe9eabb1910daa4416abed49db56d023317cc6e2"
+    sha256 cellar: :any_skip_relocation, catalina:       "57c845d632be93c7b7ba81706c289d61bb32332961a9f2461e4f50461679b36f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "97652b640edf5ebc3b7fea72b59dbdd2acd98b52d3e60f3e42f877ef16d73144"
   end
 
   depends_on "go" => :build
