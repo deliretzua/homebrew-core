@@ -10,6 +10,7 @@ class Snowflake < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6b1b386f296fbcd63130cf79858ddcb3a7e573ae260f925ecf26e6b21c8e8116"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "14c92d54bdf129eb17d407188606e6817a88473ad0d35fb90bd124a1b4e1aec8"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "398f5436e61a3655a5b1b62a7c6a98e2b37b071f4c11ee270068208eb9805ddf"
+    sha256 cellar: :any_skip_relocation, ventura:        "afe041f4758d0b57f5b2eaf1357e9b37d3827958a4e672b67e8a76c85ab3b10a"
     sha256 cellar: :any_skip_relocation, monterey:       "aca68cb7a4a3043e882b48df8de88b9700b1fb12817807acd948d1a4c90459e9"
     sha256 cellar: :any_skip_relocation, big_sur:        "47a412bf90a26a22f62a0ceefe9eabb1910daa4416abed49db56d023317cc6e2"
     sha256 cellar: :any_skip_relocation, catalina:       "57c845d632be93c7b7ba81706c289d61bb32332961a9f2461e4f50461679b36f"
