@@ -9,6 +9,7 @@ class Vitess < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "054272bbd5537c96beaf76ad38aa75ed4fba243904e475e64c0a0494889a1926"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "a5f38dc3f60969d75af326ce4fefa5673507a56212fa68600e788e71f18b88fb"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "88eb89d71b07ecc22443a7cc174a63ddd7dc612567d0c8a0a677425362d1be0d"
+    sha256 cellar: :any_skip_relocation, ventura:        "a556830941563b5effa10711f06b15e9c52350b7b51a3aa1236d64240c114bd3"
     sha256 cellar: :any_skip_relocation, monterey:       "62b959efeee3feb16787dab4664a26b09dd2b90ca5cecd011ffef510f91f1da8"
     sha256 cellar: :any_skip_relocation, big_sur:        "52bbadbf719417234fdb8a6fef70a7fda2f4093077b59ea4bbb96afcb1d81fd3"
     sha256 cellar: :any_skip_relocation, catalina:       "2861d38d75ec15816b24bff4c03af7e74237a00ddc63451e99abe0fd8b3d536c"
