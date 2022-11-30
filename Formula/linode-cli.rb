@@ -12,6 +12,7 @@ class LinodeCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e56f3b98f1dc0b2debcaac19726b62d1ab4e130ad19e67934b0134701d2a121e"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8e640ac6ec849097d9f4c821865ccb59c1061cb5091d50e0fbd741180f651d8b"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b5d09fabdec2bcf873941b04858ad578085b7088de13d3029b2ab3ff6ae54efa"
+    sha256 cellar: :any_skip_relocation, ventura:        "581dee10e18ec6a728d65981797eabf9e2a5a10b68b2933bacdea05f999ac8bd"
     sha256 cellar: :any_skip_relocation, monterey:       "85f38a2c310bda1ea243d5057c047bc9fe5454051ab2b2a3405c279ec0fcadcb"
     sha256 cellar: :any_skip_relocation, big_sur:        "7cf3ef4d94d1752efc251a15fcc8e3c77c8e5da7e2427ced745da43500317cb7"
     sha256 cellar: :any_skip_relocation, catalina:       "f4a2f1ac725a0a82f44fc11319ac48a4c072cbadad70d1f8cb7019ae8d92304c"
