@@ -9,15 +9,13 @@ class Jsonschema < Formula
   head "https://github.com/python-jsonschema/jsonschema.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f6466b0da0224a6032b11ccb946ae9621c5f1dbddb54c86055965f24780805d1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "837810d192217865aefa25421554fe02709019060faab5f6317042f1cb77ace5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f78327ca1a3d89ef36bb37bff5d4904021dd73f8678f821c849adf2d053c0355"
-    sha256 cellar: :any_skip_relocation, ventura:        "28fa340844147727d1b48f704b6547fa3160bc58fb091b52a45a807c56ca06da"
-    sha256 cellar: :any_skip_relocation, monterey:       "5515829f57e8627cf12ca65deb0b1d9e24505d4fe89ab22b1269503eaa71f035"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ac5a56f030e45673a6b333366b67236c488296613b9504a39f64314f81010886"
-    sha256 cellar: :any_skip_relocation, catalina:       "67d97e992ab442330ab427756db36c100442477e7413eae06311f5b568d0f127"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d718d98a8eb62223df48171c50bba9c36cb8ffef721c203fe96464f778c2296b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4c26cd5129a5f40259fbd68a639a8be2716772f101f3b2b221d1bc933f7a7bc5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2bf59f4a37da0c8b58947f074e5667a557a89e83529d7368f9106aa8a44d1817"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5aaf0cc515401f186bbc5a8dc2ac1c8a1b55f526990140990216b20ce7bcc9ab"
+    sha256 cellar: :any_skip_relocation, monterey:       "c4e3904eb06d086a33ad63ea8991bf1f884ca5b386370bf7a7d167fd1e508966"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a2c29684ce27332a6ad33ac34d8666bb1ef2242836b70391df176cf0bf93db82"
+    sha256 cellar: :any_skip_relocation, catalina:       "674cd7a0bde6a6b8c36fff283e2d2dd70c1aa9c9a5143d4f5e30a6bfb32667b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e02603ac9676ccfd62a9a457e81514df7a3cfceadaf4399e0e176ce2aea1710"
   end
 
   depends_on "python@3.10"
