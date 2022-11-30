@@ -7,14 +7,13 @@ class Spaceship < Formula
   head "https://github.com/spaceship-prompt/spaceship-prompt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bc9bd5c5f8b093ad6da8b02786140beb5cb787779505a0612b95ccd526f6a1db"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c46d97844abdf3d12c846998af399ef7cc65d50862c57d44ed08e6fbaa8c55a2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5c3a09e6da9a5c18d0043752246336da01409c2dcc6feb60cfefab87c3bb3ecc"
-    sha256 cellar: :any_skip_relocation, ventura:        "d6611b833f9aa5d452c5d6a572ff2c8416df5f8629ecfb7511fdffcf07ab52bb"
-    sha256 cellar: :any_skip_relocation, monterey:       "fae09e61ebfacde1faed1e37bb7492df1657ab42103d31535a26ee5a815231e3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "07072e4349852499ddb5a1a09e4a58ad888982626a6585f69b0cc3da6de5997d"
-    sha256 cellar: :any_skip_relocation, catalina:       "c0447a20740bc376f9bfd523bb416b5ed7568e2dbe28d58d1c256b4666e0b9c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "398dbb6574306fdc47e3a1eed71e2cb017997ee4e9cd30640acbf6269993c41b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5891a28673681ca3f1655042fb8ec24f77f295815159466d3fb153ff92ff3ebb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1ac943ef5eaa99591e8be98edf194bfab30239dd076c807fd94c56e8141854cb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c5b6a355cc38b383975aeaafc349fb83503fe25a9b2f80be96d1abbf5f0a2bb7"
+    sha256 cellar: :any_skip_relocation, monterey:       "2634ea7fd084db7686c35062f98f95be433f67e12a66be77f83722dd3579156c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "52925ec06e65405cbd93054cdd6b6a3f208b559977147d145fed5e5ea40185c8"
+    sha256 cellar: :any_skip_relocation, catalina:       "b1666961076b140c6045164421ea8a2b3af13914eabea20f890e759cad80c854"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d2fffa0b787ea8935f343c494a38b3c9599745bffa8b17503d079e50013a9fa"
   end
 
   depends_on "zsh-async"
