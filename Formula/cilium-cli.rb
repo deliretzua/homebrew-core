@@ -9,6 +9,7 @@ class CiliumCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "74976b6deb3f496c4b0095ac7dd8691e023d9d17542b79b44db1d11c5180015f"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "403f7b72378424e98dc9191d89af6201899ed2884e85c04f83d2211a1756b72a"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "56dc91f0e6221da27f906dfd4df6b43c336245eeddcecdfb3926422365999c7c"
+    sha256 cellar: :any_skip_relocation, ventura:        "cea88ca50899e3e5a86d8b6344471d8cddb5197f82b2f642484ba6dcb87d21ed"
     sha256 cellar: :any_skip_relocation, monterey:       "619be05d98e9f9e3997af5fcd0d24535e10f821034a20c34fdc1c765d8e9ef89"
     sha256 cellar: :any_skip_relocation, big_sur:        "0e8ae6c8036e92a60eb588ca87217b6811a08986906d14473427edabc1b6f000"
     sha256 cellar: :any_skip_relocation, catalina:       "bbec7c22131249c4ff369c33475e20fe26d81bc5eacac6b10fe8a111bb879fc7"
