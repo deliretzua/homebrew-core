@@ -12,6 +12,7 @@ class Commitizen < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ded484ce4a40fd1442e09c0e9888914d290e7361d37ebcb5b9fbadf5cd0bc023"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3bd20b512092a26cf78222d08ae008ebbe43504c58474c55d78079f091c495e5"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c0d7b352ea6ba30ea9bea511aebe9197430a6f4a86abc6fd6a9228b63ead27a2"
+    sha256 cellar: :any_skip_relocation, ventura:        "1a8ee0840eb1d368d7922a74c01050a87b8e4283f03fb67a23a65700bf45b280"
     sha256 cellar: :any_skip_relocation, monterey:       "d3b36bee8dff544b7f0cc385df7416f8d31d3dc87ac3f45a0ce0d15b3ba9ca6e"
     sha256 cellar: :any_skip_relocation, big_sur:        "5a4a24a800fd25a22f6d58d8465d4132bcd4c22ddea068978d060ed35122de0c"
     sha256 cellar: :any_skip_relocation, catalina:       "b7bdf5c6316e27ee271d19744a7563f772e69999fc844618740788966443fd7d"
