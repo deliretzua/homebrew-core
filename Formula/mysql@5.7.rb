@@ -11,14 +11,13 @@ class MysqlAT57 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "1fa90c448d11f163caac35972ca429e0a31c9348dee0cdf63b816282b0f747e9"
-    sha256 arm64_monterey: "177e5cb2046e5bd02fdae5a388dd435f118f6792cdf33c0f8b845bf1c552175e"
-    sha256 arm64_big_sur:  "f1a68419ac62039a7dc50c32f86f281eec52098ab74f9f2e354e81bb65dcd0b6"
-    sha256 ventura:        "b92c22a5f932f4bdbf8cada8c40b9a3a4a1b8815f7a6d43802cf2c9072110a2e"
-    sha256 monterey:       "616c28a28f7c8dbc2e032a05afc06096f094c22d5fe298f6234ad9b71dfb0e9a"
-    sha256 big_sur:        "848228fa2254a9e4db25ad542edab903dded764a32f60ebe1a26f0640d3df3f6"
-    sha256 catalina:       "f584639c86134d3e0e5343ea0c3d74151ca251477ad12bd5d639f01f1378c90e"
-    sha256 x86_64_linux:   "2cf4c1be1e1c17487922c7246723dd9843da55bd6f5f9cd2370ca5362dbe116d"
+    sha256 arm64_ventura:  "f676e2d9bdbd75ef5886f29151794e5c4d78b1cbe9b38fe4ffa879eed2a30094"
+    sha256 arm64_monterey: "2fd7950e1d9c90cd16a892c9941b2ee0ef0d0d6a38a7902b0d136b7b3bd8ce23"
+    sha256 arm64_big_sur:  "4106858e141460cf1886120f5612e440b43025b22070a123f68aae65b3517109"
+    sha256 monterey:       "8996955c7e6434dfa23428299bee4cf5abf92edd407be3e32506d0b69f36f521"
+    sha256 big_sur:        "6ff834385ccf64e14d5d5d2e3c089ed15891d3de2e273476995dc4fa44be0971"
+    sha256 catalina:       "e1f3e8f8efb66d6b268a21db982b36344fe7300f6983c3baeffa223a096686ed"
+    sha256 x86_64_linux:   "0c3720a83a86943ec243c111787ccc792b2ac8aa9d83b49340ef7205646880dc"
   end
 
   keg_only :versioned_formula
