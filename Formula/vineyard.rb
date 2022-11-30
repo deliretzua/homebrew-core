@@ -12,6 +12,7 @@ class Vineyard < Formula
     sha256 arm64_ventura:  "5ecf2c44e617834003b6ab2b5c576315d6b4f099f68030ff0248accbb260affd"
     sha256 arm64_monterey: "09a91c461378d104fa8ced9f8e0783412b997c821cf1ccb26c4eedb8c3b82328"
     sha256 arm64_big_sur:  "51b73b78a44278798a028654e649e1cde111c339e8d97c87a44de0a23f85ca9e"
+    sha256 ventura:        "e75181f09db48e9c428ba0035e39bd7e0742812207feebeb6eafeed7920aa075"
     sha256 monterey:       "a0d7fd6d659159ec310d696b85698d451b9e671659d605b673efc1f373cc26ef"
     sha256 big_sur:        "f7fc39595baeb55165730135c3f1bfd642b0ad3e37eea8d1da58254f3e31740b"
     sha256 catalina:       "57713d4fc7e4998504fdce57ad8bc9b5aa0f9f07f314cc210aae9b024da6d1d2"
