@@ -21,6 +21,7 @@ class Clusterctl < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "20af2c73e7c9c5b2e6afe97db4c997a1aa26fd9e87b31769bdce162591532b32"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f61b5d4b70d3915cfb7a099d1a7ec83b9037fc520c36749447b123c07335ea6f"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c35547172310ec21673041835109c3e0dbdfea7d4e89afd5bbcd5d9c9c85ff73"
+    sha256 cellar: :any_skip_relocation, ventura:        "49d102c8c2485399751a2776c5fa23244aebc338baf6569f1fc60daf7c72eeb7"
     sha256 cellar: :any_skip_relocation, monterey:       "f2b23d2fb7edb803bca90b6693289a50b9ae4f9378f329cce250dc15bc30c8cf"
     sha256 cellar: :any_skip_relocation, big_sur:        "2e4d802af5acaeb694fd40dbce0eb127c3a5d847312706b29ba448950010e6ed"
     sha256 cellar: :any_skip_relocation, catalina:       "4da3450e4bd4047883c1958b58ec050f28cf5783f9859de8d7e4e1245cc05e9b"
