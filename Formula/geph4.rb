@@ -10,6 +10,7 @@ class Geph4 < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2359f070b36fff71553bd1b1434d600b9fb61187507ac516ef8941eed3a38c89"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "b47bc078c6d06ea71481991148fe05756a34d7f5e831bf8fd8296f014f8c3036"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e2a4d9304721fbc5e33fef21690630a5359a8d41667c1fd90f0a4d8ee632b4f7"
+    sha256 cellar: :any_skip_relocation, ventura:        "b1a39a17a173045f7e3c71b8a0c76b559fbdb8ed13057df9ee4bb4a5754501e3"
     sha256 cellar: :any_skip_relocation, monterey:       "1929be19dff08b9d265caa553ad86d629a64a7d47ea64e42d7b2a3db7d1191cc"
     sha256 cellar: :any_skip_relocation, big_sur:        "a2d81df62b9298def302ad3454a7f25c53ac2c2c495932d3ed90c8f4b9382ae2"
     sha256 cellar: :any_skip_relocation, catalina:       "3f0953f038ef26d8d864e9fce426bbcf3a7ac7b27fb87db4cf191b59b0c7cec4"
