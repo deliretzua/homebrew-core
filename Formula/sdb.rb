@@ -1,8 +1,8 @@
 class Sdb < Formula
   desc "Ondisk/memory hashtable based on CDB"
   homepage "https://github.com/radareorg/sdb"
-  url "https://github.com/radareorg/sdb/archive/1.9.2.tar.gz"
-  sha256 "58f45a1de7eace53d0bc1d7daf20c63102e1dda00198ca3799fe57dcfb1f06cc"
+  url "https://github.com/radareorg/sdb/archive/1.9.4.tar.gz"
+  sha256 "dbdb00dc2f8824f91baf0d818371c737b3580bdc60628d3c5d1a069722d77912"
   license "MIT"
   head "https://github.com/radareorg/sdb.git", branch: "master"
 
@@ -17,13 +17,16 @@ class Sdb < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa4b90d38a6a06bbfb716fcb12d2c0b605b0558abb9dd3c2566f4d2973ea180f"
   end
 
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "vala" => :build
   depends_on "glib"
 
   def install
-    system "make"
-    system "make", "install", "PREFIX=#{prefix}"
+    system "meson", *std_meson_args, "build"
+    system "meson", "compile", "-C", "build", "-v"
+    system "meson", "install", "-C", "build"
   end
 
   test do
