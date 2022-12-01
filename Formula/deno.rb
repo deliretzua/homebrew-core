@@ -1,8 +1,8 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https://deno.land/"
-  url "https://github.com/denoland/deno/releases/download/v1.28.2/deno_src.tar.gz"
-  sha256 "ec42e4aac15308efee702c92e9651dd0894b7c0728edbe5dcd49f6d14990a7e8"
+  url "https://github.com/denoland/deno/releases/download/v1.28.3/deno_src.tar.gz"
+  sha256 "85059ab2b88d53fea7aabf7c293d3d563a67fcb08e71f6298772891b8c25b0a6"
   license "MIT"
   head "https://github.com/denoland/deno.git", branch: "main"
 
@@ -39,8 +39,8 @@ class Deno < Formula
   # We use the crate as GitHub tarball lacks submodules and this allows us to avoid git overhead.
   # TODO: Remove this and `v8` resource when https://github.com/denoland/rusty_v8/pull/1063 is released
   resource "rusty-v8" do
-    url "https://static.crates.io/crates/v8/v8-0.55.0.crate"
-    sha256 "46cd4f562bce7520fbb511850c5488366264caf346be221cf7e908f51ac33dbc"
+    url "https://static.crates.io/crates/v8/v8-0.58.0.crate"
+    sha256 "8e9b88668afedf6ec9f8f6d30b446f622498da2ef0b3991a52e10f0ea8c6cc09"
   end
 
   resource "v8" do
@@ -49,7 +49,7 @@ class Deno < Formula
   end
 
   # To find the version of gn used:
-  # 1. Find v8 version: https://github.com/denoland/deno/blob/v#{version}/core/Cargo.toml
+  # 1. Find v8 version: https://github.com/denoland/deno/blob/v#{version}/Cargo.toml#L43
   # 2. Find ninja_gn_binaries tag: https://github.com/denoland/rusty_v8/tree/v#{v8_version}/tools/ninja_gn_binaries.py
   # 3. Find short gn commit hash from commit message: https://github.com/denoland/ninja_gn_binaries/tree/#{ninja_gn_binaries_tag}
   # 4. Find full gn commit hash: https://gn.googlesource.com/gn.git/+/#{gn_commit}
@@ -58,8 +58,11 @@ class Deno < Formula
         revision: "bf4e17dc67b2a2007475415e3f9e1d1cf32f6e35"
   end
 
-  # textwrap 0.15.1 was yanked, update to use 0.15.2
-  patch :DATA
+  # patch textwrap, remove in next release
+  patch do
+    url "https://github.com/denoland/deno/commit/c3b75c692c6392dd59ba7203f4f94d702eb20e27.patch?full_index=1"
+    sha256 "d64096893d41c13ba358f43d4300f7438371dca2918e96f92fa41acf2c1eb425"
+  end
 
   def install
     # Work around files missing from crate
@@ -115,22 +118,3 @@ class Deno < Formula
                    "#{testpath}/hello.ts")
   end
 end
-
-
-__END__
-diff --git a/Cargo.lock b/Cargo.lock
-index 5b9a49f5e..e5b4e2676 100644
---- a/Cargo.lock
-+++ b/Cargo.lock
-@@ -4803,9 +4803,9 @@ dependencies = [
-
- [[package]]
- name = "textwrap"
--version = "0.15.1"
-+version = "0.15.2"
- source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "949517c0cf1bf4ee812e2e07e08ab448e3ae0d23472aee8a06c985f0c8815b16"
-+checksum = "b7b3e525a49ec206798b40326a44121291b530c963cfb01018f63e135bac543d"
-
- [[package]]
- name = "thiserror"
