@@ -1,8 +1,8 @@
 class GitLfs < Formula
   desc "Git extension for versioning large files"
   homepage "https://git-lfs.github.com/"
-  url "https://github.com/git-lfs/git-lfs/releases/download/v3.2.0/git-lfs-v3.2.0.tar.gz"
-  sha256 "f8e6bbe043b97db8a5c16da7289e149a3fed9f4d4f11cffcc6e517c7870cd9e5"
+  url "https://github.com/git-lfs/git-lfs/releases/download/v3.3.0/git-lfs-v3.3.0.tar.gz"
+  sha256 "964c200bb7dcd6da44cbf0cfa88575f7e48d26925f8ec86d634d3f83306a0920"
   license "MIT"
 
   bottle do
@@ -16,6 +16,7 @@ class GitLfs < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "43e16ee02644936dbf6d2d504b8c66cd3e0c3dd1313436e9bd253c4c051e437c"
   end
 
+  depends_on "asciidoctor" => :build
   depends_on "go" => :build
   depends_on "ronn" => :build
   depends_on "ruby" => :build
@@ -24,17 +25,14 @@ class GitLfs < Formula
     ENV["GIT_LFS_SHA"] = ""
     ENV["VERSION"] = version
 
-    (buildpath/"src/github.com/git-lfs/git-lfs").install buildpath.children
-    cd "src/github.com/git-lfs/git-lfs" do
-      system "make", "vendor"
-      system "make"
-      system "make", "man", "RONN=#{Formula["ronn"].bin}/ronn"
+    system "make"
+    system "make", "man", "RONN=#{Formula["ronn"].bin}/ronn"
 
-      bin.install "bin/git-lfs"
-      man1.install Dir["man/*.1"]
-      man5.install Dir["man/*.5"]
-      doc.install Dir["man/*.html"]
-    end
+    bin.install "bin/git-lfs"
+    man1.install Dir["man/man1/*.1"]
+    man5.install Dir["man/man5/*.5"]
+    man7.install Dir["man/man7/*.7"]
+    doc.install Dir["man/html/*.html"]
   end
 
   def caveats
