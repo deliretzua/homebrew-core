@@ -6,6 +6,15 @@ class Pbzx < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/NiklasRosenstein/pbzx.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any, arm64_ventura:  "2daae05cf14027d7cefc132e705bf69a04e4fd5425c4856bda3ba33da6ce575f"
+    sha256 cellar: :any, arm64_monterey: "52198369eac9a2ce3b84a3d293517c84dd9fbea20010379ece7ac849cedeba2c"
+    sha256 cellar: :any, arm64_big_sur:  "12bb9d8f9ab80e43ed3627ffb4add78ab55d965814b8e2551ef78426ee47c869"
+    sha256 cellar: :any, monterey:       "40bd57e2e67b8558e65a82a981cd864c2f9644a90475e942423a631b6cdfd190"
+    sha256 cellar: :any, big_sur:        "8444ecb5864ac3a5324a92620b3ac280deac66cc09621cd7cdc1c5e8b94f119b"
+    sha256 cellar: :any, catalina:       "c6d161a1c58bcbc3e1f6d8bcf7ec567a0f93cafe626849838cf4d8ec4c90044a"
+  end
+
   # pbzx is a format employed OSX disk images
   depends_on :macos
   depends_on "xz"
