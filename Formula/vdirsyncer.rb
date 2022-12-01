@@ -9,15 +9,13 @@ class Vdirsyncer < Formula
   head "https://github.com/pimutils/vdirsyncer.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bd43a255f3ad916c9245c960807735b0f35ee29f9efb449b4caadc8d9560b59a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8e34eb4b43eedd1c8720875cf4773309e878f1dc75200a77b58ddf496f99dec3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0ff47f93267a860f72c7d14dbf285de3ae4910e7cd531986307bb5b1037a556e"
-    sha256 cellar: :any_skip_relocation, ventura:        "fc83c7407d0e10a9630ee944a9144e76ab25d25fcce6a659bfd8956134493ef2"
-    sha256 cellar: :any_skip_relocation, monterey:       "8864057f7f25b54126526d698f6301905ab5a76d30e0a96e706011bd93bf82b5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b6a1585c290d0085dc140d7b1aff825bb05fbaf349fabc3c0923195bc8103ab1"
-    sha256 cellar: :any_skip_relocation, catalina:       "6c9a7abfceff287ccf60f55fa08e45f58b993c9c4e15cd88d49f379b67df8491"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b82ca484886611e64cfb95cfa284bd7d0d024fa5087cff092c2026328ae3eed"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c86d39cebc818f124090c35c781c179e980463f8ce21213e22bbaa2e4903dbb4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "347d424a776319b0b59fdef0840e891026caecd8fd5d2b58e131d0ecd18a2093"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6370d3d6b4d11114a8f7ea8b0df6184e24cef8daf78c1aaacbbfb02cf9bfd83a"
+    sha256 cellar: :any_skip_relocation, ventura:        "ae8c05e84db31f335797fcc9250a7e0fec540d289c11979d79fe976572147167"
+    sha256 cellar: :any_skip_relocation, monterey:       "f982f172b59fd8b6640b22707efae90a6b5c5d659529acd4c87710629650fda6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "83a2babf913e94514f64c9ca4a20d231996640d05395738fd7291a22bbac0112"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4c53a5cb9f0e0bf85d80d2072287220f1afd346025ac2a3f8a8ec7347cb86d9"
   end
 
   depends_on "python@3.11"
