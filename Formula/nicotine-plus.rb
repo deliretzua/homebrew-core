@@ -9,14 +9,13 @@ class NicotinePlus < Formula
   head "https://github.com/Nicotine-Plus/nicotine-plus.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bb80ddd865a0ff5f766a5bf534b3563546c47fc27b0fe1821c2823d6b7cb5782"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bb80ddd865a0ff5f766a5bf534b3563546c47fc27b0fe1821c2823d6b7cb5782"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bb80ddd865a0ff5f766a5bf534b3563546c47fc27b0fe1821c2823d6b7cb5782"
-    sha256 cellar: :any_skip_relocation, ventura:        "1a8a4981c4c5b4c0d9bad7c843cd1346fbd124cf882e6cf99781a76252121060"
-    sha256 cellar: :any_skip_relocation, monterey:       "1a8a4981c4c5b4c0d9bad7c843cd1346fbd124cf882e6cf99781a76252121060"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1a8a4981c4c5b4c0d9bad7c843cd1346fbd124cf882e6cf99781a76252121060"
-    sha256 cellar: :any_skip_relocation, catalina:       "1a8a4981c4c5b4c0d9bad7c843cd1346fbd124cf882e6cf99781a76252121060"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3be7cc8f92630bb307542d5c9318406ffa3828ade3b304338bd688530ddb5292"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e55ebcb6bcf83863697441a0a689ff912970674e9689e856cfab545aa9271093"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e55ebcb6bcf83863697441a0a689ff912970674e9689e856cfab545aa9271093"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e55ebcb6bcf83863697441a0a689ff912970674e9689e856cfab545aa9271093"
+    sha256 cellar: :any_skip_relocation, ventura:        "5a08281e6ac89a6eaefecef2ef1950b0f2792350b939791ae088d50130808d79"
+    sha256 cellar: :any_skip_relocation, monterey:       "5a08281e6ac89a6eaefecef2ef1950b0f2792350b939791ae088d50130808d79"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5a08281e6ac89a6eaefecef2ef1950b0f2792350b939791ae088d50130808d79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "06c399bb9b2c23aa5509f3897b52bae5266d39e7fe4ce3369c06223729b2256c"
   end
 
   depends_on "adwaita-icon-theme"
