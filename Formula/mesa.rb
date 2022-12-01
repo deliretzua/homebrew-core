@@ -7,8 +7,8 @@ class Mesa < Formula
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
   stable do
-    url "https://mesa.freedesktop.org/archive/mesa-22.2.4.tar.xz"
-    sha256 "65d76b53ca5c7b46019e0e8e5b414de45d2fecd3fcd71707f6c3bc7691c9f7ab"
+    url "https://mesa.freedesktop.org/archive/mesa-22.3.0.tar.xz"
+    sha256 "644bf936584548c2b88762111ad58b4aa3e4688874200e5a4eb74e53ce301746"
 
     patch do
       url "https://raw.githubusercontent.com/Homebrew/formula-patches/f0a40cf7d70ee5a25639b91d9a8088749a2dd04e/mesa/fix-build-on-macOS.patch"
@@ -58,7 +58,6 @@ class Mesa < Formula
     depends_on "libxrandr"
     depends_on "libxshmfence"
     depends_on "libxv"
-    depends_on "libxvmc"
     depends_on "libxxf86vm"
     depends_on "lm-sensors"
     depends_on "wayland"
@@ -111,9 +110,8 @@ class Mesa < Formula
         -Dopengl=true
         -Dgles1=enabled
         -Dgles2=enabled
-        -Dgallium-xvmc=disabled
         -Dvalgrind=false
-        -Dtools=drm-shim,etnaviv,freedreno,glsl,nir,nouveau,xvmc,lima
+        -Dtools=drm-shim,etnaviv,freedreno,glsl,nir,nouveau,lima
       ]
     end
 
