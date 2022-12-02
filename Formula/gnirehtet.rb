@@ -1,11 +1,21 @@
 class Gnirehtet < Formula
   desc "Reverse tethering tool for Android"
   homepage "https://github.com/Genymobile/gnirehtet"
-  url "https://github.com/Genymobile/gnirehtet/archive/v2.5.tar.gz"
-  sha256 "2b55b56e1b21d1b609a0899fe85d1f311120bb12b04761ec586187338daf6ec5"
   license "Apache-2.0"
   revision 1
   head "https://github.com/Genymobile/gnirehtet.git", branch: "master"
+
+  stable do
+    url "https://github.com/Genymobile/gnirehtet/archive/v2.5.tar.gz"
+    sha256 "2b55b56e1b21d1b609a0899fe85d1f311120bb12b04761ec586187338daf6ec5"
+
+    # Fix compilation issue with rust 1.64.0+
+    # upstream PR reference, https://github.com/Genymobile/gnirehtet/pull/478
+    patch do
+      url "https://raw.githubusercontent.com/Homebrew/formula-patches/d62149f/gnirehtet/2.5-rust-1.64.0.patch"
+      sha256 "bdda0abc50344b14227d880d8257189f49eb586722b6e5fa07f3cb70b442b7a0"
+    end
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8e895ff323e648db638a97542eeed9d71936f882c36b95e410bd50a7ff272ffd"
