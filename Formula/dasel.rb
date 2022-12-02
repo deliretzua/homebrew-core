@@ -1,8 +1,8 @@
 class Dasel < Formula
   desc "JSON, YAML, TOML, XML, and CSV query and modification tool"
   homepage "https://github.com/TomWright/dasel"
-  url "https://github.com/TomWright/dasel/archive/v1.27.3.tar.gz"
-  sha256 "1dfd0bf372ab252931adc636887c1d34a75e9ac767b5e6baabf9fd91fdfa15a6"
+  url "https://github.com/TomWright/dasel/archive/v2.0.0.tar.gz"
+  sha256 "64000f987149f20879ea8850b16015bd2cbfaf15e7e570dd0c2015a3683455ab"
   license "MIT"
   head "https://github.com/TomWright/dasel.git", branch: "master"
 
@@ -27,7 +27,7 @@ class Dasel < Formula
   end
 
   test do
-    json = "[{\"name\": \"Tom\"}, {\"name\": \"Jim\"}]"
-    assert_equal "Tom\nJim", pipe_output("#{bin}/dasel --plain -p json -m '.[*].name'", json).chomp
+    assert_equal "\"Tom\"", shell_output("echo '{\"name\": \"Tom\"}' | #{bin}/dasel -r json 'name'").chomp
+    assert_match version.to_s, shell_output("#{bin}/dasel --version")
   end
 end
