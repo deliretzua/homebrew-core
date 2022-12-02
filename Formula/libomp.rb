@@ -1,8 +1,8 @@
 class Libomp < Formula
   desc "LLVM's OpenMP runtime library"
   homepage "https://openmp.llvm.org/"
-  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.5/openmp-15.0.5.src.tar.xz"
-  sha256 "fd1f4ca2d1b78c1b42bd74c9ae32b3bedd77242e8fb5dc774ace4a43726d1615"
+  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.6/openmp-15.0.6.src.tar.xz"
+  sha256 "1ac6f159d81625d852a42676ff6d8820cb744c18d825a56d56a6d7aa389f5ac9"
   license "MIT"
 
   livecheck do
@@ -29,8 +29,8 @@ class Libomp < Formula
   uses_from_macos "llvm" => :build
 
   resource "cmake" do
-    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.5/cmake-15.0.5.src.tar.xz"
-    sha256 "61a9757f2fb7dd4c992522732531eb58b2bb031a2ca68848ff1cfda1fc07b7b3"
+    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.6/cmake-15.0.6.src.tar.xz"
+    sha256 "7613aeeaba9b8b12b35224044bc349b5fa45525919625057fa54dc882dcb4c86"
   end
 
   def install
