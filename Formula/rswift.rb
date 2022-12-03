@@ -7,13 +7,10 @@ class Rswift < Formula
   head "https://github.com/mac-cain13/R.swift.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ced4bcf3d1ce445e1ca9eae4adddba44e81eaf83342ad0d0e3e68b79bfe2d212"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0a609e1a2f866c2b1d08ae2fb5114a182ba5a87a91f745202b8a0de67eadb3e4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2db2bde39d2e583b5982869ea8c25696909cd83b82fece0ea41f7c6809702459"
-    sha256 cellar: :any_skip_relocation, ventura:        "decefebfdaa729c286ea1013d77eb3223b50d31f5c3451565d21860a9b9a7d20"
-    sha256 cellar: :any_skip_relocation, monterey:       "9d743c8f7a78919017ea4835de73d385e9fd04b9291aedd27ae7cba0e827cafd"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fb0930087125bb968caaa02eee28f21d9643def376de811c7b72aac874eed85b"
-    sha256 cellar: :any_skip_relocation, catalina:       "5fa3a697f9af414e62a11567311054687c3805c3d4220ec9105639f439d92936"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f2ddbf7ac4cfe913a4dd74ab971e04fdf18d7221c8bf45b583efab6bb0669546"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a5dcb76afcfe70d5452b1ec8507e1cbae48b7e571406d31c95e2a55362810685"
+    sha256 cellar: :any_skip_relocation, ventura:        "964b149d215719ad37bcb03334b430bbc811999704c7ef03c7e25c1064d611b4"
+    sha256 cellar: :any_skip_relocation, monterey:       "7f3a91a5d8bb25095ce8fa9917a0f7b32d15afe0ed857ac1a36e396ad18939a2"
   end
 
   depends_on :macos # needs CoreGraphics, a macOS-only library
