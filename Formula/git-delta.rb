@@ -7,15 +7,13 @@ class GitDelta < Formula
   head "https://github.com/dandavison/delta.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7c16c0cbdf9e6e51d24c877a05c8be4045d2804b0f3e9662055c68b7978caa2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "59cfd83238180b2b19b87273973af0e9b7260f89f276f97545256088fb7af942"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e7a28647fe1d1d4e3a5790910b6fc0f54af11b468cd8bd2ff3a018885886ad4d"
-    sha256 cellar: :any_skip_relocation, ventura:        "332091753806ce5f2804c8f55ea5319cd9c1fdb62f70fe068ae17589a1d3ba12"
-    sha256 cellar: :any_skip_relocation, monterey:       "5727dfe745c390bfe16ea295e6622b30f283611f33d07f760f5fe63f6304f400"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1a2f27f7061835d7f51da6a504f594f55970b3641f534c723fe86ed8043c5819"
-    sha256 cellar: :any_skip_relocation, catalina:       "9dc934459be9b1ae71d9c3dd680edc441111561cb241c9ff8b777eec8f869d30"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "86be75a7f0e6ecd53d196fcd5636caa4b438371030783a4cabc550c2ae846cd0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "314576894d97cb599b9e0d7713427e9321d58f956f5e83035b3004437a7b62f9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d00daf45a4061198c2b9f2d4f7ff18887af44f5a2f2fd39d8425877d61c6760f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "76f858aca5cf74affd1410ea1ec68a51ce3e62f54e9f4de2d5c98e03cf281578"
+    sha256 cellar: :any_skip_relocation, ventura:        "a9d543150fc4578a4be0131cdcc12a6ade4c8f573067dfd792f04cc5b62716f8"
+    sha256 cellar: :any_skip_relocation, monterey:       "eaab568cb1386840666684aa90c449d847d0b44f5064e3855db35cf738edb4c1"
+    sha256 cellar: :any_skip_relocation, big_sur:        "eaefc855767ffb2e9366f69e1eaea31b606b6e20c590188ca477437fc4c77278"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1bcc4d16d7c927d94abf8994790d2a0549369a84c0fec9ca27296cb6767a58fe"
   end
 
   depends_on "rust" => :build
