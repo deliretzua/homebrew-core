@@ -12,6 +12,7 @@ class PbcSig < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any, arm64_ventura:  "a084822aa386425d1956ac3afdf2accbb8c813d371bbb20711e0f1d147f560ef"
     sha256 cellar: :any, arm64_monterey: "d2fde3522eb0285c965608483e1099f231df57528446ce3ebc59cee147459d58"
     sha256 cellar: :any, arm64_big_sur:  "f99446bcb7e5930651fc63d4a6bea1b34b489e13ad7318a026d0be3ed6fe39f9"
     sha256 cellar: :any, monterey:       "49ba0b0e8757276a5ab822f942f321e7fe5b7efbb2340946e21f3042dbe579bd"
