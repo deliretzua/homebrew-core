@@ -9,14 +9,13 @@ class Streamlink < Formula
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "c402ea9638d229b4e39e94a2341a61770f52a6f9bb83a5d1551f163d3d396d0c"
-    sha256 cellar: :any,                 arm64_monterey: "c57988969cadde6893305bcd40e617b63767475315cce8fd096ed3d19571039b"
-    sha256 cellar: :any,                 arm64_big_sur:  "743ee41819d8103b26efe3f59c6295120c588b3a5d747577dccda569914c4d68"
-    sha256 cellar: :any,                 ventura:        "796ea932f77212714ff942d11c644131dc9a6c4052bf82acec3408c15962cdc0"
-    sha256 cellar: :any,                 monterey:       "2964ec329b8be145843bf626d65fd6175095edae38023d2f937d0ae9796f1a69"
-    sha256 cellar: :any,                 big_sur:        "9f116727b4694c1b43a87ab5daaf9cb57f041c22f1c0de130734103a69d03aa1"
-    sha256 cellar: :any,                 catalina:       "9b721a31df7061e5d51dce8c8cbf2cf123ad73c9cbd96b36d4b04473a93baf07"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "82d1e9d484be65afe44851162a3602cc669ea8b47e0f8e90530494ca89b17ef6"
+    sha256 cellar: :any,                 arm64_ventura:  "c70bf73e06817a3924dea8c5ccf6e985b209679fa5833fb3828cbd604922cb31"
+    sha256 cellar: :any,                 arm64_monterey: "ea08fa134b6b13f661f12684307944660045d626a0f74e5b77bf7963eaf36562"
+    sha256 cellar: :any,                 arm64_big_sur:  "ad1ebb0929e820ec70c6d6ccc02d5cc563e0eed799457a719747fec67666a1aa"
+    sha256 cellar: :any,                 ventura:        "47e84563fc44d6f87978dcedf19dcd857371c77bde2cc5e60f1afdc3b412849d"
+    sha256 cellar: :any,                 monterey:       "d00571b71bd35877f508f986d7b24baac043086de162b2160f5323c2676b2c34"
+    sha256 cellar: :any,                 big_sur:        "f346636ef1a1dca74c6cb33c96281d350f5803a8188d9f759fafcd062c30d201"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "073bb7a89ecd4baa6d685797b356b5e7a8077b292f90f4095f0d2809d65dfb07"
   end
 
   depends_on "libxml2" # https://github.com/Homebrew/homebrew-core/issues/98468
