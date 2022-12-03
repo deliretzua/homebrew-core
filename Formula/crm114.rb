@@ -10,6 +10,7 @@ class Crm114 < Formula
   end
 
   bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "9791c36069114cb7235007258500b450c2d28aec42bc0753fae806bb2ef71dd4"
     sha256 cellar: :any,                 arm64_monterey: "0cdce09555c1d90f1e577367c906921bbd8ea8fb37af61598a8ec80307fe7bf5"
     sha256 cellar: :any,                 arm64_big_sur:  "24d3e83ee6c91b1fbed3b83aefbd17c2a93119b12d6cf7a9cea10090e52af6a8"
     sha256 cellar: :any,                 monterey:       "6ba9e53e2cbfd76a236595fff2cd7d0bd816dd41c4b48ec3e7d673bf12a40f69"
