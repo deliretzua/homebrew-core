@@ -20,6 +20,7 @@ class Synfig < Formula
   end
 
   bottle do
+    sha256 arm64_ventura:  "4408911daf111c2cbf2aa10f4def2688b2b780435801a518b1cd6b5e2f7f4f9e"
     sha256 arm64_monterey: "d6c3ff6f8ebaf3c51541374f0b002a7aa76276f654c2a1bfbb5832d1c58b23b7"
     sha256 arm64_big_sur:  "129b75a9a6beea76d92b7b916f4a4353591abc1be63369e199fa80b8f626aff1"
     sha256 ventura:        "24be7a2a17acd81188d5920da4af74e459ed95d531434e13c30aa1e0727c6b7e"
