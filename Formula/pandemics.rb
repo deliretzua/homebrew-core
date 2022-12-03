@@ -7,6 +7,14 @@ class Pandemics < Formula
   sha256 "e9e54497f5b32c15cb5635d780566d855d086b82c352be154d5fb01a18f8ff7e"
   license "BSD-3-Clause"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9363a6ce01d8d91fa2eec4d3956589b599b6c72405f1b130736977c037e1f8bd"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9363a6ce01d8d91fa2eec4d3956589b599b6c72405f1b130736977c037e1f8bd"
+    sha256 cellar: :any_skip_relocation, monterey:       "1fa20d0ac8a7faa555023482cc4387c9caa07a39b99149517ea24ae2683b2a2e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1fa20d0ac8a7faa555023482cc4387c9caa07a39b99149517ea24ae2683b2a2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9363a6ce01d8d91fa2eec4d3956589b599b6c72405f1b130736977c037e1f8bd"
+  end
+
   depends_on "librsvg"
   depends_on "node"
   depends_on "pandoc"
