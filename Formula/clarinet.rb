@@ -16,6 +16,7 @@ class Clarinet < Formula
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_monterey: "33c7ebf7d27944b288dfd75557819fac32562165522e153072e69fb34b6f0afb"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "76b97ed1c936463db010965810cf2258712809d52255b7efbdd09eb32792b5a0"
+    sha256 cellar: :any_skip_relocation, ventura:        "bf2b825779ca19ec27279b3c003cc35bf1bbfd2f2ff23181d7db8b0c21209dda"
     sha256 cellar: :any_skip_relocation, monterey:       "5dfa44d8a0942d57c7ae975bc91af90fd40d42909968a2ca4b574ddfd55d0c96"
     sha256 cellar: :any_skip_relocation, big_sur:        "63b96b2ba3a2ea5d83c4e75ee44bb3436fcb9543b38023042c230dbda2804409"
     sha256 cellar: :any_skip_relocation, catalina:       "317b04d1ceda6b7a41e9c548604055b0f2221e70f99cdd0b4e5b69b4c7cb583e"
