@@ -6,6 +6,10 @@ class CondaZshCompletion < Formula
   license "WTFPL"
   head "https://github.com/conda-incubator/conda-zsh-completion.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "366d8cd0e2e0dda5ea1f268cac68b214833c00ae09d94107a186f97b4eadde86"
+  end
+
   uses_from_macos "zsh" => :test
 
   def install
