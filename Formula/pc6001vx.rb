@@ -1,8 +1,8 @@
 class Pc6001vx < Formula
   desc "PC-6001 emulator"
-  homepage "https://eighttails.seesaa.net/"
-  url "https://eighttails.up.seesaa.net/bin/PC6001VX_3.9.0_src.tar.gz"
-  sha256 "b5ad5c7191a786fb0b904701ea43319500e51f845428baceeabc6d8919e2f6be"
+  homepage "http://eighttails.seesaa.net/"
+  url "https://eighttails.up.seesaa.net/bin/PC6001VX_4.0.0_src.tar.gz"
+  sha256 "ebf3d3afd589d771ed624070c4a79963d90eb7a974848b9f1c15cb2ef29363c2"
   license "LGPL-2.1-or-later"
   head "https://github.com/eighttails/PC6001VX.git", branch: "master"
 
@@ -17,18 +17,14 @@ class Pc6001vx < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "ffmpeg@4"
-  depends_on "qt@5"
+  depends_on "ffmpeg"
+  depends_on "qt"
 
   fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   def install
-    # Need to explicitly set up include directories
-    ENV.append_to_cflags "-I#{Formula["ffmpeg@4"].opt_include}"
-
     mkdir "build" do
-      qt5 = Formula["qt@5"].opt_prefix
-      system "#{qt5}/bin/qmake", "PREFIX=#{prefix}",
+      system "qmake", "PREFIX=#{prefix}",
                                  "QMAKE_CXXFLAGS=#{ENV.cxxflags}",
                                  "CONFIG+=no_include_pwd",
                                  ".."
@@ -45,7 +41,7 @@ class Pc6001vx < Formula
 
   test do
     ENV["QT_QPA_PLATFORM"] = "minimal" unless OS.mac?
-    user_config_dir = testpath/".pc6001vx"
+    user_config_dir = testpath/".pc6001vx4"
     user_config_dir.mkpath
     pid = fork do
       exec bin/"PC6001VX"
