@@ -13,15 +13,13 @@ class Freeswitch < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "5d548ddb3d91f4ebe5b9053f1036c80f9e0f5a70a10a6a8ec1477e7ea3a29b68"
-    sha256 arm64_monterey: "92c4fbe41ea20e17015b925bb7dacc9a1e390750d92828bdda8669512b5eb730"
-    sha256 arm64_big_sur:  "b9f5274cd30763c538687ee99d8127a82b158bd6dd040f7903cfebe11cd72635"
-    sha256 ventura:        "e220a5b4d13a34d2184e30695a31ea83ff5e605ee5a6a2fb570930c6a47d0009"
-    sha256 monterey:       "212d0a0c336d7d9664a11253a1e03346e61639c586415365747586729e049b43"
-    sha256 big_sur:        "0fa34380d2de422598e412f860b8d0e203f1b7d20e88e02eb4977440cd7db3ea"
-    sha256 catalina:       "c5d905de36a82f12b1c3bd923d991fac46cfd0a1eaf399fe20616e4e2ec23a0e"
-    sha256 x86_64_linux:   "97d3d76aa7658d3a4c86a714721afe7905f3ce1826bc5187af214fedd498a551"
+    sha256 arm64_ventura:  "2bb979f0e691bf40412830016e85dd661f56fbaf2b5720bb31da32531f7c1e33"
+    sha256 arm64_monterey: "7b5f2f425115a319cbd21ef279e525dae40a8ac4d74ee68819e907e0b012ab2e"
+    sha256 arm64_big_sur:  "5198917bd65265839cc4bfd7afb7f8e60ba7eb74213b254f3ffa31b7168bf1f2"
+    sha256 ventura:        "fabe1f906acfdbb3b2844b7afd44b4dbbdbd81ee18a409e934b5d9676d27954a"
+    sha256 monterey:       "967fcad01bfa72c563b2b680d4c631c398568b9338f8e241c35cc4a28048b044"
+    sha256 big_sur:        "c85f6a73aab968eb2ed630f0c273153ce7ae16a94c2a27b4f740e34be1d6a426"
+    sha256 x86_64_linux:   "c9d3b99cac170fa6eb067c9fe78988dc215c70c89208c6cdbeb6c278484f279b"
   end
 
   depends_on "autoconf" => :build
