@@ -12,7 +12,7 @@ class Nftables < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.10" => :build
+  depends_on "python@3.11" => :build
   depends_on "gmp"
   depends_on "jansson"
   depends_on "libedit"
@@ -24,7 +24,7 @@ class Nftables < Formula
   uses_from_macos "ncurses"
 
   def install
-    virtualenv_create(libexec, Formula["python@3.10"].bin/"python3.10")
+    virtualenv_create(libexec, Formula["python@3.11"].bin/"python3.11")
     system "./configure", *std_configure_args, "--disable-silent-rules",
       "--with-python-bin=#{libexec}/bin/python3"
     system "make", "install"
