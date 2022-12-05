@@ -19,7 +19,7 @@ class Micropython < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.10" # Requires python3 executable
+  depends_on "python@3.11" # Requires python3 executable
 
   uses_from_macos "libffi", since: :catalina # Requires libffi v3 closure API
 
