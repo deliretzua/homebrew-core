@@ -1,8 +1,8 @@
 class Libxxf86dga < Formula
   desc "X.Org: XFree86-DGA X extension"
   homepage "https://www.x.org/"
-  url "https://www.x.org/archive/individual/lib/libXxf86dga-1.1.5.tar.bz2"
-  sha256 "2b98bc5f506c6140d4eddd3990842d30f5dae733b64f198a504f07461bdb7203"
+  url "https://www.x.org/archive/individual/lib/libXxf86dga-1.1.6.tar.xz"
+  sha256 "be44427579808fe3a217d59f51cae756a26913eb6e4c8738ccab65ff56d7980f"
   license "MIT"
 
   bottle do
@@ -22,12 +22,6 @@ class Libxxf86dga < Formula
   depends_on "xorgproto" => :build
   depends_on "libx11"
   depends_on "libxext"
-
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-  end
 
   def install
     args = %W[
