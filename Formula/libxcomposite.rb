@@ -1,8 +1,8 @@
 class Libxcomposite < Formula
   desc "X.Org: Client library for the Composite extension"
   homepage "https://www.x.org/"
-  url "https://www.x.org/archive/individual/lib/libXcomposite-0.4.5.tar.bz2"
-  sha256 "b3218a2c15bab8035d16810df5b8251ffc7132ff3aa70651a1fba0bfe9634e8f"
+  url "https://www.x.org/archive/individual/lib/libXcomposite-0.4.6.tar.xz"
+  sha256 "fe40bcf0ae1a09070eba24088a5eb9810efe57453779ec1e20a55080c6dc2c87"
   license "MIT"
 
   bottle do
