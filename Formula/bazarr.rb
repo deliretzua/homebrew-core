@@ -5,8 +5,8 @@ class Bazarr < Formula
 
   desc "Companion to Sonarr and Radarr for managing and downloading subtitles"
   homepage "https://www.bazarr.media"
-  url "https://github.com/morpheus65535/bazarr/releases/download/v1.1.2/bazarr.zip"
-  sha256 "7134917e7318032a0ea13cb4c31f2cc6ac92f76ccfe8666ef1a1f9851453c54e"
+  url "https://github.com/morpheus65535/bazarr/releases/download/v1.1.3/bazarr.zip"
+  sha256 "8ede84f95b43ec974f20975606456b43288d7d3eefc52633e245eb15001da571"
   license "GPL-3.0-or-later"
   head "https://github.com/morpheus65535/bazarr.git", branch: "master"
 
@@ -84,20 +84,24 @@ class Bazarr < Formula
   end
 
   test do
+    require "open3"
+    require "timeout"
+
     system "#{bin}/bazarr", "--help"
 
     port = free_port
 
-    pid = fork do
-      exec "#{bin}/bazarr", "--config", testpath, "-p", port.to_s
-    end
-    sleep 20
-
-    begin
-      assert_match "<title>Bazarr</title>", shell_output("curl --silent http://localhost:#{port}")
+    Open3.popen3("#{bin}/bazarr", "--config", testpath, "-p", port.to_s) do |_, _, stderr, wait_thr|
+      Timeout.timeout(30) do
+        stderr.each do |line|
+          refute_match "ERROR", line
+          break if line.include? "BAZARR is started and waiting for request on http://0.0.0.0:#{port}"
+        end
+        assert_match "<title>Bazarr</title>", shell_output("curl --silent http://localhost:#{port}")
+      end
     ensure
-      Process.kill "TERM", pid
-      Process.wait pid
+      Process.kill "TERM", wait_thr.pid
+      Process.wait wait_thr.pid
     end
   end
 end
