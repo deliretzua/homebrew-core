@@ -32,6 +32,7 @@ class GraphTool < Formula
   depends_on "boost-python3"
   depends_on "cairomm@1.14"
   depends_on "cgal"
+  depends_on "fonttools"
   depends_on "google-sparsehash"
   depends_on "gtk+3"
   depends_on "librsvg"
@@ -62,11 +63,6 @@ class GraphTool < Formula
   resource "cycler" do
     url "https://files.pythonhosted.org/packages/34/45/a7caaacbfc2fa60bee42effc4bcc7d7c6dbe9c349500e04f65a861c15eb9/cycler-0.11.0.tar.gz"
     sha256 "9c87405839a19696e837b3b818fed3f5f69f16f1eec1a1ad77e043dcea9c772f"
-  end
-
-  resource "fonttools" do
-    url "https://files.pythonhosted.org/packages/55/5c/a4a25cf6db42d113d8f626901bb156b2f7cf7c7564a6bbc7b5cd6f7cb484/fonttools-4.38.0.zip"
-    sha256 "2bb244009f9bf3fa100fc3ead6aeb99febe5985fa20afbfbaa2f8946c2fbdaf1"
   end
 
   resource "kiwisolver" do
@@ -112,6 +108,11 @@ class GraphTool < Formula
     xy = Language::Python.major_minor_version(python3)
     venv = virtualenv_create(libexec, python3)
     venv.pip_install resources
+
+    %w[fonttools].each do |package_name|
+      package = Formula[package_name].opt_libexec
+      (libexec/site_packages/"homebrew-#{package_name}.pth").write package/site_packages
+    end
 
     args = %W[
       PYTHON=#{python3}
