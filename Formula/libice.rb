@@ -1,8 +1,8 @@
 class Libice < Formula
   desc "X.Org: Inter-Client Exchange Library"
   homepage "https://www.x.org/"
-  url "https://www.x.org/archive/individual/lib/libICE-1.0.10.tar.bz2"
-  sha256 "6f86dce12cf4bcaf5c37dddd8b1b64ed2ddf1ef7b218f22b9942595fb747c348"
+  url "https://www.x.org/archive/individual/lib/libICE-1.1.0.tar.xz"
+  sha256 "02d2fc40d81180bd4aae73e8356acfa2a7671e8e8b472e6a7bfa825235ab225b"
   license "MIT"
 
   bottle do
