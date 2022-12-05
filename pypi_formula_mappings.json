@@ -617,6 +617,9 @@
   "tox": {
     "exclude_packages": ["six"]
   },
+  "trailscraper": {
+    "exclude_packages": ["six"]
+  },
   "trash-cli": {
     "exclude_packages": ["six"]
   },
