@@ -1,8 +1,8 @@
 class Evince < Formula
   desc "GNOME document viewer"
   homepage "https://wiki.gnome.org/Apps/Evince"
-  url "https://download.gnome.org/sources/evince/42/evince-42.3.tar.xz"
-  sha256 "49aecf845c946c96db17ba89d75c8002c5ae8963f504a9b0626d12675914645e"
+  url "https://download.gnome.org/sources/evince/43/evince-43.1.tar.xz"
+  sha256 "6d75ca62b73bfbb600f718a098103dc6b813f9050b9594be929e29b4589d2335"
   license "GPL-2.0-or-later"
 
   bottle do
@@ -35,19 +35,19 @@ class Evince < Formula
 
   def install
     ENV["DESTDIR"] = "/"
-    system "meson", *std_meson_args, "build",
-                    "-Dnautilus=false",
-                    "-Dcomics=enabled",
-                    "-Ddjvu=enabled",
-                    "-Dpdf=enabled",
-                    "-Dps=enabled",
-                    "-Dtiff=enabled",
-                    "-Dxps=enabled",
-                    "-Dgtk_doc=false",
-                    "-Dintrospection=true",
-                    "-Ddbus=false",
-                    "-Dgspell=enabled"
-    system "meson", "compile", "-C", "build", "-v"
+    system "meson", "setup", "build", "-Dnautilus=false",
+                                      "-Dcomics=enabled",
+                                      "-Ddjvu=enabled",
+                                      "-Dpdf=enabled",
+                                      "-Dps=enabled",
+                                      "-Dtiff=enabled",
+                                      "-Dxps=enabled",
+                                      "-Dgtk_doc=false",
+                                      "-Dintrospection=true",
+                                      "-Ddbus=false",
+                                      "-Dgspell=enabled",
+                                      *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
 
