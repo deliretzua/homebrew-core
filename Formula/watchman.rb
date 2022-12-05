@@ -1,10 +1,9 @@
 class Watchman < Formula
   desc "Watch files and take action when they change"
   homepage "https://github.com/facebook/watchman"
-  url "https://github.com/facebook/watchman/archive/v2022.11.28.00.tar.gz"
-  sha256 "bce42b77d60ca01dbadd4ae38a569216ca398b11001c5d1cf950481425317a87"
+  url "https://github.com/facebook/watchman/archive/v2022.12.05.00.tar.gz"
+  sha256 "e56c7433b186190b56d1ed86987a1f64c15486bf0f37dd7d38c826fac07e34f3"
   license "MIT"
-  revision 1
   head "https://github.com/facebook/watchman.git", branch: "main"
 
   bottle do
@@ -38,13 +37,6 @@ class Watchman < Formula
   depends_on "python@3.11"
 
   fails_with gcc: "5"
-
-  # Fix build with CMake 3.25.0. Remove when patch is merged and released.
-  # https://github.com/facebook/watchman/pull/1076
-  patch do
-    url "https://github.com/facebook/watchman/commit/903c5a5a7c328ebd6e528cf79d7b61152ff9a456.patch?full_index=1"
-    sha256 "afec5e417ae24c35317db5d7fc178048dbe2bf11be9477a105ef390d0884bef7"
-  end
 
   def install
     # Fix build failure on Linux. Borrowed from Fedora:
