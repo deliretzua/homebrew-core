@@ -34,7 +34,7 @@ class Fontforge < Formula
   depends_on "libtool"
   depends_on "libuninameslist"
   depends_on "pango"
-  depends_on "python@3.10"
+  depends_on "python@3.11"
   depends_on "readline"
   depends_on "woff2"
 
@@ -73,9 +73,10 @@ class Fontforge < Formula
   end
 
   test do
+    python = Formula["python@3.11"].opt_bin/"python3.11"
     system bin/"fontforge", "-version"
     system bin/"fontforge", "-lang=py", "-c", "import fontforge; fontforge.font()"
-    system "python3.10", "-c", "import fontforge; fontforge.font()"
+    system python, "-c", "import fontforge; fontforge.font()"
 
     resource("homebrew-testdata").stage do
       ffscript = "fontforge.open('Ambrosia.sfd').generate('#{testpath}/Ambrosia.woff2')"
