@@ -18,7 +18,7 @@ class Pushpin < Formula
   depends_on "rust" => :build
   depends_on "condure"
   depends_on "mongrel2"
-  depends_on "python@3.10"
+  depends_on "python@3.11"
   depends_on "qt@5"
   depends_on "zeromq"
   depends_on "zurl"
@@ -92,7 +92,7 @@ class Pushpin < Formula
 
     begin
       sleep 3 # make sure pushpin processes have started
-      system Formula["python@3.10"].opt_bin/"python3.10", runfile
+      system Formula["python@3.11"].opt_bin/"python3.11", runfile
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)
