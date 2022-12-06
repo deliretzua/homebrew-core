@@ -9,15 +9,13 @@ class Sqlmap < Formula
   head "https://github.com/sqlmapproject/sqlmap.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a5870be0d75ed6ae5f975846fd423bb821421297bade85459a2814aee910a460"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a5870be0d75ed6ae5f975846fd423bb821421297bade85459a2814aee910a460"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a5870be0d75ed6ae5f975846fd423bb821421297bade85459a2814aee910a460"
-    sha256 cellar: :any_skip_relocation, ventura:        "b916a5a057c935bc2cafd4b2d8f3f09939cde30c9d03cb66fe682fa7d9b1c44f"
-    sha256 cellar: :any_skip_relocation, monterey:       "b916a5a057c935bc2cafd4b2d8f3f09939cde30c9d03cb66fe682fa7d9b1c44f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b916a5a057c935bc2cafd4b2d8f3f09939cde30c9d03cb66fe682fa7d9b1c44f"
-    sha256 cellar: :any_skip_relocation, catalina:       "b916a5a057c935bc2cafd4b2d8f3f09939cde30c9d03cb66fe682fa7d9b1c44f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b7b16cafabb429e0aa1847b9b0db9491a8a57687955ccc81ceedb9ee81e8d45"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f26a54b3e4be5284565a6d8d4e8ed991a0cc5c31519c6e3416de288279251802"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f26a54b3e4be5284565a6d8d4e8ed991a0cc5c31519c6e3416de288279251802"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f26a54b3e4be5284565a6d8d4e8ed991a0cc5c31519c6e3416de288279251802"
+    sha256 cellar: :any_skip_relocation, ventura:        "d2fcb7a5962810e2c67e869866b13e14e8df5bc393f8d26c198020109c209da1"
+    sha256 cellar: :any_skip_relocation, monterey:       "d2fcb7a5962810e2c67e869866b13e14e8df5bc393f8d26c198020109c209da1"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d2fcb7a5962810e2c67e869866b13e14e8df5bc393f8d26c198020109c209da1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0aba334bff88a83714b7746bf3d14449432f53f39c37105d50efbe289509c89c"
   end
 
   depends_on "python@3.11"
