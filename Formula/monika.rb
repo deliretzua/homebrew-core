@@ -3,8 +3,8 @@ require "language/node"
 class Monika < Formula
   desc "Synthetic monitoring made easy"
   homepage "https://monika.hyperjump.tech"
-  url "https://registry.npmjs.org/@hyperjumptech/monika/-/monika-1.11.0.tgz"
-  sha256 "efdb34745a1de2fca8e918ee69577feee3f09a55bd6f5f6e1cddfa9f058ceeaf"
+  url "https://registry.npmjs.org/@hyperjumptech/monika/-/monika-1.14.0.tgz"
+  sha256 "d07d4f047b8b68bd02bd7e1ee5f0e07e589b1441653f05a39af9d4737bb0deee"
   license "MIT"
 
   bottle do
@@ -47,7 +47,7 @@ class Monika < Formula
       $stdout.reopen(monika_stdout)
       exec bin/"monika", "-r", "1", "-c", testpath/"config.yml"
     end
-    sleep 5
+    sleep 10
 
     assert_match "Starting Monika. Probes: 1. Notifications: 1", monika_stdout.read
   end
