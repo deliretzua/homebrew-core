@@ -6,6 +6,16 @@ class Grantlee < Formula
   license "LGPL-2.1-or-later"
   head "https://github.com/steveire/grantlee.git", branch: "master"
 
+  bottle do
+    sha256 arm64_ventura:  "46253789d31595c08c50abca379da6d795dbd6ed79419e3a764759f8fe17e1b1"
+    sha256 arm64_monterey: "cf5d7791583fbe05a7040ca9abcb8adcae421c1e6426d6c7b2d498f2fff5a882"
+    sha256 arm64_big_sur:  "98cf93a0121f6dc1fe9ff0c90fac922101e2105dafe8b78ef6d58e47f7077a7b"
+    sha256 monterey:       "208abce9f9486cb7ffa60421a026f44e3af436d74bf3a344ef00a92945eb5231"
+    sha256 big_sur:        "8aebd298307cd5055ee40a88a3728866a141e26a412b35c1db95f3c894f886e4"
+    sha256 catalina:       "c94ce97fcb5d60f4a31b48d2a36a4da60fa685a67d2f320716d535920abb5967"
+    sha256 x86_64_linux:   "aa0d2ecec107907c391964d313d1ae2fa164d22d8f15c80e02b721d21e058316"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "doxygen" => :build
   depends_on "graphviz" => :build
