@@ -8,14 +8,7 @@ class BashLanguageServer < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9961b5a37ca9823789584484faa59325212d07421b2e77f18043c87ae6da044f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9961b5a37ca9823789584484faa59325212d07421b2e77f18043c87ae6da044f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9961b5a37ca9823789584484faa59325212d07421b2e77f18043c87ae6da044f"
-    sha256 cellar: :any_skip_relocation, ventura:        "1cefcb238cce580e1254795890950be3a5d622093ee031e9e8f2d21e83b87cbc"
-    sha256 cellar: :any_skip_relocation, monterey:       "1cefcb238cce580e1254795890950be3a5d622093ee031e9e8f2d21e83b87cbc"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1cefcb238cce580e1254795890950be3a5d622093ee031e9e8f2d21e83b87cbc"
-    sha256 cellar: :any_skip_relocation, catalina:       "1cefcb238cce580e1254795890950be3a5d622093ee031e9e8f2d21e83b87cbc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9961b5a37ca9823789584484faa59325212d07421b2e77f18043c87ae6da044f"
+    sha256 cellar: :any_skip_relocation, all: "097b26989c1ccffebdfc20f287365aab898394b0c828c1259666579b71755293"
   end
 
   depends_on "node"
