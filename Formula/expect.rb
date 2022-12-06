@@ -12,6 +12,7 @@ class Expect < Formula
   end
 
   bottle do
+    sha256 arm64_ventura:  "41694fc786b834187a385fdff5719a44c8c2c61000907cf7e682eb67f6339d3b"
     sha256 arm64_monterey: "9d52fecd2233cf0b3c895c63f8ab03912fd74075244221196e9882334e743f08"
     sha256 arm64_big_sur:  "70d13137d6fc17c78f565f07c5bf9a23404fc8e658f9cf2015a8ecd3d69d4dc6"
     sha256 monterey:       "db086c31928306bb3e9735bdef4a06b1bdcce0e4d60bb78968e40d3e31064858"
