@@ -3,8 +3,8 @@ require "language/node"
 class Jhipster < Formula
   desc "Generate, develop and deploy Spring Boot + Angular/React applications"
   homepage "https://www.jhipster.tech/"
-  url "https://registry.npmjs.org/generator-jhipster/-/generator-jhipster-7.9.2.tgz"
-  sha256 "5f089544d6c2f06bbd109d06460ff6f2387b10d4c8fe9a54d4be070a00779b56"
+  url "https://registry.npmjs.org/generator-jhipster/-/generator-jhipster-7.9.3.tgz"
+  sha256 "c76f39732ed3594d07d03a51c3724f10a40c6343f385ddb48caa2ba7ef0a66cd"
   license "Apache-2.0"
 
   bottle do
@@ -22,6 +22,11 @@ class Jhipster < Formula
   depends_on "openjdk"
 
   def install
+    # Bump dependent package yeoman-environment to 3.11.0 to work around
+    # `ERR_PACKAGE_PATH_NOT_EXPORTED` error. Remove on next release.
+    inreplace "package.json",
+      '"yeoman-environment": "3.10.0"',
+      '"yeoman-environment": "3.11.0"'
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     bin.install Dir["#{libexec}/bin/*"]
     bin.env_script_all_files libexec/"bin", Language::Java.overridable_java_home_env
