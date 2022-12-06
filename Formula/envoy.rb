@@ -1,8 +1,8 @@
 class Envoy < Formula
   desc "Cloud-native high-performance edge/middle/service proxy"
   homepage "https://www.envoyproxy.io/index.html"
-  url "https://github.com/envoyproxy/envoy/archive/refs/tags/v1.24.0.tar.gz"
-  sha256 "31a81841447fbb51589a198d8e8998f2b8ad1fff4921e017fa37691015b3a9f9"
+  url "https://github.com/envoyproxy/envoy/archive/refs/tags/v1.24.1.tar.gz"
+  sha256 "385e5345e9bc73dcdae311d1df61e16e998860fc958571be9c9b781ad20e14f8"
   license "Apache-2.0"
   head "https://github.com/envoyproxy/envoy.git", branch: "main"
 
@@ -52,13 +52,6 @@ class Envoy < Formula
   # Brotli upstream ref: https://github.com/google/brotli/pull/893
   fails_with gcc: "11"
 
-  # Remove this when the tagged release archive has "tools/github/write_current_source_version.py".
-  # Reference: https://github.com/envoyproxy/envoy/blob/main/bazel/README.md#building-from-a-release-tarball.
-  resource "write_current_source_version.py" do
-    url "https://raw.githubusercontent.com/envoyproxy/envoy/3ea63d73407f5af8992e20e1bf0fb4b481b71d13/tools/github/write_current_source_version.py"
-    sha256 "89f90657983d4b21b29a710503125f90fee3af3a3a93a48fefc1d7296a4ce5ab"
-  end
-
   def install
     env_path = if OS.mac?
       "#{HOMEBREW_PREFIX}/bin:/usr/bin:/bin"
@@ -92,17 +85,9 @@ class Envoy < Formula
       args << "--host_cxxopt=-Wno-deprecated-declarations"
     end
 
-    # Remove this when the tagged release archive has "tools/github/write_current_source_version.py".
-    # Reference: https://github.com/envoyproxy/envoy/blob/main/bazel/README.md#building-from-a-release-tarball.
-    write_current_source_version_tool = "tools/github/write_current_source_version.py"
-    unless File.file?(write_current_source_version_tool)
-      resource("write_current_source_version.py").stage do
-        cp "write_current_source_version.py", "#{buildpath}/#{write_current_source_version_tool}"
-      end
-    end
-
     # Write the current version SOURCE_VERSION.
-    system "python3", write_current_source_version_tool, "--skip_error_in_git"
+    system "python3", "tools/github/write_current_source_version.py",
+                      "--skip_error_in_git"
 
     system Formula["bazelisk"].opt_bin/"bazelisk", "build", *args, "//source/exe:envoy-static.stripped"
     bin.install "bazel-bin/source/exe/envoy-static.stripped" => "envoy"
