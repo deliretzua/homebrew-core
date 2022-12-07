@@ -1,8 +1,8 @@
 class D2 < Formula
   desc "Modern diagram scripting language that turns text to diagrams"
   homepage "https://d2lang.com/"
-  url "https://github.com/terrastruct/d2/archive/refs/tags/v0.0.13.tar.gz"
-  sha256 "52fd8cddfb7fb34d88a0d6049c038bc31447216ede659d892ec13e288ab966e7"
+  url "https://github.com/terrastruct/d2/archive/refs/tags/v0.1.0.tar.gz"
+  sha256 "78fac0235fd583e28d961b0fd066994095a9cec4d5a834747833bbab042ab1c0"
   license "MPL-2.0"
   head "https://github.com/terrastruct/d2.git", branch: "master"
 
@@ -20,7 +20,7 @@ class D2 < Formula
 
   def install
     ldflags = "-s -w -X oss.terrastruct.com/d2/lib/version.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/d2"
+    system "go", "build", *std_go_args(ldflags: ldflags)
   end
 
   test do
