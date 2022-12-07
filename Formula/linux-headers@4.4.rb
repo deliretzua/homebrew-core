@@ -6,8 +6,7 @@ class LinuxHeadersAT44 < Formula
   license "GPL-2.0-only"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e924cdf506f91e9010ea3dd8a32396262a28bc54ac0290982fd85a3215e7db2a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "08339aac091f6bef8e643268c0801898e14acd349420f7e08df8c2094efcef8b"
   end
 
   keg_only :versioned_formula
