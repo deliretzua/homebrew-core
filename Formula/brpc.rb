@@ -6,6 +6,15 @@ class Brpc < Formula
   license "Apache-2.0"
   head "https://github.com/apache/incubator-brpc.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "382a6deb2c15f11562ac69ca645b9c361d94caf2346bf182dce1f2a54a9bb870"
+    sha256 cellar: :any,                 arm64_monterey: "34b3794cbedecd1c80925c91f79f6f69ba6efb408165a5c189d4de7783430c6b"
+    sha256 cellar: :any,                 arm64_big_sur:  "886117566d5c45c6de1da0ac4eabf3b5651073766f1a1ff76b56047848c5a4a5"
+    sha256 cellar: :any,                 monterey:       "98842f35e57c39112ebb8dbb3499217267afa69949ff85aecf7ab08fcb3bbbe0"
+    sha256 cellar: :any,                 big_sur:        "1430053d5df145f7fd5816f801d1fca38f41834cfd151451048452a52e0a9e3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4279dd6133c90689487b330c51f7508d65088d032dd9d5621b77625aeb7432f0"
+  end
+
   depends_on "cmake" => :build
   depends_on "gflags"
   depends_on "leveldb"
