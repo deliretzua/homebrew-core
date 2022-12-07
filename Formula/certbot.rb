@@ -9,14 +9,13 @@ class Certbot < Formula
   head "https://github.com/certbot/certbot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "4f5057f5861e1556d41383b8a57f7ff902eb438b1c32ff4da2705e82796b7758"
-    sha256 cellar: :any,                 arm64_monterey: "9df1610c4279d6ba7288d334ad4c6d830d4dbb01cd1c0e4a649d059d469575a1"
-    sha256 cellar: :any,                 arm64_big_sur:  "3cfa9c3e324bb7ce0c3101726d564e79aea8bdfd81eba3aa6b74832a16931c32"
-    sha256 cellar: :any,                 ventura:        "5f789242206314c9816e0500eee5336b25ead6c259a460ce3039b085d004c2fa"
-    sha256 cellar: :any,                 monterey:       "bf1f5ccfc74d4e314ebc139880fa6b1081ec45b740b1fea626e2864465cc153b"
-    sha256 cellar: :any,                 big_sur:        "4c5356821e73848b39d70aa1a238ac194515c8d8fb0e73a08030e6b9fc733207"
-    sha256 cellar: :any,                 catalina:       "427d5e4bbae514d0d0803e8d8f7624b80d3123df0101fdebf93162f1807a898d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "505e2e51f18973a2133c620560a65cb7118c0cbf06d0b82f4a48de3c61e4be77"
+    sha256 cellar: :any,                 arm64_ventura:  "e62df81b011a1e4374ba349897216aad1403d63652d817b8968482874f558bc8"
+    sha256 cellar: :any,                 arm64_monterey: "135938207878cfdfa4179ad924be9c9466c684ea7467d999380a4d0f8995d960"
+    sha256 cellar: :any,                 arm64_big_sur:  "13514cc8a83d6c72a4a71c7d0b1e903f5fd30d844f1663bce179bdbc67b21ea4"
+    sha256 cellar: :any,                 ventura:        "9ed4abf37bc64d6889732a01047ed8de9be925448172cae998340c7e1c33496b"
+    sha256 cellar: :any,                 monterey:       "4586e5ca02ff77d4f90aae57b7808ea44f57cc80a96aae5d7ea4b7b687d3f65a"
+    sha256 cellar: :any,                 big_sur:        "0dcc6f3d4fd015d3856b375008e9546887b73853d3a42506e07bc59b3fbac784"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1129e599aa0f0b62c658670799ea7d05c470c9cbb3b415ec0e12ff40765cfd81"
   end
 
   depends_on "rust" => :build # for cryptography
