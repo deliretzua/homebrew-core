@@ -5,6 +5,16 @@ class Aribb24 < Formula
   sha256 "88b58dd760609372701087e25557ada9f7c6d973306c017067c5dcaf9e2c9710"
   license "LGPL-3.0-only"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "60ea5e1c7b35cde769b03c6172b4ff78dec340a91f8ae2e1c6b490fdce65c34a"
+    sha256 cellar: :any,                 arm64_monterey: "9e6741b85e4276c01c4ee9a9a304f816a2bbc7c848bf3f2607308af48c2464b0"
+    sha256 cellar: :any,                 arm64_big_sur:  "14ac368a22499dc0de526a744fd69ba07c64a01de95e5f9fbf16df2a90c38a6e"
+    sha256 cellar: :any,                 monterey:       "58a30ff5299bfc9311c30ae8ff571f156eb336add5b25d35d36c6e2a8e8d5534"
+    sha256 cellar: :any,                 big_sur:        "fe1e9015a5c0791019bcdf64b980730d8736c85ea6cf306beef8e06ce8ebfaf9"
+    sha256 cellar: :any,                 catalina:       "31520472d7d33c860fff359b7ca6cd3e724bf504d9926c601a4db798d21df600"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a53b1584bef9b5d6aead4cc62266c67a9e642ea7234479516f4c083d0316f34"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
