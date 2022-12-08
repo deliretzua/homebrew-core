@@ -7,6 +7,16 @@ class Jscpd < Formula
   sha256 "90a6ce1dffaa1031c76baad87c9aff221cc2ae5caed9eb9b6e02c6f09f210e37"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "78ddf9eaa6556bc17ae3b15237a88ac3ecbaab8afd720fef8955a6b93edc3d83"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "78ddf9eaa6556bc17ae3b15237a88ac3ecbaab8afd720fef8955a6b93edc3d83"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "78ddf9eaa6556bc17ae3b15237a88ac3ecbaab8afd720fef8955a6b93edc3d83"
+    sha256 cellar: :any_skip_relocation, ventura:        "d4a903e9d00cd989ae50217a6d0c07760b148c4a26007f29886a61e2b3b24e4d"
+    sha256 cellar: :any_skip_relocation, monterey:       "d4a903e9d00cd989ae50217a6d0c07760b148c4a26007f29886a61e2b3b24e4d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d4a903e9d00cd989ae50217a6d0c07760b148c4a26007f29886a61e2b3b24e4d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "78ddf9eaa6556bc17ae3b15237a88ac3ecbaab8afd720fef8955a6b93edc3d83"
+  end
+
   depends_on "node"
 
   def install
