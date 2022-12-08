@@ -5,6 +5,15 @@ class Ibazel < Formula
   sha256 "c6413d3298c51d968bbbe8a01f481b83947e55eae6af78c0b8268a91e02d7989"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "589e6363b32a7b04d26c82ea20f0cf1c57bbbf8032a85184a51b10c099b73a8e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "96c2e05c6989413b925022963934672797bb1c2a6fd84c2094487b904d0178d0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c0ef0efb3f2ddd64c0ef4091de7fe73533e9426944b2966c3305dc961735542a"
+    sha256 cellar: :any_skip_relocation, ventura:        "2eb34b4a29ec5bd9eea7dfec7edf6f6b2c93c23dc3fe4f83f67d57bbddfc1ddf"
+    sha256 cellar: :any_skip_relocation, monterey:       "2eb34b4a29ec5bd9eea7dfec7edf6f6b2c93c23dc3fe4f83f67d57bbddfc1ddf"
+    sha256 cellar: :any_skip_relocation, big_sur:        "baafd1ed952af966721f4982c9fc4cd746b1c3c7adfab0b0f49d94008570a1ca"
+  end
+
   depends_on "bazel" => [:build, :test]
   depends_on "go" => [:build, :test]
   depends_on :macos
