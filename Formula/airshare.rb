@@ -9,15 +9,14 @@ class Airshare < Formula
   revision 3
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "254c7bb2312af945bacc012087f1f20b6bf09640a5ae4fe39e8257ed78c3f0dd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4d6238402006c5a7b0e1d6c223b59ac45c59a7820d193698c2b64eda7435452b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5c65d79fdfd2c345cc6b14def1fd87153d91fdfaa0fea70d8aa1c7e4af6cfbe0"
-    sha256 cellar: :any_skip_relocation, ventura:        "89d2a3b149ffe3247da33f3193c770dcc3fbca3f994722d511f826ba675326e6"
-    sha256 cellar: :any_skip_relocation, monterey:       "3cc5b64b96f92a560986b1154bf3c52f0fdb5c0e27d072c7b15455e1592bc196"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3576c23e2096a4ca5709692374e5af90b5f7c8201ae99affb67bb68f8c30f7b2"
-    sha256 cellar: :any_skip_relocation, catalina:       "1ad770538d96edc8f7165b5c82781e3ac42c6c92f7ee7e02c4d12f8f27f695ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c406480844bcc97b13a601c0a871d61380dbdf8b9debb13d45b616b789e9b8ef"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a0b75e8296057c53e2e908b48aa2b94745080dc1ea8fa7b99abf4c07e575de05"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "aaddb77b59550bfc5fb7f1348e69f01734819e6476bcc41d41b1b7c367dbd396"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b648c1e831b3325b61d3348146ab57da9e9cbb77ebd111c9f56ae995c12690ed"
+    sha256 cellar: :any_skip_relocation, ventura:        "65f223b2d581ab3e903cb682356b9858b116cb986a4a4cf74f4deebc3420e381"
+    sha256 cellar: :any_skip_relocation, monterey:       "5edc8f8865415a5bb5557a068c14ccb0a51602bbf3e07f8403114d65f74c51d6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d0cbf473e2fba0484156a6e8974b03c794fe091d5f35ab15f8ae68f3d04d00b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90e31f4ea062d42c66d96d9982a6b05b310f588c1b85e9970ad1126f4fd1304c"
   end
 
   depends_on "python@3.11"
