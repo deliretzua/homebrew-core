@@ -7,14 +7,13 @@ class When < Formula
   head "https://github.com/bcrowell/when.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "005cc29f69bc43959e1702e482c33b6894bc9eec2078a96687dfd09c258fa18e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "005cc29f69bc43959e1702e482c33b6894bc9eec2078a96687dfd09c258fa18e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "005cc29f69bc43959e1702e482c33b6894bc9eec2078a96687dfd09c258fa18e"
-    sha256 cellar: :any_skip_relocation, ventura:        "005cc29f69bc43959e1702e482c33b6894bc9eec2078a96687dfd09c258fa18e"
-    sha256 cellar: :any_skip_relocation, monterey:       "005cc29f69bc43959e1702e482c33b6894bc9eec2078a96687dfd09c258fa18e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "005cc29f69bc43959e1702e482c33b6894bc9eec2078a96687dfd09c258fa18e"
-    sha256 cellar: :any_skip_relocation, catalina:       "6cddc86c59d8cdf0ba79ecc974dd57705c34656891fe402b920baa07d801685c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a8266c047098f0549959cb83da63bac863f1d9c0c4cd57dff48e2c560255d69"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "932e4d3a5887293dc38afaf08f11ffb073784eeaaab09828608278c0e3dd5a3a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "932e4d3a5887293dc38afaf08f11ffb073784eeaaab09828608278c0e3dd5a3a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "932e4d3a5887293dc38afaf08f11ffb073784eeaaab09828608278c0e3dd5a3a"
+    sha256 cellar: :any_skip_relocation, ventura:        "932e4d3a5887293dc38afaf08f11ffb073784eeaaab09828608278c0e3dd5a3a"
+    sha256 cellar: :any_skip_relocation, monterey:       "932e4d3a5887293dc38afaf08f11ffb073784eeaaab09828608278c0e3dd5a3a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "932e4d3a5887293dc38afaf08f11ffb073784eeaaab09828608278c0e3dd5a3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d49cbde109823dc26ff8f009d3ea47ec366f0fe459e3e36373797c486fc5ab08"
   end
 
   def install
