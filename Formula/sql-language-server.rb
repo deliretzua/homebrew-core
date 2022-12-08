@@ -7,6 +7,16 @@ class SqlLanguageServer < Formula
   sha256 "d299d593dd759f9f9cf97bf5a55f5df1f324de8fda0e4a489156d73080f4bed6"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "56138b096802d7d020dce98f4d87f77983bef8273353c9c872f99e8b6498a4b4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f0959abbbd324585b084e7b61c9f527e0889f70e44a891b2fa6335f0dd620709"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "138290948146b2c6a109bcca8068db1657f7c6787ae0297e088219bcf3fcb395"
+    sha256 cellar: :any_skip_relocation, ventura:        "404b3322306ba145aeff8461da9ed91d220728f0d60115151b63b38c25cb4106"
+    sha256 cellar: :any_skip_relocation, monterey:       "e3bb726af367c4448479b85811aade197335c7034220c7e3f122806aa07edbca"
+    sha256 cellar: :any_skip_relocation, big_sur:        "718d52ef6a3f21c080a4c2ae6254eb0546aec9ed3d071e0261b5b286f2ea32a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0f67599530f537b09ef125c3929125c88b63e9c77a5892f660fcce677ecb4c94"
+  end
+
   depends_on "node"
 
   on_macos do
