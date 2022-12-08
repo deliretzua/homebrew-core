@@ -10,14 +10,14 @@ class AwsGoogleAuth < Formula
   head "https://github.com/cevoaustralia/aws-google-auth.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "799829315c71753d67eb9d92650da7cb68c7e6d20e61aa9b8e240c016924c4c2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f258e73f9cbb4abe057479be9eb1765e611e15a5710ecc5153932a8f2c305007"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "de22101e3a0c9c24d5a0e50fc9f43530cfbe97c6bd25ec22d3d9218079bccc66"
-    sha256 cellar: :any_skip_relocation, ventura:        "a267b7c8886e0a76c6300401f3d5d6c494b2416b23559121d9549e1bf574a9d3"
-    sha256 cellar: :any_skip_relocation, monterey:       "8e96617684541aaec30cafe198c7add06d7d7c309f14f705fa2b4a179c8783cf"
-    sha256 cellar: :any_skip_relocation, big_sur:        "118d86ec1b2ea50f34cfde2d83914386c4e4bf265cc90013eade023522f21bcc"
-    sha256 cellar: :any_skip_relocation, catalina:       "85f36f110ca30bc18ccfaabf6896fa81d135ecb304afb02e1f4ad9ffffbe6a8d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e69b2622dd0080f485b527efc697cf6a28699b9e15f57a788afc8bcfe2ab4810"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "38adcec404107aa3a11cdd6c502c8db788d31b39c20f78170e0a2347d9dda1f9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "20a863f8a5894e9db4d4ec8ee4c4933062121ca6248f36b2954c96902491f0db"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2c76f2e7fca79fd9a707685fe8be1e84bc10e894741ddb20b95203e65d4043c3"
+    sha256 cellar: :any_skip_relocation, ventura:        "43f460fed16266678a15a9e1996a4123783d454c83161c0c9d52c028a2bd1ace"
+    sha256 cellar: :any_skip_relocation, monterey:       "48356dcb8aabb80ca37213fbcf3472b71ec49877005678b2da24f4ac6554919b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a685483c34374eaa9dec45c840f523b6b7112e9149293ca61a48fac4edce7bfc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "313157c28c0ff67f56fff8758e23c6439f073aee8251bf2f9aade34e4cf17cbb"
   end
 
   depends_on "pillow"
