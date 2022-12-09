@@ -10,15 +10,14 @@ class BandcampDl < Formula
   head "https://github.com/iheanyi/bandcamp-dl.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fd0d6e2100fd334a573a6e2adb3759d4df76d6643c4892c01b55d5825ffbe260"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "328c1e9d1608e8a982949175f44ae77320aefa49c4bf4a676d9a3df534271f08"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "253093dd02e6dee303d7f6e9f119ab24ee132724696bad655011f941a47735b2"
-    sha256 cellar: :any_skip_relocation, ventura:        "b653eb576e56aac15a90ff4f87c70ca1d4e2645c56fd1223ca3608c19e62c6f6"
-    sha256 cellar: :any_skip_relocation, monterey:       "5f5590040e253372a98de14771f01e73421157dd147f68721f63c282f881ecb6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "596206bbf596dbcb317f99814cf07cbb48d3be981891e09d137773df05fc7bda"
-    sha256 cellar: :any_skip_relocation, catalina:       "cb766afbee33d2dc937f6b8c8574a0e3ae41d2a2b16c8bcaffef5b3133976782"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a9598884798f0eec0eefba701f775fc2a67c2619848913ce88f165bdddddcda"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "88184b5f54f7cf5a2b97e5753c6ca51e4cb02d3d669a58f7b804de1924130daf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c5999f01d7845e54ccd1f7790e5d0b1285b5299de67c38bfe0492ddc181ce6db"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e0121b1c6d4e50130f55c9b562072f08bf73be81063c1eb1249668bedae593dc"
+    sha256 cellar: :any_skip_relocation, ventura:        "0d930f610cad9f961102c75c2286c174bcaf0f4f2875191adda808c106b7b6a1"
+    sha256 cellar: :any_skip_relocation, monterey:       "c382d53c634f5e38415246adcb55c6d409e20e00a2895cdd635f1f149730cb4a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e539394a1ea643940cd3b61b65ffb9aa1ad858b16c9927c621b5e37ce7b82f3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "884da894acb5a386fcd4cf3c3e0b7696bbf6cf53534496743de958bbfe1e548f"
   end
 
   depends_on "python@3.11"
