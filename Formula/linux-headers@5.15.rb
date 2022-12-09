@@ -6,7 +6,7 @@ class LinuxHeadersAT515 < Formula
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d8552a6d4e4e3e7c2b1f77b58107fd47c5af3f12f80dff1cd77d6308b5231362"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "885c2dc12e00cf1b500581d2869daa827eafed7345a93a01633f630f1aedaef6"
   end
 
   depends_on :linux
