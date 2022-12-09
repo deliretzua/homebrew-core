@@ -6,6 +6,10 @@ class Clitest < Formula
   license "MIT"
   head "https://github.com/aureliojargas/clitest.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "b9badcbac8548cafe8e0eadb7ec8b90a48c52d97ae1d437c068edd950476d647"
+  end
+
   def install
     bin.install "clitest"
   end
