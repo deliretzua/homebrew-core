@@ -23,6 +23,16 @@ class DotnetAT6 < Formula
     end
   end
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "4c47770a26a3f7b9a8e51516da26d1c3415c2c67fd51df62e2a8e63c4f0b71e8"
+    sha256 cellar: :any,                 arm64_monterey: "15f6544ea8c423295820c459e86fc3e8c6d464cafd5abfb200cf9f710031dc5a"
+    sha256 cellar: :any,                 arm64_big_sur:  "2be891e1b8ec95b350f603598a1cfda4c3d58893b450a02f776ca308915ad824"
+    sha256 cellar: :any,                 ventura:        "86448a6cbf2c23b316ac1c50892e90ce1dd072fe3c898113fa54fc0f54e3e493"
+    sha256 cellar: :any,                 monterey:       "51d954f1e7c35277d19fbafd24071c9d89537a8f91e8751d6387c138e56e34a7"
+    sha256 cellar: :any,                 big_sur:        "a6c5b2f0c555d02e8dce1d0b914b0b791078bce370c1cd44cbca0f57fd1ccbe0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "37a779906cef166c69ecb7b2d374924ff7460cd5f63377991daff417a0ce6007"
+  end
+
   keg_only :versioned_formula
 
   depends_on "cmake" => :build
