@@ -13,14 +13,13 @@ class Php < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "d6b3b3da1ecf71eef7385eb1bdd8df46ed87f5b3634b5f21793d7e5ffcad18b7"
-    sha256 arm64_monterey: "e38cf09c4a4a42a13eeb485b1e49b05623c65c22de79f4f1d6008c0bb402eba4"
-    sha256 arm64_big_sur:  "0082443a794c70eb50bd9004cad7c5c72636be9c755dee80501fd7f5a0852954"
-    sha256 ventura:        "ca6e3f3cc64abd84389edd4c7f054470ef9a7380597843967ddeefe7a9c5432a"
-    sha256 monterey:       "fe11be88dfd7ee67d3cc522650e0024e557122080fcd83999edeed572bd457c7"
-    sha256 big_sur:        "a98e467ee71397e0a9d9848558082b88cd1c56ac0d0941e4469e43eb7d713fcf"
-    sha256 catalina:       "cf3305c4abe9e50ca8a7eb2c9f1608438d6e3feb1f411bedf730aebb689ac874"
-    sha256 x86_64_linux:   "ed386de11d1a071cb7cfc8f1334abc14f881b868ae45ddc125de12937d448b6d"
+    sha256 arm64_ventura:  "1cd68cd16bad12a23e4e3f8ab4be87455ff3e35d58ba22212cb8a3f0be5e83f5"
+    sha256 arm64_monterey: "3a6df9ae8fc672c12df1db29eaa7585d3f482fa1142cea0c751a79573028a1ba"
+    sha256 arm64_big_sur:  "f305c6a7053e819ce2a1afa0397debd97737fbccf013ed62f742778fc0596882"
+    sha256 ventura:        "f1b15af07a08e7e494d1ee469784fdd32f1a703b7a47f08198d44b7a062b681f"
+    sha256 monterey:       "b2776587333c8755a0a30249ff13110e8ae30ee461a0306424a2d5af66571038"
+    sha256 big_sur:        "1d4a3e676be4aefd7b2f95e6aaaf6c5c19768f38fcf937b863d05ca471460946"
+    sha256 x86_64_linux:   "8afad2a52f4fa331f0853c96533ce379c6c9b7dcf741491ecf9b5a6079cab2ef"
   end
 
   head do
