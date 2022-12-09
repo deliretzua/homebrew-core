@@ -8,7 +8,7 @@ class Deployer < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "626958a7bd2b8e670951094c2e5d137a9bc8058927f0e5083f05ac4036f598f3"
+    sha256 cellar: :any_skip_relocation, all: "53895f90f4afca9b8ca1857d4a5dda39759720657eb1a8f774f52a042b29c6c2"
   end
 
   depends_on "php@8.1"
