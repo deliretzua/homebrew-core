@@ -12,6 +12,16 @@ class PhpAT81 < Formula
     regex(/href=.*?php[._-]v?(#{Regexp.escape(version.major_minor)}(?:\.\d+)*)\.t/i)
   end
 
+  bottle do
+    sha256 arm64_ventura:  "2f60883710ebb145b8a43aa903dc6a5867af9b103528fce50e7f98a2631aa289"
+    sha256 arm64_monterey: "b040f0edf912f5021fa6af2505eeef432ae9fd3f5f616c7951657d77ede86506"
+    sha256 arm64_big_sur:  "586a4fe9c870f34aac9e0a4fac47d3b907dadf949a25357b224add5d9bed5e4c"
+    sha256 ventura:        "aac017954ec5dd227c2af09e9cd0c4bd7e77cdb710514002d6daa142e2879f31"
+    sha256 monterey:       "07c6e518531379d33f566897f89d37f607ee8998959dede8f3511591ea6d3c63"
+    sha256 big_sur:        "f1b01ef6155747bb7d03d6627b913273bbac9bb97358c945a294a4968eb96bf6"
+    sha256 x86_64_linux:   "b323e25063a29950bb163d4a23533e1fbaf897141f9dba0790496106404edfc3"
+  end
+
   keg_only :versioned_formula
 
   # Security Support Until Nov 25 2024
