@@ -9,15 +9,14 @@ class Bpython < Formula
   head "https://github.com/bpython/bpython.git", branch: "main"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f7e1f934ecdfd7e176ae519a4f2e3c7842606ed91b4a7bbfe52ea1b053568d1e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "51415da492e0680a8f7506b7583987cc9e82a613b49ecaaa3f859858089e38b3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "09e671aeb6b897898d6a02c50b0cf23bc3e660f22bcb2db074f4bd29b9579783"
-    sha256 cellar: :any_skip_relocation, ventura:        "e63b5bf3ca991828c469213bc38ff1821b6ea16fd4a9ce18657ce899fdfa7499"
-    sha256 cellar: :any_skip_relocation, monterey:       "58eb4fcacb47a322c5dd459b1ffca04725bc5363093ca2d6cfd7916a89f65f68"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e0cfb059ee562407de784c0cf94b1e11af2eb1326f936b49e79f15a1cd6af412"
-    sha256 cellar: :any_skip_relocation, catalina:       "3beafb36bd3e94a97ba9d99538b59fdf9b9f344b70d9bb04421db9880c6a5867"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "06ebf1532a49e4c88bbca4effe8dbc79b4a26e376bce4d2803d7445ca22d11a1"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e5130679e537bb21be214bb865b900e6371ce71cc7092d6f5c4f6b41a04195ad"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d7b0eb79ff7e09a96920b34e9e82e2abeec1f7a57afca5cece01a381482f6996"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "046c2fd1923b244280be7848451bce1c58bb1877b49f2068ae66275141c1b23e"
+    sha256 cellar: :any_skip_relocation, ventura:        "14cd59266dc3e75530709b89ce695807c5e5c7337aa1577ab030106fb7df49ca"
+    sha256 cellar: :any_skip_relocation, monterey:       "7e957af13cde91deb3ffb5305b4760f5e9f9c6026ec827272c60ca982bc98d27"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4fc1046162df864a562faa4ffb0c64e4f898f0fbc0952eb86d34a69214f8de31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "697e9b60b8dd7733e686dc93f19035eeafd7e72dd12f40ffa0c5fecbb999bcd0"
   end
 
   depends_on "pygments"
