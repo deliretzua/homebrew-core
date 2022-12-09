@@ -27,12 +27,13 @@ class Libplacebo < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_monterey: "3f113d415c26bf237f93941a74496fa9a0895f95391bcbe7d40979c4aed51ff8"
-    sha256 cellar: :any, arm64_big_sur:  "f59770598c4b472ded9c4a7dba4940abbe329e06d4a2ddd6321cb1428f5c3316"
-    sha256 cellar: :any, monterey:       "19852df5a17236a60a765dce3dcb06854349da6a9761384e0df3a27ffa811e98"
-    sha256 cellar: :any, big_sur:        "93c1e3ea5040219a5498b1140481316a81c7424a2fc1a8cd56d361dcd3e2c667"
-    sha256 cellar: :any, catalina:       "cd55187c55c1bee4be2420bf092a60b541550727263ac717ca5030a898492bc4"
-    sha256               x86_64_linux:   "98ca562ff165a97fd38574ece4987534ef15deebfe3e9e945159ba9e2dddd45a"
+    sha256 cellar: :any, arm64_ventura:  "f836c0f2d72ee350cafc1ed9e3c7dcb0004ea8a5f23dc1a7b772a200a7ee6bb8"
+    sha256 cellar: :any, arm64_monterey: "82dfb4d29e647496897ec8f45e44e61574ead9e0d2e07e0d223d374286492807"
+    sha256 cellar: :any, arm64_big_sur:  "02d1c68e4e70cca3f800fbd457544f10f9311e3acb034d6f2323ed19af26b65a"
+    sha256 cellar: :any, ventura:        "c4972dfcf3c91aec6789ae40a131e15835e7f02a10f459db1b3058c225256c7b"
+    sha256 cellar: :any, monterey:       "739c011349ca2db7198d0089a0896e3b10c40ef8609273852e7385ef3aa98d49"
+    sha256 cellar: :any, big_sur:        "a668ac54f239149f53b810577d955a06a26211d91cb582f406cb9ed04f2306e0"
+    sha256               x86_64_linux:   "197511f3a746307cbf11249f9f26dd7ae47b8926bdb9843d6f3c89b75e7d571d"
   end
 
   depends_on "meson" => :build
