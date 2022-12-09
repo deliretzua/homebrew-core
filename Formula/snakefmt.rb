@@ -8,6 +8,16 @@ class Snakefmt < Formula
   license "MIT"
   head "https://github.com/snakemake/snakefmt.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "24f528537b77695f070e659e33cb61b584ec61f08033ec9292af3f2ba8191a86"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "da11c1380d061cfcb1a4e6f21eb81d826637e7fd50d2d206fb8bb559a04471de"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d024e159f79b77b92ba8abc4de1083bc65deb968c832dc9616b378ec92779b61"
+    sha256 cellar: :any_skip_relocation, ventura:        "6112689c7d9a1a68457f93f40cd19141ff9cf029978affd6dcb3015f251351b6"
+    sha256 cellar: :any_skip_relocation, monterey:       "c4e1ec2ae7cf58e2c99e4e4bed2de3dda255df176f0d30ef8dbd0045d3eb36e5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d361b04fdaca0b72427e3e0a3dfaef8cc8b618307d5b31c3122f22d77298e4fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "78edb0a5016951baa7dfb845a548793c21d13e76c825931dbfe9c886430cbf09"
+  end
+
   depends_on "black"
   depends_on "python@3.11"
 
