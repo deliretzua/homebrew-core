@@ -9,14 +9,13 @@ class Poetry < Formula
   head "https://github.com/python-poetry/poetry.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "84745e5c42a0c01ac739aab277d339da1efb16a33d616dc1bb3e9caf877b69e7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "47db4c4fa49a5f722eb02e76c4eff691fd0594ecca09f5ed5b8fc71d19ebadeb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1c167ba5e0796414e62c1c3c032e86a910d5d6061889e4516acfa27faef25018"
-    sha256 cellar: :any_skip_relocation, ventura:        "f2bf4ff8ebc4b50514829111e9852b685d585ac76b5f6df052c17e3312d52eec"
-    sha256 cellar: :any_skip_relocation, monterey:       "075bdd4906f5f70239ec319589fe5e7ee912ff7d8fdcc2eb633cb8595ed29a7b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d9ac1216e806257b2f483a8472b43ae23ea47063dc388d93c5efcc5f128c0c6e"
-    sha256 cellar: :any_skip_relocation, catalina:       "ad9aac2ef1a6c9bbcf0122981a4b22577172d145db381e8fa0a14d8f5aff649f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0444aede6b9906ff5b983e61dc636df1808b1fb953c17b1ddcfddae221bf2090"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "622ff2d2b0e2e49c98d2a8b5d58755b17e95f62316589f094be8958a9d4e7cf8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "afbe25d4b99a7e1c6ca127f15ac1321fbeacfffad243f593a5f58da0a2220202"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "61234d6bc752db38a9bb1208ab3786fe9dbd84243e9bfffb8ac82139d8f7dbf1"
+    sha256 cellar: :any_skip_relocation, ventura:        "2beaec45da49f98f68828e7e03d255353fdfad46bce923e33e1df596b1ff9006"
+    sha256 cellar: :any_skip_relocation, monterey:       "2ac46252aa6959d30fdc9cd2fcf452b7a5cef819e6c67dcbb52f100d745c14dd"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3e044761cf4cfb631766973fb3c52223f6ca4cda28cbda41f336e680a2476b83"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45058cb8a135038dfc8aeace6bb66e82ae2cf527b4b8295d7da79dcaae9eda51"
   end
 
   # `rapidfuzz` requires `cmake` to build
