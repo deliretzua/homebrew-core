@@ -7,6 +7,16 @@ class SpectralCli < Formula
   sha256 "be10eda3f272cd2cab3f6a43a24826b1c1f99ac22e46303695c88820ca5655f3"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8094984ad27a565eba603823f4ab1ad2b5c715b6779d00732ad8898000887f32"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8094984ad27a565eba603823f4ab1ad2b5c715b6779d00732ad8898000887f32"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8094984ad27a565eba603823f4ab1ad2b5c715b6779d00732ad8898000887f32"
+    sha256 cellar: :any_skip_relocation, ventura:        "8fadf7da982609f149bf3ce4ab4d848c2631adfd6f49defd83f417cec3d7b93c"
+    sha256 cellar: :any_skip_relocation, monterey:       "8fadf7da982609f149bf3ce4ab4d848c2631adfd6f49defd83f417cec3d7b93c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8fadf7da982609f149bf3ce4ab4d848c2631adfd6f49defd83f417cec3d7b93c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "475a7ec50de3503a4639f8dc7ff036cd79c171400a806cfe7b88dcaa2437b029"
+  end
+
   depends_on "node"
 
   resource "homebrew-petstore.yaml" do
