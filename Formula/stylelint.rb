@@ -7,6 +7,16 @@ class Stylelint < Formula
   sha256 "ced94e168133a1d2092e187b27701a0ecd25e88c0a8a01a911101b323a918ae0"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e57709888a4cca0d61e4237ad9996a24b86dfa924b5c0e8b234adb34ced57223"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e57709888a4cca0d61e4237ad9996a24b86dfa924b5c0e8b234adb34ced57223"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e57709888a4cca0d61e4237ad9996a24b86dfa924b5c0e8b234adb34ced57223"
+    sha256 cellar: :any_skip_relocation, ventura:        "933d11f3903acebb2ac367b80a85c4ca0a6e27816f8536bf94312086a475e8cb"
+    sha256 cellar: :any_skip_relocation, monterey:       "933d11f3903acebb2ac367b80a85c4ca0a6e27816f8536bf94312086a475e8cb"
+    sha256 cellar: :any_skip_relocation, big_sur:        "933d11f3903acebb2ac367b80a85c4ca0a6e27816f8536bf94312086a475e8cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e57709888a4cca0d61e4237ad9996a24b86dfa924b5c0e8b234adb34ced57223"
+  end
+
   depends_on "node"
 
   def install
