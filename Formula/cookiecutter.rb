@@ -9,15 +9,14 @@ class Cookiecutter < Formula
   head "https://github.com/cookiecutter/cookiecutter.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "976519ec3673bc4c250bc0a0e82088ee0d6281a8e686ad69749076d72d47e5f0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "898929c74f9af6b3d1f6d92f65fbf9a7ed6a36c0946fb93bd78ebf854b69f3ff"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9578c5ade6ab9ed951f170f23e1a586f8831c56025d7502c36d5b5f84c32aa35"
-    sha256 cellar: :any_skip_relocation, ventura:        "1b28228bce1ef73af75efb6214146a994f124e670664505798beca6e41cc326a"
-    sha256 cellar: :any_skip_relocation, monterey:       "bd3d3c2896c70991f56ba7677a038c4d50e2dc8c5844ad0861549ced5d8b4ea1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "561e540f569764e56c252d7f75c1530086c14bbb863973cd959d4b6c2b42ff6a"
-    sha256 cellar: :any_skip_relocation, catalina:       "9239818f56d62ec3c3bae26d8f3609d92dc75cd57032f2b5b23df8e7603273c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9e81a06db0941468d398e43d0db11a7e4cb39ef0b6b69a2873e782c657a79d6"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b8f9c48b055b403ce01f51f69ba08534c5ae194b26424e6a1c933dc26f3063e4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "58877579e48f540668e3a9cfd1103ca4d0fd12e55961cbd4d0ffec4b93ff0b79"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ceb1d37e1f947b2fd189fccb07879c2bb8d364edfe7ba13d4cc4cfb0b94cda9e"
+    sha256 cellar: :any_skip_relocation, ventura:        "77887a257f9dd8d83316b29c7de657fef70306f227eeb181aed8fe2a07cc08b0"
+    sha256 cellar: :any_skip_relocation, monterey:       "2a75dddb0d521ebfd8a4214eacec8209f7442fb390998a1151e7ba0b745b4d87"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c8308d71ed751100b9f9a0163e519baf631d8e12b1e39b95b5d969f2490dd3cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "675482def9f3d9dd76605a39a390c56e92a87bd97d5512c5759a430eb062c70d"
   end
 
   depends_on "python@3.11"
