@@ -9,15 +9,14 @@ class Buku < Formula
   head "https://github.com/jarun/buku.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "9a793d1c6ac976e252212aeb2d202f0609bfb7f5acee5fe755a7713c6169f867"
-    sha256 cellar: :any,                 arm64_monterey: "6a4c5629699a594fd13def627e9549b0d65a4fe5f656be1b5df406d7ac1b8cfa"
-    sha256 cellar: :any,                 arm64_big_sur:  "4b4dd4cb23f639bfd9a405e63e1e43d140651e596e345f65afdf00200b856087"
-    sha256 cellar: :any,                 ventura:        "799c57645799d536e0f9a5b697ea3a85e216c9b7f8e7f3dd6613d2128ffba5b2"
-    sha256 cellar: :any,                 monterey:       "18f3707ef5957bef14d9e18ee2d943567794a14c156bece8f5b8860f67bd111a"
-    sha256 cellar: :any,                 big_sur:        "1d23e98533075753f5d34369d8889869e564df8173cbde815098fbc45eca57ec"
-    sha256 cellar: :any,                 catalina:       "0b524849b68b43a58e3f38d06139e4d8418726baa6c00b63d93fd2d09e3cb7e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7718c862cec46c8ce256cc4551862da08f8d2fdffddb0739a3d31252c61ea76f"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "cf51c010d50bb71250d17f4e3da876d735af64bc8b8a1b1edd7e94a4ce01cf55"
+    sha256 cellar: :any,                 arm64_monterey: "2dde10f7c29c668ad7243d05735745ac3c753b9cc7f7a9fb9e17c7641be6ac59"
+    sha256 cellar: :any,                 arm64_big_sur:  "b8f93cc8f7fae2666a3ff53fcc1dbe1b852680bf5c405968a8b6ccd80d397834"
+    sha256 cellar: :any,                 ventura:        "aadc5fb99df06ddabab49eee7d151db88dd81afbd49e8d1d8a1e622978f56845"
+    sha256 cellar: :any,                 monterey:       "4402232487ed095877b1ec6340554ed32209478c5dc6f900ba721c121605c0b9"
+    sha256 cellar: :any,                 big_sur:        "bff321359f006a68408ab0cbc4a132f9bcf9d97b629e54a1869bf85b2633f037"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "806641894cfb837585768df236375ca638f2a6a31fe2e6401e5d112e886b7f85"
   end
 
   depends_on "rust" => :build
