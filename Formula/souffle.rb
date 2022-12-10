@@ -5,6 +5,14 @@ class Souffle < Formula
   sha256 "db03f2d7a44dffb6ad5bc65637e5ba2b7c8ae6f326d83bcccb17986beadc4a31"
   license "UPL-1.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1331fbbd0231070f1c2c45748d442100992a4127b4c09b7ade363a47b4ff4502"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "0a441bcb1b6ddb8c5695a8c9473bd507841f37eddd94e117c637a035d3d8d15b"
+    sha256 cellar: :any_skip_relocation, ventura:       "b704be498ec7a7f69afbf1b9466caed8a3f20f599bf5cd11dfe1d985a5c89c7d"
+    sha256 cellar: :any_skip_relocation, monterey:      "8a15d900785b447834ff525d837bde5976abdd7fdac46e99224e6d7604ebcd4c"
+    sha256 cellar: :any_skip_relocation, big_sur:       "54359b0756972ca99d438dd8cbd72a49dfe93b53ee3c1731e7b32931973b5bfc"
+  end
+
   depends_on "bison" => :build # Bison included in macOS is out of date.
   depends_on "cmake" => :build
   depends_on "mcpp" => :build
