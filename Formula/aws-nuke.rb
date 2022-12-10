@@ -8,13 +8,13 @@ class AwsNuke < Formula
   head "https://github.com/rebuy-de/aws-nuke.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9f2d0dcf1b1092ea82be2ce8caf96ab4cc2546d2956fdd59083039e8bac2e516"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9f2d0dcf1b1092ea82be2ce8caf96ab4cc2546d2956fdd59083039e8bac2e516"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9f2d0dcf1b1092ea82be2ce8caf96ab4cc2546d2956fdd59083039e8bac2e516"
-    sha256 cellar: :any_skip_relocation, ventura:        "48b4bf2b7a42ae9324875e7954d1e7432f587baa1dce3209afff5893ffe25487"
-    sha256 cellar: :any_skip_relocation, monterey:       "48b4bf2b7a42ae9324875e7954d1e7432f587baa1dce3209afff5893ffe25487"
-    sha256 cellar: :any_skip_relocation, big_sur:        "48b4bf2b7a42ae9324875e7954d1e7432f587baa1dce3209afff5893ffe25487"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc8814510dc2141e6b8e4c049bc90ec40c2da11658eeea8261b370d18e6f577d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fd86a7a4313fad0fe7b3166bc97a47bfd4df554d79790dd55e60da9bbf45d295"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fd86a7a4313fad0fe7b3166bc97a47bfd4df554d79790dd55e60da9bbf45d295"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fd86a7a4313fad0fe7b3166bc97a47bfd4df554d79790dd55e60da9bbf45d295"
+    sha256 cellar: :any_skip_relocation, ventura:        "d8464526c0d63a628531b94fff979e70fe0d86a51e9ac32b4973305bdca24017"
+    sha256 cellar: :any_skip_relocation, monterey:       "d8464526c0d63a628531b94fff979e70fe0d86a51e9ac32b4973305bdca24017"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d8464526c0d63a628531b94fff979e70fe0d86a51e9ac32b4973305bdca24017"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d19d1926f8122492b19734273fc34b6b07c36f0f4191c04255339c1e98254d62"
   end
 
   depends_on "go" => :build
