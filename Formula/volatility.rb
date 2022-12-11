@@ -14,6 +14,7 @@ class Volatility < Formula
     sha256 cellar: :any,                 arm64_ventura:  "c2fa1be5cbdf6c5adf599d111b8c493c54e6d33fcc9e5b00b3cea067acdcce73"
     sha256 cellar: :any,                 arm64_monterey: "4f26aedeff20798472ec9010d825bc12e0a0e05a30f0c89089f59a4060543561"
     sha256 cellar: :any,                 arm64_big_sur:  "924ce0580c479e68a8f6d6e8862d19a6462610fc89e9accff0d5c5c9d9c0efe5"
+    sha256 cellar: :any,                 ventura:        "7a191a437430b21dca1cc226d5b0a6cd74443f97a3f9991adaaef084bd5aa9bb"
     sha256 cellar: :any,                 monterey:       "392653598d6d4bd79c92cb63b44c569091b59754f6af8eeac1d70785d9726c95"
     sha256 cellar: :any,                 big_sur:        "82bcd412f5408ac6cade0a35ca616a6244fdabf4b27c258b96afc52de750fc89"
     sha256 cellar: :any,                 catalina:       "a3dcb3a54ed478a13f36e3c9f4023c09db3d3cedbeeab5f2683d6c6ffc577883"
