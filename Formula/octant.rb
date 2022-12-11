@@ -15,8 +15,10 @@ class Octant < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "02429106747153e095a5c0778c702bb6e4d20bf8b7b784d6cab8f7ace15600a9"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3979f72547fd4ab0f49aebc0d3b7e31cddf579a225450f21ce882a6ccd4c4d83"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b03fd4872ba4ec08a4c5992e38f33d55717bf5aae69cf58bb5e7d19da8bc1844"
+    sha256 cellar: :any_skip_relocation, ventura:        "521bf38043e81e6d08d7dadb0de1750d0a5812911dbfec283e25075e9755615b"
     sha256 cellar: :any_skip_relocation, monterey:       "6e3ef528790c99983c18ee34e7cddd3d3fc5a8293822d18ae5cdac6f0be41ca0"
     sha256 cellar: :any_skip_relocation, big_sur:        "b9fcb7b4c1b04b0a14157668298580e968b7bf8108c38112e7882fd3d2574fe1"
     sha256 cellar: :any_skip_relocation, catalina:       "733232f99202af616246a23733949ba64beb39fe0f710f48271132bfa207b3b9"
