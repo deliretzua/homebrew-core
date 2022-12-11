@@ -9,14 +9,13 @@ class Global < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_ventura:  "fc5220bc90cdbae9f5943afb92fab2a578764079288914243bc74943cca442d8"
-    sha256 arm64_monterey: "f695539cab306291779614dc48a7e711307499b448e18d88aaee41335717cfb8"
-    sha256 arm64_big_sur:  "4798c08d49b918a026a10457575f301dae7943d9f61d234a1c50dc2fe0159121"
-    sha256 ventura:        "5293be6d86806e1f71c6f1afeb75c99819bab17c57fa2a7d94ae60903f7a7327"
-    sha256 monterey:       "612fd73df9f636ce6fd323ad96475bb6fab68076ccddf0e7b064d0c3673ea0a9"
-    sha256 big_sur:        "b4981a0ed6b7445ddb0f21ce8005fb36c0f530cfbd20a3a95c1d840cdf81886b"
-    sha256 catalina:       "cbba064cb529f3a5f20e27d02f261f636afb2f099c32e09a3b6c210d4af3024f"
-    sha256 x86_64_linux:   "77a768a84867fbefbb58cf0cea3baa42a30584966e6725013361cef031b6d6f4"
+    sha256 arm64_ventura:  "8d1198b19e8434e3efd55a350ceb8025f9d8e3829379c1158b196453f5fc8726"
+    sha256 arm64_monterey: "16be70332826b4f6fff1fe329261c3e6d0c191ffa6c072aaee67f251f4884ec4"
+    sha256 arm64_big_sur:  "4db854ebdb0400e322b10cc71730568313c6723a9678360b316fc547684f06a4"
+    sha256 ventura:        "759433f9ee88cf432a33fafb16d2691e191a1cab98866f14c2cf17340ecccefb"
+    sha256 monterey:       "4b4df3d890c28bfdb765942a82781a1f2c28731e2b546592a37f361082360101"
+    sha256 big_sur:        "fde855f3b4b68c2bf34e33fe170bce3f53abe8ab76522aabe3d5c20c750d5d03"
+    sha256 x86_64_linux:   "f027aac458584bd59fa1d33033c62440af0521141759bf5e0199ab96ff9a02f6"
   end
 
   head do
