@@ -11,13 +11,12 @@ class PysideAT2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "160ad065834104b2a9f3077f49f7c2fe05784442e8ccb8b20dd2a1e7e6082592"
-    sha256 cellar: :any,                 arm64_monterey: "bedee071b741dde0d9fff218d2c0d3eb282df78042f8461806258e03803ce4d2"
-    sha256 cellar: :any,                 arm64_big_sur:  "9127707bb8b25282e612d3360ad9467b6528716a61dcb8541637994a5c76bb39"
-    sha256 cellar: :any,                 ventura:        "0d98b1c6b7156df258d4f432d8192a2ea4a2f2a5e97e834c6d56a4d5f6ace974"
-    sha256 cellar: :any,                 monterey:       "ab98e21f4ad696786804474dbca16cf4f4868ada27d26306885111a3060d7e6b"
-    sha256 cellar: :any,                 big_sur:        "6f7cb05f3476f4b8f3c0d414d65ae72592ef5ea363219d196fac461fe3e9b13b"
-    sha256 cellar: :any,                 catalina:       "41cda4203982c1700e69a91dd5e5fcc8d56ec2016f53c71f0658a6b4b59a9e85"
+    sha256 cellar: :any, arm64_ventura:  "31e34cffe4d0912a00196e901742f932081fc1a8aa9ec3171c804304ce8f321d"
+    sha256 cellar: :any, arm64_monterey: "9572db68877f799d9c397c925246e756f51d8d37f83236fc0c500d33c8992bfa"
+    sha256 cellar: :any, arm64_big_sur:  "32e543ecff6cef9bc5864e3f0b85233058b17f1ff5d79b860313461cd7f338e8"
+    sha256 cellar: :any, ventura:        "7552f8ae8d6d84dccfe131b2ee869af5d1e2646a075c6adca79aed3a24013fad"
+    sha256 cellar: :any, monterey:       "53e71205d91568df5b0598586339f38dfa07194516e416161d8f572e775fbcff"
+    sha256 cellar: :any, big_sur:        "9600bb5fb67bc676490cb7ef6bde1a89a806aa0b97b7d7b39f4ada92bf82c767"
   end
 
   keg_only :versioned_formula
