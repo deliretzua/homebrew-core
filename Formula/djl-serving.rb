@@ -13,7 +13,7 @@ class DjlServing < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "cf1c865204bb3d4ab5625cd686b76598e1d69a57fe1bf2c6ab0b57a992b5cdd4"
+    sha256 cellar: :any_skip_relocation, all: "94aaecfa8f346f98dec8cfadc7e9381b4eebaae1570c4faa4efe818dc37e8c2e"
   end
 
   depends_on "openjdk"
