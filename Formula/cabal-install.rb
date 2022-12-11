@@ -17,13 +17,14 @@ class CabalInstall < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1cf0bd1fa1bc4afb62e7fad74b92ae6f28798d63814d195fa5741b3c3821aa43"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4783fe7f7d8e7ae44bf6752c887819fab673d15c41c617fa8dce215ee8304eef"
-    sha256 cellar: :any_skip_relocation, ventura:        "0c6a4adb2d333719844c60974a57d787671ce6e688389ae0c1ec51f2432c1539"
-    sha256 cellar: :any_skip_relocation, monterey:       "0662573e0cae281e74e8283a9d4d33bf384728183915dc8391d9c1317e3e50db"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a01863975ff22421990a6c70929701a6ba21675b6b4a371d79349e506b015c6b"
-    sha256 cellar: :any_skip_relocation, catalina:       "9c52b90081efda0ef6bb21357c76901f2b94677ae86434d06e377f950f978829"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17c419427fd0060bbfb347184732358eb8a48bb4c60d613e358797f0207a5573"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "40ab69cd21f54e597795b71abf344665072feb6ac2b03bd2bae0e04bb631ef83"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3af91ef28d8d82761de341be8277b8ab61c50c9c222d27ff1f6265ec11595be2"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "252fe73c7aaf9c44ef3a2f7dc25bc89230a614591dcd6efcf1a8ccc8bec901ac"
+    sha256 cellar: :any_skip_relocation, ventura:        "c1d60e3d027bdef6559d3128c4139bc1d93a73cc3e60323c4a135eb948962c76"
+    sha256 cellar: :any_skip_relocation, monterey:       "a682772e0cf626c821efd4d884737e33104831d1e5ab2ce6f90be557aa872ca6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "395c7c55426e70ecadbcfd943d9b4e0a4cd8799331a2f0b585289bd0a93f8c15"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d84d35b0bd0a269423bb92082e848227f24c3fe61549da35b42da32c46effae"
   end
 
   depends_on "ghc"
