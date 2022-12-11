@@ -6,6 +6,16 @@ class Licensed < Formula
       revision: "02435ab9489d03617a7f95941d2a2d267306052d"
   license "MIT"
 
+  bottle do
+    sha256 arm64_ventura:  "deb2eb18dcb03501b396fb4abfe06d057eee46e4dc8f43cecd26d617526184c5"
+    sha256 arm64_monterey: "17c719d56ee9aecf45d9f6c7de06e051a43004bd580d71d8f1beb267fae97ba7"
+    sha256 arm64_big_sur:  "8ec2cbed9312f16f5e0d8410ebfe67bc45d8757d46369d62331c04639201457d"
+    sha256 monterey:       "9413257d0ab186ca54af66a5818cf36182b3dd1b70ccc784c1a317b1ef128a08"
+    sha256 big_sur:        "c34bc2e9ec5c607be6df1de484144189187d7aef8cec5105378a0bf42abe85b5"
+    sha256 catalina:       "7909eb9eb07410a9c9155bcda4b390dd95e82f90067adc2f26e92e56ca49ec4c"
+    sha256 x86_64_linux:   "4163924b949ce0760436ddaf8ed6152078ad8a6c8ccba95f22919d0ba91e9f7d"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "xz"
