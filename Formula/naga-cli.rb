@@ -6,6 +6,16 @@ class NagaCli < Formula
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/gfx-rs/naga.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5b2a425164a8b6531c39abe2ed61a8d4e68e4cc81ec55e35ebd0ae5c410d6f60"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cdf4bdd0201d8e49ad56e2482767ea9a435f09928e08862a378aabc5fab04f4c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3c03399f669b226f7764ac52eac2c17093a577f54900b36620fb88f3e7a55c58"
+    sha256 cellar: :any_skip_relocation, ventura:        "d5c34518cb374e9487375355206b707a2203479f7071af8c9df96bb9d14e0bdc"
+    sha256 cellar: :any_skip_relocation, monterey:       "061ad1c5059d6723fc6ea2fac894702233b6c9dc3badb6fb98237392a7e6c960"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ec17d75dda52b03a7f856c42d5b2c45a36068cf94218fc7d4e5c004f577e0751"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4de71885af471ff620f01b29438fb210d63a37cf9de0fe5a6e923f09f2cd9af7"
+  end
+
   depends_on "rust" => :build
 
   def install
