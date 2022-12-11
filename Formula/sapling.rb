@@ -6,6 +6,16 @@ class Sapling < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/facebook/sapling.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "49bf9ec4f58d8349d4b6115258cfc569128384d516ad8e98dd916aebdc66984b"
+    sha256 cellar: :any,                 arm64_monterey: "a98cca203bb709ed5f6d8c401879474dfbdaa008dd99b3aeb0328379b6da8b3b"
+    sha256 cellar: :any,                 arm64_big_sur:  "c90af6e3e29acff0c159683ae3ec72e177e0200c181501a6a51a5e10bfd4aae7"
+    sha256 cellar: :any,                 ventura:        "ebf0b109ec15347914db5cab0567bd6dc76cc1122f5109e23ecdd49128754ea6"
+    sha256 cellar: :any,                 monterey:       "bffb541620c7561dbbf6cf568e56abec5d7babc0baadfcb3e3785021e9de2f45"
+    sha256 cellar: :any,                 big_sur:        "915e9dacb59b84e15f49826affe53d9dd1400db98c3fc361e00701388ce65e3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "611e7a822fa7b96ca591264b8c61184dcf4d8a5bfedbce8fe30460c6feda6f2e"
+  end
+
   depends_on "cmake" => :build
   depends_on "rust" => :build
   depends_on "yarn" => :build
