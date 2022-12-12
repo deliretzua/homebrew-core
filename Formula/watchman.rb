@@ -1,8 +1,8 @@
 class Watchman < Formula
   desc "Watch files and take action when they change"
   homepage "https://github.com/facebook/watchman"
-  url "https://github.com/facebook/watchman/archive/v2022.12.05.00.tar.gz"
-  sha256 "e56c7433b186190b56d1ed86987a1f64c15486bf0f37dd7d38c826fac07e34f3"
+  url "https://github.com/facebook/watchman/archive/v2022.12.12.00.tar.gz"
+  sha256 "5641efb409bf62d63086bae586610931d90b430b8986e9f1e4871cb159fcf8f5"
   license "MIT"
   head "https://github.com/facebook/watchman.git", branch: "main"
 
@@ -39,9 +39,10 @@ class Watchman < Formula
   fails_with gcc: "5"
 
   def install
-    # Fix build failure on Linux. Borrowed from Fedora:
-    # https://src.fedoraproject.org/rpms/watchman/blob/rawhide/f/watchman.spec#_70
-    inreplace "CMakeLists.txt", /^t_test/, "#t_test" if OS.linux?
+    # Fix "Process terminated due to timeout" by allowing a longer timeout.
+    inreplace "CMakeLists.txt",
+              /gtest_discover_tests\((.*)\)/,
+              "gtest_discover_tests(\\1 DISCOVERY_TIMEOUT 30)"
 
     # NOTE: Setting `BUILD_SHARED_LIBS=ON` will generate DSOs for Eden libraries.
     #       These libraries are not part of any install targets and have the wrong
@@ -54,9 +55,7 @@ class Watchman < Formula
                     "-DWATCHMAN_BUILDINFO_OVERRIDE=#{tap.user}",
                     "-DWATCHMAN_STATE_DIR=#{var}/run/watchman",
                     *std_cmake_args
-
-    # Workaround for `Process terminated due to timeout`
-    ENV.deparallelize { system "cmake", "--build", "build" }
+    system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
     path = Pathname.new(File.join(prefix, HOMEBREW_PREFIX))
