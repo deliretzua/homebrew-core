@@ -7,6 +7,10 @@ class GrammarlyLanguageserver < Formula
   sha256 "0d50b88059b5a63c66e3973e94d4f368366087ef59427003106a99bb46c46728"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "9f728288cb46659e57ec3e8577561d2c590fe45ae673be3cac69a41da4c32537"
+  end
+
   depends_on "node"
 
   def install
