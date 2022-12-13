@@ -1,10 +1,10 @@
 class GnuComplexity < Formula
   desc "Measures complexity of C source"
   homepage "https://www.gnu.org/software/complexity"
-  url "https://ftp.gnu.org/gnu/complexity/complexity-1.10.tar.xz"
-  mirror "https://ftpmirror.gnu.org/complexity/complexity-1.10.tar.xz"
-  sha256 "6d378a3ef9d68938ada2610ce32f63292677d3b5c427983e8d72702167a22053"
-  license "GPL-3.0"
+  url "https://ftp.gnu.org/gnu/complexity/complexity-1.13.tar.xz"
+  mirror "https://ftpmirror.gnu.org/complexity/complexity-1.13.tar.xz"
+  sha256 "80a625a87ee7c17fed02fb39482a7946fc757f10d8a4ffddc5372b4c4b739e67"
+  license "GPL-3.0-or-later"
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "069c43183f32681bc060d6cd22a38c2aed732c7e3ca80eb5eaa952e70b73b151"
@@ -21,12 +21,26 @@ class GnuComplexity < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6bc40505bf964f2ac7ef30d2f65c8180832e709c49cf6872b8651caf6a84b1a1"
   end
 
+  # Drop `autoconf` and `automake` when the patch is removed.
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
   depends_on "autogen"
 
+  # Fix build problem in doc. Borrowed from Debian.
+  patch do
+    url "https://salsa.debian.org/debian/complexity/-/raw/69a7b9d27eb5c2ba8aa43966518971df74d55657/debian/patches/01_fix_autobuild.patch"
+    sha256 "3c2403be83ae819bbdfe7d1b0f14e2637d504387d1237f15b24e149cd66f56b1"
+  end
+
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    # Fix errors in opts.h. Borrowed from Debian:
+    # https://salsa.debian.org/debian/complexity/-/blob/master/debian/rules
+    cd "src" do
+      system "autogen", "opts.def"
+    end
+
+    system "./configure", *std_configure_args
+    system "make"
     system "make", "install"
   end
 
