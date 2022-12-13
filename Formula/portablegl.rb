@@ -7,6 +7,16 @@ class Portablegl < Formula
   license "MIT"
   head "https://github.com/rswinkle/PortableGL.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5072b5c557a56c16b3db6a916074c0c4933e925681c80a88bb78b9fbe6e7c307"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5072b5c557a56c16b3db6a916074c0c4933e925681c80a88bb78b9fbe6e7c307"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5072b5c557a56c16b3db6a916074c0c4933e925681c80a88bb78b9fbe6e7c307"
+    sha256 cellar: :any_skip_relocation, ventura:        "a74c17ac74f36af4038cef1c4770c198fe2fb3a5e92988741ecb7b9b05598c87"
+    sha256 cellar: :any_skip_relocation, monterey:       "a74c17ac74f36af4038cef1c4770c198fe2fb3a5e92988741ecb7b9b05598c87"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a74c17ac74f36af4038cef1c4770c198fe2fb3a5e92988741ecb7b9b05598c87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5072b5c557a56c16b3db6a916074c0c4933e925681c80a88bb78b9fbe6e7c307"
+  end
+
   depends_on "python@3.11" => :test
   depends_on "sdl2" => :test
 
