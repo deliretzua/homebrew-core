@@ -9,7 +9,7 @@ class GrammarlyLanguageserver < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9f728288cb46659e57ec3e8577561d2c590fe45ae673be3cac69a41da4c32537"
+    sha256 cellar: :any_skip_relocation, all: "7433d92272f07c1cd865850dbf5db445aaef83b4ce00cebd49b8faad6aaf88b4"
   end
 
   depends_on "node@16"
