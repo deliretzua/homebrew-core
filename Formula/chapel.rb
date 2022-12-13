@@ -1,10 +1,9 @@
 class Chapel < Formula
   desc "Programming language for productive parallel computing at scale"
   homepage "https://chapel-lang.org/"
-  url "https://github.com/chapel-lang/chapel/releases/download/1.28.0/chapel-1.28.0.tar.gz"
-  sha256 "64eacfb5915e1b3c487e865f819faf9bb8771c9f83aac6512698ded1baab250e"
+  url "https://github.com/chapel-lang/chapel/releases/download/1.29.0/chapel-1.29.0.tar.gz"
+  sha256 "f87bc7285c4641ed540f806c63ab904137b650b1e232a11c15f76e874e079804"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/chapel-lang/chapel.git", branch: "main"
 
   bottle do
@@ -18,6 +17,7 @@ class Chapel < Formula
     sha256 x86_64_linux:   "44e78c563407371437e9cb150ffd1b1f02dfd6f2643ec82d88322ad5665346a1"
   end
 
+  depends_on "cmake"
   depends_on "gmp"
   depends_on "llvm@14"
   depends_on "python@3.10"
