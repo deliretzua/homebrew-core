@@ -12,6 +12,16 @@ class Mimirtool < Formula
     regex(/^mimir-(\d+\.\d+\.\d+)$/i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "63863ff7843331ff1e122519247bd29c374813276d69119f5862205a5b72e70f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e3d90ce45e41033cc2cc3a97a8307e530a3ae376e27e95b7372dbba12d99ec2c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7c9ddf7abb7f639d4428ee97028c1fff4723a310f1c1f414aa334c0f80d0630f"
+    sha256 cellar: :any_skip_relocation, ventura:        "53c25c35eef0fe6424166cc175e57fcd74835c1021510e449a86040983aaf90d"
+    sha256 cellar: :any_skip_relocation, monterey:       "b65031d565051a00cf59ab0101b590fb65ca6ce375833f49bcbb1b2f09da1fb0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "05086c58f081ad16066d5396a65f0d5d5fc457b13af217d1575df7801b32601e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "439fb6a4c0513af52c647696b51dcb299ee234c13a2d349d9efd243935b02be7"
+  end
+
   depends_on "go" => :build
 
   def install
