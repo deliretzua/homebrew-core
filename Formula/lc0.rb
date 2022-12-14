@@ -2,10 +2,9 @@ class Lc0 < Formula
   desc "Open source neural network based chess engine"
   homepage "https://lczero.org/"
   url "https://github.com/LeelaChessZero/lc0.git",
-      tag:      "v0.28.2",
-      revision: "fa5864bb5838e131d832ad63300517f4684913e7"
+      tag:      "v0.29.0",
+      revision: "afdd67c2186f1f29893d495750661a871f7aa9ac"
   license "GPL-3.0-or-later"
-  revision 2
 
   bottle do
     rebuild 1
@@ -34,6 +33,8 @@ class Lc0 < Formula
 
   fails_with gcc: "5" # for C++17
 
+  # Currently we use "42850" network with 20 blocks x 256 filters
+  # from https://lczero.org/play/networks/bestnets/
   resource "network" do
     url "https://training.lczero.org/get_network?sha=00af53b081e80147172e6f281c01daf5ca19ada173321438914c730370aa4267", using: :nounzip
     sha256 "12df03a12919e6392f3efbe6f461fc0ff5451b4105f755503da151adc7ab6d67"
@@ -41,6 +42,11 @@ class Lc0 < Formula
 
   def install
     args = ["-Dgtest=false"]
+
+    # Disable metal backend for older macOS
+    # Ref https://github.com/LeelaChessZero/lc0/issues/1814
+    args << "-Dmetal=disabled" if MacOS.version <= :big_sur
+
     if OS.linux?
       args << "-Dopenblas_include=#{Formula["openblas"].opt_include}"
       args << "-Dopenblas_libdirs=#{Formula["openblas"].opt_lib}"
