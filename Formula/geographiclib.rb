@@ -6,14 +6,13 @@ class Geographiclib < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8c13b49ba4fd61359db8469ac1ad2ae64b70f6757cb073cb085071943c497a94"
-    sha256 cellar: :any,                 arm64_monterey: "bfe0a6587b1795fb82b5c1b59c9b34462f720450ae32cb5940f6f3d4daf8b1ff"
-    sha256 cellar: :any,                 arm64_big_sur:  "a16bfa8a86ba9e3d72cc97ad1f3fdcb18fe60b16d09bfdcda16b19a12d4b38e2"
-    sha256 cellar: :any,                 ventura:        "2037fedcfd23bfe80eb5e9be3f366d7873a2f40f9a3c3e8d95380fc53f5013f1"
-    sha256 cellar: :any,                 monterey:       "c6f56914e3a91a17d2fdaccfe69b555936229cf85ec8e49cb331145eaf071a02"
-    sha256 cellar: :any,                 big_sur:        "ffeeacbc0e4fc7508d59d8c194b4f898545ad783d1e8e8aa56e5654722c96027"
-    sha256 cellar: :any,                 catalina:       "c4f069e57eff006d3f062ffe998ca0a8cefc9c42a93ea7969ec0bc187bef6064"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3aa5a4b955500a20587ef6c0b6a7064cac7e62620a69406ba3af1a002646f0bb"
+    sha256 cellar: :any,                 arm64_ventura:  "10cf6efab39f38c196766b1834ae4f38fa0e5a95cebe8d55c8948619e39635cb"
+    sha256 cellar: :any,                 arm64_monterey: "94aae0bc5e90445619ce8ffcab8ad5b748bc0e0c538cd4fe44bc75268a82634c"
+    sha256 cellar: :any,                 arm64_big_sur:  "255f1273022558178fa4e4649177f921f974ec983f5db0ec66de737e032816d8"
+    sha256 cellar: :any,                 ventura:        "54bf6556433f9c426925eb5ef6876d1c6c3aec35cc1cb8269685c43a9a6c9ed5"
+    sha256 cellar: :any,                 monterey:       "348294792079ec9c5909bd933b4dfd3879fa26ec2addf6b38ee5a0c529e4541f"
+    sha256 cellar: :any,                 big_sur:        "19a15f2d0739d121c7e5afa3fd58782b4dc505439a58bc6e579fe03ed6f5db13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e5be7b2ec72c6b062a24a4ef412898223c9e44ee3d21ef5daa3a7060cb7833e"
   end
 
   depends_on "cmake" => :build
