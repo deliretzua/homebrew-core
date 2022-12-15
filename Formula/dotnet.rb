@@ -39,15 +39,13 @@ class Dotnet < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "7de1fed5e5f96e5a33b506bc67d7f42346fe3462692c555c7f8f77d2f574aeee"
-    sha256 cellar: :any,                 arm64_monterey: "4462cce323287e601c885a71418ff2425e59c62364806775a6fb49c2bd5fdb91"
-    sha256 cellar: :any,                 arm64_big_sur:  "341d025fed0a2bb01cf2199cc19aba069e90e83c9dd91c189818f68b12be8512"
-    sha256 cellar: :any,                 ventura:        "3d16e46012f344be4370aa4cfa4a8c8f7d9e76250de42f9e7d8fd674b774a9f3"
-    sha256 cellar: :any,                 monterey:       "b208c464e92f5dec6c9641a0a004a4c4f445e636ca4eee910866e5461784ebf7"
-    sha256 cellar: :any,                 big_sur:        "e5cdb53c941e2f484c36ce4573cab3919b90a2164ba4960bb15aeb47da342baf"
-    sha256 cellar: :any,                 catalina:       "68549d9d271924074783afaaf3257030c70d7f47511203d9badd3c43b62cff66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "645d857e3555c70c7475017f38d9556ead417f64e6903c4510fecaeb04741284"
+    sha256 cellar: :any,                 arm64_ventura:  "a48ccb41aef44b23111a8c9af155a7d4ca687d12e693abdf16a460606b643534"
+    sha256 cellar: :any,                 arm64_monterey: "d3b31cc177ef4abc05cbfc638bf10c5d208c727862698a65f2f1c1f200381134"
+    sha256 cellar: :any,                 arm64_big_sur:  "7758478afea76d3736405674b37476b45d73d855de155df35049d4dd92dda4cb"
+    sha256 cellar: :any,                 ventura:        "87c91d98f45df0407a2988272ec54016848ae6370dc0fed7a02444767f5f25db"
+    sha256 cellar: :any,                 monterey:       "9e202396b41bcb8d45c857b9f4806a7907edf018ec4e14d8af1e3867f5d66320"
+    sha256 cellar: :any,                 big_sur:        "015dca815eb4ea5b4a9a7160b79ad45e509ae6525e939f3a81d3985ec88533cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a75b5f8d7331b1db749735e6a8fb3f9dbfe6298c44fa0e8911d727e7195b8eb"
   end
 
   depends_on "cmake" => :build
