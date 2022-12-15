@@ -6,6 +6,16 @@ class Emqx < Formula
   license "Apache-2.0"
   head "https://github.com/emqx/emqx.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any, arm64_ventura:  "e34729e259a00dda966ae2ea2129321f54e30546a8600f042dbd47476fa54aaa"
+    sha256 cellar: :any, arm64_monterey: "60937ff39d0615da13399fbb42db52fe71316a87edb3e0932fd57cd5824f007a"
+    sha256 cellar: :any, arm64_big_sur:  "b8500e0ecceac9329196db229f5d066cc3eeadf8ca9786a68108c784d1fb19d9"
+    sha256 cellar: :any, ventura:        "0ab8cc929fe9abdeecf27e9fe3a381384275542ee310a8d51e47e0692a507651"
+    sha256 cellar: :any, monterey:       "8d46327297a6bdf248281bb162dc292446a7534cc6044e49fde5136719349c19"
+    sha256 cellar: :any, big_sur:        "841b46690488901c855cb9dfac22110f8b46ea70e3e66b344d69fc975fa4a939"
+    sha256               x86_64_linux:   "7829942a2111840a896090c0c6ba1cba431e85fc6f87726dd54586caadbbd7cc"
+  end
+
   depends_on "autoconf"  => :build
   depends_on "automake"  => :build
   depends_on "cmake"     => :build
