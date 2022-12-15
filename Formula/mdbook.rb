@@ -7,14 +7,13 @@ class Mdbook < Formula
   head "https://github.com/rust-lang/mdBook.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8f79c18d2d18b0a81807d1cd9be69bf479474cfdfca3be17ad64560ddf4a4da5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e259058acbee1b609088bbe23da21e70c7c5364c5cc550ee3518ec059f245a5e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9ca65f74cf93287d9d5e37cbebcdd0cfa84d496113cf1f41a45ccbce451f74c8"
-    sha256 cellar: :any_skip_relocation, ventura:        "bafe94ad5c4caf51af7a8afdbd87ad6d423a3e46ea0e035028e39d9855e2da37"
-    sha256 cellar: :any_skip_relocation, monterey:       "0fd0a9be158e78581427048cd7023ec87f22dbc51a84f06f1ee46fe9d446b8b3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1a37df6028e3ce17d6614fd002a4acbc4368544ddac6a6b616f219d47217496f"
-    sha256 cellar: :any_skip_relocation, catalina:       "d17a284cf020dccb3dc9654121a256a497cce024be545cfd3f241ac9ca8e2fd3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d21b9bbf9828211c8a96c2de3261047e591128aec8f609302f4c36c0a1b1905"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2de84e4e3ee16a1b972cc2d097b19fb5a656dff3278cd48a847f592aed4c952b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "078dcac90dceb65af12007d43c6757605135078dfcf1a53cf95c6e3caf0000b4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "32ee29f893d944e24932ad3083ca093314c26e8ab6baa6470d65a9c9535e2a96"
+    sha256 cellar: :any_skip_relocation, ventura:        "5ccd14ab6b3d149ea3418fee8221c5539c7493f5e6efeb53573308b8f96872b6"
+    sha256 cellar: :any_skip_relocation, monterey:       "90c2488fc75996a99fed43ce0d0de0fd6c2f54510fff2da8a2e1a612cb06a8f4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "87be6b8f05c49334fbb52019351539e4c6f0ef6dacc5e20f21dd8d6a9dea78ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "00f61b4798f0f32aa634f61a088a56267472df33da670118c7f0d384c4e065fd"
   end
 
   depends_on "rust" => :build
