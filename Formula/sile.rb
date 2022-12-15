@@ -1,10 +1,9 @@
 class Sile < Formula
   desc "Modern typesetting system inspired by TeX"
   homepage "https://sile-typesetter.org"
-  url "https://github.com/sile-typesetter/sile/releases/download/v0.14.5/sile-0.14.5.tar.xz"
-  sha256 "2f0d6bb49efdf38a44f322ccc7cdb5bb9c2207fdbb44f67aa362ea0963068e07"
+  url "https://github.com/sile-typesetter/sile/releases/download/v0.14.7/sile-0.14.7.tar.xz"
+  sha256 "32f5db8d76e3334c56bc1b42c271604f16fff48450b59f503a44f385cc205d07"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "13ca61aa62f4dc8e6d627f75d1abfed698fe3df551b522086c1efa978a498933"
@@ -36,11 +35,6 @@ class Sile < Formula
   uses_from_macos "unzip" => :build
   uses_from_macos "expat"
   uses_from_macos "zlib"
-
-  resource "bit32" do
-    url "https://luarocks.org/manifests/siffiejoe/bit32-5.3.5.1-1.src.rock"
-    sha256 "0e273427f2b877270f9cec5642ebe2670242926ba9638d4e6df7e4e1263ca12c"
-  end
 
   resource "linenoise" do
     url "https://luarocks.org/manifests/hoelzro/linenoise-0.9-1.rockspec"
@@ -181,7 +175,8 @@ class Sile < Formula
     end
 
     system "./bootstrap.sh" if build.head?
-    system "./configure", "--disable-debug",
+    system "./configure", "FCMATCH=true",
+                          "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--with-system-luarocks",
@@ -197,6 +192,23 @@ class Sile < Formula
 
     (libexec/"bin").install bin/"sile"
     (bin/"sile").write_env_script libexec/"bin/sile", env
+  end
+
+  def caveats
+    <<~EOS
+      By default SILE uses the font Gentium Plus to render all documents that do not specifically call for something else. If this font is not available on your system you may encounter errors. Of lower priority depending on your use case, the math typesetting package defaults to using Libertinus Math and the default monospace font is Hack.
+
+      Homebrew does not supply any of these font dependencies in default casks, but they can be added by tapping cask-fonts:
+        brew tap homebrew/cask-fonts
+        brew install --cask font-gentium-plus
+        brew install --cask font-libertinus
+        brew install --cask font-hack
+
+      Alternatively you can download and install the fonts yourself:
+        https://software.sil.org/gentium/
+        https://github.com/alerque/libertinus
+        https://sourcefoundry.org/hack/
+    EOS
   end
 
   test do
