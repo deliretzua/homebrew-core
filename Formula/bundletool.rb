@@ -6,7 +6,7 @@ class Bundletool < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6d06440e568ef96aeed42d6fbde87f94bbfebaed1bd85b4e0cf38655872a349f"
+    sha256 cellar: :any_skip_relocation, all: "f20598bc6fe3105246831f442d07d3b6cef333a89dd2a373bb10c3501b8249a3"
   end
 
   depends_on "openjdk"
