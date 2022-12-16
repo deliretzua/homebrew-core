@@ -8,7 +8,7 @@ class Json5 < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b78db2e75223abf02b70379e741be320cc35f26190b7907035d694735b44253c"
+    sha256 cellar: :any_skip_relocation, all: "473056a228a89fb1075f4449b2e04bf7c7629f71dbbb8a48c55788c390889881"
   end
 
   depends_on "node"
