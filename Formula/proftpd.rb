@@ -1,11 +1,10 @@
 class Proftpd < Formula
   desc "Highly configurable GPL-licensed FTP server software"
   homepage "http://www.proftpd.org/"
-  url "https://github.com/proftpd/proftpd/archive/v1.3.7e.tar.gz"
-  mirror "https://fossies.org/linux/misc/proftpd-1.3.7e.tar.gz"
-  mirror "https://ftp.osuosl.org/pub/blfs/conglomeration/proftpd/proftpd-1.3.7e.tar.gz"
-  version "1.3.7e"
-  sha256 "6e716a3b53ee069290399fce6dccf4c229fafe6ec2cb14db3778b7aa3f9a8c92"
+  url "https://github.com/proftpd/proftpd/archive/refs/tags/v1.3.8.tar.gz"
+  mirror "https://fossies.org/linux/misc/proftpd-1.3.8.tar.gz"
+  mirror "https://ftp.osuosl.org/pub/blfs/conglomeration/proftpd/proftpd-1.3.8.tar.gz"
+  sha256 "f7139e7377a2cb059b8b9b14d76a6df5f440e3181cb15ae890d43bbcae574748"
   license "GPL-2.0-or-later"
 
   # Proftpd uses an incrementing letter after the numeric version for
@@ -36,11 +35,13 @@ class Proftpd < Formula
     inreplace "sample-configurations/basic.conf", "nogroup", "nobody"
 
     system "./configure", "--prefix=#{prefix}",
+                          "--sbindir=#{sbin}",
                           "--sysconfdir=#{etc}",
                           "--localstatedir=#{var}"
     ENV.deparallelize
     install_user = ENV["USER"]
     install_group = Utils.safe_popen_read("groups").split.first
+    system "make", "all"
     system "make", "INSTALL_USER=#{install_user}", "INSTALL_GROUP=#{install_group}", "install"
   end
 
@@ -53,6 +54,6 @@ class Proftpd < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{opt_sbin}/proftpd -v")
+    assert_match "ProFTPD Version #{version}", shell_output("#{opt_sbin}/proftpd -v")
   end
 end
