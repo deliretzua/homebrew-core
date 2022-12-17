@@ -1,8 +1,8 @@
 class LinkGrammar < Formula
   desc "Carnegie Mellon University's link grammar parser"
   homepage "https://www.abisource.com/projects/link-grammar/"
-  url "https://www.abisource.com/downloads/link-grammar/5.11.0/link-grammar-5.11.0.tar.gz"
-  sha256 "bdb9a359f877ff95d60f44d1780387324fa3763de5084ba1817dbf561a0ebed4"
+  url "https://www.abisource.com/downloads/link-grammar/5.12.0/link-grammar-5.12.0.tar.gz"
+  sha256 "3f113daca2bd3ec8c20c7f86d5ef7e56cf8f80135f903bb7569924d6d0720383"
   license "LGPL-2.1-or-later"
   head "https://github.com/opencog/link-grammar.git", branch: "master"
 
@@ -30,7 +30,15 @@ class LinkGrammar < Formula
   depends_on "python@3.10" => :build
 
   uses_from_macos "flex" => :build
+  uses_from_macos "libedit"
   uses_from_macos "sqlite"
+
+  # Fix for fatal error: 'threads.h' file not found
+  # remove in next release
+  patch do
+    url "https://github.com/opencog/link-grammar/commit/725de848e4ac832ba7cd876e01f3d6a67d6e578b.patch?full_index=1"
+    sha256 "e167c0c5a2713b539099ea1839c31801709e3fd5c9368eae9aa3f480fa5f1f13"
+  end
 
   def install
     ENV["PYTHON_LIBS"] = "-undefined dynamic_lookup"
