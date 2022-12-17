@@ -1,8 +1,8 @@
 class Pypy < Formula
   desc "Highly performant implementation of Python 2 in Python"
   homepage "https://pypy.org/"
-  url "https://downloads.python.org/pypy/pypy2.7-v7.3.9-src.tar.bz2"
-  sha256 "39b0972956f6548ce5828019dbae12503c32d6cbe91a2becf88d3e42cc52197b"
+  url "https://downloads.python.org/pypy/pypy2.7-v7.3.10-src.tar.bz2"
+  sha256 "35e2cf4519cb51c4d5ffb4493ee24f0c7f42b4b04944903ca4b33981a04a3bc5"
   license "MIT"
   head "https://foss.heptapod.net/pypy/pypy", using: :hg
 
@@ -20,7 +20,6 @@ class Pypy < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on arch: :x86_64
   depends_on "gdbm"
   depends_on "openssl@1.1"
   depends_on "sqlite"
@@ -35,10 +34,15 @@ class Pypy < Formula
 
   resource "bootstrap" do
     on_macos do
-      url "https://downloads.python.org/pypy/pypy2.7-v7.3.4-osx64.tar.bz2"
-      sha256 "ee7bf42ce843596521e02c763408a5164d18f23c9617f1b8e032ce0675686582"
+      on_arm do
+        url "https://downloads.python.org/pypy/pypy2.7-v7.3.10-macos_arm64.tar.bz2"
+        sha256 "14b178f005603e3df6db7574b77b9c65ae79feda1a629214cafcb4eee7da679d"
+      end
+      on_intel do
+        url "https://downloads.python.org/pypy/pypy2.7-v7.3.4-osx64.tar.bz2"
+        sha256 "ee7bf42ce843596521e02c763408a5164d18f23c9617f1b8e032ce0675686582"
+      end
     end
-
     on_linux do
       url "https://downloads.python.org/pypy/pypy2.7-v7.3.4-linux64.tar.bz2"
       sha256 "d3f7b0625e770d9be62201765d7d2316febc463372fba9c93a12969d26ae03dd"
@@ -62,8 +66,6 @@ class Pypy < Formula
   # Build fixes:
   # - Disable Linux tcl-tk detection since the build script only searches system paths.
   #   When tcl-tk is not found, it uses unversioned `-ltcl -ltk`, which breaks build.
-  # - Disable building cffi imports with `--embed-dependencies`, which compiles and
-  #   statically links a specific OpenSSL version.
   patch :DATA
 
   def install
@@ -78,42 +80,27 @@ class Pypy < Formula
     python = buildpath/"bootstrap/bin/pypy"
 
     cd "pypy/goal" do
-      system python, buildpath/"rpython/bin/rpython",
-             "-Ojit", "--shared", "--cc", ENV.cc, "--verbose",
-             "--make-jobs", ENV.make_jobs, "targetpypystandalone.py"
-
-      with_env(PYTHONPATH: buildpath) do
-        system "./pypy-c", buildpath/"lib_pypy/pypy_tools/build_cffi_imports.py"
-      end
+      system python, "../../rpython/bin/rpython", "--opt", "jit",
+                                                  "--cc", ENV.cc,
+                                                  "--make-jobs", ENV.make_jobs,
+                                                  "--shared",
+                                                  "--verbose"
     end
 
+    system python, "pypy/tool/release/package.py", "--archive-name", "pypy",
+                                                   "--targetdir", ".",
+                                                   "--no-embedded-dependencies",
+                                                   "--no-keep-debug",
+                                                   "--no-make-portable"
     libexec.mkpath
-    cd "pypy/tool/release" do
-      package_args = %w[--archive-name pypy --targetdir . --no-make-portable --no-embedded-dependencies]
-      system python, "package.py", *package_args
-      system "tar", "-C", libexec.to_s, "--strip-components", "1", "-xf", "pypy.tar.bz2"
-    end
-
-    (libexec/"lib").install libexec/"bin/#{shared_library("libpypy-c")}"
-    if OS.mac?
-      MachO::Tools.change_install_name("#{libexec}/bin/pypy",
-                                       "@rpath/libpypy-c.dylib",
-                                       "#{libexec}/lib/libpypy-c.dylib")
-    end
+    system "tar", "-C", libexec.to_s, "--strip-components", "1", "-xf", "pypy.tar.bz2"
 
     # The PyPy binary install instructions suggest installing somewhere
     # (like /opt) and symlinking in binaries as needed. Specifically,
     # we want to avoid putting PyPy's Python.h somewhere that configure
     # scripts will find it.
     bin.install_symlink libexec/"bin/pypy"
-    lib.install_symlink libexec/"lib/#{shared_library("libpypy-c")}"
-
-    # Delete two files shipped which we do not want to deliver
-    # These files make patchelf fail
-    if OS.linux?
-      rm_f libexec/"bin/libpypy-c.so.debug"
-      rm_f libexec/"bin/pypy.debug"
-    end
+    lib.install_symlink libexec/"bin"/shared_library("libpypy-c")
   end
 
   def post_install
@@ -215,14 +202,3 @@ __END__
      # On some Linux distributions, the tcl and tk libraries are
      # stored in /usr/include, so we must check this case also
      libdirs = []
---- a/pypy/goal/targetpypystandalone.py
-+++ b/pypy/goal/targetpypystandalone.py
-@@ -354,7 +354,7 @@ class PyPyTarget(object):
-             ''' Use cffi to compile cffi interfaces to modules'''
-             filename = join(pypydir, '..', 'lib_pypy', 'pypy_tools',
-                                    'build_cffi_imports.py')
--            if sys.platform in ('darwin', 'linux', 'linux2'):
-+            if False: # disable building static openssl
-                 argv = [filename, '--embed-dependencies']
-             else:
-                 argv = [filename,]
