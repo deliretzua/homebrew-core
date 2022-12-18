@@ -1,8 +1,8 @@
 class Gedit < Formula
   desc "GNOME text editor"
   homepage "https://wiki.gnome.org/Apps/Gedit"
-  url "https://download.gnome.org/sources/gedit/42/gedit-42.2.tar.xz"
-  sha256 "3c6229111f0ac066ae44964920791d1265f5bbb56b0bd949a69b7b1261fc8fca"
+  url "https://download.gnome.org/sources/gedit/43/gedit-43.2.tar.xz"
+  sha256 "f950d2d35c594bb6c8dbc9f5440cad7788ca0a8688e2b07846f83de9a4e3fc25"
   license "GPL-2.0-or-later"
 
   bottle do
@@ -16,12 +16,15 @@ class Gedit < Formula
     sha256 x86_64_linux:   "a88a052db3e1337e2f5264f192a284ab29b0332f9235beae9aefc02244ec18eb"
   end
 
+  depends_on "docbook-xsl" => :build
+  depends_on "gtk-doc" => :build
   depends_on "itstool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
   depends_on "vala" => :build
   depends_on "adwaita-icon-theme"
+  depends_on "amtk"
   depends_on "atk"
   depends_on "cairo"
   depends_on "gdk-pixbuf"
@@ -36,9 +39,11 @@ class Gedit < Formula
   depends_on "libsoup"
   depends_on "libxml2"
   depends_on "pango"
+  depends_on "tepl"
 
   def install
     ENV["DESTDIR"] = "/"
+    ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}/gedit" if OS.linux?
 
     system "meson", "setup", "build", *std_meson_args
@@ -52,8 +57,7 @@ class Gedit < Formula
   end
 
   test do
-    # Remove when `jpeg-turbo` is no longer keg-only.
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["jpeg-turbo"].opt_lib/"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["icu4c"].opt_lib/"pkgconfig" if OS.mac?
 
     # main executable test
     system bin/"gedit", "--version"
