@@ -6,14 +6,13 @@ class Ghex < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 arm64_ventura:  "d53e8c59361907d9b0348de0278366f8ab32629e02b0c08514f29038772ab12f"
-    sha256 arm64_monterey: "4d7254cc2ef96df2c6187e904e2a63613cfa2963b1c4aa4965f10f49dac318ef"
-    sha256 arm64_big_sur:  "c493a5c7d8421dbd84ab8bf8e61ba469fa57afe70f99728a17a95046ccfb85a5"
-    sha256 ventura:        "f645c9ba17cd1fa12ab3a39f16cd1a86d488ff886b4f2848a4a89652a3f42fa4"
-    sha256 monterey:       "54fe13e40831f5e0032ce82bbded59c5521043e41fcbfed8d532ea2b878e90df"
-    sha256 big_sur:        "54c7098a34cbc2cc9c5d32881bf19160fd9506dd81f06c9037036fbd5e08bf4c"
-    sha256 catalina:       "b95753839545d3a7e8d664b7afb87cbf4a585635d49fef7ee5cb93ec9e890bd1"
-    sha256 x86_64_linux:   "1726f4384ae6dc10dba8cae6bfdb7621abb987fb0390ee7ca8b43bbc597f19a9"
+    sha256 arm64_ventura:  "74e151da0528935da9049a5dd39123190d781a3c063bc98d9415618062bad480"
+    sha256 arm64_monterey: "402113e3b5f93b1792663309f438dc9d27b9509e5ef3242514a75a43462560ef"
+    sha256 arm64_big_sur:  "dd4c724e0c28832d8e15720d3aa128e570a1492e0022c4d1b13d41f81c614f2a"
+    sha256 ventura:        "c0438c0eb753283effd90008a2e4d980f0102dd098fd26c32ee2bc6c422695b3"
+    sha256 monterey:       "2c1c3e16266e772f2cdb4bf59247c7ff921f3394ab031528d719078897f3b997"
+    sha256 big_sur:        "96265a286a5ee0db13a704dc2bf09417a694797a1b3362b90aa4a24def42e1b3"
+    sha256 x86_64_linux:   "062720289937674dadc9f42fcc739292e89e54b0189820f2a8897e969672971c"
   end
 
   depends_on "desktop-file-utils" => :build
