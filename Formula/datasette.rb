@@ -8,14 +8,13 @@ class Datasette < Formula
   head "https://github.com/simonw/datasette.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f2b10742f4985771d9449d55e9ec9a099bffe4cc4094007007dab597cf6ebf08"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "691684c030840f100cbae8c822d1aee6422cc7b93c6ee80c5758087c4a70c468"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "511725857f7e7641ddcf569116418fe0f5d195e1a26041f76648eaa3eb61e2fb"
-    sha256 cellar: :any_skip_relocation, ventura:        "4122d6337ad8455b9eaf18f5384bc0376841484d214baea8e9b6d24db1893ff7"
-    sha256 cellar: :any_skip_relocation, monterey:       "91be8bb2e11ef17db0022494b454d18ad2595e7cd00f8a6ab130ba843ed7bd1d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8772458cb90ef246c1d87a437d147c6f152d5c2d7b94ecc51fd767f1b00cc649"
-    sha256 cellar: :any_skip_relocation, catalina:       "ae72fffe1ea51434c819da75308f42eea2c5b536838acf8961c6801d23354b03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2f0811fe9a2668ce9372777262a61e7622baca2f4abcaec4e85df9b3ebca985"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "beece201de3226f2f9afb7f66fb0e12f46ce5230512640a760344889f55ff4ac"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0e56c576be002ff423418348777d435a1f7987c30873a0468310b8a2a7fbd6ff"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1f6f0ecfd01dec055bae0632eec859ebcfe0535802398efcdd26fa0db66ca2f6"
+    sha256 cellar: :any_skip_relocation, ventura:        "9dffe86222a0afa9447fc1813075123d5f5d1c05a0bad6a43419882eb955de62"
+    sha256 cellar: :any_skip_relocation, monterey:       "6e6e018f664c57c81938eb8c7be180babd1b07dff6a98d9315f47da7cd14d95e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1bb4596c3691c435c61d65f6cce32d8cf367562ca2fd4b87f58c0927b54b1d46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c2e18ac00b0c26323113dd3dce346d7df962ea262b49ae60342b79b3ebf0834"
   end
 
   depends_on "python-typing-extensions"
