@@ -1,8 +1,9 @@
 class Ghex < Formula
   desc "GNOME hex editor"
   homepage "https://wiki.gnome.org/Apps/Ghex"
-  url "https://download.gnome.org/sources/ghex/42/ghex-42.3.tar.xz"
-  sha256 "add40f8ab24921db30d27be58f00273201977d87fdc8d79eceadfa8b0e354def"
+  url "https://download.gnome.org/sources/ghex/43/ghex-43.0.tar.xz"
+  sha256 "866c0622c66fdb5ad2a475e9cfcccb219a1c6431f009acb2291d43f2140b147e"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 arm64_ventura:  "d53e8c59361907d9b0348de0278366f8ab32629e02b0c08514f29038772ab12f"
@@ -22,12 +23,18 @@ class Ghex < Formula
   depends_on "pkg-config" => :build
   depends_on "gtk4"
   depends_on "hicolor-icon-theme"
+  depends_on "libadwaita"
 
   def install
+    args = std_meson_args + %W[
+      -Dmmap-buffer-backend=#{OS.linux?}
+      -Ddirect-buffer-backend=#{OS.linux?}
+    ]
+
     # ensure that we don't run the meson post install script
     ENV["DESTDIR"] = "/"
 
-    system "meson", *std_meson_args, "build", "-Dmmap-buffer-backend=#{OS.linux?}"
+    system "meson", *args, "build"
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
