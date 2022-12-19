@@ -6,7 +6,7 @@ class Skinny < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "136e223ff9658c5d185c911eb0e8a130bb5931814d7a788dd5bfa4f9513d37a7"
+    sha256 cellar: :any_skip_relocation, all: "97cc1387283607f82657290b059c45d22018c2b2a93abe4ce14cf771af450def"
   end
 
   depends_on "openjdk"
