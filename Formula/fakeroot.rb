@@ -6,14 +6,13 @@ class Fakeroot < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "52c8c0df164c33131f151529ad3abae12c40afb58c25f3b2118e6003289c6b22"
-    sha256 cellar: :any,                 arm64_monterey: "7e0e4ef8f43b55ea24a0e11b436b96263af4ab80c8a90b39d1e4d479633a31fb"
-    sha256 cellar: :any,                 arm64_big_sur:  "38e3a802475e1ca4a146a7144f84e94925257331761bf841218e557f0556f988"
-    sha256 cellar: :any,                 ventura:        "6e061df8a3faff41f686699d9961e598c1715a5a9ee75a41aca5dfd1ca2a2577"
-    sha256 cellar: :any,                 monterey:       "2522875d0b65d593eebbeecf71e5ed9fe38e3a911abce60db45bbfd1ec5a139c"
-    sha256 cellar: :any,                 big_sur:        "8e0d19fe2fa84595407862beca5457a1b258d48eda689bd1cb0ca84fb966f7f1"
-    sha256 cellar: :any,                 catalina:       "ec8a523ac84e27ebb81e3cbc41b619fb8fb7cf4858c6d2ada62c2b39a3461885"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0fe66fdf8d3f3c8207fde2c98b5af0562101a38ab164b0a85ae803d7c382abc7"
+    sha256 cellar: :any,                 arm64_ventura:  "aedceb09368601f72b1faf40c4d99500666a0f56f8790517232062a8e9c71998"
+    sha256 cellar: :any,                 arm64_monterey: "be2bc267bd36107015417f9bc50d00f4f588719f592ecc90b8e1a022d02c98a2"
+    sha256 cellar: :any,                 arm64_big_sur:  "f7e804656c5fef0d0b3608694c09a422b92e640a808b2757eca874ac39781932"
+    sha256 cellar: :any,                 ventura:        "f9b9aa5ef732b108c4061ec856e086352b37eee26e8cb7fe4e323ebf18a9a565"
+    sha256 cellar: :any,                 monterey:       "433eaab3292da30f2efe0ccdd98e329a787366b33b3b72bef7426d7bbb7868c5"
+    sha256 cellar: :any,                 big_sur:        "1a7020f1cd33cdb0a48e3af18486ec91eb85b938953e21b37808e29150a12b15"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2c0c27baa67937807bf7c6a141443930a76cd51bfb2b757f5d5d9582c1653a92"
   end
 
   # Needed to apply patches below. Remove when no longer needed.
