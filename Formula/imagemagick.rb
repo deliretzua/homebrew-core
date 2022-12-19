@@ -12,13 +12,13 @@ class Imagemagick < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "240727a657723cd988aed4274b6585d9d79b462d1b754da1a5b5f4876adc4bc2"
-    sha256 arm64_monterey: "ebb124e9c2127ef2b69c70c6775bd70fe8707932fabab1827e3ce710ff3e1c5f"
-    sha256 arm64_big_sur:  "e649d2a4db2f54f1303a58b4a79403d0b32a86d6f7537e352997d176494fb96b"
-    sha256 ventura:        "3d1349e66c3c73519bbc0ea661b54344805272f1325113005dab18b443de797c"
-    sha256 monterey:       "3821342e940ee5fcec98dc8881028fde5db42bdab1f3d1af0fb785d012f24c9d"
-    sha256 big_sur:        "732dcb4dee994b169e023da0534cffbb461efd8b7c1e86b5c9b3dc6125da0122"
-    sha256 x86_64_linux:   "6b017b7e19278d97b50767d45e1bb363a550fe05638b603fb51cf5b65c974c97"
+    sha256 arm64_ventura:  "6bf5d48b2c7ff9bee03e432bbe6eff9d8b0e12364e0936a97db445fa6a176c60"
+    sha256 arm64_monterey: "01571a033aaf10e38458c26160d0ddd51dc642e657b9b96e9783539b381706e5"
+    sha256 arm64_big_sur:  "374a643cd50f435a57d22428bc73dbe5a4725d743df777008b6dae773de0514b"
+    sha256 ventura:        "42573bae3687bbecffaedcda843a1653b63d15760960d63c6b2a13a08b6534cf"
+    sha256 monterey:       "d886aedda4cb79363cb01da7dcd57e858ab6db0e683bd49f9d42bb51e01f7715"
+    sha256 big_sur:        "a8f670ae36cc1dd1501357ea7b23e607f1203c5c3590457fc9e2a30f6fce7f49"
+    sha256 x86_64_linux:   "95f7e20891ac26df6bdad65e33b508ab60883d4ba71b4f1e87dfcdcd6df55a71"
   end
 
   depends_on "pkg-config" => :build
