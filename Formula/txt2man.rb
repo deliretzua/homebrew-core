@@ -5,6 +5,16 @@ class Txt2man < Formula
   sha256 "4d9b1bfa2b7a5265b4e5cb3aebc1078323b029aa961b6836d8f96aba6a9e434d"
   license "GPL-2.0-or-later"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "665ae11624c51ed123faad382b4af7256b5e055c235d54f1d063e58589380909"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "665ae11624c51ed123faad382b4af7256b5e055c235d54f1d063e58589380909"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "665ae11624c51ed123faad382b4af7256b5e055c235d54f1d063e58589380909"
+    sha256 cellar: :any_skip_relocation, ventura:        "bf830d1619712538f9458fdd8c6e201d883297ee6e7210dd9e8d977318de216e"
+    sha256 cellar: :any_skip_relocation, monterey:       "bf830d1619712538f9458fdd8c6e201d883297ee6e7210dd9e8d977318de216e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bf830d1619712538f9458fdd8c6e201d883297ee6e7210dd9e8d977318de216e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "665ae11624c51ed123faad382b4af7256b5e055c235d54f1d063e58589380909"
+  end
+
   depends_on "gawk"
 
   def install
