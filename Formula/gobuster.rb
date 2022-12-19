@@ -6,14 +6,13 @@ class Gobuster < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "92da28061caa8936eb9d242428228c97c7f712bbdf1abb19565fde0e986bfd6e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "81295a263139fc40b9791f101fb2517a8e722064f2045bbfecfa7897d7311387"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ffde25408cd305d7db6f7734f52929a067e0892ef8cdacc17f179c6c9955ca23"
-    sha256 cellar: :any_skip_relocation, ventura:        "dcfddb3b433139fe9dbd8f5d7961cf689dbece7fb99ff2e85b3698012ab583ef"
-    sha256 cellar: :any_skip_relocation, monterey:       "e51317791fd1ffd91982426048f21de3d833df93e649c9b128d054c06b7b91c2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6965806410d4a9cab1fd2bf35de0d5e8de6256676ad7b34e87073beecb82f334"
-    sha256 cellar: :any_skip_relocation, catalina:       "34dcf644b5a042c86febc6cf259bb98ba35a9e90a4c40532f780f33438d637a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a50198993283a76c683a178a300a44866c323aec4cca69f15dce201c36b6ce8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c9820b56a0e45217b65115db2e25751c10163c7bce02ca3f055b7096310724b3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "074630eaef1913ff05aa15d4d6a76b746398c65edbafe5d41beb9c700f8dd869"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "df458e7067fc3dec8b116fe45eb236b7064a2f4eb33e2d23544c29a1b472fde0"
+    sha256 cellar: :any_skip_relocation, ventura:        "07df0ac727553adc8718705fa04c6b6116521324f03da1cc92d6260381875603"
+    sha256 cellar: :any_skip_relocation, monterey:       "db09e7d44a20593a6dc396f18597728aa3acd854c9284389a2ec141922b1fc30"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a784447973cce16026bd9aa06c6136f7541aa29f74100b1888fac7f26664fd49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8dde5b5a125df983e8b0fd80f2a6918ab8554a6a576a4e832bfd3fcd3718f1d1"
   end
 
   depends_on "go" => :build
