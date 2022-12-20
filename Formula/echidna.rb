@@ -1,8 +1,8 @@
 class Echidna < Formula
   desc "Ethereum smart contract fuzzer"
   homepage "https://github.com/crytic/echidna"
-  url "https://github.com/crytic/echidna/archive/refs/tags/v2.0.5.tar.gz"
-  sha256 "711672269d93e024313cc74c16f0c33f45b432e71a9087ef9e65d5ac0440968e"
+  url "https://github.com/crytic/echidna/archive/refs/tags/v2.1.0.tar.gz"
+  sha256 "c8e71f2b5900f019c8c4b81bb19626b486584fe63d2f9cdfad6ddd2a664a1d4c"
   license "AGPL-3.0-only"
   head "https://github.com/crytic/echidna.git", branch: "master"
 
@@ -15,38 +15,18 @@ class Echidna < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b3d9b40e7b1aadd4787cd06b97f46eda3c8a37b4b1c961dd09aaed72921d1f0"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
   depends_on "ghc@9.2" => :build
   depends_on "haskell-stack" => :build
-  depends_on "libtool" => :build
 
   depends_on "crytic-compile"
   depends_on "libff"
+  depends_on "secp256k1"
   depends_on "slither-analyzer"
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
-  resource "secp256k1" do
-    # this is the revision used to build upstream, see echidna/.github/scripts/install-libsecp256k1.sh
-    url "https://github.com/bitcoin-core/secp256k1/archive/1086fda4c1975d0cad8d3cad96794a64ec12dca4.tar.gz"
-    sha256 "ce97b9ff2c7add56ce9d165f05d24517faf73d17bd68a12459a32f84310af04f"
-  end
-
   def install
     ENV.cxx11
-
-    resource("secp256k1").stage do
-      system "./autogen.sh"
-      system "./configure", *std_configure_args,
-                            "--disable-silent-rules",
-                            "--prefix=#{libexec}",
-                            "--libdir=#{libexec}/lib",
-                            "--enable-module-recovery",
-                            "--with-bignum=no",
-                            "--with-pic"
-      system "make", "install"
-    end
 
     # Let `stack` handle its own parallelization
     jobs = ENV.make_jobs
@@ -58,9 +38,8 @@ class Echidna < Formula
       "--skip-ghc-check",
       "--extra-include-dirs=#{Formula["libff"].include}",
       "--extra-lib-dirs=#{Formula["libff"].lib}",
-      "--extra-include-dirs=#{libexec}/include",
-      "--extra-lib-dirs=#{libexec}/lib",
-      "--ghc-options=-optl-Wl,-rpath,#{libexec}/lib",
+      "--extra-include-dirs=#{Formula["secp256k1"].include}",
+      "--extra-lib-dirs=#{Formula["secp256k1"].lib}",
       "--flag=echidna:-static",
     ]
 
@@ -84,7 +63,7 @@ class Echidna < Formula
 
     with_env(SOLC_VERSION: "0.7.0") do
       assert_match(/echidna_true:(\s+)passed!/,
-                   shell_output("#{bin}/echidna-test --format text #{testpath}/test.sol"))
+                   shell_output("#{bin}/echidna --format text #{testpath}/test.sol"))
     end
   end
 end
