@@ -8,13 +8,12 @@ class Rubyfmt < Formula
   head "https://github.com/penelopezone/rubyfmt.git", branch: "trunk"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2f218d7b1b26f6a4818d1d398f103b68a1d6fe75fca7077e8781f45033cf3d4b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d839898bf5809b19cb31bed03f174c2d335193daf0ae3f7eba722d3c075df6d9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fc069ca891bc56b61dc47a060329a14376baf59fd3f207aa50e831555f28aa86"
-    sha256 cellar: :any_skip_relocation, monterey:       "ef4a822468573167fe1cea652bdddd42d9c61547f639fe2518d672e88bf37e55"
-    sha256 cellar: :any_skip_relocation, big_sur:        "869db78a409c39560aff03c6e54c99c344c35d6dd1d43705ba2ac086f53e0af3"
-    sha256 cellar: :any_skip_relocation, catalina:       "7206819d3053e1d6dbe1b194f5eeb1550a6b88f7c899ec0b533a7aed93ac6bc9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d512052245d378b1d6b9fc9cc04783bd26cbb70980cc530f81f7e4f36c23d80f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ffe2557b460a78c161959cc03999ad288d33ade3e4f73f412fd24b2f465b7601"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0dfe25a13c4da055ae4ff958e30e308df845672985bf5b22ff659304716f556f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "09a2ee947086e1b2b8bd58c077a23279e13439ec1e5ba915ebaaf78bb1368da7"
+    sha256 cellar: :any_skip_relocation, monterey:       "e3c7a4b275561ff64c5df8c0bd1c829f8366ed9d943e45c75e8c716ea2a77bd9"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4cc3b3a8c815a97fb043ddccbd6af3686dee3abfa863b64f7cc8f89c1c772aed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb93fe3e235c3b4e177e7287e1a0aef59f547ff2100f28ee62ae51534e6c0260"
   end
 
   depends_on "autoconf" => :build
