@@ -6,15 +6,8 @@ class Docutils < Formula
   license all_of: [:public_domain, "BSD-2-Clause", "GPL-3.0-or-later", "Python-2.0"]
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "68d49b7adbd286d79e538b1d139fccbd16d860fb2711409e9058d53d8f5b456e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "68d49b7adbd286d79e538b1d139fccbd16d860fb2711409e9058d53d8f5b456e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "68d49b7adbd286d79e538b1d139fccbd16d860fb2711409e9058d53d8f5b456e"
-    sha256 cellar: :any_skip_relocation, ventura:        "63d91b072dde1c302435f1c6eea482d3a10cd83d109d2dd12adf192de28ca55f"
-    sha256 cellar: :any_skip_relocation, monterey:       "63d91b072dde1c302435f1c6eea482d3a10cd83d109d2dd12adf192de28ca55f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "63d91b072dde1c302435f1c6eea482d3a10cd83d109d2dd12adf192de28ca55f"
-    sha256 cellar: :any_skip_relocation, catalina:       "63d91b072dde1c302435f1c6eea482d3a10cd83d109d2dd12adf192de28ca55f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "63d91b072dde1c302435f1c6eea482d3a10cd83d109d2dd12adf192de28ca55f"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "137618cfdeedcb9cdb104c8ac7ba4e17d1f08dafc0ebabdddfe6f18dde061793"
   end
 
   depends_on "python@3.11"
