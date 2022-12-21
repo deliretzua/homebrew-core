@@ -2,8 +2,8 @@ class Kubekey < Formula
   desc "Installer for Kubernetes and / or KubeSphere, and related cloud-native add-ons"
   homepage "https://kubesphere.io"
   url "https://github.com/kubesphere/kubekey.git",
-      tag:      "v3.0.4",
-      revision: "f34bf693b4c1770a9fd51c58b5c1ad85e9664f95"
+      tag:      "v3.0.5",
+      revision: "5efdd04e3e4976f3a33081dadef8d4beb1368905"
   license "Apache-2.0"
   head "https://github.com/kubesphere/kubekey.git", branch: "master"
 
@@ -27,16 +27,18 @@ class Kubekey < Formula
   end
 
   def install
+    tags = "exclude_graphdriver_devicemapper exclude_graphdriver_btrfs containers_image_openpgp"
+    project = "github.com/kubesphere/kubekey/v3"
     ldflags = %W[
       -s -w
-      -X github.com/kubesphere/kubekey/version.gitMajor=#{version.major}
-      -X github.com/kubesphere/kubekey/version.gitMinor=#{version.minor}
-      -X github.com/kubesphere/kubekey/version.gitVersion=v#{version}
-      -X github.com/kubesphere/kubekey/version.gitCommit=#{Utils.git_head}
-      -X github.com/kubesphere/kubekey/version.gitTreeState=clean
-      -X github.com/kubesphere/kubekey/version.buildDate=#{time.iso8601}
+      -X #{project}/version.gitMajor=#{version.major}
+      -X #{project}/version.gitMinor=#{version.minor}
+      -X #{project}/version.gitVersion=v#{version}
+      -X #{project}/version.gitCommit=#{Utils.git_head}
+      -X #{project}/version.gitTreeState=clean
+      -X #{project}/version.buildDate=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags, output: bin/"kk"), "./cmd/kk"
+    system "go", "build", *std_go_args(ldflags: ldflags, output: bin/"kk"), "-tags", tags, "./cmd/kk"
 
     generate_completions_from_executable(bin/"kk", "completion", "--type", shells: [:bash, :zsh], base_name: "kk")
   end
