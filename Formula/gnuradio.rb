@@ -3,10 +3,9 @@ class Gnuradio < Formula
 
   desc "SDK for signal processing blocks to implement software radios"
   homepage "https://gnuradio.org/"
-  url "https://github.com/gnuradio/gnuradio/archive/refs/tags/v3.10.4.0.tar.gz"
-  sha256 "c6b9f59447a842559b00b3a67b4ca1186e9adb8db742b25400507fedc747f2bd"
+  url "https://github.com/gnuradio/gnuradio/archive/refs/tags/v3.10.5.0.tar.gz"
+  sha256 "04aae0c45e55c8fcaf99829d92db102395c7e10a7ad9910533694806d5ae121a"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://github.com/gnuradio/gnuradio.git", branch: "main"
 
   livecheck do
@@ -73,13 +72,13 @@ class Gnuradio < Formula
   end
 
   resource "Mako" do
-    url "https://files.pythonhosted.org/packages/6d/f2/8ad2ec3d531c97c4071572a4104e00095300e278a7449511bee197ca22c9/Mako-1.2.2.tar.gz"
-    sha256 "3724869b363ba630a272a5f89f68c070352137b8fd1757650017b7e06fda163f"
+    url "https://files.pythonhosted.org/packages/05/5f/2ba6e026d33a0e6ddc1dddf9958677f76f5f80c236bd65309d280b166d3e/Mako-1.2.4.tar.gz"
+    sha256 "d60a3903dc3bb01a18ad6a89cdbe2e4eadc69c0bc8ef1e3773ba53d44c3f7a34"
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/df/9e/d1a7217f69310c1db8fdf8ab396229f55a699ce34a203691794c5d1cad0c/packaging-21.3.tar.gz"
-    sha256 "dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb"
+    url "https://files.pythonhosted.org/packages/6b/f7/c240d7654ddd2d2f3f328d8468d4f1f876865f6b9038b146bec0a6737c65/packaging-22.0.tar.gz"
+    sha256 "2198ec20bd4c017b8f9717e00f0c8714076fc2fd93816750ab48e2c41de2cfd3"
   end
 
   resource "markupsafe" do
@@ -92,19 +91,6 @@ class Gnuradio < Formula
     url "https://github.com/CastXML/pygccxml/archive/refs/tags/v2.2.1.tar.gz"
     sha256 "9815a12e3bf6b83b2e9d8c88335fb3fa0e2b4067d7fbaaed09c3bf26c6206cc7"
   end
-
-  # Fix build with fmt 9+
-  # https://github.com/gnuradio/gnuradio/pull/6053
-  patch do
-    url "https://github.com/gnuradio/gnuradio/commit/e63ee41fd455cdd39ae983c258d8632c3ea57fc6.patch?full_index=1"
-    sha256 "be4373f13ffe8ae8ddc7216eb2b7ddb436b7be345cc0e108ae60b5010935a859"
-  end
-
-  # Fix missing includes. Fixed upstream by:
-  # https://github.com/gnuradio/gnuradio/pull/6188
-  # https://github.com/gnuradio/gnuradio/commit/463c3477549b26b32d9b73eef30044e97c4eee64
-  # Remove with next release.
-  patch :DATA
 
   def install
     python = "python3.10"
@@ -248,18 +234,3 @@ class Gnuradio < Formula
     system Formula["python@3.10"].opt_bin/"python3.10", testpath/"test.py"
   end
 end
-__END__
-diff --git a/gr-blocks/include/gnuradio/blocks/blockinterleaving.h b/gr-blocks/include/gnuradio/blocks/blockinterleaving.h
-index 9d4e0f2..f6b8bc6 100644
---- a/gr-blocks/include/gnuradio/blocks/blockinterleaving.h
-+++ b/gr-blocks/include/gnuradio/blocks/blockinterleaving.h
-@@ -12,7 +12,8 @@
- #define INCLUDED_GR_BLOCKS_BLOCKINTERLEAVING_H
-
- #include <gnuradio/blocks/api.h>
--
-+#include <cstddef>
-+#include <vector>
-
- namespace gr {
- namespace blocks {
