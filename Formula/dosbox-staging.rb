@@ -1,8 +1,8 @@
 class DosboxStaging < Formula
   desc "Modernized DOSBox soft-fork"
   homepage "https://dosbox-staging.github.io/"
-  url "https://github.com/dosbox-staging/dosbox-staging/archive/v0.79.1.tar.gz"
-  sha256 "43f23fd0a5cff55e06a3ba2be8403f872ae47423f3bb4f823301eaae8a39ac2f"
+  url "https://github.com/dosbox-staging/dosbox-staging/archive/v0.80.0.tar.gz"
+  sha256 "d4f6a4517402fba9bf81596a591e119062d26c7411c791eb0157cc6c89dfacdf"
   license "GPL-2.0-or-later"
   head "https://github.com/dosbox-staging/dosbox-staging.git", branch: "main"
 
@@ -35,6 +35,7 @@ class DosboxStaging < Formula
   depends_on "mt32emu"
   depends_on "opusfile"
   depends_on "sdl2"
+  depends_on "sdl2_image"
   depends_on "sdl2_net"
   depends_on "speexdsp"
   uses_from_macos "zlib"
