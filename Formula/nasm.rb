@@ -1,8 +1,8 @@
 class Nasm < Formula
   desc "Netwide Assembler (NASM) is an 80x86 assembler"
   homepage "https://www.nasm.us/"
-  url "https://www.nasm.us/pub/nasm/releasebuilds/2.15.05/nasm-2.15.05.tar.xz"
-  sha256 "3caf6729c1073bf96629b57cee31eeb54f4f8129b01902c73428836550b30a3f"
+  url "https://www.nasm.us/pub/nasm/releasebuilds/2.16/nasm-2.16.tar.xz"
+  sha256 "f05e2dc04bdb075487207d775770e9e508e250e63da8bf6c769976d66dd55249"
   license "BSD-2-Clause"
 
   livecheck do
@@ -35,8 +35,7 @@ class Nasm < Formula
     system "./autogen.sh" if build.head?
     system "./configure", "--prefix=#{prefix}"
     system "make", "manpages" if build.head?
-    system "make", "rdf"
-    system "make", "install", "install_rdf"
+    system "make", "install"
   end
 
   test do
