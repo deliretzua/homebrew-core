@@ -25,7 +25,7 @@ class Mimirtool < Formula
   depends_on "go" => :build
 
   def install
-    system "make", "BUILD_IN_CONTAINER=false", "cmd/mimirtool/mimirtool"
+    system "make", "BUILD_IN_CONTAINER=false", "GENERATE_FILES=false", "cmd/mimirtool/mimirtool"
     bin.install "cmd/mimirtool/mimirtool"
   end
 
