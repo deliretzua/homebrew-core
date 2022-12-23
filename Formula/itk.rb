@@ -1,10 +1,9 @@
 class Itk < Formula
   desc "Insight Toolkit is a toolkit for performing registration and segmentation"
   homepage "https://itk.org"
-  url "https://github.com/InsightSoftwareConsortium/ITK/releases/download/v5.2.1/InsightToolkit-5.2.1.tar.gz"
-  sha256 "192d41bcdd258273d88069094f98c61c38693553fd751b54f8cda308439555db"
+  url "https://github.com/InsightSoftwareConsortium/ITK/releases/download/v5.3.0/InsightToolkit-5.3.0.tar.gz"
+  sha256 "57a4471133dc8f76bde3d6eb45285c440bd40d113428884a1487472b7b71e383"
   license "Apache-2.0"
-  revision 4
   head "https://github.com/InsightSoftwareConsortium/ITK.git", branch: "master"
 
   livecheck do
@@ -67,7 +66,9 @@ class Itk < Formula
       -DModule_ITKVtkGlue=ON
       -DModule_SCIFIO=ON
     ]
-    args << "-DITK_USE_GPU=ON" if OS.mac?
+    # Cannot compile on macOS with this arg
+    # Upstream issue: https://github.com/InsightSoftwareConsortium/ITK/issues/3821
+    # args << "-DITK_USE_GPU=ON" if OS.mac?
 
     # Avoid references to the Homebrew shims directory
     inreplace "Modules/Core/Common/src/CMakeLists.txt" do |s|
@@ -104,9 +105,9 @@ class Itk < Formula
 
     v = version.major_minor
     # Build step
-    system ENV.cxx, "-std=c++11", "-isystem", "#{include}/ITK-#{v}", "-o", "test.cxx.o", "-c", "test.cxx"
+    system ENV.cxx, "-std=c++14", "-isystem", "#{include}/ITK-#{v}", "-o", "test.cxx.o", "-c", "test.cxx"
     # Linking step
-    system ENV.cxx, "-std=c++11", "test.cxx.o", "-o", "test",
+    system ENV.cxx, "-std=c++14", "test.cxx.o", "-o", "test",
                     lib/shared_library("libITKCommon-#{v}", 1),
                     lib/shared_library("libITKVNLInstantiation-#{v}", 1),
                     lib/shared_library("libitkvnl_algo-#{v}", 1),
