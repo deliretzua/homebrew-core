@@ -1,9 +1,9 @@
 class Inform6 < Formula
   desc "Design system for interactive fiction"
   homepage "https://inform-fiction.org/inform6.html"
-  url "https://ifarchive.org/if-archive/infocom/compilers/inform6/source/inform-6.36-r4.tar.gz"
-  version "6.36-r4"
-  sha256 "9becbad0cc737e993a5fc969b9ee9689781e3884658d52b17db68dad55010f2d"
+  url "https://ifarchive.org/if-archive/infocom/compilers/inform6/source/inform-6.41-r2.tar.gz"
+  version "6.41-r2"
+  sha256 "a6043b2df82173474635dcbcccfe510cdb2e1ef24be8abb9a8b0e46cd8a5f6e0"
   license "Artistic-2.0"
   head "https://gitlab.com/DavidGriffith/inform6unix.git", branch: "master"
 
@@ -19,6 +19,13 @@ class Inform6 < Formula
   resource "homebrew-test_resource" do
     url "https://inform-fiction.org/examples/Adventureland/Adventureland.inf"
     sha256 "3961388ff00b5dfd1ccc1bb0d2a5c01a44af99bdcf763868979fa43ba3393ae7"
+  end
+
+  # patch Makefile to make it portable
+  # upstream PR ref, https://gitlab.com/DavidGriffith/inform6unix/-/merge_requests/24
+  patch do
+    url "https://gitlab.com/DavidGriffith/inform6unix/-/commit/ba179ca1.diff"
+    sha256 "05b6027009d4f936c503ef25397c3f106d16c7dad3585e926f277dbbda54e893"
   end
 
   def install
