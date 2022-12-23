@@ -1,8 +1,8 @@
 class BareosClient < Formula
   desc "Client for Bareos (Backup Archiving REcovery Open Sourced)"
   homepage "https://www.bareos.org/"
-  url "https://github.com/bareos/bareos/archive/Release/21.1.6.tar.gz"
-  sha256 "da883c7d8ded422dfc8fd9ab8467c3d79faf0d9b367328de7860ab85e1507172"
+  url "https://github.com/bareos/bareos/archive/Release/22.0.0.tar.gz"
+  sha256 "65b2f0d2bcb8ddf82a4a611c1d272dc5921f9f610ba3df9d9fdaf376b4920c61"
   license "AGPL-3.0-only"
 
   livecheck do
@@ -39,10 +39,14 @@ class BareosClient < Formula
   conflicts_with "bacula-fd", because: "both install a `bconsole` executable"
 
   def install
-    # Work around Linux build failure by disabling warning:
+    # Work around Linux build failure by disabling warnings:
     # lmdb/mdb.c:2282:13: error: variable 'rc' set but not used [-Werror=unused-but-set-variable]
-    # TODO: Try to remove in the next release which has various compiler warning changes
-    ENV.append_to_cflags "-Wno-unused-but-set-variable" if OS.linux?
+    # fastlzlib.c:512:63: error: unused parameter ‘output_length’ [-Werror=unused-parameter]
+    # Upstream issue: https://bugs.bareos.org/view.php?id=1504
+    if OS.linux?
+      ENV.append_to_cflags "-Wno-unused-but-set-variable"
+      ENV.append_to_cflags "-Wno-unused-parameter"
+    end
 
     # Work around hardcoded paths to /usr/local Homebrew installation,
     # forced static linkage on macOS, and openssl formula alias usage.
@@ -101,7 +105,7 @@ class BareosClient < Formula
 
   test do
     # Check if bareos-fd starts at all.
-    assert_match version.to_s, shell_output("#{sbin}/bareos-fd -? 2>&1", 1)
+    assert_match version.to_s, shell_output("#{sbin}/bareos-fd -? 2>&1")
     # Check if the configuration is valid.
     system sbin/"bareos-fd", "-t"
   end
