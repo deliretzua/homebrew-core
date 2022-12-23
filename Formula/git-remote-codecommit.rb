@@ -9,15 +9,14 @@ class GitRemoteCodecommit < Formula
   head "https://github.com/aws/git-remote-codecommit.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aa3babcfd3c1322c57600ab40cf5f231c466c4b4efe40e789e5900182469681a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7a3e4159b111df2c478774b19092c6c526200abd7b3015097a8f0cb5e7af8673"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ced97705990d50c77851badbba049b5772c6c23d259bcc3ac3e36ca2d58b7b75"
-    sha256 cellar: :any_skip_relocation, ventura:        "c1cf2b611bbca3623840722e32c300fbd43bb8b66578312aef9e0d83e780c767"
-    sha256 cellar: :any_skip_relocation, monterey:       "a700c8e7bfa15993e44e389aa082981432cb2630b6a0fc2ee5ad7948ee8d1040"
-    sha256 cellar: :any_skip_relocation, big_sur:        "50d82f4816304ef6fd7a48399fe5019ca8c7eb85e9287c52cb23bfe5881ac017"
-    sha256 cellar: :any_skip_relocation, catalina:       "01f8a1c497bf2aa29a0bdbcf97ca326338ffe7a956dd0e2a697c3384f5ef0c2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a00a72c0b27c905f7d2bd830dc6cb4feff9aacbbccc8039c9766943c4ca74ecf"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "43ef3adad3daaf8fd88f1a1fb349e2ae31bfe525201412c3291e775a19d84966"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e9eb04b1e5bcb3bb3865616151c0f1623bff6a2290947505671ba5a302bf6927"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "062a914e87f8ba41aa676d3a46b20823f03f6d5f350ddd0c72c128606051d7e4"
+    sha256 cellar: :any_skip_relocation, ventura:        "5a990f540b94844cacfe46f88b39b3c80f99a378660560f6aab67e5e32f2072f"
+    sha256 cellar: :any_skip_relocation, monterey:       "4e26950dfc93111777c733a7c8ffaf48240286b37dab08e97c8a91d1d9275607"
+    sha256 cellar: :any_skip_relocation, big_sur:        "633630a3d3df1fb7d7f4e99e89b06cbbbb45413b314725f17156c6eb058f30dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "06b9786d4c53d05b8cf19dae7640325ff5117a4650d986736209e778527343f2"
   end
 
   depends_on "python@3.11"
