@@ -4,7 +4,7 @@ class Xplanet < Formula
   url "https://downloads.sourceforge.net/project/xplanet/xplanet/1.3.1/xplanet-1.3.1.tar.gz"
   sha256 "4380d570a8bf27b81fb629c97a636c1673407f4ac4989ce931720078a90aece7"
   license "GPL-2.0-or-later"
-  revision 5
+  revision 6
 
   bottle do
     sha256 arm64_ventura:  "2bb0c0e4ea64c49788e5f0dae512f51d8574ee234bb5e4e60937a4b1be21166f"
