@@ -9,15 +9,13 @@ class Theharvester < Formula
   head "https://github.com/laramies/theHarvester.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fc2f580aadda06fe21bbff1e4d6bdadb3a3e2ce387e3a5d0734d7dcfad7caa9b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5aeb6ebc484b8ec6f6cd8d25b345b7dd61979a3d395ae60ef627a00c65384431"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9b3d55094a7c3c2e0423ac03a8588cb85b04cacfd3edd8364c457abfc0211219"
-    sha256 cellar: :any_skip_relocation, ventura:        "37ee8ce6a72abf21210ee9b3d05768e087be6872a7eef8c834e0db4d8fc91328"
-    sha256 cellar: :any_skip_relocation, monterey:       "16a38f063f78745f63521e10daf3f2a24d7c99ba18f641f999359f5c95823d54"
-    sha256 cellar: :any_skip_relocation, big_sur:        "48843806879452db791a77da4b6ced55cff656b7c5e3af0d27c8a1c6bf905cba"
-    sha256 cellar: :any_skip_relocation, catalina:       "065cdc0a1a0261a6ed952ea8485aab7d5588bc690cab505df932910570ab2942"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "11996c3442077a0cf712a6044643cf4cbdf411163a28ad5c2b73dd4b7b3b6416"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "57d6bff50f538bd546d1dbfd57829f9d9b1275aa0b59a3437780234ab2812a11"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7a91db4a0477a4d3aac674af0167812b3dd23f192cfdcecb14b836c91a9bd66f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "02f4a76b9e85610734023e0495a8160bc0a757c00df52564a5a3dd08ce2e2561"
+    sha256 cellar: :any_skip_relocation, ventura:        "01dea252adb87cbf2c9af3252ec2347772495301cacb9f28e0785581d5b556f3"
+    sha256 cellar: :any_skip_relocation, monterey:       "b4a3c009e5183549db2a5b449478347160e88f73a929fcc785969b742eb4797f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "eb93f073498572a4486fdd30fdd6f93b621c88432017badd2a0ae458fdbbe56b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3385bbe5ef27952aee1aaf312d83fd5b0795da775979b74ae9fe6e9294f5f5b1"
   end
 
   depends_on "maturin" => :build
