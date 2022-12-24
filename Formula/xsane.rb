@@ -5,7 +5,7 @@ class Xsane < Formula
   mirror "https://fossies.org/linux/misc/xsane-0.999.tar.gz"
   sha256 "5782d23e67dc961c81eef13a87b17eb0144cae3d1ffc5cf7e0322da751482b4b"
   license "GPL-2.0-or-later"
-  revision 5
+  revision 6
 
   livecheck do
     url "https://ftp.osuosl.org/pub/blfs/conglomeration/xsane/"
