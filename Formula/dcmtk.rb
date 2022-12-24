@@ -3,6 +3,7 @@ class Dcmtk < Formula
   homepage "https://dicom.offis.de/dcmtk.php.en"
   url "https://dicom.offis.de/download/dcmtk/dcmtk367/dcmtk-3.6.7.tar.gz"
   sha256 "7c58298e3e8d60232ee6fc8408cfadd14463cc11a3c4ca4c59af5988c7e9710a"
+  revision 1
   head "https://git.dcmtk.org/dcmtk.git", branch: "master"
 
   livecheck do
