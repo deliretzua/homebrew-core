@@ -7,6 +7,16 @@ class AnsibleAT6 < Formula
   sha256 "c188f3ac8a8583794aadcff0bea87895ead58c19d6f244cd0c342562706e176c"
   license "GPL-3.0-or-later"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "4eef44d32ee4a9bf33589d86636eba0d32cec5827f601bda54abc9f4b2de5279"
+    sha256 cellar: :any,                 arm64_monterey: "aa37bda45dd7bae690b7be3043f7c1018fe1c8ea39eb3bc8adee4e533bc852df"
+    sha256 cellar: :any,                 arm64_big_sur:  "831da82b09e7673adc5554e423bf7571c954a4a16923fc26075104591026525a"
+    sha256 cellar: :any,                 ventura:        "abe382530dadfa29070b4606b204ad9cfe2842d0e89c2d7cee54ad2d63c71314"
+    sha256 cellar: :any,                 monterey:       "0620043ecc0b1242a0f2b9962226c826f995222a7f274236c8a48a82d038f485"
+    sha256 cellar: :any,                 big_sur:        "4b72dc1b4477a5e28f4875871405617ea4c1e7097acfc48539ff606b1ef5ecd3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4798045e9dd2987d57190c3835c7dd673560b418acbce956148346f4c877ffa"
+  end
+
   keg_only :versioned_formula
 
   # https://docs.ansible.com/ansible/latest/reference_appendices/release_and_maintenance.html#ansible-community-package-release-cycle
