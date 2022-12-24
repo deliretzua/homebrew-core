@@ -4,6 +4,7 @@ class ArgyllCms < Formula
   url "https://www.argyllcms.com/Argyll_V2.3.1_src.zip"
   sha256 "bd0bcf58cec284824b79ff55baa242903ed361e12b1b37e12228679f9754961c"
   license "AGPL-3.0-only"
+  revision 1
 
   livecheck do
     url "https://www.argyllcms.com/downloadsrc.html"
