@@ -11,12 +11,12 @@ class Bazel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9c681b45926e6c115061d65701eca991c966d653d3669c7dcebf7eb70b5a3008"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "32dacfc0977f55dc7d624285389d49e7e9fe73c93b6750aa1d607a4132236550"
-    sha256 cellar: :any_skip_relocation, ventura:        "11bca611276938c6051719027a0172f4a789075c2bf6a12b6349163d173c6232"
-    sha256 cellar: :any_skip_relocation, monterey:       "1793e4750f679dd14b5c8d78ef2e5a067bd09b3266c8c7b7d32d3d1eff91c7ab"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a382200a114a8afae746506c33ca39d476c45916c4426ca55d327c07c4a56d4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "28df3089111654b0e8a243ceb29ed222af77ae9550a425989c8b2db214a5225b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2138a58297acd97702c2f3c76c748b400ace1908b4d2d4dc65efa7998fb828aa"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b795339b954fa2d5a3c190074b8db89a72f13b77f714ac77640db789469d5cd8"
+    sha256 cellar: :any_skip_relocation, ventura:        "2788d278c56c08face7a12ff127ef00b4a66dd106c0c04d449a474bc6e66b3a9"
+    sha256 cellar: :any_skip_relocation, monterey:       "9cd7f67a8945a69ef6c9aa4181c43e344ebc8ee1d229b2e9f878042fa8d16cc5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a6c989d274324b5b7e49f8d934fab52d0361c19c15c00dbeea38d8a36dd84369"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df7d131b0500e2d2acf645d41881f428ffbb777c95ff78f8a3b3f2189b0fd17a"
   end
 
   depends_on "python@3.11" => :build
