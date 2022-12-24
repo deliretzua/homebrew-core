@@ -3,8 +3,8 @@ require "language/node"
 class Lanraragi < Formula
   desc "Web application for archival and reading of manga/doujinshi"
   homepage "https://github.com/Difegue/LANraragi"
-  url "https://github.com/Difegue/LANraragi/archive/v.0.8.7.tar.gz"
-  sha256 "4b0338a1fc0bd6cc64cee38da823e395caa7e61362f60d9ae7c2d07e3cb51da5"
+  url "https://github.com/Difegue/LANraragi/archive/v.0.8.81.tar.gz"
+  sha256 "7f6698c1eeec8f5cd714381d4fdeb73bd6260c30316a59bd7a080a3f77edab3f"
   license "MIT"
   head "https://github.com/Difegue/LANraragi.git", branch: "dev"
 
@@ -37,8 +37,8 @@ class Lanraragi < Formula
 
   resource "libarchive-headers" do
     on_macos do
-      url "https://github.com/apple-oss-distributions/libarchive/archive/refs/tags/libarchive-83.100.2.tar.gz"
-      sha256 "a0228f75792f881bc927196f8b794d0263a019aab741765e54550f75271258aa"
+      url "https://github.com/apple-oss-distributions/libarchive/archive/refs/tags/libarchive-113.tar.gz"
+      sha256 "b422c37cc5f9ec876d927768745423ac3aae2d2a85686bc627b97e22d686930f"
     end
   end
 
