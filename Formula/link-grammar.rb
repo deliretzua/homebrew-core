@@ -12,13 +12,13 @@ class LinkGrammar < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "8b37ba8dd0a9fa572f8b27ac599794944cbbcbf0ff9f285e626f158f4b8949da"
-    sha256 arm64_monterey: "aa20af4221646a75ed55c925c9e31a40dac472ed2c1bac4a8fb47091726b86d5"
-    sha256 arm64_big_sur:  "3ebd29a4f4bc6beeff416c488489e53960a3a56d28c29171d47c3815a939a192"
-    sha256 monterey:       "b3803fc1c5a7f1ddb6273e059d0004fe9a93264df06f353c2f614cc99da62b93"
-    sha256 big_sur:        "c97623baff37808a540fab1bc18cc813950d91efcfa35e49a288a7765d979fb2"
-    sha256 catalina:       "9c1b15d2475130e51dd5db8c7862abd2758ead4df00a95112b8c16ea5392a3d6"
-    sha256 x86_64_linux:   "4196be17d96f458b85b146cfaebe18bd9982f3462e99b83522ebb13cb37691e9"
+    sha256 arm64_ventura:  "bbe9aae38bbabf529620c4ac37e7204362f5d27e1b6e25767409ffba3151d9e9"
+    sha256 arm64_monterey: "ddd1a9a8ea7797f90617343b3f393aa5c7efab9f31aa467be787ed4ddfb618f4"
+    sha256 arm64_big_sur:  "d1dd1f44860b36e49d8173af70979d63c8bcfbec919cc3fd6a07f9aa1e90c52e"
+    sha256 ventura:        "287c1feb30837e9a8fbc976d8aaa6ef303080cb9d9469a621d1437b48f82b381"
+    sha256 monterey:       "1812844bdb12bc8dc5d4c36dacc9f3eba171e137b68da2dd7ce9b660389d067c"
+    sha256 big_sur:        "342952810d5bd827b80b2f34a66c1ccdacf8b7ad8b1900d1273d69fe2cf25b40"
+    sha256 x86_64_linux:   "3cbd843bee05f489bc89d4a410ce33e31ae2cd3845409b77c73a8837cf84294a"
   end
 
   depends_on "ant" => :build
