@@ -1,8 +1,9 @@
 class GitTrim < Formula
   desc "Trim your git remote tracking branches that are merged or gone"
   homepage "https://github.com/foriequal0/git-trim"
-  url "https://github.com/foriequal0/git-trim/archive/v0.4.2.tar.gz"
-  sha256 "0f728c7f49cc8ffb0c485547a114c94bdebd7eead9466b1b43f486ef583a3d73"
+  url "https://github.com/foriequal0/git-trim.git",
+      tag:      "v0.4.3",
+      revision: "65288617a637029573a5c3517abcb95b050ea02b"
   license "MIT"
 
   bottle do
@@ -24,13 +25,6 @@ class GitTrim < Formula
 
   on_linux do
     depends_on "pkg-config" => :build
-  end
-
-  # Patch for OpenSSL 3 compatibility
-  # Upstream PR ref, https://github.com/foriequal0/git-trim/pull/195
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/a67e684/git-trim/openssl-3.diff"
-    sha256 "b54a6ae417e520aefa402155acda892c40c23183a325cf37ac70920b5ad0246c"
   end
 
   def install
