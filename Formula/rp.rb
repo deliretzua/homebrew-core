@@ -7,14 +7,13 @@ class Rp < Formula
   head "https://github.com/0vercl0k/rp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fcbf9fb210132a603c35746444b28de6ca8953ffb3002bbdf7eaefa10c871bd4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e2cc474474f5fe70e41d693e534d8223e60085ab01e905125fc845d6605101b4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fbbff042d70c19351c17402b84281119ca54b0e891e6ac51fbc860bd2420a60d"
-    sha256 cellar: :any_skip_relocation, ventura:        "5cde470fa93797c2c98228c941ae9821b104054f00aaf4437903c52bfedfffcf"
-    sha256 cellar: :any_skip_relocation, monterey:       "b150d2d183c7630055d6ca16e1b8c262d280bc033977b2f78e34200ab814e7a6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3317f6ee6566143a696822292eb36e606ac36c477f38b144091506a2aa917081"
-    sha256 cellar: :any_skip_relocation, catalina:       "b8377b907ca950b7cbade53319faf087cd3afbd6a392d0d706cad3fad4699a9a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "67081b03c03ff06219bfc8eb32c5ac87c5dde0c45d183eb974d14956f0f32e88"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bb1c3d0c682cb2aaff8d2b97fcbfd113d29cdddeb4c8febabda779fbba5ab9ce"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6201785871ec1b8d5a54a5cbd4b8dea9233398e43afc2e55f324a1c6ef8aed3a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "500216c7233512f19e96023bee4004751ae859b0290b221b613dcad28f17c198"
+    sha256 cellar: :any_skip_relocation, ventura:        "a870afc86480f917ccfbcf0e1cf232759d433a0f33a6fd3ec78926ec0e05b50e"
+    sha256 cellar: :any_skip_relocation, monterey:       "aa4b6390399a35780500f8a0883b71d6cb1571832623b8bd857954e94e84ac52"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f26f7baaff9524bf6c6a51d9ffe822df425285a4f86830510ededa36e19805fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f99beaac2c5b4f80eb49b2f79357e73ff5f59f354bb63be29ec0c7a2d887477"
   end
 
   depends_on "cmake" => :build
