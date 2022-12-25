@@ -11,15 +11,13 @@ class XmlToolingC < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8b0f96c66e6f3fab2d33b44228b4690b3b480fe92d19774028f1b63f8e2da1bf"
-    sha256 cellar: :any,                 arm64_monterey: "a04d49dde2d69e17ee4f258abe9a992e43b048fa10f1a8bcfd02c1fc37839a5f"
-    sha256 cellar: :any,                 arm64_big_sur:  "65e021c1f203021118f1ed17a67869077a2ae014774729173010c8095e3b89ec"
-    sha256 cellar: :any,                 ventura:        "7dfecb4b3317f24cf5b5dec21e7fa2856d90f0afd0e49c7247e6714c5c4a38c3"
-    sha256 cellar: :any,                 monterey:       "ebde61320a9596a85561d46b4dae80d0e6e4abc2b3dbf506eff2ec85d82c52fc"
-    sha256 cellar: :any,                 big_sur:        "57c8c16990f589f0e07a7e5d57dd202c4f35b6e66d57bbda66d4d9bc2af6bd33"
-    sha256 cellar: :any,                 catalina:       "859a056b4271610e876b42606d145a0ddc2d79cb94c0470e2ca93cdef38c4e2b"
-    sha256 cellar: :any,                 mojave:         "69d6679f8c610867e03269af38ce56306af656a2e1f7b3bbce30d25085d6ae9a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7cc7b883e123f169a52223df4b1bbf66244b3d3363a29984ef3fde445fd625c0"
+    sha256 cellar: :any,                 arm64_ventura:  "82a7123ec05ff4b0b317de79593dd6357946875f932551e6882857fc3acb9c62"
+    sha256 cellar: :any,                 arm64_monterey: "cbd0a7684e3ad9c36ebb12352e986920f03d26a982a1910c62ed525f9cc71dd8"
+    sha256 cellar: :any,                 arm64_big_sur:  "b1b152e45a1899923a767d20de18720cd215ef6fa5c6e737e80808ae77bdff66"
+    sha256 cellar: :any,                 ventura:        "07f29554ce9fcd13de4e6a65a69e189be4e281c3498b80a9a0fcf75aa4ef8454"
+    sha256 cellar: :any,                 monterey:       "e5674556cd12e57db8a2d9a8781a44bc4a87be4c3b0bfe44a196f0cce65943ea"
+    sha256 cellar: :any,                 big_sur:        "bf5c95c1a510b20f6a1fff57f432100c05fe689452853f9dc6a00b9a89b93016"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5918ac165b0a7bfd4c333e42a37171d913e8379989475d68a60af99ee00013a4"
   end
 
   depends_on "pkg-config" => :build
