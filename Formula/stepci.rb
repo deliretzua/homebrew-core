@@ -7,6 +7,16 @@ class Stepci < Formula
   sha256 "e30ffbac5205ace4aa4bd6dd07a7e659a068c4d7c38255ca0faf3d7eb4b2bdec"
   license "MPL-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1e41ea796ca2e6cae06d78d88a3c164906c7c0a64249e99dbb2090a893b98d80"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1e41ea796ca2e6cae06d78d88a3c164906c7c0a64249e99dbb2090a893b98d80"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1e41ea796ca2e6cae06d78d88a3c164906c7c0a64249e99dbb2090a893b98d80"
+    sha256 cellar: :any_skip_relocation, ventura:        "33aaabc25e3c13545ccd2262d671e030dee0a6851003f000f45044bbf2906fe5"
+    sha256 cellar: :any_skip_relocation, monterey:       "33aaabc25e3c13545ccd2262d671e030dee0a6851003f000f45044bbf2906fe5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "33aaabc25e3c13545ccd2262d671e030dee0a6851003f000f45044bbf2906fe5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e41ea796ca2e6cae06d78d88a3c164906c7c0a64249e99dbb2090a893b98d80"
+  end
+
   depends_on "node"
 
   def install
