@@ -1,8 +1,8 @@
 class Arangodb < Formula
   desc "Multi-Model NoSQL Database"
   homepage "https://www.arangodb.com/"
-  url "https://download.arangodb.com/Source/ArangoDB-3.10.0.tar.bz2"
-  sha256 "48b36216541f9da8ca86ce304a3ea96964da53a324c94c9a229552af70949726"
+  url "https://download.arangodb.com/Source/ArangoDB-3.10.2.tar.bz2"
+  sha256 "bb7824f15e3ab0f6140f1cf5abf9891652326140957e204c23e58f982388a772"
   license "Apache-2.0"
   head "https://github.com/arangodb/arangodb.git", branch: "devel"
 
@@ -24,12 +24,16 @@ class Arangodb < Formula
 
   depends_on "cmake" => :build
   depends_on "go" => :build
-  depends_on "python@3.10" => :build
+  depends_on "python@3.11" => :build
   depends_on macos: :mojave
   depends_on "openssl@1.1"
 
   on_macos do
     depends_on "llvm" => :build
+  end
+
+  on_linux do
+    depends_on "gcc@10" => :build
   end
 
   fails_with :clang do
@@ -40,6 +44,10 @@ class Arangodb < Formula
                                              ^               ~~~~~~~~~~~~~
     EOS
   end
+
+  # https://github.com/arangodb/arangodb/issues/17454
+  # https://github.com/arangodb/arangodb/issues/17454
+  fails_with gcc: "11"
 
   # https://www.arangodb.com/docs/stable/installation-compiling-debian.html
   fails_with :gcc do
