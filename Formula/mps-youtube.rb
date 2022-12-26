@@ -9,14 +9,14 @@ class MpsYoutube < Formula
   revision 12
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "978333f648bbc75f2d95b6b096b0ba21f094d88076f0c148cdeb2ffaf542d3ac"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8836a41e83de7ffe7e9d3f804b67f7b2f6f0581cef0a63a944f01833fd11dc8c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8836a41e83de7ffe7e9d3f804b67f7b2f6f0581cef0a63a944f01833fd11dc8c"
-    sha256 cellar: :any_skip_relocation, ventura:        "33ee577a62f2a89a924160b28f4747b78b7d6e94bca85d0723c00a1569447788"
-    sha256 cellar: :any_skip_relocation, monterey:       "4427c42e4efe37f8c550288610f1404a88d3124815cd19d5749eafbf9a9d6272"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4427c42e4efe37f8c550288610f1404a88d3124815cd19d5749eafbf9a9d6272"
-    sha256 cellar: :any_skip_relocation, catalina:       "4427c42e4efe37f8c550288610f1404a88d3124815cd19d5749eafbf9a9d6272"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c5b3fcc9a61653e8cdaa4ae05ef4c8e2fd4edaec0a79a48481ee625adf080b0e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "34b87b2545d398fbda0fa4d275a171a952f4d7c9cf62b0ab1c3b2920b0cf446f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "34b87b2545d398fbda0fa4d275a171a952f4d7c9cf62b0ab1c3b2920b0cf446f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "34b87b2545d398fbda0fa4d275a171a952f4d7c9cf62b0ab1c3b2920b0cf446f"
+    sha256 cellar: :any_skip_relocation, ventura:        "17af74c4e50533a28f381707209239aca41abb4cd5af1653dbe6bf40ba008fcd"
+    sha256 cellar: :any_skip_relocation, monterey:       "17af74c4e50533a28f381707209239aca41abb4cd5af1653dbe6bf40ba008fcd"
+    sha256 cellar: :any_skip_relocation, big_sur:        "17af74c4e50533a28f381707209239aca41abb4cd5af1653dbe6bf40ba008fcd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "331211aeb8d3a9c6a22c4fe525a67b3197b373143bc02b933ecc91f5eaff0151"
   end
 
   depends_on "mplayer"
