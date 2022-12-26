@@ -7,6 +7,16 @@ class Prowler < Formula
   sha256 "d050e1ff138f3361186ae81124fd823e6e1b2f0dc4b2516a47388641ef150559"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "6880220073753e1db4cd36539c4a10ab164e559158a5d09a0bb8b84dc5f0c9bd"
+    sha256 cellar: :any,                 arm64_monterey: "6f16d480b7e9729cfd68e7e02119931fadd48826ee1543cd999166c711fdc8ad"
+    sha256 cellar: :any,                 arm64_big_sur:  "1cae08ab8a22fbc4bfc845e59dbb86a311d276b408ba15af53cd17392ef5179d"
+    sha256 cellar: :any,                 ventura:        "d37b991db4d461c680988225f808d1bb17540017bd934f299308b919406a4c77"
+    sha256 cellar: :any,                 monterey:       "da9c366d9824b1ff9b66771ffe00655cdbd9e6d68ba4019ce36c33da3d68d161"
+    sha256 cellar: :any,                 big_sur:        "0d23da71141abe7557c3cb086f2c3d59b34f1bc91b5c99f823b0a34adf34f18e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "563b0700c49ba760b2990499a091eb2593dd61220d41a3301a5638e1bc30b973"
+  end
+
   depends_on "rust" => :build # for cryptography
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
