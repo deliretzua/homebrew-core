@@ -10,7 +10,8 @@ class Googler < Formula
   head "https://github.com/jarun/googler.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "843e6394f80e096decffc6fa0f9089ab224889ae6e14ce96c82a56c854905d28"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "1d6c7d8176987bf3ca799f10d913e853441b28c5cb394c7a3cbe70c30b61432d"
   end
 
   deprecate! date: "2022-01-24", because: :repo_archived
