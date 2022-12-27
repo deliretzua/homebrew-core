@@ -15,15 +15,14 @@ class Rover < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "22c6d424681c36f59cfe9587c21217ce407195a4166264033079eda86a0909a1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "68af46f927616d0d0941ade763d91cbe29efbc22b48f7821bd0de73d700893e9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cb65eec58656f668c8ed7464503b6557e0dd14bdf031bced4094f0e4252ae802"
-    sha256 cellar: :any_skip_relocation, ventura:        "18e9d9a70e83d20a17571e8de7316f1582814d1caca0af41ff765e7e087c258d"
-    sha256 cellar: :any_skip_relocation, monterey:       "33552815f7328ae64ad5219942211da72054d505e3b4dc28d73814a3f5a16daa"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d4f7b3f9530e7d3a4e8d82f8835c1e136c78f11850d9980bb56d99d0f17a0cf2"
-    sha256 cellar: :any_skip_relocation, catalina:       "e9fea88f64256c9c5674376ad70030348844d944c1e2a456677d3485ddede5a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f743d47b1435b86eddd55b270a8146e8e93459aa251ebca6479e992d2b170659"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e4870951580fd04489eb919d2dd32449b0125966ae08b3b57f763d1e55779bb6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7edd5e0cbdb2157440042abb506c6874076c69dc76055dd6ef364f55d4713306"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "30fbb6ca81d7bdab3a19527779418d51d1761c13b4b8015c42130240285dc0d1"
+    sha256 cellar: :any_skip_relocation, ventura:        "730545ededa10e202f9874927adfc0c896bae32c7cb5399be732470ed5b01d11"
+    sha256 cellar: :any_skip_relocation, monterey:       "7818bb257d22e0fdaad8f211d3b5171012687296d4bf418786dfcb3c9c8baef7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "79466bed67bcf94fc1e1e6249f1e2e9f7753916cd77b07cd2f43dd686e51dd06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f82800525cdb5b3fd57c07ecbe7813d9f278285e48310b4b7abd13b7de3003b"
   end
 
   depends_on "rust" => :build
