@@ -2,8 +2,8 @@ class Vlang < Formula
   desc "V programming language"
   homepage "https://vlang.io"
   # NOTE: Keep this in sync with V compiler below when updating
-  url "https://github.com/vlang/v/archive/0.2.4.tar.gz"
-  sha256 "8cdbc32fb928051ce7959dd943af3efee26bddc4ed3700a1cb365be73a306bf9"
+  url "https://github.com/vlang/v/archive/refs/tags/0.3.2.tar.gz"
+  sha256 "a1eece20503bee18a8a5f9f2a5cedd1ba7b3f5c2ee181886cc67ba703a43eb7c"
   license "MIT"
 
   livecheck do
@@ -23,19 +23,29 @@ class Vlang < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a9db9337867f25273de9744c53e8956245e6c17531fde5cc57bf39520ef4763"
   end
 
+  depends_on "bdw-gc"
+
   resource "vc" do
     # For every vlang release there is a matching commit of the V compiler in the format
     # "[v:master] {short SHA of the vlang release commit} - {vlang version number}".
     # The sources of this V compiler commit need to be used here
     url "https://github.com/vlang/vc.git",
-        revision: "fd5f57740ff6d7a8566b774318df54c2fa460f92"
+        revision: "f96a25aee506a6025d716c8520c0a492374081c6"
   end
 
+  # upstream discussion, https://github.com/vlang/v/issues/16776
+  # macport patch commit, https://github.com/macports/macports-ports/commit/b3e0742a
+  patch :DATA
+
   def install
+    inreplace "vlib/builtin/builtin_d_gcboehm.c.v", "@PREFIX@", Formula["bdw-gc"].opt_prefix
+
     resource("vc").stage do
-      system ENV.cc, "-std=gnu11", "-w", "-o", buildpath/"v", "v.c", "-lm"
+      system ENV.cc, "-std=gnu11", "-w", "-o", buildpath/"v1", "v.c", "-lm"
     end
-    system "./v", "self"
+    system "./v1", "-no-parallel", "-o", buildpath/"v2", "cmd/v"
+    system "./v2", "-o", buildpath/"v", "cmd/v"
+    rm ["./v1", "./v2"]
     libexec.install "cmd", "thirdparty", "v", "v.mod", "vlib"
     bin.install_symlink libexec/"v"
     pkgshare.install "examples"
@@ -47,3 +57,25 @@ class Vlang < Formula
     assert_equal "Hello, World!", shell_output("./test").chomp
   end
 end
+
+__END__
+diff --git a/vlib/builtin/builtin_d_gcboehm.c.v b/vlib/builtin/builtin_d_gcboehm.c.v
+index 0a13b64..23fca2b 100644
+--- a/vlib/builtin/builtin_d_gcboehm.c.v
++++ b/vlib/builtin/builtin_d_gcboehm.c.v
+@@ -31,12 +31,12 @@ $if dynamic_boehm ? {
+ } $else {
+ 	$if macos || linux {
+ 		#flag -DGC_BUILTIN_ATOMIC=1
+-		#flag -I @VEXEROOT/thirdparty/libgc/include
+-		$if (prod && !tinyc && !debug) || !(amd64 || arm64 || i386 || arm32) {
++		#flag -I @PREFIX@/include
++		$if (!macos && prod && !tinyc && !debug) || !(amd64 || arm64 || i386 || arm32) {
+ 			// TODO: replace the architecture check with a `!$exists("@VEXEROOT/thirdparty/tcc/lib/libgc.a")` comptime call
+ 			#flag @VEXEROOT/thirdparty/libgc/gc.o
+ 		} $else {
+-			#flag @VEXEROOT/thirdparty/tcc/lib/libgc.a
++			#flag @PREFIX@/lib/libgc.a
+ 		}
+ 		$if macos {
+ 			#flag -DMPROTECT_VDB=1
