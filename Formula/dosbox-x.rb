@@ -1,8 +1,8 @@
 class DosboxX < Formula
   desc "DOSBox with accurate emulation and wide testing"
   homepage "https://dosbox-x.com/"
-  url "https://github.com/joncampbell123/dosbox-x/archive/dosbox-x-v0.84.1.tar.gz"
-  sha256 "d5ba5b3d87b0dc69d70f6c9701eec36772bbc3716e0b201b74ec73d4b3ff38cc"
+  url "https://github.com/joncampbell123/dosbox-x/archive/refs/tags/dosbox-x-v2022.12.26.tar.gz"
+  sha256 "39fb1ed19ea31e11883aa57655493b3100ac6b328ef59c799b840b9bfdfacb7b"
   license "GPL-2.0-or-later"
   version_scheme 1
   head "https://github.com/joncampbell123/dosbox-x.git", branch: "master"
@@ -40,6 +40,17 @@ class DosboxX < Formula
   end
 
   fails_with gcc: "5"
+
+  # upstream PR ref, https://github.com/joncampbell123/dosbox-x/pull/3907
+  # remove in next release
+  patch do
+    url "https://github.com/joncampbell123/dosbox-x/commit/b9ba6fba0dd0dc7fbeaa083de9d338564e8a6407.patch?full_index=1"
+    sha256 "f8173ce0560d6a5d36f00c3c1fbef03c22b6006c76d70fb311f3af54edc3de85"
+  end
+  patch do
+    url "https://github.com/joncampbell123/dosbox-x/commit/2dbbfff7407cb87d618ac341567e3c0ab1c03c6e.patch?full_index=1"
+    sha256 "573b6cfc9fe2f9a297c11c6c272b1b2296bab183ff3037455c76bcba077d589a"
+  end
 
   def install
     ENV.cxx11
