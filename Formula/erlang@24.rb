@@ -2,8 +2,8 @@ class ErlangAT24 < Formula
   desc "Programming language for highly scalable real-time systems"
   homepage "https://www.erlang.org/"
   # Download tarball from GitHub; it is served faster than the official tarball.
-  url "https://github.com/erlang/otp/releases/download/OTP-24.3.4.6/otp_src_24.3.4.6.tar.gz"
-  sha256 "8444ff9abe23aea268adbb95463561fc222c965052d35d7c950b17be01c3ad82"
+  url "https://github.com/erlang/otp/releases/download/OTP-24.3.4.7/otp_src_24.3.4.7.tar.gz"
+  sha256 "0cb1092f6aff83e8026acffa020dfcffb91073e559311ee1681fdec2d0e15e2e"
   license "Apache-2.0"
 
   livecheck do
@@ -28,9 +28,11 @@ class ErlangAT24 < Formula
   depends_on "unixodbc"
   depends_on "wxwidgets" # for GUI apps like observer
 
+  uses_from_macos "libxslt" => :build # for xsltproc
+
   resource "html" do
-    url "https://github.com/erlang/otp/releases/download/OTP-24.3.4.6/otp_doc_html_24.3.4.6.tar.gz"
-    sha256 "5122c6d298624244e83dfc82fa2f8260acf67d3c895af93a66f23558a8e7b64e"
+    url "https://github.com/erlang/otp/releases/download/OTP-24.3.4.7/otp_doc_html_24.3.4.7.tar.gz"
+    sha256 "37fb272117b449e597a6c9a0d8a0b80a854a3020bd1fc0a62325ceb895005670"
   end
 
   def install
