@@ -1,8 +1,8 @@
 class YubikeyAgent < Formula
   desc "Seamless ssh-agent for YubiKeys and other PIV tokens"
   homepage "https://filippo.io/yubikey-agent"
-  url "https://github.com/FiloSottile/yubikey-agent/archive/v0.1.5.tar.gz"
-  sha256 "724b21f05d3f822acd222ecc8a5d8ca64c82d5304013e088d2262795da81ca4f"
+  url "https://github.com/FiloSottile/yubikey-agent/archive/v0.1.6.tar.gz"
+  sha256 "f156d089376772a34d2995f8261d821369a96a248ab586d27e3be0d9b72d7426"
   license "BSD-3-Clause"
   head "https://github.com/FiloSottile/yubikey-agent.git", branch: "main"
 
@@ -26,13 +26,6 @@ class YubikeyAgent < Formula
   on_linux do
     depends_on "pkg-config" => :build
     depends_on "pinentry"
-  end
-
-  # Support go 1.17, remove when upstream patch is merged/released
-  # https://github.com/FiloSottile/yubikey-agent/pull/99
-  patch do
-    url "https://github.com/FiloSottile/yubikey-agent/commit/92e45828da1c33531f507625f41e3bdadfe3ee86.patch?full_index=1"
-    sha256 "605503152d3ea75072a98366994b65e4810c54e3dc690d8d47b9fb67ef47bd4d"
   end
 
   def install
