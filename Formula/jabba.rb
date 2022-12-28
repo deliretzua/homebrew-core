@@ -1,10 +1,11 @@
 class Jabba < Formula
   desc "Cross-platform Java Version Manager"
-  homepage "https://github.com/shyiko/jabba"
-  url "https://github.com/shyiko/jabba/archive/0.11.2.tar.gz"
-  sha256 "33874c81387f03fe1a27c64cb6fb585a458c1a2c1548b4b86694da5f81164355"
+  # fork blessed by previous maintener https://github.com/shyiko/jabba/issues/833#issuecomment-1338648294
+  homepage "https://github.com/Jabba-Team/jabba"
+  url "https://github.com/Jabba-Team/jabba/archive/0.12.0.tar.gz"
+  sha256 "15a142239869733d7f0fe8c0cc0cd99f619e5bc8121ebabc9c28c382333b89c0"
   license "Apache-2.0"
-  head "https://github.com/shyiko/jabba.git", branch: "master"
+  head "https://github.com/Jabba-Team/jabba.git", branch: "main"
 
   bottle do
     rebuild 3
@@ -19,26 +20,22 @@ class Jabba < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "359b80689e628a11217fe33067133d61eb52970610e45d54ace41705ccb06b5d"
   end
 
-  depends_on "glide" => :build
   depends_on "go" => :build
 
   def install
     ENV["GOPATH"] = buildpath
     ENV["GO111MODULE"] = "auto"
-    ENV["GLIDE_HOME"] = HOMEBREW_CACHE/"glide_home/#{name}"
-    dir = buildpath/"src/github.com/shyiko/jabba"
+    dir = buildpath/"src/github.com/Jabba-Team/jabba"
     dir.install buildpath.children
     cd dir do
       ldflags = "-X main.version=#{version}"
-      system "glide", "install"
-      system "go", "build", "-ldflags", ldflags, "-o", bin/"jabba"
-      prefix.install_metafiles
+      system "go", "build", *std_go_args(ldflags: ldflags)
     end
   end
 
   test do
-    jdk_version = "zulu@1.16.0-0"
-    version_check ='openjdk version "16'
+    jdk_version = "zulu@17"
+    version_check ='openjdk version "17'
 
     ENV["JABBA_HOME"] = testpath/"jabba_home"
 
