@@ -7,13 +7,13 @@ class Emqx < Formula
   head "https://github.com/emqx/emqx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "2ba049891bbe5c750cb7ff453f391d7b63fa603e262b983937ae864a18f26f2f"
-    sha256 cellar: :any, arm64_monterey: "1e8cd100d410321e1409c98c9697ce8303cf3d8bfc48f3fbc66e572c17e26109"
-    sha256 cellar: :any, arm64_big_sur:  "b9aadbe8e98aa3cb05ccb04fb452738cde49dba34e2204fa681115bdad8664ec"
-    sha256 cellar: :any, ventura:        "511f7aebeb02ab09108969746c6c55ed4f1964eea501bcb48a2c363180a08af2"
-    sha256 cellar: :any, monterey:       "0758997447bfe912077984f373d09bf2beb085cd2658412e733c0131aba20056"
-    sha256 cellar: :any, big_sur:        "8da2df84f5d1137a32d28f1ea0d0022ad83c9bdc41ff11a9cc122f1549df4439"
-    sha256               x86_64_linux:   "a9328b1798d0fd0a635dd783992ef372701a1f9e17b9ef24f401ec752d558594"
+    sha256 cellar: :any, arm64_ventura:  "13802e1e73c46b59a9643db5136b0ca7f52e285db0b878d2a86a3891ab384df9"
+    sha256 cellar: :any, arm64_monterey: "5d390390916f62a5eedca9a7ed23af0c75bf11ac5cbe1c77729c0d0d7cc0585b"
+    sha256 cellar: :any, arm64_big_sur:  "6f37c66ea50078b9e750ae2a82332a09f460e5969d2b6dc2209133d3753e5657"
+    sha256 cellar: :any, ventura:        "ad40d3dd85455c92aa5f698d08c07135036ce6c15c7339e3e5d6cfdae3250ae1"
+    sha256 cellar: :any, monterey:       "f9d267822fed84a13d218c2d41f322510d5a8ededd62cf56ce204a42255e7195"
+    sha256 cellar: :any, big_sur:        "a2eb5e0753e3f27e36a2975b3fc489299c235cc3d91fd0f4ded16296969e85c3"
+    sha256               x86_64_linux:   "2f1ccf11a2b8bdd84f172712451b80cfbd56c0d6a1abf9fdc6abb7dca9a60d18"
   end
 
   depends_on "autoconf"  => :build
