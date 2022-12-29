@@ -7,15 +7,13 @@ class CargoWatch < Formula
   head "https://github.com/watchexec/cargo-watch.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0db48532635d7015bde870a460c5d09bedf75048b87556607fc6a5123d1e8654"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3696d7daecd6532f313d7237eca9318c31917eb671a115377c56e2437af9b1db"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bb66ff2296c182b357d04612c3f65fc3452f0f3d8923decf8191c293ff4f4957"
-    sha256 cellar: :any_skip_relocation, ventura:        "ba0be6030725469e389b3ae7f9382622a0ac1df83e18e1e0bfdfef537fcf0cab"
-    sha256 cellar: :any_skip_relocation, monterey:       "4aa33cef9f23a62da08b439a30127e14f226b15de3e740087c083b860a5eabc0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f095d5b5a3c90929e3095fdefe165d7204a21b8a5b97d1eba27cd0fe3c6a7f39"
-    sha256 cellar: :any_skip_relocation, catalina:       "9b2666059f60483427a6bda3df3f5ed8f4e1bc010acf9f0863a39f383eed6e5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9922546a66c9faf2b7dcb08e08a398941d66d564117e5431a62b36063cfabe90"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2e16f13574e9c7f952e82cae4eb8cfd459fead9c5409df0a70c826e5134eb0cd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "67df2f4923a5bdc19be044e9084fa327937b605c3ef9ffc79db5905196df05ea"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ebee4e05fdaa9d34c3c4c41149c8c872a461deec949e4ab5b338610e87cd2992"
+    sha256 cellar: :any_skip_relocation, ventura:        "dc4a79c842e8ee437d8512c44e6376e5ebe4108fa6cd040f0ed4dd0448903122"
+    sha256 cellar: :any_skip_relocation, monterey:       "11bb1331b31c171fe8b258af33a905b5a9ae68070e6c0d7ada9a5a400eaa8a34"
+    sha256 cellar: :any_skip_relocation, big_sur:        "87b30b747d69b45eb11030fd8f85e7c853fc71087830e131915bbff5ee227076"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "157894fb6b75dc740435750e556c014fb2414225b78156d4742634768c4dcfdf"
   end
 
   depends_on "rust" => [:build, :test]
