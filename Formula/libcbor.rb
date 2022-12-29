@@ -1,8 +1,8 @@
 class Libcbor < Formula
   desc "CBOR protocol implementation for C and others"
   homepage "https://github.com/PJK/libcbor"
-  url "https://github.com/PJK/libcbor/archive/v0.9.0.tar.gz"
-  sha256 "da81e4f9333e0086d4e2745183c7052f04ecc4dbcffcf910029df24f103c15d1"
+  url "https://github.com/PJK/libcbor/archive/v0.10.0.tar.gz"
+  sha256 "4f79c6a9e587aaf877f1c4e74a842a599f2b56b5afb6bf59e51bc643b4f69ba0"
   license "MIT"
 
   bottle do
@@ -32,10 +32,9 @@ class Libcbor < Formula
     #include <stdio.h>
     int main(int argc, char * argv[])
     {
-    printf("Hello from libcbor %s\\n", CBOR_VERSION);
-    printf("Custom allocation support: %s\\n", CBOR_CUSTOM_ALLOC ? "yes" : "no");
-    printf("Pretty-printer support: %s\\n", CBOR_PRETTY_PRINTER ? "yes" : "no");
-    printf("Buffer growth factor: %f\\n", (float) CBOR_BUFFER_GROWTH);
+      printf("Hello from libcbor %s\\n", CBOR_VERSION);
+      printf("Pretty-printer support: %s\\n", CBOR_PRETTY_PRINTER ? "yes" : "no");
+      printf("Buffer growth factor: %f\\n", (float) CBOR_BUFFER_GROWTH);
     }
     EOS
 
