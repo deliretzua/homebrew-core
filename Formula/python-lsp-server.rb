@@ -9,14 +9,13 @@ class PythonLspServer < Formula
   head "https://github.com/python-lsp/python-lsp-server.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "22e80e963fe17745bfcb9a975b173283537c0be0dae2c64803e862a062a66fe1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0be623c09688e712b095a5dd48d2785f6fdde27f1dbb4268226233033ff3608a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4db452c719d04afd093cb64f776bef0fd76987422b4111554e31c3fc1ec92238"
-    sha256 cellar: :any_skip_relocation, ventura:        "faa9420f301b6cd3ef686163b138973f7ea3ef8a4fb30b02bf38a7abfc9f33dc"
-    sha256 cellar: :any_skip_relocation, monterey:       "8b63d3caac9372e49cae574a289222ab4919669bc09ae83e8bb4a98cd1e17b13"
-    sha256 cellar: :any_skip_relocation, big_sur:        "28d28aace6138499d16809656bb282f2e467ca0f2aaa561de542f2ee4bb1f065"
-    sha256 cellar: :any_skip_relocation, catalina:       "98e208b76802d77b63a9a2aa5e9c5883f639d45be559c4f4880a36a052c70add"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3ba66f2c44bd11458288f3b7aed801e4395ea05b005b670cb5e23de304437da"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e99c004916d69ad1dae001275a8cdb84671d0f0e4af583f68554a151646cb8c1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "94f7f2729f90dd47dbf0b338236a949a59066e6f7b55dffd022235432e9c7c8d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9ad46c7facf45dbdc5108429e12ececd665265dacf7dacc33a67a0387d4e5a0a"
+    sha256 cellar: :any_skip_relocation, ventura:        "ad6eef9791426f3f428df25ab857be117f19cb8554dab6056301ec8ab37e7338"
+    sha256 cellar: :any_skip_relocation, monterey:       "46e82ade8ca863b620613d4733badad99d24616dc58fe678aab32b84a9cd07e9"
+    sha256 cellar: :any_skip_relocation, big_sur:        "410356386eb9e2ff95fc1b271eb5b3f7c2542c9719ed4d023c7317f011a4bba5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c8e30b896b862eba43b59402887d0e825735e3c0ea22506873d396d7bacf155"
   end
 
   depends_on "python@3.11"
