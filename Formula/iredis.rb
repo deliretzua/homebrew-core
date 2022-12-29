@@ -9,15 +9,13 @@ class Iredis < Formula
   head "https://github.com/laixintao/iredis.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b50ddc33b6ef2fbc534a32680f24473171d575d7d2baa04705a405347762d94"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "59b371854d2f07984f58bceed6578473d1a2e29e3f187f9b15918aa40ebc98e0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "69caee98a2fd8450ce9ff5131a00ff9a9bd0eb95197e325d60589233dea05292"
-    sha256 cellar: :any_skip_relocation, ventura:        "7dfd26065bcff326df9c7516e9612ece4362dc873cb60ca419400bf91a5bf03b"
-    sha256 cellar: :any_skip_relocation, monterey:       "540602e1e1b59f53d3f09fb095b63ab9f7e938a8d8c97e8c4541791be5b0c3fd"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f488dc95a684fc40623256577d3faf2ed39af413df5b7d9cf91016b6a7e04b96"
-    sha256 cellar: :any_skip_relocation, catalina:       "f6f4d1bc7cf5a412607debbc964e926e71e5e34e9d550bddd9942afab3472b8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a1f04bccb5bf4291e0cb074689c1e2a5a16f590e1395e3fc579b90226c30aa32"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4933ef60018e3986ff5c02032e55b627656f51561c1210a7d8afc1e65a788ca0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5881189048c44d11ac81fe06f396d1b7f9ab94e972a21ea3adbce89813b51387"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1c8ed5c830ba199182d688ed582c100ced6e386b8cde207d7ca13dc2bf38000d"
+    sha256 cellar: :any_skip_relocation, ventura:        "04f5e222b726fd9e2644670ecdcc06e2e2a20b00894d5a10d2ae981c229201eb"
+    sha256 cellar: :any_skip_relocation, monterey:       "5a235f080f6e553e100d705871560944597cd5200c508583409e20b84ae5b6ed"
+    sha256 cellar: :any_skip_relocation, big_sur:        "88b4ca8dd1c889e5b420e1618b9a642b9d01f633d3809e09f653b729515fe4db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6676b27417a11fee2840cade467846ae54abc03c6cedd305df7ee868a66f726b"
   end
 
   depends_on "python@3.11"
