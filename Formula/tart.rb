@@ -6,8 +6,8 @@ class Tart < Formula
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "824b8df3b40c17054251d3eeebe044c789d27ff1da8234137a2836a34b4e69cc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c62fbcbdd94c15a9ed978f538781ca349f1c66226f669005fda6e2b719256009"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d5b07783ecae638e17c78cd92e8cc0d3ca06c80cf4175386cba0c508f2fad806"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3bf13b206521d4818c8e37367e7a2f3a773c4dae6fe896a6a420c4eb5698f944"
   end
 
   depends_on "rust" => :build
