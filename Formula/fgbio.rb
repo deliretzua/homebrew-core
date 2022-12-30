@@ -5,6 +5,10 @@ class Fgbio < Formula
   sha256 "85a01664fc8c3aa853d636ce8975c25c11d87352d7878e877af5f6a5bb1b3dce"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "fc1e9c36d3d17322c98dacdc3df8f164ecd8f2dfb9f85d1f62ed54760ca5686e"
+  end
+
   depends_on "openjdk"
 
   def install
