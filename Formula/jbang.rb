@@ -5,6 +5,10 @@ class Jbang < Formula
   sha256 "32ae1b46d26a1e5f7e3084e7c1adc53058d5f75356e4464ab8327ff5e133cb29"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "816f2af8b9fbf14749e774c994b3e593e348d9b2ebeaef3efdea556a8a274db1"
+  end
+
   depends_on "openjdk"
 
   def install
