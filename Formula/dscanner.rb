@@ -2,8 +2,8 @@ class Dscanner < Formula
   desc "Analyses e.g. the style and syntax of D code"
   homepage "https://github.com/dlang-community/D-Scanner"
   url "https://github.com/dlang-community/D-Scanner.git",
-      tag:      "v0.12.2",
-      revision: "8761fa1e38c4461e0dda1782b859d46172cc3676"
+      tag:      "v0.13.0",
+      revision: "e94c4fad77b69e3a741b8747058755fbcc204b9f"
   license "BSL-1.0"
   head "https://github.com/dlang-community/D-Scanner.git", branch: "master"
 
@@ -27,6 +27,10 @@ class Dscanner < Formula
   end
 
   def install
+    # Fix for /usr/bin/ld: obj/dmd/containers/src/containers/ttree.o:
+    # relocation R_X86_64_32 against hidden symbol `__stop_minfo'
+    # can not be used when making a PIE object
+    ENV.append "DFLAGS", "-fPIC" if OS.linux?
     system "make", "all", "DC=#{Hardware::CPU.arm? ? "ldc2" : "dmd"}"
     bin.install "bin/dscanner"
   end
