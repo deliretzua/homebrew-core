@@ -9,15 +9,13 @@ class Pwntools < Formula
   head "https://github.com/Gallopsled/pwntools.git", branch: "dev"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "f66d6b0da1564e6d863aa51626e29a96a464792308797a521c9367acd72d598b"
-    sha256 cellar: :any,                 arm64_monterey: "fdc247c6b92386c6f9e191614c4021f5f9ff9bac41c7c380857da8f8d5807222"
-    sha256 cellar: :any,                 arm64_big_sur:  "a17ad73d3db989602ac0cf21ef9f67bfb326315396a66bc2531560c424f74350"
-    sha256 cellar: :any,                 ventura:        "7f8d1926604dba1cdec5c427ac78423a4fe4fe4d11a396daaa6ad94928506361"
-    sha256 cellar: :any,                 monterey:       "d15edfabf0888dad7a0215e213e1ecd2c793124474e7bcbe1a98156735b63288"
-    sha256 cellar: :any,                 big_sur:        "5eea61e8c97d64a79d21ec14dc12906f3d9333e3f4ab97298d6274a510a9424d"
-    sha256 cellar: :any,                 catalina:       "d5c7e023a0fcd9c30030ad3c7ced9eee64ca529ea0cbe7b6b6f76927945d5f7e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c9e68328ca5cda4728c74d2f8f718f6f9a1bac662310be08d06cb1f30451ce7"
+    sha256 cellar: :any,                 arm64_ventura:  "fd7f3e893224e7f6bcdcc690c9fb6f114de11de15241e19eea647a40fff7e63b"
+    sha256 cellar: :any,                 arm64_monterey: "1742f2620051687d4a3fc536fe0db2954eea10df4108a30600c72e1e45f84698"
+    sha256 cellar: :any,                 arm64_big_sur:  "78d006d76a2c0a63d57e8952e5a771a2bdf081160feca46d593889697e4734bc"
+    sha256 cellar: :any,                 ventura:        "e3c8368b81ba29b457f447c839588d0aea421c73c6625917ff9286647b792a13"
+    sha256 cellar: :any,                 monterey:       "7c4ea2b975d69409287534cac559e2cdd65232a311a3a01fa239ca99b6b39a88"
+    sha256 cellar: :any,                 big_sur:        "35a21bf5597158ceb477b138735b6db6f352af1d26475b97c02cbbd0b7e58207"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c016963809e345058e1ec896b82e63aa33880a5e10c58533cf6a0e9f6bdefc64"
   end
 
   depends_on "rust" => :build
