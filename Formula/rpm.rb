@@ -12,14 +12,9 @@ class Rpm < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "f50bae938e1e727d9653ab655df667be722360ef0641d4e33435b9f5b1b2aada"
-    sha256 arm64_monterey: "07c3b5a832fb5c1b75e2096a9146ca47d22750277414f98b4b3bb91c6ac01450"
-    sha256 arm64_big_sur:  "4a4e308c175c19023fb3128ec13b0acca85e761c1a8a9e525e8c8e31dc74ae4f"
-    sha256 ventura:        "0150063eb81f2e291de7c967597bf8a2ddbf4f86a781691fe448d5bfcb559a64"
-    sha256 monterey:       "d12aac69e0a3306982c6327fa220a54b1a2f1a3224e09555a6af65fec5a43fc6"
-    sha256 big_sur:        "f213bde4157208b400ad3927bbc694e2cbcd652c25ed4293e524793f62b0cb36"
-    sha256 catalina:       "e7982bc9769b7fbfcb00da573dc3d4160a3ae95a9a68bf02d4bae2c4e10faee4"
-    sha256 x86_64_linux:   "f2fbe2fec1f2d1212c2122560728929445e499f25df89cf8d623f04b993d5903"
+    sha256 arm64_ventura: "aefec64781c00cadb3cf23c472dca6b95448f7e1d13b2d99f02bd402428c62e7"
+    sha256 ventura:       "b8f1babd7bb8e9441dd20b122a36294d7c6efde30b914232d10ce0b9b31331e4"
+    sha256 x86_64_linux:  "7abd5ec6e0fe728546f10d918de572587bfffa4bbcc3bc1543283dbb48fd0d2b"
   end
 
   depends_on "gettext"
