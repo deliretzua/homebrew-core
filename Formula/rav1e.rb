@@ -21,13 +21,13 @@ class Rav1e < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "781fdba55f672f2808d5a942645de9fe9e032f9c6f4b74a626a1eed77d8d5238"
-    sha256 cellar: :any,                 arm64_monterey: "cf02db9e7de5fde855205de5c4712ea332a6165b155063bca322bfc292704b2d"
-    sha256 cellar: :any,                 arm64_big_sur:  "2a18dfad1d04729a15103f084449a1fa1378e571651ec96d145d59158abb1e45"
-    sha256 cellar: :any,                 ventura:        "a162a9c35f1adb24986a47c654250eee20a5adad72b473c44cf7f3adee821a5e"
-    sha256 cellar: :any,                 monterey:       "c26df3fe0341c72aba9ce445350e6f73bc1e4c1e730a7ada7d6e4b03d7b6a2ac"
-    sha256 cellar: :any,                 big_sur:        "6ed0c0c4c1c8dc2e3da2caec1c70e9866c372813deb1532b4ebc511fbbd5d13c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6298430329a5c5cfdb1d170b2690834a4759aa14515a3a0fac8aa91204b9835f"
+    sha256 cellar: :any,                 arm64_ventura:  "b5b1726d8ecf856dcde35e86ea1c20cd7c939472a43043a7210e5a5c21b34241"
+    sha256 cellar: :any,                 arm64_monterey: "a23010337ff70bc45e14acb95ba75852bc41d53f782e4c44214af53ee993fb33"
+    sha256 cellar: :any,                 arm64_big_sur:  "c258c744d8328bfaa0ecb2cccb4402f4edc01068d511ce30f966c215e03fc69e"
+    sha256 cellar: :any,                 ventura:        "d4a0f84349768b4b5e59964b45667d86130131066c4f5065ee975d1a09cebc8c"
+    sha256 cellar: :any,                 monterey:       "d73eab7e675cc5e66c6848fd5bce15c86e72bc1f4b9ccbd2fb59722b186b30d3"
+    sha256 cellar: :any,                 big_sur:        "285df3feec091df6671e9d97b1128c657c65b2eb03d27507c9195372303a6fd8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e599778a54e84996d31d2123da123582f7770f88f5ccba9322fb2171c10499c"
   end
 
   depends_on "cargo-c" => :build
