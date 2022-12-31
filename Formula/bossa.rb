@@ -6,6 +6,16 @@ class Bossa < Formula
   license "BSD-3-Clause"
   head "https://github.com/shumatech/BOSSA.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2158f7a97081f5f80316164003c9081332974aef077205116c33a4aecd374baa"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "13a2c2eb937b91821a9f6f353219287ef55b464b9cf7c1b856d886fb1497f0eb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "374d82b1d164b7996887cad910472e9a9e58fc5eecfb8e61271e26059137727a"
+    sha256 cellar: :any_skip_relocation, ventura:        "d2c70106f28ae84a178b62a6f028eac65adf61baf48c6de1d2992796403eb6a6"
+    sha256 cellar: :any_skip_relocation, monterey:       "0cc5c9f5080c2066dde8ee2c4c9fe8d7d6fc251a89bc975e2fde2fc99399e10a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "aa5fe3c981a324abb67a667253e2cfae1479b832e8a2d53ba615d99d3e0f0002"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0621b561b15f00b336c30d0d91ab52ab59b8b6fab7c1a9fccb4faa287f65b52"
+  end
+
   on_linux do
     depends_on "readline"
   end
