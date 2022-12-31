@@ -9,14 +9,13 @@ class Gawk < Formula
   head "https://git.savannah.gnu.org/git/gawk.git", branch: "master"
 
   bottle do
-    sha256 arm64_ventura:  "75f5cc7303e2233b14c8d75c1bd030aedecb3805108246b7645b42e5716bd712"
-    sha256 arm64_monterey: "0223f5e5d69c3b8ae50f9665e567e7f2462c947b74955b3d8fb7895d5d73c197"
-    sha256 arm64_big_sur:  "7fd916fd9dc7f70c89ec1d280e5ffb0aec94e4a1329abca92a9b1c44b9b6e3c0"
-    sha256 ventura:        "cb1d3cad74dcca71069e401acc140c51d4192803b073d97e230559acc31c1626"
-    sha256 monterey:       "4c4b1b9becee9835568dc513ded2c4046a3f07a2a9c576ab04ff21a758e7e78b"
-    sha256 big_sur:        "ba37e5dce0545e3c84d40c9610f1a4a633c4732fac6c8619a030d19b1b2070b5"
-    sha256 catalina:       "ff65adfdd73bbfb3636a840ccf1a0c6a904f9779660836378f8719c46e27d184"
-    sha256 x86_64_linux:   "00df3e9224a984613c28a32334007a7f3a9729fc4fc695cfb55855dcc4091d04"
+    sha256 arm64_ventura:  "398affcca2ae34f356319c04675a1f9dac987fe93c24b7e44f3de0c3f2f80578"
+    sha256 arm64_monterey: "9b5790b804bb252baff6d8fd36c72346b976ae6620d0a611da8dd259fe280937"
+    sha256 arm64_big_sur:  "d36c8dde904dbc42ab10935b328bf5826a520df6f9116b6027d76bb6825480f7"
+    sha256 ventura:        "3ac715c614601790fd8330232db1152ce43b7faf4360b86a6c4abd0fbd589042"
+    sha256 monterey:       "5b8c20dceb9faf67e9527a55b80b1b6238f8f1dc43519c5cc1f8637bd2d5520b"
+    sha256 big_sur:        "05e3e4bfe065797628bba4e0c5239cbd6392690259ff6f0eed0c58a1cd880422"
+    sha256 x86_64_linux:   "cbf9ec54861af080e96532c8591ca2e9cf1347f3bcfdb7f70c92c1e35dcf2c48"
   end
 
   depends_on "gettext"
