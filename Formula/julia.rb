@@ -5,8 +5,8 @@ class Julia < Formula
   #
   # TODO: Use system `suite-sparse` when `julia` supports v7.
   # Issue ref: https://github.com/JuliaLang/julia/issues/47884
-  url "https://github.com/JuliaLang/julia/releases/download/v1.8.5/julia-1.8.5-full.tar.gz"
-  sha256 "35554080a4b4d3ce52ef220254306bd42ac0d88eff9eb85592a57d0663db5df2"
+  url "https://github.com/JuliaLang/julia/releases/download/v1.9.0/julia-1.9.0-full.tar.gz"
+  sha256 "222eb533c9dc54734949eb3a4169f54aefa1bc20be385fc1cf798c8219fe6400"
   license all_of: ["MIT", "BSD-3-Clause", "Apache-2.0", "BSL-1.0"]
   head "https://github.com/JuliaLang/julia.git", branch: "master"
 
@@ -57,46 +57,39 @@ class Julia < Formula
     sha256 "1eea77d8024ad8bc9c733a0e0770661bc08228d335b20c4696350ed5dfdab29a"
   end
 
-  # Fix Linux build, listdc++ issue. Remove in next version.
-  # https://github.com/JuliaLang/julia/issues/47987
-  patch do
-    url "https://github.com/JuliaLang/julia/commit/0b211609.patch?full_index=1"
-    sha256 "f8b802ef2004320dd8039b3c4896e99f5460c9bcada29bc699eaca7f843f2737"
-  end
-
   def install
     # Build documentation available at
     # https://github.com/JuliaLang/julia/blob/v#{version}/doc/build/build.md
     args = %W[
-      VERBOSE=1
-      USE_BINARYBUILDER=0
       prefix=#{prefix}
       sysconfdir=#{etc}
-      USE_SYSTEM_CSL=1
-      USE_SYSTEM_PCRE=1
-      USE_SYSTEM_OPENLIBM=1
+      LOCALBASE=#{HOMEBREW_PREFIX}
+      MACOSX_VERSION_MIN=#{MacOS.version}
+      PYTHON=python3
+      USE_BINARYBUILDER=0
       USE_SYSTEM_BLAS=1
-      USE_SYSTEM_LAPACK=1
-      USE_SYSTEM_GMP=1
-      USE_SYSTEM_MPFR=1
-      USE_SYSTEM_LIBSUITESPARSE=0
-      USE_SYSTEM_UTF8PROC=1
-      USE_SYSTEM_MBEDTLS=1
-      USE_SYSTEM_LIBSSH2=1
-      USE_SYSTEM_NGHTTP2=1
+      USE_SYSTEM_CSL=1
       USE_SYSTEM_CURL=1
+      USE_SYSTEM_GMP=1
+      USE_SYSTEM_LAPACK=1
       USE_SYSTEM_LIBGIT2=1
-      USE_SYSTEM_PATCHELF=1
-      USE_SYSTEM_ZLIB=1
+      USE_SYSTEM_LIBSSH2=1
+      USE_SYSTEM_LIBSUITESPARSE=0
+      USE_SYSTEM_MBEDTLS=1
+      USE_SYSTEM_MPFR=1
+      USE_SYSTEM_NGHTTP2=1
+      USE_SYSTEM_OPENLIBM=1
       USE_SYSTEM_P7ZIP=1
+      USE_SYSTEM_PATCHELF=1
+      USE_SYSTEM_PCRE=1
+      USE_SYSTEM_UTF8PROC=1
+      USE_SYSTEM_ZLIB=1
+      VERBOSE=1
       LIBBLAS=-lopenblas
       LIBBLASNAME=libopenblas
       LIBLAPACK=-lopenblas
       LIBLAPACKNAME=libopenblas
       USE_BLAS64=0
-      PYTHON=python3
-      LOCALBASE=#{HOMEBREW_PREFIX}
-      MACOSX_VERSION_MIN=#{MacOS.version}
     ]
 
     # Set MARCH and JULIA_CPU_TARGET to ensure Julia works on machines we distribute to.
