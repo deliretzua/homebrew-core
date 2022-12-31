@@ -12,14 +12,13 @@ class RomTools < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "46d7734e7d9dce5ca37ba446c31d27081962ebf1f1486bb6808ed8166c015469"
-    sha256 cellar: :any,                 arm64_monterey: "734901e58e28448b2dea53f78aa00220990c1b8a4d440bc4aae985fba4bac55a"
-    sha256 cellar: :any,                 arm64_big_sur:  "4f1b8491be0355c2e752ae5a43381016a8d7a87d1738c549fe4b6a03c68f8608"
-    sha256 cellar: :any,                 ventura:        "94974b979e993d56454b07aa133b6556248f99793be5cc4a0602883dba092178"
-    sha256 cellar: :any,                 monterey:       "ef59798a907b39a6fc48e4c1516eca8fbf8509c54d52c6daecacad288e5734ab"
-    sha256 cellar: :any,                 big_sur:        "050650e8ea572cf91f4390fb534a369a3c75687366f4feafe8f910d5f9dfda4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a2c77c5910c85fc67899f196bda33d6123ea778d0ad587ef60c7bd570dd381dd"
+    sha256 cellar: :any,                 arm64_ventura:  "e9d2b0b44131f3f2ba7680ef195459dfb903973f81cebdcda35774017768b520"
+    sha256 cellar: :any,                 arm64_monterey: "36105462443d01f64edeae59ca24278126e01eb588f04be7a7372ee0fe547237"
+    sha256 cellar: :any,                 arm64_big_sur:  "e149f839929d52479426b87a87bfd79836405c1dc91b4296c90e0aafbfd6f052"
+    sha256 cellar: :any,                 ventura:        "5dccb2b440e6cd46b07378da92b449f047327f68cd3164f704b7fe2090668c51"
+    sha256 cellar: :any,                 monterey:       "8921eb1c2f49bc656dfb570c30a28bbcd2c03e1a9abe2a37a67970e7c9dee458"
+    sha256 cellar: :any,                 big_sur:        "637eaa8931b215f52b9dbaa29cbc62795c3e8e9c8c3a048592cba7256229e567"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "14321701dc756cf00a237f22ed2aa567504fb4f313fd1d1b4728519c0c6860a3"
   end
 
   depends_on "pkg-config" => :build
