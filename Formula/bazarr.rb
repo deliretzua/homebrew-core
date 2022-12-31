@@ -5,8 +5,8 @@ class Bazarr < Formula
 
   desc "Companion to Sonarr and Radarr for managing and downloading subtitles"
   homepage "https://www.bazarr.media"
-  url "https://github.com/morpheus65535/bazarr/releases/download/v1.1.3/bazarr.zip"
-  sha256 "8ede84f95b43ec974f20975606456b43288d7d3eefc52633e245eb15001da571"
+  url "https://github.com/morpheus65535/bazarr/releases/download/v1.1.4/bazarr.zip"
+  sha256 "7a2b428504d3922358fcd6c333ebb6665cae733cc9f67563212d6c4b4e433b74"
   license "GPL-3.0-or-later"
   head "https://github.com/morpheus65535/bazarr.git", branch: "master"
 
@@ -34,8 +34,8 @@ class Bazarr < Formula
   uses_from_macos "zlib"
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/70/bb/7a2c7b4f8f434aa1ee801704bf08f1e53d7b5feba3d5313ab17003477808/lxml-4.9.1.tar.gz"
-    sha256 "fe749b052bb7233fe5d072fcb549221a8cb1a16725c47c37e42b0b9cb3ff2c3f"
+    url "https://files.pythonhosted.org/packages/06/5a/e11cad7b79f2cf3dd2ff8f81fa8ca667e7591d3d8451768589996b65dec1/lxml-4.9.2.tar.gz"
+    sha256 "2455cfaeb7ac70338b3257f41e21f0724f4b5b0c0e7702da67ee6c3640835b67"
   end
 
   resource "webrtcvad-wheels" do
