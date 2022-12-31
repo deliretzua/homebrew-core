@@ -5,6 +5,10 @@ class Jreleaser < Formula
   sha256 "0dd340f7ffde49d697c4fffacf884fe871a6af65753da0b1c71c77638d59113a"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "50b9016e0c96bead9f8383104c01f5b555e596540b751928d1a1dcc84bac39c5"
+  end
+
   depends_on "openjdk"
 
   def install
