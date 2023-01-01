@@ -1,10 +1,9 @@
 class Hdf5Mpi < Formula
   desc "File format designed to store large amounts of data"
   homepage "https://www.hdfgroup.org/HDF5"
-  url "https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.12/hdf5-1.12.2/src/hdf5-1.12.2.tar.bz2"
-  sha256 "1a88bbe36213a2cea0c8397201a459643e7155c9dc91e062675b3fb07ee38afe"
+  url "https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.14/hdf5-1.14.0/src/hdf5-1.14.0.tar.bz2"
+  sha256 "e4e79433450edae2865a4c6328188bb45391b29d74f8c538ee699f0b116c2ba0"
   license "BSD-3-Clause"
-  revision 1
   version_scheme 1
 
   livecheck do
@@ -32,6 +31,10 @@ class Hdf5Mpi < Formula
   uses_from_macos "zlib"
 
   conflicts_with "hdf5", because: "hdf5-mpi is a variant of hdf5, one can only use one or the other"
+
+  # Fixes buildpath references in install, remove in next release
+  # https://github.com/HDFGroup/hdf5/commit/02c68739745887cd17b840a7e91d2ec9c9008bb1
+  patch :DATA
 
   def install
     inreplace %w[c++/src/h5c++.in fortran/src/h5fc.in bin/h5cc.in],
@@ -112,3 +115,28 @@ class Hdf5Mpi < Formula
     assert_equal version.to_s, shell_output("./a.out").chomp
   end
 end
+__END__
+diff --git a/configure.ac b/configure.ac
+index 8e406f71af..7b1d10c014 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -3012,8 +3012,7 @@ SUBFILING_VFD=no
+ HAVE_MERCURY="no"
+ 
+ ## Always include subfiling directory so public header files are available
+-CPPFLAGS="$CPPFLAGS -I$ac_abs_confdir/src/H5FDsubfiling"
+-AM_CPPFLAGS="$AM_CPPFLAGS -I$ac_abs_confdir/src/H5FDsubfiling"
++H5_CPPFLAGS="$H5_CPPFLAGS -I$ac_abs_confdir/src/H5FDsubfiling"
+ 
+ AC_MSG_CHECKING([if the subfiling I/O virtual file driver (VFD) is enabled])
+ 
+@@ -3061,8 +3060,7 @@ if test "X$SUBFILING_VFD" = "Xyes"; then
+     mercury_dir="$ac_abs_confdir/src/H5FDsubfiling/mercury"
+     mercury_inc="$mercury_dir/src/util"
+ 
+-    CPPFLAGS="$CPPFLAGS -I$mercury_inc"
+-    AM_CPPFLAGS="$AM_CPPFLAGS -I$mercury_inc"
++    H5_CPPFLAGS="$H5_CPPFLAGS -I$mercury_inc"
+ 
+     HAVE_STDATOMIC_H="yes"
+     AC_CHECK_HEADERS([stdatomic.h],,[HAVE_STDATOMIC_H="no"])
