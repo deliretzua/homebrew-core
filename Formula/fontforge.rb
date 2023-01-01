@@ -1,10 +1,9 @@
 class Fontforge < Formula
   desc "Command-line outline and bitmap font editor/converter"
   homepage "https://fontforge.github.io"
-  url "https://github.com/fontforge/fontforge/releases/download/20220308/fontforge-20220308.tar.xz"
-  sha256 "01e4017f7a0ccecf436c74b8e1f6b374fc04a5283c1d68967996782e15618e59"
+  url "https://github.com/fontforge/fontforge/releases/download/20230101/fontforge-20230101.tar.xz"
+  sha256 "ca82ec4c060c4dda70ace5478a41b5e7b95eb035fe1c4cf85c48f996d35c60f8"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
     rebuild 2
@@ -43,10 +42,6 @@ class Fontforge < Formula
     url "https://raw.githubusercontent.com/fontforge/fontforge/1346ce6e4c004c312589fdb67e31d4b2c32a1656/tests/fonts/Ambrosia.sfd"
     sha256 "6a22acf6be4ab9e5c5a3373dc878030b4b8dc4652323395388abe43679ceba81"
   end
-
-  # Fix for rpath on ARM
-  # https://github.com/fontforge/fontforge/issues/4658
-  patch :DATA
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
@@ -87,15 +82,3 @@ class Fontforge < Formula
     assert_match "Web Open Font Format (Version 2)", fileres
   end
 end
-
-__END__
-diff --git a/contrib/fonttools/CMakeLists.txt b/contrib/fonttools/CMakeLists.txt
-index 0d3f464bc..b9f210cde 100644
---- a/contrib/fonttools/CMakeLists.txt
-+++ b/contrib/fonttools/CMakeLists.txt
-@@ -18,3 +18,5 @@ target_link_libraries(dewoff PRIVATE ZLIB::ZLIB)
- target_link_libraries(pcl2ttf PRIVATE MathLib::MathLib)
- target_link_libraries(ttf2eps PRIVATE fontforge)
- target_link_libraries(woff PRIVATE ZLIB::ZLIB)
-+
-+install(TARGETS acorn2sfd dewoff findtable pcl2ttf pfadecrypt rmligamarks showttf stripttc ttf2eps woff RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
