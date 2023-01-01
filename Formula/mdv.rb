@@ -11,16 +11,14 @@ class Mdv < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7689a64f112b66c3ea5d283ed59d44b9d482d360c4dd8c41b60a5cbeca8d328c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a6794a4864eeae9e1e805700605fa80610da626f48e586744535ce00d8b88f21"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "81ef8f08570dbd4af753403e58d266fa2e4b440db92fb9b4506a92e9bd6de100"
-    sha256 cellar: :any_skip_relocation, ventura:        "9fc8fb8224a73aab80444013474c9e0057147452ac60c87054f39c3104d7a691"
-    sha256 cellar: :any_skip_relocation, monterey:       "68cc02cf881189ed510e2a5beff7de61217ce316c8aba28819cdb25d6da3838f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "04e3e87af387732342c4674feeb11b493090eb6504d4c6797b57f41bbf9a90a8"
-    sha256 cellar: :any_skip_relocation, catalina:       "ba336eac38af86dd98d74dbba06226d13b0bc8af719e1e40a863f9f394da4de8"
-    sha256 cellar: :any_skip_relocation, mojave:         "ecb421e63e0278668ae2d570c8095186cb3e4695c5ba9891f20d16c2ba3c6e6c"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "3b9847a65d7c9820148cd848687efdb598193cc76abb031c1f71841bad2ec60d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0bdd4c19f2486841a91bbf3a13eb69d46b6b77d729abd870a05430c19d8be6b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "71ae01d9490f34a8dc613b8b5b03945ced5e9eb822a8bf8f25098181e5592c45"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "71ae01d9490f34a8dc613b8b5b03945ced5e9eb822a8bf8f25098181e5592c45"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "71ae01d9490f34a8dc613b8b5b03945ced5e9eb822a8bf8f25098181e5592c45"
+    sha256 cellar: :any_skip_relocation, ventura:        "37bbe57f489ba52c7f93d19757b56ef24760f4534b56165a83f500551ee20336"
+    sha256 cellar: :any_skip_relocation, monterey:       "37bbe57f489ba52c7f93d19757b56ef24760f4534b56165a83f500551ee20336"
+    sha256 cellar: :any_skip_relocation, big_sur:        "37bbe57f489ba52c7f93d19757b56ef24760f4534b56165a83f500551ee20336"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "35c0a2589592f56f6c8c4c7cda2049c724efeffdf031613a676d9274016bee2d"
   end
 
   depends_on "pygments"
