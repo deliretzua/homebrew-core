@@ -12,13 +12,14 @@ class Tcpdump < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "5363b4922b06c82726ae45c07c3631ccd47349f80267829a26627c5eb9ef28f7"
-    sha256 cellar: :any,                 arm64_monterey: "8662fda1e6830511da0efab140fc8aa228148849cb248feab6191cf9b1de9355"
-    sha256 cellar: :any,                 arm64_big_sur:  "39ada3d8d3e3bc34a390f8f648cd670b6871054a84bb712b6779b74d6f7f0dfe"
-    sha256 cellar: :any,                 ventura:        "317e4d198368817d78f348bba73956c75051a77d3d53d3cafd449d6721f55c13"
-    sha256 cellar: :any,                 monterey:       "885f34983135867ad1a10872b0b149e5c7baeb5de8804e69cf8a17bd056e373a"
-    sha256 cellar: :any,                 big_sur:        "b520603806bc5d57569458485d2dfc55e87a61ba9d179fd3a2e954fb1c858d2d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "48a3e91e4eb8ccd2e7cdf0e4bc6b816d6be1b07edd0d0488ef5d406a7620227e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "a23bc85b24fa8c354c34d421ba3a5a3a66813da733a3f92531951d50ee687247"
+    sha256 cellar: :any,                 arm64_monterey: "c2d1c25d3bc51ab32b32ffa538b967ad5cd6c915de4cc027c561c4cbde945904"
+    sha256 cellar: :any,                 arm64_big_sur:  "80ef73cbc460fdacb8615d7848579cf098c442fffdbc0b159a48e19e186be49d"
+    sha256 cellar: :any,                 ventura:        "55d49386b8ec20e1653794f6086453280c51d7b0eff70b8a8daafef4c4852208"
+    sha256 cellar: :any,                 monterey:       "50435f4a6d6ffeced288f07dfb03d2fcd2b28e7a9d86a17c3ab6956da977e014"
+    sha256 cellar: :any,                 big_sur:        "202e53843212c66f95abf38b23bdd9ec5bef6061246d140736fcc28d7c25cce2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d32f09a5e2f527168bbd33235719aa0a605ce0c9e298335ef63c33097ac90a57"
   end
 
   depends_on "libpcap"
