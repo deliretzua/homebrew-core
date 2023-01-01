@@ -1,8 +1,8 @@
 class Latexindent < Formula
   desc "Add indentation to LaTeX files"
   homepage "https://latexindentpl.readthedocs.io"
-  url "https://github.com/cmhughes/latexindent.pl/archive/V3.19.1.tar.gz"
-  sha256 "1ec2b1b83d3dcde3bf654933ebbe9de38ba7793f2f52564450cae71c9cab913e"
+  url "https://github.com/cmhughes/latexindent.pl/archive/V3.20.tar.gz"
+  sha256 "d2e96faf99a99e10a03f177ff9caf2d8e3f75b1ab84839dffb6e169fc8126c90"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -90,8 +90,8 @@ class Latexindent < Formula
   end
 
   resource "Module::Build" do
-    url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Module-Build-0.4231.tar.gz"
-    sha256 "7e0f4c692c1740c1ac84ea14d7ea3d8bc798b2fb26c09877229e04f430b2b717"
+    url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Module-Build-0.4232.tar.gz"
+    sha256 "67c82ee245d94ba06decfa25572ab75fdcd26a9009094289d8f45bc54041771b"
   end
 
   resource "Module::Implementation" do
@@ -145,8 +145,8 @@ class Latexindent < Formula
   end
 
   resource "Test::Fatal" do
-    url "https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Test-Fatal-0.016.tar.gz"
-    sha256 "7283d430f2ba2030b8cd979ae3039d3f1b2ec3dde1a11ca6ae09f992a66f788f"
+    url "https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Test-Fatal-0.017.tar.gz"
+    sha256 "37dfffdafb84b762efe96b02fb2aa41f37026c73e6b83590db76229697f3c4a6"
   end
 
   resource "Try::Tiny" do
