@@ -4,6 +4,7 @@ class NetcdfCxx < Formula
   url "https://github.com/Unidata/netcdf-cxx4/archive/refs/tags/v4.3.1.tar.gz"
   sha256 "e3fe3d2ec06c1c2772555bf1208d220aab5fee186d04bd265219b0bc7a978edc"
   license "NetCDF"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "b8249b9ab11997990d8ecba6a47b57b4a5df1e6aad825f17f0ad00ad23a85b7d"
