@@ -9,12 +9,14 @@ class Sgr < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "1de1d02bf6bc27c2d1697c7d4e5ad9dd9c7785148d59bb21998d55c6f5c9acfc"
-    sha256 cellar: :any,                 arm64_big_sur:  "ee30fdf8f659da70498c116eda59a27b5696c2c8251b22f5e253058fb951ee65"
-    sha256 cellar: :any,                 monterey:       "26f8987ae0e80865d5db865f5f6d503287988e3e84ff5c7c94a1fefdd053cebb"
-    sha256 cellar: :any,                 big_sur:        "80c39910a011201d61a3f50de6f6b53ee696af9c75155d04ace80d3fbd284ee8"
-    sha256 cellar: :any,                 catalina:       "be74b99de044555b07ade08e36943e0c5fa432aad9b0f732c66a3338e37d89ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9fe1825ebd65955b70fa8ad1853c722fe43f3c55d85ba4deab0a9294594ab261"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "8c1b3cdad5a8929e729d19e01ec396532e4eb5744ca6728cab1f31ef43165424"
+    sha256 cellar: :any,                 arm64_monterey: "138ce113025e2c5f653170e25cf8465d6b892c2efd126fc1b5da2477cbb8a56c"
+    sha256 cellar: :any,                 arm64_big_sur:  "5b9736c66c5b33a2804b7edd05b2e07c2f85c278a619e1e7d79fb6e68127122e"
+    sha256 cellar: :any,                 ventura:        "77aa3ec88fb23e71026d182e9c490c1956b1d08e6d02b25fa948e28b604c4d0a"
+    sha256 cellar: :any,                 monterey:       "49097472ad80b5862c90bb8d0a8d502915d8c569ad5c60f0fe50d379e386451a"
+    sha256 cellar: :any,                 big_sur:        "67aef300fb9502bddae5bca4739d4ce11e0cbd96d68cd9d72cae7a1f98a9ed88"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90d51ba0c11eaf95cec87f5a8069b2fff71e6288a2442c0a64ad73955da99098"
   end
 
   depends_on "poetry" => :build
