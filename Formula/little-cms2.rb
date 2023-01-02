@@ -6,6 +6,7 @@ class LittleCms2 < Formula
   url "https://downloads.sourceforge.net/project/lcms/lcms/2.14/lcms2-2.14.tar.gz"
   sha256 "28474ea6f6591c4d4cee972123587001a4e6e353412a41b3e9e82219818d5740"
   license "MIT"
+  revision 1
   version_scheme 1
 
   # The Little CMS website has been redesigned and there's no longer a
