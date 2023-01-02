@@ -1,10 +1,20 @@
 class Libcpuid < Formula
   desc "Small C library for x86 CPU detection and feature extraction"
   homepage "https://github.com/anrieff/libcpuid"
-  url "https://github.com/anrieff/libcpuid/archive/v0.6.2.tar.gz"
-  sha256 "3e7f2fc243a6a68d6c909b701cfa0db6422ec33fccf91ea5ab7beda3eb798672"
   license "BSD-2-Clause"
   head "https://github.com/anrieff/libcpuid.git", branch: "master"
+
+  stable do
+    url "https://github.com/anrieff/libcpuid/archive/v0.6.2.tar.gz"
+    sha256 "3e7f2fc243a6a68d6c909b701cfa0db6422ec33fccf91ea5ab7beda3eb798672"
+
+    # Fix build for macOS
+    # Remove in the next release
+    patch do
+      url "https://github.com/anrieff/libcpuid/commit/3b0a1f7e5b10efb978cea4c5cb5b727ba1ef3655.patch?full_index=1"
+      sha256 "d4dcc843e78fe5872aba483b0fb5adb0b8e702f6343a383db566dae81eec0d9d"
+    end
+  end
 
   bottle do
     sha256 cellar: :any,                 ventura:      "b197362eee621d3118a68c1a5bd461beba3517c47fe014e1a94667e184f69557"
@@ -17,13 +27,6 @@ class Libcpuid < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on arch: :x86_64
-
-  # Fix build for macOS
-  # Remove in the next release
-  patch do
-    url "https://github.com/anrieff/libcpuid/commit/3b0a1f7e5b10efb978cea4c5cb5b727ba1ef3655.patch?full_index=1"
-    sha256 "d4dcc843e78fe5872aba483b0fb5adb0b8e702f6343a383db566dae81eec0d9d"
-  end
 
   def install
     system "autoreconf", "-ivf"
