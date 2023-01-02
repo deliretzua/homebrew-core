@@ -2,7 +2,7 @@ class SdlImage < Formula
   desc "Image file loading library"
   homepage "https://github.com/libsdl-org/SDL_image"
   license "Zlib"
-  revision 9
+  revision 10
 
   stable do
     url "https://www.libsdl.org/projects/SDL_image/release/SDL_image-1.2.12.tar.gz"
