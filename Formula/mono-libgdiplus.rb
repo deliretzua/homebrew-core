@@ -4,7 +4,7 @@ class MonoLibgdiplus < Formula
   url "https://download.mono-project.com/sources/libgdiplus/libgdiplus-6.1.tar.gz"
   sha256 "97d5a83d6d6d8f96c27fb7626f4ae11d3b38bc88a1726b4466aeb91451f3255b"
   license "MIT"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://download.mono-project.com/sources/libgdiplus/"
