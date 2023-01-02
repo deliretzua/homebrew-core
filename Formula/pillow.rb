@@ -4,6 +4,7 @@ class Pillow < Formula
   url "https://files.pythonhosted.org/packages/00/d5/4903f310765e0ff2b8e91ffe55031ac6af77d982f0156061e20a4d1a8b2d/Pillow-9.5.0.tar.gz"
   sha256 "bf548479d336726d7a0eceb6e767e179fbde37833ae42794602631a070d630f1"
   license "HPND"
+  revision 1
   head "https://github.com/python-pillow/Pillow.git", branch: "master"
 
   bottle do
