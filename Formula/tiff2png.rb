@@ -4,7 +4,7 @@ class Tiff2png < Formula
   url "https://github.com/rillian/tiff2png/archive/v0.92.tar.gz"
   sha256 "64e746560b775c3bd90f53f1b9e482f793d80ea6e7f5d90ce92645fd1cd27e4a"
   license "ISC"
-  revision 2
+  revision 3
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "bbcb5b7fc991956788025ab520c25494e0f7c324c32708b4b73512b5d34e7763"
