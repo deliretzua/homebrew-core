@@ -4,6 +4,7 @@ class Gtk4 < Formula
   url "https://download.gnome.org/sources/gtk/4.10/gtk-4.10.3.tar.xz"
   sha256 "4545441ad79e377eb6e0a705026dc7a46886e46a1b034db40912909da801cea9"
   license "LGPL-2.1-or-later"
+  revision 1
 
   livecheck do
     url :stable
