@@ -7,15 +7,13 @@ class Bottom < Formula
   head "https://github.com/ClementTsang/bottom.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "877d2e06dd2f926222b398f76d85109f518e18cabb1cd8e77d914990047c38f5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8e7e126717b29e5317ddac5abc247bf3dc1d084f544af13af37ab4e17b66410d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0cc0790f7611b7e50bb4ae22b1376a12619716f13b4f8bb406c0f2c67bf69232"
-    sha256 cellar: :any_skip_relocation, ventura:        "2d80542e097eacb2f75c294807fe5f0b30a7b9fb96824d5cd9d261b75dd8a18f"
-    sha256 cellar: :any_skip_relocation, monterey:       "c8572a9b69cff3a51c94131b487d783efeeccf141dc84d15c33573d46bdbfe81"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ab7573866fee9294189c90e5bec525d54652835be497a1cbf4c1c0c4b999ffa7"
-    sha256 cellar: :any_skip_relocation, catalina:       "622766c0da5d44b5b7ea85ee524b16aa7b8b96366a677c6f158b8f6e35e60243"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d31da37fed38b840c8cb34388da41be7398ae33c69725e6c36cd54b59cc265ac"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f1ff37a97a0798737e38ce3f1dfc8b7f3667ec28e400d799a5e11a338984dd35"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a06a086763f5d9eb759035614c87f326ad5a77f7070465da9c4f2148ae7ae7fd"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e957ae292d89de8535f92d870260529c84889e1559e7bf2ca33ac206e38a0bab"
+    sha256 cellar: :any_skip_relocation, ventura:        "8c4edf12a6e344ff622550a269a1185361e2de56971781d91ed8121efd87b091"
+    sha256 cellar: :any_skip_relocation, monterey:       "abe1c56d2a1a949284b716baefb0bb15a5262097ab4b8e52b30145204d7d22d0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f91e743720c1b39e586315b2a1311931a1f81ebda6841b2c8306c19e3ae20620"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b0185270c1a21c94b1e0a81474d573f4284dad735ef1868a95a9850cffbc727f"
   end
 
   depends_on "rust" => :build
