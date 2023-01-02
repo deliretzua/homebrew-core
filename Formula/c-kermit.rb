@@ -29,7 +29,12 @@ class CKermit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "982c8eb9c1956b669d4f769cb1c70a0cc7f32848674aba10e5aa906de57bdd1d"
   end
 
+  uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
+
+  # Apply patch to fix build failure with glibc 2.28+
+  # Will be fixed in next release: https://www.kermitproject.org/ckupdates.html
+  patch :DATA
 
   def install
     os = OS.mac? ? "macosx" : "linux"
@@ -47,3 +52,17 @@ class CKermit < Formula
                  shell_output("#{bin}/kermit -C VERSION,exit")
   end
 end
+
+__END__
+diff -ru z/ckucmd.c k/ckucmd.c
+--- z/ckucmd.c	2004-01-07 10:04:04.000000000 -0800
++++ k/ckucmd.c	2019-01-01 15:52:44.798864262 -0800
+@@ -7103,7 +7103,7 @@
+ 
+ /* Here we must look inside the stdin buffer - highly platform dependent */
+ 
+-#ifdef _IO_file_flags			/* Linux */
++#ifdef _IO_EOF_SEEN			/* Linux */
+     x = (int) ((stdin->_IO_read_end) - (stdin->_IO_read_ptr));
+     debug(F101,"cmdconchk _IO_file_flags","",x);
+ #else  /* _IO_file_flags */
