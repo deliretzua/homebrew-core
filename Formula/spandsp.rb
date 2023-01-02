@@ -3,7 +3,7 @@ class Spandsp < Formula
   homepage "https://web.archive.org/web/20220504064130/https://www.soft-switch.org/"
   url "https://web.archive.org/web/20220329161120/https://www.soft-switch.org/downloads/spandsp/spandsp-0.0.6.tar.gz"
   sha256 "cc053ac67e8ac4bb992f258fd94f275a7872df959f6a87763965feabfdcc9465"
-  revision 2
+  revision 3
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "d4a163f05a94cdabd07ce9dfbdeb0e78eb7a40891a2f58bb7c676d36c81020a3"
