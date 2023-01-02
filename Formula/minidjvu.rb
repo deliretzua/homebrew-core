@@ -4,6 +4,7 @@ class Minidjvu < Formula
   url "https://downloads.sourceforge.net/project/minidjvu/minidjvu/0.8/minidjvu-0.8.tar.gz"
   sha256 "e9c892e0272ee4e560eaa2dbd16b40719b9797a1fa2749efeb6622f388dfb74a"
   license "GPL-2.0"
+  revision 1
 
   livecheck do
     url :stable
