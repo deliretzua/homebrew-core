@@ -6,7 +6,7 @@ class Pike < Formula
   mirror "http://deb.debian.org/debian/pool/main/p/pike8.0/pike8.0_8.0.1738.orig.tar.gz"
   sha256 "1033bc90621896ef6145df448b48fdfa342dbdf01b48fd9ae8acf64f6a31b92a"
   license any_of: ["GPL-2.0-only", "LGPL-2.1-only", "MPL-1.1"]
-  revision 1
+  revision 2
 
   livecheck do
     url "https://pike.lysator.liu.se/download/pub/pike/latest-stable/"
