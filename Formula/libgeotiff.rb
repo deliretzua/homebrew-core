@@ -2,7 +2,7 @@ class Libgeotiff < Formula
   desc "Library and tools for dealing with GeoTIFF"
   homepage "https://github.com/OSGeo/libgeotiff"
   license "MIT"
-  revision 2
+  revision 3
 
   stable do
     url "https://github.com/OSGeo/libgeotiff/releases/download/1.7.1/libgeotiff-1.7.1.tar.gz"
