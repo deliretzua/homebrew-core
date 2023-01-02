@@ -9,14 +9,13 @@ class Ncurses < Formula
   license "MIT"
 
   bottle do
-    sha256 arm64_ventura:  "b534276b8519970e057330ceb2f16c3788cb33fd4aa2b6dc157e3edd598d6eba"
-    sha256 arm64_monterey: "a1aabfa5d0fd9b2735b3d83d5378a447049190a34d85c3df9f2983beecbf83d5"
-    sha256 arm64_big_sur:  "dec526d7259a034bb8622cfd2d3bfad738ecc42d03e2d1f79019cfbadbd45b16"
-    sha256 ventura:        "71e24cf407b0e1c56158a133a6bb9a62b615f66219805a141ebeb85b93062ca7"
-    sha256 monterey:       "b23144507b0e799235e12b2f6dfb1a595c18384ef773c680a05eb785724d9dc5"
-    sha256 big_sur:        "15ee5cba182428fe2bcd80da6605214104b77e808a484c97ab281741f1a66a06"
-    sha256 catalina:       "59d9544f77cdbd9066f6265872c0c32e38ac26db0ba88389f5911797e157b20f"
-    sha256 x86_64_linux:   "09c1d079d3b5cf1c855afa9da1fc7251234b73971d4cbe0bf7b9fca1cbea353c"
+    sha256 arm64_ventura:  "7f6ef060a13afca7fbd510a95b8f687e9a44f2c06ab18a68ee0037f60abebb67"
+    sha256 arm64_monterey: "103cc4576dbcb2f907f07f612671d221c3a30ac4e0e30ac92232c1149734abd5"
+    sha256 arm64_big_sur:  "89fba020401221224c789911e14ab04cef29610e247166e8536d7434993d978e"
+    sha256 ventura:        "1460ee1a2732cde79771a8c22960897e9aa3e57da0410ddcc0560bc5fc113d9a"
+    sha256 monterey:       "2ba0f33a4a8578f779f3dc5dbbc53aede3fa2c7f2c79b97ccfc71b34e4c4da53"
+    sha256 big_sur:        "7e99f031d087a9662bf4c74d662a30b832a951349cab876b7652c0d0240509f0"
+    sha256 x86_64_linux:   "abfe09d33077a2181c9802f34a8a71cd059b324663559b9853fd775d215c2ea6"
   end
 
   keg_only :provided_by_macos
