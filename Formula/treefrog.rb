@@ -1,8 +1,8 @@
 class Treefrog < Formula
   desc "High-speed C++ MVC Framework for Web Application"
   homepage "https://www.treefrogframework.org/"
-  url "https://github.com/treefrogframework/treefrog-framework/archive/v2.4.0.tar.gz"
-  sha256 "d7fc8459013097c0798f2b57ac1ff684077c8417c48fb536913edd94dda31738"
+  url "https://github.com/treefrogframework/treefrog-framework/archive/v2.6.0.tar.gz"
+  sha256 "edddf0a59713767d7dff12064b502576492827f8eef72dc1ddb82eabd4be7349"
   license "BSD-3-Clause"
   head "https://github.com/treefrogframework/treefrog-framework.git", branch: "master"
 
@@ -23,7 +23,11 @@ class Treefrog < Formula
     sha256 x86_64_linux:   "c779dc8dde4b68594fc501e53a49f17b193a0c507335e608663479bde6022b35"
   end
 
+  depends_on "cmake" => :build
+  depends_on "pkg-config" => :build
   depends_on xcode: :build
+  depends_on "gflags"
+  depends_on "glog"
   depends_on "mongo-c-driver"
   depends_on "qt"
 
@@ -37,7 +41,7 @@ class Treefrog < Formula
       inreplace "src/corelib.pro", "/usr/include", HOMEBREW_PREFIX/"include"
     end
 
-    system "./configure", "--prefix=#{prefix}", "--enable-shared-mongoc"
+    system "./configure", "--prefix=#{prefix}", "--enable-shared-mongoc", "--enable-shared-glog"
 
     cd "src" do
       system "make"
