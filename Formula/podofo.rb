@@ -4,7 +4,7 @@ class Podofo < Formula
   url "https://downloads.sourceforge.net/project/podofo/podofo/0.9.8/podofo-0.9.8.tar.gz"
   sha256 "5de607e15f192b8ad90738300759d88dea0f5ccdce3bf00048a0c932bc645154"
   license all_of: ["LGPL-2.0-only", "GPL-2.0-only"]
-  revision 1
+  revision 2
   head "svn://svn.code.sf.net/p/podofo/code/podofo/trunk"
 
   bottle do
