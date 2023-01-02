@@ -4,6 +4,7 @@ class Proj < Formula
   url "https://github.com/OSGeo/PROJ/releases/download/9.2.0/proj-9.2.0.tar.gz"
   sha256 "dea816f5aa732ae6b2ee3977b9bdb28b1d848cf56a1aad8faf6708b89f0ed50e"
   license "MIT"
+  revision 1
   head "https://github.com/OSGeo/proj.git", branch: "master"
 
   bottle do
