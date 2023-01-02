@@ -4,6 +4,7 @@ class Grokj2k < Formula
   url "https://github.com/GrokImageCompression/grok/archive/refs/tags/v10.0.6.tar.gz"
   sha256 "968bd7aad7315c9a389fcec56ab611f1c8724083d4e0838d095992f555087906"
   license "AGPL-3.0-or-later"
+  revision 1
   head "https://github.com/GrokImageCompression/grok.git", branch: "master"
 
   livecheck do
