@@ -4,6 +4,7 @@ class Libgr < Formula
   url "https://github.com/sciapp/gr/archive/refs/tags/v0.72.1.tar.gz"
   sha256 "1d03eda3761e212f150d64236c7bd8e29ae9f46843a7c210e84ec8ca1bb5176f"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 arm64_ventura:  "1a9a592020ac7df6b44fddaa7d018d0026f68939be219345b6a11026b8b28407"
