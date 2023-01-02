@@ -4,7 +4,7 @@ class Gd < Formula
   url "https://github.com/libgd/libgd/releases/download/gd-2.3.3/libgd-2.3.3.tar.xz"
   sha256 "3fe822ece20796060af63b7c60acb151e5844204d289da0ce08f8fdf131e5a61"
   license :cannot_represent
-  revision 4
+  revision 5
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "62e2d11e1a556084beab6320187c522647cb15308233f164d9fe1e177701d37f"
