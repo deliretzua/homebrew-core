@@ -4,6 +4,7 @@ class Imlib2 < Formula
   url "https://downloads.sourceforge.net/project/enlightenment/imlib2-src/1.11.0/imlib2-1.11.0.tar.gz"
   sha256 "94b74f7c28d5d05ac936d479f944a71222311b8ced8d012fd57010830faade31"
   license "Imlib2"
+  revision 1
 
   bottle do
     sha256 arm64_ventura:  "9593d7f05cf0e259f616c5c40ed62646f4d14e3bfb7e68e77524ad3f6d97f70c"
