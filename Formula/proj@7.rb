@@ -4,6 +4,7 @@ class ProjAT7 < Formula
   url "https://github.com/OSGeo/PROJ/releases/download/7.2.1/proj-7.2.1.tar.gz"
   sha256 "b384f42e5fb9c6d01fe5fa4d31da2e91329668863a684f97be5d4760dbbf0a14"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 arm64_ventura:  "ef50e257e02dadd349f715b576562fd1c3927e5ff52787bd3f8c7d85a41b8822"
