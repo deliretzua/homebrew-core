@@ -2,6 +2,7 @@ class Ghostscript < Formula
   desc "Interpreter for PostScript and PDF"
   homepage "https://www.ghostscript.com/"
   license "AGPL-3.0-or-later"
+  revision 1
 
   stable do
     url "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10011/ghostpdl-10.01.1.tar.xz"
