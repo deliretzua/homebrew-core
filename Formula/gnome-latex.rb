@@ -7,14 +7,13 @@ class GnomeLatex < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_ventura:  "2ce74461c6544307ce6ef78ca8ee4a041955401dadb131f95cf28df1d11a9ac4"
-    sha256 arm64_monterey: "ed4db46967ee4e4a49617ccb1bab481aaf8c01c772fe98f4b09cec1374715ea8"
-    sha256 arm64_big_sur:  "65daa605789bb193d0fcb02e45207c4ee200c28213dc923b2b0c6c2d3f64884b"
-    sha256 ventura:        "66e8b36170eb1ea6355b31f76e761e79e8809eb09bd53c5a55d9d10be2b595db"
-    sha256 monterey:       "e6faaf0aff9d05e3c60261a37f65dba8036903c718cd40f9057825901b513498"
-    sha256 big_sur:        "9fc46312b67c240185ef1929a3e3660aaead71cbd0ede56aaaf6422cc3429b8a"
-    sha256 catalina:       "224ac8c01214d4b9171a7dd7432b441fe3631ad48b8f7bafa1a306bf894e31c2"
-    sha256 x86_64_linux:   "ec254c8a93ae75f3fa3c3af37415c051731090348db585b7e2b99869812aee5f"
+    sha256 arm64_ventura:  "f06efbf2dbba8b342210c88d0343a9ea7dcc0ea2635be6547e74d2caeb9cfa70"
+    sha256 arm64_monterey: "51de73af3ae1d9c55c091d36268e1874d4edc12d73f8bbcf21925fd57c4b7b5a"
+    sha256 arm64_big_sur:  "b067b352478df9a74e3650d1397485db30d255e1360c9265381bba9845ba8d5d"
+    sha256 ventura:        "19a2472d46a29cc3fd5cd48883cf5ebbf7c8dbfe08c20208bb77564511962c40"
+    sha256 monterey:       "3c4c5d295ffee44a5c7acbff6ff0b9e5bc9eef749584861b35d46397d03446a9"
+    sha256 big_sur:        "04f05bd4f4c55742f72673520076ce9899df5934f9421deff5344d8177298637"
+    sha256 x86_64_linux:   "7e243ca213ca46495cc3798a5b6a5d7fae042da5a25537608c67d1a6ea704704"
   end
 
   depends_on "appstream-glib" => :build
