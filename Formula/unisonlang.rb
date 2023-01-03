@@ -4,9 +4,9 @@ class Unisonlang < Formula
   desc "Friendly programming language from the future"
   homepage "https://unison-lang.org/"
   url "https://github.com/unisonweb/unison.git",
-      tag:      "release/M4e",
-      revision: "af0bc1325918c077fc62f9a7d2c3937d36d53563"
-  version "M4e"
+      tag:      "release/M4f",
+      revision: "e5d9662c6c8802eecc63da2d6348e899d0d3ba8c"
+  version "M4f"
   license "MIT"
   head "https://github.com/unisonweb/unison.git", branch: "trunk"
 
@@ -33,9 +33,9 @@ class Unisonlang < Formula
   uses_from_macos "zlib"
 
   resource "local-ui" do
-    url "https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/M4e.tar.gz"
-    sha256 "9caf016902a334db1109fd51c0aceaf7f64645201d1f1c44f45e7aaf9fd2a3d3"
-    version "M4e"
+    url "https://github.com/unisonweb/unison-local-ui/archive/refs/tags/release/M4f.tar.gz"
+    sha256 "868cc77c936b15ba67818295913fc4e9da44077f780a30bfe7bee307802e3b18"
+    version "M4f"
   end
 
   def install
@@ -49,7 +49,7 @@ class Unisonlang < Formula
       # if that occurs. Problem seems to happening while running `elm-json install`.
       # Issue ref: https://github.com/zwilias/elm-json/issues/50
       Timeout.timeout(300) do
-        system "npm", "run", "ui-core:install"
+        system "npm", "run", "ui-core-install"
       end
       system "npm", "run", "build"
 
