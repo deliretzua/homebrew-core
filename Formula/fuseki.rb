@@ -7,7 +7,7 @@ class Fuseki < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "7c543feabad850098ae17ad9431fb8c1bf85a621f279f72fdc79fe77c66b8bae"
+    sha256 cellar: :any_skip_relocation, all: "10a6f1c450c74c6a89a3c61ea151c0c4f06e9aef880ea4aa4146971a928f6951"
   end
 
   depends_on "openjdk"
