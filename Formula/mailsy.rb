@@ -8,14 +8,13 @@ class Mailsy < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7895f343f6290912eec520fbdce9015a7b2ba401feda5f3351e2282a530220a1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "10e9485d0cc9c2be2ae1434d55bc4465e30c2f550f3ae804b996e553b250cfbf"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "10e9485d0cc9c2be2ae1434d55bc4465e30c2f550f3ae804b996e553b250cfbf"
-    sha256 cellar: :any_skip_relocation, ventura:        "b75dc7896a57826a9cbb8257e84726b12bd13dcbe7d8ff84c4bb217ff4301d6f"
-    sha256 cellar: :any_skip_relocation, monterey:       "a64208278b48c0c6706464b01c7bb8ea29b444cd676926c5fcab518606831d81"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a64208278b48c0c6706464b01c7bb8ea29b444cd676926c5fcab518606831d81"
-    sha256 cellar: :any_skip_relocation, catalina:       "a64208278b48c0c6706464b01c7bb8ea29b444cd676926c5fcab518606831d81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "10e9485d0cc9c2be2ae1434d55bc4465e30c2f550f3ae804b996e553b250cfbf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2514b6b84c2c0d5a632b316c98af3111c96731f92fb6aadf8e10fbebc085f899"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2514b6b84c2c0d5a632b316c98af3111c96731f92fb6aadf8e10fbebc085f899"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2514b6b84c2c0d5a632b316c98af3111c96731f92fb6aadf8e10fbebc085f899"
+    sha256 cellar: :any_skip_relocation, ventura:        "e7eaa1cbb7ee39d0bcd8fcfb4c7ace25c7cc4b12c3eebaa4716b44f6054991fd"
+    sha256 cellar: :any_skip_relocation, monterey:       "e7eaa1cbb7ee39d0bcd8fcfb4c7ace25c7cc4b12c3eebaa4716b44f6054991fd"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e7eaa1cbb7ee39d0bcd8fcfb4c7ace25c7cc4b12c3eebaa4716b44f6054991fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2514b6b84c2c0d5a632b316c98af3111c96731f92fb6aadf8e10fbebc085f899"
   end
 
   depends_on "node"
