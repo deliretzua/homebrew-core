@@ -1,11 +1,10 @@
 class Couchdb < Formula
   desc "Apache CouchDB database server"
   homepage "https://couchdb.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=couchdb/source/3.2.2/apache-couchdb-3.2.2.tar.gz"
-  mirror "https://archive.apache.org/dist/couchdb/source/3.2.2/apache-couchdb-3.2.2.tar.gz"
-  sha256 "69c9fd6f80133557f68a02e92dda72a4fd646d646f429f45bb8329a30f82f20e"
+  url "https://www.apache.org/dyn/closer.lua?path=couchdb/source/3.2.2/apache-couchdb-3.3.0.tar.gz"
+  mirror "https://archive.apache.org/dist/couchdb/source/3.3.0/apache-couchdb-3.3.0.tar.gz"
+  sha256 "e8c6bf3f99a8f0d2af5806652f57d53796367e2d4b24dedc86e268cf86f787a0"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url :homepage
@@ -32,11 +31,11 @@ class Couchdb < Formula
   #   please re-compile this module with an Erlang/OTP 25 compiler
   # escript: exception error: undefined function rebar:main/1
   # Ref: https://github.com/Homebrew/homebrew-core/pull/105876
-  depends_on "erlang@24" => :build
+  depends_on "erlang" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "icu4c"
-  depends_on "openssl@3"
+  depends_on "openssl@1.1"
   # NOTE: Supported `spidermonkey` versions are hardcoded at
   # https://github.com/apache/couchdb/blob/#{version}/src/couch/rebar.config.script
   depends_on "spidermonkey"
