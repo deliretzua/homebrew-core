@@ -9,15 +9,13 @@ class Pydocstyle < Formula
   head "https://github.com/PyCQA/pydocstyle.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "11591f3472ce083fd8f56068da5a7441954d66f4afad42500b6650b2a3814d9b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "79d16bee35a3b67c8953b524bc40924a9ae6f362116d9c8716d73c5816574b76"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2f3596d75b4c7799708e2af41e2e55202ee09554b74e535e0be90f946a88c710"
-    sha256 cellar: :any_skip_relocation, ventura:        "4191bca163eb8ced72cacb8fde273314ca8be9ccfb03d8115500a04ed1563093"
-    sha256 cellar: :any_skip_relocation, monterey:       "f36bd57c1c1b64bea7d05f66c93150c897a9c49fb4923d50d847b25856e2a0dd"
-    sha256 cellar: :any_skip_relocation, big_sur:        "af34d12a6df41fb57f8cbe3f75b41c001300fca417a40a5e3a3a34524cb9479d"
-    sha256 cellar: :any_skip_relocation, catalina:       "efe358f510174eb6d12b900d692e54b740425f85dbd1390db3d57b618e8278b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "71a9fce6d97ce3168628b5316a0f398cbad89deb2e1069e3f2f2b3f9dd8797a8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2d32bd2370cf0c6e7bdc3afff9661380cf1050d631dc1ee417ea3bab16a720d8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "73f2d0ef3d21a6746434c3578d44486baf8d1b7cef240cd71c717c33b16e48cc"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "33e20d88202debbe9e679c74decc18a4f09043da3fd927866aef482cf2be20df"
+    sha256 cellar: :any_skip_relocation, ventura:        "e8bf2a91fe6ad37749583ff14d830effce80e1fb21a7a197bb382e6b9461408d"
+    sha256 cellar: :any_skip_relocation, monterey:       "e5bd1c82cde39e8971673a1693f18cb845d6d683f9f13b6000657fe05fc4a5a7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5574481a6a7b75ea780196684da29a91555e3eb72b48da4e4ac3a3a1f01bad1b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d89fa0edfcf8bd9ce19f2384924eec93156081035e39495e0076b712e466f01f"
   end
 
   depends_on "python@3.11"
