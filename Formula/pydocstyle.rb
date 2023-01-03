@@ -9,13 +9,13 @@ class Pydocstyle < Formula
   head "https://github.com/PyCQA/pydocstyle.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2d32bd2370cf0c6e7bdc3afff9661380cf1050d631dc1ee417ea3bab16a720d8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "73f2d0ef3d21a6746434c3578d44486baf8d1b7cef240cd71c717c33b16e48cc"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "33e20d88202debbe9e679c74decc18a4f09043da3fd927866aef482cf2be20df"
-    sha256 cellar: :any_skip_relocation, ventura:        "e8bf2a91fe6ad37749583ff14d830effce80e1fb21a7a197bb382e6b9461408d"
-    sha256 cellar: :any_skip_relocation, monterey:       "e5bd1c82cde39e8971673a1693f18cb845d6d683f9f13b6000657fe05fc4a5a7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5574481a6a7b75ea780196684da29a91555e3eb72b48da4e4ac3a3a1f01bad1b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d89fa0edfcf8bd9ce19f2384924eec93156081035e39495e0076b712e466f01f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dee06d3bd641327e0df55963fa898cf326ea0078633d97dfb2ce1ac7135e7bd5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "281c7a1b2aca5d293724af8c0bf4eaf5fb6acae3bb6e90b6544399879c1531ba"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "53c853042653f2189d096f3470c10725ff43599be7c569cf688cc242b1ad6c42"
+    sha256 cellar: :any_skip_relocation, ventura:        "3ced7d900552304d01ad0a1ed0473435082a70898d40e879a2fb1a77afe6ad69"
+    sha256 cellar: :any_skip_relocation, monterey:       "59717b9bb27f945289f9f75dad090aae52f9e27cbd86a39c3c426436bce6bf89"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b77714137b6c87b1b69e6dd47d9977e71150119eaf1f79b23c9176661936414a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d6155c6752c97e736f54919b0320a902204b37e0583051bd73ae861e16954008"
   end
 
   depends_on "python@3.11"
