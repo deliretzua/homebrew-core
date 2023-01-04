@@ -9,15 +9,14 @@ class ReconNg < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3234c6a086bea3cea57358943f75f2b412b0a179760f2319643e8517439e57bd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2e2e45a733f31ec9e0530cfc1e8fff4be936a47aa9d16e5f18bdc6cf5604db61"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0c67a45b9343f19d54224ea3d2d315395e2671e3956230cf773dcdb5809fc74e"
-    sha256 cellar: :any_skip_relocation, ventura:        "14c93add3cf9d93b8b501ae3fdf8bd465753a9988de714ebcd2afa4c6cd49ebf"
-    sha256 cellar: :any_skip_relocation, monterey:       "a61255c42019f8ca5865e11a54bc9e55a37ca6deefbb3f9f3f3502bca7b9a556"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b7641d98fbac1452c6bad5e4a07b8901faf28dbd66f7201db11a128f92650f84"
-    sha256 cellar: :any_skip_relocation, catalina:       "d1c3ff3698802850447b16d31118f020479b68e38f6f07a59e6f5ad33cec4da8"
-    sha256 cellar: :any_skip_relocation, mojave:         "52870b6cae825becbad66e89b672790ed2fe4107586e51cdc6fe5e44e40a0092"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3a1463e334a7e33e84d3c09fff13e8070aa42c7af678d88f65f9ab771a72b32"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "a8ee4d38da2ae7b503992e7b6a54bf2ce8543b00772b0fef820a904bea115d80"
+    sha256 cellar: :any,                 arm64_monterey: "bc54ffbc6c878bb333490615c78e4ba46765cc51d8c8568ebc052080fd861945"
+    sha256 cellar: :any,                 arm64_big_sur:  "d285257e11e5e4dd1944ac2a55dda5b13a7f088b3368fda99e5e8ecd405be2b8"
+    sha256 cellar: :any,                 ventura:        "ffc893dded85bb8f5b60333603233f997350b3cf3e711a8c321e4742b4c33b24"
+    sha256 cellar: :any,                 monterey:       "332e6a027e05027230ec9c046ffe8b8651ee1e9598401b600ddd451a34b8c16c"
+    sha256 cellar: :any,                 big_sur:        "ec3153ed4f98b7986f302461ea185d9ed2d59d844e98bac59342fb4256516f51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "678e0115e9dc3834923df4eeaddd75c102d34dc666ab0f03179a225d276094b1"
   end
 
   depends_on "libyaml"
