@@ -9,14 +9,13 @@ class Commitlint < Formula
   head "https://github.com/conventional-changelog/commitlint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "538e8f5fe80de3d505512730e86d34d9d14085f6d9547d3bda0eaba66f25b936"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "538e8f5fe80de3d505512730e86d34d9d14085f6d9547d3bda0eaba66f25b936"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "538e8f5fe80de3d505512730e86d34d9d14085f6d9547d3bda0eaba66f25b936"
-    sha256 cellar: :any_skip_relocation, ventura:        "cb35ed4534d4f33f632d3a2def192949c1de75740af3f757040554274f19539a"
-    sha256 cellar: :any_skip_relocation, monterey:       "cb35ed4534d4f33f632d3a2def192949c1de75740af3f757040554274f19539a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cb35ed4534d4f33f632d3a2def192949c1de75740af3f757040554274f19539a"
-    sha256 cellar: :any_skip_relocation, catalina:       "cb35ed4534d4f33f632d3a2def192949c1de75740af3f757040554274f19539a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "538e8f5fe80de3d505512730e86d34d9d14085f6d9547d3bda0eaba66f25b936"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d45347c821ed31c21a5ac760f0e06fd0c5437e00ec09eb9658f3e4d2be407c65"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d45347c821ed31c21a5ac760f0e06fd0c5437e00ec09eb9658f3e4d2be407c65"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d45347c821ed31c21a5ac760f0e06fd0c5437e00ec09eb9658f3e4d2be407c65"
+    sha256 cellar: :any_skip_relocation, ventura:        "3113eac87b053b9ca914bfe792d88de36f3d4e12d13dbda43bb9571161e79b1f"
+    sha256 cellar: :any_skip_relocation, monterey:       "3113eac87b053b9ca914bfe792d88de36f3d4e12d13dbda43bb9571161e79b1f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3113eac87b053b9ca914bfe792d88de36f3d4e12d13dbda43bb9571161e79b1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d45347c821ed31c21a5ac760f0e06fd0c5437e00ec09eb9658f3e4d2be407c65"
   end
 
   depends_on "node"
