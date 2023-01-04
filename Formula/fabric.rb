@@ -10,15 +10,13 @@ class Fabric < Formula
   head "https://github.com/fabric/fabric.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "135dc5cc6e423e5f934a7d05171305f3f424605eb9a503a6f2f4071c37913dc3"
-    sha256 cellar: :any,                 arm64_monterey: "ccd2663005a3c16d686d0aa758a3289e158e8d003b47ee08ef277a6448836b89"
-    sha256 cellar: :any,                 arm64_big_sur:  "630be8c0a1469b55894d3ed7bf2dcdba281dabbe45d3bb8a28e968dff71dcab1"
-    sha256 cellar: :any,                 ventura:        "29b2c1aa7da4b29debc87bbe804f6dd663bf457f4801db31eed436ac8739c017"
-    sha256 cellar: :any,                 monterey:       "972cf4da10edce2148cb1bd3a8e9bcb2228ab3a4bdb4af61ae5ec8671c5b10b3"
-    sha256 cellar: :any,                 big_sur:        "aed7203872c89087d2464ed1cf86f839b96ff838846e2f117c38c02f831ac87f"
-    sha256 cellar: :any,                 catalina:       "2acb1f21d3a07f4f22fc564630ce0d8c5e254982332d7d4cf2fc72d4a9fc0b98"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90be4f0931d76416c08baa7d8730849ea3673ee92085559cf13de4d8e47e7626"
+    sha256 cellar: :any,                 arm64_ventura:  "a1a7be20ae24e6473efe6b1ba4c4c7e2642ab6d3bb3f7408f5cd3b878c2ae953"
+    sha256 cellar: :any,                 arm64_monterey: "413c265c7f8c0eca5f518999f2fb9e31e5c605a3d00476f52024290932ceb4d0"
+    sha256 cellar: :any,                 arm64_big_sur:  "6a7c6299830e150b00b293fcdd0e3d40b8c25c622dce285dac1109fd970f70de"
+    sha256 cellar: :any,                 ventura:        "37ad2531d247c000d436e7f967f11ae8297d7d591df339aad718109527eaa56a"
+    sha256 cellar: :any,                 monterey:       "d669622ff80f57dbf306736aea82205e09e6dce871f4909e19673484c8bdc496"
+    sha256 cellar: :any,                 big_sur:        "75276bc6e1f60bb7f9671b1130f39c2309dfc450341c2bb42ecb9bafdf7f1408"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7ca89bcb09a9a20f1982cd1e9b4943a30621b8c953ab05533138217e32bb953"
   end
 
   depends_on "rust" => :build
