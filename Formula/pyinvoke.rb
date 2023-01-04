@@ -19,14 +19,13 @@ class Pyinvoke < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "029a95b94fb67fc2cd1dbac8d5d1d5a4fa4e4f2f73bdfae884bc307f7d1df70b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "94c01767e4889359070893a059ab2acc918346363656a7327c94af44946de0d7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "94c01767e4889359070893a059ab2acc918346363656a7327c94af44946de0d7"
-    sha256 cellar: :any_skip_relocation, ventura:        "a4b53d71501ce6bc3cae2149c95df1fab67ce935d175914160d5169a920fa316"
-    sha256 cellar: :any_skip_relocation, monterey:       "e1d00d88a499551112ae26e7d9ab802c22cd67fcbcf0905440268de4854e086d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e1d00d88a499551112ae26e7d9ab802c22cd67fcbcf0905440268de4854e086d"
-    sha256 cellar: :any_skip_relocation, catalina:       "e1d00d88a499551112ae26e7d9ab802c22cd67fcbcf0905440268de4854e086d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "92637a30e8c01405910a515b2fc8480c30438cef6a20e9bac366f93529f8dbb8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e4254961d8b57fe582e30b38b4e39ea0d8ea53401a1a485511ae12f2c545c94b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e4254961d8b57fe582e30b38b4e39ea0d8ea53401a1a485511ae12f2c545c94b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e4254961d8b57fe582e30b38b4e39ea0d8ea53401a1a485511ae12f2c545c94b"
+    sha256 cellar: :any_skip_relocation, ventura:        "191044f6ed007f1ed00dfe9b6b35f1a58df53850ba341dd37c8b64b7dfdabda0"
+    sha256 cellar: :any_skip_relocation, monterey:       "191044f6ed007f1ed00dfe9b6b35f1a58df53850ba341dd37c8b64b7dfdabda0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "191044f6ed007f1ed00dfe9b6b35f1a58df53850ba341dd37c8b64b7dfdabda0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "808c3ca90ec453fe65718449286422063d57e342f08a06cdf38d49799115d162"
   end
 
   depends_on "python@3.11"
