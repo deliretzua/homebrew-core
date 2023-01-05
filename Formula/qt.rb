@@ -3,8 +3,8 @@ class Qt < Formula
 
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.4/6.4.1/single/qt-everywhere-src-6.4.1.tar.xz"
-  sha256 "e20b850b6134098a7f2e7701cfddfb213c6cf394b9e848e6fbc5b0e89dcfcc09"
+  url "https://download.qt.io/official_releases/qt/6.4/6.4.2/single/qt-everywhere-src-6.4.2.tar.xz"
+  sha256 "689f53e6652da82fccf7c2ab58066787487339f28d1ec66a8765ad357f4976be"
   license all_of: [
     "BSD-3-Clause",
     "GFDL-1.3-no-invariants-only",
@@ -12,7 +12,6 @@ class Qt < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } },
     "LGPL-3.0-only",
   ]
-  revision 2
   head "https://code.qt.io/qt/qt5.git", branch: "dev"
 
   # The first-party website doesn't make version information readily available,
@@ -36,7 +35,7 @@ class Qt < Formula
   depends_on "ninja"      => :build
   depends_on "node"       => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.10" => :build
+  depends_on "python@3.11" => :build
   depends_on "six" => :build
   depends_on "vulkan-headers" => [:build, :test]
   depends_on xcode: :build
@@ -136,16 +135,8 @@ class Qt < Formula
     directory "qtbase"
   end
 
-  # Fix Linux build with CMake versions >= 3.25
-  # remove in next release
-  patch do
-    url "https://github.com/qt/qtwebengine/commit/240e71877865ed07e4c8d5bd4553aa0772c2adf4.patch?full_index=1"
-    sha256 "8fb13bfc7aac50084e1c533955564a1819bbb25b544ebccd05b99e24527c7b80"
-    directory "qtwebengine"
-  end
-
   def install
-    python = "python3.10"
+    python = "python3.11"
     # Install python dependencies for QtWebEngine
     venv_root = buildpath/"venv"
     venv = virtualenv_create(venv_root, python)
