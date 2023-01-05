@@ -12,13 +12,13 @@ class Druid < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1f4a5c9ec3cac0f9961e57d0fb1930c29f2bf3f5ba5c39678f85750ebac3ed69"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1f4a5c9ec3cac0f9961e57d0fb1930c29f2bf3f5ba5c39678f85750ebac3ed69"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1f4a5c9ec3cac0f9961e57d0fb1930c29f2bf3f5ba5c39678f85750ebac3ed69"
-    sha256 cellar: :any_skip_relocation, ventura:        "7cba6fc2ac0794c197966a043b7be94191e31d4ccdef4060f7573581a7ba6b89"
-    sha256 cellar: :any_skip_relocation, monterey:       "7cba6fc2ac0794c197966a043b7be94191e31d4ccdef4060f7573581a7ba6b89"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7cba6fc2ac0794c197966a043b7be94191e31d4ccdef4060f7573581a7ba6b89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f4a5c9ec3cac0f9961e57d0fb1930c29f2bf3f5ba5c39678f85750ebac3ed69"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1ec6f20b3276baa4b8574e0f7110756bbc33f0be2da362a3e091625f52141889"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1ec6f20b3276baa4b8574e0f7110756bbc33f0be2da362a3e091625f52141889"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1ec6f20b3276baa4b8574e0f7110756bbc33f0be2da362a3e091625f52141889"
+    sha256 cellar: :any_skip_relocation, ventura:        "230adef95922223c683c293bc9933375521f40c95e64502caec1e09c7fb57e8a"
+    sha256 cellar: :any_skip_relocation, monterey:       "230adef95922223c683c293bc9933375521f40c95e64502caec1e09c7fb57e8a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "230adef95922223c683c293bc9933375521f40c95e64502caec1e09c7fb57e8a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ec6f20b3276baa4b8574e0f7110756bbc33f0be2da362a3e091625f52141889"
   end
 
   depends_on "zookeeper" => :test
