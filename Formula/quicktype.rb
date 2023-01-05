@@ -10,7 +10,7 @@ class Quicktype < Formula
   head "https://github.com/quicktype/quicktype.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "263c1c7164bad55605edb9ec9ddeb2f14e22b48bf7f4a22bc5c596bb5b7d3fe5"
+    sha256 cellar: :any_skip_relocation, all: "7ef3aef56d9f7a904a59cbd818ab0ef0aa9ef325e5421c456fe4ce8eaa729915"
   end
 
   depends_on "node"
