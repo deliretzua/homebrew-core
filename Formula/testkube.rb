@@ -13,13 +13,13 @@ class Testkube < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "58fde71c9609d3554f22c8dd835139b4461ffe463cd84c976cba15fb32ed0d9e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "58fde71c9609d3554f22c8dd835139b4461ffe463cd84c976cba15fb32ed0d9e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "58fde71c9609d3554f22c8dd835139b4461ffe463cd84c976cba15fb32ed0d9e"
-    sha256 cellar: :any_skip_relocation, ventura:        "a556ca67606e4d2296481dfe89aa9389bcd10908824c89142a904d1a847cb899"
-    sha256 cellar: :any_skip_relocation, monterey:       "a556ca67606e4d2296481dfe89aa9389bcd10908824c89142a904d1a847cb899"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a556ca67606e4d2296481dfe89aa9389bcd10908824c89142a904d1a847cb899"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c06625725ae032174df6e66d8bf682444b86b862c0ed93a3cb171c3d4ac1112"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "65237a9d8a2a8fa703b1f529f8bd4402c02271501a040d0b370c51f71c241e5f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "65237a9d8a2a8fa703b1f529f8bd4402c02271501a040d0b370c51f71c241e5f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "65237a9d8a2a8fa703b1f529f8bd4402c02271501a040d0b370c51f71c241e5f"
+    sha256 cellar: :any_skip_relocation, ventura:        "e229412c67376eb380b28552628123cf42863326f911c934312ccc26eff5b9e4"
+    sha256 cellar: :any_skip_relocation, monterey:       "e229412c67376eb380b28552628123cf42863326f911c934312ccc26eff5b9e4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e229412c67376eb380b28552628123cf42863326f911c934312ccc26eff5b9e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8b073ff1ee1a8afffbc3083ea3d939ba1a9771beea2d29b0488a01dac818cd6"
   end
 
   depends_on "go" => :build
