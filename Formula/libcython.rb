@@ -10,14 +10,13 @@ class Libcython < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d5e3ab9ad1b8acc88814849923b2dc1b38b9c92360a25262c62ee2f3728a2a0c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5fa9e558d708f5147a117e8f2294ca7da536b1ef6bc663720f2c71ff807eb322"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "19b5f477c479bb2e123a7bb6256f68332f9eefdb107656aa86cb1a80a7bb91a6"
-    sha256 cellar: :any_skip_relocation, ventura:        "7db706db1aa710a2b75b9df45cd6706bbe895b462669b979f9728b53ef02a4d6"
-    sha256 cellar: :any_skip_relocation, monterey:       "cfc83a5fae8efc1ba21d7002f82a1e286e94ec44d352aaf25c10b6b98f2a08bf"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9e0689718cabfeff7f5fe3f57705b26ddd0982142774c689a072f52af7628ee7"
-    sha256 cellar: :any_skip_relocation, catalina:       "aebb47718129ee4b0a543330fc9030b19011b5950ce17945a2ae315f131bf35b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7d9973c0d66985d70ca141dc3cb981a1762b1093c3bc213b48499383793617c8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "be0c691d6cd5a6d4fddb451f4ca631ff5db6eeb66c34125af92b575b4f66689c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e2d764c9f97a1a9e306af3da2f1487f1655349cea1552bd2abbf7fb2c353fcdb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7d95464d268e883e91cb65b07511cd4df4dc3a3223daafd16f8ece26ad7dff46"
+    sha256 cellar: :any_skip_relocation, ventura:        "3cec41e6f556b916d01168c7c483825ab5e27ad24660d4610340879a62233975"
+    sha256 cellar: :any_skip_relocation, monterey:       "6c4a2f6075f5cbfdcc8e4e467afd66f845cd03137155c085538e64e4ee9a23ac"
+    sha256 cellar: :any_skip_relocation, big_sur:        "32c0df922d0067357241e2d26f71a374d8e64dae909deb11cd7cfe040323c59d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec834f549c15e8330359e23b01a63f3240e5cd6ae607ad53d3f0005b2e504cfd"
   end
 
   keg_only <<~EOS
