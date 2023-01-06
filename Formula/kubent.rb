@@ -7,6 +7,16 @@ class Kubent < Formula
   license "MIT"
   head "https://github.com/doitintl/kube-no-trouble.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b253c116737aa11ffe96165128063e0cfd361ebb4b83cecadd4e58cb4a67971a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5cddd6fee8427d67e9261d1cc5cac91245c2564bc20375a7b53a2106b610e921"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "24cc7e7c89661ff0f22472460e3f00af8943c823f36df5efd070e24dc5cafaf2"
+    sha256 cellar: :any_skip_relocation, ventura:        "e43bb284c4c03fc17bb739a5cf85e5961cfe490e025044b4777fa383921840e8"
+    sha256 cellar: :any_skip_relocation, monterey:       "51299269284628a9ea395e29c88a464ec4721da7148e1b269dbea1c18356b557"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c00f175140366cdacd8f3595c6470ed0b967fda98a09ffa0eb51988a4a2a9331"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ee4f92a7de119b79f18b88aed128a6ca80847a6f1f0837b69c992469ec40b43b"
+  end
+
   depends_on "go" => :build
 
   def install
