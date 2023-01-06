@@ -7,7 +7,7 @@ class SchemaEvolutionManager < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4fae24c63f5b7fcb0de8a607d04769fe4251262b48c4f442480e80a7659afee2"
+    sha256 cellar: :any_skip_relocation, all: "90d12f573e1075a3f09d482b9b47844a2b0530d70dad6331d9f01103e3c67e4d"
   end
 
   uses_from_macos "ruby"
