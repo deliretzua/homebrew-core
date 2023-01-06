@@ -11,8 +11,7 @@ class Rabbitmq < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "74417b767ca4fa475218cb707a44c368296cef93990e806d17eed13b4d955a53"
+    sha256 cellar: :any_skip_relocation, all: "9072f57c449d81bf05e1dc63df9e00a1fb6610d4a25cd8ab28641f56c1b3ded6"
   end
 
   depends_on "python@3.11" => :build
