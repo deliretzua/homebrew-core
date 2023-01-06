@@ -7,7 +7,7 @@ class ApibuilderCli < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "928a2a30b122f17f8d1c297b5440c8a7b58755aa3da21e0f98f34600171486c4"
+    sha256 cellar: :any_skip_relocation, all: "635386febe5f3684c6ad68bc0a3372dfe899042ecd6fcb73f0a7e0ac39f8dfc1"
   end
 
   uses_from_macos "ruby"
