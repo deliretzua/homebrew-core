@@ -13,14 +13,14 @@ class JohnJumbo < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "d619d5c6ad355d0ccf8434bfa9d65d8baad56678c01fc9e0d0674d23663d24d6"
-    sha256 arm64_monterey: "87eebf43b7a544bf756affb4519798e3754867bcbcbd946e7616bc99fd0f7d37"
-    sha256 arm64_big_sur:  "c1223a9135967ac2aadff6423e381d91b7b0421e03fe5a380543fc7566542eed"
-    sha256 ventura:        "3b43e7cef626c15f438936079ac74ff0297d72c09995d63917e6d8c245947d70"
-    sha256 monterey:       "30a4feeadf226c792fe1714d2ac01a169b3d6609a046d08db23a2014aef13f50"
-    sha256 big_sur:        "f57a158083194a19ed0e52d1098e2bb7f7b6eb36e4bcded2d2b735c36c09f97d"
-    sha256 catalina:       "357620f058f892a637262e1c49edb436a2b2159123b66146cd323180d8a3c081"
-    sha256 x86_64_linux:   "2831ddaa75b8827bc870d5d229ebbe556c5bd40b5359141bed7384ea358fc0c5"
+    rebuild 1
+    sha256 arm64_ventura:  "82da2e81fdeedfb9a71f1740ff7bfef4641ccce5f31d51fa6d1ca7fdd576f6ef"
+    sha256 arm64_monterey: "4bccbd52d70bbdffc767cf12cfe177bf32002504a300de3d52e91ec8d4d19691"
+    sha256 arm64_big_sur:  "3441957c8cd6257a3f4d6cda745aaf22d461a9688408e81cebf538b6f5131663"
+    sha256 ventura:        "503d1df42838b5d921ab6994410ff2e37b6d3717944fee0440e331f867c8e978"
+    sha256 monterey:       "0ace1b1a1ce24edde854033c8bae3c4b3d42379f569f374d9f43b56856f90eae"
+    sha256 big_sur:        "7ee4f489b10109d93d69757ffc0cb8b8538e7b391d549d9d133400d39433c22c"
+    sha256 x86_64_linux:   "2c1c1fa912ee63f865d0f61c11188f50d1d600e2c8af616175db78c9f51c154a"
   end
 
   depends_on "pkg-config" => :build
