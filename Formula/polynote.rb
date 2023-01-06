@@ -8,14 +8,13 @@ class Polynote < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_ventura:  "8cfb10752dbbdf07ea6dd55a6f2a3b4cbf63e7ae2e9d075d7ac5bca1889eb233"
-    sha256 cellar: :any, arm64_monterey: "17bfeb81e5a1622f2717953db56d43dc14bad82049ca226dedcf1b408fd5b6bf"
-    sha256 cellar: :any, arm64_big_sur:  "4aacdc01c58ab424ad45c801be76380f4cb5a4881944cc4504889dea0d8a773d"
-    sha256 cellar: :any, ventura:        "e88ffafee90af291e739394af8c6e706822097832900734f3781542edf669155"
-    sha256 cellar: :any, monterey:       "ecbe7dd1f51869ef7a007eccfc7c313d21284dc5c0a865eb0618207c9eaddc7f"
-    sha256 cellar: :any, big_sur:        "afd1808f167bb3e3c21feab17924611a743abbc947a1780d46f57c006a0caf66"
-    sha256               x86_64_linux:   "afb48cc127304977afb6b5a8280816cd19b4729a6fe1648033cb7bc436b8e56a"
+    sha256 cellar: :any, arm64_ventura:  "0af542d492d91b4215463fa08cacbe3ed2e042b214ace807f73d49ec0ec83053"
+    sha256 cellar: :any, arm64_monterey: "25288879b2bb601cf95384ae5ae01bd3b7734f28ea06f3627afed1c116f85f99"
+    sha256 cellar: :any, arm64_big_sur:  "88c81ed22651a67114ddc8af9ec4307e45f31ac642d296896ded5295793ed424"
+    sha256 cellar: :any, ventura:        "d2bc6efa2010a4be9dfcf0265ceb016e69863ae8ca91eb1ff483d1ea7d532feb"
+    sha256 cellar: :any, monterey:       "ccf759d29c2dc1cb8365f26ad24595b9413af5df63b02b5b1370562a2dc7371a"
+    sha256 cellar: :any, big_sur:        "e9682de198d26ec46ec3529f481bff0fbab6fb14821591206b21fadccc9641cb"
+    sha256               x86_64_linux:   "80431ae7bf4b8ea682af60831efa18dcec859388734899b198b8773bb4919230"
   end
 
   depends_on "numpy" # used by `jep` for Java primitive arrays
