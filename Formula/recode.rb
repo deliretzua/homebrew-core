@@ -1,8 +1,8 @@
 class Recode < Formula
   desc "Convert character set (charsets)"
   homepage "https://github.com/rrthomas/recode"
-  url "https://github.com/rrthomas/recode/releases/download/v3.7.12/recode-3.7.12.tar.gz"
-  sha256 "4db1c9076f04dbaa159726f5000847e5e5a83aec8e5c64f8ca04383f6cda12d5"
+  url "https://github.com/rrthomas/recode/releases/download/v3.7.13/recode-3.7.13.tar.gz"
+  sha256 "22bbdf79725a59f4d84c3dad63a911c5e8f443f109443c032cad564900b6b733"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -16,6 +16,7 @@ class Recode < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "365bd66e439e5592ee482547354c758279ed085413efd9eb926db2beddb3d32e"
   end
 
+  depends_on "help2man" => :build
   depends_on "libtool" => :build
   depends_on "python@3.11" => :build
   depends_on "gettext"
