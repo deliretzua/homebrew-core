@@ -13,14 +13,14 @@ class Ldc < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "83bf917f2b4222fd6fac4714e70d1be4386af4f39056105dd9931d119ae8c5e8"
-    sha256 arm64_monterey: "51fa3cac2b7a1cf24ccd2513ac717558bad15ab0bf372d77f9e533a6e206a5e6"
-    sha256 arm64_big_sur:  "44edf489e8c3cc251e5aaaa54500b68048f403a8bcf921ab15e1a08a309d14e9"
-    sha256 ventura:        "62396546a21e87c04fa42a24868add3d998cbca969ee2641af2c14f7db30754e"
-    sha256 monterey:       "06b057c83bfc5915fdf4ce3e5ce0c9769324a2540616174adde6b39b5840c43a"
-    sha256 big_sur:        "ec17a74f6430156728ecc45e79c51ff3537b95cb124b1ca33713a15bf634c250"
-    sha256 catalina:       "68722090b10934b81b4852cee6b24e634cbf0af948fb525423e03ca787f952f3"
-    sha256 x86_64_linux:   "8360bdaac2d2910dcfda59757142a9d429631db654e8d8df2478e89d1570a4c7"
+    rebuild 1
+    sha256                               arm64_ventura:  "41889aaf4d473a23d230a285a64bcd91377a24c93bf8ba181dd166449840fba8"
+    sha256                               arm64_monterey: "2d2b2218a0f12f356b37b1ec993ebac70a9e3bfdab0377902231866314389653"
+    sha256                               arm64_big_sur:  "bab8dac0b6f0f3ccfe5b39c533f8f0a47553f29bfe86cfc963f2d5ac676be196"
+    sha256                               ventura:        "d34d3fbf8d3b8069642e6c0f94b50b01963ae59dd6fcde0450864f90dd88e980"
+    sha256                               monterey:       "aa6ed611b879d8788f0049b639b198f31ecf9a5af1392fdccb51622b1550a0ca"
+    sha256                               big_sur:        "a272354602009b1bbcf13dc5e07590094e6b7de57f0733ef0bfff1f06070775d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23b971f1555b91d3e5954938b8eca74b8633cac74ede10be9ed3de2505b17135"
   end
 
   depends_on "cmake" => :build
