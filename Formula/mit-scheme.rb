@@ -13,10 +13,9 @@ class MitScheme < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 monterey:     "4ca9936e7e9d596a0de4a5a8dd77b7a1d76e94a905651926d64ab2ba02bc42c8"
-    sha256 big_sur:      "671d6531ccb7cbc34863bec18fc27c5be3792e955c9dcff569f3e7d61b8dac3f"
-    sha256 x86_64_linux: "5129eed815f93a963cbca4761637d8d056cf5d6d853fe6feb08c9b53e5f18d36"
+    sha256 monterey:     "bae1d2a271efb27c40b785490cb77ae62a2ad2856c49169df4ca4b6fa5d15a77"
+    sha256 big_sur:      "e53230ae27dc40a7b3a4ed54dfe9e905b60a605f5693e5fdbea513f4a5f12b35"
+    sha256 x86_64_linux: "84fc2e7429a15a8a894e39b4edfe042e4ddc404ef517896bcf63c8ee0c97bbed"
   end
 
   # Has a hardcoded compile check for /Applications/Xcode.app
