@@ -1,9 +1,9 @@
 class MitScheme < Formula
   desc "MIT/GNU Scheme development tools and runtime library"
   homepage "https://www.gnu.org/software/mit-scheme/"
-  url "https://ftp.gnu.org/gnu/mit-scheme/stable.pkg/11.2/mit-scheme-11.2.tar.gz"
-  mirror "https://ftpmirror.gnu.org/gnu/mit-scheme/stable.pkg/11.2/mit-scheme-11.2.tar.gz"
-  sha256 "0859cb03a7c841d2dbc67e374cfee2b3ae1f95f6a1ee846d8f5bad39c7e566a1"
+  url "https://ftp.gnu.org/gnu/mit-scheme/stable.pkg/12.1/mit-scheme-12.1.tar.gz"
+  mirror "https://ftpmirror.gnu.org/gnu/mit-scheme/stable.pkg/12.1/mit-scheme-12.1.tar.gz"
+  sha256 "5509fb69482f671257ab4c62e63b366a918e9e04734feb9f5ac588aa19709bc6"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -37,12 +37,12 @@ class MitScheme < Formula
 
   resource "bootstrap" do
     on_intel do
-      url "https://ftp.gnu.org/gnu/mit-scheme/stable.pkg/11.2/mit-scheme-11.2-x86-64.tar.gz"
-      sha256 "7ca848cccf29f2058ab489b41c5b3a101fb5c73dc129b1e366fb009f3414029d"
+      url "https://ftp.gnu.org/gnu/mit-scheme/stable.pkg/12.1/mit-scheme-12.1-x86-64.tar.gz"
+      sha256 "8cfbb21b0e753ab8874084522e4acfec7cadf83e516098e4ab788368b748ae0c"
     end
     on_arm do
-      url "https://ftp.gnu.org/gnu/mit-scheme/stable.pkg/11.2/mit-scheme-11.2-aarch64le.tar.gz"
-      sha256 "49679bcf76c8b5896fda8998239c4dff0721708de4162dcbc21c88d9688faa86"
+      url "https://ftp.gnu.org/gnu/mit-scheme/stable.pkg/12.1/mit-scheme-12.1-aarch64le.tar.gz"
+      sha256 "708ffec51843adbc77873fc18dd3bafc4bd94c96a8ad5be3010ff591d84a2a8b"
     end
   end
 
