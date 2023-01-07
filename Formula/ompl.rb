@@ -1,10 +1,9 @@
 class Ompl < Formula
   desc "Open Motion Planning Library consists of many motion planning algorithms"
   homepage "https://ompl.kavrakilab.org/"
-  url "https://github.com/ompl/ompl/archive/1.5.2.tar.gz"
-  sha256 "db1665dd2163697437ef155668fdde6101109e064a2d1a04148e45b3747d5f98"
+  url "https://github.com/ompl/ompl/archive/1.6.0.tar.gz"
+  sha256 "f03daa95d2bbf1c21e91a38786242c245f4740f16aa9e9adbf7c7e0236e3c625"
   license "BSD-3-Clause"
-  revision 3
   head "https://github.com/ompl/ompl.git", branch: "main"
 
   # We check the first-party download page because the "latest" GitHub release
@@ -33,7 +32,6 @@ class Ompl < Formula
   depends_on "ode"
 
   def install
-    ENV.cxx11
     args = std_cmake_args + %w[
       -DOMPL_REGISTRATION=OFF
       -DOMPL_BUILD_DEMOS=OFF
@@ -59,7 +57,7 @@ class Ompl < Formula
       }
     EOS
 
-    system ENV.cxx, "test.cpp", "-I#{include}/ompl-1.5", "-L#{lib}", "-lompl", "-o", "test"
+    system ENV.cxx, "test.cpp", "-I#{include}/ompl-#{version.major_minor}", "-L#{lib}", "-lompl", "-o", "test"
     system "./test"
   end
 end
