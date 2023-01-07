@@ -15,13 +15,13 @@ class DosboxStaging < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "1427f1f931c4150a939bc7b7617dbfb8bc92f7fb94e4a18aadc75aefc4e561a1"
-    sha256 arm64_monterey: "082a32877a34dfdf8c2991bf482fa308eb502ff784ff59e8d78af920765b23e5"
-    sha256 arm64_big_sur:  "4e3cf9ec624eb11055fb8b3a3cb1490af2b622e74c986714c00e06194bf97e32"
-    sha256 ventura:        "6d875ea527d93563513a2afc91ccf03324be4a351e8e971d3b198974f0891d2d"
-    sha256 monterey:       "438de7ea5997b1589f0a70d69f4c66164801b75e2c09087f4b60bb8884d02104"
-    sha256 big_sur:        "38b00a9d5a94fe8e00db9e5de9b14d1285bee310ea635c0340d40c36cdd9ecf3"
-    sha256 x86_64_linux:   "c17546040d2e84f48fa2388e83f701d52eb795abb32f3d2aaf03d1fc1f8cbd12"
+    sha256 arm64_ventura:  "ede878e833eb4c983ef235783dd9159be18acf03b48e686575ad7392d054ae53"
+    sha256 arm64_monterey: "72a2fb1f3ec6427ba0fd17a044326d7671d10c780201c4a25d0fd923d6bea5e1"
+    sha256 arm64_big_sur:  "cd7582b8a91271b3207f58db439fa7515563f6f64016fb39b12cd829815115b3"
+    sha256 ventura:        "07a56487d2a430af500f506f9cca55c5e197c0ce401f91625b78888022b0f78c"
+    sha256 monterey:       "6e09bc33484abdecb4d3c0dfbd18995b56175aef5df23954d8075f46dbde469b"
+    sha256 big_sur:        "6fb4d0bcc1a8467a6ed4ce36313611e611b313100c26c25592f22cd725f7bd94"
+    sha256 x86_64_linux:   "7b747336d0836675791b880ff6dde5490ae0d9ef417e007e924c068581b810af"
   end
 
   depends_on "meson" => :build
