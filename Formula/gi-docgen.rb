@@ -9,14 +9,13 @@ class GiDocgen < Formula
   head "https://gitlab.gnome.org/GNOME/gi-docgen.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "28fbf04dad49ead32302a60a9e88eaf90115e808e5df9a35e4f90e68ddfd3bd4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2bdc1e61f8f6a8cd066c2debbffa52848930ebce700e2481acbcf111ada1df4c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cbc18cdca02978e370cd4994c97e02bdb9083a12a3b9cc5e6647464426d734c2"
-    sha256 cellar: :any_skip_relocation, ventura:        "3f0d1c663afe3b52787c7b0ca7ecca1f92f2d9e7300377c12dd6a11177d714a5"
-    sha256 cellar: :any_skip_relocation, monterey:       "194f50b12ce008e6c0533b3e658e99e16211edca7eabfc8599eabd742e31eecf"
-    sha256 cellar: :any_skip_relocation, big_sur:        "77f7543d7583217d4092f25743dd70c59f42c75ae3da32f4142c28b2fc33bba5"
-    sha256 cellar: :any_skip_relocation, catalina:       "78d73e32cfc350ea7f501074753dee254854c0c9127955db6377777a9669cd74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "edd16dfe78250cbdc8ce461aa9a925c2121754539f494ad978bc4c21be77a275"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4457956c9dbdd582c2d8a86e23902226cb0f7de110cc28c2036d616677b588f2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "21b1f4b55bc59063bcfcfa500b3c89440b5b1f7f4a93d5168433fd73b2ec8207"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cf1cdf93e560faf4fbc3dcd6a6d1c00fdf29d9fcba56bba2bec135d58543f22e"
+    sha256 cellar: :any_skip_relocation, ventura:        "d76520359e7bd6d5fa63a0f36354c29676352da054e611966e93fa3c56323597"
+    sha256 cellar: :any_skip_relocation, monterey:       "3e432556d65b23faf4d78216c088dfc1435b6e5c9f7586d2f668b2a2af470743"
+    sha256 cellar: :any_skip_relocation, big_sur:        "77c659d7c8004212417531e491fbb18c40e3dea50740df5c1093f91f68543048"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90ba3994ae191ef527494dc53d54d92c183c18597f4193ec5cbf221e0ead848c"
   end
 
   depends_on "pygments"
