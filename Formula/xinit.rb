@@ -5,6 +5,16 @@ class Xinit < Formula
   sha256 "b7d8dc8d22ef9f15985a10b606ee4f2aad6828befa437359934647e88d331f23"
   license all_of: ["MIT", "APSL-2.0"]
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "0fbd33c0f3e8a01224d5f4c2f1437236957d9f9b80d0199f6bf729fe783320c9"
+    sha256 cellar: :any,                 arm64_monterey: "b32fd947d6ab4e3d27cae884ecba3d25d618cc5df48869995db8211857a75cf9"
+    sha256                               arm64_big_sur:  "e3fa6b976ee03fddeea911fb37cf872c72b23b8a4b00ed11299925656b983fd5"
+    sha256                               ventura:        "3db4e377fbe430f3ea074f0ec1f433b3b7278aa451da736d95a8a1ff72e87047"
+    sha256 cellar: :any,                 monterey:       "b206deb4ff3200499ab32a8984c90901277094697eaed812ec0e8d10765e64d6"
+    sha256 cellar: :any,                 big_sur:        "1b62cbaab6ec39e95a11057e5ce26209c5b4f5696eaab24c0a59e1b7374a7fe0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "540015cba432ff1f7e719b37f9c2c3af6d8f40784840eeb8e8774cf8575b82a0"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "tradcpp" => :build
   depends_on "xorg-server" => :test
