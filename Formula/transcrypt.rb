@@ -17,7 +17,7 @@ class Transcrypt < Formula
 
   def install
     bin.install "transcrypt"
-    man.install "man/transcrypt.1"
+    man1.install "man/transcrypt.1"
     bash_completion.install "contrib/bash/transcrypt"
     zsh_completion.install "contrib/zsh/_transcrypt"
   end
