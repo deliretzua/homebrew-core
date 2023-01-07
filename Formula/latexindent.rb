@@ -1,8 +1,8 @@
 class Latexindent < Formula
   desc "Add indentation to LaTeX files"
   homepage "https://latexindentpl.readthedocs.io"
-  url "https://github.com/cmhughes/latexindent.pl/archive/V3.20.tar.gz"
-  sha256 "d2e96faf99a99e10a03f177ff9caf2d8e3f75b1ab84839dffb6e169fc8126c90"
+  url "https://github.com/cmhughes/latexindent.pl/archive/V3.20.1.tar.gz"
+  sha256 "d0378f37e7b172fe548b9b17d22556514cb34b0fc4ebb35dcd42b1448747ca92"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -115,8 +115,8 @@ class Latexindent < Formula
   end
 
   resource "Params::ValidationCompiler" do
-    url "https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Params-ValidationCompiler-0.30.tar.gz"
-    sha256 "dc5bee23383be42765073db284bed9fbd819d4705ad649c20b644452090d16cb"
+    url "https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Params-ValidationCompiler-0.31.tar.gz"
+    sha256 "7b6497173f1b6adb29f5d51d8cf9ec36d2f1219412b4b2410e9d77a901e84a6d"
   end
 
   resource "Role::Tiny" do
