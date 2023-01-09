@@ -1,8 +1,8 @@
 class Wiredtiger < Formula
   desc "High performance NoSQL extensible platform for data management"
   homepage "https://source.wiredtiger.com/"
-  url "https://github.com/wiredtiger/wiredtiger/archive/refs/tags/11.0.0.tar.gz"
-  sha256 "1dad4afb604fa0dbebfa8024739226d6faec1ffd9f36b1ea00de86a7ac832168"
+  url "https://github.com/wiredtiger/wiredtiger/archive/refs/tags/11.1.0.tar.gz"
+  sha256 "0d988a8256219b614d855a2504d252975240171a633b882f19149c4a2ce0ec3d"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
 
   livecheck do
@@ -23,16 +23,31 @@ class Wiredtiger < Formula
 
   depends_on "ccache" => :build
   depends_on "cmake" => :build
+  depends_on "swig" => :build
+  depends_on "lz4"
   depends_on "snappy"
+  depends_on "zstd"
 
   uses_from_macos "zlib"
 
+  on_linux do
+    depends_on "python@3.11" => :build
+  end
+
+  # Adds include for std::optional. Remove in version 11.2.0.
+  patch do
+    url "https://github.com/wiredtiger/wiredtiger/commit/4418f9d2d7cad3829b47566d374ee73b29d699d7.patch?full_index=1"
+    sha256 "79bc6c1f027cda7742cdca26b361471126c60e8e66198a8dae4782b2a750c1c3"
+  end
+
   def install
-    system "cmake", "-S", ".", "-B", "build",
-      "-DHAVE_BUILTIN_EXTENSION_SNAPPY=1",
-      "-DHAVE_BUILTIN_EXTENSION_ZLIB=1",
-      "-DCMAKE_INSTALL_RPATH=#{rpath}",
-      *std_cmake_args
+    args = %W[
+      -DHAVE_BUILTIN_EXTENSION_SNAPPY=1
+      -DHAVE_BUILTIN_EXTENSION_ZLIB=1
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+    ]
+    args << "-DCMAKE_C_FLAGS=-Wno-maybe-uninitialized" if OS.linux?
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
