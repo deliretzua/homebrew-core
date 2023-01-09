@@ -5,10 +5,9 @@ class Julia < Formula
   #
   # TODO: Use system `suite-sparse` when `julia` supports v6.
   # Issue ref: https://github.com/JuliaLang/julia/issues/47884
-  url "https://github.com/JuliaLang/julia/releases/download/v1.8.3/julia-1.8.3-full.tar.gz"
-  sha256 "52b6895a9d4ad2fe36db261ee8c4c8cc9212b837a12f93002faaf537a2151f50"
+  url "https://github.com/JuliaLang/julia/releases/download/v1.8.5/julia-1.8.5-full.tar.gz"
+  sha256 "35554080a4b4d3ce52ef220254306bd42ac0d88eff9eb85592a57d0663db5df2"
   license all_of: ["MIT", "BSD-3-Clause", "Apache-2.0", "BSL-1.0"]
-  revision 1
   head "https://github.com/JuliaLang/julia.git", branch: "master"
 
   bottle do
@@ -51,10 +50,17 @@ class Julia < Formula
   fails_with gcc: "5"
 
   # Link against libgcc_s.1.1.dylib, not libgcc_s.1.dylib
-  # https://github.com/JuliaLang/julia/pull/46240
+  # https://github.com/JuliaLang/julia/issues/48056
   patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/dd7279eea22d92688d2a821c245d92c4f8406fcf/julia/libgcc_s.diff"
-    sha256 "f12c11db53390145b4a9b1ea3b412019eee89c0d197eef6c78b0565bf7fd7aaf"
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/202ccbabd44bd5ab02fbdee2f51f87bb88d74417/julia/libgcc_s-1.8.5.diff"
+    sha256 "1eea77d8024ad8bc9c733a0e0770661bc08228d335b20c4696350ed5dfdab29a"
+  end
+
+  # Fix Linux build, listdc++ issue. Remove in next version.
+  # https://github.com/JuliaLang/julia/issues/47987
+  patch do
+    url "https://github.com/JuliaLang/julia/commit/0b211609.patch?full_index=1"
+    sha256 "f8b802ef2004320dd8039b3c4896e99f5460c9bcada29bc699eaca7f843f2737"
   end
 
   def install
