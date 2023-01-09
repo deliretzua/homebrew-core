@@ -1,11 +1,10 @@
 class Gnunet < Formula
   desc "Framework for distributed, secure and privacy-preserving applications"
   homepage "https://gnunet.org/"
-  url "https://ftp.gnu.org/gnu/gnunet/gnunet-0.17.5.tar.gz"
-  mirror "https://ftpmirror.gnu.org/gnunet/gnunet-0.17.5.tar.gz"
-  sha256 "8a744ff7a95d1e83215cce118050640f6c12261abe4c60a56bcf88e500f0023d"
+  url "https://ftp.gnu.org/gnu/gnunet/gnunet-0.19.2.tar.gz"
+  mirror "https://ftpmirror.gnu.org/gnunet/gnunet-0.19.2.tar.gz"
+  sha256 "86034d92ebf8f6623dad95f1031ded1466e064b96ffac9d3e9d47229ac2c22ff"
   license "AGPL-3.0-or-later"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "a91a4ae5c45bb5304fd032f2d02368e6f5c769cfbba1ea5669e8e8e4807bc87b"
@@ -17,8 +16,6 @@ class Gnunet < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa2caa63b0612e0c697d73bdf72feb228ede99c75c75aa284c8606080f329716"
   end
 
-  # macOS `ld64` does not like the `.la` files created during the build.
-  depends_on "llvm" => :build if DevelopmentTools.clang_build_version >= 1400
   depends_on "pkg-config" => :build
   depends_on "gettext"
   depends_on "gnutls"
@@ -33,11 +30,15 @@ class Gnunet < Formula
   uses_from_macos "curl"
   uses_from_macos "sqlite"
 
+  # Patch for LOGIN_NAME_MAX not defined on macOS
+  # Remove in 0.19.3
+  patch do
+    url "https://git.gnunet.org/gnunet.git/patch/?id=613554cc80f481025def331ac5a7ab111510ce0f"
+    sha256 "02d498dd85c351de7a89fecfa5b78c9ee32abd1a58188264c93cf84ebd3f4416"
+  end
+
   def install
     ENV.deparallelize if OS.linux?
-    # Workaround for Xcode 14 ld until Makefile is fixed
-    # Ref: https://github.com/Homebrew/homebrew-core/pull/113789#issuecomment-1288125182
-    ENV.append_to_cflags "-fuse-ld=lld" if DevelopmentTools.clang_build_version >= 1400
     system "./configure", *std_configure_args, "--disable-documentation"
     system "make", "install"
   end
