@@ -11,14 +11,13 @@ class FetchCrl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "31195e7618b568140819ca5220581f5fee24d18049a925116e144aff0e07410c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "31195e7618b568140819ca5220581f5fee24d18049a925116e144aff0e07410c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "31195e7618b568140819ca5220581f5fee24d18049a925116e144aff0e07410c"
-    sha256 cellar: :any_skip_relocation, ventura:        "31195e7618b568140819ca5220581f5fee24d18049a925116e144aff0e07410c"
-    sha256 cellar: :any_skip_relocation, monterey:       "31195e7618b568140819ca5220581f5fee24d18049a925116e144aff0e07410c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "31195e7618b568140819ca5220581f5fee24d18049a925116e144aff0e07410c"
-    sha256 cellar: :any_skip_relocation, catalina:       "31195e7618b568140819ca5220581f5fee24d18049a925116e144aff0e07410c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c479b15b49f159bd6371fe3e609024bf716caf93561861e4e6c0aaca296755fd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cefc451865fffbb827a6c2cb4603960bd672a69dca19b512811912bbb6cdc83a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cefc451865fffbb827a6c2cb4603960bd672a69dca19b512811912bbb6cdc83a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cefc451865fffbb827a6c2cb4603960bd672a69dca19b512811912bbb6cdc83a"
+    sha256 cellar: :any_skip_relocation, ventura:        "cefc451865fffbb827a6c2cb4603960bd672a69dca19b512811912bbb6cdc83a"
+    sha256 cellar: :any_skip_relocation, monterey:       "cefc451865fffbb827a6c2cb4603960bd672a69dca19b512811912bbb6cdc83a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "cefc451865fffbb827a6c2cb4603960bd672a69dca19b512811912bbb6cdc83a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad140d4dcb26765b4ab846846e7a2a0a2cd422405a123d1ad0b11c02f38193da"
   end
 
   uses_from_macos "perl"
