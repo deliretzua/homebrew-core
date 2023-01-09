@@ -10,7 +10,13 @@ class Quicktype < Formula
   head "https://github.com/quicktype/quicktype.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "7ef3aef56d9f7a904a59cbd818ab0ef0aa9ef325e5421c456fe4ce8eaa729915"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "453087fc85e054ea0773f8a2d9381ecfa2fca4ca5a8ea13d4ec2168532bbf0e6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "453087fc85e054ea0773f8a2d9381ecfa2fca4ca5a8ea13d4ec2168532bbf0e6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "453087fc85e054ea0773f8a2d9381ecfa2fca4ca5a8ea13d4ec2168532bbf0e6"
+    sha256 cellar: :any_skip_relocation, ventura:        "10d91682539c80d8036330950baa92c8a2e470f46ebc152af893cdf88072165f"
+    sha256 cellar: :any_skip_relocation, monterey:       "10d91682539c80d8036330950baa92c8a2e470f46ebc152af893cdf88072165f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "10d91682539c80d8036330950baa92c8a2e470f46ebc152af893cdf88072165f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "453087fc85e054ea0773f8a2d9381ecfa2fca4ca5a8ea13d4ec2168532bbf0e6"
   end
 
   depends_on "node"
