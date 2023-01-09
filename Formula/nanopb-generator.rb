@@ -13,8 +13,7 @@ class NanopbGenerator < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "ac1eb681935c128508d1d5f2159ec8fe2cb4c7d248b8f955ce53f35f7ca0a63e"
+    sha256 cellar: :any_skip_relocation, all: "8fa99a6f2d8fbb4fc69952cc533309c554578f983f5413d882bd86d9ddef37b7"
   end
 
   depends_on "protobuf"
