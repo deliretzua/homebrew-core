@@ -6,13 +6,13 @@ class RpkiClient < Formula
   license "ISC"
 
   bottle do
-    sha256 arm64_ventura:  "5174f0f8ad8c4f703aabd4a95431bef8e793b98819ae62dc375efc1143de76be"
-    sha256 arm64_monterey: "0f0e12dcc765439340d005b89713afc888c3c43a08c39008679380e41566cdaf"
-    sha256 arm64_big_sur:  "8897f02df93019175167ec36b8384bc457ac91e6ec31db468599dbcb2d082133"
-    sha256 ventura:        "35d437fe4c0bf152e8406d6b02b484c373f1a0463a72c921feb74e25df208a42"
-    sha256 monterey:       "deb08c58cd55a113823c2abcd099a4c54e1977d2ab3b5a3fd29622e8bc46ca86"
-    sha256 big_sur:        "3553bd4f41316c7eb13a8653b7ec141cd94cc06f0703f07c2fca1f5e74d60373"
-    sha256 x86_64_linux:   "17ca03fab715c3001ada7fe58a41bd737718959b76b7f0ff1cc525c566b2cf74"
+    sha256 arm64_ventura:  "68a2394a47e424d5d218407ef2e7a13486c3a41b63851ee490a314af6d3a1c67"
+    sha256 arm64_monterey: "5e6403874007d3bc810a048fdb839310df6e5f19539c1ab4f4692101d10e3131"
+    sha256 arm64_big_sur:  "ec6f3dda6f8c51227aef2af0efba137b2b64f998f134c88abc3776c5b1d68430"
+    sha256 ventura:        "293a75b60c4069562cf6c836eab505bdbc282050b6c866029cccd548e06bbe5c"
+    sha256 monterey:       "e9ea8b936428ad9685f7b7534b79db17bf68a46ed14601d3781e5a3f796fa81d"
+    sha256 big_sur:        "4d409a946b1efb77e0667cd93aa5f62284db34a3f3800e99759f89cf59b9f9e6"
+    sha256 x86_64_linux:   "90f625188abd2191d12b7b0a4f4304910071b15aca3aef0b8a2003db62d7a142"
   end
 
   depends_on "pkg-config" => :build
