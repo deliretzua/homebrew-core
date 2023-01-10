@@ -22,8 +22,10 @@ class Manticoresearch < Formula
 
   bottle do
     rebuild 2
+    sha256 arm64_ventura:  "ab8ca313efc755139d54400a39c5c60c938d65878be2027ce5062af51cfc3603"
     sha256 arm64_monterey: "5673f85d8f24a48ea0d34e1dd6c6b9fdf1952cb321df2ac3ac18ff03f8e8d9b0"
     sha256 arm64_big_sur:  "9644cc623e3a60cd23cc0deb454bbaa8611a20f970815aa2777dbfc3cb9c0779"
+    sha256 ventura:        "f91a5f93e23e90635ad4d1da3552b6de1b11fee202ffdf2442f163cb3dc8f6c3"
     sha256 monterey:       "390e934dd2fed4628113b6173be6362bca7ddd7c191f39d96e1ad083d08f9f72"
     sha256 big_sur:        "f0f112c752093ec2036e3e15ab921fb98a5ae397c0655da8abd12168e1435e34"
     sha256 x86_64_linux:   "99f72739ed133fa468249e0aeda9d242eea7f817090a6ce795eae0ab15542b13"
