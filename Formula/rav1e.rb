@@ -5,13 +5,13 @@ class Rav1e < Formula
   head "https://github.com/xiph/rav1e.git", branch: "master"
 
   stable do
-    url "https://github.com/xiph/rav1e/archive/v0.6.2.tar.gz"
-    sha256 "8fe8d80bc80a05ee33113c0ee19779d9c57189e5434c8e1da8f67832461aa089"
+    url "https://github.com/xiph/rav1e/archive/v0.6.3.tar.gz"
+    sha256 "660a243dd9ee3104c0844a7af819b406193a7726614a032324557f81bb2bebaa"
 
     # keep the version in sync
     resource "Cargo.lock" do
-      url "https://github.com/xiph/rav1e/releases/download/v0.6.2/Cargo.lock"
-      sha256 "5f1f34a269322b8ec6c6432d6b928c72da254e16e65a0c8f81fe252367a99ba5"
+      url "https://github.com/xiph/rav1e/releases/download/v0.6.3/Cargo.lock"
+      sha256 "f22049598eb6f9948b4d852850eeb48c1236a7a068692db85cbfe72b94498581"
     end
   end
 
