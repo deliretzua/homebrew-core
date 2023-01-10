@@ -1,8 +1,8 @@
 class Logstash < Formula
   desc "Tool for managing events and logs"
   homepage "https://www.elastic.co/products/logstash"
-  url "https://github.com/elastic/logstash/archive/v8.5.3.tar.gz"
-  sha256 "423cf8ebb8719afb7b3c1e4f8e26d9e0726494263714ee4ac32e3ccf9533f403"
+  url "https://github.com/elastic/logstash/archive/v8.6.0.tar.gz"
+  sha256 "c7da98206fdd6cdbef3dfa9fbdded07553ddeef8a5e8454fc8f2afae26d530df"
   license "Apache-2.0"
   version_scheme 1
   head "https://github.com/elastic/logstash.git", branch: "main"
@@ -25,6 +25,15 @@ class Logstash < Formula
   depends_on "openjdk@17"
 
   uses_from_macos "ruby" => :build
+
+  # Ruby 3.2 compatibility.
+  # https://github.com/elastic/logstash/pull/14838
+  patch do
+    on_linux do
+      url "https://github.com/elastic/logstash/commit/95870c0f7a7c008c10e848191f85a1065e7db800.patch?full_index=1"
+      sha256 "b09065efe41a0098266d1243df19c6e35f4d075db06b41309c8fa791b25453f5"
+    end
+  end
 
   def install
     # remove non open source files
