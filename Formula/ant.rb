@@ -8,7 +8,7 @@ class Ant < Formula
   head "https://git-wip-us.apache.org/repos/asf/ant.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "65361546d11f6cd675bc64aae75cd14dc3e77e7ed466b45e871bd09780df23f1"
+    sha256 cellar: :any_skip_relocation, all: "592b81d01d7daff43e4a5a5eb555f14457410ccac8a623982a65ab412709a394"
   end
 
   depends_on "openjdk"
