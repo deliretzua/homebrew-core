@@ -1,8 +1,8 @@
 class DsdaDoom < Formula
   desc "Fork of prboom+ with a focus on speedrunning"
   homepage "https://github.com/kraflab/dsda-doom"
-  url "https://github.com/kraflab/dsda-doom/archive/refs/tags/v0.25.2.tar.gz"
-  sha256 "e030491e4cb7ade1d297164d95286fc1853bb08b2077397cbb4a46c4869b3280"
+  url "https://github.com/kraflab/dsda-doom/archive/refs/tags/v0.25.4.tar.gz"
+  sha256 "a7ba9f920eff10fd56dba797c0fa666e356f458f4fb4d2453c5c03ef5e3fbde8"
   license "GPL-2.0-only"
   head "https://github.com/kraflab/dsda-doom.git", branch: "master"
 
@@ -22,10 +22,10 @@ class DsdaDoom < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "dumb"
   depends_on "fluid-synth"
   depends_on "libvorbis"
   depends_on "mad"
-  depends_on "pcre"
   depends_on "portmidi"
   depends_on "sdl2"
   depends_on "sdl2_image"
@@ -44,12 +44,10 @@ class DsdaDoom < Formula
     system "cmake", "-S", "prboom2", "-B", "build",
                     "-DDOOMWADDIR=#{doomwaddir(HOMEBREW_PREFIX)}",
                     "-DDSDAPWADDIR=#{libexec}",
-                    "-DBUILD_GL=ON",
-                    "-DWITH_DUMB=OFF",
-                    "-DWITH_IMAGE=ON",
+                    "-DWITH_DUMB=OM",
                     "-DWITH_FLUIDSYNTH=ON",
+                    "-DWITH_IMAGE=ON",
                     "-DWITH_MAD=ON",
-                    "-DWITH_PCRE=ON",
                     "-DWITH_PORTMIDI=ON",
                     "-DWITH_VORBISFILE=ON",
                     "-DWITH_ZLIB=ON",
