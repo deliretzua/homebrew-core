@@ -8,15 +8,13 @@ class Restview < Formula
   license "GPL-3.0"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "53bf1c94ce5dd28f537d6e0391c4d45a598d86711ae85f1c89012d6b823ec24e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "17c48b5838702d58ab32bdb41af4ccd1544754a34118fba2901c1664507aba7e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f50937f4bd21ce1666c20e43f9f81b4da81d105d896e37fc0e78df34b1315e70"
-    sha256 cellar: :any_skip_relocation, ventura:        "9cee8d2afdf1816113f109cf6cef6493fa397e312520c224bf3fac59cc0cf14b"
-    sha256 cellar: :any_skip_relocation, monterey:       "301d16ee4e9b3cfe46d31dee3ccd535e783b1743dd9e5754ad4586d49cc6a1c5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bd30574a3c873904c59cb16a3ec72e21a14b75f9c8fd88372dea94d239cb0cab"
-    sha256 cellar: :any_skip_relocation, catalina:       "8992fbee2f64fb5d41ed2f0fb04c8d37bc6914791187582a66b97a1588c99d67"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "762d85d4f7157aaf45a4e37d453d5fd844652434a65017331ece19d6f2c0c4f7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7144d1e54ac3ed388b6af07e9d5d4d5c3ab69a7d8335827d436e5d95cd90700"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c41b60a583752a7c15309695cdc0dccccc9f98771cc28d290352863877fadfd4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f0526020a022a59774f2eb26fbcf5f9422085fce34286004c37e8a74f715ff51"
+    sha256 cellar: :any_skip_relocation, ventura:        "5c36b262a3d8898d9caeebc8f9faf3806e2554a3836d430ad2ce985ae389c69d"
+    sha256 cellar: :any_skip_relocation, monterey:       "045d7c7fbec94805454c23b54ac749995171610eb9b7e8a39d96f740bd02e44d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "41c9ba7729e2494ef67b6158b715b03dbf186e33cd12f9cdf7f35263578ea456"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c959a52879a1835bda4c7e8b9e454afc7ac20613a72c31547cfad5264e294991"
   end
 
   depends_on "docutils"
