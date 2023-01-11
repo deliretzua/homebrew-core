@@ -8,14 +8,13 @@ class BitwardenCli < Formula
   license "GPL-3.0-only"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1466950502a9152ee108b0b4c070799fa18742c667c52caf907cee4475999d5c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1466950502a9152ee108b0b4c070799fa18742c667c52caf907cee4475999d5c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1466950502a9152ee108b0b4c070799fa18742c667c52caf907cee4475999d5c"
-    sha256 cellar: :any_skip_relocation, ventura:        "2c9ae76e972ea3e409be58a3a437f0b39b53c5f3fa5bcdb019832057566de8d0"
-    sha256 cellar: :any_skip_relocation, monterey:       "2c9ae76e972ea3e409be58a3a437f0b39b53c5f3fa5bcdb019832057566de8d0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2c9ae76e972ea3e409be58a3a437f0b39b53c5f3fa5bcdb019832057566de8d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1466950502a9152ee108b0b4c070799fa18742c667c52caf907cee4475999d5c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b5003c94ebc6f68b58c635a53d7faae01b3c8f3662139a8ffef10d7fd0fa60c4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b5003c94ebc6f68b58c635a53d7faae01b3c8f3662139a8ffef10d7fd0fa60c4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b5003c94ebc6f68b58c635a53d7faae01b3c8f3662139a8ffef10d7fd0fa60c4"
+    sha256 cellar: :any_skip_relocation, ventura:        "e7dd69a2be5f17dad5cd31849fcc7351f4bce8ae1f413be89446f56bbab16372"
+    sha256 cellar: :any_skip_relocation, monterey:       "e7dd69a2be5f17dad5cd31849fcc7351f4bce8ae1f413be89446f56bbab16372"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e7dd69a2be5f17dad5cd31849fcc7351f4bce8ae1f413be89446f56bbab16372"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5003c94ebc6f68b58c635a53d7faae01b3c8f3662139a8ffef10d7fd0fa60c4"
   end
 
   depends_on "node"
