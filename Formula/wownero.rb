@@ -2,10 +2,9 @@ class Wownero < Formula
   desc "Official wallet and node software for the Wownero cryptocurrency"
   homepage "https://wownero.org"
   url "https://git.wownero.com/wownero/wownero.git",
-      tag:      "v0.10.1.0",
-      revision: "8ab87421d9321d0b61992c924cfa6e3918118ad0"
+      tag:      "v0.10.2.0",
+      revision: "ab42be18f25c7bdfa6171a890ad11ae262bc44d0"
   license "BSD-3-Clause"
-  revision 5
 
   # The `strategy` code below can be removed if/when this software exceeds
   # version 10.0.0. Until then, it's used to omit a malformed tag that would
@@ -53,10 +52,6 @@ class Wownero < Formula
     sha256 "e39914d425b974bcd548a3aeefae954ab2f39d832927ffb97a1fbd7ea03316e0"
   end
 
-  # Boost 1.76 compatibility
-  # https://github.com/loqs/monero/commit/5e902e5e32c672661dfe5677c4a950c4dd409198
-  patch :DATA
-
   def install
     # Need to help CMake find `readline` when not using /usr/local prefix
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DReadline_ROOT_DIR=#{Formula["readline"].opt_prefix}"
@@ -83,18 +78,3 @@ class Wownero < Formula
     assert_equal address, shell_output(cmd).lines.last.split[1]
   end
 end
-
-__END__
-diff --git a/contrib/epee/include/storages/portable_storage.h b/contrib/epee/include/storages/portable_storage.h
-index f77e89cb6..066e12878 100644
---- a/contrib/epee/include/storages/portable_storage.h
-+++ b/contrib/epee/include/storages/portable_storage.h
-@@ -39,6 +39,8 @@
- #include "span.h"
- #include "int-util.h"
-
-+#include <boost/mpl/contains.hpp>
-+
- namespace epee
- {
-   class byte_slice;
