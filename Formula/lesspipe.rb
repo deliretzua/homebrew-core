@@ -6,7 +6,13 @@ class Lesspipe < Formula
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1fea365d12621bd65e1df169e2355b4d91ab157081ca83bb8c9346ae799f5669"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eab7ed95d12d5b9ccf4f2600e41ec76f771cf6efbce668e1be80497366029a1f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "eab7ed95d12d5b9ccf4f2600e41ec76f771cf6efbce668e1be80497366029a1f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "eab7ed95d12d5b9ccf4f2600e41ec76f771cf6efbce668e1be80497366029a1f"
+    sha256 cellar: :any_skip_relocation, ventura:        "eab7ed95d12d5b9ccf4f2600e41ec76f771cf6efbce668e1be80497366029a1f"
+    sha256 cellar: :any_skip_relocation, monterey:       "eab7ed95d12d5b9ccf4f2600e41ec76f771cf6efbce668e1be80497366029a1f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "eab7ed95d12d5b9ccf4f2600e41ec76f771cf6efbce668e1be80497366029a1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5569b10632037ead5f2f19b5c8b6328bbbac744dfe523da1cadfbd760ebe22ab"
   end
 
   def install
