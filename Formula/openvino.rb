@@ -11,6 +11,16 @@ class Openvino < Formula
     regex(/^(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "0adf07206e42e7b34de843e59c337cea43a691940f4392a08f71689f7d93ab33"
+    sha256 cellar: :any,                 arm64_monterey: "bba738c28e237a7fd726c899bfaa672f7ad8aab78a0e1911fcfb2177775ac199"
+    sha256 cellar: :any,                 arm64_big_sur:  "8c5eadbf56eae998cc5fea71e96c4521a623261943b52c8d87eb292afeb46136"
+    sha256 cellar: :any,                 ventura:        "cd6624a3870c58c9da2e98f39d436c0e32bc993bd044cb1a197de65a64c2b2bc"
+    sha256 cellar: :any,                 monterey:       "be04f666d2107db7519b19f57a392a570a5f0f28bb46f0008b80363d3a44226f"
+    sha256 cellar: :any,                 big_sur:        "27c754180c1525835ab7a0dc40ce893511b1a9276c95c9dd4b87298145876d9a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8adde2adfe752b29c58545e1c1eb203f870968ce4194fff50e6e9c30d9a49821"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "gflags" => :build
   depends_on "pkg-config" => [:build, :test]
