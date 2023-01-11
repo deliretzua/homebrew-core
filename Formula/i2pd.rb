@@ -1,10 +1,9 @@
 class I2pd < Formula
   desc "Full-featured C++ implementation of I2P client"
   homepage "https://i2pd.website/"
-  url "https://github.com/PurpleI2P/i2pd/archive/2.45.0.tar.gz"
-  sha256 "4050c0a38fda06a76defbd2721f468f5b09889ed7b6b5a7e207e4659d300738f"
+  url "https://github.com/PurpleI2P/i2pd/archive/2.45.1.tar.gz"
+  sha256 "a84b1e3cb5ac45f39af98e63291d34725ef67337e11acbe0e245acde7a5b2b72"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "4d3f4b4869353a147ddb8c4554c5240b88cd61ebc6932b6c3fbcead5f9178a44"
@@ -19,13 +18,6 @@ class I2pd < Formula
   depends_on "boost"
   depends_on "miniupnpc"
   depends_on "openssl@3"
-
-  # Upstream issue ref: https://github.com/PurpleI2P/i2pd/issues/1836
-  # Remove in next release
-  patch do
-    url "https://github.com/PurpleI2P/i2pd/commit/acd6af709ee6371b3d0340d2c92cb86f6f4bcb97.patch?full_index=1"
-    sha256 "54343ce6a8cf970cd65c9b39c55b3fe15f28c3a1dc6dbc07df870ad8118cebc7"
-  end
 
   def install
     args = %W[
