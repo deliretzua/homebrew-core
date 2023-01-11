@@ -6,6 +6,16 @@ class Kwctl < Formula
   license "Apache-2.0"
   head "https://github.com/kubewarden/kwctl.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e9c2c796d3c25ba33d6c8f907a1755dbd639f31e51dd83268c5efc91aca3d4a7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ea8e61cbf57feb4fab235d78dc4ad629babb58a6e277bfc27c6e5e7ce9dce2ad"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "32d2ee30a7ee663fd8ab7809016e7c4b1c6ae41526e185f41a7591f4804d2457"
+    sha256 cellar: :any_skip_relocation, ventura:        "4078c8caaa3aa2388465ef1bd2cf084e8e3f771f2e5e0a8b9d0200f67dcea492"
+    sha256 cellar: :any_skip_relocation, monterey:       "5f431513a9fee9aa40302909df7f653be7ceb9427eb78e303e74f6d26da7c2b8"
+    sha256 cellar: :any_skip_relocation, big_sur:        "cebc85df660e2624ff4353764c181d4b2a96c8c320261af889d0024ad0447728"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd435cefc90b9ef6eaf66f05e9fbf9f669e54a851e57731c62172920f708ce01"
+  end
+
   depends_on "rust" => :build
 
   def install
