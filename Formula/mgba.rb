@@ -1,8 +1,8 @@
 class Mgba < Formula
   desc "Game Boy Advance emulator"
   homepage "https://mgba.io/"
-  url "https://github.com/mgba-emu/mgba/archive/0.10.0.tar.gz"
-  sha256 "e2d66d9ce7c51b1ef3b339b04e871287bf166f6a1d7125ef112dbf53ab8bbd48"
+  url "https://github.com/mgba-emu/mgba/archive/0.10.1.tar.gz"
+  sha256 "5fc1d7ac139fe51ef71782d5de12d11246563cdebd685354b6188fdc82a84bdf"
   license "MPL-2.0"
   head "https://github.com/mgba-emu/mgba.git", branch: "master"
 
@@ -42,10 +42,6 @@ class Mgba < Formula
     depends_on "elfutils"
   end
 
-  # discussions in here, https://github.com/mgba-emu/mgba/issues/2700
-  # commit reference, https://github.com/mgba-emu/mgba/commit/981d01134b15c1d8214d9a7e5944879852588063
-  patch :DATA
-
   def install
     # Install .app bundle into prefix, not prefix/Applications
     inreplace "src/platform/qt/CMakeLists.txt", "Applications", "."
@@ -67,25 +63,3 @@ class Mgba < Formula
     system "#{bin}/mGBA", "-h"
   end
 end
-
-__END__
-diff --git a/CMakeLists.txt b/CMakeLists.txt
-index ce8e4d687..a8116d3ea 100644
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -718,8 +718,13 @@ if (USE_LZMA)
- endif()
-
- if(USE_EPOXY)
--	list(APPEND FEATURE_SRC ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/gl.c ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/gles2.c)
--	list(APPEND FEATURE_DEFINES BUILD_GL BUILD_GLES2 BUILD_GLES3)
-+	if(APPLE AND MACOSX_SDK VERSION_GREATER 10.14)
-+		list(APPEND FEATURE_SRC ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/gles2.c)
-+		list(APPEND FEATURE_DEFINES BUILD_GLES2 BUILD_GLES3)
-+	else()
-+		list(APPEND FEATURE_SRC ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/gl.c ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/opengl/gles2.c)
-+		list(APPEND FEATURE_DEFINES BUILD_GL BUILD_GLES2 BUILD_GLES3)
-+	endif()
- 	list(APPEND FEATURES EPOXY)
- 	include_directories(AFTER ${EPOXY_INCLUDE_DIRS})
- 	link_directories(${EPOXY_LIBRARY_DIRS})
