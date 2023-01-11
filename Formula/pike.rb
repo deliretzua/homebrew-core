@@ -14,15 +14,14 @@ class Pike < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "3ff13701ed6f1b07323df232c6fcd35125fea646fd0a78ec29c06a1bd3eab29c"
-    sha256 arm64_monterey: "49738b5e4a0c626992a93f2ea98bca84ba1cd5c4a3f5bb1dec3aa76b8f7f9320"
-    sha256 arm64_big_sur:  "966941419e0ad6d79afe1c06cbf5c6426987a4fb044118efaf639db74ecf9f74"
-    sha256 ventura:        "1650ccd2417aa16e7a70b1677ff6524de9461c6e11d69aac0f17d3d8943a1bb2"
-    sha256 monterey:       "67a354ed3a0cbc132c61fb3042b9f3dfbcaadad7f43fc43aaa70c4c60ac90838"
-    sha256 big_sur:        "f7d73f5d026696f371a577db4e34a271b9f4844df9a5671a78f7e00f1373311b"
-    sha256 catalina:       "fba4b09bca334abbbfb682151ca87e173d31250cf1f2682cb84f171c47d0723f"
-    sha256 x86_64_linux:   "1681d64d3aa898314870cc8f2838ee7b56e87d41d431c655526c04424166891d"
+    rebuild 2
+    sha256 arm64_ventura:  "031ee62b11a955552b030373aa91497be82b7b7fee22ce3c60cc24b1918e88c1"
+    sha256 arm64_monterey: "2a53a923852149cd694ce6d7be8b45c0403d8d03a0766f4f322fadc7e8f71bf7"
+    sha256 arm64_big_sur:  "878b3ea7543e92619a780924ad4d658a4d02c130c574c6a663fa538b520ec0b5"
+    sha256 ventura:        "ecaac78aa7f662a1622d736cff67eeaca243a2bd21df149902c9b215c0ee76af"
+    sha256 monterey:       "ea888dfb5125f9bd5bbbc67d435072067cd37b965a083b0734e060945e409715"
+    sha256 big_sur:        "c58188256a4bb81c01c63da5dfa60ba65496d5a4e9b6b21b40d7614930bb916e"
+    sha256 x86_64_linux:   "45a3daec18716e556c84641e255863a690f4affa90134a535430d141c0fc865d"
   end
 
   depends_on "gettext"
