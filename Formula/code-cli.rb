@@ -12,13 +12,13 @@ class CodeCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dd2b90edffb26b8562428df3616449dfcdca5c02fb0c859b88202c0b8116d024"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9b1bdc451d47eaabae7e83a03766f0a79bfa03bddd126a1a3c5bf9cbbb09ac57"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0bdc268faeea2d6bd21824f296ca37ffc18ca21dfbb0ff956315d40945eb5772"
-    sha256 cellar: :any_skip_relocation, ventura:        "8ee51700124588424d87ebe2367ce8f4e02ed7c627ad7312ee07a7763904f01b"
-    sha256 cellar: :any_skip_relocation, monterey:       "3cab5777e5c49bca9eda26c4308bd22b2f40ec99512f4476ddb566081fc916ab"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e071e61d47e169f36624eeea8aa87c5901d84d5653aa5913fb87e3374968bf29"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9884a8387b97187a32ed9ee0c8d67dc3872752919ce6d8d82c2942aa36d295c0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "28ecdc93feecda8a4f0f048d48fa7454c265bc1a43300918bf0b8d8929ab9989"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c763500a0366eb14e2510294f3ff9ddf57eabb3a1a504f6067bc40947296a265"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "028035bff4e2cee441803029e6646d67d0061503f67a2c3880caed5dbd1d9c26"
+    sha256 cellar: :any_skip_relocation, ventura:        "47bc40292da0d5c63bd84b9b8690814b7b76823f79bb2d324c35a339635e5a7a"
+    sha256 cellar: :any_skip_relocation, monterey:       "5168c35421ca2e806c8a3a5124dd5c5de68f84500585baef3b2dd980218511ae"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f7c94092020d36e040a7e5a50a39972241beaf2524b17081bc24e160cc72cdb2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e2f136e967933ac150818f1f40241c40b1879c595e775ca838003600ec04d3c6"
   end
 
   depends_on "rust" => :build
