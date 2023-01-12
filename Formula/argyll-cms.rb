@@ -11,14 +11,14 @@ class ArgyllCms < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "97e1af541220a0aeeebd4cf5dbec4b95910d18cbe80ff7d4b1a2550baea18a03"
-    sha256 cellar: :any,                 arm64_monterey: "2eb28a59cef2bdcc142008d4d36470e586e8e22285273303802a7e16bb95d08f"
-    sha256 cellar: :any,                 arm64_big_sur:  "253c5434082b4237f8067ad31ee6fae81811048f76d2cad8e2ae3ca360d51be8"
-    sha256 cellar: :any,                 ventura:        "efc91bb914a5c0e7a66d674c06ea9f8b7c552611bb5bd16538acbdad95a30709"
-    sha256 cellar: :any,                 monterey:       "efa97d39822d0ded97541bc095e59a976eb3f893da6bd4cbb2a90a3174cd9830"
-    sha256 cellar: :any,                 big_sur:        "eb7a9fd709675ccd7f1b59ae9d3e17bc301b4f7c15857a4c32f8f71e6801dc05"
-    sha256 cellar: :any,                 catalina:       "36860658ac2513441fcf1968c16d57fa6fbb5b7385d5437df24ffebe84ed7e1b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f4ed53c2d490076f96e3833f36d35c8629f909eba688142349489138856037c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "30fcd5d782e74fffb37d639ae30449062cfb8e5b68f500302f53eea98e972e3d"
+    sha256 cellar: :any,                 arm64_monterey: "ab77de0d5218e45c5b9b2c6190f9c08ed53aac2aafb7c23bbcdbd05faf21a8d1"
+    sha256 cellar: :any,                 arm64_big_sur:  "d2de7810f54558d2e12d566274d1a25075c085d21f357d30dcd6be18ea94a36e"
+    sha256 cellar: :any,                 ventura:        "dc567e1d7c8ac4ccff0d021a1bfd835daa9024f0297b884535b7d25fe03e7ffe"
+    sha256 cellar: :any,                 monterey:       "f4baba7347d52020f7e68fd90fadca1337c049abe047315550353556054123b7"
+    sha256 cellar: :any,                 big_sur:        "b9a0b4117a777707a229636875d1d5785dc2a956f5748f4aaaded89855012ee8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "605fd5a5d79d3c5c1a33342a808a174bdd4add73c13036bb216c3e115a396b12"
   end
 
   depends_on "jam" => :build
