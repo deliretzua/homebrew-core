@@ -11,7 +11,7 @@ class Mockserver < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b1ac4dd7b832de2a5afdb8536eaf6ec503a3a16b5c0f73dddb07b30d2febeb75"
+    sha256 cellar: :any_skip_relocation, all: "019123f1946f7d2bd51fa089369f57d1e68b72c8b620b668689efc131202d882"
   end
 
   depends_on "openjdk"
