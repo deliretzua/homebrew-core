@@ -2,10 +2,9 @@ class Braid < Formula
   desc "Simple tool to help track vendor branches in a Git repository"
   homepage "https://cristibalan.github.io/braid/"
   url "https://github.com/cristibalan/braid.git",
-      tag:      "v1.1.8",
-      revision: "d7391f2585fc86a8057d88de248ddc082eb8fa1b"
+      tag:      "v1.1.9",
+      revision: "0b2f7cd4296039c0e8c0a5f563443c4f0665d026"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1f812921245ed9f606c0c85a5f273595e8ee4b7e5cfa30af32c3a32c2c90eda6"
@@ -35,8 +34,8 @@ class Braid < Formula
   end
 
   resource "json" do
-    url "https://rubygems.org/gems/json-2.6.1.gem"
-    sha256 "7ff682a2db805d6b924e4e87341c3c0036824713a23c58ca53267ce7e5ce2ffd"
+    url "https://rubygems.org/gems/json-2.6.3.gem"
+    sha256 "86aaea16adf346a2b22743d88f8dcceeb1038843989ab93cda44b5176c845459"
   end
 
   resource "main" do
