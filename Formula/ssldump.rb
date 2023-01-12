@@ -28,7 +28,7 @@ class Ssldump < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libpcap"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   # reorder include files
   # https://sourceforge.net/p/ssldump/bugs/40/
@@ -50,12 +50,12 @@ class Ssldump < Formula
     # this project doesn't use Makefile.am so they're not brought in.  The copies
     # in the 0.9b3 tarball are too old to detect MacOS
     %w[config.guess config.sub].each do |fn|
-      cp "#{Formula["automake"].opt_prefix}/share/automake-#{Formula["automake"].version.major_minor}/#{fn}", fn
+      cp Formula["automake"].share/"automake-#{Formula["automake"].version.major_minor}"/fn, fn
     end
 
-    system "./configure", "--disable-debug",
+    system "./configure", *std_configure_args,
+                          "--disable-debug",
                           "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
                           "--mandir=#{man}",
                           "--with-pcap=#{Formula["libpcap"].opt_prefix}"
     system "make"
