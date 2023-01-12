@@ -6,15 +6,13 @@ class Seal < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "0dd23ba22353615762f25747bb49e2b7b01b68fe1bee34fa1aa2db56a64bbb02"
-    sha256 cellar: :any,                 arm64_monterey: "d7777ee9fe71f92c9900365ca44547b539c371d64b6c60719e39577f8393eb89"
-    sha256 cellar: :any,                 arm64_big_sur:  "edf57735aa66bfabe77f812f343eda0e8cef6ab82ab8f485e1c99ae85197dcb1"
-    sha256 cellar: :any,                 ventura:        "ef8b46670dd9780f5490a276e52bfb4f04ebcf5da2cfbbc36f7c12e28eda9a84"
-    sha256 cellar: :any,                 monterey:       "27af2b9d7c694e1cc8e78036698a64bd2ebac7c0b3ed51392b8b601cd27ea961"
-    sha256 cellar: :any,                 big_sur:        "0894b4b4a67025a78aa99fb4a3e1403582c0150612b309a92cf0717fbb84475f"
-    sha256 cellar: :any,                 catalina:       "bbe794b1b0316b97c4a1024cfbbde2012dbb52b4684696ba2795f221a99ccd4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "72fb7e142c831ee8615d16e01cc981dc51d001b50b6726a0c3d6084a360983f4"
+    sha256 cellar: :any,                 arm64_ventura:  "be6bc6562cd94e6cdaaaf9fea4678a9d203891103136b54ebebd207f925e1518"
+    sha256 cellar: :any,                 arm64_monterey: "815a7f97fc5c9ac4f1dff9aefcfa9d8dc2de686db9986895cfdd03e67c532365"
+    sha256 cellar: :any,                 arm64_big_sur:  "47554e0e49d403571cb2a8dd1556173684c9137bb1795041ab7ffbcf01f8c2ea"
+    sha256 cellar: :any,                 ventura:        "4913771595a3039b887b499c9a5432c6ec83a4e6bb53e426ab10451258cdfa5c"
+    sha256 cellar: :any,                 monterey:       "1b4df4b2882c98e5577e0cbfe992ada1125250070e9343459c0451524d2f2831"
+    sha256 cellar: :any,                 big_sur:        "01a9f4a313feac9bf415099ac09c9e3647bbf3304006ce06f871cf589c7e0588"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "311dbf6d2608ee2921e86a72bb4bbe83c1e859676b4a95dabb3822ab700ff011"
   end
 
   depends_on "cmake" => [:build, :test]
