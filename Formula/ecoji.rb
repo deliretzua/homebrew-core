@@ -6,6 +6,16 @@ class Ecoji < Formula
   license "Apache-2.0"
   head "https://github.com/keith-turner/ecoji.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "23b8840deb6010c46dbef2a199375627fbe0d29d0fdd4fe0f7b3bb7998a66742"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "23b8840deb6010c46dbef2a199375627fbe0d29d0fdd4fe0f7b3bb7998a66742"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "23b8840deb6010c46dbef2a199375627fbe0d29d0fdd4fe0f7b3bb7998a66742"
+    sha256 cellar: :any_skip_relocation, ventura:        "262576c8572a6bf2b65b8fb0cb5091a2831616e84f586af9a88d72584f3b1c5c"
+    sha256 cellar: :any_skip_relocation, monterey:       "262576c8572a6bf2b65b8fb0cb5091a2831616e84f586af9a88d72584f3b1c5c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "262576c8572a6bf2b65b8fb0cb5091a2831616e84f586af9a88d72584f3b1c5c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8faad5be2a6c052f1489356052b81fab7bbfa597c7285f93842e99fe4f46f60"
+  end
+
   depends_on "go" => :build
 
   def install
