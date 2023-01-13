@@ -13,13 +13,13 @@ class Libvncserver < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7b8596d4664583e7c23ad5af6cabe5cf3189c557c166768589c7c77322d4a70a"
-    sha256 cellar: :any,                 arm64_monterey: "2b2d24c9d3528ba81f7de80eb91448460108878488a04660ec296c36cbfa4edd"
-    sha256 cellar: :any,                 arm64_big_sur:  "4d9c99dc705a710eaf23fc72a85193200dc08df28f2ea90b8020db76e73166e5"
-    sha256 cellar: :any,                 ventura:        "e3c938ad6344e2af6bba985c177e2359323676d435419530d6e3a098cb7e9e6e"
-    sha256 cellar: :any,                 monterey:       "30cd6e09106cb0fe56c9d31aee78ddd5f46568cb0e8de1be57a5642fe6aa3ff0"
-    sha256 cellar: :any,                 big_sur:        "9a040c3f4ca5923040a2f27813fd176bfdb1a4c60c3ecb003b8bda0210e90e24"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b3653eb3e793c0380213276fc06020ce4ce6778fbfbd10eee36aba880bc36f0"
+    sha256 cellar: :any,                 arm64_ventura:  "5212065cfd69a225a5daa89fe45a7677d2a2716970f69d7015b4206b6b90b633"
+    sha256 cellar: :any,                 arm64_monterey: "44455a6842335f99c4722e9fb89da75c1ce7af49778ee66bb08670e3ece665ab"
+    sha256 cellar: :any,                 arm64_big_sur:  "fb8f83791e2207e227b625710686602862a6fd9cd8ca88940e6c21a63fdd9435"
+    sha256 cellar: :any,                 ventura:        "fce52496a16dacb10b307481ce5faff96613aa9329cb63850f7f05be37909d79"
+    sha256 cellar: :any,                 monterey:       "35af138621f6415eec78d4e2e6e2f8bc5f74dd22bf38cb0f3c34fd2bd32c84df"
+    sha256 cellar: :any,                 big_sur:        "2f83240c0b85bdcf83c84cc6ba18ab00c8eb097520eea08133df3ab1d3c91ad9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "96d783c095df406689824ecfdcb6ee757526b6a5cf7b7951ef268d6ee8a6243f"
   end
 
   depends_on "cmake" => :build
