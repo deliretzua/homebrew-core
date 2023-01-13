@@ -7,13 +7,14 @@ class Wget < Formula
   revision 1
 
   bottle do
-    sha256 arm64_ventura:  "a205f83efcbd5cfe22e70261f2b8afdca71cb172222ee3106bb44bc3512414ca"
-    sha256 arm64_monterey: "d1f955187691ad37ede6c33a1eabcd9f25b2f9841fc51ca3422a6cd8e830bd64"
-    sha256 arm64_big_sur:  "ea51216e20e8e7e8d13370c54f2282d7bbf472af73550a685cd7bbf78ed9af89"
-    sha256 ventura:        "24d0f69261b578a8f7c80130cf695a78b9b0a554405d63a30ad7d36c487ce789"
-    sha256 monterey:       "6f17f29657928ecbd76873ef55ee572414650dfc431c28e0587351532b251ae7"
-    sha256 big_sur:        "e33bd34193575636ee2b7cc761821e316d475947b95280a296069324ee31f44f"
-    sha256 x86_64_linux:   "47534590ea4e6468e74fe5945d28ab87510efab485490a132f7fb3bd02686e5d"
+    rebuild 1
+    sha256 arm64_ventura:  "7415a3b847237e0a981f2df42761578d6b6b285361c450c010219355bd1c0df2"
+    sha256 arm64_monterey: "ed959d9bd75bfac18aa823bd62c8e5f4736174fd183aee9ebaa913d0810dea36"
+    sha256 arm64_big_sur:  "42233b960709325f6e4ec479eb1786379e1b3757b4b7641bdbbd8e6a058e1013"
+    sha256 ventura:        "0915596ebf9426fc9aad9307a6813ba35ac860e9dfa755741a23e9d446ac3b93"
+    sha256 monterey:       "f97fc2639cd9d2d037c2bf1a94fa664ef2d81143ce8a1fb5b740ce2eb397889c"
+    sha256 big_sur:        "f85c6720bdabd86db32dd54837f577b709bc5de98896622a19f698f8a14e604f"
+    sha256 x86_64_linux:   "738ec27b5b39877b8004096d9c3edd04ff814e18dd6f6afca89a2f5b4eeedcac"
   end
 
   head do
