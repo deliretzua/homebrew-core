@@ -3,8 +3,8 @@ require "language/node"
 class Truffle < Formula
   desc "Development environment, testing framework and asset pipeline for Ethereum"
   homepage "https://trufflesuite.com"
-  url "https://registry.npmjs.org/truffle/-/truffle-5.7.2.tgz"
-  sha256 "7c94b3fb542d49d93b22ba2c0e9d54ec837db55e2e3b46e1c4c7bbef3e7c0a97"
+  url "https://registry.npmjs.org/truffle/-/truffle-5.7.3.tgz"
+  sha256 "7faa8c5a8b6861bcfe5cb0821f328f5f228bf63c923817a755b6fc05c498a716"
   license "MIT"
 
   bottle do
@@ -46,7 +46,7 @@ class Truffle < Formula
     deuniversalize_machos truffle_dir/"node_modules/fsevents/fsevents.node"
 
     # Remove incompatible pre-built binaries that have arbitrary names
-    truffle_dir.glob("node_modules/ganache/dist/node/*.node").each do |f|
+    truffle_dir.glob("node_modules/ganache/dist/node{/,/F/}*.node").each do |f|
       next unless f.dylib?
       next if f.arch == Hardware::CPU.arch
       next if OS.mac? && f.archs.include?(Hardware::CPU.arch)
