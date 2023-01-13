@@ -18,13 +18,13 @@ class Emscripten < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "542c1aa2ec82224349d175dea10143f31d7072d3bf0b2c13c5a93e91a4e95303"
-    sha256 cellar: :any,                 arm64_monterey: "e0d475b62a48b06dc1f8d7fb9403f33a5bb5e235ffb87594431e2d101cad64ba"
-    sha256 cellar: :any,                 arm64_big_sur:  "48cc3647c7e35ca549ec460fa2d7f498109756d68e6837b2909a538a4f6b4785"
-    sha256 cellar: :any,                 ventura:        "26b21d2f2bee8398c572ff038e15f6c62e6e3ed02b34a913a672fc14680a042c"
-    sha256 cellar: :any,                 monterey:       "26933595b156d14668648b9c1baca29b58f1ad8e9cd0476782b7db626a4a6282"
-    sha256 cellar: :any,                 big_sur:        "074ad0169c4d228ec442c559103649c9308a0d9f5a929b2bb45851116673a7ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "622a94c532aa1cc2d8595c375180756748f3beb8fa243ceab6360b963fe723df"
+    sha256 cellar: :any,                 arm64_ventura:  "1f5780ca6f7936eeb32d2bb3bbc2096dad0851f536a3358aeba9a8e1efe800aa"
+    sha256 cellar: :any,                 arm64_monterey: "f87cd2256b76ced0b49cc36e6660dcb98e87081320b6082650876d9ca08a8e40"
+    sha256 cellar: :any,                 arm64_big_sur:  "60c0015b1c8cf06aecfb3b49e4f32fa7231ff50e7ffa58a2b5d52c2ad9b691f2"
+    sha256 cellar: :any,                 ventura:        "f77d4b8c21b88b53a34dd9652d4c0c3317af92e7ecf77008915f9b3f82d32f11"
+    sha256 cellar: :any,                 monterey:       "84c31131ef431de909e6888caa2b7885f557d8f30ff0dd6bc47df47c13920d53"
+    sha256 cellar: :any,                 big_sur:        "91fe6dec8048881bee9ff0fdafa76c8d574d3c6aac86d6924d3e228ed228d526"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ba52e38884f65f3b23a72231c516a75380da2e456aedc2746f72fbf1b11e403"
   end
 
   depends_on "cmake" => :build
