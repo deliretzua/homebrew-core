@@ -13,14 +13,13 @@ class Snort < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_ventura:  "01bbd12e1615dc4708325b2fc739e04f21962346794d4884436bd3dc42b736eb"
-    sha256 cellar: :any, arm64_monterey: "f0560d959142360cbcf22fb556d19294370a127998ff9769036b26024cf84092"
-    sha256 cellar: :any, arm64_big_sur:  "acbf5a7f4ec50e6785465fb661941cc5f22a5f912e2a10c1951464d8818ed51c"
-    sha256 cellar: :any, ventura:        "ab9d249f971d5ae5676c18778fa8c62d5beabae8c07c98db5c688981662c6398"
-    sha256 cellar: :any, monterey:       "4c85847c0365eecf09d952fdec11c3050d9e310e3a829b90f2cea9a089fd886d"
-    sha256 cellar: :any, big_sur:        "4647cb1a7f59bfbcffe43fb504188aca1d88156e0d27e813db0c5c5e9fe9375d"
-    sha256               x86_64_linux:   "4f621feaefbfbf8728a35d9c5895f1bc0f8716c3121229c264a1afbde671d16a"
+    sha256 cellar: :any, arm64_ventura:  "70dc993ef6f60dc19874ab40493301e4983fabf062ba68def119c15a3b39a291"
+    sha256 cellar: :any, arm64_monterey: "5686d6122610fd9e8d8d5585314e5a0fa045161369dbc45e5aed6c5145e3fed2"
+    sha256 cellar: :any, arm64_big_sur:  "976a4c5682aaf39133b490ede411e26ad8a4e501b37c5fbb77444baab516fa7b"
+    sha256 cellar: :any, ventura:        "bff6ce1f922837656999f21fc5c8467d3bd0dc8de69cc380cb0c15ab63c7a0aa"
+    sha256 cellar: :any, monterey:       "af09cace150ec4705d076b76c9b210d48b846eab40562eb2c2554b8214f1384f"
+    sha256 cellar: :any, big_sur:        "b75441d5a79de1c1639cf9b2c1da135950fcc904b495f782e60d537c2ebc804c"
+    sha256               x86_64_linux:   "d809bc3a18ee9ab586b26a896f967214b091b81278fae32586da93d258a00cb5"
   end
 
   depends_on "cmake" => :build
