@@ -7,6 +7,16 @@ class Flagd < Formula
   license "Apache-2.0"
   head "https://github.com/open-feature/flagd.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "074d1344006a7ca428a7b3651542984643ae0b3baba2f554b6d1b4a8349b9232"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "195240e2954bf8d03c689c434e061f293308bc9c5a333e033e265f317e6a7cfa"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c9451baa79b2ccffdf7dc842bb037bb55aa063ad2710f927f60bbad1d15ad5cd"
+    sha256 cellar: :any_skip_relocation, ventura:        "ddab89b5438c62bb4bf96d335476ea1dd4b14a639cdee8d7619b3714ab7d9686"
+    sha256 cellar: :any_skip_relocation, monterey:       "c84b8b2ff509b4aa2f683237a729ee4c8d8261da8186bcf6398e46375faa82bb"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b4f045420e67865a5eb8f0eecfe8665110c369c53261af189b6abdb56555508f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f6042f22d1d3d5652f4879e8cc06565cf9fdafa0b57de1ac33d6743c94714847"
+  end
+
   depends_on "go" => :build
 
   def install
