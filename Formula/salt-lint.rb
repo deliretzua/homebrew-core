@@ -8,15 +8,13 @@ class SaltLint < Formula
   license "MIT"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "87fc6f52e39cca360c96a70a329080dae9beed83737c8b6f9127962bde43ae25"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5854dd0330baaf0f6d0d26fe4e0910932164de550fc5759b1d2832f6aa646a51"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a9f38d3c5d28634fb1543ba4ba6f61c1e97719e2bed569132968d532260cbf44"
-    sha256 cellar: :any_skip_relocation, ventura:        "d22336a46b4e08fbb17f7220a5bbf145c5429ecd59fafe29b42c216770878a61"
-    sha256 cellar: :any_skip_relocation, monterey:       "23df453884270f756913358f4b7e1d9fc6b08a92e72d180a9646060e0458376e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "05150cd861ee2d091d7a006e2026adec3a08c6d4f0b35515916ee911c9853acb"
-    sha256 cellar: :any_skip_relocation, catalina:       "74394670e09ff7757149be51d66049b0d0b3d8cb2f2dfe3c8fe2cbb9f517911f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68913a999bbfa7d99438aa023989b8d453e8f32ebba446075261372bf98e06d6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "54b6321fc843c4ad8b1cf1ded5b174d12f435970dd4c35398db8815bb5ce6a07"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "aad129291f8090fe9c3e7b5f032ca0beaaa6365acafa41bcb7c02ef4a205f0ae"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "803b9b71ebdc062cd2f6916b8708548c9347bdf14b94b0e357571498907273e9"
+    sha256 cellar: :any_skip_relocation, ventura:        "e5414f3e2cc389b93e37aa15ae2f934d182df89f09fba7de95477619a4248fbb"
+    sha256 cellar: :any_skip_relocation, monterey:       "1604578e3177842b5377be55e8e86fb119f12983491db50d6bf857594be15993"
+    sha256 cellar: :any_skip_relocation, big_sur:        "39a5fcb90a5b1d5a9512b33c08114c2df4f5bb82790bd395bd7d41e829a22a8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "882fbe46b0001488b0aeacfb804ef1f2906db20e1490d6751f25348749aa7ab7"
   end
 
   depends_on "python@3.11"
