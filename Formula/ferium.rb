@@ -7,13 +7,13 @@ class Ferium < Formula
   head "https://github.com/gorilla-devs/ferium.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c4a775ac6e681881fd1cd12249a45ccab6f2c0fca85cf0190823edd7fe222941"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ee7486b22b7613a3e1fd1d4343d3d7245a731666dbdf62c60bb456dbe9cc8514"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "929b40a9ba30ae9bcce0d1da93e2dd2441b8334c2c4a28c8c744c9f4dc9756b2"
-    sha256 cellar: :any_skip_relocation, ventura:        "39f472afff8525e3879d1b8b4fc3c9f567ce79d7e4dc6ae6b069fa1c9e491993"
-    sha256 cellar: :any_skip_relocation, monterey:       "e9f078f3d4bf35b2735e73840f1cf490f375c3c040099000a7bba6d3270f8c9e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ba25b616c3bab3451f2588053fdd0d6d1dc01953918c70a0cfe9e1553ad8cb72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "890098dc060f10f7d052ed3002e5f331508329c31f9baef660347fa95b98e0c4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b531b8a451f6c3ee55bb64ff5b2ab3b9439f558d3ca30b53421062a1fecd98e2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "36855db44a1442c8581da48d23968bd2b15c989325860c5e789050af83abf7e3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c4e25626850f7fb2849bc179c95655b90f6ce75884e1f94ada5dfc06d02abfb4"
+    sha256 cellar: :any_skip_relocation, ventura:        "ef8f9c6e5a01eb396e8348cb270028c5ef5a3f88c29088ba84d4f3590ce5f980"
+    sha256 cellar: :any_skip_relocation, monterey:       "829c91da73767d09167cc6b22e2113471dc5067966766c6e6c34519ccdf54022"
+    sha256 cellar: :any_skip_relocation, big_sur:        "fc078bdd9f079ff809f9aa2cb957257860a25ea47ef9717fe7c896ce868ee182"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "16a0c5d0f77e8208face364aacc028fe89e5c114797d1b8453bdd51ed493ac49"
   end
 
   depends_on "rust" => :build
