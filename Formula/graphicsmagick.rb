@@ -11,13 +11,13 @@ class Graphicsmagick < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "35cf8786213d513dd4f992fbe0dd92a9242cfc5722132cb96a53efe5ef1f332e"
-    sha256 arm64_monterey: "8e279fb2e6269dffdc6268c304632ac4ad84718c01751299759b6ebd849cec22"
-    sha256 arm64_big_sur:  "109fecb48596bf2b02571761aa66e69b9b80d8515a0460a0e0fd8b3c53ad4480"
-    sha256 ventura:        "77dea8c6cef1e529da7d181feb49ee9f1d9f5c3094a14453277ee3b932473839"
-    sha256 monterey:       "350a28fcfd5dd7bce571e8922ce38af74dc0fbb92897f6b81762d378806d9b19"
-    sha256 big_sur:        "034a0dc30d4e8107b183c2438e8911f6d8ecaffc96f7ff8598e5660fcf89ae8b"
-    sha256 x86_64_linux:   "03b091052b63deae7e63fb4924579e050063cbc03a3ac989fd3b9d69d251a5a2"
+    sha256 arm64_ventura:  "b0bafc8854f9f7b8fbb54553a614beb0f8158488ec0e311dd3dd1ef87a64fe79"
+    sha256 arm64_monterey: "a8437596931ec5d6f2404ca81c05a64861a99457695f9130b9de525d24310079"
+    sha256 arm64_big_sur:  "305cd1e588584b5f1b10cb7bb9811f0aa6e99fb646c24968f8e906f111b27d7b"
+    sha256 ventura:        "67020d0a5c4accf346b836949cf0c85482cfa6b531bbf27b0acd06bec7b289bf"
+    sha256 monterey:       "d27f686a2bbc904c9a862d8442c4fcc307823ac6d1b122a5605e292089acee67"
+    sha256 big_sur:        "a5bb71478461411166840182d595a1af67227ab6fc0f1c56a69ab0d91f8bb7ba"
+    sha256 x86_64_linux:   "8d8433ad727526734d430e4d8ad8023894e740e5551eb92894e3e37870c6b0b3"
   end
 
   depends_on "pkg-config" => :build
