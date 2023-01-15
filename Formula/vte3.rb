@@ -7,13 +7,13 @@ class Vte3 < Formula
   revision 1
 
   bottle do
-    sha256 arm64_ventura:  "1f5fea1bc015167bd8a858ca8a149443775698cab6510f0870b6fd2100180afb"
-    sha256 arm64_monterey: "5b78a4dcc215831402e0d47a34481336ca4de251c1bb166cfb2f2e2ce5e6ae34"
-    sha256 arm64_big_sur:  "9dbefbc4873d8e55484a41e5e8452b62a1bbb86173380a5a39b94572fc43c8ed"
-    sha256 ventura:        "e232bed5063bd7ac5d8512c5b77b98bc5cca06fb04735888b3893363131a2dcc"
-    sha256 monterey:       "db6112d7be93a4004a1258ddd4e2382e3d8f573597683cbf023b4f2935bf3d71"
-    sha256 big_sur:        "a2a738d4088f107175875d91a72652c094916a3333d37bcffc7bc689d4484fe4"
-    sha256 x86_64_linux:   "edbe9ab6b18481fba3d686de975e322939d6dca526a4ca0f5e1ca61bd346bea6"
+    sha256 arm64_ventura:  "eb57fde7e74efe6d97f791028d097d55ba00a5226526a95e72f2d4a7c3fc81aa"
+    sha256 arm64_monterey: "4e7eb735689f2f0b583ef2da76125c32cc93f150e777c910f4b9347eee249b91"
+    sha256 arm64_big_sur:  "0c5e8fb9555270b2309158bcd1d36f3b6ae7c37da4e7e490c9de9943542652f8"
+    sha256 ventura:        "1b6bea826a7256dbd44d3d0de6cbeef078280aff9e308bfb48eba7b529db419c"
+    sha256 monterey:       "6a2a1442d72544d7a10e252ac1c9673bb9fa4a096d0f3725e56671d2511cbf83"
+    sha256 big_sur:        "217e5ae3fea4e1dcd2b0ed48f4624c4c84236f4a364f03e62759eacc402ba81c"
+    sha256 x86_64_linux:   "b1ec1d73d262b8dc6a92d14da66b1889391079302fc45ea1dbb61562c0266d99"
   end
 
   depends_on "gobject-introspection" => :build
