@@ -13,13 +13,14 @@ class Distcc < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "8eb63057e2dfe3c30167c9e4bdae8c3b95adb0e49d0107587df14084053a3b95"
-    sha256 arm64_big_sur:  "ffab1cecd8e01d68b0219b5a6bfe5ff17951b56721e22e43c98e5195d25a0478"
-    sha256 monterey:       "d8c6cdd1435d7bb44b6ada902e509765ea6a270b4e7a6b8d77d723531d3878eb"
-    sha256 big_sur:        "18a8fd773714b43e5effec750afca17ff2c55c29cfcfbf43a70da804d0387be8"
-    sha256 catalina:       "eeb7573a412908530b6deec90e1a8dea6d6e8ca543914ccdc8aa93cf390cacad"
-    sha256 mojave:         "a2ed5a4d9b741a95a0ff3bb710f7382b6d3b4e01c30f6e0e9698da8796291504"
-    sha256 x86_64_linux:   "1c5befd01ca2e4c87b074ef98b7d23f33a5b08e9b63e77b71869d4da1b2a7e51"
+    rebuild 1
+    sha256 arm64_ventura:  "ae3e5f6ee6b7ce6b2db11d3f6710adade66ed52f9f90effa5fbc89cbcda5c7b1"
+    sha256 arm64_monterey: "5c55152ee011c5ee9ee80d6dd8afc0459d10698336fe6acd1d5885154925c0d9"
+    sha256 arm64_big_sur:  "93ab4921b118e8da7928a8e260c57dea0214c548d514b3085cbe0e97a9ce44fe"
+    sha256 ventura:        "c19d7cb1f54bde33fe9ff79ca8ba1772091315c583f6cf21cf4ceaf826886558"
+    sha256 monterey:       "87f38e3222a99da6532491198e14568fefd8e5b68e6fbf850d990f4f9a8c0f3b"
+    sha256 big_sur:        "0c13ddef45e9c4b0b8206c665debab7b20607e60f2eecd6416e6b7b96b7eb2f5"
+    sha256 x86_64_linux:   "f62a2ac4db8798cca95136213d540115e239e63c5dd97d70757e06c6eae98032"
   end
 
   depends_on "autoconf" => :build
