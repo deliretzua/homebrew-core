@@ -13,15 +13,13 @@ class Openttd < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_ventura:  "c0474c89956d999fcdf65ffabc20acc891fe6f553f68dc2dae121e9b1bef8e62"
-    sha256 cellar: :any, arm64_monterey: "b7634c8226eefa527c8c18889b2a1493df76145f81004d137186ff60bc61cefb"
-    sha256 cellar: :any, arm64_big_sur:  "59a846aef200324ba4df723fe712c5dfaa4044f01d34b328839c30ea5b52fb0f"
-    sha256 cellar: :any, ventura:        "8af1ad5e427dbaa1d6068d5deb1af289a7b80ae0cbd8336cbf86ee99a3e705eb"
-    sha256 cellar: :any, monterey:       "686298b62aca61f3215eacca71a457e35c0cb439d334a08a625ce096268cd998"
-    sha256 cellar: :any, big_sur:        "c1ec943c89316af06939cf7e55e9f2d5aa9eb46ad95f91c9d104acbd85dd5b75"
-    sha256 cellar: :any, catalina:       "a884b8a01baef4a90209053ab7ffbae294045afe33273c0b14d04c14640a6f33"
-    sha256               x86_64_linux:   "2629dd5ea308d530b4864cf2c3db1f54c68dda1b171189b1d13f8386e81ee958"
+    sha256 cellar: :any, arm64_ventura:  "92bac9d28bfe606455ed36d91fa62db9cb5976c8f859328b7bfd52b07ce34e28"
+    sha256 cellar: :any, arm64_monterey: "923ecdaa9af593f55ea53ca53e06978c400d7a15edc9250b850d8bef706efe44"
+    sha256 cellar: :any, arm64_big_sur:  "14cb00bf931dcba029b94424a6f510fe2b36c56bc65cb8763657b8af557765c7"
+    sha256 cellar: :any, ventura:        "79b590edfa18bf62d702ddf6292b2b6540d5f1f1c24a0d21512f4e8cab0d6b69"
+    sha256 cellar: :any, monterey:       "74585290b8c23c627965da5c5e2d2fc2b2e19f9c9263e4a274ace3f224f76ba0"
+    sha256 cellar: :any, big_sur:        "b5314a7edf0e45d1fd97f8cf529843d2bd56922f5022441ee883a798abe31475"
+    sha256               x86_64_linux:   "0461c563f2afe1ad8d37e838b089276e7e0816c7316e566c12f6898ed06a2745"
   end
 
   depends_on "cmake" => :build
