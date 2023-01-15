@@ -5,6 +5,13 @@ class TigerVnc < Formula
   sha256 "9ff3f3948f2a4e8cc06ee598ee4b1096beb62094c13e0b1462bff78587bed789"
   license "GPL-2.0-or-later"
 
+  # Tags with a 90+ patch are unstable (e.g., the 1.9.90 tag is used for the
+  # 1.10.0 beta release) and this regex should only match the stable versions.
+  livecheck do
+    url :stable
+    regex(/^v?(\d+\.\d+\.(?:\d|[1-8]\d+)(?:\.\d+)*)$/i)
+  end
+
   bottle do
     sha256 cellar: :any, arm64_ventura:  "109fdbc449f3d9888c9442b95280bf1f3c2b9ac876670a7bb52f1fb0c350e10e"
     sha256 cellar: :any, arm64_monterey: "77eb966db9ec8b43de5c86e21e6626097271d58f7fbd8ccea5d551bfb0e7ddbf"
