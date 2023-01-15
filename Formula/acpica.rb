@@ -15,11 +15,11 @@ class Acpica < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "d8c97744dcd6f6b1be41c6b13a07b02c373f83bf1aa7d8852d96a2935a5c5330"
-    sha256 cellar: :any_skip_relocation, ventura:       "36c5768c90757e49b87d58cb6068d1745a557c0741fc27c32df08fdd0254a949"
-    sha256 cellar: :any_skip_relocation, monterey:      "0ada9f5afbb835d2ab0cf55ba23e07c286373ec6ed1b6fb46859cf510cfff49a"
-    sha256 cellar: :any_skip_relocation, big_sur:       "27433e94ad72edf41984cfe6a665afa21f6f5ce997c3fdedf33c68eb864d785e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87a339b361429ed66f9316dda49339bf70848c94d6038b22daf6585ee0123e10"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "e69b188caca07beac560141ef4d9519109383eef13813d23d99d508e82ea765e"
+    sha256 cellar: :any_skip_relocation, ventura:       "275be697f6fc4add94fec360407398b70d259a757e654a819843d393de8a54c8"
+    sha256 cellar: :any_skip_relocation, monterey:      "6a4f3736eee30b72c57d76719ded526c0db20b176f710f3eedd6586bc3b3d59b"
+    sha256 cellar: :any_skip_relocation, big_sur:       "0689b9e9e35b3e59caaef23c74a315bb012108d11a29bd103385150d4cf245e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30d8fec0a2b421723e0ba234512fff5352f96ba355564b38670a5c92c548da08"
   end
 
   uses_from_macos "bison" => :build
