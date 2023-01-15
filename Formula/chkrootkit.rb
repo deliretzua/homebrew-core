@@ -12,15 +12,13 @@ class Chkrootkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "df424f7b9dcd0ff298d054020bb1086be26c1276aa617da306a54561986615b1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "59a2d7c6798a78d907c269ab5ed9effdc111e4ff6b4dd7e5bd65ed3721846c72"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7a0131227a3d12132068de046c3a7fa851a452bae907c635a92a484868977104"
-    sha256 cellar: :any_skip_relocation, ventura:        "a53b31363f10d0fca17efc6fa2173b937f63776c19a01a2d2633b9c700b35f82"
-    sha256 cellar: :any_skip_relocation, monterey:       "818406aced3c057489cea7395219de7aeff1c7da9e2b3218939d291c21595c72"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7fac603ca267b72c2882d460a458957f843a5e821fb0406d6230d42f1fe0557b"
-    sha256 cellar: :any_skip_relocation, catalina:       "a181e6fe3a682bfb24742eac3823e3be8fa531e18954e99b02098bb7c43323fb"
-    sha256 cellar: :any_skip_relocation, mojave:         "dcb47fe6461d30ac9088466a4681eca173863767a6336965dee128e35bcf8c91"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a1d5b23f87e71487ee2a4594ad9e9293791761158867903c574bfd89c9f2ba0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a258b8d69f0bf8c1dd9b9b23aba20d27949fda98ddee50bbbfa78ebdc55de7c1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1c6496e1a119f83e5e23fcde469684f5b35266e23508a6e916f912ba1ac3f06f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a119c099a118a185ac8dd5b9fbbaa568c19e59164b09142e244ad17e9deaf5a4"
+    sha256 cellar: :any_skip_relocation, ventura:        "2f88f6115544d95e4409f74d5cb4fbde7418c430ce589d5eac8fe2690fb5ad14"
+    sha256 cellar: :any_skip_relocation, monterey:       "5c56183f6855ad2d7545bd380828de4c512c53de0d4c1c23f27f35840e284a48"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4a41aaede48d1084680b894f295fbf1de375c4ffc0ec86cc170907ff64357634"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef592be0764a0d57c7562a57211ebdb64c7f98241a8b7bdd596c57aea9a89e8a"
   end
 
   def install
