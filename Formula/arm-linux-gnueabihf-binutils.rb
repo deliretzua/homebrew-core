@@ -1,9 +1,9 @@
 class ArmLinuxGnueabihfBinutils < Formula
   desc "FSF/GNU binutils for cross-compiling to arm-linux"
   homepage "https://www.gnu.org/software/binutils/binutils.html"
-  url "https://ftp.gnu.org/gnu/binutils/binutils-2.39.tar.xz"
-  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.39.tar.xz"
-  sha256 "645c25f563b8adc0a81dbd6a41cffbf4d37083a382e02d5d3df4f65c09516d00"
+  url "https://ftp.gnu.org/gnu/binutils/binutils-2.40.tar.bz2"
+  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.40.tar.bz2"
+  sha256 "f8298eb153a4b37d112e945aa5cb2850040bcf26a3ea65b5a715c83afe05e48a"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -20,6 +20,8 @@ class ArmLinuxGnueabihfBinutils < Formula
     sha256 catalina:       "6f8cbd94bf5ba89b49b3547ab29b90e9bcf4b2d6ca2173a88b80751e44160491"
     sha256 x86_64_linux:   "630a97002e764c3f2a9df69ee344e31ad9ea897da540d0dd5fef97b96ac269a1"
   end
+
+  uses_from_macos "zlib"
 
   on_system :linux, macos: :ventura_or_newer do
     depends_on "texinfo" => :build
