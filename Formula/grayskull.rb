@@ -7,6 +7,16 @@ class Grayskull < Formula
   sha256 "e0fab1efd2141b42aded727f1212b326f3972abcf1d0e6d37e89ed07cd76bd00"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "daf85f4b664f21eb535d343c53cd1e3aa4b9586a2987fd44234403c83e0bd5c5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fc1ccec41ef68807248de9f628a4f21fe86bae7358bfbb45896cf85d07b7f60b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ab3e85dc2a3ea0453ae64882dd794013f06d2a5c80e9cd6a1c4cd22573d9affb"
+    sha256 cellar: :any_skip_relocation, ventura:        "98aea150e64cdc3c14909de6f547fa5bf842453951518d45409a0c56bc83056c"
+    sha256 cellar: :any_skip_relocation, monterey:       "251e5ac54e44360fd0c3a85f31c8f4ebe54832d6d03bcfb2b3ce53a8df30ea92"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9758b9f16e0a17a4f3bde9381f34911f6e9e183152121b79a2d5b8260baaf290"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "92e88d41583a26a2e16102ea86bf2b3a7e38f4f4badf790be754ebe91125e4b2"
+  end
+
   depends_on "cmake" => :build
   depends_on "python@3.11"
 
