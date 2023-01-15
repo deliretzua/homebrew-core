@@ -15,14 +15,13 @@ class Samba < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "051b24e4afef1632447fed0407decbc44efc12f4cf6d8144231666c42c4faa25"
-    sha256 arm64_monterey: "c6e18e3f22acea130e83f11eebd51d85b7b594a9d371891257b0a130bbfe31ff"
-    sha256 arm64_big_sur:  "a9ba7054523b3b13fc6aeb0444a9a816e43cc8c7e1eacbe516d3e2cbd189673c"
-    sha256 ventura:        "6111c8adac57188bb113b552e73290f2e6c222cb055bdbd93400a1f14f595847"
-    sha256 monterey:       "4a2fce95e7847202c650b426aa9b8dc76878955032bbb6782c0c23c67d583de4"
-    sha256 big_sur:        "c42ecd9a4092379993fca623ce6f8632745c39819075f8488d25735bd5972da9"
-    sha256 x86_64_linux:   "0a9271342edc28f7cc7531b8297808fc9f52bc21c246c7bf38c3ef398dfe2839"
+    sha256 arm64_ventura:  "04ad33cdd80290e44791fe98ea8c0b2408f53c0bfdc3df8a1e91a11c21af06fe"
+    sha256 arm64_monterey: "057312cc260b6da7d86fa9a150aaea1eb9dc5f3da0d2f85e5628c3a18f4548bd"
+    sha256 arm64_big_sur:  "48ce223d4f46a102e1d182a0f1d98965aaff1ca96c4e20ecc5f78673be00c7a2"
+    sha256 ventura:        "705a3f2a5609ce141e38261b1624769e0b0806f169d2df12d4b80ce98de8239b"
+    sha256 monterey:       "7abcaf3a0c7078ee1d2c7a3f4b2f647499b34f75de6702b9a8eb6af60e19649a"
+    sha256 big_sur:        "09d931a7bf91fa330fcb40d0cb31b9f9347c6401244e5d9d10333c55bd8287cd"
+    sha256 x86_64_linux:   "48a0b3fe8c814b1dbdb6d6ff81e55430a04a5b07eca466b26d1656b5d81de83c"
   end
 
   depends_on "cmocka" => :build
