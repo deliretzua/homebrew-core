@@ -7,13 +7,13 @@ class Onioncat < Formula
   head "https://github.com/rahra/onioncat.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f90771ab2a7452000b57fa958fe4b22f3ee9623145449a4021a64a7160ff3e5a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "40f981f1c2d95f993249d1716b3e6193dfad9e3731e8d7f69ede25046a0fd960"
-    sha256 cellar: :any_skip_relocation, monterey:       "2f0edf6c284d728ad4146005d49966ef7b90c347fffa2585358b3d96a724ce2e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9053dd0ef8e185c7d328e3ea488106c567bf4fcff6b1b864f63ce2a0b6a882f0"
-    sha256 cellar: :any_skip_relocation, catalina:       "2cc9de36de4f8fb6bf5ef7776b7e8de219444123df698ac4a9cbfc7a87f0d4e6"
-    sha256 cellar: :any_skip_relocation, mojave:         "ea6c02f40094f48e34c8a4bd03d66761ddf6262745683006d58d26a27e5f5a9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6032e98bbce7b3c2182c06ff794abcdcfd4ac8743d61ca367d346120c2130680"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5d98c497d64308db451fc406bf76b816ee49b70663ce8f44d191aa27cf3d9e2d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "71c67f580e84d26eafae2eda4570a2120397eaf4b51ffbbaef460e90acbd6837"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8fe8eac3abd7b2c80d88637337e7fe1aecf4cd7ece7dfeeef358908eb7e34d2f"
+    sha256 cellar: :any_skip_relocation, ventura:        "0eee00bd8307e0b28343321cfebdb0b65d4571303272f4fa641c5bcffda7cc82"
+    sha256 cellar: :any_skip_relocation, monterey:       "1cae594d41f43082cbaa1ca9f488731b51041ecd9faf6525606bbb81e2b5c23f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8140808aa7baef9ae6f5b3830587974f4bc00216e8a9201ba70b0110ec719494"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a82151f85710fa7a4eeb914861ea12e8739b5b0afa483f34eb1445ae0a728983"
   end
 
   depends_on "autoconf" => :build
