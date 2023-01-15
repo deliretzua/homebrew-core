@@ -9,14 +9,13 @@ class Pythran < Formula
   head "https://github.com/serge-sans-paille/pythran.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e5bf394a94b7af4cd5144c55e796a3de7a30e82f7966d6b2b5dc1aa03a1091f8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e5bf394a94b7af4cd5144c55e796a3de7a30e82f7966d6b2b5dc1aa03a1091f8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e5bf394a94b7af4cd5144c55e796a3de7a30e82f7966d6b2b5dc1aa03a1091f8"
-    sha256 cellar: :any_skip_relocation, ventura:        "ea51ad415eb3da7ed5e1dea09bd6a2caa7a6bd8c1ff24e9091f73c6295d0215f"
-    sha256 cellar: :any_skip_relocation, monterey:       "ea51ad415eb3da7ed5e1dea09bd6a2caa7a6bd8c1ff24e9091f73c6295d0215f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ea51ad415eb3da7ed5e1dea09bd6a2caa7a6bd8c1ff24e9091f73c6295d0215f"
-    sha256 cellar: :any_skip_relocation, catalina:       "ea51ad415eb3da7ed5e1dea09bd6a2caa7a6bd8c1ff24e9091f73c6295d0215f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f30eb8b8aaafff3f6cfa3bd473f3d8b9d63239f5e3ce2630797855a331a230ec"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2242ff7ef584033d48281786887cd0676c7e397339b9ea40aef1100402335d66"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2242ff7ef584033d48281786887cd0676c7e397339b9ea40aef1100402335d66"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2242ff7ef584033d48281786887cd0676c7e397339b9ea40aef1100402335d66"
+    sha256 cellar: :any_skip_relocation, ventura:        "2225d213fdceddaab2e5b26eb4b0f77936550bbc89462d759c16bace06793f0e"
+    sha256 cellar: :any_skip_relocation, monterey:       "2225d213fdceddaab2e5b26eb4b0f77936550bbc89462d759c16bace06793f0e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2225d213fdceddaab2e5b26eb4b0f77936550bbc89462d759c16bace06793f0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4286f9064a81b4bbe54ef2b715ceced50b18d890a6763c1a7287e6982d88720a"
   end
 
   depends_on "gcc" # for OpenMP
