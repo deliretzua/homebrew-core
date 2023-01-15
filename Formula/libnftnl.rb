@@ -6,7 +6,7 @@ class Libnftnl < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "94764c454e993ee303396d1260a55dd173d0437f67cebc1e652c2bbba6ee6bd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "607c140572fe20418d5413e69cf77a5474445ee6a49d83c3598cc291b89ab518"
   end
 
   depends_on "pkg-config" => [:build, :test]
