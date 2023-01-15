@@ -7,14 +7,13 @@ class Sile < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b1ec8a69f69bec2fde86d310994642f2b47dbcc7a5523b780b5dd9f5e1a3dd17"
-    sha256 cellar: :any,                 arm64_monterey: "173fa5e31a65fb208bfd27dff30e3bedb7115105679c5f75b1e7d396e68fc437"
-    sha256 cellar: :any,                 arm64_big_sur:  "509e7218127ad380a0ca7628bdca7c200be4134b5b7a7f77a4ccb882052d0343"
-    sha256 cellar: :any,                 ventura:        "0d7bc022a47e22b81845f0b7ca9cca64538a259f8bd68c253c1310d3570464d2"
-    sha256 cellar: :any,                 monterey:       "f1e8cc09a3d2259047ff0922fca9ed595273f01b84f018bd180158a7dbfedc9a"
-    sha256 cellar: :any,                 big_sur:        "5521f377b47e5da50f89dd1fbb59fcfe0ef98d40b9999358359acb31b9566f25"
-    sha256 cellar: :any,                 catalina:       "f592d76567d2a0bd440f3767dbc68e8add9bba65f9ba72be995800099ed8bcf4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "561b25ec149b24c4e094a9f62561a3af055c7abe223c7b509bb0e3cffafaa406"
+    sha256 cellar: :any,                 arm64_ventura:  "13ca61aa62f4dc8e6d627f75d1abfed698fe3df551b522086c1efa978a498933"
+    sha256 cellar: :any,                 arm64_monterey: "b286d124eaac6ce9d984bf34037899de53b5089cfd1083b9477f65e0c8d6ee72"
+    sha256 cellar: :any,                 arm64_big_sur:  "bc014c2e327de0f15b5aeca9e5c9e0b53e7ba017a37ef26067658d72911c4e93"
+    sha256 cellar: :any,                 ventura:        "9b6e7bc2fbc37d83bba0d2c78e7fd4aa9c477b828be2517cca50426d9a732593"
+    sha256 cellar: :any,                 monterey:       "61c52d8b11be1c9bac065ed1c1a56df8ac72b2e057433ed0e687d46989f9da1a"
+    sha256 cellar: :any,                 big_sur:        "a5789d2eef2f67125e073e9cce109e8a67f9f25bd5bc7007c002165410f9dc96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5c52636810e6314d95fb78a5c2fdddc380e47744ffe5548a786248deb3c278ab"
   end
 
   head do
