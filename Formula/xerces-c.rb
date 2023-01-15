@@ -8,14 +8,13 @@ class XercesC < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e858e931c939d044e591755091c6db66feb4c526e47279d02d430a7620e2eab7"
-    sha256 cellar: :any,                 arm64_monterey: "55a07ff428b5caeafc5628df1af7b39ac340d3ec1130bbaf5474363a374c01db"
-    sha256 cellar: :any,                 arm64_big_sur:  "20fc19025ac2b500e659dd8ec35136e13ac789c6f26d3a720a793e0ee7f2983b"
-    sha256 cellar: :any,                 ventura:        "7fd7f60de40b53884d1fedb6fba70442ffc5a15128e441926b973cf584da1506"
-    sha256 cellar: :any,                 monterey:       "52590592166754dff35051432cf0d5e8f656ecc4774e21d47dcf2ad936ef3f80"
-    sha256 cellar: :any,                 big_sur:        "8238563eea46d61d137b62d3f4b7ef7e8184f06b5c89b140c7c657b724ea34ec"
-    sha256 cellar: :any,                 catalina:       "2829258e76d45883ab076906aa1e3649a0d7775932353ea642e6ead0cc5e5371"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "76d7da011335635adf76ec6ae5f48980174673effb6d6cfcb3ebb48db4eb5720"
+    sha256 cellar: :any,                 arm64_ventura:  "6d5d2ab9215f5d716c2d714f2cfd85f57c5c263b782d92a657b61a2eceacabb9"
+    sha256 cellar: :any,                 arm64_monterey: "8a412a239af33b893ea1c5bef13650f5d2cd074c1c1dca368579120efdd2f366"
+    sha256 cellar: :any,                 arm64_big_sur:  "5e44f510463f401a0c50d7ce136f8073e3ff0a3cdaa59f1640d9b2c99585e0fc"
+    sha256 cellar: :any,                 ventura:        "108e04af86f1049a210cd4c2255c6891578468c6d9ac53ac5b9552d1cff41598"
+    sha256 cellar: :any,                 monterey:       "2222908e9bbcaddf3db710e4b5034c999bd4c42d31cb1e58cfa59e9039b2f2ee"
+    sha256 cellar: :any,                 big_sur:        "924efc9ed9d26683ba2639b0714e191ab2f397bfc812be5370dcbbacf053e1df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "92fb7b227025549bdb51f35d41762ee08cff52ce6b52882e4bb947feff1ef23d"
   end
 
   depends_on "cmake" => :build
