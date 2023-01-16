@@ -7,13 +7,13 @@ class Datafusion < Formula
   head "https://github.com/apache/arrow-datafusion.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "16961b03098cf9e402406b1abc8448c12c867bbf5804ac130cf97e66bd4e8c8a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "220d5d230734435ff0e4b91e68ec3a73a9972e0bfaa656fbd67c32eb5374974b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "caf1c0cd8dcd2c0698753677f9a64c4de5564c5eab370a5139226fc6cbdad01c"
-    sha256 cellar: :any_skip_relocation, ventura:        "22a20f5d08a8a40a6a000b32c7a6800134fcf438324d67dead66237a96213b28"
-    sha256 cellar: :any_skip_relocation, monterey:       "2c40150d4c169e25f31c58ca143086520c80e65d12aa5c1eb3e6e3930ab725c1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8743f6e785e296471736571f909dbc823dbeae0bf1d8f13f5d63406be97e9b2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b712c672172abe1f2f1fca4b4bcd75e893149c6520aca6d8defc863c65ef1bc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b62ca884947d160a61214a0cf3dd37602bfa0ae99fa10e2c0abe637725e2f142"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ae1ff3bf8ff90537975af878b1afe4fc11d02e2eddc78ef13b81cb4c3e871678"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b5c00d8e72bfa59e4985565f5e639c6a0e3cfbffe9fdbf03a1e0de5d9850d8be"
+    sha256 cellar: :any_skip_relocation, ventura:        "feff195131a1cf4b4d22763c40d27f510a13f3e4a3a0ab9561cfbe45d0f2254b"
+    sha256 cellar: :any_skip_relocation, monterey:       "1e66ac4d1d2a9e67a02af87d4b1fdeea3d5c47a9a202753105f24eabca6484d3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6664a6e8f6b2a9feb8fccca9f312851cc0e5569a712ce27f26f9fb48498b1d25"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f536b810076e4e428c2b149eb24a1bfcf58c2470879726498b04b4d39233156"
   end
 
   depends_on "rust" => :build
