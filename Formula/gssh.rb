@@ -1,8 +1,8 @@
 class Gssh < Formula
   desc "SSH automation tool based on Groovy DSL"
   homepage "https://github.com/int128/groovy-ssh"
-  url "https://github.com/int128/groovy-ssh/archive/2.11.0.tar.gz"
-  sha256 "86dba70bc6370af9db2e1364c1c97dc57f884703bc6814c7a845ec2bdf1ed279"
+  url "https://github.com/int128/groovy-ssh/archive/2.11.1.tar.gz"
+  sha256 "1ac050fc06cf04bdd8bd1fc576aefb9d68be13340e9081eba312573711611b8a"
   license "Apache-2.0"
 
   bottle do
@@ -16,12 +16,6 @@ class Gssh < Formula
   end
 
   depends_on "openjdk@11"
-
-  # Fix shadowJar build failure, remove in next release
-  patch do
-    url "https://github.com/int128/groovy-ssh/commit/87913563ebb96c95a9fd17737c56aeff29916f0a.patch?full_index=1"
-    sha256 "c4c41e991ebb2eed737fb4bc90667a4b1f00958cabe8c4a5695c855072c7aeaf"
-  end
 
   def install
     ENV["CIRCLE_TAG"] = version
