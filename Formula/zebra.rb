@@ -11,13 +11,13 @@ class Zebra < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "bc47098d8ebe543a011fcb4a34042d69140954d9ad4129ec6f15ce7c44a57c84"
-    sha256 arm64_monterey: "33a48c82e2d3d34dd168ac5c5f30d7eeb68706ebfe4fca5f4f743e8c8f8c7d7d"
-    sha256 arm64_big_sur:  "02a6d5a901c190bd1130077f3f6f46845f9973b89e387ab2a6f445c3d5e52ebe"
-    sha256 ventura:        "29e8244bb036655f5972c728f4181fa9fecdda2660e5a18a706b39170a9f4fbb"
-    sha256 monterey:       "e8053445a0d04c64f9927742b8bb021ae82c77aaea9745547d88562c1cc45c2e"
-    sha256 big_sur:        "8fef9cc6a75a9e05ad9684f6e162d7f7e99df5b7ff7df0f42f9378fd4fd44830"
-    sha256 x86_64_linux:   "53385db244b4140a36f1d31aaffee3ac9c110d456330e255bbd97d1a327edc42"
+    sha256 arm64_ventura:  "0f4eaa1599579ff8fb91df4daffdae399a9124687b1822bf9927406153020f27"
+    sha256 arm64_monterey: "d794e304a3a78b98bdeb991c86e20d44d06fc91fece39eb9fa72cedf9a9ad61e"
+    sha256 arm64_big_sur:  "406b5dcefcb72c220c812573a5330b13eca277be52b0ae552b191c327d2deacb"
+    sha256 ventura:        "ac364f090fde9a0d88df2fb9f9aeef522dad399ad7bf92bc5ef321f2036c9306"
+    sha256 monterey:       "17a5be5288b4568497a4a0bd0e592d98fa235ba382d4307e7a8eca2905d64861"
+    sha256 big_sur:        "f623a3e76d8a564683b86bdf8b3e743073bb5a849e9b99faa2a763cc2c351def"
+    sha256 x86_64_linux:   "caaa71a7fea9ecd017271647f7d8a6d7a7c16f0147eb0ece9fbaf8715363dd1d"
   end
 
   depends_on "icu4c"
