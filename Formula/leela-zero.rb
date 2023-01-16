@@ -23,7 +23,7 @@ class LeelaZero < Formula
 
   on_linux do
     depends_on "opencl-headers" => :build
-    depends_on "ocl-icd"
+    depends_on "opencl-icd-loader"
     depends_on "pocl"
   end
 
