@@ -7,13 +7,13 @@ class Snowflake < Formula
   head "https://git.torproject.org/pluggable-transports/snowflake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8248eeab4ab9c2100bdb235fe304245ffb3010c655578a0fe05beae3a1c37322"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ecc6facd24052def5fd89b81bdf8074f59abf308f5d75a107d0150bc1d420341"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c114efd86dea93354ac2697a606f9dabf2e5ece0da3cc6525209f626bd52b675"
-    sha256 cellar: :any_skip_relocation, ventura:        "cb2bcb546f01c1e67898472305a3334746303d3355d51fabf90dee95c6f60b91"
-    sha256 cellar: :any_skip_relocation, monterey:       "ce76da15fc8d620c0e6b69bfeb412790c8dc68e23772c48bdd23b7dab8e0521d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7dab725e33f2874704c15f2d0d3378fec0a8de1440d2d6675bbaba0073b37ad9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "01e81fa869a654760267a4885b357e9989380abbd11167a23e28f467ccbdcc3c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aba61457a9541b191082be7deaf8cd6e793f2e40dfb2786ef0a71616231fe6a2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9e29478898bd2e269b81ade530e011267c5c6d14c30b6659d8e60f7265ef14e8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "995c4e26312b0850fae3c653cc24762106a1239e7252c6a4edb06d2b8a11a37f"
+    sha256 cellar: :any_skip_relocation, ventura:        "11c35fffefa2d767450b37d20f3701854a2ab5f3b4de713d7776a931aabe74e3"
+    sha256 cellar: :any_skip_relocation, monterey:       "96241414b5160b6c673c19095baf8207bf26e04069acf8802b13ef073a0a6f08"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5be927160024fcc5d348dd5f2cee3f41ad9d5aab8d6f619ecbf1708618213a44"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ee708391bca9b3e94a99e6ca3b7ac2983913fbc76e4307d2d424f0ec38ebc4d4"
   end
 
   depends_on "go" => :build
