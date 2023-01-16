@@ -12,13 +12,13 @@ class Jpeginfo < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "01ba4365d4bed48303ffe4b7eda697006ee978525a1c3e971ae1d43b2117b8f6"
-    sha256 cellar: :any,                 arm64_monterey: "248d09ff5171378a89961669504198d95c9c403780f2c0b208a88d93b2b03359"
-    sha256 cellar: :any,                 arm64_big_sur:  "2cd7083ee9be651a3879aa94e8cc5372c0e8815de5a31e6694c0413c794140c1"
-    sha256 cellar: :any,                 ventura:        "de5b7688383ec8bbf434454f5cbb6522ac942419ef826ddadb2449a4a6fc4c57"
-    sha256 cellar: :any,                 monterey:       "09642bc641e8a9e7e28b6f2db5f72fe5fddc24fe2a97d2ba48971a32db6683bd"
-    sha256 cellar: :any,                 big_sur:        "6b03e7a143c3a2e209104418ac438dffd80f0a0d06754296d4d08e988110c359"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a6679a48a19077b9c232d8d1b45dbb0409409c12c183c66324317afe1cf9ddc"
+    sha256 cellar: :any,                 arm64_ventura:  "7b2d0e338d66f520f18491d3044a22de5d3844f6d5bfce18cea0510c31e77554"
+    sha256 cellar: :any,                 arm64_monterey: "82ac2b4fe44b18dae1dfb51814ade86bcf4015365665bc07120306be468332e8"
+    sha256 cellar: :any,                 arm64_big_sur:  "d2934f7604dc04fc17813a1d3a6d1b10b400b648009ffa65f26045c6ffb136cf"
+    sha256 cellar: :any,                 ventura:        "dd1b225d43bf11f5da7dd72437a1a49900b2f0c251b14885cf8417198a1e3455"
+    sha256 cellar: :any,                 monterey:       "8cbf7240dbba078ad4a7345dc5f331b2287d166816052004e724a278492d4b74"
+    sha256 cellar: :any,                 big_sur:        "0f1295e1dcccbfbb1fc3c63033b128050047a6541024b5cfe7d10da0164bf153"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c950c04a37faad38e1ef55191eaa29a6670c1eec3c4ce3c7959b3cf4313cfcd"
   end
 
   depends_on "autoconf" => :build
