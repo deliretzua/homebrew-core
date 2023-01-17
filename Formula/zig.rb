@@ -17,13 +17,13 @@ class Zig < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "01af7e89a24e093d0a9237fd46cac44adf68a9abf43cbeab2d19f375c587728d"
-    sha256 cellar: :any,                 arm64_monterey: "7bd6777182b5b0d39aa73c0840b5d9619c76e0328cf48909648ef134ab0c8c2f"
-    sha256 cellar: :any,                 arm64_big_sur:  "c501006d75235e835705010031188f1e840f5e977c4022981bee7d95d9dd5e35"
-    sha256 cellar: :any,                 ventura:        "55c9562de04c6bc2f14e2a0d78e04bcfca087c567222b0f273ca828c2bd11910"
-    sha256 cellar: :any,                 monterey:       "f1df3f7f4fc4d266d5af55a7adacd17d38d47385f863a92902beecd434af1086"
-    sha256 cellar: :any,                 big_sur:        "8e9858adbecf1870e59028794a70e0e37c26ffe513301fb4d88e92819c3c160a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0cf9a390995748c4450c9b748cae48f333371a97d4f4fbe5c373ed64a2ca9166"
+    sha256 cellar: :any,                 arm64_ventura:  "a3908bf383d7754fbc4875440c9b8392e9c4bc5bb9a0f4e62f80d2ea0044414b"
+    sha256 cellar: :any,                 arm64_monterey: "c9c484c3a6161663eda02c97a2898629e2c82576105e47f32cd9e4e741545f66"
+    sha256 cellar: :any,                 arm64_big_sur:  "5ec09008b3393fc4fb4793a39c9938776f69695ea51b509ad3c68a6d6be00e5e"
+    sha256 cellar: :any,                 ventura:        "d52517dc0a1e61ab460bc4453e616c3e18f3b088b6d66e16eda12a70815aead5"
+    sha256 cellar: :any,                 monterey:       "fc156c0ddf4bb31e6258c905acc3121fda3ecb7930385d7baa245099cb7d90ef"
+    sha256 cellar: :any,                 big_sur:        "42647236a8dee891946d8e399cf06d07c3f16e46eaf83db460f1443e8013c52b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "900d27fc1b3a98e1be76db86621b76d195336712a409e5088223e230dd12d76d"
   end
 
   depends_on "cmake" => :build
