@@ -9,15 +9,13 @@ class Ykman < Formula
   head "https://github.com/Yubico/yubikey-manager.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "3fc62037229dc461447d747037f1ccd483db5b48c878257703535954b07f7283"
-    sha256 cellar: :any,                 arm64_monterey: "cd733000ba56bd3800af24aa4b5309cccd54ca82dd955a2cbb92a413164b2ae9"
-    sha256 cellar: :any,                 arm64_big_sur:  "813bde6cbe7e0251abfe8b3817bdd271d82d7e125e71678fbaa7d2b0a97d1345"
-    sha256 cellar: :any,                 ventura:        "6d6e00240012a0a956a0a0322e845f0b76929f0d5cb0b33213759e22522d558a"
-    sha256 cellar: :any,                 monterey:       "c71653347e5209dedc1d1ed4670f7b2549f10250b46176c6d03aac1613718f2e"
-    sha256 cellar: :any,                 big_sur:        "7c09339831e8ac15337c9c413c75b94e490af4d83383e23528c5fbf6474df827"
-    sha256 cellar: :any,                 catalina:       "8486be81e85b9501966c3ab9657bddeef793329b91341fb0b33f60e4fbc719ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8a3c7606b95add89c47a501c0f3c4d864834679ba0f2d8efb362b43b913b7bcb"
+    sha256 cellar: :any,                 arm64_ventura:  "c6a3e121cdba5f024b645f341e14aaec753b454cd3a003839de177d78c26de40"
+    sha256 cellar: :any,                 arm64_monterey: "7f8c9a093fc951b99114d332ceb25385298fbd1248a34ed96b63013026031682"
+    sha256 cellar: :any,                 arm64_big_sur:  "ed416b97ceeeb04521e5c6d365c3eec35933c472f3301598d433778661b41d42"
+    sha256 cellar: :any,                 ventura:        "b020ce89d8dc4f0e1c5e07e7ad72fe900f2329afca1cc445bbe750b626bea746"
+    sha256 cellar: :any,                 monterey:       "917a5521e62d81b2d0380b282d0505634f03fa7da74329f67ddaf897fc98630d"
+    sha256 cellar: :any,                 big_sur:        "a6942371ce9f176a298ea68f8c56da8b24a1380ff2d3d0c63e804515d66f52e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cdfd2e70e761faf8cecde3e80b67009432239c007d42a671a2238c9722fde113"
   end
 
   depends_on "rust" => :build
