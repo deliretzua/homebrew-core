@@ -8,13 +8,13 @@ class CloudflareWrangler2 < Formula
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4ff5f6f86468ce67a4f586a61fe7da7822c55ef9f52ebd1f7e47b99ef88fa36e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4ff5f6f86468ce67a4f586a61fe7da7822c55ef9f52ebd1f7e47b99ef88fa36e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4ff5f6f86468ce67a4f586a61fe7da7822c55ef9f52ebd1f7e47b99ef88fa36e"
-    sha256 cellar: :any_skip_relocation, ventura:        "1a06fc11aae046e11d82a34258e2ee3acfb104423b28f1e4dad90889ae28e1ba"
-    sha256 cellar: :any_skip_relocation, monterey:       "1a06fc11aae046e11d82a34258e2ee3acfb104423b28f1e4dad90889ae28e1ba"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1a06fc11aae046e11d82a34258e2ee3acfb104423b28f1e4dad90889ae28e1ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "00173c948d312f3497e5fc6e2d17db49169e1dd9b81be2f237197af3b50752bc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8c8674947cb14528816121a864b5bd43a6db37dec08d3ce530ec7635fc65746f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8c8674947cb14528816121a864b5bd43a6db37dec08d3ce530ec7635fc65746f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8c8674947cb14528816121a864b5bd43a6db37dec08d3ce530ec7635fc65746f"
+    sha256 cellar: :any_skip_relocation, ventura:        "a55db6dd4d83ba25dfefc2bdd0cf2b122b4083f90df15d2e310c16d609dbacce"
+    sha256 cellar: :any_skip_relocation, monterey:       "a55db6dd4d83ba25dfefc2bdd0cf2b122b4083f90df15d2e310c16d609dbacce"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a55db6dd4d83ba25dfefc2bdd0cf2b122b4083f90df15d2e310c16d609dbacce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a1aae6440e4ddaf8a96e90a730080e516c8197abb9aeb4bf839a5f6c4099c45f"
   end
 
   depends_on "node"
