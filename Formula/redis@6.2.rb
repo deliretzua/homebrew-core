@@ -11,13 +11,13 @@ class RedisAT62 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "bd84a61004010182eae7dd0e6024df9051fc3cd99f1f2cc0c1c91e8d017449a7"
-    sha256 cellar: :any,                 arm64_monterey: "d289551a0e58ab0ecfdc62617a45ddbf9b7645d300e0fa3f8566a6baf781cbfa"
-    sha256 cellar: :any,                 arm64_big_sur:  "d47a2b29f65a2071fe0f59235e55d79cc9cebbbc99aaa65bf020605b14b84a62"
-    sha256 cellar: :any,                 ventura:        "a5fe64b34732950c957f7cf11d28494e43b27bc11a2fe23fdd3183cc83216ce3"
-    sha256 cellar: :any,                 monterey:       "f0cd35054786e3af8bc74326c98b16eba207fc369dc30cfce7042541a3138609"
-    sha256 cellar: :any,                 big_sur:        "698321edcf17b8b1cdafdaed03c238878180a132f74b33b5641e5d3ed3f4a867"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e44409fbcc0bf96dd451bad4793bf910cea382c0c71889bad1b2bf0d42e44ed0"
+    sha256 cellar: :any,                 arm64_ventura:  "504489073b3154dbf54ac31b9d1b4849a32595dedf4ea246535e4c366d2410fd"
+    sha256 cellar: :any,                 arm64_monterey: "32ca02bb872f05a83fb455cc8e2e85a039ba4cd439ecf11f16269131d1d82da7"
+    sha256 cellar: :any,                 arm64_big_sur:  "c6ccb7539b8d8b5ffa2c84e0a57f9340d033be97e6e1b25f4cc587fa216c624c"
+    sha256 cellar: :any,                 ventura:        "6ed1f00de9958e23f87766615fe2085b5431de77d46190599fec4e8570bf65c2"
+    sha256 cellar: :any,                 monterey:       "86e6bfa62634050824969a04ae1f55a12ee393e6fd63dd429b8f1414a4221bd9"
+    sha256 cellar: :any,                 big_sur:        "c4fa215726360ec71b3bd3901d1155c655f00c180051ba7932ae3cdd2b5a24fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c7ab628a9eafd256db997897441658a13c1ae04b6faa449f08e267763374f15"
   end
 
   keg_only :versioned_formula
