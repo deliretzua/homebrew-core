@@ -7,13 +7,13 @@ class Kubefirst < Formula
   head "https://github.com/kubefirst/kubefirst.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e87aff901bcf9aaa344fc26b83c56c34938d4c69a9ff702361ccda8c6687bc1d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "75f115cb0627380c9e6dc0ac4d321db5a225294245c10d084983ac90a5a98c60"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f576dc55050715290a53f16bd147b97823b24d0c133c4c1e024ab445c8b4df26"
-    sha256 cellar: :any_skip_relocation, ventura:        "68d1f71c97ddba74162fb79049aa6de3fd1395e6ce20724179293ac807b0ca58"
-    sha256 cellar: :any_skip_relocation, monterey:       "015bc1a2fa6511d8c4c4098e28f07b8700488c45513caf6800e1f27780d7efe1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0a495dfff569903444594d50e23feea8a951434e62f24aaee6971f9c1e66553b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba37692a69330392681c3af6b2ca798ffa68777908be04dd92ff9ab7ae89cce8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e317bf9e3fb57bec5bdf5e13b6ed4ae2bff6a2075242387bd954f2834b88f751"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6379b90936356ff2259daef1aad9b1957cc4f4e521f25c3fb905b16ddb6cce8e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7e862d65cc4c51ee677e66e84a60ddb6ad706bad48cecc447168ac8ae956826b"
+    sha256 cellar: :any_skip_relocation, ventura:        "98e5294942a4a76a33ae686776d2c0b923d851eba9fd710b01a89b16208bf190"
+    sha256 cellar: :any_skip_relocation, monterey:       "f26c4d2922fca7ccf7f0dc48b67fb28b6f9afcb6a81f60b19859c96d654664dd"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6d0d3954516306b5316714d14ed77947cc459a2db2395567fbbd623091386386"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb39b73ba94f52879fa4fd3c0ce75ebd893511edecbede49468c4a12d32f6720"
   end
 
   depends_on "go" => :build
