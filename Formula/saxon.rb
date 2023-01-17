@@ -7,7 +7,7 @@ class Saxon < Formula
   license all_of: ["BSD-3-Clause", "MIT", "MPL-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "39e9110c49b68bd767e5faabff06a566bd60649b69e7f0d068006702713eafb8"
+    sha256 cellar: :any_skip_relocation, all: "f251d15ee9c43c8c24034263f84fe9b5b81bddec4507e4891d657597964b078b"
   end
 
   depends_on "openjdk"
