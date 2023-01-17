@@ -43,6 +43,13 @@ class Fheroes2 < Formula
     bin.install "script/homm2/extract_homm2_resources.sh" => "fheroes2-extract-resources"
   end
 
+  def caveats
+    <<~EOS
+      Documentation is available at:
+      #{share}/doc/fheroes2/README.txt
+    EOS
+  end
+
   test do
     io = IO.popen("#{bin}/fheroes2 2>&1")
     io.any? do |line|
