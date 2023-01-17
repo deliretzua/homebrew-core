@@ -16,6 +16,10 @@ class PariNflistdata < Formula
     end
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "f21acb6d76e9e64b540c6fe53f58686919d739066a5f5b72c338e7a2681c761f"
+  end
+
   depends_on "pari"
 
   def install
