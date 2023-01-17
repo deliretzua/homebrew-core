@@ -3,8 +3,8 @@ require "language/node"
 class Cdktf < Formula
   desc "Cloud Development Kit for Terraform"
   homepage "https://github.com/hashicorp/terraform-cdk"
-  url "https://registry.npmjs.org/cdktf-cli/-/cdktf-cli-0.14.3.tgz"
-  sha256 "eea5d55d6bc6f626c84900d34573928672c708d98b0dbabfc39b54d654de1cc5"
+  url "https://registry.npmjs.org/cdktf-cli/-/cdktf-cli-0.15.0.tgz"
+  sha256 "77cde5f175ee612041aea64a7871d678e65b946681f0d3f4a20305c101563f09"
   license "MPL-2.0"
 
   bottle do
@@ -24,6 +24,14 @@ class Cdktf < Formula
     node = Formula["node@18"]
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     (bin/"cdktf").write_env_script "#{libexec}/bin/cdktf", { PATH: "#{node.opt_bin}:$PATH" }
+
+    # remove non-native architecture pre-built binaries
+    os = OS.kernel_name.downcase
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    node_modules = libexec/"lib/node_modules/cdktf-cli/node_modules"
+    node_pty_prebuilds = node_modules/"@cdktf/node-pty-prebuilt-multiarch/prebuilds"
+    (node_pty_prebuilds/"linux-x64").glob("node.abi*.musl.node").map(&:unlink)
+    node_pty_prebuilds.each_child { |dir| dir.rmtree if dir.basename.to_s != "#{os}-#{arch}" }
 
     generate_completions_from_executable(libexec/"bin/cdktf", "completion",
                                          shells: [:bash, :zsh], shell_parameter_format: :none)
