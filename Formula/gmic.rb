@@ -1,8 +1,8 @@
 class Gmic < Formula
   desc "Full-Featured Open-Source Framework for Image Processing"
   homepage "https://gmic.eu/"
-  url "https://gmic.eu/files/source/gmic_3.1.6.tar.gz"
-  sha256 "e73d63ba6520637c782b6e5e6805037a27b6255c011c9e2a60a56f9c28822ce4"
+  url "https://gmic.eu/files/source/gmic_3.2.0.tar.gz"
+  sha256 "8db3ba8ae003c4946a26d643b8173f7aa49e9c84f2ee1f74140165d3f20d3116"
   license "CECILL-2.1"
   head "https://github.com/dtschump/gmic.git", branch: "master"
 
@@ -32,6 +32,10 @@ class Gmic < Formula
   uses_from_macos "curl"
   uses_from_macos "zlib"
 
+  on_macos do
+    depends_on "bash-completion"
+  end
+
   # Use .dylibs instead of .so on macOS
   patch do
     on_macos do
@@ -56,7 +60,7 @@ class Gmic < Formula
       SOVERSION=#{version}
     ]
     system "make", "lib", "cli_shared", *args
-    system "make", "install", *args
+    system "make", "install", *args, "PREFIX=#{prefix}"
     lib.install "src/libgmic.a"
 
     # Need gmic binary to build completions
