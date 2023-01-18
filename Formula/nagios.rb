@@ -11,13 +11,13 @@ class Nagios < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "7db0695bbae427961a1822dc5304b4402d904da918c0b098972844ba124ce220"
-    sha256 arm64_monterey: "c2bcde07a56fb7115522c01e901137e570829879e2d3dbc248f35348ac7e05d1"
-    sha256 arm64_big_sur:  "fd35798f4d1300888264d7946ef2007c050c562122d6ee83e04f355455a5d6ee"
-    sha256 ventura:        "112abc2955c0d88b27d249f08cb6bc1d998815f16389d88c0786f4c20eb1172e"
-    sha256 monterey:       "ebdd3e0f05804ee1c0b014bfe4da8137926e7c87f560f2adfe11c7a397ebdad4"
-    sha256 big_sur:        "bb335ee0d104300f3f998a738e7d4ff8c8525df42a7beb3ad6e855a6372e1b49"
-    sha256 x86_64_linux:   "0ebd2f195770a874487bb13a52be1b8fe18d909ef3cc7e881e0debe267a3ed1a"
+    sha256 arm64_ventura:  "290d9ff2fd3a8d76d83df7ed7b445f697927c43f729e070ed1ff69194e7bc2fa"
+    sha256 arm64_monterey: "d8be8e2f7e135c090861150657cacda5339cea9e0d00955f85d6ef8edc043809"
+    sha256 arm64_big_sur:  "7fb5a5fc186f90ac19e74be2e2ddfcce7523b5ad45d29ee67fe4278d74135e44"
+    sha256 ventura:        "5a8a68d1f4d2fa9706a8c84787b9bf35c70f95db6ccd801e99ea05e6d22f8c68"
+    sha256 monterey:       "56780c151f1903a218681678e81ace045067dd6eb27613d8beeb96fdbbca22cc"
+    sha256 big_sur:        "c6dbbe42f9fb6c0d86afd0902037a95ba8bde35d133a31f7ba903762a11f5956"
+    sha256 x86_64_linux:   "921787f28ff72c7e6e4e050e523b081f4a5e5b9f53a1266ea4daeff12075136f"
   end
 
   depends_on "gd"
