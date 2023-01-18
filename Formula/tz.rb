@@ -7,13 +7,13 @@ class Tz < Formula
   head "https://github.com/oz/tz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c961532b2ab2604a9d659ff39e7160821e59a585d12b6653b6f58754c2863557"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c961532b2ab2604a9d659ff39e7160821e59a585d12b6653b6f58754c2863557"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c961532b2ab2604a9d659ff39e7160821e59a585d12b6653b6f58754c2863557"
-    sha256 cellar: :any_skip_relocation, ventura:        "80c69c3de5137e46284305295b9154a65597ee5fc874786960cbe2c35252668b"
-    sha256 cellar: :any_skip_relocation, monterey:       "80c69c3de5137e46284305295b9154a65597ee5fc874786960cbe2c35252668b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "80c69c3de5137e46284305295b9154a65597ee5fc874786960cbe2c35252668b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "67f8546f0d90e65fa86eb500f0efaed4d1a7b3dc774baca0fd1a0f5e842b44db"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "83aaf5ea3205df997942013f5a6c8660c41ae6da4526d16d55335e5dabdccfc0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "83aaf5ea3205df997942013f5a6c8660c41ae6da4526d16d55335e5dabdccfc0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "83aaf5ea3205df997942013f5a6c8660c41ae6da4526d16d55335e5dabdccfc0"
+    sha256 cellar: :any_skip_relocation, ventura:        "c5673576b5029313511c42bafd35fe8309cf023792222c1e25f7fd9a8656b2b4"
+    sha256 cellar: :any_skip_relocation, monterey:       "c5673576b5029313511c42bafd35fe8309cf023792222c1e25f7fd9a8656b2b4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c5673576b5029313511c42bafd35fe8309cf023792222c1e25f7fd9a8656b2b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "92db3447fdf82ca46731489658954d1fb9e28457e9ed714df9115dbed8b6b2e9"
   end
 
   depends_on "go" => :build
