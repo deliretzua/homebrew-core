@@ -6,13 +6,13 @@ class VideoCompare < Formula
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e2b3ead40dca111badcd0947be514a76c4e5a91d4622e9c5fdcbc08fc7371e08"
-    sha256 cellar: :any,                 arm64_monterey: "7856fd039738eafd4f7104174cdccfec11d612aaa20feade7ddf7a13eeeb6e16"
-    sha256 cellar: :any,                 arm64_big_sur:  "912d081fdc613b2653e5c2926eababa060a53b6709b53c41e2fe3e815a195013"
-    sha256 cellar: :any,                 ventura:        "8964b6da15f00f7e275cb8fafb9ade86fa7fc95fd6506bc76850e2aed9703a68"
-    sha256 cellar: :any,                 monterey:       "9b0b63e2e18f2486afc17bc7cc54a2052e0a822f8c8f74461e580d9b6215c41e"
-    sha256 cellar: :any,                 big_sur:        "148957b8c802a12a1ad856c1179b025fb8a5d257e0266cec0268b8d54595c20d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f18a620c69273eca846c82f6f206a33162df2b2d5e136fb032a44f857374178"
+    sha256 cellar: :any,                 arm64_ventura:  "d3c88113579babdac66f0790c02c2a233dc121f6d001e41363196285c8f21481"
+    sha256 cellar: :any,                 arm64_monterey: "f91172c1c7a89ea9dc20b164859bebcf9e1dee0a67a3d87bed847a7162a2f2ca"
+    sha256 cellar: :any,                 arm64_big_sur:  "f373e0568c20a9d451cdc0f8596a121d2184883cba11c3d8693e0c59ae4f4d78"
+    sha256 cellar: :any,                 ventura:        "bd15e05d3e06f4abd938af19106faac93d4f42e2a646a7af635c00d74e7cca9e"
+    sha256 cellar: :any,                 monterey:       "458b1a4d925db4320d675f5fc6eaa811b14b47598369aad25bd4e0a5261f6b43"
+    sha256 cellar: :any,                 big_sur:        "9def25034c976de4403ecfd47e8eadb8fa02b3f166cb90d34c92904b30f9cc88"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e0060d170c95eebd5f0d598526e072f81a970e8c1d90e249167f0004e942434"
   end
 
   depends_on "ffmpeg"
