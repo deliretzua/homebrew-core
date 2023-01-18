@@ -4,8 +4,8 @@ class Shaderc < Formula
   license "Apache-2.0"
 
   stable do
-    url "https://github.com/google/shaderc/archive/refs/tags/v2023.1.tar.gz"
-    sha256 "8041c6874a085a0f357d7918855f9e39bbeff9313cbeacab28505aa233fc0da2"
+    url "https://github.com/google/shaderc/archive/refs/tags/v2023.2.tar.gz"
+    sha256 "06c4e2fdd63d62b73450d7011b72e7720b416182fb883fb0aac0afe6db2df3f6"
 
     resource "glslang" do
       # https://github.com/google/shaderc/blob/known-good/known_good.json
@@ -22,7 +22,7 @@ class Shaderc < Formula
     resource "spirv-tools" do
       # https://github.com/google/shaderc/blob/known-good/known_good.json
       url "https://github.com/KhronosGroup/SPIRV-Tools.git",
-          revision: "0e6fbba7762c071118b3e84258a358ede31fb609"
+          revision: "63de608daeb7e91fbea6d7477a50debe7cac57ce"
     end
   end
 
