@@ -1,8 +1,8 @@
 class Kwctl < Formula
   desc "CLI tool for the Kubewarden policy engine for Kubernetes"
   homepage "https://www.kubewarden.io/"
-  url "https://github.com/kubewarden/kwctl/archive/refs/tags/v1.4.2.tar.gz"
-  sha256 "e04e75063689e73a386e841987307d473520a8f9834acf8d08434cc6cc688d60"
+  url "https://github.com/kubewarden/kwctl/archive/refs/tags/v1.5.1.tar.gz"
+  sha256 "bbf6a3b549e870093f698462d110f2c1bcc6ec922f890e8c93745017534a7d5a"
   license "Apache-2.0"
   head "https://github.com/kubewarden/kwctl.git", branch: "main"
 
@@ -17,6 +17,10 @@ class Kwctl < Formula
   end
 
   depends_on "rust" => :build
+
+  on_linux do
+    depends_on "pkg-config" => :build
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
