@@ -6,13 +6,13 @@ class SofiaSip < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "378f0e53eb0f67c808b1b945db49395b5ef7b7c45db426967b338fdad92431de"
-    sha256 cellar: :any,                 arm64_monterey: "b751275b9e9fbfcef6467f71a5cba21f0a76922165b046151c174a7a0f2635c3"
-    sha256 cellar: :any,                 arm64_big_sur:  "0979e6efa9d99a3691989053be95ef021ee3c659b3f685ee9f64c74edb0b07db"
-    sha256 cellar: :any,                 ventura:        "274ff84113b56b98ad53ab8259d53aa5e30500093051fd23140dc517dcf0e7ae"
-    sha256 cellar: :any,                 monterey:       "ea70cb7f1679bd062d89d016141b5679d74210d9aa3bd0ceb26a5a054dcb222b"
-    sha256 cellar: :any,                 big_sur:        "7d8a534f02df4040a2bb526484e2186dbb1bb8ec877a1b224468660882b5f8e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94c87ea1757270244b39dfab0f6b9d7f7436d576dec8e090c0f84a5957032de8"
+    sha256 cellar: :any,                 arm64_ventura:  "cd50e25d3321c930d2ae3347c7af57dd44663ea7548969ac8ca5bdbe03511ab3"
+    sha256 cellar: :any,                 arm64_monterey: "1c12c644963be477bcba9df308b577dd8dc23f4dc030827f374a299aceca501a"
+    sha256 cellar: :any,                 arm64_big_sur:  "3835261ec2d775b4bf988d2bcd47f462e6f45eb6f88e4bea4ddee85312a5ff4e"
+    sha256 cellar: :any,                 ventura:        "3e338adbcbe1fa2ce3c87b334a3dbddba29c049ba80d165470dff9d8e3536cbd"
+    sha256 cellar: :any,                 monterey:       "4d5e9edd4943763e64157e06dad629b65aea3c1037bf7a619335b5bee3eb97fc"
+    sha256 cellar: :any,                 big_sur:        "82ec35a1bac257ba0e38ef9deaf6f015113435b9ba521b39ac4764358bf4ea15"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83e13fc866956618838b3e9aa5c1f16d574586c0d082a321c5e5c56a1ca62b1b"
   end
 
   depends_on "autoconf" => :build
