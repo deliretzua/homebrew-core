@@ -1,8 +1,8 @@
 class SpirvTools < Formula
   desc "API and commands for processing SPIR-V modules"
   homepage "https://github.com/KhronosGroup/SPIRV-Tools"
-  url "https://github.com/KhronosGroup/SPIRV-Tools/archive/v2022.4.tar.gz"
-  sha256 "a156215a2d7c6c5b267933ed691877a9a66f07d75970da33ce9ad627a71389d7"
+  url "https://github.com/KhronosGroup/SPIRV-Tools/archive/v2023.1.tar.gz"
+  sha256 "f3d8245aeb89f098c01dddaa566f9c0f2aab4a3d62a9020afaeb676b5e7e64d4"
   license "Apache-2.0"
 
   bottle do
@@ -22,19 +22,19 @@ class SpirvTools < Formula
   resource "re2" do
     # revision number could be found in ./DEPS
     url "https://github.com/google/re2.git",
-        revision: "d2836d1b1c34c4e330a85a1006201db474bf2c8a"
+        revision: "954656f47fe8fb505d4818da1e128417a79ea500"
   end
 
   resource "effcee" do
     # revision number could be found in ./DEPS
     url "https://github.com/google/effcee.git",
-        revision: "35912e1b7778ec2ddcff7e7188177761539e59e0"
+        revision: "c7b4db79f340f7a9981e8a484f6d5785e24242d1"
   end
 
   resource "spirv-headers" do
     # revision number could be found in ./DEPS
     url "https://github.com/KhronosGroup/SPIRV-Headers.git",
-        revision: "85a1ed200d50660786c1a88d9166e871123cce39"
+        revision: "d13b52222c39a7e9a401b44646f0ca3a640fbd47"
   end
 
   def install
@@ -44,6 +44,7 @@ class SpirvTools < Formula
 
     mkdir "build" do
       system "cmake", "..", *std_cmake_args,
+                            "-DCMAKE_INSTALL_RPATH=#{rpath}",
                             "-DBUILD_SHARED_LIBS=ON",
                             "-DSPIRV_SKIP_TESTS=ON",
                             "-DSPIRV_TOOLS_BUILD_STATIC=OFF"
