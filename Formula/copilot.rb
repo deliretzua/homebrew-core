@@ -15,14 +15,13 @@ class Copilot < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ac9a2ecb2f35b675deb5b84f668e8e0efabcabca3094d8e24da07dccc17b7dba"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "128b8021daae6f94aad1c71b99140af4ca957dcfdb21add1b654fe6d9e574e8f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f325a594a87c856522e5cc9d1e7b7660ade49e9b01dfea968c907e7a72357ec0"
-    sha256 cellar: :any_skip_relocation, ventura:        "0ed2ed0d8160a089ae407aa36fea6c42197482e0e3cb0bda014cd48c4da3cd94"
-    sha256 cellar: :any_skip_relocation, monterey:       "1acd4219a20140302689eb3a8f0038acd4a55f3366a57bb218040f446cdd65b5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d98f0c2747ce7050f09dbab368480ca9be170d7a3a8acad5d07c6abe0a8996e8"
-    sha256 cellar: :any_skip_relocation, catalina:       "17be331d92f30114f9f601c85ba8288c10552ebf324b0602a45e1556ddedbf49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "63be0a8488685722cf25a0b241b8f40235a184dcbc264226721b66531bff8388"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6e9ef48f73f2e862e6f82798876ae5e3ffdea88b09fb65b4dbcde49e7c090e1c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7892b5c994be4ae0d0d08e7e674e22293fbfb4cfc680fd39212aa050b4908331"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "737472f9a96867214bd0054db2f605edc72edc2199375dd72a4802a8acfd79ff"
+    sha256 cellar: :any_skip_relocation, ventura:        "ec6c318f847f2ac1501fdc695586ace7358d4ae976d31ded6c51a281e541df22"
+    sha256 cellar: :any_skip_relocation, monterey:       "09b324a0e6f700799630fe24d7754fd24815cb5c1401615f795c3b8cd9ed02a7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5007f1e8e2e33d41135dc7d5b199470ede227e9f12d76d1bd3bf973f28727850"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "27fb07d18848a8a806e00eb7fbeae1c376475e53de7b0393f166e4e40b07813f"
   end
 
   depends_on "go" => :build
