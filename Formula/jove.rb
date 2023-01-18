@@ -5,18 +5,13 @@ class Jove < Formula
   sha256 "6d9aeb85c04fedac7e3df2a1716e014dc53d6938f665fc32a9facd40c117102d"
 
   bottle do
-    sha256 arm64_ventura:  "b201d1acdef17d2d3a74b4c6aa7d6e59e4c9d74ee208ef508b56017441ac719c"
-    sha256 arm64_monterey: "7a4e8fb6e7fb7fbe40fe89e458fa7e1fbd991ebaa1d1ba68c112bc0734603375"
-    sha256 arm64_big_sur:  "410dc581e7eae19afab271eea74bd002fc7e48d4cfded7e4e8de33a277dc38b7"
-    sha256 ventura:        "cb3c2c213e96ac706693f3c736a0fde618508226e13dea8080a73dacc974a9e8"
-    sha256 monterey:       "8cc9a947664f8284103b39ff1a2969f43c176a85e2d408add27d7575a8da855b"
-    sha256 big_sur:        "d1e6814d17f0e79e20c2a0aea2791fb2d045621c89d84d9eba29358dfe284717"
-    sha256 catalina:       "c232b6742b25b3ca53a7c5da2c2577d4bed34e244b2cf90a61e5a5a8ade20e7a"
-    sha256 mojave:         "8ee0b5bfd6d4dab4b56551dc1bd5cf8b03909f833d90fb213be0c16babbb88af"
-    sha256 high_sierra:    "852bb69e61f542d5741b4a442c72c8f72304468d0c1101c2843b1c272111a6d1"
-    sha256 sierra:         "a4559511caca50cf08e01049dda2a35a9423b5c976bf0d930ba819afebc1387b"
-    sha256 el_capitan:     "c083761f33516e9d18718b6f78f6468b9aa72c0c80bb625987c60c05cc4f1895"
-    sha256 x86_64_linux:   "16b980f6ffc7e4d3d3ee8a98d89b9e3786b630e6847130fe412ea7dac5d17050"
+    sha256 arm64_ventura:  "dab2713caabaa568a7a8ad9b51928fe67a9cbd4af93fa36c9b15bbbb80ec47b7"
+    sha256 arm64_monterey: "132a60a0db17f572b052d619330e51a26622a0cced239769eea9d6078269e1ae"
+    sha256 arm64_big_sur:  "86c25c839c2840966fd336cc52cdbbef8d2cf83a96fc76ff79918d5368e21e4c"
+    sha256 ventura:        "de72aa109f60feb1246cd96aa8eeba5959f27dded81a2c48f5a88cb32d09c585"
+    sha256 monterey:       "62416384fee5373051cb7dd5522d7a8311a49127e6747c9331f8f95b6a4e89d6"
+    sha256 big_sur:        "afb51b5da7ea5971652f148e429c71b825110c831a6e81f261e54bf191890c62"
+    sha256 x86_64_linux:   "cb5e83e0c790c33068c0fa4b06277abed8fe7d5db2718420ff6a9b096479d9c3"
   end
 
   uses_from_macos "ncurses"
