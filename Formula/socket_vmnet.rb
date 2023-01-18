@@ -19,6 +19,7 @@ class SocketVmnet < Formula
   keg_only "#{HOMEBREW_PREFIX}/bin is often writable by a non-admin user"
 
   depends_on :macos
+  depends_on macos: :catalina
 
   def install
     # make: skip "install.launchd"
