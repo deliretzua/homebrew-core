@@ -8,13 +8,13 @@ class Ruff < Formula
   head "https://github.com/charliermarsh/ruff.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "04848f426282927b1435355089d687718a6a6271f6c3e15b231678cac3429c65"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f9b92f0a6b1ae52ddf6ab3474201e4feb46da816980fb7d140eab7fba2165407"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "94a1548b925ee7380ba51035782b40d9c875025f373aa46dd519ab3fdebca3d9"
-    sha256 cellar: :any_skip_relocation, ventura:        "3f1c55c1ce1b02611764fab291e7608aa8971e54a00ef6da53ec9d8d03202dc5"
-    sha256 cellar: :any_skip_relocation, monterey:       "1e1b5e8523ca10c34c51fccc9a4f8c92f613ac8bc8c8e161625181cac0ca3347"
-    sha256 cellar: :any_skip_relocation, big_sur:        "789d5943c38760ade6f4006b3246e7ec353a5ad339564ed2b379b2825d0ebb18"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e058f384022b09225771c2ef3c670929f3d80fe48e419737d8cc04068e6d651e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "95e6233e559a48cdc41fac297857cefd16c766484af65dd0109e18424f2ca52d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0de17dda56438a6bfec73b5cda280ad3258888f21138c577063fd40c126b47a0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6506258cb92a7508199aaec361b2ac4a94fd3ceec11355e91d33126c9eb1037c"
+    sha256 cellar: :any_skip_relocation, ventura:        "bda8cbc0e6dda3fd245e44773e0bbef8798827326123df6fc07c22c967da5d4d"
+    sha256 cellar: :any_skip_relocation, monterey:       "108fc6db2cb680c2ad59e88b7b2b07c2ff955cab9ef5d3701f0b0e30de4902e4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "cf21430100c4a0dad0398db0c38bdc9cd9b95377a21b793b548b1d9f39f60349"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f037afe61760db56f2cc0c76205931f7e42954fc1d7a1c334379489b8328e1d8"
   end
 
   depends_on "rust" => :build
