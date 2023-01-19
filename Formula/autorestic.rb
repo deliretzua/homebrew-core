@@ -7,14 +7,13 @@ class Autorestic < Formula
   head "https://github.com/cupcakearmy/autorestic.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "43177f4922b28c496135b9b88a1d5535064ed955112c422d553053d3eaed7c04"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "68c80af5328d9139bc884eb7fe030682e857068f1219aa959564d20d174e5491"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "23f4d518baf2dd7ec4d2e9aa27e725d4855efb8ae252e7c60b57a502282e362a"
-    sha256 cellar: :any_skip_relocation, ventura:        "b78f57daa92f48b59ba132139a73836dc621e01c6f16f5a26f7ce691b1a4ca41"
-    sha256 cellar: :any_skip_relocation, monterey:       "7b17a2f41e3a12bc59022c5d8158070430ee427e04ea4079ae6794419f1f9b2f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1d7069238dad4ba499ef2e726128678442ddd493166daa2f78d18f20e73469c6"
-    sha256 cellar: :any_skip_relocation, catalina:       "4afa30bd072a153e406fc0e4c02b356a0878a960fcc2f1064ec1a2435ac81a11"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "48ef35b76070f834756d4a34be624350d9f08476dbe0a2f060c429e8e45b1ade"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8e247669bada22a51e8a7ee8739ce3a25fff1bf3f40b5979ebf3398386e44868"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4af10bf0b5de0eb4ed52f6b9ac823045b04650baf90f8a0854662675786ecb19"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c5072482edf9bc91066bba07da96cfd4cd2de511e2d262f17c6ebe38bc4d8342"
+    sha256 cellar: :any_skip_relocation, ventura:        "1af0cb1fd885abf210960ee8cba4d74da82cdcecbcaac216c9ccf710b20554c1"
+    sha256 cellar: :any_skip_relocation, monterey:       "226204417620bf95ce12323e9007537485ac870ec36deb71123965dbe20640be"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a1b3983670856dfd1397d0bfe14df72b0898ab720c02eda086f074d6d8ce3212"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0e6cfbeb2c85036ae0379336fcef709e7dd4c254cba1407eec79310b1f35920"
   end
 
   depends_on "go" => :build
