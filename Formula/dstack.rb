@@ -7,6 +7,16 @@ class Dstack < Formula
   sha256 "217bab45d3104236916333e3bb1942c9d3bef7868574827ca733931aecc4c884"
   license "MPL-2.0"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "7f66ca270d3c00dd6c2a06241b274249b81ce41e4394b110c121f858f9bae8f6"
+    sha256 cellar: :any,                 arm64_monterey: "e2e3ea94ebc49f1b1d04bc45cfda88a47abcab74c8ee3ffcf1b4f926e849a514"
+    sha256 cellar: :any,                 arm64_big_sur:  "45db6387836fa967c2d70e450b02f1f2f68112b5721cb6ad6150289adb348e74"
+    sha256 cellar: :any,                 ventura:        "615da659c5ba4a4649c9d83d9bfdfc212e04df58af8939168766b192639d4ce7"
+    sha256 cellar: :any,                 monterey:       "dffbfc0b738a9c3e25e8dc9e9fa047c19832198bf76d3b34f7192feb8b591396"
+    sha256 cellar: :any,                 big_sur:        "cfb089b951322035925fc28e72f8a69170a9560584dc5599cb3db94f24ae245c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9fb2b0480294ad4c446cea6cf92f27bc83c5fa62f5b2044346883b61fb10a380"
+  end
+
   depends_on "rust" => :build # for cryptography
   depends_on "python@3.11"
   depends_on "pyyaml"
