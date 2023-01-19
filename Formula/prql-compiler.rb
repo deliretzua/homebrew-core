@@ -1,8 +1,8 @@
 class PrqlCompiler < Formula
   desc "Simple, powerful, pipelined SQL replacement"
   homepage "https://prql-lang.org"
-  url "https://github.com/prql/prql/archive/refs/tags/0.4.0.tar.gz"
-  sha256 "7387b529071fbc89944649d9a9b9cb1b919ca7288560cc96f428c0a77337e752"
+  url "https://github.com/prql/prql/archive/refs/tags/0.4.1.tar.gz"
+  sha256 "b60df362a0b823600ccc614c335f4a8876a577a7ceeb6d162f16540fd9340f73"
   license "Apache-2.0"
 
   bottle do
@@ -18,7 +18,7 @@ class PrqlCompiler < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "prql-compiler"), "--features", "cli"
+    system "cargo", "install", "prqlc", *std_cargo_args(path: "prql-compiler/prqlc")
   end
 
   test do
