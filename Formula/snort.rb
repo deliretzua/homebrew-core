@@ -1,9 +1,9 @@
 class Snort < Formula
   desc "Flexible Network Intrusion Detection System"
   homepage "https://www.snort.org"
-  url "https://github.com/snort3/snort3/archive/3.1.51.0.tar.gz"
-  mirror "https://fossies.org/linux/misc/snort3-3.1.51.0.tar.gz"
-  sha256 "023fb873361ed589e3f7b2137f0a091388f5006d756c85946c790bb73e87a345"
+  url "https://github.com/snort3/snort3/archive/3.1.52.0.tar.gz"
+  mirror "https://fossies.org/linux/misc/snort3-3.1.52.0.tar.gz"
+  sha256 "351ef4295b54d750ea557bdd5a10c8a04d1edc35003b0d84620451c998591117"
   license "GPL-2.0-only"
   head "https://github.com/snort3/snort3.git", branch: "master"
 
@@ -51,11 +51,11 @@ class Snort < Formula
 
   fails_with gcc: "5"
 
-  # build patch, remove in next release
+  # build patch, remove when it is available
   # upstream PR ref, https://github.com/snort3/snort3/pull/286
   patch do
-    url "https://github.com/snort3/snort3/commit/da94fd11baa9b224a5f23ab34d1a5ce6c97d1fce.patch?full_index=1"
-    sha256 "150211aadaffb6c7e82454dc3add130e971dd938444c8996d7f0d7bb7c0eac8d"
+    url "https://github.com/snort3/snort3/commit/2b498993a47c728c3e273b440266eb40e5aa56c6.patch?full_index=1"
+    sha256 "fb93fe6bf01f3f7d3479c25f2ebe52f0d19b42574b608ec15451c3397906139b"
   end
 
   def install
