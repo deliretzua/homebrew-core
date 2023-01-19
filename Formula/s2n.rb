@@ -12,13 +12,13 @@ class S2n < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "000c1dbb3759a817da1a6c2da2054dbb4b5f6360c0588884385a2d6d2397dea2"
-    sha256 cellar: :any,                 arm64_monterey: "75fd92ac52b5f0f5d5c48cf9a7dad68eed59379d6036361706aa274bf2274795"
-    sha256 cellar: :any,                 arm64_big_sur:  "cc80b352e1851cc63fc77ed65d08aac25a681a5336f57368849acf4e8175b5aa"
-    sha256 cellar: :any,                 ventura:        "3b6388bf883d07d2fca4b6259bb5366b7b6ed0474059dfa2311c464e18da3ae0"
-    sha256 cellar: :any,                 monterey:       "422d3e52bc28b49333b539fd2feb4f0fe1f2bcc17fa05a6b0f9df6de02051dc1"
-    sha256 cellar: :any,                 big_sur:        "0c3ffceb4002e3bd11dd4405f1cffee0a13009fc0b654b3f86354af8fd40c37a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9936b90d0f74823cd56d227a6254ea9d2b3201ad5066a3d2290a0ee5583ec624"
+    sha256 cellar: :any,                 arm64_ventura:  "0cf73757497095bbae9dbd13ede2efb44aecd3aadde2bb13d218db4ceefd9acb"
+    sha256 cellar: :any,                 arm64_monterey: "468fc99358c1ef625f0eaedb080557eb62d75af7e98cfab90a791c4a6d0878a0"
+    sha256 cellar: :any,                 arm64_big_sur:  "47e8d875bfbcaf2a6fc0dc7cceaf494457ad5ba74b2b2bc53179a4df72bb31e6"
+    sha256 cellar: :any,                 ventura:        "ca268b7a94b53b7a62b2045131f7d11a3c97df1955b60032454e12a7b1321cf3"
+    sha256 cellar: :any,                 monterey:       "3e1803ea7dc43980f92e9ae34c74f72598f0e8084b08c93dd88b7ae94476a235"
+    sha256 cellar: :any,                 big_sur:        "07d5e17e769071475f2025a701d14c0918bb2d4b8844bf00b6b40edc81174cc6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4506422550d084127d27b18a523b6c71390ebc48d9a0f7f8fbe61074a6267f64"
   end
 
   depends_on "cmake" => :build
