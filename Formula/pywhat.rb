@@ -10,15 +10,14 @@ class Pywhat < Formula
   head "https://github.com/bee-san/pyWhat.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "480ba6a8c42429fac58f689d10953189fafc5e6d88af1c89cf40b1cf9615206d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dac74f058deb4625e95ac54d69abd24d2070d5e661bc07037706d330f88fac05"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "696e78d8044c155ad0953148b89a7e8d0f89c385b73452a0129b8db3ac8737e5"
-    sha256 cellar: :any_skip_relocation, ventura:        "a1843a509d2a5357beef1cae3b19387269868ed276d743520b94ba799c724fde"
-    sha256 cellar: :any_skip_relocation, monterey:       "3c7fa1694ce65ed22d9aeb7ef7e853f06094049c2a2af5b0d04507ee452cccc0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "97bfac5197c7b3f4af650b1862b8e3675797fecb70568154488ca27bf47aabb3"
-    sha256 cellar: :any_skip_relocation, catalina:       "11521a3f937f546818b64f33f369d6a748056853ce71f32aff13fdf0246fe938"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e175c03515ec4cb1c538c1989cabbc52686ac198969c4d545a218ef6be190808"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4968c7ff6c37272afedb526e8bd71aa04c4cfe9539bb095082d65980680ab9c6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fbf27dd5fcbee4898510b45c5aa86297d46e3a53448dbea1f330113a64526cca"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "afc7dcf4f11bef07bc6d06c2195e9ac9acf641ea8a9455e586ee90a20be11b5a"
+    sha256 cellar: :any_skip_relocation, ventura:        "d24dfb3b8b8bb78a470907caf5a7014af1581bb796c0fec704bf73454735cd15"
+    sha256 cellar: :any_skip_relocation, monterey:       "33ae9b4c199197f328f6141e5900d946ab6d85712266b86200208372698bdf14"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c16b928e2087cf586005ac5f7ea5671c44d69521317b0b8db9f367581c87a5f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f453b0de5fc318d9383a4afef920a6d3b989973b60a56be616e37f51827b2332"
   end
 
   depends_on "python@3.11"
