@@ -435,9 +435,6 @@
   "pip-audit": {
     "exclude_packages": ["six", "Pygments"]
   },
-  "pipenv": {
-    "exclude_packages": ["six"]
-  },
   "pipgrip": {
     "exclude_packages": ["six"],
     "extra_packages": ["wheel"]
@@ -461,9 +458,6 @@
     "exclude_packages": ["six"]
   },
   "proselint": {
-    "exclude_packages": ["six"]
-  },
-  "protobuf": {
     "exclude_packages": ["six"]
   },
   "prowler": {
@@ -499,9 +493,6 @@
     "exclude_packages": ["numpy", "six"]
   },
   "pyvim": {
-    "exclude_packages": ["six"]
-  },
-  "pywhat": {
     "exclude_packages": ["six"]
   },
   "rbtools": {
@@ -657,9 +648,6 @@
   "vdirsyncer": "vdirsyncer[google]",
   "vint": {
     "exclude_packages": ["PyYAML"]
-  },
-  "virtualenv": {
-    "exclude_packages": ["six"]
   },
   "virtualenvwrapper": {
     "exclude_packages": ["six", "virtualenv"]
