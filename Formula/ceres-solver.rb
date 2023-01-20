@@ -13,13 +13,14 @@ class CeresSolver < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8afc4d9240edc07cb3c89f975fd4f6ef81a1f0aa76b888623592a65f6ed5ebbc"
-    sha256 cellar: :any,                 arm64_monterey: "cb33938e1c8cc0a54239906f22d27d8f2a56d0ec166cc9e8c07ebf315f0f4d25"
-    sha256 cellar: :any,                 arm64_big_sur:  "7b24d21ff3863a23a9b9545e9c0a15122782e0d2afda33598342b5e98504a668"
-    sha256 cellar: :any,                 ventura:        "19400316cec033c482cef38c75a49e96c1f6bb25011af650a8bf041964a9553b"
-    sha256 cellar: :any,                 monterey:       "eb467cbb1fd2960b32c4ee445c9d9e4be8c17ef3ccf15180cb671a5d15b082e9"
-    sha256 cellar: :any,                 big_sur:        "cedfd01c68b1139b07c67a1084e614bb7988757e76821d1c88543a8580be6f52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7f96c61a999be519b46c3020b5a7bcdbf030f22c5ff6fe8ba57e02231d21a6b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "f12f93e7c94dd4d9e637e246e701ef1fafbaad3adb6c5a017bf215df3a8f8461"
+    sha256 cellar: :any,                 arm64_monterey: "35728fcad03b676927e813b779b4a7c44f4e7d82324a9d593900e7abdf99774c"
+    sha256 cellar: :any,                 arm64_big_sur:  "a4807a7e8aede0638d63fa82da0e826a404832d7932e162a3d39d9fefce73169"
+    sha256 cellar: :any,                 ventura:        "51616e048c6c21b6268b3b7aed022a5c3b6b7c584e2a8aaae94a69a6f5ba8e8e"
+    sha256 cellar: :any,                 monterey:       "ecefafa20520360cf5b2cf4322c64a6aa9b35eb22796fc1ad820b1ccc9e768d3"
+    sha256 cellar: :any,                 big_sur:        "c1f640a30f86d2c7a3686904cadc11d398f841d3a455b044d29240e46777dbd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf7e9f108963e511e4c6b1a7597af01533934b9ea02ee6b82fc657172acb376c"
   end
 
   depends_on "cmake" => [:build, :test]
