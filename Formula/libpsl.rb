@@ -7,13 +7,14 @@ class Libpsl < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "747de9ae89fc15f597e7ba88ab38d5724e83db2ed97092e83842f5cb43d99afa"
-    sha256 cellar: :any,                 arm64_monterey: "bc5fc1904d283c30a582a2436c665f60a110b71985b539829ba58bffe5b2ad7a"
-    sha256 cellar: :any,                 arm64_big_sur:  "58c9e7b7c68a294319bb0ad6ffa4324ff04c255607fb54754a81a7146af8fd77"
-    sha256 cellar: :any,                 ventura:        "7627adb6d9998407e7a29f6945e379a4659db45fd52129ade36244de40f74bf7"
-    sha256 cellar: :any,                 monterey:       "dcfaca272bdd3dde8b5a00f0b5ea3a791216abea45dce36e4689d5c587ff4dd5"
-    sha256 cellar: :any,                 big_sur:        "b128e094dde2f7a821c1ce88e0efebe6c50de52f5ddd240745c8317c61ce28f6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b2956d04539e66fcae71eedcabc4501ebc78b5411be75368c46326a3386d2bd"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "7518afd0130f15500f4fd4d5c8ed43cee3b0e3c8c237a12bb3e9adbc4a6ec4cb"
+    sha256 cellar: :any,                 arm64_monterey: "7cb1d77973b8fdfa4a2804ae69434ec3cf4248a906d3a46b66e29f9920843f48"
+    sha256 cellar: :any,                 arm64_big_sur:  "5050c1c715b46f55ed6c96fcc00cebb682847c714bf225aadb18fe6b4c3f84f6"
+    sha256 cellar: :any,                 ventura:        "7c48120e1842b1ef8909e1f0310e613aadc67ca2799f216b1a88603964a815e1"
+    sha256 cellar: :any,                 monterey:       "6a021e3c659939c49c53d04a7f4ad7b9333b37c9f05587731c5a1024c15c71da"
+    sha256 cellar: :any,                 big_sur:        "95a808735dbfb307e8e3ab1a747fd8ecd82ab57bd31a72c8c2b40d71047c05b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a7cd47ce99f50e717ef2af9c82964912cac03e3e0659e818d689294604094ba2"
   end
 
   depends_on "meson" => :build
