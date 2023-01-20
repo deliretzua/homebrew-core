@@ -11,13 +11,13 @@ class Pdnsrec < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "39ce25470b06f6680a7d291fad6f78c5416da346223a751342e7d3395c8251d0"
-    sha256 arm64_monterey: "7bb4a703ec0c55a5965bca1c0c7ca8192c544223df4519f7f77a13bc0fd7b5fc"
-    sha256 arm64_big_sur:  "22ea9497eaa34fa6ffc8c51e4247e207c11b66653c3d3b543f984ccd978d1183"
-    sha256 ventura:        "dd4db28863cd4b37935e038f4011cb252cc7f14c04452a6f18fca5bb6dfd633b"
-    sha256 monterey:       "ffbb83b3336a792881a1248a7ef770beb3e7060aa51f883e8640b2aae38a7cdb"
-    sha256 big_sur:        "eeab11f2b84b1bb4ad7b83541ddedcdcd868309d1e6409ba3f686140d419e3bc"
-    sha256 x86_64_linux:   "ab6e0347ce3ccc462792cd5e03219f11722fcf77c30bdbfeebaf441eab0862fa"
+    sha256 arm64_ventura:  "0fc50c2d1fd2c6541d9fb86e2fb3d26e113eab22f2c69e095838979ecdb33b10"
+    sha256 arm64_monterey: "319a1fb7b75e3e49e5dab818b255425715d9df62f843d74c7d5963caf4c780ab"
+    sha256 arm64_big_sur:  "805adf575a619e0d70949f1d1873d318fe215333e3e8929f7c779f51e61f7f23"
+    sha256 ventura:        "06c33bbbbdbf28d69af9934aa047f0796be5001affa8674fee6352b32ed3f64f"
+    sha256 monterey:       "596d22e45d7f5b0e0a2f13d3cee3c28f2b1ced86ec5a7cac02114e1ada904425"
+    sha256 big_sur:        "b952c2562f5c135da75593c0c5a17d0bf259b1e71c8f9fed5c7823dccbb95bd6"
+    sha256 x86_64_linux:   "505839e72f2da4fa2dbe5ffeafa7eabd625e0beda9ec246d5534ba4bb38472d2"
   end
 
   depends_on "pkg-config" => :build
