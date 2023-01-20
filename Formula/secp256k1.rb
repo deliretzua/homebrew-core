@@ -7,13 +7,13 @@ class Secp256k1 < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "774773baaaa4540d4fda3ccafda45b9fb4b15dd2d53fa367e78e23cd880eef3b"
-    sha256 cellar: :any,                 arm64_monterey: "585cef2cf391256b0441142c7dfa629033c7718731346b5205f232ab0bee6bed"
-    sha256 cellar: :any,                 arm64_big_sur:  "1efb6ef9892ea80e565aba659a7e57cc5048dee059d30d5d54edab518c62a939"
-    sha256 cellar: :any,                 ventura:        "5c692c1935df4965afff8bb13de16046279dbfabf4db0b2c9564e55135dc3dce"
-    sha256 cellar: :any,                 monterey:       "21ae567546e80433d73f5f4f4a8d1628fee0e322d9b232a5d3a0acaa8ba9ebd1"
-    sha256 cellar: :any,                 big_sur:        "c24b600b5dc500808db84584a2158d2c28ade3f910e99e9c5e9875576f5932d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f80abdbf822a5877ad7103bccdd5a4afe098b7fed786ef1f8f3e6c4671fa683e"
+    sha256 cellar: :any,                 arm64_ventura:  "c04de7a15f26c12bc7249a4a22aea57e0d96ae62a27647008ececf686b9ea3c1"
+    sha256 cellar: :any,                 arm64_monterey: "ee9fc938a7b050a8dd09109d6b1ceacf4e26bb5392cc0d3abd75388bc02e87f0"
+    sha256 cellar: :any,                 arm64_big_sur:  "a645f3b3894290a8c15ab2d925b3f892d5c6b5ed365cc4c974b1aa8d5dd161c2"
+    sha256 cellar: :any,                 ventura:        "d0eeb9751a4a81fc0e0f3600513282d4c00742a36898b79c73e6d047629ff76b"
+    sha256 cellar: :any,                 monterey:       "c8858df58c0936777aa6b25c1fdc23a2f298069fc501747a084786f734b91847"
+    sha256 cellar: :any,                 big_sur:        "eabdd956d0cb66dc20f81e08e0fb319a40a151a51689e02b94a68312e555ef6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b4db5a8502383769c830fca8b036febbbf7baec7c5bf9b57d46370ee82a87f53"
   end
 
   depends_on "autoconf" => [:build]
