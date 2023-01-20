@@ -7,13 +7,14 @@ class Gspell < Formula
   revision 2
 
   bottle do
-    sha256 arm64_ventura:  "de7469b30c9c17a2914a840cc474b23ad3c16f68d0f57c1f1834bc931a996297"
-    sha256 arm64_monterey: "a8aa160e46dd71a143e009f66eb0164ccea88b10954b8792ffa8ab8ccf01141c"
-    sha256 arm64_big_sur:  "e8b3bfdaca0a6a27bcd2ff5e3e4cc9227ec73a9a47378bbcdb2492f07c9bbe0c"
-    sha256 ventura:        "9f094a7a23f75800fa7359bfe06f8bdebc351f1962df49b47550f5ef08203ec5"
-    sha256 monterey:       "2777e111e6c74f706b19bb044d52527bb5db78fa49c3d2ab5bce22e07571b733"
-    sha256 big_sur:        "2f86453a5b333727061aaf2ec9a7fb35d4907d193eb4b60c49e6208b722f1ca2"
-    sha256 x86_64_linux:   "ea56b56fe83fdceac890b81db9bb2828379b2275804a555d16ce250b21b78c54"
+    rebuild 1
+    sha256 arm64_ventura:  "65c906574ff5e87056ca93c2f85d6c3b23eaa4650a1f24b5dee72da575101c9f"
+    sha256 arm64_monterey: "d7c62a15ae3002daa6e3b8a34db896890eb7e540d308b1af38fae9e934eb968b"
+    sha256 arm64_big_sur:  "afdc49aec4ce907138b80adfb2b85c9166850f3d405f646c919927d4d0bfc61a"
+    sha256 ventura:        "962ac8b16ebac953aa098fe234d6603e2bc7a388791dc40b5f23ba6f1f7775cf"
+    sha256 monterey:       "98e5a2909232aa846d11fa5b08ae36194953a29595e50a8abd2092d8ab145ba4"
+    sha256 big_sur:        "d8f6031f9bfa590015cd06a9390dab16ec90e0507d97b7f4b16ba683c9115791"
+    sha256 x86_64_linux:   "1dad36d3cd68e3c2b15b8ab4a0d82eb145276bdc58f017319512aafc9a25bd04"
   end
 
   depends_on "gobject-introspection" => :build
