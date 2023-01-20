@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https://semgrep.dev"
   url "https://github.com/returntocorp/semgrep.git",
-      tag:      "v1.4.0",
-      revision: "56be8122b10b8d99b8973bb93651fe1da4df64cd"
+      tag:      "v1.5.1",
+      revision: "e95f1c8a8f535bf19c56ca12f9c68b4cbcdc391b"
   license "LGPL-2.1-only"
   head "https://github.com/returntocorp/semgrep.git", branch: "develop"
 
@@ -110,6 +110,11 @@ class Semgrep < Formula
     sha256 "dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb"
   end
 
+  resource "parsy" do
+    url "https://files.pythonhosted.org/packages/70/96/ba47d2f91e3375cfcae1cf7f90b6c2b043e6e15b76a0dd2f75a0849391de/parsy-2.0.tar.gz"
+    sha256 "7fd36ce0ebb0b80d969d39975038172de95ba212d9f0e1e73d8d51bf284f4524"
+  end
+
   resource "peewee" do
     url "https://files.pythonhosted.org/packages/17/c8/8035f2155832580d786c35cb1ce0a89d80a67be522f620878fc294742905/peewee-3.15.4.tar.gz"
     sha256 "2581520c8dfbacd9d580c2719ae259f0637a9e46eda47dfc0ce01864c6366205"
@@ -185,23 +190,20 @@ class Semgrep < Formula
       # We pass --no-depexts so as to disable the check for pkg-config.
       # It seems to not be found when building on ubuntu
       # See discussion on https://github.com/Homebrew/homebrew-core/pull/82693
-      system "opam", "install", "-y", "--deps-only", "--no-depexts", "./semgrep-core/src/pfff"
-      system "opam", "install", "-y", "--deps-only", "--no-depexts", "./semgrep-core/src/ocaml-tree-sitter-core"
-      system "opam", "install", "-y", "--deps-only", "--no-depexts", "./semgrep-core"
+      system "opam", "install", "-y", "--deps-only", "--no-depexts", "./libs/ocaml-tree-sitter-core"
+      system "opam", "install", "-y", "--deps-only", "--no-depexts", "./"
 
       # Run configure script in ocaml-tree-sitter-core
-      cd "semgrep-core/src/ocaml-tree-sitter-core" do
+      cd "./libs/ocaml-tree-sitter-core" do
         system "./configure"
       end
 
       # Install semgrep-core and spacegrep
-      cd "semgrep-core" do
-        system "opam", "install", "--deps-only", "-y", "."
-        system "opam", "exec", "--", "make", "all"
-        system "opam", "exec", "--", "make", "install"
-        bin.install "_build/install/default/bin/semgrep-core" => "semgrep-core"
-        bin.install "_build/install/default/bin/spacegrep" => "spacegrep"
-      end
+      system "opam", "install", "--deps-only", "-y", "."
+      system "opam", "exec", "--", "make", "core"
+      system "opam", "exec", "--", "make", "core-install"
+      bin.install "_build/install/default/bin/semgrep-core" => "semgrep-core"
+      bin.install "_build/install/default/bin/spacegrep" => "spacegrep"
     end
 
     ENV["SEMGREP_SKIP_BIN"] = "1"
