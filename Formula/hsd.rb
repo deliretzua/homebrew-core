@@ -13,13 +13,13 @@ class Hsd < Formula
   end
 
   bottle do
-    sha256                               arm64_ventura:  "13f36e7d5ce43f4c433576fb905e227f2eb8f87deae20f71b9e67405043239b5"
-    sha256                               arm64_monterey: "c1962aa290d5f128550ae881524b43cab399393ea28f4847afe9d2a1a99c0c42"
-    sha256                               arm64_big_sur:  "e10e342c0e4c83596de9bb5752a21fd34d914c807a44be2c1bc8ef4ddca6ad96"
-    sha256                               ventura:        "af4c9706437551e6d4bb704d53a0878379148c81422ecf6745c5f83202fb7272"
-    sha256                               monterey:       "1266ce92302ceeace08342629c5c3683a2e49118ea48858ed01f37d53a3a1440"
-    sha256                               big_sur:        "47093caa245ff57f0d98422784b225add6341722f20c57f5a9a82920652ca65a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1d07e51508c6823ac3aa62f1cffa02a813c9dc96e72b1690e176dd72f2cc8e71"
+    sha256                               arm64_ventura:  "0864a8c79a0a9abf3e5de9ba4a29d40dbf87f46955f3e8a572185297f9c85651"
+    sha256                               arm64_monterey: "549fdec6f1529239a5e57f2d61f1d524a9976913f7866cfbb3c2f3f1e3c57883"
+    sha256                               arm64_big_sur:  "773e274d9ea8c436891d1dec21724bdd303c0fdf6534d1b0387720ddf69ea961"
+    sha256                               ventura:        "2fb720854ff59869b3647a484b52c697542b0903180872e25a6211016f6c59e2"
+    sha256                               monterey:       "b084f090146ce1fd7eb4a55d33b7db08e964a271127efbfe76713547284da4f1"
+    sha256                               big_sur:        "f61ec0c9cb4d9aeaf9337d185c6c6cc7282fade49a9dc004f3834fcc370da78f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "de24c62e30033c7338df415559a28f26e0a2ee07fa0317f24e57e9924d65038d"
   end
 
   depends_on "node"
