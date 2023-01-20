@@ -7,14 +7,13 @@ class Trafficserver < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "2a218cb530837ee85c8848bf9528dcd24d2b12a76fb4a279ce11b5182c55c542"
-    sha256 arm64_monterey: "237dd8cf79dc9b1cb579806c8628b11a3288fa6314580977e773ea9af27f773a"
-    sha256 arm64_big_sur:  "d865eac70aeefb577fccade81c2e2acd8855f6aa8a1ca85bdaa45dfa4a2a31a3"
-    sha256 ventura:        "0fe7710eca8e8190713a06f73ffd0d854e209e26614ec92ec677c96c5c2643a3"
-    sha256 monterey:       "8ae71a89c9751b540dff46ab847aaa6607366d1bd2c2ac6ab8bca802933cf1e0"
-    sha256 big_sur:        "d61152e41660a97e00423e42a654869ab63f90bf89b20deded85378ac87789e3"
-    sha256 x86_64_linux:   "5f44336902e39bd4debf3ceff1eeb30e236ccb390656138feae53b4af35bfd77"
+    sha256 arm64_ventura:  "618c899fe9753c75ba338a0ac3ac39b58367eb78ae83c916ac585dffe76944cb"
+    sha256 arm64_monterey: "87288afff7329c6630a092d0e5322367cf3f5cc53e4e4fd17ed440f3ab4ce97a"
+    sha256 arm64_big_sur:  "0af95c168e7d5af31d8179f690863d408139c2f0fb983322137d069e35bdacf8"
+    sha256 ventura:        "21b8b4aa2f4c96f76e38853c4afde0f3aa294791d6eb17da9c0bb22c1edb840e"
+    sha256 monterey:       "898575eb75584f9c884c7580bc00344bf7a49ddb295cdc98e72761c117d6de38"
+    sha256 big_sur:        "f8d42c92a06c7b472c10f34a047dc417079539d9cf6c1581cf4ae0f4919222af"
+    sha256 x86_64_linux:   "eb16bfdc1c6ec0ff60d434aa86ab639ac02e40110c3fe35dfa8751d46d990974"
   end
 
   head do
