@@ -11,13 +11,13 @@ class Micronaut < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1e34dd3a228d2d2b506b4575be0972e6c37e7255d92bae8289f524cc27e03009"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "28831d18db13946ba8f0f481f5e464dd74639ee913635e68ec20b9bb2bf691d4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5270719895c85da460c8716713e8940c03cb607971d8396bc30c2400f8d02150"
-    sha256 cellar: :any_skip_relocation, ventura:        "3b7b3107b0268373d230187f2e4250c7a8cb42a7a4ca90201c3c9b137aa7313c"
-    sha256 cellar: :any_skip_relocation, monterey:       "001a2a14b3cbe303676f4b387775a13a59a221a693dcc82f30df260afa27dbeb"
-    sha256 cellar: :any_skip_relocation, big_sur:        "21d5db0a531646dbaea96de43ed32c05510ec30a953d5e801fb10985711f28b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f62eb2e86b5fd9a6b4562b2063cbc0a868ad5db64107ed97e07dea40224e90e5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "859c364da6e57f663965e577bdd2e1df85e71d284c8e608d9f4e1ebdfdfb1aa5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4eb6cda3e39bba10de780374e4982fedeb6d4d06ac94a042c24e3940bd40d932"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "25540d7690cb98f0ad58531456c60b4eb7bdda713573a30892ee84a88e581cb9"
+    sha256 cellar: :any_skip_relocation, ventura:        "66a2ac1d4d89eec5d2c21a8a820b310ae38338d79bd7546e00acf06460c5fbc4"
+    sha256 cellar: :any_skip_relocation, monterey:       "87a25f685f5a25474848f6a12c7e34c82a17c7cc2f9c7c38539dc4d56306ad95"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d49dded53cc1820e01bd5e48344c69c88668b409d931a430a08982dce10c8ec2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1cee561f3d9b3f7650e2585ee805aff000373ff36bc28b4669cff142fe2fe555"
   end
 
   # Uses a hardcoded list of supported JDKs. Try switching to `openjdk` on update.
