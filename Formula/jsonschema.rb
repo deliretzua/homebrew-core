@@ -9,14 +9,14 @@ class Jsonschema < Formula
   head "https://github.com/python-jsonschema/jsonschema.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "23e4639d5e5067076fb6c92d35a03b1d427dc31d7586d51c6e7c255c55439a1e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "18aac6c452ba522914a5fce4ba6d29aa60b4bf5102cea0c961f20634f70adbc6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "00ab626e232e11ac3063b31155ec14847a160f7bdf1691b085a0b182ab83a25c"
-    sha256 cellar: :any_skip_relocation, ventura:        "69cfdad96ec414d52f2fcced61d0cefaffe6c09d3b68ee873d9e0773624ea9c1"
-    sha256 cellar: :any_skip_relocation, monterey:       "e6448be32e737ea48641e110086d1ec770ce797bf9f302ab0b4321433b5f939c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "00b202b6f536caccc0400307494ce3cbd528fc78a2f8c0a225e61fe3ba2dba3b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b553a0c90869652654d5c4f779000f244f109d1ec6b7938c5b12db000d054120"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b4497ebb5664dd3b2b87a8b47a66ae796cf317032dd833e8f79488064b3b9c0e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b218d0b5f2b42e17c13710955b8099021ef302453fb6f6e01bdc9c4c5002307c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6584b6fed9ac39d34eb7128dc34b624fe7a5c8bd463d20ddca421c327d5b455d"
+    sha256 cellar: :any_skip_relocation, ventura:        "ca12521a58d52cb0880a2c2a170ec74738f43738c2b11889c4ec1253f6e6d354"
+    sha256 cellar: :any_skip_relocation, monterey:       "22ef6546b03378994e3cee49bfc7f3f0127d13b88a938fba53e31d8987620ad3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0aac0cf2e568bc02885ca1448ea6969109d57bf482b156c26d71b7f8c9b9ac29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d5d9adbaab5f963722b4da057ae1524bb48c5c7d5f4f1cf2a214c969d6160598"
   end
 
   deprecate! date: "2023-01-20", because: "cli is deprecated, and will be removed"
