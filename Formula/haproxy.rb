@@ -11,13 +11,13 @@ class Haproxy < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "63b8356aef698cd0115d3095f904eb4a23d9a4a229a002a87456eb83ba239e47"
-    sha256 cellar: :any,                 arm64_monterey: "3b47edd19adaf276fd234b4f61b5aaeece00fe9fab8ce233c598f6dfb395d37a"
-    sha256 cellar: :any,                 arm64_big_sur:  "93e2352852e057ac0b88c974482d1c1a3f98ca70723e5f454576e6cc1e67ba75"
-    sha256 cellar: :any,                 ventura:        "9080f926f20250df2832cb184cd270114006ce8da59111bb35000b00ece3a6e8"
-    sha256 cellar: :any,                 monterey:       "f4fb1b42d79565bfc236fa48b00556befac320dd5dcb801a78506cdab9c19c7b"
-    sha256 cellar: :any,                 big_sur:        "4de178618cc335305ff8a58c52ea82132d8284bf4b3cd796727fb5e0ca305699"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a73f570c5a8ddb6f3c14451399866f7768b954e567f9a34a60779983727e720"
+    sha256 cellar: :any,                 arm64_ventura:  "cebd0c0fe3ccb11a33309512d68f34af59bb10ba4866d99df36e9094ef47e1a3"
+    sha256 cellar: :any,                 arm64_monterey: "5792e214a655368e9e4f5ea822b5128cbf1f3a3277c624e54810f474ecc73a9d"
+    sha256 cellar: :any,                 arm64_big_sur:  "a59e87fe0c47e7279ac0b38b860a130644fb1f87a5ad8c2b33cd47589daad07e"
+    sha256 cellar: :any,                 ventura:        "86188e40027495b195583768bffa220b9166d9b66ffd6ce7ec6267d8e390c90b"
+    sha256 cellar: :any,                 monterey:       "11b1cc4cf1c8673a5c2caedd2cbb1600b9a071e57c3b25be751db8ab73de8a08"
+    sha256 cellar: :any,                 big_sur:        "41275f52d7b357d3345ab74797d90534a3a989afcf2d9896e13ceb01eb052a35"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8272351370eda885e6e1c3c4f7608c45d993d2dccf86721f4cc3c42849d3a033"
   end
 
   depends_on "openssl@3"
