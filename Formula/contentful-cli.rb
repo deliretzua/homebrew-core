@@ -3,8 +3,10 @@ require "language/node"
 class ContentfulCli < Formula
   desc "Contentful command-line tools"
   homepage "https://github.com/contentful/contentful-cli"
-  url "https://registry.npmjs.org/contentful-cli/-/contentful-cli-1.18.0.tgz"
-  sha256 "13289eb453e65b7b216a63fd4032a75e9ad904599036739725b4726494f501cf"
+  # 1.19.0 introduced a big code layout change, which is not easy to patch.
+  # TODO: re-add version throttling in next bump
+  url "https://registry.npmjs.org/contentful-cli/-/contentful-cli-1.19.1.tgz"
+  sha256 "0e6ca9433f227a2a71e0f8527d530cb2e4cadf3864a7d6a614054af0ef8929ba"
   license "MIT"
   head "https://github.com/contentful/contentful-cli.git", branch: "master"
 
