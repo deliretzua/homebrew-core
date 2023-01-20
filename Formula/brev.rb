@@ -11,13 +11,13 @@ class Brev < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "428b45125897bcaff35df7f81c70398c348d7100d7abcfc27627ac30a08dab6f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ad16fd37fccb9d8c5d40f2406e551d7af93a95448601027643c7ced4ef2ca942"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "734356a5c00bcb33b5b68faa967624e98d2f451e2287e4ca6247d23cef7069cf"
-    sha256 cellar: :any_skip_relocation, ventura:        "8b495f9c0d954b93af33f603090b1eb13e0093fa41463282fce9db36bdf6ed38"
-    sha256 cellar: :any_skip_relocation, monterey:       "6b1c74ce74e49b5467753d6c38ecbeeb8c8cbf2882fbc4728224450f42ebb8dd"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f4c55afa3db9956174e16e932807249fd4276371bb220dd0bcafcd81a6d046ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2def1d8a6f99b2c54ad021abc8d9ea47e65f1c49ee85d60fa16515540edf32a9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2bb0e9667e7b51a3f1ac5b374dcab5bfc2bac50546248d34e55f8ac0867c737c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ecb7254b887737c8287e58f48a2adc0a44abe30dfefe9ca5a426761b1dbe2303"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0227319a29393352376fc9ebd45e23984f2065d2bdad58237c2c0bf7627449e4"
+    sha256 cellar: :any_skip_relocation, ventura:        "3a39bed3fec6f83d991ac2c5e977c72efc557a249743a8b97063774f23343a37"
+    sha256 cellar: :any_skip_relocation, monterey:       "1e98f24c7060c40c682bf63a1752aefec27862624beb8ea4a0911459dded0257"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c20b6d1842e6715fc9592bc26da329255454c429610b2ba3b06fd9bfd2a6cbbd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e70d84eed29faea6214f2a1b20d5b59b60735208d095415638fad11f2a4656a7"
   end
 
   depends_on "go" => :build
