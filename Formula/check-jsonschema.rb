@@ -8,6 +8,16 @@ class CheckJsonschema < Formula
   license "Apache-2.0"
   head "https://github.com/python-jsonschema/check-jsonschema.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d5b0d20f9489c10ca94b5ce5c649c53c02d8e767b8368271dabcf5a530089887"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dea28aa4047d38334c35b49e6b2c9628601aae72b5004988ca6494e00ba6c241"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e2ec38eba37e5c526945279e9ded05b23140715268272793cc0fa31f0385dd08"
+    sha256 cellar: :any_skip_relocation, ventura:        "71bb512163bd651fed58bfcfe9eed14d2e26febbf5c2368ba32c3b49bdb7233f"
+    sha256 cellar: :any_skip_relocation, monterey:       "800c7cf95cbac21c2cb1c55458fbfeff7ce39adb5323c46c69235a4b60e12eaf"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5388f5cf987749d6254ae6bcc8496323071e769eea745c1d46e2061f594bb976"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "183db901e1e47e82a7fa67183378d6a6c81d4fbaec2b4221c371ad9b89ba32a7"
+  end
+
   depends_on "python@3.11"
   depends_on "six"
 
