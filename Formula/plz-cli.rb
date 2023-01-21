@@ -7,13 +7,13 @@ class PlzCli < Formula
   head "https://github.com/m1guelpf/plz-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7b759c8bd3faecb16a8255d4cb579ab31889d6a65dd9cddff8870362e3befb83"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5e445e675441a360cdd0cac091975920d7c933a00952d25ffacf975ecd6032cb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "524a9879589ba979fcbeb074419a9924d969287acfff3cf5295638db690a1375"
-    sha256 cellar: :any_skip_relocation, ventura:        "66b64a8fe94c38f8faa25f0ef8057a737a86979efe91f9d53a6bde6403d50eb5"
-    sha256 cellar: :any_skip_relocation, monterey:       "de1b6da32b7ba0f9798ee454eea129b26cb2c86240f24d53cff25766eaa65f92"
-    sha256 cellar: :any_skip_relocation, big_sur:        "94599fd498263edc0cf61c72ab4f88980e2961a6d5c9fac7a54910e077e868a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cda5b1b67611359fdca995c6a2fb68a3dde49ae6aa02bb0cc91b69f48eb7d48c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "712daed5162a08666a528b6ac4a39ee38d823ad901f4ee99e7a4cf84c8347a44"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e21593300690424d358f6a89b269901fc0b0d0d0a280fd26cf946aea957ab5e6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "11f8a1dff87667615edf74528f56ba9d0154a82bfee8cf6f6d4bc48ebe6eae27"
+    sha256 cellar: :any_skip_relocation, ventura:        "98cdd319c98ab3f97188ea676c5dbfb6e25688421169cca9bb11d55e0d29a648"
+    sha256 cellar: :any_skip_relocation, monterey:       "9b5e3b8d1338d44c175939695d27d071d46c59016f99428bf9125764344aefe4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "40a9e0bb5b19683781d3e192981fd718fc8053b701df5e7a9baa972919387d4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "418a5123b2bee4b8ab221598b5eedbfa3c94d48caad848617f36e43f28ae3db8"
   end
 
   depends_on "rust" => :build
