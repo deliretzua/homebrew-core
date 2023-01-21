@@ -6,13 +6,13 @@ class Gedit < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 arm64_ventura:  "de832d8fb0b0248d19e07c69ed39adffd59968fd48cd0c14033a85387713ee1a"
-    sha256 arm64_monterey: "aad806aa20f386b697e27d02e842a5aa5fec007a30d4067f84be1f43595e4357"
-    sha256 arm64_big_sur:  "cd69203dfe0a8bed0f00542d2ddb9286a645424b5022cb2ecc4729c96dc97e7f"
-    sha256 ventura:        "6b4d031aaeb367eb24c7adbea442dcbb3b9b29bc062bcc49dd7f00a06a66379a"
-    sha256 monterey:       "e565dd03ea823cfd5cbfedf58aa5aca391d0821a57435f99d9915ef8706e6431"
-    sha256 big_sur:        "4e230308e50adfccc7a6357a9f7c457b2145c31cc076c61b4434d87ac48c044b"
-    sha256 x86_64_linux:   "8eb36b2f3a46162a5b17a9cc4466f68d2471cc27a3ce0cef27c139029b4bd283"
+    sha256 arm64_ventura:  "cc000ff6ce9a1a451fa8285e0f4bbf59fc268ad18beccce471aa86d674e2b5c5"
+    sha256 arm64_monterey: "b33cb89f188de3fe780f49976fe140265bdf1c376f196302af7d29eb8a1a7fa2"
+    sha256 arm64_big_sur:  "cc7b5b656925a805602feda814d96b12bd4f64d00072230e1c03eb55fa607137"
+    sha256 ventura:        "a7c193913c461fbb89a0a1f4e78a1cb7b726b38f6bb6d9410c6d61b98b10af80"
+    sha256 monterey:       "79f51aa19950f4c483f918ac2759fc69b58494d2f66617cfb737d894cf6a8ff9"
+    sha256 big_sur:        "b1957792f7fc3962fb40c0f23b56caf52db23fc9cc6c13de38c643dcc4c8712a"
+    sha256 x86_64_linux:   "a758efe0173d7ade8ad0576242917451221904efd1f64b85a1568208fd753e0d"
   end
 
   depends_on "docbook-xsl" => :build
