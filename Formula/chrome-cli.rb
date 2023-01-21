@@ -7,13 +7,12 @@ class ChromeCli < Formula
   head "https://github.com/prasmussen/chrome-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2906090cfc853b40887321a0b55810146793f14f782ffa613569b261d8cd5098"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2cf65772593e86be9a02761d2ec17ffdf685c4f3eb28a01cdcd7a7cc18e39d54"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "df1f09538d913e62a7be6529e3936bee96b9ceac29e04b48b320ec2fc426be07"
-    sha256 cellar: :any_skip_relocation, ventura:        "2762923b16b57cd06c6df2fa405f2f2088790c2c1bb27f0a027ff6b77906a892"
-    sha256 cellar: :any_skip_relocation, monterey:       "8a54bfafacf5fa0bc13824a28c7994d17ab7271fd90c40defb8eb3440ac22af3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a63860da780f58237ccae8deb63425d54f827093004d0a8fbbb05191a8e5b5b0"
-    sha256 cellar: :any_skip_relocation, catalina:       "7e3ee262df867a7f9f928b4b2e5e8f9eab064bd0833008e9be672352a85eb37f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b9cad7a2ea2a83eedee95fe614d0aa403d4a68d43506291e2bc995a696a39da8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b40f80e3df682fd5aba11db1309c804f6aa1c0c2f5ef6968dc8a02f159c93896"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4648829faea6d5c7d785457ab37743c60ca13cf2cab00931bee898c09b291061"
+    sha256 cellar: :any_skip_relocation, ventura:        "9c596ba1446b40a6f4b0cc54ac632b1136296bb3387eefc05547ea98ecbcbedc"
+    sha256 cellar: :any_skip_relocation, monterey:       "80285d8813788bb56dfba93a138ee2b005c17dbf6963ad27c2da12f52053817a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "cd136a38941c85cf7159438f9a7f3a13baef83c9d2e43c79ab01c0d237de4341"
   end
 
   depends_on xcode: :build
