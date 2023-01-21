@@ -6,15 +6,13 @@ class Stress < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "682417d0cce887de4bfad5dbf1382917cda827e21b760f890a74d1856e45915d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d62a404e264f4d64f2e5a14c9adee3f6cdb3593c31880410d24f38accea32bdf"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3dc5c125c3eb8cf95cb21bf4ae2efaf114b9b47677747026ba92a5c9eb09ad6e"
-    sha256 cellar: :any_skip_relocation, ventura:        "cf4131cee3e5082600056d0872a4a0147d477c6b87f24fab295a86201a649973"
-    sha256 cellar: :any_skip_relocation, monterey:       "c3a4929d6031c9cdf21cb81c8b3ff06b3a9bad924194eeadba7996aabb9cd9a7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "00d9ed736381a3967b8eaf0b709328ccb0263640fdc856fe5c2e8f2164ea705d"
-    sha256 cellar: :any_skip_relocation, catalina:       "2fb692ddaa54337dfe07eb71ee647e167bbe41db054556c32d7507cba38caa43"
-    sha256 cellar: :any_skip_relocation, mojave:         "6220e38d281aa1f7933c582711083d2e33bc36071e32776a55a6c8441e3de209"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b303854895396f0b6b5a75e654b5315ae4eccd5d4c7de451d7d1997edb0a7e7a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "044a6885d230385e498d3ec58cfb69a660fd14c559b98f6f290011d8a0538e0d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "118778f167fc89bd644efa192610afb14e2943ffd337ddac936a8d28752dd839"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "61787e73298604cc4fe4639761fe50233e7a8ba3c9253f5e980e02b46daebd6d"
+    sha256 cellar: :any_skip_relocation, ventura:        "695bfb124e1e5d77727d32ff213651860b3c7277abc90ed074b13ee646b199ee"
+    sha256 cellar: :any_skip_relocation, monterey:       "bd39f786f17a6a6c521ac6a0aeefb86d9c8008e079ae836d3b7c71484b385bff"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d7e1a1ec5ec0b6ac13656605dff3de6f5d450077e36ed01203dbb5aac90aa87f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c187c5ce03c3016b0d4a16674ec10005ee738e08907ad6dd1e576fd4b10903e"
   end
 
   depends_on "autoconf" => :build
