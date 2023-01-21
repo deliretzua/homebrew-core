@@ -6,6 +6,7 @@ class Fabric < Formula
   url "https://files.pythonhosted.org/packages/2f/84/dbcbc78055397a783134f56b30c70a61a645fae568d73ec7aa301f5f93fd/fabric-3.0.0.tar.gz"
   sha256 "bfe960c1ae904e7624af9d40ad5b9b99581ed9c4fd09349c0d02b7486e1d0f89"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/fabric/fabric.git", branch: "main"
 
   bottle do
@@ -22,7 +23,6 @@ class Fabric < Formula
   depends_on "openssl@1.1"
   depends_on "pyinvoke"
   depends_on "python@3.11"
-  depends_on "six"
 
   resource "bcrypt" do
     url "https://files.pythonhosted.org/packages/8c/ae/3af7d006aacf513975fd1948a6b4d6f8b4a307f8a244e1a3d3774b297aad/bcrypt-4.0.1.tar.gz"
