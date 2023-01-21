@@ -12,13 +12,13 @@ class Erigon < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f50af05f2e59e2f62ad79f1852e82c5a7afadbba6b9075b7237545f6a92ff43b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "47f8fb3925b47e562dcdf8f13faa4ca1a76a35c5baaf07426847cdd26688d0df"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4f3a619b3fe00e183622cbb9f5045dc3455b083c34064e8f299f053d070ae6c3"
-    sha256 cellar: :any_skip_relocation, ventura:        "e0035f35566f8a5ebb62e2a512e788818f4df2f4ea08f4ef71b9a771d2605e7b"
-    sha256 cellar: :any_skip_relocation, monterey:       "1170a3339bf2d1667904dd817edb1fd4bc497021b60c6cc64d9bc6a88a141bb5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "90affb9329f991d41c955a2e7f60f72321beca327f97fb17c12650a60c5f49e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "69096ff1ada60729315badb049a11d9c5882182a53f49e6491d2dff1453033e0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f379bced46737fc6d5479c6e4eddd319f977ef7201fa833d417fd6f2f31bdd29"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "419f05ee2055bbe05dbb220b4e839ed240987ffc17bbfe7414bbdf1fad67c6b5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8530ffa48a1cbbea42728f4cd7403f71e0dc818e5e65bf183933e74410369e07"
+    sha256 cellar: :any_skip_relocation, ventura:        "7bfe4e31da4167833f0e96c8f1f78f889ef340b6402b6a48a64aeb48ea34c21d"
+    sha256 cellar: :any_skip_relocation, monterey:       "845ef0d3807f8483cc276bcca2660af5f4435f10a0771585b3490ade2064a041"
+    sha256 cellar: :any_skip_relocation, big_sur:        "90251a2ecca646416284edd217b457ed7a792619d8963f9b70a42839febe7773"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a31ae6e0cf3645cc5767b943b9ebfd99577966ebf10b76b64c73a082b532b46"
   end
 
   depends_on "gcc" => :build
