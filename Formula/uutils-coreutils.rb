@@ -7,14 +7,13 @@ class UutilsCoreutils < Formula
   head "https://github.com/uutils/coreutils.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "781a59b516e607bcd8ac4b7c058ecef0fa6f6d93c43d10db3d623dcbb5da0227"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6bb8efbf99a978cf3fb35446fde1a6f16668c5a6ef613ca80fec8940184b7a0a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "86d96212c06714de24acee35746cb09c2a1e345d8acc54e05f6b393d14062a37"
-    sha256 cellar: :any_skip_relocation, ventura:        "bc6db87b1bb5570757d2b0b86886799f280cf8a146a34dbaf914f82f59d274dc"
-    sha256 cellar: :any_skip_relocation, monterey:       "7a0ac42b5708c26d1e9e58a3a173452bfae8b76a142910a2965e7acc5838c6ec"
-    sha256 cellar: :any_skip_relocation, big_sur:        "38022b2cd2fbd005fcb8bbe94968e73d2b3ac3defe3de41bb4c8402e79ed8861"
-    sha256 cellar: :any_skip_relocation, catalina:       "21a588651b729fe838551f42127efa6e2ba1079a651ea44d313cc5e4fd96a63f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dbe31d269b27279bf63ae01dca1670a955bde64873c1b1311f45cc1a9bbe3336"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "528c706f0d8cc376fc787b0ed667c945d9ae61f58f5681449389b8759700f013"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "badf3241383299397d8965cd1b1459f09726c4b7ea6ed2f15d649cc51a904812"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e413c572c17bbd767903a81310857aaa9795560445f30fdbd516c0574505ce91"
+    sha256 cellar: :any_skip_relocation, ventura:        "5dadea5d9ecdb0f04179ff54f16c2da4db18f5dc9e4437f8dbb6513e0e3a013b"
+    sha256 cellar: :any_skip_relocation, monterey:       "a426e0df8dc9729fbc0a7490fa4df17c215cdb03e42fb01cb8d49b68548506f6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5eb26cc251ad81ff38c416a74ba21dc5e2678cd52b5a91ea7fe5d8c628709086"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8313b5ae4f2c06c9fdadad410a469b478a17ce0b26926f8373e048ed522d547a"
   end
 
   depends_on "make" => :build
