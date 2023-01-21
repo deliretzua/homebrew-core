@@ -9,15 +9,13 @@ class RobotFramework < Formula
   head "https://github.com/robotframework/robotframework.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "c4800385431780805c0908a1dd2494e1371099cfd94a929d19039eead5fdeeb6"
-    sha256 cellar: :any,                 arm64_monterey: "c86f80e5f4983d7910dd45c3276f010e2ce97df9d35b7ba892d68be0bfb502a7"
-    sha256 cellar: :any,                 arm64_big_sur:  "2b2ccc704d6f6c9c9bad543d5de83b5679dc661cd4b0f7be9303b5014de35c85"
-    sha256 cellar: :any,                 ventura:        "8cd12098ded419bb396fc71d238d49930b281f1862f7ca6951309cc4c8231567"
-    sha256 cellar: :any,                 monterey:       "932bedd1165d173778b5427f593c790bfd1a877db4f4f00aa0beebf07461e4bb"
-    sha256 cellar: :any,                 big_sur:        "4983c7cfea2277b34064b2ad08269af5381fd65b79964f64f67794781ccc209d"
-    sha256 cellar: :any,                 catalina:       "7ac3dcf41cfff7ea20a08ecf76d72443f08e055a1bb3c1c306d6c4dcc736567d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "446e5f9cbca22d9b20841623af283df245e5b8e8e71816521f3017c50571d694"
+    sha256 cellar: :any,                 arm64_ventura:  "d8ad60161f1d75bf3dc7a9f71621d353c5ce987d5e152549d573985e12d91b37"
+    sha256 cellar: :any,                 arm64_monterey: "b4d0090018ac80a118c17396c40685ab7f73e38381f252d5168496b6d3630e79"
+    sha256 cellar: :any,                 arm64_big_sur:  "4fe36f7cdb5a74d3e367736c3e1e7d70a0857218731de02a1437233bbedafa2e"
+    sha256 cellar: :any,                 ventura:        "f049bf1583e683db64a8c534e0e952bfbc9fc7eee1ff4bdd8ec7c6f523ad5d36"
+    sha256 cellar: :any,                 monterey:       "7064d92565228e2cca04293c9b0bad7a96357753572a090ad5a0df00b13fd840"
+    sha256 cellar: :any,                 big_sur:        "aa3f0b950861d150c9227aa00dfd947850f6c1bb52a4aecb3dbcb80378174cab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b964b153cff5ca6666885acec230ebb8939554a64e62d4942a9667dba535ee16"
   end
 
   depends_on "rust" => :build
