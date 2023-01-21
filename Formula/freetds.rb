@@ -20,13 +20,13 @@ class Freetds < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "eed63594ff18b91b502044c5960864f5910beb5f27ed634d85370e78372d4d55"
-    sha256 arm64_monterey: "d915287c415ec0b9fd3d23f4abc028bd58d4dacbb4ba67b3d2b61322f4fdd322"
-    sha256 arm64_big_sur:  "0fd5f6654336104509aa2e8892ff5de9324c602823c4100d80a8640e9effbcc1"
-    sha256 ventura:        "82e4c0ee874eb5062a940808c30e959acdc98cb11d89f1a6d53c8c1d06f60ed1"
-    sha256 monterey:       "d7f1f2ef964b56b26344e6c844c79a760b915b2f357b02f4f34649bc0759d47d"
-    sha256 big_sur:        "aed24c83410497d496df043c0d7b98efb6853c79911a8ef1ed99a6042f5d1edb"
-    sha256 x86_64_linux:   "ef06953e9dc795868a9d0dba7e8586b857da7cac261332150064c347e3e6aafb"
+    sha256 arm64_ventura:  "2cf1f35b95f63c8a04b2a3dbb409c8cd937d5eec106ac618b8cf72c5e5e9b3e2"
+    sha256 arm64_monterey: "0a3739275e2832e9e8c52440d5f60532d2caa6b0e81c7cd8278799654f9105ff"
+    sha256 arm64_big_sur:  "5eb75dbd48dc5c998c754e13df5c5e518f5a00882d17a3f6fff28adfbc5b0f8f"
+    sha256 ventura:        "dd5a84af9b40c74a186b5db8e50a851e6f9769b394c1aa1514d41e98d0a1ccf4"
+    sha256 monterey:       "d0f06bda633e1889c4bf41b89685d2396dbd87899a2a4faa23b5b50c82a28fed"
+    sha256 big_sur:        "8fbd7b1169650cd75b68b2057741520ebe87610cd2ab54c3bc51bf5225ad4e26"
+    sha256 x86_64_linux:   "30fca553d0810e54d0b6e6e8fd12e11ccbb94ebe80d1045ce7859d06e017ae45"
   end
 
   head do
