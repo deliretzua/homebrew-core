@@ -6,13 +6,13 @@ class OsmiumTool < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "ef6fb69e1cb749d35ffab87e2f842efa0f16c57047e96ab895bf5f063e487cc6"
-    sha256 cellar: :any,                 arm64_monterey: "6d2223c0fa9866d66db794f80ee1d2771327156aa77fb5fa7fa62ca31e11b4a5"
-    sha256 cellar: :any,                 arm64_big_sur:  "cddf3e857d857be6ce79fe4e6f5e055e26b6a6f2ebbbd34000c9df936273eb7d"
-    sha256 cellar: :any,                 ventura:        "f733109b5eaab596ecdbe2fa07dd02a630f189c274e8b32eaa3193b0d7058f10"
-    sha256 cellar: :any,                 monterey:       "1c2c65baf505cd961b7d2a21fdd35aa90ffad5408c049f9d5245249c66eaf804"
-    sha256 cellar: :any,                 big_sur:        "bef07c4ffd4e49b17ac0cbe31f2b03ebe5e8af0179ab2da595cdf574325848ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d0abf08b249ebb86ce347e7983847966b888cd5437e9e7eb05ab2f0f94b0695"
+    sha256 cellar: :any,                 arm64_ventura:  "f06d9f6ae6a228b1fca37fad1bab9721760632c5f3f287d8b4c192beccbce372"
+    sha256 cellar: :any,                 arm64_monterey: "0cecfdad7eb06bdf718e7472ab6e40ad691a2733d79379b8b3114203b269a6d4"
+    sha256 cellar: :any,                 arm64_big_sur:  "a776cc479cb4a220b7179814464714f69e0dc7f60c96b21eb7807fb2906a6ae2"
+    sha256 cellar: :any,                 ventura:        "22a8add357c9ca575aed1d729942f7aee33d664029a19869edffe71c45006c51"
+    sha256 cellar: :any,                 monterey:       "c9a15aed4b8af602c9fa1131f63f1dbfd1bd056bac9e0d8d5b7261eb04771220"
+    sha256 cellar: :any,                 big_sur:        "fd6e881f2ff097715732c8e1904dc799da8ab7e78dae7bc67a9b9247ac7a6de7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c82ba0a54458beefdff33686c3248ebeec6117f91f852520ecc2e51a47fd221"
   end
 
   depends_on "cmake" => :build
