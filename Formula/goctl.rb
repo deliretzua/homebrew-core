@@ -6,13 +6,13 @@ class Goctl < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "812b3cc90f6ab4a89c92c11ca2bc0fae725c4942c723feda6cdb2a16a26dc4d4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "135fbafa6986dc77526ac8ade5378963aa4ccec735636048c9cc1332ecb5f5ab"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c5aaf4a59f4a4d106e93149741fb3bb8d2cdb276353486502e5e3366faa010fc"
-    sha256 cellar: :any_skip_relocation, ventura:        "7f6e59c07aa5f3d5ad26bc046978c0d2cc66a671666ef14bee59c84fb9253c4f"
-    sha256 cellar: :any_skip_relocation, monterey:       "23bdc0656b6935bc7bc1fb01e94a2e470f37f4b120f322a9c8c20558d940ee3a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "eb1ff75c77f2cdbaf1f77c04b7712d5b8f4e403ebaa5a915e3c013f0a2d31845"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "641f54a3d8792ecec8ee23ba4bf5d27811e432ab92376cdc34cfd3c536e820c8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7ff2e65c32579894be8b0ed1cd69afa272541309f826e1a25969c6df05804194"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fae505dda6d542a153c26c97305cadf6a30ee6026f16f9cc2da5c44749103ef5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "69dcbe17bd0c79c7f4987cbaf8a7a807ed4ae04d5b65605b7ba3b03682808992"
+    sha256 cellar: :any_skip_relocation, ventura:        "3dc35f63b901a39e84526224bd5d5d1b9f5ad573c10b1ad4cd9b10b6524bae28"
+    sha256 cellar: :any_skip_relocation, monterey:       "97c4b63da81a3d6185a02f8287f356ca132efaf8e38722b8fadd935bd54af714"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8eb1bcb4c9af2649830b51b8e3cf14876f3b8814578fee0ee6a77b996a23951d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a2731d2aff0689bdc5e1c26bfeb1eedf09687fb081f70524b899c85f6ca76095"
   end
 
   depends_on "go" => :build
