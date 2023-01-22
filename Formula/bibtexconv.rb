@@ -7,15 +7,13 @@ class Bibtexconv < Formula
   head "https://github.com/dreibh/bibtexconv.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "e699763d13690a230cf2a280ea0b3e096be5e793a0ef37d68fe134e4e6256f4e"
-    sha256 cellar: :any,                 arm64_monterey: "c2e6b9a91b14e08c20d8540ed7c7f55876ef4ce4aeb8a609355950c6b7761fbd"
-    sha256 cellar: :any,                 arm64_big_sur:  "ba5a0696961b35cf63415b5f76cff2e3da8a53665dc08865aae498438ddd3c49"
-    sha256 cellar: :any,                 ventura:        "b473fe27789fcc07f48881b95b0391b1fc8291fdd8bf29dd75bd70598d9b55a2"
-    sha256 cellar: :any,                 monterey:       "14cfdc9391afdada9d5e87f83b73b5efcb40048c653bb9db1ccd262920005484"
-    sha256 cellar: :any,                 big_sur:        "6391b2d3a13681ef85be37aa6d406bd842fda6ffbad19b9cc6888791bd456739"
-    sha256 cellar: :any,                 catalina:       "02e854e05769f075e9cc192b4182a631252f84069037d9faef64092451812684"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "843ad83eade84da2672051adfa92cf57650c6b52a1d89b30e7871fcf037794e2"
+    sha256 cellar: :any,                 arm64_ventura:  "d9c85fe7a60d47876f0b3a65a6d16ec09f60eb1526f474aa4e7444da4a0b07e7"
+    sha256 cellar: :any,                 arm64_monterey: "9163d625133c3eb7d02abf6cc6f63436b597e7c9b01dc3dc1c71c99859dbde95"
+    sha256 cellar: :any,                 arm64_big_sur:  "e267b9657835e14eafa69a790853664aae39755a0e9692640c5a33537ff285a8"
+    sha256 cellar: :any,                 ventura:        "e56ae711439e7cab2c328d1de79cf73e719aa4059ae5c0951cf895797ff210be"
+    sha256 cellar: :any,                 monterey:       "6fc4c03c5490aa595504c7ba933199e8aca57b6372b93a7183b7c53cd8c9f3a6"
+    sha256 cellar: :any,                 big_sur:        "1d8ddfb750b024ccecf2040fc7f25c900cd00613415f9cd570d987fb2e0a34da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "82994cb9d9f591a8d32f2592772dcf45b3db12c3ec94ac7b4c3a7f265298e5e3"
   end
 
   depends_on "bison" => :build
