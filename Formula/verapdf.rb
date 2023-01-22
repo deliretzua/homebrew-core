@@ -1,8 +1,8 @@
 class Verapdf < Formula
   desc "Open-source industry-supported PDF/A validation"
   homepage "https://verapdf.org/home/"
-  url "https://github.com/veraPDF/veraPDF-apps/archive/refs/tags/v1.22.3.tar.gz"
-  sha256 "d5a83444c79870adeb7ebf48aef685943c90458637344342c21f06df0e04ec93"
+  url "https://github.com/veraPDF/veraPDF-apps/archive/refs/tags/v1.23.144.tar.gz"
+  sha256 "0b076f5438f5fdd67b64103c76be20abe0e48deab29ab248857b8549b8de7757"
   license any_of: ["GPL-3.0-or-later", "MPL-2.0"]
   head "https://github.com/veraPDF/veraPDF-apps.git", branch: "integration"
 
@@ -22,16 +22,17 @@ class Verapdf < Formula
   end
 
   depends_on "maven" => :build
-  depends_on "openjdk"
+  depends_on "openjdk@17"
 
   def install
+    ENV["JAVA_HOME"] = Language::Java.java_home("17")
     system "mvn", "clean", "install"
 
     installer_file = Pathname.glob("installer/target/verapdf-izpack-installer-*.jar").first
     system "java", "-DINSTALL_PATH=#{libexec}", "-jar", installer_file, "-options-system"
 
     bin.install libexec/"verapdf", libexec/"verapdf-gui"
-    bin.env_script_all_files libexec, Language::Java.overridable_java_home_env
+    bin.env_script_all_files libexec, Language::Java.overridable_java_home_env("17")
     prefix.install "tests"
   end
 
