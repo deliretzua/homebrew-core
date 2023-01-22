@@ -6,13 +6,13 @@ class Lsof < Formula
   license "Zlib"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "48281dc438f7aeee17da2fc19f2ebebbd4fd5ee090cd6ffb6f9d4c60551e802b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7b16732790025d8358e39d8a3d15226892fb11c5d11d09c07b89930dab084e07"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b9b6a948840bdc6cfcdf061ec885c7f286e5a3e2b2f99cc739e6a60eb7c5b67d"
-    sha256 cellar: :any_skip_relocation, ventura:        "69cb98e2f67c2305809d4d3ed3ebcbdfbf9085d7f9f1dfc5a7f4f863e5a04c9f"
-    sha256 cellar: :any_skip_relocation, monterey:       "a6e4465a241f8d4a2c9b05a413d1719d100c77aacb2ed55cb42e2baffe258c93"
-    sha256 cellar: :any_skip_relocation, big_sur:        "dc47b6170550634d0c4cc5e8fbafda89953b7008c436d9e1f3579fbf40be6b57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "677c0a688b9ed6bbea88b955860ce80e3da483ac3df535f928e38722cbccacbd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fa116c39661d0d7b685897977dd5d90c384557baeb7dbeef0ab261cc8bd36e74"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d5b2be9ee891a5cb62e3e2d68c6513d9a7b27fa414acae729242a1abdbe93135"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "90d939a92133f1221f24d45c5406412959aa38aeac6c3a884ba3dc7b9fbf6f84"
+    sha256 cellar: :any_skip_relocation, ventura:        "0019c79578d74d752cf0589ff83c1b8b21a073327deb58b310ba59e9e46c4b09"
+    sha256 cellar: :any_skip_relocation, monterey:       "c33f6a2ff078b538a77c1fa0475b1d409d7196dadfffab16b90d38a13d4ed38f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "badaa07907718d5b13096cbfd3654afd65f36dc96ba0f7b382aa8ddd448a689d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb3f15624b78349297ca7a081f14b93a26a7f08d5cb78eda0c268ffbede36f4f"
   end
 
   keg_only :provided_by_macos
