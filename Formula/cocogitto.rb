@@ -6,13 +6,13 @@ class Cocogitto < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b9ad55806a725ea9f144c4be295b0c7af7f3054bc837529c7cf13233833f40f5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f427efe2a5656fd7e164db1d226f0346788b24e8fb9f6c01280e0ac0a796ef4e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d5b24bc4efa1a08c918fc21face5935b1bee4fa598757858b0e74ace7209168d"
-    sha256 cellar: :any_skip_relocation, ventura:        "fab6c2e3ba772ba3493ff8e69cd86f2dffb9ce055dfe89f6778b2909c6653c01"
-    sha256 cellar: :any_skip_relocation, monterey:       "a0d9114a6296eb274b863f46f1c62fb70abbc35e13542e324cc67b738d4b4211"
-    sha256 cellar: :any_skip_relocation, big_sur:        "159aabbb7fcbe2961755c56435f1bee5817e35da1ac54ab2e64e1dd487375ddc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc3966802fce305d916031c79f61c0ef0353509a6c861c7af5b9ce61d2576d2a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "87685c70c732a72fa1518e48e28d12422ecc75ce1d873fc64df7ff9c333f2825"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9f140f316b9b061b7e118e32375b7f82304a5bda53a9c27a478163c92ed37d0d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5937cb632d2d8c8efced6db54d390da6ed0f9b813cefc00b7361a64f4da3684a"
+    sha256 cellar: :any_skip_relocation, ventura:        "e1c0d5bc34f8d9587f5913e7f795245814c4730ad21950236e92873bc1161137"
+    sha256 cellar: :any_skip_relocation, monterey:       "bd2f0c71e87edaa4b9f00c09f386bf4535bf1090cc5833f035167cd839ed0084"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b5399375c3e75feaf0f6a8adc7f497ee1384130b69c0dc9fb94d421e0f3df554"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb11438ddcb1deb1a30aa764ddf37f47fb6da6b3661ef94d7dffedf39854baf2"
   end
 
   depends_on "rust" => :build
