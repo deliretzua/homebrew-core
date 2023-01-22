@@ -18,13 +18,13 @@ class SuiteSparse < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b19d379787b225266f4ac0d8844099f6abc2e619419d15052ca401247dd52a83"
-    sha256 cellar: :any,                 arm64_monterey: "e2337bd5db3169e5c2b5b4bd869046f3ab2a2a45deae9bb5c4f016b105183227"
-    sha256 cellar: :any,                 arm64_big_sur:  "9a7a4daf35874c2eb86b106730b74add2d82ab5b25759a2a3a25dd8a5f3f9ace"
-    sha256 cellar: :any,                 ventura:        "78a06034ae76cfc508e3e28a1d4536b00425d234b615434029f442c4b55d2211"
-    sha256 cellar: :any,                 monterey:       "55bff923c3d4fc50851ebbed8117120ca4d0fad57804d246dd275c405f69329e"
-    sha256 cellar: :any,                 big_sur:        "7db60d709ecfc631b19ee164196dc1174c726b0a35184373b3ceb4862d3e6acc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b74e86097e8da7b3fb661776a97b0c116a6ed4c281a70476e2341a51f8cfbfa"
+    sha256 cellar: :any,                 arm64_ventura:  "800547f35ec665c5285aa4b07e84e2397c062e09dccd46e65481e433f442b0de"
+    sha256 cellar: :any,                 arm64_monterey: "5686b2ea580a81059913df0d9dd1f8d117b89f583967ea25a2a4f741a6714921"
+    sha256 cellar: :any,                 arm64_big_sur:  "88337a211c6c36a234b1e007d696dd97cee549f06b316d3523e1a186bbac2f83"
+    sha256 cellar: :any,                 ventura:        "4fd414d62bc14a2737736dfab169c9e5f7a1684766ff1338278e75929aa0b882"
+    sha256 cellar: :any,                 monterey:       "44cde4609e04dd354f160735bbaf07e4142dc1ff33295c817bdfef64c2e482a1"
+    sha256 cellar: :any,                 big_sur:        "45f684ff114624b410ac9e24a5660c4f9d943697647dd56c97cd2e8ef1ba3160"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "93309af5befc94e7641a0159f95bef6b087a6399e35516d159356b901af2acae"
   end
 
   depends_on "cmake" => :build
