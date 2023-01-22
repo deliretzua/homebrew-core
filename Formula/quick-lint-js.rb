@@ -8,14 +8,13 @@ class QuickLintJs < Formula
   head "https://github.com/quick-lint/quick-lint-js.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "101e8e67f127771ea448c661faa1c43696649940aac9d2607a6c02260e6f2f6e"
-    sha256 cellar: :any,                 arm64_monterey: "49f6234901bff48ac7655e4ccd3ebe3537c04877d3bc5add5e7aabb9964df3fb"
-    sha256 cellar: :any,                 arm64_big_sur:  "75becb2742c84477cc3d455298e728381e0cde0c10e3ed7c0f2880d417f2cd57"
-    sha256 cellar: :any,                 ventura:        "3ab50cf8c861f5c64a46493b5bc4c6b6b5cd3280a8a188575126e5f4ef8c1e07"
-    sha256 cellar: :any,                 monterey:       "ef1b51d496634b92dbe8cf78cdd5f4de38c5d1ac69e9ae1e682791ce2c343344"
-    sha256 cellar: :any,                 big_sur:        "6ae879827826b5dab7d724c8ef6c00df109c613116029de5207c3e1c52247d57"
-    sha256 cellar: :any,                 catalina:       "4cc0d70ce91b9ab13fac0123a07d8c9fed4722ca83539291e83606214ae466b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a00b52f5ac8787a3f03244ec27fc93cbfb72409cc87801cfac70f98fb98404de"
+    sha256 cellar: :any,                 arm64_ventura:  "ddb906981ec7d1078c2ee9897b6d1d8fd9286576ee918ac7d3fca53fa5ad658c"
+    sha256 cellar: :any,                 arm64_monterey: "d0dd6276f2882bb2e652988fdc15d6ea9820809710ffd73a9d8ddbe613829717"
+    sha256 cellar: :any,                 arm64_big_sur:  "eefa91188a135f9d3342cb7d68a0341ec36942369cbde1df85316018f78fc38f"
+    sha256 cellar: :any,                 ventura:        "798117f3af42acc8479efe2baf9b7a28c76058a7612cb2fe210e2d9812abf174"
+    sha256 cellar: :any,                 monterey:       "0f0ec361b2f1dceb4c2bf32b8dc16b0789239567e7d6b585a2dbb267a83ff4ab"
+    sha256 cellar: :any,                 big_sur:        "30fd611076954c5f5c7dd1bdbcfe4a5361ad47714a3feb826f591d283c703e8b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "65a074287b7899e23cc86ea22820960017f3c6e3c56b8dee123e70ec753dd37e"
   end
 
   depends_on "cmake" => :build
