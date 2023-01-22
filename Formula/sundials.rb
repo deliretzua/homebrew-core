@@ -12,13 +12,13 @@ class Sundials < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "3a4acc4f7c00b60ea532287baf4c1e472677fc133fded0b8f141abb28d8cce21"
-    sha256 cellar: :any,                 arm64_monterey: "bddd45f9878edc4e15e81e47338f8651509a7b21fe96c6c524486bea725060e3"
-    sha256 cellar: :any,                 arm64_big_sur:  "f5c24b74aa603bf847d92410b1dc09635fac2d129f54809315fa83e7b4e5b36a"
-    sha256 cellar: :any,                 ventura:        "a2ec79fc5c534824d06c78ceb27f82d40167875714de95dad8b3bffd2c191f55"
-    sha256 cellar: :any,                 monterey:       "5a467f62fac80e5c7500081b90783fdec403f116ec00e5b519fef912dea76ddd"
-    sha256 cellar: :any,                 big_sur:        "1abd29bb4275e316e8f31e5269b2e525442eba0e13447170be55ebf9d0261a91"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "07ba35bfcf4afa2139794d08034c151fd6ce689b13519a9be3917383dcac6c40"
+    sha256 cellar: :any,                 arm64_ventura:  "a48dd4520c7151ce4795b842153ea4bdc77ef4b06fbdfdd0df25b609038d64ca"
+    sha256 cellar: :any,                 arm64_monterey: "cdac128562ccbb0cc63d232f70cbade11e33d89133ccc2ffb74649427c292350"
+    sha256 cellar: :any,                 arm64_big_sur:  "2f9b9624036c333f079570abbc9af03daa8c498a788a38cf3361d8d97152c81a"
+    sha256 cellar: :any,                 ventura:        "ee7aade8dba27f4e6281a785b79012f71b6701cc775dc9a0efdd82516b13d369"
+    sha256 cellar: :any,                 monterey:       "c89daddc370b11612578ab9c54a435a08440a2a635e9b248b23f9030d5cf2714"
+    sha256 cellar: :any,                 big_sur:        "330af17a201f90e88b6a6329cb92fc8c590f31cec53fdde68e558e9f6c31f41a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1dbb51411fa5ff52802ebf9bbc4a4df03513271f12a9641e64b96368301d487"
   end
 
   depends_on "cmake" => :build
