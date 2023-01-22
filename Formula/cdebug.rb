@@ -7,13 +7,13 @@ class Cdebug < Formula
   head "https://github.com/iximiuz/cdebug.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b5cf4d64fad5499a035d62663395ad7144ba3fb1ac52223a8712cb387f9af2c1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "33d3f8e72ecfb7b91db1f01cb1a4102aec1cdc765027457c348436c7318b831e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "000bc4559cdf6fc55217466c6e9b639ac11dc14ae9af3af9bc8d70a15d5a724d"
-    sha256 cellar: :any_skip_relocation, ventura:        "893f326aab5ebf9f10815a42fba3c679ce3d35144e786dbcc88ccfa5dc2aed61"
-    sha256 cellar: :any_skip_relocation, monterey:       "78f58e5fa5981b6c77835bdc492d57ddc3bf01add741a2e0e42bf4e489e3ff47"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f71c5a3bd1f65c0f9ecbbd39cf8f69c4bab64b999a94120896d7242cb6ac3b00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2b6ae43c8e72c6cba922665690e7f6c2ceed8a405671f744782ba8dabf64eadb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "88d2982c1ed4eb4cadb8096d10b0076feed71804dabf76d556dd343c79c31b43"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cc31a806ea0357e8915951be20a1b9936ee0893607b1df1ff7bb906a3103cdb4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1eb38f9940de8666cee4a8ffff32ebd4045e7c1a28e74dd2d5998c9123e46f1f"
+    sha256 cellar: :any_skip_relocation, ventura:        "7819ed50867fea255652a22e7fcc89c6b9e6c8e4d69d92e8b0297c6501d96d8a"
+    sha256 cellar: :any_skip_relocation, monterey:       "93e077c9a35d99e435b47d27dccb72aff15f45af1a9dfda592594873e7a1cf7d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8756dd4ece7c7f597ff23716cdce1ff9d14fc5eb5dca1ed1021253b1f2f73993"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3079ddc6fc91ed94c804bd0f161e7e6f5ef78de1210d2270e3f609fdb097f521"
   end
 
   depends_on "go" => :build
