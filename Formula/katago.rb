@@ -11,13 +11,13 @@ class Katago < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "545a3de01f45b3d6dbc7499e7d2d238ee5c272cf684ac3608d71838c3312676c"
-    sha256 cellar: :any,                 arm64_monterey: "5fad67fa83aee0041784d42466da6cf6fad401ca5a6f7e9fc5507340e37096dc"
-    sha256 cellar: :any,                 arm64_big_sur:  "6ea44e174155a9f34f246b72f4164e30bee5691bba51613719fedc1f87e490da"
-    sha256 cellar: :any,                 ventura:        "51fb52b28ec6e0047ccbc07d0e450ad28b4eb8d4656a6f41e6eac8fd8101fe3e"
-    sha256 cellar: :any,                 monterey:       "5eafd8108833693bf7934f7c811c5f8b0ed4eb6629a027d6dff0b08f3b27392d"
-    sha256 cellar: :any,                 big_sur:        "195d86dfd85d67dd4e608920d0d80fe048fa6ee985083bf6a851ee131227f973"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe65fc80139d97f4304fde188b30a8725b5419bfc0f6f1ef63dd38fa4f7623ed"
+    sha256 cellar: :any,                 arm64_ventura:  "c411e717d6abc03bdba42fc59e41ab8d39df74698c0b2b3738f9f2b6fe3c3e26"
+    sha256 cellar: :any,                 arm64_monterey: "f4327c496eed90ff3fcedf7bd31f10dd3aea17e74035be297672c0caf6063d2a"
+    sha256 cellar: :any,                 arm64_big_sur:  "703e95fed63ca4673d52e8b193844787ded4f4df13bbf6281b0499583c4b6aa3"
+    sha256 cellar: :any,                 ventura:        "7b53b154ac37c80c7cf81e1d25e34e30d5438f1d91faa698e66c1abbc334cc1b"
+    sha256 cellar: :any,                 monterey:       "361821c12fb2f598c5a5c7c3feea63658a4a4fc4c585eb9f26bdb51e076c0ea9"
+    sha256 cellar: :any,                 big_sur:        "3290fd5c2764a724de19c78e575280fffcaac8ea9ee09470be7774d160bc2c9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "63cdbe6ef771685909f9db13e3befd441f2a1592e0dbc4ef97b6e46ed5c170a5"
   end
 
   depends_on "cmake" => :build
