@@ -652,6 +652,9 @@
   "twine-pypi": {
     "exclude_packages": ["six", "Pygments", "docutils"]
   },
+  "twtxt": {
+    "exclude_packages": ["six"]
+  },
   "urlwatch": {
     "exclude_packages": ["PyYAML"]
   },
