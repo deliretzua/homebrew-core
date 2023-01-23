@@ -6,13 +6,13 @@ class Kubergrunt < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ed49cb958f8b0f520b9b91c33b2bbff29965e3f65ef5c614523ace2736ca42dd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2e0d9ae276ff773154f1a3a33c2b3678381fd4297e420d80dd8694d6c88381a3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6117deff0212637993d9f34dde5e385d373b6de370cbaa2ee2c91d9692f5e5ff"
-    sha256 cellar: :any_skip_relocation, ventura:        "ccc7f1710bf5a093bff998f12aae87236554f585463457a272222f754283edda"
-    sha256 cellar: :any_skip_relocation, monterey:       "95fef3654406f148a7cbfc0aa8dd125784f335aaadd23396d5fbbff5a677291d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "97b4ce36a97f348cb91ef8a5d22223ae7fccf0945f7a4ad2cdc19648293300e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4decff027924f2dac9e44f400a5cdbf6ba538025988eccf5bfc5a904e87dd990"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5881d734fcd146a5e38c7f9b46f93bf0b43f9b11e6d14ff6c28f3133f36d82a3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "131537fab553c8445633ecf4f8e65ef0421eaaabb8371e7add86ae4ae099e9ec"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3e0b5ede1490ce0e0a76ad53fdc7dc6af6328c2c6ede58e211952301a8a9767a"
+    sha256 cellar: :any_skip_relocation, ventura:        "db5086501e719769345ccfd79226a3579c28ab5258531c0466bee4cb51a730e5"
+    sha256 cellar: :any_skip_relocation, monterey:       "6925c607220df36e491eeaf3f5d666eaea6f1e41c05661a76b7b03fe6b8b4a19"
+    sha256 cellar: :any_skip_relocation, big_sur:        "37daf452e0833dd0238dec82b0e418c6ef9fc8531251e3e912252b737a4b6843"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2ba45cba8901ba83eef1bff7d00a13500d889e2900ed876a6197b6b50970d61b"
   end
 
   depends_on "go" => :build
