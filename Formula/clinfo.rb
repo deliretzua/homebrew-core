@@ -13,14 +13,12 @@ class Clinfo < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a32c61641d925f1c4273db20ce0a9e0891dbe388a93db1c4ae398f68b13198f1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a4d0c2af62d60954d4046e4c8f7dd16e16d90957462b7f1e98277e3fb88ba018"
-    sha256 cellar: :any_skip_relocation, ventura:        "22dd33865487662965aeb057ae5f443ce40359b4555c5cc836d70b40de855d6d"
-    sha256 cellar: :any_skip_relocation, monterey:       "6e5e0204e873a5efe9e06a03dca323dd1875a148a99bc771d1a777ddcc5a0b58"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cb20a0053dd57a483815485e804884ba93cafde11b2d265285a7ad0b49fd3705"
-    sha256 cellar: :any_skip_relocation, catalina:       "fe9953456ce92ca4701c040d4971be611671ab058c4743802c4721a5313e2bf1"
-    sha256 cellar: :any_skip_relocation, mojave:         "6165806150adf656308b999a1fac88effdf0fe5128b39d21c4faa0cda9b3c491"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "99db424979264c6c3e4f8e3b1eeb9a9911fac5129558ba5c801eb302b0f9c91d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f813fa0658cb136354ea6fd6a304f4ed37937bde4b5701dcee354cde08b5e2e5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "762985fa4b310ff913ed54201ef1910070ecb0dbfb90b57fa7d04254d810ab00"
+    sha256 cellar: :any_skip_relocation, ventura:        "7f21bc4670f3da38530454e12368b2790059d534d428e77a952f78271c4af928"
+    sha256 cellar: :any_skip_relocation, monterey:       "ddf37e1369f567bfbf671cfe8b9fa85cc58d29e24eae65a002ba1d8bb1124c4b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "05c53fe5c0be798e7e7d7eace29593b88c15721d5d8db010c72174ca7464f928"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9453f23f10fc0cf9c28fd0b64e744c19a437e0466411cb88addea9abdecd5f0"
   end
 
   on_linux do
