@@ -7,13 +7,13 @@ class Edencommon < Formula
   head "https://github.com/facebookexperimental/edencommon.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8875c2ccd0f972e769b13c84a7b2204f59f4e30fc7100e4662c8396a39e6b9ad"
-    sha256 cellar: :any,                 arm64_monterey: "a9eb3a974d1fef894f665a64c0bd6f4d10aeb7f9e15e2c494f4d6895923b16ed"
-    sha256 cellar: :any,                 arm64_big_sur:  "f0c2695a7876992cb3b194ec8f1e26ba4faa9518ff6e3b47b295f677afad4b30"
-    sha256 cellar: :any,                 ventura:        "6fbf0a492b55e4a06c507c2179865be9545aa1e482a4cfb8c87092d7b7b5a371"
-    sha256 cellar: :any,                 monterey:       "eaaf888e19cbbb4a92c8afd2584d9b42e7baa2a7be3db0fada30397f04ecdbb3"
-    sha256 cellar: :any,                 big_sur:        "c22e9cbf5f632e1b7b272654f2fa3c709cb2c71839ec2c6ba29f43f2196bc725"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "febec90369dcb399df359d5d8aff4d6acc08223d837d113acf195c8697caa4b1"
+    sha256 cellar: :any,                 arm64_ventura:  "adc52dbe1f75bba4fc159d3e0ce8c54dd8bf0369253741a623a5c76dbbf27462"
+    sha256 cellar: :any,                 arm64_monterey: "160bfc23fa6e7d2e5d5eb709cca703669b4070997d0a079014f98c42731a64ac"
+    sha256 cellar: :any,                 arm64_big_sur:  "787c644153acc375f36149038c759eab64d26d72ea4910bd100c83af4b463c33"
+    sha256 cellar: :any,                 ventura:        "b5c67d40c247957c7ef6784d86f464ebc1781e46565f9d9931eabf10179e874c"
+    sha256 cellar: :any,                 monterey:       "d4cec88acf30a344c6a1a09196f26e81cb68a8faba3ec89f32e3a5505f6e6c42"
+    sha256 cellar: :any,                 big_sur:        "5bf1c773f1ac36b78a64225e28698f51138db8bf81a5d53c1d86647b0220eefc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c76a58d84bde9550b9c06504192be796802181789ba00c90881c2687f49e1642"
   end
 
   depends_on "cmake" => :build
