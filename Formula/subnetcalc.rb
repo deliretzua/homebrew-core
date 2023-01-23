@@ -7,13 +7,13 @@ class Subnetcalc < Formula
   head "https://github.com/dreibh/subnetcalc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bb9a97d4624ba2eb1e41b0bb8fbbdcdec86983dcffed476c9c4441a11a639ecb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "427da5c6383dd9a3307ec30c9a975ca5456f7b2c27b59d433991b25d613f0576"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "305a22c7217e51ad68f175bb9958d69474f8f4e1d2316d69ca49032302fa9eb5"
-    sha256 cellar: :any_skip_relocation, monterey:       "1afef375229983906d16d2dc28801d71b651cd29a118626f15448ad8d2439a87"
-    sha256 cellar: :any_skip_relocation, big_sur:        "97c26adfa53f4ec1e1d546040ae4f21416f6b8737cea762e6c4a2d1abbf11631"
-    sha256 cellar: :any_skip_relocation, catalina:       "2cba9786049522b242944fb71cb2a6cbbeb8ffa38616c7f6624b6c651e6a4c95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d6133da67859d9980c7fab8e57aaf87238083c72e989378915495250100e799"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "448c9a4cfd16b74b5d5736a9f79c41561a7a4ea64dc8aec70dc79be5dceed1a5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c43c3b341d1bccad74159860507d69fdd987c88c5bcb40a43ddd263804bdee55"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fea19e5ea9b50c64964eea89d42cab6e73226a84edf902312d075e4221a024d4"
+    sha256 cellar: :any_skip_relocation, ventura:        "c4f1ea6cb8dc466cfe374dfe1c58e7e740c5c55d6c08c601fc8a787c995c4807"
+    sha256 cellar: :any_skip_relocation, monterey:       "041126a8a260f2be6a214276e300fb2ab1e50be90401b0c1e4c78d9f8ba7ad02"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b74f11d72ddcdc25c3c6335681d0a42b6f234c8151517d835d41848f32bbac03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e71dab73f979672019fb1aee85c4dbc38f6be8183355b3e9b14a95b465719295"
   end
 
   depends_on "cmake" => :build
