@@ -1,10 +1,10 @@
 class Ddrescue < Formula
   desc "GNU data recovery tool"
   homepage "https://www.gnu.org/software/ddrescue/ddrescue.html"
-  url "https://ftp.gnu.org/gnu/ddrescue/ddrescue-1.26.tar.lz"
-  mirror "https://ftpmirror.gnu.org/ddrescue/ddrescue-1.26.tar.lz"
-  sha256 "e513cd3a90d9810dfdd91197d40aa40f6df01597bfb5ecfdfb205de1127c551f"
-  license "GPL-2.0"
+  url "https://ftp.gnu.org/gnu/ddrescue/ddrescue-1.27.tar.lz"
+  mirror "https://ftpmirror.gnu.org/ddrescue/ddrescue-1.27.tar.lz"
+  sha256 "38c80c98c5a44f15e53663e4510097fd68d6ec20758efdf3a925037c183232eb"
+  license "GPL-2.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "faa860db4715963f220c26412211476871b9de334cad2a0a250177f3fafdc6c4"
