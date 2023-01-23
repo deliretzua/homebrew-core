@@ -19,8 +19,9 @@ class ReconNg < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "678e0115e9dc3834923df4eeaddd75c102d34dc666ab0f03179a225d276094b1"
   end
 
-  depends_on "libyaml"
   depends_on "python@3.11"
+  depends_on "pyyaml"
+  depends_on "six"
 
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
@@ -138,11 +139,6 @@ class ReconNg < Formula
     sha256 "7ccfae7b4b2c067464a6733c6261673fdb8fd1be905460396b97a073e9fa683a"
   end
 
-  resource "PyYAML" do
-    url "https://files.pythonhosted.org/packages/36/2b/61d51a2c4f25ef062ae3f74576b01638bebad5e045f747ff12643df63844/PyYAML-6.0.tar.gz"
-    sha256 "68fb519c14306fec9720a2a5b45bc9f0c8d1b9c72adf45c37baedfcd949c35a2"
-  end
-
   resource "redis" do
     url "https://files.pythonhosted.org/packages/7a/05/671367bb466b3301bc4543fdad6ac107214ca327c8d97165b30246d87e88/redis-4.4.0.tar.gz"
     sha256 "7b8c87d19c45d3f1271b124858d2a5c13160c4e74d4835e28273400fa34d5228"
@@ -156,11 +152,6 @@ class ReconNg < Formula
   resource "rq" do
     url "https://files.pythonhosted.org/packages/f3/f8/f772ba09cfdbc7659039636dff2db4ea460dc5e84f4562e25cdc120762c3/rq-1.11.1.tar.gz"
     sha256 "31c07e55255bdc05c804902d4e15779185603b04b9161b43c3e7bcac84b3343b"
-  end
-
-  resource "six" do
-    url "https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
   end
 
   resource "unicodecsv" do

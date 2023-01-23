@@ -511,6 +511,9 @@
   "rdiff-backup": {
     "exclude_packages": ["PyYAML"]
   },
+  "recon-ng": {
+    "exclude_packages": ["six", "PyYAML"]
+  },
   "regipy": {
     "package_name": "regipy[cli]",
     "exclude_packages": ["tabulate"]
