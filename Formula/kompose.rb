@@ -1,8 +1,8 @@
 class Kompose < Formula
   desc "Tool to move from `docker-compose` to Kubernetes"
   homepage "https://kompose.io/"
-  url "https://github.com/kubernetes/kompose/archive/v1.27.0.tar.gz"
-  sha256 "258e05c6e725fd2ef710275a6ce8d391d5d54de46f0a9f637ebbeb96b976b4ad"
+  url "https://github.com/kubernetes/kompose/archive/v1.28.0.tar.gz"
+  sha256 "6afd873246f53cd056a51c6d95377ce8da020e4a1da4e591d4520e2c160a6de9"
   license "Apache-2.0"
 
   bottle do
@@ -16,8 +16,7 @@ class Kompose < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9b48d58808855c3e8aa8c4211422706693adbac6d416abfcb407e44d537188a"
   end
 
-  # Bump to 1.18 on the next release, if possible.
-  depends_on "go@1.17" => :build
+  depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
