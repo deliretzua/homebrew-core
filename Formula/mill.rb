@@ -11,7 +11,7 @@ class Mill < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e1182750e49b19a6d5037c3ec7e50a4add6e22e18a013a30c79dc9f2d94d52fa"
+    sha256 cellar: :any_skip_relocation, all: "3dce0c38f4a4a108a42177f58d7a5dbc94771cd0eb73186346ac3a23958d04df"
   end
 
   depends_on "openjdk"
