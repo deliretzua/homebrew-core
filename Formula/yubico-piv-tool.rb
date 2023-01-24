@@ -11,14 +11,14 @@ class YubicoPivTool < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "003a83e34fadee641720bf199666c4ac9379fd781c1962d48c55020bc19e5237"
-    sha256 cellar: :any,                 arm64_monterey: "8f318d73ecaba695565af93bb8b17220832e30c51cae308b9b3737788e394975"
-    sha256 cellar: :any,                 arm64_big_sur:  "99b5bb89e217f0e98b5edaf95b75a2d50c07a5f593a104edc66518d51e86e59b"
-    sha256 cellar: :any,                 ventura:        "d8b283f9d158783072fa1c83cc11f26809143ef657c62dcd15541759ade0d6f1"
-    sha256 cellar: :any,                 monterey:       "963208d74145e747d84890ad0515214e9fa843d103cebd74501e1230eda7a2b7"
-    sha256 cellar: :any,                 big_sur:        "ba15d7a429b902fcc6cfdd6c5378081b01d22a28779a7571e268e1d5d10ff1d8"
-    sha256 cellar: :any,                 catalina:       "118ab85bbda0694c6edc746dd210849814c05c41a586217c9ed974d67f406a30"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fba7bda0c4156d76af37f971ead7c8a39d395fa62cacc8ab69d20f8bce77ea98"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "4121657e010a147567cfb9c119719caca1997131d8bc3a1c3d64cc51749bfc21"
+    sha256 cellar: :any,                 arm64_monterey: "048f6b502ba5cf242a18b858fa92f7a80be05f691131bc536741dadf4e1f9602"
+    sha256 cellar: :any,                 arm64_big_sur:  "4334a3092fcac6f5c894029fd94ea42f6d5955fb23c274a6db683ba391a75057"
+    sha256 cellar: :any,                 ventura:        "9342208cb9d59cefbe8997d3dfae6347ef8735d60bdec4e4dfe02afb1ec3b6e2"
+    sha256 cellar: :any,                 monterey:       "805bd4bbea1cf4befe41f725073609f96e815ea143a6fd964aa9060aad2b10f6"
+    sha256 cellar: :any,                 big_sur:        "aaab33462adc61ae55d3b0163dc1360ff8a084822bfb5dfbc63ab8d17de810a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f111e091d70132fe778b05e7bcca3d929cfbfcbd893eeebcb7cb5db059231a28"
   end
 
   depends_on "check" => :build
