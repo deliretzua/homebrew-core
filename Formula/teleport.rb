@@ -16,13 +16,13 @@ class Teleport < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "292311af2d8b82c1b686e981456caa4d83407adc43b91a45aaf61c03282144cf"
-    sha256 cellar: :any,                 arm64_monterey: "b7bc4bbeafbc5a519e1db62394e13544da047fd319eb6a7366532a74d1986aa9"
-    sha256 cellar: :any,                 arm64_big_sur:  "f5b93a930eb97d84f3049abfe8594f0ca25192f6e856e000d51bd187f1a1fbfb"
-    sha256 cellar: :any,                 ventura:        "2eea96cc106b79a4d33402c280abbf233eebf8c931528911550892e05fe21a72"
-    sha256 cellar: :any,                 monterey:       "14bf1bc68cfdd089fc5b0e4e82ff50b604fa125e6540e327e9523207eb22cabc"
-    sha256 cellar: :any,                 big_sur:        "d6221ca618ba322dbc56c5236e541bba8e52091548fc27c104895cb329859c1a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "27522300f101d34d7623811131ee9a8c98274497834d5d24809f02d4324b729f"
+    sha256 cellar: :any,                 arm64_ventura:  "2975291532419ff07d22f51bc0a07c8ad53b9f2b72de90a508cce2e5d6d93919"
+    sha256 cellar: :any,                 arm64_monterey: "4bc4ea2ae97a40367a0407cd3212c63c94ef7542e1c301fe4459de453c59fe78"
+    sha256 cellar: :any,                 arm64_big_sur:  "1eb2bbab86f4e9a78dfa30abe655b24f06c6a43d3a470138715af759a7ef2a16"
+    sha256 cellar: :any,                 ventura:        "09c568f5c8072e097e262baa069c594fb74d5c80c628915bedf8b21c9078a7bb"
+    sha256 cellar: :any,                 monterey:       "1ce64b7ff57aa8dc68767f2cfe5260fadcfb55f5b1327ea2d7081208a86e6c54"
+    sha256 cellar: :any,                 big_sur:        "53fec3d9442ac91cca295126e1752f762b0587316aeb11a6fbdb605854f1b9c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "921617407b305cc031402640317dd3baad764fee429b111decc23e2703fbac22"
   end
 
   depends_on "go" => :build
