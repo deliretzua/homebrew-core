@@ -8,13 +8,13 @@ class Grayskull < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0a50a3c89faff38da0e6a242209842d777071a3dc05b2639264cba48765c90b0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b32807576fd423991a4305bec0a0897b65a991f16e60e860449631d07465d756"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5fde674c126cc045a7a6083ba82307128fd30747164330492190aba68f2e2099"
-    sha256 cellar: :any_skip_relocation, ventura:        "552cb58567ee28277652a35f7e1eca6265eb31a002f4bfcdc192e0180eaceb2c"
-    sha256 cellar: :any_skip_relocation, monterey:       "628be5f54becba5936e7ece4587c1bbc71050fa5a5ca93fc203660e6cf2b4678"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1bf7cec2ea6309d9437fbe391bad49aa6d760c5f1cbbc84bf7771a9981ae3a29"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e27b35e3a5f2bddc7f5424e7e26d6ddc2f0f5372e0c749f8e3f6665cd90b640e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "45d9795457d945eeb53ab3328c8b587509fe9acc458629054aff08c1a10d6b92"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "80ba040d27de5c011e410b36ea56f225932cbfd6a4962a522f238a3fcaf6c8d3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "90777a1cdc384af4cbaf438a37585822e0f51e39308b5364c3c9bd02ee2de675"
+    sha256 cellar: :any_skip_relocation, ventura:        "7d657e2262ca3c90889c604e559daabdf33523b05928c5e3edcf56304955da4a"
+    sha256 cellar: :any_skip_relocation, monterey:       "f032121abbc49d16ecbdca2913679e0ae0fd685848ae8ea1cb9f5339297c8ad2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ef6417dbcf1d5744cc33fb4fa22ed2be86d54d86acecb15c07bf4a989f641edb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f67de7db0a5f65dfadce6da3ba71f8aa3982e19588cfe233a7455e389958887b"
   end
 
   depends_on "cmake" => :build
