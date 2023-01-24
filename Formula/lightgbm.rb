@@ -7,13 +7,13 @@ class Lightgbm < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d2a734161a5fbb6521bf33881944def260f34ddb1141a832ad883766a80631d7"
-    sha256 cellar: :any,                 arm64_monterey: "704d5d92951b9e10bc7fe95e6ba6a76319af8b5a8d8112b10e241aa01a70ae2d"
-    sha256 cellar: :any,                 arm64_big_sur:  "977487ea6e9fd598d6a67ea4fba2fbf92482e5bc5f915fc9031df37cc2c97c67"
-    sha256 cellar: :any,                 ventura:        "051d2d3205e2f51e7b8eae631257804a474a3f43d6b50e209ddd95c34067f402"
-    sha256 cellar: :any,                 monterey:       "73a06375ad255e6566835a85a001abefa66ca2c3c208d8fe1fd219dec45d933b"
-    sha256 cellar: :any,                 big_sur:        "894a6789f09ab9b80707b9cba0f9689e63c5c4b2ca4efd0efd1b2334a9da4ac9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8c9ad2079210dfcf902c8e655f917cd5c04380c775bfd9d6800561e27649f1b"
+    sha256 cellar: :any,                 arm64_ventura:  "7d94dc1085f6834d2d38ae1d6155333d56c0862bb45a9bb51cb6fedee8d26d2d"
+    sha256 cellar: :any,                 arm64_monterey: "ae03ad63f5ae164e1cd92eda00b6af59edd4a3cbb6d1e32dafd3b4a8e7c38ace"
+    sha256 cellar: :any,                 arm64_big_sur:  "0b9a840386e5ae60ec7b0a5b727ef4bf4bc889e7fcd4d2842727d1cc2288ce4c"
+    sha256 cellar: :any,                 ventura:        "515f6e0358450ecf2b8d1980c9f95879f79a6ed4bb17f87fdc6d4603a86234fd"
+    sha256 cellar: :any,                 monterey:       "fcaab8c7cc809659bcbb7cd706fd7ce736fed68e50da11e43c4a11e53e11cd19"
+    sha256 cellar: :any,                 big_sur:        "d48012904a9b82656108d8f40101864bfe4df0fe7f05ec3695287fe4b812450f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "780b9b26acd666842f6f031ca321a67ba9979751f19daa2c39725950e87b1f97"
   end
 
   depends_on "cmake" => :build
