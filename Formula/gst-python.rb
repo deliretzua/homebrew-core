@@ -1,8 +1,8 @@
 class GstPython < Formula
   desc "Python overrides for gobject-introspection-based pygst bindings"
   homepage "https://gstreamer.freedesktop.org/modules/gst-python.html"
-  url "https://gstreamer.freedesktop.org/src/gst-python/gst-python-1.20.5.tar.xz"
-  sha256 "27487652318659cfd7dc42784b713c78d29cc7a7df4fb397134c8c125f65e3b2"
+  url "https://gstreamer.freedesktop.org/src/gst-python/gst-python-1.22.0.tar.xz"
+  sha256 "6c63ad364ca4617eb2cbb3975ab26c66760eb3c7a6adf5be69f99c11e21ef3a5"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -27,11 +27,8 @@ class GstPython < Formula
   depends_on "pygobject3"
   depends_on "python@3.11"
 
-  # See https://gitlab.freedesktop.org/gstreamer/gst-python/-/merge_requests/41
-  patch do
-    url "https://gitlab.freedesktop.org/gstreamer/gst-python/-/commit/3e752ede7ed6261681ef3831bc3dbb594f189e76.diff"
-    sha256 "d6522bb29f1894d3d426ee6c262a18669b0759bd084a6d2a2ea1ba0612a80068"
-  end
+  # Avoid overlinking
+  patch :DATA
 
   def python3
     which("python3.11")
@@ -55,3 +52,30 @@ class GstPython < Formula
     EOS
   end
 end
+__END__
+diff --git a/gi/overrides/meson.build b/gi/overrides/meson.build
+index 5977ee3..1b399af 100644
+--- a/gi/overrides/meson.build
++++ b/gi/overrides/meson.build
+@@ -3,13 +3,20 @@ install_data(pysources,
+     install_dir: pygi_override_dir,
+     install_tag: 'python-runtime')
+ 
++# avoid overlinking
++if host_machine.system() == 'windows'
++    python_ext_dep = python_dep
++else
++    python_ext_dep = python_dep.partial_dependency(compile_args: true)
++endif
++
+ gstpython = python.extension_module('_gi_gst',
+     sources: ['gstmodule.c'],
+     install: true,
+     install_dir : pygi_override_dir,
+     install_tag: 'python-runtime',
+     include_directories : [configinc],
+-    dependencies : [gst_dep, python_dep, pygobject_dep])
++    dependencies : [gst_dep, python_ext_dep, pygobject_dep])
+ 
+ env = environment()
+ env.prepend('_GI_OVERRIDES_PATH', [
