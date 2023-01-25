@@ -13,13 +13,13 @@ class Gh < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "322a53bfd927bbf721bb22cf62d4e92073b0aece1689585215b16572b6581bde"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "20c71ed66837170edad5feaa1b3fba86e8474db81f1cd981340fb7a440f5857a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e5c5b24540bb89e184bab2fbda18bd0f8c09639f3e8723bb6b9c1b781859a73b"
-    sha256 cellar: :any_skip_relocation, ventura:        "132aa094bcaa5b0a74064b370177c5caa57a38dfcc753813784096e3101831a3"
-    sha256 cellar: :any_skip_relocation, monterey:       "c54d7e1b3c55d34eb33f0d8be7d019171033803e26a30631ea1589c4647df23a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0b6e09379010159c256b6f3d5a25d7438122885049282aef5533452c55b8ad1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3263b764d8ca85fbb2fc078e5199f365c42349c2a5d4294bec4885bc26ce71b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1ee1220663a7f459ba495a75f5215b03842fd3caf5beab88aff11930fcc6304a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "59e24af3e37f8af5970a42dd7e95a1797457cf0a80a4d8567c0a395670c97d39"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "40b13605bfbb68568dfced72ab87c599190d42f35e1e115d996fd75d44f015bf"
+    sha256 cellar: :any_skip_relocation, ventura:        "3e72858f084a4dc5c7b9eea721ab37f6accf674e68c4c144f49650412451e6aa"
+    sha256 cellar: :any_skip_relocation, monterey:       "ff2024322cf04fd532404f30561d09ded34151a261c7fc5906e035a5645aee64"
+    sha256 cellar: :any_skip_relocation, big_sur:        "fedb18a375923bea01c62c32abffbe2b357c55f4735453530340c0d4f83ba588"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da4f12836a7d4939a61ea5fd3526876884b84b41d7bf9a4b5dde7418a1d8f7cf"
   end
 
   depends_on "go" => :build
