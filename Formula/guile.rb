@@ -1,24 +1,10 @@
 class Guile < Formula
   desc "GNU Ubiquitous Intelligent Language for Extensions"
   homepage "https://www.gnu.org/software/guile/"
+  url "https://ftp.gnu.org/gnu/guile/guile-3.0.9.tar.xz"
+  mirror "https://ftpmirror.gnu.org/guile/guile-3.0.9.tar.xz"
+  sha256 "1a2625ac72b2366e95792f3fe758fd2df775b4044a90a4a9787326e66c0d750d"
   license "LGPL-3.0-or-later"
-  revision 4
-
-  stable do
-    url "https://ftp.gnu.org/gnu/guile/guile-3.0.8.tar.xz"
-    mirror "https://ftpmirror.gnu.org/guile/guile-3.0.8.tar.xz"
-    sha256 "daa7060a56f2804e9b74c8d7e7fe8beed12b43aab2789a38585183fcc17b8a13"
-
-    patch do
-      # A patch to fix JIT on Apple Silicon is embedded below, this fixes:
-      #   https://debbugs.gnu.org/cgi/bugreport.cgi?bug=44505
-      # We should remove it from here once Guile 3.0.9 is released.
-      on_macos do
-        url "https://git.savannah.gnu.org/cgit/guile.git/patch/?id=3bdcc3668fd8f9a5b6c9a313ff8d70acb32b2a52"
-        sha256 "3deeb4c01059615df97081e53056c76bcc465030aaaaf01f5941fbea4d16cb6f"
-      end
-    end
-  end
 
   bottle do
     sha256 arm64_ventura:  "48357e0f3887432c278fc30c2b85c598c4e696ae0ca0be7666438b14d73479cf"
