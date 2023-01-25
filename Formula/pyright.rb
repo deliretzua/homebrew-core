@@ -9,13 +9,13 @@ class Pyright < Formula
   head "https://github.com/microsoft/pyright.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "95f56aa23e85e11d51fd3cdc1596e1060351a796fc075ac74d73f2889d21620d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "95f56aa23e85e11d51fd3cdc1596e1060351a796fc075ac74d73f2889d21620d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "95f56aa23e85e11d51fd3cdc1596e1060351a796fc075ac74d73f2889d21620d"
-    sha256 cellar: :any_skip_relocation, ventura:        "1304f4c7364ad7d3b5afb4f9994db1c0e16d0c5b784f247f10e5bb6d4e9fd14a"
-    sha256 cellar: :any_skip_relocation, monterey:       "1304f4c7364ad7d3b5afb4f9994db1c0e16d0c5b784f247f10e5bb6d4e9fd14a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1304f4c7364ad7d3b5afb4f9994db1c0e16d0c5b784f247f10e5bb6d4e9fd14a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "95f56aa23e85e11d51fd3cdc1596e1060351a796fc075ac74d73f2889d21620d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fdacd10eb1b160d5f22ff8986ffd8dc0b841536f1da13e0a4a9ac463f8b74172"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fdacd10eb1b160d5f22ff8986ffd8dc0b841536f1da13e0a4a9ac463f8b74172"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fdacd10eb1b160d5f22ff8986ffd8dc0b841536f1da13e0a4a9ac463f8b74172"
+    sha256 cellar: :any_skip_relocation, ventura:        "29b69324ca86330d7799e71eeae4788fc5ee70e2fa146fb0a8491722567a5803"
+    sha256 cellar: :any_skip_relocation, monterey:       "29b69324ca86330d7799e71eeae4788fc5ee70e2fa146fb0a8491722567a5803"
+    sha256 cellar: :any_skip_relocation, big_sur:        "29b69324ca86330d7799e71eeae4788fc5ee70e2fa146fb0a8491722567a5803"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fdacd10eb1b160d5f22ff8986ffd8dc0b841536f1da13e0a4a9ac463f8b74172"
   end
 
   depends_on "node"
