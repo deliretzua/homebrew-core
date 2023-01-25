@@ -7,13 +7,13 @@ class SwaggerCodegen < Formula
   head "https://github.com/swagger-api/swagger-codegen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "280058d52643dc57c8e2e596527a2318db3aa97fb4d51fbc815e63736eff931a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a2e2e938eb70ef5ef65c32bffe57154259441a2b9e020496094a67794811be42"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e77bc0b4fa56fb6813994ea715bab4875f15455a7db3b440bfa3dc6cf177aa93"
-    sha256 cellar: :any_skip_relocation, ventura:        "c5b93945b20b047b3592ea0ffe16a99a6df1d9899e1775a4e0b768ed255584de"
-    sha256 cellar: :any_skip_relocation, monterey:       "5562967cae570a75553101787f34fc19b4c632916ad232a161af4332c389b862"
-    sha256 cellar: :any_skip_relocation, big_sur:        "71a844cc38944d64166ac5fdfc533c59cd63228d0c102af72fa3fdb12a9e28a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b75f688b814929320e415aac66fcbd3d4ec6084a7ad330115b4662471b0f73e6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ac83fbd838d2578534e81b545f88a9348bb71b7c680a03e6afa93804857dd058"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ff88789fee05e1ec2264e2639907a5839c82cc1d15c026c5854763e6320efa9f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "be248b0c9c610e54ec679a66f6c725408d2d76006f35c7872f1001177eae186c"
+    sha256 cellar: :any_skip_relocation, ventura:        "45f80c164459c08001e2ec23aa1fb3c143dedd60f40f6bee0b7a3ada412145ab"
+    sha256 cellar: :any_skip_relocation, monterey:       "2c87f286f04365d519e57fed7c76efb86a35d3759c17397b1c63bf6436def93d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a59abb2b36fa88f91e7f91d23f3839eb8b60f7566861432370c475ec1fbb8f8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7eaee1e682808a22c672c1c774a8a5f3dfbcf5329260886f2c430df2ebf2144d"
   end
 
   depends_on "maven" => :build
