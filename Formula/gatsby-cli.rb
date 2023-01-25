@@ -4,8 +4,8 @@ class GatsbyCli < Formula
   desc "Gatsby command-line interface"
   homepage "https://www.gatsbyjs.org/docs/gatsby-cli/"
   # gatsby-cli should only be updated every 10 releases on multiples of 10
-  url "https://registry.npmjs.org/gatsby-cli/-/gatsby-cli-5.4.0.tgz"
-  sha256 "1c33aa8e77ce96782df64dd20919b6cf4104a58bd32e6decce010027b679e720"
+  url "https://registry.npmjs.org/gatsby-cli/-/gatsby-cli-5.5.0.tgz"
+  sha256 "5e99bf712a1081e8d2052b46bd6ed9e0251c90b894cad446311235d7923c3eea"
   license "MIT"
 
   bottle do
@@ -19,10 +19,6 @@ class GatsbyCli < Formula
   end
 
   depends_on "node"
-
-  on_macos do
-    depends_on "macos-term-size"
-  end
 
   on_linux do
     depends_on "xsel"
@@ -41,15 +37,6 @@ class GatsbyCli < Formula
                     .map(&:unlink)
                     .empty? && raise("Unable to find #{mod} musl library to delete.")
       end
-    end
-
-    term_size_vendor_dir = node_modules/"term-size/vendor"
-    term_size_vendor_dir.rmtree # remove pre-built binaries
-    if OS.mac?
-      macos_dir = term_size_vendor_dir/"macos"
-      macos_dir.mkpath
-      # Replace the vendored pre-built term-size with one we build ourselves
-      ln_sf (Formula["macos-term-size"].opt_bin/"term-size").relative_path_from(macos_dir), macos_dir
     end
 
     clipboardy_fallbacks_dir = node_modules/"clipboardy/fallbacks"
