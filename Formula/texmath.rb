@@ -7,13 +7,13 @@ class Texmath < Formula
   head "https://github.com/jgm/texmath.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fb76190866e3670eeb44b9b7e04d99186cc2fd42630698d18f3e4d1f93247a87"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "37ab470f173d44dca955775b35315af0cc3b052a2f59a4addfba4a62ad66a4be"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fcdef4cc091fb5b84e89161ec8ecdfa930983efc528a9ce9c067ec4a88f5fa7e"
-    sha256 cellar: :any_skip_relocation, ventura:        "f2a766eaf751b79e2c5c81601bea2f873abb45bd48c1afc0be28a2dc9f84411a"
-    sha256 cellar: :any_skip_relocation, monterey:       "aa0d22676259b923b8527a37b50d10f2873eaf3eab662ecc361af4e76b8bfed0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "029137ed88803647e3cae9df1dc94384b771c9cc97cab44427154c92537c1ed7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1262f24a60b22b1817e767edad3a704d6ca019e02366214ad3da0838491875f8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9218cbb4dee29a13455b7fabe79be153b26fcada3a9c16f612cac20514d66fd2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7fae42feba2ef59284fb037baf2cbe62bd8832bca0a69c6d0c7de263014b4615"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "af950c39d0f977e1416185f9285db85c993dba170622cb033c3b79ca4e3f1fa9"
+    sha256 cellar: :any_skip_relocation, ventura:        "94dd539ab8a939fe2abd94b930c9b53e2348ab43351c72eb20495abcef033a89"
+    sha256 cellar: :any_skip_relocation, monterey:       "ae03f1c26d684b8f385966ec3917729c1be50f1eaa27af8146eedc144ed62f80"
+    sha256 cellar: :any_skip_relocation, big_sur:        "552ad82f0a98f93e5c1e4f5962701b0d4d63d19d4f6f0f243046156990c0a2d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "89f39d3b4a56e86ecc23777744f53f5ee287dd8566a0743ec3f197be3edeca80"
   end
 
   depends_on "cabal-install" => :build
