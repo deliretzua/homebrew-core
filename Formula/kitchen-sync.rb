@@ -12,13 +12,13 @@ class KitchenSync < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "2d5834d3d6ff1d32e97e858726bcab2a5cf1b7d2ad3e0517e041ebf0ef0eefe5"
-    sha256 cellar: :any,                 arm64_monterey: "b8668dd02b0579352bf5eb255a8ced3c343426f5aa1f977360abe243e7d304e6"
-    sha256 cellar: :any,                 arm64_big_sur:  "ba141afe739a227cade93e748dfb3aa452c816051722324a527b572f8ac8bc5c"
-    sha256 cellar: :any,                 ventura:        "696c4c4feca61d55bce859ce814064f56247068d9ffe30226c67c0dea54ba820"
-    sha256 cellar: :any,                 monterey:       "ae171ce02f87e09fa8c0e4e897af7e3eb1e02bb2a0ae364f4f6bc8c4b432d093"
-    sha256 cellar: :any,                 big_sur:        "61f4a4ad996a1ecbc5fb8a26850a944d381f54371b1a826b40dddd996b808a26"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df5ea9150bc47e332e5ff1eb589b53577536db04f20c6700cbf5428dcc5db919"
+    sha256 cellar: :any,                 arm64_ventura:  "ddb84094f83bd102d1265bed95a3a89a49c80e9f54c49efa33ca9b2d0d540617"
+    sha256 cellar: :any,                 arm64_monterey: "57bfe600076a6e201187e23964fbbe838da403432fa1c5f1e87a70a669caab61"
+    sha256 cellar: :any,                 arm64_big_sur:  "3fffdd7af0375625a2682cddd3e42df50c75f8df4831f105562a64ce1a709707"
+    sha256 cellar: :any,                 ventura:        "b42f537f2b0a2159d29dd39310c8d2ac316f8ab516e0f7979b4fc9b19a7d467e"
+    sha256 cellar: :any,                 monterey:       "f37f1ed67b54da5fa4a30549b3162138569c7306fd8d3a18e03c486cd11f7ee9"
+    sha256 cellar: :any,                 big_sur:        "60270754c4e413bb7add2d8104a925fc40a5920ebb0614cfd4ce852c00dc3fc6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90aa8d03966bf367921a460cdb10f42e89b98f44a11b12b94af0a12549727fd3"
   end
 
   depends_on "cmake" => :build
