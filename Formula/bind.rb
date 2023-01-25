@@ -22,13 +22,13 @@ class Bind < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "43eba3418b76653aa170858f63733d45c9930c1e4e72799086cc56b632e9413f"
-    sha256 arm64_monterey: "25ea6590c38696b05bdd980280c9d5ed4e4d799779debc86a57d7676516b8028"
-    sha256 arm64_big_sur:  "95c1ca6f56df52158bdfce7352aa9d9c2a900eaf5cacd688e8ce5246d95941fc"
-    sha256 ventura:        "c85ab574088ce132580471e8479002b36c6d0c654edd8566d67e27acb4677019"
-    sha256 monterey:       "58e9b01cf604962e99d81cdab712e9b1d2075854f796ad2699043d711a32efc4"
-    sha256 big_sur:        "cccac27cd01b5c834ed6606d6b601ebf0f4a514c13aee74a3f9fc59581ae8437"
-    sha256 x86_64_linux:   "3f9328beae0e3dfb1cbc4fecb3abef647da636c025990f8e2d0b44a34071a913"
+    sha256 arm64_ventura:  "4af825b967b6b6712b7073845613d72279a41d8a1ddef55b21592697e1111bac"
+    sha256 arm64_monterey: "2bfc74ece9777b535d2ec0a44c892d102c63230dfe1f34e0a15186ee8d76bd2e"
+    sha256 arm64_big_sur:  "28ea0ecfb461ef53c9ec36ae3d78a67407c679d2130a9a173e91fb3dbfbcf035"
+    sha256 ventura:        "51ddf86fd55f2fae31e4326afdd2baef4f39b951f7a49f89d3611ddcca0d6e6b"
+    sha256 monterey:       "ea23a980e54db10d13c52fcae92dc436aff929912cecb368d2162c38c845f7d9"
+    sha256 big_sur:        "f3afcfaab5a1dc52b75fedce12c3f1546e799ccbb085db2ecf17d25642379254"
+    sha256 x86_64_linux:   "1bb21990f4a46acbdb95944a3288095d47d55d4c8c80bf389d1e9facb0bc70fc"
   end
 
   depends_on "pkg-config" => :build
