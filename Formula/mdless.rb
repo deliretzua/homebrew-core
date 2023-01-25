@@ -5,6 +5,16 @@ class Mdless < Formula
   sha256 "ce67a184aaeba66955c96f9f2d3353040b359c166329a149c49b470bf8edeb39"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "831ab133d0eadf0b5e2c718d06606c018b2cf29bc1dfb5d36fee2a8d5e7310c0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "831ab133d0eadf0b5e2c718d06606c018b2cf29bc1dfb5d36fee2a8d5e7310c0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c84c0fe0a30bf587a1f342bf0f5fde9b13df687364863d658ed10f66fa59895d"
+    sha256 cellar: :any_skip_relocation, ventura:        "831ab133d0eadf0b5e2c718d06606c018b2cf29bc1dfb5d36fee2a8d5e7310c0"
+    sha256 cellar: :any_skip_relocation, monterey:       "831ab133d0eadf0b5e2c718d06606c018b2cf29bc1dfb5d36fee2a8d5e7310c0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "831ab133d0eadf0b5e2c718d06606c018b2cf29bc1dfb5d36fee2a8d5e7310c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7ebc6e459d02711eae96faa862f3738999534122dd9898c8bb1e62c2416f788"
+  end
+
   uses_from_macos "ruby"
 
   def install
