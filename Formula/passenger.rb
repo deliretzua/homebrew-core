@@ -7,13 +7,13 @@ class Passenger < Formula
   head "https://github.com/phusion/passenger.git", branch: "stable-6.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "edb5c8d94569c932c9cf7e164a1c11bb87e81c68997bb46c066d11e32fd7b650"
-    sha256 cellar: :any,                 arm64_monterey: "de3e03a9a40e4239092faf19293202192374871c73b2e28f6caffb6d0fe74bd3"
-    sha256 cellar: :any,                 arm64_big_sur:  "608b5e5215c6bf8330b85af91a7bfff315824719285d299a0463408318c93cd4"
-    sha256 cellar: :any,                 ventura:        "60ebadb635e30a048e81e4a20f3b3b2c5738b2f21f092fd8bfe03b4dcb4823ce"
-    sha256 cellar: :any,                 monterey:       "fe35f8a353b495b477377582fce7e2b84baebe5ceeb47b0a15d00acebcb7bda8"
-    sha256 cellar: :any,                 big_sur:        "90c1d3511b97e8e2061f5f5743991a04e807b4dae19dc1abdaffe0f64da150c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "01786b3c6b4280892e36f298285980d2e54a2771c73e577cbf5ca846a3f38e44"
+    sha256 cellar: :any,                 arm64_ventura:  "c337215890e0a2098401123699e2d35f6517a1ef99fa2e9af572d36af2b5580f"
+    sha256 cellar: :any,                 arm64_monterey: "9a159825e6ed8472fd3239be0f54f8a9998474fa9e35bdb4d49150886504bd39"
+    sha256 cellar: :any,                 arm64_big_sur:  "4dd57f1a385100f5f2c166e1c898f5db6709e4a0606c4479764775a82276cb1f"
+    sha256 cellar: :any,                 ventura:        "dc9e0a09ac83404ea6b6931acd53a94e9ca5e4558d1474fe12b2acb76477915a"
+    sha256 cellar: :any,                 monterey:       "ff6302650bf8cdf1b6d4bb813e6dcc41b1ecd6308464ce6fb6b8dd524e5449fe"
+    sha256 cellar: :any,                 big_sur:        "ff96d0f9373027403e51c69762802c1b324d5ad777d97d28796677e50252ba1d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8eb4b9076c2da3c0590ba4ee76e80ac8ef1b99880dfc7ed900c996c7b8f426af"
   end
 
   depends_on "httpd" => :build # to build the apache2 module
