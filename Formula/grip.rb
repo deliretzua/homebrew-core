@@ -20,6 +20,7 @@ class Grip < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5503a7767fca81819798f82ad6c931812e9fa259554a4b6ae6587e378bfb631a"
   end
 
+  depends_on "pygments"
   depends_on "python@3.11"
 
   resource "certifi" do
@@ -75,11 +76,6 @@ class Grip < Formula
   resource "path-and-address" do
     url "https://files.pythonhosted.org/packages/2b/b5/749fab14d9e84257f3b0583eedb54e013422b6c240491a4ae48d9ea5e44f/path-and-address-2.0.1.zip"
     sha256 "e96363d982b3a2de8531f4cd5f086b51d0248b58527227d43cf5014d045371b7"
-  end
-
-  resource "Pygments" do
-    url "https://files.pythonhosted.org/packages/e0/ef/5905cd3642f2337d44143529c941cc3a02e5af16f0f65f81cbef7af452bb/Pygments-2.13.0.tar.gz"
-    sha256 "56a8508ae95f98e2b9bdf93a6be5ae3f7d8af858b43e02c5a2ff083726be40c1"
   end
 
   resource "requests" do

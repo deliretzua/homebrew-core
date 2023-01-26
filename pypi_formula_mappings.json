@@ -265,6 +265,9 @@
   "goolabs": {
     "exclude_packages": ["six"]
   },
+  "grip": {
+    "exclude_packages": ["Pygments"]
+  },
   "hatch": {
     "exclude_packages": ["Pygments", "virtualenv"]
   },
