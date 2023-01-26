@@ -28,6 +28,7 @@ class Jupyterlab < Formula
   depends_on "pandoc"
   depends_on "pygments"
   depends_on "python@3.11"
+  depends_on "pyyaml"
   depends_on "six"
   depends_on "zeromq"
 
@@ -288,11 +289,6 @@ class Jupyterlab < Formula
   resource "pytz" do
     url "https://files.pythonhosted.org/packages/03/3e/dc5c793b62c60d0ca0b7e58f1fdd84d5aaa9f8df23e7589b39cc9ce20a03/pytz-2022.7.1.tar.gz"
     sha256 "01a0681c4b9684a28304615eba55d1ab31ae00bf68ec157ec3708a8182dbbcd0"
-  end
-
-  resource "PyYAML" do
-    url "https://files.pythonhosted.org/packages/36/2b/61d51a2c4f25ef062ae3f74576b01638bebad5e045f747ff12643df63844/PyYAML-6.0.tar.gz"
-    sha256 "68fb519c14306fec9720a2a5b45bc9f0c8d1b9c72adf45c37baedfcd949c35a2"
   end
 
   resource "pyzmq" do
