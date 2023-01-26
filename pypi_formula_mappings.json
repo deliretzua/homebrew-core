@@ -102,7 +102,7 @@
     "exclude_packages": ["six", "PyYAML"]
   },
   "cfn-lint": {
-    "exclude_packages": ["six", "PyYAML"]
+    "exclude_packages": ["six", "PyYAML", "typing-extensions"]
   },
   "charmcraft": {
     "extra_packages": ["appdirs", "pydantic"],
