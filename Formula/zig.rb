@@ -7,13 +7,10 @@ class Zig < Formula
   head "https://github.com/ziglang/zig.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "df936652f951eae31e4faf5c878d613e4ced6028a1fa555047ffec9fc7f02cd7"
-    sha256 cellar: :any,                 arm64_monterey: "0db450570200f124aed4d3750f6472491424a47dbcff91418ca84a649201819a"
-    sha256 cellar: :any,                 arm64_big_sur:  "1c3190b58e7c36c3ebe5f00c5423d65a502eedd422992b8e28b223cae17c67d3"
-    sha256 cellar: :any,                 ventura:        "2deaff1dfc54e41f92adf130167a644d57d38cca7c074f5c1054a9c628b71a30"
-    sha256 cellar: :any,                 monterey:       "e7c66e2a7d7d94af2844132e20913810d821fdb0f901f2336aa8ee88b39c93f0"
-    sha256 cellar: :any,                 big_sur:        "171497e2e4e8cd729c3bdd332bb26c3ae820cbfabff1d0876e7c6101c47a0703"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "99a414e113877e3348717d54b4fe4b6e4e78db2b179a1ddce5bdf3be48af04f7"
+    rebuild 1
+    sha256 cellar: :any, arm64_ventura:  "8a4d9ff9954cc5653d7ee911bdb1763d391782ec9a238045ff56ba5f86bf2e1a"
+    sha256 cellar: :any, arm64_monterey: "39edbad109f049325e58dbc101a748c02c175be1f0a40174b2e896e4bef3ccdc"
+    sha256 cellar: :any, arm64_big_sur:  "0b51293590c234eeb6719160a14e4b613bf72881485e5d0e232cf780db76d3b9"
   end
 
   depends_on "cmake" => :build
