@@ -475,7 +475,7 @@
     "exclude_packages": ["six", "tabulate", "typing-extensions", "PyYAML"]
   },
   "pwntools": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "pygments"]
   },
   "pydocstyle": "pydocstyle[toml]",
   "pygitup": {

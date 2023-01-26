@@ -20,6 +20,7 @@ class Pwntools < Formula
 
   depends_on "rust" => :build
   depends_on "openssl@1.1"
+  depends_on "pygments"
   depends_on "python@3.11"
   depends_on "six"
   depends_on "unicorn"
@@ -120,11 +121,6 @@ class Pwntools < Formula
   resource "pyelftools" do
     url "https://files.pythonhosted.org/packages/0e/35/e76da824595452a5ad07f289ea1737ca0971fc6cc7b6ee9464279be06b5e/pyelftools-0.29.tar.gz"
     sha256 "ec761596aafa16e282a31de188737e5485552469ac63b60cfcccf22263fd24ff"
-  end
-
-  resource "Pygments" do
-    url "https://files.pythonhosted.org/packages/e0/ef/5905cd3642f2337d44143529c941cc3a02e5af16f0f65f81cbef7af452bb/Pygments-2.13.0.tar.gz"
-    sha256 "56a8508ae95f98e2b9bdf93a6be5ae3f7d8af858b43e02c5a2ff083726be40c1"
   end
 
   resource "PyNaCl" do
