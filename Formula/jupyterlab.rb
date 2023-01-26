@@ -389,9 +389,11 @@ class Jupyterlab < Formula
       (libexec/site_packages/"homebrew-#{package_name}.pth").write package/site_packages
     end
 
-    # gather packages to link based on options
-    linked_hatch = %w[jupyter-core jupyter-client nbformat ipykernel nbconvert]
-    linked_setuptools = %w[jupyter-console notebook]
+    linked_hatch = %w[
+      jupyter-core jupyter-client jupyter-events jupyter-server jupyter-server-terminals
+      nbformat ipykernel nbconvert
+    ]
+    linked_setuptools = %w[notebook]
     unlinked_hatch = %w[jupyterlab-server]
     unlinked_setuptools = resources.map(&:name).to_set - linked_hatch - linked_setuptools - unlinked_hatch
 
