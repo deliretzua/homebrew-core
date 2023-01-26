@@ -6,6 +6,11 @@ class M1ddc < Formula
   license "MIT"
   head "https://github.com/waydabber/m1ddc.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1e81833fe542690bd540109b71b584e72105b9a52a2f39c8f8864d7b682d16db"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dbb0437173b2133d7312cb91a73dfc0f25946f79ef94ca365025e1f4034c7edb"
+  end
+
   depends_on arch: :arm
   depends_on macos: :monterey
   depends_on :macos
