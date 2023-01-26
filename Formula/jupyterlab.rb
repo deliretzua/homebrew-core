@@ -389,9 +389,8 @@ class Jupyterlab < Formula
       jupyter-core jupyter-client jupyter-events jupyter-server jupyter-server-terminals
       nbformat ipykernel nbconvert
     ]
-    linked_setuptools = %w[notebook]
     unlinked_hatch = %w[jupyterlab-server]
-    unlinked_setuptools = resources.map(&:name).to_set - linked_hatch - linked_setuptools - unlinked_hatch
+    unlinked_setuptools = resources.map(&:name).to_set - linked_hatch - unlinked_hatch
 
     # `jupyterlab-pygments` requires `jupyterlab` to build. Since Homebrew doesn't
     # allow circular dependencies, we locally build a `jupyterlab-pygments` wheel
@@ -414,9 +413,6 @@ class Jupyterlab < Formula
         system hatch, "build", "-t", "wheel"
         venv.pip_install Dir["dist/*.whl"].first
       end
-    end
-    linked_setuptools.each do |r|
-      venv.pip_install_and_link resource(r)
     end
     linked_hatch.each do |r|
       resource(r).stage do
