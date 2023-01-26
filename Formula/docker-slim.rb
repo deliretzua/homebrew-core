@@ -1,8 +1,8 @@
 class DockerSlim < Formula
   desc "Minify and secure Docker images"
   homepage "https://dockersl.im"
-  url "https://github.com/docker-slim/docker-slim/archive/1.39.0.tar.gz"
-  sha256 "3574952b1d8ff340af3f9ed58d6a22f0f8d81ac043ea73b8d2e5eca80fedefce"
+  url "https://github.com/docker-slim/docker-slim/archive/1.40.0.tar.gz"
+  sha256 "b55a8f0b2e563223bfbe296349b84ff5ea134f1b67b6a9c0731c9d75dcdc6d6d"
   license "Apache-2.0"
 
   livecheck do
@@ -23,24 +23,26 @@ class DockerSlim < Formula
 
   depends_on "go" => :build
 
-  skip_clean "bin/docker-slim-sensor"
+  skip_clean "bin/slim-sensor"
 
   def install
     ENV["CGO_ENABLED"] = "0"
     ldflags = "-s -w -X github.com/docker-slim/docker-slim/pkg/version.appVersionTag=#{version}"
-    system "go", "build", "-trimpath", "-ldflags=#{ldflags}", "-o",
-           bin/"docker-slim", "./cmd/docker-slim"
+    system "go", "build",
+                 *std_go_args(output: bin/"slim", ldflags: ldflags),
+                 "./cmd/slim"
 
-    # docker-slim-sensor is a Linux binary that is used within Docker
+    # slim-sensor is a Linux binary that is used within Docker
     # containers rather than directly on the macOS host.
     ENV["GOOS"] = "linux"
-    system "go", "build", "-trimpath", "-ldflags=#{ldflags}", "-o",
-           bin/"docker-slim-sensor", "./cmd/docker-slim-sensor"
-    (bin/"docker-slim-sensor").chmod 0555
+    system "go", "build",
+                 *std_go_args(output: bin/"slim-sensor", ldflags: ldflags),
+                 "./cmd/slim-sensor"
+    (bin/"slim-sensor").chmod 0555
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/docker-slim --version")
-    system "test", "-x", bin/"docker-slim-sensor"
+    assert_match version.to_s, shell_output("#{bin}/slim --version")
+    system "test", "-x", bin/"slim-sensor"
   end
 end
