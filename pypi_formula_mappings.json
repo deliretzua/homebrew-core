@@ -479,7 +479,7 @@
     "exclude_packages": ["typing-extensions"]
   },
   "pylint": {
-    "exclude_packages": ["isort"]
+    "exclude_packages": ["isort", "typing-extensions"]
   },
   "pyqt": {
     "exclude_packages": [

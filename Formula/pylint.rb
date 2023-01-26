@@ -18,6 +18,7 @@ class Pylint < Formula
   end
 
   depends_on "isort"
+  depends_on "python-typing-extensions"
   depends_on "python@3.11"
 
   resource "astroid" do
@@ -48,11 +49,6 @@ class Pylint < Formula
   resource "tomlkit" do
     url "https://files.pythonhosted.org/packages/ff/04/58b4c11430ed4b7b8f1723a5e4f20929d59361e9b17f0872d69681fd8ffd/tomlkit-0.11.6.tar.gz"
     sha256 "71b952e5721688937fb02cf9d354dbcf0785066149d2855e44531ebdd2b65d73"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/e3/a7/8f4e456ef0adac43f452efc2d0e4b242ab831297f1bac60ac815d37eb9cf/typing_extensions-4.4.0.tar.gz"
-    sha256 "1511434bb92bf8dd198c12b1cc812e800d4181cfcb867674e0f8279cc93087aa"
   end
 
   resource "wrapt" do
