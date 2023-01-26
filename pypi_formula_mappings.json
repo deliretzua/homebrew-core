@@ -378,7 +378,7 @@
   },
   "moto": {
     "package_name": "moto[all,server]",
-    "exclude_packages": ["six", "PyYAML"]
+    "exclude_packages": ["six", "PyYAML", "typing-extensions"]
   },
   "mycli": {
     "exclude_packages": ["six", "tabulate", "Pygments"]

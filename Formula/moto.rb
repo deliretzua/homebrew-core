@@ -18,6 +18,7 @@ class Moto < Formula
   end
 
   depends_on "rust" => :build # for cryptography
+  depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -275,11 +276,6 @@ class Moto < Formula
   resource "types-toml" do
     url "https://files.pythonhosted.org/packages/c6/8b/a8544990966e9b475c1767f21272cbbdc2b470d4e690e04b5510b129b311/types-toml-0.10.8.1.tar.gz"
     sha256 "171bdb3163d79a520560f24ba916a9fc9bff81659c5448a9fea89240923722be"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/e3/a7/8f4e456ef0adac43f452efc2d0e4b242ab831297f1bac60ac815d37eb9cf/typing_extensions-4.4.0.tar.gz"
-    sha256 "1511434bb92bf8dd198c12b1cc812e800d4181cfcb867674e0f8279cc93087aa"
   end
 
   resource "urllib3" do
