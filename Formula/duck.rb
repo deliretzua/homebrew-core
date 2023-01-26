@@ -1,8 +1,8 @@
 class Duck < Formula
   desc "Command-line interface for Cyberduck (a multi-protocol file transfer tool)"
   homepage "https://duck.sh/"
-  url "https://dist.duck.sh/duck-src-8.5.3.38959.tar.gz"
-  sha256 "a0c04ed874fb07eb1062b142c3aaa1190adc0789503b82e4898681e6eaedab3c"
+  url "https://dist.duck.sh/duck-src-8.5.4.39083.tar.gz"
+  sha256 "58c2dfd41098e694ebedf451429a2fbfce258ed2c76d599d730f00ed49c22dc2"
   license "GPL-3.0-only"
   head "https://github.com/iterate-ch/cyberduck.git", branch: "master"
 
@@ -41,8 +41,8 @@ class Duck < Formula
   end
 
   resource "jna" do
-    url "https://github.com/java-native-access/jna/archive/refs/tags/5.12.1.tar.gz"
-    sha256 "2046655137ecd7f03e57a14bbe05e14d8299440604f993cef171c449daa3789c"
+    url "https://github.com/java-native-access/jna/archive/refs/tags/5.13.0.tar.gz"
+    sha256 "526bff8ffcbc2067a7403f55b01ad8d7a781c098abca79c4ea6c9e80198bb5fd"
   end
 
   resource "rococoa" do
