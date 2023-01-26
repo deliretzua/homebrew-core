@@ -6,13 +6,13 @@ class Logstalgia < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_ventura:  "41dbb3eca9e29150230d903ba6aa7df60519beef66aba71ff43921b19c317151"
-    sha256 arm64_monterey: "aaa66a9d512e36930484677b62cdfdda23533c30c4ad626c3bb2c7d0a52335b1"
-    sha256 arm64_big_sur:  "b7074450d72aaf9260bf33bad971a3c1f7348b67334e2906353ea9e4a60ddf97"
-    sha256 ventura:        "c358ed85782bd34b274f7cb00e0a854edff0465ce527034194258abba9b231ac"
-    sha256 monterey:       "5cc41a5a64a33d430f53d62e384f2f6fa33a9bb19063d4df2e2d290e1b902159"
-    sha256 big_sur:        "d04e3e79136ec4744c9d82ca7aef22972a5b428489313f2f3064aae8483ecf1d"
-    sha256 x86_64_linux:   "e1e192bda5c6eb48dda5e4b91a40a2467ae9b80d214281bd328133ea70ebcb31"
+    sha256 arm64_ventura:  "27e9810c391318dc66cd73a577452e2a4cdb261409ab0a91e5f7be62993cacf6"
+    sha256 arm64_monterey: "4417eb86e0840a81e4f65737b97b95c27bb4fb16cef3b06e490ea6ee02492ce9"
+    sha256 arm64_big_sur:  "4e83c5c6ebc90a2b1876078a0799032aba22d0227e59979cc061cdfec1c2c073"
+    sha256 ventura:        "55948f7595d2761138f3d9a15190eb3ebacf5493e9cc336e7cbb01a40fd5110a"
+    sha256 monterey:       "d29aa89705294c1aa80165c7ee66d2d46d1273b972be94744e56e6b59440e131"
+    sha256 big_sur:        "60c8226b514874695e821c3f35e57495f0c03a806d2daaeaf44d958340f7769b"
+    sha256 x86_64_linux:   "60e89a6cc0d0e08c367c5577ebf2a42be19340f8b7e652f3fc33585e17a0a858"
   end
 
   head do
