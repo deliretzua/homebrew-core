@@ -242,6 +242,9 @@
   "gcalcli": {
     "exclude_packages": ["six"]
   },
+  "gcovr": {
+    "exclude_packages": ["pygments"]
+  },
   "gi-docgen": {
     "exclude_packages": ["pygments", "smartypants"]
   },
