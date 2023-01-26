@@ -18,13 +18,13 @@ class Pdal < Formula
   end
 
   bottle do
-    sha256                               arm64_ventura:  "b145597a2bc716cbcbaf26d84decccb036ec13b128660ed75650a0b1d701ddca"
-    sha256                               arm64_monterey: "da9093b3d6f58a288c57d1881655d8ff40eda857fe64927d04dcdb123f638289"
-    sha256                               arm64_big_sur:  "9eff84edbe30ac408fd28f0903af506ae6864a0b108d6ed5c32bb726292751b1"
-    sha256                               ventura:        "8aace20f820b6f384a629d003ff9a868ab7b65ce93342d1da0db7a4cad9fa97a"
-    sha256                               monterey:       "c8e4d8faebdb46f9e9884f4a84dc58fc5cc82ec15e86ec6b70a2c5d860b55d72"
-    sha256                               big_sur:        "4862f29cfc6f7778ba3427cab71d77598830f178b196edb61827321f9940bd34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c2eea1807baa6fd1a77cf2068b8b42853188fc20b38fdf4073285633a2d4819"
+    sha256                               arm64_ventura:  "6efce087c245991d4843a4c4649db05ffdcbf7b059016e88a7a9c3fe92871ef0"
+    sha256                               arm64_monterey: "9f26c0343cc0bf96c4815ccbc040f9b03fdc5ad462a4b86a46c50dc7f440b77d"
+    sha256                               arm64_big_sur:  "17367be0a40f8531deba7e466024ad94462340b1eddc52411e07763572b96010"
+    sha256                               ventura:        "c6089581421ab6da3cda4173ee0be1fa73aad9a7fd26650b39975187866695e7"
+    sha256                               monterey:       "b7dd199aec4e4af7ddd17b85d8626b031a4578215a6d550c64341a6078a1f2f0"
+    sha256                               big_sur:        "9038d24e9ecba22eb1310630bd56e3f9261b5142e5c0df449cc9a30c3c7aa472"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "88234cbbf72d1e730fb8af5d79bbc8f2ceb45f5a856d3eb429096ee3eced234a"
   end
 
   depends_on "cmake" => :build
