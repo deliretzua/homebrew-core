@@ -18,6 +18,7 @@ class Theharvester < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3385bbe5ef27952aee1aaf312d83fd5b0795da775979b74ae9fe6e9294f5f5b1"
   end
 
+  depends_on "pygments"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -200,11 +201,6 @@ class Theharvester < Formula
   resource "pyee" do
     url "https://files.pythonhosted.org/packages/e6/88/a917aaa0da1915292022745184275e095516b490a85d89fc48fd4de1c01a/pyee-8.2.2.tar.gz"
     sha256 "5c7e60f8df95710dbe17550e16ce0153f83990c00ef744841b43f371ed53ebea"
-  end
-
-  resource "Pygments" do
-    url "https://files.pythonhosted.org/packages/e0/ef/5905cd3642f2337d44143529c941cc3a02e5af16f0f65f81cbef7af452bb/Pygments-2.13.0.tar.gz"
-    sha256 "56a8508ae95f98e2b9bdf93a6be5ae3f7d8af858b43e02c5a2ff083726be40c1"
   end
 
   resource "pyppeteer" do
