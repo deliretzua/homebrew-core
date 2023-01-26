@@ -8,13 +8,13 @@ class Esphome < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8da98c1e384f30dbf29c93349675e8948c92427cc011e2c80d4645cc08ac39ab"
-    sha256 cellar: :any,                 arm64_monterey: "f4c47a1dc1b9f168c191b2538227298e296077f1b3f84769aa3ba26fe5255617"
-    sha256 cellar: :any,                 arm64_big_sur:  "5c83d55806e9f3afd6f3f354ad1c3c65c73a5139a7a85ebc26d46798c598718d"
-    sha256 cellar: :any,                 ventura:        "a2c68cde953cb73dc18d6b6e4f4333c1c32dc5c6e35f513f74d6919be753b9b1"
-    sha256 cellar: :any,                 monterey:       "9d55303b482f368d4e219f01fc28a79b95be805bc9edf7cdf6c45460ba8d27ba"
-    sha256 cellar: :any,                 big_sur:        "bd62d91cfc29c63eb67cf44f6d1eb266dcb487e4944b4c68c67276478821d266"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f0bf4cec1fc655c492f56a9ec58d2ad4022d545802c946ac51817e7f52410932"
+    sha256 cellar: :any,                 arm64_ventura:  "79db1a613643616a36142f7a4e5ea5f1abcdd3daf31e6b3c6895c4e1d9f5de3c"
+    sha256 cellar: :any,                 arm64_monterey: "6746d11089c7e54c80520aebcc50b05766d705c3c66198ba902853a5e468b070"
+    sha256 cellar: :any,                 arm64_big_sur:  "36cad27b9af49b8a9ef1f8e15fe85d06c979a24911523d533748bd1acb0b0dcd"
+    sha256 cellar: :any,                 ventura:        "a6a35d5207f67443189d6af58eea1aa8b0b3c4e3529ef26f4cbe05042e8e715d"
+    sha256 cellar: :any,                 monterey:       "d6cbee1a0b8c37b9d1c457fd8e62d2c641612cd766d005c4b5ddd8c26f0e97cb"
+    sha256 cellar: :any,                 big_sur:        "a8fe617f1fba94057e21ffa263251de28f4c3875ef08fe34077bd8e53c679628"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17145c42ab8d53ddb537f1d80fa529ae7a1da69ffef73aa978e63bb664f98bcf"
   end
 
   depends_on "rust" => :build # for cryptography
