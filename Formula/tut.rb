@@ -6,13 +6,13 @@ class Tut < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a0761e617d35d4a8b91a46df2321d35213c77721d0ff95fa65bffbce6e451942"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "794d8b4d5d23f9f8123d4b5bed51e645ce215712bcdaff691968ad1d97c3385d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bd035bb07cd424d869e63b2a4c93741d441475d59a7eb3f525dfdd36dc13dc35"
-    sha256 cellar: :any_skip_relocation, ventura:        "46bcf1ffa747088b679a35791a2ac3667f6cd2d8741c16a3b814438c79ad1658"
-    sha256 cellar: :any_skip_relocation, monterey:       "5e705ff6e0c9bfd6f3a5a9c79976a167b364854018b5a6c3aa9f0c8898ca12e8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "46b6e873f2ab5da4c67812c15a3b8ba5779df9b1c9ae488ce79cd4add929ed5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6398f4c77bd4d6b2317e83eedc3716f345fd1c7d37c78da745d4319bd051afa6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "73a5450eb16784d6c42f63e497748c837d663e796d910ac7a1a839f694d6d91a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "af53e3fc39990fc439f5613e1931c24bc38d05526cebd108edcc24d298ad9f86"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a32649707bb41ba0dbbda69879cc9fdfdbc7e5611399ffdebe54b9857f8e8bd7"
+    sha256 cellar: :any_skip_relocation, ventura:        "bb9f6d0b46819c74ed5c2b82d85bb320153853fcb826b8637b6ca6632fc9098f"
+    sha256 cellar: :any_skip_relocation, monterey:       "dc6cd4fa84bc565c7f22bab2a4d55e8c313a67ecf21978a98a40cbb7fad5e4f2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "931e7398ad80e6374b97fa18da74d2973698e9ef732995347e1bd01a9ac04a8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3b8f56c413f16c8c270d137048c2a2d7f2f68418f20f7a5b67c6ba2f1d18167"
   end
 
   depends_on "go" => :build
