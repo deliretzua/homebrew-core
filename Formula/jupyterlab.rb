@@ -234,6 +234,9 @@ class Jupyterlab < Formula
   resource "notebook" do
     url "https://files.pythonhosted.org/packages/41/15/a4285abb25c87dec3002cd7eab88320ef21448effdd3714840695aafab12/notebook-6.5.2.tar.gz"
     sha256 "c1897e5317e225fc78b45549a6ab4b668e4c996fd03a04e938fe5e7af2bfffd0"
+    # This is to avoid a circular dependency, where `notebook` depends on `nbclassic`,
+    # which transitively depends on `notebook`.
+    patch :DATA
   end
 
   resource "notebook-shim" do
@@ -428,12 +431,6 @@ class Jupyterlab < Formula
     # remove bundled kernel
     (libexec/"share/jupyter/kernels").rmtree
 
-    # remove non-native binaries
-    if OS.mac? && Hardware::CPU.arm?
-      site_packages = libexec/Language::Python.site_packages(python3)
-      (site_packages/"debugpy/_vendored/pydevd/pydevd_attach_to_process/attach_x86_64.dylib").unlink
-    end
-
     # install completion
     resource("jupyter-core").stage do
       bash_completion.install "examples/jupyter-completion.bash" => "jupyter"
@@ -491,3 +488,14 @@ class Jupyterlab < Formula
       shell_output("curl --silent --fail http://localhost:#{port}/lab")
   end
 end
+
+__END__
+--- a/pyproject.toml	2023-01-27 12:04:48
++++ b/pyproject.toml	2023-01-27 12:05:01
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires=["jupyter_packaging~=0.9", "nbclassic>=0.4.0"]
++requires=["jupyter_packaging~=0.9"]
+ build-backend = "setuptools.build_meta"
+
+ [tool.check-manifest]
