@@ -11,14 +11,14 @@ class Suricata < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "b44b931e92576744d41bcf2d56a032756c0e598df5ec91ad88a41ae802746dba"
-    sha256 arm64_monterey: "54b31e8ed41e4a7b0393ac92756c78071598e375e5d4e05ab12171cc930209fb"
-    sha256 arm64_big_sur:  "aaa09cea15038f44049984def0233c38c4113d429a334e059b03da982b41b5f4"
-    sha256 ventura:        "c92e6b5b13829a4488d28520c387a26954d79e2a9f2cd621c13d4899305d4039"
-    sha256 monterey:       "c61a3c2247d304d022766d9192bccec95823b26852aec2f56580e8555522fa0a"
-    sha256 big_sur:        "4f64f5dbe1acf76afd72edb4ee4cfda8b68f0c9bc37b753172062b9a031e93e8"
-    sha256 x86_64_linux:   "8c802684f70f9164e199797f805fca059bcfd4d69e1d941df9211f76b192db7f"
+    rebuild 2
+    sha256 arm64_ventura:  "228f546b55eab4043896a3e23a85528ab76c2c82b90b0f2eabc55550ced6e718"
+    sha256 arm64_monterey: "fa8cb9d6e418d939dd686eb65959a9c5a542c667f1a033e9cfc13a17d37fb65a"
+    sha256 arm64_big_sur:  "bd73603e4dd7cc2460039b00704790a68f9bad3f1b64be837e5507f2ddfddfd3"
+    sha256 ventura:        "bde7b061c546b7949c1d4f7abeaa2a0fef49ccd1218a2341df3b8869e4fa8633"
+    sha256 monterey:       "4fa17a2c85ca9a8a199f0c307b9bec763ecc36cd30c08c9b00b2f4474bda2084"
+    sha256 big_sur:        "a00a3496f483c992997e2a4a395cbab5793c73e17f639ba03d98bd251557dd0e"
+    sha256 x86_64_linux:   "0fdf313c3a614350eaf5756bf7312543a78949666ebbd358b0703df3ec2aaffb"
   end
 
   depends_on "pkg-config" => :build
