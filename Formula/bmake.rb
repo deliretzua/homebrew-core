@@ -11,13 +11,13 @@ class Bmake < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "94216c08aa9a53469c8199536cadfb4277f7a7aac16b0c7139b7a47006536f70"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "62673ff3137dc9592b8767a8e88c7a282de533e6323b9281bbb93c11452ccee4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "66c3e458fdba0c8286e30db34a04661673b7c275ed0f0811db888b9f0d3745e2"
-    sha256                               ventura:        "7a0c69c9299ad36dcedc2dc4a21d92662613bbfc28039dd17241200ecd532842"
-    sha256                               monterey:       "79cb481ef936b22aad6f58084ec394f0ff28fc6698f56f80f641b741e18e6566"
-    sha256                               big_sur:        "e83c79f073ac8b77a90da01a8d77e55b7685a694963b8e5043f90e325df50c77"
-    sha256                               x86_64_linux:   "0ef90e9aa2cb2e9314980768aabd08285c783352c917a2302eac75e8b06fb274"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "99482a673c31a4467a54c1bb1e87a81ae5ec6d7d92e024e4f38ebcc80ea3cd0c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ed2892600e709af86cb8db71d711609c3c5fe344d5302da6fd0bbb428ce2c789"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7c186db78215d531f8592d02e7abb5ab265d1af50679aedd538ccdb4aeec26e7"
+    sha256                               ventura:        "5ec025df0a65508e721372d1db7f45a86e4d0fec63f85b6115ed4ffa9ca3cd93"
+    sha256                               monterey:       "32d3c9fbd8b7818a029427ed0946c42a7e9ec5cf877e375ed43abe432220f74c"
+    sha256                               big_sur:        "d3a6b5ce5028ee9f29ea25e3fbac9cb79cbea2f188ca044ac613af9cdf8f0d91"
+    sha256                               x86_64_linux:   "bbfcff5fff2d43f6067c0aacdcaa70a8a8ec3d92142e58fa823096063154d401"
   end
 
   def install
