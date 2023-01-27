@@ -12,13 +12,13 @@ class SwiProlog < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "3df03320f6702fff05bef68d6ce1c2bbac59ddefaa264d324af5e1d880bae9d6"
-    sha256 arm64_monterey: "c5d50d9125a09585f6c2f0ab3d45ab5d084e3d554f1f7f2ded66ac4853452526"
-    sha256 arm64_big_sur:  "02b37cf09b14e97a36ef9623f62e78d9b67186af33c2e3d87fbd7f48f0143f8c"
-    sha256 ventura:        "c7afcab31d2f0cc5b0ae8f849db1d143f34c9bed0db8dfd41dfb77cb61783a9c"
-    sha256 monterey:       "64aedf69e5e1e56b6f4efa37790a963ae6dfcb1eaf4463bd307504b268c48c09"
-    sha256 big_sur:        "63fcb4b565a7b3eda277f282d2f6e3141b6e80b1e7db754dfbab10cbb46f6198"
-    sha256 x86_64_linux:   "b438b58997eb6507cc99f557ecbabc6b5427e2bfaefc084c563f6ff8666ddc88"
+    sha256 arm64_ventura:  "e68d396b1fdc0e15ae49ab64af00bb77daad6064932daacb42e666bab902d36a"
+    sha256 arm64_monterey: "6c11129a2e337b7239efda15ee0b342f982e4ded180a468e0e9ea6b27e987af8"
+    sha256 arm64_big_sur:  "92033e7096a74e8f2656eef2ef94377d7de7057959453e989f8984ca7536ba2e"
+    sha256 ventura:        "d48fcdb3fe358b79619c1d301fe76977c1ecb274cb0111ef2968251be6372e58"
+    sha256 monterey:       "3b5880ab3fc580cb9e01f3a874185f8d9065f83302a4735da22f85f3b0b18e3d"
+    sha256 big_sur:        "65c8fe85fe1cc2ba1dbd66cbfff34e2b05f15494e57acffcce604aa2b6e53b25"
+    sha256 x86_64_linux:   "d1057a373529b0c322e2f023fd3e40db57ba7e54c5ad7b7b3eb7655651f7300e"
   end
 
   depends_on "cmake" => :build
