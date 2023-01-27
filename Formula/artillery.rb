@@ -8,15 +8,13 @@ class Artillery < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "da5dd79bedf7e5a7bd6a626913bcf87b9da0d2e77086023bfd558787fdce4828"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d9863cb2e051f8b7b4ece37ecf453c4d57ef99915a0d47e236f8d86b9351cd39"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5b4ca42c0271c2257d1da68652023309cbaf7a45411e59fda3e214f0e2d1e06f"
-    sha256 cellar: :any_skip_relocation, ventura:        "c8aabec272a0afb466b52c2c27460005b5579cd0852b4589348f469f2e8b14a0"
-    sha256 cellar: :any_skip_relocation, monterey:       "ead56f60ac28f077a748272e1bd4a769eb462f2ee877919bd22d015bc5c8ee4e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "19009ef3f41fe90b0647df579a1a2065bffe7a1a67d6c32c91b7512225f16da5"
-    sha256 cellar: :any_skip_relocation, catalina:       "19009ef3f41fe90b0647df579a1a2065bffe7a1a67d6c32c91b7512225f16da5"
-    sha256 cellar: :any_skip_relocation, mojave:         "19009ef3f41fe90b0647df579a1a2065bffe7a1a67d6c32c91b7512225f16da5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "09db551a48e31d05654d8510cfb5e2c555fa4ea6b719d9e8899db72f553d2ecf"
+    sha256                               arm64_ventura:  "689f156fe8c6256570e4704356a584f42a1434bfe2e368af659ef8aba7a1d6f5"
+    sha256                               arm64_monterey: "7f199224a527716d8c6af0d65491ce767503aa110f2972351cd36b036782caec"
+    sha256                               arm64_big_sur:  "a9e903c34a6c236a011e09ba8e21e69b928ca40f78cd253899d819a35259c68c"
+    sha256                               ventura:        "ef60129fba71d8d4558bc87a02e64d755525bc9c4b91f2012a068cfe85cfc887"
+    sha256                               monterey:       "65e48f1b3ccf5968a3171c3694f06844f5d6b3ef736468ec24d1240f470d1932"
+    sha256                               big_sur:        "5064e677ccfcbbb4d5f65cca0e320c5950ad93a8a93066fc81b041f568f48373"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a21471fe1702592e81963cc2a95ccbfe6c7c3e26551e57d573f6c7e2af8de80d"
   end
 
   depends_on "node"
