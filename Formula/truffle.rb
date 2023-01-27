@@ -8,13 +8,13 @@ class Truffle < Formula
   license "MIT"
 
   bottle do
-    sha256                               arm64_ventura:  "17f295be7a5d58db564da7e2ddf87ddc313f64cc8493311ad92c6dd918da5fe5"
-    sha256                               arm64_monterey: "d92a77d0963aca3c346da47ef86ec3b3305390d7807dae29240df8a726791458"
-    sha256                               arm64_big_sur:  "ebf701e249324a113f0278be34648698c85aaaf7361887d4fb16fe9f395edc33"
-    sha256                               ventura:        "e153296cffd27acc88be7d9cb9d48c91c374e087b7d9442084f0ddcb9ac3be5f"
-    sha256                               monterey:       "e011357b2286eb1b467b61f6519611c4840b1a116f3561d480ab1d7ae4172651"
-    sha256                               big_sur:        "fa59c46becb41c3c99b1cb7255a30b808d0aa3ffb4e8f988a8cf136fca68641e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52c365c79c396e5ca8a37256fbc541737058dba2420017d7440a034004b088d8"
+    sha256                               arm64_ventura:  "f38f734bdbb59beab5fa30d44f03ef95e0ec98a88c4259f9cca2f83413bd3dc8"
+    sha256                               arm64_monterey: "2d5a9cc7c6a963e553c0bb88cb7ec9d482d4ed563ae7f183325b386307835af4"
+    sha256                               arm64_big_sur:  "be071af7f39eac52397e8a436c0730b1efe51af8fd86e4d39164ab0dcd9273b1"
+    sha256                               ventura:        "c58c05761492f4404c48e86b2e6d8b01a012d60d7c15b2c20af1c1446ae4814f"
+    sha256                               monterey:       "c3e21b4ee71b83448b949285e238da797cc151b84e0075ade6e4dcded296d7fb"
+    sha256                               big_sur:        "1bf8cf01bf9e19cb5a9938fc0d80154491a79e35b238ae68c2daadfb10764ff1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ad1701b24aaf9ad4d4d6a494d50b53e801280fe913c2f45e58f4e6d1b403c2e"
   end
 
   depends_on "node"
