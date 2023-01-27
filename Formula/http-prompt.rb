@@ -21,6 +21,7 @@ class HttpPrompt < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "226b69ea41dabcc2edf5e0aab966f140fa4b5e99feb0c2f8283429abc69b0980"
   end
 
+  depends_on "pygments"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -73,11 +74,6 @@ class HttpPrompt < Formula
   resource "prompt-toolkit" do
     url "https://files.pythonhosted.org/packages/c5/64/c170e5b1913b540bf0c8ab7676b21fdd1d25b65ddeb10025c6ca43cccd4c/prompt_toolkit-1.0.18.tar.gz"
     sha256 "dd4fca02c8069497ad931a2d09914c6b0d1b50151ce876bc15bde4c747090126"
-  end
-
-  resource "Pygments" do
-    url "https://files.pythonhosted.org/packages/e0/ef/5905cd3642f2337d44143529c941cc3a02e5af16f0f65f81cbef7af452bb/Pygments-2.13.0.tar.gz"
-    sha256 "56a8508ae95f98e2b9bdf93a6be5ae3f7d8af858b43e02c5a2ff083726be40c1"
   end
 
   resource "PySocks" do
