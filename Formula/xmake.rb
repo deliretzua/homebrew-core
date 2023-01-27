@@ -7,13 +7,13 @@ class Xmake < Formula
   head "https://github.com/xmake-io/xmake.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "05a9f474fb460a2f96565640f7c6008bed0607452717719ed3f2f9dc1431d190"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cfc777f5664f712aa8317556f6a1ad4b932ea8ac7e27e9d9b5ecc5d875b9689b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cd3f78323c73db6bafbe753be3117d8cf915fd834c2533a2aec6e75c965c89e9"
-    sha256 cellar: :any_skip_relocation, ventura:        "95d25fd4234cd1273af00ddab7d43a70052142d76583e0be7fe2a10d0d4a90d8"
-    sha256 cellar: :any_skip_relocation, monterey:       "24ab7d497a68e885f425d3510669559b213d8022ed4d46132abad1cb0265dcfb"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c50ee5cbbc73137f9f4267354ab9ecea521091a9a1ddd38522e5ade7d1953206"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8287500219faf376951c4028e569fdc576ec87f1f28e9a0758066415c4b6f4e5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8185d7ecaca3829491c6b707d23ac37ff763de2e21c92681600229c01a2d6338"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "506a82530a7cff0217d6fab0a8e378502e9c56a040402152787906886c9d92da"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a8866311fc2b085199cd46946801ff942ebc9c712c1e37f49b1d2ac779e94cc4"
+    sha256 cellar: :any_skip_relocation, ventura:        "9795ba1a21b591fc47e9cf6764a342d47c0106ed4f052342598747b4bd9a8eee"
+    sha256 cellar: :any_skip_relocation, monterey:       "0bc50c40cc1c17f4049c69ae8b463ba5ef230cb8347a34d60bd8bcf973d1f784"
+    sha256 cellar: :any_skip_relocation, big_sur:        "882fc7e3f8bcb217156b2f54dcfc548bad96e608cbcee14efdc20c134abd3aa4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b333e94c8ef4da5c3c170973c83b0c79fca68b8240d77d233f9d6d312d9327e6"
   end
 
   on_linux do
