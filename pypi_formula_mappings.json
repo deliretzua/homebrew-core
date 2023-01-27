@@ -446,6 +446,9 @@
   "peru": {
     "exclude_packages": ["PyYAML"]
   },
+  "pferd": {
+    "exclude_packages": ["Pygments"]
+  },
   "pgcli": {
     "exclude_packages": ["six", "tabulate", "typing-extensions", "Pygments"]
   },
