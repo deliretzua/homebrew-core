@@ -512,6 +512,9 @@
   "pyvim": {
     "exclude_packages": ["six"]
   },
+  "pywhat": {
+    "exclude_packages": ["Pygments"]
+  },
   "rbtools": {
     "exclude_packages": ["six", "typing-extensions"]
   },
