@@ -7,8 +7,13 @@ class Teku < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "9e73e19af674f48e1e1c1f39ea14c0fe9d7eb9ab7883b215babaf8308d230ac8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "25785acd4818dc99693ea962fa323cac75077550078dd5dbe4ac0d00b3a3357c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "25785acd4818dc99693ea962fa323cac75077550078dd5dbe4ac0d00b3a3357c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "25785acd4818dc99693ea962fa323cac75077550078dd5dbe4ac0d00b3a3357c"
+    sha256 cellar: :any_skip_relocation, ventura:        "25785acd4818dc99693ea962fa323cac75077550078dd5dbe4ac0d00b3a3357c"
+    sha256 cellar: :any_skip_relocation, monterey:       "25785acd4818dc99693ea962fa323cac75077550078dd5dbe4ac0d00b3a3357c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "25785acd4818dc99693ea962fa323cac75077550078dd5dbe4ac0d00b3a3357c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "51127258744ad442bd52b0ee863d3d81b6076df4f311e3921733d59bf3397bd2"
   end
 
   depends_on "gradle" => :build
