@@ -13,14 +13,13 @@ class FleetCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7af3cbd8c57c8e4f5de827fb930941311509cc3c81542205efddbc310ca866e6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1e0affab95a62d2d5bd91b6b5c8686a16aad03fab472a1978ac0ee9a25adefc3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f3624bedc3add6abb303688173efcde7f684b18830c8087f10486f59b0049985"
-    sha256 cellar: :any_skip_relocation, ventura:        "0dd4656e50153413f04402b2b69a3e4687bb87681e0f03f7e5fbef45b80125b1"
-    sha256 cellar: :any_skip_relocation, monterey:       "a232ec341572813a709ab75eae73e9e7a4faa3f896763f86ef24bfc49b9baeb1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c14d09ede6d4fe64c935b339e468794cb5dee7795c643613363c7b2443c0e060"
-    sha256 cellar: :any_skip_relocation, catalina:       "296ae9ec602ca43678def775ca4f76b41fef3b89bc905c9a0bbc80b1bef0ac0b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2593c41ee98100fde005e703a6528ea16b7f8588681e2db13149260718946983"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1f10d869e0e3cd4530fa6fd017daf0ea3080228d77734d1cb7d0f314baa376bd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7838e3198d7c39da1bb47a2de19265e176cb9ec8378a87d94133c2d80a0649d5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "64a2f1367f90f80dd39f50b0a5e05c0ab09c56467852e97529f42fc145b66f3a"
+    sha256 cellar: :any_skip_relocation, ventura:        "a58667b4c2bed6eb0002a12d25c57755781ff810b6ffd9c2243d22eb4f443fc5"
+    sha256 cellar: :any_skip_relocation, monterey:       "5a748e9eca21913d338ff182cd665c2d0cc057de0a0c115e3f288abf7e5237f0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6904dfbb4ed3d1fa7867a7cd60bda35e91f01856a6332605c264754d9c5a25f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e432fa51209b8e6242466f89142da6a29d24f72bdf8df7d81c851d267201b0f9"
   end
 
   depends_on "go" => :build
