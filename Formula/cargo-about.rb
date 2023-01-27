@@ -7,13 +7,13 @@ class CargoAbout < Formula
   head "https://github.com/EmbarkStudios/cargo-about.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "16a070bc96dee9e68662e51eaa30930b376696ebccaf772a63b904b74767ea91"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e66b8c934ba62c681da3e9306786216ee2f99e5b82ef94d84be3a3fdc03587c1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8cbc35efac28eed7ab75ad652855b29d0b685a06cc1c4337254959727636b863"
-    sha256 cellar: :any_skip_relocation, ventura:        "b5ffc939efa22d6d1d48fd700ef46192b10770fcc1d582deabc025394f11354e"
-    sha256 cellar: :any_skip_relocation, monterey:       "5c4c876a38d66c15d00fffdbd26edb9d8385dd1fd6a6c8f6c651b5f198354a64"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3033a58b98b55299efcd96f414b88a4f25505f680ed44197f4bf75d3c7d9300b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a05c60a220c6ef2d0e55ec425996952acb46fd7d92e102638acfa1f36a06ec6a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0fcf7c00ba86d85050fcd1b8f4a8f5b45c6e500004a588243b9d8e9de3a934c3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "acdd8991793007bcf69e1a01e85ae09f213629f1863c7b7f3fbb4a870833ef1b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "be4f3b429a2c49974b2f346c5062efabdb350f1680ee0027457b10eda2f0c99c"
+    sha256 cellar: :any_skip_relocation, ventura:        "ed1c02415e18f53f36f46b7c995c5a0dd5dc5a2cf1071b1956adc9387aaa421f"
+    sha256 cellar: :any_skip_relocation, monterey:       "cc4d156bcb5b91d5be52c52fb709e0127484e9c7ef9c0f8ae20745d9ce615e81"
+    sha256 cellar: :any_skip_relocation, big_sur:        "92bd2872fd066be81dd60980b2814c49b30c4cc82cf025f96ef4f53fe137675b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2eeb535a6d8eda627e8f303497de0615866defe3fdbe5b73d49b907bb43a841"
   end
 
   depends_on "rust" # uses `cargo` at runtime
