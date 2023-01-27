@@ -400,7 +400,9 @@ class Jupyterlab < Formula
     ]
     linked_setuptools = %w[jupyter-console]
     unlinked_hatch = %w[jupyterlab-server]
-    unlinked_setuptools = resources.map(&:name).to_set - preinstall - linked_hatch - linked_setuptools - unlinked_hatch
+    unlinked_setuptools = (
+      resources.map(&:name).to_set - preinstall - linked_hatch - linked_setuptools - unlinked_hatch
+    )
 
     pybuild = Formula["python-build"].opt_bin/"pyproject-build"
     hatch = Formula["hatch"].opt_bin/"hatch"
