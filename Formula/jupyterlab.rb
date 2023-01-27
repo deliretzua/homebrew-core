@@ -468,7 +468,7 @@ class Jupyterlab < Formula
     assert_match "Jupyter console", shell_output("expect -f console.exp")
 
     (testpath/"notebook.exp").write <<~EOS
-      spawn #{bin}/jupyter-notebook --no-browser
+      spawn #{bin}/jupyter notebook --no-browser
       expect "NotebookApp"
     EOS
     assert_match "NotebookApp", shell_output("expect -f notebook.exp")
