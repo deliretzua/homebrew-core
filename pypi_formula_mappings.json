@@ -581,7 +581,7 @@
     "exclude_packages": ["six"]
   },
   "search-that-hash": {
-    "exclude_packages": ["typing-extensions"]
+    "exclude_packages": ["typing-extensions", "Pygments"]
   },
   "semgrep": {
     "package_name": "semgrep",

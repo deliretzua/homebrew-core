@@ -21,6 +21,7 @@ class SearchThatHash < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "edeb59fd46067f852b6a88651d957947225d928e2184e8299f2418cfaa1383bd"
   end
 
+  depends_on "pygments"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
 
@@ -82,11 +83,6 @@ class SearchThatHash < Formula
   resource "name-that-hash" do
     url "https://files.pythonhosted.org/packages/32/58/1f4052bd4999c5aceb51c813cc8ef32838561c8fb18f90cf4b86df6bd818/name-that-hash-1.10.0.tar.gz"
     sha256 "aabe1a3e23f5f8ca1ef6522eb1adcd5c69b5fed3961371ed84a22fc86ee648a2"
-  end
-
-  resource "Pygments" do
-    url "https://files.pythonhosted.org/packages/e0/ef/5905cd3642f2337d44143529c941cc3a02e5af16f0f65f81cbef7af452bb/Pygments-2.13.0.tar.gz"
-    sha256 "56a8508ae95f98e2b9bdf93a6be5ae3f7d8af858b43e02c5a2ff083726be40c1"
   end
 
   resource "pyparsing" do
