@@ -6,13 +6,13 @@ class Sile < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "13ca61aa62f4dc8e6d627f75d1abfed698fe3df551b522086c1efa978a498933"
-    sha256 cellar: :any,                 arm64_monterey: "b286d124eaac6ce9d984bf34037899de53b5089cfd1083b9477f65e0c8d6ee72"
-    sha256 cellar: :any,                 arm64_big_sur:  "bc014c2e327de0f15b5aeca9e5c9e0b53e7ba017a37ef26067658d72911c4e93"
-    sha256 cellar: :any,                 ventura:        "9b6e7bc2fbc37d83bba0d2c78e7fd4aa9c477b828be2517cca50426d9a732593"
-    sha256 cellar: :any,                 monterey:       "61c52d8b11be1c9bac065ed1c1a56df8ac72b2e057433ed0e687d46989f9da1a"
-    sha256 cellar: :any,                 big_sur:        "a5789d2eef2f67125e073e9cce109e8a67f9f25bd5bc7007c002165410f9dc96"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5c52636810e6314d95fb78a5c2fdddc380e47744ffe5548a786248deb3c278ab"
+    sha256 cellar: :any,                 arm64_ventura:  "313d37bcf6e9b30756fa4acaa45dae65d0dcd9f1df862f1f3a40b9355c2d3a91"
+    sha256 cellar: :any,                 arm64_monterey: "44ccdb84d63269713c104c3207529585a0ef8b69e404728b35e5bfce5d593622"
+    sha256 cellar: :any,                 arm64_big_sur:  "ee6dac0a165820a883f41823c1f381e4e6a71a2af24f4090354f627bc1c7ff3c"
+    sha256 cellar: :any,                 ventura:        "3e99661c4dc013bbbe172de9e3c7e6ac97784cdb0f93ae63ef2f2deb609b5b96"
+    sha256 cellar: :any,                 monterey:       "b3cbbbaef041076935424db511989f0912cb572588952ed9a3e117ec93778c93"
+    sha256 cellar: :any,                 big_sur:        "65009dc079219d7e9a2c762386de86f30105d130e56e0ebfcb02910ba260a373"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "82870e18b9253519dc03ff4749e0670c064e4444c25f68fe526856ecf5c04ebe"
   end
 
   head do
