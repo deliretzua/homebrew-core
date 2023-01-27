@@ -166,6 +166,11 @@ class Jupyterlab < Formula
     sha256 "52be28e04171f07aed8f20e1616a5a552ab9fee9cbbe6c1896ae170c3880d392"
   end
 
+  resource "jupyter-console" do
+    url "https://files.pythonhosted.org/packages/1b/2f/acb5851aa3ed730f8cde5ec9eb0c0d9681681123f32c3b82d1536df1e937/jupyter_console-6.4.4.tar.gz"
+    sha256 "172f5335e31d600df61613a97b7f0352f2c8250bbd1092ef2d658f77249f89fb"
+  end
+
   resource "jupyter-core" do
     url "https://files.pythonhosted.org/packages/1f/05/7c8e5e534f1c0833512fa82f47d50733043b11adb4688d33dfbf89a645a6/jupyter_core-5.1.3.tar.gz"
     sha256 "82e1cff0ef804c38677eff7070d5ff1d45037fef01a2d9ba9e6b7b8201831e9f"
@@ -393,8 +398,9 @@ class Jupyterlab < Formula
       jupyter-core jupyter-client jupyter-events jupyter-server jupyter-server-terminals
       nbformat ipykernel nbconvert
     ]
+    linked_setuptools = %w[jupyter-console]
     unlinked_hatch = %w[jupyterlab-server]
-    unlinked_setuptools = resources.map(&:name).to_set - preinstall - linked_hatch - unlinked_hatch
+    unlinked_setuptools = resources.map(&:name).to_set - preinstall - linked_hatch - linked_setuptools - unlinked_hatch
 
     pybuild = Formula["python-build"].opt_bin/"pyproject-build"
     hatch = Formula["hatch"].opt_bin/"hatch"
@@ -418,6 +424,9 @@ class Jupyterlab < Formula
         system hatch, "build", "-t", "wheel"
         venv.pip_install Dir["dist/*.whl"].first
       end
+    end
+    linked_setuptools.each do |r|
+      venv.pip_install_and_link resource(r)
     end
     linked_hatch.each do |r|
       resource(r).stage do
