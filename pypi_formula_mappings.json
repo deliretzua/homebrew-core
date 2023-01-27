@@ -480,6 +480,9 @@
   "prowler": {
     "exclude_packages": ["six", "tabulate", "typing-extensions", "PyYAML"]
   },
+  "ptpython": {
+    "exclude_packages": ["Pygments"]
+  },
   "pwntools": {
     "exclude_packages": ["six", "pygments"]
   },
