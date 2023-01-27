@@ -7,13 +7,13 @@ class Lesspipe < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eab7ed95d12d5b9ccf4f2600e41ec76f771cf6efbce668e1be80497366029a1f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "eab7ed95d12d5b9ccf4f2600e41ec76f771cf6efbce668e1be80497366029a1f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "eab7ed95d12d5b9ccf4f2600e41ec76f771cf6efbce668e1be80497366029a1f"
-    sha256 cellar: :any_skip_relocation, ventura:        "eab7ed95d12d5b9ccf4f2600e41ec76f771cf6efbce668e1be80497366029a1f"
-    sha256 cellar: :any_skip_relocation, monterey:       "eab7ed95d12d5b9ccf4f2600e41ec76f771cf6efbce668e1be80497366029a1f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "eab7ed95d12d5b9ccf4f2600e41ec76f771cf6efbce668e1be80497366029a1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5569b10632037ead5f2f19b5c8b6328bbbac744dfe523da1cadfbd760ebe22ab"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c2156478a5b6006415e8d51dfaa6eef48f4f9b65a2166c8a3deace997809e3b2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c2156478a5b6006415e8d51dfaa6eef48f4f9b65a2166c8a3deace997809e3b2"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c2156478a5b6006415e8d51dfaa6eef48f4f9b65a2166c8a3deace997809e3b2"
+    sha256 cellar: :any_skip_relocation, ventura:        "c2156478a5b6006415e8d51dfaa6eef48f4f9b65a2166c8a3deace997809e3b2"
+    sha256 cellar: :any_skip_relocation, monterey:       "c2156478a5b6006415e8d51dfaa6eef48f4f9b65a2166c8a3deace997809e3b2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c2156478a5b6006415e8d51dfaa6eef48f4f9b65a2166c8a3deace997809e3b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ceb4e96042a617340ea075043fa7baa75056229a80270f9dcb9f0e4f411415df"
   end
 
   # patch for runtime error, remove in next release
