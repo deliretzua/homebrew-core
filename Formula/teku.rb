@@ -7,13 +7,13 @@ class Teku < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "25785acd4818dc99693ea962fa323cac75077550078dd5dbe4ac0d00b3a3357c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "25785acd4818dc99693ea962fa323cac75077550078dd5dbe4ac0d00b3a3357c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "25785acd4818dc99693ea962fa323cac75077550078dd5dbe4ac0d00b3a3357c"
-    sha256 cellar: :any_skip_relocation, ventura:        "25785acd4818dc99693ea962fa323cac75077550078dd5dbe4ac0d00b3a3357c"
-    sha256 cellar: :any_skip_relocation, monterey:       "25785acd4818dc99693ea962fa323cac75077550078dd5dbe4ac0d00b3a3357c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "25785acd4818dc99693ea962fa323cac75077550078dd5dbe4ac0d00b3a3357c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "51127258744ad442bd52b0ee863d3d81b6076df4f311e3921733d59bf3397bd2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "08ab22d78ef5388c99041f5cbf6c335d83e93d1931255e8e8900c225ee536df2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "08ab22d78ef5388c99041f5cbf6c335d83e93d1931255e8e8900c225ee536df2"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "08ab22d78ef5388c99041f5cbf6c335d83e93d1931255e8e8900c225ee536df2"
+    sha256 cellar: :any_skip_relocation, ventura:        "08ab22d78ef5388c99041f5cbf6c335d83e93d1931255e8e8900c225ee536df2"
+    sha256 cellar: :any_skip_relocation, monterey:       "08ab22d78ef5388c99041f5cbf6c335d83e93d1931255e8e8900c225ee536df2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "08ab22d78ef5388c99041f5cbf6c335d83e93d1931255e8e8900c225ee536df2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c906e9c39f62dc68959cba9e7ed96853375362f9b5a9f2b7837cac47686ac7f"
   end
 
   depends_on "gradle" => :build
