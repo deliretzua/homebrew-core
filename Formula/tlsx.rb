@@ -7,13 +7,13 @@ class Tlsx < Formula
   head "https://github.com/projectdiscovery/tlsx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ce82a5e68f77f97fa43496d642f57bc33b0852650d1869df31c63d03a94b6900"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "69c61858dcc94a73ef47778ee35c4d14fb3432d852d9059b290c97898ad2751c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d2ec394bffce60cce3088e2ad3596b212db777b686228abd0c866c18f7a43c8b"
-    sha256 cellar: :any_skip_relocation, ventura:        "1ef6fa8749f6424efb28e368d9f7d8e54e1c3275a43a0e2e57911640b09fc216"
-    sha256 cellar: :any_skip_relocation, monterey:       "480a29689630c2c97e773eeb118878b8b2619f53348de42ed3cf378bb1882991"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cf0331e882bfcba2cec02af61a7d3c551c2eddf08123258053da87a4f6de3471"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7d7113a8c601f83f3c6b70901c64562f959089bf82c95309a0e3b8b45143794a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f5f0411b4501ea55be82d466c03e28796e9637b402f2aacfbf4c7250d95c8a03"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4c9592f391352549ea01af264fc2a10abd1ca12e7a85e699f68f079b286aa6cb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bb08dd62100a6dca087b21a5ed61654b26af4173b78e9cc57dd51a3c8e6f9344"
+    sha256 cellar: :any_skip_relocation, ventura:        "158bc31a500f0d2458e78d1cbf295521620bec075950c919f70a0b54db97f11c"
+    sha256 cellar: :any_skip_relocation, monterey:       "f86cb68a9d254d3e6ddc2e8426768a3abd6f8a07df7f6491fb45e7ebd0f308ca"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e71a40f50ff734a859ad6fc784393f46035a6c17312e62ff746e3e37894b43c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bfa685485c3c0f012b6fc6d2f63449220f193479a6f6ad7c09cd90a1a5882d10"
   end
 
   depends_on "go" => :build
