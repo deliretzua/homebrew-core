@@ -11,14 +11,13 @@ class Deark < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "66e48cf6efeb8aea069324cf2d7b2de043774301d5f83695890f7bee9f947c61"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8571ab11b57e2e90d68906b9a930c8f9667cbe4176bcd3d80a82bd7c3cadc597"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ba55a7b86b72f8de1ff901c2f927c07dde145e1f21281ff5bfd848120df7f5c0"
-    sha256 cellar: :any_skip_relocation, ventura:        "55dcf74ebde1b73b86714670a3d19aebcb37b54fb2f55362955e458dc94cbb20"
-    sha256 cellar: :any_skip_relocation, monterey:       "84180e4b5798017745f3fd80b93e098d58b71ac187021d2adff329c0865eabf3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "94d21e0cd0b11731d5c57e972a70b4119fe7a38bc29c4d201faf15aefe4f8e8f"
-    sha256 cellar: :any_skip_relocation, catalina:       "2a66f100c4cedef2a12624884f2cb321b34a81a62e458296be66dc308bd78d08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03470cea3de90c84d08119ec61defdb5a49315c02edc5d28f1c3836ff8e89bca"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5ed4fa3b539e020e2c4afa580166293b9d148cce9caf602bb3ca994139abc2b1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e68115bc2870357c15a2ebd94f70382116eec4c5d94500421c93cda21fa60696"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "38837770d573c53e889a75d9dfcea9701f33539d3bd350e96721e4dac43a5ba7"
+    sha256 cellar: :any_skip_relocation, ventura:        "def3274201210f991dd0ddc79546bf1d36a900bcde3e202b26a176e3949dc2cc"
+    sha256 cellar: :any_skip_relocation, monterey:       "18e3ce42adea9c623fbc926e16106edd362103a0d9f1bcda251e73bd12c9255b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "96ff6225b7606a00a2786398264653fe87c4f995922ec9418ce3b400b8f1da0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "162e85f0bb303675e98e5f421b398512beb7c5ea0744457642e6af265bbfedbf"
   end
 
   def install
