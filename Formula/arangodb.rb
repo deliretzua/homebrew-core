@@ -12,13 +12,13 @@ class Arangodb < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "f4174cba675452cd45cc046c97e156c5bca2430d3dee2df89870b5db3e872edd"
-    sha256 arm64_monterey: "589570961d7a6ee38a0f8d2c5b72d7c0ed86d1ae6e62fd3a46bb9f15d02b3ac2"
-    sha256 arm64_big_sur:  "036864afe81b9b710a7a2c1846f292fa034c2cbf0414dfc1f436e609acc4a5eb"
-    sha256 ventura:        "0cde38d56d4601aae040d7fb1bd47ce69d465ff2a9c76e9af39d9a6b04142b66"
-    sha256 monterey:       "d22e46a456735251ef5168f2f0ce05d695e9cb3045854eb4b21b63785464e91d"
-    sha256 big_sur:        "221679910a1bf97b57209aaf14fc4888b5806dae62a3a239937230affbb437b0"
-    sha256 x86_64_linux:   "8d05c9bdde3fea5db3c91ae350fdde24e5c1b9f43214076f551fb2fcbe09b64d"
+    sha256 arm64_ventura:  "196ca03c949389022a3c0d84606189e0185cb5698583d4be734780d335dee3b0"
+    sha256 arm64_monterey: "36b2aafbb61710ebb88c34c7b2cc1951f6d88b9ec4ab9592db875e9ada9dd3d8"
+    sha256 arm64_big_sur:  "63abcc969e399950b7f286b2fad2dde7885211b3862463edeedc6ac0c89ec8f3"
+    sha256 ventura:        "582d958d19d17aecb12ec327b40792243d5555a92f886ed18746a71218c5843a"
+    sha256 monterey:       "480235fa3dc1f1cb324c727b1e6b66faedb09bbae34fdbfd17225c6c4eec1612"
+    sha256 big_sur:        "3e71951d623a9a24f93e18714562aef02ef919f9b615d8a88ea4e0f608141aa4"
+    sha256 x86_64_linux:   "f618d6fb6481c8c5053d8a68b64f015a4a166be574ab12de0a38e7270ea8a82d"
   end
 
   depends_on "cmake" => :build
