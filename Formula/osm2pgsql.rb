@@ -7,13 +7,13 @@ class Osm2pgsql < Formula
   head "https://github.com/openstreetmap/osm2pgsql.git", branch: "master"
 
   bottle do
-    sha256 arm64_ventura:  "0a48e71a3e0a79c4c8c032309fa40bcdd3bb65f6904147045b7ec00f9dbe3524"
-    sha256 arm64_monterey: "85d329f3a86a7dd3bad4676dfc827ebbda16d9a56ad5d3062e611544b69ac5e2"
-    sha256 arm64_big_sur:  "144c623f4c17b3e228da70e7ea6a0b2f0c449fa288c6e2de55ed6109fa412b08"
-    sha256 ventura:        "351fd34612a1d55e7f799a6288e265486ac9e80f8933a81e8b565b1d810f3ca3"
-    sha256 monterey:       "51a4ee7f1a07b5b3d7eba482cf390b31226904d09bcbfdbe82d5ea65364fe664"
-    sha256 big_sur:        "85f49712c57f9b087dd3f02ee788e7ba823abee1ead3cf722bea293c02d8f215"
-    sha256 x86_64_linux:   "b624004e0b3ff4310b8a2c48c2733442869f7217737cb2a1561a4d07609f3688"
+    sha256 arm64_ventura:  "2c59aa140480693d0803de5fd1289c59f133581c099f07e10420d1e02190f7eb"
+    sha256 arm64_monterey: "5d9658b16a3c1625d4982622ef17d12aa85192dbbc4fcbd79bbe77babe993aa6"
+    sha256 arm64_big_sur:  "93c931121d11f8db4ab9ad57abc5d04a98b6c0716097a0e1df2fe0e4b4dce1bb"
+    sha256 ventura:        "b15158365e7e54240ed9136df6db58da2077986436f54337163a4538ba4c92f4"
+    sha256 monterey:       "d0b7bd622135350073619a5589b5ad21b09c008240fda11dd5048479226b0d41"
+    sha256 big_sur:        "819259fe065d22f78c458bb9cb5a1a0a067c7d1208aa5c3bf551ecea636f9f5c"
+    sha256 x86_64_linux:   "5f5bdee2b687ffbaf1e7fd5556c10af3f1ea9de120e20a9460a49c0e3f22ad3d"
   end
 
   depends_on "cmake" => :build
