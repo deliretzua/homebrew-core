@@ -9,13 +9,13 @@ class Trailscraper < Formula
   head "https://github.com/flosell/trailscraper.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0bb654d437d44d9d59769a77b5c2d603d1cf54660a72632935f4498acfa336cc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "010aeca289d9ccc086eba0bb417b82ff593ad59b71a46f363720724e0b3b5620"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7583d820887dbe67efcf9ee53f4b30f32b4392789348870f2e6c8d47b35edf6b"
-    sha256 cellar: :any_skip_relocation, ventura:        "fb760de33c8b333c2b6020284eaacf38523eb8ad00bf179142bdda9f2c4dca41"
-    sha256 cellar: :any_skip_relocation, monterey:       "84170df9025d6ac407dae454486e803cbec770bcf4a8bbe58dca75b9482fb8db"
-    sha256 cellar: :any_skip_relocation, big_sur:        "209de4cd23a327251538d17b5bfaa34ac56eac59429ee3c1ede333c88614528f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9588284863f7f8a4a26961d3427909011a81166546c18b1a8e346998abd3ca5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f9e66ebb373a566bd0ba72e945245a6c4ab05236b509cf7170e8aa65bbb7fee0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a98eb9f9bcd1605ed0a50e5129e50e52a27ae2003b4045f1adab0e6e91d47ce8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ea1caa6f8c28b1f272fe6ce234f74625f71174998b4f5671d11d3964cd26d52f"
+    sha256 cellar: :any_skip_relocation, ventura:        "5bb42af07983d50f5c8d5bab7b1b0f9602365221c6d16f8cff518a3ad6d94129"
+    sha256 cellar: :any_skip_relocation, monterey:       "4969c624af360265353808133fb25715e012d6b4c9e957903caba4972c6e8ac0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "849b319c01e99fdc14bffd06b3610a4d053c5885b523303fe925e58055c86dd7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23ab1666ebdbfdc0d6bce107d6f774f26a232f31a713524aa643264fb7ca0474"
   end
 
   depends_on "python@3.11"
