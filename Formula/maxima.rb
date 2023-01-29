@@ -12,13 +12,13 @@ class Maxima < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "22c47b19ca6d456890d991e52c76473e8fa8c457280619cd5ab747ecfc6d3983"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "04e1064642d37fd2e74384b6dea73ef7c6f16be79fcb0846ef51a125be6b7c15"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fd2cf7c9fe4d7de64df7b58dedd74e9b8db09a9d8ac0e31806e2713afd438e61"
-    sha256 cellar: :any_skip_relocation, ventura:        "31529bd77f03ec89d779da2bb7358a9011e133f7ac3c832af2baf8aff7a227c1"
-    sha256 cellar: :any_skip_relocation, monterey:       "3542fd101e5d7f591dc98fb9413442b1cc4ee3df8f69a91c5ab53a6af20eb1a0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d5dbd1a9fb984dd67ac763b590fbb7a36904e655ce037d106b270620f9bd9d14"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d76b88e53b18c6bd3a653ece525fdcda55e262f6fe27d4c7dbb4fc33645c1dcf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "805283024f2be2da28f828fac555d4d6f02b9bccd27cd84be8c1c4c4aa4b59fd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d5bde7bcb75f82f244cb4b243d264fd3796917bf97a83be02ad6947b68adfb00"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d2d76c2bffbf1270158e175d3713811e99f8326f7169f1cf13d091cbe376e225"
+    sha256 cellar: :any_skip_relocation, ventura:        "6d7482570cbdaa892a04758fc2e17e46ee4ed6222b37a933ffddf66e79d252df"
+    sha256 cellar: :any_skip_relocation, monterey:       "bd6bfb89f71bfe46f98b0f8b48102b3400e251049990790cfed636bb4fd7afcd"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d51bf9e64cfdf29697fd0f4e652a088cc106c381dd60673acba8a9af8074cba6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5cf954ac5b454685839242d8e6638a225981c596fdac12adaf603741555116c3"
   end
 
   depends_on "gawk" => :build
