@@ -1,8 +1,8 @@
 class Inja < Formula
   desc "Template engine for modern C++"
   homepage "https://pantor.github.io/inja/"
-  url "https://github.com/pantor/inja/archive/v3.3.0.tar.gz"
-  sha256 "e628d994762dcdaa9a97f63a9b8b73d9af51af0ffa5acea6bdbba0aceaf8ee25"
+  url "https://github.com/pantor/inja/archive/v3.4.0.tar.gz"
+  sha256 "7155f944553ca6064b26e88e6cae8b71f8be764832c9c7c6d5998e0d5fd60c55"
   license "MIT"
   head "https://github.com/pantor/inja.git", branch: "master"
 
@@ -32,7 +32,7 @@ class Inja < Formula
           inja::render_to(std::cout, "Hello {{ name }}!\\n", data);
       }
     EOS
-    system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test",
+    system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test",
            "-I#{include}", "-I#{Formula["nlohmann-json"].opt_include}"
     assert_equal "Hello world!\n", shell_output("./test")
   end
