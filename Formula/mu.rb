@@ -18,13 +18,13 @@ class Mu < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "90fd3e0bf68e9d068837ec62e9c7995820b4d5efdd9c97fe57f0d93f4bcdd91a"
-    sha256 arm64_monterey: "4912edec797751cbcc299c803cc923f9dc43a98c0bebfde4bbda06cd7c11178c"
-    sha256 arm64_big_sur:  "c2f7c55d2d21d0afeb64d1a17e9ad52c3b0dd57790329a401168335c9b1875ab"
-    sha256 ventura:        "c59786b25c71cc1a0e6a12cb27cc1921076aa5f4a98a623dbbf5f697284105cf"
-    sha256 monterey:       "4a6917251e981252fc3d93251811b8c345da6daa769aba17b625b5d78a6cc9b1"
-    sha256 big_sur:        "6aedc6e3fd0cd6dfc1972dc2290decda236c8ec29b935854269e759653fa0c1b"
-    sha256 x86_64_linux:   "e553af9084e9b538e88094978a245b5feaa8414f451de41e3e6edf855e66dc37"
+    sha256 arm64_ventura:  "a7374671eb123ef221ad1df86dba8b3fd9ad7d10e048f439245b88240ae15676"
+    sha256 arm64_monterey: "aff9b01cee886de6fbe057aa2fe33aead281911496a65f58e254586f04766912"
+    sha256 arm64_big_sur:  "88e297752713b5922ee0d4fe819677bbf2c1d787cf27ec90bbdfbeca7d402e6a"
+    sha256 ventura:        "ffcd38352e528ccae36b058d630a79e0240626a8d76ee3535bbdefbd90b69306"
+    sha256 monterey:       "5abf4fafe115819cf9a22bac48b7307157561c06e237d389af2bdd590e06dff4"
+    sha256 big_sur:        "252ae563cb147d3cbcdfb3cb4ba84b2febb0a4ebefd567ae449f2215a31fed5c"
+    sha256 x86_64_linux:   "07366478a9a8b5c3f328e73837f1c7dcf213a73a5c28ebd74d316378b6747dc2"
   end
 
   depends_on "emacs" => :build
