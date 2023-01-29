@@ -8,13 +8,13 @@ class Tmuxp < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "176749c58209dbb98cddd31cfd59b9e2fa5fb874f0cdd3af2a779e9dff43c092"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c0cb02265d001f32b0ecd33c95387becece49962cbe3622f3278f64620ea6c22"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3a99ddcd85bffd2f8dd1dbd192ef6a3e859f7385cbaa579442453be81c60f977"
-    sha256 cellar: :any_skip_relocation, ventura:        "7b645e2f4952a162ab6ed64be702b779e1f23e1462a4189a29a26fd4968b28f8"
-    sha256 cellar: :any_skip_relocation, monterey:       "78640fb6b3e7fc419bb443065805e96d911391ae4aaa71c098d44c6a9aab0b7d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7d370edfc5f20ba914eb76fdc1809e6d5d9dd2cad584f1cd5460fffa22989e9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f21d425f2f294519da87a46831959a5fe9a414320730ac90985a320036a69593"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1a04489270cb9430a6901467bce1d055ae1ee1d9e8ade4fa0c0e9d9509effd19"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "866cb3e09eceaba99f2ac80dfe44190c96d44f398adfae896289aefe7aef7c27"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "38c6ffeb07dfcf49b49f4573239f4283a247b25918119a1faf86a9ef43a995b0"
+    sha256 cellar: :any_skip_relocation, ventura:        "9d79e71ee1ecc1255dbac671725d8d88632e0caea1278d533e9422715846fc27"
+    sha256 cellar: :any_skip_relocation, monterey:       "d88c05e350cacb35d855abc4f49f6e3b6b0b3630f7983597beb2b544911e5576"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7be6e6856d68d51f158dd69d55f00ed89550dc9f69d8db48e1ad86f67d2b7a92"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "060589cd8ac47294b60b414fb598131505b614195854384af21972a131448083"
   end
 
   depends_on "python@3.11"
