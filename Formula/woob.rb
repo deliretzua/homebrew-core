@@ -13,13 +13,13 @@ class Woob < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "14fcb4ae2eeb421c3e933b442f28c03104b595de1daa2d79dc1133a1addc21c6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "735fe4b81c2e3c220a42360829bce0ab386c01f5f51b4c98bcb14539a00aa78c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6df1a5ad4fb95dae84edea3a818755265d310d491767d9842ac49af577ec5117"
-    sha256 cellar: :any_skip_relocation, ventura:        "36e115c2d27d14ecc115b4339f45f64ff9af1e188040cc62e74cf992f288015f"
-    sha256 cellar: :any_skip_relocation, monterey:       "69752ff0af116b674bb52d391ee19bf00058656115ff1513a5c0a385a04bd06f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4bc37a3bec52101c3f1066051ac1b05e720cfe2e3d1beaac24ec376f3dbca401"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d1af65260d56b6bf1403a5619710642b8e4ea0ab9eea67578886ea3f4a7e81d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "530a8d217e66bf1ac5a56bd44d528304747a8d8f8020c34e9f5b373bdd18154e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f6e4b58ba59cf6698c3707409a409c2578a7a2114ed304fd3606e6b1105d7038"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5feaf9c390fcc56829b49f5ce50b6d49bf4e525294cff1cbcd55772abfcdac8c"
+    sha256 cellar: :any_skip_relocation, ventura:        "bee9aa8156a85c76a81d15db0939f3f9d237631b4a1d79875ece232ab1cea387"
+    sha256 cellar: :any_skip_relocation, monterey:       "9606ef02982ef08911789757142ee0c3fd64f95dedb2cbfaeb379bf788d8043f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "92082a22babba683f32276c3ea7961b333ebf2c72fa7734a1ca9606f79dcc1ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "988160eeadac8872cfe3b105aaa64f0bbb1eb63cf91b78ff7d705d64472090d9"
   end
 
   depends_on "gnupg"
