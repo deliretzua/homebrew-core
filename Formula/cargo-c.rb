@@ -11,13 +11,13 @@ class CargoC < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8bd2dca0982170de1d022ea041f780b6d781b4ef641076910d2c3cfc37554d11"
-    sha256 cellar: :any,                 arm64_monterey: "eb2cb2830b2eea3e4af89125928eb3bbf0fc8f2180b4b2ceccd6ed1175738fdc"
-    sha256 cellar: :any,                 arm64_big_sur:  "415c81f580ebe951ad694797395921f52f4718b3b0cf76b3c2f1d7840f50ccc8"
-    sha256 cellar: :any,                 ventura:        "4f57e3ad4774f8af86990f6a98ed28b136aa6e9c2c5c4472d83f9a7ab2df01ca"
-    sha256 cellar: :any,                 monterey:       "4e62f45fbd97805624ab001cb6a67d5b200bd1c7059567e483a453b159c01f85"
-    sha256 cellar: :any,                 big_sur:        "cd624e79d0282347b1918cd6ca75f7a80e8304f6d63feb46aaea5242a55e86bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5179d65bf4d109c68987d15b16cd074f7eac8c41ca0ea65f699bb06f155eebc2"
+    sha256 cellar: :any,                 arm64_ventura:  "60e294e3a3e7a4b34f3c7a2d7c3499381978274fe6d8b52c435984e9d43b5013"
+    sha256 cellar: :any,                 arm64_monterey: "97a703d772eb976655113393c1c2aa1d8e8f34a25145bad75c1859c4bee859cb"
+    sha256 cellar: :any,                 arm64_big_sur:  "7a2e70ae9fe9743f3f0f3a8a3311beff797a3b7e9536b83c5fd3e252602559d5"
+    sha256 cellar: :any,                 ventura:        "9b2fd455a711ad35bda33e789df43c838a03ae660ea29797c59215511604edd2"
+    sha256 cellar: :any,                 monterey:       "4a466f143727f9311fb97b4ddc67a5069df9e3b8536787ab80820330492b7836"
+    sha256 cellar: :any,                 big_sur:        "2f764fbfbe6a3391246ec9ab49f6b1ea17a2529229d8a2ab218a580189780689"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f19b37500292957402dbd65df801845c267097607d2b74c96867fe4791d09cf7"
   end
 
   depends_on "rust" => :build
