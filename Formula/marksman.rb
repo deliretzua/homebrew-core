@@ -8,13 +8,13 @@ class Marksman < Formula
   head "https://github.com/artempyanykh/marksman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fcd1b7a90e9ec70d36e83edeb8e6001098d68ae5c48047a15d293d954785478a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "05f660090de95c14b0f23d5e0feb25fb8935a497c485252c6d441ec518d82f78"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "04ee968d615acdf4e19902364b755d195783658737aabc35f86e06c67108a7e0"
-    sha256 cellar: :any_skip_relocation, ventura:        "96828019d0480600e90e533ada31697dd609e9f1b60d7eec99e0a3bff6e9740c"
-    sha256 cellar: :any_skip_relocation, monterey:       "8dd5fba0918d4e7a89171e164268b54ab5a659d294107780125b41fdd1bed724"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3bedc8eeaa622ea1fec821197ee2ce2fdf0ec1f5447da4ef50a57c4ca0844e84"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c0ddf03a37dffb5ce295f3a67a0f7ccf3659e7076d43038444ca42c139038fe"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7081de73c921787a40b329b00536750f9091c079bd96e738acb1964f9105fddf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2fcd7846a8aac0c9db8f4a36bcfe91ffcfabaa92fd989547ed65c36ccf7d2f1a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dd1d3cffc5a7a301a436b9c28c18a4cb3ed3cdf778a0971e1b79ead792188976"
+    sha256 cellar: :any_skip_relocation, ventura:        "9fb78baa82b2987b14f7446a91af2dc0e43a9343cc455fdfa4f90df6ede71cab"
+    sha256 cellar: :any_skip_relocation, monterey:       "b6130ce3839799e27cbad5dd5f03e5561a58ea72e5e79b766719379d7ac013dd"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9c74dd14f5f9a860cf41ec2daec84045f6ce648764aaafa5db52e263773c158d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef590da29698b782ededc7344a9b202d856ebeb847784abd0680fd543e406650"
   end
 
   depends_on "dotnet@6" => :build
