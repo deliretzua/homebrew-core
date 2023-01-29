@@ -11,13 +11,13 @@ class Dmagnetic < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "e6940319b967507415be3bddd0be0d55371b443e1e2aa19a632d86e2c6053166"
-    sha256 arm64_monterey: "0a62644ba3abf82e6e81780ba4717b29cca1fd95055f7296bce848f1dbba4fe7"
-    sha256 arm64_big_sur:  "c023ef0b64d06d0725b153116d921ed32bd5af504ca15c4e759ff313091b7d92"
-    sha256 ventura:        "d23f362dd896c05e7c26cbfd6fa4d6c9941e3752bd851d3ca915eaa1d336ddb4"
-    sha256 monterey:       "f8b059c4cd374854eb806e8467633dd7ac9e624dbf8832d842d9a79ce22245ab"
-    sha256 big_sur:        "f1f89777da204a7e8eaa16cf9ded1c5abb40d9f30ee17c3d3b548dd910671a29"
-    sha256 x86_64_linux:   "d3fcb77de41a65ff5d9ef566fc12593008821bd61a85ea03f1e1e2e5b2bff371"
+    sha256 arm64_ventura:  "04a28c563b190acca6d3d0167e1476438717e558d243123fd821f4960c3f5ad2"
+    sha256 arm64_monterey: "4c7bbc22b20743ad1b6c45077c857ece0b446231686fbe664b21897434eb874d"
+    sha256 arm64_big_sur:  "c1a5fb93957fada941cc457a37406a43918e7c7eb1af4579c241edc43caa0868"
+    sha256 ventura:        "cb334115639d028f1c25661276aab6ef2c84db2e0bddfe7875bee3c5a07cc94c"
+    sha256 monterey:       "13a91829e4bca711a5e6dfbdb02292777f4ce3c836748a291df1aa601a055bc2"
+    sha256 big_sur:        "9e135dc4b24c390eb50527e84f7d915ba5b060429ec3c2e273e2fd6ebfe37693"
+    sha256 x86_64_linux:   "a89c211a9cd74bffa552a5d34fb90db3a3abbf20aba22e0d6d56dc0ba49ae387"
   end
 
   def install
