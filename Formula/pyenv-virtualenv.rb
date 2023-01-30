@@ -13,13 +13,13 @@ class PyenvVirtualenv < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "03551b4cbf9bcbf04eb07de5a382fcda83b8591bba38097bfc62f4cc300b1ec6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "03551b4cbf9bcbf04eb07de5a382fcda83b8591bba38097bfc62f4cc300b1ec6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "03551b4cbf9bcbf04eb07de5a382fcda83b8591bba38097bfc62f4cc300b1ec6"
-    sha256 cellar: :any_skip_relocation, ventura:        "29fdaa2e9516b77cf0cf41f10058115db14e3c31924cd96f9fe226fa56abbd61"
-    sha256 cellar: :any_skip_relocation, monterey:       "29fdaa2e9516b77cf0cf41f10058115db14e3c31924cd96f9fe226fa56abbd61"
-    sha256 cellar: :any_skip_relocation, big_sur:        "29fdaa2e9516b77cf0cf41f10058115db14e3c31924cd96f9fe226fa56abbd61"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b87d0c08b3ad5cb73e33ca631cf14f487b25646c933faf06e91f1d5e311ccbd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "49fb9fb141148ea0e5463249d2a0d79beda9539fa0b30d0171d28a751c06d1a1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "49fb9fb141148ea0e5463249d2a0d79beda9539fa0b30d0171d28a751c06d1a1"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "49fb9fb141148ea0e5463249d2a0d79beda9539fa0b30d0171d28a751c06d1a1"
+    sha256 cellar: :any_skip_relocation, ventura:        "577ddf85d837acd6accf6aebf29be59dcd0ce17a23c57b25de07b564214f6203"
+    sha256 cellar: :any_skip_relocation, monterey:       "577ddf85d837acd6accf6aebf29be59dcd0ce17a23c57b25de07b564214f6203"
+    sha256 cellar: :any_skip_relocation, big_sur:        "577ddf85d837acd6accf6aebf29be59dcd0ce17a23c57b25de07b564214f6203"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dd41573b474f1991731daff3bef3aa2c4b72dca46129864e601db9f53787fdb6"
   end
 
   depends_on "pyenv"
