@@ -6,14 +6,13 @@ class Liqoctl < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7ae44ed71dd521a98f047800c50300d39583b311049af8732536dc279a9060b2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7ae44ed71dd521a98f047800c50300d39583b311049af8732536dc279a9060b2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7ae44ed71dd521a98f047800c50300d39583b311049af8732536dc279a9060b2"
-    sha256 cellar: :any_skip_relocation, ventura:        "a5186e15337ba18ee734a5ad2a85ed0886e276c2073377098a4f696f4018dc80"
-    sha256 cellar: :any_skip_relocation, monterey:       "a5186e15337ba18ee734a5ad2a85ed0886e276c2073377098a4f696f4018dc80"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a5186e15337ba18ee734a5ad2a85ed0886e276c2073377098a4f696f4018dc80"
-    sha256 cellar: :any_skip_relocation, catalina:       "a5186e15337ba18ee734a5ad2a85ed0886e276c2073377098a4f696f4018dc80"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f881c287a39bc54612f846e746ad75354868d9703c0b92606fde939ffabf5ce"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "33ad718639a576a686e16202ac66af5369eae6a92f3372d1079aecab3e4299b8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "33ad718639a576a686e16202ac66af5369eae6a92f3372d1079aecab3e4299b8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "33ad718639a576a686e16202ac66af5369eae6a92f3372d1079aecab3e4299b8"
+    sha256 cellar: :any_skip_relocation, ventura:        "a20b52ca648b5fbdb7668b43f84fa4c13df0cfcb434e404c774b0561e49ddaf3"
+    sha256 cellar: :any_skip_relocation, monterey:       "a20b52ca648b5fbdb7668b43f84fa4c13df0cfcb434e404c774b0561e49ddaf3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a20b52ca648b5fbdb7668b43f84fa4c13df0cfcb434e404c774b0561e49ddaf3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5aa043426f8a164d4f35d6216fc1ac8039454849d5114d44e6db0298b36225cc"
   end
 
   depends_on "go" => :build
