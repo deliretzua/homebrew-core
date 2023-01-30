@@ -2,8 +2,8 @@ class Erlang < Formula
   desc "Programming language for highly scalable real-time systems"
   homepage "https://www.erlang.org/"
   # Download tarball from GitHub; it is served faster than the official tarball.
-  url "https://github.com/erlang/otp/releases/download/OTP-25.2/otp_src_25.2.tar.gz"
-  sha256 "aee1ef294ee048c976d6a126a430367076354f484f557eacaf08bf086cb1314d"
+  url "https://github.com/erlang/otp/releases/download/OTP-25.2.2/otp_src_25.2.2.tar.gz"
+  sha256 "94d5b6b0495050c5ea78a10c02ba3bdb58ce537c2a8869957760e67ec02924bd"
   license "Apache-2.0"
 
   livecheck do
@@ -34,10 +34,12 @@ class Erlang < Formula
   depends_on "unixodbc"
   depends_on "wxwidgets" # for GUI apps like observer
 
+  uses_from_macos "libxslt" => :build
+
   resource "html" do
-    url "https://github.com/erlang/otp/releases/download/OTP-25.2/otp_doc_html_25.2.tar.gz"
-    mirror "https://fossies.org/linux/misc/otp_doc_html_25.2.tar.gz"
-    sha256 "b08e933e4d8753039dfa03c47daec30f7a9194e5e41b8c3c318c6c95d861b252"
+    url "https://github.com/erlang/otp/releases/download/OTP-25.2.2/otp_doc_html_25.2.2.tar.gz"
+    mirror "https://fossies.org/linux/misc/otp_doc_html_25.2.2.tar.gz"
+    sha256 "3077f209fe25034130e262c039a9c8d43773456cf49be052ee9057f870ee77e9"
   end
 
   def install
@@ -49,9 +51,6 @@ class Erlang < Formula
     system "./otp_build", "autoconf" unless File.exist? "configure"
 
     args = %W[
-      --disable-debug
-      --disable-silent-rules
-      --prefix=#{prefix}
       --enable-dynamic-ssl-lib
       --enable-hipe
       --enable-shared-zlib
@@ -69,7 +68,7 @@ class Erlang < Formula
       args << "--with-dynamic-trace=dtrace" if MacOS::CLT.installed?
     end
 
-    system "./configure", *args
+    system "./configure", *std_configure_args, *args
     system "make"
     system "make", "install"
 
