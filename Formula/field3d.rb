@@ -4,7 +4,7 @@ class Field3d < Formula
   url "https://github.com/imageworks/Field3D/archive/v1.7.3.tar.gz"
   sha256 "b6168bc27abe0f5e9b8d01af7794b3268ae301ac72b753712df93125d51a0fd4"
   license "BSD-3-Clause"
-  revision 9
+  revision 10
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "01f10aea2d4feb02cf770ef2beb67d2603d43df433d5e5b922045e9e2f92af38"
