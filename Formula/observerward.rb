@@ -1,8 +1,8 @@
 class Observerward < Formula
   desc "Cross platform community web fingerprint identification tool"
   homepage "https://0x727.github.io/ObserverWard/"
-  url "https://github.com/0x727/ObserverWard/archive/refs/tags/v2022.11.14.tar.gz"
-  sha256 "9fee36957715f93d88662dbcc7ee709426c9ac87c9fb6c5d90e3dc9e6d4b65f0"
+  url "https://github.com/0x727/ObserverWard/archive/refs/tags/v2023.1.31.tar.gz"
+  sha256 "c8bb3104590419589a791ff481017b4e328a529937a88fc37398985f8a8463b3"
   license "MIT"
 
   bottle do
@@ -19,9 +19,6 @@ class Observerward < Formula
   depends_on "rust" => :build
 
   def install
-    # Fix a segfault when built with rust 1.67.0.
-    # Remove on next release.
-    inreplace "Cargo.toml", 'prettytable-rs = "^0.9"', 'prettytable-rs = "^0.10"'
     system "cargo", "update", "--package", "prettytable-rs", "--precise", "0.10.0"
 
     system "cargo", "install", *std_cargo_args
