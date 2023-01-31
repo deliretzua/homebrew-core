@@ -17,15 +17,13 @@ class Gtkx < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "88567f860b5e3ad354ad086b5f5fa19a2d088d867af42207ced931a30005b805"
-    sha256 arm64_monterey: "977f25c376ffbf7785a8a3464e61490c40d7eb940385cae3b205ef9b9d53b693"
-    sha256 arm64_big_sur:  "b304a9f2d24f97e179cb5731713fc4876a730b507eb057bba4f9097af46d7708"
-    sha256 ventura:        "07d68504346b0d2529b01a14146f37e303fe3fa900c58667d51a30097abde11e"
-    sha256 monterey:       "84df93d99e85fff484d42ab803a41ca83daec204950e2f2dc32602c718c646f5"
-    sha256 big_sur:        "8ead5b96878ad431ac3e23dc3bd20bb4eac509c63c231e594986a0fa331e157f"
-    sha256 catalina:       "3900f64476d7988670b5d0c855f072fba0af2b1bb323acf4f126f70c95a38616"
-    sha256 mojave:         "10d1f2a81a115b9cf1e8c76fbd6cdc58f5b4593eb7f9e15cbe0127e14221dd06"
-    sha256 x86_64_linux:   "aac750f0c7081619c9f3a403bfbc47ac58cd6300733b2d31dc2b0384b1500066"
+    sha256 arm64_ventura:  "09d870f69784624a4585fd4778d622441689350d4ef444f658e5e8be0edb644c"
+    sha256 arm64_monterey: "9c86b442ae42c6842b04c5f2fba9014cf92da4ce1b6730821d400b1549fb9c4c"
+    sha256 arm64_big_sur:  "7f1fa14922a06171f2827daa56e7973721de2257a7920e8091081fedb641d63b"
+    sha256 ventura:        "336771ce80cf6413d18c87666abf8ff030faf96a8530c1f5e4185184d80d791b"
+    sha256 monterey:       "b9e663b0c11f3fbd74d92aacf6246202b600dc4346de26f43516d1531d88b60b"
+    sha256 big_sur:        "3eb689a0bf93bff2991160daa62cd31bea4ee77791ae216f2d6b30d5305ce6b4"
+    sha256 x86_64_linux:   "3ccb9319c9550fd10cedb09ef7cfc51ed8ffd71b1698aa66d143d83f5c1b895a"
   end
 
   depends_on "gobject-introspection" => :build
