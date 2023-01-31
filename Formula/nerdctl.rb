@@ -7,7 +7,7 @@ class Nerdctl < Formula
   head "https://github.com/containerd/nerdctl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "370c85c986365a16203595efa6392c95b06d93f324e7965e39c7b73a4fe35f66"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0ed7311b3fa6434595a703bcabe155bfee7f794985c3bfee570e5007b640d572"
   end
 
   depends_on "go" => :build
