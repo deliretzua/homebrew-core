@@ -11,14 +11,13 @@ class GstPython < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "6160154235951d7ff14e28b5b2e63ca46ad4c67cefb85878ec9f3235bd7dc353"
-    sha256 arm64_monterey: "f232d6369ff3182389abd14345eec7dd50e49c90666461f35e5bd34d1365fcef"
-    sha256 arm64_big_sur:  "6732658419661fa5e5eaa10f411c3200d26bc5b3717a6c69c5ec4c1e8619fd73"
-    sha256 ventura:        "9102414169ed31f48f8c0e3741ffa44760c411608f409dd094c728f1aa65dfe7"
-    sha256 monterey:       "7f5bbb9496be22f10fda37b1534f97cbd2f9b0a29a5681fd6d47661f7e3b28f4"
-    sha256 big_sur:        "7e9fbc50c5cc07f273dbe3a5a57c59e99dc50f58dd20d8fbb41c87da0c8828ce"
-    sha256 x86_64_linux:   "5dc205d0d1778992ca8ff8eacd08af2441fc78588cde6e0b3e94f9f06ee5e9f6"
+    sha256 arm64_ventura:  "627f61e862103cfd5d37f3f8d362486c8f130681bd3803021f5ba7405eda733f"
+    sha256 arm64_monterey: "ec8f6d3ca790262c049df58b4d703e22cfd7b50fbc50290c99ef09893f30d1cf"
+    sha256 arm64_big_sur:  "f70c45aa848b1caf06d6579557e33b5b4795b0f1c7473d014fbd06d9ad5fe779"
+    sha256 ventura:        "b4ca5abcc0e8f24e1c05d7c907bdb979e3d195e0e778bd83203b84e182b5704a"
+    sha256 monterey:       "37cbf8dae7e320e4eeee532a197713cd10d1bddf29a29c2655b333534ef1b2d8"
+    sha256 big_sur:        "8f81a557d990a051ab91909ecce271a8a80de6f832ef06e3fdefb09d35195f43"
+    sha256 x86_64_linux:   "eeac212bb8c9b0b172117c32ff51362a70c280698b5f6baddebc074463425130"
   end
 
   depends_on "meson" => :build
