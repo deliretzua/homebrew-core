@@ -6,13 +6,13 @@ class Recode < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "36b3e395da0fa0dc36f82798e1cb1f993115dc05bd3fc23cfec2fce6d4a50f55"
-    sha256 cellar: :any,                 arm64_monterey: "9de3695ef53d184456f3447e703d358bade6bcdf506a21dfee8d2d30ff381672"
-    sha256 cellar: :any,                 arm64_big_sur:  "2ce7b2c21ae41e9d86dd967aeeca28d61827db5a2aa5de0fbbcf613461228249"
-    sha256 cellar: :any,                 ventura:        "a313db5487582d69f4086a633a3f0c1223e2ed5250ef15a7f2d490c4fd25cfef"
-    sha256 cellar: :any,                 monterey:       "c112fcae93ad14b4728c31cd2e5b6e0ffd3a2305caac0f8d5859d0571cc97f35"
-    sha256 cellar: :any,                 big_sur:        "284ca96c22d0bff8ba5164f42df49524db62bdba3eff8cc87d5d759ecfb11946"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a0c4df1ad61f8427d75b9454142d15a88d2af7b642d03784c55e6b89fce29c0"
+    sha256 cellar: :any,                 arm64_ventura:  "43e1f1c1e34ea2a6ce0e794aa99378dcc282b88e75abd5b64407544f79b18f5e"
+    sha256 cellar: :any,                 arm64_monterey: "a350ff1d98007511a123cc29e8d338164d36ad97126e1cbf6f706d70d4a55238"
+    sha256 cellar: :any,                 arm64_big_sur:  "30c322a156a08ef567279ebafbe6766be1d65306e1ed0529554effd1ec682167"
+    sha256 cellar: :any,                 ventura:        "e994c456daa78b8e6c324ca5802b6b6ebf27207585280430102090299841ba1b"
+    sha256 cellar: :any,                 monterey:       "37660b18533ce9c469a27dce18f577947f4f5a7dbbb26b19e50a88d9ee9e2eb7"
+    sha256 cellar: :any,                 big_sur:        "249ce4061a2202c4a0435c913e34856a5f91ffe761a31a1ce43a55509dc19599"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ebf5fa37f30212152b21e78386294f7c25217ab049414d840bcbc87738bfe110"
   end
 
   depends_on "help2man" => :build
