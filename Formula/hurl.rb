@@ -7,13 +7,13 @@ class Hurl < Formula
   head "https://github.com/Orange-OpenSource/hurl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "82409a212f2c0e38261ad5a8fd9c5084360063578240427124e183b827e0c290"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c13ba0cf2195e96e77d38e69934c4a506a135951fec2a2bdbc66d922098747fe"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6b32e95a475cd1cbd1eed88779e594f2b80d71689adfd23c08d5012df317aac7"
-    sha256 cellar: :any_skip_relocation, ventura:        "205c2c9505066b43325c940bd35bb45896fb8277552b01e3c5966c31f0ccd763"
-    sha256 cellar: :any_skip_relocation, monterey:       "914f7833b3297367341af824d57c57af0eefb89f986000a92ac4c00583ebfe4d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b43172850809ac87ea77d0c92affa933a0aed059aba9f91edff2659b630ab010"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "115b3729b3aaf760fa79257cc171ad9f5479cd13f272e1b4f6e5bd870fc26764"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ec06767e3c13ce75cbc38d4a58a9a666bcdde27cebdeca334f9e8938b3132bcf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4f6d0d17661b13880620f78eedd1a2645a1ba2f730221eb26caa7ae72a02864c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c1fbcbd68edfe5292957ec1b7c3cd4897f53632acc62c18367bc74be39104f49"
+    sha256 cellar: :any_skip_relocation, ventura:        "ace14dc57f016b28abc0e35332b7d369216decb7f113babc95381afeb93db992"
+    sha256 cellar: :any_skip_relocation, monterey:       "fb1fb9e4956f4c2da9d35a85843443895272a73f46028e9650c8b8ea97c1aec9"
+    sha256 cellar: :any_skip_relocation, big_sur:        "cb418a569526fb28b0503543c1b5b6c5cc7b51d94ba15e03393589586b40446c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8da8fefe3b5d1f603cf93b5a9ee8716e889d881b54d9ccf8b1c4fee1c2f0816e"
   end
 
   depends_on "rust" => :build
