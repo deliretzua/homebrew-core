@@ -13,14 +13,13 @@ class Mimirtool < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5b52e8915e04c0d174a2eab443ee2dcada73fe01a8c3454e3e78e5f6e5e1c624"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7c12f4f48e17cff5977558083e02145caa4ae27e623c5aa1f1a8585bb49059c5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "803ca2e2cde3f36fb62ea4a0d7d8048d4e946d15d1b9e7b04c9db620beff8ac0"
-    sha256 cellar: :any_skip_relocation, ventura:        "23e61f68c02eaf2753b1e020403e26a129f39bacea96d33425a41725809fd1ba"
-    sha256 cellar: :any_skip_relocation, monterey:       "ca44ba45ff5409b332378329a594a902160f6b17fc79115c1c7fedb54424b0da"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c568c2e4923350f6bc6cd54f751d101b0d8bba3b756eb14789d5e9c3ee5d2df0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d99cf86eb8ab8fbffbff8bdb5f4b6fd00858f82bcd3bd99ff9efabe452422328"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fd4b80edb33a2bdc205b2726650707044e6b052fa64bfcde25e5c4e032aef5fc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "848e162e24a5eca027861845a8f0b3a5cca3e41d3b849c2d61466c051e047237"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8468e69b70ddd150caabb2099655259554aefd675f1e88aca7c9fd31f09dc72b"
+    sha256 cellar: :any_skip_relocation, ventura:        "47e11cce207ec57f33fcdc75968a7a174e8080710b4d443d279fff22bd031ab1"
+    sha256 cellar: :any_skip_relocation, monterey:       "a99f4333edddd5b32cd1b24d0280269ff8156036f1da02ae08fd1b10a14308d1"
+    sha256 cellar: :any_skip_relocation, big_sur:        "98145919dd3339c314a0b3a55f67e94290b236610023f659d6fcc8f4efb24b8f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e59a911de274f645a03391a179c975c888c27c19330b66a437ce204214dd02ad"
   end
 
   depends_on "go" => :build
