@@ -11,13 +11,13 @@ class TektoncdCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "db99ad614b3d13716199a50e0f76754e89b4cabe3df39fe07bf96ca859333d13"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "170e62ae0e4abb03b93d714c4d6b25960397e59e9d1ec8202e9d6468a5d09a2a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9414914cc9c446d9f7ff089df232cc44bf8d05dea4a9f23b8f72fa8d88fad375"
-    sha256 cellar: :any_skip_relocation, ventura:        "6588b455beb7f0bfe3d07a9afe00c1a7f8cb68a7c2a5e4b2f16e94dccfb1f285"
-    sha256 cellar: :any_skip_relocation, monterey:       "60155a4c5b22aeedef8c6b0de5b2026580ee01d00ca122dbc40bf711dee561e0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "29f864d69fbff5bc9eb28a0a2cff47a3ea63c10f79c82b90a9e1362420879ddf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "942a628b79ec084a7805c6acffeeba5b78e3ab3796310d960bc092b4c73ac85b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ea184de41ff07c894bf5e6c519af414f012800164d744a4985a73b48c990a735"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "283c1773f6151a20caa19ef700e174a6d44152db80a7dca5d4d06b58d70f6989"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "baf842cc8c6d992cbd05c0874cb157df6acaf08b97cb7f903c3342e818e9fada"
+    sha256 cellar: :any_skip_relocation, ventura:        "e06ebcd0e59d78ef4481ff0b86d46b512c59493bacd17355865c7d215161e7e1"
+    sha256 cellar: :any_skip_relocation, monterey:       "b596347a4c50ecff98bcce10ed55a455170782dd82d5b55e013568e4c813fa84"
+    sha256 cellar: :any_skip_relocation, big_sur:        "df88e19c6be6194e99fc23b35d4ca5907776c89f4ab2e3fed432327496ee1ec0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b4b05aac6ae50db51b434ade5ab1718b018e66c09f83d2a285021093c8a219c3"
   end
 
   depends_on "go" => :build
