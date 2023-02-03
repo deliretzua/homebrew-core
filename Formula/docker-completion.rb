@@ -12,7 +12,13 @@ class DockerCompletion < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "cca0f1578406ac707ad98082b42feb89aa447f549cebc7cad68efe758c414e09"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7ec972bb979426aad54eec58cb5592e0f2e26deab5275e31b8c0b3ae50b0ef1f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7ec972bb979426aad54eec58cb5592e0f2e26deab5275e31b8c0b3ae50b0ef1f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7ec972bb979426aad54eec58cb5592e0f2e26deab5275e31b8c0b3ae50b0ef1f"
+    sha256 cellar: :any_skip_relocation, ventura:        "7ec972bb979426aad54eec58cb5592e0f2e26deab5275e31b8c0b3ae50b0ef1f"
+    sha256 cellar: :any_skip_relocation, monterey:       "7ec972bb979426aad54eec58cb5592e0f2e26deab5275e31b8c0b3ae50b0ef1f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7ec972bb979426aad54eec58cb5592e0f2e26deab5275e31b8c0b3ae50b0ef1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c5b8ce029a88eda55d4d382c239ae42bc1b1edd70f4bbee81c0841919c1cea6"
   end
 
   conflicts_with "docker",
