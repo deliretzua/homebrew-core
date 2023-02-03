@@ -13,13 +13,13 @@ class OperatorSdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "59040f8090c039a9772ccc74990b862c053aaaf2af330cc49602d4afc166b7f9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "762896997182935b28ec10c7db022d13931b9122ad6dced4221122b023d21435"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "45dae033c84c95a5f1a525c0f088fbd7ac788099c5b42ddd608b6b725d31c542"
-    sha256 cellar: :any_skip_relocation, ventura:        "4effdbaea3d12d6b0b41ed5aa2b36a9e054e801ba586e3f22eb1f5c45eb8ee10"
-    sha256 cellar: :any_skip_relocation, monterey:       "f1bf122bdff1aff2bcb660099c9d3df799f93123833167f4562e0c66da02c29f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bbfaf4086da9e76ef6739906c670951c56ad9f399c3b0de487668533d2a15258"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0663ad39863a1ff712d24b8bc02544e54820f16a1c2d8a719324616f0aaeb86c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "543216ad9178837817d02103bdf94fb45a4d7f2e55b8cf183072ad87b5302596"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9438e91689988a5824a9da738fa46dffd7d077b213022a1184000d7d5215a038"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "37286ce81c439bfb159edf840148b4878bd6c35ac8bad75f911dfa5d1915c94b"
+    sha256 cellar: :any_skip_relocation, ventura:        "b27b724626c828f9fa99fb14cd03277600ddf86589587a70f76f946e32372043"
+    sha256 cellar: :any_skip_relocation, monterey:       "46eb6de55a233ba346c6153b836e8df8b686e6ff0f710a960651f6532534f65f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b4b480ab2962a97ed7fbfb235abefbbf8491307ab7a9078bba5f267845479d3c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "708ba0f99a619d51311b305970bc36412002a0a730767d522d03b97f47abbc54"
   end
 
   depends_on "go"
