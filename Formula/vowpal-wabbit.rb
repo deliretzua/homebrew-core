@@ -7,14 +7,13 @@ class VowpalWabbit < Formula
   head "https://github.com/VowpalWabbit/vowpal_wabbit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a93633d4b89c08895d347e376812dbc4949238880295cd9e40b1c7989c6a5679"
-    sha256 cellar: :any,                 arm64_monterey: "94844c66dd9e1ad1926f58274857a1fa8cadfc36b8c051a11ab98fb16e1e8740"
-    sha256 cellar: :any,                 arm64_big_sur:  "137e1e3cfaf566104f384a0a73cb77704872e781910ca7e18e24cc8a0f7884bd"
-    sha256 cellar: :any,                 ventura:        "d6a3147090bdfa8b895db6b095407cbfbc563b2a0a3fb7fef1c84337bef95c41"
-    sha256 cellar: :any,                 monterey:       "8c3fbf88dfcaff31b65606de210beb85e8000e13b63156cf1cc8281e3cc97116"
-    sha256 cellar: :any,                 big_sur:        "e2f852d4573bfe2584b0d87ce178b2219943ae109633066b8e95dd8ca9a08cac"
-    sha256 cellar: :any,                 catalina:       "a5150986c662a1c629d603beb83aa7b0a555d11968f0a93a1a3c35fa6ca8cf0d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "98957d759c485fefbe0489855bbcfcb6e2d18c788bb752fecf66747adf40b780"
+    sha256 cellar: :any,                 arm64_ventura:  "b35b651a934888e7b76851c5564c83e5e02f71d22050696834a5fc329206bacf"
+    sha256 cellar: :any,                 arm64_monterey: "eaef2c65a2af0081644e537a79c35f5d0e9cfe70281e1c6a6f14d96ba1a9e16f"
+    sha256 cellar: :any,                 arm64_big_sur:  "21515c2b3d24862b37456e33d57da611f43f8210a267972d26eb25fadcadcd9c"
+    sha256 cellar: :any,                 ventura:        "d43ad2bf7a6f87d6e2aebdda2a0f235cf8fa45551e72c5da973ef30b1f8f9ad4"
+    sha256 cellar: :any,                 monterey:       "ee72120341717bd3117bde59e1e361434ed7d66bb135819b39e8e3a35a1bc1f2"
+    sha256 cellar: :any,                 big_sur:        "6161c55b3dffa3fe7ac98808d6520fd8d1ace45ff87db803bc1021c2aeba4786"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fdaa6d5fd78c6a6e0057f97ec4e09a19aa0b9d340e3fd60d3943c25798bffc50"
   end
 
   depends_on "cmake" => :build
