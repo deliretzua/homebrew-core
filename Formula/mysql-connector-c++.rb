@@ -11,14 +11,13 @@ class MysqlConnectorCxx < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "cdfdaf9635365b9b82ed2b97b35e4feaa19b9dc57de194b25b803dfbd2fe03fc"
-    sha256 cellar: :any,                 arm64_monterey: "681fac456c8676f2cd56dd849cb26c12d230f24e42f3b84f52090594fddd9b5e"
-    sha256 cellar: :any,                 arm64_big_sur:  "faa9e4a14708b37e160b71e6ca3d801e8f539087a5129b6cf80bccb7e82e0ed4"
-    sha256 cellar: :any,                 ventura:        "137a609f49adb86329d64874300e2bb855bb44ece1febae4900f16a7c039b50c"
-    sha256 cellar: :any,                 monterey:       "bf509a6346328acebe632c087ccf64d45d9aeeaee2a62e919e2cc0d547cff928"
-    sha256 cellar: :any,                 big_sur:        "177987159c619258613b2defb87f1ad686cea87c70c967ad0c80fb562fb2d659"
-    sha256 cellar: :any,                 catalina:       "71ae5ab9dafca521b0232834702259947cab9677d7df611690ed4bcf6bd61a5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e8577785defea700cd26ba07923c34703e5e4dbd8a29c571db04a6dc2eeaefa"
+    sha256 cellar: :any,                 arm64_ventura:  "9710648b67da44ee1d92dfa2ac023b66c7e193b1deb68bc618124a6afa23f97b"
+    sha256 cellar: :any,                 arm64_monterey: "678881af35d1147a5c0b630930f2994af40419420dd84ac1adeaa5ba12d7446f"
+    sha256 cellar: :any,                 arm64_big_sur:  "f8df7b38314468440fabc7661fc44df6ff6134617581da6c0351693d48052feb"
+    sha256 cellar: :any,                 ventura:        "4553fed15ffb695ee07243ffa9ea8a25ebfca275ce03d25039b6a20b8ded0700"
+    sha256 cellar: :any,                 monterey:       "ada40ba2c5a2c4abedfe348ac3a17d269c3b2bb25d91773a5a3117cb2767021b"
+    sha256 cellar: :any,                 big_sur:        "de8c2d95a26c4ee682d5198a9ca755f28ad697b85980404615ccca04a831329d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a085d1cfbe804db4c89f3a93c69acbd73f1ead03c44747ad7847d63582c1302"
   end
 
   depends_on "boost" => :build
