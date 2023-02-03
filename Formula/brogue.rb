@@ -1,8 +1,8 @@
 class Brogue < Formula
   desc "Roguelike game"
   homepage "https://sites.google.com/site/broguegame/"
-  url "https://github.com/tmewett/BrogueCE/archive/refs/tags/v1.11.1.tar.gz"
-  sha256 "dc562cf774f88b12b6aeebdac5a00e62e8598b3f84da2130a54a67a60c5debf2"
+  url "https://github.com/tmewett/BrogueCE/archive/refs/tags/v1.12.tar.gz"
+  sha256 "aeed3f6ca0f4e352137b0196e9dddbdce542a9e99dda9effd915e018923cd428"
   license "AGPL-3.0-or-later"
   head "https://github.com/tmewett/BrogueCE.git", branch: "master"
 
@@ -19,6 +19,12 @@ class Brogue < Formula
   depends_on "sdl2_image"
 
   uses_from_macos "ncurses"
+
+  # build patch for sdl_image.h include, remove in next release
+  patch do
+    url "https://github.com/tmewett/BrogueCE/commit/baff9b5081c60ec3c0117913e419fa05126025db.patch?full_index=1"
+    sha256 "7b51b43ca542958cd2051d6edbe8de3cbe73a5f1ac3e0d8e3c9bff99554f877e"
+  end
 
   def install
     system "make", "bin/brogue", "RELEASE=YES", "TERMINAL=YES", "DATADIR=#{libexec}"
