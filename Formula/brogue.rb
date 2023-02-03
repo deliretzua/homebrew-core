@@ -7,12 +7,13 @@ class Brogue < Formula
   head "https://github.com/tmewett/BrogueCE.git", branch: "master"
 
   bottle do
-    sha256 arm64_monterey: "142084b08e652f1b4bac49bc2b4633a8da661e998d53cfe57a483d6f64af743b"
-    sha256 arm64_big_sur:  "d67f70b4f81e4d8e4824100ec04534a1148f09a1db240ebc412c4ece5506a3d6"
-    sha256 monterey:       "51bb16e0cce068f13d652da480b80d33cda96118cb0c94afa458c5cbc19c4411"
-    sha256 big_sur:        "34c616e203f1f35770c5a5d10c2c52a3351259e2b4ef7e99c59fcbeb28252e46"
-    sha256 catalina:       "05f07a50558b4e2731ba0989322d3354238d81d926eb54aabb1ecf5c91f085a8"
-    sha256 x86_64_linux:   "3f43f81206bac39b28fe2bbb162090eae354cadc2d3ef0919bc28f58f3a5fc06"
+    sha256 arm64_ventura:  "b3fb81412edaad2c3447f2500430162487f422c8e6e48acf887fb029a8aa40f2"
+    sha256 arm64_monterey: "f545e3d7758f956956599d3cb01dbfd230349ab70b4751b9398973e26dbeec52"
+    sha256 arm64_big_sur:  "886aa3d64dd77d365d4c8ce311ab0a0194c5f3c876c51887b626d148307b6a14"
+    sha256 ventura:        "31081da4bd41c4471fc2579095688435b1011a5def3c466ac722bf3b636906fa"
+    sha256 monterey:       "cccb038be8fffad521143a7dd87e9b94a5aacbce8462e6b1317a8f1ff8714463"
+    sha256 big_sur:        "4f8184e978f64e2b3c3dddb5af5721fe1ecb3431f69a1c85e3673eb024733d43"
+    sha256 x86_64_linux:   "83b284e5c9b8d58756ac33e743d56b9bac827cfab5e965070a24dc5b6b849e1d"
   end
 
   depends_on "sdl2"
