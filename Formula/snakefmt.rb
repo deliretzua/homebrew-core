@@ -9,13 +9,13 @@ class Snakefmt < Formula
   head "https://github.com/snakemake/snakefmt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3aa93c2a19c0bab0243b6437c3310e8ecbc93db8b87203affc2954679e22c3ee"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "951819e2d2a50962ab7b478f611d9c35403e3cd017816e51d2dc5873c38cbabc"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7cf8eeed7dd532c9e7ca96c85be349ca08cb8c5704ca98899438aada619893ca"
-    sha256 cellar: :any_skip_relocation, ventura:        "a71f0ec41e979fa968fe3794da34c8c8bbf93dbd218e1ba65a06b2ef06980f66"
-    sha256 cellar: :any_skip_relocation, monterey:       "50712fd7fc8b1f6ab0e584f04c7434caa18227e104a67f74ee9df454e8d9e67a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "08b849820345b62863fd4c59e2b8cb51e5ea89d8a702938af6794f12f861e6e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4636514398d8a3023e7f3db67c02daee1b4e04b3a413d68d8e02e1ef620dca8b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0bb8a4ad3d7179d4b3d0a83c9b6d0bb169662b17dee655f88d092c86c60d1d6b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "50ba4aa16c13b7d5cc04ed2c27ae4e9841646c95f86bc50166a660bac3aa6177"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "249dea34414960cfa9d8d38c936ce48fad6ca0d2233310cca1f4dd11b923f29f"
+    sha256 cellar: :any_skip_relocation, ventura:        "329b59822a904ebd347c7a722252a8d50374c198c44d9829402537c76e10e190"
+    sha256 cellar: :any_skip_relocation, monterey:       "e6567d6b7870482c1750b1242e4fac557578a5638240db425aab4411122958fb"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e2d5043c74d16142c956ae25c2717bf9c16a12745c0a3d89239df9c28dfc9753"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "de1faae813213e2ffe111960ec7751a74627cbfd3d3a688d50e3647af57358d3"
   end
 
   depends_on "cmake" => :build
