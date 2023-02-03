@@ -7,13 +7,13 @@ class HasteClient < Formula
   head "https://github.com/toptal/haste-client.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dc801c71f126d37c41d0a482dbc45764fd5ed30c7d1c89e549274cf37f984017"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dc801c71f126d37c41d0a482dbc45764fd5ed30c7d1c89e549274cf37f984017"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0d4950a8e14856b464bdd84e2622979a0f5fb80a44566ebf172286b714887bdd"
-    sha256 cellar: :any_skip_relocation, ventura:        "dc801c71f126d37c41d0a482dbc45764fd5ed30c7d1c89e549274cf37f984017"
-    sha256 cellar: :any_skip_relocation, monterey:       "dc801c71f126d37c41d0a482dbc45764fd5ed30c7d1c89e549274cf37f984017"
-    sha256 cellar: :any_skip_relocation, big_sur:        "dc801c71f126d37c41d0a482dbc45764fd5ed30c7d1c89e549274cf37f984017"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1863cf6bdf7665c478d3c440a7841afbfa1d50f3a25841eac3e50559909d6fd1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "867a679e7daef529fa36bd744eb7ce3326867bed1fb5588fe79b626121247232"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "867a679e7daef529fa36bd744eb7ce3326867bed1fb5588fe79b626121247232"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b0bf267cb522df7e54546c61342ab74db3610856894b4a6f4e010e70ba2c0308"
+    sha256 cellar: :any_skip_relocation, ventura:        "867a679e7daef529fa36bd744eb7ce3326867bed1fb5588fe79b626121247232"
+    sha256 cellar: :any_skip_relocation, monterey:       "867a679e7daef529fa36bd744eb7ce3326867bed1fb5588fe79b626121247232"
+    sha256 cellar: :any_skip_relocation, big_sur:        "867a679e7daef529fa36bd744eb7ce3326867bed1fb5588fe79b626121247232"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e8ca7f96707ff93d23f2faf3deb15bdaf7faeca5a78115823bc1c00a22e436d"
   end
 
   uses_from_macos "ruby", since: :high_sierra
