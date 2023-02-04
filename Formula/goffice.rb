@@ -6,13 +6,13 @@ class Goffice < Formula
   license any_of: ["GPL-3.0-only", "GPL-2.0-only"]
 
   bottle do
-    sha256 arm64_ventura:  "c714b0618b08bfd4a2b8d1f093b9e5a9a8c1a3909bf79e97b3b373252c75dbdd"
-    sha256 arm64_monterey: "46647af83047037b79fe86a9b7a4fb1dbbbd11fef94e2c871b3d96911cb2b649"
-    sha256 arm64_big_sur:  "7236c998a8738d5e66bcd7d5e1c49d2ffc9f033f59f540c834fb3c5c9a2f5e24"
-    sha256 ventura:        "420dd27eefb3e786dd528c038ecab66c77e7bffd6690d7014ca765cc215842f2"
-    sha256 monterey:       "198e22e9fc6780c0cd9757ad127da0be7db27cb2315ca292bbf3f761b86362e8"
-    sha256 big_sur:        "6f81e80829c1ccd7e69b9e49fd2c1b4bba97f71354e29aeb7b33cec8c54aeea5"
-    sha256 x86_64_linux:   "ef24735ed6b8512d77c0147f7dc587f4a0d898611a447c86f3b35bb36a74e431"
+    sha256 arm64_ventura:  "b4fba5dd3adb45ec2bbd704602870bebdb56498f8e32a0d9cc73695e56d70539"
+    sha256 arm64_monterey: "d65b7f9ed3f4f20f40db33f6a5e0524a7bb4eefbf7aa64cf2bd6d16ee36a10fe"
+    sha256 arm64_big_sur:  "0aa63ad148cb4aae4c65266661a83918c908e20215370f370a83539b76013925"
+    sha256 ventura:        "64237ea971207b9ed98c30df3fd174e43655c961e3fda8f477c694046906d6eb"
+    sha256 monterey:       "e504938af2973d98cfed4e9a402ba7abafbfa9a1d93cb5deebda0af512bc70db"
+    sha256 big_sur:        "b4b6abb961eb7cc3485f517d1ea196104b0bddfdaa6dee3f258f906584f6e434"
+    sha256 x86_64_linux:   "8cde966d15d0204ea00adf282e606d026988617d25d5e2f139a623a8ce8f1b66"
   end
 
   head do
