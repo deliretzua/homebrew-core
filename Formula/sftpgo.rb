@@ -6,13 +6,13 @@ class Sftpgo < Formula
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 arm64_ventura:  "6898c4baf4c867d16ff36744bcbf75c73293b242a53c6ddb7f1f8db9497167aa"
-    sha256 arm64_monterey: "2d60280325a64059ff1fd1142a8a95e53a312e7673f65400549c5fd96be58f50"
-    sha256 arm64_big_sur:  "f47a01e057a0129135d3f7f1161cba3da29cbd11d2c71cffc3d29a90ba1ceaeb"
-    sha256 ventura:        "002729711b5c4680b32ddc64f6ce51285bba4bc283ecf053b46521c261b08d03"
-    sha256 monterey:       "2d48a02728ce09981ba3f92a1dd2042d2585ad2a28d97788439e7977f6615d3c"
-    sha256 big_sur:        "e69584ececa2d551378ff57a1bd688690a807dfe3a5efb4741d7c659f3e098c9"
-    sha256 x86_64_linux:   "9d7f992e82f099fbfb9dac82d2df66c342cfa2cde105f2672c124184745d770a"
+    sha256 arm64_ventura:  "f57fe765321a4334d7d0d0e6a741142b1a1fc1cefbed575d3d5ca67990c2c673"
+    sha256 arm64_monterey: "c39cec67f7dd00d3080c30985c4b77f1e7930bea659ac7f9a4b188b5839358f6"
+    sha256 arm64_big_sur:  "c3dd4284782638426badf49b0903d21a3425d126bc0a405a0332879023f8e8aa"
+    sha256 ventura:        "5960f069c36bb49390e0de70488090f1021223ae8f78e7fb4a8d60d5db075e82"
+    sha256 monterey:       "2a17ff52f9420c5e166ce023f665124bc5fe4ced8c0ae80a6b3815a00a97dd29"
+    sha256 big_sur:        "ce545ee899c7f65ea25fa1dec364a5d45dd3bc2f8b01b786a4311aa818ca6977"
+    sha256 x86_64_linux:   "764d0840d3f1cefed059e1c47a0cf7ce86d6ec670c426e0d3d6f958038b7f89b"
   end
 
   depends_on "go" => :build
