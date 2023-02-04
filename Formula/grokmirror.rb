@@ -10,15 +10,14 @@ class Grokmirror < Formula
   head "https://github.com/mricon/grokmirror.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7f150f165e9b344bdd451af27884677d636af72239d1168914b5b58377ce22aa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3247fcb790e5bf02062162e65ee093bf6c33528a2f734e472bc259ea7b36ae02"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b3fa6d1cab11e8a5420fb936a5e0815f4913fa3c228316820fd489b02c7c4141"
-    sha256 cellar: :any_skip_relocation, ventura:        "12024c31b1e067f1028b2a089838ad8da3cd195aeb48b4a34591e3344a8be60d"
-    sha256 cellar: :any_skip_relocation, monterey:       "1021e03076c4b6851ecd9edc8916024e839e1731d10dcfc60799f01aae79e28c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fc8fb3248cde8ca25f41c572e33250e7b74d77864366a3419457a57d9ba02d62"
-    sha256 cellar: :any_skip_relocation, catalina:       "711286b10063e47357abfdd277c1fdb12aa5c6bdd147c0f94349ea12aab51156"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "46fc238fa908a5e27b3ff868f028d26b00ffce7963cd09ec09ed6a498a649e6a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "575557ee7b1dfb91f4b6d9c894f92d18fa2f3599a51eeffd9252d9a47ee30831"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "79e18c3586aebe8298b911feb87d772bd08c16b16e92e663289861f18cddd504"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3319592a5961b5c9e5bc8c4f6661887145fba61fb214d67911fce4e15ba6e964"
+    sha256 cellar: :any_skip_relocation, ventura:        "55ae3b899fb78983834cc8ba37cdda057b0d5dbc791788d6d821152b1dd6a0e2"
+    sha256 cellar: :any_skip_relocation, monterey:       "6fece291fbd9033dea1ee7187fc3e145ffab41767c7b0b7b11413644a88d1c4b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9e362090e2a147800d1882bdca7d7eea47e4bf5773c1f1244b406865ca4437e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4dde4654426c623f3164b7d2d734fafbd5b70a2ca4735596d856ed133725f9b9"
   end
 
   depends_on "python@3.11"
