@@ -9,13 +9,13 @@ class Toot < Formula
   head "https://github.com/ihabunek/toot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9f0de5d75682a3c28ffdd6eb2599ac7ddc2933741ed243b87544d68e647750d8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6a58ab22ae0f2eb2c8310e156ba8a1148e4d9f8feee24704a263e62595a2e6da"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "583c804bf85e5b82c467c4ef42c1714af73b56057322246d76886387dfd2fefd"
-    sha256 cellar: :any_skip_relocation, ventura:        "5df468660735054c3c11b744c870d8bd239c69e142016c2373931b7211a474e9"
-    sha256 cellar: :any_skip_relocation, monterey:       "d9a73566d8ccc8cad636871716f48f9429b28fc65db7c6013818b9e8acec6642"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b805c2775ac4b7f408d98f59d2ebd2868a76b0419a69fd47d0e5d3a8db81c0b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "79878a4b5e8c336d68fcf86e178abb1f0540186b1f0a6df830a5c5b80fd7e905"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ce9aa9ce775cb4fbaef53512c44c2ee366650e56161b41e944f1d13d303db0eb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d8eac9b9f89e2304c4256f61843db0a47b145f311f8efead6ef5f9f2518edb45"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d4bd0de1ab82434f25c65d1e2176398a42af40e620af13c6a8d9c027d7444981"
+    sha256 cellar: :any_skip_relocation, ventura:        "f027d3d6b925f17ecbb2773bd68bbca4b498c42b22cb57cf13316e74b7b33db5"
+    sha256 cellar: :any_skip_relocation, monterey:       "29ce594d1916854c85d65b9582a1dd62b2497ed60cb1c479f1a36b421165d9a0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "88f48cc94c30bc4527bd35b90619c4b2b21581c6caf88fc95e7f073ee78eff91"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2df8cd5bc39309af15ed3a3826d492d13e0565bf317f9131430bd7f64214e6f1"
   end
 
   depends_on "python@3.11"
