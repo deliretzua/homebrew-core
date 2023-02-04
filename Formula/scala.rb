@@ -11,7 +11,7 @@ class Scala < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "de973b41793c7d09a86f220f23c5b2bcd8852a60c3528db3cf1eff5fce4a2f21"
+    sha256 cellar: :any_skip_relocation, all: "5b522d89c3cb6fdc86fea19d376a18d45072731dec5e2390fb45f885c4a07f71"
   end
 
   depends_on "openjdk"
