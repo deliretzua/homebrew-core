@@ -1,8 +1,8 @@
 class Latexindent < Formula
   desc "Add indentation to LaTeX files"
   homepage "https://latexindentpl.readthedocs.io"
-  url "https://github.com/cmhughes/latexindent.pl/archive/V3.20.1.tar.gz"
-  sha256 "d0378f37e7b172fe548b9b17d22556514cb34b0fc4ebb35dcd42b1448747ca92"
+  url "https://github.com/cmhughes/latexindent.pl/archive/V3.20.2.tar.gz"
+  sha256 "0fd3d58c49f6ec6d030c6cb3db958bd4bce5fb348e4f19e29b476291b35cee9f"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -140,8 +140,8 @@ class Latexindent < Formula
   end
 
   resource "Sub::Quote" do
-    url "https://cpan.metacpan.org/authors/id/H/HA/HAARG/Sub-Quote-2.006006.tar.gz"
-    sha256 "6e4e2af42388fa6d2609e0e82417de7cc6be47223f576592c656c73c7524d89d"
+    url "https://cpan.metacpan.org/authors/id/H/HA/HAARG/Sub-Quote-2.006008.tar.gz"
+    sha256 "94bebd500af55762e83ea2f2bc594d87af828072370c7110c60c238a800d15b2"
   end
 
   resource "Test::Fatal" do
@@ -199,7 +199,7 @@ class Latexindent < Formula
     (libexec/"lib/perl5").install "LatexIndent"
     (libexec/"bin").install "latexindent.pl"
     (libexec/"bin").install "defaultSettings.yaml"
-    (bin/"latexindent").write_env_script("#{libexec}/bin/latexindent.pl", PERL5LIB: ENV["PERL5LIB"])
+    (bin/"latexindent").write_env_script(libexec/"bin/latexindent.pl", PERL5LIB: ENV["PERL5LIB"])
   end
 
   test do
