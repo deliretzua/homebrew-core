@@ -6,13 +6,13 @@ class Pgformatter < Formula
   license "PostgreSQL"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1aac1d52dc2962a6ab1d941b266ae611549e25b275ffdce88a7e606b8ddf78bb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1aac1d52dc2962a6ab1d941b266ae611549e25b275ffdce88a7e606b8ddf78bb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "421bea7cd89ef84473ad0ac59ec9619d276f0535c628f047105b5ece2ba45b7c"
-    sha256 cellar: :any_skip_relocation, ventura:        "f33ef9982bcba1931fdf3f3031d1a66d859fb3616bcd839c2b243584218625b7"
-    sha256 cellar: :any_skip_relocation, monterey:       "f33ef9982bcba1931fdf3f3031d1a66d859fb3616bcd839c2b243584218625b7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1ef6bdf4c8989f4c64f7866d6f1994b42ec986b7e31bd06f68204103140c2add"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a59e5e67acc43d57a72a56211d8a50a8fe1561652dce28c490110f91582c1001"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f55a58ffba124482444519c77f9e29cfab2bb7148b78da263eb20f64a3a184c4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f55a58ffba124482444519c77f9e29cfab2bb7148b78da263eb20f64a3a184c4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "19b902f507e8db9da9f1c17367a4427edae7a92cf5a935bcbd61cced35803129"
+    sha256 cellar: :any_skip_relocation, ventura:        "5ed298cd9259c04e657f25ba10211677c940c568212188af3f1af11c960ece6e"
+    sha256 cellar: :any_skip_relocation, monterey:       "5ed298cd9259c04e657f25ba10211677c940c568212188af3f1af11c960ece6e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b9bc5a12c9188639e69b5aa6c418e0f16005fe60643a7dd23fc2d9ad117352e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "186f7f4b0fe30734daa469c0432147d25295c6c8e6719ddf821679ff33f81c32"
   end
 
   def install
