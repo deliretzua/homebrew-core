@@ -13,14 +13,13 @@ class TigerVnc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "109fdbc449f3d9888c9442b95280bf1f3c2b9ac876670a7bb52f1fb0c350e10e"
-    sha256 cellar: :any, arm64_monterey: "77eb966db9ec8b43de5c86e21e6626097271d58f7fbd8ccea5d551bfb0e7ddbf"
-    sha256 cellar: :any, arm64_big_sur:  "da27b10b7a89f771a6e134b9e81fa5fd49b8f0ffbd545c8e6569644cd0dcfc65"
-    sha256 cellar: :any, ventura:        "8de663dc2ccab42a4256b3d3af1bf595f33e5c5dacc809961a54799df0d47103"
-    sha256 cellar: :any, monterey:       "13159586d63ec225969612e5d3f3d47eeacdadf7a3df3c930a932f9a95321002"
-    sha256 cellar: :any, big_sur:        "168aaa072c658c672b6cf54901d27c603ce09fe4c70d5711f5cd6b4b8927daea"
-    sha256 cellar: :any, catalina:       "e703e1d70a8d46b3c20bd58a9c8c4796ec221342413ca3342a2c2ea66cbc221f"
-    sha256               x86_64_linux:   "12274cb50da8dca757eb9a53340ffab3c5fc9f126f5d64c977c4b5cb6f87722b"
+    sha256 cellar: :any, arm64_ventura:  "cb8b5aca83eec23225f23766cb0cfc5eb15299f8aa5eb13a1ced30ac78756b92"
+    sha256 cellar: :any, arm64_monterey: "dd5c3cf2007c8391f094063228c15037c86ccda866859452beeb3aa17b142143"
+    sha256 cellar: :any, arm64_big_sur:  "8223ea7c979decd76dab24b5c97f2280c83b0ff3fc7d7a834106c548444d5ca1"
+    sha256 cellar: :any, ventura:        "20fce5e9746fe220609a75310888d6b115f73b1f9599f5de1583cac6377971c5"
+    sha256 cellar: :any, monterey:       "6eb575b793d946fbc46fb67ed5fa534ca58a535d4e0455d18156383bb134296c"
+    sha256 cellar: :any, big_sur:        "1070ab53bc2d15a9d79b889cb0f061009c6587bc32e04f5268d0923671191e0a"
+    sha256               x86_64_linux:   "da4cc90f405696e72d0ad4e5b78c0a864c0fdc24309a52cf656ceaa944c9168f"
   end
 
   depends_on "cmake" => :build
