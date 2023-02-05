@@ -6,13 +6,13 @@ class Difftastic < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f211dfa095845bfdc5dc5dc6efb402a09a676a5edfa998fc5fbc01b4dc1fe1d3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6fe8d33a50c413127d7db5c6ab791d807aacf4857c80bf1f55ffd326e413c8cc"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "996e69f73c8b7d2c9c2f3ef508367c3c113b3edcdc9e1a3967fb8f59fe4a3ca4"
-    sha256 cellar: :any_skip_relocation, ventura:        "536ec2a689c0fa9361b5bf5c015bc76444b154beb9d406ea5e8df6a75f0c053d"
-    sha256 cellar: :any_skip_relocation, monterey:       "4fc96ca40d6beed358795ed2a51930f4bf23f8a6bc4042281fd8bba00b9c41ed"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7118cd39b528f3ba3aee16d97c7b31842c092cfe6498a829278b38f29ece51ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a4d0aeda54f831a91d26b6bdd4f475ecd98590086da1427ef750b9552215fc4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7965a86dff95a89f0dc6ad276af47f8e68915df3eb01d0a148f9c3bf01062e2e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "152fd92d3ea06b8d4f9b1c66216734aed7fe3cab1d98a28fa0a54b545c6b96fb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "075ab34319f4531b7223ea2e964d9ffbefb4b8deba7fdcc338bbef2f6d7a9394"
+    sha256 cellar: :any_skip_relocation, ventura:        "80c9d7efa977cd55aa7042af48bc6b49082cdd9658334cd1b541b4ce6cfc7fdf"
+    sha256 cellar: :any_skip_relocation, monterey:       "3c18f642e1f9e50f7f39f9da92000153f368efc1088443ff2a2feb05ac8b26c1"
+    sha256 cellar: :any_skip_relocation, big_sur:        "25dccb452732379d2a39b648cea5432ed9a42ced3af5609bd7c5a2a8fc7ffd79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "84f86864bd360d39e7c035be6e40756a7012d92ab9fca35944a5c14a6ac3ef05"
   end
 
   depends_on "rust" => :build
