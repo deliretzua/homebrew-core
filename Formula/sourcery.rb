@@ -9,10 +9,10 @@ class Sourcery < Formula
   head "https://github.com/krzysztofzablocki/Sourcery.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b4dadf511fcc95d370c4c1177f6f1f547ff8d1acf3a75b219ce92eee41548b78"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d3a1fc5930c78d1eb84c77d46f27c185fcfa17fbb54bbf6428d78ed7e27f06b5"
-    sha256 cellar: :any_skip_relocation, ventura:        "7fafa2119619a9617a3d5aec4810162abe83d8544fb7ef88daae1de81b358e0f"
-    sha256 cellar: :any_skip_relocation, monterey:       "cedcb7105cff45f157063faf89a7a61c973031dfe481e3d8abcad11dcc6db963"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "723cc4e0a495920267bb5b241774d350eb313d44458347bb09c803b0e3f85186"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5072dcb0529c0455aeae19619e7be7a5fd6106649217ea59957e9eed2542465a"
+    sha256 cellar: :any_skip_relocation, ventura:        "4132316be272e76fd079a070f809798b394eb08b4d021a1e47828692ad6c64a0"
+    sha256 cellar: :any_skip_relocation, monterey:       "f7aab882c75f95141ef8cff04d6c363e568901ebe686a8b4ffab0d2b83d1a2e6"
   end
 
   depends_on :macos # Linux support is still a WIP: https://github.com/krzysztofzablocki/Sourcery/issues/306
