@@ -5,6 +5,16 @@ class Soplex < Formula
   sha256 "357db78d18d9f1b81a4fe65cf0182475d2a527a6ad9030ac2f5ef7c077d6764c"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "fe7cab6cf7d72f3600615567c5d35928f64100a894aec88c036a1b74ae8ebaef"
+    sha256 cellar: :any,                 arm64_monterey: "871d364891d796e3a9a6d6c9892f6f5eaf78ee931eb9150aa8ccdd11dfa84f3a"
+    sha256 cellar: :any,                 arm64_big_sur:  "9c4f2020273a628be567632a3da99f20fa1c9d40928e92069c3b9e5aa94fb129"
+    sha256 cellar: :any,                 ventura:        "32914581bf7e4ebda8bab2d3d1be0ae0ef8fb2c72383fc46f81bec2e73f7b700"
+    sha256 cellar: :any,                 monterey:       "749d4059dac1f07bcf248346ac94dcb0367b0d996779a28cb2df629c63dfb8dd"
+    sha256 cellar: :any,                 big_sur:        "a34f1994cf2e258d82eede007619d98e62997670289e00f6415ab50d14215019"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fee3c886e05256b18d65755ed273701030f604aad30d676b7e72b2f5f167af9c"
+  end
+
   depends_on "cmake" => :build
   depends_on "boost"
   depends_on "gmp"
