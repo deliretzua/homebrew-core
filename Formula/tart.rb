@@ -1,8 +1,8 @@
 class Tart < Formula
   desc "macOS and Linux VMs on Apple Silicon to use in CI and other automations"
   homepage "https://github.com/cirruslabs/tart"
-  url "https://github.com/cirruslabs/tart/archive/refs/tags/0.36.3.tar.gz"
-  sha256 "a8da8bc66ed32d31e4a7e547bf679a61ac772b5edd7aff85020459364fdd4d70"
+  url "https://github.com/cirruslabs/tart/archive/refs/tags/0.37.0.tar.gz"
+  sha256 "9f2d4af148107f8fed38af0973fcfa6cf3a9b31bab529da8d89ada49f789d519"
   license "AGPL-3.0-or-later"
 
   bottle do
@@ -19,8 +19,8 @@ class Tart < Formula
   uses_from_macos "swift"
 
   resource "softnet" do
-    url "https://github.com/cirruslabs/softnet/archive/refs/tags/0.6.1.tar.gz"
-    sha256 "3943295bda70f0520dca9adf469f921f65ec2f6d96240046995dd5528deade57"
+    url "https://github.com/cirruslabs/softnet/archive/refs/tags/0.6.2.tar.gz"
+    sha256 "7f42694b32d7f122a74a771e1f2f17bd3dca020fb79754780fbc17e9abd65bbe"
   end
 
   def install
