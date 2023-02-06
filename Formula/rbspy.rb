@@ -1,8 +1,8 @@
 class Rbspy < Formula
   desc "Sampling profiler for Ruby"
   homepage "https://rbspy.github.io/"
-  url "https://github.com/rbspy/rbspy/archive/v0.15.0.tar.gz"
-  sha256 "1319a5a3e0c9fbc361f4d7dd7dddc2dc14d21bf097c0bd0e153bf1e8768af6a0"
+  url "https://github.com/rbspy/rbspy/archive/v0.15.1.tar.gz"
+  sha256 "0ef3fcae235bf26a2ef34a47ef15262811d161cba1b8241ebe32a8cf2bc8a425"
   license "MIT"
 
   bottle do
@@ -37,11 +37,11 @@ class Rbspy < Formula
 
     expected_result = <<~EOS
       % self  % total  name
-      100.00   100.00  sleep [c function] - (unknown)
-        0.00   100.00  ccc - sample_program.rb
-        0.00   100.00  bbb - sample_program.rb
-        0.00   100.00  aaa - sample_program.rb
-        0.00   100.00  <main> - sample_program.rb
+      100.00   100.00  sleep [c function] - (unknown):0
+        0.00   100.00  ccc - sample_program.rb:11
+        0.00   100.00  bbb - sample_program.rb:7
+        0.00   100.00  aaa - sample_program.rb:3
+        0.00   100.00  <main> - sample_program.rb:13
     EOS
     assert_equal File.read("result"), expected_result
   end
