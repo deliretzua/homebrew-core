@@ -10,14 +10,14 @@ class Subliminal < Formula
   head "https://github.com/Diaoul/subliminal.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e3e8c5f2e56891e31d0712e687902e07621229f6e340a2c343ea7095bab4d4bf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "896b416ad54ab5640db53f83dc021165a4c1b15f30cd97d778f1e795c0bf3a34"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "408ab52e46c264b167ee376d1a65085a9105acdf6e37d4d9860d32e880588b5c"
-    sha256 cellar: :any_skip_relocation, ventura:        "8f83330aa341b9d8c55771bde0b80061fc99e81c69bfabfef637750379371846"
-    sha256 cellar: :any_skip_relocation, monterey:       "fea6f947320910b06754e0bf23968aaa3352947121469a8e51ba47635502ef3d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5fd715aca420c248489a132b5b6557ca8abccdcfa142d26ffdcbf49f38406284"
-    sha256 cellar: :any_skip_relocation, catalina:       "4ba247d8897d00e269f1da168be4521f5e9a3710f5674f265676fe136963f831"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "833521658241fa71e6ee3b16c80d511fe8d0dacd079c74d39978426f4e56501a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aceffa16fd3c0ef9dd59807dd2144a55c7291846b4d85100811ce5de7b7ca5a4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4e71db9ee5661b99f756281a8683affe6d239c01c4f168e56fdea76a939e1fdb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "93417bbdf08ad983d6a2ec5151f043dfbc84408759849ea52d95ddf7d564f6da"
+    sha256 cellar: :any_skip_relocation, ventura:        "d871750ece1d220e3fbbb7ce244eb82f7ef9e172b2562369ff73f67be8b60371"
+    sha256 cellar: :any_skip_relocation, monterey:       "205cf4a299a71a713c1800a763b1e4db6dbe84231b300e0a76e68e7ec70955e6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "452dd79729153b41090bf94487b70d369ffed3769ad23aea7cb78112f770db2a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cbde28668573a72b7572899110d645aca03095d47cd1a77999a626e84e70853d"
   end
 
   # https://github.com/Diaoul/subliminal/issues/1046
