@@ -8,15 +8,14 @@ class TrezorAgent < Formula
   license "LGPL-3.0"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_ventura:  "515b999a700bdfc68934c06c935fc7045b9196951fe7b988c8e99ffb82edbf7e"
-    sha256 cellar: :any,                 arm64_monterey: "e9c21c9144a0262aeb8c8be34b5299912aa80717cbf801c9ae4bc57c74d8526a"
-    sha256 cellar: :any,                 arm64_big_sur:  "46017d9bd87c292d6cc1be828647b58e6723ffeb44223035f0eb9672f226fd85"
-    sha256 cellar: :any,                 ventura:        "7e037a423e7a88c2f0e2a0f42dc2a31ca912ed923ee2d5627ac8094b605c4106"
-    sha256 cellar: :any,                 monterey:       "0773675566f131166702c3bc9b838efec777f924be76b04293b237b200738cad"
-    sha256 cellar: :any,                 big_sur:        "6cb146eb0618a186c90692e17a37c80313695eb3a956711fafc4f922d05b446d"
-    sha256 cellar: :any,                 catalina:       "d7bcbef8dfcdd6c546f93a55d52cd91d3a0e52623d80b710904d8081aeb3208c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a05a1b031e1093f98e675288bbbba4db8fd067b65c588c1cbfb2bd1b58d2a865"
+    rebuild 4
+    sha256 cellar: :any,                 arm64_ventura:  "156f51ffb92280c4e1e7cab527b9d467e5f2dd16798a1a17d2078d5ffb31a0e8"
+    sha256 cellar: :any,                 arm64_monterey: "1c6c9263c35fa9f64a16a9e322771c0852bcbf8df9c2dc3347b445b49b80a12d"
+    sha256 cellar: :any,                 arm64_big_sur:  "58ead9708ab06cf2d1dd5d295cb1f776211e537d624843a46b13f27067d95e41"
+    sha256 cellar: :any,                 ventura:        "776a88873d33b3a48f22163edbb4611b7f6d8091fbe90c7cc219df2901ae7192"
+    sha256 cellar: :any,                 monterey:       "bda120bfad45e84ba29b5e1260cac28196b084817a5542cfe37ec3ea1fae0ef4"
+    sha256 cellar: :any,                 big_sur:        "e4010ad86f2753127d5d63802a9c18226f79d3485784ea6ddf0007ff36631f32"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3a2bddebcdb46958d6d2ec1325f00de40701b4637dd46d797c5048e3a385b92"
   end
 
   depends_on "rust" => :build # python-daemon resource depends on cryptography
