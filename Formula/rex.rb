@@ -6,14 +6,13 @@ class Rex < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "25e720f0a28f7762f424632605c417c2ee3ce1496cd1520c5a2c08e8877d4e4a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "25e720f0a28f7762f424632605c417c2ee3ce1496cd1520c5a2c08e8877d4e4a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7fb823e7d2b461e687f36b22be742da1c5b903b84cab11acde9a7fc44223737a"
-    sha256 cellar: :any_skip_relocation, ventura:        "a4640015236f2c3122de44650aca33bf0b249ee81fc1513a56390484bc217aec"
-    sha256 cellar: :any_skip_relocation, monterey:       "a4640015236f2c3122de44650aca33bf0b249ee81fc1513a56390484bc217aec"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9ddcc81e4c5325a81de3822367fb083b1e51b3b60342c497653fb7b7e4e791ab"
-    sha256 cellar: :any_skip_relocation, catalina:       "1e4b314b9f79b0ad955002062950d086c13436330dfc3575ee33ca53dfa5dfdf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7791149dbc99f2c148a2efd34246f5d2b96b68f8388905d1cc6069b2d7180951"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "112f0484497ff23cb21b3a14b132a1f35e4880eb9b6a4ca9968b251221612259"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "112f0484497ff23cb21b3a14b132a1f35e4880eb9b6a4ca9968b251221612259"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "34eb60481263dab0e658c21f13044da0e06bc1d99d82bee61e7af88237c714df"
+    sha256 cellar: :any_skip_relocation, ventura:        "ceb9c8689dfdafd08b391dc4ca93c8e0a2432d3ae4316d6e604e85243aa3907a"
+    sha256 cellar: :any_skip_relocation, monterey:       "ceb9c8689dfdafd08b391dc4ca93c8e0a2432d3ae4316d6e604e85243aa3907a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1ed010e5763cffa442340883614f414fe150c9d16285e0cd6c84071c163cc963"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7498ec8e144643cecb35434ab2a7c35af2eb627533d5b6f75f3bd09c78709efc"
   end
 
   uses_from_macos "perl", since: :big_sur
