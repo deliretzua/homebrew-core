@@ -10,14 +10,14 @@ class Dooit < Formula
   head "https://github.com/kraanzu/dooit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3343b1c9256da28ca0423aa3b26c3e0580138bc6afda0112a7adbd8d577932d9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "66b7ea1e658422e69f1200ab0036ab7b101db35de94acc75e5c7e9b67a08fbf1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b7253afa4f4d165ab89deb686258a8926d5bf29811207e31857aea4f3ce2aafb"
-    sha256 cellar: :any_skip_relocation, ventura:        "bca605e9ff879f1ff3952612216bb8350d5928bf7b60a135c65273fc0914d35c"
-    sha256 cellar: :any_skip_relocation, monterey:       "ae77c6201c1342253b0b00cfd6e9e79c147574f2a689b03374cd1552eeb330c9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d86878cd9521051f1c99301d26c3fe99f3c7ba6ce347c42ee254d08f27c25a80"
-    sha256 cellar: :any_skip_relocation, catalina:       "ad25c06f95e4bb2deaf43ef17449ea5a5c651042768e55160752db3b9a67f418"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d48d258e8f5a63f17adb84f73596d05de510c3419e89b27638b1a2ef03537b8a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ce5e1cd21f4835ea8b66b55f1293e719f44c8cf6c1d938386153773c28f251a3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e55b13321bf9c9e8c63e8147f060a9c03f801f30d419a351f4a07afc7f0b6c20"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d3f04bbd64026605eb919a92a2114f681dc4e25355e8bc7598ad26f4f5c58399"
+    sha256 cellar: :any_skip_relocation, ventura:        "0a22d8f1f05a84b1da88c452fa681dbf8c2f94fc8d884f5fe5ab73357c2cbc34"
+    sha256 cellar: :any_skip_relocation, monterey:       "574cd4707bff5f6a30fde76afcbe57379fe827c20dec60e96946e7db2b87cce1"
+    sha256 cellar: :any_skip_relocation, big_sur:        "cf13f35ee7738abd8672a04925489875d17de8fc4a756dab14cd1a091cfbda7a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "88b292cf4e22aa9ce9dfbe3c614a2e45194386e43b04df4093585f40de0f5d30"
   end
 
   depends_on "cmake" => :build
