@@ -9,15 +9,14 @@ class Urlwatch < Formula
   revision 1
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "105f9638217032e3ad264a21508fe156ffd35bdc9d2091fe11834c592bd7f10a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6fbfdb6c48a3bed7061c23cdf5f8d6710e2a3814dcd5890f1aeb3dba67c30116"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e206295fa468c8a011c24928e3dbd1369ff50846e91f3ca6fa6aa7f411e04a8f"
-    sha256 cellar: :any_skip_relocation, ventura:        "7614b1a8b2590d8d6c8e4f09fb9f523b6ae52f578a2d433bcedf50065dd2f69a"
-    sha256 cellar: :any_skip_relocation, monterey:       "3db41fa757762edc24eee9ba8249662719183814b2e86f8b1bf0716bf49da493"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ffd5cbc070fcacf518fb26bcb9a2862739a6191caa2faf9d672f685772ac5907"
-    sha256 cellar: :any_skip_relocation, catalina:       "b515b71a833c2457660b9e9ec9cb97222ea5fd4a06222e9a7ee9e5aba094743c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2f428f3fce7b936efd608c8e54d82a25efe9d3de0bd7911ba9d4d1af0a660f8"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5c6a77e60638644a61731f6455148c73d591a11e8071a32498f9aa5d98ad0610"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d9286909229a207731997c98bbb87b6315554ed22cd9cbb9d9ae5ef3e65bafeb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3b3cab7c4603e7d21bf6be0f902c58e13790a123e13a395eaee5d14ff123af5d"
+    sha256 cellar: :any_skip_relocation, ventura:        "6b8835ae3708fc47ce9d5803ade1cb16b0968d95af125e72d3cc087d17bbb6b6"
+    sha256 cellar: :any_skip_relocation, monterey:       "8ce65dba7f4feda1bd0a211c721b868dbc478c46e586956a657a48cc540f9165"
+    sha256 cellar: :any_skip_relocation, big_sur:        "cbea0b6c157a9a22f4b444161ca4e23dc2c7e06086c8e07f917170d00a2dc0d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c271b410bbce414548ba62cc88f8e41a4282439c745ddc405001c6dba20ac48"
   end
 
   depends_on "python@3.11"
