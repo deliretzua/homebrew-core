@@ -1,8 +1,8 @@
 class Meilisearch < Formula
   desc "Ultra relevant, instant and typo-tolerant full-text search API"
   homepage "https://docs.meilisearch.com/"
-  url "https://github.com/meilisearch/meilisearch/archive/v0.30.5.tar.gz"
-  sha256 "56b78e31fab27daf1bed305e986550711d219be9392979b7c98aee4dec0d51b5"
+  url "https://github.com/meilisearch/meilisearch/archive/v1.0.0.tar.gz"
+  sha256 "390cf67cc2769fd4b3208ba187f8173e1604d5e48b29525fe171a3e36ae83672"
   license "MIT"
 
   livecheck do
@@ -23,7 +23,7 @@ class Meilisearch < Formula
   depends_on "rust" => :build
 
   def install
-    cd "meilisearch-http" do
+    cd "meilisearch" do
       system "cargo", "install", *std_cargo_args
     end
   end
@@ -39,7 +39,8 @@ class Meilisearch < Formula
   test do
     port = free_port
     fork { exec bin/"meilisearch", "--http-addr", "127.0.0.1:#{port}" }
-    sleep(3)
+    sleep_count = Hardware::CPU.arm? ? 3 : 10
+    sleep sleep_count
     output = shell_output("curl -s 127.0.0.1:#{port}/version")
     assert_match version.to_s, output
   end
