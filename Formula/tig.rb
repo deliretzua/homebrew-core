@@ -6,14 +6,13 @@ class Tig < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e5714a87f936aa18a67e0194f1620322cd414a5cbe7a60c162fe019ca1089441"
-    sha256 cellar: :any,                 arm64_monterey: "223dec6016b112b2657201767e02956e25fed98e31e4fdfaed25388cb75c4b94"
-    sha256 cellar: :any,                 arm64_big_sur:  "fef3c697604de0bd9c63d6a7a215477f2b607b38446e12d8b89fd0e29491476f"
-    sha256 cellar: :any,                 ventura:        "54fbb690bb8007fd3923a0893059a8c4059b7b47aec9491ecd2e2632e3798bc3"
-    sha256 cellar: :any,                 monterey:       "0e589cfbd49883f2c7c36b33fddfff2c87ae1b834d29291d07b8d01fbeda5a2d"
-    sha256 cellar: :any,                 big_sur:        "67d6a03327396458bf3c5c0ce55448d26be124ea90bfe7203da46d5eaf7f49a9"
-    sha256 cellar: :any,                 catalina:       "38fc1871df548ed93dcd7318f51e18818c4d0c341f89ddc5bb888b5241375d04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c06537c36fe31445917ed77f8c97778bc59b88cc8ac00f140bb990a9b71a303f"
+    sha256 cellar: :any,                 arm64_ventura:  "3fa31c8df81b62eab50fe8dce66ae4d3f8c6e3e3b5b9419b66ea060134c45cec"
+    sha256 cellar: :any,                 arm64_monterey: "baa8d9d3b26071ac70a2b03fe8a9bf48a77e315f33c539db853f2f05aca82298"
+    sha256 cellar: :any,                 arm64_big_sur:  "41489b4ee08464c87eeda7b71c80ad56a26b092a47bb70e4895359d249436e82"
+    sha256 cellar: :any,                 ventura:        "1345c53a9d4dc959cfe0012a63cb18b6f3b80b26ff6bf1f6c1d42914b7732b56"
+    sha256 cellar: :any,                 monterey:       "63496a29ec59fcceeecee537be5c81db83570ae4788a79b44cd72383e7628489"
+    sha256 cellar: :any,                 big_sur:        "0edc3212ca7d0728a63ccbe87453c27fee9f72f56ec4f841e265468973e8096d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49d670c3984ee5ae01ae3ffdd5f7a7cfd0af767bc8fe120d02133ccaf249a511"
   end
 
   head do
