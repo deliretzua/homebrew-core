@@ -12,13 +12,13 @@ class FluentBit < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "ddc00f0733b1f64ce2f19d85ea8e3e077ea3b6db03d515618846957e1dc04b68"
-    sha256 arm64_monterey: "69cc9cfaaaa60550ccf87008fe7e37e0a4c44614b9e54804e4f63b9f5fff9f59"
-    sha256 arm64_big_sur:  "c4cbb9d4becf2ab47a93c40d4e7520670f490aa38c9d3b74b7bd1377a251b27e"
-    sha256 ventura:        "dffa4b23bbb6b339e02d454a84fa66d2dca374300f1e5ffb73057ba62c54d705"
-    sha256 monterey:       "581d20b020b93db2b0f82d1ae6e78ada2caa542f2ccac81c63c5cf61c3e588dd"
-    sha256 big_sur:        "20517b9560edf3e14c50fe069009828e1170312be3ed9504573b2ea2a87bccea"
-    sha256 x86_64_linux:   "81152634fe381e4060c2c598ffe338a23637589b73a37dd5b2bf6a45a02d3f9e"
+    sha256 arm64_ventura:  "0463fea8a38a358abccc5194f9fc829dd5e406f10f94201349c8df4ff112939c"
+    sha256 arm64_monterey: "4cca4e925adc910fcd8a32b9e5e6167c20e27d43142b0380c67807f8fbac1f1d"
+    sha256 arm64_big_sur:  "4ff5023587bbb7230f341e6a5b9edd046fb779aadff9e4e9c92c1af4ac8b74ee"
+    sha256 ventura:        "613a3cfd4ca024c1c305dec08bbbe6101cc50b6c89af48ef26b3d0a7c8cc1318"
+    sha256 monterey:       "13bc4baa31c2bd8ab8da89cd1f2405803bf9b291e672c62fefebe014cb54714f"
+    sha256 big_sur:        "3a0c14a2533306840ebbc3f5ed4375469d047be9f7023a3afab9385321acb27b"
+    sha256 x86_64_linux:   "b790144b4e472e8cab875fb13117cf47cc2d8dcfda6792bcbed1207587a435a9"
   end
 
   depends_on "bison" => :build
