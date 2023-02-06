@@ -9,15 +9,14 @@ class Flintrock < Formula
   revision 5
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "2e1f6e23d9febd433782653f5bfdabc7de8082f03a33bb2d896964502ff75935"
-    sha256 cellar: :any,                 arm64_monterey: "dfdbf5d1cb34ac0b4222a90abafe78162d59bb1d37cf86c04937020becdad602"
-    sha256 cellar: :any,                 arm64_big_sur:  "2e998e143c9f2a976462e6081f39656c4693572e02dfb262e369f4e54b6265af"
-    sha256 cellar: :any,                 ventura:        "f4090f56613759e67478b51c6e50f24b288bc85a34a000b2fdca92afaf138440"
-    sha256 cellar: :any,                 monterey:       "924c7326a1d8b691aa9d85c5bfe24731f4146223f013bff1c9bb206cd7aad54b"
-    sha256 cellar: :any,                 big_sur:        "1277d8befcf4750fd278e6ef7e81060d36ea5e060703ac13eabf5ff46ad17fc7"
-    sha256 cellar: :any,                 catalina:       "f0d15228ef6ed04419b555f85929d96538c758ae59c8e0363936c2d11eea8393"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f9e789e8c5b6124cf603d2424c2ee7e8bcb85d1d1bafb67e8d5aa22738a4368"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "a10b3b6a0438862b4537ae6f1b2cad78baa90c0fe895cb5167ab5fe8da7a1445"
+    sha256 cellar: :any,                 arm64_monterey: "bf098d99c7b716732b437e6c2a9d94cec7b858123a8358ae4dcf91120089f36c"
+    sha256 cellar: :any,                 arm64_big_sur:  "ace2aac413d9dc3b99adad311f1e9d8cddddcf0fbec3475e00c17fd2e2858a60"
+    sha256 cellar: :any,                 ventura:        "6db7941afebb02d80a862d771dc3288e5138a54ba613d32189de198445b65159"
+    sha256 cellar: :any,                 monterey:       "f0b0e0ec5b10cac8eca12a5bfb2fadbcce5a6213730ef16f2adf7275988f9c2e"
+    sha256 cellar: :any,                 big_sur:        "e67f51b431878d1d76952cbd58ab5693b3070dc0127b81e35f7ef6c25a883dd7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae15dcf1a34b873376377f124dd22a2b564ab6c41c9f4a122d8388d02aec6aed"
   end
 
   depends_on "rust" => :build
