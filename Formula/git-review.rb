@@ -9,15 +9,14 @@ class GitReview < Formula
   head "https://opendev.org/opendev/git-review.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "465665143bbad4a6e1cc00ffa3b3ddd3627ec508726f463b40d779d4e77f2a4a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7df1495c0fb807fd2337b88a71766c59c35c4ff1d1d21e17f520a6d3e597379f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9010deaf20b3c78b9ba95ed5466534552549cab39d733ab351580118178ac7d3"
-    sha256 cellar: :any_skip_relocation, ventura:        "e193a7e5655b097777bb43842558b0646a70e5a2ce4f6738d611c0dfc9052f92"
-    sha256 cellar: :any_skip_relocation, monterey:       "0a62cd57c2a5ba7452e42035cba35275755f08ad00676bfd0cf4e23fc42cf0e2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d40296f48a0f24261fc4e8dd8087807fb16d215803af8bc2fb499dc50e4875e0"
-    sha256 cellar: :any_skip_relocation, catalina:       "e3b03b93811344d8b3ed75ef01b3ae386b50fa95ba776a5cc2137c36784387d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a910dfac976e4a18bb859f40e7235eecabc9deef41a706c4354dc6fd39116f03"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9b140770d995b35fef5c00b3bfacdb325b8c5077b70ccfa9b5dfc29fdeb4e444"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "49d58c6cb4cac250cfd1664cc2eadffc4c84fc96d80ba6e4614c92397e20b408"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "46fa4da3efdd6f92200fb1259af57ba85e84aa164a6b6fd584a30585033fc702"
+    sha256 cellar: :any_skip_relocation, ventura:        "d2aac9d3da25e04b033749b096e2dbef43a45340aecad4e206934b42fa804854"
+    sha256 cellar: :any_skip_relocation, monterey:       "3f5ec02f7f35023ca2a234499576ded5ab471f342e7e88f83e17fe5a9b5cf4d2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "28eb3a5e2839815d42941d72246c08ab6fb5d9c8ac9ffa53a2866c91cf395e77"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b1dc5dd061157c6913353b5a908c535a07dc046d783d7a0a7a0fe2ef3b590b2"
   end
 
   depends_on "python@3.11"
