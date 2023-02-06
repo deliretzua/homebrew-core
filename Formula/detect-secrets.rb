@@ -9,15 +9,14 @@ class DetectSecrets < Formula
   head "https://github.com/Yelp/detect-secrets.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7031eb88670ddce6debdd065845964eedb4e76861cd18173c4c292bf46e91894"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1622566470e48ee2ebad364f0e55ef38c15287e7ba32a0684ab8f2e2fa4cb3eb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "183fe37e5115b2bbc4de9262ecf3bc3dd826201f45ab09e54c36fc231255fd21"
-    sha256 cellar: :any_skip_relocation, ventura:        "1f76cfc33331a7fb3b76b93d7d45b297462f20dd4ad11c0a0c8954425f9535bd"
-    sha256 cellar: :any_skip_relocation, monterey:       "eaa33b66b295b5cebfce5bc2466b0b75ce366e486103eb91d049c052d569e650"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0830609eb2780349a180dfa53ae9d0cc2c294d0ad963697365b6c0d593245be8"
-    sha256 cellar: :any_skip_relocation, catalina:       "22929cf2fb7109b11e718c01178c171bdcf639d390a0b57a133fccfe96ab0369"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6653e0c83e9a1725e6c6915fcab0f2237930b19e44dcfc05bebf04435d47f3c9"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6c6177e1d8bc674be4ab6b73c7e9643efcc2e70f10ac5e3dbc245327efe13d09"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b387eaa1e377705fd5c010d7b88b754d95932dbc935c74df1215870c8fa7135a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "54520e1021ad0f40eee0904d4e85d24b4b5898c16386d6be6c794667a006db0d"
+    sha256 cellar: :any_skip_relocation, ventura:        "4e4df008031d270b25826dae5ee64bb2cfabf391d1e14d880d54c225690b8989"
+    sha256 cellar: :any_skip_relocation, monterey:       "52816f078e0e8f5c254148bb9b41040cdb4d800e1194ee31e31828e5aedbcbff"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b960952cd63ec5589e2e1da1fb0bd8960455e0db7b532385aaae632c1c44ca97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "425076b4ff0e2f81bf11a87138b62077db7f5bf549072431185122dd0e7bc254"
   end
 
   depends_on "python@3.11"
