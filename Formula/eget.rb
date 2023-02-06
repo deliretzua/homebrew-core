@@ -7,14 +7,13 @@ class Eget < Formula
   head "https://github.com/zyedidia/eget.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c02ef9c05a662375a5d0ebc40e0a23bda97ed074c4f05426ade07daaf96af2fa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c12b5e607e4d55fb6c65d895b32b22828d58f5b824b3c0a6e67998f989438312"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8cb94b85450d94bd30b303c05a3627a25f19b6827f315f68e18370d924c798b6"
-    sha256 cellar: :any_skip_relocation, ventura:        "4853bd40ba4656ed3922dae58c31679666eca4bc5187581637570043aa76eb75"
-    sha256 cellar: :any_skip_relocation, monterey:       "7e3d445c82f7e3974f1c302f74d9663250826bd082931580d8308e3c155c5d71"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a02c420db63e1a2103d15ae0b9df3037f5ec660dc79ea63701f3f959274dc353"
-    sha256 cellar: :any_skip_relocation, catalina:       "32e90a815abd4608b66ab65eaeb7d02c48ada09dfa82105d50e020a8418c8a55"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "01774653ba4cfa6043211d1e8410e1c41ca75aff7d5d4f8cdbab4e40c301f7a5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "13c487d7bfd50229d2a9718e433646be3f3b70deccb25ee7e6ac397be533575a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e5f1d048c470851fb719fd0ac0f16262cdde3f94c66b2642a133258b6fcb5678"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "38a809afdeb8a95d1513595e0b0d93784bb0678e16b9265d3507d9a9aef76263"
+    sha256 cellar: :any_skip_relocation, ventura:        "96b2b9c72b458959f5fdeaff638e7c1615e6528192006423dc37fad479581f41"
+    sha256 cellar: :any_skip_relocation, monterey:       "3b66acd619b459ae116da5482cd90d72df0fcd02a89e66d7e754afc4802ec8aa"
+    sha256 cellar: :any_skip_relocation, big_sur:        "17cc8dabc07c6988541ba3980743509d157e41f4ec873f4cf32932f3d04c529d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d188affbb252fd050c2973dfdc992352f4e949e2db6ce7a5707191f2fb1102ec"
   end
 
   depends_on "go" => :build
