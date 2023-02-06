@@ -12,13 +12,13 @@ class Fend < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f4c96fd8f4f97bb9a34ad3c883899d60393de6549c40817f8232ec8d343ae682"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "703e96551be78e1f3cfcfd1c139c5c1cea689dc21caadccd998384258cc392c7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8e1d61389848562a7732a364dc6294179a46d4329ec51af1c744e405ff9df9cc"
-    sha256 cellar: :any_skip_relocation, ventura:        "343d4272d7437a6d560e11981c6f34c102b564bafea92829d42f07ac9eeaa81b"
-    sha256 cellar: :any_skip_relocation, monterey:       "59c2877d5dfdf724125e8a21ab42bf906edd65161b13ce4eb8c2b097a6fb6098"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e8ee802e5f673bb92abf26be952ada2d5691e06669e80d2c7c895d79288d8108"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b37374af5869aa28ec913082826d9c44af0ce3c57bfc1d5f71905dfa0374a83"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4d8a4f0bdaca718d236935c03088fef172aba98a4ad7aa5a840857f0d255710e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "486e32a213c6d5e5960417d1f3acabbf72e50d176a9e906abbc4aca7a18dee9d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "47a4758e7d645ecb87a127b6d204e0065ed5ad8110b066d2e9124c690978b744"
+    sha256 cellar: :any_skip_relocation, ventura:        "5d7eb5c590cbe263520a9cfc94bea33d836c1c6ddd87a451d4ff99e57b4d1737"
+    sha256 cellar: :any_skip_relocation, monterey:       "ec9c00d0905d5b1ec4240ab28fbcb8752f252b06ff1288f329fd8438bd9b52e8"
+    sha256 cellar: :any_skip_relocation, big_sur:        "00de13e987b5400904c6e454308ccba6363994c9949722d9f629d1174b1ecc1a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9993c8707f6c2316f7835b277bf1d600b12ee98036e8aacd26acf91017d5532c"
   end
 
   depends_on "pandoc" => :build
