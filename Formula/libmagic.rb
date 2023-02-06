@@ -11,13 +11,14 @@ class Libmagic < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "d9336a1be44d8c6307cc49aebebf15b61b8b184d09a0de7a8a1a22f935a495ce"
-    sha256 arm64_monterey: "4a50a08c650c6b18e670b1dfa03967190c663123f068fdd7c9b8dc2485067573"
-    sha256 arm64_big_sur:  "efa77cbf2767dc77caca083c6cdda108b63b1a94a2b292842c6d6c0e7bf66cd8"
-    sha256 ventura:        "b1b371f7431e0a18bfd095677271dac7a5056ea0990fcecb1924a4d73ab64a5a"
-    sha256 monterey:       "6b56d0677ddf627f62410682b80c900f6aca24963000d83f7acc9148bdd91769"
-    sha256 big_sur:        "ea9ea2b9eeaa22ae738c743be1e3fbd00b01193d675f93f1dbaaeadbac770137"
-    sha256 x86_64_linux:   "7a7951e67423493720b99273788ab46042209b802ca2006d20acdbccd67185a5"
+    rebuild 1
+    sha256 arm64_ventura:  "f75b57b1eb21b7adae66433ab7fdc21ebc2d8140270f76be325d6fce3058c395"
+    sha256 arm64_monterey: "f5367d8a930f6ac8bb72fab66d0596490e1fc33a7f723701492426812dca87d8"
+    sha256 arm64_big_sur:  "a1a3b47eeeacdebbcf3a94f65ca27d995e60e867fae6bab8b2bd5b9774424f99"
+    sha256 ventura:        "b010a3c8c7df5041caaff99ce844a9939f7f2529e4fe51e9817aa442a6949498"
+    sha256 monterey:       "cf47bc2045224fc2c4dad701a80e7819883a447ee817d27a6197ff6fc751488d"
+    sha256 big_sur:        "96bdcf33b2fd96db377b5a8952f56e7433bf17634b3e9cefef9b68ac775ca385"
+    sha256 x86_64_linux:   "b0c07cbb8b16858ff3c762efe68dcb7be0f03139d40559e89766c104df06d6e4"
   end
 
   depends_on "pkg-config" => :test
