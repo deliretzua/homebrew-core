@@ -8,13 +8,13 @@ class Flagd < Formula
   head "https://github.com/open-feature/flagd.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0784f05c401a4eb993fc8eeaacea77deee48b27ea79eb3deb338f42660a5e16f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3b01c6c74a5735495ab3fc25d127944718db69fa6110a1fe87135129f1b45c34"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "10ffb838b80958d1bca792fee3b644c76a00c668ce2a3c53a6284f4ee93d2f25"
-    sha256 cellar: :any_skip_relocation, ventura:        "966b365045b3cefb2e4b608f099d759d8715d4d03c54eb1ddcc76c3abd6747d2"
-    sha256 cellar: :any_skip_relocation, monterey:       "f6d6f4e04c764d391519cf4e467d0b42e975d653c7955952399c855d6ef4b011"
-    sha256 cellar: :any_skip_relocation, big_sur:        "637338258e9848fb5ada6020df1c99f8a2540db92b4bfc7456fbad41d671f67c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "31583643ae5a0ce1057793b21ea4e4e8da007935bb4ba654e0c6c781558144c5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d588c0101073cf7bf6fb54fd1e2c03f958f88f8d9a2f550301e04f0cc9c9f8a0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cf87f0b1c4e0595f9a2b35e39fa7e1837f99f30f1d43ecf2693a253daea91277"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "16459a6094d23ead4be505fdf0b90c20ca9974f0e22f98e8e20fd4ef1c34c2b5"
+    sha256 cellar: :any_skip_relocation, ventura:        "1bf26ec27dc749a977646f5f2a461d056aa58501c75c5028dc8071d39df2c304"
+    sha256 cellar: :any_skip_relocation, monterey:       "92fbebb9c4b5e2650d98fa0b621debb0e3762c4b48ea0394c0712f2adc0c1185"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d4fbadbb14015defe75199dac0c199e40f33e2978849bcb62326b2dab3908eeb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "526cb5d541e064624f15b77045b968bf6074c39b68db999360cc8baea54a718a"
   end
 
   depends_on "go" => :build
