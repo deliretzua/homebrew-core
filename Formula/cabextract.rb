@@ -11,17 +11,13 @@ class Cabextract < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3335c1095656e7e828c82ecc33e982c6a185557bb93f4023faa91ad2c16ce0aa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7b76f71d383733860f6d81d72a38f3d0fb07c28d6fb72d7261b19c5973482853"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f421b4d93548f37080a4041a1ae83cffa6e0407489913ea09525e3e3f482d39e"
-    sha256 cellar: :any_skip_relocation, ventura:        "e486c6c9f917706387ad6acbdd33b9c9587ea0ed7d6cbb4e40f37bf89bb44c2c"
-    sha256 cellar: :any_skip_relocation, monterey:       "293895188547de1614324e2830e80f7605ee63b0c8019961e413a8c11c4e2fb7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1ddac23f5e64926d1f2cd400e6fa0739db93dc0517712965b2b0ca1b3e74eabd"
-    sha256 cellar: :any_skip_relocation, catalina:       "d60179c028ac5fb69580f2f01cd9f59c1d1544c8f6d84a230a7dd3587f3c27e0"
-    sha256 cellar: :any_skip_relocation, mojave:         "cd27b939a0191d4dfff8ae13300b260b5ae01c563a21613718160012a982d5e8"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "c77caa7c32b4320f9e887abeea99261345e83f03e2c321ec9e99ddd9c75f5d98"
-    sha256 cellar: :any_skip_relocation, sierra:         "c531546af69afda3101f07b509eb143cdaef00f4fdcbdd420e60287508a87e5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a5504109fb1efe70b9d92f53cb617486f9036597ca77c606ff71d9e4b373f4b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "92ae5d0d2943f9d374dd70ee3b4b60abe8ab33783f45e8ee68dcc3d8df891e3f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6e1e2aa1907ed6a5c635118d2c1756889ab90dc63e110f8d591e8cab644e7dec"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c632d89f6f55317494ec0cb8da6c23214dad4f6318d2ce9c6d42f70d6a5a764e"
+    sha256 cellar: :any_skip_relocation, ventura:        "c0644e8e20c01a9bf0759cdbf29d05a4e36344cd5945b3a601c4091b22899e5c"
+    sha256 cellar: :any_skip_relocation, monterey:       "1c42d09f33a2c75971ee9c6d0f7bce9f36fd73fafa65264dd4299939aa4ba409"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1dd9828110287f16b4754f00520eeb096ad5a4336ea32e1e1242bc7899b1ee16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2e9c5f98c058dfc91722b07b07973cbc0368080aa7234256d8fc3337373c0ba"
   end
 
   def install
