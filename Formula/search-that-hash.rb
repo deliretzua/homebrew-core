@@ -10,15 +10,14 @@ class SearchThatHash < Formula
   head "https://github.com/HashPals/Search-That-Hash.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d84ac4e3ab6115c4a8484cf8d632586a0ec6dcc7be463b50458530239f3ef805"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9d3e2a70f922e14e1cf44a6d0e51b1675223d425b950cb8ff9dd4a044f44d857"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c3a295b246a955d4e75837b8a8ad34b5c9d0c5a1d488a1dfc43a7b75078f571e"
-    sha256 cellar: :any_skip_relocation, ventura:        "2f5affb96ab4d31bc4463bab9319e3a20a63440878c2de81614fa7994f140057"
-    sha256 cellar: :any_skip_relocation, monterey:       "b7c49fc78e71fedd39937cd44ccbcefe2472392ee5f0b4568dccd37f2ced785f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3b4817beef5532aaad6b8dac4bcc6b3821435f3056897966a8bd0d1f949be5d5"
-    sha256 cellar: :any_skip_relocation, catalina:       "808111c76e4c796dc625ff86d19fcddecfd487e5c7158954cac87ba72869a633"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "edeb59fd46067f852b6a88651d957947225d928e2184e8299f2418cfaa1383bd"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eeb4252db092451d3c62757b4f0ee7f4b563d5fd597a551f6df7777cadda0352"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3a8c63b71de650fec44c6d6b318b4ea49ec1a0e5d791f365be65a7a6ec877988"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2ecac31304fbced8ec4a3a4f223275b23a98bc5ad4dd9f5a8231611f48970ed9"
+    sha256 cellar: :any_skip_relocation, ventura:        "b2497fe78bc6ba7455d0ad13a0ce5bfa4300a0cdad97f375239925200c5cf808"
+    sha256 cellar: :any_skip_relocation, monterey:       "4dc2479126748675b022b11b58ec1afbd2ef2d89e3f8963f57ac43f896e6d77f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3b677959c7f463d1e5b4c9e65fa55ad25a74a3472b1fc35a0e67e9c3cfb36dfc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d1a05a8de843e1e0316c1c3ad05e74702fd3cda2036b40bfce54ab035bf688b"
   end
 
   depends_on "pygments"
