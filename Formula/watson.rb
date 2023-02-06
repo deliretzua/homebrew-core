@@ -9,15 +9,14 @@ class Watson < Formula
   head "https://github.com/TailorDev/Watson.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4942b60dda033a8a0867488ff85626dba42680cbe6a41ec5f03e61589ddec19c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "438c799cc494f72b46aadd5e67c38b699191a98af3c4f204c1bdd99ec90d52d8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a6811ee20faa202e189dffb5cb5c8126c9c25f1241c949f8717cfb004c600966"
-    sha256 cellar: :any_skip_relocation, ventura:        "05a888be29b68de6b5a68c213b295bb0341dc13d64ce168b031d1bee5a71e284"
-    sha256 cellar: :any_skip_relocation, monterey:       "2cd983b76a69dfdf0c14235db263bacec84bd9dac318fea9e8363ae5b36c219f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ae4716d2aeea0b881daf46c1d5039ef6898c6b68cc47634012afdc1f64955db8"
-    sha256 cellar: :any_skip_relocation, catalina:       "5d4054b8795c8700aa718c1af81bd4285ad408cae8a1b9b789b24a7f3a8d0556"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68f12f8079faa2d892084538c05577a7a58785f7adcef81aa4db39fbe4396661"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "06371cfae253042603d91c62b7e938fabd0697d0db4718dcaa44959e044937c2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "95386e23ea6f1b4876af2b87d196255aa307e6a8090d5aeebcab02d986062577"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "47ad6fbb3e57adb4e58ef03bb164e277670ac61e2da32ebadb2446bf1438e0a1"
+    sha256 cellar: :any_skip_relocation, ventura:        "76566a7a1587286ada92441587a0c12f177d80ddfd69b212b331712b28d725a2"
+    sha256 cellar: :any_skip_relocation, monterey:       "10618e9c5018e2e12e59a995e21f14b0455e27bba8f1dcffd4b9d5dcd7b094dc"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d81ac3575281d13010eee894825249042bce14f6e93e4a09aa01d79ffc9b620a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6064b698f6abe3aba0dba7027ed40a022dc6d484b362e4388dd391c0aa3db228"
   end
 
   depends_on "python@3.11"
