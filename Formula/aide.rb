@@ -6,14 +6,13 @@ class Aide < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "da63a166bd78f49ae0459e96f2f98ceda43ae418c9e5430e3641d3cf37499a6d"
-    sha256 cellar: :any,                 arm64_monterey: "b0c84efe8e1900637012961de81510d4b161add9251fc83614141cc149e0c575"
-    sha256 cellar: :any,                 arm64_big_sur:  "7d5c7b012260f55372992d7e692f53c72d14e8b265db4869af5641f0b44f8435"
-    sha256 cellar: :any,                 ventura:        "81772e8128742974468566cf527a3335495bc5b6c4c8189ad88c80fe33bf200a"
-    sha256 cellar: :any,                 monterey:       "f19c632ec5e607e4fa4687cc3b49f644d678a957e93ab5e74df37c51df97203a"
-    sha256 cellar: :any,                 big_sur:        "c619712d6930437e597f599e5e62f0047fd9ce985aae1ed964d1cc5a03fdf5ef"
-    sha256 cellar: :any,                 catalina:       "aa1ae5486d07a19d0729947adcc180518ad1b6a46fc29c0b450e95868b80a05a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef25683c89e216c309bd49f0422a83111ca6535e695822b3962cce5ed77bacee"
+    sha256 cellar: :any,                 arm64_ventura:  "8b806defe2e638ecb625e99493844648d13eb73fe7f4d6447e6b00fd38f9fe60"
+    sha256 cellar: :any,                 arm64_monterey: "b45e9aded2b3e1588b5990dd18de49f9e3e7e7bf9ecf5f6276d1e9895899cc5d"
+    sha256 cellar: :any,                 arm64_big_sur:  "aadba4f98c0595cc3331430b1ce02d8dd1806b25e56b05161efea091f8be55c5"
+    sha256 cellar: :any,                 ventura:        "1ea3996fb6343a8167185e8c73ef9eb5ed239b2751d3b0113b997690eaac1495"
+    sha256 cellar: :any,                 monterey:       "740c26430d95559f962d33123c885dcceb4cd015802de92fe27dcb14d655329a"
+    sha256 cellar: :any,                 big_sur:        "c878bc2f73d229a2c6ace06c106be9e007669e5abffabe69640dc212ac7287b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a57c932f6e2b90d85326e1627667616b465840699967a2f0eec4c170cd284fcd"
   end
 
   head do
