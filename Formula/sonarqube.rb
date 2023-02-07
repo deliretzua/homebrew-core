@@ -11,14 +11,13 @@ class Sonarqube < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9c916beb8876dbfb418013585037698613b8b09bf80d25b211c35f986f1c3047"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9c916beb8876dbfb418013585037698613b8b09bf80d25b211c35f986f1c3047"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9c916beb8876dbfb418013585037698613b8b09bf80d25b211c35f986f1c3047"
-    sha256 cellar: :any_skip_relocation, ventura:        "9c916beb8876dbfb418013585037698613b8b09bf80d25b211c35f986f1c3047"
-    sha256 cellar: :any_skip_relocation, monterey:       "9c916beb8876dbfb418013585037698613b8b09bf80d25b211c35f986f1c3047"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9c916beb8876dbfb418013585037698613b8b09bf80d25b211c35f986f1c3047"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "199c84355c54cc7ed7ee9309921f5c44527fea01b10b618b2a89f7eab4f14757"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a06b3ae0b22ad47bb6f809666632730744b0cbc8567b8be2a8dbcb1ba88d9568"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a06b3ae0b22ad47bb6f809666632730744b0cbc8567b8be2a8dbcb1ba88d9568"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a06b3ae0b22ad47bb6f809666632730744b0cbc8567b8be2a8dbcb1ba88d9568"
+    sha256 cellar: :any_skip_relocation, ventura:        "a06b3ae0b22ad47bb6f809666632730744b0cbc8567b8be2a8dbcb1ba88d9568"
+    sha256 cellar: :any_skip_relocation, monterey:       "a06b3ae0b22ad47bb6f809666632730744b0cbc8567b8be2a8dbcb1ba88d9568"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a06b3ae0b22ad47bb6f809666632730744b0cbc8567b8be2a8dbcb1ba88d9568"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ebf2cc25e1802f84c5b06d6cf9d785e8ef0a13a83764be7dcca5073e34bd7739"
   end
 
   depends_on "openjdk@17"
