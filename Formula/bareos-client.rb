@@ -11,13 +11,13 @@ class BareosClient < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "c31bff5b89e2fd69fbff2c19fdfbe383527d5d8eca3432c1a3a70e9c7517ab9f"
-    sha256 arm64_monterey: "5a655725bfb5880b577446a8e0f2ab0dbd5e68ec573145ebc23b873db49346d6"
-    sha256 arm64_big_sur:  "3549a05fe64407e3272cb7e424db96fb98054eb1b59fc3eeecb1a081cf0dc198"
-    sha256 ventura:        "4a0c60b4b2890665f46b79e5b6cd094cdad8dc652b2c01a913dc8ae48585e49a"
-    sha256 monterey:       "62d3c9fb618f92b7020155a40b4ad35d492ac12f14d8d59eeda4e50a521f7d15"
-    sha256 big_sur:        "d1d568fae299d0b058065845fd02cefb1e7e15c81549cea7e51619ea5b6445c5"
-    sha256 x86_64_linux:   "fd6faed2dc6a3a6e078fa58d00df9aa23cf671eec7fa5fd2d50e9d455de0979d"
+    sha256 arm64_ventura:  "11db9e64da397b206bb93979bc5680438c7771393c86c9186b265611ea4a96fb"
+    sha256 arm64_monterey: "096213ed7d05ec2cbdfdbd0412158e616aa69c52d1379a5167f706f6363bd69b"
+    sha256 arm64_big_sur:  "0d57ffd282865aa9cd28e482b1087a1eda508ac935736901ead4c3e7a2c83a52"
+    sha256 ventura:        "e47bb2c79d69670f1989d5880e0881c08c89fadd193fbc61564ea74f579221a7"
+    sha256 monterey:       "6aeb7c540d9411e9da68c1aa3a4df77def6bb09987ed26cda91a3a501304c006"
+    sha256 big_sur:        "ad0251f4962266b14521af06cda449854094785f8074107ede6ccfc4cd9828eb"
+    sha256 x86_64_linux:   "605dbfedf560f2523127837679768094e3065b59b6e68be74eca50617fcc7c26"
   end
 
   depends_on "cmake" => :build
