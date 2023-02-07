@@ -11,13 +11,13 @@ class Gromacs < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "6bc420e2a17a0db3eed8abb59e907db4628fdd03a4245d7cc31ebe17322f2176"
-    sha256 arm64_monterey: "b4d4fd06e3f78e8906bbd4ab91ab898ce161c3ac95cc3340f4d3ea011191d0d4"
-    sha256 arm64_big_sur:  "98662ef69d48e761b1034186a26e24c694e61803c26a624df845d68c7d80e294"
-    sha256 ventura:        "f20cc04ff9ea494d9afe37f6915b4d0e892af0b5da56af86229bfd7dc918c168"
-    sha256 monterey:       "317d761ccdec419401e26377aa0d9391da78e22ff54b20c9a07c709b618ee608"
-    sha256 big_sur:        "12a455ff433d57f810f23d00d3de1d1e13191cad7df5d8b25b2215a412e350ab"
-    sha256 x86_64_linux:   "715154f35df45f6571421a33abf7207d3058c780cdb56e2f6cf50075d7e538e4"
+    sha256 arm64_ventura:  "121ee4296691d422344e7295ad0606fa5cfcd3504534a142d6fc89308726fd0a"
+    sha256 arm64_monterey: "549c85b8dd66ff7d86147fa072ca6de0c56545a1c6a4b9c5cf47d511bd3c991e"
+    sha256 arm64_big_sur:  "fe588294099d3a2301f7a47aeda12966158e43904567cf2080aca2bdf81a4063"
+    sha256 ventura:        "c7fa552af63e395219c8cd24517f989dbe97e9df29e80ae68bb4a840d12110dd"
+    sha256 monterey:       "fcfd520513c4d0a9f79e19edac79c7752b0b0d52e135316e1dd8a29d50cebdaf"
+    sha256 big_sur:        "2f938fdeb2415927628d65b8cbd51c51cd18087930bdee7c67dd0629508e09b3"
+    sha256 x86_64_linux:   "78b8768a142696cb544b02356a8071e849193368b78f880e14e7ec3161ae3e31"
   end
 
   depends_on "cmake" => :build
