@@ -1,8 +1,8 @@
 class Envoy < Formula
   desc "Cloud-native high-performance edge/middle/service proxy"
   homepage "https://www.envoyproxy.io/index.html"
-  url "https://github.com/envoyproxy/envoy/archive/refs/tags/v1.25.0.tar.gz"
-  sha256 "81e6cecfb22d52b5d81bad54271d0febeb27dd2e79847315228fe0560ea83854"
+  url "https://github.com/envoyproxy/envoy/archive/refs/tags/v1.25.1.tar.gz"
+  sha256 "d3504dc6706f1c009412240824faedfc0ac99db996715ebda695e752aecefed5"
   license "Apache-2.0"
   head "https://github.com/envoyproxy/envoy.git", branch: "main"
 
@@ -70,7 +70,6 @@ class Envoy < Formula
       # external/v8/src/base/platform/platform-darwin.cc:56:22: 'getsectdatafromheader_64'
       # is deprecated: first deprecated in macOS 13.0.
       # https://bugs.chromium.org/p/v8/issues/detail?id=13428.
-      # Reference: https://github.com/envoyproxy/envoy/pull/23707.
       args << "--cxxopt=-Wno-deprecated-declarations"
       args << "--host_cxxopt=-Wno-deprecated-declarations"
     end
