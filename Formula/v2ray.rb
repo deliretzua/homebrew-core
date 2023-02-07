@@ -1,8 +1,8 @@
 class V2ray < Formula
   desc "Platform for building proxies to bypass network restrictions"
   homepage "https://v2fly.org/"
-  url "https://github.com/v2fly/v2ray-core/archive/v4.45.2.tar.gz"
-  sha256 "7a126bac7df32f627f34331778cb39ac99db18d7edcd45628db06e123fa0694b"
+  url "https://github.com/v2fly/v2ray-core/archive/v5.2.1.tar.gz"
+  sha256 "97bc872e798fed51c23c39f8f63ee25984658e2b252b0ec2c8ec469c00a4d77a"
   license all_of: ["MIT", "CC-BY-SA-4.0"]
   head "https://github.com/v2fly/v2ray-core.git", branch: "master"
 
@@ -22,22 +22,21 @@ class V2ray < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a9d347cd01bddb5e1a4c81c0374b4c6ca62b5ea3f1f4e353c1c68f59895089d"
   end
 
-  # Bump to Go 1.18 with when v5 releases.
-  depends_on "go@1.17" => :build
+  depends_on "go" => :build
 
   resource "geoip" do
-    url "https://github.com/v2fly/geoip/releases/download/202204280105/geoip.dat"
-    sha256 "38fe72a33f23920cf14e804bf14c26ea0210db3ea2108a2d51fa32c48ac53170"
+    url "https://github.com/v2fly/geoip/releases/download/202302020047/geoip.dat"
+    sha256 "33e7836477c4b8cf4fb547b74543ab373c6f0ab99d6f1eb62faec096042e901d"
   end
 
   resource "geoip-only-cn-private" do
-    url "https://github.com/v2fly/geoip/releases/download/202204280105/geoip-only-cn-private.dat"
-    sha256 "e8d0d7469b90e718f3b5cba033fec902dd05fab44c28c779a443e4c1f8aa0bf2"
+    url "https://github.com/v2fly/geoip/releases/download/202302020047/geoip-only-cn-private.dat"
+    sha256 "1bf20b18ac663b7f536f827404fb278e482dd431744b847d4124b282254f6979"
   end
 
   resource "geosite" do
-    url "https://github.com/v2fly/domain-list-community/releases/download/20220501162639/dlc.dat"
-    sha256 "dff924231ec74dd51d28177e57bc4fd918f212d993a6c1264f335e966ceb5aa9"
+    url "https://github.com/v2fly/domain-list-community/releases/download/20230207100055/dlc.dat"
+    sha256 "e8da9867f215b070f5a2d184aa6473279b06c06c8c8c7d9610548a3bc501cbfa"
   end
 
   def install
@@ -46,11 +45,6 @@ class V2ray < Formula
     system "go", "build", *std_go_args, "-o", execpath,
                  "-ldflags", ldflags,
                  "./main"
-    system "go", "build", *std_go_args,
-                 "-ldflags", ldflags,
-                 "-tags", "confonly",
-                 "-o", bin/"v2ctl",
-                 "./infra/control/main"
     (bin/"v2ray").write_env_script execpath,
       V2RAY_LOCATION_ASSET: "${V2RAY_LOCATION_ASSET:-#{pkgshare}}"
 
@@ -70,7 +64,7 @@ class V2ray < Formula
   end
 
   service do
-    run [bin/"v2ray", "-config", etc/"v2ray/config.json"]
+    run [bin/"v2ray", "run", "-config", etc/"v2ray/config.json"]
     keep_alive true
   end
 
@@ -106,7 +100,7 @@ class V2ray < Formula
         }
       }
     EOS
-    output = shell_output "#{bin}/v2ray -c #{testpath}/config.json -test"
+    output = shell_output "#{bin}/v2ray test -c #{testpath}/config.json"
 
     assert_match "Configuration OK", output
     assert_predicate testpath/"log", :exist?
