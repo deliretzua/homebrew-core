@@ -2,8 +2,8 @@ class Freeswitch < Formula
   desc "Telephony platform to route various communication protocols"
   homepage "https://freeswitch.org"
   url "https://github.com/signalwire/freeswitch.git",
-      tag:      "v1.10.8",
-      revision: "35108661409083be680d0e74e6abd563e0a4c384"
+      tag:      "v1.10.9",
+      revision: "a615e85afcdc5f3ca438e86fefc7ca21ee6b3a06"
   license "MPL-1.1"
   head "https://github.com/signalwire/freeswitch.git", branch: "master"
 
@@ -109,13 +109,13 @@ class Freeswitch < Formula
   # There's no tags for now https://github.com/freeswitch/spandsp/issues/13
   resource "spandsp" do
     url "https://github.com/freeswitch/spandsp.git",
-        revision: "e59ca8fb8b1591e626e6a12fdc60a2ebe83435ed"
+        revision: "67d2455efe02e7ff0d897f3fd5636fed4d54549e"
   end
 
   resource "libks" do
     url "https://github.com/signalwire/libks.git",
-        tag:      "v1.8.0",
-        revision: "bccc2f394855500c8f6f488b441d6fb94343491b"
+        tag:      "v1.8.2",
+        revision: "85a575bb892254dd105a6490b9864956b90430ce"
   end
 
   resource "signalwire-c" do
