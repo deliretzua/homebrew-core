@@ -8,13 +8,13 @@ class Caf < Formula
   head "https://github.com/actor-framework/actor-framework.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d26e545beda6dc74ee4d446bec12bb54158da2486b4de6dd310f714956a11fad"
-    sha256 cellar: :any,                 arm64_monterey: "3c4a2c1e0ec69fb4b6df1173c0424ab17a96a9b40c2d617e23c8ef4a5948f7c2"
-    sha256 cellar: :any,                 arm64_big_sur:  "9ad6df11587acfd3dee17c6146c5583c622a93b56fa1196556b78bfbecab19a6"
-    sha256 cellar: :any,                 ventura:        "450da6cb21242c11530f54acd2cea1165b7cce5f6752adc6f8be6a90520834a3"
-    sha256 cellar: :any,                 monterey:       "b4ac549e53de30f23d33aed19034551b2ae04d71b7522fa499f59f1f426c67ab"
-    sha256 cellar: :any,                 big_sur:        "29780a541e8752ac4b6ffd6fac30134f0471b3902a04ecd0bf8533592cd3cf1b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "401b400c28bb3d355ba77b67dbe73041b01e3d3ec44cc20937351360a94fa443"
+    sha256 cellar: :any,                 arm64_ventura:  "36271cc9b8c45efc28109943a5012c61b7493df70b0f6f2f05a1452144cf7598"
+    sha256 cellar: :any,                 arm64_monterey: "4bf3296be380d42fdab8bdd51bdadbc9c58f0c0dee5ed999c656c1c09501bdc7"
+    sha256 cellar: :any,                 arm64_big_sur:  "7b502424030b22dd42cce486f8f9678c3fa9394e6fc7dc4e20cec43eeea90d86"
+    sha256 cellar: :any,                 ventura:        "de9a5ac34794db48d3c2ad0ac43dd41e78657cea302a7425853d02fad22ae6ac"
+    sha256 cellar: :any,                 monterey:       "6d02f7e2c9ecb1121ebe06df546b1f27a6fb4449b94d6297d84f69f2198a80ba"
+    sha256 cellar: :any,                 big_sur:        "be42b0834d4417d13f2780508b16aac05fead8c183c1d4d9a25dbcd08f4e9c35"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c519377231227dfff8c172ff1248d66dfdf03e9566c9f3027d93c8954d756cf7"
   end
 
   depends_on "cmake" => :build
