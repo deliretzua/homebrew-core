@@ -7,13 +7,13 @@ class Autocorrect < Formula
   head "https://github.com/huacnlee/autocorrect.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1776e977122ea4914bb336bd94ffd144bcab152578520524906553214007927e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "64ca92fd8f6a8eceb161fe09fdda7e69ce89f5ed512194c307db0c6656325883"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "02fa2bfd8b1003c1edc8ac172c394ac13aea0ea3472f2f37108a88bc8c2ea1f8"
-    sha256 cellar: :any_skip_relocation, ventura:        "28310e216839f847382a4b6e826cad606686a4a23dc5d97f06761ff446841418"
-    sha256 cellar: :any_skip_relocation, monterey:       "8e8ef839836b44351d92af73f66d30ac68053ab967df259a1c7235316e4b34cc"
-    sha256 cellar: :any_skip_relocation, big_sur:        "17710fda15271fe2e04b5c9bf0c9663aa0e9a9440eae4407299ac4a9ded24c34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "11e06d3ade6ddc9b5bb6df4904487864b28839ff4ec95a943d598c6e3b8ea326"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "194977e0bfb23bcdc6dd19d8cb9047ef3fd1c2a4bc6b04da736ef33efe0fddef"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "67b3957215582cb1aade0a41410596ed1c7311f273e755c54edd889fb1d84a9b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8efb4adf7d8620d709f3c36dd537641038dbc54f5ec56d6215ce76e2b04592b6"
+    sha256 cellar: :any_skip_relocation, ventura:        "dc96b1b9e519d30696a772d24653f9fa6a02902923a862e85a2396dbba2b1f5a"
+    sha256 cellar: :any_skip_relocation, monterey:       "915d064c7a2e498332fcda6aee031ab0b8d27cd40e45c33741bcdf62b7bef831"
+    sha256 cellar: :any_skip_relocation, big_sur:        "65f443c9a5bd920caa438da95245dccd33d2f77112a41945f8bf4ed2a58b8434"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "42c145ed2db0c307a8f46961c717b2aebfebf32e813f0d1d8fc74a45ad5e88cc"
   end
 
   depends_on "rust" => :build
