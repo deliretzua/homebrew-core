@@ -7,13 +7,13 @@ class Tig < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "3fa31c8df81b62eab50fe8dce66ae4d3f8c6e3e3b5b9419b66ea060134c45cec"
-    sha256 cellar: :any,                 arm64_monterey: "baa8d9d3b26071ac70a2b03fe8a9bf48a77e315f33c539db853f2f05aca82298"
-    sha256 cellar: :any,                 arm64_big_sur:  "41489b4ee08464c87eeda7b71c80ad56a26b092a47bb70e4895359d249436e82"
-    sha256 cellar: :any,                 ventura:        "1345c53a9d4dc959cfe0012a63cb18b6f3b80b26ff6bf1f6c1d42914b7732b56"
-    sha256 cellar: :any,                 monterey:       "63496a29ec59fcceeecee537be5c81db83570ae4788a79b44cd72383e7628489"
-    sha256 cellar: :any,                 big_sur:        "0edc3212ca7d0728a63ccbe87453c27fee9f72f56ec4f841e265468973e8096d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49d670c3984ee5ae01ae3ffdd5f7a7cfd0af767bc8fe120d02133ccaf249a511"
+    sha256 cellar: :any,                 arm64_ventura:  "a433db97a4470854452df7310d11758fea48ffd75a4e1e8a9f3b3ddae789dc44"
+    sha256 cellar: :any,                 arm64_monterey: "f6fde5e50a8665094751838fafa4ffab2548ffc46e6676b10ce39074429d2cb7"
+    sha256 cellar: :any,                 arm64_big_sur:  "6fdce8500cbc679b4ef77d545135ffe93be67a55858966a3775c06ce1d6e35ec"
+    sha256 cellar: :any,                 ventura:        "e1bd241e23b1dc78017372f04959356801e23a2750b51d84e564e4ed124185e9"
+    sha256 cellar: :any,                 monterey:       "768e3c0d3d8c4842bce7de7d63e7bcf9d092c8872b7a67d2c737efaf0aa81d6f"
+    sha256 cellar: :any,                 big_sur:        "1637bc2253879491360476a653b798a9736e585ee543e3ef0f54f571bdbee7c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "962b5b01903e102b59a90b6a321b1d23d1bbda68b19d715f890a4b4a62c0421f"
   end
 
   head do
