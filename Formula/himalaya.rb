@@ -6,14 +6,13 @@ class Himalaya < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9afa07bfcee038ad4b7cf05e4f29bef8bb0b83f506d7e4a64f9f92506582c64f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "228423705be7125f89466fbc1a402b59a11a42fe3e5733da3a2008ec2e65eea6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b3c895ac97e696cd8e72540cf1b35ae67a640d51eedb602283ffba7a06150237"
-    sha256 cellar: :any_skip_relocation, ventura:        "6e780b44d75a083c112141b4433003cd88a53e97f1900656b97942415d502f83"
-    sha256 cellar: :any_skip_relocation, monterey:       "e55224ee1eaf81ebe35e45cae4d298f21b59e94eb2b186aabd43105543724901"
-    sha256 cellar: :any_skip_relocation, big_sur:        "888d0a5f2329ff1886873fbd1ebfce5e2ffd75b10bfdbff6f23c689f5437ca08"
-    sha256 cellar: :any_skip_relocation, catalina:       "59d725336736c13e371f3122914aa00554f0be6571b31f0986f6282c560088f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df944a8eac04538217530966bdb4ff7f2becf551af52a2fb88f229cb272eb485"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1f352182c651945e219a845eeb9ae5e3feb89f364dd6e63fb86d92512f602333"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "be4ffdc1d74df2130440233b316343033c49cda0718b80c4f2fed40ab7ecf9c5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8b5ec45e9cbb42f5be3fd37d0014c1c14fa1c4000c821d9d76313539793de905"
+    sha256 cellar: :any_skip_relocation, ventura:        "a094234872441c3fc96d0d72306da6535ea10b1e5187b828243a4547541007b5"
+    sha256 cellar: :any_skip_relocation, monterey:       "f3c399419f26b8aee5c322e57467955127480e67acd7861d42dac38890bc22a4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "101ff8f99348304ccf141a7e3893aa49e452afa3b04558e24c58dd20449faad3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c8396adb7a697c0f3627ac7ff9c5ca352bd177c1199fba68072ac040fd20ec1d"
   end
 
   depends_on "rust" => :build
