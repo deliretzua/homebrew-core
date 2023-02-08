@@ -6,13 +6,13 @@ class GitSync < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "804143d01298df86953e628fbb3cc005bb3a4f48bc0a13faa3a1aee3f00c0784"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "804143d01298df86953e628fbb3cc005bb3a4f48bc0a13faa3a1aee3f00c0784"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "804143d01298df86953e628fbb3cc005bb3a4f48bc0a13faa3a1aee3f00c0784"
-    sha256 cellar: :any_skip_relocation, ventura:        "17b68939e36ae942c75e6beec232f432ab65841a43e4ab921f74b443b9fe01b5"
-    sha256 cellar: :any_skip_relocation, monterey:       "17b68939e36ae942c75e6beec232f432ab65841a43e4ab921f74b443b9fe01b5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "17b68939e36ae942c75e6beec232f432ab65841a43e4ab921f74b443b9fe01b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0faa136717ed80c81c3c120bc30489650da157dde30654339dcd81ea06e8d777"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d58a6b9e5618970b1dd372c9b9e6a0b0e73ca1907c6f2128401cef2b46b6525f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b94df27a1ffcd98ec30d7b468f89b8122859be0b1e4102e11c5f265b9360b891"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "88706c64be147318ba9974083b8762231738ec6ae0314bdcf39d7b37b9c567e2"
+    sha256 cellar: :any_skip_relocation, ventura:        "a316f105613544b098331b0184ee29b29ffb6fcf83c2402912279fc5a3a8fa40"
+    sha256 cellar: :any_skip_relocation, monterey:       "033a0b3a34ff3c0928ffbe27f1cf678e123ad36c5179fe9ecd79fdaecefaadb4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "07db0d12d3be5b615ea6971c04aa9daafc0b7e9e60288c0bb47cead0ec7f3731"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb5781268308f09a99f2a5e66f754049b7324a919d96050ad51a9c9d34bc81d5"
   end
 
   head do
