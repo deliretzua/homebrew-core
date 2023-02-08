@@ -7,7 +7,13 @@ class RubyBuild < Formula
   head "https://github.com/rbenv/ruby-build.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3dbf454935a5bd36e3f9cc64e1b8d1f3404d289123eda4877a9179474d2abeae"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "da2aad7da7a965a9210b00c89d962c523b87d280947513237f75375e3ae86d77"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c530e52acfdbb815b7f348eebf793342cfd3cd74a2f148bb95514c516fba7a46"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "169c6995f66d17e9ca477b739ea896956d70a1c3ecb1057661b98c3034c8f946"
+    sha256 cellar: :any_skip_relocation, ventura:        "6d48a44680b49ab4df425c698d09c2e91f48345906b21e0c8ec2a809039434f2"
+    sha256 cellar: :any_skip_relocation, monterey:       "6f49bbbee0db2284e48fd0061226549ef4690bb03901fae9c35d31809c8e1b4c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0f29e369b551871440d4aca043d2771a1e3a7ef2f01f531a5d4a1d938ac7a291"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "87a5c809d0f0e9e9ac5fc96f4eddd6df856b99c452086d8b41a442535623551e"
   end
 
   depends_on "autoconf"
