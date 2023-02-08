@@ -7,13 +7,13 @@ class Kwctl < Formula
   head "https://github.com/kubewarden/kwctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0fd0d3bdd99ca003f8da79989061555a32f3ad9621114eb22f951235fd183851"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9539d5d1d21cb16b56146f39739533a8f93d228f425eb082ab482f8ed46de124"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0d47114c3770ab7ebb40b120fcbff2d3d747ad960cc83fe65045335a2c21df30"
-    sha256 cellar: :any_skip_relocation, ventura:        "7c8df466fa495f62d76f0ee5a1b3d2d23a3791ae274e0e753d574c8343e734cb"
-    sha256 cellar: :any_skip_relocation, monterey:       "bf85a989f24fde342d0d54f624426d9afd5d3ef8f4aa5253b1af508279228d47"
-    sha256 cellar: :any_skip_relocation, big_sur:        "38dc75d114198b26f6dbeac761fadbf54a02de53ddc705f6c462e361f2c6ebac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "82ad9f3801bae678a4e652e8fd7be999bac9b504a536aa299f075de6127ea665"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2011149b19a67cc3f1ea8eb539464a052fdb5ef689ed3eea110e53053f0f19a9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "503425d99e773c7fe953c2c4a5e062a31f51ddfed412223c2dd49463ca32bab1"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0b9223f94cfc784e7fd4abd71cc1ba75a44ced7ac5fedaad1b6674c8b68ba049"
+    sha256 cellar: :any_skip_relocation, ventura:        "c47e3ff8eb049a6d2549cc4f722949b29044e5ec3a81ef999f81570b34be2124"
+    sha256 cellar: :any_skip_relocation, monterey:       "53bab7336e137d7f1d6c2f4071d6987108ae343ad965dc464d1739afc859d17c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "72239fc5132f2a49a46cc1a1e13a0d1c6d413491e71270e0b31bfabe996918e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05f38a10b116c057ac821d784f450fc692162a4fbc7d6010f476563927ccea84"
   end
 
   depends_on "rust" => :build
