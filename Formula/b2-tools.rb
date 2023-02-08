@@ -8,13 +8,13 @@ class B2Tools < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fddebbf5eb525cf3958e11b36a68ef33a0e19dc80aac243a22a18b34becb591b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "97f97fc48da58ed9aaa4b44498d5299d3eb3b5a5f76f6b3f4853143069da2682"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "692392ba06308a5f0c52fd0bf3c0809bb833d248f525eebfeb0e046ecb627e3a"
-    sha256 cellar: :any_skip_relocation, ventura:        "804ffd15ecc5e2f453037a91115ec87304ac8ac861955c6ca8c653ffc0e186c9"
-    sha256 cellar: :any_skip_relocation, monterey:       "3a94487254340f2588b2aa9118797890cf0ab4e3faaf4eda0aae86e60c006c74"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2e624ef3413c25c025ad85717925c3bb3a2cc960a9f10125111d30403828f21b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3957993c5640198f01b2e252bb9258fda4c4ab01c061f73fc7c0ece7affac076"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "217e9d20ea75792705b7b05ae7a31205ef0beacd0f5d9013faf117b97eb70cc9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "70a9e69a1931024ccd8d3397d1e9da88239f330609eeedf67fabf84da70bec01"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f45b7434d1f2f0c17b36ef6c90467dbfb1cbec54125a4b18279a6540f7fe801a"
+    sha256 cellar: :any_skip_relocation, ventura:        "a3d788dc987a6804b47d4b32f154adfadcb63285ca4fbabecbd035d5e7146626"
+    sha256 cellar: :any_skip_relocation, monterey:       "3f273deccf6ca2993046b509984bc9639c25a3633bbbd6872b71a2d2214679c9"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e282f6c71020ac59d981e157c7f6686b94e7620c7255fc1c1e65be5d332d3077"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ffc1ac9c8b54fecfe667786289beb71cb3a30eece7fb2aafe1ca148b7c318bc"
   end
 
   # Does not work with Python 3.11, see https://github.com/Backblaze/B2_Command_Line_Tool/issues/834
