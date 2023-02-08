@@ -6,14 +6,13 @@ class PgCron < Formula
   license "PostgreSQL"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "864b0cdaab5f8cd61f48ec3a85a05c0284f6fa4e35a5e9723a702c6104511282"
-    sha256 cellar: :any,                 arm64_monterey: "de153e8d2ed978871f338683cc37cd3db60556efa31085b3ada30ca32a21043b"
-    sha256 cellar: :any,                 arm64_big_sur:  "4b29b5814a740ba56edb6344bcb305dd50407f511394fd7714e5007caed07754"
-    sha256 cellar: :any,                 ventura:        "8298a0b17d05a0274a979342f74c629733f37852e26b710e5b6e3ede9e035704"
-    sha256 cellar: :any,                 monterey:       "00f830eef2cdaac50eafd420fc2e8186aa4782969d3cc80fe981acac6cd54d1c"
-    sha256 cellar: :any,                 big_sur:        "569f88ebc5cad834c2b1bd0bb416cad28f315892dcfce0808f5b0cdbbaa410e3"
-    sha256 cellar: :any,                 catalina:       "cf317c7daaad2d1bb6d2fff390a6d7824ef6250ba9b22c867baf4d4cc7efd0fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bddc49247c16f2efa40654d060d3deb3decb171bf0cee49d54e1362219a2de2c"
+    sha256 cellar: :any,                 arm64_ventura:  "853d38ed4036f4b8b5774f769cf76e066aa65258a81b4305859b38b6ca067093"
+    sha256 cellar: :any,                 arm64_monterey: "cccf4e75e3d4f1740e5a36136bcd33ad9f1b60d3c97d50ca499393c88dfbb53f"
+    sha256 cellar: :any,                 arm64_big_sur:  "9501e5d48fe12c8261756a025a5bf8fc9bec784c4896cea2bbaa4425c6f68a26"
+    sha256 cellar: :any,                 ventura:        "5d20cf0b06c7ac4bfbaf07db493f6d38501db677f149f01480204ec6cdef13a2"
+    sha256 cellar: :any,                 monterey:       "3dfbd493ef777d2a7e5de54fd0a08073e71c979be2af54a985b09b92df401564"
+    sha256 cellar: :any,                 big_sur:        "c453cfd698549808193db6742d5c429d07649c1262d2389782d1b33c66c4dc19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f1764adb44cd221ccd94a63d1b590958c26d017de543ac13149d9d267353c0d8"
   end
 
   # upstream issue for running with pg@15, https://github.com/citusdata/pg_cron/issues/237
