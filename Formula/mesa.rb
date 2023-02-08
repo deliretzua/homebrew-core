@@ -7,8 +7,8 @@ class Mesa < Formula
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
   stable do
-    url "https://mesa.freedesktop.org/archive/mesa-22.3.4.tar.xz"
-    sha256 "37a1ddaf03f41919ee3c89c97cff41e87de96e00e9d3247959cc8279d8294593"
+    url "https://mesa.freedesktop.org/archive/mesa-22.3.5.tar.xz"
+    sha256 "3eed2ecae2bc674494566faab9fcc9beb21cd804c7ba2b59a1694f3d7236e6a9"
 
     patch do
       url "https://raw.githubusercontent.com/Homebrew/formula-patches/f0a40cf7d70ee5a25639b91d9a8088749a2dd04e/mesa/fix-build-on-macOS.patch"
@@ -26,7 +26,7 @@ class Mesa < Formula
     sha256 x86_64_linux:   "710494af88e67c91884d905993a9288b1ffbbb68d3c0190c0d356671d33b0398"
   end
 
-  depends_on "bison" => :build # can't use form macOS, needs '> 2.3'
+  depends_on "bison" => :build # can't use from macOS, needs '> 2.3'
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
@@ -74,8 +74,8 @@ class Mesa < Formula
   end
 
   resource "MarkupSafe" do
-    url "https://files.pythonhosted.org/packages/1d/97/2288fe498044284f39ab8950703e88abbac2abbdf65524d576157af70556/MarkupSafe-2.1.1.tar.gz"
-    sha256 "7f91197cc9e48f989d12e4e6fbc46495c446636dfc81b9ccf50bb0ec74b91d4b"
+    url "https://files.pythonhosted.org/packages/95/7e/68018b70268fb4a2a605e2be44ab7b4dd7ce7808adae6c5ef32e34f4b55a/MarkupSafe-2.1.2.tar.gz"
+    sha256 "abcabc8c2b26036d62d4c746381a6f7cf60aafcc653198ad678306986b09450d"
   end
 
   resource "glxgears.c" do
