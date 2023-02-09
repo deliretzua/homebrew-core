@@ -6,6 +6,16 @@ class Micromamba < Formula
   sha256 "4c794246dd6008caebebef8c6266e6ba3f9ff5ce48908c830e448811587e9921"
   license "BSD-3-Clause"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "a95ca7a0f74a2e0bee8ee9c72ecf196f3b5c9af661d8f5ca57e22686e25d6cbd"
+    sha256 cellar: :any,                 arm64_monterey: "70e5737e192d685bcd2fdd1d5d647a10ef13d96d3e564ebcf795406c3ba007bf"
+    sha256 cellar: :any,                 arm64_big_sur:  "0ef3edf33ed3249c347f1c8db2f77363db0da3a7ed15fab0ad972e9002e7c587"
+    sha256 cellar: :any,                 ventura:        "f4080ec5170383bcb351c6df1c1cdc684613f5183eefd8e6555fd262a4da9219"
+    sha256 cellar: :any,                 monterey:       "63b44c045f132fe45aafa4595a87e231e7825c949b6a203379cd978e275e96b8"
+    sha256 cellar: :any,                 big_sur:        "a3a15adbd8e4c4bb3cdd911ff5dbe0a1639ce5ddc27f682480e8441b923b0d49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b419e6d70b2bc9bd19877f156e8aef002eb3c635a16279f437cebb3951f7e818"
+  end
+
   depends_on "cli11" => :build
   depends_on "cmake" => :build
   depends_on "nlohmann-json" => :build
