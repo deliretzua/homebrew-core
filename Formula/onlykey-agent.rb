@@ -9,14 +9,14 @@ class OnlykeyAgent < Formula
   revision 1
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_ventura:  "5ec3e96ff7071cbc045c5cd46627738f2ae22c796c119e49cbf9f22d7f1a2497"
-    sha256 cellar: :any,                 arm64_monterey: "aeb09907f488f04298db01b54b3fdd3906a5760640275fd8e6758a1ba92f107b"
-    sha256 cellar: :any,                 arm64_big_sur:  "21969f8f9d20f43e01e35b7b1ebbea721726772eb4e1aa3487c8247b0e9eaac3"
-    sha256 cellar: :any,                 ventura:        "b3ac40cd5d934dbc31ded4f06d437d98a2c5f8845ca1325550dc1bd74eab2783"
-    sha256 cellar: :any,                 monterey:       "d88a6b1dc6acc92c48589aabedfe6d881ec7a6c88d6b198669d58441c49848e6"
-    sha256 cellar: :any,                 big_sur:        "e6b8f631c71ba1537820d241f956c53b772b71ab9a36022a7e961cf6279fa32c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d185a16ef7b1f304832f944370711692e59c64ad5a495e3add0ad417576754ed"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_ventura:  "e3a75311e00fd26a36aca0f0652016b49510ee79f60fd4b73921fcaed368a66d"
+    sha256 cellar: :any,                 arm64_monterey: "f9d2a26b325eb55337dd1397c6772d3eca95ca797f771862e3f045afe18ccc34"
+    sha256 cellar: :any,                 arm64_big_sur:  "92dd0caa3ae58fb1b68de5e01b3a746be2a04c97653b3918a9284dbb3398409e"
+    sha256 cellar: :any,                 ventura:        "2feadbc4ac694e79e9c31acc88de51b0531c5ea1082d6e295b80280f554a9d61"
+    sha256 cellar: :any,                 monterey:       "15e7737d43c436ae9e560988d7b91555ab2793710f1a8df2f4218733741cae55"
+    sha256 cellar: :any,                 big_sur:        "53b299868f6180585a7e316da8dec39b79e3e914df0c1904e32efef97d1e98f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b925815505ff5273264385bfcfdd13c5a6c0906f086f3fe552490ba28aa85ca"
   end
 
   # https://docs.crp.to/onlykey-agent.html#installation
