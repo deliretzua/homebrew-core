@@ -6,13 +6,13 @@ class Paps < Formula
   license "LGPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "5ae25ca5af148e92c8c1d8c9b1d7ada1c15e6f3c7778534afd3e4b6e490503a4"
-    sha256 cellar: :any, arm64_monterey: "e89a0f42d9551bfda4c320e72fb1073b1b678a91b51200f0437a80c01cd95f50"
-    sha256 cellar: :any, arm64_big_sur:  "c848669c3526b218529a7fa6f2477cf93df7a7066f83897e599157efe5600085"
-    sha256 cellar: :any, ventura:        "3e8efca3bdf7dfbac2ffe47ee334b2eb6c1b98d59cdca99e4bb92fdfb721d13d"
-    sha256 cellar: :any, monterey:       "f71a32472aba742785c9dbd21c0f7e95f230f931077b8b22b3e45577a7fb36a0"
-    sha256 cellar: :any, big_sur:        "1d347779b763c8c13ea13ceb33bfb94f8a65202ce94b6c363127233d5c29fccb"
-    sha256               x86_64_linux:   "b23e4f35dca9a61464c55404d7d59159c7b79516f3a60c0106c77d915ba6c9e2"
+    sha256 cellar: :any, arm64_ventura:  "e3326fb171dfcd3f5a36a90549d48eac049405952eede125f920996c007b7fdf"
+    sha256 cellar: :any, arm64_monterey: "6ed29020cb058bab185f934c04a3e4adc08f8e36ba4859c3db9aadf3a4bb3a32"
+    sha256 cellar: :any, arm64_big_sur:  "15d0131e38f17ba32c9778d03ef3323f86fe205082fb72fdb66ecaa7e4a2dd52"
+    sha256 cellar: :any, ventura:        "6458c23bcde24b31b736ef9b610b4adb824edc09438bd94e3ca14e00efa0b6c0"
+    sha256 cellar: :any, monterey:       "eb7e80f53f60756a9c1153ef1d52832c78c942f40d42b1c2c789e4a44fa4a57f"
+    sha256 cellar: :any, big_sur:        "3a00997c25f0fb731bf76583d47b5b2680c255949ed5f2e8981e0a54a64134dd"
+    sha256               x86_64_linux:   "08926b1df0c882015a3a40593dfefc5d8ac0cbace74afc832fb3399e465e12b2"
   end
 
   depends_on "meson" => :build
