@@ -12,14 +12,13 @@ class Mongocli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4dcdf86f13aba04f2d0bb66a2f0a590124e69c21e4704e1740fb353e37b30616"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5e9bb7281818e642593bf01afe0fa04958bdf80788343dce24b400e8f2981001"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0b041b70d391b572747107a67ccd2844e2867efb0970ecffa2de536dd27b4733"
-    sha256 cellar: :any_skip_relocation, ventura:        "639918c5433da5b4fdbf155d1af2b205cfd03edeb968cc3ab673fcf2070560ef"
-    sha256 cellar: :any_skip_relocation, monterey:       "3bef87280581006bdbeece7c5b7650f6113fa6b877cac545e65eb985a1f4c62a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e133e09dc0475370900c87f68fafcee7ad71b331feddbc617e9124afd1ad5b9e"
-    sha256 cellar: :any_skip_relocation, catalina:       "43e17eedb6ea73eb0d940065e71ac8492e7de653ebcd0ceb32c754c9807b4d1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "def71a082c0ac46e918a92a967aab8aac56a89fd24de2281506b05b5bea405d9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "07dfaffaaab6651af53849c1a8450a514888790362236ee038c85c3764e80bc7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e5d29d1b85af429a17bd1b306300d05507adb6e0720d80b69e4a9d5604b0afd9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e018680c6913608f16f4518c3e32601151198672c0988410b1724a0fefc724c9"
+    sha256 cellar: :any_skip_relocation, ventura:        "7e6dfcfb0ef40b3a42a794f09ae8bd563e8113cea90341c6d41cd15c4116c7a9"
+    sha256 cellar: :any_skip_relocation, monterey:       "66ecf32edeb131e23a45d0100cddab5ccaff990f78232f98c3657c7985ebc787"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a0b1541f6938d6305ff05a87f1bb14e69cd214be587398c7888fb519412b049a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05d77d5f34b76714d380d27006c6cfc58a50c3f8cd5bf244e48e839eef46c099"
   end
 
   depends_on "go" => :build
