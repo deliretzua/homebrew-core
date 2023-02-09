@@ -9,6 +9,7 @@ class Nap < Formula
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "f0ed819808bb795ecfce79d5415ea928d48b3f4cd9d716ef26e0e48a4f88067b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9a201267139b6f4d72d65a5651b981efba2fd74d0583221b87071ec34ad1051"
   end
 
   depends_on "go" => :build
