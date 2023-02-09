@@ -10,14 +10,14 @@ class Awscurl < Formula
   head "https://github.com/okigan/awscurl.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_ventura:  "5358c8ddda4e4134640b53c58df145cf01f786efd2a1813dfd02bbebeea006a0"
-    sha256 cellar: :any,                 arm64_monterey: "c7915264e8ea0553714c8a95a5a1b75bc4f3af5bfec2d0f5c124a7ea85aa6213"
-    sha256 cellar: :any,                 arm64_big_sur:  "5402933d60a39f87ce4a47731282adf12fddab30a6ed93ccdd57dc867617e35e"
-    sha256 cellar: :any,                 ventura:        "c16f3a9dbd8b5bc78b6a9db33a531a8e0f5afefcab7304c2d8948d3824a7c92c"
-    sha256 cellar: :any,                 monterey:       "7c5a70efd6149129edb6dc77e996145de158f6daa10fcdaa964fdadaef190208"
-    sha256 cellar: :any,                 big_sur:        "e6ef3ffe330576f4ca845aa60ac433d8995194d672ea444d1b5568d4ebb5fb05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0843401423ae91bf6ab680449c16429305c10db54a77b4fe9535be4dcd1474c5"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_ventura:  "4c06e64adceed3e052bf45ef198d53bd8b0758eab2f48b0510a428dbde34ef31"
+    sha256 cellar: :any,                 arm64_monterey: "04c39ea14acb6a0943ea9a40405bc32f46a96825a847132de573550ca861283c"
+    sha256 cellar: :any,                 arm64_big_sur:  "5355b486a5d907c00c147a05215674df08259c3e5da74518ad272af2fe302d87"
+    sha256 cellar: :any,                 ventura:        "6edd7bbc6bf2e828ddd0608819bfb1cd60fc88235c98dc245577a388de5a1e63"
+    sha256 cellar: :any,                 monterey:       "8d6895ca9c2746cce80029e911adf30e2c38d240705b89fb4633ed0233dc08ab"
+    sha256 cellar: :any,                 big_sur:        "5544323f22f99ef6bdc64391161f8f3ce7c787952315dacfb5058c1b3bd54a16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d15f2ba11089e18a8415fa62e27640db9746b2d314a7c82bb5ee3ecb1a346df"
   end
 
   depends_on "rust" => :build
