@@ -6,13 +6,13 @@ class Keploy < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e0c3cef00a7b742848d0bc0a5feaef9178e2869d4a927e3e6063c42fa91683e8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c8f41726c7665270edc7fed79532eebffca3b5fba2067692707b0144c06d42d6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f72acec4fe5a99038bb39e7dba58642c95b7c9a591b20aba83a134a26a8dc466"
-    sha256 cellar: :any_skip_relocation, ventura:        "cf9615bfacf2ac385d5c8927c2d3a93d8dafad4da670cca43694133a30314eaa"
-    sha256 cellar: :any_skip_relocation, monterey:       "0ad3295116990d8b573cfcbdd9a40bfd52ea6da238bc85a133eea4291e9a7cd1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bda37f0273d89131c3dd8eea5fd16b08b433f6dae60916bd7d17423f522cd075"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "984ac42a0deab3709a1d9c5beac02f3ca3baf02cede7c8c6b27a318cef7e9806"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d261da38e1424ad9ca8226546f1b2629b98be72e324588a31150c04b7936b54f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ed408b569abe25e7a1ad974d293cc293245732479066853d89c801b5e21c35f3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "415537bdcc9a76e125dd0cc776e08f6f1d5ee63cb29ea7837deba1f0e404e009"
+    sha256 cellar: :any_skip_relocation, ventura:        "6e311728d8fad686fac0f202e8aada24fcd76bf8f91376eb2efba2f3ef9d1245"
+    sha256 cellar: :any_skip_relocation, monterey:       "c6ce65273983c26ee6f809bf56dbed0f523007c8459370bd59d7761a36007c27"
+    sha256 cellar: :any_skip_relocation, big_sur:        "46993c305a3fac5c87eadb8485c674ac9236d41ae01ebe769379a67dd7a1526b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1212bc10e2906ee220d6f0361636268dd22efc5bfe8109fcec92d00e7fadd83a"
   end
 
   depends_on "gatsby-cli" => :build
