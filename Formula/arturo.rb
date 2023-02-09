@@ -1,8 +1,8 @@
 class Arturo < Formula
   desc "Simple, modern and portable programming language for efficient scripting"
-  homepage "https://github.com/arturo-lang/arturo"
-  url "https://github.com/arturo-lang/arturo/archive/v0.9.80.tar.gz"
-  sha256 "25f4782e3ce1bc38bedf047ed06a3992cf765071acded79af202a1ab70b040e2"
+  homepage "https://arturo-lang.io/"
+  url "https://github.com/arturo-lang/arturo/archive/refs/tags/v0.9.83.tar.gz"
+  sha256 "0bb3632f21a1556167fdcb82170c29665350beb44f15b4666b4e22a23c2063cf"
   license "MIT"
 
   bottle do
@@ -16,13 +16,15 @@ class Arturo < Formula
 
   depends_on "nim" => :build
   depends_on "gmp"
+  depends_on "mpfr"
   depends_on "mysql"
 
   def install
-    inreplace "build.nims", "ROOT_DIR    = r\"{getHomeDir()}.arturo\".fmt", "ROOT_DIR=\"#{prefix}\""
+    inreplace "build.nims", /ROOT_DIR\s*=\s*r"\{getHomeDir\(\)\}.arturo".fmt/, "ROOT_DIR=\"#{prefix}\""
     # Use mini install on Linux to avoid webkit2gtk dependency, which does not have a formula.
-    args = OS.mac? ? "" : "mini"
-    system "./build.nims", "install", args
+    args = ["log", "release"]
+    args << "mini" if OS.linux?
+    system "./build.nims", "install", *args
   end
 
   test do
