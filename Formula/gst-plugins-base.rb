@@ -4,7 +4,8 @@ class GstPluginsBase < Formula
   url "https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.22.0.tar.xz"
   sha256 "f53672294f3985d56355c8b1df8f6b49c8c8721106563e19f53be3507ff2229d"
   license "LGPL-2.0-or-later"
-  head "https://gitlab.freedesktop.org/gstreamer/gst-plugins-base.git", branch: "master"
+  revision 1
+  head "https://gitlab.freedesktop.org/gstreamer/gstreamer.git", branch: "main"
 
   livecheck do
     url "https://gstreamer.freedesktop.org/src/gst-plugins-base/"
@@ -35,9 +36,14 @@ class GstPluginsBase < Formula
   depends_on "pango"
   depends_on "theora"
 
+  on_linux do
+    depends_on "freeglut"
+  end
+
   def install
     # gnome-vfs turned off due to lack of formula for it.
     args = std_meson_args + %w[
+      -Dexamples=disabled
       -Dintrospection=enabled
       -Dlibvisual=disabled
       -Dalsa=disabled
