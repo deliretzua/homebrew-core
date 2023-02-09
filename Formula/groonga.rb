@@ -11,13 +11,13 @@ class Groonga < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "6aee6bc7db77164816ce0534e6afaf7341920bfc1590770f01bcc4a6b9abbf02"
-    sha256 arm64_monterey: "2d6f56c78d01ebc5c6f70d894fd4f196ea1f067bf71c86b3692b6f7ad4d46caf"
-    sha256 arm64_big_sur:  "9852143c70b08e192164c54648e2460bb7a1f89d37d8ee8150319a1122676449"
-    sha256 ventura:        "a343a80849bfb9aa2a04f26b2569fc63b48109854f22278ce3cddcc9b68ac470"
-    sha256 monterey:       "7a83f1fdacfee5d8b626f9f1b977fa7536d4da55fb339fccd02c9ddfc7efe4e1"
-    sha256 big_sur:        "4834f74fc7569258fa8122d9e7f78bc3997e104f8f49a074554e4e2388f9eff8"
-    sha256 x86_64_linux:   "8533eea74f729bb1aab61e8e13dade6ad555895dad4858982f12a77a603a33a6"
+    sha256 arm64_ventura:  "ae08e73d1a04391f6c29ef7dacaea7b4feddd8b3581c2990d550fc78dead2827"
+    sha256 arm64_monterey: "7e247b6955c4b8f4fb9e3f3ae538d0286ffb265c0d21214def84694e8ce621eb"
+    sha256 arm64_big_sur:  "b2c2236a8197e513bfc114e26584cc2b4de447686015194169945f3fefc29eac"
+    sha256 ventura:        "32491f40ccc9cc6177f1270951cfc9065928cb6e481c1969d742b327c3ec54f2"
+    sha256 monterey:       "404bf81fe9e74a0ce20c0842e494a92922fa89851983758e532b83de200f6d0b"
+    sha256 big_sur:        "e834e8ffe165e71b64c5feefb56f8662bd666080dc0852980b4ba8a56e7e4c21"
+    sha256 x86_64_linux:   "d46f10219807ad48de1fc90e9bb8937cfbf1e411fd43b52617c48ec399536f82"
   end
 
   head do
