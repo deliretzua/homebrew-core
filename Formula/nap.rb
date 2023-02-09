@@ -7,7 +7,8 @@ class Nap < Formula
   head "https://github.com/maaslalani/nap.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "aa1b0f4cfc407cb72526136b5f94197e3aca5150b790c7d35ea8034792e2597d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "f0ed819808bb795ecfce79d5415ea928d48b3f4cd9d716ef26e0e48a4f88067b"
   end
 
   depends_on "go" => :build
