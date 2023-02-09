@@ -1,8 +1,8 @@
 class Pandocomatic < Formula
   desc "Automate the use of pandoc"
   homepage "https://heerdebeer.org/Software/markdown/pandocomatic/"
-  url "https://github.com/htdebeer/pandocomatic/archive/1.0.0.tar.gz"
-  sha256 "22fc1802afc74ead9fc1011180c005c63932e8430aef61984dfaa43efb64c2d4"
+  url "https://github.com/htdebeer/pandocomatic/archive/1.1.0.tar.gz"
+  sha256 "33a2f2ac628c54851be1b5b10114b3e086f08efd8c28826d00608fca1f3616b7"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -12,8 +12,22 @@ class Pandocomatic < Formula
   depends_on "pandoc"
   depends_on "ruby"
 
+  resource "optimist" do
+    url "https://rubygems.org/gems/optimist-3.0.1.gem"
+    sha256 "336b753676d6117cad9301fac7e91dab4228f747d4e7179891ad3a163c64e2ed"
+  end
+
+  resource "paru" do
+    url "https://rubygems.org/gems/paru-1.1.0.gem"
+    sha256 "0c7406a398d9b356043a4a1bfee81f33947d056bb114e9dfb6a5e2c68806fe57"
+  end
+
   def install
     ENV["GEM_HOME"] = libexec
+    resources.each do |r|
+      system "gem", "install", r.cached_download, "--ignore-dependencies",
+             "--no-document", "--install-dir", libexec
+    end
     system "gem", "build", "#{name}.gemspec"
     system "gem", "install", "#{name}-#{version}.gem"
     bin.install libexec/"bin/#{name}"
