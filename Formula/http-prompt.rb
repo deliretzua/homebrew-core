@@ -10,15 +10,14 @@ class HttpPrompt < Formula
   head "https://github.com/httpie/http-prompt.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "002dd8b814be749bafe95679f80235e2fed66cc1356e3a8bddb58e371354dd2c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d5b571d1abf9a992279be7b728cfa51718b544ee5e8209a3af1feb58046c057b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4edc959368fdbb4061c84906e8b7e35b7e1f9c31a8c6dabe43d3215003f1b647"
-    sha256 cellar: :any_skip_relocation, ventura:        "6781f8e1081a34191eeaac6bf0d09ff15bf1729fe8d17dad17a91d5c39427c61"
-    sha256 cellar: :any_skip_relocation, monterey:       "c40d0d4ac6681d195735bf33b11ebf3f436132ff9aa62dd5ef967f9bd803b669"
-    sha256 cellar: :any_skip_relocation, big_sur:        "08f7b20ce52f1a9957bdfb375b37103433ec9e99497e1bb80468792ca21f097b"
-    sha256 cellar: :any_skip_relocation, catalina:       "115551eb461f3b6b5f1bd58dc75b9c852e6ce0e5148f87214def2e616d0ff717"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "226b69ea41dabcc2edf5e0aab966f140fa4b5e99feb0c2f8283429abc69b0980"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5849569ef0bc11192d89de3258b724a27a7eaa46648d196e90b3c8eb1eea532c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c0e1f8b0bb77bf8fce5ac1e05ced804fcd8948dc08469ea90dcd208c1fd8fc42"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "045b57683a7a2f12769b6be9b365792d69912c51673d37eb9f4122371b632e6e"
+    sha256 cellar: :any_skip_relocation, ventura:        "c58cfd99a536f9512a33aae19be3311b6e31de7162580c969a33c66a4cef1220"
+    sha256 cellar: :any_skip_relocation, monterey:       "73102747d9cc22242d24a21b03b261c9063a7f9b45488b6ad1f7060e3ffa3ada"
+    sha256 cellar: :any_skip_relocation, big_sur:        "88b32e77b0593911a1d6e0c84ae568c2406904a5e8833b0716dd1f8d10a57762"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4eb5cd29dfe444fdd51573ab06b712988acbfcf7aa66f53eda8d0ec78790202d"
   end
 
   depends_on "pygments"
