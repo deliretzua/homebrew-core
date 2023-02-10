@@ -10,15 +10,14 @@ class Credstash < Formula
   head "https://github.com/fugue/credstash.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "52608d3499897c52d289b7ba30bd5ef1b4ac9d5638aceb0f5d6118cdda25922a"
-    sha256 cellar: :any,                 arm64_monterey: "e2cf82ffe8572152a4d29954d245c9c1cca360650d5647524f8e18913c97f0f3"
-    sha256 cellar: :any,                 arm64_big_sur:  "b54243ce850fc1eab92dd2c54438477f7e6effff757860f5988bd93a93fb6986"
-    sha256 cellar: :any,                 ventura:        "be2ac32bad49c2c4ea995a7f936f1da8f97bc24a52ace5a7c8a9c6224dbd2ea4"
-    sha256 cellar: :any,                 monterey:       "d5222f55dc5c4cf986d2ad2ad7831587bb39a0215c102a9374a422e5e8d55b0f"
-    sha256 cellar: :any,                 big_sur:        "9969ff2c103da08a614bde619554268c164c559fc899b6849e92644b92cd0571"
-    sha256 cellar: :any,                 catalina:       "9374f353b786d61526a755c995b99ecaba4e61a1456813f9a5a36cb820a10023"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "381772e9cc4dd54df348808c8b4c7e1c0e72dcfb6931bd40fc5b857987659994"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "a919782a8d10823d65c05afd63617fe01f0f3640c1e2cc47ad5723aced3ff508"
+    sha256 cellar: :any,                 arm64_monterey: "8fc4f9fb33f3c5370146196837e7dc7665106293338e41833c34be7f071af8b1"
+    sha256 cellar: :any,                 arm64_big_sur:  "7ebb38b086cfae58223de1c486213589a21ee06685ef8885f2ab290f93f2ce81"
+    sha256 cellar: :any,                 ventura:        "dbda91956a4378006c4c4a9d9638ee08a261a51e3cbd3d33a5b03129a769e98d"
+    sha256 cellar: :any,                 monterey:       "e4b952e6eb65a18385b2aee1906594b7aee7b1682ed3286138060273c9bb63be"
+    sha256 cellar: :any,                 big_sur:        "4e54ffc6dea4d5dce48ced799a65e53665eaa422ebc7d75f3bcdaaf2c1f58b5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15e075b3b5496589081cd5b29a86ec5249f36c05a71c3ef78a1647475030a4be"
   end
 
   depends_on "rust" => :build
