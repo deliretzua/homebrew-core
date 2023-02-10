@@ -9,15 +9,14 @@ class Fava < Formula
   head "https://github.com/beancount/fava.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2610af22e783034fbf8d72ca091594a9193e1a5bddc94bde717c84bdb0eeedd8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9244a38854b6124b3102bd0bef632440d53434db85c27ba4221576acb2c3e885"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9e3af3ef90a226ca74ca7a5a631f04858fdf2a64813e071a83b648c663917980"
-    sha256 cellar: :any_skip_relocation, ventura:        "4bc4023cd99b6b02e0b5b2414494c045839139c09169f81983f420a828bbc5e1"
-    sha256 cellar: :any_skip_relocation, monterey:       "7f8f9276577e0977f2f7baeed8e41255b1941d29a10f86aa61567ea4a53d427a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "85a4079f127206797059cb19fe481543788cb4d356bd40ef36fbe70a753a12c9"
-    sha256 cellar: :any_skip_relocation, catalina:       "8c9d42e8338ee8941758bdae38d6311d41b752472a36022b357111a3f538b705"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c572516248d0d209c30ecb631bb5bff12249d086bf453bab8dd9cc785b09f69b"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1004f3e6c4ce8187ec277d537ad37e99b3c4ffd2c3489d2ad3b743b02f66e7be"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "55f31d793d422cbaa39c002f74f4f04955afa9ea84b42bd154379242768d06eb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "01a38daa8e35f76ff7c1089247e71b42c215374d75e13f0bfec5cd8b27b728fc"
+    sha256 cellar: :any_skip_relocation, ventura:        "e49426d0760dc29fb18125230c21fe5ff911a595692b0e55256db4545f1e1854"
+    sha256 cellar: :any_skip_relocation, monterey:       "84810946ddbbe2483756869f23aab225b2f196633de9c05e2206c502d439805d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "20a3bbb9e63d67f337c855bc530c80260fbbfab27a12b269cd78743942fa8eb6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3ac85021d5b8d61cefecd4a0dcf5d3ed0aa711802f63235973bf269e45e3bd4"
   end
 
   depends_on "python@3.11"
