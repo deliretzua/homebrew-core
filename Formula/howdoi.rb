@@ -8,15 +8,14 @@ class Howdoi < Formula
   license "MIT"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e816e12866a487b315750a529830214f7741e8cdeb75616e4f5a21b2d8a7ca8c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e0f7dc663b2ce0682b6ea983ffcf687ac8aeeac773d1a01296243a54cb27621d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "93031d69f38d5efb0debee8f0df1adc3d0c586a5cc807a8585faf7573775deff"
-    sha256 cellar: :any_skip_relocation, ventura:        "77f9a16d14d3d2b4f2b27ff5d31e370ef54ba89cf36239928dbbba63f2d9b168"
-    sha256 cellar: :any_skip_relocation, monterey:       "6fd718a5b5f7c34371783dac0bfbc2c2bc9d7ac4c5a839760812dedcc5ad71f0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c51d2ea4b9bfb2ea1c9ae40517a710eefd0c1f49745ec88d4bca70d3b3373af2"
-    sha256 cellar: :any_skip_relocation, catalina:       "c3351a47bcdc701e43485ae09d36da8f9877367d6410fd2f85b8cc5c28385ada"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc06bed9bc40d06c68b01963be9ddcb8460ea0fc47cf1479d04d05d3cdb2a70c"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "385428175489a8d6e02fd301786e1f9219185e96d143bd5452e27eeb780d3b64"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "78c4080f8095eaed404b8328662e0d38ec9100dc57fb7034f4d870ed93985042"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "db44aa34be96fc4e680d7f3a1d5f417faac2593eb9ff218347bc2ee2528e4ba0"
+    sha256 cellar: :any_skip_relocation, ventura:        "c0131faa1a555c5b239e3cdb6997febedfa94c9a5df9e1c89a6154a4647ebd8e"
+    sha256 cellar: :any_skip_relocation, monterey:       "bbab48025e63623be10af86a151d657c885077da46f4edcaf131f74761d9ac5d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8df2fdcbc7b190089145693b4fc7530b907bff9cd3631b311514d286bde26263"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "939ecaed13930b01fdc9c7ccb22869528ea4cb149d8ff131bd96e368a8464003"
   end
 
   depends_on "cmake" => :build
