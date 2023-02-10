@@ -9,14 +9,14 @@ class Ansible < Formula
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "5f127d3cbc17edaf3a15b2488feb34e3fce6f77d6d822ad5f4c8f3a6cbec3f2b"
-    sha256 cellar: :any,                 arm64_monterey: "2aaec11a6d89834c1f7256821ad7fdaadc7b292632171169e463dea9cbb15aa1"
-    sha256 cellar: :any,                 arm64_big_sur:  "4bfe9043f888680a9c78121069a5d11e1e0aefeb5605aa2e522a18fc682fd1cb"
-    sha256 cellar: :any,                 ventura:        "4ee9dd7a596240460b18324281054acd1b21269a9a41854e1c58ec38f4705896"
-    sha256 cellar: :any,                 monterey:       "7803d2cd3a81e67a6b71be1f91effc9a8319c91fe4e6c73904a176edd13bf57b"
-    sha256 cellar: :any,                 big_sur:        "4bbbb84c1d2be600ab0189bc3980af7301fc2944f4b4aa4e4a4d28f43435ce31"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "610782af7541bc2d06e42b37c0857dca0142647d7fc6d798936336613ff4c804"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "e80158de8cf82a02ba691d4efafaa19d53316247442d801234e9e2517079357b"
+    sha256 cellar: :any,                 arm64_monterey: "997ca6cf75474b6aaa7e9e1be5a5c82bb9e2d914af0e624d4a7b787af8af1ace"
+    sha256 cellar: :any,                 arm64_big_sur:  "944859cd609243ca419b661fde3438572f72c1c4c494a2401909a819a078d20d"
+    sha256 cellar: :any,                 ventura:        "35ad58d636875927a0d6932bc26d9d931a9c92c39e9b6fcea028ea4314fbef69"
+    sha256 cellar: :any,                 monterey:       "9e55940815ecc940e8c45b10f62d210002ccae4f58f468e1db53c9f0b9ba4f32"
+    sha256 cellar: :any,                 big_sur:        "513a711216c296baf49479a1f1b1184f95f8db79780a8917755f3b62902feabd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a9e229af08b47abdd9fdfb7c3b2cd3676ec0717a09fcfcfc6c66ccc8ded68248"
   end
 
   depends_on "pkg-config" => :build
