@@ -9,15 +9,14 @@ class Flit < Formula
   head "https://github.com/pypa/flit.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6bd28c6b210602e16d0430cfde9bea90bc36c3f3c8df5462e8894a2a6231e615"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4dbf8a9e8e9df5301a978774c79361bccb722227344b8257de66aef1f89864b7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d424220d30faa14fcd391ae4acbcdcdb3b923ca4237990d85b5a15f614f5090b"
-    sha256 cellar: :any_skip_relocation, ventura:        "d8c0d3c83ec706d3c8db72b4ce50fa58fd05e230e6f4bc61836c7c024fe03ad2"
-    sha256 cellar: :any_skip_relocation, monterey:       "ec577206379daaaab4f712994a1a546a8a79b2b335165f374058cff750191ca9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a28df2da3dc584cc9ff6e2159e2bc0c33caadd813611d9a4aaad7b1d257762b4"
-    sha256 cellar: :any_skip_relocation, catalina:       "3da182a01a57251992616c5275d64781206644df7d7d9d8d5b31636b0b7e8fdc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "db0339e8e776366d78171427ccbd679f4566ad1715935aa1e9dc320615d37b6a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c79cd79ddd53d849487514e66f3ce7cd062942639ebfa86b18c45cb032bedf62"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f1f355701e2e759a91dd1165f9a80127bc2a1ca7ea9f6ea01ab559fd03d5a069"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e89b7fcc04fb5ede6b3ee4468b5890689ee8ec4c47eea3d5b0dfce55cd2c0cb8"
+    sha256 cellar: :any_skip_relocation, ventura:        "17b346f784b1ce2d3503cc4f4776e71d05131d85c2080f55f971c5bada781e5c"
+    sha256 cellar: :any_skip_relocation, monterey:       "70d5d61f35d5b40ca442f193324101bc7a2fa4f9bc52b275c6dfefbef5a99f4c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "356f09a724ecc55cc158ffd911855942b1e67192e76bd893f82adc462e6d34a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "84e9f9b69437ee28a56a66cb0bb6fdbd3c32c8dfdd209277cb4f7569c3b65660"
   end
 
   depends_on "docutils"
