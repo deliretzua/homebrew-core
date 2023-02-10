@@ -9,15 +9,14 @@ class Bandit < Formula
   head "https://github.com/PyCQA/bandit.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "915f962f89f0cf0ae432a4fc72901c4529a66a280b22a6d44306efcdc716ff80"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b1e17670712be6fee6d21317c108098e3d5144708d133f218deeeaa797c9d98b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "43bd465a694df50d4c6d305d947ee3df3b9d011629a6070ea4960af73a0aa991"
-    sha256 cellar: :any_skip_relocation, ventura:        "c94f859d5644ac37a62613030f07da6b73865b993ece6a0501d7692e87be8906"
-    sha256 cellar: :any_skip_relocation, monterey:       "058d08e4c08317f2516696e3ab71e4145ab8d48106a26edb84be0a2e9c066ba0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d9abf0e13a3b93ee4711cb3524b8e404a5e0dc17ed1c17174477a888218e85eb"
-    sha256 cellar: :any_skip_relocation, catalina:       "c4d190831b21b6110bb3eab21f79406e94b196a57188a744fa137b45fcc00552"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "20277723685bcd548b17fcf4639d6ba3bbc3a1638c091b5612816d04f7eb2d15"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "07fdc41db4bce2fdc153c47337a1109a7ebdce8b3efa733a09aa4076218ab47c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f1473ba42ebb0cf7ccc01c2e27a45847c7159a99dab56a52c7abb0368e358c35"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1aeb9aac2d424bb759d5ff9e64498116b37dfb66abce49732361d5da1fc9b090"
+    sha256 cellar: :any_skip_relocation, ventura:        "14fb71a5213aa505cc0f4d7b6ebc8fca7666ec2e9b8bd220a06f73099376e198"
+    sha256 cellar: :any_skip_relocation, monterey:       "7028e989b7b8a3e3486ecdc6b173169a7f2a3a6925326c41988b05e5923ecc59"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f48b01cab5be42c2198088d8eb122798a9038f3bdb8200a4ec7325ab4afc911e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "344efa052fd0a3a6dc54730e4502f85f7ecc7f30338b6b5dd6eb9196a98ed2f9"
   end
 
   depends_on "python@3.11"
