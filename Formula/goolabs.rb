@@ -8,15 +8,14 @@ class Goolabs < Formula
   revision 5
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6827c4b62794c81fcfb40ebd97075ad112395a9d5735e1809f0ba5aa44813ba4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d911074af03f75f3c427204ba9de2c0cbde484acea50e1812083d5380c432fbb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "333363cc68a5f1ea613b1f5289ae885f29aa21a4fe823b7613f0b42e1b54a743"
-    sha256 cellar: :any_skip_relocation, ventura:        "8792ad356850a0d1f8d279050f804c258438af585882392fd2fce12dfa198d3c"
-    sha256 cellar: :any_skip_relocation, monterey:       "12e163a6e7ec11fd896d9eddcf84f8392a28286d7185d62f3e2007c63a378713"
-    sha256 cellar: :any_skip_relocation, big_sur:        "599d3c67f4d493645f2ab05624a759bda6243bb3e2b9567ae124621363fb953c"
-    sha256 cellar: :any_skip_relocation, catalina:       "631ffed8f4068eb6999ed105ce79d717a890423696422ae643d0711044f64739"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a291badb249a5b354d472099a450092730d23ab4ab66c0b3b9788bbe2d853972"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f7234d5813a08707fb06104379dd8b19247e8582334514847e9d6a5e9ec8226b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ff511d21670576540eb0ff2edac6e4b2112897d0d3e0f57fe6fe3b944a945336"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0e2e2ff10c0490f9f7c80481fce350b43a01edd749ef8a6b47a1248801df34f8"
+    sha256 cellar: :any_skip_relocation, ventura:        "b0a07c5adae4d54a7fb5f4f69d36743ff940c8d14dde79c76326c7123179b840"
+    sha256 cellar: :any_skip_relocation, monterey:       "0f7574fe2846be244376b5ef8c47e68fb73d7e8131c3c47eefa5af7719167e90"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b9500f78a17b7408f4ce68abd3d70f52d4955d9ffc1db2ff47dbd89a0ec321f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "82f5bf0303201726a66fd956d1fbe5d4bb0e6e570134a07030e5e659ae716af9"
   end
 
   depends_on "python@3.11"
