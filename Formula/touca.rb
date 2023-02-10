@@ -6,6 +6,16 @@ class Touca < Formula
   sha256 "a3f35dfbb1f7aa45cef327e0b8fd30fde50e9bbfc5941f38df9df1ee2f154df7"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b4b6fc1e8d26e3982bc55a04e4779cf4d3eb7f83de9fae7a2250b3b14e2144e7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "869e8c07f8ec47ed66c597d5c7634a5394e3f9b49a82134da06212d6d2cbd6fe"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f82c10c8fa180638113cf3ac467e3d61be5efa604d53a067d57f27210629eed4"
+    sha256 cellar: :any_skip_relocation, ventura:        "29e87e9acb129b66be70eb25b28354773b1e8772572ae8ea5634c625516d4ac4"
+    sha256 cellar: :any_skip_relocation, monterey:       "f4b8c36fcdeef84ce3e3f81c0f1d3afd37aa928c2dd9f573140b35ad125f3bee"
+    sha256 cellar: :any_skip_relocation, big_sur:        "528704871484dfa011a940e9a2609f92cba35933b99b424e49ab6f9d60aab62a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "833e11adab690169e47c9544404709242aedcc419ce63b78c91dcbc848b5a6f0"
+  end
+
   depends_on "python@3.11"
 
   resource "attrs" do
