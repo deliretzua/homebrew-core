@@ -6,6 +6,10 @@ class ZshAutocomplete < Formula
   license "MIT"
   head "https://github.com/marlonrichert/zsh-autocomplete.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "fe7a87395db7c45ca43b46ea2a784e05d0610f3106ec74a300a7c8210c701627"
+  end
+
   depends_on "clitest" => :test
   uses_from_macos "zsh" => :test
 
