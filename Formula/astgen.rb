@@ -7,6 +7,10 @@ class Astgen < Formula
   sha256 "aef681ef016dce49f0b6433f078d3451412b1847a4c540362822d0ccf08d5aff"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "37c3057ef5e7c7d7fd0093de8e10a04f2c48622d7813062dd6bb72264b282ab8"
+  end
+
   depends_on "node"
 
   def install
