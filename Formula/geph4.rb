@@ -7,13 +7,13 @@ class Geph4 < Formula
   head "https://github.com/geph-official/geph4-client.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ee5e24a4383a826a15a1d394fe905e7e66ded733417ba08dd9dc58310cf419a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cc75e20687b7d2494ecbfe31f2b0ba8e3e87dc96ad309e9a6d2b55c15cb95337"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "83bf5bb6aec991cadba319169645efb964ae039736a1afecc14620dd79d8110a"
-    sha256 cellar: :any_skip_relocation, ventura:        "9f2a06a62e6c3d50996a1c5e2ea2a888a396ffa5036a2df765d2d2e612feb6e5"
-    sha256 cellar: :any_skip_relocation, monterey:       "b1e4d11282b4a7c42723f1d11c86353d5e120ca4be454dd526533e6691f7c493"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d11eb7af9d82a9f857ed1161b1e366091fed4fb264f2f694b11ff1643cd3ffdf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ff0fd879061c0b805686330c5c793355436098bf20a318129d8e3fcbfcff872"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "69b8da0ef36e735d82cc82379438928c07936525e72d376d15548c348ece3a3c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "98c215ed0d9ed6e861f3818ec68a8b4ef05b7ca50473145f869a27770809d00d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2408010424a1f91bf81b217f082ebadf506bec8ba5b1468d40c50f45e42b6c2f"
+    sha256 cellar: :any_skip_relocation, ventura:        "f4e18fb3153dff518e9eda9923af4d0d5415641f07def791b9175f42f7790fed"
+    sha256 cellar: :any_skip_relocation, monterey:       "2c91aae889f5c60de15f251ecf04a25da1ddae9338f332baf6fa8272d77e843e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "23b6e230b4688d2c147d63ce3042723b69b5ef612a714cdd7e3fb7b18a3776c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cfa84e9d1d18bf24a4628067b6381fddaf68fafa595b06a689d8fa8db4b5fc44"
   end
 
   depends_on "rust" => :build
