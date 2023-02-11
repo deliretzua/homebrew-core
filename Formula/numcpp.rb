@@ -1,8 +1,8 @@
 class Numcpp < Formula
   desc "C++ implementation of the Python Numpy library"
   homepage "https://dpilger26.github.io/NumCpp"
-  url "https://github.com/dpilger26/NumCpp/archive/Version_2.8.0.tar.gz"
-  sha256 "3868cf24b0981d5b5bfeaea65719f541f82d331ef7b79ba0d73cedb4dc7ddd47"
+  url "https://github.com/dpilger26/NumCpp/archive/Version_2.9.0.tar.gz"
+  sha256 "1c15e23beb4f3d4933d7a6e8d5eb0259e825685973c8f0219485d3f606e5378a"
   license "MIT"
   head "https://github.com/dpilger26/NumCpp.git", branch: "master"
 
@@ -30,7 +30,7 @@ class Numcpp < Formula
               std::cout << a[i] << std::endl;
       }
     EOS
-    system ENV.cxx, "-std=c++14", "test.cpp", "-o", "test", "-I#{include}"
+    system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test", "-I#{include}"
     assert_equal "1\n5\n9\n", shell_output("./test")
   end
 end
