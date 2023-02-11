@@ -13,14 +13,14 @@ class Clamav < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "566a4d11bc8ca53fee33d293affe50755cf2319c4b512b8f70602da28885d6bc"
-    sha256 arm64_monterey: "21f3be13579c7c6d727e14cb63cb8d63596303b69e9a568e4c91989e4d02661e"
-    sha256 arm64_big_sur:  "7d66556ccb979501639455ca4539a9363125e6dba7870adcc4b0fbdc66f84f1a"
-    sha256 ventura:        "f0077180b720016af25f6a5e7b30a850452dd53ee5a3cbd262b8f91da2972291"
-    sha256 monterey:       "74b61ebb8712d8ebd61ef91e84985189a63fcc4566d1d56d3c2186def0a25fc1"
-    sha256 big_sur:        "c69381ac4b0291b822b865a81111eb70c50994377fc8d3ce01ab778b23bd5405"
-    sha256 catalina:       "7c43f41dea9dbaeaa7090a88657f830464b8fde34965301e4fa95651f6a6cbb4"
-    sha256 x86_64_linux:   "23b2c1b89b53a2bec4acc6c43b3194bec144be7c220be6a58da8f9acf197508c"
+    rebuild 1
+    sha256 arm64_ventura:  "20fa54f0363b44b41f510d1165b14235518ade3cb015c9cb6132e48b812d1558"
+    sha256 arm64_monterey: "5036a85ef01d1e0292dc593c91ddb62ff2841d3b7c350cb1206eb15d34b044b2"
+    sha256 arm64_big_sur:  "7befdfea6d7ddb3a554e17d7e5751f20ecd9ab1fa010b399227cc7cfdd574dcb"
+    sha256 ventura:        "015f15cc18655b931dc8b31f854ced4aea0b56b552366a8fb6724b162db753f6"
+    sha256 monterey:       "3db9d5acd15c9f509ca1e11b9a805c45df1b5685190d6f39875dcc5b5a25629d"
+    sha256 big_sur:        "ae9ab4abe64d93199fae2ea4a47c48496d2e69df5d4040e368879edba35c2402"
+    sha256 x86_64_linux:   "8b2a6fb3a8caaa5121067e025fabb91603254370ea75bcb19c22f2a10c68df1d"
   end
 
   depends_on "cmake" => :build
