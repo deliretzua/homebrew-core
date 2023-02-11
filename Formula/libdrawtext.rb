@@ -1,8 +1,8 @@
 class Libdrawtext < Formula
   desc "Library for anti-aliased text rendering in OpenGL"
   homepage "http://nuclear.mutantstargoat.com/sw/libdrawtext/"
-  url "https://github.com/jtsiomb/libdrawtext/archive/v0.5.tar.gz"
-  sha256 "7eea99dbf9c86698b5b00ad7f0675b9327098112bf5c11f1bad0635077eae8a9"
+  url "https://github.com/jtsiomb/libdrawtext/archive/v0.6.tar.gz"
+  sha256 "714d94473622d756bfe7d70ad6340db3de7cc48f4f356a060e3cb48900c6da01"
   license "LGPL-3.0"
   head "https://github.com/jtsiomb/libdrawtext.git", branch: "master"
 
@@ -20,11 +20,6 @@ class Libdrawtext < Formula
 
   depends_on "pkg-config" => :build
   depends_on "freetype"
-
-  patch do
-    url "https://github.com/jtsiomb/libdrawtext/commit/543cfc67beb76e2c25df0a329b5d38eff9d36c71.patch?full_index=1"
-    sha256 "dd6a78d2c982215b91fcb6fba9d00311b09a8eea26564f7710daabc744c3be09"
-  end
 
   def install
     system "./configure", "--disable-dbg", "--enable-opt", "--prefix=#{prefix}"
