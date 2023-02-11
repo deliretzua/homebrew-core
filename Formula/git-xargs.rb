@@ -6,13 +6,13 @@ class GitXargs < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c63f00da0e78c9c31b52c0ebaa68187d2001029acae87dc38cca60a0e38834b3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "28bfffc04a13d6749e680557007482bcf1d402da18961024831fef1ff7680c6f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cf67eda7ec926ef5365b82684c384a62a6130c93e8e965181eeb128b2193439e"
-    sha256 cellar: :any_skip_relocation, ventura:        "edb5f7e8472c29ab90bb606e68a91cf2c63ab676fb677cc43486a089210cdf66"
-    sha256 cellar: :any_skip_relocation, monterey:       "91f99afbeeeeceb77ec41080c24056c1ffcd78c8a19b874864a1c6c6af4a3d9e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "628461a8b30a425856d1d5741faf5354afbf0b619ee2815f64c017fd6e295695"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "01ee6428e1f7002b89bda7c11261cb4753ca41e9279ee449b9dd0d7c69ebfa4a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b62849de04d1224a727798abfaee89f8bd4e070e1da4ae9f3728b70e6c04e03a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e73af27a8248f5f01a995e9ebe041419a8023a8b1b6e0678be754bba897926c5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "aca1ad133cac981f2841f38db10a3b0bc6616e927769877459e2b3d3ad18fcc4"
+    sha256 cellar: :any_skip_relocation, ventura:        "510aee1ae3214707fb1f6b29853f64703588f816a877b9f51f15a7121db359ed"
+    sha256 cellar: :any_skip_relocation, monterey:       "2ef4683d1c7d9aba3acb11a9cfb2a18fc0d39464d321c60e6340a3662ef22bbc"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5d14ab6bb827388275d86de008428fd32b8b297b7f1e0d61f38b35841db775bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "869d61a02e115f90b2f74b37eed51df61191f4ea61cb70a766040b2c53590969"
   end
 
   depends_on "go" => :build
