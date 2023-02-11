@@ -8,11 +8,10 @@ class Gdbgui < Formula
   license "GPL-3.0-only"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, ventura:      "683c98de867e3e006a280dab3e7e20e58d48acdcb3e78c4c8fd91c9712e2fca9"
-    sha256 cellar: :any_skip_relocation, monterey:     "1031ee63ee031a396598dd8bc6b454c3d6f6645f8e9bd9d210ca5b77b2968ce3"
-    sha256 cellar: :any_skip_relocation, big_sur:      "077648f75054dcf02393cba046d54c7e50895bb69652a20baf24860c337235a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "24dd86450f85bf1912d652d357649fd68b8c4755b48b5dd74320668f8298086c"
+    sha256 cellar: :any_skip_relocation, ventura:      "7915addb6621ba98e5b8a0eadf4d8ad92f9325cc04eba623cead0170f47fdc37"
+    sha256 cellar: :any_skip_relocation, monterey:     "119f67831a4f28de8a5ff9b5fbba32600912386178b46b0f9e309cd7d651b4a9"
+    sha256 cellar: :any_skip_relocation, big_sur:      "4c4ca02744a6f4a82bed16ccb7c117bdadb2890b93e0b74db1e0b3c13952b146"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0f8e35829f3e228ddbc5c3965eb3b1f103d18e934e95700f51f80afb8d106235"
   end
 
   depends_on arch: :x86_64 # gdb is not supported on macOS ARM
