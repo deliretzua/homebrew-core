@@ -8,13 +8,13 @@ class CfnLint < Formula
   license "MIT-0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5a4af3e75fec4ddc9c149ccaad28c5d2a7d532f39cf212fefc93c33c0fcc3deb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e688476d6b28792fdd1641ad2f8b73e2936c3ac3a96a543974815a4591ee78e2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c2077629251713342b6813d13495f167af91261243f027941609a8b4d6cc51c5"
-    sha256 cellar: :any_skip_relocation, ventura:        "f481703355378141ec0a2d8d428576e697833f0da9516b428f2d0337df1d6158"
-    sha256 cellar: :any_skip_relocation, monterey:       "8d27d3eb0f4bd5084a398fdb3b45525bc9aa014c67085b4a179efe4ff002fd4b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2122fd28cae218cde97d998efa7527a9ee0c655f9d914a5041b2e360ac35eda7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b80649059b448cb1b77eed55cc6ab8c4751fc07b32af5a6f2824f317df62bdf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "31a4e2b8b78dbbef199d65aa12eef1b0beeabd3bba602ae4f34f28c1f766ed67"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "849a26370a6ebd0044f2c2636c67e33d820613e55e96d520131ed2238244f0ef"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "92bc4b313a9a1d0e0812c048de214ac4b9c02ce869e1899a9dfaa92e58dab60a"
+    sha256 cellar: :any_skip_relocation, ventura:        "3572e6722275bdc4b25a4f2b0c363c2fbeb6680903c37e5dc337bc0c56180459"
+    sha256 cellar: :any_skip_relocation, monterey:       "d26b2c772db6f7a3fa5085015105b2d9ffcf76671ca5f8f5e543d21422a318a1"
+    sha256 cellar: :any_skip_relocation, big_sur:        "04920a62f004ce5cf36cc0580e9a51bb183be3524251782552f9f2c1a540d824"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc9badf197ec8c4e1ac204d303fb383f527ed31149d7260a2c1fbce20db25b93"
   end
 
   depends_on "python-typing-extensions"
