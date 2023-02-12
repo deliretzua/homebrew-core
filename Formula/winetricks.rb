@@ -12,7 +12,7 @@ class Winetricks < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f33dcdbdaa19fb315454a79234f5b1edf2f3ddc8489c0f0c57670bd10fc2c990"
+    sha256 cellar: :any_skip_relocation, all: "ead5dbc1a97c48c64e6fd117e4011483253f2779c127054837e6d2b2c87712b2"
   end
 
   depends_on "cabextract"
