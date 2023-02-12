@@ -11,14 +11,13 @@ class Jack < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "9cf54ddb51aba0829825dcec602d85e18b232eac4c8557efe7a7e5bdcca05608"
-    sha256 arm64_monterey: "5b8c6629a97e463b96bb2672c3a0cfb8da8b5cf91d147f632c7f6d351a7fe3cb"
-    sha256 arm64_big_sur:  "a9732675aef73bf6a133a8130b46a81a275aad83abfc0d0d72b91f34580d11fb"
-    sha256 ventura:        "4153adcbb219bfafaaf25aed11df7268222e255201f75b1ae16b1a59e6b54da7"
-    sha256 monterey:       "8047fbdd9eefa085dd3e66584d907bbbcfee2e7651f80836ff621844d39a53aa"
-    sha256 big_sur:        "f1f19dbf7ba59e389e51d325997b6c4173ebcf3c076732edd1d3ebbf51af5ab0"
-    sha256 catalina:       "d4ac8617761bb59dfaa1390d237ef7ad2b2733283353a8484fd4a1c8a82b4f79"
-    sha256 x86_64_linux:   "8a52eb2b5ec3ad62d4b573e7dd5997142d7435600da01cae8156dd6f6b0dae9b"
+    sha256 arm64_ventura:  "de407106387c805a6117edb7e10646accf5cc25abed05b310475709b07d403c3"
+    sha256 arm64_monterey: "44c6dfc147a7e6f5677e6f5a94ce46fe4ec87db6953c2893eb5bdc6082623eca"
+    sha256 arm64_big_sur:  "5b71efa702af44215537e74f2f792a7f9a02253a10350a91a0043735de24d6ac"
+    sha256 ventura:        "2f54c142f838c5ce1f248d44b5efb32cf52092c8e232b2848965c68a2c5a6066"
+    sha256 monterey:       "59251197992e250453273d7cf62da7a4b11b730382686e3e5bb8349c9d7c8ce5"
+    sha256 big_sur:        "df787dac8716e347bd2e336ac604042333e2ccff75cbe665412fb39fbb0f9cfc"
+    sha256 x86_64_linux:   "7e201f19d5920e21582995edffb59667edefa7ac50ee3016cbd4fc4d872b548e"
   end
 
   depends_on "autoconf" => :build
