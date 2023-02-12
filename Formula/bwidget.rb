@@ -5,6 +5,10 @@ class Bwidget < Formula
   sha256 "bfe0036374b84293d23620a7f6dda86571813d0c7adfed983c1f337e5ce81ae0"
   license "TCL"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "d3a68fa38b1fca601feaf9f7891b6fa611dfee8d68e7e83319e8864a5ac9a75d"
+  end
+
   depends_on "tcl-tk"
 
   def install
