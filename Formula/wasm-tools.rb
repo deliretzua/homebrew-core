@@ -12,13 +12,13 @@ class WasmTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "75401a572bed679a3f6d44bb8edb510f1e09dd2532122c0ac5d6238bb32ffd96"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4d7012936a4c939ffe1f1e60d8a59887acd1de69401b863876224edb33fb2947"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "40c017cfa0649af219869cb0b16df6de4c62b1c5f3feb37cdf07a3edc202bf1e"
-    sha256 cellar: :any_skip_relocation, ventura:        "fa59ae3ebc647ad99522aa7f03415a5f42f82d29d5f8aabfe831ad22f27110e3"
-    sha256 cellar: :any_skip_relocation, monterey:       "efd1b40df45974c6f96c5174966c31c9dd9fbc44766c51125780677db08cd55d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cd4c756c5445b1fe01513cf439a8cf1208e8f8290e10f7ba81210dfc81df2de6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3848d01e92d12f36553cc7d89b6bb7792d29a0741ebd4907ecd586a5b3516177"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d53e7554796b2f8923080c13d8376ac981949125c18f4504734fe63b0802fc94"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8eedef1d5b8d3623cc5a290831b20bdbd18523c3c19f2d6ceb37f7ebae526a45"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3644c941ca5548a5e5b73d3ce768bd7cb4306bf8857981e39f2e26c987101f00"
+    sha256 cellar: :any_skip_relocation, ventura:        "66fe33e553999a86ded5eeb03f8ac43d57d8388862dceca951a8308d9eba0412"
+    sha256 cellar: :any_skip_relocation, monterey:       "a01429cbfd874b4e68c35220be43e129f0ec49de4f1dc6329f388a90d7a75080"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1c47316c4cb9b853440fb590166e8b83c250d4df9e8a1419ca379970c66a294a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "93e39629a85d2f046e4abc3e55a38b51e95e8f99817628214f115151c87225c1"
   end
 
   depends_on "rust" => :build
