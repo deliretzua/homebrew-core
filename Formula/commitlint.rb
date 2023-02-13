@@ -9,13 +9,13 @@ class Commitlint < Formula
   head "https://github.com/conventional-changelog/commitlint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b48861fdb6b8c1eabc515720dbc2eb959f697215623f05624e825027df04b433"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b48861fdb6b8c1eabc515720dbc2eb959f697215623f05624e825027df04b433"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b48861fdb6b8c1eabc515720dbc2eb959f697215623f05624e825027df04b433"
-    sha256 cellar: :any_skip_relocation, ventura:        "e55d398f6414d09b0a28436583487aa2939ee2a37946e091bd097231100a4426"
-    sha256 cellar: :any_skip_relocation, monterey:       "e55d398f6414d09b0a28436583487aa2939ee2a37946e091bd097231100a4426"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e55d398f6414d09b0a28436583487aa2939ee2a37946e091bd097231100a4426"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b48861fdb6b8c1eabc515720dbc2eb959f697215623f05624e825027df04b433"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0d67f9b5c987a2c47c2bd7b324e2406a5f8896c71d2c91fba07b64fad127b2d5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0d67f9b5c987a2c47c2bd7b324e2406a5f8896c71d2c91fba07b64fad127b2d5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0d67f9b5c987a2c47c2bd7b324e2406a5f8896c71d2c91fba07b64fad127b2d5"
+    sha256 cellar: :any_skip_relocation, ventura:        "424e8d447471327fa14c6cad2178b15ffd8c7c865fb6a37ba841410d58f2bafb"
+    sha256 cellar: :any_skip_relocation, monterey:       "424e8d447471327fa14c6cad2178b15ffd8c7c865fb6a37ba841410d58f2bafb"
+    sha256 cellar: :any_skip_relocation, big_sur:        "424e8d447471327fa14c6cad2178b15ffd8c7c865fb6a37ba841410d58f2bafb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d67f9b5c987a2c47c2bd7b324e2406a5f8896c71d2c91fba07b64fad127b2d5"
   end
 
   depends_on "node"
