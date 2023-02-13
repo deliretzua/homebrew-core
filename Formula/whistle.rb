@@ -8,7 +8,7 @@ class Whistle < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a96cfdb3c6f2d77e281d54340ee1cde9edbb90a1a441437debe33bebdf95bb68"
+    sha256 cellar: :any_skip_relocation, all: "73cff8825dc749e1da449a04af00964614890101605e8b20e012d383b39bf066"
   end
 
   # npm dependency `set-global-proxy` ships an x86_64-only binary.
