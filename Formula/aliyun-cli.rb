@@ -7,13 +7,13 @@ class AliyunCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "76071e72a2160b46e49a0a3f6dcb42eebc44bf2424ee5dd4a8d0397cbc9c20c4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cf332dc27cdf343bd884082b7cfe7a6d699f7ad281ce0fe5c0d3c81dbc3f5e65"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3f8c818ba368b4548daf951db941b07d09f52c81133a288d97ba6795c220e2a5"
-    sha256 cellar: :any_skip_relocation, ventura:        "b7d730db44c48d69b8db6abd5bbfe30e286d7e5c800a1609567771e451c9dbe8"
-    sha256 cellar: :any_skip_relocation, monterey:       "fbad89d0d593744d7c36587e8c795f5970193aac1ae888b031677ecde576622f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "98217d5f9e3870de3003eb3ad213d32501b4955517697364e4143f8d722c9117"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c72c8de0808cce3b0b1f41d5c836ed8a3d9c673d4b449443e2853ef55616dcee"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "92136da5fd43f914cca73094d9bd0e7a370a74a6955b7afb9e71730c6f95e339"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "04ec7541d8d6b8e4b0ae8116a4536ad367a53268d6aac1613b2a915a7a824a1e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0fb02dc3d8a05e96df26911a5359621236fd1e5743d01fee7b5cae3dd26d103f"
+    sha256 cellar: :any_skip_relocation, ventura:        "0864a2cfef14b03430ae426504a0fcfa0d6cfd3c2ddb22f825658a5607395f9c"
+    sha256 cellar: :any_skip_relocation, monterey:       "719eaba297dbfd1b04c3b11cfa1201a819f4d12ef040dd53e0e1dceb6c63766f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3eed09b79ac693397d0d594261163264ae29ef2f86d387edf05a98182ee7823f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2df1eb15fc7f04f093f7d9dea93ab45932cc78b3d24b3868257ee99cb5cc5da"
   end
 
   depends_on "go" => :build
