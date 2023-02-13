@@ -10,6 +10,10 @@ class GradleAT7 < Formula
     regex(/href=.*?gradle[._-]v?(\d+(?:\.\d+)+)-all\.(?:zip|t)/i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "8d62d254f3578c6a50b0578ee96584b84a42cdc50086c71eb73bbbb7acfa83c6"
+  end
+
   keg_only :versioned_formula
 
   depends_on "openjdk"
