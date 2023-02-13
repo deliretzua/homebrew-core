@@ -1,8 +1,8 @@
 class Arrayfire < Formula
   desc "General purpose GPU library"
   homepage "https://arrayfire.com"
-  url "https://github.com/arrayfire/arrayfire/releases/download/v3.8.2/arrayfire-full-3.8.2.tar.bz2"
-  sha256 "2d01b35adade2433078f57e2233844679aabfdb06a41e6992a6b27c65302d3fe"
+  url "https://github.com/arrayfire/arrayfire/releases/download/v3.8.3/arrayfire-full-3.8.3.tar.bz2"
+  sha256 "331e28f133d39bc4bdbc531db400ba5d9834ed2d41578a0b8e68b73ee4ee423c"
   license "BSD-3-Clause"
 
   bottle do
@@ -19,26 +19,29 @@ class Arrayfire < Formula
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "fftw"
+  depends_on "fmt"
   depends_on "freeimage"
   depends_on "openblas"
+  depends_on "spdlog"
 
   fails_with gcc: "5"
 
   def install
     # Fix for: `ArrayFire couldn't locate any backends.`
-    # We cannot use `CMAKE_INSTALL_RPATH` since upstream override this:
-    #   https://github.com/arrayfire/arrayfire/blob/590267d2/CMakeModules/InternalUtils.cmake#L181
-    linker_flags = [
+    rpaths = [
       rpath(source: lib, target: Formula["fftw"].opt_lib),
       rpath(source: lib, target: Formula["openblas"].opt_lib),
       rpath(source: lib, target: HOMEBREW_PREFIX/"lib"),
     ]
-    linker_flags.map! { |path| "-Wl,-rpath,#{path}" }
+
+    # Our compiler shims strip `-Werror`, which breaks upstream detection of linker features.
+    # https://github.com/arrayfire/arrayfire/blob/715e21fcd6e989793d01c5781908f221720e7d48/src/backend/opencl/CMakeLists.txt#L598
+    inreplace "src/backend/opencl/CMakeLists.txt", "if(group_flags)", "if(FALSE)" if OS.mac?
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DAF_BUILD_CUDA=OFF",
                     "-DAF_COMPUTE_LIBRARY=FFTW/LAPACK/BLAS",
-                    "-DCMAKE_SHARED_LINKER_FLAGS=#{linker_flags.join(" ")}",
+                    "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
