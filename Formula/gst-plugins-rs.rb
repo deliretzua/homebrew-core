@@ -8,13 +8,13 @@ class GstPluginsRs < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "4345aea3e6be46623ab99517b0dccb6b60ca9906234512f670c47d2169f7e58b"
-    sha256 cellar: :any, arm64_monterey: "c9d028f52d332863a8a5daba6a2b5c8911f3b21694d7795a2c603b6dcaf66e84"
-    sha256 cellar: :any, arm64_big_sur:  "b797ed1b876636a50072cb5be7b4974301c2b56d1ab024fd1fbc90a163f524cf"
-    sha256 cellar: :any, ventura:        "ade04d23444c76011d4f0c5941323bac9a5f1d5dd7a3a61e95ef427c163049b8"
-    sha256 cellar: :any, monterey:       "5b3ae8d0b38ba078825b66334a43ce1afd26ddf881aa0ed0c8868ca03b0a596d"
-    sha256 cellar: :any, big_sur:        "62551bedede466dea6326e3584abf6944128c34ebc7446cb4bf919594f96e491"
-    sha256               x86_64_linux:   "2dbbceac1e0e65145df412b9eb6d8a66571426d8479e24d5ed2cad1af0b63a6a"
+    sha256 cellar: :any, arm64_ventura:  "d1627bb955f6e798cb89d5443cd89cc5bd1b78cdd881cf27b73f3cd76b3ddb00"
+    sha256 cellar: :any, arm64_monterey: "6bc8c89ba844d8983a3cb3660b60ea1cbe4d8f79e1b47b0ab3472ca3a12c692a"
+    sha256 cellar: :any, arm64_big_sur:  "22aa654c4adc6f605dae499cb802ae5bb77bab12ab0516091798273de77d26b0"
+    sha256 cellar: :any, ventura:        "86c87b489e69a9c01285ac5727e566c636c1ae8310a778bfbea3555b6bdb1809"
+    sha256 cellar: :any, monterey:       "cf0d0ac159d068145d040d1a3edb35457e2394d3708fc2c01aeeb3e3be6ab9fd"
+    sha256 cellar: :any, big_sur:        "8ee09bbaa9b6ff20874c73b3ecde648e7e91016f61e3d97719eb418c8979d209"
+    sha256               x86_64_linux:   "bb8bbf2f3d4f673f7da3209b69fdeced59128e6ba0c091a789da3ac6357b9cdd"
   end
 
   depends_on "cargo-c" => :build
