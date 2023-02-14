@@ -6,6 +6,10 @@ class Geometry < Formula
   license "ISC"
   head "https://github.com/geometry-zsh/geometry.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "77440678fe53ba93dabb7fce6d5e5dac1685d9ed2e6612c62ad136245981136f"
+  end
+
   depends_on "zsh-async"
   uses_from_macos "expect" => :test
   uses_from_macos "zsh" => :test
