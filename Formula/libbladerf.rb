@@ -2,8 +2,8 @@ class Libbladerf < Formula
   desc "USB 3.0 Superspeed Software Defined Radio Source"
   homepage "https://nuand.com/"
   url "https://github.com/Nuand/bladeRF.git",
-      tag:      "2022.11",
-      revision: "11ba36daa3dd9dcd304436e45fd797fe51326faf"
+      tag:      "2023.02",
+      revision: "82c5bfd68d1937542a508f031d536fdccabb3985"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
   head "https://github.com/Nuand/bladeRF.git", branch: "master"
 
@@ -28,10 +28,9 @@ class Libbladerf < Formula
 
   def install
     ENV.prepend "CFLAGS", "-I#{MacOS.sdk_path}/usr/include/malloc" if OS.mac?
-    mkdir "host/build" do
-      system "cmake", "..", *std_cmake_args, "-DUDEV_RULES_PATH=#{lib}/udev/rules.d"
-      system "make", "install"
-    end
+    system "cmake", "-S", "host", "-B", "build", *std_cmake_args, "-DUDEV_RULES_PATH=#{lib}/udev/rules.d"
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
