@@ -4,6 +4,7 @@ class Csvtk < Formula
   url "https://github.com/shenwei356/csvtk/archive/refs/tags/v0.25.0.tar.gz"
   sha256 "47d244068274ad5070ef50cafee243d1035c51692b025bf074d0b7be3f8a7d1c"
   license "MIT"
+  head "https://github.com/shenwei356/csvtk.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "82ed512905b11fe2de26ca015077e91a87b8d745d49e366ebbf6e42baee3c5c4"
@@ -25,6 +26,7 @@ class Csvtk < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./csvtk"
+    generate_completions_from_executable(bin/"csvtk", "genautocomplete", shell_parameter_format: :arg)
   end
 
   test do
