@@ -7,7 +7,7 @@ class Solr < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "74b9246d38fc0c296b104f1c7cc9ec6a22e9552f32d70ef1fb14156973ae21dd"
+    sha256 cellar: :any_skip_relocation, all: "f691da4d2ec2602fa7a66fe4b64b751ff706a7359b3dbc1f0cf0c3e329272f8f"
   end
 
   depends_on "openjdk"
