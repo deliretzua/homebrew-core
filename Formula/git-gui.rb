@@ -11,7 +11,7 @@ class GitGui < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "107a3c99cef391f0f805bc0866af655aad8ffed15d870aa2c0074ba95070cf90"
+    sha256 cellar: :any_skip_relocation, all: "9e3e31302b7f4f35288532d4fd95438aa1ad36a6784da7331666dee8ce9e3f66"
   end
 
   depends_on "tcl-tk"
