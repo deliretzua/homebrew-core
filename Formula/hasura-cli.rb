@@ -3,8 +3,8 @@ require "language/node"
 class HasuraCli < Formula
   desc "Command-Line Interface for Hasura GraphQL Engine"
   homepage "https://hasura.io"
-  url "https://github.com/hasura/graphql-engine/archive/v2.18.0.tar.gz"
-  sha256 "2e9a79d8dfe497b8234f7d91683f1fdd4217081fc4cd3f0f9e177d53d061d99a"
+  url "https://github.com/hasura/graphql-engine/archive/v2.19.0.tar.gz"
+  sha256 "f53d304ee0f6cab1a9f1e8a7d100b258bf72a111d80b21d94cfc65b47e75f177"
   license "Apache-2.0"
 
   bottle do
@@ -18,7 +18,7 @@ class HasuraCli < Formula
   end
 
   depends_on "go" => :build
-  depends_on "node@16" => :build # Switch back to node with https://github.com/vercel/pkg/issues/1364
+  depends_on "node@18" => :build
 
   def install
     Language::Node.setup_npm_environment
@@ -31,6 +31,8 @@ class HasuraCli < Formula
 
     # Based on `make build-cli-ext`, but only build a single host-specific binary
     cd "cli-ext" do
+      # TODO: Remove `npm update pkg` when https://github.com/hasura/graphql-engine/issues/9440 is resolved.
+      system "npm", "update", "pkg"
       system "npm", "install", *Language::Node.local_npm_install_args
       system "npm", "run", "prebuild"
       system "./node_modules/.bin/pkg", "./build/command.js", "--output", "./bin/cli-ext-hasura", "-t", "host"
