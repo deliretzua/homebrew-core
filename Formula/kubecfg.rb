@@ -1,8 +1,8 @@
 class Kubecfg < Formula
   desc "Manage complex enterprise Kubernetes environments as code"
   homepage "https://github.com/kubecfg/kubecfg"
-  url "https://github.com/kubecfg/kubecfg/archive/v0.28.1.tar.gz"
-  sha256 "40fc6d02550a137973909ae93929a219ed49d5317c4196fa333a3c6e619d9b05"
+  url "https://github.com/kubecfg/kubecfg/archive/v0.29.0.tar.gz"
+  sha256 "efd21c404de5b9ffc2e44803c8dc06dd184d5581147d4c46a31d379ab1258a9c"
   license "Apache-2.0"
 
   bottle do
@@ -18,17 +18,12 @@ class Kubecfg < Formula
   depends_on "go" => :build
 
   def install
-    (buildpath/"src/github.com/kubecfg/kubecfg").install buildpath.children
+    system "make", "VERSION=v#{version}"
+    bin.install "kubecfg"
+    pkgshare.install Pathname("examples").children
+    pkgshare.install Pathname("testdata").children
 
-    cd "src/github.com/kubecfg/kubecfg" do
-      system "make", "VERSION=v#{version}"
-      bin.install "kubecfg"
-      pkgshare.install Pathname("examples").children
-      pkgshare.install Pathname("testdata").children
-      prefix.install_metafiles
-    end
-
-    generate_completions_from_executable(bin/"kubecfg", "completion", "--shell", shells: [:bash, :zsh])
+    generate_completions_from_executable(bin/"kubecfg", "completion", "--shell")
   end
 
   test do
