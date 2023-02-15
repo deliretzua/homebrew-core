@@ -3,8 +3,8 @@ require "language/node"
 class VercelCli < Formula
   desc "Command-line interface for Vercel"
   homepage "https://vercel.com/home"
-  url "https://registry.npmjs.org/vercel/-/vercel-28.15.4.tgz"
-  sha256 "486ebbd3a3fcd7c821150c1300638953d6c55cc5495b2ba5da4547ef77fd3798"
+  url "https://registry.npmjs.org/vercel/-/vercel-28.15.6.tgz"
+  sha256 "8738c0b59262f042a7908617f9030a4f89de44afffd5e0d20cb38f6a381d654c"
   license "Apache-2.0"
 
   bottle do
@@ -19,24 +19,21 @@ class VercelCli < Formula
 
   depends_on "node"
 
-  on_macos do
-    depends_on "macos-term-size"
-  end
-
   def install
-    rm Dir["dist/{*.exe,xsel}"]
     inreplace "dist/index.js", "= getUpdateCommand",
                                "= async()=>'brew upgrade vercel-cli'"
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
-    dist_dir = libexec/"lib/node_modules/vercel/dist"
-    rm_rf dist_dir/"term-size"
+    # Remove incompatible deasync modules
+    os = OS.kernel_name.downcase
+    arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    node_modules = libexec/"lib/node_modules/vercel/node_modules"
+    node_modules.glob("deasync/bin/*")
+                .each { |dir| dir.rmtree if dir.basename.to_s != "#{os}-#{arch}" }
 
-    if OS.mac?
-      # Replace the vendored pre-built term-size with one we build ourselves
-      ln_sf (Formula["macos-term-size"].opt_bin/"term-size").relative_path_from(dist_dir), dist_dir
-    end
+    # Replace universal binaries with native slices
+    deuniversalize_machos
   end
 
   test do
