@@ -437,6 +437,9 @@
   "onlykey-agent": {
     "exclude_packages": ["six", "Cython"]
   },
+  "openai-whisper": {
+    "exclude_packages": ["torch", "numpy", "PyYAML", "huggingface_hub"]
+  },
   "openstackclient": {
     "extra_packages": ["python-heatclient", "python-octaviaclient"],
     "exclude_packages": ["six", "PyYAML"]
