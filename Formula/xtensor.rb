@@ -6,7 +6,7 @@ class Xtensor < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f8e4bf18008e59b8e1d1b33f9b22efe0c407904b2efe07dca6e9a461a647d6db"
+    sha256 cellar: :any_skip_relocation, all: "b7dad6122fea060c95ef4198071192e2f4971c052312414dc454e5564fc48f06"
   end
 
   depends_on "cmake" => :build
