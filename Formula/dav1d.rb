@@ -6,14 +6,13 @@ class Dav1d < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8fdc81bd7aba4e4ec7b06e6eb3cc38db6c789ef079d87fa1cf3c2891e9a42d1c"
-    sha256 cellar: :any,                 arm64_monterey: "ed488f61f6809e006ff1ab3557ba1ea6bbd89c12ea47782afdeca1b01f6f2d18"
-    sha256 cellar: :any,                 arm64_big_sur:  "0e15f91e99bd1a41408ea7d2773b2676e4339a4d369bb8de0b9be6b1dd0a1bec"
-    sha256 cellar: :any,                 ventura:        "67d10c5e36161d0a5e7a5c752c7883a62bf6c750b58fc7a0d3a8eb920183edb7"
-    sha256 cellar: :any,                 monterey:       "c50893e5d767b31380e5dff32c1d934d345fa8656d794efbbf0be937f9bd5cd1"
-    sha256 cellar: :any,                 big_sur:        "c194ecbe7768aa96b0d29094ef9d355f0b585d0281f705cb9d9bdf429591be51"
-    sha256 cellar: :any,                 catalina:       "4025ff5fb02272858f31890fba825eb440cf2f341de4be2e73505a608ba436e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "02f0a49f6230ccc27eade0cffcc2e502eb22bfed8abe5430285bdab7276346f6"
+    sha256 cellar: :any,                 arm64_ventura:  "09b2ecc597d2bfd42943e4f1942fe7e2345ad7bb4b73163325e9a995a44b4608"
+    sha256 cellar: :any,                 arm64_monterey: "5326cd563c172c25161cbd69248b3109452cc04ffe97da757652ed75f2f7cabc"
+    sha256 cellar: :any,                 arm64_big_sur:  "7d552c2b1becebf8d0c7783ed85fe63ba4cbf71cf53abe0e9a235f542691e68a"
+    sha256 cellar: :any,                 ventura:        "1867e720b29df42f57cdd2644efea8c4918153f8b65af5427114db43781ac5fd"
+    sha256 cellar: :any,                 monterey:       "c9cc918847005baff18a28015e6dce362f91f5edb9995540aa439734f2749b37"
+    sha256 cellar: :any,                 big_sur:        "d11459b6990b9baf1e3fe19195c6e7ef4f42d9a2137351d1037f45a4e5638964"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc5de59a1ecae93b8ca823f659aa8aa6d46ea47a24ab6216d0eb272406c414a8"
   end
 
   depends_on "meson" => :build
