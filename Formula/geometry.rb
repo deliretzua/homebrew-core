@@ -7,7 +7,7 @@ class Geometry < Formula
   head "https://github.com/geometry-zsh/geometry.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "77440678fe53ba93dabb7fce6d5e5dac1685d9ed2e6612c62ad136245981136f"
+    sha256 cellar: :any_skip_relocation, all: "fb4186111a4ac55abbf13a80026f3d8de8c1f53fb505ceb9ff9d186fb2539c8d"
   end
 
   depends_on "zsh-async"
