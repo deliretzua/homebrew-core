@@ -8,6 +8,16 @@ class OpenaiWhisper < Formula
   license "MIT"
   head "https://github.com/openai/whisper.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "185d4e04e2dd3241e6444ade684c81dba104cbef606e537a3ce220a09b01ea37"
+    sha256 cellar: :any,                 arm64_monterey: "6d68c2132757002f9faa17928ef069087d567a885060112a9a5b4bdf2bc6d155"
+    sha256 cellar: :any,                 arm64_big_sur:  "6be21db9a90620001d4aadc7fdc167197633665acc42ddf0f7f59852e155c19c"
+    sha256 cellar: :any,                 ventura:        "354589ed95ca65d59bab9aa91985b94528b979c6bb9756109e874da1a1be4cb0"
+    sha256 cellar: :any,                 monterey:       "2998ecd36feb9dd7f6117f086575ee7f15db9abb974934a540dfb780f741102b"
+    sha256 cellar: :any,                 big_sur:        "77ff63caec09aa3d3128f246e83d01474a77449585e8cc91dd10036c991b7ef1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a1cbb5fcf54fc28b3d0d06e9b9fdd13026735620af1621ae07bdcab1c0b855d"
+  end
+
   depends_on "rust" => :build # for tokenizers
   depends_on "ffmpeg"
   depends_on "huggingface-cli"
