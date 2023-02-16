@@ -2,8 +2,8 @@ class Xgboost < Formula
   desc "Scalable, Portable and Distributed Gradient Boosting Library"
   homepage "https://xgboost.ai/"
   url "https://github.com/dmlc/xgboost.git",
-      tag:      "v1.7.3",
-      revision: "ccf43d4ba0a94e2f0a3cc5a526197539ae46f410"
+      tag:      "v1.7.4",
+      revision: "36ad160501251336bfe69b602acc37ab3ec32d69"
   license "Apache-2.0"
 
   bottle do
@@ -35,7 +35,6 @@ class Xgboost < Formula
   # Starting in XGBoost 1.6.0, compiling with GCC 5.4.0 results in:
   # src/linear/coordinate_common.h:414:35: internal compiler error: in tsubst_copy, at cp/pt.c:13039
   # This compiler bug is fixed in more recent versions of GCC: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=80543
-  # Upstream issue filed at https://github.com/dmlc/xgboost/issues/7820
   fails_with gcc: "5"
 
   def install
