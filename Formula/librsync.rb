@@ -6,15 +6,13 @@ class Librsync < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "cc61b71352f218c2097897616816c87438636d4087a15060412711a5614b2342"
-    sha256 cellar: :any,                 arm64_monterey: "8f48bfa9495ff1e3f5dbb3c84a849205ee4307cfca4ca0d4c9fdc5dd04304617"
-    sha256                               arm64_big_sur:  "e2672691faeaba727acde6252c3dba8a39b9a0703f942f8f830d6e5514e15bb3"
-    sha256 cellar: :any,                 ventura:        "8ac966da10799876d5b9e1065d2da6870cfd209c218977801e4d08ad5c7a7b2d"
-    sha256 cellar: :any,                 monterey:       "4fa2dba2f40587cb7e1a3c837dae70c121509d858e44a5ec6bd564ba68c2cc3b"
-    sha256                               big_sur:        "7561cdbc8327f77db0647112ae1496ca544c659a04dfe83e703c9edeee890869"
-    sha256                               catalina:       "4d38d5dbea74b9eac4624877d7c7e29f08c38d68dedaaf9dadbdc5e3a820678b"
-    sha256                               mojave:         "5796b96a6fc4781e134879993d0fa23816994c424d9984ec0584ae6b0bea2963"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae437eeb42f5d9cde1bdafc1fc8fdcdca1dc940d638c4225f9303a9ae439a2fa"
+    sha256 cellar: :any,                 arm64_ventura:  "d89603add652e75d67066aa9477b3d0ec7c1506386f9f39b16a4dae526ddfc3f"
+    sha256 cellar: :any,                 arm64_monterey: "461c371c845a9d9e11f87d42b2728b86add7dda8f6a2dd8fac92863b072a6cfb"
+    sha256 cellar: :any,                 arm64_big_sur:  "186a5d37529edc819f7a252f8963711172ed728e8eb53cef7057b4af35f50284"
+    sha256 cellar: :any,                 ventura:        "8da189cee0efb319169720c595b1155d28b411207c4aede49f183883b9244b74"
+    sha256 cellar: :any,                 monterey:       "15175944a49b2d7144a0699770a3a7417321935f5e1b59a5bdd88bfc62d586ed"
+    sha256 cellar: :any,                 big_sur:        "5f6642fc425a2c00562044691956722c994aeeb1bcf8ed9f8624c8de4a54b0fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f6d3f9187ead6288ea4ab0d9519466f02cb3ef81c5d90624a93960bf7c207c49"
   end
 
   depends_on "cmake" => :build
