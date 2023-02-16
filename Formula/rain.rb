@@ -6,13 +6,13 @@ class Rain < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "418902fcf070f3c0935eaa1e19f1a0a88dd528235ad187457e13302ac9f5b470"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1217aea668a9e8109d7812aaccf35567ba921cb86e868979babd9dc562a27ff0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "00e2261f9b2e13c6f9d5ff31d8667d14e4afd02d3a78a4ec78ec2aa9e2ef8d4c"
-    sha256 cellar: :any_skip_relocation, ventura:        "1b6bf35ddd81d2d732a0bfa93ed24e62921e0db5b76f9833fc139354c1def8f8"
-    sha256 cellar: :any_skip_relocation, monterey:       "245dbc19f8c583d6a1a39a131ed651a12ea9d91aaa80312f934821ebecd68762"
-    sha256 cellar: :any_skip_relocation, big_sur:        "dd16898b69de7efccea794c500305e3b5ce5948fb12fc04d2a4cfbe9c57234da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5daca8070c1f256edb61ffc520b6aeaa9afe8004260016308437c1ded28f7d0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4fe8155395e59dc30f5650c84935a371b6c4d19ebd6370d66f674b27ab147ac3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a74c0dbb131873eb391114fbd97ca9cb57421f7d5175a47e16ed13eaf5237b1d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ef947cd281d29ae17560c91492632e79804f25322b00dececefcfaa33f47eb30"
+    sha256 cellar: :any_skip_relocation, ventura:        "c4d473d054e2ad57ed516acea26b71aac143d3c53240081a60a2447662e7df82"
+    sha256 cellar: :any_skip_relocation, monterey:       "fa2b84383641a4d95500ba185cdca932e50c89c41465119347337e7c07a9328c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f6d3bb608dac5a48f092de2798f2214b6d40352ebf522c356c53ac609cbf5c40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bee65c2f8d67c2a030ab8b03013dc5bbbc913fcfbdb0127bbc9018d9e50da778"
   end
 
   depends_on "go" => :build
