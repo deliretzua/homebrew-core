@@ -6,7 +6,13 @@ class Cromwell < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2aacb5acac2682c8437112b65935980ead16dfe5344ad0a02395ed9fe7484ce7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "32c1c6f5ba62df9c2fa1ee21ecd00cd71f6e176cf9f481a388602beaaaad1fe2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "32c1c6f5ba62df9c2fa1ee21ecd00cd71f6e176cf9f481a388602beaaaad1fe2"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "32c1c6f5ba62df9c2fa1ee21ecd00cd71f6e176cf9f481a388602beaaaad1fe2"
+    sha256 cellar: :any_skip_relocation, ventura:        "32c1c6f5ba62df9c2fa1ee21ecd00cd71f6e176cf9f481a388602beaaaad1fe2"
+    sha256 cellar: :any_skip_relocation, monterey:       "32c1c6f5ba62df9c2fa1ee21ecd00cd71f6e176cf9f481a388602beaaaad1fe2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "32c1c6f5ba62df9c2fa1ee21ecd00cd71f6e176cf9f481a388602beaaaad1fe2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da037e50ee875bdc82bc99122ea830c6de4a301581ec0286deb4c677de11580c"
   end
 
   head do
