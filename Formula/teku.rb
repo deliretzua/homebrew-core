@@ -17,13 +17,13 @@ class Teku < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "08ab22d78ef5388c99041f5cbf6c335d83e93d1931255e8e8900c225ee536df2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "08ab22d78ef5388c99041f5cbf6c335d83e93d1931255e8e8900c225ee536df2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "08ab22d78ef5388c99041f5cbf6c335d83e93d1931255e8e8900c225ee536df2"
-    sha256 cellar: :any_skip_relocation, ventura:        "08ab22d78ef5388c99041f5cbf6c335d83e93d1931255e8e8900c225ee536df2"
-    sha256 cellar: :any_skip_relocation, monterey:       "08ab22d78ef5388c99041f5cbf6c335d83e93d1931255e8e8900c225ee536df2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "08ab22d78ef5388c99041f5cbf6c335d83e93d1931255e8e8900c225ee536df2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c906e9c39f62dc68959cba9e7ed96853375362f9b5a9f2b7837cac47686ac7f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c677013ffd68b1900da5c6ce52bc73f5284ea4e0f048a8fdf57efb52b055d7ca"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c677013ffd68b1900da5c6ce52bc73f5284ea4e0f048a8fdf57efb52b055d7ca"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c677013ffd68b1900da5c6ce52bc73f5284ea4e0f048a8fdf57efb52b055d7ca"
+    sha256 cellar: :any_skip_relocation, ventura:        "c677013ffd68b1900da5c6ce52bc73f5284ea4e0f048a8fdf57efb52b055d7ca"
+    sha256 cellar: :any_skip_relocation, monterey:       "c677013ffd68b1900da5c6ce52bc73f5284ea4e0f048a8fdf57efb52b055d7ca"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c677013ffd68b1900da5c6ce52bc73f5284ea4e0f048a8fdf57efb52b055d7ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7795ad55bdee306e9c3ab4b5b3676de17f890f2a004e61685358ccd0cd47fd4a"
   end
 
   depends_on "gradle" => :build
