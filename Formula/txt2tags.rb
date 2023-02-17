@@ -8,15 +8,13 @@ class Txt2tags < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c7ada1460b8414d186474f786fe2a5d2643b4f08cca60e3b81c9c946fa308cbe"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c7ada1460b8414d186474f786fe2a5d2643b4f08cca60e3b81c9c946fa308cbe"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c7ada1460b8414d186474f786fe2a5d2643b4f08cca60e3b81c9c946fa308cbe"
-    sha256 cellar: :any_skip_relocation, ventura:        "fd7145ac3dc3b49ff98088c5201a961bf361dc2cabb35b5bbb6db533fc861e82"
-    sha256 cellar: :any_skip_relocation, monterey:       "fd7145ac3dc3b49ff98088c5201a961bf361dc2cabb35b5bbb6db533fc861e82"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fd7145ac3dc3b49ff98088c5201a961bf361dc2cabb35b5bbb6db533fc861e82"
-    sha256 cellar: :any_skip_relocation, catalina:       "fd7145ac3dc3b49ff98088c5201a961bf361dc2cabb35b5bbb6db533fc861e82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "de5e182914b9b55783f347caeaa9d5f671e49bb1bbd055eb2c75958e110226f7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c733dd69bfebdbd7eaebcc27c4d80e2ed080cbcef5a71d22aa1965f6e4164bdb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c733dd69bfebdbd7eaebcc27c4d80e2ed080cbcef5a71d22aa1965f6e4164bdb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c733dd69bfebdbd7eaebcc27c4d80e2ed080cbcef5a71d22aa1965f6e4164bdb"
+    sha256 cellar: :any_skip_relocation, ventura:        "337725d77060c6e7f0ddd638ff0d904b98aca4b78748327b0494b7ab02584c8c"
+    sha256 cellar: :any_skip_relocation, monterey:       "337725d77060c6e7f0ddd638ff0d904b98aca4b78748327b0494b7ab02584c8c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "337725d77060c6e7f0ddd638ff0d904b98aca4b78748327b0494b7ab02584c8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cbe92bcad887b8e2d4f32d1b2afe040e2577852d6d1eb4ec327ef62f05c4a826"
   end
 
   depends_on "python@3.11"
