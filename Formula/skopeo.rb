@@ -1,8 +1,8 @@
 class Skopeo < Formula
   desc "Work with remote images registries"
   homepage "https://github.com/containers/skopeo"
-  url "https://github.com/containers/skopeo/archive/v1.11.0.tar.gz"
-  sha256 "f2e73704f901a62503c3b6d7db62d89db6fadd6787ff739c017f911853d43bd6"
+  url "https://github.com/containers/skopeo/archive/v1.11.1.tar.gz"
+  sha256 "7e2b327a687d2230e9075120fff1024e6c2f22738a4179030121c953dda7d3b5"
   license "Apache-2.0"
 
   bottle do
@@ -17,10 +17,10 @@ class Skopeo < Formula
 
   depends_on "go" => :build
   depends_on "go-md2man" => :build
+  depends_on "pkg-config" => :build
   depends_on "gpgme"
 
   on_linux do
-    depends_on "pkg-config" => :build
     depends_on "device-mapper"
   end
 
