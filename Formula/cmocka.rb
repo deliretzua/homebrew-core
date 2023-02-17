@@ -7,17 +7,13 @@ class Cmocka < Formula
   head "https://git.cryptomilk.org/projects/cmocka.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a8f740f136437949637b8587bcb355b51b31a8a58f872738caabdafb8f649f56"
-    sha256 cellar: :any,                 arm64_monterey: "a504b57668ab63e04fd3ca656d6a0a48a215779b9779dad64e6e65e56441c2fd"
-    sha256 cellar: :any,                 arm64_big_sur:  "e2ed51c48c56006bb4b8591259eb206968e46457e78b15570c567d990b5f97d3"
-    sha256 cellar: :any,                 ventura:        "62276a9dcaed10332781bd14a2d6e23e174d88a588558ec384d76ebb4b334380"
-    sha256 cellar: :any,                 monterey:       "221d35e014f83b7ba5c115ed5dc058508f956ff551141676a13ece2be1c476a3"
-    sha256 cellar: :any,                 big_sur:        "a852c9033a2ca9543dff361a5a5d19027dddab7d207e9a080cf9f8bf75751354"
-    sha256 cellar: :any,                 catalina:       "719b81c50a85d95dfc0bdd88b52e5642cc81e22f95776fc8d92065217bef879e"
-    sha256 cellar: :any,                 mojave:         "a05bfdbe08b08dc01db59d0c2c724b2a58c4f9e12c260dc5865e27dd456e7771"
-    sha256 cellar: :any,                 high_sierra:    "c4fc9fe8a73b23206c0db8907c2f67dea482d689afea18c5e746556aff8098b5"
-    sha256 cellar: :any,                 sierra:         "a8d32491c7cfd1670be11c022faa07619d7821a4328fb034e76f225933b5c4dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0f6e5f5ffe5cdf0605d128b361f338ae8f986d7fbd5713681c07747738ff4266"
+    sha256 cellar: :any,                 arm64_ventura:  "10d26bf899a3f81117ff42367d0dd11d1519e3f146d63341c5c87e89a42e983e"
+    sha256 cellar: :any,                 arm64_monterey: "01113968fe6423bef882def55d8db208c5f5ae527b5a508f8f58f1ced15990a8"
+    sha256 cellar: :any,                 arm64_big_sur:  "c6efe7c74fe398d438be12f5e8e27dd334ecbabc4fbb5746c615754526df519a"
+    sha256 cellar: :any,                 ventura:        "cc1c7cbc44a6a23aac1dee4c14702eac7ef3a56835a1dc381f0ea18dbe3c306f"
+    sha256 cellar: :any,                 monterey:       "7ca0cd56fe2a9cc06d639f627612fb5292052131465503db15e4689ddaa09e61"
+    sha256 cellar: :any,                 big_sur:        "16476a114556a1e6abf8494c111ec345f6020e1a33f3cc4183f05c41fcf40cc5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a1e0e2240ed1b163dca04fe01532343d88833957fad05e80df1d8572a67ba16"
   end
 
   depends_on "cmake" => :build
