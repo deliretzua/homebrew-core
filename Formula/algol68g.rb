@@ -17,6 +17,7 @@ class Algol68g < Formula
     sha256                               ventura:        "922c5dfa253374741d669ae51d9a525670f1b797ed302520963ad1d8cf76cf7d"
     sha256                               monterey:       "0d3222188e840cdea444f4da1c40fc3737c7dfa8f8463c7b7adc08726224b002"
     sha256                               big_sur:        "7044219f656b07cf34c3e96a429cb51aa6eb5c0e7d86441201c342e350afbda6"
+    sha256                               x86_64_linux:   "92de0b7334e0346c309dfa18e2d930e8b58ad111bd3d30a91bcbe25bdfd45f46"
   end
 
   on_linux do
