@@ -12,7 +12,7 @@ class Onedpl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0569d75967ca8c8d00aa51390324d2165101715669a511cc5e5234c9e3a00716"
+    sha256 cellar: :any_skip_relocation, all: "5f78ee41677887fa9c4ef1dbaf559f29e6754fbdc57550634d2c8e2dd12686c1"
   end
 
   depends_on "cmake" => :build
