@@ -15,7 +15,7 @@ class Ski < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "cbda47eb2a97213dee88f63680f6301826874ffc66c6ad2b666125e1505f8585"
+    sha256 cellar: :any_skip_relocation, all: "c3579d8ff81a16c59efa672da26be95e006c19debd511d532f7fc29011cf02c9"
   end
 
   head do
