@@ -3,8 +3,8 @@ require "language/node"
 class Httpyac < Formula
   desc "Quickly and easily send REST, SOAP, GraphQL and gRPC requests"
   homepage "https://httpyac.github.io/"
-  url "https://registry.npmjs.org/httpyac/-/httpyac-5.10.2.tgz"
-  sha256 "e3d4a8d091d447f81ae043b101171721aaf2bf913a84c092c821e0525a04040f"
+  url "https://registry.npmjs.org/httpyac/-/httpyac-6.1.0.tgz"
+  sha256 "6dd0e1ef8b95b5b967a9651668cf2dead6ea3c4cd814412e592f9fe9b878ac37"
   license "MIT"
 
   bottle do
@@ -46,16 +46,26 @@ class Httpyac < Formula
       Content-Type: text/html
       Authorization: Bearer token
 
-      # @keepStreaming
-      MQTT tcp://broker.hivemq.com
-      Topic: testtopic/1
-      Topic: testtopic/2
+      POST https://countries.trevorblades.com/graphql
+      Content-Type: application/json
+
+      query Continents($code: String!) {
+          continents(filter: {code: {eq: $code}}) {
+            code
+            name
+          }
+      }
+
+      {
+          "code": "EU"
+      }
     EOS
 
     output = shell_output("#{bin}/httpyac send test_cases --all")
     # for httpbin call
     assert_match "HTTP/1.1 200  - OK", output
-    # for mqtt calls
+    # for graphql call
+    assert_match "\"name\": \"Europe\"", output
     assert_match "2 requests processed (2 succeeded, 0 failed)", output
 
     assert_match version.to_s, shell_output("#{bin}/httpyac --version")
