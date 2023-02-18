@@ -1,8 +1,8 @@
 class Rizin < Formula
   desc "UNIX-like reverse engineering framework and command-line toolset"
   homepage "https://rizin.re"
-  url "https://github.com/rizinorg/rizin/releases/download/v0.4.1/rizin-src-v0.4.1.tar.xz"
-  sha256 "669d956b997820a36e423cf35d482aa99849254b9658cef6844459912dfdbfb8"
+  url "https://github.com/rizinorg/rizin/releases/download/v0.5.0/rizin-src-v0.5.0.tar.xz"
+  sha256 "d0d0f876f1312331f5dd015e3cdad3ffa569bb49bc520aa26d8c966f8e6ea444"
   license "LGPL-3.0-only"
   head "https://github.com/rizinorg/rizin.git", branch: "dev"
 
@@ -22,7 +22,6 @@ class Rizin < Formula
   depends_on "pkg-config" => :build
   depends_on "capstone"
   depends_on "libmagic"
-  depends_on "libuv"
   depends_on "libzip"
   depends_on "lz4"
   depends_on "openssl@3"
@@ -40,7 +39,6 @@ class Rizin < Formula
         "-Duse_sys_zlib=enabled",
         "-Duse_sys_lz4=enabled",
         "-Duse_sys_tree_sitter=enabled",
-        "-Duse_sys_libuv=enabled",
         "-Duse_sys_openssl=enabled",
         "-Duse_sys_libzip_openssl=true",
         "-Duse_sys_capstone=enabled",
