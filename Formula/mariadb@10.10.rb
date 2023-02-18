@@ -22,6 +22,16 @@ class MariadbAT1010 < Formula
     end
   end
 
+  bottle do
+    sha256 arm64_ventura:  "eaa2a3d0cb8e20c580349adad391c13cb3b2a192e9d42f78bc01b17c0c0ee763"
+    sha256 arm64_monterey: "090c8198d722350f85097c838eece281e210e0bbdbdb9b138288d292cc87ce31"
+    sha256 arm64_big_sur:  "28a31dc5d8f8a07aaa837c8932a20e17124252e58f7ae1c38f0737cde7775029"
+    sha256 ventura:        "1bea7ed59408de7ef867f88ce97ff14905853bde7bb3fd2a89b5df486a544572"
+    sha256 monterey:       "bb2ee7ca3296ff21ff41dee5c1e1663760df03d336a7809716923921d592f59a"
+    sha256 big_sur:        "b49074b2f15bdd808df5ab0577937009db053c6e3d9d5a92a39a64e3201a60ac"
+    sha256 x86_64_linux:   "751ca3eb0ba05925c532688d24b63ab9e5565b12720a6ed2a13bccdcd06d8cb4"
+  end
+
   keg_only :versioned_formula
 
   # See: https://mariadb.com/kb/en/changes-improvements-in-mariadb-1010/
