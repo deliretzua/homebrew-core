@@ -12,14 +12,14 @@ class Expect < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "41694fc786b834187a385fdff5719a44c8c2c61000907cf7e682eb67f6339d3b"
-    sha256 arm64_monterey: "9d52fecd2233cf0b3c895c63f8ab03912fd74075244221196e9882334e743f08"
-    sha256 arm64_big_sur:  "70d13137d6fc17c78f565f07c5bf9a23404fc8e658f9cf2015a8ecd3d69d4dc6"
-    sha256 ventura:        "98df9a7371c178be65065294d2567deba4af4c057ff3ab09ff5474581b91985a"
-    sha256 monterey:       "db086c31928306bb3e9735bdef4a06b1bdcce0e4d60bb78968e40d3e31064858"
-    sha256 big_sur:        "c45b66b3d9c4a6c2b0fa68d9daec2b48bed4df6ab564ff652ce0cf41040419c3"
-    sha256 catalina:       "b4899f933cfe9caea23ffa18529be2d2e2d66d828de427f9a2b3f7e1795bd10e"
-    sha256 x86_64_linux:   "f5fa2ccf3978e434b52d22920f3e5a27d2f922e1838e5eede42ed6332d5d7031"
+    rebuild 1
+    sha256 arm64_ventura:  "b4365dcb8458401c304c3a3caa4f4011f9329070b35c3a676487ee19f30b1cba"
+    sha256 arm64_monterey: "5ff98a9cf5b047096aab9a160a8c712d233ecf7db36beb3266558eccc192db59"
+    sha256 arm64_big_sur:  "2fc1bd04e2b574486ae498ef9f4ce15ca8d984d9dc62a0edf62a04e3a4462801"
+    sha256 ventura:        "6d59e098a54143167156956fa665bb0135c9928df4fee1f3cfc03371cb5c0b11"
+    sha256 monterey:       "846fa2041ea776fc3bc210bd38b1021761e4093dbb8bf7370c3e94dd37d77fea"
+    sha256 big_sur:        "f295e826b5797266fdceb33482e8dab427a4c2c2650a92537a440db22e74b8c1"
+    sha256 x86_64_linux:   "0163251e6adfe08adac9e1a2493266eded980c8eee028ee83228599ddb3c1224"
   end
 
   # Autotools are introduced here to regenerate configure script. Remove
