@@ -10,6 +10,7 @@ class OdoDev < Formula
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_monterey: "acc7899b7060ba2ed4c4dc1883ce0c91ec104b39307b5369dc34d9017839293f"
     sha256 cellar: :any_skip_relocation, ventura:        "66a3e2b392787b1db2688f8b4d7cedc8ec1b4150eb016b4c6e47a9ee29c7f236"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "73dd235856ef918800d0fef88f6609adfeb26c8ea4c9dd447bcb804cdcc42032"
   end
 
   depends_on "go" => :build
