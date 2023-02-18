@@ -12,15 +12,14 @@ class Rpm2cpio < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d1143df4e3b6fa8a152e68a6531e608ed72b9876d98cf75fbc92723c56aeaeff"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "532dfd83bf5efec35d5dad581695ac40e830e9545cf5e2599520e18e385d2d5c"
-    sha256 cellar: :any_skip_relocation, monterey:       "e8aa94b3bfd21f5a8c01ead59e5890dca5d4bb2daf96534f5a9caad0baca17f9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "605d2412f20fb282a4b7bf18f67b1ac63382965714f7d6711d13a317e626ae8d"
-    sha256 cellar: :any_skip_relocation, catalina:       "8655ba73b79595a55d289c2c969e027f2034c0af88263f9fa8c5cb8a1184a823"
-    sha256 cellar: :any_skip_relocation, mojave:         "081902485154a2061d890e6421a55d15bfe5072c05109c79e0ef50f2a11b96e5"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "804dccff2726a9ac18a1002cd8adb06aacd07ce1fff93b995c042d4e78775176"
-    sha256 cellar: :any_skip_relocation, sierra:         "05f2a6011c554efb2c2196fdf08bfc6f7c6fd6d4e32530399888aabcc73ca339"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5309dbce1d6af482193ea258b593b7f30c23036dd3dc6d56a1ea16edba480411"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a0d766ccb938671a8c732670ae21369f7213ff1c75bcbae8dd3375043ca7a0f4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4dc679df047764833091737b1c6abe53f76788281df5fa220ff0914cf5f7bde6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f4048459b1dce919e2cdbb30b79b7893a5ebac6edf34ec82bc7ac224836b06c5"
+    sha256 cellar: :any_skip_relocation, ventura:        "d23abbffe4e9bb974d7be5a6e07ba8105b641a01cbd924d439b87a9824849deb"
+    sha256 cellar: :any_skip_relocation, monterey:       "d93f7543c723d33c9cc2666bfe057583889d60d4d250f4f6921e1844a652043e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9a704cd7500da1e5ee5da24db92d732212c7d3e1106ab7dd54888f5fcb681475"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a5a71b883b56d4c4188946221d349a9e0bdbc5f2f1a835df26b0504c439b335"
   end
 
   depends_on "libarchive"
