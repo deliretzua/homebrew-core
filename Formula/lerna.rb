@@ -8,13 +8,13 @@ class Lerna < Formula
   license "MIT"
 
   bottle do
-    sha256                               arm64_ventura:  "9f8c4bb0c4f655027abe3d527300c88dfac54a743074fad0eb96174638f5095b"
-    sha256                               arm64_monterey: "741f6dfab6ad999734d43170d71fa987eeb8ba5e00583b15154e5c91c131a346"
-    sha256                               arm64_big_sur:  "6ca426cef9d2eb647bf166f3548c8af112e8385a5f99d86fdb3025135474cafd"
-    sha256                               ventura:        "d81db78e9092845516c90f949b93d94242710becba4295f95d47bf4e138990f8"
-    sha256                               monterey:       "d0df37d822ddb2655dbd9a6959755474029d72d7551fd80d05c4359295b3141e"
-    sha256                               big_sur:        "ff5e6b6ea17b465c02b37ca3921266ef1e2817072ebd672694bd4d3c3b4aef83"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f5694c27785e4510cc41ee4fcaa9a12925c2201c2cfa652a63b72243cdc079c"
+    sha256                               arm64_ventura:  "45067917276d3898dd8c418b363d65dbb45de1184553f5fbe412b993e23ee828"
+    sha256                               arm64_monterey: "7abc9bc635df5d316f23102434e0e2b3603ce76c51bfad82ae7ba6c25774f6a2"
+    sha256                               arm64_big_sur:  "c923c0686d0c4a9544a32e15a5519d8d810f4df9e8cf2326617fa78dd049beaa"
+    sha256                               ventura:        "8c22cd2349916306bc6f5d0fb110400cc1b5751dccb7234b5e38eda17a812891"
+    sha256                               monterey:       "bbbeb85fbf410676956c2f597be12ed23b4e72ad1bb442b1ae4e32c6eca0805d"
+    sha256                               big_sur:        "92cb09f010da357f250e2f848e233d73c72e71c6c258b9c03e62653506fd1c1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04cc394d32304ea39c9a04383c7bd38693aceb92b16e20c5a38ef53c576fbb8d"
   end
 
   depends_on "node"
