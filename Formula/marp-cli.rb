@@ -8,13 +8,13 @@ class MarpCli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "54b99863b43bd661040432ba033c930bdeb523a6b3a1a47f8b04b78f3b94b817"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "54b99863b43bd661040432ba033c930bdeb523a6b3a1a47f8b04b78f3b94b817"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "54b99863b43bd661040432ba033c930bdeb523a6b3a1a47f8b04b78f3b94b817"
-    sha256 cellar: :any_skip_relocation, ventura:        "eeb05c478f02916031c91af4a18d7f48f278426b0acf965af95ca3517fdb73f3"
-    sha256 cellar: :any_skip_relocation, monterey:       "eeb05c478f02916031c91af4a18d7f48f278426b0acf965af95ca3517fdb73f3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "eeb05c478f02916031c91af4a18d7f48f278426b0acf965af95ca3517fdb73f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0455db0de1b53e40ab06519622ea1ade7b10531523d8d8ebdac873062230ea1d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "02a8a1f9c0d1d29742ac5a3efc85cffc1276367e0f28ae4053ae0157c976fe7c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "02a8a1f9c0d1d29742ac5a3efc85cffc1276367e0f28ae4053ae0157c976fe7c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "02a8a1f9c0d1d29742ac5a3efc85cffc1276367e0f28ae4053ae0157c976fe7c"
+    sha256 cellar: :any_skip_relocation, ventura:        "72fbe13449386b62e6ae2d5160c4d130abec7d5c35dc7c6f1301fb7a72603204"
+    sha256 cellar: :any_skip_relocation, monterey:       "72fbe13449386b62e6ae2d5160c4d130abec7d5c35dc7c6f1301fb7a72603204"
+    sha256 cellar: :any_skip_relocation, big_sur:        "72fbe13449386b62e6ae2d5160c4d130abec7d5c35dc7c6f1301fb7a72603204"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "06aa44cf13b6eae50f398e47808bce12b8c0bb0be87bac1dc632b2380df20831"
   end
 
   depends_on "node"
