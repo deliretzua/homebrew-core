@@ -7,6 +7,10 @@ class Solhint < Formula
   sha256 "d7a214896a9b9d0c79110cdf1774057c0d78bfa9e8fbafb6628aeb8953aa00f8"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "63d8b534920f5026721e09e6b3ed0f4295c614ab45aafd16ceaf660e5d12924e"
+  end
+
   depends_on "node"
 
   def install
