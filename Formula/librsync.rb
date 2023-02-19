@@ -6,13 +6,13 @@ class Librsync < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d89603add652e75d67066aa9477b3d0ec7c1506386f9f39b16a4dae526ddfc3f"
-    sha256 cellar: :any,                 arm64_monterey: "461c371c845a9d9e11f87d42b2728b86add7dda8f6a2dd8fac92863b072a6cfb"
-    sha256 cellar: :any,                 arm64_big_sur:  "186a5d37529edc819f7a252f8963711172ed728e8eb53cef7057b4af35f50284"
-    sha256 cellar: :any,                 ventura:        "8da189cee0efb319169720c595b1155d28b411207c4aede49f183883b9244b74"
-    sha256 cellar: :any,                 monterey:       "15175944a49b2d7144a0699770a3a7417321935f5e1b59a5bdd88bfc62d586ed"
-    sha256 cellar: :any,                 big_sur:        "5f6642fc425a2c00562044691956722c994aeeb1bcf8ed9f8624c8de4a54b0fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f6d3f9187ead6288ea4ab0d9519466f02cb3ef81c5d90624a93960bf7c207c49"
+    sha256 cellar: :any,                 arm64_ventura:  "ecf222fd327da97f55371c9c790dd373a4ff7c5db9ad8d3d94a18235c77cd7dd"
+    sha256 cellar: :any,                 arm64_monterey: "e2062c102af08ddda0befc3c942256fc1e9135c1f3a5ace59cb89033b2fd430b"
+    sha256 cellar: :any,                 arm64_big_sur:  "d8eacef1d3062a140f915d3f864f1ed2764175739658fbe7f39d5a316df4aa1e"
+    sha256 cellar: :any,                 ventura:        "56a8016cd9f57fd16a18dc4718af15fa033220894bda2dab1eeb03583982635a"
+    sha256 cellar: :any,                 monterey:       "0b1430ccb90548e554ae9b56990bfe958c416dac61594185b2ac0d38af89bb2d"
+    sha256 cellar: :any,                 big_sur:        "1f060456ddd3143afd9d7b4ce09fa73de0b685d16e5b5add2eec4039175879d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c48743c4c502118826bf142d7bb393099a994c882b55c1c11430c656382af16"
   end
 
   depends_on "cmake" => :build
