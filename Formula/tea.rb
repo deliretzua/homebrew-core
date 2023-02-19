@@ -7,13 +7,13 @@ class Tea < Formula
   head "https://gitea.com/gitea/tea.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "efe269fde55927760636cf99b3d039fa4a63cb67eb00df089f791c7659ba5205"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3e61aaa16503d35ae2d5efae7ee482d7b2f5086ed49fb3234a385415c43f6ed3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "51610feeb111b8f299d7badb970765746bfe337f2fff49735b7e2f3eb347b779"
-    sha256 cellar: :any_skip_relocation, ventura:        "24cf5573187e565a997294d31ffc794bc36d9cf211430c4b971978d5bcaa7e7a"
-    sha256 cellar: :any_skip_relocation, monterey:       "112dc527fa980db36b2232329ba77ee20aeaf5802c241d53bda3327418e01cda"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b52853ba566cc4d3dcd88a9ea5ef9e534f961dad787ad275002a99c919ddb26c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "06fd0c7f0aee84019f43ad784ba9bc390678503cb75e49510d92f971051fbbd0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "29e52360a6c2dcb368442a59161640e1cf96e565ab59d1520e42c6a2ce38b7d7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f95a8d47dcb61111ec3632dc2406ba7da8ce2cfe1da0be65f1404d486090b4c5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5e019cd0a45c2234d98059888ee64645ab9770caf44be38d5316715f965eea64"
+    sha256 cellar: :any_skip_relocation, ventura:        "1046864dd1353e9d099c60620a3e7f0c987538ad6f97718a8680cabf620919cf"
+    sha256 cellar: :any_skip_relocation, monterey:       "fadca52e0a62f26ea7eb13db0c68b598d37612e27bbff34d65b55b8ab77a238b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e7893a8ecea71ac9be6a7667957e5f5056be4f30ca08ae82e570547d58a2bd2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "46d697d3d95d709675428a104ae1cc97faa3ac732054f612eee298e664829e21"
   end
 
   depends_on "go" => :build
