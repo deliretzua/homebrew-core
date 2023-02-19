@@ -11,13 +11,13 @@ class OpenapiGenerator < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6d60726334f03d6ab64cb8086c383d72a320e3dc6bffde86a1d9cabadd1420a7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6d60726334f03d6ab64cb8086c383d72a320e3dc6bffde86a1d9cabadd1420a7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6d60726334f03d6ab64cb8086c383d72a320e3dc6bffde86a1d9cabadd1420a7"
-    sha256 cellar: :any_skip_relocation, ventura:        "6d60726334f03d6ab64cb8086c383d72a320e3dc6bffde86a1d9cabadd1420a7"
-    sha256 cellar: :any_skip_relocation, monterey:       "6d60726334f03d6ab64cb8086c383d72a320e3dc6bffde86a1d9cabadd1420a7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6d60726334f03d6ab64cb8086c383d72a320e3dc6bffde86a1d9cabadd1420a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e76029092fa9349e487e1db47da0c334f74a8a9be77804e42dad764d594e14d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3e002f4cd58f4bea0c04bcd3303bca97095309828541363a2113bcd859200bfe"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3e002f4cd58f4bea0c04bcd3303bca97095309828541363a2113bcd859200bfe"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3e002f4cd58f4bea0c04bcd3303bca97095309828541363a2113bcd859200bfe"
+    sha256 cellar: :any_skip_relocation, ventura:        "3e002f4cd58f4bea0c04bcd3303bca97095309828541363a2113bcd859200bfe"
+    sha256 cellar: :any_skip_relocation, monterey:       "3e002f4cd58f4bea0c04bcd3303bca97095309828541363a2113bcd859200bfe"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3e002f4cd58f4bea0c04bcd3303bca97095309828541363a2113bcd859200bfe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8df6e5c27f99aa2d6123880a0795da5bd27665dd9e04c37a9fcfb02a66513d25"
   end
 
   head do
