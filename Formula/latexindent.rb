@@ -6,13 +6,13 @@ class Latexindent < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dded390e66c6332e9c8b328d77b3ba53195055f4a554b2a7e70333dd5b0180c8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c6863629f0019fbcec129858e335ef4d6a3c04769e5ec86f54b0d79b44903029"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a6e4d1732223650e23aaa0891edee1c38d009f248f9d9fbe1009dea48fd2ccc5"
-    sha256 cellar: :any_skip_relocation, ventura:        "220be12c77845e8106f06bb6d3cba7296c89d8964ea3a6c82b76de15d4a630d3"
-    sha256 cellar: :any_skip_relocation, monterey:       "c7e59fefb87d6eeee1566f3e7ce4f09450234b8f52f2f03779062a4a177f4f4b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2e2b71c9806b198d92e9fd60d9570187638531b865a1cfbabe4a94e884feb359"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "77f70494a858c4e01f2b97c44011fce4f870bbcb87e4d457bca7fe6b3a83a46f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ba9628576963041096ef6da763e05aa2706bda57602623d339685840f00743ce"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f0b4a40d405b5150ae09f7feb87e867c428883df1bd401da216249b27619a594"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bcf17762e6f05429767ff14319511f595dca260205e8f2dba4520151e8993442"
+    sha256 cellar: :any_skip_relocation, ventura:        "a91de02584d87ea05420f34c0743d8dbd589ca2237a9e36399ebf0134a9797d0"
+    sha256 cellar: :any_skip_relocation, monterey:       "d606bc309deb1d08b6a3c2ca292ae29e629753e1d6c62719e95d4b4b2d686644"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8d856d9d0c3e35511416e766e11802c9a8a758ca7e80d69f330fd63d7cddad16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26f1bf36f10c4a8e9b3c2eccb4faf434a0eb1d3c20663d041d3cd939863eca07"
   end
 
   depends_on "perl"
