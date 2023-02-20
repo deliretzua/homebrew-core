@@ -11,13 +11,13 @@ class Armadillo < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d5bfde666521b1af91612d4780817cd276b02e2bdcda0094e5dec9e27dda7db5"
-    sha256 cellar: :any,                 arm64_monterey: "f4b53f256e78c3ae5c3977baec13728e4204dd6069419646891efc42d73e3027"
-    sha256 cellar: :any,                 arm64_big_sur:  "f83e7e5b9c2cd65b3df959eff8892d3a612499d2582c3e20ed272343baaf4e9f"
-    sha256 cellar: :any,                 ventura:        "be8f412ef620dd3e4440c3f5449c546182f23f6105e405a4c061391eae02bef5"
-    sha256 cellar: :any,                 monterey:       "bbe8c70c81409344aefa0a3b917a8f61fc6e54ca881ffef433bf8b797f274cba"
-    sha256 cellar: :any,                 big_sur:        "f72d899e937f18f49c2b3abe97e0182f97a4561b1f327c4c3a4eb13a4f6a9de0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a0a3d1afcea59b74c770f889d55bf844d3e2e370a847dcef20570cd4a567703"
+    sha256 cellar: :any,                 arm64_ventura:  "66450ca0b3919f5bbf3fb7108afaebe633b9a6f00f1a278782e7c3aeb678e98f"
+    sha256 cellar: :any,                 arm64_monterey: "04b9fbbd260c886862293e8b17ba00237caddd4228e32004c1d466b5a1948ace"
+    sha256 cellar: :any,                 arm64_big_sur:  "7a4e90535d0b335f4b7538db0df81f1bfe3008e8deba03fc6f1ecbc3efdae5ad"
+    sha256 cellar: :any,                 ventura:        "c1de3f442639894833837f2f7d5a0c1ec603d79d48b13539a8e4a7b7f84441d5"
+    sha256 cellar: :any,                 monterey:       "50df67037e8e05f1b613959d7fd3db67fb2d7a1c74f797915a50d1e921558436"
+    sha256 cellar: :any,                 big_sur:        "90dc64cffc65ebf28ba9620ed7ca30093904a4d4e2c8d70226dd4fc7f6f9be12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "464ea0d4642b834c0c4e9f8417fb24400e79cbd83e3d7471c6ea4cf374b01123"
   end
 
   depends_on "cmake" => :build
