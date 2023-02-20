@@ -7,13 +7,13 @@ class Envd < Formula
   head "https://github.com/tensorchord/envd.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e885ac2c61ad07614e3b4c6ca934c0b926227c74c4198076221c40a701d38d3e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e885ac2c61ad07614e3b4c6ca934c0b926227c74c4198076221c40a701d38d3e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e885ac2c61ad07614e3b4c6ca934c0b926227c74c4198076221c40a701d38d3e"
-    sha256 cellar: :any_skip_relocation, ventura:        "d51f173aecc212572fd75c7b7a6980ef8b5369747ddd7510e599f2503b6dee58"
-    sha256 cellar: :any_skip_relocation, monterey:       "d51f173aecc212572fd75c7b7a6980ef8b5369747ddd7510e599f2503b6dee58"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d51f173aecc212572fd75c7b7a6980ef8b5369747ddd7510e599f2503b6dee58"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e304616e3941c4aadbc327a7042b6870001a1e22af2d1b502994455178dd6a79"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "57c3cf422676e9a73a9697bd589bea9cdb3d7319b8463fe8cde9aae36ad1dd8d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "57c3cf422676e9a73a9697bd589bea9cdb3d7319b8463fe8cde9aae36ad1dd8d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "57c3cf422676e9a73a9697bd589bea9cdb3d7319b8463fe8cde9aae36ad1dd8d"
+    sha256 cellar: :any_skip_relocation, ventura:        "bb1a27ce1d30a2a79eeecc0e6aa0ecac3fe86fa58aaa65f33acc6e90d50aa0e1"
+    sha256 cellar: :any_skip_relocation, monterey:       "bb1a27ce1d30a2a79eeecc0e6aa0ecac3fe86fa58aaa65f33acc6e90d50aa0e1"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bb1a27ce1d30a2a79eeecc0e6aa0ecac3fe86fa58aaa65f33acc6e90d50aa0e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6443a34bf0a1908085d997bf913493b1ed7b5acbc954942776bd1eb11aaf9f5a"
   end
 
   depends_on "go" => :build
