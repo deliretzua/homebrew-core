@@ -9,7 +9,7 @@ class Jsdoc3 < Formula
   head "https://github.com/jsdoc3/jsdoc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "992d7b1cabe4898bd8cd878624fcc3f293814ee8b0ebd7137160c86a6513239b"
+    sha256 cellar: :any_skip_relocation, all: "434e317dce4f21f10ea9b1c1d88b14461859e3f01fa869f0616004c504a8fed9"
   end
 
   depends_on "node"
