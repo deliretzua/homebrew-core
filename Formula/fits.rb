@@ -1,8 +1,8 @@
 class Fits < Formula
   desc "File Information Tool Set"
   homepage "https://projects.iq.harvard.edu/fits"
-  url "https://github.com/harvard-lts/fits/releases/download/1.5.5/fits-1.5.5.zip"
-  sha256 "48be7ad9f27d9cc0b52c63f1aea1a3814e1b6996ca4e8467e77772c187ac955c"
+  url "https://github.com/harvard-lts/fits/releases/download/1.6.0/fits-1.6.0.zip"
+  sha256 "32e436effe7251c5b067ec3f02321d5baf4944b3f0d1010fb8ec42039d9e3b73"
   license "LGPL-2.1-only"
 
   livecheck do
@@ -14,15 +14,15 @@ class Fits < Formula
     sha256 cellar: :any, all: "cd4ac00bed12a2221f0f5b43e13c6605bb53c8cbcb4f518beec8eebb8bef820f"
   end
 
-  # Installs pre-built x86_64 binaries
-  depends_on arch: :x86_64
+  depends_on "exiftool"
+  depends_on "libmediainfo"
   # Installs pre-built .so files linking to system zlib
   depends_on :macos
   depends_on "openjdk"
 
   def install
     # Remove Windows, PPC, and 32-bit Linux binaries
-    %w[macho elf exe].each do |ext|
+    %w[macho elf exe dylib].each do |ext|
       (buildpath/"tools/exiftool/perl/t/images/EXE.#{ext}").unlink
     end
 
@@ -47,6 +47,9 @@ class Fits < Formula
     (libexec/"bin").install %w[fits.sh fits-ngserver.sh]
     (bin/"fits").write_env_script libexec/"bin/fits.sh", Language::Java.overridable_java_home_env
     (bin/"fits-ngserver").write_env_script libexec/"bin/fits.sh", Language::Java.overridable_java_home_env
+
+    # Replace universal binaries with their native slices (for `libmediainfo.dylib`)
+    deuniversalize_machos
   end
 
   test do
