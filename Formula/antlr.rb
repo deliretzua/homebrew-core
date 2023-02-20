@@ -11,7 +11,13 @@ class Antlr < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9e5d18110040bd130207bfa3daab67bf83f66042e3feed715676c5e7b4adee18"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dd6e0a5741418c4d07644dbe6697a79f5d98a07d1396d009caad04dcb1ea5e3f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "dd6e0a5741418c4d07644dbe6697a79f5d98a07d1396d009caad04dcb1ea5e3f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dd6e0a5741418c4d07644dbe6697a79f5d98a07d1396d009caad04dcb1ea5e3f"
+    sha256 cellar: :any_skip_relocation, ventura:        "dd6e0a5741418c4d07644dbe6697a79f5d98a07d1396d009caad04dcb1ea5e3f"
+    sha256 cellar: :any_skip_relocation, monterey:       "dd6e0a5741418c4d07644dbe6697a79f5d98a07d1396d009caad04dcb1ea5e3f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "dd6e0a5741418c4d07644dbe6697a79f5d98a07d1396d009caad04dcb1ea5e3f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "80bb154cc36537be68ae865ff52bdf9988a2a2a1c66a63adb96eff8a560c946f"
   end
 
   depends_on "openjdk"
