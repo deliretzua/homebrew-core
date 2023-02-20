@@ -8,13 +8,13 @@ class Jabba < Formula
   head "https://github.com/Jabba-Team/jabba.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2cc7bf2459997c184493c2b3ee2db66439c02fee4cd65a70ffee3c8f4fb00311"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e89e5313435d4ef86ad7a6670f87cacaac13cd9cfbad3d34d987a53196f12dc8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4e685947d36c86746a9dc1819a29e8a9fa03d16a4915263d45b37802ca8845e0"
-    sha256 cellar: :any_skip_relocation, ventura:        "d3d425f7777ca12f8ffc0e440d7303bb1ac6a19bf8bafdf326c2e2cf95830f42"
-    sha256 cellar: :any_skip_relocation, monterey:       "7d1174ab957c14353ac767f792be07832331e995a1e15d947b1f1e256557bc93"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5e42f37a50d9a1ac185ca3adfefbe341ffd8150d8a49e6bd6b063076a528986d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "315baf57135ee0d42aec6d36ff02509e07b5e6de76832ee60f0f47bb3d5c6f1b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6a27f8c6f6c058bfbc5f98d6ad1037013c1849f80f4d05cda274fa8a8d1e6159"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "16c46cd77f9daea31252b1cc479ed71a598ba385a984a16fd8d4b33303b32808"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "91ac15457375b816ee6b90ed999d105414463cae66df68db4829513f0324d386"
+    sha256 cellar: :any_skip_relocation, ventura:        "3faf882dd022a5691e5e7a1d3db04104bdc17d0674abe69a6ef7dc1405a44104"
+    sha256 cellar: :any_skip_relocation, monterey:       "c3ecfed12f4067413173cdf391b9ba9b1e9e66eee20ed80ef32a58757167dde6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ef83f5290a46b7f0d121b1eccf40869b964b0a8134e6cdb033d2715719086e3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e4532d576e0f24ee5b043b7a554569c3014a163f71a3cf2177ffa9ffc4026e2"
   end
 
   depends_on "go" => :build
