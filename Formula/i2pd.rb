@@ -6,13 +6,13 @@ class I2pd < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e669799a25dcbb6ec0cfe5e8445f24b147bb7637b56e6d324e9565228ff622c4"
-    sha256 cellar: :any,                 arm64_monterey: "c638d69fcfe3ad8b353e87276a772c296fede838c81f5e6b1dbc1a928adf47f3"
-    sha256 cellar: :any,                 arm64_big_sur:  "03adeb73e6e460a81d690e39dabfd58b2d9becf4420f489f6f6ffc75260a98b9"
-    sha256 cellar: :any,                 ventura:        "caaf54a6a98bf59206615a21d561c6d856cae65d9021a98876d6840054667ea8"
-    sha256 cellar: :any,                 monterey:       "16216f9797ed8ce16e83c863ad95c26eed8d6eee299ed8df8d7d26832a20fd56"
-    sha256 cellar: :any,                 big_sur:        "7e0bc3289c8ba31282d9b7cbdc37c10a1bc4c14f7dc80d304c82b6a4343049a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e4377bdf062c5084586a990318d0819158614d08ca4401dd9a21e4163800f28"
+    sha256 cellar: :any,                 arm64_ventura:  "aea0a9cf171befb1f9d115cd77e8b6e8a32e99c91743b58bbea9c96129f33578"
+    sha256 cellar: :any,                 arm64_monterey: "35a429b86c613e1381bc858846d7738922f029ba97e9b312d63a14dfab16a4d2"
+    sha256 cellar: :any,                 arm64_big_sur:  "843fb1398b4292d392a0324cf8d26062e32498700632245846191f1ed369bba3"
+    sha256 cellar: :any,                 ventura:        "61ba19b6ffb89d39fe01dfe4b3b8a368d0cc297405e8a54073da862db4315810"
+    sha256 cellar: :any,                 monterey:       "b61b04827b109d42cae634627b30943e792a1275988ccbfeb4cf1c5cc495aae9"
+    sha256 cellar: :any,                 big_sur:        "cae86090b95998bba5e881915bccdb21406fef73efdb95d164d41efb0f2b1a81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8fbbb08c51c3ff20a5c2ddac331bb7f929d68a272ecf14662e2924aae7e231bd"
   end
 
   depends_on "boost"
