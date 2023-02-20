@@ -2,8 +2,8 @@ class Jabba < Formula
   desc "Cross-platform Java Version Manager"
   # fork blessed by previous maintener https://github.com/shyiko/jabba/issues/833#issuecomment-1338648294
   homepage "https://github.com/Jabba-Team/jabba"
-  url "https://github.com/Jabba-Team/jabba/archive/0.12.1.tar.gz"
-  sha256 "f4daa202771ad28108a0bf7fda441ad750214295fb590804d1f0735a41401257"
+  url "https://github.com/Jabba-Team/jabba/archive/0.12.2.tar.gz"
+  sha256 "44bd276fde1eaab56dc8a32ec409ba6eee5007f3a640951b3e8908c50f032bcd"
   license "Apache-2.0"
   head "https://github.com/Jabba-Team/jabba.git", branch: "main"
 
@@ -24,7 +24,7 @@ class Jabba < Formula
 
     # Customize install locations
     # https://github.com/Jabba-Team/jabba/pull/17
-    inreplace "Makefile", " sh install.sh", " bash install.sh --skip-rc"
+    inreplace "Makefile", " bash install.sh", " bash install.sh --skip-rc"
     inreplace "install.sh" do |s|
       s.gsub! "  rm -f", "  command rm -f"
       s.gsub! "$JABBA_HOME_TO_EXPORT/bin/jabba", "#{opt_bin}/jabba"
