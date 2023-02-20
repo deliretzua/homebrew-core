@@ -37,7 +37,7 @@ class Libvorbis < Formula
 
   resource("oggfile") do
     url "https://upload.wikimedia.org/wikipedia/commons/c/c8/Example.ogg"
-    sha256 "379071af4fa77bc7dacf892ad81d3f92040a628367d34a451a2cdcc997ef27b0"
+    sha256 "f57b56d8aae4c847cf01224fb45293610d801cfdac43d932b5eeab1cd318182a"
   end
 
   def install
@@ -64,7 +64,7 @@ class Libvorbis < Formula
     testpath.install resource("oggfile")
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lvorbisfile",
                    "-o", "test"
-    assert_match "2 channel, 44100Hz\nEncoded by: Xiph.Org libVorbis",
+    assert_match "2 channel, 44100Hz\nEncoded by: Lavf59.27.100",
                  shell_output("./test < Example.ogg")
   end
 end
