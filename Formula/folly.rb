@@ -7,13 +7,13 @@ class Folly < Formula
   head "https://github.com/facebook/folly.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "73f36e24cb83ab5b88e30788d8f53421b4b9f81a48a54234e2687cfb799541c5"
-    sha256 cellar: :any,                 arm64_monterey: "01f25bd80f523eb83fdc658a0499b2e5f706bfdb258d3e90fbc4a9b0ea129f9b"
-    sha256 cellar: :any,                 arm64_big_sur:  "69137b8c5735309bc046a3942b5b19737f6e8a22d2e8ba43ef01140f1b23d6ff"
-    sha256 cellar: :any,                 ventura:        "0621af156e6fbdc3996a62f3d5f07cccaa79d3c082f5f186c94e5513529d1588"
-    sha256 cellar: :any,                 monterey:       "2d64d85e8537c172c2c71113c678c9ae41c7dea560f6911dc2e6ac97dbd59f32"
-    sha256 cellar: :any,                 big_sur:        "8a8dabda3ad5fca6ab51882b8f8b514d00a642a68fa5e1b746b652e7f4942b13"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7df0726cb587dcb101b8b98c0cf0794da010a515e1b20ccbcd168e93ae8727af"
+    sha256 cellar: :any,                 arm64_ventura:  "4f1546a2ec4dece01f18176e4a87503ac0a7a6aacbab9f750b8bf23c24d07ac3"
+    sha256 cellar: :any,                 arm64_monterey: "14ae35365f3752eb3580050f4a7eabb7992dc5cf3e167e6274aa6f2e9a1380d2"
+    sha256 cellar: :any,                 arm64_big_sur:  "b00a6d81d4d019e4749bb79bb1cc933611fd7161276797d44be0945a7d65ad1b"
+    sha256 cellar: :any,                 ventura:        "2bebe22155647790caf7cb81766250554f5e6bf46cbe1b7fdb5803626f6ee05b"
+    sha256 cellar: :any,                 monterey:       "a26ce672150e41de3a0fc93a0d55171f0293a7e1174cb03e6638cb38f2ff8ee9"
+    sha256 cellar: :any,                 big_sur:        "64e168e9a782ba09fbfa031e86701002ef98e0c99c699f29d31efcc910b49daf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "abac4dbc053ab9f315f2011813ed6b2d86da0dbf0db551a1b223240798186f46"
   end
 
   depends_on "cmake" => :build
