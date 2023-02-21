@@ -8,14 +8,13 @@ class Fdroidserver < Formula
   license "AGPL-3.0-or-later"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_ventura:  "8795d8eb40b12a28959cb8846784ab7d23253846cba92404d17c90ecf4b66570"
-    sha256 cellar: :any,                 arm64_monterey: "00db53ef588bc4880758081e3324919099f15f374b6eae25c8f073e139991b0a"
-    sha256 cellar: :any,                 arm64_big_sur:  "091af75c19d0ba78f6d3c9e634bc40f43a71fac106f38260c20f52dc6ebf2246"
-    sha256 cellar: :any,                 ventura:        "da0fc80864c18a6a0da65f14324f161cb6e2eb18ce129726a7c5a6e23a4846d7"
-    sha256 cellar: :any,                 monterey:       "6546ae0a41615974c2f92f94a2226bb6aabbc73b704568eceefce56217bc2c11"
-    sha256 cellar: :any,                 big_sur:        "1b094faccfdd690496cd2aee61a16ada7c7c236659aa342288ffc51de7c2fd37"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "853d52415536f215b05675d316ec50b7ab19d222ff3f9538411c4571792f5a5e"
+    sha256 cellar: :any,                 arm64_ventura:  "65c083f35537cfaa95d0c890506c44fa9022ee07a27cf534556edfec07b7c5b7"
+    sha256 cellar: :any,                 arm64_monterey: "d65197e45610d275fead2f02cf519bb617588fbb8154011f150c6b4cacb5c75a"
+    sha256 cellar: :any,                 arm64_big_sur:  "22af3327d4d43ac49108d8e60a015959e43ececf1f0fb0fbe838622e997969d7"
+    sha256 cellar: :any,                 ventura:        "4043063d7d8dae6665279286311886b8f74771e4cfa941625765bda3d635ecbb"
+    sha256 cellar: :any,                 monterey:       "cf13c51bba206b22b100bb39f96e194dd7cb2c81036156759fa17bfa36b2a29d"
+    sha256 cellar: :any,                 big_sur:        "c5c6f00c85a5b252ae32429ee5c1bd6fe24097a23fb7b77f0a9a4336e209f0cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8db2ff92ba31e3edfd79fddfde015f8fd93be73374e99e89173ac410e180648"
   end
 
   depends_on "pkg-config" => :build
