@@ -17,13 +17,13 @@ class Doggo < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1b52a39277350522f9bf6e5d466942c488b4ff28451470a4514163f1f0c1c621"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e9efde0974a3c99bc20547bb46a859e1bc16e7a9fe51258203901ae527f2e9f8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0fa71c6ad80aa231c5a8ccac33dee9c37a9d83c18f144cfb48d3effab814ff3c"
-    sha256 cellar: :any_skip_relocation, ventura:        "fa45db6b6ca4c7923fdef34b82aa54444ecfc6277379a4e5c1bebff788cf5dee"
-    sha256 cellar: :any_skip_relocation, monterey:       "14c0702c87d0245c5d5ad8b238bad6325ed1c580a4819e838f42e85caf74b439"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c57cdbc88339c9d7291ca80b7f066693303dfee95959cf138f33633a0a68a51f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc720679ba537b8b881624652d13b1753a5f59b78dfb91930214e7b50f3b6e46"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9ed48319e2b05a4af4ca5db6cf53db7c50937a2fcafacfaf0c4fe27864e10f81"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9ed48319e2b05a4af4ca5db6cf53db7c50937a2fcafacfaf0c4fe27864e10f81"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9ed48319e2b05a4af4ca5db6cf53db7c50937a2fcafacfaf0c4fe27864e10f81"
+    sha256 cellar: :any_skip_relocation, ventura:        "bce53f03da69b5135c981d6f70e6b6ca483e286b7a6bfc225553bd8ae6f11fee"
+    sha256 cellar: :any_skip_relocation, monterey:       "bce53f03da69b5135c981d6f70e6b6ca483e286b7a6bfc225553bd8ae6f11fee"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bce53f03da69b5135c981d6f70e6b6ca483e286b7a6bfc225553bd8ae6f11fee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac0c6551b944673b293cc5cceb253a1f9e6663efa4b5ac73fe71f0348cfdbfd3"
   end
 
   depends_on "go" => :build
