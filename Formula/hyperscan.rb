@@ -6,11 +6,10 @@ class Hyperscan < Formula
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 ventura:      "a4fc78fa4d26c64c84bab7368868e9e6cab11b095a50417d90170fa9f36336fc"
-    sha256 cellar: :any,                 monterey:     "11b9e5d59354cb47e13696678ef1e8ae413140644b000f0482f2eb0f791d2bcf"
-    sha256 cellar: :any,                 big_sur:      "70eb92530ab4a02c32b5e4696a38f2b37dbfcd98a982795f82ceec5f8345019e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7b96b0ff9caf5d6f7f201f5ae2916a110dd179828d096e19bb0b4326fd90db2e"
+    sha256 cellar: :any,                 ventura:      "f0105513ef5f4258bea80ce4d66fdc58870ade37549098c5a7ef695c02e2c21a"
+    sha256 cellar: :any,                 monterey:     "38d912db872b46ddd8242f543e343b4a8a47c98d2900e6dc7b9a1e80fc8f9141"
+    sha256 cellar: :any,                 big_sur:      "4d712c27745f4c175051fc4b753b990b70f2108858ff3620f1e928aee8666753"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "01a5210d8c7b25dc9029a3f3b97fee837c22f4fdfa53d41e94d5d258d9180550"
   end
 
   depends_on "boost" => :build
