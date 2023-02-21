@@ -6,13 +6,14 @@ class Liqoctl < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "33ad718639a576a686e16202ac66af5369eae6a92f3372d1079aecab3e4299b8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "33ad718639a576a686e16202ac66af5369eae6a92f3372d1079aecab3e4299b8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "33ad718639a576a686e16202ac66af5369eae6a92f3372d1079aecab3e4299b8"
-    sha256 cellar: :any_skip_relocation, ventura:        "a20b52ca648b5fbdb7668b43f84fa4c13df0cfcb434e404c774b0561e49ddaf3"
-    sha256 cellar: :any_skip_relocation, monterey:       "a20b52ca648b5fbdb7668b43f84fa4c13df0cfcb434e404c774b0561e49ddaf3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a20b52ca648b5fbdb7668b43f84fa4c13df0cfcb434e404c774b0561e49ddaf3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5aa043426f8a164d4f35d6216fc1ac8039454849d5114d44e6db0298b36225cc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ce2e1e9a8bbdd25c1a77ac3dff6cc2a7be8d1a26f9e2c772eacf3137bff032b0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ce2e1e9a8bbdd25c1a77ac3dff6cc2a7be8d1a26f9e2c772eacf3137bff032b0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ce2e1e9a8bbdd25c1a77ac3dff6cc2a7be8d1a26f9e2c772eacf3137bff032b0"
+    sha256 cellar: :any_skip_relocation, ventura:        "6840106cb9a64b02565797f7e26e21c5e9bd289e510a6468d350280f2b4d0bfa"
+    sha256 cellar: :any_skip_relocation, monterey:       "6840106cb9a64b02565797f7e26e21c5e9bd289e510a6468d350280f2b4d0bfa"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6840106cb9a64b02565797f7e26e21c5e9bd289e510a6468d350280f2b4d0bfa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b4277364b3a7bbf19a6b6b62d4cc7fcc0c2d314227b87fce005db00e98960a8"
   end
 
   # upstream issue, https://github.com/liqotech/liqo/issues/1657
