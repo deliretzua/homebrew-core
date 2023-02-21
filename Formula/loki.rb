@@ -12,13 +12,14 @@ class Loki < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "57c32ee7be2605dad06a98520e0e7e25ccffbe3f8a8f8094e38fcb7faa971eb0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a623825275d7dc74acc5dc72dc39b0db5f8b2ce847e51a48febbe037aa978483"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b49dd02b645834595ba131a3761b9185d8ec09729dfaf203635e04b62c8488dd"
-    sha256 cellar: :any_skip_relocation, ventura:        "172ace29b920a5b5efa15925666dce532ef4f1c4e4f71594d6e278c87f1a0bfa"
-    sha256 cellar: :any_skip_relocation, monterey:       "74ba46931027180e85f2624dcc52039e502f2f882891b6c61fbe37d6b00e3cf9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fa52db6b9297d1117d6158bff2027873f5319cf0cecbcd3bb08d01444a32d83a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3e390c5294886b1bb4db6c98cb6eba5f2ba98fa63ce8e2fdcfba55e13a959ea"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b3357c95a448acfca1682a3d8bbb6c135a51925bff7ead639db14234920bb697"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "94585a632ce78469a8974a17a89f9177d35c457bb5d1fa29ecf51d93e0b1ca34"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "71db02df29d3494b4602cfdbe7599a1a52753dd7136a45cdd09e7e6d8ef14ee1"
+    sha256 cellar: :any_skip_relocation, ventura:        "52ab9cb750d3b9b5df9c5a75a05c4df6397851eb411a91bda2fe8b876e1a75fc"
+    sha256 cellar: :any_skip_relocation, monterey:       "225fa879ba8c8c60244a57e4fbaf283d2d11019b264497fe16f1971b9aa79e43"
+    sha256 cellar: :any_skip_relocation, big_sur:        "25df00c32d80ea19334143d911c4ca21bed869ac39bbf3b336a52458bcb9c2c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "846aa7d6a1ab7d2df91b2f13d57b67c90dbef6ee4c5ee716981efc87f9fcb313"
   end
 
   # https://github.com/grafana/loki/issues/8399
