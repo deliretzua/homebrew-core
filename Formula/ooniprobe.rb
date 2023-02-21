@@ -11,13 +11,14 @@ class Ooniprobe < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "37679340f9a5720d4d480208405ed525bc015d2ea939b566f0be232f86c18394"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "59518f6f9835d5de6f2f6657c00318d436139852a949f2347f6e2a2d1db5a319"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "baf6713f41fd35f4afd8af3195576539262fbdb9711e01a2802a323fe3a755bb"
-    sha256 cellar: :any_skip_relocation, ventura:        "0e62f1539a577bfcca9ac6de432a95b4f60d2588cb9a191ed39b49905cc6adad"
-    sha256 cellar: :any_skip_relocation, monterey:       "951cbef30b9dd1ee9725f2552962ee848b4b2d07bfc3217755a4cf89309a7267"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8706b71d9cbb454e5a3ff3c6a1ced5d51338d3055987686badf2e09f151fd1bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "89324bb339716a74d32e30a5236d6fbe0eca5aa855d0856466a795aa784d418f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1dd57aa045ce0c6fca0a3dde82d010ec925e3188ebf30b0fbf1b05ea4f96745c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3e7dfeac0148fb386e2d66eb37c0d77eecb28fb82cc1c83c1d17e7e66ff62b88"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "eac4f6d252463cb90700787205679543bf7d296c6f659d311c1422733c572c48"
+    sha256 cellar: :any_skip_relocation, ventura:        "eb43f851efc036236c02360eb11f8fa047ca376a7e6f8a6c0433c0aee969df12"
+    sha256 cellar: :any_skip_relocation, monterey:       "352e99ddbbbed86b7ffe59827eefd933061dae3176e88c97ed58309df3002092"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6bf4ff07b63cf7ee1c4489d914c6edc02044b73f2df43489c31d38cacc11be93"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8d6333124c42d9dcbfd097973766b7c6e28edca8000f9a30463bb522f225c9e"
   end
 
   # Upstream does not support go 1.20 yet and recommends using a specific Go version:
