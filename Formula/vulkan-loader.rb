@@ -12,13 +12,13 @@ class VulkanLoader < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "abce63bed67a2b13c9a04d5b0384c5f09aba7cc2623d7fd89d480c0424970af7"
-    sha256 arm64_monterey: "193e471f04ef9f5f1e96fc3352e80102cb404639553cb4f3ff434e852723d284"
-    sha256 arm64_big_sur:  "c610aea3aefa403e9e5cd37b42b41d0c3b2d8839612671477c90df0eb8aa7776"
-    sha256 ventura:        "ab388b9a7dbc6b0854070320b5b92c1409cf2fd67139df39e5b26a47a354a8c3"
-    sha256 monterey:       "78a6a3889712e4c25649836ae5b43bb3410ddffbd8f9d1ff0d82b1c8e73310ec"
-    sha256 big_sur:        "3204256ef6444b4640d921c347d6339a7ca124bc86ebff2bf224502b6c9045db"
-    sha256 x86_64_linux:   "669f19d1d70c04ffa844e68e6a320aa5b19ed4a0b59d522b5715edd5f656968b"
+    sha256 arm64_ventura:  "dbae5bc95eeb33607e8616620d2da0b619dc416e7efe99961c9a867948882b9e"
+    sha256 arm64_monterey: "6d666d69ab4619f57ec30e8f620e157281f29c197ffc71c16b8b876091fb0438"
+    sha256 arm64_big_sur:  "98b21d1675fcb9d6ed0be1c34d0222d4ff58bf6bc2f14e9d79c45f9e810845df"
+    sha256 ventura:        "568d2c5b878e5ddf900516ae8d42bd50fa5939113353ce82cc0c39da6ae4c082"
+    sha256 monterey:       "cf776f0ef5a0ee28fec169f7c368684f3335685f1a9498469df810b5591db80e"
+    sha256 big_sur:        "01991b0eba636bb6c0a69f93bfdbdf7ebba8cb0a1d4f50e34dabbbb17387dc49"
+    sha256 x86_64_linux:   "39bf751d408387a49a44500c0ddf686748cbf20540cb136d2227cdced0fc346d"
   end
 
   depends_on "cmake" => :build
