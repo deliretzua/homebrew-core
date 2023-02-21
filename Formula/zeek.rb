@@ -2,8 +2,8 @@ class Zeek < Formula
   desc "Network security monitor"
   homepage "https://www.zeek.org"
   url "https://github.com/zeek/zeek.git",
-      tag:      "v5.1.2",
-      revision: "12ee8cfa317cf708a11cc3d03d638b6ee6b97daa"
+      tag:      "v5.1.3",
+      revision: "0b8bb63846ecddb7e3a8105669a3a992c994c721"
   license "BSD-3-Clause"
   head "https://github.com/zeek/zeek.git", branch: "master"
 
@@ -42,7 +42,7 @@ class Zeek < Formula
     (buildpath/"auxil/c-ares").rmtree
 
     # Remove SDK paths from zeek-config. This breaks usage with other SDKs.
-    # https://github.com/corelight/zeek-community-id/issues/15
+    # https://github.com/Homebrew/homebrew-core/pull/74932
     inreplace "zeek-config.in" do |s|
       s.gsub! "@ZEEK_CONFIG_PCAP_INCLUDE_DIR@", ""
       s.gsub! "@ZEEK_CONFIG_ZLIB_INCLUDE_DIR@", ""
