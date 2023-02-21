@@ -1,8 +1,8 @@
 class Hyperscan < Formula
   desc "High-performance regular expression matching library"
   homepage "https://www.hyperscan.io/"
-  url "https://github.com/intel/hyperscan/archive/v5.4.0.tar.gz"
-  sha256 "e51aba39af47e3901062852e5004d127fa7763b5dbbc16bcca4265243ffa106f"
+  url "https://github.com/intel/hyperscan/archive/v5.4.1.tar.gz"
+  sha256 "6798202350ecab5ebe5063fbbb6966c33d43197b39ce7ddfbca2e61ac5ecb54a"
   license "BSD-3-Clause"
 
   bottle do
@@ -23,23 +23,15 @@ class Hyperscan < Formula
   depends_on arch: :x86_64
   depends_on "pcre"
 
-  # fixes glibc 2.34 issue https://github.com/intel/hyperscan/issues/359
-  # remove in version > 5.4.0
-  patch do
-    url "https://github.com/intel/hyperscan/commit/564ed6f65a1058e4e0adab69bdd17ba9138c8a0c.patch?full_index=1"
-    sha256 "21a22ac92c8f61c3b06f72919d356d594fc89d090eb1f238ce11e89d55e22bfb"
-  end
-
   def install
-    cmake_args = std_cmake_args + ["-DBUILD_STATIC_AND_SHARED=ON"]
+    args = ["-DBUILD_STATIC_AND_SHARED=ON"]
 
     # Linux CI cannot guarantee AVX2 support needed to build fat runtime.
-    cmake_args << "-DFAT_RUNTIME=OFF" if OS.linux?
+    args << "-DFAT_RUNTIME=OFF" if OS.linux?
 
-    mkdir "build" do
-      system "cmake", "..", *cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
