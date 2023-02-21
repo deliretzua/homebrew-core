@@ -9,13 +9,13 @@ class GatsbyCli < Formula
   license "MIT"
 
   bottle do
-    sha256                               arm64_ventura:  "2c300334e45a81a92e5e63705605d26967e0659de7bcefdc3a008cf570b4617d"
-    sha256                               arm64_monterey: "e707d8cc1b1d9425289ed2a079e5822eb192e2cb142dd5178b06e3739e7a89b9"
-    sha256                               arm64_big_sur:  "078b7375a845c941c0d889e946734b449efa63e391bf4547c917558431c83440"
-    sha256                               ventura:        "3006c97645137299e067e58f01d783565a0f6ba09c25beaa1ced7a4f71a041d8"
-    sha256                               monterey:       "705cc80c4af262aa79ebf52385123b5eb73888a056677c671d1dc34cc2721b27"
-    sha256                               big_sur:        "5878f0968ba9c3930c8abe8eff1b27428ceb80d6d0f300093a3339aef422cae5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e602d81b7b22107a15339e9b75da8c3299bf249421b6a1dfa1f64148dd92697"
+    sha256                               arm64_ventura:  "e1377580f96a1b98d54563acbf90af730f1cb2027d6d3e2f272171b40c169922"
+    sha256                               arm64_monterey: "06b0eb7132a1342b4611ccfb6419efefb90b3a44adf222b154f907beacc79e32"
+    sha256                               arm64_big_sur:  "e1fe50cb90f84031ff23d33fd5fe34b85330e2b649c77c1738c5d215f6f985f1"
+    sha256                               ventura:        "efcacb04bf31eade018d5157f3127ff31376f367436ada578bb9187571c24757"
+    sha256                               monterey:       "defbc94b94682706072acf0fe1a3099c7517e0afd439749d5d13fa01762b443a"
+    sha256                               big_sur:        "ab8bdd76a6f2a79d81b6f3b8f37ab4f65984f9906509465a56a50b877a5b857b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1416730204ff61c51cd3e2c31dc91863cb6db0995754b71b7422b7d93e0a67f2"
   end
 
   depends_on "node"
