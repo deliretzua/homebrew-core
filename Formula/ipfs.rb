@@ -16,13 +16,14 @@ class Ipfs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c0126368a62cd896b0960d2aad61f71282c71a32c8fb9066ea9b3783d58d3313"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3af99e9d64194a32d98dc2e70617dee65269e595e3028deb4ea14084ea145279"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3a4c21b4eb107ca4110eeb8effb50d3cd7e780b072e0506cc2518d7b1ee1c638"
-    sha256 cellar: :any_skip_relocation, ventura:        "8d87577f91ee6b7c14df6267e9532401e84770132a5b5b136b9a918e3b61f15c"
-    sha256 cellar: :any_skip_relocation, monterey:       "6947ddc793e19504cb0cc4bf0c0337e87ee1651cfcd01e53c3c0352343d5c069"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bf21f4c1e07aa18672a104f060f85184f81ea0da15b14163f2f32c7f687d8830"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "58ecd9f387e58a58e78ba10370fcbb1f41dbe37e0325766f5a0751a7303fd87b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fcbad31c879fdec667936a4554dcca91c691d66e44b9661f357a0809a00e6398"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "928391df10977e6fc904376b75a9af4eab747ee8bbd9a88fe3a0a018ae399df0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e90e63800fee90e649eaabcb0c303629af268d466106323feed7eaf85ebf2703"
+    sha256 cellar: :any_skip_relocation, ventura:        "aa4c5193277f7c900d647020acc15a18f9329330369cf8171867581708755f4d"
+    sha256 cellar: :any_skip_relocation, monterey:       "b164663b8126c003b6e77a1cd981996067e0af3cc0bf6a96ed6a69650144b80a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1a45563a05f0ec8250036e80069be098afd65f0cc4eacaa2c016150456ce127c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a595cddf7450bf86035d486f7221f52a60c0698143238f3388fca5fa3b5ca17"
   end
 
   # Support for go 1.20 is merged upstream but not yet landed in a tag:
