@@ -7,13 +7,13 @@ class Rizin < Formula
   head "https://github.com/rizinorg/rizin.git", branch: "dev"
 
   bottle do
-    sha256 arm64_ventura:  "d57557c11cd249618370438570556b04a457bc9d83c018d433a53bdb92f3c9ee"
-    sha256 arm64_monterey: "217c39d3197b31d88a573d259180c0880814c6bc4d32c709a890f5d5078324ca"
-    sha256 arm64_big_sur:  "819444b1f40e3f5ce5245f344e269cff3b9dbf37664028882771c75654014fe0"
-    sha256 ventura:        "1db2cc0721fbd4953e66d2a96a152e94ccf972e22e8116f540d7987e3e7edcbf"
-    sha256 monterey:       "32dffc5909c355ffdc2a1cf29844edc980c3c64187b6b83b44cada9d2d70f71f"
-    sha256 big_sur:        "1f379a0263d703c92be1d285e28fa84475ca421d53f6f8040c58a43350ac104d"
-    sha256 x86_64_linux:   "0949c2db7a151de8cd8e5972922accad50c862bff40896c66bc73abe49a8038e"
+    sha256 arm64_ventura:  "af85de7434c87871d4ec012ebd1d88c4b18bb7d5a46b8de2efd717bfc17ede1a"
+    sha256 arm64_monterey: "1c79e16d6d34e35fd98fbc4f4fd68d49400723e26c1ffbfb2766248de5fe36f9"
+    sha256 arm64_big_sur:  "97972495ae0938c5879fa581c8937f412f7837925ed5d0c1b8bc285c5aad21d4"
+    sha256 ventura:        "d65c985eb91505d8bf62be45efb9b94d7a3e28a5c0cc17d7e727cf2a2b03e1ad"
+    sha256 monterey:       "9930684d08fe7850c72275b57a7d93f29d25e6fc48a8394bc541e6bd0c2e8340"
+    sha256 big_sur:        "fbea8f829e4cd8c58371caafc956d3b46cb2cac18d0226711674ee29ac92ffe5"
+    sha256 x86_64_linux:   "c83d1d539ddbe37fc0775987cd9748d604041b973209e373e20310fa638e293d"
   end
 
   depends_on "meson" => :build
