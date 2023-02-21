@@ -7,13 +7,14 @@ class Gost < Formula
   head "https://github.com/ginuerzh/gost.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bef38a72f00cf2c1541f2a6bf34849a0c8048c7ca553ac981543befea759307f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9c37a3dbde37ec6ff5ba00bb00504557e1f8c908a5241ddd712c6045c9cad5ef"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3de7286627df04cbde8e03ca4b106c52bb4c1edc13f1fd9256399f4ac277b626"
-    sha256 cellar: :any_skip_relocation, ventura:        "53ead07134ab659928fd04f1433877950f2968c7cc8db46ea3b02e30f4c2d32c"
-    sha256 cellar: :any_skip_relocation, monterey:       "4c00df99bf712607fe4db01f67ccf75b5b8b2b677e62675f6e776c860c952ed4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9388d9690ef99ab96ee5ef00170a1de9657992457b591debc80c6df8b8a42f38"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c5a2ba36a5267f2e249f8645998d0707e6f20ca5134c1f88a16370d2900d9c2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a038791ff4264c47f939d8c23da79d7c2c6973908078a266a1c6e6b6b62bf554"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "15980cd4a66cefb943da580fda1debf22ae133a7dfff87544ee6e99b44a0c45a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "18fe7a2a916b7989b4c8d1ca8136001bb8eff011ceee2f6bd68721ab402fbab0"
+    sha256 cellar: :any_skip_relocation, ventura:        "bb5575025c71775c7f6ab8110ec58a314271a75522b0fc419e0d339466b02619"
+    sha256 cellar: :any_skip_relocation, monterey:       "7247575e8ddd0fb98d8894f33a0534e2254cadfeafd1216a8c211ebb61141e4f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "cbf1914a54b4ca00a52ce37a1519856a49eaa35a50f8afd7d0ede9ac5de352f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "19b99cc2fdc814773ed05924490b3896473889ad7a933b7ce1c80e53127fae5c"
   end
 
   # Support for go 1.20 is merged upstream but not yet landed in a tag:
