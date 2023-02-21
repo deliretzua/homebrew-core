@@ -11,13 +11,14 @@ class StorjUplink < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6274cd5ff5dc3998bf81b485c004221db0d7deccf23b4c66c5e781d0e3c053bc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7edea6e14f6b37a4d884ed5467a48d2242a6bc90b2711147f7314eeaae398cb8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7c42fb428d8346712144c87e777d0de444fcf86c0657ed84fb494c73e2c4e0bf"
-    sha256 cellar: :any_skip_relocation, ventura:        "15cbebb0d59eb7e10e0640978581d468cd262277a68eb1634092fdf05adb046d"
-    sha256 cellar: :any_skip_relocation, monterey:       "4be9cd29020f440de7852c2a1c04ddec61701f8a18dea70de4963579f8e1e8d9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1efc1168f6163a8a0a8beec1c15294c082382e0a8efc6f48d3777fda27c6042e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "226057ff620e59eef120705deed1c484c0b011ca102519718a52d530c001878e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2645db079a3998873e8f4f7d35b7f09da2e1e39ec7e4a340ece1f3202be5211c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "76b2aabd5d1852c538e7608e0c64d5e3f95c7ec8d4f9dcfeb312ac89d8441ec7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d3cd55494f5fe820cb36c6cbd120841927e07a9874ef61191e9d6b924645a0fe"
+    sha256 cellar: :any_skip_relocation, ventura:        "a9062922cd377dda2542b87b0548cad2a1401f351d9f45654ebb0b8472f9a9f8"
+    sha256 cellar: :any_skip_relocation, monterey:       "6a17e6d3576810c527e42874ca4804382a49af3d7ae048500a9092d4478e9d28"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3b244a75c3348137316567c5d217fa1a739985c1c8af9fc24efa9841a660a6d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7750b031bb79718eaaa0cc839a356e7894314f88375cecf01975490f2d11b7c8"
   end
 
   # Support for go 1.20 is merged upstream but not yet landed in a tag:
