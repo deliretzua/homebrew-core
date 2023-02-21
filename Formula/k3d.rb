@@ -12,13 +12,14 @@ class K3d < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0c336784e94c795ca14f2c386f3c29d820bcfe0cf039b1d5d4f9cb1aaf76a23d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a8d2dfd67037402cc11a7bbc869704b9fd4a0f3b1beb90b241bdf0320f0eb80f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "294e9615047ad90d758d700b75a8688f2c435b94bf872f89b40e0fd89a4e545c"
-    sha256 cellar: :any_skip_relocation, ventura:        "b6aaa5e7ce3f6ec0093878439ecf6160c3987414b2c897929eb34d9ceaed578e"
-    sha256 cellar: :any_skip_relocation, monterey:       "7e5febf2cf5790f4a873cd42db315dc565b9069669f14a3c63d4e71f675fed9a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "44ab04cf2b8c26ff02114018fba171be323e75f91cc88b2615309fc82f7df85c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b54a5483a88662242d44450a2d0a22e200ad22543bf2d3e8e5818e1b40715b20"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "70de9968bfe299fafd689ad73a306c2cd8b22cf5997de224ffd76e245305fc77"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1ad3e41baa5cdcee825c716a043f7e1324edc5875b9501d07158c4e8152b86e6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a5770041d0636fae5f3b370fc8fdbd51dd0f51032a3c8c97629c4822af00676a"
+    sha256 cellar: :any_skip_relocation, ventura:        "2d21356473666c54aaee7436c91da157746e6b091f17475069c91233c573f40d"
+    sha256 cellar: :any_skip_relocation, monterey:       "f1fa2be81ffbed9cf23a9f2258d539e87a5e2feec5177392683f4ecd6b9a363c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "740722dd62a2a36bb2eb3f657ed6aa25c01f4db0e41a64d1bbef65d4b351ae39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab6e8dbc60e972893a34168c37cda4e644aa1df0db72d4fd464e799bd1118b83"
   end
 
   # upstream issue, https://github.com/k3d-io/k3d/issues/1207
