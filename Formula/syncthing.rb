@@ -12,13 +12,14 @@ class Syncthing < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5cf4b8caeaaa6f6bdd49407eaec17becac3f89b064d34d32d904ca2c97c018a1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "19c3433dddc52c77bc99fe8007e8e0bfb2102615b45143d4a21eb534973e31d9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a071039390dd9aaa0d0631b487fa6c586862f370bd2ffad49615e4db8f81227c"
-    sha256 cellar: :any_skip_relocation, ventura:        "74f5e4406505f8c4cd4abf4dc08d5b8919b89da7256a84302b353bc358687c89"
-    sha256 cellar: :any_skip_relocation, monterey:       "84a90e737f17d273a8c31fe7cb8a3d85987fab8cab99e3734db33e266724c3c9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "892caf4a4879181916efb60d5a37d6dc8060896911a9fd8b8c422e1afc6dea12"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7aff2937905c367c3f0c94f76181a5666f6e079310dc956e42d0bb874c9e30a6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2f99b50924f35ba44663ff155e5145fe208082468bec8b27a4902318ab1d2ebf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9732af6ea84bd42f920faeb32832fadcedc5f59c68796241e2bebd0d42d07b5d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d8d4a6349fdd99b654e8e811e3415503e342be57df18c78c53bd2c6b8e9aac2c"
+    sha256 cellar: :any_skip_relocation, ventura:        "b7cd29949e4179fe899d67bf626392688b305a59920876837330ff8b4433bed1"
+    sha256 cellar: :any_skip_relocation, monterey:       "f68abc5b36f103daff4f608be6fe649496216eaf30d852e3c60da96c57cc93b2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c2071bfaca4e5fab7acbe0b591025c0d142cd1e5b696bb8713ca44dc5db5efc0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe9b690ed914f9ea87bbead57374b9a7bf948a271435be3593d187b2a72621fc"
   end
 
   # Support for go 1.20 is merged upstream but not yet landed in a tag:
