@@ -8,13 +8,14 @@ class Skaffold < Formula
   head "https://github.com/GoogleContainerTools/skaffold.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7219ed397048efad7c51ddfbeed43b94a2f0cb34b6c4280cfba5fd87740aa92b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a2be3a149316bdb205cf52cacd1184b21bc094d47de2ba09466f285369e26fba"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9c07939ed16e40ce7aaecaf35cc40de5d5f1a5f965c07aaf83cf8703e187d1e2"
-    sha256 cellar: :any_skip_relocation, ventura:        "d913ca23899d452875f7a2d70bc67188911898cf18a2acdce25d2165a21bb423"
-    sha256 cellar: :any_skip_relocation, monterey:       "b6fc296c4de9006c261d5720f53c9c9ca040c0e509d19d5afcf37b1710290788"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c8f824f399aeefba17bd9d5a60645b20dfa9507b4f0153262557da1ad98da54c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec9d01a4758ef95cdf54ec96ee018bc3c343c8fcb102a4e7ea584cb3f55e651f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d08fde1c8fec4c82c4f6d080a596e61230e68dd6ecbd62daf8858a1c35a3aef6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8d73bfdea9adf4e8f51e6213536fc6e4ecf98fc53fe4420beca39430f3ded82c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "762fab1c47520f7c9b744f88acaf43692f999797b1e4c88d4d9a387171b1bd8e"
+    sha256 cellar: :any_skip_relocation, ventura:        "2b63cbb40929d8177893d54fdbe84b4cf2d79ef453e607de2328073177908f38"
+    sha256 cellar: :any_skip_relocation, monterey:       "82c007ecc2d70e4af37b6824fc4f9c2d928200ad61f57ae5878227cbce33bbbd"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e7210fe85c14b2b1fe912881058b623881b0f9f3c162ad134d9cf3e92adb633e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a6c6403dee3cbc108229fbcda13f458af7830ad229b407545cecc67ffa5c44f"
   end
 
   depends_on "go" => :build
