@@ -11,6 +11,16 @@ class GoAT119 < Formula
     regex(/href=.*?go[._-]?v?(1\.19(?:\.\d+)*)[._-]src\.t/i)
   end
 
+  bottle do
+    sha256 arm64_ventura:  "c60ef2d487bc835f5517faec0f2030b8b991bfacf86f821b1530eb6b1bfc7061"
+    sha256 arm64_monterey: "e52e672e364338f9aa6a5c46e375e6f0f4a75a142b135f197da2ae664543743f"
+    sha256 arm64_big_sur:  "8f718370e37cad168918de62d9185a6b9f05823756373cf85b96190f4d2b3f01"
+    sha256 ventura:        "1f6af2af7764cf8b54746708dc1a2105a751d6c26b3f576040cdc4cf2fa5cfa6"
+    sha256 monterey:       "80bcd46bde3b726a6d68b14bcbaf0800d9f293b05e542921877ea9ebbb80e850"
+    sha256 big_sur:        "0858d01fa96a6ad32aff91830c009eb9aeb67d996624def140a6ce342579c7c6"
+    sha256 x86_64_linux:   "28e9ce5e8408a4569f54b1b60b658a6dc61360f0d3a716bd5caaa7ed75de1bfd"
+  end
+
   keg_only :versioned_formula
 
   # Don't update this unless this version cannot bootstrap the new version.
