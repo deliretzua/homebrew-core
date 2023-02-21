@@ -7,14 +7,14 @@ class Gomplate < Formula
   head "https://github.com/hairyhenderson/gomplate.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8890dc7468a058943c8c3a386dedc24fed14d846ac3869ce482b5761da228f5a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7422e0c33f8344f90aaf7143ab3f9efb14765e1f224cc483668625a9c543dc03"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "25361aea3bacfacd8e865b8187d961423172e995bac7bbcd1decc92a1aebe9a8"
-    sha256 cellar: :any_skip_relocation, ventura:        "f447696df84656adee848c3203a2de6e4c01a62ed11495f36b5d2bdf1b5db7e1"
-    sha256 cellar: :any_skip_relocation, monterey:       "efd2b06c6aa0f8afc726a9972ed3fd1a27d82a52d0bfae4cc9452ca1164ad537"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c65e330ace2baa2b4cd8d84e264a888228317f515847429ca080abefa64fe655"
-    sha256 cellar: :any_skip_relocation, catalina:       "5598e94fe9d798ae398770c4acb1ba429784deafbeb309b8c49f4af604ffebbb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f44f0319eb88531404a40470c8f3f351c543e328c90fffbf1e89985664ed2a78"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c05588c8c729ca113fee428653b850cf4fd16ff2b6ba459ab10c8f2aee9cc882"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bd4fb2649d00b524e5246d9a564b16e7480ebef52aa69021bf93f1b287025141"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cf5d5d2764fc6473146769f85f06391765d14936bb6cd663861883aa855f4107"
+    sha256 cellar: :any_skip_relocation, ventura:        "1e40641b772f5e01865d4e6e3e5fe81ec808ff084b0d9e1180ec536a3ddcaa5a"
+    sha256 cellar: :any_skip_relocation, monterey:       "820d9c3fc7735b4f9feb4666d29647e94203a7c9401c23dea44b335bee58db1b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "63048888c30c332cca0e300f0fd095e6d6d1d981ba3cae1691304b9225eb2187"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f9863a55d812073a3178688c987e123d8fd634e8fe611a324150c73f0f8c2f6"
   end
 
   # upstream issue report, https://github.com/hairyhenderson/gomplate/issues/1614
