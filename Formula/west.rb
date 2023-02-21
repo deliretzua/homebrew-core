@@ -9,15 +9,13 @@ class West < Formula
   head "https://github.com/zephyrproject-rtos/west.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bfd642c688a6faf1e631076913634527aeec5ba2a491cbfbe04f416a863a3dd1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8b24b137ec120b1309da110333531ecd95c563db9033ce3244619f933facfa8d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c5a6cba418e165f66aeebd6c9a0320aac87f97edd800ef0a6342f9d41c4cf9ea"
-    sha256 cellar: :any_skip_relocation, ventura:        "c075c2cfa7ebed2005a9f00cf870a9344f6951d70c31cc9d0e731a88b05c24e0"
-    sha256 cellar: :any_skip_relocation, monterey:       "c6d775b67b23fae50928f859f67a9224b1c665e93cad3edc92559bc206e78e09"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f91d9ee4e59bdf503b98c14faca5102aff2bf75a94031b58faf4ef3b45eb0e70"
-    sha256 cellar: :any_skip_relocation, catalina:       "284d97fb4bfe590b937404ab2b5d6915e211f7fb9a1e15791b2d88158e3ce158"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cbcbd3f97e2da46276cb1be5df0b99c6b0bfdcc93e89783965842866208964a3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "46ab551b998b3b487583c65d5654aaf685e1649d247dcbc64c5326126628931a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f19c404d19f36b99b8906428df8a8f860c1bb9164341ca9898ca206b6f8781ce"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6f74441f20eed938e2f22c9dc7a1716216ad5748abf6b3e6b17c118f9d9996e9"
+    sha256 cellar: :any_skip_relocation, ventura:        "a152ddf40c0da8c7bb7456a4adae1247cfb9c9f765a486c64b617056e887a170"
+    sha256 cellar: :any_skip_relocation, monterey:       "ec4972f36c1112a15f284d78c1cadf4485ca064d83e6c1ecd047eac57b9e8688"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e776bef6572b3d179e054b4ea2bc11909211b68fd54824df290d28d4be9dcbc9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec32c20321b4b10b68c709abdda37cf3c8437f307a73590b2d3abffde3756930"
   end
 
   depends_on "python@3.11"
