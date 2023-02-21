@@ -13,13 +13,13 @@ class BalenaCli < Formula
   end
 
   bottle do
-    sha256                               arm64_ventura:  "f5e544b9ea8d97eb61ea5fff604997e01d12c4755b6aac9adc8180f264394c92"
-    sha256                               arm64_monterey: "e667976ce75df0cc33bb8afd0b5f40431c0d3dc66bb26c9e56b27403268a7256"
-    sha256                               arm64_big_sur:  "8e876f59466b88b0b53369d5d244ea2c3394cf31f30aedf732e2e165cfbc278d"
-    sha256                               ventura:        "b31799b2f490542298b7233231f13141df3d4a177ae0af5aee4d05703c33ba3f"
-    sha256                               monterey:       "3b9b7c25e6972deb63a0c143edfe00cd86fab8ac234be9bee4f6000eb1faa709"
-    sha256                               big_sur:        "26021e0182866632d7f9c108cd964937e8d7400937f41b6434f14d8deff94043"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a65813ed2c8eaa8c2d447b053338d0b4f0239b168b4c43f3cbaf31f2da6d1b1"
+    sha256                               arm64_ventura:  "8a8b54266a4ba99eeb77c47785d779670531cde0a932da21d4bf796cf1b1a8cf"
+    sha256                               arm64_monterey: "cc1fc5c77ecb9d4411164a483e0a6bd87b34ca69b5b2e88aa09f3b15694c951e"
+    sha256                               arm64_big_sur:  "72e029379a2e7f3140c9d64b9efba170321dd1651d17a874b289ce90ee299d57"
+    sha256                               ventura:        "5224f955b1d5e5cc3518430a4ec194085b94b82b0560602bfa0465531f3490c9"
+    sha256                               monterey:       "2bd519966174eb79b0120694dd2e09b7078e0a03eac7911ea7210d7c7d864558"
+    sha256                               big_sur:        "3163055a8d2ab87f29317a5dfec1f850f59946f82f3fe4f7763fd7500f7c36ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3e3ccfc853ea3d62f119532863a92ccaf9e55de0b8ad8f90d7338ac0e7717a6"
   end
 
   # Match deprecation date of `node@14`.
