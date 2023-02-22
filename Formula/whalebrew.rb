@@ -8,14 +8,14 @@ class Whalebrew < Formula
   head "https://github.com/whalebrew/whalebrew.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b261a5634eb50b002b2611c01c633d1f633cb9407f58f9659d565057bba82a9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2b261a5634eb50b002b2611c01c633d1f633cb9407f58f9659d565057bba82a9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2b261a5634eb50b002b2611c01c633d1f633cb9407f58f9659d565057bba82a9"
-    sha256 cellar: :any_skip_relocation, ventura:        "aff7415c0ca2bbf63f06bbd53474f0870a5ce6259c6cbdf16778848d9c74c1ca"
-    sha256 cellar: :any_skip_relocation, monterey:       "aff7415c0ca2bbf63f06bbd53474f0870a5ce6259c6cbdf16778848d9c74c1ca"
-    sha256 cellar: :any_skip_relocation, big_sur:        "aff7415c0ca2bbf63f06bbd53474f0870a5ce6259c6cbdf16778848d9c74c1ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1b48ff5791412a01db7203c15164644bddecb122fb037e0b84dc0cc468523ed"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "45675eb4fb83c79dcfa2df9943824504e940c8804f707839f57fe5db0524e732"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "45675eb4fb83c79dcfa2df9943824504e940c8804f707839f57fe5db0524e732"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "45675eb4fb83c79dcfa2df9943824504e940c8804f707839f57fe5db0524e732"
+    sha256 cellar: :any_skip_relocation, ventura:        "ee9bcc9fcac2c928168114ebfa65144fe4ac709e6b83067d472b42046a724899"
+    sha256 cellar: :any_skip_relocation, monterey:       "ee9bcc9fcac2c928168114ebfa65144fe4ac709e6b83067d472b42046a724899"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ee9bcc9fcac2c928168114ebfa65144fe4ac709e6b83067d472b42046a724899"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba07785a22eb5cb03d897c63a04173dfff74c6f4def5d13ca855b6f342be441a"
   end
 
   depends_on "go" => :build
