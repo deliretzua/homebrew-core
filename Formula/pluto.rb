@@ -7,13 +7,13 @@ class Pluto < Formula
   head "https://github.com/FairwindsOps/pluto.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ada2614d0f5f0202bd794b3de3d0ca1abb1df463c3df6f645b9613a2f03bf588"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8d89b425314d78c3175608bb5fec215fa13abc4a020574237a5859b287d13303"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "90675dc3176db8e97f400fe8dee3a5689873ee83732f78e7c315595e5c8778e5"
-    sha256 cellar: :any_skip_relocation, ventura:        "9786e48da56b4771a0dc6cc43e51a55b12eb1c2d5d103e3a7b8aee7b4715eb64"
-    sha256 cellar: :any_skip_relocation, monterey:       "1220fd3bfb0e42a1c5cedb05c61ddd4d9980aaa5a0c37ff6d54d672783b2e8d8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c6a6074795d38423944911ddb8835a2922f9ae1a17ef3e900b86051b2a2bc104"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "989dc229f2aee3963acd49e5d592e4443976e6bdb2851c9a3ff9d5d89dfee750"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d73bb56447041820824424c0f7cb9dd77edd861d75d596323205ac1e664e8aa9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4e0b208f268be7b68cd6dbd1300a9dfe823d76abca61108e26c04791096e5930"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5a1c21f75b937468884fe85b99ba06b4cfa923d8e5f15f1734c670a4f8964bf2"
+    sha256 cellar: :any_skip_relocation, ventura:        "3f191a551c8709affb3db8862bfb730a294aff6842aa3b07f583d3bd6db96d1f"
+    sha256 cellar: :any_skip_relocation, monterey:       "f51076268908479b4c0ac256ad250f8ea6bd120ac121acfa4a498ee3d1b48ef5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "07adabb5cf54b33ed310953d2dd10e63738b11dc1041c00ac572043d00461bfe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d8e3e1691d255d96153c4a274918b82b4561fdc48ec2a238dcbd92382352cae"
   end
 
   depends_on "go" => :build
