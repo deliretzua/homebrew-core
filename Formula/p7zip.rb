@@ -6,14 +6,13 @@ class P7zip < Formula
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dd7cb7a6a46e211dc70b68c37d479aacbcdc10ff82c7ccb362568a8419bb4a02"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e547edf3d09ecb55e80732926e888aa0b1b1c4e26c3c9d426ea5feb114d68933"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a2b311e771e182e09c82bafd5b4022787a48dee235e119ea3951eead83679939"
-    sha256 cellar: :any_skip_relocation, ventura:        "9719fb57808dfdf16c2b24d742412f5cf3c2646518ae22c670b4780f69265669"
-    sha256 cellar: :any_skip_relocation, monterey:       "8965f47208c8e5fdc1311ed3e2dd577e68c0eed95bd6fd772ffa621a87597721"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1e2401bb27e6fb23e7d07eff10b78ff3f3b334aedf2344ed1df89b7cc5c7940c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab12417b8f6a38cb88eb9c5c90de17844b16e3441934427a9cfe275de82e2fec"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6513bd9bfcd09b10daaee0c6a932c81e26b312ef3c3c9c0e5365032c830a4a9e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bf24dc934ed3ed7af833d8209bf051ea7d3633883dd2124312daeeee7f05979e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "957996e3f011b38d511ad7a6cc276a90befb4a81a73ac7b11f6a60727f3c7970"
+    sha256 cellar: :any_skip_relocation, ventura:        "972d07a3d845624cdd5ec397b1632a51e6c679b0b6b31130a5ec29a8cb51d9d5"
+    sha256 cellar: :any_skip_relocation, monterey:       "dc0a43db9ec4a64bab1ef02fc8dd73c63bec2eda9d74b2efb408b7b126f37d49"
+    sha256 cellar: :any_skip_relocation, big_sur:        "df7d89c12a8d9c0d3499ddba4ef4cd0cd606a86b00578a6b15ea3e03b7969449"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f710f7278c964390af99b4fd4776a3054aed68952acaebc98e725e8b9a638c21"
   end
 
   # Remove non-free RAR sources
