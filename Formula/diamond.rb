@@ -6,14 +6,13 @@ class Diamond < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "29b72714b65599913d889c6ce97b64a9a40fd453d00f3cb58be9f45974ff8d6d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b1e1daedcd1ea44e29b70859d57bcd6f0983b9d38ac27f32e63b1072002f452c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "aa0e405531a810c30e7e86414dd6bc5a1a3d362af243329008623c703134dafb"
-    sha256 cellar: :any_skip_relocation, ventura:        "e11d1f81fbf3a6a664d6b3e435e96e43eb701e5d95bd2bd81eef5fa2f9168b7e"
-    sha256 cellar: :any_skip_relocation, monterey:       "63dd3620cc1447aeb81b99e636301489ca6d2d3ba6a42f7c3c3432eacf82539b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "619e8ff1bbfe88b3336831c3f324ba076461cdbc5a9cf8638d510ca0bf1a9dd3"
-    sha256 cellar: :any_skip_relocation, catalina:       "392f3045b0972f2ec771f1afd3349da404e0f083b57115dc093125247d22e5db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c3558c6daf8a9f202cc9c1ae5081aef8a5671f4b0879229e6b6d1e886fb91ce"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "048afe8f4aaedf2edcdf7556e86852d2a2bf9e422392d8b230ead2ab7eb3deb0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c06489c1429f6d0f9f5173e95c0a77d687f3838fd94eecdf84cf80656bb2e845"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "05dec99fd645fc14cda1a65cecea093ede97133a24d07cccb648f59b2f3b25fd"
+    sha256 cellar: :any_skip_relocation, ventura:        "b30bbf94c2bad84051a4d197b75f1606b593eb8857296046d804c8b2d4e37c79"
+    sha256 cellar: :any_skip_relocation, monterey:       "974aa226a4dbc2ba46e57e9ec130b653c07f5481298714d8bacb690ebeb93024"
+    sha256 cellar: :any_skip_relocation, big_sur:        "aac71eae2009f881062264cad63e9f974891aed2bec7cac55524ad498968de17"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "391842f8269f62f3113a42e7b2ad3be5683228a5cd2d85e11ec1408de985667e"
   end
 
   depends_on "cmake" => :build
