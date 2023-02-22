@@ -7,12 +7,13 @@ class Fastfec < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_monterey: "319e719a3319eb0743f3c2f4bad9982f856d61ad6e48a12834b18d0824f43db2"
-    sha256 cellar: :any, arm64_big_sur:  "ebd69d8e9df72f65268e5edf6df685edbebf9c23efe92460fc991b156719c6fd"
-    sha256 cellar: :any, monterey:       "d4419d3e30e3b37fd68efeb77714b96ceac2272681208f6642cb93cccdf1a9f5"
-    sha256 cellar: :any, big_sur:        "2077568c25d019f94010d2ffd52d59bfbc99426bd46a40ac790f453325cbf51e"
-    sha256 cellar: :any, catalina:       "00b9052385c892e80ca899d30f20fc5884b9987b59566fc68512709b41107735"
-    sha256               x86_64_linux:   "20a3766b4146a2279677f2510b066b238eef632c7f19e30c9a589deceaaa6f9a"
+    sha256 cellar: :any,                 arm64_ventura:  "8cd93c3ee8341f51200494f88ea7988b80f9572f31ff3ce887613aca2eeb7666"
+    sha256 cellar: :any,                 arm64_monterey: "e4a418b3cc7102643171d183f760d8472e346bfd867b0f9b1c9efcf77ef989e3"
+    sha256 cellar: :any,                 arm64_big_sur:  "cf8a31a76e96182523864464e836c933da99eb1166dca8c9ea3565c279f4e5f5"
+    sha256 cellar: :any,                 ventura:        "f8b6f48029a6b92236f23a25fac991956522d2ea3b406367dad94a718c581179"
+    sha256 cellar: :any,                 monterey:       "03535ac3132d60e752fa89765d510550586906ab23831997b64298957f3b6326"
+    sha256 cellar: :any,                 big_sur:        "2eae2434276d7188f96c8897118f4573a9beab27feabb38215b7d317c8067ab1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7566d57296f3b7928138acda003a04e9b64dcffa8d2c0d843a1610cffcf31853"
   end
 
   depends_on "pkg-config" => :build
