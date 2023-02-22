@@ -1,8 +1,8 @@
 class Fastfetch < Formula
   desc "Like neofetch, but much faster because written in C"
   homepage "https://github.com/LinusDierheimer/fastfetch"
-  url "https://github.com/LinusDierheimer/fastfetch/archive/refs/tags/1.9.1.tar.gz"
-  sha256 "0b6d31bc213282b26a7c2fc9706d41e1669a7ea8875154ba6aed1ba428c92b3d"
+  url "https://github.com/LinusDierheimer/fastfetch/archive/refs/tags/1.10.1.tar.gz"
+  sha256 "3741521d265ac948cbf0fe3a098b3296d1b18d16f3a159fd6669794ef720525b"
   license "MIT"
   head "https://github.com/LinusDierheimer/fastfetch.git", branch: "dev"
 
@@ -24,6 +24,13 @@ class Fastfetch < Formula
   depends_on "vulkan-loader" => :build
 
   uses_from_macos "zlib" => :build
+
+  # Fix build on macOS < 12. Remove when merged and released.
+  # PR: https://github.com/LinusDierheimer/fastfetch/pull/425
+  patch do
+    url "https://github.com/LinusDierheimer/fastfetch/commit/6983c165ee8bb6860640cde1a333e77b9b736529.patch?full_index=1"
+    sha256 "b0da380a16fcaf3aec06bf8127dd3913583b424d54d602cc765c44687b884195"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_SYSCONFDIR=#{etc}", *std_cmake_args
