@@ -8,13 +8,13 @@ class Ghq < Formula
   head "https://github.com/x-motemen/ghq.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a5fcdc35224b0e20b8b0d478963dafdbf959709855ba1a0daca8987c8ac7fbee"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "816e051f0bc5c73578cb6da49060dd4a50d1846f66f4956468b8c4c8a66d4638"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c4ca80281e5feeea036edcefe116d8d4343ab1d50afb2260a8a82a49d38e94fe"
-    sha256 cellar: :any_skip_relocation, ventura:        "2ed35e76b1682a9e62bfe00d6e25d866e81756f1df8d9bbfe5a167a74df4ebd0"
-    sha256 cellar: :any_skip_relocation, monterey:       "4b6e07aa7f6c18fde824aec219a17f5e1e120f2392091ab7bfccf1cd7452519d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1849add538e2397050493115622f78bc87b98264e034655d61ecbdd3028095a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "91edb3f042b18e40a06626daf00e640c0830a9b5dbb0a2eccbf6ca60f665e82d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2aba0daa438f7965bc26d14c9446d877b4db04182d920d55e61727f64caaa848"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5211875ee9a0147b9e85a6e4b23e7c99f6ac9123d57b8957f5b55bae1d0df649"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c816c7db8ca9c116ad526bd84b063bb1bd31b08ff1cdd3d01534a5fde9067611"
+    sha256 cellar: :any_skip_relocation, ventura:        "190fa3dd14e708c997f76fa9d497c21811c64855c76cb42f1ed9aca6d28336df"
+    sha256 cellar: :any_skip_relocation, monterey:       "75cac47d922fdca3e80d4d433ec955048c4ca58d7fd964012f4cbaced58ef9f2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "71c161fc5532a0051c3b14229f69836f0b7b7681dbc49cfe7b0fbdf0323353a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cbfcb037c4a4c913d33c6680ac877ad0f8ec7a465a1c4c868e108b9563517b9a"
   end
 
   depends_on "go" => :build
