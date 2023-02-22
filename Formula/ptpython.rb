@@ -9,13 +9,13 @@ class Ptpython < Formula
   head "https://github.com/prompt-toolkit/ptpython.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8119a9151bf965172dab4c79593e20d6349530ab7af5c70f044ee9f3fcde1320"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "04d8f2f4fcc40c3e8f9270dffa586c87e1e92f8362efcc1fd2ca67b78251e3b3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bb39b8ee66418c86e8ddeeca0a9ca852f0ee58b29f79045c2aff398728ea1ce4"
-    sha256 cellar: :any_skip_relocation, ventura:        "7d09ad6c3aa4fcc54b8c5af0853e426260880659cc12610dc1227d77977ea721"
-    sha256 cellar: :any_skip_relocation, monterey:       "aadb58206b8587d106b9ea36cd3b1a68f8be4ec029123ca675eb7a4ff3a0d972"
-    sha256 cellar: :any_skip_relocation, big_sur:        "abf083f54beb1d98083981115e83ba826e8a9e73992889ce29769e11dcd6ffbe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "89462b8c6a3c93543f16fb70e8753ae02788d27e5700343ebed89201450b9931"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ae423ad98867ba33d617d85cf0238e8b72593786d6681f195c91679b0d4ad0ef"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "47bba0b5aae615868f735419b935c70c1b97144b95152f9f31f152986b85f6e8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b5ce664b22e7d3d411812234546d60b2ced4cc1a5295721b15a962366e41271f"
+    sha256 cellar: :any_skip_relocation, ventura:        "7c71c1fec1fcd8e5bbf5e9ec04a1990306d07030f2076796b6e1d45bc51140b6"
+    sha256 cellar: :any_skip_relocation, monterey:       "d00f080700e6c20c0e8cf3f21278111fa9fa9227d8fb8a43c655758fea327226"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c3913be54671d6b1d439ecd379e4352257675a9a28ba9a73e95502ee8d43bd27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "415afcca297305d11243407d24ef38fb5b69aa4ff2c3c964739dbf76e86207b4"
   end
 
   depends_on "pygments"
