@@ -7,13 +7,13 @@ class Jove < Formula
   license :cannot_represent
 
   bottle do
-    sha256 arm64_ventura:  "dab2713caabaa568a7a8ad9b51928fe67a9cbd4af93fa36c9b15bbbb80ec47b7"
-    sha256 arm64_monterey: "132a60a0db17f572b052d619330e51a26622a0cced239769eea9d6078269e1ae"
-    sha256 arm64_big_sur:  "86c25c839c2840966fd336cc52cdbbef8d2cf83a96fc76ff79918d5368e21e4c"
-    sha256 ventura:        "de72aa109f60feb1246cd96aa8eeba5959f27dded81a2c48f5a88cb32d09c585"
-    sha256 monterey:       "62416384fee5373051cb7dd5522d7a8311a49127e6747c9331f8f95b6a4e89d6"
-    sha256 big_sur:        "afb51b5da7ea5971652f148e429c71b825110c831a6e81f261e54bf191890c62"
-    sha256 x86_64_linux:   "cb5e83e0c790c33068c0fa4b06277abed8fe7d5db2718420ff6a9b096479d9c3"
+    sha256 arm64_ventura:  "2e9b2657fad6c36e1e1b39b066ebf5ff7a1550e06282587fec73f12cbb88b64b"
+    sha256 arm64_monterey: "9f9a6579f6d98004f457a666a5df11774a82bedab8272e97614497ecb97b8a85"
+    sha256 arm64_big_sur:  "ba671e0e1eb0b24d2075c803bbfbeba555b68b63ca33d2f8dbbd2610fc245b5f"
+    sha256 ventura:        "a3e1c2298a38918f69d2fb8a61a3a5874ca56bf3db8547af2f000c4aca0d4fca"
+    sha256 monterey:       "3bee4c0523992eb074d6d794ef6aea2c49c1356107de08fd7ea3453c3fd0d215"
+    sha256 big_sur:        "adf4187a1ea7ef17bf1855f6d1b26391bd64565f942adef7093a4635c8cf76f6"
+    sha256 x86_64_linux:   "e5e285d1faece205fb8b5406b13f18d2925e9b91fab638645d80aed788317706"
   end
 
   uses_from_macos "ncurses"
