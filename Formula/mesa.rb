@@ -17,13 +17,13 @@ class Mesa < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "e6724916193f630d5ff91e99147e4fcf344d026453816456daa95b256fe01141"
-    sha256 arm64_monterey: "fa76f4d216fb7994112b6f660bc876276a1f35a753449b21a8a65ed69c87367a"
-    sha256 arm64_big_sur:  "371bd78519bf09b2909e7925145a62e91e76629a5ce86208a41663fd0f00cc2c"
-    sha256 ventura:        "4e2e8cb812b29f04a051d1757edf34cb67273f7ea71e31d93c17b33bf817222d"
-    sha256 monterey:       "01979d65294b11fa54a1074d98ef450ff06f78ec66b1c04da909057d69528a1a"
-    sha256 big_sur:        "e57fd814b647fa30fe5a7070cfdd430036eb8929987559c627a1797ee552c441"
-    sha256 x86_64_linux:   "2e284df581a48f9fad309d7fcbfd879f889ea8c9fbef095e7505cf44a167472b"
+    sha256 arm64_ventura:  "78ff0ec3c6cf55e5d1ba90c2c0fe18ce49b8751bac823027f4a96b0110f76c08"
+    sha256 arm64_monterey: "44359d2253b1da9759a203cc086f5e7afa33dd489ecce8250e5b869d78b77c17"
+    sha256 arm64_big_sur:  "1524f6487d68a066ccc0e722b6d6cdea5c6e0202379ae646ec40e8859341b18c"
+    sha256 ventura:        "fb2c5772bb8d48e6d5c2d361362be7dbe0232c214a366ba73e457e1f66d9988b"
+    sha256 monterey:       "5acf9d9aaf2c7a7043c1e47e3792e5e6383aac48ba96266aaf77197cbe342c19"
+    sha256 big_sur:        "57282b092fc2132ad1d724bac7a39014295ad55478586d82db5741a6cd6a30af"
+    sha256 x86_64_linux:   "c02a17bf31d456217110de520fd65972b6873e1c7007bfbe725f9941074f3649"
   end
 
   depends_on "bison" => :build # can't use from macOS, needs '> 2.3'
