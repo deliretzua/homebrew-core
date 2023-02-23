@@ -7,14 +7,13 @@ class SwiftProtobuf < Formula
   head "https://github.com/apple/swift-protobuf.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e1a1bfb300bde92ebdeeffe944519b47b3c1f87782f94abcf732cc6337c83d6c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d2942e98393b832e111f497f0307519cb804da44805ea808871257a985c5e828"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a2edda1eae560c71c5af63c40b4c1f5db4f4519f19e8c687a1164a68824cf79d"
-    sha256 cellar: :any_skip_relocation, ventura:        "efd376ffbdafd5103eb3b30cf344ed026db5025eb37b79fc09d8091be96cc0b9"
-    sha256 cellar: :any_skip_relocation, monterey:       "9f50576e1878a6223afcf1070a6cf41e6da512a2465ff2aad2b53344220a7cf4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3d8d11284d2023a21d5abc0557892388862c4e59e7bb412b5306462dfa34ed80"
-    sha256 cellar: :any_skip_relocation, catalina:       "fec03e634072c0d7dcb80427bafbaa9709104f035d73c2ab5c72323d462106d7"
-    sha256                               x86_64_linux:   "e03b4561a10795235ab9459391fed4599933bbd0c21dd4308f1a0c98d83a8374"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4ab81cd57fa5d4e0deceb37a6f8154358487993feb4e285b6a89b2ff64696b1e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ffd933a75cd2ffed9df15963280d588f52fdbe16406ec717b68e9cf949d06de7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d4b88c2de6a47a6dbfd5610a8593fa4a02a3a0873c61b3a3c475aa94b70d4c55"
+    sha256 cellar: :any_skip_relocation, ventura:        "9316fe689efc7fb59bb3054b6d46129e77b22d1be37b26a2e2699f90fc02a65d"
+    sha256 cellar: :any_skip_relocation, monterey:       "3379e66262839bcbd26a18a6bc45905753b8843fe859b6dc87df9136a5155f44"
+    sha256 cellar: :any_skip_relocation, big_sur:        "caeeced8da8117c23ae74c10ff7fc6df514b87fa62fe7420ad8d771aa2bfdb15"
+    sha256                               x86_64_linux:   "b4d312e67d6c85613a57ee2e030a25b398bdd98da2bbde591597f953a31da8a7"
   end
 
   depends_on xcode: ["8.3", :build]
