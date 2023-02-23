@@ -7,13 +7,13 @@ class Sqlc < Formula
   head "https://github.com/kyleconroy/sqlc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4d68c12c07963bcfbc2b633464e7fa77a36bc73a2bb3063a5b5b6f6c44b599d0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "45b3931a59c064db42a1365fe51b32e816585ba9b56eec3865f42553b404e6f6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2cdfe83d3ed6b8b629c8eb8bbee56f83500ce7a1028ba838c27d7e15f8368e84"
-    sha256 cellar: :any_skip_relocation, ventura:        "b7e8cbb869b60c4c6d6db89c78a140dfcfa9af0e78ba76fdcfaca4ebdc4b5cb2"
-    sha256 cellar: :any_skip_relocation, monterey:       "f51736c9c1ab490b47097eb02218dd096c82f5156e6154930416d80b2b59011b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7c00f7c1f7ee2a3749d88ba13d698c9d61d99e9dd140bf782fe3bf0aeb1679cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "342a37d7534e75859571bf5dcecb847d6643d6c831dc6a8057c14f02480e14ab"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d0b69ea618c5381f4fb070432cd6f811c35c10ccdfaf52cdb9e31bcaa8b4aec0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c3a9612bcf20896ec074aa7c5eeff573ee5e51ad2d37fb35a4d5403078a6c5aa"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c3db753e1793272c04b5ef7199ea0cbdb2ec299861014f80f76243af7a76ffb9"
+    sha256 cellar: :any_skip_relocation, ventura:        "29cf3f2a38e175507f8ebd3046d8b35b0f215fef880342fefc27d8076c184cc7"
+    sha256 cellar: :any_skip_relocation, monterey:       "0403f773b16af97c39bee8e72d92d254715a386b2af5781b24fc9a062d4562b4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f659b81d1558cd5ecca81bf9a2f3f8730e2d7a4c1d6cdaec6ce836a7750f6c27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2073a255a0239e30b900ef06fa121fd82a6c3ff5196c9a87577356fddc6cba8a"
   end
 
   depends_on "go" => :build
