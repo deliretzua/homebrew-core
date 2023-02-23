@@ -6,7 +6,7 @@ class Deployer < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e60541a70a8b91e0c5d44ad14434d45952d7b6261ebbc4a374663b302b130926"
+    sha256 cellar: :any_skip_relocation, all: "f8763fb95f862648eaba3f084f2ef58ae2adb24b7216569a4a846f69bf976cbb"
   end
 
   depends_on "php"
