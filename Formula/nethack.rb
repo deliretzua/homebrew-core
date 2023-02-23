@@ -3,9 +3,9 @@
 class Nethack < Formula
   desc "Single-player roguelike video game"
   homepage "https://www.nethack.org/"
-  url "https://www.nethack.org/download/3.6.6/nethack-366-src.tgz"
-  version "3.6.6"
-  sha256 "cfde0c3ab6dd7c22ae82e1e5a59ab80152304eb23fb06e3129439271e5643ed2"
+  url "https://www.nethack.org/download/3.6.7/nethack-367-src.tgz"
+  version "3.6.7"
+  sha256 "98cf67df6debf9668a61745aa84c09bcab362e5d33f5b944ec5155d44d2aacb2"
   license "NGPL"
   head "https://github.com/NetHack/NetHack.git", branch: "NetHack-3.7"
 
@@ -31,10 +31,16 @@ class Nethack < Formula
   uses_from_macos "flex" => :build
   uses_from_macos "ncurses"
 
-  def install
-    ENV.deparallelize
+  # add macos patch, upstream PR ref, https://github.com/NetHack/NetHack/pull/988
+  patch do
+    url "https://github.com/NetHack/NetHack/commit/79cf1e902483c070b209b55059159da5f2120b97.patch?full_index=1"
+    sha256 "5daf984512d9c512818e0376cf2b57a5cd9eefaa626ea286bfd70d899995b5de"
+  end
 
-    # Fixes https://github.com/NetHack/NetHack/issues/274
+  def install
+    # Build everything in-order; no multi builds.
+    ENV.deparallelize
+    # see https://github.com/Homebrew/brew/issues/14763.
     ENV.O0
 
     cd "sys/unix" do
