@@ -1,8 +1,8 @@
 class Mat2 < Formula
   desc "Metadata anonymization toolkit"
   homepage "https://0xacab.org/jvoisin/mat2"
-  url "https://0xacab.org/jvoisin/mat2/-/archive/0.13.2/mat2-0.13.2.tar.gz"
-  sha256 "957633dd80b0c060062925b057607559bdcd9a52fbe25bee0723d1db425dffaf"
+  url "https://0xacab.org/jvoisin/mat2/-/archive/0.13.3/mat2-0.13.3.tar.gz"
+  sha256 "e1bb0161fa1c2f2adb1b933761f9569534309e90209568f96aca5fc8a74f511a"
   license "LGPL-3.0-or-later"
 
   bottle do
@@ -21,6 +21,13 @@ class Mat2 < Formula
   resource "mutagen" do
     url "https://files.pythonhosted.org/packages/b1/54/d1760a363d0fe345528e37782f6c18123b0e99e8ea755022fd51f1ecd0f9/mutagen-1.46.0.tar.gz"
     sha256 "6e5f8ba84836b99fe60be5fb27f84be4ad919bbb6b49caa6ae81e70584b55e58"
+  end
+
+  # Fix pyproject.toml config, remove in next release
+  # https://0xacab.org/jvoisin/mat2/-/merge_requests/104
+  patch do
+    url "https://0xacab.org/jvoisin/mat2/-/commit/ed0ffa5693b6d710b19a9101d6cb0625f8b6f1fc.diff"
+    sha256 "b067ede2688af82b77438bf60891356f1aa5b33e78208e1f3ea485570626cbe2"
   end
 
   def install
