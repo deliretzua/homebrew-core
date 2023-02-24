@@ -11,12 +11,12 @@ class Got < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "128ea43fd4f312a9c5a85416c5c83c9a0aabffd2a78f208c77c3c10dd479bf8e"
-    sha256 arm64_monterey: "452a369c1ff13b9700ba0d69672089cc9b0c9694710a47a4564ae24ad048023a"
-    sha256 arm64_big_sur:  "d58a1ee53ebac1db929aae66c339df27b917ddb280d6fc30f3bdbafb7ad9eefa"
-    sha256 ventura:        "2997774668453393867c301810ca98912a5bf28df65dbf24a7ecef1bf095da0d"
-    sha256 monterey:       "9c941a28efdae2a4dd055565487c7df2183e2d6712bcc4d9311d98bdc5c5cd87"
-    sha256 big_sur:        "7f8d8fc172f498ebbbb6b8a44eacdfe4b6bba5cb65ad26d22c6403da6d2759d6"
+    sha256 arm64_ventura:  "a632986306c399e654a27a8ebf5c1ac9e1cb707e034e8f052f43bf818d9008ec"
+    sha256 arm64_monterey: "654178cc06b6306096d836ce721cafaae47e1d31623ec380fef42a75d1c992cb"
+    sha256 arm64_big_sur:  "a6e8fe9ca6aab7c2eff5b2f14a0406c93da8bd749caffd314b2d50107cec6b39"
+    sha256 ventura:        "758e4e7f972819ec0d2a83f1e789ce1a47736606f9690bb4b939b06c0b21a031"
+    sha256 monterey:       "71c51de0103e8f4c1fa4075977092d452c9140828a0a894bbac906cd46398a97"
+    sha256 big_sur:        "152693ad826b71ade82c83011cadb271d683f0f10cfd034cff1def6370abb967"
   end
 
   depends_on "bison" => :build
