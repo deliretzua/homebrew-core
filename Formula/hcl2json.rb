@@ -1,8 +1,8 @@
 class Hcl2json < Formula
   desc "Convert HCL2 to JSON"
   homepage "https://github.com/tmccombs/hcl2json"
-  url "https://github.com/tmccombs/hcl2json/archive/refs/tags/v0.3.6.tar.gz"
-  sha256 "500a7a6b85c2ca2da357c8b95fd39caa298e9e9bd46167651c62c380d9ebfc7e"
+  url "https://github.com/tmccombs/hcl2json/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "5f5bc19211406c9d25ba2b6f934f9fda3ee0b4ab4a3b6f199d0418e84c38b9ed"
   license "Apache-2.0"
   head "https://github.com/tmccombs/hcl2json.git", branch: "main"
 
@@ -19,11 +19,12 @@ class Hcl2json < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args
+    system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do
-    test_hcl = <<~HCL
+    test_hcl = testpath/"test.hcl"
+    test_hcl.write <<~HCL
       resource "my_resource_type" "test_resource" {
         input = "magic_test_value"
       }
@@ -41,7 +42,7 @@ class Hcl2json < Formula
       },
     }.to_json
 
-    assert_equal test_json, pipe_output("#{bin}/hcl2json", test_hcl).gsub(/\s+/, "")
-    assert_match "Failed to convert", pipe_output("#{bin}/hcl2json 2>&1", "Hello, Homebrew!", 1)
+    assert_equal test_json, shell_output("#{bin}/hcl2json #{test_hcl}").gsub(/\s+/, "")
+    assert_match "Failed to open brewtest", shell_output("#{bin}/hcl2json brewtest 2>&1", 1)
   end
 end
