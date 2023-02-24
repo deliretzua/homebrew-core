@@ -6,13 +6,13 @@ class Psalm < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a40fcfdf34b6a6d022a37e17424b61cfc8ab347ef1bb30cb530baa46bc08ce66"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a40fcfdf34b6a6d022a37e17424b61cfc8ab347ef1bb30cb530baa46bc08ce66"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a40fcfdf34b6a6d022a37e17424b61cfc8ab347ef1bb30cb530baa46bc08ce66"
-    sha256 cellar: :any_skip_relocation, ventura:        "9f89e0130ce9f4593f30f58a4024551e158c19e09d6c09bebe6bffe09d306006"
-    sha256 cellar: :any_skip_relocation, monterey:       "9f89e0130ce9f4593f30f58a4024551e158c19e09d6c09bebe6bffe09d306006"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9f89e0130ce9f4593f30f58a4024551e158c19e09d6c09bebe6bffe09d306006"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a40fcfdf34b6a6d022a37e17424b61cfc8ab347ef1bb30cb530baa46bc08ce66"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "40b94ca76c8d7f90998861a1c2cce22cb9862296d7427d4509406a907141f569"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "40b94ca76c8d7f90998861a1c2cce22cb9862296d7427d4509406a907141f569"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "40b94ca76c8d7f90998861a1c2cce22cb9862296d7427d4509406a907141f569"
+    sha256 cellar: :any_skip_relocation, ventura:        "d43129d6fcf14f4058870501e78df89ed65f4b440bfc7b4b13d6bfa9552d5617"
+    sha256 cellar: :any_skip_relocation, monterey:       "d43129d6fcf14f4058870501e78df89ed65f4b440bfc7b4b13d6bfa9552d5617"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d43129d6fcf14f4058870501e78df89ed65f4b440bfc7b4b13d6bfa9552d5617"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "40b94ca76c8d7f90998861a1c2cce22cb9862296d7427d4509406a907141f569"
   end
 
   depends_on "composer" => :test
