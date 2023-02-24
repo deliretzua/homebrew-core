@@ -7,13 +7,13 @@ class Onefetch < Formula
   head "https://github.com/o2sh/onefetch.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fca68d469c926ba18adad64bf58bcd36c472d16fb9d4bd783a75ba94eea3d6be"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6a930e2a2cbbc39fcff71c78b23a79a9340c193badc6869db561ec8e13e06b27"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e70df35cf69626137408b1c26d624f5fe1cb2fdfdb3c1f5d6459afc603d73fac"
-    sha256 cellar: :any_skip_relocation, ventura:        "1ec8aad1b80654586ff20a5945db7e69c28dd26b3b211967f9fad26c2cb66e8f"
-    sha256 cellar: :any_skip_relocation, monterey:       "cdc1ea5eaefc948a8b37672a01cc83dbd6a55224bc040948ad8a1ca49df85c9c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6f5ddddfa77c2aa077eb808cd0e0610d755bc95a4ad87634dcfe11f9b7c4d09e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e371157da5efe3c3752f85689e8c78dd74d3f2456889bf6ac8e1bdf9470a2571"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5399c27570296ae42422c9e025ab5ab8835bb72ffcfba2b25041454f6b39a09e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fd0d7efe8af64d480ffe3f6bca0ff137d84a455089890ba884cbf512157c6e9b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5d0cee2127e2a55eb5aebbb201bbc3211e41ee5be3e781af89493d9b5d08e596"
+    sha256 cellar: :any_skip_relocation, ventura:        "1552dd38e68dd636888be0f350c8d98792e2ad8399de732fa129391241a526c5"
+    sha256 cellar: :any_skip_relocation, monterey:       "d2e7d389b7afddf3c6f25944694013be1f3353c7189c68a91e7c125edc53502f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "cebaa0c3d054d858515378fa4fc84abb928853423b7f9ef0962660279a63791f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0c0ed1915d92c86ee7c5ff6ac3dcb5074a1286c90a1418463ae1eeb31fbd09a"
   end
 
   depends_on "cmake" => :build
