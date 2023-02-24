@@ -7,13 +7,13 @@ class Cmocka < Formula
   head "https://git.cryptomilk.org/projects/cmocka.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "10d26bf899a3f81117ff42367d0dd11d1519e3f146d63341c5c87e89a42e983e"
-    sha256 cellar: :any,                 arm64_monterey: "01113968fe6423bef882def55d8db208c5f5ae527b5a508f8f58f1ced15990a8"
-    sha256 cellar: :any,                 arm64_big_sur:  "c6efe7c74fe398d438be12f5e8e27dd334ecbabc4fbb5746c615754526df519a"
-    sha256 cellar: :any,                 ventura:        "cc1c7cbc44a6a23aac1dee4c14702eac7ef3a56835a1dc381f0ea18dbe3c306f"
-    sha256 cellar: :any,                 monterey:       "7ca0cd56fe2a9cc06d639f627612fb5292052131465503db15e4689ddaa09e61"
-    sha256 cellar: :any,                 big_sur:        "16476a114556a1e6abf8494c111ec345f6020e1a33f3cc4183f05c41fcf40cc5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a1e0e2240ed1b163dca04fe01532343d88833957fad05e80df1d8572a67ba16"
+    sha256 cellar: :any,                 arm64_ventura:  "59ce3786b76ea0bad5cf63974c4c341a967f562f6beeebac2714b9a6cdb8ee69"
+    sha256 cellar: :any,                 arm64_monterey: "655c370c95261b0a2497884db61e2d93e016b3ac12c895bd177c4937fe8382b9"
+    sha256 cellar: :any,                 arm64_big_sur:  "f834bde77c929e72148871eb2ebb902b6f746fc5c80581027ac3e2c8eba4e695"
+    sha256 cellar: :any,                 ventura:        "1af6df21cc146d414b8c6b03b995cb99e18ee020efcf34c6be4f2724684797ad"
+    sha256 cellar: :any,                 monterey:       "b5120aab3d6d5daf7a4166c0bd95b622d057bdc519ce9d8792ac3174effcec26"
+    sha256 cellar: :any,                 big_sur:        "4bdc48b2707b15f13d671f193de414f70a905e4a6e62e7f3ad823c0e01ec9f13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3ac6a9be93cbd9ff420c38ff86c3c5559fe2ab584423f8bddd04c77f7235ab3"
   end
 
   depends_on "cmake" => :build
