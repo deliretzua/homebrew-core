@@ -7,13 +7,13 @@ class Hcl2json < Formula
   head "https://github.com/tmccombs/hcl2json.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "11f8d47d705d970f6f311b60ae52e49c15cd4ea5dfc0522b754af7db86c02132"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "11f8d47d705d970f6f311b60ae52e49c15cd4ea5dfc0522b754af7db86c02132"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "11f8d47d705d970f6f311b60ae52e49c15cd4ea5dfc0522b754af7db86c02132"
-    sha256 cellar: :any_skip_relocation, ventura:        "63d8ce597be648f1c4c798c35af743a981cdb141d0e612f790157f28d65f0582"
-    sha256 cellar: :any_skip_relocation, monterey:       "63d8ce597be648f1c4c798c35af743a981cdb141d0e612f790157f28d65f0582"
-    sha256 cellar: :any_skip_relocation, big_sur:        "63d8ce597be648f1c4c798c35af743a981cdb141d0e612f790157f28d65f0582"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "647256c3d6e217b7362377461de59e4c1bdbca7ce79cd0afd358c96b493f4115"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "af03f295b07c463feb8ebdd7a4cba0594916418dbf46761abf5c330181ffcb78"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "af03f295b07c463feb8ebdd7a4cba0594916418dbf46761abf5c330181ffcb78"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "af03f295b07c463feb8ebdd7a4cba0594916418dbf46761abf5c330181ffcb78"
+    sha256 cellar: :any_skip_relocation, ventura:        "aa5c2bec588ec15249d88fa73969e51f854ea3601521eb3491162c081a04efc6"
+    sha256 cellar: :any_skip_relocation, monterey:       "aa5c2bec588ec15249d88fa73969e51f854ea3601521eb3491162c081a04efc6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "aa5c2bec588ec15249d88fa73969e51f854ea3601521eb3491162c081a04efc6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a58a7d9bf33a669cf41007e6c54236c179f53e4bece76cef4b18235440aa01e"
   end
 
   depends_on "go" => :build
