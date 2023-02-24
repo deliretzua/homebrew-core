@@ -11,14 +11,13 @@ class Logcli < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7a3d7762f361b3f892cc7ee669e527141bab4348a4b0829f662e9f478e9cd3a4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "52592b34272ab91622b4b70b37ce74872de40ad548423fb9ff25b793e4de1541"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "48f0ea0295052e51d2ee4e9b01e6921ad9d51dcbf98fd4da6994a85ef37cfef2"
-    sha256 cellar: :any_skip_relocation, ventura:        "a44045d519b1154c1343921592c806a1bd72cce7dcedeaf5e1eac60c46e4cc93"
-    sha256 cellar: :any_skip_relocation, monterey:       "ef3789712ede063d970bd1cf6a839ff82474838f621a72024da98721fd51fe9b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2d6010356232f1e79b3d779a3eef759a88f28fc53e3ded875f76bb70ecf301c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d601a71fbb23f0ceb11d1b5d5b8ef415c4fd695cec28bc53694a0965f82f761"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1f2c24a38d4b489fc346b365671089f0ac45581877d23d63798f1050fe09f5e1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a78a0115518a2b5f95a734a6a2c7ea1aba71c704eb3d8a90690b6e0df5a6e29f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "319b8f32bdc9fa3e02690b8274ac1c38c5f902edfa14b2665b031fd3f652f9e0"
+    sha256 cellar: :any_skip_relocation, ventura:        "f19f0da1078c259c40b245372d11346a1057827f9adbc933f7a14e6dde61c824"
+    sha256 cellar: :any_skip_relocation, monterey:       "7a7b084c24875f400696c16f952fc267b2d485b8335f00d6aa0c404634a9816e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "185ff24c0348b2fb8dd474325f70e878d2565786ffea011dde901d7717099ae1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bdffa8ebea96ee1945d255816ee83aa0d96e064f487c36dfb8b241c0786bc150"
   end
 
   # TODO: Try `go@1.20` or newer on the next release
