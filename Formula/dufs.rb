@@ -6,13 +6,13 @@ class Dufs < Formula
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "382ba9e7e6114721a5d119399f9fa762a0a2fd29a3dbd50b1ed9385db5e5173b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "26e1f2bc5f8223f85413ebafeb6b50b94c1cd4e5e5a0680ae5fa842f86610d81"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "be382b2f7e4728d8a1bbeb7d3b89660b5763150b597f4513a550f4ea01c3911b"
-    sha256 cellar: :any_skip_relocation, ventura:        "99847a256a2d12da09d7899b1111bbaeea8bb0a248f94960b0dfa6ecfe2f1a6d"
-    sha256 cellar: :any_skip_relocation, monterey:       "0d9bf3e14de11397297ef965cc856c20ff85d569c80204b014674bed3a7c126a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b9a256f521453cb96955658b6ea5b24072d44bf278e94959bca1ff54b693236a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e26ae0ef34ea21e2bb520748650f3afc76af97a0598329b7004d5215cff6830c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "95aae948353c374d7ca7daa1d10c31c64df4dee863e488ab38e8dfdc7b8c12df"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "61e5fbe5710807d363d82bf71bfcbb7875b48f5ed937e5f4a6052d6186039c87"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "996db48fe5e7c31072afdd175e8ea676b905a968d779216a9aaa3c91a1b217a5"
+    sha256 cellar: :any_skip_relocation, ventura:        "c802ba09111d0bea6c3bc552d7c65e3110f79e479c2f72b48c59281216f27f45"
+    sha256 cellar: :any_skip_relocation, monterey:       "017e6f33813a743f8f20de62bf188552f246ab5a7340f53b5f47ffc8fc57b149"
+    sha256 cellar: :any_skip_relocation, big_sur:        "be5e9f6a00901704f0a4b9aefa010a894fabf69f794423574259d732904cd55e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c29ade870d0a49aa072a466521edefb1c9765c94688e5e7b7ef8bf2e813d31b"
   end
 
   depends_on "rust" => :build
