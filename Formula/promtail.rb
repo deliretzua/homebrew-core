@@ -11,14 +11,13 @@ class Promtail < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "23e9af057f5e372caeaa3cf80e6debe7252a7ebbf309551a747d40cd3cb7970f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b69733a407c7e16462eef2ef65f1a9353404f19c556cbbe94917077dd5778460"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "46f23b21ca702192566d6eeed009afdb225da561593b8331af766918a29e4ea9"
-    sha256 cellar: :any_skip_relocation, ventura:        "c699d6c2234b090722376da1e7de7fd8afcffa1d08a42c47274e38fc898fbeb9"
-    sha256 cellar: :any_skip_relocation, monterey:       "68fc3ea98ca7a26bcb67942b0a46a3564bdd79d94f86f5bc3258b5bdcbcf2996"
-    sha256 cellar: :any_skip_relocation, big_sur:        "76e0855d57e840463d7bb8e0b9d003763cc7c05611772d0bfc74c9ea410af402"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b7d12eb4cfefaa68a6792b121c70241185e88e7d041a0e263c669057daa281f5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "be88dca50585092c4552ec7979d4d439b7f22aef59aa6b78dd976ce610bfa9e6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "30ccdf7058856321cb91fecbb2af5059f6df81cd0700fe8f84192d7316cdbc2e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b314548a9d2ac77aead9f9a046ebaa54d820e08ba472e727243a45bc9775f76b"
+    sha256 cellar: :any_skip_relocation, ventura:        "eeba9d98dfe5f33f2270de138f37ff70245f8c6a5eb9f9f78f67a2e44d6311f1"
+    sha256 cellar: :any_skip_relocation, monterey:       "1bf742efd6812f253c407b28cc8b8e35f2faea0e0c8728080253df8c8940dc05"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c642e8eda6b339ede1e81364c2cc1cf79cdc1310f761b8febdc61950ef821b63"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8fe4438c845d5f6b6f3f1eef1fb2f0d14f2692d9167ba61a6d03b75e83066068"
   end
 
   # TODO: Try `go@1.20` or newer on the next release
