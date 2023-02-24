@@ -6,13 +6,13 @@ class VirustotalCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e39d385e108e5bd35c3840822cdf147a4efa12627ff9864c97a136ec9f40dae7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ac0a0e5b0f363dafbc330605067fbff45256e9189821dd2a518f92f412a03141"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5f5a48643f8fb5832614662e83e9830698821642ac632dd3678506725b92d76d"
-    sha256 cellar: :any_skip_relocation, ventura:        "45ca62bde365b041ae6da8d5d1ecc7c1116e3ebba546713d32812ef9f044ba4c"
-    sha256 cellar: :any_skip_relocation, monterey:       "1549869b8da937f0258977110c4f29a4375b50177d353e1c609c2bf80f0794c3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0ee8259bc0ae0c24d11e20fd9eb7bd052bd483de38226630fb3da7c2fdc91685"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52fcaf3680f07a8f7f72dc3fbd7fc607ce4c56384a747cf53e6755b9b0b2bafe"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d1f742b449fb60a15fbdfac466d785ac4c1ed31fb28b456b0d214c8ea765ef11"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d1f742b449fb60a15fbdfac466d785ac4c1ed31fb28b456b0d214c8ea765ef11"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d1f742b449fb60a15fbdfac466d785ac4c1ed31fb28b456b0d214c8ea765ef11"
+    sha256 cellar: :any_skip_relocation, ventura:        "9b5920d97a5b8ef4a0df7c02f46add85084becffc8c1dd466b8dcb40f90dfcd5"
+    sha256 cellar: :any_skip_relocation, monterey:       "9b5920d97a5b8ef4a0df7c02f46add85084becffc8c1dd466b8dcb40f90dfcd5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9b5920d97a5b8ef4a0df7c02f46add85084becffc8c1dd466b8dcb40f90dfcd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1b0a3cb29e4db006518a120bf4bdfa4f972d192c74b0c238b3c15fafc860cfb"
   end
 
   depends_on "go" => :build
