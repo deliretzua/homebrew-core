@@ -11,13 +11,13 @@ class Cabextract < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "92ae5d0d2943f9d374dd70ee3b4b60abe8ab33783f45e8ee68dcc3d8df891e3f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6e1e2aa1907ed6a5c635118d2c1756889ab90dc63e110f8d591e8cab644e7dec"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c632d89f6f55317494ec0cb8da6c23214dad4f6318d2ce9c6d42f70d6a5a764e"
-    sha256 cellar: :any_skip_relocation, ventura:        "c0644e8e20c01a9bf0759cdbf29d05a4e36344cd5945b3a601c4091b22899e5c"
-    sha256 cellar: :any_skip_relocation, monterey:       "1c42d09f33a2c75971ee9c6d0f7bce9f36fd73fafa65264dd4299939aa4ba409"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1dd9828110287f16b4754f00520eeb096ad5a4336ea32e1e1242bc7899b1ee16"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2e9c5f98c058dfc91722b07b07973cbc0368080aa7234256d8fc3337373c0ba"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8e4cd53d32db9ea97656f399dd9033eaa5ef5c8cc3226de8de09865e6c610435"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "371a13fefca5fbd78edd570020e5f0eaf82536c55e54a8efd01fe7570103cd01"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3d71ed3ba74cc371c392104c0f9c8f2fdc8e504e046140f5c1c74e95680fd6db"
+    sha256 cellar: :any_skip_relocation, ventura:        "2e30506702df76799a4c685f6004e58cbf06b27a1bbb25fb401f802aa95bd80b"
+    sha256 cellar: :any_skip_relocation, monterey:       "add98c9cb4c6d920c8acb6378ad9bec3bf1f95f531a522c07e4cfc6bf00c687f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "af25a0c0dadcae5b550953a5c2857533c65013ff65daaa67555d6bf0b204249c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5631eaa72da365accb3b576606fcfcc619879e83bfdd97c74233c073f6f42374"
   end
 
   def install
