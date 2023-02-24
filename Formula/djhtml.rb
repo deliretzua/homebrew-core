@@ -8,13 +8,13 @@ class Djhtml < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "23f9bf11f2f02d88247e6ab185899e942966e900bec10be3945f73c35fb67a0b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f31cfd241dc93b5c43a712520e50498b4ae7f32ac69ed31ad993ae952f866bba"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7b6c8f2891e2b9e690dd67a15c20897aa3c2607adaa45cce952d755abcd64116"
-    sha256 cellar: :any_skip_relocation, ventura:        "7b76e4ab4698b540744c66829a67cbf2098d446f170ac6e497df4c5e55971ee4"
-    sha256 cellar: :any_skip_relocation, monterey:       "30923468ff1108c5580a3dd135817e815515b20121f24fcd063fcfc2ee3e776f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e812566e4cf47aea5205cd63111925d18f58340a7ab88bddcbdf64b9c3b51ac5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8130a6eaffec8464aede54d04839b5ab226587826f9694d8053a5ed9e8ad1e95"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "04faeb1da5b17a16bcc5a707236b93285c225dcf2779428c4aee84dcef6eca7d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8478b30ef745876f32be53ebf93320ffd79c555bdb97a11c6d6b23c3acd183da"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b3eb977a27efb89abf0d1940ff37b98d456d2a0ec2a56df09b02c6ab419fc9a4"
+    sha256 cellar: :any_skip_relocation, ventura:        "2267f0deabd8580c8f4f3e297b865d93451d47b9a74fbe8f469bba7b70a2e2b2"
+    sha256 cellar: :any_skip_relocation, monterey:       "ff48f6bbd7352cef4112d6e70617e2306964277541b87c751338577e26a2b868"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5efd376bcb18d6973cf020cd35b0c986ea84889935bd9a1d3c9b39b3f209b1cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a4c197c330de5ae1629f5b817b761308db290df4284afb590f16264a666812b7"
   end
 
   depends_on "python@3.11"
