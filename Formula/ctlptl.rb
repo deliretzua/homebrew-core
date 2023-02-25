@@ -6,13 +6,13 @@ class Ctlptl < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "11c927b20bd93e4dd58d34a7cc998f45b7f5d514eeace196ba45b4f883108f06"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9ee5aa9f1fb861e5f0e8b0d615d57f0bf822f98eff32cba5059e3c8a5f4a4dc1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "55e10297f813a6b7f0beedaa7ccc19fa51b1c098982f1fdcf6221bbeafcbc6f8"
-    sha256 cellar: :any_skip_relocation, ventura:        "128dfcdff008b162f6957987c2689934c6085aad6e2a056553c297317a1b2fb0"
-    sha256 cellar: :any_skip_relocation, monterey:       "5f796890ff5cc2d6762f3ceeb0718cae8702f270bd3bb2f4680774f558273b6d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "45f18d0434065ffc5f707193abce9683e3697aebdacdb754c8cd41fc22df8eb2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26f08caec0429d564b171301f7a5f61942002f8d460ac812d967a8866beb9862"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d72660a81966cc84eda5f9793932975f4f9e2c3e967d14e46e55cf02cd872964"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "19ce77f0eaf84661329f57c49cad985390d0c853317aa5922f33ca32f39f80eb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0ca6c3eb0a49e9ee580f820ac7cf5be9f7085e9af950056e691b950c0d8752f2"
+    sha256 cellar: :any_skip_relocation, ventura:        "d5f1dd426fe65d72cc5cd09cd81aaae2fcf815465882dabd30ede83da258d18f"
+    sha256 cellar: :any_skip_relocation, monterey:       "038316af06b7a2d3a89a47f3023dfa0f0978b7d3eaf6f3888f46d3e1c2695250"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d726d1f9e8857b75325e60e50148be5f8e2cb4991eb7b21cb30fedd531e578fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf855ca03bc8b9da0d2ded35d44fbb844c4a6eebc0e693a6eadf1f8771009caa"
   end
 
   depends_on "go" => :build
