@@ -7,13 +7,13 @@ class WebpPixbufLoader < Formula
   head "https://github.com/aruiz/webp-pixbuf-loader.git", branch: "mainline"
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "f329dc4397723a5e00701bf7d329a66a7b0be573e67819daba4004b8aa273e46"
-    sha256 cellar: :any, arm64_monterey: "17af961f881ebad680da48c554e754eaf92e8e53802081fb5edd7af38a08d904"
-    sha256 cellar: :any, arm64_big_sur:  "9d04feb9d74a27bc638f36c22b0b324db8ab80f1bc2068b5be1e4d238d77d366"
-    sha256 cellar: :any, ventura:        "b9e9fad830e06a39562cdd9216f576d9e086519c15d7abc52e5a26d7dd52af18"
-    sha256 cellar: :any, monterey:       "4641387d6b51f8cac2af790fee568bd5a76c2a37de3d94a5537a7133244c48a5"
-    sha256 cellar: :any, big_sur:        "3bab25e2385b9d019e270a9c35703318d2a37fea6c0c5436e5854b550fb09b3d"
-    sha256               x86_64_linux:   "e96c7714225bdf25bc84d30c591a842496fc4a2520012619569cd5999868f111"
+    sha256 cellar: :any, arm64_ventura:  "b8826558233aa001feef12caa8b0c04a800da80ec923c092faa7dcd31eaeff3c"
+    sha256 cellar: :any, arm64_monterey: "7ea54cfcf759ae4693b684bd44de7e0c9598cd7f14f098b0e141d82057f182d3"
+    sha256 cellar: :any, arm64_big_sur:  "0271943a04b08878b54a462ac6b30ef43da986c0d6a999e2be359222c1a6aa7c"
+    sha256 cellar: :any, ventura:        "4ce3a5d5259ef21702dde69e7510ce261c496c0fae1d7ff933a1b09b22e9aa30"
+    sha256 cellar: :any, monterey:       "ad8d1cf266786c6653316eeae0fa1720ba309ec0840f243233345d1f86ee090f"
+    sha256 cellar: :any, big_sur:        "97c8c74b7db8314844978fbd4dca25730d932408255c7d27b662fc18b6ec315e"
+    sha256               x86_64_linux:   "c30063eec94110025f5ab81a1975324b1a5b4a492edcc354b71aac5bc582a4f2"
   end
 
   depends_on "meson" => :build
