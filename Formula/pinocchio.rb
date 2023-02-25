@@ -7,13 +7,13 @@ class Pinocchio < Formula
   head "https://github.com/stack-of-tasks/pinocchio.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "3d7812a9ec476c35ac259f322250520a54584868568aa4cb314f27405bbc52ba"
-    sha256 cellar: :any,                 arm64_monterey: "6a145f843355437817287be7dd0c28f94d8f0ebd032daca2d7ed4b31081d838a"
-    sha256 cellar: :any,                 arm64_big_sur:  "1dd1048792d08e340d906629a075a2b51a210f9e223d2c717fb85d3c225e3a42"
-    sha256 cellar: :any,                 ventura:        "9be178353c852b20d8a6500186a859ce7a8f2c6aceac044d4a3fae820b464766"
-    sha256 cellar: :any,                 monterey:       "13975f126c22dd9af2859812e1f4df42065ce057111bf93aa1dcc406b7362720"
-    sha256 cellar: :any,                 big_sur:        "99e118ce4f50b1627435faddf50db7ef2a361ab1f4394c6157db7d303fa707f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea1412306fd8e21a221e78b8aea37e742071191a3a7f42042da01114c2f542fb"
+    sha256 cellar: :any,                 arm64_ventura:  "1115b38e228404f4f26bf3e5f73d32f683228b99abc9a9c6ac1263cbcc1d1da9"
+    sha256 cellar: :any,                 arm64_monterey: "849a51002a17484d3c202382b5f6ea01c94cc2772dbd8c0ad6fdf348f9a771af"
+    sha256 cellar: :any,                 arm64_big_sur:  "5cf11e71afab073ffd5aba5cc582565059e609eecabacdd0d296e7c7eacb3933"
+    sha256 cellar: :any,                 ventura:        "7ffce5f7c16914bdead331b6193e53ba8f3bfc829e981814dfdca16b493b0fe9"
+    sha256 cellar: :any,                 monterey:       "dc95cc2081e8226d5067cac80ef9cbef8461f8da9c46551dab0ff7acf627c9a6"
+    sha256 cellar: :any,                 big_sur:        "db8355c31e6c33c56cd2be4067e973f0f589a6b6e618bbf9f7824a313a29b920"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba12a7aac1e5f3b6c8563a13e6c7549213095586845ac4d9f2c186f31dcfefff"
   end
 
   depends_on "cmake" => :build
