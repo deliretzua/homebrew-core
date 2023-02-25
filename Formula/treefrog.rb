@@ -12,13 +12,13 @@ class Treefrog < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "57327c1eab74babf1ea4b1b661ed83c731a0fbf67fa05e3ae81c53b76b7d3632"
-    sha256 arm64_monterey: "2cda35d89279eb669ffd0483b561b736180b540166360cd16705600397276dd0"
-    sha256 arm64_big_sur:  "2aa8ed9dc3b192b8e68f32519154ad7b40122e6b384cfab4793baa8e39747b65"
-    sha256 ventura:        "7904a37a4810adce21c768212623d5fb5bcc0239978f4c6bcf7e5121a7cccb10"
-    sha256 monterey:       "404d87c20a1b963bad0f5ff21b34c7bddb1d09b09d5a5d7263b934a24fec5e7d"
-    sha256 big_sur:        "0c49ef371594442cd70a8fda81dc14895d83440a29c535fbf396f577b69ed049"
-    sha256 x86_64_linux:   "8a6ddbf29eb61446254a3c1c41161c36d0235e8ecfbb746f72ffdf7f08226673"
+    sha256 arm64_ventura:  "9ba098cef4a0a1ee9e901c6ab44a479343b05c38cc98c7ae5b7d5d8aedcd0db9"
+    sha256 arm64_monterey: "8e5d64fd8623d052ea4b0b1c317a38c19bcac70e3e6eb50a57127e0ab9ae4afd"
+    sha256 arm64_big_sur:  "69eab49c877b06af9e356373ce8b3025c1784f3a84c5f683a809e02016876ed1"
+    sha256 ventura:        "9123956bfecd0df7ade211892c4758b9e8d6ac5f8abd10371a3479e000cc3f40"
+    sha256 monterey:       "a68d5e4caef66e2c55a4fb5896c3d11d9203fc8bc663905ff65139de12cf01fd"
+    sha256 big_sur:        "b2e570d00817bc9cc46b85092835411e1d6b4423d22455082ef062648aae09a1"
+    sha256 x86_64_linux:   "2c39ccce700b3156a6da3dbe18062234c0fae2601fd0ae0ec4b9c2b70aebe6b1"
   end
 
   depends_on "cmake" => :build
