@@ -9,13 +9,13 @@ class Libgda < Formula
   revision 1
 
   bottle do
-    sha256 arm64_ventura:  "b18587293e001ff6935192e6fcd7abe9e4331567676b93e05c82ec1f26852c78"
-    sha256 arm64_monterey: "9507bbd5bbe926aaa34cfc60f45c0d1356344b5f0d58d2439dae2c9369070287"
-    sha256 arm64_big_sur:  "5a362970b76959e90e8ded9f9963a54b9944c05fd478848d894bab5f6f231f4e"
-    sha256 ventura:        "047a234bcf4fb07a8076e6aa3661531db094ded0b6ffe31fc2ddfb4f3bc45feb"
-    sha256 monterey:       "cdcf75e0a86528db4a8b07e26d11742aea3c677105f9450f8f4a14b9f47d371a"
-    sha256 big_sur:        "5ce190057fd44a4d5ae1be137fe44297a17059be7e22e08fd424c15b34be0669"
-    sha256 x86_64_linux:   "712d4518f1133a0e15869f011539833bc0ccce38fc57fddab40616f12c242b38"
+    sha256 arm64_ventura:  "2ad13b6485c1e19fc2f02105116efb13d841d2cdba99630dbf48300a7860668a"
+    sha256 arm64_monterey: "1fe5095ef5f30564b1dbec5ac8698d6ab9c3f64b8d422015680a17d8b3d26c4a"
+    sha256 arm64_big_sur:  "fb1c0eb0fddccfa6a7849b1cdceb7cc5e1bcae895bf91dcc7d095f3633722ace"
+    sha256 ventura:        "ca2d498ae544cc55c2ee83ed79307306aa9b3454b5ec8d995ad1fdfcca6556b6"
+    sha256 monterey:       "62535c82a43635e59e8f3bb177b0e7ec9649262d6bb9e861e4a8fcc987aac5c0"
+    sha256 big_sur:        "edf500167b129ef94c8b81a919292c27a5072860e28cf198564f66bf1b5140e3"
+    sha256 x86_64_linux:   "88a4d46e93408d4a0dfd32fc6db0ae04291b15f0b92080c26e64925b370cde33"
   end
 
   depends_on "gettext" => :build
