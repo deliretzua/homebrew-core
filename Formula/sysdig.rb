@@ -2,17 +2,20 @@ class Sysdig < Formula
   desc "System-level exploration and troubleshooting tool"
   homepage "https://sysdig.com/"
   license "Apache-2.0"
-  revision 9
 
   stable do
-    url "https://github.com/draios/sysdig/archive/0.29.3.tar.gz"
-    sha256 "6b96797859002ab69a2bed4fdba1c7fe8064ecf8661621ae7d8fbf8599ffa636"
+    url "https://github.com/draios/sysdig/archive/refs/tags/0.31.3.tar.gz"
+    sha256 "31dd35fa37f2505af82ae7976c969f0be3deb3b3e968794003e7b0b466515483"
 
     # Update to value of FALCOSECURITY_LIBS_VERSION found in
     # https://github.com/draios/sysdig/blob/#{version}/cmake/modules/falcosecurity-libs.cmake
     resource "falcosecurity-libs" do
-      url "https://github.com/falcosecurity/libs/archive/e5c53d648f3c4694385bbe488e7d47eaa36c229a.tar.gz"
-      sha256 "80903bc57b7f9c5f24298ecf1531cf66ef571681b4bd1e05f6e4db704ffb380b"
+      url "https://github.com/falcosecurity/libs/archive/refs/tags/0.10.5.tar.gz"
+      sha256 "2a4b37c08bec4ba81326314831f341385aff267062e8d4483437958689662936"
+
+      # Fix 'file INSTALL cannot make directory "/sysdig/userspace/libscap"'.
+      # Reported upstream at https://github.com/falcosecurity/libs/issues/995.
+      patch :DATA
     end
   end
 
@@ -44,7 +47,9 @@ class Sysdig < Formula
   depends_on "jsoncpp"
   depends_on "luajit"
   depends_on "openssl@1.1"
+  depends_on "re2"
   depends_on "tbb"
+  depends_on "valijson"
   depends_on "yaml-cpp"
 
   uses_from_macos "curl"
@@ -76,11 +81,10 @@ class Sysdig < Formula
     # ld: unaligned pointer(s) for architecture arm64
     inreplace "falcosecurity-libs/driver/ppm_events_public.h", " __attribute__((packed))", "" if Hardware::CPU.arm?
 
-    # These flags are not needed for LuaJIT 2.1 (Ref: https://luajit.org/install.html).
-    # On Apple ARM, the flags results in broken binaries and need to be removed.
+    # Override hardcoded C++ standard settings.
     inreplace %w[CMakeLists.txt falcosecurity-libs/cmake/modules/CompilerFlags.cmake],
-              "set(CMAKE_EXE_LINKER_FLAGS \"-pagezero_size 10000 -image_base 100000000\")",
-              ""
+              /set\(CMAKE_CXX_FLAGS "(.*) -std=c\+\+0x"\)/,
+              'set(CMAKE_CXX_FLAGS "\\1")'
 
     # Keep C++ standard in sync with `abseil.rb`.
     args = %W[
@@ -90,11 +94,11 @@ class Sysdig < Formula
       -DBUILD_LIBSCAP_EXAMPLES=OFF
       -DDIR_ETC=#{etc}
       -DFALCOSECURITY_LIBS_SOURCE_DIR=#{buildpath}/falcosecurity-libs
-      -DCMAKE_CXX_STANDARD=17
+      -DCMAKE_CXX_FLAGS=-std=c++17
     ]
 
     # `USE_BUNDLED_*=OFF` flags are implied by `USE_BUNDLED_DEPS=OFF`, but let's be explicit.
-    %w[LUAJIT JSONCPP ZLIB TBB JQ NCURSES B64 OPENSSL CURL CARES PROTOBUF GRPC].each do |dep|
+    %w[CARES JSONCPP LUAJIT OPENSSL RE2 TBB VALIJSON CURL NCURSES ZLIB B64 GRPC JQ PROTOBUF].each do |dep|
       args << "-DUSE_BUNDLED_#{dep}=OFF"
     end
 
@@ -112,3 +116,17 @@ class Sysdig < Formula
     assert_match "/tmp/sysdig/sample", output
   end
 end
+
+__END__
+--- a/cmake/modules/libscap.cmake
++++ b/cmake/modules/libscap.cmake
+@@ -49,6 +49,9 @@ if(BUILD_LIBSCAP_MODERN_BPF)
+        "${PROJECT_BINARY_DIR}/libpman/libpman.a"
+ endif()
+ )
++
++include(GNUInstallDirs)
++
+ install(FILES ${LIBSCAP_LIBS} DESTINATION "${CMAKE_INSTALL_LIBDIR}/${LIBS_PACKAGE_NAME}"
+                        COMPONENT "scap" OPTIONAL)
+ install(DIRECTORY "${LIBSCAP_INCLUDE_DIR}" DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/${LIBS_PACKAGE_NAME}/userspace"
