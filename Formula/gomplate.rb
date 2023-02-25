@@ -7,14 +7,13 @@ class Gomplate < Formula
   head "https://github.com/hairyhenderson/gomplate.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c05588c8c729ca113fee428653b850cf4fd16ff2b6ba459ab10c8f2aee9cc882"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bd4fb2649d00b524e5246d9a564b16e7480ebef52aa69021bf93f1b287025141"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cf5d5d2764fc6473146769f85f06391765d14936bb6cd663861883aa855f4107"
-    sha256 cellar: :any_skip_relocation, ventura:        "1e40641b772f5e01865d4e6e3e5fe81ec808ff084b0d9e1180ec536a3ddcaa5a"
-    sha256 cellar: :any_skip_relocation, monterey:       "820d9c3fc7735b4f9feb4666d29647e94203a7c9401c23dea44b335bee58db1b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "63048888c30c332cca0e300f0fd095e6d6d1d981ba3cae1691304b9225eb2187"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f9863a55d812073a3178688c987e123d8fd634e8fe611a324150c73f0f8c2f6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7a12b8b85ece0c764f5e485f6d6c26842e6416ca61e772eb9cd0b82b7bb90b09"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7112808f0a406027e02b1eb397c4c0ff6787e2ee9f68781f220eec0acddfc5ba"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6f7e5bf4e612bebf5a6969e7c2702f21ebd247feb68ae4884b64d6543890f014"
+    sha256 cellar: :any_skip_relocation, ventura:        "cbe982a7167cb3a53bb836b0b63dbf89156a7fb126a0e0012c8eb5deed49fec4"
+    sha256 cellar: :any_skip_relocation, monterey:       "42167eeb85476b4a4f2664e6a91ba20e98cc091d2d9778f9fe0f90567338b8ee"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ac80e544f63db96c8a2dccbebb90af44e9f17276d27af7be6446e5a83394c972"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "621a2a033543fc50ce3ad023d16b1d36949e6acc611ecfe9aeef3c75f9c04217"
   end
 
   # upstream issue report, https://github.com/hairyhenderson/gomplate/issues/1614
