@@ -12,13 +12,13 @@ class Fortio < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1e2f6783b6f78a90f42a8d9343eefc9df43379443c5e95f96b0e497cb8e35627"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7b56bd5ca8a0727408c3d50a3af0354efc5fc6fa16e4ad3b6005b6858822eeec"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fa9da173dce1b58f2b57f0ffcb564c33daf12d3585ed2e9c3d49a1277d69a6e3"
-    sha256 cellar: :any_skip_relocation, ventura:        "63d7d07b2d1964e0085996de743ca66b37853092fe9370f83c1938cc8766cd5f"
-    sha256 cellar: :any_skip_relocation, monterey:       "7d5994527b01867e2344b0cc2a56ab5ca50456fee6d0acc09c0da531b83c0d47"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e9b590ecd0ac6fd7b64e9454d9f9ab3b6f597b42a78cca6bbac3c89f659c6606"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "652d7caca3467a4cf3611061533f29d381f933fb293745240e4a7d39f4d493b4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7f6f065ba8b7cd147342e646ad898eff8cf9cc55beed3d8235a162eebdbad1d7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6fee9918b8f95c62f2975f90c400722a401a660b18cae4f8f8867ec8b7a9a078"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "92b31424eb0b64f965254dfd21271c2f05536e67937135e1820e4dfa16a63da9"
+    sha256 cellar: :any_skip_relocation, ventura:        "830778cecbe9ea8a4339777a027c44dec11a4e486a16b9dbd695d5bbf51d4e18"
+    sha256 cellar: :any_skip_relocation, monterey:       "b652238b91e64ab210969d4a8ec60a58fa575517c6485d8362b189c632deaed9"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3a914a59cc46d4146d4a73a6c2be1e57dff2dd6984cda251c77d59b4f95818f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "336b4589d9492ff82756679af69a621cede17573bd30cae28912fc3d1e8aa3bd"
   end
 
   depends_on "go" => :build
