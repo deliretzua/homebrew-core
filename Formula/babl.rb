@@ -13,13 +13,13 @@ class Babl < Formula
   end
 
   bottle do
-    sha256                               arm64_ventura:  "b903be06a5e5d5f9c342c2debd9dfc6e5fd32b35a5055fc9df6813efae8ac5be"
-    sha256                               arm64_monterey: "907dd8df4c6e8ed1bd886757db8ed4aa1bbac12c0940caadcdecdcab747e123f"
-    sha256                               arm64_big_sur:  "9a83dd6ef019889dc0409b2ab21adf33443388c5b00834d6ece2bb562a99f35a"
-    sha256                               ventura:        "4085fa0240a176e34cc9b70b35a6bdf5539f58e337d71c65cbabf9b96062269e"
-    sha256                               monterey:       "80f73cd070ffe55d65bd1c4cee18bba1730dd3b9ec02a78090af92ad816bd674"
-    sha256                               big_sur:        "90e156b78cfc33c302d085f4231d7aa25fb5943e319e7e7514f85c2144771df9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e50cfa5fd796b45717cd4aabf9e927d3627d1c8dd651d62cc09b6a1c962c4558"
+    sha256                               arm64_ventura:  "58933e6ff3b4668a99ca68b66675aff978a82e73fd6a73c8ec8ae42a153a4f5b"
+    sha256                               arm64_monterey: "4035c252ad05ff6a8c9dbc2aee4cd2e04bc1b530193f923b2a631d7168308c76"
+    sha256                               arm64_big_sur:  "09a93b17b65015ce5e6d99511456107bde7613669ec7733a075f1e6228b173ff"
+    sha256                               ventura:        "4d63f7966c3b9303917ef263c8c14d7de11e1e265649b272834880f10609ac32"
+    sha256                               monterey:       "b658b5b00cb490a4447d76961ffdb5e79d85a0f4846bd1dede71e1466b75729c"
+    sha256                               big_sur:        "c69922cb98949769c7bcc45caa60b3a4005273eb9babdebf12120be1ab779723"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b441f493212b7949ee45db5ba186860ab885255b8c284a67132f7d60967edd41"
   end
 
   depends_on "glib" => :build # to add to PKG_CONFIG_PATH for gobject-introspection
