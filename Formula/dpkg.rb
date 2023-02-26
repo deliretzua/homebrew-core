@@ -14,13 +14,13 @@ class Dpkg < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "393676670386745c744411d3333ccd281dccdaab02a466a4fbb65ef162dd8491"
-    sha256 arm64_monterey: "1b61dc9b20405dd83ca2fb70298f33777cffaabca1b2b1c832e058c35f973282"
-    sha256 arm64_big_sur:  "14d5371aa4b82950ae3afcd4811cd8c3cb296e0e63368e37bef56ea41073b37d"
-    sha256 ventura:        "e8c456c5e78ddfdc9c7f91324e471e2534cc037569a5efe8724718bac66c0462"
-    sha256 monterey:       "8b949ff81816fdcfccbeec1ac07f1288696f6f34c354748a158233dfbd155841"
-    sha256 big_sur:        "dc7a14cae8a456bebbbc72a2f60c9823222cf47cac3a8f834365b3f3bc554d1f"
-    sha256 x86_64_linux:   "3db7cbf2930bb754ef35e1c60c64110f9a59bc38b70da5525d0b62ea907f7b45"
+    sha256 arm64_ventura:  "97d9ced4de6aaa94c5b67ad734c8f8eeac862e226f9eee19a67b0832576de84c"
+    sha256 arm64_monterey: "7fc0c8d6bb7d3fbc9ed3c81eb64807aa4fb69ea1af9a2dc496c88628a4f5f0b2"
+    sha256 arm64_big_sur:  "ff4b8d5dc01021e0b9c0b008183e781deac816fba7a11089e457ba7af2b92ad3"
+    sha256 ventura:        "73bfb0beab763c40e4a1cfd2e98c955cbfbc551d843f34dacdcc3eefe25b2181"
+    sha256 monterey:       "6d8b10fc5c2a3237963bea8da8df81cee7df7a00643b43cf9493fe53b54340d7"
+    sha256 big_sur:        "da95dd886913de7ecbff3b8c4a53cd51c6c8358f2fad98a0354d993c63081df5"
+    sha256 x86_64_linux:   "64fa09b2550a07aee3279ed5a9395c70c604062809a952c05f47a366b4e7eb64"
   end
 
   depends_on "pkg-config" => :build
