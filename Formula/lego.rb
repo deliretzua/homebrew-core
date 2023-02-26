@@ -6,13 +6,13 @@ class Lego < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "848259d3a6043787046c08fea51323ecad44bd4a4ae6e2689bdbe09cb89ef69b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "acdd213220350dc00fe75d9dfc17d9515b8c720a6ee1bf3d69bf7b26cb77ffd3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f092828ed73b7934857527d21650a6f572e0bb51852d96bafe8b3f2727465ab7"
-    sha256 cellar: :any_skip_relocation, ventura:        "ca901a4d850eb96f87fa493366975696a7639dee224318ef83da5dc4c01c342c"
-    sha256 cellar: :any_skip_relocation, monterey:       "0543d22e9b4acb02822d27a514835ed286307272c56116502d7e1040b258137b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d4f375f1430ab42b3b046f5af17981183d17f73e8d15f91bdc6df9a8bfb011e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af5d1246d356700ff76e9b545fbf360af3d464fd6aa35956e85d94493caf968e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9cae9b9574119fa5ce634caf42662280829c73c451bdffde3e790821efb0f2b1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5c52cc4dfd56e9cbd41ddd3f554e298739a4522055525995f27d98b69af73297"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "24c7091f9790b7d7c35b1691021f25dd669512bfd6188246cd745a3a86478e27"
+    sha256 cellar: :any_skip_relocation, ventura:        "b184869f34a20619b5139c89e5e7d2e3a16b43f8fea0f65d52d62b48f7f3f850"
+    sha256 cellar: :any_skip_relocation, monterey:       "bc0d1f6d9563fdbbc156a2aafa3001522b606e369f9e369093cbfdada53f7905"
+    sha256 cellar: :any_skip_relocation, big_sur:        "70b72d4992558fdde3741a95cf46fe2e14aae074b23a89fa548c3ebc53ae243c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83ab2d0eded06aa1a1504d6a8944d0794b57e5560b4d9898521f103d4b2ac1b8"
   end
 
   depends_on "go" => :build
