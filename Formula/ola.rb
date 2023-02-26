@@ -1,10 +1,9 @@
 class Ola < Formula
   desc "Open Lighting Architecture for lighting control information"
   homepage "https://www.openlighting.org/ola/"
-  url "https://github.com/OpenLightingProject/ola/releases/download/0.10.8/ola-0.10.8.tar.gz"
-  sha256 "102aa3114562a2a71dbf7f77d2a0fb9fc47acc35d6248a70b6e831365ca71b13"
+  url "https://github.com/OpenLightingProject/ola/releases/download/0.10.9/ola-0.10.9.tar.gz"
+  sha256 "44073698c147fe641507398253c2e52ff8dc7eac8606cbf286c29f37939a4ebf"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  revision 6
   head "https://github.com/OpenLightingProject/ola.git", branch: "master"
 
   bottle do
@@ -33,18 +32,13 @@ class Ola < Formula
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
 
-  # remove in version 0.10.9
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/add0354bf13253a4cc89e151438a630314df0efa/ola/protobuf3.diff"
-    sha256 "e06ffef1610c3b09807212d113138dae8bdc7fc8400843c25c396fa486594ebf"
-  end
-
   def python3
     "python3.11"
   end
 
   def install
-    # https://github.com/protocolbuffers/protobuf/issues/9947
+    # https://github.com/Homebrew/homebrew-core/pull/123791
+    # remove when the above PR is merged
     ENV.append_to_cflags "-DNDEBUG"
 
     args = %W[
