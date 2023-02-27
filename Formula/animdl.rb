@@ -8,6 +8,16 @@ class Animdl < Formula
   license "GPL-3.0-only"
   head "https://github.com/justfoolingaround/animdl.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e09b513b85fcf3c98dfb5d669a4ca5e1bb7ebfb7b6f4cb7e42a32460cef83e20"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a56bd32fe864aa1b639fa730ecfdae78fb55eeae493bcf35dfdb9f9432250cc8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "557d840d18aafed892513c36d700125777d157bc40a0861f6a0133eeca8f575b"
+    sha256 cellar: :any_skip_relocation, ventura:        "dffaaf17cb687b085fd6f4a287b8b04782fb8df57b020a9a7eb75f75fba42bbb"
+    sha256 cellar: :any_skip_relocation, monterey:       "3f8b15f16ddc494259123f3033d9c452b760f69ed256843cb1b4b0d0a55bc88a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b376db6cdcd1baf6c72e07b69cffbc012b6b5998affa27d3d7572f830b47eaf0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "22a99cc76a033c8282ff978c140b02494a3b45a1fb595eae7ce4c60f90c9b1bc"
+  end
+
   depends_on "pygments"
   depends_on "python@3.11"
   depends_on "pyyaml"
