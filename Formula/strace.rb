@@ -6,7 +6,7 @@ class Strace < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ed23dd4081a62bb5c797619220352d2fc256a4d942a13d29fc777094209dcb75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "108f04929bf2675f4c959deb1f78d6f4cbd5958c2881ea62c379b60e808e300e"
   end
 
   head do
