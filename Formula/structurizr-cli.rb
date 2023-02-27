@@ -6,7 +6,7 @@ class StructurizrCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ece2403e7c7a73f6f225493fdc6cd1fedf5adff001a6c94cb65e5d7cd5bdda97"
+    sha256 cellar: :any_skip_relocation, all: "94aa34cbfc80c461d21a344b5018adfd97a414946addce58d713d298fb105b8e"
   end
 
   depends_on "openjdk"
