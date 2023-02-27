@@ -7,13 +7,13 @@ class Acl2 < Formula
   revision 7
 
   bottle do
-    sha256 arm64_ventura:  "a94d2b62422a980725adc902ac5f4f93cb0e934a04ad6a04c5a24000f663f67f"
-    sha256 arm64_monterey: "aac8029edb0eab51b7c35114dd7753561122ef67cb7b255811883ea85550e84d"
-    sha256 arm64_big_sur:  "0b2db94e5b2fbe940f8bd932d08500e988b61b2fbea2a11c74b99fa7ac0e7304"
-    sha256 ventura:        "e4b429ad277178fdb4145380a34580b272edd18f157253f748333ce6bdda9b85"
-    sha256 monterey:       "3530dbaadbb2eb3dadf8c9c138822553ef3b587ef7b64a7999a687eae7c1afef"
-    sha256 big_sur:        "a91d0e66a6290b209ef81e0d6d9449f75e211f4131d2e307b4a904c16553c103"
-    sha256 x86_64_linux:   "4242766e8afa624b28739b2d4cbe874dc3438705c714263242d7532b2284b9fc"
+    sha256 arm64_ventura:  "f94fa1dc77ddfdd63dfe9d606ca51c1c685b2a4b7b9ce74107c3856793960360"
+    sha256 arm64_monterey: "54dd390bab8f979f8d998065c4b068b6fa992e30f4689ffd0e70f9c134ae8770"
+    sha256 arm64_big_sur:  "fa3d7764682eb8e1c10fafa7195363395c81beac651b8b6c05ef819e984e5c5a"
+    sha256 ventura:        "27040d43e1e0d34aedc90fa5820b6b65ba1eb44fe907977af0feaf2f078538f5"
+    sha256 monterey:       "8964e88cae48808a7fdd9cb9b2103eddccadd384a066a3525c9585f8a6088b88"
+    sha256 big_sur:        "781b6c3027758962e1ab74b447477ef5406ab5cd0b998f64ac7970f90d6c3202"
+    sha256 x86_64_linux:   "e0553008c6f5b908c5b2c201ee21d5d72593d559df10d28fcf2f38f4dd3d2396"
   end
 
   depends_on "sbcl"
