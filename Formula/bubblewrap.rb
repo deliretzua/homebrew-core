@@ -6,7 +6,7 @@ class Bubblewrap < Formula
   license "LGPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "73f968a609c8ccb42909bfdebab5addcd52c59ecda5bfb19a081ae9f95e0dbbf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8647ce8a184f5a3071dc0dd4ba31c17423540d5bd11bd1b2513771d9fab36a66"
   end
 
   head do
