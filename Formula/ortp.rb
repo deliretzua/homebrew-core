@@ -7,13 +7,13 @@ class Ortp < Formula
   head "https://gitlab.linphone.org/BC/public/ortp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "6ad1b60d0e292c1fc993b2a1c7fbadd85e3b6eeeb8450ef5a92e72c0f790ff5c"
-    sha256 cellar: :any,                 arm64_monterey: "f4e3fa82caf247e8921e60b23d55f060d6a00a432759205124cea053eaa1f890"
-    sha256 cellar: :any,                 arm64_big_sur:  "9f2207f3f18ed35aa2f43bf62dc33c535028ff502009669bafd99515096fac98"
-    sha256 cellar: :any,                 ventura:        "267aa0704ed2750da7b15430dcfc06fe6127d5bc60eb3b4d0413140bceff29e1"
-    sha256 cellar: :any,                 monterey:       "0b86ce40de1e0177946a7a0c94375a5c0ac9d1729cc21541791f0d9bcc5ef8b0"
-    sha256 cellar: :any,                 big_sur:        "a416b2ae182f7b536fb5325248b97a105460381274ca611c6fb34097a8b69c95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2af4f80821b084b07f4fc6e286ee84394027ef9d1a1218c68c26d1d466b7d43b"
+    sha256 cellar: :any,                 arm64_ventura:  "3f258e1374801e2223030eeba8406ba48ee371689ac673a3939c2716913c184d"
+    sha256 cellar: :any,                 arm64_monterey: "e6cc02d357eb7b1d309c3c403450d5eaf6c000d2eb2773ad440f37cc0312e323"
+    sha256 cellar: :any,                 arm64_big_sur:  "841f870ee3e8cb86aae66b2cf12a5f0526be6e3e51ac2fae1d7f2142b9e3946d"
+    sha256 cellar: :any,                 ventura:        "64462b6170536ae80b46fa044f04b6081a539bd327a4bddedeb558a23f2dba90"
+    sha256 cellar: :any,                 monterey:       "940bf9cc2a9e6d5cd71220b67e062471bbc333c7c3c89ab34c88a82ffb08cf62"
+    sha256 cellar: :any,                 big_sur:        "db52de9db992300d9aee79b8a135bc7821770dd2b3fe6f95341a066c13cb1841"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "015d0686d7f03db79a6917b8ed34e454486286e59e9c079cb3379f79db0b0f27"
   end
 
   depends_on "cmake" => :build
