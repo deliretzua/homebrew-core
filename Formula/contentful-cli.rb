@@ -5,8 +5,8 @@ class ContentfulCli < Formula
   homepage "https://github.com/contentful/contentful-cli"
   # 1.19.0 introduced a big code layout change, which is not easy to patch.
   # TODO: re-add version throttling in next bump
-  url "https://registry.npmjs.org/contentful-cli/-/contentful-cli-2.0.2.tgz"
-  sha256 "79cb14c517f0a29a131ab66c768ece676a4a4c0c9d359a370552e86f5f42886b"
+  url "https://registry.npmjs.org/contentful-cli/-/contentful-cli-2.1.0.tgz"
+  sha256 "b851ba2545a43cc7660d819fddbf0902b82d3c8713a8be9c6e3d8266440e7646"
   license "MIT"
   head "https://github.com/contentful/contentful-cli.git", branch: "master"
 
