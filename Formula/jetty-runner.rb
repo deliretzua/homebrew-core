@@ -12,7 +12,13 @@ class JettyRunner < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b9f25d49abbbe28850ee767e1777521ba5454fe502523bc8161314ef53266d82"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "17e72d7c303faad3cff674691d9657eeaf4a01db71087cb7d49a78eb6bd8559f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "17e72d7c303faad3cff674691d9657eeaf4a01db71087cb7d49a78eb6bd8559f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "17e72d7c303faad3cff674691d9657eeaf4a01db71087cb7d49a78eb6bd8559f"
+    sha256 cellar: :any_skip_relocation, ventura:        "17e72d7c303faad3cff674691d9657eeaf4a01db71087cb7d49a78eb6bd8559f"
+    sha256 cellar: :any_skip_relocation, monterey:       "17e72d7c303faad3cff674691d9657eeaf4a01db71087cb7d49a78eb6bd8559f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "17e72d7c303faad3cff674691d9657eeaf4a01db71087cb7d49a78eb6bd8559f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fcf4ff31ae4fba559f3cc6d157632a936e6c29e39be665a4521964b7cd7f3fdf"
   end
 
   depends_on "openjdk"
