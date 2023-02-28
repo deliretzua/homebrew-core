@@ -12,14 +12,14 @@ class Exa < Formula
   end
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any,                 arm64_ventura:  "910fc9f942a2df4b3ee136e3dad43f462498789764fa35082dd61a0b332c194e"
-    sha256 cellar: :any,                 arm64_monterey: "b0d030bc4cf06afa67b0e39034446133650ad6126896b4aec7cd4a7845a5e544"
-    sha256 cellar: :any,                 arm64_big_sur:  "aa10fe12556adf1c9e9bd579c9da35b6c6589c03dd0ab7af2f836ce6a931a3a1"
-    sha256 cellar: :any,                 ventura:        "e7da51aa740f180efb4ecba6eeafc94a5b49853034b2af5b6d7b0b62be01fbdc"
-    sha256 cellar: :any,                 monterey:       "2e56e98a4a176368a16f374651607a16e75c7187576583b6125d59c03a0812ba"
-    sha256 cellar: :any,                 big_sur:        "06319ab9ff978ac940f34b4ee8f8557da5971ab8048ffb34a997d18b9ffdf595"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33403a5088316ff6339ea8674f8f5cc1a1f93d44e294cd0231ca559fcf7fc6de"
+    rebuild 5
+    sha256 cellar: :any,                 arm64_ventura:  "a3896eda34a5096be5642986d3de7c87eab719af5f6d3ad54ee216744a1462c2"
+    sha256 cellar: :any,                 arm64_monterey: "1b10765192e4f4940862feab95cf7f7491f50fca87771550f4a0796ca0b7563f"
+    sha256 cellar: :any,                 arm64_big_sur:  "29f335cc2130b0c5ee93236f9a3e805dc8af4fb9414a3e4b73d38e1c528399ad"
+    sha256 cellar: :any,                 ventura:        "4cc39e72c301eef716e0ab8e2f05f91fa3e1cbf3545b8002f9602ceb2c3c3c82"
+    sha256 cellar: :any,                 monterey:       "48e94b7764256f3e9e309dfd1a08c4dbaa2af3e2623fcfdb7c5ea9558fde6e5c"
+    sha256 cellar: :any,                 big_sur:        "3668c3a6a375d1ef1d340abbb77488ea6c60a166ea692da3eda5eb04cfbdbef2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "17a48a5beedeb00f98311e75e25cc3cd7043b1f9ef28ceccc5285bb4848eec34"
   end
 
   depends_on "pandoc" => :build
