@@ -6,13 +6,13 @@ class Cloudprober < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0dc7d6e3f25c76b31c008eb6db18dbaf529983953ebe251251a84c7e8f3b98ef"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a541f578b05ca56fa9d5eac6114a45fc6b7bf8e9a030ae4e6782bac572f8eff5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cf2cf4187226f80799490ea3952b7b9cfff2642cafc029cd58344d0823b792fc"
-    sha256 cellar: :any_skip_relocation, ventura:        "f439dedfb9d73635979c202c3243366c1a028dd5c7751bce55fa6b2f94bfc0ba"
-    sha256 cellar: :any_skip_relocation, monterey:       "6dfc559da88f30cf4bfca78133fdb73b2b34aa08e0f78c64a7727f0b0e8f2027"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7856d75a6b366fcc33922901990735fe7249a355baf0d003ddb355d6cac374e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4613f4a715535e37ba38e3654ecde3bb54e4e2590c0ece68277f722e76ddfd7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ed574c5802414eff22f60f44110697ae3196f73add06a8a7e1b759fc84614e87"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0ff0f12c676cc0106467d53008f80f7fbd3459b5ef72fdb0c2cc8afefbed2a79"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "65cfd91a2e79eaa3d28f096daeb362e868f471a555c0003f5e7162837043881e"
+    sha256 cellar: :any_skip_relocation, ventura:        "ee1151215192715e77956be4488966ad0269b0a4f90c59724d771c5ab4823cdb"
+    sha256 cellar: :any_skip_relocation, monterey:       "a1a7a079a95402ec61d097ad2760582e707d8f739a2ad847256625b23c05f731"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ce84097d8974c3b06f3514c4a4202f10caa4bb54db40bf84335aff6806499f20"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb8f3ab2240841449d26d99fe791cf83eb434128b93c6913a3b33fe3ffc4ecef"
   end
 
   depends_on "go" => :build
