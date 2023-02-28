@@ -4,7 +4,7 @@ class Ffms2 < Formula
   # The FFMS2 source is licensed under the MIT license, but its binaries
   # are licensed under the GPL because GPL components of FFmpeg are used.
   license "GPL-2.0"
-  revision 3
+  revision 4
   head "https://github.com/FFMS/ffms2.git", branch: "master"
 
   stable do
@@ -12,7 +12,7 @@ class Ffms2 < Formula
     mirror "https://deb.debian.org/debian/pool/main/f/ffms2/ffms2_2.40.orig.tar.gz"
     sha256 "82e95662946f3d6e1b529eadbd72bed196adfbc41368b2d50493efce6e716320"
 
-    # Fix build with FFmpeg 5. Remove patches in the next release.
+    # Fix build with FFmpeg 5/6. Remove patches in the next release.
     patch do
       url "https://github.com/FFMS/ffms2/commit/586d87de3f896d0c4ff01b21f572375e11f9c3f1.patch?full_index=1"
       sha256 "cd946d9f30698a5a7e17698c75e74572ecaa677b379dc92d92e4a986243d69c6"
@@ -36,6 +36,7 @@ class Ffms2 < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "ffmpeg"
 
@@ -47,9 +48,6 @@ class Ffms2 < Formula
   end
 
   def install
-    # For Mountain Lion
-    ENV.libcxx
-
     system "./autogen.sh", *std_configure_args, "--enable-avresample"
     system "make", "install"
   end
