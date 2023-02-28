@@ -3,8 +3,7 @@ require "language/node"
 class ContentfulCli < Formula
   desc "Contentful command-line tools"
   homepage "https://github.com/contentful/contentful-cli"
-  # 1.19.0 introduced a big code layout change, which is not easy to patch.
-  # TODO: re-add version throttling in next bump
+  # contentful-cli should only be updated every 5 releases on multiples of 5
   url "https://registry.npmjs.org/contentful-cli/-/contentful-cli-2.1.0.tgz"
   sha256 "b851ba2545a43cc7660d819fddbf0902b82d3c8713a8be9c6e3d8266440e7646"
   license "MIT"
