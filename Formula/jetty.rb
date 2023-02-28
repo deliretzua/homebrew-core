@@ -12,13 +12,13 @@ class Jetty < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8685eef1635a4ceb861341d2dd9fc54eae707008c5c842615e11ca166ef986a9"
-    sha256 cellar: :any,                 arm64_monterey: "1eb8b35239266529099087d2bd851982af32f1d6a2bae2d8fee8f7712121ce44"
-    sha256 cellar: :any,                 arm64_big_sur:  "48fb1dc907a3e534f328c66544a2636192b415b7f29fb92c9037d38886f20429"
-    sha256 cellar: :any,                 ventura:        "217a2d9f397f9364371137e1e255b3e4b7d12bd3a906e5113e9a63532d1a009c"
-    sha256 cellar: :any,                 monterey:       "217a2d9f397f9364371137e1e255b3e4b7d12bd3a906e5113e9a63532d1a009c"
-    sha256 cellar: :any,                 big_sur:        "217a2d9f397f9364371137e1e255b3e4b7d12bd3a906e5113e9a63532d1a009c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a5e9b1b7d50c5cc9b71841f5b27abb266b24b9c005de97f63029effba933d31"
+    sha256 cellar: :any,                 arm64_ventura:  "d228e1b73584d5d9eee674e2ad77c5bb3b4b9fa3b33e515c12d9e24c2301af91"
+    sha256 cellar: :any,                 arm64_monterey: "af0e1498c5bfbc9c05e728edfac77da8cb49c617554a149fe45ef9c499f5530e"
+    sha256 cellar: :any,                 arm64_big_sur:  "ec74afc2299e03f8241ba5e14a4008768e3c654db05f5beabe547714d71adaa5"
+    sha256 cellar: :any,                 ventura:        "ee8afdb5a427644b41e8678220c2661d0dc34538488033d5f8c8c9081cddc175"
+    sha256 cellar: :any,                 monterey:       "ee8afdb5a427644b41e8678220c2661d0dc34538488033d5f8c8c9081cddc175"
+    sha256 cellar: :any,                 big_sur:        "ee8afdb5a427644b41e8678220c2661d0dc34538488033d5f8c8c9081cddc175"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e13e171d78c9c7ea3d9493a3edf75f6ec44854603608e6a4fa05345af183c9fe"
   end
 
   depends_on "openjdk"
