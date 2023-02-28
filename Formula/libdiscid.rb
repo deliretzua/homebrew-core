@@ -12,18 +12,13 @@ class Libdiscid < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "49649e1da022773f63752c1ae6557cce46c33ecf14e7f1f8812015cd0c79e9f5"
-    sha256 cellar: :any,                 arm64_monterey: "8acbeba6f3ab89c360994667a65f26cd8d8a974392cd27fcd6de9e4c20cd9b62"
-    sha256 cellar: :any,                 arm64_big_sur:  "67f29aadedf99093c49470c6b99974ea94ed16491bf173e141055c501f4f26e3"
-    sha256 cellar: :any,                 ventura:        "a5bc0b414b3664794edb2ddaa5e5c5c2119ef293ff6676d75f3e5f8e94f15e06"
-    sha256 cellar: :any,                 monterey:       "6e1722879ecb396a04c3800cbf13ade90b60ac55fe9939126f3e12fd15d40d96"
-    sha256 cellar: :any,                 big_sur:        "3388368253a64c71bd0cb6fcf0cd06102808d53cbaf3be99e482f175b5129952"
-    sha256 cellar: :any,                 catalina:       "74dd7ef5362b91818107ef3c8c3edab443faf8a17662294a24573e5f476110c7"
-    sha256 cellar: :any,                 mojave:         "f6a415ae56c151ccef5e10cc239675be8cbd7dcf60a8b9c88c87a756bda5bd9a"
-    sha256 cellar: :any,                 high_sierra:    "3ffb586f09efcd9322a28bafc671292d0caf38edc18326c048a7390ced94979f"
-    sha256 cellar: :any,                 sierra:         "6d43fee98239a6a600e59cce0f4f2ceda713bf27cc3d03bc8711d1c773ba84b6"
-    sha256 cellar: :any,                 el_capitan:     "22e96d837cfe404cf268c41f6ce26c6b47eb8a991578ce1f18bcea862f9f1c91"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e1a1df51835243be69651af2bee7c63dd3c067362478bc016cf39e84910e79a"
+    sha256 cellar: :any,                 arm64_ventura:  "e62b74dea259346a51a40aef5af06c0ef88ec7b6de98565371b5a9b257a0be7b"
+    sha256 cellar: :any,                 arm64_monterey: "dea2303c568083440c68462c35cc616c83b52640596fac2440d1eb3827ff22e3"
+    sha256 cellar: :any,                 arm64_big_sur:  "514b36a72418f8c3049768ac1d6ad8b99221deb8d00635c0fd132474b5e9834d"
+    sha256 cellar: :any,                 ventura:        "bca3beecd97f989e62862945de9da1c29ec350e2d014dc5d7ddc1c1f1e6323ba"
+    sha256 cellar: :any,                 monterey:       "edeb0fe1e99842867995aa8298612843c5102a04aac3be71d6aabdf41c538574"
+    sha256 cellar: :any,                 big_sur:        "7ea4638affc7a8943db29b9b1e0889d68451c1919424540ccd0b6f06c48a5680"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c901a24b7316aefdb0bea6ed5d8805e3d817b9941d472cb92eabb9354caa84c"
   end
 
   def install
