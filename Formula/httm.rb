@@ -7,13 +7,13 @@ class Httm < Formula
   head "https://github.com/kimono-koans/httm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b4510b8f4ee8598416583c7797c525f4403bdd8e68bee62765725e7f7355b8f4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a4c4a3c11118ac0bfb4f27f485b6e7c6efb77b08c2f6999ad41946fc78efd025"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "586394b97a8c8985859c2420c30cb8eea1de9e0ea2381ed3eea567359ffe8f5e"
-    sha256 cellar: :any_skip_relocation, ventura:        "22c908fb142c151ed46d21a2ce5f7f73e36349c2dbcb9781d036e703cbc9959d"
-    sha256 cellar: :any_skip_relocation, monterey:       "8ab1c2aaab783c93421b654ee311c458a115464d2ebdc4a052e94af618f3e3a6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0655d5dfb1aebc6ce3fc2e907fa1b2fd3f189d6170e45d6e5541b8ae0a9cc38f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c40c9009710b3b49e35a4deeb92237e83926fba08abe4c0142ac21d75c55c132"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "495aea803dcb07b6df565f8e3aada5322b710f673543281721f9f846de7e8cec"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c3b5d2051eaf01caa7a306ee1fac44e4337a775b4bf0f23fe8c7959e1ddad066"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fc4a85362a93d92d12e657c553daea00cad035e6fad6dac3bda2239beb90c6e8"
+    sha256 cellar: :any_skip_relocation, ventura:        "148039a615f9cfeff364963ea01380529f1042b9b3f85df6be9fee0db088ebb0"
+    sha256 cellar: :any_skip_relocation, monterey:       "15d32edefaf8880da2c1fb02879ee5b238b1ad99e22ca3c8652e0bccad6d485e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "10ad841e2987d93d598cc36e401fd591bf0116ac37b6efe3c122cd61dc538e2a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "233f4a5bdd3414fd88a7b9e90a5da033c2440b7412ec011e296e6640e7148001"
   end
 
   depends_on "rust" => :build
