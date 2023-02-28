@@ -7,15 +7,14 @@ class GitSeries < Formula
   revision 7
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "76107d37585c43d3c7ea8f69971b1a2485a221e3ce0c87b2b1860ff097e76f17"
-    sha256 cellar: :any,                 arm64_monterey: "908fc5596af1e413b3f9aa6a50f50adda016ddb025f2eeaf4b532072e0364d95"
-    sha256 cellar: :any,                 arm64_big_sur:  "24739f0dd29b00b52ef26a38658662184801d30b7dc8c33e9e46e5e1ec351aeb"
-    sha256 cellar: :any,                 ventura:        "9afeaf659a5b2b490e829c9d1cd75dc26458af33402e63738ecda3998bbe4008"
-    sha256 cellar: :any,                 monterey:       "386da3ab9a088239de9d642c164768504517293fff3d0189783e3ab8aad8f791"
-    sha256 cellar: :any,                 big_sur:        "caf6563a0c6f3ff85c59c97464b05e2e27509d87ed344f1693d68d903b297770"
-    sha256 cellar: :any,                 catalina:       "3df33788f9498b11b518b7555b4ad7f3d4fd188777483eab9ab2d1aa3ce05e0a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7d5130d7d0265432d2f1dc775f20bbb09d6ff7ce5c98e9b839972c94308c2332"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "04889a2a2676538b5529b2cfb5085acce8bb3771b914e1207fb2c4b84a606df8"
+    sha256 cellar: :any,                 arm64_monterey: "503c48f0ad4435030aab00b3ebfb1162a49e93bf9332043c66de07c2d8f3a1f1"
+    sha256 cellar: :any,                 arm64_big_sur:  "7ee96f2e51fac16a9d1ff0352b74fab9ad68aad0d6c1a4a00e9cd738b03a5fdf"
+    sha256 cellar: :any,                 ventura:        "4fdcedd491262fc937cca80829200393fc9323ad126ec3dbab84ed613e8bca35"
+    sha256 cellar: :any,                 monterey:       "479c9f19e2ee86d2686ebb106e7d20bca4f71b10b1297544014b6f6f10e2a754"
+    sha256 cellar: :any,                 big_sur:        "59dcd3a3cd5044f679d294ba6a4170503f077e601fb6ef7f75f7392ab1dcf7eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3080234f5707f6f8c5cdcde8e93a3cf5e3bbe10b6ea9cc54f1d21a2151f6e0f3"
   end
 
   depends_on "pkg-config" => :build
