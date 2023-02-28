@@ -1,8 +1,8 @@
 class Ispc < Formula
   desc "Compiler for SIMD programming on the CPU"
   homepage "https://ispc.github.io"
-  url "https://github.com/ispc/ispc/archive/v1.18.1.tar.gz"
-  sha256 "5b004c121e7a39c8654bb61930a240e4bd3e432a80d851c6281fae49f9aca7b7"
+  url "https://github.com/ispc/ispc/archive/v1.19.0.tar.gz"
+  sha256 "da1eccb8ead495b22d642340f3bab11fb64dd2223cd9cc92f0492f70b30f34b5"
   license "BSD-3-Clause"
 
   bottle do
@@ -20,7 +20,7 @@ class Ispc < Formula
   depends_on "cmake" => :build
   depends_on "flex" => :build
   depends_on "python@3.11" => :build
-  depends_on "llvm@14"
+  depends_on "llvm"
 
   fails_with gcc: "5"
 
@@ -36,20 +36,18 @@ class Ispc < Formula
     # Disable building of i686 target on Linux, which we do not support.
     inreplace "cmake/GenerateBuiltins.cmake", "set(target_arch \"i686\")", "return()" unless OS.mac?
 
-    args = std_cmake_args + %W[
+    args = %W[
       -DISPC_INCLUDE_EXAMPLES=OFF
       -DISPC_INCLUDE_TESTS=OFF
       -DISPC_INCLUDE_UTILS=OFF
-      -DLLVM_TOOLS_BINARY_DIR='#{llvm.opt_bin}'
-      -DISPC_NO_DUMPS=ON
-      -DARM_ENABLED=#{Hardware::CPU.arm? ? "ON" : "OFF"}
+      -DLLVM_TOOLS_BINARY_DIR=#{llvm.opt_bin}
     ]
+    # We can target ARM for free on macOS, so let's use the upstream default there.
+    args << "-DARM_ENABLED=OFF" if OS.linux? && Hardware::CPU.intel?
 
-    mkdir "build" do
-      system "cmake", *args, ".."
-      system "make"
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -74,7 +72,7 @@ class Ispc < Formula
       target = "sse2"
     end
     system bin/"ispc", "--arch=#{arch}", "--target=#{target}", testpath/"simple.ispc",
-      "-o", "simple_ispc.o", "-h", "simple_ispc.h"
+                       "-o", "simple_ispc.o", "-h", "simple_ispc.h"
 
     (testpath/"simple.cpp").write <<~EOS
       #include "simple_ispc.h"
