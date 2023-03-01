@@ -12,8 +12,7 @@ class Gcsfuse < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ae1556ce802d2e6ffe6be4ee1c8ff302ec715e46c5542b5b100415a3c70ec8f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c7946970510775947ac26eda132be989c9990eba7874e80e5e122d530178cbbd"
   end
 
   # gcc-11: The build tool has reset ENV; --env=std required.
