@@ -6,13 +6,13 @@ class PowermanDockerize < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f3b2985c7df26cc45ea461d2ba73eebc2d74e3c2a3be2ca06515c96ddb24355d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "295b42056ef7c3671cceb6d3dcf291291da7e888b53cfef13a31a740f98dc41e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1b4c5641593af5f64015d54b1d583b36e29cb277f3caf1227f8130a6e853ca27"
-    sha256 cellar: :any_skip_relocation, ventura:        "f0e93cc3cdaa1b1a9625a0a835510f7840944f357ea5140b81abd66cefc29a01"
-    sha256 cellar: :any_skip_relocation, monterey:       "39520ba40547427c7fddc96b6d11077ba7d628e2c8f7a01408ff64afffb9efeb"
-    sha256 cellar: :any_skip_relocation, big_sur:        "316718edcda00d3f8ba267646865374853f13732e4657b880aebe5e15dd8cf7d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "618f0667675365d041d46e9396a26841a3425f090c687be3d23d4cbab3a1b9a2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "22a49e6780e8e00a054aaa35c6749d21095d374eac84c5c773ff549b38adae4a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "22a49e6780e8e00a054aaa35c6749d21095d374eac84c5c773ff549b38adae4a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "22a49e6780e8e00a054aaa35c6749d21095d374eac84c5c773ff549b38adae4a"
+    sha256 cellar: :any_skip_relocation, ventura:        "8ab1eff297eb25f14338b89b7bd198978b3541e619203fa92ef2450b0045e098"
+    sha256 cellar: :any_skip_relocation, monterey:       "8ab1eff297eb25f14338b89b7bd198978b3541e619203fa92ef2450b0045e098"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8ab1eff297eb25f14338b89b7bd198978b3541e619203fa92ef2450b0045e098"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "02c820b472202d7146338d7c94989edf2ce8f8c6223abf57f688224a9f92cc0e"
   end
 
   depends_on "go" => :build
