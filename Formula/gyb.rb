@@ -7,6 +7,16 @@ class Gyb < Formula
   license "Apache-2.0"
   head "https://github.com/GAM-team/got-your-back.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "602d9dfce6755f7e3fe3803dacf3c41c99e8b2ed0a5e1b16c1a3f5eda37dc578"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bbaab2fa74f08eb34d67ae5d3b6534aa8e511b6f178d92e4f5702ac76c564d0c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "01fb5b6feb46a3c13b87738534467002388044754330e70fea41704119d120d7"
+    sha256 cellar: :any_skip_relocation, ventura:        "2579e77951d64ee85a8d4ff0212af2c4bc4e8da98aa922d20c49b09e6294d464"
+    sha256 cellar: :any_skip_relocation, monterey:       "5eaac37d23f9934c9c09c81a195a293ecff8a39c434215a6da88ca1ae55b7678"
+    sha256 cellar: :any_skip_relocation, big_sur:        "702ea65eecb4ea9b4eaaf3d00ad9cc0b49bf83f5e0605702937c519e5dde4917"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d4f7ef20416aa2c86dc62b727f35cac6c9185416eff75bffa806de8e1100dc8"
+  end
+
   depends_on "rust" => :build # for cryptography
   depends_on "python@3.11"
   depends_on "six"
