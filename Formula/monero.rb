@@ -2,10 +2,9 @@ class Monero < Formula
   desc "Official Monero wallet and CPU miner"
   homepage "https://www.getmonero.org/"
   url "https://github.com/monero-project/monero.git",
-      tag:      "v0.18.1.2",
-      revision: "66184f30859796f3c7c22f9497e41b15b5a4a7c9"
+      tag:      "v0.18.2.0",
+      revision: "99be9a044f3854f339548e2d99c539c18d7b1b01"
   license "BSD-3-Clause"
-  revision 1
 
   livecheck do
     url :stable
@@ -35,13 +34,6 @@ class Monero < Formula
   depends_on "zeromq"
 
   conflicts_with "wownero", because: "both install a wallet2_api.h header"
-
-  # patch build issue (missing includes)
-  # remove in next release
-  patch do
-    url "https://github.com/monero-project/monero/commit/96677fffcd436c5c108718b85419c5dbf5da9df2.patch?full_index=1"
-    sha256 "e39914d425b974bcd548a3aeefae954ab2f39d832927ffb97a1fbd7ea03316e0"
-  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
