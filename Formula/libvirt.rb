@@ -12,14 +12,13 @@ class Libvirt < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "cc75afa96b97bf89fd6081f45111a5a57d42ba76b9b3e6b3ea55aeeded8c8904"
-    sha256 arm64_monterey: "3a29f44beb9928fabd06aeaffac383e2ad6f79c00ca2e57b696919ba98969f93"
-    sha256 arm64_big_sur:  "47b581a3bf826640ae7dd4b8be53daf978a562348f303ff4b04f6dcc18b6c52b"
-    sha256 ventura:        "9a81be693ca08b32b1819a72bc6e7fd5ba38388ce19201fda4f2feed541746cb"
-    sha256 monterey:       "3ff1b7aff29ab47e4c3fe3d18c73231b5057f74c33ad0f4ee8671236a8da405a"
-    sha256 big_sur:        "2c8eda21b6d05503cfef0095af9cf6199cff20b07384635fc656e38d1cd9c862"
-    sha256 x86_64_linux:   "bb79a9bfa9a59cd6fc5d836230e1c50077ade0a007530cf96314dd85d5c3da98"
+    sha256 arm64_ventura:  "a0ad1459d0cd11d37810d873eb1c2fba2ad167a0b4ab5ebe538ed8b44495e413"
+    sha256 arm64_monterey: "f0f153f7d349657a44b8177df87f519ed54ea6d3c95ade7f3c61e6de28728c5c"
+    sha256 arm64_big_sur:  "220969ba84fcac799a45ed3a4f145ad7dde85a560b5c9d8fbaa84302de9a027b"
+    sha256 ventura:        "7c7c79718b8eb242cb398fea929629b476d012bfcfb2bbf548866e0cbce1a3eb"
+    sha256 monterey:       "92a10075ddec2c0565e621fa0d3104add7b0da3b2babe78205f9d8662317d69a"
+    sha256 big_sur:        "91fd6fb6464237ea7848dd3a7fd87c74deec4c25d7208e88f53d8a858570a253"
+    sha256 x86_64_linux:   "6a7c8079937edc6b31676e8285f24fb046721c95185b1ab160540b996368410f"
   end
 
   depends_on "docutils" => :build
