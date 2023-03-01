@@ -7,13 +7,13 @@ class Fdroidcl < Formula
   head "https://github.com/mvdan/fdroidcl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9c549d7f3ead6ac34d089bb3fc4f968efcdb111fba67021f79bb5fab8309f39c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "783ca1d4d51da20058631202f89ae23bab21f5b2d51e53d6c4d47e7710172a3c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a97e452f11bdcc88f5da85554cb53672a1c0266d512515c3361773ba43ce158f"
-    sha256 cellar: :any_skip_relocation, ventura:        "d64dfbd06d3c0f0d4f1350753fcd3fce58ee9bfcabacad7694679608a3775bcf"
-    sha256 cellar: :any_skip_relocation, monterey:       "4058da1a3039551360e6bc57448e5b52885b858474af65ba118f487f19b9bc08"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e47a2f00c2f41b2ceb0dec399bfeff0ce72977bcb6d63d741111507bc13fbe10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b37f276bc7d4a1fe0b6591e2c555745cdf9d212ddab8140d5c0f09c8fc848263"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b6439e615b6b2a8215cb52dddceccf338311592fb196a1c6d44f2aa5c266e5e5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b6439e615b6b2a8215cb52dddceccf338311592fb196a1c6d44f2aa5c266e5e5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b6439e615b6b2a8215cb52dddceccf338311592fb196a1c6d44f2aa5c266e5e5"
+    sha256 cellar: :any_skip_relocation, ventura:        "aab9b2028e64b0c1a6720227648e3cb5c2b4bb66356a826b325fb9189808d7ef"
+    sha256 cellar: :any_skip_relocation, monterey:       "aab9b2028e64b0c1a6720227648e3cb5c2b4bb66356a826b325fb9189808d7ef"
+    sha256 cellar: :any_skip_relocation, big_sur:        "aab9b2028e64b0c1a6720227648e3cb5c2b4bb66356a826b325fb9189808d7ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e51256959812a67ce1ff4b6a9169e7e72cd07e3ef548d6199848caa3a6ce888d"
   end
 
   depends_on "go" => :build
