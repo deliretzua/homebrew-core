@@ -8,6 +8,16 @@ class AivenClient < Formula
   license "Apache-2.0"
   head "https://github.com/aiven/aiven-client.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "36505cd0ec09fad6c224ac9423477e12bc5ac5968afe716f8c522709a5c75bec"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a5b33d55acfa430417c5f60fb071ac2ba67e4229b2c4458781ba9de51d08364a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a56a8300fc654ebba93d4fa8b52cd597b8acbf369753008117adf3052b6b4b80"
+    sha256 cellar: :any_skip_relocation, ventura:        "0d4887f17b7ebaa172d61aaaf34c4d467985705e3485c99a66e77c67ea7ce8fe"
+    sha256 cellar: :any_skip_relocation, monterey:       "7b6089b99528c0a55169b4e2d941d6610c308b663acf408c3bd19a1b6ac3db1b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "01caefe620f3ec23be6a20bd8a901a2167c56ea83d6039cf180aef9bcc32b2eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "304d7f6618163e5b44456a54583c982bdceca9c3baffed22cb597a952dd894c4"
+  end
+
   depends_on "python@3.11"
 
   resource "certifi" do
