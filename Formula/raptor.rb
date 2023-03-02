@@ -1,8 +1,9 @@
 class Raptor < Formula
   desc "RDF parser toolkit"
   homepage "https://librdf.org/raptor/"
-  url "https://download.librdf.org/source/raptor2-2.0.15.tar.gz"
-  sha256 "ada7f0ba54787b33485d090d3d2680533520cd4426d2f7fb4782dd4a6a1480ed"
+  url "https://download.librdf.org/source/raptor2-2.0.16.tar.gz"
+  sha256 "089db78d7ac982354bdbf39d973baf09581e6904ac4c92a98c5caadb3de44680"
+  license any_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later", "Apache-2.0"]
 
   livecheck do
     url :homepage
@@ -24,18 +25,15 @@ class Raptor < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e12ca0982ee8eebad9a39d5f77ef329dd9e56fdbfa9e3d083648bfecba8d6d7"
   end
 
+  uses_from_macos "curl"
   uses_from_macos "libxml2"
 
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
-    sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
+  def install
+    system "./configure", *std_configure_args
+    system "make", "install"
   end
 
-  def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
-    system "make", "install"
+  test do
+    system bin/"rapper", "--output", "ntriples", "https://planetrdf.com/guide/rss.rdf"
   end
 end
