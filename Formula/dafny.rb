@@ -1,8 +1,8 @@
 class Dafny < Formula
   desc "Verification-aware programming language"
   homepage "https://github.com/dafny-lang/dafny/blob/master/README.md"
-  url "https://github.com/dafny-lang/dafny/archive/refs/tags/v3.12.0.tar.gz"
-  sha256 "02608ab5047b308924682faa0b8fe7a502455a7d331e46dd0f7e8cd8ab832f22"
+  url "https://github.com/dafny-lang/dafny/archive/refs/tags/v3.13.0.tar.gz"
+  sha256 "8536bc0650e3801cfb21bd0fc65d2c802940917eb572719d0695c763765c2ea0"
   license "MIT"
 
   livecheck do
@@ -25,26 +25,11 @@ class Dafny < Formula
   # https://github.com/dafny-lang/dafny/blob/v#{version}/Source/DafnyRuntime/DafnyRuntimeJava/gradle/wrapper/gradle-wrapper.properties
   # https://docs.gradle.org/current/userguide/compatibility.html
   depends_on "openjdk@17"
-
-  uses_from_macos "python" => :build, since: :catalina # for z3
-
-  # Use the following along with the z3 build below, as long as dafny
-  # cannot build with latest z3 (https://github.com/dafny-lang/dafny/issues/3601)
-  resource "z3" do
-    url "https://github.com/Z3Prover/z3/archive/Z3-4.8.5.tar.gz"
-    sha256 "4e8e232887ddfa643adb6a30dcd3743cb2fa6591735fbd302b49f7028cdc0363"
-  end
+  depends_on "z3"
 
   def install
     system "make", "exe"
     libexec.install Dir["Binaries/*", "Scripts/quicktest.sh"]
-
-    resource("z3").stage do
-      ENV["PYTHON"] = which("python3")
-      system "./configure"
-      system "make", "-C", "build"
-      (libexec/"z3/bin").install "build/z3"
-    end
 
     (bin/"dafny").write <<~EOS
       #!/bin/bash
@@ -64,7 +49,5 @@ class Dafny < Formula
                   shell_output("#{bin}/dafny /compile:0 #{testpath}/test.dfy")
     assert_equal "\nDafny program verifier finished with 1 verified, 0 errors\nRunning...\n\nhello, Dafny\n",
                   shell_output("#{bin}/dafny /compile:3 #{testpath}/test.dfy")
-    assert_equal "Z3 version 4.8.5 - 64 bit\n",
-                 shell_output("#{libexec}/z3/bin/z3 -version")
   end
 end
