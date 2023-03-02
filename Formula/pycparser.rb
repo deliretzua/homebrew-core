@@ -5,6 +5,10 @@ class Pycparser < Formula
   sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
   license "BSD-3-Clause"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "882d005d9bcc429f3eee0d5cdb3c5065302ec25c96ea1ae3d5a32fb1f6f08cb8"
+  end
+
   depends_on "python@3.11"
 
   def python3
