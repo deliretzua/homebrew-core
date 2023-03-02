@@ -13,7 +13,13 @@ class FabricInstaller < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9428f27d95d8ae7e4f552f3ba6a426add1c3184fa127f219b8bd19385881b61a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4126ef7546f0feaadfbd1238b808319f76e70791b8ddc2341a673cb6cb0598be"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4126ef7546f0feaadfbd1238b808319f76e70791b8ddc2341a673cb6cb0598be"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4126ef7546f0feaadfbd1238b808319f76e70791b8ddc2341a673cb6cb0598be"
+    sha256 cellar: :any_skip_relocation, ventura:        "4126ef7546f0feaadfbd1238b808319f76e70791b8ddc2341a673cb6cb0598be"
+    sha256 cellar: :any_skip_relocation, monterey:       "4126ef7546f0feaadfbd1238b808319f76e70791b8ddc2341a673cb6cb0598be"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4126ef7546f0feaadfbd1238b808319f76e70791b8ddc2341a673cb6cb0598be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "99531a98bd6324b373148e0e35a1d4f995ebfd49af888a779fd005b18f652d75"
   end
 
   depends_on "openjdk"
