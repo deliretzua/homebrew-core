@@ -27,6 +27,8 @@ permissions:
 jobs:
   upload:
     runs-on: ${{github.event.inputs.large_runner == 'true' && 'homebrew-large-bottle-upload' || 'ubuntu-22.04'}}
+    container:
+      image: ghcr.io/homebrew/ubuntu22.04:master
     steps:
       - name: Post comment once started
         uses: Homebrew/actions/post-comment@master
@@ -53,6 +55,11 @@ jobs:
       - name: Install gems
         run: brew install-bundler-gems
 
+      - name: Install skopeo for bottle upload
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y skopeo
+
       - name: Configure Git user
         uses: Homebrew/actions/git-user-config@master
 
@@ -74,7 +81,7 @@ jobs:
         uses: Homebrew/actions/git-try-push@master
         with:
           token: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
-          directory: /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/homebrew/homebrew-core
+          directory: ${{steps.set-up-homebrew.outputs.repository-path}}
         env:
           GIT_COMMITTER_NAME: BrewTestBot
           GIT_COMMITTER_EMAIL: 1589480+BrewTestBot@users.noreply.github.com
