@@ -7,14 +7,13 @@ class GitBranchless < Formula
   head "https://github.com/arxanas/git-branchless.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d925d16450b292ccdc395d14ada3fb7b31e0e68371167ff39dabb1bc6b85750c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "203a2d9ea729f13e90154956c084168da301e57813deeceb8af67c6f6957e929"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "95f06b8290faadf47b19c6fb823dffc00d4cae17847ae15e129c4d6765c5644e"
-    sha256 cellar: :any_skip_relocation, ventura:        "3dc4ec0cc5b1a56de840b66e7e5e7c4e4bd8e271605f32479a91921561694830"
-    sha256 cellar: :any_skip_relocation, monterey:       "380046b597b6f6313165086ab3293083903cc475d9a07580acedba80ce165110"
-    sha256 cellar: :any_skip_relocation, big_sur:        "156407961ac7e41675997cabc01abd6f580ebda82141d08686a78c12d675adc3"
-    sha256 cellar: :any_skip_relocation, catalina:       "9b5b0bb9f8f8d381e77ef99a88ae388779c419c85faaf6eb575a860bcec2707f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce0165197dc97ae9de900af63953ad42162539773b62c6398ae9fd7cdee21467"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3c7097d5226186a40a5577069913b66cb6f50697c18ed2a9382500346c32269e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a0a2e9068007931a64ce9ffd8d4ebe4a6abd919fa8d00d17212d2092c1541413"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a8d5c87a1b6b7900655e171bae899374a165e33ab22d565ecd867e9932d9c93e"
+    sha256 cellar: :any_skip_relocation, ventura:        "58eecb4f015b929b1fc18c4c636f9beca3f0926998699c1de96932dc5b14fcdc"
+    sha256 cellar: :any_skip_relocation, monterey:       "35941715dcaa62518162792c282485985ce4b65cb41f82282540033f439072a3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "373c63d6cacfdb277324d29ecd7715846577aa7eba991ce327a262227ca129d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5bf7f015971734d8f7dd9b5a2decda30a504dc7af449fda1cb85d8815f91e063"
   end
 
   depends_on "rust" => :build
