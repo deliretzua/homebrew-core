@@ -11,13 +11,13 @@ class Dafny < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0bb2e5af4b30628859f2f3f7ce1b696ad9ecdb007d4def6c986b666abe8cd175"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d185a2006fa15c829d292c028d11cb647736296820a6e8a381ce6f62ac3b3f88"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ec3479c309a967e4eb70950fe4cdb169a26d1a7cae14522b51b4841f33ee2653"
-    sha256 cellar: :any_skip_relocation, ventura:        "5e19141d67faa259296513b4a66e41c21b0e38a42e21865fc11fad78fd99ef32"
-    sha256 cellar: :any_skip_relocation, monterey:       "61a99305fcb989115d173c44a91b3c7de26577a931fb2565ae8b36421c201026"
-    sha256 cellar: :any_skip_relocation, big_sur:        "46ff56f12ddff5825e8479a9d7697dd9bf1d84ed690d70ef2ff8f2958907ac28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a2a52b0e65a99455f164a9113cf519795c47a853adcca95c6b37769bacec383"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b2383b58212856bb2ca74b74d5e04a218ef1bebddad756d6e3be76dae87ea9a1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ac6d3d07f0b3d1838ba30ca8fe92fd1b877ca4545337599afb1e438c8acc4eab"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "28c964d69057e55e604f4448de90f6e043e5a9138a89051f4a3c7426b0b5bc8c"
+    sha256 cellar: :any_skip_relocation, ventura:        "ddaa7777502f6cb55ac68748d3db2e1b0c0e6f8f0e8f3ae95c4293de367ac498"
+    sha256 cellar: :any_skip_relocation, monterey:       "5f2b01d8980629352a836703a85544e7b8478202de19f30333d43c1325c20c76"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e0583ef6df65be92d0c84b5f3f75c305adf26ecec970a4a612fcefb6db091707"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "40824ca81d83b29138ef76bb67c5061ab7e768238e38eb4bf93d75648f7f92bb"
   end
 
   depends_on "dotnet@6"
