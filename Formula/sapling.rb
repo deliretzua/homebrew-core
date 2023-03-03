@@ -7,13 +7,14 @@ class Sapling < Formula
   head "https://github.com/facebook/sapling.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "0ace6f8d4217aef506650fec20728311ac6f309cb4209c30af20d76d228f331c"
-    sha256 cellar: :any,                 arm64_monterey: "76f6622501b2c9d61fe31ab75ab25cace1d7f823cdf574cc1682f33c6a64b4c6"
-    sha256 cellar: :any,                 arm64_big_sur:  "8d3b6684e15d0684d865e00660b2b9a181b359870239dc840e671ade15cdc09e"
-    sha256 cellar: :any,                 ventura:        "18e6aff992756525db3f1189d13ee651ed1d82c537ebe526e9f1db9c33547edc"
-    sha256 cellar: :any,                 monterey:       "a5ffeb61307729636bbbf1189c39300e256d44ed0db89ed5dc9cd2282c1a6b03"
-    sha256 cellar: :any,                 big_sur:        "9d47357638d7a2277bbaf6bcebc246e8017ccfd720766c423778ccf8c99addb0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "137b8880f450ef73650bfdbb7644f8555ba724f58506832a1697ff891948286a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "b9aee4101baae22fe8b0e32a8eb9f086f63967851a9410960e36d3541c98845e"
+    sha256 cellar: :any,                 arm64_monterey: "bcaa04164fc08e79065d1899e8ade085047090b40c63174fb81fa02ac8437646"
+    sha256 cellar: :any,                 arm64_big_sur:  "5a0d6120c941935d1d0159b76b967968ca3421ec7f61fedb8d3bf0a6804589c5"
+    sha256 cellar: :any,                 ventura:        "e90c415a3327d7e0823c5b4e31b3d84514bc19f25687d5e9a5c231d686a07c7e"
+    sha256 cellar: :any,                 monterey:       "484be2fe2b901132f7c9cecb918dae45c7f43518a6ce2d2b57b816aeb536a7ac"
+    sha256 cellar: :any,                 big_sur:        "bf39795492d13fa68e0a247982b913031d1ea873543c548c8aa790250b32ba60"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "993b6d4628338f297b17eb1be68ffbea8bba85f54c76659e1db38d53b22974b1"
   end
 
   depends_on "cmake" => :build
