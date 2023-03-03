@@ -6,6 +6,16 @@ class Gmssl < Formula
   license "Apache-2.0"
   head "https://github.com/guanzhi/GmSSL.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "3901189ad99d6383777117a33b8cac4cbdcb96874dd7df8c620b305aa4c05f16"
+    sha256 cellar: :any,                 arm64_monterey: "0adabc2e2e7d41fff55c5ac4a24676001a2df3b59f71e0ffb22da34997206c1d"
+    sha256 cellar: :any,                 arm64_big_sur:  "637d92fb7828aa336a56bd87e97a4a12944fa115b4b1d36f918cc919313df60d"
+    sha256 cellar: :any,                 ventura:        "0ac11a28a67f0b54e914a0077c663546d5487e24543ee344a5c8f53b2e2b4736"
+    sha256 cellar: :any,                 monterey:       "334078972e49393d539b5ed1a376835cac1e83188871ad7583ce530a3aab4062"
+    sha256 cellar: :any,                 big_sur:        "50bb11e538f4f5e59c7d89f7543cddb744d81aa780ec5887e8585070958f2a33"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "118622ab1fe804ebe6207c89e52aa460fca02994ca3127913fe4563cc8a8ff44"
+  end
+
   depends_on "cmake" => :build
 
   def install
