@@ -1,8 +1,8 @@
 class Cpr < Formula
   desc "C++ Requests, a spiritual port of Python Requests"
   homepage "https://docs.libcpr.org/"
-  url "https://github.com/libcpr/cpr/archive/1.9.3.tar.gz"
-  sha256 "df53e7213d80fdc24583528521f7d3349099f5bb4ed05ab05206091a678cc53c"
+  url "https://github.com/libcpr/cpr/archive/1.10.1.tar.gz"
+  sha256 "dc22ab9d34e6013e024e2c4a64e665b126573c0f125f0e02e6a7291cb7e04c4b"
   license "MIT"
   head "https://github.com/libcpr/cpr.git", branch: "master"
 
@@ -18,20 +18,22 @@ class Cpr < Formula
   end
 
   depends_on "cmake" => :build
-
-  uses_from_macos "curl"
+  uses_from_macos "curl", since: :monterey # Curl 7.68+
 
   on_linux do
     depends_on "openssl@3"
   end
 
+  fails_with gcc: "5" # C++17
+
   def install
     args = %W[
-      -DCPR_FORCE_USE_SYSTEM_CURL=ON
+      -DCPR_USE_SYSTEM_CURL=ON
       -DCPR_BUILD_TESTS=OFF
       -DCMAKE_INSTALL_RPATH=#{rpath}
     ] + std_cmake_args
 
+    ENV.append_to_cflags "-Wno-error=deprecated-declarations"
     system "cmake", "-S", ".", "-B", "build-shared", "-DBUILD_SHARED_LIBS=ON", *args
     system "cmake", "--build", "build-shared"
     system "cmake", "--install", "build-shared"
@@ -44,6 +46,7 @@ class Cpr < Formula
   test do
     (testpath/"test.cpp").write <<~EOS
       #include <iostream>
+      #include <curl/curl.h>
       #include <cpr/cpr.h>
 
       int main(int argc, char** argv) {
@@ -54,8 +57,14 @@ class Cpr < Formula
       }
     EOS
 
-    system ENV.cxx, "test.cpp", "-std=c++11", "-I#{include}", "-L#{lib}",
-                    "-lcpr", "-o", testpath/"test"
+    args = %W[
+      -I#{include}
+      -L#{lib}
+      -lcpr
+    ]
+    args << "-I#{Formula["curl"].opt_include}" if MacOS.version <= :big_sur
+
+    system ENV.cxx, "test.cpp", "-std=c++17", *args, "-o", testpath/"test"
     assert_match "200", shell_output("./test")
   end
 end
