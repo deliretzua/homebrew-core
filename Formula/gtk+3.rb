@@ -11,14 +11,13 @@ class Gtkx3 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "9f50dc6891e966c5c64cdc1830e9e7bf3ff066dc25b783fd4abd10cfcaa31bfd"
-    sha256 arm64_monterey: "c0a3f9c2f4019739da142711867e7cbde728e8a53746d74c1203a20fcc911691"
-    sha256 arm64_big_sur:  "df1cc6b2751b342bae206d400020795ec99d6231ba37c9125a94be2fdb4185f7"
-    sha256 ventura:        "be0e0e5c46ded73926df9a00df059b334ab5d620fdebda55578168ba9ff62288"
-    sha256 monterey:       "a88bd8612540f4c608152a244079887d8c404754a3897311608a6bb10a72981c"
-    sha256 big_sur:        "be1c7bbe919519333e1b6ddc7eb2b88304077a88ec9f4ba2cec03cfe7f5d0803"
-    sha256 x86_64_linux:   "4f346fe9908956f892353d644d3a8c7ab236c66ea3aac0ea354f7fba7168dd9a"
+    sha256 arm64_ventura:  "e3d32e51f311c3b986198861fa0b2bda3426fba44c2f6d09c001af90fba24281"
+    sha256 arm64_monterey: "eaf4262525c6e79780c9558bf00717a6634abb3ab30b9156542d866b299df6d5"
+    sha256 arm64_big_sur:  "19a984eda5eafec3de927dcca21ce5d0b19896480b2d1dfdc8bd557a6dd4bef4"
+    sha256 ventura:        "8fa632e21375dd8f162ab10b0189180fb757eb47321c667c94bb52bd9443763b"
+    sha256 monterey:       "8f22c56c71572a2480da7773537219076c422fdc989fd6331ed165bf9547e8c0"
+    sha256 big_sur:        "6b7efa168de9389adaed3a748c2f24e326962af1492a3541233a12c6a15f31f1"
+    sha256 x86_64_linux:   "d73b18f997af5efe9001fd729500eb445c47d145a724a901acd351d6fff3bdf2"
   end
 
   depends_on "docbook" => :build
