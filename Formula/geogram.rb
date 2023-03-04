@@ -1,8 +1,8 @@
 class Geogram < Formula
   desc "Programming library of geometric algorithms"
   homepage "https://brunolevy.github.io/geogram/"
-  url "https://github.com/BrunoLevy/geogram/releases/download/v1.8.2/geogram_1.8.2.tar.gz"
-  sha256 "29703321b9271186a08ef3c651d90ce92c052bad55dd9395d084c02474258d7e"
+  url "https://github.com/BrunoLevy/geogram/releases/download/v1.8.3/geogram_1.8.3.tar.gz"
+  sha256 "f75ab433fe2402bd14a165ce4081184b555b80443f17810139f244f55af56e7c"
   license all_of: ["BSD-3-Clause", :public_domain, "LGPL-3.0-or-later", "MIT"]
   head "https://github.com/BrunoLevy/geogram.git", branch: "main"
 
@@ -28,7 +28,7 @@ class Geogram < Formula
     depends_on "doxygen" => :build
   end
 
-  resource "bunny" do
+  resource "homebrew-bunny" do
     url "https://raw.githubusercontent.com/FreeCAD/Examples/be0b4f9/Point_cloud_ExampleFiles/PointCloud-Data_Stanford-Bunny.asc"
     sha256 "4fc5496098f4f4aa106a280c24255075940656004c6ef34b3bf3c78989cbad08"
   end
@@ -51,7 +51,7 @@ class Geogram < Formula
   end
 
   test do
-    resource("bunny").stage { testpath.install Dir["*"].first => "bunny.xyz" }
+    resource("homebrew-bunny").stage { testpath.install Dir["*"].first => "bunny.xyz" }
     system "#{bin}/vorpalite", "profile=reconstruct", "bunny.xyz", "bunny.meshb"
     assert_predicate testpath/"bunny.meshb", :exist?, "bunny.meshb should exist!"
   end
