@@ -7,14 +7,13 @@ class Cpr < Formula
   head "https://github.com/libcpr/cpr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "daf5f4894c2478834e450baac837154179fc88a2ec3d7d06ddf6c3be24ad4ffc"
-    sha256 cellar: :any,                 arm64_monterey: "2d53f0135afc4e4b3767a5a3293d7cf467830d7c0a634d663f4bfd353054991e"
-    sha256 cellar: :any,                 arm64_big_sur:  "95ec7967fa535c4b6d80ebb3f5112f91b74432a372b4ee15b88fae50b5f9c3c4"
-    sha256 cellar: :any,                 ventura:        "7fb242be16db5b1d40f897c9ae3c9c3707c4bae8550af47f27177106aff45eb8"
-    sha256 cellar: :any,                 monterey:       "36a7fe15e003dd3bf20d1f8e3dbb8101ca4db8d52864b701ca5f4e956086d67b"
-    sha256 cellar: :any,                 big_sur:        "8f04311199164cf7afb2d552b177fe0f61c0bae1f226161fb4bca5492e3dc3da"
-    sha256 cellar: :any,                 catalina:       "58275768c618ee0fb50833391bcc6ffe4ed380eba1cb86ffdf65f2d935b3b140"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aeb29af6745f6c1503aae57ae9bf2e73615beae9e66626eb633501331dc3f8b8"
+    sha256 cellar: :any,                 arm64_ventura:  "8de164388ffbf11b113b9c5fe233249c21acdd862c3d28b82d9010fcf9cf61b0"
+    sha256 cellar: :any,                 arm64_monterey: "b7bdeb4299cac576edfd74f1bfd2cb261d61a46802d0f5f45d82ff7c382d5c88"
+    sha256 cellar: :any,                 arm64_big_sur:  "e361052b91de21b37ff4fd7c2002fb0bd36d3828a5e7bf113138566bb1c75c88"
+    sha256 cellar: :any,                 ventura:        "37ff99e818fd2034c6f31cc346b91dc659fe500e0a9c9c56dc27dd9de0fbb890"
+    sha256 cellar: :any,                 monterey:       "1ec2d9da6b8c17740c561d9ea92da1689517e3af08875e7183aa14d17a8ee0fb"
+    sha256 cellar: :any,                 big_sur:        "967e18a037d91f5c4e8833a654a919e6d4443e5f9465360f8b154e5f5b21419e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0028ce9198459ed30456c69bc5378456d5410d921fc7b85fa321bfbb2852442b"
   end
 
   depends_on "cmake" => :build
