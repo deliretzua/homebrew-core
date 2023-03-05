@@ -4,6 +4,7 @@ class VapoursynthSub < Formula
   url "https://github.com/vapoursynth/subtext/archive/R3.tar.gz"
   sha256 "d0a1cf9bdbab5294eaa2e8859a20cfe162103df691604d87971a6eb541bebd83"
   license "MIT"
+  revision 1
   version_scheme 1
 
   head "https://github.com/vapoursynth/subtext.git", branch: "master"
@@ -31,7 +32,7 @@ class VapoursynthSub < Formula
     # A meson-based install method has been added but is not present
     # in this release. Switch to it in the next release to avoid
     # manually installing the shared library.
-    system "cmake", "-S", ".", "-B", "build"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     (lib/"vapoursynth").install "build/#{shared_library("libsubtext")}"
   end
