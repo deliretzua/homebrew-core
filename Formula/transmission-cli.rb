@@ -11,16 +11,13 @@ class TransmissionCli < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "b6c5414407b789d0c97b2454a636d7abf5cd7344a3c55846b1e0648877db0986"
-    sha256 arm64_monterey: "7cea8d14774f036fb808ab778efd7aaebfdd46b0057e401ccfc1744e09f05e30"
-    sha256 arm64_big_sur:  "07a84ee48fdee3046614731074c3e3f20f814011d644e6804a836e586a11f4a5"
-    sha256 ventura:        "643cf06d5177d5df947ff6021971ba0605f7ad7cade990204d5d29a3820dd7f9"
-    sha256 monterey:       "8785d5cd7675a2f5203cd9cb4a7b13b756037d2ee127abfe6223b946733efe34"
-    sha256 big_sur:        "d536f415cf27818d83062e693c8ebde50057fbe36d120b81cda3bbb32e5396b7"
-    sha256 catalina:       "7640fdff8a0840356ea2d43d3ab0efe1d5da5c2840d9fe555deed3c9957705c1"
-    sha256 mojave:         "db2aa6896d89884e15d5dda0b35c152a96cd028703c69f7f8bd9288d0d61a838"
-    sha256 x86_64_linux:   "178d05964e9efd8d4541cf5589f4772ccdc59b8de83158f96b8ad7ffeff6b8d2"
+    sha256 arm64_ventura:  "98802b194c66798d671f9bca130fe68e29bfa6f100af050cf8c42b7abc31d557"
+    sha256 arm64_monterey: "2226b75355904336981e73bb27bd6ee188599881a9b5dda270508bdcfb90f675"
+    sha256 arm64_big_sur:  "7c157dce0f5339e4317b2727929f5e6370ceb95e38ea6eca1d48e9fef4433dd0"
+    sha256 ventura:        "816a1d500c494ec4254b52a66bfcd7396c6087eef95bd6fa7c1e2f2224f7e6c9"
+    sha256 monterey:       "bdfa6a52225c03bab3cca6679ca9402d6b1e06595610cf1f4d1fa68fef6c94a2"
+    sha256 big_sur:        "50707dba2364185f0707fcfd61aef888a9d85f5cd1abc66335aedda7402b984e"
+    sha256 x86_64_linux:   "86f5b5d6520beb7297fe400b5f2c412b4cd54435f5692d06155a7fef67e829d7"
   end
 
   depends_on "cmake" => :build
