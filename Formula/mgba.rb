@@ -4,6 +4,7 @@ class Mgba < Formula
   url "https://github.com/mgba-emu/mgba/archive/0.10.1.tar.gz"
   sha256 "5fc1d7ac139fe51ef71782d5de12d11246563cdebd685354b6188fdc82a84bdf"
   license "MPL-2.0"
+  revision 1
   head "https://github.com/mgba-emu/mgba.git", branch: "master"
 
   livecheck do
