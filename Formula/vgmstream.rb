@@ -6,6 +6,7 @@ class Vgmstream < Formula
       revision: "9f99e742df8115297cc265244f451e769a3ab23b"
   version "r1831"
   license "ISC"
+  revision 1
   version_scheme 1
   head "https://github.com/vgmstream/vgmstream.git", branch: "master"
 
@@ -40,7 +41,7 @@ class Vgmstream < Formula
 
   def install
     ENV["LIBRARY_PATH"] = HOMEBREW_PREFIX/"lib"
-    system "cmake", "-S", ".", "-B", "build", "-DBUILD_AUDACIOUS:BOOL=OFF", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DBUILD_AUDACIOUS:BOOL=OFF", "-DUSE_CELT=OFF", *std_cmake_args
     system "cmake", "--build", "build"
     bin.install "build/cli/vgmstream-cli", "build/cli/vgmstream123"
     lib.install "build/src/libvgmstream.a"
