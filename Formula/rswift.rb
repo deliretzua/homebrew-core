@@ -7,10 +7,10 @@ class Rswift < Formula
   head "https://github.com/mac-cain13/R.swift.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f070f8ef57caba4f93c38a5f60d0c0fdac457289949a50b66007ed477d281043"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "51a4e6c8e8cc24590966f9a02b8e13a089f143770ecc8217224f42a758268efd"
-    sha256 cellar: :any_skip_relocation, ventura:        "81e656fc368c7bddbca9a095518bca63c4d11408c274d558fd26e6313952f2d3"
-    sha256 cellar: :any_skip_relocation, monterey:       "2514bf9e6e8a9fe4e3e84ec13af6606dc6bb5ac23bba6e273a6b63aa65e2c49b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "279c8d49ed003903fcd411f13e96853833acc3c166e9a51c26c681f3a7961df6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7f6905779476ea9ef646075c787afb0df60f43fbd18bd83441d17609eb750c63"
+    sha256 cellar: :any_skip_relocation, ventura:        "39d05b5f6965c3ee7c46bbe31f375819e7210e6c09fd1c73327ddbd4d4dce5d7"
+    sha256 cellar: :any_skip_relocation, monterey:       "b6f6ce17bd46e84b622610798265959f74bef5c5f0b9c17c02ec188cc3fa13e1"
   end
 
   depends_on :macos # needs CoreGraphics, a macOS-only library
