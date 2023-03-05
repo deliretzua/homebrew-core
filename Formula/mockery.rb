@@ -1,8 +1,8 @@
 class Mockery < Formula
   desc "Mock code autogenerator for Golang"
   homepage "https://github.com/vektra/mockery"
-  url "https://github.com/vektra/mockery/archive/v2.20.2.tar.gz"
-  sha256 "2dde91bc8465111b61d934d695749413c9596e7b6bc64351af1e5c5e776d7d54"
+  url "https://github.com/vektra/mockery/archive/v2.21.0.tar.gz"
+  sha256 "2334e0671201f6ad833e4275cfe9e75360bfb9d4eaa944f97e6d34a359d25b37"
   license "BSD-3-Clause"
   head "https://github.com/vektra/mockery.git", branch: "master"
 
@@ -19,7 +19,8 @@ class Mockery < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/vektra/mockery/v2/pkg/config.SemVer=v#{version}")
+    ldflags = "-s -w -X github.com/vektra/mockery/v2/pkg/logging.SemVer=v#{version}"
+    system "go", "build", *std_go_args(ldflags: ldflags)
 
     generate_completions_from_executable(bin/"mockery", "completion")
   end
@@ -28,7 +29,7 @@ class Mockery < Formula
     output = shell_output("#{bin}/mockery --keeptree 2>&1", 1)
     assert_match "Starting mockery dry-run=false version=v#{version}", output
 
-    output = shell_output("#{bin}/mockery --all --dry-run 2>&1")
-    assert_match "INF Walking dry-run=true version=v#{version}", output
+    output = shell_output("#{bin}/mockery --all --dry-run 2>&1", 1)
+    assert_match "INF Starting mockery dry-run=true version=v#{version}", output
   end
 end
