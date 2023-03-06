@@ -7,6 +7,10 @@ class VscodeLangserversExtracted < Formula
   sha256 "d94b4dc5c4095ccfbb140119aa2dafdb4c7fdf4204c69ef08e56633b068346e6"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "969ee0fb2fde9d26e639337f7c48db4ffa4890fb7840eecdf90e21a84584634e"
+  end
+
   depends_on "node"
 
   def install
