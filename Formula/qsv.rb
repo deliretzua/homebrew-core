@@ -1,8 +1,8 @@
 class Qsv < Formula
   desc "Ultra-fast CSV data-wrangling toolkit"
   homepage "https://github.com/jqnatividad/qsv"
-  url "https://github.com/jqnatividad/qsv/archive/refs/tags/0.90.1.tar.gz"
-  sha256 "c144e64fbb0650518e1bd37926ede565d467c5bd5ad4d78f46543eaf3ec83fc6"
+  url "https://github.com/jqnatividad/qsv/archive/refs/tags/0.91.0.tar.gz"
+  sha256 "3453be7b49cb97f391806dcb705ab3b44786dd58b776f1f09a44d56f6bef6d91"
   license any_of: ["MIT", "Unlicense"]
   head "https://github.com/jqnatividad/qsv.git", branch: "master"
 
@@ -26,8 +26,8 @@ class Qsv < Formula
     (testpath/"test.csv").write("first header,second header")
     assert_equal <<~EOS, shell_output("#{bin}/qsv stats test.csv")
       field,type,sum,min,max,range,min_length,max_length,mean,stddev,variance,nullcount,sparsity
-      first header,NULL,,,,,,,,,,0,"Failed to convert to decimal ""NaN"""
-      second header,NULL,,,,,,,,,,0,"Failed to convert to decimal ""NaN"""
+      first header,NULL,,,,,,,,,,0,
+      second header,NULL,,,,,,,,,,0,
     EOS
   end
 end
