@@ -4,6 +4,7 @@ class VideoCompare < Formula
   url "https://github.com/pixop/video-compare/archive/refs/tags/20230311.tar.gz"
   sha256 "83f5bb685e511f8faa9eb482f5f3a724a612d2012eaa58e780d454d58df75f39"
   license "GPL-2.0-only"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "c01be1a066dc0440322413a909e8ece4bc9c4be686bfc52e8e12356c80312754"
