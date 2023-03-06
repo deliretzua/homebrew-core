@@ -6,13 +6,13 @@ class GrafanaAgent < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3195c250163d23058d60dcbd160c7575e7bae6e13d88b940398aa28fdb5d412c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e523ae7f46f5d5c16e6a695ec810a3ce2bb1199e905f9eb2284824932a873a36"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "45e52d3da1e999a0dc32b724c6418714b235213d905c141fcda47be92e467972"
-    sha256 cellar: :any_skip_relocation, ventura:        "3ea4fb5166fdf19548103326b9120774e09a14739cbc82385c6d9514a74d6a9b"
-    sha256 cellar: :any_skip_relocation, monterey:       "46577e602d75225cfc41a88884a8ee53fc367dc2db82b111b5acb95b625ddd9c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "79a4a64840e26c509fa8b568d636249ed7ad496791aa73fb63a5a35f95a5eb8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "04843fcd1bebfd9370f5300e0e7dadafdf00f0e7091a136192a743333713be5f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b3b6e8737e003ce6f30acfa89f078a82716c1245d4a0d8808c46e59e4dedd32f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "149dfcff8c4c8afddd6f0ab08eab616dc30adef4ad79641237463d50124559a3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2784b12d84ad2a523b46438ca7ddd1840ecb0c4a2b5c9882eef9b45074f0a21f"
+    sha256 cellar: :any_skip_relocation, ventura:        "5cece3807b77d08e275148520ba24d48dd8b411e37baa96ab3f3cd13524bf657"
+    sha256 cellar: :any_skip_relocation, monterey:       "93b3f9c629ef53a24e08ec0232b809e11bc085ce1888988a6c67eb659a53d403"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9be7107bdc4d0efc0642f9a1b957f6719f195c04371d8594441b90669d6bba9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "db5eacc80070a232d6cae96ec16d4bd3dbb516cc08523dfc70ffdba1a2c5a021"
   end
 
   depends_on "go" => :build
