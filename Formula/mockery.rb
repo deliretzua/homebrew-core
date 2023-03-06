@@ -1,8 +1,8 @@
 class Mockery < Formula
   desc "Mock code autogenerator for Golang"
   homepage "https://github.com/vektra/mockery"
-  url "https://github.com/vektra/mockery/archive/v2.21.0.tar.gz"
-  sha256 "2334e0671201f6ad833e4275cfe9e75360bfb9d4eaa944f97e6d34a359d25b37"
+  url "https://github.com/vektra/mockery/archive/v2.21.1.tar.gz"
+  sha256 "a58e4ac8be76f422e4d7a93ed786b32bcd3b817024b81d652493a6eedd9c6bea"
   license "BSD-3-Clause"
   head "https://github.com/vektra/mockery.git", branch: "master"
 
@@ -29,7 +29,7 @@ class Mockery < Formula
     output = shell_output("#{bin}/mockery --keeptree 2>&1", 1)
     assert_match "Starting mockery dry-run=false version=v#{version}", output
 
-    output = shell_output("#{bin}/mockery --all --dry-run 2>&1", 1)
+    output = shell_output("#{bin}/mockery --all --dry-run 2>&1")
     assert_match "INF Starting mockery dry-run=true version=v#{version}", output
   end
 end
