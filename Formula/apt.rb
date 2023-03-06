@@ -11,7 +11,7 @@ class Apt < Formula
   end
 
   bottle do
-    sha256 x86_64_linux: "c80612fa8359afe7fbed5794d9d2a71b8d55430ddca655674cce07b598b6487e"
+    sha256 x86_64_linux: "7ec6f063d6f0ddff884ef59c314c85280ec848a06deb793e82d1b6cbb77890b2"
   end
 
   depends_on "cmake" => :build
