@@ -19,14 +19,13 @@ class Audacious < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "54de674d0590c05be8d17fddbe15175919e137de43b65ce70aded7173a4df72f"
-    sha256 arm64_monterey: "a3015cefc23d7e52def1896203de76922c652b8234ddc2cf0c4e4a90bace04d7"
-    sha256 arm64_big_sur:  "325d25c7d0998253960ad4344e5dbd0055806de247163d79724a0392dc5c3730"
-    sha256 ventura:        "946f75f5419edb4d49193cc616c5d0a9b3d1e59813ad273c3b592cb96c7b63ec"
-    sha256 monterey:       "4d85ec6a6ee927388bf4f1d3956116901798ca30f1a63a85c674df5037097ee9"
-    sha256 big_sur:        "3016b1ce25b2055357f52138030166773ec5445cf45c87032d7771133c352886"
-    sha256 catalina:       "0ab3edc5ffe3f71c8f7c453bdd929939264b4e4f51373909da3720111b96466d"
-    sha256 x86_64_linux:   "a9b7551315f0fab21041da8c8d6f864573ed83c9db54f01bc0b099cadac87583"
+    sha256 arm64_ventura:  "d0dedeae2538b361776268675cd15b6d31bb447baf5292f0a6553bb0a2d0b0fd"
+    sha256 arm64_monterey: "0bce7dffa93cc7ed89b1a498916964ec77b2d2d60d91f3fd37f260590c35ffe9"
+    sha256 arm64_big_sur:  "aaaae3e21e0006eb92147032b2a2e7352cec6e1a218fdbef64850fece604a162"
+    sha256 ventura:        "3e42f001f3b6b8f5d534bdbee468fbd65487b2326eef311e309ecfcfb207411e"
+    sha256 monterey:       "c71da6067a089b7e74c847fdc31d2c58f49adf7e7287d31521ea73aa7f648885"
+    sha256 big_sur:        "dce962afa17a17605baaed5931780aed01a7fb4f40831e178684c61ac3a8566b"
+    sha256 x86_64_linux:   "daac98ed40d90ec2e11f305e706417b998c5211f4291e6542ad7baac464fcfe3"
   end
 
   head do
