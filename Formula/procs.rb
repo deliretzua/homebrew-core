@@ -6,13 +6,13 @@ class Procs < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ce5c4fbef3d298de789442018ecd415726928035cbdd97a4dd22be9728ff701c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "acd6917f8c30de7074ebfc9c70815472f8d29d57202543f038ca2ad06ee22694"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e64e47b40f5cb0a363b25a53e05324529c843cb777840d79487bf31ca89b66f7"
-    sha256 cellar: :any_skip_relocation, ventura:        "7307978d50f2dc5802157a4194224ebaf73c282b5096d8de54adbd0e7ab29693"
-    sha256 cellar: :any_skip_relocation, monterey:       "4a74cb9aeda845a964ccdfa80b71added1b7d39d28d9362c188a2c0c040bd743"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3e7be029b6f52540b22158852cb6e7802dc6a6f708ce8acd1f3078c60c3dd358"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a75396bb0024bfe05a2c925ef6a451a33cf18d38f5ced33d6b26809648a5223"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "de9c1631762b37a015ef29105948b0d16e040f114d771fc7cebe1f7c8c1ec27c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "43df9e9c419a6746dfa675e4950aa00785d628179e8c01966620970f770e391a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3d51c5e8f70fd83cf4b83586ac4a5a33a97b68850948b905064ede175a869e25"
+    sha256 cellar: :any_skip_relocation, ventura:        "b2358cc32f33927686a09fc9fb380487fde56f79add118fb7d36848bbf8af29f"
+    sha256 cellar: :any_skip_relocation, monterey:       "883c61ba9506ab4540781a29b7c0f5e0cbce671d7712be64b21ece718ff42090"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9f221df219dbf0dc1736132cf9c96b1b7ac6bde0fbd397711b8a50e3503294ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90e02932ce2bedda3120384fdea912f82188f05170b341d7a9a2b8455bae10c8"
   end
 
   depends_on "rust" => :build
