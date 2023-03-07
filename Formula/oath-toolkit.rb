@@ -13,13 +13,13 @@ class OathToolkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "d56bf5ebe830d184b5ead115d5cd6cbd99e841ecc22bdaa1eb95acc7c1205dd7"
-    sha256 cellar: :any, arm64_monterey: "e625bb0ce23aa527527c3edde57e7ac2c3636818058d78df3d6d6365ce5d54ed"
-    sha256               arm64_big_sur:  "717b1353b92a3014f89cd9d70d1fde81ea8d72105bc2f7664e2991873b7f995f"
-    sha256               ventura:        "7a9b25b290e753ce832993af349c3b9a6082b54ca622e5bf3762f7f917830b3d"
-    sha256               monterey:       "1e835161792bb992feba1db5e19c662de011357c85cd1d1beb29c7fd60994e41"
-    sha256 cellar: :any, big_sur:        "ed8dd264bf39ffdeff84b2ed366bb3bebcd3578081b9f5d78a9f2b05160078aa"
-    sha256               x86_64_linux:   "b571a3591c7215d239a068af0b284211a7222b96af08bd73736c6c8dd08c6547"
+    sha256 cellar: :any, arm64_ventura:  "78cfac4a520dd81fe758a5d55d0f05e49cfff2f91abd9ed4376922f54d8641bd"
+    sha256 cellar: :any, arm64_monterey: "916966e662d84e352bd54c21a32c0c3ba5986fe1a9711a1292f34c3acee1ff56"
+    sha256               arm64_big_sur:  "bde1ebd951548431e0a8a1a654a980a0e0d1cf189a65debc9156e0b55033fde1"
+    sha256               ventura:        "5bde0b71a6ba32c4aa622adc290cd3abf0144d1780c0985bc5cde00c5f2f5fbd"
+    sha256               monterey:       "141152f0e04f2805bc79b207c2572d42e725e459343e7353a6d0da115b5b6916"
+    sha256 cellar: :any, big_sur:        "44766968c6215e02f4456375f9f1574cf72aa813ae08eb2bbac60888d24c1c60"
+    sha256               x86_64_linux:   "dd6bb67e9c5a9f4f46dafd67a84e58f0a36cf1be54a98fc266317b5b317fbb78"
   end
 
   # Restrict autoconf, automake, gtk-doc, and libtool to head builds on next release.
