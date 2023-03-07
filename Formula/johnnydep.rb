@@ -7,6 +7,16 @@ class Johnnydep < Formula
   sha256 "edc6c95e2ee1ab433d69afddaa85af4e4ffc040ff607bdb579b72c4e35d15b8f"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cb81b2dc320d3c3f1bf5a91cde07ee5b962c51ceb9e01fad8c796cd4b8668e7a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d98351267c04a3214887cd27cb913af31b6fbc2244ab280ff0f24139c76c81f8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "67a079bd1d0c8003b8d1ec913310c23e311a521e14e66eaa0cc9ae8ad5c9c613"
+    sha256 cellar: :any_skip_relocation, ventura:        "79fe2488c6f0fe737687b8a82e53b2c7a2da28185ef54e4fdac818f415f3af79"
+    sha256 cellar: :any_skip_relocation, monterey:       "f9b2085be14a69c3b812fde38a6433ce840d91fe3b2e5a86b622d0fd11687a4f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e2ac9d56c4ecc02ed60cdc46f5aad898f070a447382cfa99f0e3f7ca1751b6cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "752768769097065128c953e0bcfb099285ab7cc78af84729d3d595c09f48ddb9"
+  end
+
   depends_on "python-tabulate"
   depends_on "python@3.11"
   depends_on "pyyaml"
