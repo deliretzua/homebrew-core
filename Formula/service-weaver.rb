@@ -13,6 +13,16 @@ class ServiceWeaver < Formula
     end
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b4508272566a6a22c44df91230adb8149e7dee6d32caf5f2ffb852104a0a2772"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "456576e6257c230225e2c5e91f69085641cd835174b248e011fdd5a4ee063d8a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a48eab9505d95c4313a988ea4508650a102e850798f48919326378a84a19eb05"
+    sha256 cellar: :any_skip_relocation, ventura:        "bb1f554bcc6029c21caaea02fbf65c94acac64647658b0a2f7d9a36ed00da3e5"
+    sha256 cellar: :any_skip_relocation, monterey:       "af25810ff3d4543da6d598b9ec70af8a8b0a0c5f5cafd66e7017abbeda4eb02d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e2c1394c36cc9f4d07b14071f196fbd41e8caff8f2f94076a2d51376e3b7c3f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9502bd1dd4e913788d77109731de4c6edc5637590d30bb1b8fe4c3774d863020"
+  end
+
   head do
     url "https://github.com/ServiceWeaver/weaver.git", branch: "main"
 
