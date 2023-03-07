@@ -8,7 +8,7 @@ class Solhint < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "63d8b534920f5026721e09e6b3ed0f4295c614ab45aafd16ceaf660e5d12924e"
+    sha256 cellar: :any_skip_relocation, all: "3c29e86604cde4fe7925063eaed32eb2c72744669e2d1d2ba77953d2f2313a71"
   end
 
   depends_on "node"
