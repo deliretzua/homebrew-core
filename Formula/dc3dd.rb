@@ -1,10 +1,9 @@
 class Dc3dd < Formula
   desc "Patched GNU dd that is intended for forensic acquisition of data"
   homepage "https://sourceforge.net/projects/dc3dd/"
-  url "https://downloads.sourceforge.net/project/dc3dd/dc3dd/7.2.646/dc3dd%207.2.646/dc3dd-7.2.646.7z"
-  sha256 "d26d5c1eaa413a10dfcdb2525a9fd8135902eb0b0a8f4632529fbebb06430d95"
+  url "https://downloads.sourceforge.net/project/dc3dd/dc3dd/7.3.0/dc3dd-7.3.0.zip"
+  sha256 "ec56b9551aec581322acaf3f557e0a6604d547de8a739374668e2f5af2053c3f"
   license "GPL-3.0-or-later"
-  revision 2
 
   bottle do
     sha256 arm64_ventura:  "62c4ad25c7505cf54a8f2e6f3e513276e092f89d7cc4b6c62c8b88e987dd6e44"
@@ -27,13 +26,6 @@ class Dc3dd < Formula
   resource "gettext-pm" do
     url "https://cpan.metacpan.org/authors/id/P/PV/PVANDRY/gettext-1.07.tar.gz"
     sha256 "909d47954697e7c04218f972915b787bd1244d75e3bd01620bc167d5bbc49c15"
-  end
-
-  # Apply patch to fix gnulib with newer glibc.
-  # Reported upstream here: https://sourceforge.net/p/dc3dd/bugs/19.
-  patch do
-    url "http://distfiles.lesslinux.org/dc3dd-7.2.646_glibc-2.28-1.patch"
-    sha256 "0c3ef49b7bf4952ed94df1e54495ca1df2f081cba34cd421c14cff267cb9866c"
   end
 
   def install
