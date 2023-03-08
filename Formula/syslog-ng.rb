@@ -6,13 +6,13 @@ class SyslogNg < Formula
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
 
   bottle do
-    sha256 arm64_ventura:  "78a49eb06d82535a6ebc2161cb1c79b6daba8a3ad9f758b48937d64969f7df1b"
-    sha256 arm64_monterey: "96d637e00617c3cc890e369434443ffea941972bf88a47dda0f2812cb77dcade"
-    sha256 arm64_big_sur:  "0bdf1ba4f15b138b4649499abad8ae7e2b309762262657fc42b3f23994b50b2a"
-    sha256 ventura:        "9f3139fcf42f667511dfe2d530aaa4975c60f14baf3ec981d5198cf4eef81362"
-    sha256 monterey:       "8ed4a28175302a9b32325580321d2a00be2f44861910d557dca7507dd9db4cee"
-    sha256 big_sur:        "d114d13dbea57ccecf46e1dee29b05a7eac5f719bbf5fed9098b962136656e9e"
-    sha256 x86_64_linux:   "99dbf11d82ab67cb340771ea32a3a1db71831a1cd56fa8eaace0a977d9b5f7ea"
+    sha256 arm64_ventura:  "a98bc7e7599e186e37e37763780a4e2d9ac60a65abc17d97c962bdf9190cece1"
+    sha256 arm64_monterey: "7e8fedd0988c648ade04af6145af7d4c7bade33e1c9855b2ea635675372249b6"
+    sha256 arm64_big_sur:  "325192b75694e14b35f7e6ecde47b1dfe18663d6d6aa2351cc0141d74de4a468"
+    sha256 ventura:        "acfc5ef3758c9b675e01004a072bafffc0fd2a4ac9af70d88a51e6d5fcf8ef02"
+    sha256 monterey:       "a66a56c192e5c180d11fe1ab483ab1eb37e3643f895b9d4ff41168714c83d324"
+    sha256 big_sur:        "eba311d8ec7c95aa18299e9582e5f05975d4536314bc7d1de07a6c85b392ce32"
+    sha256 x86_64_linux:   "dddd26b1bdd3534a4f1a3125efb32a569fd1aec296ac6454dc662e28f00a3fdb"
   end
 
   depends_on "autoconf" => :build
