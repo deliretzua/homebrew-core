@@ -11,13 +11,7 @@ class OpenlibertyWebprofile8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "603180ec65e8b7e449f3a0c9ff4744a16be0e30e0ddd9848d75a47499209564a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "763251a89664c7da3ed1e910bd3ea14721fc76d93653db002e57ddc9713adafe"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6d9a119d9a33c26871994fb2b643ad018eb2bfe93265dea4d6176cc067054659"
-    sha256 cellar: :any_skip_relocation, ventura:        "7996f9ecf020afc565fe94c06a554bd6c0b8d75c960311b682edc2acca417228"
-    sha256 cellar: :any_skip_relocation, monterey:       "6fb3b73acb6dad5797e6b4138b0fd788deb732cbf330f47ee8ed6dfb0d029dec"
-    sha256 cellar: :any_skip_relocation, big_sur:        "757980c486accf98a4e437fe2dec8e2ac177f47794d5dbd507eb984d4206852b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ecfa1f21ac7d466b2f3a4b53157d4a985770bece34f601d00b6eadd4bd12a9de"
+    sha256 cellar: :any_skip_relocation, all: "0d4640222fbc16f3d9f662ecea60c064c890cf0b1a983ec99405ef9a0aaa2aa3"
   end
 
   depends_on "openjdk"
