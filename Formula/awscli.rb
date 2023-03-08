@@ -3,8 +3,8 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://github.com/aws/aws-cli/archive/2.11.0.tar.gz"
-  sha256 "30dc7235fba29d18c19460dcb3d54ca7d105dd5fb9ef84408cfad673a7817961"
+  url "https://github.com/aws/aws-cli/archive/2.11.1.tar.gz"
+  sha256 "038a0c9c1050ff1b1dbd8850c73e8760edee7f1c67420212866f48afc2afe3a7"
   license "Apache-2.0"
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
@@ -31,8 +31,8 @@ class Awscli < Formula
   # 2. Ignore `docutils` and `six`. Update all other PyPI packages
 
   resource "awscrt" do
-    url "https://files.pythonhosted.org/packages/ae/98/dda092078f2d47bad08e184ab9d364b8f89166497062bc1cf811c0bbbde2/awscrt-0.16.10.tar.gz"
-    sha256 "3101499b479b82f0403f615bf520c1f8b9506818d275e3e28ade25cc6bcdb92b"
+    url "https://files.pythonhosted.org/packages/a2/90/c59a1be4b9978331f363370c991a7ab766aef207adafadcdbd52899c4da2/awscrt-0.16.11.tar.gz"
+    sha256 "39b5b98e28e1e4004f332abed2d6cbbb8679b580588ea857a453eccf729c9761"
   end
 
   resource "cffi" do
@@ -46,8 +46,8 @@ class Awscli < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/e3/3f/41186b1f2fd86a542d399175f6b8e43f82cd4dfa51235a0b030a042b811a/cryptography-38.0.4.tar.gz"
-    sha256 "175c1a818b87c9ac80bb7377f5520b7f31b3ef2a0004e2420319beadedb67290"
+    url "https://files.pythonhosted.org/packages/fa/f3/f4b8c175ea9a1de650b0085858059050b7953a93d66c97ed89b93b232996/cryptography-39.0.2.tar.gz"
+    sha256 "bc5b871e977c8ee5a1bbc42fa8d19bcc08baf0c51cbf1586b0e87a2694dde42f"
   end
 
   resource "distro" do
