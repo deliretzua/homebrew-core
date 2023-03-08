@@ -8,13 +8,13 @@ class Portablegl < Formula
   head "https://github.com/rswinkle/PortableGL.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5072b5c557a56c16b3db6a916074c0c4933e925681c80a88bb78b9fbe6e7c307"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5072b5c557a56c16b3db6a916074c0c4933e925681c80a88bb78b9fbe6e7c307"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5072b5c557a56c16b3db6a916074c0c4933e925681c80a88bb78b9fbe6e7c307"
-    sha256 cellar: :any_skip_relocation, ventura:        "a74c17ac74f36af4038cef1c4770c198fe2fb3a5e92988741ecb7b9b05598c87"
-    sha256 cellar: :any_skip_relocation, monterey:       "a74c17ac74f36af4038cef1c4770c198fe2fb3a5e92988741ecb7b9b05598c87"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a74c17ac74f36af4038cef1c4770c198fe2fb3a5e92988741ecb7b9b05598c87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5072b5c557a56c16b3db6a916074c0c4933e925681c80a88bb78b9fbe6e7c307"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "abb0c595bf1ede018e8e0644d3aa263c9cd65af2572c16590b6214f23aa7f402"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "abb0c595bf1ede018e8e0644d3aa263c9cd65af2572c16590b6214f23aa7f402"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "abb0c595bf1ede018e8e0644d3aa263c9cd65af2572c16590b6214f23aa7f402"
+    sha256 cellar: :any_skip_relocation, ventura:        "abb0c595bf1ede018e8e0644d3aa263c9cd65af2572c16590b6214f23aa7f402"
+    sha256 cellar: :any_skip_relocation, monterey:       "abb0c595bf1ede018e8e0644d3aa263c9cd65af2572c16590b6214f23aa7f402"
+    sha256 cellar: :any_skip_relocation, big_sur:        "abb0c595bf1ede018e8e0644d3aa263c9cd65af2572c16590b6214f23aa7f402"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "acdd41c99fd456db8443da0d8b1bd7a85da618b6f7c885749527a125729bb25d"
   end
 
   depends_on "sdl2" => :test
