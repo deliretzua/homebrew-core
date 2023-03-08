@@ -6,12 +6,13 @@ class Arturo < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "d2fefdc8b29ddcc25ec170ee951974c0f0639456ae44f3066b30ba9bfacff832"
-    sha256 cellar: :any,                 arm64_big_sur:  "2099288de81442cd767921ad6210904e33a8ebac246fc1a65c07411783116b39"
-    sha256 cellar: :any,                 monterey:       "9ff3e59d195ca8aaeba073c03981667094bf97d133e50e177cbafe9bf428095c"
-    sha256 cellar: :any,                 big_sur:        "65147c59e9070ca346499761685b22d97d6ce2ad189587ce9e868762dfe780f8"
-    sha256 cellar: :any,                 catalina:       "a538cff3a4ee46a2b7744b321815424afa4476e692ee5be671c55c5823bdd06b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c41186a164daa64e8261d523fab9061b6d18fb672494ac4c6504d2b2963ceafe"
+    sha256 cellar: :any,                 arm64_ventura:  "9764085cbe25c95d32bc664488a5a32cf96d084a2297795a41f5f48d00de26d8"
+    sha256 cellar: :any,                 arm64_monterey: "677bc52f00e1f29785f398322ef1e626937f72448cafe04be89d5c70a7c08c94"
+    sha256 cellar: :any,                 arm64_big_sur:  "e789724da912ae762ce8d024b1b67b5b970b6633ee65faa104a1978bfc5b611b"
+    sha256 cellar: :any,                 ventura:        "19d0bf41aa2c91c201cace61f3fa3a45b697a35f0f8502058c0984e44eab7414"
+    sha256 cellar: :any,                 monterey:       "d308d8d2af2118bcfdb6a7f6a10bd2185ea460ca3ab7e5c45ac5abca4763df0a"
+    sha256 cellar: :any,                 big_sur:        "0b89382b8412200743a13775357656b8a20ca1944fee7e83fa6983ebe30fb5f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac7789d3c4ecc404a4e86e5c216c2bab553a8521642fdcdf69b8bc52fadf426b"
   end
 
   depends_on "nim" => :build
