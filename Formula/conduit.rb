@@ -6,6 +6,16 @@ class Conduit < Formula
   license "Apache-2.0"
   head "https://github.com/ConduitIO/conduit.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0c1ca6c02997b7258b8c4e3e0468d3b5c16d1bcdf89ae2fd77cef55afb73febf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "aead63dd26e90369e0db8daf6225c0a960068f4b1564102d613c9987e69381db"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "587777cb3f9031c9bdca37c75e61340349c310c7c9a6be002eb47bf8135aeb04"
+    sha256 cellar: :any_skip_relocation, ventura:        "4ea9a345a3e3106b72b61d79f643dafc02724052504fa373d9893dad06a96b4c"
+    sha256 cellar: :any_skip_relocation, monterey:       "daff1361164257a24f2d1f82edf85b202cdb01b821be539ea32f2cedfa67af25"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e24311e73aabe7d0d9db273ffb8a5055b57d1c69e4697dc5f49c613260800291"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "809e7fea25a55719189fbb12e53f05af3155513b831625f47ce2833d38801880"
+  end
+
   depends_on "go" => :build
   depends_on "node"
   depends_on "yarn"
