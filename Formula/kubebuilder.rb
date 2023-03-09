@@ -2,8 +2,8 @@ class Kubebuilder < Formula
   desc "SDK for building Kubernetes APIs using CRDs"
   homepage "https://github.com/kubernetes-sigs/kubebuilder"
   url "https://github.com/kubernetes-sigs/kubebuilder.git",
-      tag:      "v3.9.0",
-      revision: "26f605e889b2215120f73ea42b081efac99f5162"
+      tag:      "v3.9.1",
+      revision: "cbccafa75d58bf6ac84c2f5d34ad045980f551be"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/kubebuilder.git", branch: "master"
 
@@ -17,7 +17,6 @@ class Kubebuilder < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "baa5b916968af2b81b20947537303dfbd46908fa609ea34e5b6ac7a166c313c0"
   end
 
-  depends_on "git-lfs" => :build
   depends_on "go"
 
   def install
