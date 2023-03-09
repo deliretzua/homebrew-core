@@ -12,6 +12,16 @@ class ConanAT1 < Formula
     regex(/^v?(1(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "782c7c77b5214ddf5efd4c7780dd2dce1d36c757deabec25c73151e26363c42b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "572173cebaf2b35325dba15f1b86c8dfccf7909d0771d744b97c2ef592ad5173"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "671d165dddf48c9a13869c5a9f93a18133ab9110fa9908a6c68698312e80e53d"
+    sha256 cellar: :any_skip_relocation, ventura:        "fa09f88e16d469fa0dbdb8042712873847f2c530fe63a986bb5e3853170297f9"
+    sha256 cellar: :any_skip_relocation, monterey:       "5e9fa3bbc92508601868e2632ceb2e8b08251dd80213b4371545ffb6b95dbb3b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1da588c22603e905a98c2595fcc25d5178fef1183ae35b74861a74cc6f4471d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e8f080b2bb8a206355e3912bc2b1fe6b94fe0fb68caba5cc9e73ebf4e6eedf0"
+  end
+
   keg_only :versioned_formula
 
   depends_on "pkg-config" => :build
