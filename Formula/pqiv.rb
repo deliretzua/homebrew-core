@@ -8,14 +8,13 @@ class Pqiv < Formula
   head "https://github.com/phillipberndt/pqiv.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "ea25aebb4644c982eb777eb2458da0eb686ad996a2be1f5a9de62e5f929f8eb8"
-    sha256 cellar: :any,                 arm64_monterey: "8782a71f1737e6809e0bf8e03c1dbacd3822de5bb2b19857ca03c6df7d8a5c1a"
-    sha256 cellar: :any,                 arm64_big_sur:  "0c81274c8d13c19d95d69fdad59ed8fd94e3860f90b0eb2ca83a45435b214769"
-    sha256 cellar: :any,                 ventura:        "ae097f09c899852bd6926dd99c45d73a738b62074e71a4a56ec4b2044600c133"
-    sha256 cellar: :any,                 monterey:       "dba41e09a3ead21456f9d727eb6bede873098b7d0499629264900b618e7eace2"
-    sha256 cellar: :any,                 big_sur:        "6ef9f48897bb6fe32ed7cc51666c35415e7d1c77a1e5d10701c64a69402cdd84"
-    sha256 cellar: :any,                 catalina:       "9983a52d1c8b71c44f2bd435f4336a69c98aa1adf029b0fe72aebc6da23d10b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33a23ff2a31d049557d533c50c1a30ab1e8c28d4ff28627e7ddb4ad08dcaeda8"
+    sha256 cellar: :any,                 arm64_ventura:  "e17fbd19adfba4fdc573713331f18cbe87550de5b704f752d763f3f7d7e22a13"
+    sha256 cellar: :any,                 arm64_monterey: "26640d26826157233d2ec78a06a392e6f86822b59851728b1bd464c65d5e8e1e"
+    sha256 cellar: :any,                 arm64_big_sur:  "2f867b48156591c1c23b6a661122a8f4d0295e14864e802fd2fa81090a5ace44"
+    sha256 cellar: :any,                 ventura:        "af580ea8722cec9dd7b4e630c9eac3a333ab3c48d5fab28e6a1a80d019c86662"
+    sha256 cellar: :any,                 monterey:       "f475889e1b206362317aa74be2aa4bf1bc1989607586cb2dbce61d91157181b8"
+    sha256 cellar: :any,                 big_sur:        "95b612456e3a948f0ade7c910191e3a99921424168d6cd7b2598d7438b0aba58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f63bffe4108075c27d10db43816be4c8ebf61131b55764d053b3229ab1e0505e"
   end
 
   depends_on "pkg-config" => :build
