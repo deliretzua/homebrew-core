@@ -12,15 +12,13 @@ class Zbar < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "0148fabe1084ac13f107a34c15e69a68a4e0de8c1212550ea927d5873450843b"
-    sha256 arm64_monterey: "e9b2610d5fa22cd12a463ac2701240acc8f6e1c1c190e6fbe1e8f56b12fb695e"
-    sha256 arm64_big_sur:  "66d7b6a0b9cc69e2d0786aa626577abc917adba4dd76b79e7bc959afd9eefb7c"
-    sha256 ventura:        "e7b877bc80e132b018fe786882ade65d5650ab81ae7e087c81f1a61d278ffb7f"
-    sha256 monterey:       "e3f3cd2101683ec1e5d129d9c590f9e61283dd078968231211c994ebd919eeeb"
-    sha256 big_sur:        "7a440c19a50c6dd6ebf77b41a254e78fa5ffc641877ae180d131f1cc0d2f4e6b"
-    sha256 catalina:       "6524034479ef1b0329914bba94b9a778f07436a4fdcef8d5685df31152a1d990"
-    sha256 x86_64_linux:   "b95de47606556882a0e828e77e7230a3e02d49df3fac48d6692f18e33a9e88b6"
+    sha256 arm64_ventura:  "8e47931ef4322523fbcd9ed08a53774ebba3bb778609cac5e1f7be32d44c37a0"
+    sha256 arm64_monterey: "071cf2dd5834b5aa37d64720e4225f0147be2ffd26ac5d12810eff69e01023b9"
+    sha256 arm64_big_sur:  "d05d32d19ebed228a56c77ff4b96a28191061d3b368955310693bf9cfea668de"
+    sha256 ventura:        "994bde16e7eb7479fe5f467c88d635fddc43493ac9ff834cf178a5f34019a2fa"
+    sha256 monterey:       "a549684b74c2b6b5baa7d8b572035b1e30ea6c13d3d5e314bbbeeec06207b555"
+    sha256 big_sur:        "854f0c484c327120712dcc4d92de26167b82f988db8da4a95ed2403f324a0fc7"
+    sha256 x86_64_linux:   "9d2bd79a442b04a651f35d2b6e77c3668fafdea6ff59edc6036d3e74b472a990"
   end
 
   head do
