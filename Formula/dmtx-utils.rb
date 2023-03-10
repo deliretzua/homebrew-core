@@ -7,13 +7,13 @@ class DmtxUtils < Formula
   revision 6
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "65d04597069d638a468b5d3a4efb2f692d2db3252f6224498ae74355f10dde49"
-    sha256 cellar: :any,                 arm64_monterey: "37e220d882d243c0eadb50f15548d7d21173086c86b43a113b5653e874992167"
-    sha256 cellar: :any,                 arm64_big_sur:  "44f0cbd9a5de8cbc33a3e1ec377388fd482e14e56c6eb6d9655ec3ea6c0c6221"
-    sha256 cellar: :any,                 ventura:        "a59cdc1655b0d2c2f01064a7df57f633712d1b0f7c6e526a55a8f88a36e570e0"
-    sha256 cellar: :any,                 monterey:       "410a0dada9e7952b29db3bc96664990056099b764430e5d989f9a6450b99cf21"
-    sha256 cellar: :any,                 big_sur:        "aa71909f139e1f2a4fd4b19e169802c209de4e6a878d787100d9b82191f4e0a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "66a12e61bcf4893b8ad93934ad2939df35a8bf3eda7264b92acb6e38d060db49"
+    sha256 cellar: :any,                 arm64_ventura:  "c147ab73dac9c03562cf06d561a923ba70e30ecb4607d755622d0156805a7892"
+    sha256 cellar: :any,                 arm64_monterey: "81be259b08bd67f4dab389bb326b4adbdd01cd201d5b98c77f4cc72e0f5c669a"
+    sha256 cellar: :any,                 arm64_big_sur:  "f7e90d8cd99bbedb06dffa5338d64e65307fcb4c98095d897a91466a8da86322"
+    sha256 cellar: :any,                 ventura:        "161997f60768bb9798550757f0a01e2e27434934d9ec8a2b47153a52abe10cd7"
+    sha256 cellar: :any,                 monterey:       "7a754c6517fc4a35d07c17a34b3bf98d62d85fa6015f11ecd38d92db4e1c0372"
+    sha256 cellar: :any,                 big_sur:        "fa4722a33d220d1f8cd8740c4b6d938e92f8d9b76ab555762cc8c84c72084573"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc7f066604465fcaf850671368291a758eec7fa261d6bbdbde892b798fd0daa1"
   end
 
   depends_on "autoconf" => :build
