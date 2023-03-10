@@ -6,12 +6,12 @@ class Licenseplist < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "157dad9a9e0729167a3d4dae8fdfea0ee100f2b76c94eea81bdc0bdd3a36c1a4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7798aac32ba615f4bdaec6318bb10d9bc34b011e92318b6735202f786d31717c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b0e6058b809f415211fe9e2c01431e0e1f65d36f16134244dc766a4a65c850f4"
-    sha256 cellar: :any_skip_relocation, ventura:        "d2dd1db4e958254edd7c924c35e4b1b79d36d71f812633bf71b6f7d4e44bbb97"
-    sha256 cellar: :any_skip_relocation, monterey:       "88a4473d93fa66b5e3976ee51520ed3cdec6ce79900354844f3e66d7030dbaa8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2e62fd1b18cfd6ec6b966b8d24da5ce9dacc67c0595a30d8eea585338abd8c6e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9e8b79aa6d8499ac3878d29cde2bf1255c413c30b1a9689016f20a18055fdc29"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fe8da00beb253d4bbec4e9f51c94153f7364d434a4c6da8a0c43a9e801508e33"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "06f63335e2996681e9228ab794772dbd714a9921c57c0d80d5e49f92cbd0d7a7"
+    sha256 cellar: :any_skip_relocation, ventura:        "d5981b7403137942db6fbdd3244b9c104f18efb55c0ecb0e78a63b470f8011a0"
+    sha256 cellar: :any_skip_relocation, monterey:       "ec670903c01b716275bae82ec870d5d92d124e668e1443fc442f09c6b1fbc9a4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3091e742927f40c96428935699fe53c4d1e0830e158bfcb77cddb6b1fc9c1235"
   end
 
   depends_on xcode: ["13.0", :build]
