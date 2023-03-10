@@ -8,14 +8,13 @@ class Gitlint < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e76c35c0f5c1264f660de5f79a30e5609247685ca0d27a0929696009870c6218"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e4ab8cb2671afa9e4aaa8de6fda45198162567a7e8611086bce572908f4e702a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "526b454400bcc7440c23e3659728140d2b96372734d4c59784e59a7ff542c98b"
-    sha256 cellar: :any_skip_relocation, ventura:        "f92add1cb7cca06297104b86f6c734bc164b197b440d53d86ec880159f89c5b3"
-    sha256 cellar: :any_skip_relocation, monterey:       "2043b77407919887505d5ac40225596e536a709e290be4840e9da25587b82731"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a519f46cce1b93e2045ef2880012e7a811accbe1816671ebc1b102ade4142d4c"
-    sha256 cellar: :any_skip_relocation, catalina:       "515ae6455446a91ae666d6e078e1c30eeaccac57f90976c6f72b867df31762e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "395a1c0dc259937b455d9792749abae1235b65d1a48e10039cd2743c475b4920"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b2ff182766d7e36a8767a2776cbfc29d893eaa41db0b8b316e47b97fc65e415c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "09578b908fc814e0d8d43f4629ddff25bc07440d1fe14451e9ba70428701a730"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "caaa2531c830499d1c84e7175dfe246f9dfaaaa84fcc0dda09cfff89dd3f2127"
+    sha256 cellar: :any_skip_relocation, ventura:        "eae71fbd54573037bf098ffcfae61ae1ad2b5ef7cd1128b5d7fe58152d6db1f2"
+    sha256 cellar: :any_skip_relocation, monterey:       "bef2e4b1ee6d9ff969a3056e6b1dbf5e52eddaa694f85de967a8f55171b963ec"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c1b403d54ea9fb7abd33ea796de70d125686e6ce6a3b49e603d52e74255b6e16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9864ef0cc95d169a63f5ab0b4c35c2480e53be11b6787642a3e416e23ae72b3e"
   end
 
   depends_on "python@3.11"
