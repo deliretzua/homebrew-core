@@ -7,7 +7,7 @@ class Metalang99 < Formula
   head "https://github.com/Hirrolot/metalang99.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "18db07784d10e03e77e14d5f2d611ce5c899c0b4cc485233736c8d6e93c579fc"
+    sha256 cellar: :any_skip_relocation, all: "32b71a356b77df0dc6f4deee767caf0e383aec97be42eb4c7a5361a1cd595850"
   end
 
   def install
