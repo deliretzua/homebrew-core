@@ -6,12 +6,13 @@ class Libpinyin < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "0ad30a7fa33d9c0a1c8581c2419503d1d78b003ddcee423c37bac04cafe93c8b"
-    sha256 cellar: :any,                 arm64_big_sur:  "27a64914df992d5c46d8b48b857330192efd499b68e9b14530209f38dbeff6f7"
-    sha256 cellar: :any,                 monterey:       "17c216d7bb3b88f0949728385f2fb6c34192c7237bfccacffdab2e3fa66f25db"
-    sha256 cellar: :any,                 big_sur:        "04aef79d829825812370a7f379d2c4fc71295cc44b55836dee114695cca1c774"
-    sha256 cellar: :any,                 catalina:       "0bee752e798e97e0d6e49686e87b68004858dacbcd3117c11d7ee4187961d200"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b4d994fc8832b0919775a0e16f769fe8d1a2e5ea82227c1012b5cdf6a0c8bb7"
+    sha256 cellar: :any,                 arm64_ventura:  "62ed5199739dcaae0ead97433ba897628981a6d3460a2718e4b41891c77842bc"
+    sha256 cellar: :any,                 arm64_monterey: "9029eba7441fd7bf391a4b7f098d1459a2800b3d38abe6ad7d684b0d754d1376"
+    sha256 cellar: :any,                 arm64_big_sur:  "0fb826732bff1c6e1b4925d289a7225f7aa8dbd2130f62592a7f9e7163e77799"
+    sha256 cellar: :any,                 ventura:        "634410145976dea7c905671ced7fe0f38d6fdad9d1433d7c0e6338c1cea1138e"
+    sha256 cellar: :any,                 monterey:       "aede5aed924b8237f69c86fd4a68d31f17d04dcf328548bb4872836803c560cf"
+    sha256 cellar: :any,                 big_sur:        "93f521f571f01608a07acfa914a17ee9085d9787659bf46a15d36d96e6e26d2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4cd31415baad247bf8886eff8243b1e1b0fb8b068bce7ae9ec267e2fee3b3524"
   end
 
   depends_on "autoconf" => :build
