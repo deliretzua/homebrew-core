@@ -6,7 +6,7 @@ class Jreleaser < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "266426b360aea342cda76cadb5bb5aa23d38933938b44a1c066101dc497c6736"
+    sha256 cellar: :any_skip_relocation, all: "a74632b4ed4d2f8f5e8955f584ae1b1e2fc490cdf67827e09f4c25656b031f48"
   end
 
   depends_on "openjdk"
