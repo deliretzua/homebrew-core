@@ -1,8 +1,8 @@
 class Libvoikko < Formula
   desc "Linguistic software and Finnish dictionary"
   homepage "https://voikko.puimula.org/"
-  url "https://www.puimula.org/voikko-sources/libvoikko/libvoikko-4.3.1.tar.gz"
-  sha256 "368240d4cfa472c2e2c43dc04b63e6464a3e6d282045848f420d0f7a6eb09a13"
+  url "https://www.puimula.org/voikko-sources/libvoikko/libvoikko-4.3.2.tar.gz"
+  sha256 "0156c2aaaa32d4b828addc7cefecfcea4591828a0b40f0cd8a80cd22f8590da2"
   license "GPL-2.0-only"
 
   livecheck do
@@ -27,8 +27,8 @@ class Libvoikko < Formula
   depends_on "hfstospell"
 
   resource "voikko-fi" do
-    url "https://www.puimula.org/voikko-sources/voikko-fi/voikko-fi-2.4.tar.gz"
-    sha256 "320b2d4e428f6beba9d0ab0d775f8fbe150284fbbafaf3e5afaf02524cee28cc"
+    url "https://www.puimula.org/voikko-sources/voikko-fi/voikko-fi-2.5.tar.gz"
+    sha256 "3bc9b0a0562526173957bf23b5caaf57b60ecc53be63fc16874118002ec620f1"
   end
 
   def install
