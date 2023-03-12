@@ -12,14 +12,13 @@ class Nwchem < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256                               arm64_ventura:  "efd545915c4c2d455f6b43676ba1c34a94f5e0e58b8fab628fb877f5a7eed20b"
-    sha256                               arm64_monterey: "00018cb677e46b5257182b09ef70fa02674147fb1294cd8fbf4272a525b40a30"
-    sha256                               arm64_big_sur:  "2a894ac9816fa7e546a46622e06ed35ca00affdc069a38cb43f4b2cc24ec2112"
-    sha256 cellar: :any,                 ventura:        "019b2dfd3faeab131a2d5a3da7ae85ffd651fba32f9849d4c2cf8f78f7476d00"
-    sha256 cellar: :any,                 monterey:       "64304c9b016e4828a06b18ecd237f4518d0de1859a9e08f2ed469475ab686aea"
-    sha256 cellar: :any,                 big_sur:        "621772f44a79bc6cb9b6800456e30ea72c64ad93d4af166f6e1e2425cd5af20c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "691c2244a0dcfc7484fd9d1248968fa59638f5fed36ae36e003372c6468b5461"
+    sha256                               arm64_ventura:  "6f2813bab91bb47361c3311aa00a238d5417e54e41ada9a9ff56b63dd6d2abc8"
+    sha256                               arm64_monterey: "4ad3206f334c98bd0c1441ae82ee86cbab62ca401dff557fa51b7e450f079ec5"
+    sha256                               arm64_big_sur:  "d57fbea35192e517e1034ff8d8504bfb54c4a259dd838317b53497ad706b4212"
+    sha256 cellar: :any,                 ventura:        "c308301f1e5b07c2cc5a9de2dd35f331942ed457d928148af7bb3756985a0b40"
+    sha256 cellar: :any,                 monterey:       "be5d075056247429c4483383f849928026deaad1fc37e9bcb8c8aba355885371"
+    sha256 cellar: :any,                 big_sur:        "fd2032b804cf888c5db6e967ffeb9ed90d6db592392630a5c7bf5babc95330c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "685f2a62f9294bf64780b39d801121a208520857f1cbf97eaf3de07bb64eb600"
   end
 
   depends_on "gcc" # for gfortran
