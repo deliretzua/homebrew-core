@@ -10,6 +10,16 @@ class Libgit2AT15 < Formula
     regex(/v?(1\.5(?:\.\d+)+)/i)
   end
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "45890efc844a6ccde796efa4756a41375735572b54947ecda8e0858b41a884bf"
+    sha256 cellar: :any,                 arm64_monterey: "dc152e1db59734a81563ce8f9f058730b05e314fb4bd727a170f1be828e36cc0"
+    sha256 cellar: :any,                 arm64_big_sur:  "84a6669c3b32baca505dee3f5d5fb61aa5b6c702c5ba8230d350fda5acee263a"
+    sha256 cellar: :any,                 ventura:        "a3d6857aa3b6ba663c7e943b4d081664af897b65350abb6e30193a5483905f3c"
+    sha256 cellar: :any,                 monterey:       "2e8ee4edd3649f680229d3b949ebfc635584c8eaf4ddfe606d4ff34b26122e82"
+    sha256 cellar: :any,                 big_sur:        "f317f24b43c63188db7c37a88f5cbc7ed75fa5c3ed83d17b1ac4e593e467e634"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d04641c90b730f0515ba0b6b577f57ac145e21fdf968ccfddbc554adc9cc0fa3"
+  end
+
   keg_only :versioned_formula
 
   depends_on "cmake" => :build
