@@ -7,6 +7,16 @@ class Zlint < Formula
   license "Apache-2.0"
   head "https://github.com/zmap/zlint.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ee32cd12404a1470ce1563d47c357e5897c7bcf37b779e7cf6c90e8320cbda01"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c2108ace81fd6e19f8274eb714a18f81ef80a35522973ccae2e3d1596944bcfc"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0c27508bad3671f435a86d953828ec6a54b931fdb8fc13c9fc1fbb13398b281f"
+    sha256 cellar: :any_skip_relocation, ventura:        "a17c789cbbef10d8cf14d2beb19bceecf264d742450229d36aed3f8ebde94065"
+    sha256 cellar: :any_skip_relocation, monterey:       "15fc8ad8a2b37b48e996d9b1d18d18d88d3604c1f1515e383c85e4a05fc65808"
+    sha256 cellar: :any_skip_relocation, big_sur:        "937dcd7c1cf86a6ac64cf41d2545d3ce4c9b8528cb4791b4dd82918e2ae72b65"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9904de582fbb438e55e14dc9cc81f31c25048e3fb4a6f8f718aab20e5650e34a"
+  end
+
   depends_on "go" => :build
 
   def install
