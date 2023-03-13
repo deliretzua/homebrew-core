@@ -2,8 +2,8 @@ class LaceworkCli < Formula
   desc "CLI for managing Lacework"
   homepage "https://docs.lacework.com/cli"
   url "https://github.com/lacework/go-sdk.git",
-      tag:      "v1.13.2",
-      revision: "829f36abd73a6e85757869e998516368800e63a5"
+      tag:      "v1.13.3",
+      revision: "ab00f35f0f718ea87dfe077ae1b06286b4dfce7f"
   license "Apache-2.0"
   head "https://github.com/lacework/go-sdk.git", branch: "main"
 
@@ -19,12 +19,6 @@ class LaceworkCli < Formula
   end
 
   depends_on "go" => :build
-
-  # Enable completions, remove after merged and released
-  patch do
-    url "https://github.com/lacework/go-sdk/commit/750bad27d89fe925a9f69377a87bc738907aecff.patch?full_index=1"
-    sha256 "aa962fbaf173503a67c7bf86c5120f76723a983f7f3e118484bf0ae102c13cc6"
-  end
 
   def install
     ldflags = %W[
