@@ -29,6 +29,7 @@ class Bullet < Formula
       -DBT_USE_EGL=ON
       -DBUILD_UNIT_TESTS=OFF
       -DINSTALL_EXTRA_LIBS=ON
+      -DBULLET2_MULTITHREADING=ON
     ]
 
     double_args = std_cmake_args + %W[
