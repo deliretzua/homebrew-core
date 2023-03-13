@@ -6,6 +6,16 @@ class Gfold < Formula
   license "Apache-2.0"
   head "https://github.com/nickgerace/gfold.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "f193e526daa6a3d3f7785018e13b7634d53b41aaaf0a1cf983f9c2ebcaf992b3"
+    sha256 cellar: :any,                 arm64_monterey: "dcb81bf8ed789456810d7e63e014f8a4cb0f6c178329351ff2fc072ad22bdd3e"
+    sha256 cellar: :any,                 arm64_big_sur:  "93aab312ef8a1bf53044f4dde89a33c54d07180f6c1f8784c154d858400c3484"
+    sha256 cellar: :any,                 ventura:        "53d22eab5499f6ee9048211817de6ba8d19ed0d36310df33fd9efb7728b2de7f"
+    sha256 cellar: :any,                 monterey:       "2ab7117ac324b40dd2bba7218f5961a26e3589cd5a31777971eff10f27edec2a"
+    sha256 cellar: :any,                 big_sur:        "29b8f4ff9f7879e3cae6aff89eaf1a80992dd8dbff5e7f9c41e9c5b73ffb90d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c09f89c69fa031e2a26d9f8e0bf5e50ff4cdc4aa125d0c1d590c64b92801edaf"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "libgit2@1.5"
