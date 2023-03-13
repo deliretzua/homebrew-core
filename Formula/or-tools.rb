@@ -1,10 +1,9 @@
 class OrTools < Formula
   desc "Google's Operations Research tools"
   homepage "https://developers.google.com/optimization/"
-  url "https://github.com/google/or-tools/archive/v9.5.tar.gz"
-  sha256 "57f81b94949d35dc042690db3fa3f53245cffbf6824656e1a03f103a3623c939"
+  url "https://github.com/google/or-tools/archive/v9.6.tar.gz"
+  sha256 "bc4b07dc9c23f0cca43b1f5c889f08a59c8f2515836b03d4cc7e0f8f2c879234"
   license "Apache-2.0"
-  revision 2
   head "https://github.com/google/or-tools.git", branch: "stable"
 
   livecheck do
@@ -23,7 +22,7 @@ class OrTools < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkg-config" => [:build, :test]
   depends_on "abseil"
   depends_on "cbc"
   depends_on "cgl"
@@ -48,13 +47,9 @@ class OrTools < Formula
       -DBUILD_SAMPLES=OFF
       -DBUILD_EXAMPLES=OFF
     ]
-
-    # Support ABSL_LEGACY_THREAD_ANNOTATIONS, https://github.com/google/or-tools/issues/3655
-    # remove in next release
-    args << "-DCMAKE_CXX_FLAGS=-DABSL_LEGACY_THREAD_ANNOTATIONS"
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
-    system "cmake", "--build", "build", "-v"
-    system "cmake", "--build", "build", "--target", "install"
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
     pkgshare.install "ortools/linear_solver/samples/simple_lp_program.cc"
     pkgshare.install "ortools/constraint_solver/samples/simple_routing_program.cc"
     pkgshare.install "ortools/sat/samples/simple_sat_program.cc"
@@ -64,18 +59,21 @@ class OrTools < Formula
     # Linear Solver & Glop Solver
     system ENV.cxx, "-std=c++17", pkgshare/"simple_lp_program.cc",
            "-I#{include}", "-L#{lib}", "-lortools",
-           "-L#{Formula["abseil"].opt_lib}", "-labsl_time",
+           *shell_output("pkg-config --cflags --libs absl_check absl_log").chomp.split,
            "-o", "simple_lp_program"
     system "./simple_lp_program"
+
     # Routing Solver
     system ENV.cxx, "-std=c++17", pkgshare/"simple_routing_program.cc",
            "-I#{include}", "-L#{lib}", "-lortools",
+           *shell_output("pkg-config --cflags --libs absl_check absl_log").chomp.split,
            "-o", "simple_routing_program"
     system "./simple_routing_program"
+
     # Sat Solver
     system ENV.cxx, "-std=c++17", pkgshare/"simple_sat_program.cc",
            "-I#{include}", "-L#{lib}", "-lortools",
-           "-L#{Formula["abseil"].opt_lib}", "-labsl_raw_hash_set",
+           *shell_output("pkg-config --cflags --libs absl_log absl_raw_hash_set").chomp.split,
            "-o", "simple_sat_program"
     system "./simple_sat_program"
   end
