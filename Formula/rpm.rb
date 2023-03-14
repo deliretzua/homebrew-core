@@ -1,10 +1,11 @@
 class Rpm < Formula
   desc "Standard unix software packaging tool"
   homepage "https://rpm.org/"
-  url "https://ftp.osuosl.org/pub/rpm/releases/rpm-4.18.x/rpm-4.18.0.tar.bz2"
-  sha256 "2a17152d7187ab30edf2c2fb586463bdf6388de7b5837480955659e5e9054554"
+  url "https://ftp.osuosl.org/pub/rpm/releases/rpm-4.18.x/rpm-4.18.1.tar.bz2"
+  sha256 "37f3b42c0966941e2ad3f10fde3639824a6591d07197ba8fd0869ca0779e1f56"
   license "GPL-2.0-only"
   version_scheme 1
+  head "https://github.com/rpm-software-management/rpm.git", branch: "master"
 
   livecheck do
     url "https://rpm.org/download.html"
@@ -39,10 +40,11 @@ class Rpm < Formula
 
   conflicts_with "rpm2cpio", because: "both install `rpm2cpio` binaries"
 
-  # Fix -flat_namespace being used on Big Sur and later.
+  # Fix an "expected expression" error.
+  # Upstreamed at https://github.com/rpm-software-management/rpm/pull/2434.
   patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
+    url "https://github.com/rpm-software-management/rpm/commit/5375b90150b5468ea9985b81f10dc8fae20d9db4.patch?full_index=1"
+    sha256 "24c4c8ffc5259204797b9ef6050edb5bfef4e03940866bf30e9d41256179ec55"
   end
 
   def install
