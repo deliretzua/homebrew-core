@@ -1,8 +1,8 @@
 class Telegraf < Formula
   desc "Plugin-driven server agent for collecting & reporting metrics"
   homepage "https://www.influxdata.com/time-series-platform/telegraf/"
-  url "https://github.com/influxdata/telegraf/archive/v1.25.3.tar.gz"
-  sha256 "b2b0ec6c1f698a8f5f8af75cf932a14e53b2eff57f959c4bae8d6c71dc363773"
+  url "https://github.com/influxdata/telegraf/archive/v1.26.0.tar.gz"
+  sha256 "ee6933a16930dfd8b32832f0ed9e0393bb14cdb973abc1a773bfb58976470ea8"
   license "MIT"
   head "https://github.com/influxdata/telegraf.git", branch: "master"
 
@@ -24,8 +24,9 @@ class Telegraf < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/influxdata/telegraf/internal.Version=#{version}"), "./cmd/telegraf"
-    etc.install "etc/telegraf.conf" => "telegraf.conf"
+    ldflags = "-s -w -X github.com/influxdata/telegraf/internal.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/telegraf"
+    (etc/"telegraf.conf").write Utils.safe_popen_read("#{bin}/telegraf", "config")
   end
 
   def post_install
