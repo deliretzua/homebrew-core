@@ -1,8 +1,8 @@
 class Got < Formula
   desc "Version control system"
   homepage "https://gameoftrees.org/"
-  url "https://gameoftrees.org/releases/portable/got-portable-0.84.1.tar.gz"
-  sha256 "208305e9e6c214fb46ddd5be7205b29d65bf3dab2062d294d30c9b669b4f0157"
+  url "https://gameoftrees.org/releases/portable/got-portable-0.86.tar.gz"
+  sha256 "1478cb124c6cbe4633e2d2b593fa4451f0d3f6b7ef37e2baf2045cf1f3d5a7b0"
   license "ISC"
 
   livecheck do
@@ -32,6 +32,11 @@ class Got < Formula
     depends_on "util-linux" # for libuuid
   end
 
+  # Avoid the `compat/getopt.c` placeholder and use the system's version.
+  # Reported to the upstream mailing list at
+  #   https://lists.openbsd.org/cgi-bin/mj_wwwusr?func=lists-long-full&extra=gameoftrees
+  patch :DATA
+
   def install
     # The `configure` script hardcodes our `openssl@3`, but we can't use it due to `libevent`.
     inreplace "configure", %r{\$\{HOMEBREW_PREFIX?\}/opt/openssl@3}, Formula["openssl@1.1"].opt_prefix
@@ -48,3 +53,18 @@ class Got < Formula
     system bin/"got", "checkout", "repo.git", "src"
   end
 end
+
+__END__
+diff --git a/include/got_compat2.h b/include/got_compat2.h
+index ec546e4b..54e01a99 100644
+--- a/include/got_compat2.h
++++ b/include/got_compat2.h
+@@ -390,7 +390,7 @@ int scan_scaled(char *, long long *);
+ #define FMT_SCALED_STRSIZE	7  /* minus sign, 4 digits, suffix, null byte */
+ #endif
+ 
+-#ifndef HAVE_LIBBSD
++#if !defined(HAVE_LIBBSD) && !defined(__APPLE__)
+ /* getopt.c */
+ extern int	BSDopterr;
+ extern int	BSDoptind;
