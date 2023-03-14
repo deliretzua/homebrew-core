@@ -2,8 +2,8 @@ class Tailscale < Formula
   desc "Easiest, most secure way to use WireGuard and 2FA"
   homepage "https://tailscale.com"
   url "https://github.com/tailscale/tailscale.git",
-      tag:      "v1.36.2",
-      revision: "0438c67e2517c78feeaf0d9f61ea2a6303dd875c"
+      tag:      "v1.38.0",
+      revision: "10d462d3215547592f4a30469690068235e2d032"
   license "BSD-3-Clause"
 
   bottle do
@@ -22,12 +22,12 @@ class Tailscale < Formula
     vars = Utils.safe_popen_read("./build_dist.sh", "shellvars")
     ldflags = %W[
       -s -w
-      -X tailscale.com/version.Long=#{vars.match(/VERSION_LONG="(.*)"/)[1]}
-      -X tailscale.com/version.Short=#{vars.match(/VERSION_SHORT="(.*)"/)[1]}
-      -X tailscale.com/version.GitCommit=#{vars.match(/VERSION_GIT_HASH="(.*)-dirty"/)[1]}
-    ].join(" ")
-    system "go", "build", *std_go_args(ldflags: ldflags), "tailscale.com/cmd/tailscale"
-    system "go", "build", *std_go_args(ldflags: ldflags), "-o", bin/"tailscaled", "tailscale.com/cmd/tailscaled"
+      -X tailscale.com/version.longStamp=#{vars.match(/VERSION_LONG="(.*)"/)[1]}
+      -X tailscale.com/version.shortStamp=#{vars.match(/VERSION_SHORT="(.*)"/)[1]}
+      -X tailscale.com/version.gitCommitStamp=#{vars.match(/VERSION_GIT_HASH="(.*)"/)[1]}
+    ]
+    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/tailscale"
+    system "go", "build", *std_go_args(ldflags: ldflags, output: bin/"tailscaled"), "./cmd/tailscaled"
   end
 
   service do
