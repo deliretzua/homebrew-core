@@ -7,13 +7,13 @@ class Alembic < Formula
   head "https://github.com/alembic/alembic.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e56740fefdee340d0c1e2250d6f1fe3f7445cec8d477bab24de34b594a57f84d"
-    sha256 cellar: :any,                 arm64_monterey: "7167289cc28233076d058d606ca28e3fcf561153111f4083271aadf72da9f599"
-    sha256 cellar: :any,                 arm64_big_sur:  "4123919fbebdf099e4a56189de9372dd6e7b980eab6893fbe4fe0308a278e3cf"
-    sha256 cellar: :any,                 ventura:        "7490f5a0d9ce13d9703d2e93f52999a66f089530d97d2ed71109e58483935008"
-    sha256 cellar: :any,                 monterey:       "9ba5a3e4b5896001f96daef6a4fc231e14731d05e647b01d3d34a905765a5961"
-    sha256 cellar: :any,                 big_sur:        "317a32fad945a39eed8ef5c4540ba1d5ced3cbaa7b95174971e009e3c5bfae24"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aeac00e2f55eaf0aa1ddeab45f91e79a58532d2c7885853b9e496a30483ad020"
+    sha256 cellar: :any,                 arm64_ventura:  "7bb000eb90474a22b53b828e2140d26adbb5ddbc78ee42b5a8c9dd0447ac493c"
+    sha256 cellar: :any,                 arm64_monterey: "e87eb223819f98ce0582e3ec932ef8fbb478c85ce93ad99fd9f90a0a56aae4b3"
+    sha256 cellar: :any,                 arm64_big_sur:  "ef2aa27c42f96f5a1ae9469e75d704bc24458e018462ed0196acfd37697b2ab0"
+    sha256 cellar: :any,                 ventura:        "c1fa0666f63a047c455fb9f00feca8ed82e2c84c2a1c6d1883ff41e507d3b715"
+    sha256 cellar: :any,                 monterey:       "edc9109326c4e97dedea1b7d07b5e6957f242f67eeb17eebcb6f1da1b6ae8047"
+    sha256 cellar: :any,                 big_sur:        "1fddf85cb8102d9c7f94b3595f65b7aad961d138797a0805df17f5b722cb3130"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d41d701580f8e183deb9c542ae98065402e9ee9f4fc631cc3b4ae304c2af1f1f"
   end
 
   depends_on "cmake" => :build
