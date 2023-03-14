@@ -1,8 +1,8 @@
 class AwsConsole < Formula
   desc "Command-line to use AWS CLI credentials to launch the AWS console in a browser"
   homepage "https://github.com/aws-cloudformation/rain"
-  url "https://github.com/aws-cloudformation/rain/archive/v1.3.2.tar.gz"
-  sha256 "db9c0c72d2e6a5e0d0114b9c6e5a33f32ad4aad9e80c9dadacab2b7e9c2de35f"
+  url "https://github.com/aws-cloudformation/rain/archive/v1.3.3.tar.gz"
+  sha256 "230db11449b34043dc9e10a009134bd5dca240dc20a5d12710b98606f62559a7"
   license "Apache-2.0"
 
   livecheck do
@@ -28,6 +28,6 @@ class AwsConsole < Formula
   test do
     # No other operation is possible without valid AWS credentials configured
     output = shell_output("#{bin}/aws-console 2>&1", 1)
-    assert_match "could not establish AWS credentials; please run 'aws configure' or choose a profile", output
+    assert_match "a region was not specified. You can run 'aws configure' or choose a profile with a region", output
   end
 end
