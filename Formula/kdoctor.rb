@@ -7,12 +7,12 @@ class Kdoctor < Formula
   head "https://github.com/Kotlin/kdoctor.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "095b49bdacbc9e40c7da081533f87e54aa7053cc897a2a7a16690d9edbf5726f"
-    sha256 cellar: :any, arm64_monterey: "e02293c5e22037d46c7aa5381f2f7ec7cc09f0de971e4b95100acaa3bcd4f8cc"
-    sha256 cellar: :any, arm64_big_sur:  "c5dd4c19bb59df578963e1b60b8bc427b66e9b6f0f49a249ffc0a2209e50960e"
-    sha256 cellar: :any, ventura:        "eed0101170752ca261c184ade26a6cc83db1d2839b603517602d2685ae406b51"
-    sha256 cellar: :any, monterey:       "eed0101170752ca261c184ade26a6cc83db1d2839b603517602d2685ae406b51"
-    sha256 cellar: :any, big_sur:        "f1a4c78c51bbce87f4e03ff0c63280e5850afda7008ebb9dcb919858b53103a4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eba7ca9905740f040831ef93f51aa0ff89df1de0f0505e212705ae913fbcd9fb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "82601392dd0af59e203244553d423b07621bd310bd63adae4134686259138385"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0f1cb7722c1bcf843f2648903fb7f7a8832437e0ee6b038312be067f1a50afdc"
+    sha256 cellar: :any_skip_relocation, ventura:        "2384ae968cbd575c65c0d9ea152ed83da0712796bb90256671dae8a1e0b349de"
+    sha256 cellar: :any_skip_relocation, monterey:       "2384ae968cbd575c65c0d9ea152ed83da0712796bb90256671dae8a1e0b349de"
+    sha256 cellar: :any_skip_relocation, big_sur:        "731d3da8ed8c1497b5b305031560f545890930f37b53c36e816a1e0fc3f0ac2d"
   end
 
   depends_on "gradle" => :build
