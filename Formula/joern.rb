@@ -1,8 +1,8 @@
 class Joern < Formula
   desc "Open-source code analysis platform based on code property graphs"
   homepage "https://joern.io/"
-  url "https://github.com/joernio/joern/archive/refs/tags/v1.1.1522.tar.gz"
-  sha256 "bd8d2281ad4c990ce48e7f742aaae102f175a00c01138677d876be4cbd63b4fe"
+  url "https://github.com/joernio/joern/archive/refs/tags/v1.1.1529.tar.gz"
+  sha256 "02b6930669ee0fc13409a570e5eeac026cfce0d35aca20a079c2d779ad787d29"
   license "Apache-2.0"
 
   livecheck do
@@ -23,21 +23,23 @@ class Joern < Formula
   depends_on "sbt" => :build
   depends_on "astgen"
   depends_on "coreutils"
-  depends_on "openjdk"
+  depends_on "openjdk@17"
   depends_on "php"
 
   def install
     system "sbt", "stage"
 
-    libexec.install "joern-cli/target/universal/stage/.installation_root"
-    libexec.install Dir["joern-cli/target/universal/stage/*"]
-    bin.write_exec_script Dir[libexec/"*"].select { |f| File.executable? f }
+    cd "joern-cli/target/universal/stage" do
+      rm_f Dir["**/*.bat"]
+      libexec.install Pathname.pwd.children
+    end
+
+    libexec.children.select { |f| f.file? && f.executable? }.each do |f|
+      (bin/f.basename).write_env_script f, Language::Java.overridable_java_home_env("17")
+    end
   end
 
   test do
-    ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
-    ENV.append_path "PATH", Formula["openjdk"].opt_bin
-
     (testpath/"test.cpp").write <<~EOS
       #include <iostream>
       void print_number(int x) {
