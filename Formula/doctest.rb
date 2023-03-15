@@ -6,7 +6,7 @@ class Doctest < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5b9c1591eb8725eaf6aaa851f094a1f6ed90fee952f38e48134d230ca4582672"
+    sha256 cellar: :any_skip_relocation, all: "b8f867ef81a9944b88b63e945435086d822964acb39dd47b8a059057b76acec3"
   end
 
   depends_on "cmake" => :build
