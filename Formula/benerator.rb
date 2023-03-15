@@ -5,6 +5,10 @@ class Benerator < Formula
   sha256 "194feb051ae18cfcd407b8e1668ce9c60561394bc454f9fc9747c274166843bc"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "b9dbcf4f48977d55becf5ba073086aaf6e338435b5dba1a646683e7e94685e4f"
+  end
+
   depends_on "openjdk"
 
   def install
