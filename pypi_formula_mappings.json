@@ -246,7 +246,7 @@
       "numpy", "pillow", "PyYAML", "yamllint", "pathspec", "fonttools", "Brotli",
       "ipython", "appnope", "asttokens", "backcall", "decorator", "executing", "jedi",
       "matplotlib-inline", "parso", "pexpect", "pickleshare", "prompt-toolkit", "ptyprocess",
-      "pure-eval", "Pygments", "six", "stack-data", "traitlets", "wcwidth"
+      "pure-eval", "Pygments", "six", "stack-data", "traitlets", "wcwidth", "typing-extensions"
     ],
     "extra_packages": ["wheel"]
   },
