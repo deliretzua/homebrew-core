@@ -8,13 +8,13 @@ class Ns3 < Formula
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "025372658342066002fda7183e7d70b5238b8dd951099230dddf24c0ababd95b"
-    sha256 cellar: :any,                 arm64_monterey: "bb4cdf7466478942821f1a1449ba04f2321828d30bc68d356c3791495c0d88e8"
-    sha256 cellar: :any,                 arm64_big_sur:  "1fe7dc61f8afaf84ac85159a8dd36e82cc490c7d297cdc045f544139bf32fc9d"
-    sha256 cellar: :any,                 ventura:        "370908150973ec532bbecd06e4a159287cbe36a2a766a68f3d5ee7a3c22973b8"
-    sha256 cellar: :any,                 monterey:       "f692d7bc0751d27840a3b34d061f937a9df20aa67a30021be3ca68951d93ea59"
-    sha256 cellar: :any,                 big_sur:        "9f3bc3a14ea36660ae012397901da5e4dc31da48a711c0d7e4d8dcfe9c42d2ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "636457c0e0458503cfd38d7ef3dac11aa7235b42729624ca7c9149be0d88da94"
+    sha256 cellar: :any,                 arm64_ventura:  "466ce5ab86ae921f37fd80365f2bae6d0709753e020016b7ea0b6922b92e9517"
+    sha256 cellar: :any,                 arm64_monterey: "e4ecd9d999f92e2e631bbfe220e2ae47f01ee285d7a8c40fd0821c6ddf978288"
+    sha256 cellar: :any,                 arm64_big_sur:  "47e35b33f07fcab8d697aeb79a0ec786f23f9bad826867448dd58fc49f79049c"
+    sha256 cellar: :any,                 ventura:        "83363cc43df063e78718de2933192980e95ed1b018f8737f72d2f7332b4cc7d0"
+    sha256 cellar: :any,                 monterey:       "d4ad119ad0b87778c333688d687a50e3f9ef950e18484d017bb030fbea6ddb34"
+    sha256 cellar: :any,                 big_sur:        "370021cec704c07371a236d0d1f95db10491dd4a82185e230d06904240212f24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8fe98517ace66418dc8532a44c8a96de4ef17c73b96f00f5408a35217bca784"
   end
 
   depends_on "boost" => :build
