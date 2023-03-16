@@ -9,15 +9,13 @@ class Osc < Formula
   head "https://github.com/openSUSE/osc.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "93144cf2161710eeee9aa2b5cf676c50e318e59231514e457144c96eb41d87d0"
-    sha256 cellar: :any,                 arm64_monterey: "a83119ef9487123848841600f40ca303748c6a43362e078b874b44bbb15f3c51"
-    sha256 cellar: :any,                 arm64_big_sur:  "af95c49efddcd1b3ba387e91217142cf4c768bc643ada25367aa688d22c096dd"
-    sha256 cellar: :any,                 ventura:        "d1749b2dc0164cdfcf5b3cb87145ad9a9c1015fa87565363104c3f9db1e4428a"
-    sha256 cellar: :any,                 monterey:       "51d26b7ba92aca0563e9a89650b5e76796dc5fbec1bcbedd726d32f02ca65b14"
-    sha256 cellar: :any,                 big_sur:        "28074a56f1b8dc3d81031cbec687e95be2ca122efd7d749de4f5c179f3868a64"
-    sha256 cellar: :any,                 catalina:       "b95acc4edb4e58a810dd7767acb69ad7f97b622aed911a682b8b9728ea6313f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d5d40cb379b04526e1b974bf1c727a5b74f8bdacc9e568950f249e075fcece4"
+    sha256 cellar: :any,                 arm64_ventura:  "3be25eae843651d13332d085dc4a7e7b23f7c0d2d31e0d70220f8af7d46f95d5"
+    sha256 cellar: :any,                 arm64_monterey: "f40077a64ff1035659b8851de871eecc685296150fad942b336f3a5fe2bb3d00"
+    sha256 cellar: :any,                 arm64_big_sur:  "51ac32869990765752db1249c84f615c62aebfa343b37314470af9bc258710bb"
+    sha256 cellar: :any,                 ventura:        "1d1a55d907c73014304adfe05dd2228fdff4f74e45e3377976cc6827b78e4ea8"
+    sha256 cellar: :any,                 monterey:       "c9e42c21e657282f94d3de3cbdf7d5d32c32dbb99c4b0ec41f46a164a4a80b51"
+    sha256 cellar: :any,                 big_sur:        "0d0559948754c8568ed410847210ef71b929bdf2f9cb80453af1ee91470bfcd4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "76e52514a9887f9172af7b20365b01c48edbcc08455a8acc0afac9978abd76d9"
   end
 
   depends_on "rust" => :build # for cryptography
