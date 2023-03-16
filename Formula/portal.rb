@@ -7,13 +7,13 @@ class Portal < Formula
   head "https://github.com/SpatiumPortae/portal.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eb5d90d8201664c8eee810e7dbdcecdd25e7a9a88c19ce21b9d9b62c7ef5cff9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "eb5d90d8201664c8eee810e7dbdcecdd25e7a9a88c19ce21b9d9b62c7ef5cff9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "eb5d90d8201664c8eee810e7dbdcecdd25e7a9a88c19ce21b9d9b62c7ef5cff9"
-    sha256 cellar: :any_skip_relocation, ventura:        "70be550a28d8e0fdbd8cd639e7fd909af78cb5d7a75b18be12992b91319f8f2b"
-    sha256 cellar: :any_skip_relocation, monterey:       "70be550a28d8e0fdbd8cd639e7fd909af78cb5d7a75b18be12992b91319f8f2b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "70be550a28d8e0fdbd8cd639e7fd909af78cb5d7a75b18be12992b91319f8f2b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a518d52bedd55a0cb2612f851ec21f8670443300ef028f197fafa2d8369afd08"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "956d12c9e7f7c8f8979c8b17ca0eaeb45e8639419a8c8ab2d271ebf19e1def0c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "956d12c9e7f7c8f8979c8b17ca0eaeb45e8639419a8c8ab2d271ebf19e1def0c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "956d12c9e7f7c8f8979c8b17ca0eaeb45e8639419a8c8ab2d271ebf19e1def0c"
+    sha256 cellar: :any_skip_relocation, ventura:        "93a8ee8abb4795f58ed78bf8050d87c68c997d6af40c9791e504cb93de26022a"
+    sha256 cellar: :any_skip_relocation, monterey:       "93a8ee8abb4795f58ed78bf8050d87c68c997d6af40c9791e504cb93de26022a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "93a8ee8abb4795f58ed78bf8050d87c68c997d6af40c9791e504cb93de26022a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "611aa11a9045911553b7751fc59df6f0c58bbe9107d0b88442ee2d349da8d8e6"
   end
 
   depends_on "go" => :build
