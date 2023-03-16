@@ -1,8 +1,8 @@
 class Openmama < Formula
   desc "Open source high performance messaging API for various Market Data sources"
   homepage "https://openmama.finos.org"
-  url "https://github.com/finos/OpenMAMA/archive/OpenMAMA-6.3.1-release.tar.gz"
-  sha256 "43e55db00290bc6296358c72e97250561ed4a4bb3961c1474f0876b81ecb6cf9"
+  url "https://github.com/finos/OpenMAMA/archive/refs/tags/OpenMAMA-6.3.2-release.tar.gz"
+  sha256 "5c09b5c73467c4122fe275c0f880c70e4b9f6f8d1ecbaa1aeeac7d8195d9ffef"
   license "LGPL-2.1-only"
 
   bottle do
@@ -31,20 +31,18 @@ class Openmama < Formula
   end
 
   def install
-    uuid_args = if OS.mac?
-      ["-DUUID_INCLUDE_DIRS=#{MacOS.sdk_path_if_needed}/usr/include", "-DUUID_LIBRARIES=c"]
-    else
-      []
-    end
+    args = %W[
+      -DAPR_ROOT=#{Formula["apr"].opt_prefix}
+      -DAPRUTIL_ROOT=#{Formula["apr-util"].opt_prefix}
+      -DPROTON_ROOT=#{Formula["qpid-proton"].opt_prefix}
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DINSTALL_RUNTIME_DEPENDENCIES=OFF
+      -DWITH_TESTTOOLS=OFF
+      -DOPENMAMA_VERSION=#{version}
+    ]
 
-    system "cmake", "-S", ".", "-B", "build",
-                    "-DAPR_ROOT=#{Formula["apr"].opt_prefix}",
-                    "-DPROTON_ROOT=#{Formula["qpid-proton"].opt_prefix}",
-                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
-                    "-DINSTALL_RUNTIME_DEPENDENCIES=OFF",
-                    "-DWITH_TESTTOOLS=OFF",
-                    *uuid_args,
-                    *std_cmake_args
+    args << "-DUUID_INCLUDE_DIRS=#{MacOS.sdk_path_if_needed}/usr/include" << "-DUUID_LIBRARIES=c" if OS.mac?
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
