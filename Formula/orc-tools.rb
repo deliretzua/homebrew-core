@@ -11,7 +11,13 @@ class OrcTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "14d47af5ff0ec0128a3aa1aeb834af80bd5c4ef3d376dca5e07af108b1e97d5f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6f344899ccd86674a3401f5c0413e2835a204175805a68ee92bd4e14c978c5fc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6f344899ccd86674a3401f5c0413e2835a204175805a68ee92bd4e14c978c5fc"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6f344899ccd86674a3401f5c0413e2835a204175805a68ee92bd4e14c978c5fc"
+    sha256 cellar: :any_skip_relocation, ventura:        "6f344899ccd86674a3401f5c0413e2835a204175805a68ee92bd4e14c978c5fc"
+    sha256 cellar: :any_skip_relocation, monterey:       "6f344899ccd86674a3401f5c0413e2835a204175805a68ee92bd4e14c978c5fc"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6f344899ccd86674a3401f5c0413e2835a204175805a68ee92bd4e14c978c5fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83f1383190fe72f08440fc53f8bedb12be18ab6c005f29fb19c3b7d23dc1fc5d"
   end
 
   depends_on "openjdk"
