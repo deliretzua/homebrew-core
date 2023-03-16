@@ -1,10 +1,9 @@
 class Lgogdownloader < Formula
   desc "Unofficial downloader for GOG.com games"
   homepage "https://sites.google.com/site/gogdownloader/"
-  url "https://github.com/Sude-/lgogdownloader/releases/download/v3.9/lgogdownloader-3.9.tar.gz"
-  sha256 "d0b3b6198e687f811294abb887257c5c28396b5af74c7f3843347bf08c68e3d0"
+  url "https://github.com/Sude-/lgogdownloader/releases/download/v3.10/lgogdownloader-3.10.tar.gz"
+  sha256 "eb91778cb1395884922e32df8ee15541eaccb06d75269f37fd228306557757ca"
   license "WTFPL"
-  revision 3
   head "https://github.com/Sude-/lgogdownloader.git", branch: "master"
 
   livecheck do
@@ -28,16 +27,17 @@ class Lgogdownloader < Formula
   depends_on "boost"
   depends_on "htmlcxx"
   depends_on "jsoncpp"
-  depends_on "liboauth"
   depends_on "rhash"
   depends_on "tinyxml2"
 
   uses_from_macos "curl"
 
   def install
-    system "cmake", ".", *std_cmake_args, "-DJSONCPP_INCLUDE_DIR=#{Formula["jsoncpp"].opt_include}"
-
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DJSONCPP_INCLUDE_DIR=#{Formula["jsoncpp"].opt_include}",
+                    *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -48,6 +48,7 @@ class Lgogdownloader < Formula
     writer.write <<~EOS
       test@example.com
       secret
+      https://auth.gog.com/auth?client_id=xxx
     EOS
     writer.close
     lastline = ""
@@ -56,7 +57,7 @@ class Lgogdownloader < Formula
     rescue Errno::EIO
       # GNU/Linux raises EIO when read is done on closed pty
     end
-    assert_equal "HTTP: Login failed", lastline.chomp
+    assert_equal "Galaxy: Login failed", lastline.chomp
     reader.close
   end
 end
