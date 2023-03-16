@@ -1,9 +1,9 @@
 class Cracklib < Formula
   desc "LibCrack password checking library"
   homepage "https://github.com/cracklib/cracklib"
-  url "https://github.com/cracklib/cracklib/releases/download/v2.9.8/cracklib-2.9.8.tar.bz2"
-  sha256 "1f9d34385ea3aa7cd7c07fa388dc25810aea9d3c33e260c713a3a5873d70e386"
-  license "LGPL-2.1"
+  url "https://github.com/cracklib/cracklib/releases/download/v2.9.10/cracklib-2.9.10.tar.bz2"
+  sha256 "9e0f2546220c6023754d81e5110c87192f92c703a2b0cc58661cd82dbcf07c63"
+  license "LGPL-2.1-only"
 
   livecheck do
     url :stable
@@ -24,8 +24,8 @@ class Cracklib < Formula
   depends_on "gettext"
 
   resource "cracklib-words" do
-    url "https://github.com/cracklib/cracklib/releases/download/v2.9.8/cracklib-words-2.9.8.bz2"
-    sha256 "ec25ac4a474588c58d901715512d8902b276542b27b8dd197e9c2ad373739ec4"
+    url "https://github.com/cracklib/cracklib/releases/download/v2.9.10/cracklib-words-2.9.10.bz2"
+    sha256 "19a557eb482332a4499267d9e25089a76bfb9e2bdea7ecf62ea6b6df4fb4c118"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
@@ -35,9 +35,8 @@ class Cracklib < Formula
   end
 
   def install
-    system "./configure", "--disable-dependency-tracking",
+    system "./configure", *std_configure_args,
                           "--disable-silent-rules",
-                          "--prefix=#{prefix}",
                           "--sbindir=#{bin}",
                           "--without-python",
                           "--with-default-dict=#{var}/cracklib/cracklib-words"
