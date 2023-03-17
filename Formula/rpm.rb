@@ -13,10 +13,9 @@ class Rpm < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura: "b53546064adccbad8b399e755dee7ce53b7e5740bafb0c9f57c21755bbd44a4e"
-    sha256 ventura:       "c3479781c5af9756f03f0fa03ae34a8810aa5fe4a5a578c012be0aa6d2778b18"
-    sha256 x86_64_linux:  "92fa3dcdb9eb03d3db9941ac7ee1a01a380aa78bdf8d0446f397ac699ff02ca1"
+    sha256 arm64_ventura: "6705d70ecbc4e00acde775fb29b27a5b451e440b0e6c37d5bd539925fb1c5bc0"
+    sha256 ventura:       "d48de12b7598c45696e25a5fce486fcb90f4eecf5a4e7224fead7d7592890299"
+    sha256 x86_64_linux:  "98bb5f4798bc874e8fe11186bf96923c5adc5f68d35143616e7c001def9550fe"
   end
 
   depends_on "gettext"
