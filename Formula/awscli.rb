@@ -3,8 +3,8 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://github.com/aws/aws-cli/archive/2.11.3.tar.gz"
-  sha256 "c88082d0e1edb00016c7c457545f1a3a63eb133e1b76b8a3e2168e1c6adf5a66"
+  url "https://github.com/aws/aws-cli/archive/2.11.4.tar.gz"
+  sha256 "005a71054334d5bc4ab130feabbaed4099454d9d49b6c90285b392525e862676"
   license "Apache-2.0"
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
@@ -21,6 +21,7 @@ class Awscli < Formula
   depends_on "cmake" => :build
   depends_on "rust" => :build # for cryptography
   depends_on "docutils"
+  depends_on "pycparser"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -63,11 +64,6 @@ class Awscli < Formula
   resource "prompt-toolkit" do
     url "https://files.pythonhosted.org/packages/37/34/c34c376882305c5051ed7f086daf07e68563d284015839bfb74d6e61d402/prompt_toolkit-3.0.28.tar.gz"
     sha256 "9f1cd16b1e86c2968f2519d7fb31dd9d669916f515612c269d14e9ed52b51650"
-  end
-
-  resource "pycparser" do
-    url "https://files.pythonhosted.org/packages/5e/0b/95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46de/pycparser-2.21.tar.gz"
-    sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
   end
 
   resource "python-dateutil" do
