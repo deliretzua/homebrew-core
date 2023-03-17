@@ -71,10 +71,13 @@ class OpenaiWhisper < Formula
     venv.pip_install resources.reject { |r| r.name == "test-audio" }
     venv.pip_install_and_link buildpath
 
-    # link the `huggingface-cli` virtualenv to this one
+    # link dependent virtualenvs to this one
     site_packages = Language::Python.site_packages(python3)
-    package = Formula["huggingface-cli"].opt_libexec
-    (libexec/site_packages/"homebrew-huggingface-cli.pth").write package/site_packages
+    paths = %w[pytorch huggingface-cli].map do |package_name|
+      package = Formula[package_name].opt_libexec
+      package/site_packages
+    end
+    (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
   end
 
   test do
