@@ -7,13 +7,13 @@ class Rtx < Formula
   head "https://github.com/jdxcode/rtx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9d78d36d477d365f081e87831b19c03b06747b5bffdec7b84f0072981f66146f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "62a642538ec33beb569ac28bca928bb187be90df40a03db798d0940439590af2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "21fa15d4df447c0700e614d1b2c6afbbcaea32ef776d1b9cff5741ebd1c2d6c0"
-    sha256 cellar: :any_skip_relocation, ventura:        "0f72be7fd3d348f5f640de983fb247d3091509715d9137448309177df52c5dd5"
-    sha256 cellar: :any_skip_relocation, monterey:       "f44e54368c6e4322ac3ee1b185c97a0f8e2b28d03f9f516a79db6934393e5bd9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d4884236266d24fbce61a1aaefdda203cd762ff47efb6048a792b15fbba2118f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "be85900a2f7c47e2ed03e2970030a47a457521fbf5fa5ce1d585eba1cb4ce26b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "25e39e05e22b8b21690be71698ca4857da7f69a822c573fad906ce4899523297"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9d1a77642f2cd432057f2b1db657b65d933d2eefc93d2c93c8a814e9434a451a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "762d273a183b803cbf07a42aa01471a49d224549f9a529408d24b2e4b9ddf914"
+    sha256 cellar: :any_skip_relocation, ventura:        "9150c7a1c7fae3615967ea2153414b340d44885f10410caf02f34ca64c8a61e3"
+    sha256 cellar: :any_skip_relocation, monterey:       "60e8ebf15efd4bd1880450ac0b1dc0995a93cbe17efddfc1da35a286031d2a7c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1298f47256fc88a66dc1f0c97529da07726a96c55323850b5ca7c416165d871c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "61901be094a0ac437aad337658ed2fb0d19992d0d3a9215f2eb22bb271f19791"
   end
 
   depends_on "rust" => :build
