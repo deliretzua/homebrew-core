@@ -1,10 +1,9 @@
 class Gpgme < Formula
   desc "Library access to GnuPG"
   homepage "https://www.gnupg.org/related_software/gpgme/"
-  url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.18.0.tar.bz2"
-  sha256 "361d4eae47ce925dba0ea569af40e7b52c645c4ae2e65e5621bf1b6cdd8b0e9e"
+  url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.19.0.tar.bz2"
+  sha256 "cb58494dc415fba9eeb12b826550ad3190dc92e265c5bb2ae1a21c92841cfd38"
   license "LGPL-2.1-or-later"
-  revision 1
 
   livecheck do
     url "https://gnupg.org/ftp/gcrypt/gpgme/"
@@ -28,15 +27,6 @@ class Gpgme < Formula
   depends_on "libassuan"
   depends_on "libgpg-error"
 
-  # Fix detection of Python 3.10 version string. We use Arch Linux's configure
-  # patch to avoid having to regenerate with autoconf. There is an open upstream
-  # PR for m4 and configure.ac changes, but it is still pending review.
-  # Ref: https://dev.gnupg.org/D546
-  patch do
-    url "https://raw.githubusercontent.com/archlinux/svntogit-packages/6a4d7746de4670dbd245e1855584f7bb5ae10934/trunk/python310.patch"
-    sha256 "5de2f6bcb6b30642d0cbc3fbd86803c9460d732f44a526f44cedee8bb78d291a"
-  end
-
   def python3
     "python3.11"
   end
@@ -47,25 +37,26 @@ class Gpgme < Formula
     # hardcoded, the Arch Linux patch that changed 3.9 to 3.10 can't detect 3.11
     inreplace "configure", /# Reset everything.*\n\s*unset PYTHON$/, ""
 
-    # setuptools>=60 prefers its own bundled distutils, which breaks the installation
-    # Remove when distutils is no longer used. Related PR: https://dev.gnupg.org/D545
-    ENV["SETUPTOOLS_USE_DISTUTILS"] = "stdlib"
-
     # Uses generic lambdas.
     # error: 'auto' not allowed in lambda parameter
     ENV.append "CXXFLAGS", "-std=c++14"
 
+    site_packages = prefix/Language::Python.site_packages(python3)
+    ENV.append_path "PYTHONPATH", site_packages
     # Work around Homebrew's "prefix scheme" patch which causes non-pip installs
     # to incorrectly try to write into HOMEBREW_PREFIX/lib since Python 3.10.
     inreplace "lang/python/Makefile.in",
               /^\s*install\s*\\\n\s*--prefix "\$\(DESTDIR\)\$\(prefix\)"/,
-              "\\0 --install-lib=#{prefix/Language::Python.site_packages(python3)}"
+              "\\0 --install-lib=#{site_packages}"
 
     system "./configure", *std_configure_args,
                           "--disable-silent-rules",
                           "--enable-static"
     system "make"
     system "make", "install"
+
+    # Rename the `easy-install.pth` file to avoid `brew link` conflicts.
+    site_packages.install site_packages/"easy-install.pth" => "homebrew-gpgme-#{version}.pth"
 
     # avoid triggering mandatory rebuilds of software that hard-codes this path
     inreplace bin/"gpgme-config", prefix, opt_prefix
