@@ -7,6 +7,10 @@ class Aicommits < Formula
   sha256 "cc2d9011a3ef1eb7317078c9154753412f3cb42f8a73dccc1cd8f84744c57a72"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "480ce28558d8bc194b9e22439c9fc314150f23a938bdc4b0fb18dba380ea67b7"
+  end
+
   depends_on "node"
 
   def install
