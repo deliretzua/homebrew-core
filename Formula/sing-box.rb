@@ -5,6 +5,16 @@ class SingBox < Formula
   sha256 "2fdf93fd49c9375cd14b2fe2e2163cbad4b65d0cfa422c592855e7810036ef56"
   license "GPL-3.0-or-later"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ff549180bcbf1d1ea82da68872ecbe25b263a19664f3dca390cd8f93c297ff9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0ff549180bcbf1d1ea82da68872ecbe25b263a19664f3dca390cd8f93c297ff9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0ff549180bcbf1d1ea82da68872ecbe25b263a19664f3dca390cd8f93c297ff9"
+    sha256 cellar: :any_skip_relocation, ventura:        "2d269410b7074575aed8403d78d1a05ee65d4fc83fb84d7a695c396e73384e18"
+    sha256 cellar: :any_skip_relocation, monterey:       "2d269410b7074575aed8403d78d1a05ee65d4fc83fb84d7a695c396e73384e18"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2d269410b7074575aed8403d78d1a05ee65d4fc83fb84d7a695c396e73384e18"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e95a6846850a535addebeea5a2955e5779858cfd74d40eb60b4cb111276c832a"
+  end
+
   depends_on "go" => :build
 
   def install
