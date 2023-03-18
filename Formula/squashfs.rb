@@ -1,13 +1,12 @@
 class Squashfs < Formula
   desc "Compressed read-only file system for Linux"
   homepage "https://github.com/plougher/squashfs-tools"
-  url "https://github.com/plougher/squashfs-tools/archive/4.5.1.tar.gz"
-  sha256 "277b6e7f75a4a57f72191295ae62766a10d627a4f5e5f19eadfbc861378deea7"
+  url "https://github.com/plougher/squashfs-tools/archive/4.6.tar.gz"
+  sha256 "afc157495fa90d2042172fc642237afe1956f1a5beb141058bba3256b8d92013"
   license "GPL-2.0-or-later"
   head "https://github.com/plougher/squashfs-tools.git", branch: "master"
 
   # Tags like `4.4-git.1` are not release versions and the regex omits these
-  # (see: https://github.com/plougher/squashfs-tools/issues/96).
   livecheck do
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
@@ -36,10 +35,10 @@ class Squashfs < Formula
 
   # Patch necessary to emulate the sigtimedwait process otherwise we get build failures.
   # Also clang fixes, extra endianness knowledge and a bundle of other macOS fixes.
-  # Original patchset: https://github.com/plougher/squashfs-tools/pull/69
+  # usptream PR ref: https://github.com/plougher/squashfs-tools/pull/233
   patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/67d366d76a655dca08177bf05d812361c4175a10/squashfs/4.5.1.patch"
-    sha256 "2cc6cfb75f1479cbc74e3a03b1c359ba63f1c1caa5bb65d6ffca0e95264552f1"
+    url "https://github.com/plougher/squashfs-tools/commit/4a33df67a4ec67d32a6a58745517c8fbaa47d602.patch?full_index=1"
+    sha256 "d079a51e56da1501e118af90bf4e3ebabf207ceaca3f0aab0194d15f5d499845"
   end
 
   def install
@@ -72,7 +71,15 @@ class Squashfs < Formula
       end
     end
 
-    doc.install %W[README-#{version} RELEASE-READMEs USAGE COPYING]
+    doc.install %W[
+      README-#{version}
+      USAGE-#{version}
+      USAGE-MKSQUASHFS-#{version}
+      USAGE-SQFSCAT-#{version}
+      USAGE-SQFSTAR-#{version}
+      USAGE-UNSQUASHFS-#{version}
+      COPYING
+    ]
   end
 
   test do
