@@ -12,13 +12,13 @@ class Goreman < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0101f4aecbab5b055aabb25a83844d9ff926b85bdfb63bcdc6d9c06cfe0e019b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0101f4aecbab5b055aabb25a83844d9ff926b85bdfb63bcdc6d9c06cfe0e019b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0101f4aecbab5b055aabb25a83844d9ff926b85bdfb63bcdc6d9c06cfe0e019b"
-    sha256 cellar: :any_skip_relocation, ventura:        "3e7417e7500d3665d3cc93bf7425bf3cdbb30f7cc9c42860fc8434e04197a418"
-    sha256 cellar: :any_skip_relocation, monterey:       "3e7417e7500d3665d3cc93bf7425bf3cdbb30f7cc9c42860fc8434e04197a418"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3e7417e7500d3665d3cc93bf7425bf3cdbb30f7cc9c42860fc8434e04197a418"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9915210e3942623384549047d25b163326ca633ef451c1237529e59df05ecff2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "43d09c2e7420bc60906706323a49d65afa612cb477ddbb0c1edd9f5e1721f7ad"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "43d09c2e7420bc60906706323a49d65afa612cb477ddbb0c1edd9f5e1721f7ad"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "43d09c2e7420bc60906706323a49d65afa612cb477ddbb0c1edd9f5e1721f7ad"
+    sha256 cellar: :any_skip_relocation, ventura:        "5771bfcd34c5bf8a1327f0a29b44908e21b4b251caa0c8c324ae2924302cbce0"
+    sha256 cellar: :any_skip_relocation, monterey:       "5771bfcd34c5bf8a1327f0a29b44908e21b4b251caa0c8c324ae2924302cbce0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5771bfcd34c5bf8a1327f0a29b44908e21b4b251caa0c8c324ae2924302cbce0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5f12a9760b379dd8e4cf4c39a69862b5a0fadfec40e511e71408006c5943c8b"
   end
 
   depends_on "go" => :build
