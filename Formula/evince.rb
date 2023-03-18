@@ -1,8 +1,8 @@
 class Evince < Formula
   desc "GNOME document viewer"
   homepage "https://wiki.gnome.org/Apps/Evince"
-  url "https://download.gnome.org/sources/evince/43/evince-43.1.tar.xz"
-  sha256 "6d75ca62b73bfbb600f718a098103dc6b813f9050b9594be929e29b4589d2335"
+  url "https://download.gnome.org/sources/evince/44/evince-44.0.tar.xz"
+  sha256 "339ee9e005dd7823a13fe21c71c2ec6d2c4cb74548026e4741eee7b2703e09da"
   license "GPL-2.0-or-later"
 
   bottle do
@@ -15,6 +15,8 @@ class Evince < Formula
     sha256 x86_64_linux:   "7424c6e6d75d8eeb2c9bf302d360bc35c3fea37aa0a535e5099fbb899309b91a"
   end
 
+  depends_on "desktop-file-utils" => :build # for update-desktop-database
+  depends_on "gettext" => :build # for msgfmt
   depends_on "gobject-introspection" => :build
   depends_on "itstool" => :build
   depends_on "meson" => :build
