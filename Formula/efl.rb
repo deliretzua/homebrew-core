@@ -4,7 +4,7 @@ class Efl < Formula
   url "https://download.enlightenment.org/rel/libs/efl/efl-1.26.3.tar.xz"
   sha256 "d9f83aa0fd9334f44deeb4e4952dc0e5144683afac786feebce6030951617d15"
   license all_of: ["GPL-2.0-only", "LGPL-2.1-only", "BSD-2-Clause", "FTL", "zlib-acknowledgement"]
-  revision 2
+  revision 3
 
   livecheck do
     url "https://download.enlightenment.org/rel/libs/efl/"
@@ -32,7 +32,6 @@ class Efl < Formula
   depends_on "gettext"
   depends_on "giflib"
   depends_on "glib"
-  depends_on "gst-plugins-good"
   depends_on "gstreamer"
   depends_on "jpeg-turbo"
   depends_on "libpng"
@@ -52,7 +51,7 @@ class Efl < Formula
   uses_from_macos "zlib"
 
   # Remove LuaJIT 2.0 linker args -pagezero_size and -image_base
-  # to fix ARM build using LuaJIT 2.1+ via `luajit-openresty`
+  # to fix ARM build using LuaJIT 2.1+
   patch :DATA
 
   def install
@@ -77,8 +76,8 @@ class Efl < Formula
     inreplace "dbus-services/meson.build", "dep.get_pkgconfig_variable('session_bus_services_dir')",
                                            "'#{share}/dbus-1/services'"
 
-    system "meson", *std_meson_args, "build", *args
-    system "meson", "compile", "-C", "build", "-v"
+    system "meson", "setup", "build", *args, *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
 
