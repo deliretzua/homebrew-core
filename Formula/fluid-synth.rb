@@ -8,13 +8,13 @@ class FluidSynth < Formula
   head "https://github.com/FluidSynth/fluidsynth.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a26af41a80f6ebc0eba1d1384711e6c6d8d33afb6b8067eb8f8823f2ac822c56"
-    sha256 cellar: :any,                 arm64_monterey: "818475a9c43ce1d0455058537351af0715c60c569107ba526cd9be52544ae5ec"
-    sha256 cellar: :any,                 arm64_big_sur:  "71794f63885755d5df4bc4923763ddceae628c9814c0f4c205b0fd1994a3a902"
-    sha256 cellar: :any,                 ventura:        "51e6bf112fffec4af8a6c11f67693c14205a4133062c9ae67e5c1b19d10bfc8a"
-    sha256 cellar: :any,                 monterey:       "780ae5444afd386bd2558cd75d52633002eacdbed8d4397d24af01d822f6d7ed"
-    sha256 cellar: :any,                 big_sur:        "811ee977e81f6ce4fd6a6c9a7564e3d3045afe69b699a3be7bb6944ee36f188e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "db1ecdd216ed9b722a92ae4ba6ce3274e2d3b4ad12b9688abb4b1fc56294994c"
+    sha256 cellar: :any,                 arm64_ventura:  "394ec658cd38eb410d47d8cf69b2ba5e3676e85abffda9f56430f50030909db8"
+    sha256 cellar: :any,                 arm64_monterey: "dbab6a34b765066e0be8a77b90b1bd5157bac31665302566405d338ae609b03f"
+    sha256 cellar: :any,                 arm64_big_sur:  "273bf2db324797f0f909f388cf5dc5d7f717b0ab45f218872035c0c16d520d3f"
+    sha256 cellar: :any,                 ventura:        "4f6535561288d26f7bda0d8825d7ee8354a9e7a088900dad968e961b9cfc7e4e"
+    sha256 cellar: :any,                 monterey:       "9936295c244a7cb84dea9142647ea05ae560fa29afb920f790a2df468ea06a72"
+    sha256 cellar: :any,                 big_sur:        "f12e58b856e8e0872f653baafb3a836d79c82a10d7bb0425a7a0009bfe8264f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7882b6ed850926a1074dc9c31ea7d0e7721221290c1ecec82bc5fe0d09246038"
   end
 
   depends_on "cmake" => :build
