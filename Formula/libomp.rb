@@ -1,8 +1,8 @@
 class Libomp < Formula
   desc "LLVM's OpenMP runtime library"
   homepage "https://openmp.llvm.org/"
-  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.7/openmp-15.0.7.src.tar.xz"
-  sha256 "3f168d38e7a37b928dcb94b33ce947f75d81eef6fa6a4f9d16b6dc5511c07358"
+  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.0/openmp-16.0.0.src.tar.xz"
+  sha256 "e30f69c6533157ec4399193ac6b158807610815accfbed98695d72074e4bedd0"
   license "MIT"
 
   livecheck do
@@ -27,9 +27,13 @@ class Libomp < Formula
   depends_on "lit" => :build
   uses_from_macos "llvm" => :build
 
+  on_linux do
+    depends_on "python@3.11"
+  end
+
   resource "cmake" do
-    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.7/cmake-15.0.7.src.tar.xz"
-    sha256 "8986f29b634fdaa9862eedda78513969fe9788301c9f2d938f4c10a3e7a3e7ea"
+    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.0/cmake-16.0.0.src.tar.xz"
+    sha256 "04e62ab7d0168688d9102680adf8eabe7b04275f333fe20eef8ab5a3a8ea9fcc"
   end
 
   def install
@@ -53,6 +57,7 @@ class Libomp < Formula
   end
 
   test do
+    assert_equal version, resource("cmake").version, "`cmake` resource needs updating!"
     (testpath/"test.cpp").write <<~EOS
       #include <omp.h>
       #include <array>
