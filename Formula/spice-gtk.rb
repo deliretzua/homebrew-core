@@ -6,6 +6,7 @@ class SpiceGtk < Formula
   url "https://www.spice-space.org/download/gtk/spice-gtk-0.42.tar.xz"
   sha256 "9380117f1811ad1faa1812cb6602479b6290d4a0d8cc442d44427f7f6c0e7a58"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later", "BSD-3-Clause"]
+  revision 1
 
   livecheck do
     url "https://www.spice-space.org/download/gtk/"
@@ -37,11 +38,6 @@ class SpiceGtk < Formula
   depends_on "gdk-pixbuf"
   depends_on "gettext"
   depends_on "glib"
-  depends_on "gst-libav"
-  depends_on "gst-plugins-bad"
-  depends_on "gst-plugins-base"
-  depends_on "gst-plugins-good"
-  depends_on "gst-plugins-ugly"
   depends_on "gstreamer"
   depends_on "gtk+3"
   depends_on "jpeg-turbo"
@@ -68,7 +64,7 @@ class SpiceGtk < Formula
     venv.pip_install resources
     ENV.prepend_path "PATH", buildpath/"venv/bin"
 
-    system "meson", "build", *std_meson_args
+    system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build"
     system "meson", "install", "-C", "build"
   end
