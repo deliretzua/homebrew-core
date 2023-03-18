@@ -4,12 +4,13 @@ class Ccls < Formula
   # NOTE: Upstream often does not mark the latest release on GitHub, so
   #       this can be updated with the new tag.
   #       https://github.com/Homebrew/homebrew-core/pull/106939
-  #       https://github.com/MaskRay/ccls/issues/786
-  #       https://github.com/MaskRay/ccls/issues/895
+  #       MaskRay/ccls#786
+  #       MaskRay/ccls#895
+  # TODO: Check if we can use unversioned `llvm` at version bump.
   url "https://github.com/MaskRay/ccls/archive/0.20220729.tar.gz"
   sha256 "af19be36597c2a38b526ce7138c72a64c7fb63827830c4cff92256151fc7a6f4"
   license "Apache-2.0"
-  revision 8
+  revision 9
   head "https://github.com/MaskRay/ccls.git", branch: "master"
 
   bottle do
@@ -24,7 +25,7 @@ class Ccls < Formula
 
   depends_on "cmake" => :build
   depends_on "rapidjson" => :build
-  depends_on "llvm"
+  depends_on "llvm@15"
   depends_on macos: :high_sierra # C++ 17 is required
 
   fails_with gcc: "5"
