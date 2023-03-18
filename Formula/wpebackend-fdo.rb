@@ -6,6 +6,10 @@ class WpebackendFdo < Formula
   license "BSD-2-Clause"
   head "https://github.com/Igalia/WPEBackend-fdo.git", branch: "master"
 
+  bottle do
+    sha256 x86_64_linux: "83cda8ea5fa199ff52301ed42fc03ce77da8767c5982815e7f52e242a011b948"
+  end
+
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
