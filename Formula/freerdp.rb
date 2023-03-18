@@ -1,9 +1,11 @@
 class Freerdp < Formula
   desc "X11 implementation of the Remote Desktop Protocol (RDP)"
   homepage "https://www.freerdp.com/"
+  # TODO: Check if this can use unversioned ffmpeg at version bump.
   url "https://github.com/FreeRDP/FreeRDP/archive/2.10.0.tar.gz"
   sha256 "88fa59f8e8338d5cb2490d159480564562a5624f3a3572c89fa3070b9626835c"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     sha256                               arm64_ventura:  "bfdb1fec28d4395805d5cec843c88f0d4164d8f530145b1263cda54764e54cb5"
@@ -39,7 +41,7 @@ class Freerdp < Formula
 
   on_linux do
     depends_on "alsa-lib"
-    depends_on "ffmpeg"
+    depends_on "ffmpeg@4"
     depends_on "glib"
     depends_on "systemd"
     depends_on "wayland"
