@@ -6,6 +6,16 @@ class Xurls < Formula
   license "BSD-3-Clause"
   head "https://github.com/mvdan/xurls.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3046b20d693d80b4c64bb478db3022889a90184833d45e482b350ff736ff3644"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3046b20d693d80b4c64bb478db3022889a90184833d45e482b350ff736ff3644"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3046b20d693d80b4c64bb478db3022889a90184833d45e482b350ff736ff3644"
+    sha256 cellar: :any_skip_relocation, ventura:        "28ccbea0f49ee55c5ff0cf51aae01ac92b416cf2783da1621e8a64f2dd5a24f6"
+    sha256 cellar: :any_skip_relocation, monterey:       "28ccbea0f49ee55c5ff0cf51aae01ac92b416cf2783da1621e8a64f2dd5a24f6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "28ccbea0f49ee55c5ff0cf51aae01ac92b416cf2783da1621e8a64f2dd5a24f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8fa5627a447c2260f95c7703f6bfecd823b2a837570da88b831a19226a4f49e4"
+  end
+
   depends_on "go" => :build
 
   def install
