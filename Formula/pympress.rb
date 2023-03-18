@@ -6,6 +6,7 @@ class Pympress < Formula
   url "https://files.pythonhosted.org/packages/08/3f/9fd254a40155c8f51b52b045f5df16a794d21d4c3dfeb8c5d379671e72f1/pympress-1.8.2.tar.gz"
   sha256 "d9587112ab08b1c97d8f9baccde2f666b4b6291bd22fcb376d27574301b2c179"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/Cimbali/pympress.git", branch: "master"
 
   bottle do
@@ -19,10 +20,6 @@ class Pympress < Formula
   end
 
   depends_on "gobject-introspection"
-  depends_on "gst-plugins-bad"
-  depends_on "gst-plugins-base"
-  depends_on "gst-plugins-good"
-  depends_on "gst-plugins-ugly"
   depends_on "gstreamer"
   depends_on "gtk+3"
   depends_on "libyaml"
