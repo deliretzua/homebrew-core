@@ -3,8 +3,8 @@ class AwsSdkCpp < Formula
   homepage "https://github.com/aws/aws-sdk-cpp"
   # aws-sdk-cpp should only be updated every 10 releases on multiples of 10
   url "https://github.com/aws/aws-sdk-cpp.git",
-      tag:      "1.11.30",
-      revision: "1729b68bfcbfdd28ec5de3a94d5792ec4a54d01d"
+      tag:      "1.11.40",
+      revision: "0515aec8e29a9300ec6ce3ae748f1dd922b7cec8"
   license "Apache-2.0"
   head "https://github.com/aws/aws-sdk-cpp.git", branch: "main"
 
