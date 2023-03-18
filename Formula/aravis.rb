@@ -4,6 +4,7 @@ class Aravis < Formula
   url "https://github.com/AravisProject/aravis/releases/download/0.8.26/aravis-0.8.26.tar.xz"
   sha256 "cb866cbcf4de2ab8fedf5d6a1213dd714347adf25d9e1812df2283230f065f80"
   license "LGPL-2.1-or-later"
+  revision 1
 
   bottle do
     sha256 arm64_ventura:  "7b8539b5c6715fbe5e1c1190729a0cafcd8c7ad2b68f9b2de3a367d2888d96a4"
@@ -22,9 +23,6 @@ class Aravis < Formula
   depends_on "pkg-config" => :build
   depends_on "adwaita-icon-theme"
   depends_on "glib"
-  depends_on "gst-plugins-bad"
-  depends_on "gst-plugins-base"
-  depends_on "gst-plugins-good"
   depends_on "gstreamer"
   depends_on "gtk+3"
   depends_on "intltool"
@@ -34,15 +32,20 @@ class Aravis < Formula
   def install
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
 
-    mkdir "build" do
-      system "meson", *std_meson_args, ".."
-      system "ninja"
-      system "ninja", "install"
-    end
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   def post_install
     system "#{Formula["gtk+3"].opt_bin}/gtk3-update-icon-cache", "-f", "-t", "#{HOMEBREW_PREFIX}/share/icons/hicolor"
+  end
+
+  def caveats
+    <<~EOS
+      For GStreamer to find the bundled plugin:
+        export GST_PLUGIN_PATH=#{opt_lib}/gstreamer-1.0
+    EOS
   end
 
   test do
