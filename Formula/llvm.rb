@@ -1,7 +1,6 @@
 class Llvm < Formula
   desc "Next-gen compiler infrastructure"
   homepage "https://llvm.org/"
-  # NOTE: `ccls` will need rebuilding on every version bump.
   url "https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.0/llvm-project-16.0.0.src.tar.xz"
   sha256 "9a56d906a2c81f16f06efc493a646d497c53c2f4f28f0cb1f3c8da7f74350254"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
@@ -491,7 +490,7 @@ class Llvm < Formula
     EOS
 
     system "#{bin}/clang", "-L#{lib}", "-fopenmp", "-nobuiltininc",
-                           "-I#{lib}/clang/#{llvm_version.major_minor_patch}/include",
+                           "-I#{lib}/clang/#{llvm_version.major}/include",
                            "omptest.c", "-o", "omptest"
     testresult = shell_output("./omptest")
 
