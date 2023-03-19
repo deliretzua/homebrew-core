@@ -7,7 +7,7 @@ class Davmail < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d08699043b36822e5063281967f3f5625079e53144a7336cc2a0bd38dd46796a"
+    sha256 cellar: :any_skip_relocation, all: "9702e80a083489ce139bf7d5d772d01dde9f5f36bbe59f1b9020cda563316a99"
   end
 
   depends_on "openjdk"
