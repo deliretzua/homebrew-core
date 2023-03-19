@@ -2,11 +2,12 @@ class Creduce < Formula
   desc "Reduce a C/C++ program while keeping a property of interest"
   homepage "https://embed.cs.utah.edu/creduce/"
   license "BSD-3-Clause"
-  revision 3
+  revision 4
   head "https://github.com/csmith-project/creduce.git", branch: "master"
 
-  # Remove when `head` and `stable` use the same LLVM version.
+  # Remove when patches are no longer needed.
   stable do
+    # TODO: Check if we can use unversioned `llvm` at version bump.
     url "https://embed.cs.utah.edu/creduce/creduce-2.10.0.tar.gz"
     sha256 "db1c0f123967f24d620b040cebd53001bf3dcf03e400f78556a2ff2e11fea063"
 
@@ -46,7 +47,7 @@ class Creduce < Formula
   end
 
   depends_on "astyle"
-  depends_on "llvm"
+  depends_on "llvm@15"
 
   uses_from_macos "perl"
 
