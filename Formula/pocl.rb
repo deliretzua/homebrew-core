@@ -1,10 +1,11 @@
 class Pocl < Formula
   desc "Portable Computing Language"
   homepage "http://portablecl.org"
+  # TODO: Check if we can use unversioned `llvm` at version bump.
   url "http://portablecl.org/downloads/pocl-3.1.tar.gz"
   sha256 "82314362552e050aff417318dd623b18cf0f1d0f84f92d10a7e3750dd12d3a9a"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/pocl/pocl.git", branch: "master"
 
   bottle do
@@ -21,8 +22,12 @@ class Pocl < Formula
   depends_on "opencl-headers" => :build
   depends_on "pkg-config" => :build
   depends_on "hwloc"
-  depends_on "llvm"
+  depends_on "llvm@15"
   depends_on "opencl-icd-loader"
+
+  on_macos do
+    depends_on "llvm" => :build # because of `fails_with :clang`
+  end
 
   fails_with :clang do
     cause <<-EOS
@@ -36,24 +41,32 @@ class Pocl < Formula
 
   def install
     ENV.llvm_clang if OS.mac?
-    llvm = deps.map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+(\.\d+)*)?$/) }
+    llvm = deps.reject(&:build?).map(&:to_formula).find { |f| f.name.match?(/^llvm(@\d+(\.\d+)*)?$/) }
+
+    # Make sure our runtime LLVM dependency is found first.
+    ENV.prepend_path "PATH", llvm.opt_bin
+    ENV.prepend_path "CMAKE_PREFIX_PATH", llvm.opt_prefix
 
     # Install the ICD into #{prefix}/etc rather than #{etc} as it contains the realpath
     # to the shared library and needs to be kept up-to-date to work with an ICD loader.
     # This relies on `brew link` automatically creating and updating #{etc} symlinks.
     args = %W[
       -DPOCL_INSTALL_ICD_VENDORDIR=#{prefix}/etc/OpenCL/vendors
-      -DCMAKE_INSTALL_RPATH=#{lib};#{lib}/pocl
+      -DCMAKE_INSTALL_RPATH=#{loader_path};#{rpath(source: lib/"pocl")}
       -DENABLE_EXAMPLES=OFF
       -DENABLE_TESTS=OFF
+      -DWITH_LLVM_CONFIG=#{llvm.opt_bin}/llvm-config
+      -DLLVM_PREFIX=#{llvm.opt_prefix}
       -DLLVM_BINDIR=#{llvm.opt_bin}
+      -DLLVM_LIBDIR=#{llvm.opt_lib}
+      -DLLVM_INCLUDEDIR=#{llvm.opt_include}
     ]
     # Avoid installing another copy of OpenCL headers on macOS
     args << "-DOPENCL_H=#{Formula["opencl-headers"].opt_include}/CL/opencl.h" if OS.mac?
     # Only x86_64 supports "distro" which allows runtime detection of SSE/AVX
     args << "-DKERNELLIB_HOST_CPU_VARIANTS=distro" if Hardware::CPU.intel?
 
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     (pkgshare/"examples").install "examples/poclcc"
