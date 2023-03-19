@@ -7,13 +7,14 @@ class Smartdns < Formula
   head "https://github.com/mokeyish/smartdns-rs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dfe8641e08520903f0f67be4af3f701347126aa8b19a2e4ddc4b746bb402d1aa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a6bfb58e2694bb495e1291152350e82ab2b1ff3bd49883bddf3c9ae5af94f4ee"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3691b9ba428c11470601f7d221bd3bb8582a300342945014366b0e290b4001e3"
-    sha256 cellar: :any_skip_relocation, ventura:        "9b380692f3d870ba703739f6693acbab93f624387241592df782ae89d9fbec43"
-    sha256 cellar: :any_skip_relocation, monterey:       "c162c736d9eaeab44f87c63c2b7f41023610f37061b39e64582f6378af2f31bd"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b18f7f5e1682cb88508d2e0209bf5781a951827fdaa642a84096b7b1fd22ead3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ef19c0fb385ee16c63c911b145886ea64f3394d78cbe6de52a3e92fa1275ac3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1468c56e0a1a9cab6dfdead21d5cb2f75bef17a3069add01b1782533ca144e71"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3981003b75e5903e14eb152011d2ba986a8955d3188a072c6fc2556cd7a13d1d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2b5be5bda9e89986e06a822db7f02fcb3f9c850270bc8ce3092a418b7a2625e2"
+    sha256 cellar: :any_skip_relocation, ventura:        "4ac27d4a785c22be97aba1074791523cf421f51e062082b840bae710330cd608"
+    sha256 cellar: :any_skip_relocation, monterey:       "f8da3e6987d9b105f399bccbaffc4fca853f8f03c1c59262488fe0604d917cea"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1a6bfc83e1d21cb51d21b8f7408bc6eea3b4abed2943413837a8e6f9faba60bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "98c9cf520cc12a73159f0bc1f259c89db1cdf00e1cb6bd777f10ccebeea9da80"
   end
 
   depends_on "rust" => :build
