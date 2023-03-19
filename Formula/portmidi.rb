@@ -4,6 +4,7 @@ class Portmidi < Formula
   url "https://github.com/PortMidi/portmidi/archive/refs/tags/v2.0.4.tar.gz"
   sha256 "64893e823ae146cabd3ad7f9a9a9c5332746abe7847c557b99b2577afa8a607c"
   license "MIT"
+  revision 1
   version_scheme 1
 
   bottle do
@@ -21,6 +22,16 @@ class Portmidi < Formula
 
   on_linux do
     depends_on "alsa-lib"
+  end
+
+  # Upstream patch, should be included in 2.0.5
+  # Fixes the following CMake error:
+  # The link interface of target "PortMidi::portmidi" contains:
+  #  Threads::Threads
+  # but the target was not found.
+  patch do
+    url "https://github.com/PortMidi/portmidi/commit/a47be8c58b25e2c122588e0b56306c0cfdce756c.patch?full_index=1"
+    sha256 "aeeb22a3809fb79d370003936a6d5b110d33cfc88b39fc0f83d060e1b79dab4c"
   end
 
   def install
