@@ -3,8 +3,8 @@ require "language/node"
 class Lanraragi < Formula
   desc "Web application for archival and reading of manga/doujinshi"
   homepage "https://github.com/Difegue/LANraragi"
-  url "https://github.com/Difegue/LANraragi/archive/v.0.8.81.tar.gz"
-  sha256 "7f6698c1eeec8f5cd714381d4fdeb73bd6260c30316a59bd7a080a3f77edab3f"
+  url "https://github.com/Difegue/LANraragi/archive/v.0.8.90.tar.gz"
+  sha256 "290bd2299962f14667a279dd8e40a1f93d1e9e338c08342af5830a1ce119c93e"
   license "MIT"
   head "https://github.com/Difegue/LANraragi.git", branch: "dev"
 
@@ -42,8 +42,8 @@ class Lanraragi < Formula
   end
 
   resource "Image::Magick" do
-    url "https://cpan.metacpan.org/authors/id/J/JC/JCRISTY/Image-Magick-7.0.11-3.tar.gz"
-    sha256 "232f2312c09a9d9ebc9de6c9c6380b893511ef7c6fc358d457a4afcec26916aa"
+    url "https://cpan.metacpan.org/authors/id/J/JC/JCRISTY/Image-Magick-7.1.0-0.tar.gz"
+    sha256 "f90c975cbe21445777c40d19c17b7f79023d3064ef8fabcf348cf82654bc16eb"
   end
 
   def install
