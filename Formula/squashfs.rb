@@ -13,14 +13,13 @@ class Squashfs < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "58c8745b53df2992c562478b518a74e65bad8c02589c166da551998fdb658b69"
-    sha256 cellar: :any,                 arm64_monterey: "50dcadbee689df7c02ebe5d670130702adffccdb571065708f46e1ac1931e987"
-    sha256 cellar: :any,                 arm64_big_sur:  "598644964161de2d652b91dd290a5a5e0e690de017a949330efcf9ad29ce5596"
-    sha256 cellar: :any,                 ventura:        "722e80872808ded8cf150daaaddaae5f431ccd027f351d13bd0c2d0c2ec3a8fb"
-    sha256 cellar: :any,                 monterey:       "885f25d16305d7cdaefe226e5601eb07c990d471f428d095e4107b3dd1264e85"
-    sha256 cellar: :any,                 big_sur:        "7363ce181dc2581dc4862218bc08ad20dc24729fe93c2ac63b0e0090dc714670"
-    sha256 cellar: :any,                 catalina:       "3bd185a9c1a765fb32186dfb141315932ca36b9b3efce9213e5e1289f739d65d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aef2b6dbbd4c705660275eb97408cf64bb9e4a8a5119a5646e08d2f19bb0b8a0"
+    sha256 cellar: :any,                 arm64_ventura:  "f991fa02cfef319fbb51959a98a9af000875f46d2a1750956c7dc8981753e63a"
+    sha256 cellar: :any,                 arm64_monterey: "29950610dc96cd2a6caed2be0d15e8b7af2a2a9963730faca6fdcb09b4b78185"
+    sha256 cellar: :any,                 arm64_big_sur:  "d7d873a7e418f994e22f57ebcdc6de247cca5096a9fad403ce76ef9fad7fc234"
+    sha256 cellar: :any,                 ventura:        "67f5500de34dc782e97fcf7ea41cd6fe598095f83e22deccabf5fd10c716f835"
+    sha256 cellar: :any,                 monterey:       "96f9bf52ee05cd82438a2228716c2ef8c9a5686629c738d460ff323702c8e8ba"
+    sha256 cellar: :any,                 big_sur:        "c82e5a6280d39d386e1cee7a6e1c145b7b0d6ef41fe442466ea34a346ea780d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4954d5934e72fce666d839d89af4b01cefc88c7655decaa585c2ac123f366c18"
   end
 
   depends_on "gnu-sed" => :build
