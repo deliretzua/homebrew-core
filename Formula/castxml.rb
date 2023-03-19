@@ -1,9 +1,11 @@
 class Castxml < Formula
   desc "C-family Abstract Syntax Tree XML Output"
   homepage "https://github.com/CastXML/CastXML"
+  # TODO: Check if we can use unversioned `llvm` at version bump.
   url "https://github.com/CastXML/CastXML/archive/v0.5.1.tar.gz"
   sha256 "a7b40b1530585672f9cf5d7a6b6dd29f20c06cd5edf34ef34c89a184a4d1a006"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/CastXML/castxml.git", branch: "master"
 
   livecheck do
@@ -22,7 +24,7 @@ class Castxml < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "llvm"
+  depends_on "llvm@15"
 
   fails_with gcc: "5"
 
@@ -33,6 +35,7 @@ class Castxml < Formula
   end
 
   test do
+    ENV.prepend_path "PATH", Formula["llvm@15"].opt_bin
     (testpath/"test.cpp").write <<~EOS
       int main() {
         return 0;
