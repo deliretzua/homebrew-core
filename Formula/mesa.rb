@@ -4,9 +4,11 @@ class Mesa < Formula
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
   license "MIT"
+  revision 1
   head "https://gitlab.freedesktop.org/mesa/mesa.git", branch: "main"
 
   stable do
+    # TODO: Check if we can use unversioned `llvm` at version bump.
     url "https://mesa.freedesktop.org/archive/mesa-22.3.6.tar.xz"
     sha256 "4ec8ec65dbdb1ee9444dba72970890128a19543a58cf05931bd6f54f124e117f"
 
@@ -41,7 +43,6 @@ class Mesa < Formula
   depends_on "libxext"
 
   uses_from_macos "flex" => :build
-  uses_from_macos "llvm"
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
@@ -61,6 +62,7 @@ class Mesa < Formula
     depends_on "libxshmfence"
     depends_on "libxv"
     depends_on "libxxf86vm"
+    depends_on "llvm@15" # TODO: Change to `uses_from_macos` when this is unversioned.
     depends_on "lm-sensors"
     depends_on "wayland"
     depends_on "wayland-protocols"
