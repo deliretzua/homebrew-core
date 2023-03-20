@@ -36,6 +36,14 @@ class Texinfo < Formula
     doc.install Dir["doc/refcard/txirefcard*"]
   end
 
+  def post_install
+    info_dir = HOMEBREW_PREFIX/"share/info/dir"
+    info_dir.delete if info_dir.exist?
+    info_dir.dirname.glob("*.info") do |f|
+      quiet_system("#{bin}/install-info", "--quiet", f, info_dir)
+    end
+  end
+
   test do
     (testpath/"test.texinfo").write <<~EOS
       @ifnottex
