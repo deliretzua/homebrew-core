@@ -1,8 +1,8 @@
 class Licenseplist < Formula
   desc "License list generator of all your dependencies for iOS applications"
   homepage "https://www.slideshare.net/mono0926/licenseplist-a-license-list-generator-of-all-your-dependencies-for-ios-applications"
-  url "https://github.com/mono0926/LicensePlist/archive/refs/tags/3.24.3.tar.gz"
-  sha256 "3107aa0ef47bda911eba1a609d10eb3d724722264491e873ea5a976bf0f6be25"
+  url "https://github.com/mono0926/LicensePlist/archive/refs/tags/3.24.5.tar.gz"
+  sha256 "52be3a89c45884fe480da7a21e9af705ba72b4b2fe2d471a8da7cc11e67e7bcd"
   license "MIT"
 
   bottle do
@@ -14,7 +14,7 @@ class Licenseplist < Formula
     sha256 cellar: :any_skip_relocation, big_sur:        "3091e742927f40c96428935699fe53c4d1e0830e158bfcb77cddb6b1fc9c1235"
   end
 
-  depends_on xcode: ["13.0", :build]
+  depends_on xcode: ["13.3", :build]
   depends_on :macos
   uses_from_macos "swift" => :build
 
