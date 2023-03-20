@@ -21,11 +21,10 @@ class Litani < Formula
   depends_on "coreutils" => :build
   depends_on "mandoc" => :build
   depends_on "scdoc" => :build
-
   depends_on "gnuplot"
   depends_on "graphviz"
   depends_on "ninja"
-  depends_on "python@3.10"
+  depends_on "python@3.11"
   depends_on "pyyaml"
 
   resource "Jinja2" do
@@ -38,9 +37,20 @@ class Litani < Formula
     sha256 "abcabc8c2b26036d62d4c746381a6f7cf60aafcc653198ad678306986b09450d"
   end
 
+  # Support Python 3.11, remove on next release
+  patch do
+    url "https://github.com/awslabs/aws-build-accumulator/commit/632b58cbbcffec0f0b57fdb6ca92fa67d1e5656d.patch?full_index=1"
+    sha256 "6fb6d8fe2c707691513cbaaba5b3ed582775fee567458d1b08b719d1fe0a768e"
+  end
+
+  patch do
+    url "https://github.com/awslabs/aws-build-accumulator/commit/d189541fcbaad28649f489e6823c2c4ca2c6aa33.patch?full_index=1"
+    sha256 "f3d79ea8ccf5ff8524a4da3495c8ffd0a2bd1099aaab1d8c52785ca80e13aee7"
+  end
+
   def install
     ENV.prepend_path "PATH", libexec/"vendor/bin"
-    venv = virtualenv_create(libexec/"vendor", "python3.10")
+    venv = virtualenv_create(libexec/"vendor", "python3.11")
     venv.pip_install resources
 
     libexec.install Dir["*"] - ["test", "examples"]
