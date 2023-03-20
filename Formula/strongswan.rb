@@ -65,6 +65,7 @@ class Strongswan < Formula
       --enable-pgp
       --enable-pkcs1
       --enable-pkcs8
+      --enable-pkcs11
       --enable-pki
       --enable-pubkey
       --enable-revocation
