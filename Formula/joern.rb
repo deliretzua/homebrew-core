@@ -11,13 +11,13 @@ class Joern < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0acc659fa699eb5423efc1e94c637a4d002b4a1b409dee6091890981a37b6f5c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ad5e8251e1e6845e30be77453694052a284a4ca4ee61507fea1841885f78e1ef"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "eb5006ad70b7725a1e22852303102b95b072b498a4513037f9b2d9680fbf930c"
-    sha256 cellar: :any_skip_relocation, ventura:        "513fd8234cf645843fdf85624c8950e7533e2e6a109eb3be97164333bc822095"
-    sha256 cellar: :any_skip_relocation, monterey:       "fc67051be9a1e1fafbb77b6c10907ea8ff0f310d98d29656291a674a17fdbd8e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c4e6d4b0a77a7accbd1ca60e16dd6d40c82cb7d4b4dccac3a94417d7d24fad05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b5bf5f3a4a3d542dd89d359fb439dbb2ed71380a378c5c930ae9a71f0f3dbfb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3988290c4a94ed3d659c348ac05bb111692cbef50741bd74f56b3fd1132e494d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cfa8413dbf077f65444a62b59c2e8edcb7c29d2df728321e9ed42f64bdc1c2dd"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e115ea1c4a564ce17311d9df3696e2fa4f24141bbfd2156839f35da967c988c2"
+    sha256 cellar: :any_skip_relocation, ventura:        "cb3201f8b4d79bc33762f23345833948d65854a610a0cf8a2464562c90261528"
+    sha256 cellar: :any_skip_relocation, monterey:       "4befe872df9cc0234d8856324552c40f8d7c737b08fdb3ffbb21ad6ee5ae6ab7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "50803ea0d2718d161644c7cb51a50dd0216ac5146ad8ed39a2805b53339f69fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9a844029034935633acef2b749a4362964e905a46a7a46a559a35fa81da719c"
   end
 
   depends_on "sbt" => :build
