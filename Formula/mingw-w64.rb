@@ -4,7 +4,7 @@ class MingwW64 < Formula
   url "https://downloads.sourceforge.net/project/mingw-w64/mingw-w64/mingw-w64-release/mingw-w64-v10.0.0.tar.bz2"
   sha256 "ba6b430aed72c63a3768531f6a3ffc2b0fde2c57a3b251450dcf489a894f0894"
   license "ZPL-2.1"
-  revision 4
+  revision 5
 
   livecheck do
     url :stable
@@ -33,6 +33,14 @@ class MingwW64 < Formula
     url "https://ftp.gnu.org/gnu/binutils/binutils-2.40.tar.xz"
     mirror "https://ftpmirror.gnu.org/binutils/binutils-2.40.tar.xz"
     sha256 "0f8a4c272d7f17f369ded10a4aca28b8e304828e95526da482b0ccc4dfc9d8e1"
+
+    # Fix linking failures in ld against import lib. Fixed upstream but still
+    # present in 2.40. Can remove this once 2.41 is released.
+    # https://sourceware.org/bugzilla/show_bug.cgi?id=30079
+    patch do
+      url "https://sourceware.org/git/?p=binutils-gdb.git;a=commitdiff_plain;h=b7eab2a9d4f4e92692daf14b09fc95ca11b72e30;hp=0d2f72332c7606fa3181b54dceef82d1af403624"
+      sha256 "99e943c9ea549c0a815493ea54f73e1af005224faa042bf2a4fa459325006c1b"
+    end
   end
 
   resource "gcc" do
