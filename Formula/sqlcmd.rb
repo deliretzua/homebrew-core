@@ -20,12 +20,21 @@ class Sqlcmd < Formula
   def install
     ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/modern"
+
+    generate_completions_from_executable(bin/"sqlcmd", "completion")
   end
 
   test do
     out = shell_output("#{bin}/sqlcmd -S 127.0.0.1 -E -Q 'SELECT @@version'", 1)
     assert_match "connection refused", out
 
-    assert_equal "sqlcmd: #{version}", shell_output("#{bin}/sqlcmd --version").chomp
+    expected = <<~EOS
+      sqlcmd: #{version}
+              \
+
+      Legal docs and information: aka.ms/SqlcmdLegal
+      Third party notices: aka.ms/SqlcmdNotices
+    EOS
+    assert_equal expected, shell_output("#{bin}/sqlcmd --version")
   end
 end
