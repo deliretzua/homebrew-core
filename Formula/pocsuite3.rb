@@ -9,14 +9,13 @@ class Pocsuite3 < Formula
   head "https://github.com/knownsec/pocsuite3.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c88346bcb86d9d6e18f3d6b1dcca6c6b238ab3ef502902e8747f5583db1ab4a9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1018ce444526a74c09d9bce27b8020a68bb74288704a1d79bbd1b8a404fd55b4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7591e18b26db4588ae238da7f6bd996c3914ff84dbc05ea5fe8b9b83ecb4132b"
-    sha256 cellar: :any_skip_relocation, ventura:        "66a9f32b2287dbe4fdf24c2712d1ccadf15136662173f96af92da24f99eb1df7"
-    sha256 cellar: :any_skip_relocation, monterey:       "9c518c54fd8cddfc1a40109425fcdc250087a7361da30e0ec771956adbbc06a2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2e52c9f6416810e346d100886e7e7f1bc6e11f4e7f567d91bdfa963f8628022b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd6cd3cdb1b2e6fd50b33ffe4b2565da24caf9e8acd556e7d14d0adcff8541d6"
+    sha256 cellar: :any,                 arm64_ventura:  "d439ead70f1b4a9628f0eea41c966db7227337944a95d35458f60a41e564820b"
+    sha256 cellar: :any,                 arm64_monterey: "9bcdeb29cb7b2266817205e6767eeaa49695c37e637c7995c6564977c7d2b40e"
+    sha256 cellar: :any,                 arm64_big_sur:  "72b5d259dd40c45dc7fe1879874e187d9e69ed5a28741c4d08f512e614121ac4"
+    sha256 cellar: :any,                 ventura:        "2be8c5222f0c2ab107adfc041e747fbde38420c8031e287ce919ba150016b7b1"
+    sha256 cellar: :any,                 monterey:       "c0103facc02a70febb85a7f7d2cafbd73571cc90aa6bd3c7fc064346c2bdf916"
+    sha256 cellar: :any,                 big_sur:        "21b254bba1ec7f4b7d374956ae63c6b90735d2fc385b9a6d3e965fc82f862c9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "16b9a33920f264448716342951adec706910b7b8a46743218c33080eb65f5f8c"
   end
 
   depends_on "rust" => :build # for cryptography
