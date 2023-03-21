@@ -19,6 +19,9 @@ class Scalingo < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "scalingo/main.go"
+
+    bash_completion.install "cmd/autocomplete/scripts/scalingo_complete.bash" => "scalingo"
+    zsh_completion.install "cmd/autocomplete/scripts/scalingo_complete.zsh" => "_scalingo"
   end
 
   test do
