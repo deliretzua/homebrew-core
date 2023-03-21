@@ -172,20 +172,22 @@ jobs:
           pr: ${{github.event.inputs.pull_request}}
           message: "bottle publish failed"
 
-      - name: Wait until pull request remote is in sync with local repository
+      - name: Wait until pull request branch is in sync with local repository
         if: inputs.commit_bottles_to_pr_branch
         working-directory: ${{steps.set-up-homebrew.outputs.repository-path}}
         run: |
-          local_head="${{steps.branch-and-remote-info.HEAD}}"
+          local_head="${{steps.branch-and-remote-info.outputs.HEAD}}"
+          echo "::notice ::Local repository HEAD: $local_head"
 
           attempt=0
           max_attempts=10
           timeout=1
 
-          # Wait until the remote is in sync with exponential backoff.
+          # Wait (with exponential backoff) until the PR branch is in sync
           while [ "$attempt" -lt "$max_attempts" ]
           do
             remote_head="$(git ls-remote origin pull/${{inputs.pull_request}}/head | cut -f1)"
+            echo "::notice ::Pull request HEAD: $remote_head"
             if [ "$local_head" = "$remote_head" ]
             then
               success=1
