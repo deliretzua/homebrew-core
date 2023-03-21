@@ -77,7 +77,6 @@ class Audacious < Formula
 
     resource("plugins").stage do
       args += %w[
-        -Dcoreaudio=false
         -Dmpris2=false
         -Dmac-media-keys=true
       ]
@@ -92,7 +91,6 @@ class Audacious < Formula
   def caveats
     <<~EOS
       audtool does not work due to a broken dbus implementation on macOS, so it is not built.
-      Core Audio output has been disabled as it does not work (fails to set audio unit input property).
       GTK+ GUI is not built by default as the Qt GUI has better integration with macOS, and the GTK GUI would take precedence if present.
     EOS
   end
