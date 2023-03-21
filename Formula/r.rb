@@ -62,6 +62,10 @@ class R < Formula
   end
 
   def install
+    # `configure` doesn't like curl 8+, but convince it that everything is ok.
+    # TODO: report this upstream.
+    ENV["r_cv_have_curl728"] = "yes"
+
     args = [
       "--prefix=#{prefix}",
       "--enable-memory-profiling",
@@ -133,10 +137,10 @@ class R < Formula
   end
 
   def post_install
-    short_version =
-      `#{bin}/Rscript -e 'cat(as.character(getRversion()[1,1:2]))'`.strip
-    site_library = HOMEBREW_PREFIX/"lib/R/#{short_version}/site-library"
+    short_version = Utils.safe_popen_read(bin/"Rscript", "-e", "cat(as.character(getRversion()[1,1:2]))")
+    site_library = HOMEBREW_PREFIX/"lib/R"/short_version/"site-library"
     site_library.mkpath
+    touch site_library/".keepme"
     ln_s site_library, lib/"R/site-library"
   end
 
