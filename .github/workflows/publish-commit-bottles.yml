@@ -11,6 +11,15 @@ on:
       args:
         description: "Extra arguments to `brew pr-pull`"
         default: ""
+      merge_strategy:
+        type: choice
+        description: "Merge strategy to use for `gh pr merge`"
+        options:
+          - merge
+          - rebase
+          - squash
+        default: rebase
+        required: false
       large_runner:
         description: "Whether to run the upload job on a large runner (default: false)"
         type: boolean
@@ -144,7 +153,7 @@ jobs:
           HOMEBREW_GPG_PASSPHRASE: ${{ secrets.BREWTESTBOT_GPG_SIGNING_SUBKEY_PASSPHRASE }}
 
       - name: Enable PR automerge
-        run: gh pr merge --auto ${{github.event.inputs.pull_request}}
+        run: gh pr merge --auto --${{inputs.merge_strategy}} ${{inputs.pull_request}}
         if: inputs.commit_bottles_to_pr_branch
         env:
           GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
