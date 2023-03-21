@@ -18,7 +18,7 @@ on:
           - merge
           - rebase
           - squash
-        default: rebase
+        default: merge
         required: false
       large_runner:
         description: "Whether to run the upload job on a large runner (default: false)"
