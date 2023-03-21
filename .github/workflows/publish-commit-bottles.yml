@@ -153,13 +153,6 @@ jobs:
           GIT_COMMITTER_EMAIL: 1589480+BrewTestBot@users.noreply.github.com
           HOMEBREW_GPG_PASSPHRASE: ${{ secrets.BREWTESTBOT_GPG_SIGNING_SUBKEY_PASSPHRASE }}
 
-      - name: Enable PR automerge
-        run: gh pr merge --auto --${{inputs.merge_strategy}} ${{inputs.pull_request}}
-        if: inputs.commit_bottles_to_pr_branch
-        env:
-          GH_TOKEN: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
-        working-directory: ${{steps.set-up-homebrew.outputs.repository-path}}
-
       - name: Post comment on failure
         if: ${{!success()}}
         uses: Homebrew/actions/post-comment@master
@@ -177,3 +170,13 @@ jobs:
           token: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
           pr: ${{github.event.inputs.pull_request}}
           message: "bottle publish failed"
+
+      - name: Enable PR automerge
+        if: inputs.commit_bottles_to_pr_branch
+        env:
+          GH_TOKEN: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
+        working-directory: ${{steps.set-up-homebrew.outputs.repository-path}}
+        run: |
+          sleep 15 # Make sure the PR picks up the commits we just pushed.
+          gh pr merge --auto --${{inputs.merge_strategy}} ${{inputs.pull_request}}
+
