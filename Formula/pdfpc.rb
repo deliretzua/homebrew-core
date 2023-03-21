@@ -4,7 +4,7 @@ class Pdfpc < Formula
   url "https://github.com/pdfpc/pdfpc/archive/v4.4.1.tar.gz"
   sha256 "4adb42fd1844a7e2ab44709dd043ade618c87f2aaec03db64f7ed659e8d3ddad"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
     sha256 arm64_ventura:  "3bf28b63e9aa3d5823c76aa28a1e62f7b8866c6fd801abebdcae0e80ef91610a"
@@ -33,7 +33,7 @@ class Pdfpc < Formula
 
   depends_on "cmake" => :build
   depends_on "vala" => :build
-  depends_on "gst-plugins-good"
+  depends_on "gstreamer"
   depends_on "gtk+3"
   depends_on "libgee"
   depends_on "librsvg"
