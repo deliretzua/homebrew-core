@@ -121,6 +121,7 @@ jobs:
         id: branch-and-remote-info
         working-directory: ${{steps.set-up-homebrew.outputs.repository-path}}
         run: |
+          echo "HEAD=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
           branch="$(git branch --show-current)"
           if [ -n "$branch" ]
           then
@@ -171,12 +172,51 @@ jobs:
           pr: ${{github.event.inputs.pull_request}}
           message: "bottle publish failed"
 
+      - name: Wait until pull request remote is in sync with local repository
+        if: inputs.commit_bottles_to_pr_branch
+        run: |
+          local_head="${{steps.branch-and-remote-info.HEAD}}"
+
+          attempt=0
+          max_attempts=10
+          timeout=1
+
+          # Wait until the remote is in sync with exponential backoff.
+          while [ "$attempt" -lt "$max_attempts" ]
+          do
+            remote_head="$(git ls-remote origin pull/${{inputs.pull_request}}/head | cut -f1)"
+            if [ "$local_head" = "$remote_head" ]
+            then
+              success=1
+              break
+            fi
+            echo "::notice ::Remote repository not in sync. Checking again in ${timeout}s..."
+            sleep "$timeout"
+            attempt=$(( attempt + 1 ))
+            timeout=$(( timeout * 2 ))
+          done
+
+          # One last check...
+          if [ -z "$success" ] && [ "$local_head" != "$(git ls-remote origin pull/${{inputs.pull_request}}/head | cut -f1)" ]
+          then
+            echo "::error ::No attempts remaining. Giving up."
+            exit 1
+          fi
+
       - name: Enable PR automerge
         if: inputs.commit_bottles_to_pr_branch
         env:
           GH_TOKEN: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
         working-directory: ${{steps.set-up-homebrew.outputs.repository-path}}
-        run: |
-          sleep 15 # Make sure the PR picks up the commits we just pushed.
-          gh pr merge --auto --${{inputs.merge_strategy}} ${{inputs.pull_request}}
+        run: gh pr merge --auto --${{inputs.merge_strategy}} ${{inputs.pull_request}}
+
+      - name: Post comment on failure
+        if: ${{failure() && inputs.commit_bottles_to_pr_branch}}
+        uses: Homebrew/actions/post-comment@master
+        with:
+          token: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
+          issue: ${{github.event.inputs.pull_request}}
+          body: ":warning: @${{github.actor}} [Failed to enable automerge.](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}})."
+          bot_body: ":warning: [Failed to enable automerge.](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}})."
+          bot: BrewTestBot
 
