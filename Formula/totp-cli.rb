@@ -20,8 +20,9 @@ class TotpCli < Formula
   depends_on "go" => :build
 
   def install
-    ENV["CGO_ENABLED"] = "0"
-    system "go", "build", *std_go_args
+    system "go", "build", *std_go_args(ldflags: "-s -w")
+
+    zsh_completion.install "_totp-cli"
   end
 
   test do
