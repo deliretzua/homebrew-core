@@ -47,6 +47,9 @@ class Micromamba < Formula
     end
   end
 
+  # Fix "error: chosen constructor is explicit in copy-initialization".
+  patch :DATA
+
   def install
     args = %W[
       -DBUILD_LIBMAMBA=ON
@@ -87,3 +90,16 @@ class Micromamba < Formula
     assert_match "Python #{python_version}", shell_output("#{bin}/micromamba run -n test python --version").strip
   end
 end
+
+__END__
+--- a/libmamba/src/solv-cpp/queue.cpp
++++ b/libmamba/src/solv-cpp/queue.cpp
+@@ -160,7 +160,7 @@ namespace mamba::solv
+             if (pos >= size)
+             {
+                 // TODO(C++20) std::format
+-                std::stringstream ss = {};
++                auto ss = std::stringstream{};
+                 ss << "Index " << pos << " is greater that the number of elements (" << size << ')';
+                 throw std::out_of_range(std::move(ss).str());
+             }
