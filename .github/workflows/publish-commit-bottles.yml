@@ -206,12 +206,13 @@ jobs:
             exit 1
           fi
 
-      - name: Enable PR automerge
-        if: inputs.commit_bottles_to_pr_branch
-        env:
-          GH_TOKEN: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
-        working-directory: ${{steps.set-up-homebrew.outputs.repository-path}}
-        run: gh pr merge --auto --${{inputs.merge_strategy}} ${{inputs.pull_request}}
+      # TODO: uncomment this once automerge is enabled again.
+      # - name: Enable PR automerge
+      #   if: inputs.commit_bottles_to_pr_branch
+      #   env:
+      #     GH_TOKEN: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
+      #   working-directory: ${{steps.set-up-homebrew.outputs.repository-path}}
+      #   run: gh pr merge --auto --${{inputs.merge_strategy}} ${{inputs.pull_request}}
 
       - name: Post comment on failure
         if: ${{failure() && inputs.commit_bottles_to_pr_branch}}
@@ -219,7 +220,6 @@ jobs:
         with:
           token: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
           issue: ${{github.event.inputs.pull_request}}
-          body: ":warning: @${{github.actor}} [Failed to enable automerge.](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}})."
-          bot_body: ":warning: [Failed to enable automerge.](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}})."
+          body: ":warning: @${{github.actor}} [Failed to enable automerge.](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}})"
+          bot_body: ":warning: [Failed to enable automerge.](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}})"
           bot: BrewTestBot
-
