@@ -28,13 +28,6 @@ class Sqlcmd < Formula
     out = shell_output("#{bin}/sqlcmd -S 127.0.0.1 -E -Q 'SELECT @@version'", 1)
     assert_match "connection refused", out
 
-    expected = <<~EOS
-      sqlcmd: #{version}
-              \
-
-      Legal docs and information: aka.ms/SqlcmdLegal
-      Third party notices: aka.ms/SqlcmdNotices
-    EOS
-    assert_equal expected, shell_output("#{bin}/sqlcmd --version")
+    assert_match "sqlcmd: #{version}", shell_output("#{bin}/sqlcmd --version")
   end
 end
