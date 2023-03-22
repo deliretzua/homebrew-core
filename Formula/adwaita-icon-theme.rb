@@ -6,7 +6,7 @@ class AdwaitaIconTheme < Formula
   license any_of: ["LGPL-3.0-or-later", "CC-BY-SA-3.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "79f3f53c3f0d0bf11c7bec0f906fd2f87c3cec7009622f15b6dde5fa1a0557d5"
+    sha256 cellar: :any_skip_relocation, all: "b873f8eb0fea7128cc034431285b4c9eb28bf8b5512ebc1103b79366350001ca"
   end
 
   depends_on "gettext" => :build
