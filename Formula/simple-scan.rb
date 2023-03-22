@@ -1,8 +1,8 @@
 class SimpleScan < Formula
   desc "GNOME document scanning application"
   homepage "https://gitlab.gnome.org/GNOME/simple-scan"
-  url "https://download.gnome.org/sources/simple-scan/42/simple-scan-42.5.tar.xz"
-  sha256 "05f5dfa4e9e206efa9d404c9861dd7c442091793e734c41719739917250e4050"
+  url "https://download.gnome.org/sources/simple-scan/44/simple-scan-44.0.tar.xz"
+  sha256 "39b870fd46f447f747eaecc2df26049ef773185099f0e13c675656264dd98e95"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -16,6 +16,7 @@ class SimpleScan < Formula
     sha256 x86_64_linux:   "8a15d4a1a86f60b6ce011c1ef46a59d2768b05316fd76fde118375d516ef1538"
   end
 
+  depends_on "gettext" => :build # for msgfmt
   depends_on "itstool" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
