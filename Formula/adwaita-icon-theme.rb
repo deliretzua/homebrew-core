@@ -28,7 +28,7 @@ class AdwaitaIconTheme < Formula
     # Someone who understands GTK+3 could probably write better tests that
     # check if GTK+3 can find the icons.
     png = "weather-storm-symbolic.symbolic.png"
-    assert_predicate share/"icons/Adwaita/96x96/status/#{png}", :exist?
+    assert_predicate share/"icons/Adwaita/16x16/status/#{png}", :exist?
     assert_predicate share/"icons/Adwaita/index.theme", :exist?
   end
 end
