@@ -16,6 +16,7 @@ class Baobab < Formula
     sha256 x86_64_linux:   "a8e1d5e8a4bd3bd5ab45d1d2378de419695d4da58e111a3d64113f9d5e7da30b"
   end
 
+  depends_on "desktop-file-utils" => :build
   depends_on "gettext" => :build
   depends_on "itstool" => :build
   depends_on "meson" => :build
