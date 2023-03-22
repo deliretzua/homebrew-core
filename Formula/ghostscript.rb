@@ -84,7 +84,6 @@ class Ghostscript < Formula
     ENV.deparallelize { system "make", "install-so" }
 
     (pkgshare/"fonts").install resource("fonts")
-    (man/"de").rmtree
   end
 
   test do
