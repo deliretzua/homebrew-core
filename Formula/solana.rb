@@ -10,7 +10,7 @@ class Solana < Formula
   # checking the releases page and only matching Mainnet releases.
   livecheck do
     url "https://github.com/solana-labs/solana/releases?q=prerelease%3Afalse"
-    regex(%r{href=["']?[^"' >]*?/tag/v?(\d+(?:\.\d+)+)["' >][^>]*?>[^<]*?Mainnet}i)
+    regex(%r{href=["']?[^"' >]*?/tag/v?(\d+(?:\.\d+)+)["' >][^>]*?>\s*Mainnet}i)
     strategy :page_match
   end
 
