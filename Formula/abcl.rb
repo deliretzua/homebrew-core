@@ -2,7 +2,7 @@ class Abcl < Formula
   desc "Armed Bear Common Lisp: a full implementation of Common Lisp"
   homepage "https://abcl.org/"
   url "https://abcl.org/releases/1.9.1/abcl-src-1.9.1.tar.gz"
-  sha256 "2c60b23a709bb7dc661e5b5ab9f1671a922f0d064d8ff64b14536bf8bd47edf3"
+  sha256 "a5bc677c9441f4a833c20a541bddd16fff9264846691de9a1daf6699f8ff11e2"
   license "GPL-2.0-or-later" => {
     with: "Classpath-exception-2.0",
   }
