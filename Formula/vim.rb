@@ -27,6 +27,7 @@ class Vim < Formula
   end
 
   depends_on "gettext"
+  depends_on "libsodium"
   depends_on "lua"
   depends_on "ncurses"
   depends_on "perl"
@@ -87,5 +88,6 @@ class Vim < Formula
     system bin/"vim", "-T", "dumb", "-s", "commands.vim", "test.txt"
     assert_equal "hello python3", File.read("test.txt").chomp
     assert_match "+gettext", shell_output("#{bin}/vim --version")
+    assert_match "+sodium", shell_output("#{bin}/vim --version")
   end
 end
