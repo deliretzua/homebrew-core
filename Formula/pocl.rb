@@ -9,13 +9,12 @@ class Pocl < Formula
   head "https://github.com/pocl/pocl.git", branch: "master"
 
   bottle do
-    sha256 arm64_ventura:  "4b2eb686484b8f44b0f14ed8ff3126d100ecca595e931f6cf7848f79af01ce0b"
-    sha256 arm64_monterey: "a585cf0ab10943ba6b1371fe91411dd6d6f60e9972495f8befff33b5689a8323"
-    sha256 arm64_big_sur:  "7f8ccb845709dd1df204500e14770b0a2debc30ea6d81a982fd0a2ea661d5667"
-    sha256 ventura:        "758084ccac11c736aa33b832cf95edd170117334468dfabc34d354bce79b959c"
-    sha256 monterey:       "da53b30483848934bb6be33405e7c41b515c404d798ccecf3ec40ea86a45facd"
-    sha256 big_sur:        "e64b4bbd980a70107064ad17f4f05a4a2236d224a54503c87674ba2dad310635"
-    sha256 x86_64_linux:   "20a9e232705a2ea7315135c6bcc111d767128916ad2904de559f08eb580753d5"
+    sha256 arm64_ventura:  "a889cde4e1f855f90ccc3e9afcb0839c3f2cd63ac4788c3b6ae109fdf69e3b01"
+    sha256 arm64_monterey: "b102e21ee22fb6da243b672735d26d75aacceb79cb2628d5cb6897dc7709423d"
+    sha256 arm64_big_sur:  "05ad886415b8c78098aec4a5511e058b86e5c4b90833e815f4f010b47723d258"
+    sha256 ventura:        "31547dd88a441097ac30b5a396d293af17331df64223e5d6bc75e8bee5219c70"
+    sha256 monterey:       "ebd4512a7dffd600b8a02b61fa017fe5f90c8b693785963d241dffcb224bd703"
+    sha256 big_sur:        "be751028d7efa9dd39564b3a79e39a40aaa6916683cccabde37b030884a64b10"
   end
 
   depends_on "cmake" => :build
