@@ -1,8 +1,8 @@
 class Scamper < Formula
   desc "Advanced traceroute and network measurement utility"
   homepage "https://www.caida.org/catalog/software/scamper/"
-  url "https://www.caida.org/catalog/software/scamper/code/scamper-cvs-20230302.tar.gz"
-  sha256 "84e8b6f34417559e9330ebd269c8cebf68bdbd2307ef1738ff07c5e87776cd4f"
+  url "https://www.caida.org/catalog/software/scamper/code/scamper-cvs-20230323.tar.gz"
+  sha256 "ec78bde05d08087a3024e40e7325888229ba6c80b15f313b2203936472838f1b"
   license "GPL-2.0-only"
 
   livecheck do
@@ -22,6 +22,7 @@ class Scamper < Formula
 
   depends_on "pkg-config" => :build
   depends_on "openssl@3"
+  depends_on "xz" # for LZMA
 
   uses_from_macos "zlib"
 
