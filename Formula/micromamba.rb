@@ -1,9 +1,20 @@
 class Micromamba < Formula
   desc "Fast Cross-Platform Package Manager"
   homepage "https://github.com/mamba-org/mamba"
-  url "https://github.com/mamba-org/mamba/archive/refs/tags/micromamba-1.4.0.tar.gz"
-  sha256 "890f37e7f84e81b85976d0a26d171406dbbbb02416efcb95bda9f263e10c21b4"
   license "BSD-3-Clause"
+  head "https://github.com/mamba-org/mamba.git", branch: "main"
+
+  stable do
+    url "https://github.com/mamba-org/mamba/archive/refs/tags/micromamba-1.4.0.tar.gz"
+    sha256 "890f37e7f84e81b85976d0a26d171406dbbbb02416efcb95bda9f263e10c21b4"
+
+    # Fix "error: chosen constructor is explicit in copy-initialization".
+    # Remove with `stable` block on next release.
+    patch do
+      url "https://github.com/mamba-org/mamba/commit/bc7fa860c982c796f3c35acaa011304128bb4e62.patch?full_index=1"
+      sha256 "16d1e3052d3a07a8951c918535ea0de8fbba53b7ded1145289253c4f6beb6e5a"
+    end
+  end
 
   livecheck do
     url :stable
@@ -45,13 +56,6 @@ class Micromamba < Formula
       url "https://github.com/apple-oss-distributions/libarchive/archive/refs/tags/libarchive-113.tar.gz"
       sha256 "b422c37cc5f9ec876d927768745423ac3aae2d2a85686bc627b97e22d686930f"
     end
-  end
-
-  # Fix "error: chosen constructor is explicit in copy-initialization".
-  # Upstreamed at https://github.com/mamba-org/mamba/pull/2397.
-  patch do
-    url "https://github.com/mamba-org/mamba/commit/6cf90892bf73c7c479def3b2da4fe1d2077c1a72.patch?full_index=1"
-    sha256 "fea5b03f7094bc338361dcb0998b1c766782114e626740ed2a5a5422344102d1"
   end
 
   def install
