@@ -1,20 +1,19 @@
 class Symengine < Formula
   desc "Fast symbolic manipulation library written in C++"
   homepage "https://sympy.org"
+  # TODO: Check if we can use unversioned `llvm` at version bump.
   url "https://github.com/symengine/symengine/releases/download/v0.9.0/symengine-0.9.0.tar.gz"
   sha256 "dcf174ac708ed2acea46691f6e78b9eb946d8a2ba62f75e87cf3bf4f0d651724"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "5e9da40908b2b1a4dd09e1d150db04c1fea72ede228e5df81cb4ba7fd699b48c"
-    sha256 cellar: :any,                 arm64_monterey: "a21f1ecb176e2381decdbc6571f59541f496d6a0e051830e30580efec1243a48"
-    sha256 cellar: :any,                 arm64_big_sur:  "5761bf631464fe6891de913a4f96804a5b40a90bbe419dc3887b25d9f155c58e"
-    sha256 cellar: :any,                 ventura:        "e653de90c0bf275adcdfe257ba6dd4891c226eff6a1782bf6ef4d25ca007b446"
-    sha256 cellar: :any,                 monterey:       "8af8b961cbd4dec429440094b7dc5dea18ff766682f013b915d2688497ccc626"
-    sha256 cellar: :any,                 big_sur:        "db330d18c95e408e3ad4ae1496cedc00313218fe08a11c8f5590e27d9016af81"
-    sha256 cellar: :any,                 catalina:       "6a0483496434c4d7205a05295db8862d068c92c2e6c7c92cb0dbafeb147d3fc7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f113390949772bbe3514e1a7e49c78a29c9e3f2fae7dbac59415b06bf5b2a58b"
+    sha256 cellar: :any, arm64_ventura:  "d03c14ff05183d5bdf901ee4e8f6bd2dac39bccdaaeedcd5f02b4186be746c37"
+    sha256 cellar: :any, arm64_monterey: "c7b4cb45ce8a7a3ad479630b0e234ce388f69e972ee915aef56b77b94c152bff"
+    sha256 cellar: :any, arm64_big_sur:  "5f280ee58a2cf7f00511ae3383de1be2753dbc1a8b0994607773c2f7c042866a"
+    sha256 cellar: :any, ventura:        "925f15a080442d78b4053a9b953270fc171846498b6524750b44f9900113d863"
+    sha256 cellar: :any, monterey:       "03da9233b6f783eec8e6399a51ed0fb97e37b191609d3b5f31cf7f90ea1e60d0"
+    sha256 cellar: :any, big_sur:        "cf30940caff9d6a2b49ca50aab93a103a8c5a71a2363b4200d0157d8f6b46d9f"
   end
 
   depends_on "cmake" => :build
@@ -22,7 +21,7 @@ class Symengine < Formula
   depends_on "flint"
   depends_on "gmp"
   depends_on "libmpc"
-  depends_on "llvm"
+  depends_on "llvm@15"
   depends_on "mpfr"
 
   fails_with gcc: "5"
@@ -45,7 +44,7 @@ class Symengine < Formula
                     "-DINTEGER_CLASS=flint",
                     "-DWITH_LLVM=ON",
                     "-DWITH_COTIRE=OFF",
-                    "-DLLVM_DIR=#{Formula["llvm"].opt_lib}/cmake/llvm",
+                    "-DLLVM_DIR=#{Formula["llvm@15"].opt_lib}/cmake/llvm",
                     "-DWITH_SYMENGINE_THREAD_SAFE=ON",
                     "-DWITH_SYSTEM_CEREAL=ON",
                     *std_cmake_args
