@@ -1,11 +1,9 @@
 class Castxml < Formula
   desc "C-family Abstract Syntax Tree XML Output"
   homepage "https://github.com/CastXML/CastXML"
-  # TODO: Check if we can use unversioned `llvm` at version bump.
   url "https://github.com/CastXML/CastXML/archive/v0.5.1.tar.gz"
   sha256 "a7b40b1530585672f9cf5d7a6b6dd29f20c06cd5edf34ef34c89a184a4d1a006"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/CastXML/castxml.git", branch: "master"
 
   livecheck do
@@ -14,17 +12,17 @@ class Castxml < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "2d6eceb20777bb59b421edc9d11522001cfb57403f9310b73eea09f13f7855b6"
-    sha256 cellar: :any,                 arm64_monterey: "cc7fa1de35722860497a29f388e7b00a825addb5a9ee9c4f884f228e52ffa88e"
-    sha256 cellar: :any,                 arm64_big_sur:  "97bb227c0f0ad8c9240c0035d8a0f9cd8508bfbd3cc2c9ffdcd28234c3a916b9"
-    sha256 cellar: :any,                 ventura:        "a1434aa8662f1c913dba97d70e74811375b931259ad8bfb113097b793314989f"
-    sha256 cellar: :any,                 monterey:       "cf2ac3221a590685146fd7c290fcabbb123ae433752e678f80317a6daac68316"
-    sha256 cellar: :any,                 big_sur:        "b9e92b973387aba647015f6e8e8416294a052a00ed90df94a2c523b1daca5661"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dee2ceedc9922dcdabdd7f30c239de34d42a0e56336f6434ba1375086677167b"
+    sha256 cellar: :any,                 arm64_ventura:  "057c4ab8947ded01c09f7a4e5f06d0d2495c46e8378e72f95818ef131cf77c47"
+    sha256 cellar: :any,                 arm64_monterey: "34889b9e8b79d22bd8610c27e9e041ce9b798558bca0fe19f17a52a0b90b7d93"
+    sha256 cellar: :any,                 arm64_big_sur:  "a47fe4eca6599684eeedef864862c99e6b6287040551e6ac3c5b4afb3727570c"
+    sha256 cellar: :any,                 ventura:        "e6959eadabdadb05d81e14f7a4fdf9fe6d1bcfe95191daca967bd31f7746e958"
+    sha256 cellar: :any,                 monterey:       "eeb130876c000ebeb9747ca6c038f1aeb46461e832ec8aec1e02960a6d892696"
+    sha256 cellar: :any,                 big_sur:        "c23d8f6e9513ce5023ec23e90631f9d399784df6a21653bd3f6e29d5029dfd43"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d1a73cec631dc4089f80da7631198186bd7ebcf007acbd710ebc564c137af99"
   end
 
   depends_on "cmake" => :build
-  depends_on "llvm@15"
+  depends_on "llvm"
 
   fails_with gcc: "5"
 
@@ -35,7 +33,6 @@ class Castxml < Formula
   end
 
   test do
-    ENV.prepend_path "PATH", Formula["llvm@15"].opt_bin
     (testpath/"test.cpp").write <<~EOS
       int main() {
         return 0;
