@@ -27,14 +27,13 @@ class Ghostscript < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "a698c53fbc3a1117c204bf7e20122c3469cd46548f908bdf3c805b61a1620f66"
-    sha256 arm64_monterey: "07becfb977ec79a7cdd2b6c5298fbb3d24ba61599106d903a7e1ea51d23b3df3"
-    sha256 arm64_big_sur:  "6d71b98737f6113d18b963ca01d454e46218458b7b6eb8e2a5ae4c59359c5d30"
-    sha256 ventura:        "b8a4f24fd3d10ef89a53af4d9793efde9b9ce019247a398614fcba87b6d6ec9f"
-    sha256 monterey:       "c61d7421c9835d33d293fd0d496ce8fb983d8ee9351a6c59e3efbd621a4bec30"
-    sha256 big_sur:        "eaf18fcce3a87ea2513439b58733a675c96a650ec91c4302293927e0054b43c6"
-    sha256 catalina:       "0a200d59567de71739729720e96e9012961e1149c3a8cfe4ff79ca44b6a24a43"
-    sha256 x86_64_linux:   "95c5e86cc3e8d68e61b7c7c7659aa75b6673d399f67e99ab815418d9f165ce22"
+    sha256 arm64_ventura:  "788ec4cdf2895fae3a406f559d520b28057d7904ab0dfe5f54ac6a8e63538c56"
+    sha256 arm64_monterey: "b01e1638dd9a930e0a25fdbf028894c543dc00bae103dca5de967de2027143f4"
+    sha256 arm64_big_sur:  "a2839d18a701b485da5950f7749df759d8779e6c472ba64412cdd62cded3e2f8"
+    sha256 ventura:        "2441f990fd554814661499a74ef413812f2d674b7f83a48ff479baa073bbd916"
+    sha256 monterey:       "e0b3be01bd091095f5a08c909e6dd60d0d23927ec937e0b97e615cd227fed86c"
+    sha256 big_sur:        "b87ca0a162d712aa5f9c361222b8dddc086a6d3957b069899a36eaaf2fa36bbc"
+    sha256 x86_64_linux:   "338baf3a006402e0eb690e35ee510fbc25ce3416472c973da495dac656f4b76b"
   end
 
   head do
