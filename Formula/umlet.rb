@@ -11,7 +11,7 @@ class Umlet < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "eeeb59f174b8e131ffeca89d11086ba325d63751614a7fa6b28991164da42fd9"
+    sha256 cellar: :any_skip_relocation, all: "8c1f2fe34db9d230b2b4412488efa3ec266d994bd72f9df8871b320321862ce7"
   end
 
   depends_on "openjdk"
