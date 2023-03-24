@@ -18,17 +18,36 @@ class Fastfetch < Formula
 
   depends_on "chafa" => :build
   depends_on "cmake" => :build
-  depends_on "glib" => :build
   depends_on "imagemagick" => :build
   depends_on "pkg-config" => :build
-  depends_on "vulkan-loader" => :build
 
   uses_from_macos "zlib" => :build
+
+  on_macos do
+    depends_on "molten-vk" => :build
+  end
+
+  on_linux do
+    depends_on "dbus" => :build
+    depends_on "glib" => :build
+    depends_on "json-c" => :build
+    depends_on "libx11" => :build
+    depends_on "libxcb" => :build
+    depends_on "libxrandr" => :build
+    depends_on "mesa" => :build
+    depends_on "opencl-icd-loader" => :build
+    depends_on "pulseaudio" => :build
+    depends_on "rpm" => :build
+    depends_on "sqlite" => :build
+    depends_on "vulkan-loader" => :build
+    depends_on "wayland" => :build
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_SYSCONFDIR=#{etc}", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+    bash_completion.install share/"bash-completion/completions/fastfetch"
   end
 
   test do
