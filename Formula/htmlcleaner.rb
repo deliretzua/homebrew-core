@@ -1,8 +1,8 @@
 class Htmlcleaner < Formula
   desc "HTML parser written in Java"
   homepage "https://htmlcleaner.sourceforge.io"
-  url "https://downloads.sourceforge.net/project/htmlcleaner/htmlcleaner/htmlcleaner%20v2.26/htmlcleaner-2.26-src.zip"
-  sha256 "617ddb866530f512c2c6f6f89b40a9ac6e46bf515960c49f47d8d037adaf0e2c"
+  url "https://downloads.sourceforge.net/project/htmlcleaner/htmlcleaner/htmlcleaner%20v2.27/htmlcleaner-2.27-src.zip"
+  sha256 "908a837f55760e8aa72f3ac516b66f2216d2b99b9b3bede56a767966401b75c4"
   license "BSD-3-Clause"
 
   bottle do
@@ -21,18 +21,8 @@ class Htmlcleaner < Formula
 
   def install
     ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
-
-    inreplace "pom.xml" do |s|
-      # Homebrew's OpenJDK no longer accepts Java 5 source
-      # Reported upstream at https://sourceforge.net/p/htmlcleaner/bugs/235/
-      s.gsub! "<source>1.5</source>", "<source>1.8</source>"
-      s.gsub! "<target>1.5</target>", "<target>1.8</target>"
-      # OpenJDK >14 doesn't support older maven-javadoc-plugin versions
-      s.gsub! "<version>2.9</version>", "<version>3.2.0</version>"
-    end
-
     system "mvn", "clean", "package", "-DskipTests=true", "-Dmaven.javadoc.skip=true"
-    libexec.install Dir["target/htmlcleaner-*.jar"]
+    libexec.install "target/htmlcleaner-#{version}.jar"
     bin.write_jar_script libexec/"htmlcleaner-#{version}.jar", "htmlcleaner"
   end
 
