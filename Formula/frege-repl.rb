@@ -8,7 +8,8 @@ class FregeRepl < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "188a05871382d1dcc4a846b2a84c56acdacce44a7de3abf9ddc7060dca387c01"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "17666cf7857b6fbd4af5f30a97a5c0d36b90f0514e58af14b07173ddece6e9a3"
   end
 
   # TODO: Switch to `openjdk` on next release.
