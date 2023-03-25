@@ -9,15 +9,13 @@ class Todoman < Formula
   head "https://github.com/pimutils/todoman.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7bc11977db8556b8020aa4d6a3c7191edd4c109371128c308f692d85523631c4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a3af01329308dd8810449d967d022f2484bf56d342e42f44e8aa7b06cf086ccb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "98016df0d18a908c967133abae1a68baf130c035be4918cbbf08b1bab0056905"
-    sha256 cellar: :any_skip_relocation, ventura:        "f5cff41e9eefd51bbfdeb4de363209509ab9c7cceff30408522f4ca0ec5dd522"
-    sha256 cellar: :any_skip_relocation, monterey:       "923854a7c40ad012b95d7da8148bcb010a1dcb9cc26ece944e324d26cc43b27c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "590e1eefc3398921e37e4243aa4a8f6a599227482709fcff26da4dfc61d5aff4"
-    sha256 cellar: :any_skip_relocation, catalina:       "8fa7ef05501e43aefaee1d0419886b432927ffb2a879d411cfbe1ca9c3d499ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b939b9afc6ca8dc3d4289a3d962da1d975ff3eabbea76368f56ef3a08b55788"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f1cb4fa375427746cc480f2ab1d000b2a41ebea837a9cea15107feb749bbaeac"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1f2cb317fca23069023cb40347899549ce36606f325eb47e114c94fcfe5e0a17"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3a7e1272f60fc31927c8416d10e853e47ab51e70a7fc7c6d07ef428d6ff96eb4"
+    sha256 cellar: :any_skip_relocation, ventura:        "65dd479f498884884f6f44861b2e2a94a16dd9804ca0bd10c3c7780124e7fb30"
+    sha256 cellar: :any_skip_relocation, monterey:       "92a56bd07295872f1035947a8b861cd03b712225fe2e9697646663c3c73f30f8"
+    sha256 cellar: :any_skip_relocation, big_sur:        "79f07f67ce90921db8407fef153987fef1c2030a6867530594c22d35aba99ae6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c2485fe6e45aa443c1061ae299c9c686d9e8ef9bf758e6e9c91c8516e3d6010"
   end
 
   depends_on "jq" # Needed for ZSH completions.
