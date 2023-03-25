@@ -5,7 +5,7 @@ class TclTk < Formula
   mirror "https://fossies.org/linux/misc/tcl8.6.13-src.tar.gz"
   sha256 "43a1fae7412f61ff11de2cfd05d28cfc3a73762f354a417c62370a54e2caf066"
   license "TCL"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -36,8 +36,8 @@ class TclTk < Formula
   conflicts_with "page", because: "both install `page` binaries"
 
   resource "critcl" do
-    url "https://github.com/andreas-kupries/critcl/archive/3.1.18.1.tar.gz"
-    sha256 "51bc4b099ecf59ba3bada874fc8e1611279dfd30ad4d4074257084763c49fd86"
+    url "https://github.com/andreas-kupries/critcl/archive/refs/tags/3.2.tar.gz"
+    sha256 "20061944e28dda4ab2098b8f77682cab77973f8961f6fa60b95bcc09a546789e"
   end
 
   resource "tcllib" do
