@@ -25,10 +25,6 @@ class Fastfetch < Formula
 
   uses_from_macos "zlib" => :build
 
-  on_macos do
-    depends_on "molten-vk" => :build
-  end
-
   on_linux do
     depends_on "dbus" => :build
     depends_on "json-c" => :build
