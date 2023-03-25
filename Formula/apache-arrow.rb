@@ -20,7 +20,7 @@ class ApacheArrow < Formula
 
   depends_on "boost" => :build
   depends_on "cmake" => :build
-  depends_on "llvm" => :build
+  depends_on "llvm@15" => :build
   depends_on "aws-sdk-cpp"
   depends_on "brotli"
   depends_on "bzip2"
@@ -36,6 +36,7 @@ class ApacheArrow < Formula
   depends_on "utf8proc"
   depends_on "z3"
   depends_on "zstd"
+  uses_from_macos "python" => :build
 
   fails_with gcc: "5"
 
