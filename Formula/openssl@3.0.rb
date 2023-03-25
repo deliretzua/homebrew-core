@@ -11,6 +11,16 @@ class OpensslAT30 < Formula
     regex(/href=.*?openssl[._-]v?(3\.0(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    sha256 arm64_ventura:  "110f3c266102f0fa0c82be4cf3ffa6603fed29aa6e1711741672bb6bfe769805"
+    sha256 arm64_monterey: "553ef2386034113e3156593291b331c130f459c0a8d148fb411ea084e036f1e7"
+    sha256 arm64_big_sur:  "46aba17269f861d709a708914347d65a0a126781c1baebcbd7e18a8adede576d"
+    sha256 ventura:        "984d024ec443bd77ea8e83568251140fbbd710a4ec48670903b1ae5809baa1c5"
+    sha256 monterey:       "bf169df9308d0f428e22738863b85464af92f970fe823a24ae7a150d79b2bc24"
+    sha256 big_sur:        "f62ab4c4fd6f33b32ba44d23482fb998b0ac8b1ca07c8e3083ccfe94fe2d1bd9"
+    sha256 x86_64_linux:   "81d153bc01a5863e5430a6d46e3f6e4f4534d0dcb06710befa399a4c1ffbb961"
+  end
+
   keg_only :shadowed_by_macos, "macOS provides LibreSSL"
 
   depends_on "ca-certificates"
