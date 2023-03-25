@@ -11,13 +11,13 @@ class Alluxio < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "36e2fcb11b4650673f03a41bcfdf3b23199c3b7a9411bcb35e40cdee8b8a9bd3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "36e2fcb11b4650673f03a41bcfdf3b23199c3b7a9411bcb35e40cdee8b8a9bd3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "36e2fcb11b4650673f03a41bcfdf3b23199c3b7a9411bcb35e40cdee8b8a9bd3"
-    sha256 cellar: :any_skip_relocation, ventura:        "5f10bc6b5a20da394c5b0458a663d88e7acf09b0ae1bdb86c32211253dfa9be5"
-    sha256 cellar: :any_skip_relocation, monterey:       "5f10bc6b5a20da394c5b0458a663d88e7acf09b0ae1bdb86c32211253dfa9be5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5f10bc6b5a20da394c5b0458a663d88e7acf09b0ae1bdb86c32211253dfa9be5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "36e2fcb11b4650673f03a41bcfdf3b23199c3b7a9411bcb35e40cdee8b8a9bd3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c38d5e85079041c189c0fe008618802ee1a87f2efb94f1b3d0be35c23e27ec01"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c38d5e85079041c189c0fe008618802ee1a87f2efb94f1b3d0be35c23e27ec01"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c38d5e85079041c189c0fe008618802ee1a87f2efb94f1b3d0be35c23e27ec01"
+    sha256 cellar: :any_skip_relocation, ventura:        "f32a22feeccef5d59267a8936b1bc400996e96bd0a8f935eccf30fa8afb74722"
+    sha256 cellar: :any_skip_relocation, monterey:       "f32a22feeccef5d59267a8936b1bc400996e96bd0a8f935eccf30fa8afb74722"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f32a22feeccef5d59267a8936b1bc400996e96bd0a8f935eccf30fa8afb74722"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c38d5e85079041c189c0fe008618802ee1a87f2efb94f1b3d0be35c23e27ec01"
   end
 
   # Alluxio requires Java 8 or Java 11
