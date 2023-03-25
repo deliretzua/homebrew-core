@@ -18,8 +18,10 @@ class Fastfetch < Formula
 
   depends_on "chafa" => :build
   depends_on "cmake" => :build
+  depends_on "glib" => :build
   depends_on "imagemagick" => :build
   depends_on "pkg-config" => :build
+  depends_on "vulkan-loader" => :build
 
   uses_from_macos "zlib" => :build
 
@@ -29,7 +31,6 @@ class Fastfetch < Formula
 
   on_linux do
     depends_on "dbus" => :build
-    depends_on "glib" => :build
     depends_on "json-c" => :build
     depends_on "libx11" => :build
     depends_on "libxcb" => :build
@@ -39,7 +40,6 @@ class Fastfetch < Formula
     depends_on "pulseaudio" => :build
     depends_on "rpm" => :build
     depends_on "sqlite" => :build
-    depends_on "vulkan-loader" => :build
     depends_on "wayland" => :build
   end
 
