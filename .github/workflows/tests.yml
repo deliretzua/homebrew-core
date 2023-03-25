@@ -78,10 +78,12 @@ jobs:
               pull_number: context.issue.number
             })
             const label_names = labels.map(label => label.name)
+            var syntax_only = false
 
             if (label_names.includes('CI-syntax-only')) {
               console.log('CI-syntax-only label found. Skipping tests job.')
               core.setOutput('syntax-only', 'true')
+              syntax_only = true
             } else {
               console.log('No CI-syntax-only label found. Running tests job.')
               core.setOutput('syntax-only', 'false')
@@ -90,6 +92,11 @@ jobs:
             if (label_names.includes('CI-published-bottle-commits')) {
               console.log('CI-published-bottle-commits label found. Skipping tests job.')
               core.setOutput('syntax-only', 'true')
+              syntax_only = true
+            }
+
+            if (syntax_only) {
+              return
             }
 
             if (label_names.includes('CI-linux-self-hosted')) {
