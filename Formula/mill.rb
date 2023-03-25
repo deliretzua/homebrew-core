@@ -11,7 +11,8 @@ class Mill < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8df1b10cdb4d7cea1e324ea9d810d8772352d01e331ea644b322c3e8fa48b6dd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "39845478ccbb762e1cbe8222bc5c16ac984bb460358c530960fb8845070dc192"
   end
 
   # TODO: switch back to `openjdk` when Scala 2.13.11 or newer is used. Check:
