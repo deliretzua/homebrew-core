@@ -3,8 +3,8 @@ class Pympress < Formula
 
   desc "Simple and powerful dual-screen PDF reader designed for presentations"
   homepage "https://github.com/Cimbali/pympress/"
-  url "https://files.pythonhosted.org/packages/70/a0/08ead2b665bea74f291466fca2996fb784110777ec441347e10555534135/pympress-1.8.0.tar.gz"
-  sha256 "160255c6dcfa5fa6bc69b40b1bde3c4ba7c10f750aeee2d6bc1877d343f743ec"
+  url "https://files.pythonhosted.org/packages/8c/1f/6d081d546bd57fd2b6537bd6dcb204a96f5490150b0f1ed8e152fe0e484a/pympress-1.8.1.tar.gz"
+  sha256 "448c6abc9c74373311be5fff5e09d5dc32e7a18459290180eb34f3373d9ba4ce"
   license "GPL-2.0-or-later"
   head "https://github.com/Cimbali/pympress.git", branch: "master"
 
@@ -31,8 +31,8 @@ class Pympress < Formula
   depends_on "python@3.11"
 
   resource "watchdog" do
-    url "https://files.pythonhosted.org/packages/a5/17/a31fc6b90ff861a27debd0650bfbca17e074fdc3e037f392872fad76c726/watchdog-2.3.1.tar.gz"
-    sha256 "d9f9ed26ed22a9d331820a8432c3680707ea8b54121ddcc9dc7d9f2ceeb36906"
+    url "https://files.pythonhosted.org/packages/95/a6/d6ef450393dac5734c63c40a131f66808d2e6f59f6165ab38c98fbe4e6ec/watchdog-3.0.0.tar.gz"
+    sha256 "4d98a320595da7a7c5a18fc48cb633c2e73cda78f93cac2ef42d42bf609a33f9"
   end
 
   def install
