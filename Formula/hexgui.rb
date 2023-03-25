@@ -1,10 +1,9 @@
 class Hexgui < Formula
   desc "GUI for playing Hex over Hex Text Protocol"
   homepage "https://sourceforge.net/p/benzene/hexgui/"
-  url "https://github.com/apetresc/hexgui/archive/v0.9.3.tar.gz"
-  sha256 "e7bf9daebe39c4efb06d758c5634c6fa25e97031ffa98592c378af89a03e9e8d"
+  url "https://github.com/apetresc/hexgui/archive/refs/tags/v0.9.4.tar.gz"
+  sha256 "902ebcdf46ac9b90fec6ebd2e24e8d12f2fb291ea4ef711abe407f13c4301eb8"
   license "GPL-3.0-or-later"
-  revision 2
   head "https://github.com/apetresc/hexgui.git", branch: "master"
 
   bottle do
@@ -22,10 +21,6 @@ class Hexgui < Formula
   depends_on "openjdk"
 
   def install
-    # Target Java 8 or later.
-    # Remove when https://github.com/apetresc/hexgui/issues/3 is resolved.
-    inreplace "build.xml", 'source="1.7" target="1.7"', 'source="1.8" target="1.8"'
-
     system "ant"
     libexec.install Dir["*"]
     env = Language::Java.overridable_java_home_env
