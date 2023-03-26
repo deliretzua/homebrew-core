@@ -64,11 +64,11 @@ class Squashfs < Formula
 
     doc.install %W[
       README-#{version}
-      USAGE-#{version}
-      USAGE-MKSQUASHFS-#{version}
-      USAGE-SQFSCAT-#{version}
-      USAGE-SQFSTAR-#{version}
-      USAGE-UNSQUASHFS-#{version}
+      USAGE-#{version.major_minor}
+      USAGE-MKSQUASHFS-#{version.major_minor}
+      USAGE-SQFSCAT-#{version.major_minor}
+      USAGE-SQFSTAR-#{version.major_minor}
+      USAGE-UNSQUASHFS-#{version.major_minor}
       COPYING
     ]
   end
