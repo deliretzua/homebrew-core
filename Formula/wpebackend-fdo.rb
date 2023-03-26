@@ -7,7 +7,7 @@ class WpebackendFdo < Formula
   head "https://github.com/Igalia/WPEBackend-fdo.git", branch: "master"
 
   bottle do
-    sha256 x86_64_linux: "83cda8ea5fa199ff52301ed42fc03ce77da8767c5982815e7f52e242a011b948"
+    sha256 x86_64_linux: "b7118b8022fa68463f88f09fe48a70e41f342878addd6ef336ccfca2a446b96b"
   end
 
   depends_on "meson" => :build
