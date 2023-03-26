@@ -1,5 +1,5 @@
 class Audacious < Formula
-  desc "Free and advanced audio player based on GTK+"
+  desc "Lightweight and versatile audio player"
   homepage "https://audacious-media-player.org/"
   license "BSD-2-Clause"
 
@@ -56,7 +56,8 @@ class Audacious < Formula
   depends_on "libvorbis"
   depends_on "mpg123"
   depends_on "neon"
-  depends_on "qt@5"
+  depends_on "opusfile"
+  depends_on "qt"
   depends_on "sdl2"
   depends_on "wavpack"
 
@@ -65,31 +66,26 @@ class Audacious < Formula
   fails_with gcc: "5"
 
   def install
-    args = std_meson_args + %w[
+    args = %w[
       -Dgtk=false
-      -Dqt=true
+      -Dqt6=true
     ]
 
-    mkdir "build" do
-      system "meson", *args, "-Ddbus=false", ".."
-      system "ninja", "-v"
-      system "ninja", "install", "-v"
-    end
+    system "meson", "setup", "build", *std_meson_args, *args, "-Ddbus=false"
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
 
     resource("plugins").stage do
       args += %w[
         -Dcoreaudio=false
         -Dmpris2=false
         -Dmac-media-keys=true
-        -Dcpp_std=c++14
       ]
 
       ENV.prepend_path "PKG_CONFIG_PATH", lib/"pkgconfig"
-      mkdir "build" do
-        system "meson", *args, ".."
-        system "ninja", "-v"
-        system "ninja", "install", "-v"
-      end
+      system "meson", "setup", "build", *std_meson_args, *args
+      system "meson", "compile", "-C", "build", "--verbose"
+      system "meson", "install", "-C", "build"
     end
   end
 
