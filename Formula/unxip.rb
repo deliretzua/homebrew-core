@@ -1,7 +1,7 @@
 class Unxip < Formula
   desc "Fast Xcode unarchiver"
   homepage "https://github.com/saagarjha/unxip"
-  url "https://github.com/saagarjha/unxip.git", tag: "v1.1.3", revision: "b3ce1ab4728d4173390c97eddd28e821ad9e2974"
+  url "https://github.com/saagarjha/unxip.git", tag: "v2.0", revision: "02f1e0dcb7362bb60b1c0e54f5d2ed3dea791343"
   license "LGPL-3.0-only"
   head "https://github.com/saagarjha/unxip.git", branch: "main"
 
