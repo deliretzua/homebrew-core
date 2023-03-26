@@ -36,21 +36,21 @@ class Go < Formula
 
     on_arm do
       on_macos do
-        url "https://storage.googleapis.com/golang/go1.17.13.darwin-arm64.tar.gz"
+        url "https://storage.googleapis.com/golang/go#{version}.darwin-arm64.tar.gz"
         sha256 checksums["darwin-arm64"]
       end
       on_linux do
-        url "https://storage.googleapis.com/golang/go1.17.13.linux-arm64.tar.gz"
+        url "https://storage.googleapis.com/golang/go#{version}.linux-arm64.tar.gz"
         sha256 checksums["linux-arm64"]
       end
     end
     on_intel do
       on_macos do
-        url "https://storage.googleapis.com/golang/go1.17.13.darwin-amd64.tar.gz"
+        url "https://storage.googleapis.com/golang/go#{version}.darwin-amd64.tar.gz"
         sha256 checksums["darwin-amd64"]
       end
       on_linux do
-        url "https://storage.googleapis.com/golang/go1.17.13.linux-amd64.tar.gz"
+        url "https://storage.googleapis.com/golang/go#{version}.linux-amd64.tar.gz"
         sha256 checksums["linux-amd64"]
       end
     end
