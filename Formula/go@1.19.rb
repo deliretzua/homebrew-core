@@ -23,7 +23,6 @@ class GoAT119 < Formula
 
   keg_only :versioned_formula
 
-
   def install
     ENV["GOROOT_BOOTSTRAP"] = Formula["go"].opt_libexec
 
