@@ -27,13 +27,13 @@ class Libplacebo < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "1b05f2f221207a72eb0aeff0e9e37b8d1f4e835e159a0a2bb36d7acddfe9c2ef"
-    sha256 cellar: :any,                 arm64_monterey: "c0e4a6375bc8fd2d89247a4bbc6c61dbf48253610d02e3ddc1d5c12668c84724"
-    sha256 cellar: :any,                 arm64_big_sur:  "ad4989d3cbbce00f7e8bcd9fc83ee2c7251e7badba15d488871d70736e962867"
-    sha256 cellar: :any,                 ventura:        "246b9d7683c435ba28de917fb9de6fbce3f21922a4a3654ddd8baac1bb925dec"
-    sha256 cellar: :any,                 monterey:       "bb3746c338f7c079f537167689761fd626dbee20fa668625e2729e56f3cbe876"
-    sha256 cellar: :any,                 big_sur:        "67b2935367bd5517deea483e4a1289240e5a1ec47c46ecf788ae95a0819cac00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b5a9b11c0861b7bd23b547dcaf36648194ab4062d639428ba7500791653deac"
+    sha256 cellar: :any,                 arm64_ventura:  "2c597b7a0957b220b91bc2123abc33a04cdf63710d4a9fa6493be031e57e07f3"
+    sha256 cellar: :any,                 arm64_monterey: "9c80ebfa61ae41fd54c97014db437ff5c17b9bc6a220d0cdd14eff22320c1fd7"
+    sha256 cellar: :any,                 arm64_big_sur:  "f59a1b228f2c720e5889f19799b7de6552b255c77ff820a3634660667b399ca4"
+    sha256 cellar: :any,                 ventura:        "8706776b31155a54db09a06d049673c9667522e5c632fbe167c787a30c17260a"
+    sha256 cellar: :any,                 monterey:       "9bd97a25debddec6f2b8d186945127235c9cbb0951a7361fd7901149ff3e913a"
+    sha256 cellar: :any,                 big_sur:        "b7d363abde8eb1c7ee676089223eef6ca1afa94535ccc3fb1252937e03581d9a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a20c8536a4d5d64c00b01c8a947f30140e79f6ab02c099e4a23bdd9ef41bc3f1"
   end
 
   depends_on "meson" => :build
