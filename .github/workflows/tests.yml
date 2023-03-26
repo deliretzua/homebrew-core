@@ -61,6 +61,7 @@ jobs:
       timeout-minutes: ${{ steps.check-labels.outputs.timeout-minutes }}
       test-bot-formulae-args: ${{ steps.check-labels.outputs.test-bot-formulae-args }}
       test-bot-dependents-args: ${{ steps.check-labels.outputs.test-bot-dependents-args }}
+      cleanup-linux-runner: ${{ steps.check-labels.outputs.cleanup-linux-runner }}
     steps:
       - name: Check for CI labels
         id: check-labels
@@ -94,6 +95,7 @@ jobs:
 
             if (label_names.includes('CI-linux-self-hosted')) {
               core.setOutput('linux-runner', 'linux-self-hosted-1')
+              core.setOutput('cleanup-linux-runner', 'true')
             } else {
               if (label_names.includes('CI-linux-large-runner')) {
                 core.setOutput('linux-runner', 'homebrew-large-bottle-build')
@@ -101,6 +103,7 @@ jobs:
                 core.setOutput('linux-runner', 'ubuntu-22.04')
               }
               core.setOutput('logs-dir', '/github/home/.cache/Homebrew/Logs')
+              core.setOutput('cleanup-linux-runner', 'false')
             }
 
             if (label_names.includes('CI-no-fail-fast')) {
@@ -213,6 +216,7 @@ jobs:
           - runner: "12-arm64-${{github.run_id}}-${{github.run_attempt}}"
           - runner: "12-${{github.run_id}}-${{github.run_attempt}}"
           - runner: "11-arm64"
+            cleanup: true
           - runner: "11-${{github.run_id}}-${{github.run_attempt}}"
           - runner: ${{needs.setup_tests.outputs.linux-runner}}
             container:
@@ -220,6 +224,7 @@ jobs:
               options: --user=linuxbrew -e GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED
             workdir: /github/home
             timeout: 4320
+            cleanup: ${{fromJson(needs.setup_tests.outputs.cleanup-linux-runner)}}
       fail-fast: ${{fromJson(needs.setup_tests.outputs.fail-fast)}}
     runs-on: ${{matrix.runner}}
     container: ${{matrix.container}}
@@ -248,6 +253,7 @@ jobs:
         if: runner.debug
 
       - run: brew test-bot --only-cleanup-before
+        if: matrix.cleanup
 
       - run: brew test-bot --only-setup
 
@@ -346,7 +352,7 @@ jobs:
           path: ${{matrix.workdir || github.workspace}}/bottles
 
       - name: Post cleanup
-        if: always()
+        if: always() && matrix.cleanup
         run: |
           brew test-bot --only-cleanup-after
           rm -rvf bottles
