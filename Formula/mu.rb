@@ -55,10 +55,6 @@ class Mu < Formula
     end
   end
 
-  # Regression test for:
-  # https://github.com/djcb/mu/issues/397
-  # https://github.com/djcb/mu/issues/380
-  # https://github.com/djcb/mu/issues/332
   test do
     mkdir (testpath/"cur")
 
