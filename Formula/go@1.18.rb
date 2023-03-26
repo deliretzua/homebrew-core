@@ -27,6 +27,8 @@ class GoAT118 < Formula
   # Ref: https://go.dev/doc/devel/release#policy
   deprecate! date: "2023-02-21", because: :unsupported
 
+  depends_on "go" => :build
+
   def install
     ENV["GOROOT_BOOTSTRAP"] = Formula["go"].opt_libexec
 
