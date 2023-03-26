@@ -79,18 +79,23 @@ class Gdal < Formula
   end
 
   def install
+    site_packages = prefix/Language::Python.site_packages(python3)
     # Work around Homebrew's "prefix scheme" patch which causes non-pip installs
     # to incorrectly try to write into HOMEBREW_PREFIX/lib since Python 3.10.
     inreplace "swig/python/CMakeLists.txt",
-              /(set\(INSTALL_ARGS "--single-version-externally-managed --record=record.txt")\)/,
-              "\\1 --install-lib=#{prefix/Language::Python.site_packages(python3)})"
+              'set(INSTALL_ARGS "--single-version-externally-managed --record=record.txt',
+              "\\0 --install-lib=#{site_packages} --install-scripts=#{bin}"
 
+    osgeo_ext = site_packages/"osgeo"
+    rpaths = [rpath, rpath(source: osgeo_ext)]
+    ENV.append "LDFLAGS", "-Wl,#{rpaths.map { |rp| "-rpath,#{rp}" }.join(",")}"
     # keep C++ standard in sync with `abseil.rb`
     args = %W[
       -DENABLE_PAM=ON
       -DBUILD_PYTHON_BINDINGS=ON
-      -DCMAKE_INSTALL_RPATH=#{lib}
+      -DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}
       -DPython_EXECUTABLE=#{which(python3)}
+      -DGDAL_PYTHON_INSTALL_LIB=#{site_packages}
       -DCMAKE_CXX_STANDARD=17
     ]
 
@@ -100,6 +105,8 @@ class Gdal < Formula
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+
+    bash_completion.install (share/"bash-completion/completions").children
   end
 
   test do
