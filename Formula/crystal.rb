@@ -34,13 +34,14 @@ class Crystal < Formula
   head do
     url "https://github.com/crystal-lang/crystal.git", branch: "master"
 
-    resource "shards" do
-      url "https://github.com/crystal-lang/shards.git", branch: "master"
-    end
-
     depends_on "llvm"
     depends_on "pcre2"
-    uses_from_macos "libffi" # for the interpreter
+
+    uses_from_macos "libffi"
+
+    resource "shards" do
+      url "https://github.com/crystal-lang/shards.git", branch: "master"
+    end # for the interpreter
   end
 
   depends_on "bdw-gc"
