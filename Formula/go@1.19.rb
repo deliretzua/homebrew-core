@@ -35,19 +35,17 @@ class GoAT119 < Formula
     arch = "arm64"
     platform = "darwin"
 
-    on_intel do
-      arch = "amd64"
-    end
+    url "https://storage.googleapis.com/golang/go1.16.#{platform}-#{arch}.tar.gz"
+    version "1.16"
+    sha256 checksums["#{platform}-#{arch}"]
 
     on_linux do
       platform = "linux"
     end
 
-    boot_version = "1.16"
-
-    url "https://storage.googleapis.com/golang/go#{boot_version}.#{platform}-#{arch}.tar.gz"
-    version boot_version
-    sha256 checksums["#{platform}-#{arch}"]
+    on_intel do
+      arch = "amd64"
+    end
   end
 
   def install
