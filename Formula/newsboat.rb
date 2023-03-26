@@ -1,8 +1,8 @@
 class Newsboat < Formula
   desc "RSS/Atom feed reader for text terminals"
   homepage "https://newsboat.org/"
-  url "https://newsboat.org/releases/2.30.1/newsboat-2.30.1.tar.xz"
-  sha256 "413ffdb44a2c348eb22491dc85ac73e1ca2489925f7cf59e96c62b1b0755602f"
+  url "https://newsboat.org/releases/2.31/newsboat-2.31.tar.xz"
+  sha256 "4baf7de25cf569924eebb63a5ddc467cd58dd3f0e7190b327b49d0c1e454c1da"
   license "MIT"
   head "https://github.com/newsboat/newsboat.git", branch: "master"
 
@@ -37,7 +37,7 @@ class Newsboat < Formula
   # https://github.com/Homebrew/homebrew-core/pull/89981
   # They do not want to be the new upstream, but use that fork as a temporary
   # workaround until they migrate to some rust crate
-  # https://github.com/newsboat/newsboat/issues/1881
+  # https://github.com/newsboat/newsboat/issues/232
   resource("libstfl") do
     url "https://github.com/newsboat/stfl.git",
         revision: "c2c10b8a50fef613c0aacdc5d06a0fa610bf79e9"
