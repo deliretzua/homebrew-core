@@ -185,6 +185,7 @@ jobs:
           remote: ${{steps.pr-branch.outputs.remote}}
           branch: ${{steps.pr-branch.outputs.branch}}
           force: ${{inputs.commit_bottles_to_pr_branch && inputs.autosquash && !inputs.clean}}
+          no_lease: ${{inputs.commit_bottles_to_pr_branch && inputs.autosquash && !inputs.clean}}
         env:
           GIT_COMMITTER_NAME: ${{ steps.git-user-config.outputs.name }}
           GIT_COMMITTER_EMAIL: ${{ steps.git-user-config.outputs.email }}
