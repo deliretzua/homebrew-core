@@ -28,9 +28,6 @@ class Blahtexml < Formula
       system "make", "blahtex-mac"
       system "make", "blahtexml-mac"
     else
-      # Parallel make has a race condition between mkdir and file write.
-      # Fatal error: can't create bin-blahtex/main.o: No such file or directory
-      ENV.deparallelize
       system "make", "blahtex-linux"
       system "make", "blahtexml-linux"
     end
