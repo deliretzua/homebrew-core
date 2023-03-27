@@ -1,8 +1,8 @@
 class AwsVault < Formula
   desc "Securely store and access AWS credentials in development environments"
   homepage "https://github.com/99designs/aws-vault"
-  url "https://github.com/99designs/aws-vault/archive/v7.1.2.tar.gz"
-  sha256 "87c6d7f01fb46a7e3ea362ab77ff8d8cca2be84ad0caf639807270c1a99ceb44"
+  url "https://github.com/99designs/aws-vault/archive/v7.2.0.tar.gz"
+  sha256 "3f2f1d0ec06eb0873f9b96b59dc70f9fcc832dc97b927af3dbab6cdc87477b0e"
   license "MIT"
 
   livecheck do
@@ -38,7 +38,7 @@ class AwsVault < Formula
   end
 
   test do
-    assert_match("aws-vault: error: login: operation error IAM",
+    assert_match("aws-vault: error: login: argument 'profile' not provided, nor any AWS env vars found. Try --help",
       shell_output("#{bin}/aws-vault --backend=file login 2>&1", 1))
 
     assert_match version.to_s, shell_output("#{bin}/aws-vault --version 2>&1")
