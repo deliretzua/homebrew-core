@@ -6,7 +6,7 @@ class Ugit < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d39f93399c5b790f6af0d142eb21344469915e29f7348ad541fb7ba09013e9d5"
+    sha256 cellar: :any_skip_relocation, all: "bba82208e7ab1f5966bb67c5f13867616e3547ba5517c62d69f9539b143efab1"
   end
 
   depends_on "bash"
