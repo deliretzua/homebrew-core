@@ -4,6 +4,7 @@ class Coq < Formula
   url "https://github.com/coq/coq/archive/V8.16.1.tar.gz"
   sha256 "583471c8ed4f227cb374ee8a13a769c46579313d407db67a82d202ee48300e4b"
   license "LGPL-2.1-only"
+  revision 1
   head "https://github.com/coq/coq.git", branch: "master"
 
   livecheck do
@@ -23,9 +24,9 @@ class Coq < Formula
   end
 
   depends_on "dune" => :build
-  depends_on "ocaml-findlib" => :build
   depends_on "gmp"
   depends_on "ocaml"
+  depends_on "ocaml-findlib"
   depends_on "ocaml-zarith"
 
   uses_from_macos "m4" => :build
