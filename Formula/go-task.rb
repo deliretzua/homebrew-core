@@ -7,13 +7,13 @@ class GoTask < Formula
   head "https://github.com/go-task/task.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "528f6f6e8c482aa77b987fa515634fcfcf8c8f767f2b8e5f1ccbdae1d0eac796"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "528f6f6e8c482aa77b987fa515634fcfcf8c8f767f2b8e5f1ccbdae1d0eac796"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "528f6f6e8c482aa77b987fa515634fcfcf8c8f767f2b8e5f1ccbdae1d0eac796"
-    sha256 cellar: :any_skip_relocation, ventura:        "67c0d32d69083528c468d9d51b5e7d992b9c7c7dd16fb52e6769d6a1609e8d63"
-    sha256 cellar: :any_skip_relocation, monterey:       "67c0d32d69083528c468d9d51b5e7d992b9c7c7dd16fb52e6769d6a1609e8d63"
-    sha256 cellar: :any_skip_relocation, big_sur:        "67c0d32d69083528c468d9d51b5e7d992b9c7c7dd16fb52e6769d6a1609e8d63"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc618c10aced94093d5116c3dc27c8f34541880371d47de250f1b47098a78420"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "40deac404c30eb31267301e1083685f15db241d0aeac15f4ecb77f010b3c00f0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "40deac404c30eb31267301e1083685f15db241d0aeac15f4ecb77f010b3c00f0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "40deac404c30eb31267301e1083685f15db241d0aeac15f4ecb77f010b3c00f0"
+    sha256 cellar: :any_skip_relocation, ventura:        "6ae87c1fe8fab48548e7ddedc7b33c6446da5583f60dc300306b2cfb1583638c"
+    sha256 cellar: :any_skip_relocation, monterey:       "6ae87c1fe8fab48548e7ddedc7b33c6446da5583f60dc300306b2cfb1583638c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6ae87c1fe8fab48548e7ddedc7b33c6446da5583f60dc300306b2cfb1583638c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9bfe7d9269bea769ea9aca2be5dbbf9ed57efe3926e1005e33a7c9f62f618d32"
   end
 
   depends_on "go" => :build
