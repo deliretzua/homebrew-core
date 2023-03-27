@@ -24,10 +24,6 @@ class Dar < Formula
 
   uses_from_macos "zlib"
 
-  on_intel do
-    depends_on "upx" => :build
-  end
-
   def install
     system "./configure", "--prefix=#{prefix}",
                           "--disable-build-html",
