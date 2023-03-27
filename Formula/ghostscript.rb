@@ -4,8 +4,8 @@ class Ghostscript < Formula
   license "AGPL-3.0-or-later"
 
   stable do
-    url "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10010/ghostpdl-10.01.0.tar.xz"
-    sha256 "2eec38c20a8e19f629270593f4150b2930e89f3410823a1003229f91acb5cb1f"
+    url "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10011/ghostpdl-10.01.1.tar.xz"
+    sha256 "e6a6c39a36e6b6ffe4960f4e2bfb85420ed157ac14a202ccdd0df4e4e2a7e392"
 
     on_macos do
       # 1. Make sure shared libraries follow platform naming conventions.
