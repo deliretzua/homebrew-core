@@ -18,9 +18,10 @@ class Asciidoctor < Formula
 
   uses_from_macos "ruby", since: :catalina
 
-  # All of these resources are for the asciidoctor-pdf, coderay and rouge gems. To update the asciidoctor-pdf
-  # resources, check https://rubygems.org/gems/asciidoctor-pdf for the latest dependency versions. Make sure to select
-  # the correct version of each dependency gem because the allowable versions can differ between versions.
+  # All of these resources are for the asciidoctor-pdf, coderay, rouge and pygments.rb gems. To update the
+  # asciidoctor-pdf resources, check https://rubygems.org/gems/asciidoctor-pdf for the latest dependency versions.
+  # Make sure to select the correct version of each dependency gem because the allowable versions can differ between
+  # versions.
   # To help, click on "Show all transitive dependencies" for a tree view of all dependencies. I've added comments
   # above each resource to make updating them easier, but please update those comments as the dependencies change.
 
@@ -146,6 +147,16 @@ class Asciidoctor < Formula
   resource "treetop" do
     url "https://rubygems.org/gems/treetop-1.6.11.gem"
     sha256 "102e13adf065fc916eae60b9539a76101902a56e4283c847468eaea9c2c72719"
+  end
+
+  # asciidoctor supports the Python 3 pygments syntax highlighter via pygments.rb ~> 2.0.0
+  # Unless pygments.rb is installed in the asciidoctor libexec gems folder, asciidoctor will
+  # not be able to find the gem. Installing the pygment.rb gem as part of the main asciidoctor
+  # formula ensures it's available if users choose to install and enable the Pygments syntax
+  # highlighter.
+  resource "pygments.rb" do
+    url "https://rubygems.org/gems/pygments.rb-2.3.1.gem"
+    sha256 "8736ff83122bb13dc61b43fc9bffbe9c672cce48c8abdcb9222399e7bcd278fd"
   end
 
   resource "asciidoctor-pdf" do
