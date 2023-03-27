@@ -8,11 +8,11 @@ class Swiftlint < Formula
   head "https://github.com/realm/SwiftLint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b7ce5d123ad1dd7ca9e7b1dda8dce1c733bfd8d5f48402f8afbc9c15aaf599c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "aed39b239db8bc21c6af631f6d3caccc055d2d30fe0ce829e9a44642f06d942b"
-    sha256 cellar: :any_skip_relocation, ventura:        "1145a8c09a812279005df8420dcd25265baf1d900ef368aeee6ad568760aa0f4"
-    sha256 cellar: :any_skip_relocation, monterey:       "f4ce10143a0f59d79c2aa31d1274db8b19ddc1d0e69cf6f4ecf947dbf84cbf79"
-    sha256                               x86_64_linux:   "e383bc2b3362ba4a37a0012cd39a587d62426fa6f22b25758f08e19a5f50ed29"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "512ecb595769f901cf75b32313b17a4e670940245ff24f755ff1a3977a15da83"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4341feca59da7d9918517c9017487bd810d4a32d3ea3125323c65f65945c9402"
+    sha256 cellar: :any_skip_relocation, ventura:        "2b2ce72f4e9b9f6a9f8014415d7a2662024cf3747f2e0a593375c2b3095e7033"
+    sha256 cellar: :any_skip_relocation, monterey:       "06926e0e327742f4dbbd7528b1a5a847a57227062780ec7502bb0d7e1ad3f9d8"
+    sha256                               x86_64_linux:   "ef46916b9f189ce18045273a0a0f2d155a1bb3bea1ac5e1c866f6df080d9dfbf"
   end
 
   depends_on xcode: ["14.0", :build]
