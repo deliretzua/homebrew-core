@@ -21,6 +21,10 @@ class LtexLs < Formula
   depends_on "openjdk"
 
   def install
+    # Fix build with `openjdk` 20.
+    # Reported upstream at https://github.com/valentjn/ltex-ls/issues/244.
+    inreplace "pom.xml", "<arg>-Werror</arg>", ""
+
     ENV.prepend_path "PATH", Formula["python@3.11"].opt_libexec/"bin"
     ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
     ENV["TMPDIR"] = buildpath
