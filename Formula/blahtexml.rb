@@ -6,18 +6,13 @@ class Blahtexml < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8649e81f949cbc530d00a446b56fee8ea6013a9bac9f8abc732c0ceda928b9d9"
-    sha256 cellar: :any,                 arm64_monterey: "8783f6707647e97b97332dfae2ae2705823786ac65977d239e9d38dfb1f5b0c7"
-    sha256 cellar: :any,                 arm64_big_sur:  "83b3c821686faba9f464198f22fc7432001e93d09c66192ff95c8d9ddbb69a80"
-    sha256 cellar: :any,                 ventura:        "33ed53295e49baaae6a268923b6ac906e6529faa52a5230090b73eda06131e68"
-    sha256 cellar: :any,                 monterey:       "a959c9373710994104947e5fe99e22d8824c5523fc4974e5634560d02cec0813"
-    sha256 cellar: :any,                 big_sur:        "b65b2c94d4c7b015a9ebf54ca27d71d52e09fc946ea1ecd170c952f3d262a599"
-    sha256 cellar: :any,                 catalina:       "3f883672f92e2039c22bb278ca50ece210c2c01e58f4c230c3ab1e3101eeb74f"
-    sha256 cellar: :any,                 mojave:         "23f943fa053e861b0f6c9f2e9cfa1c74d6b8966ac698e6650386d44f7d7de31b"
-    sha256 cellar: :any,                 high_sierra:    "c2696cdaa1724541f0d07900219247365e30061a471df0b80f6469b3bc2b4a14"
-    sha256 cellar: :any,                 sierra:         "bcd628072b5b7d6625e2b2caad1c6f64483807facda1b2eff32795de1b25070f"
-    sha256 cellar: :any,                 el_capitan:     "b1788b8622b704c67b11295f6bf84ab881298980f8101b5fed6cb7441b4edc82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "87d59192ccfff76b31b99071e19cbb24bddc8e98260d8d922fdf336fc695e5b8"
+    sha256 cellar: :any,                 arm64_ventura:  "db64fdc2a7df77d68c7530ea4285ae78bcf601088c7e77acea81f529ac469446"
+    sha256 cellar: :any,                 arm64_monterey: "893abf6f661a0ba1d90d7dc42bdb1c3ba83ce1799b5b99c4b442a8559cb1d71b"
+    sha256 cellar: :any,                 arm64_big_sur:  "de3e5596434795f4afd9439f639a26ebcd8007f4050176ab3dd46cda795a7e9c"
+    sha256 cellar: :any,                 ventura:        "9e6c88b7639416423b74abf8ed3c0c25e412ee42bfc7452d8cd0ff26e1183713"
+    sha256 cellar: :any,                 monterey:       "ca50dc5a8d4e300ab143f1dd92f182c792fa5f1b6840333c4944e1c5f48cbc2f"
+    sha256 cellar: :any,                 big_sur:        "97e4a9e3841ec8fd6c13db2ee2a02c57b0896501296b5da82f510a676482e7d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5874a0c9f4890d39638a59e7360f5e2bc7dbd4d51da536276b181b61733cdd1"
   end
 
   depends_on "xerces-c"
