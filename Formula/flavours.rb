@@ -6,6 +6,16 @@ class Flavours < Formula
   license "MIT"
   head "https://github.com/Misterio77/flavours.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0c111b5a4b8d1202a90264539f524dac5bc9f3e870bb12730da491c1243d98c7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9200bdc6a14abb08d74d76719b8e22bdd6fcb61199f681d21448c4db714bc34c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1115555c25d56152083fa2e769f6b284425edd7164cae47559707ae043e075f1"
+    sha256 cellar: :any_skip_relocation, ventura:        "a43fd8c88dd0f6ca5969c2639403f92fbe366f5403654ac8d6a2d9bd216fb391"
+    sha256 cellar: :any_skip_relocation, monterey:       "390e9e7c8829fc1f87b6a1ba982f2643609478fbdb3b5657a29195b8dd23330a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c2690b1e9148bcdf1968668bede74d9aea501c22fd37252cbf00ccb564f740a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4862a79b1de2d1d7b9f4232bab8eb9671e339c21f172d19006a103d8ecd4d1c9"
+  end
+
   depends_on "rust" => :build
 
   resource("homebrew-testdata") do
