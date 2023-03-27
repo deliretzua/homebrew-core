@@ -108,13 +108,19 @@ jobs:
         with:
           signing_key: ${{ secrets.BREWTESTBOT_GPG_SIGNING_SUBKEY }}
 
-      - name: Checkout PR branch
+      - name: Checkout PR branch if needed
         id: pr-branch
-        if: inputs.commit_bottles_to_pr_branch
         env:
           GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         working-directory: ${{steps.set-up-homebrew.outputs.repository-path}}
         run: |
+          if ! ${{inputs.commit_bottles_to_pr_branch}}
+          then
+            echo "remote=origin" >> "$GITHUB_OUTPUT"
+            echo "branch=master" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
           # We can't do `gh pr checkout` because of cli/cli#2702.
           pr="${{inputs.pull_request}}"
 
@@ -176,8 +182,8 @@ jobs:
         with:
           token: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
           directory: ${{steps.set-up-homebrew.outputs.repository-path}}
-          remote: ${{steps.pr-branch.outputs.remote || "origin"}}
-          branch: ${{steps.pr-branch.outputs.branch || "master"}}
+          remote: ${{steps.pr-branch.outputs.remote}}
+          branch: ${{steps.pr-branch.outputs.branch}}
           force: ${{inputs.commit_bottles_to_pr_branch && inputs.autosquash && !inputs.clean}}
         env:
           GIT_COMMITTER_NAME: ${{ steps.git-user-config.outputs.name }}
