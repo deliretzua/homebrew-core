@@ -47,8 +47,8 @@ class Openrct2 < Formula
   end
 
   resource "objects" do
-    url "https://github.com/OpenRCT2/objects/releases/download/v1.3.7/objects.zip"
-    sha256 "d6be9743c68f233674f5549204637b1f0304d7567a816d18e3f1576500a51d38"
+    url "https://github.com/OpenRCT2/objects/releases/download/v1.3.8/objects.zip"
+    sha256 "84a95590d13a753b1d239f7f06c8d121e36fd28694b21f33646518e2012904ae"
   end
 
   def install
