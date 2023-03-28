@@ -54,6 +54,7 @@ class Gromacs < Formula
     args = %W[
       -DGROMACS_CXX_COMPILER=#{cxx}
       -DGMX_VERSION_STRING_OF_FORK=#{tap.user}
+      -DGMX_INSTALL_LEGACY_API=ON
     ]
     # Force SSE2/SSE4.1 for compatibility when building Intel bottles
     args << "-DGMX_SIMD=#{MacOS.version.requires_sse41? ? "SSE4.1" : "SSE2"}" if Hardware::CPU.intel? && build.bottle?
