@@ -43,8 +43,8 @@ class Podman < Formula
 
   resource "gvproxy" do
     on_macos do
-      url "https://github.com/containers/gvisor-tap-vsock/archive/v0.5.0.tar.gz"
-      sha256 "8048f4f5faa2722547d1854110c2347f817b2f47ec51d39b2a7b308f52a7fe59"
+      url "https://github.com/containers/gvisor-tap-vsock/archive/refs/tags/v0.6.1.tar.gz"
+      sha256 "3be16fd732724f7b65f3629cdc4cdad3e069b3f137f9a1c4bb40105082bc5740"
     end
   end
 
@@ -133,13 +133,13 @@ class Podman < Formula
       end
 
       resource("netavark").stage do
-        system "cargo", "install", *std_cargo_args
-        mv bin/"netavark", libexec/"podman/"
+        system "make"
+        mv "bin/netavark", libexec/"podman/"
       end
 
       resource("aardvark-dns").stage do
-        system "cargo", "install", *std_cargo_args
-        mv bin/"aardvark-dns", libexec/"podman/"
+        system "make"
+        mv "bin/aardvark-dns", libexec/"podman/"
       end
     end
   end
