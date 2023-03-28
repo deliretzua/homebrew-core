@@ -18,12 +18,14 @@ class Mujs < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "33d9cd1bca8a34431d33b59b5ad5bc3d245fc288646b39e586577fcf43df7e33"
   end
 
+  depends_on "pkg-config" => :test
+
   on_linux do
     depends_on "readline"
   end
 
   def install
-    system "make", "release"
+    system "make", "prefix=#{prefix}", "release"
     system "make", "prefix=#{prefix}", "install"
     system "make", "prefix=#{prefix}", "install-shared" if build.stable?
   end
@@ -35,5 +37,8 @@ class Mujs < Formula
       }, 0));
     EOS
     assert_equal "104", shell_output("#{bin}/mujs test.js").chomp
+    # test pkg-config setup correctly
+    assert_match "-I#{include}", shell_output("pkg-config --cflags mujs")
+    assert_match "-L#{lib}", shell_output("pkg-config --libs mujs")
   end
 end
