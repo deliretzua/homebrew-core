@@ -6,13 +6,13 @@ class Lighthouse < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "10968d29f2797b9bc1c527735e689a2e68f0d0e3cfb4f7384d0d4273ad63963f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e863d0997ff9765a967e7e3f5927fc97e34495fa30e5b47b30abe531cd18a575"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cc9bf914ed4a92ec5b14085c5440c0fe2056ad63550b922fcf0059aa4bf84046"
-    sha256 cellar: :any_skip_relocation, ventura:        "5f4c546247f6d54bd44441b25004e27b0742cc787babcc9ce32ac0e18935136c"
-    sha256 cellar: :any_skip_relocation, monterey:       "827ef59765895c1c6a3e0502bcb7bc0474c22ae40515f55020d3998a92f5a690"
-    sha256 cellar: :any_skip_relocation, big_sur:        "256ba111c641c669d1905cc23821ce0263b420e7981e8fc1b3f65f03981513cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "714a82f4ff2625998868974f9069ceb55f0933dfacdb2e3ddfe0f2dbee675205"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "47e08d64897042421219492ebce8461c4698ce619ff52714dff314eeb8c1d119"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "79edc35709a394f10adcd3783ef9c3ec6e78ece2c8d5410495dce8131a495fa5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5815b153b1b3650e1d2ecd6a10383b5fa15192173064583da6f23b16fceaf901"
+    sha256 cellar: :any_skip_relocation, ventura:        "8d320b58a3bf0c7e92b6168744dac3ffaee950eedebe29ff93e0424d9492a73f"
+    sha256 cellar: :any_skip_relocation, monterey:       "cef9618a3ea6d68c3f1f0458338adcf7c9b068fdfb2357ef318b45394b8ba9f0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b8f52ca58d573c0755e3e90bc4754954043d7f83e01ff25db4a729bd1397a669"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "785bc34fa35180dbf1122c7df9a760d3365aa8ee3a06765566e5596bae101ba7"
   end
 
   depends_on "cmake" => :build
