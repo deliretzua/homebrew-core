@@ -6,9 +6,9 @@ class Vectorscan < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "478f79fe3f560be59f53b0614dce831ee8ab8851e0d4af1ecec67992456fbaf6"
-    sha256 cellar: :any, arm64_monterey: "7ac330c646e8fae05d38781cc74e76ba4f5e56db40d64e5812b86d2b46bc80ae"
-    sha256 cellar: :any, arm64_big_sur:  "734f2c58a709fa75fe7f3dfe2abe88ea94b76a27149d07d034f4a779f2197c8a"
+    sha256 cellar: :any, arm64_ventura:  "39e6c29a222fefec22d4346eb81841962097e405b6077cf696f8890aab155cf0"
+    sha256 cellar: :any, arm64_monterey: "432f5c87edd6de377363fb8348fde42ceefa5c36eea781509bb070a06dccb4ac"
+    sha256 cellar: :any, arm64_big_sur:  "5c67d4a31c7253e9bd6b23df0bfa74a31eb527b9410d274fea1da8c4d07afdc0"
   end
 
   depends_on "boost" => :build
