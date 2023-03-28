@@ -1,8 +1,8 @@
 class Mbedtls < Formula
   desc "Cryptographic & SSL/TLS library"
   homepage "https://tls.mbed.org/"
-  url "https://github.com/Mbed-TLS/mbedtls/archive/mbedtls-3.3.0.tar.gz"
-  sha256 "a22ff38512697b9cd8472faa2ea2d35e320657f6d268def3a64765548b81c3ec"
+  url "https://github.com/Mbed-TLS/mbedtls/archive/mbedtls-3.4.0.tar.gz"
+  sha256 "a5dac98592b1ac2232de0aed8f4ee62dffaa99e843e6f41dca2958095c737afd"
   license "Apache-2.0"
   head "https://github.com/Mbed-TLS/mbedtls.git", branch: "development"
 
