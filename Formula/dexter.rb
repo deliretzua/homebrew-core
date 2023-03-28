@@ -5,6 +5,16 @@ class Dexter < Formula
   sha256 "68d840020c87b5792ab9eb3e12939cf3b5944427c1e28cf8a34d5737223de2a0"
   license "MIT"
 
+  bottle do
+    sha256                               arm64_ventura:  "f5fbf96a1cc3b83156c12309a494bf209ca7cee48038a58d130984139040fe10"
+    sha256                               arm64_monterey: "1062799e459bf363ee8248ec0428601e0a2a0d36bf64bbaeb22ad3317b19c09d"
+    sha256                               arm64_big_sur:  "29b7858b15990bade00c2b4dfef64227ceebc39d076e94986e892a23557ae3c5"
+    sha256                               ventura:        "7b49affac916be707608a9cc5de40a83f22db0ad05333eb0c634acd6e1c5852c"
+    sha256                               monterey:       "9374f5d5a343a2f200df6ca84466cd0ccd7dba165f36cf84923b1f2000eba6a0"
+    sha256                               big_sur:        "720f746d14dd9624f058aad44293b95b91cece439c705fcd60fbdd9b1d2d11df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0f4ef3dfed58f27327afb4b700c45cdf93d57a27c3f21ac57780b23cdbc8037"
+  end
+
   depends_on "postgresql@15" => :test
   depends_on "libpq"
 
