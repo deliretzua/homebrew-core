@@ -7,13 +7,14 @@ class Webp < Formula
   head "https://chromium.googlesource.com/webm/libwebp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "fb2edf5a9f207f41aa11ff72efb0822da454f3a15e633738df8afdf69c40857d"
-    sha256 cellar: :any,                 arm64_monterey: "b184d1461126f09e2129f67cbc2025c3fc576f87a76a14bd7b5d76fd1d96a2d0"
-    sha256 cellar: :any,                 arm64_big_sur:  "edfeee19efb9e30eb99400eec5017d162ee70fb5d69346fec6f716a5f12c822b"
-    sha256 cellar: :any,                 ventura:        "f3f98d19c9ee4f773a937a0d5b44f504710c9f8af29cae6665820a18e2498e97"
-    sha256 cellar: :any,                 monterey:       "a07ca47cda0829022148d2b248972f3c37fd53bfbee6b767f8cbbd1a73e5fafe"
-    sha256 cellar: :any,                 big_sur:        "84ccd490c545a02910d950ba4b06027685939bec03256abbfbaf012fa02e7a1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "89347c4622e958013b7977a06178766cf00d5a98e67acc03163d0c27595cf18f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "28dcf9ddd7324057a556052ebcab2f464f5e9d08cee9d3aa420bf2bf4c7f1f1b"
+    sha256 cellar: :any,                 arm64_monterey: "75ebcbe19f4cd5057cd02e171589c9d305999e38c180a8300a6647bbf1132788"
+    sha256 cellar: :any,                 arm64_big_sur:  "0f44d3ad129eb35d06017d3049b6253baab054315f8f5aad6e634554fc4d6a78"
+    sha256 cellar: :any,                 ventura:        "ee7abe4b2abdadf7e4e326b6944956946897cb063b26e62ab025980c19ab28d7"
+    sha256 cellar: :any,                 monterey:       "b4085af67d946e79e4c6a0e27334c8eecf65a00485f9327da64475e9167faae2"
+    sha256 cellar: :any,                 big_sur:        "1e6d47fbd075f9ed5934f8edb69a56582788c151c9396aefe63aa18101cc867b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13845dd9434be5f6641b53a8dae60f8bfa9e494f69234260829dd17387d6f92f"
   end
 
   depends_on "cmake" => :build
