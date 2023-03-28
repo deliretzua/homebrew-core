@@ -147,12 +147,11 @@ class Borgmatic < Formula
 
     # Replace defaults values
     inreplace config_path do |s|
-      s.gsub!(/# ?local_path: borg1/, "local_path: #{borg}")
-      s.gsub! "- ssh://user@backupserver/./sourcehostname.borg", "- #{repo_path}"
-      s.gsub! "- ssh://user@backupserver/./{fqdn}", ""
-      s.gsub! "- /var/local/backups/local.borg", ""
       s.gsub! "- /var/log/syslog*", ""
       s.gsub! "- /home/user/path with spaces", ""
+      s.gsub! "- path: ssh://user@backupserver/./sourcehostname.borg", "- path: #{repo_path}"
+      s.gsub! "- path: /mnt/backup", ""
+      s.gsub!(/# ?local_path: borg1/, "local_path: #{borg}")
     end
 
     # Initialize Repo
