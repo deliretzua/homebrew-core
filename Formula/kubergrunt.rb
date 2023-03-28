@@ -1,8 +1,8 @@
 class Kubergrunt < Formula
   desc "Collection of commands to fill in the gaps between Terraform, Helm, and Kubectl"
   homepage "https://github.com/gruntwork-io/kubergrunt"
-  url "https://github.com/gruntwork-io/kubergrunt/archive/v0.10.2.tar.gz"
-  sha256 "837442e40827831599429f2006f46cab3b48e2e4fad96ad887a2a2a6443bceb2"
+  url "https://github.com/gruntwork-io/kubergrunt/archive/v0.11.0.tar.gz"
+  sha256 "b3f46010ca8d0c01e7732af9898ecaf6844ad9b7e907d2a0a23cb4e76c7086bd"
   license "Apache-2.0"
 
   bottle do
