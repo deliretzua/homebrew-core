@@ -4,6 +4,7 @@ class Passenger < Formula
   url "https://github.com/phusion/passenger/releases/download/release-6.0.17/passenger-6.0.17.tar.gz"
   sha256 "385559ed1d78eb83165222d568721dcc4222bb57c1939811ecd2c4ef33937ba7"
   license "MIT"
+  revision 1
   head "https://github.com/phusion/passenger.git", branch: "stable-6.0"
 
   bottle do
@@ -57,7 +58,6 @@ class Passenger < Formula
 
     (libexec/"download_cache").mkpath
 
-    # Fixes https://github.com/phusion/passenger/issues/1288
     rm_rf "buildout/libev"
     rm_rf "buildout/libuv"
     rm_rf "buildout/cache"
