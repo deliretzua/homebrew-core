@@ -1,8 +1,8 @@
 class Erigon < Formula
   desc "Implementation of Ethereum (execution client), on the efficiency frontier"
   homepage "https://github.com/ledgerwatch/erigon"
-  url "https://github.com/ledgerwatch/erigon/archive/refs/tags/v2.41.0.tar.gz"
-  sha256 "24adbd77ffb162e27852ccb75d1c8f92f4a38f831d66ebec5bb33bd379a70aea"
+  url "https://github.com/ledgerwatch/erigon/archive/refs/tags/v2.42.0.tar.gz"
+  sha256 "3495357190899816fdee35b48777fe8f6155d4f69137091460db973c58976b3b"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later"]
   head "https://github.com/ledgerwatch/erigon.git", branch: "devel"
 
