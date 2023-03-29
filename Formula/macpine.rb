@@ -1,8 +1,8 @@
 class Macpine < Formula
   desc "Lightweight Linux VMs on MacOS"
   homepage "https://beringresearch.github.io/macpine/"
-  url "https://github.com/beringresearch/macpine/archive/refs/tags/v0.9.tar.gz"
-  sha256 "fbbed218de0037d0fc82bc675fbe89b44202f757f12a5ab53f32ff70345ee1c2"
+  url "https://github.com/beringresearch/macpine/archive/refs/tags/v0.10.tar.gz"
+  sha256 "bca9075958cb76a79cb66f848a44f6ff8f2c1493d6af0b79e871b4457f1fe4d1"
   license "Apache-2.0"
   head "https://github.com/beringresearch/macpine.git", branch: "main"
 
