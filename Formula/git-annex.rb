@@ -45,6 +45,8 @@ class GitAnnex < Formula
     # Fix "Could not find module ‘System.PosixCompat.User’".
     # The module was removed in unix-compat-0.7; see:
     #   https://hackage.haskell.org/package/unix-compat-0.7/changelog
+    # Reported upstream at
+    #   https://git-annex.branchable.com/bugs/System.PosixCompat.User_removed_in_unix-compat-0.7/
     inreplace "git-annex.cabal", "unix-compat (>= 0.5)", "unix-compat (>= 0.5 && < 0.7)"
 
     system "cabal", "v2-update"
