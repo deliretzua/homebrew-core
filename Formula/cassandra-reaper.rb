@@ -6,7 +6,7 @@ class CassandraReaper < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f0ab0493764430990c28cfe5c42a82032d9aa995bd0bfe3dd161815e44bdebc9"
+    sha256 cellar: :any_skip_relocation, all: "639bbd9da63b60068593264db5656b1cf38af17cd7d7763dd91259a35b540809"
   end
 
   depends_on "openjdk@11"
