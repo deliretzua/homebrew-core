@@ -29,6 +29,7 @@ class GnupgPkcs11Scd < Formula
   depends_on "libassuan"
   depends_on "libgcrypt"
   depends_on "libgpg-error"
+  depends_on "openssl@3"
   depends_on "pkcs11-helper"
 
   def install
