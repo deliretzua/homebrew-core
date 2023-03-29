@@ -22,6 +22,10 @@ class Zpaqfranz < Formula
     url "https://github.com/fcorbelli/zpaqfranz/commit/298e496647373570b54307f4d4130bbd915ba9f6.patch?full_index=1"
     sha256 "ad02acdf3922946f09203bca4e0b926c3ea15953f04ae759e9ee8efc1cebf8d7"
   end
+  patch do
+    url "https://github.com/fcorbelli/zpaqfranz/commit/4cc32b6ffa599e3b9528c4c97d52b6ebcc697efa.patch?full_index=1"
+    sha256 "a86ed4ff7f223e65a6720438aa6c2d2f3bc42d8959ee827e95d1798d9d8b10c0"
+  end
 
   def install
     bin.mkdir
