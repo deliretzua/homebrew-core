@@ -42,6 +42,11 @@ class GitAnnex < Formula
                 homebrew/bloomfilter/
     EOS
 
+    # Fix "Could not find module ‘System.PosixCompat.User’".
+    # The module was removed in unix-compat-0.7; see:
+    #   https://hackage.haskell.org/package/unix-compat-0.7/changelog
+    inreplace "git-annex.cabal", "unix-compat (>= 0.5)", "unix-compat (>= 0.5 && < 0.7)"
+
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args, "--flags=+S3"
     bin.install_symlink "git-annex" => "git-annex-shell"
