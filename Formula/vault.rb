@@ -2,8 +2,8 @@ class Vault < Formula
   desc "Secures, stores, and tightly controls access to secrets"
   homepage "https://vaultproject.io/"
   url "https://github.com/hashicorp/vault.git",
-      tag:      "v1.13.0",
-      revision: "a4cf0dc4437de35fce4860857b64569d092a9b5a"
+      tag:      "v1.13.1",
+      revision: "4472e4a3fbcc984b7e3dc48f5a8283f3efe6f282"
   license "MPL-2.0"
   head "https://github.com/hashicorp/vault.git", branch: "main"
 
