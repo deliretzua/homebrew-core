@@ -19,8 +19,8 @@ class Zpaqfranz < Formula
   # Use a C++ compiler instead of a C compiler.
   # Reported at: https://github.com/fcorbelli/zpaqfranz/pull/51
   patch do
-    url "https://github.com/fcorbelli/zpaqfranz/commit/41f7bb7c5c87306f5d7f55b9ad233a3a453df0dd.patch?full_index=1"
-    sha256 "f6de162aabb7eef4963a9a058a22d2c5f2b67db71b5b2cc7a166f48c616258a4"
+    url "https://github.com/fcorbelli/zpaqfranz/commit/298e496647373570b54307f4d4130bbd915ba9f6.patch?full_index=1"
+    sha256 "ad02acdf3922946f09203bca4e0b926c3ea15953f04ae759e9ee8efc1cebf8d7"
   end
 
   def install
