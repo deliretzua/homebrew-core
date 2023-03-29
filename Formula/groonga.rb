@@ -53,7 +53,6 @@ class Groonga < Formula
     args = %w[
       --disable-zeromq
       --disable-apache-arrow
-      --enable-mruby
       --with-luajit=no
       --with-ssl
       --with-zlib
