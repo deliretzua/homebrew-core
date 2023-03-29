@@ -226,13 +226,12 @@ jobs:
             exit 1
           fi
 
-      # TODO: uncomment this once automerge is enabled again.
-      # - name: Enable PR automerge
-      #   if: inputs.commit_bottles_to_pr_branch
-      #   env:
-      #     GH_TOKEN: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
-      #   working-directory: ${{steps.set-up-homebrew.outputs.repository-path}}
-      #   run: gh pr merge --auto --merge '${{inputs.pull_request}}'
+      - name: Enable PR automerge
+        if: inputs.commit_bottles_to_pr_branch
+        env:
+          GH_TOKEN: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
+        working-directory: ${{steps.set-up-homebrew.outputs.repository-path}}
+        run: gh pr merge --auto --merge '${{inputs.pull_request}}'
 
       - name: Post comment on failure
         if: ${{failure() && inputs.commit_bottles_to_pr_branch}}
