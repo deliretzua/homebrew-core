@@ -66,8 +66,8 @@ class Qmmp < Formula
   fails_with gcc: "5" # ffmpeg is compiled with GCC
 
   resource "qmmp-plugin-pack" do
-    url "https://qmmp.ylsoftware.com/files/qmmp-plugin-pack/2.1/qmmp-plugin-pack-2.1.0.tar.bz2"
-    sha256 "25692f5fc9f608d9b194697dae76d16408c98707758fb1d77ca633ba78eee917"
+    url "https://qmmp.ylsoftware.com/files/qmmp-plugin-pack/2.1/qmmp-plugin-pack-2.1.1.tar.bz2"
+    sha256 "f68484426579f2a0bc68b6be06e7a019fd1c266fca35b764d5788661ddf9bcc4"
   end
 
   def install
