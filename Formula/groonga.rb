@@ -50,8 +50,7 @@ class Groonga < Formula
   end
 
   def install
-    args = %W[
-      --prefix=#{prefix}
+    args = %w[
       --disable-zeromq
       --disable-apache-arrow
       --enable-mruby
@@ -68,7 +67,7 @@ class Groonga < Formula
     end
 
     mkdir "builddir" do
-      system "../configure", *args
+      system "../configure", *args, *std_configure_args
       system "make", "install"
     end
 
