@@ -23,9 +23,10 @@ class Macvim < Formula
     sha256 big_sur:        "bd6018f7a3e608fc6f143c4e79c3388e05284cc8a689b2ee39a6035ce14eeb0b"
   end
 
+  depends_on "gettext" => :build
+  depends_on "libsodium" => :build
   depends_on xcode: :build
   depends_on "cscope"
-  depends_on "gettext"
   depends_on "lua"
   depends_on :macos
   depends_on "python@3.11"
@@ -80,6 +81,7 @@ class Macvim < Formula
     output = shell_output("#{bin}/mvim --version")
     assert_match "+ruby", output
     assert_match "+gettext", output
+    assert_match "+sodium", output
 
     # Simple test to check if MacVim was linked to Homebrew's Python 3
     py3_exec_prefix = shell_output(Formula["python@3.11"].opt_libexec/"bin/python-config --exec-prefix")
