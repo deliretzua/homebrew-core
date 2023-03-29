@@ -28,32 +28,35 @@ class Qca < Formula
   depends_on "gnupg"
   depends_on "libgcrypt"
   depends_on "nss"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pkcs11-helper"
   depends_on "qt@5"
 
   fails_with gcc: "5"
 
   def install
-    args = std_cmake_args
-    args << "-DBUILD_TESTS=OFF"
-    args << "-DQCA_PLUGINS_INSTALL_DIR=#{lib}/qt5/plugins"
+    # Make sure we link with OpenSSL 3 and not OpenSSL 1.1.
+    openssl11 = Formula["openssl@1.1"]
+    ENV.remove "CMAKE_PREFIX_PATH", openssl11.opt_prefix
+    ENV.remove ["CMAKE_INCLUDE_PATH", "HOMEBREW_INCLUDE_PATHS"], openssl11.opt_include
+    ENV.remove ["CMAKE_LIBRARY_PATH", "HOMEBREW_LIBRARY_PATHS"], openssl11.opt_lib
+
+    args = %W[-DBUILD_TESTS=OFF -DQCA_PLUGINS_INSTALL_DIR=#{lib}/qt5/plugins]
 
     # Disable some plugins. qca-ossl, qca-cyrus-sasl, qca-logger,
     # qca-softstore are always built.
-    args << "-DWITH_botan_PLUGIN=ON"
-    args << "-DWITH_gcrypt_PLUGIN=ON"
-    args << "-DWITH_gnupg_PLUGIN=ON"
-    args << "-DWITH_nss_PLUGIN=ON"
-    args << "-DWITH_pkcs11_PLUGIN=ON"
+    %w[botan gcrypt gnupg nss pkcs11].each do |plugin|
+      args << "-DWITH_#{plugin}_PLUGIN=ON"
+    end
 
     # ensure opt_lib for framework install name and linking (can't be done via CMake configure)
     inreplace "src/CMakeLists.txt",
               /^(\s+)(INSTALL_NAME_DIR )("\$\{QCA_LIBRARY_INSTALL_DIR\}")$/,
              "\\1\\2\"#{opt_lib}\""
 
-    system "cmake", ".", *args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
