@@ -1,8 +1,8 @@
 class Qmmp < Formula
   desc "Qt-based Multimedia Player"
   homepage "https://qmmp.ylsoftware.com/"
-  url "https://qmmp.ylsoftware.com/files/qmmp/2.1/qmmp-2.1.2.tar.bz2"
-  sha256 "53ce8ba00920ea604555afdc801f24a426b92b07644743cc426006bdffca017a"
+  url "https://qmmp.ylsoftware.com/files/qmmp/2.1/qmmp-2.1.3.tar.bz2"
+  sha256 "f9b1e7bf05d499d05b41c3b7527c9baa8bbf31981c7fa09786501c06334508d4"
   license "GPL-2.0-or-later"
 
   livecheck do
