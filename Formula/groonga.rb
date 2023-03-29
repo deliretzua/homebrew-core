@@ -35,6 +35,7 @@ class Groonga < Formula
   depends_on "pcre"
 
   uses_from_macos "libxcrypt"
+  uses_from_macos "ruby"
 
   on_linux do
     depends_on "glib"
@@ -55,16 +56,14 @@ class Groonga < Formula
       --disable-apache-arrow
       --enable-mruby
       --with-luajit=no
+      --with-ruby
       --with-ssl
       --with-zlib
       --without-libstemmer
       --with-mecab
     ]
 
-    if build.head?
-      args << "--with-ruby"
-      system "./autogen.sh"
-    end
+    system "./autogen.sh" if build.head?
 
     mkdir "builddir" do
       system "../configure", *args, *std_configure_args
