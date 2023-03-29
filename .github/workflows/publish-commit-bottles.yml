@@ -206,7 +206,7 @@ jobs:
           # Wait (with exponential backoff) until the PR branch is in sync
           while [ "$attempt" -lt "$max_attempts" ]
           do
-            remote_head="$(git ls-remote origin pull/${{inputs.pull_request}}/head | cut -f1)"
+            remote_head="$(git ls-remote origin "pull/${{inputs.pull_request}}/head" | cut -f1)"
             echo "::notice ::Pull request HEAD: $remote_head"
             if [ "$local_head" = "$remote_head" ]
             then
@@ -220,7 +220,7 @@ jobs:
           done
 
           # One last check...
-          if [ -z "$success" ] && [ "$local_head" != "$(git ls-remote origin pull/${{inputs.pull_request}}/head | cut -f1)" ]
+          if [ -z "$success" ] && [ "$local_head" != "$(git ls-remote origin "pull/${{inputs.pull_request}}/head" | cut -f1)" ]
           then
             echo "::error ::No attempts remaining. Giving up."
             exit 1
