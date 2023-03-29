@@ -16,6 +16,13 @@ class Zpaqfranz < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "56b3da3986185c1486f366b06f47e8fb9b20ac2a32ad20812119e006e49b7a34"
   end
 
+  # Use a C++ compiler instead of a C compiler.
+  # Reported at: https://github.com/fcorbelli/zpaqfranz/pull/51
+  patch do
+    url "https://github.com/fcorbelli/zpaqfranz/commit/41f7bb7c5c87306f5d7f55b9ad233a3a453df0dd.patch?full_index=1"
+    sha256 "f6de162aabb7eef4963a9a058a22d2c5f2b67db71b5b2cc7a166f48c616258a4"
+  end
+
   def install
     bin.mkdir
 
