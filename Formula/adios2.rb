@@ -1,10 +1,9 @@
 class Adios2 < Formula
   desc "Next generation of ADIOS developed in the Exascale Computing Program"
   homepage "https://adios2.readthedocs.io"
-  url "https://github.com/ornladios/ADIOS2/archive/v2.8.3.tar.gz"
-  sha256 "4906ab1899721c41dd918dddb039ba2848a1fb0cf84f3a563a1179b9d6ee0d9f"
+  url "https://github.com/ornladios/ADIOS2/archive/v2.9.0.tar.gz"
+  sha256 "69f98ef58c818bb5410133e1891ac192653b0ec96eb9468590140f2552b6e5d1"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/ornladios/ADIOS2.git", branch: "master"
 
   livecheck do
@@ -55,11 +54,6 @@ class Adios2 < Formula
 
   def install
     ENV.llvm_clang if DevelopmentTools.clang_build_version == 1400
-
-    # Fix for newer CMake
-    # https://github.com/ornladios/ADIOS2/issues/3309
-    inreplace "CMakeLists.txt", "cmake_minimum_required(VERSION 3.12)",
-                                "cmake_minimum_required(VERSION 3.12...3.23)"
 
     # fix `include/adios2/common/ADIOSConfig.h` file audit failure
     inreplace "source/adios2/common/ADIOSConfig.h.in" do |s|
