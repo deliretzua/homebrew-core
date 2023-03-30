@@ -6,13 +6,13 @@ class Erdtree < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b8822b33223dd892344fa98c774414f3ff0f940e26f6e888ebec2d5cee3ee2cc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a4171eebe5bfd31f10969a54fe6353262774639daf16bfea7a1fbf2bccadc2b7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "21ed73f7ede36ebb986fd93ab390d424b1a5d150d7b15bfccf5242e6f1c4cead"
-    sha256 cellar: :any_skip_relocation, ventura:        "7075b075490278db4962c7d28d3dc55394ceb80cb3c8a61761bff3cde838c9fd"
-    sha256 cellar: :any_skip_relocation, monterey:       "b416eef53e58ea41d432fd1abcad8cca3ab8ec3f8f40fad410af0b6571bd0d2f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bba29981e53719c8d422a524d360409e045cb3eae6b6f7d8e10cb0236c4c514f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ad912620b61c952ddaf17b757b364d23d1451e6c9bc685f4cc2253677a857bd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9f263c61b5d6fd9791a7fcb6652b8aa016dd3c49725d61a00b0a97c8a816c77a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3e08cbb18b70d850cde4f5015887098c2ce06a3f60f0a03214406f2d032b1bfa"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ea3278c83c8f3b0427e443cfd719ea8bd0176c0a7a6425f9d8ec3a5ba0cda2b4"
+    sha256 cellar: :any_skip_relocation, ventura:        "61e98d28ab868c4aedd1d4ed0216c808c303dacb5470f9451c0c59d2d05a6a7f"
+    sha256 cellar: :any_skip_relocation, monterey:       "c2ddae1cd0bc62513d4daff4ee50afc96492434967c1d118a5b8f2f5f0525094"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9614d2ab25d27e97e6c29305c5eaae58b94ef3d7cc93092bb5a8aa37e99c933f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e5184b2549c8684ffd4d8d359d6c5c5cf1fd6d8a93efb660c24ad345c81ac21"
   end
 
   depends_on "rust" => :build
