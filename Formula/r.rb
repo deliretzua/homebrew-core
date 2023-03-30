@@ -142,7 +142,9 @@ class R < Formula
     site_library = HOMEBREW_PREFIX/"lib/R"/short_version/"site-library"
     site_library.mkpath
     touch site_library/".keepme"
-    ln_s site_library, lib/"R/site-library"
+    site_library_cellar = lib/"R/site-library"
+    site_library_cellar.unlink if site_library_cellar.exist?
+    site_library_cellar.parent.install_symlink site_library
   end
 
   test do
