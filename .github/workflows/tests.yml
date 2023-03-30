@@ -122,6 +122,9 @@ jobs:
             if (label_names.includes('CI-skip-dependents')) {
               console.log('CI-skip-dependents label found. Skipping brew test-bot --only-formulae-dependents.')
               core.setOutput('test-dependents', 'false')
+            } else if (!process.env.TESTING_FORMULAE) {
+              console.log('No testing formulae found. Skipping brew test-bot --only-formulae-dependents.')
+              core.setOutput('test-dependents', 'false')
             } else {
               console.log('No CI-skip-dependents label found. Running brew test-bot --only-formulae-dependents.')
               core.setOutput('test-dependents', 'true')
@@ -352,8 +355,7 @@ jobs:
     if: >
       github.event_name == 'pull_request' &&
       fromJson(needs.setup_tests.outputs.syntax-only) == false &&
-      fromJson(needs.setup_tests.outputs.test-dependents) &&
-      fromJson(needs.tap_syntax.outputs.testing_formulae)
+      fromJson(needs.setup_tests.outputs.test-dependents)
     strategy:
       matrix:
         include:
