@@ -7,13 +7,11 @@ class Waffle < Formula
   head "https://gitlab.freedesktop.org/mesa/waffle.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "6ea98899df47ceb529895748932fd08dfabbd53a34ff8e153279aa59b1ee8e37"
-    sha256 cellar: :any,                 arm64_big_sur:  "2978050a3df20c384641d00498cc83255c945999ed249d9d7d2e33d24998e387"
-    sha256 cellar: :any,                 monterey:       "5c022615ff6bcd7d59cd1fc8147ebb26ae12bff7dc104db3178bd1d5655eca0d"
-    sha256 cellar: :any,                 big_sur:        "a382e396564e8eda224154272ab33584cdedc1978d096e0989aef1bf8aea4edc"
-    sha256 cellar: :any,                 catalina:       "f7a2dfc36d15d76318ee9e22277675818b75311f442792c2c979121df7fdd1af"
-    sha256 cellar: :any,                 mojave:         "2f865431b367967e1ec77232813930923f3435332972334933cb4a0173a061b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e2b0bf74c8eed8e3a8b3f85f62d4bb01172916808acc31ee74878833632e7825"
+    sha256 cellar: :any,                 arm64_monterey: "c49b293a55d1fc03a49c27f2932fedab240aaae603bf6de8c713a3f4472575b5"
+    sha256 cellar: :any,                 arm64_big_sur:  "44e6ed255b8ddafc5572f25b1f65cc59477e2961176eda549aa558e54a6b44f6"
+    sha256 cellar: :any,                 monterey:       "2f6bb76c9f4c50e79c627b6e2c2e954f128df89ff86ac3bda0a9007948290ae1"
+    sha256 cellar: :any,                 big_sur:        "9753062a77bcff11767245914b40ba773844a58f0991cb0487c8b76d07a34cec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d8a1781ff86d13b723a635387f6a47c67c2133e0a786ada9e4b4233dedcdd19"
   end
 
   depends_on "cmake" => :build
