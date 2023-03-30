@@ -15,15 +15,12 @@ class GpgTui < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6350e86b35b0890aade6d50b5cebb727457922b88748b06c7dfacf758213132"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "gnupg"
   depends_on "gpgme"
   depends_on "libgpg-error"
   depends_on "libxcb"
-
-  on_linux do
-    depends_on "pkg-config" => :build
-  end
 
   def install
     system "cargo", "install", *std_cargo_args
