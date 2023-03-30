@@ -45,6 +45,7 @@ class XorgServer < Formula
     depends_on "dbus"
     depends_on "libdrm"
     depends_on "libepoxy"
+    depends_on "libtirpc"
     depends_on "libxcvt"
     depends_on "libxshmfence"
     depends_on "nettle"
