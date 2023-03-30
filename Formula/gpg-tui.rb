@@ -21,6 +21,10 @@ class GpgTui < Formula
   depends_on "libgpg-error"
   depends_on "libxcb"
 
+  on_linux do
+    depends_on "pkg-config" => :build
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
 
