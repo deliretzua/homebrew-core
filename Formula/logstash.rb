@@ -1,8 +1,8 @@
 class Logstash < Formula
   desc "Tool for managing events and logs"
   homepage "https://www.elastic.co/products/logstash"
-  url "https://github.com/elastic/logstash/archive/v8.6.1.tar.gz"
-  sha256 "cde9743f311bfafe2b816e9c4d6bb5c12dbfde07545ecf0b641e1ae47facc888"
+  url "https://github.com/elastic/logstash/archive/v8.7.0.tar.gz"
+  sha256 "6693a60a4dbe0e09b258225750e86615842bc9942d31e80b097ed17cc8b5c4cc"
   license "Apache-2.0"
   version_scheme 1
   head "https://github.com/elastic/logstash.git", branch: "main"
@@ -60,7 +60,7 @@ class Logstash < Formula
     # Delete Windows and other Arch/OS files
     paths_to_keep = OS.linux? ? "#{Hardware::CPU.arch}-#{OS.kernel_name}" : OS.kernel_name
     rm Dir["bin/*.bat"]
-    Dir["vendor/jruby/lib/jni/*"].each do |path|
+    Dir["vendor/jruby/tmp/lib/jni/*"].each do |path|
       rm_r path unless path.include? paths_to_keep
     end
 
@@ -93,7 +93,6 @@ class Logstash < Formula
   end
 
   test do
-    # workaround https://github.com/elastic/logstash/issues/6378
     (testpath/"config").mkpath
     ["jvm.options", "log4j2.properties", "startup.options"].each do |f|
       cp prefix/"libexec/config/#{f}", testpath/"config"
