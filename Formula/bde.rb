@@ -1,8 +1,8 @@
 class Bde < Formula
   desc "Basic Development Environment: foundational C++ libraries used at Bloomberg"
   homepage "https://github.com/bloomberg/bde"
-  url "https://github.com/bloomberg/bde/archive/3.112.0.0.tar.gz"
-  sha256 "e6dfade0a1d9a1b9554b8a94e359169dab492162ffa956cb889817033daf5405"
+  url "https://github.com/bloomberg/bde/archive/3.115.1.0.tar.gz"
+  sha256 "78bcd7fcf13275a0f1daa591570edc89623c9f657bfed28c4a8984c546d50ae3"
   license "Apache-2.0"
 
   livecheck do
