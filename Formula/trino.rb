@@ -13,13 +13,13 @@ class Trino < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8d7ff777253b9f767b478263910b8252b5810e61e989963a8a7a70be68616ea6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8d7ff777253b9f767b478263910b8252b5810e61e989963a8a7a70be68616ea6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8d7ff777253b9f767b478263910b8252b5810e61e989963a8a7a70be68616ea6"
-    sha256 cellar: :any_skip_relocation, ventura:        "8d7ff777253b9f767b478263910b8252b5810e61e989963a8a7a70be68616ea6"
-    sha256 cellar: :any_skip_relocation, monterey:       "8d7ff777253b9f767b478263910b8252b5810e61e989963a8a7a70be68616ea6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8d7ff777253b9f767b478263910b8252b5810e61e989963a8a7a70be68616ea6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb06ea5cb5b6a360bfcc6532f71b6e2d9f4d73719d6297e5f9873b304df2998b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1b34b4ca41e3262f752fc1dc336b1746ffa83371a3a96fd66b7ddd9c973587d9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1b34b4ca41e3262f752fc1dc336b1746ffa83371a3a96fd66b7ddd9c973587d9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1b34b4ca41e3262f752fc1dc336b1746ffa83371a3a96fd66b7ddd9c973587d9"
+    sha256 cellar: :any_skip_relocation, ventura:        "1b34b4ca41e3262f752fc1dc336b1746ffa83371a3a96fd66b7ddd9c973587d9"
+    sha256 cellar: :any_skip_relocation, monterey:       "1b34b4ca41e3262f752fc1dc336b1746ffa83371a3a96fd66b7ddd9c973587d9"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1b34b4ca41e3262f752fc1dc336b1746ffa83371a3a96fd66b7ddd9c973587d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b10e3a8a7a0910d967f99a302718d7d4e0d8a6c01b878e34179b55e156cd2a7"
   end
 
   depends_on "gnu-tar" => :build
