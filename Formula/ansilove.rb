@@ -1,8 +1,8 @@
 class Ansilove < Formula
   desc "ANSI/ASCII art to PNG converter"
   homepage "https://www.ansilove.org"
-  url "https://github.com/ansilove/ansilove/releases/download/4.1.6/ansilove-4.1.6.tar.gz"
-  sha256 "acc3d6431cdb53e275e5ddfc71de5f27df2f2c5ecc46dc8bb62be9e6f15a1cd0"
+  url "https://github.com/ansilove/ansilove/releases/download/4.1.7/ansilove-4.1.7.tar.gz"
+  sha256 "6f8e2f6248775d6f8aca23b197b372ca7f8df8ade589ca4d5fc9a813a5d32655"
   license "BSD-2-Clause"
 
   bottle do
@@ -17,20 +17,9 @@ class Ansilove < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "gd"
-
-  resource "libansilove" do
-    url "https://github.com/ansilove/libansilove/releases/download/1.2.9/libansilove-1.2.9.tar.gz"
-    sha256 "88057f7753bf316f9a09ed15721b9f867ad9f5654c0b49af794d8d98b9020a66"
-  end
+  depends_on "libansilove"
 
   def install
-    resource("libansilove").stage do
-      system "cmake", "-S", ".", "-B", "build", *std_cmake_args
-      system "cmake", "--build", "build"
-      system "cmake", "--install", "build"
-    end
-
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
