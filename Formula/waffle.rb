@@ -1,8 +1,8 @@
 class Waffle < Formula
   desc "C library for selecting an OpenGL API and window system at runtime"
   homepage "https://waffle.freedesktop.org/"
-  url "https://gitlab.freedesktop.org/mesa/waffle/-/raw/website/files/release/waffle-1.7.0/waffle-1.7.0.tar.xz"
-  sha256 "69e42d15d08f63e7a54a8b8770295a6eb04dfd1c6f86c328b6039dbe7de28ef3"
+  url "https://waffle.freedesktop.org/files/release/waffle-1.7.2/waffle-1.7.2.tar.xz"
+  sha256 "f676195cfea58cc75ef2441c5616b2f1d5565a7d371a6aa655aff3cc67c7c2c9"
   license "BSD-2-Clause"
   head "https://gitlab.freedesktop.org/mesa/waffle.git", branch: "master"
 
@@ -18,7 +18,7 @@ class Waffle < Formula
 
   depends_on "cmake" => :build
   depends_on "docbook-xsl" => :build
-  depends_on "pkg-config" => :test
+  depends_on "pkg-config" => [:build, :test]
 
   uses_from_macos "libxslt" => :build
 
@@ -28,12 +28,6 @@ class Waffle < Formula
     depends_on "mesa-glu"
     depends_on "systemd"
     depends_on "wayland"
-  end
-
-  # Apply upstream commit to fix build with wayland 1.20.  Remove with next release.
-  patch do
-    url "https://gitlab.freedesktop.org/mesa/waffle/-/commit/2c33597245bb74f19104f0a858cd40e80b26991d.diff"
-    sha256 "739b2699349535c7f9fbc0efc7ca880c59cc8208fbf4ffacb5050dcfdf7c753c"
   end
 
   def install
