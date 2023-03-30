@@ -11,14 +11,13 @@ class Libupnp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a5eb26f40c9a8373f0f7b0288781061770524ad9cb7bf4efa5f5e57d627d048b"
-    sha256 cellar: :any,                 arm64_monterey: "2d1d07350af6f887b39c65d3b15a02dfa0cf6900bb55b9d1d9fd8aa35ff12bb3"
-    sha256 cellar: :any,                 arm64_big_sur:  "49b8f0978e19bd5a9b56523a2b9f900b26c945f447a52b619f2c5ce100665dd8"
-    sha256 cellar: :any,                 ventura:        "2a806b2965507a2d3aeeaa6c2408b5a64b1e5b2887924d1447904b3f25883919"
-    sha256 cellar: :any,                 monterey:       "e908e95cc65ef9656699437cd2f2aa5c65334bdb306746d309ff94bacb4e5a0f"
-    sha256 cellar: :any,                 big_sur:        "cbdd7bb3928ff35f2d2c055e39fa8d638b9d11ca50a62f89d61eec6a961e29e5"
-    sha256 cellar: :any,                 catalina:       "87e8de3c1a19addae2a49ecaf99b14f4abbbde0cc4ed252aed278d6bb6e86f96"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8b86de307422d877d05eff6a92ea5cf2674a7265f00576a65636eef7b35b559"
+    sha256 cellar: :any,                 arm64_ventura:  "1ea5267caaa9c0c09c722f55a28b64bd0bcd5a5b1f008b4f04b8125f4a1eab4a"
+    sha256 cellar: :any,                 arm64_monterey: "597ac4f05e80c9e68406cbe371add27891c659de0f345bec0e73712660a7a019"
+    sha256 cellar: :any,                 arm64_big_sur:  "d87f614b7d70d01d4c9e507469e9c7736f6ee18b90283700b02a4a271c576871"
+    sha256 cellar: :any,                 ventura:        "bd8092ea5266cc4cec353b75bc8a38d5577447a7de9d9da11b68eb4a93459f86"
+    sha256 cellar: :any,                 monterey:       "8fe8e07fe38a36c8fb602a172dbc5a5e8979213a8f2f0de7c737d329e925d68f"
+    sha256 cellar: :any,                 big_sur:        "57fa19f105132fb722d7e2c1a57fce0c97681992091ce1700be09ba3616403a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "82c1b78aabf54226f63972ae523e5b9e39f1f0be03bc7936a7de5932bc9bd23a"
   end
 
   def install
