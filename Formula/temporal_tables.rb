@@ -18,27 +18,6 @@ class TemporalTables < Formula
 
   depends_on "postgresql@14"
 
-  # Fix for postgresql 11 compatibility:
-  # https://github.com/arkhipov/temporal_tables/issues/38
-  patch do
-    url "https://github.com/mlt/temporal_tables/commit/24906c44.patch?full_index=1"
-    sha256 "bb2a8b507b6e6a42a25c8da694f889ee55f40b6ae621190348155b5e9198244d"
-  end
-
-  # Fix for postgresql 12 compatibility:
-  # https://github.com/arkhipov/temporal_tables/issues/47
-  patch do
-    url "https://github.com/mlt/temporal_tables/commit/a6772d195946f3a14e73b7d3aff200ab872753f4.patch?full_index=1"
-    sha256 "c15d7fa8a4ad7a047304c430e039776f6214a40bcc71f9a9ae627cb5cf73647e"
-  end
-
-  # Fix for postgresql 13 compatibility:
-  # https://github.com/arkhipov/temporal_tables/issues/55
-  patch do
-    url "https://github.com/bbernhard/temporal_tables/commit/23284c2a593d3e01f7b4918c0aaa8459de84c4d8.patch?full_index=1"
-    sha256 "c1e63befec23efbeff26492a390264cbc7875eaa3992aa98f3e3a53a9612d0e0"
-  end
-
   def postgresql
     Formula["postgresql@14"]
   end
