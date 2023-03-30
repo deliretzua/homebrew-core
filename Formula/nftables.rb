@@ -7,6 +7,11 @@ class Nftables < Formula
   sha256 "2407430ddd82987670e48dc2fda9e280baa8307abec04ab18d609df3db005e4c"
   license "GPL-2.0-or-later"
 
+  livecheck do
+    url "https://www.netfilter.org/projects/nftables/downloads.html"
+    regex(/href=.*?nftables[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256 x86_64_linux: "2fbf466c4571ec7513a6e49c6381f5493ef095bc1018ea27859caf11d3873d31"
   end
