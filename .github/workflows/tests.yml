@@ -349,7 +349,7 @@ jobs:
 
   test_deps:
     needs: [setup_tests, tests]
-    if: ${{github.event_name == 'pull_request' && fromJson(needs.setup_tests.outputs.syntax-only) == false && fromJson(needs.setup_tests.outputs.test-dependents && fromJson(needs.tap_syntax.outputs.testing_formulae))}}
+    if: ${{github.event_name == 'pull_request' && fromJson(needs.setup_tests.outputs.syntax-only) == false && fromJson(needs.setup_tests.outputs.test-dependents) && fromJson(needs.tap_syntax.outputs.testing_formulae)}}
     strategy:
       matrix:
         include:
