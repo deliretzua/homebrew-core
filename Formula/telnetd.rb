@@ -1,8 +1,8 @@
 class Telnetd < Formula
   desc "TELNET server"
   homepage "https://opensource.apple.com/"
-  url "https://github.com/apple-oss-distributions/remote_cmds/archive/refs/tags/remote_cmds-64.tar.gz"
-  sha256 "9beae91af0ac788227119c4ed17c707cd3bb3e4ed71422ab6ed230129cbb9362"
+  url "https://github.com/apple-oss-distributions/remote_cmds/archive/refs/tags/remote_cmds-69.tar.gz"
+  sha256 "ce917122a88f8bee98686476abf83f1d442e387637a021eabe02f0fe88e02986"
   license all_of: ["BSD-4-Clause-UC", "BSD-3-Clause"]
 
   bottle do
@@ -25,25 +25,36 @@ class Telnetd < Formula
 
   def install
     resource("libtelnet").stage do
-      xcodebuild "SYMROOT=build", "-arch", Hardware::CPU.arch
+      xcodebuild "OBJROOT=build/Intermediates",
+                 "SYMROOT=build/Products",
+                 "DSTROOT=build/Archive",
+                 "-IDEBuildLocationStyle=Custom",
+                 "-IDECustomDerivedDataLocation=#{buildpath}",
+                 "-arch", Hardware::CPU.arch
 
-      libtelnet_dst = buildpath/"telnetd.tproj/build/Products"
-      libtelnet_dst.install "build/Release/libtelnet.a"
-      libtelnet_dst.install "build/Release/usr/local/include/libtelnet/"
+      libtelnet_dst = buildpath/"libtelnet"
+      libtelnet_dst.install "build/Products/Release/libtelnet.a"
+      libtelnet_dst.install "build/Products/Release/usr/local/include/libtelnet/"
     end
 
-    ENV.append_to_cflags "-isystembuild/Products/"
-    system "make", "-C", "telnetd.tproj",
-                   "OBJROOT=build/Intermediates",
-                   "SYMROOT=build/Products",
-                   "DSTROOT=build/Archive",
-                   "CC=#{ENV.cc}",
-                   "CFLAGS=$(CC_Flags) #{ENV.cflags}",
-                   "LDFLAGS=$(LD_Flags) -Lbuild/Products/",
-                   "RC_ARCHS=#{Hardware::CPU.arch}"
+    # fmtcheck(3) is used in several format strings, which is not a literal and thus
+    # throws an error (-Werror, -Wformat-nonliteral). Remove once possible to build
+    # without adding this flag.
+    ENV.append_to_cflags "-Wno-format-nonliteral"
 
-    sbin.install "telnetd.tproj/build/Products/telnetd"
-    man8.install "telnetd.tproj/telnetd.8"
+    xcodebuild "OBJROOT=build/Intermediates",
+               "SYMROOT=build/Products",
+               "DSTROOT=build/Archive",
+               "OTHER_CFLAGS=${inherited} #{ENV.cflags} -I#{buildpath}/libtelnet",
+               "OTHER_LDFLAGS=${inherited} #{ENV.ldflags} -L#{buildpath}/libtelnet",
+               "-IDEBuildLocationStyle=Custom",
+               "-IDECustomDerivedDataLocation=#{buildpath}",
+               "-sdk", "macosx",
+               "-arch", Hardware::CPU.arch,
+               "-target", "telnetd"
+
+    sbin.install "build/Products/Release/telnetd"
+    man8.install "telnetd/telnetd.8"
   end
 
   def caveats
