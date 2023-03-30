@@ -2,8 +2,8 @@ class Openexr < Formula
   desc "High dynamic-range image file format"
   homepage "https://www.openexr.com/"
   # NOTE: Please keep these values in sync with imath.rb when updating.
-  url "https://github.com/AcademySoftwareFoundation/openexr/archive/v3.1.6.tar.gz"
-  sha256 "daa33d93a7b706e27368a162060df0246a7750c39a01a122d33b13f5c45d2029"
+  url "https://github.com/AcademySoftwareFoundation/openexr/archive/v3.1.7.tar.gz"
+  sha256 "78dbca39115a1c526e6728588753955ee75fa7f5bb1a6e238bed5b6d66f91fd7"
   license "BSD-3-Clause"
 
   bottle do
