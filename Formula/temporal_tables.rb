@@ -1,10 +1,9 @@
 class TemporalTables < Formula
   desc "Temporal Tables PostgreSQL Extension"
   homepage "https://pgxn.org/dist/temporal_tables/"
-  url "https://github.com/arkhipov/temporal_tables/archive/v1.2.0.tar.gz"
-  sha256 "e6d1b31a124e8597f61b86f08b6a18168f9cd9da1db77f2a8dd1970b407b7610"
+  url "https://github.com/arkhipov/temporal_tables/archive/v1.2.1.tar.gz"
+  sha256 "e3711797aa5def8f4974215bb5557204b2bc8e5e94201167eb95246a112b8138"
   license "BSD-2-Clause"
-  revision 4
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "e6f13354123d9d5c6119271e3e665b1a852c063eee2464c70f89e63677091779"
