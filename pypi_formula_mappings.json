@@ -385,7 +385,7 @@
     "exclude_packages": ["six", "tabulate", "Pygments"]
   },
   "localstack": {
-    "exclude_packages": ["six", "tabulate", "PyYAML", "Pygments"]
+    "exclude_packages": ["cffi", "six", "tabulate", "pycparser", "PyYAML", "Pygments"]
   },
   "locust": {
     "exclude_packages": ["six", "typing-extensions"]
