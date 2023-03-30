@@ -5,6 +5,11 @@ class Libnftnl < Formula
   sha256 "c0fe233be4cdfd703e7d5977ef8eb63fcbf1d0052b6044e1b23d47ca3562477f"
   license "GPL-2.0-or-later"
 
+  livecheck do
+    url "https://www.netfilter.org/projects/libnftnl/downloads.html"
+    regex(/href=.*?libnftnl[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, x86_64_linux: "607c140572fe20418d5413e69cf77a5474445ee6a49d83c3598cc291b89ab518"
   end
