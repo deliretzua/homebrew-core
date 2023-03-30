@@ -1,8 +1,8 @@
 class Stylua < Formula
   desc "Opinionated Lua code formatter"
   homepage "https://github.com/JohnnyMorganz/StyLua"
-  url "https://github.com/JohnnyMorganz/StyLua/archive/refs/tags/v0.17.0.tar.gz"
-  sha256 "ec659abac6dbe18b7ac0d53e830ab7a14805b389aa0ff97c06cc7fbf3f341292"
+  url "https://github.com/JohnnyMorganz/StyLua/archive/refs/tags/v0.17.1.tar.gz"
+  sha256 "94d421033a41d7030bfec5cafafd16e52951b08685f4a908087cbcbb8fea4073"
   license "MPL-2.0"
 
   bottle do
