@@ -26,8 +26,8 @@ class Bde < Formula
   depends_on "pcre2"
 
   resource "bde-tools" do
-    url "https://github.com/bloomberg/bde-tools/archive/3.112.0.0.tar.gz"
-    sha256 "4588c478f995f65fbd805cbe102f4440b602504d2cbd4937b79b3e49b06da0f4"
+    url "https://github.com/bloomberg/bde-tools/archive/3.115.1.0.tar.gz"
+    sha256 "ccde62feb22615aa6d090cf072de9908f354b75c4cb304a60cafe3e825bc53c2"
   end
 
   def install
