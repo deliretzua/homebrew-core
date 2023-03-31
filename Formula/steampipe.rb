@@ -6,6 +6,11 @@ class Steampipe < Formula
   license "AGPL-3.0-only"
   head "https://github.com/turbot/steampipe.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ac45388b249241acbc1ad625ace1c2385f39fba3815b256251fa5ad95631a471"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "149d42482fef02ea9aee166bdd1d3aaa4e27396057208d2bbffddc396ed1570c"
