@@ -32,7 +32,7 @@ class TkeySshAgent < Formula
 
   def install
     resource("signerapp").stage("./cmd/tkey-ssh-agent/app.bin")
-    ldflags = "-s -w -X main.Version=v#{version}"
+    ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/tkey-ssh-agent"
   end
 
@@ -56,6 +56,7 @@ class TkeySshAgent < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/tkey-ssh-agent --version")
     socket = testpath/"tkey-ssh-agent.sock"
     fork { exec bin/"tkey-ssh-agent", "--agent-socket", socket }
     sleep 1
