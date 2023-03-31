@@ -39,9 +39,9 @@ class SpirvTools < Formula
   end
 
   def install
-    (buildpath/"external/re2").install resource("re2")
-    (buildpath/"external/effcee").install resource("effcee")
-    (buildpath/"external/SPIRV-Headers").install resource("spirv-headers")
+    resources.each do |res|
+      (buildpath/"external"/res.name).install res
+    end
 
     mkdir "build" do
       system "cmake", "..", *std_cmake_args,
