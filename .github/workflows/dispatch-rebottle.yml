@@ -232,7 +232,7 @@ jobs:
       - name: Open PR with bottle commit
         working-directory: ${{steps.set-up-homebrew.outputs.repository-path}}
         env:
-          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GH_TOKEN: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
         run: |
           gh pr create \
             --base master \
