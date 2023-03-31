@@ -47,7 +47,7 @@ class NewrelicInfraAgent < Formula
   end
 
   service do
-    run [bin/"newrelic-infra-service", "-config", etc/"newrelic-infra/newrelic-infra.yml"]
+    run [opt_bin/"newrelic-infra-service", "-config", etc/"newrelic-infra/newrelic-infra.yml"]
     log_path var/"log/newrelic-infra/newrelic-infra.log"
     error_log_path var/"log/newrelic-infra/newrelic-infra.stderr.log"
   end
