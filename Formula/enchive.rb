@@ -6,6 +6,16 @@ class Enchive < Formula
   license "Unlicense"
   head "https://github.com/skeeto/enchive.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d4031f7e6516988ab5a83c2e1b9f88af552d71575772348383860a6015fe121b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bfc24708c8b6d000fc36f7d2fd305af3ad5a1f3718e0d0c92cf122e140866e57"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "653b17e2b34133e5cbbff75e3df94c251c92f043a0d2af28719ffbccf2835efa"
+    sha256 cellar: :any_skip_relocation, ventura:        "6e1fe9e5471985e9d9caadc563297313ff0d0e15a8aa1ac3ccb15be45ec4879f"
+    sha256 cellar: :any_skip_relocation, monterey:       "abca74b9d636453d9612bd0a89f2256684dc3ed42aa72bf8fdb2fcfc84788819"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a3844247a43c518b50f8a33847a39e5c91db46fdd177b810ac9d2776b842ed7b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "116e7fa59dc5c555ef911ca1668175cb71fce934dcc3f475433e84ce6d2f4d14"
+  end
+
   def install
     system "make", "install", "PREFIX=#{prefix}"
   end
