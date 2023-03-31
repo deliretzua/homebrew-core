@@ -46,6 +46,9 @@ jobs:
     runs-on: ${{inputs.large_runner && 'homebrew-large-bottle-upload' || 'ubuntu-22.04'}}
     container:
       image: ghcr.io/homebrew/ubuntu22.04:master
+    defaults:
+      run:
+        shell: /bin/bash -e {0}
     permissions:
       pull-requests: write
     steps:
