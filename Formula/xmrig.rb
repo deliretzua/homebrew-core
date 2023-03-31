@@ -27,6 +27,16 @@ class Xmrig < Formula
   depends_on "openssl@3"
 
   def install
+    # Use shared OpenSSL on macOS. In cmake/OpenSSL.cmake:
+    # elseif (APPLE)
+    #   set(OPENSSL_USE_STATIC_LIBS TRUE)
+    # endif()
+    inreplace "cmake/OpenSSL.cmake", "elseif (APPLE)", "elseif (OFF)"
+
+    # Allow using shared libuv. In cmake/FindUV.cmake:
+    # find_library(UV_LIBRARY NAMES libuv.a uv libuv ...)
+    inreplace "cmake/FindUV.cmake", "libuv.a", ""
+
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     bin.install "build/xmrig"
