@@ -31,6 +31,22 @@ jobs:
       image: ghcr.io/homebrew/ubuntu22.04:master
     env:
       HOMEBREW_SIMULATE_MACOS_ON_LINUX: 1
+    steps:
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - run: brew test-bot --only-tap-syntax
+
+      - run: brew test-bot --only-formulae-detect
+        id: formulae-detect
+        if: github.event_name == 'pull_request'
+
+  formulae_detect:
+    if: github.repository == 'Homebrew/homebrew-core' && github.event_name == 'pull_request'
+    runs-on: ubuntu-22.04
+    container:
+      image: ghcr.io/homebrew/ubuntu22.04:master
     outputs:
       testing_formulae: ${{ steps.formulae-detect.outputs.testing_formulae }}
       added_formulae: ${{ steps.formulae-detect.outputs.added_formulae }}
@@ -40,10 +56,7 @@ jobs:
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
-      - run: brew test-bot --only-tap-syntax
-
       - run: brew test-bot --only-formulae-detect
-        if: github.event_name == 'pull_request'
         id: formulae-detect
 
   setup_tests:
@@ -51,7 +64,7 @@ jobs:
       pull-requests: read
     if: github.event_name == 'pull_request' && github.repository == 'Homebrew/homebrew-core'
     runs-on: ubuntu-22.04
-    needs: tap_syntax
+    needs: formulae_detect
     outputs:
       syntax-only: ${{ steps.check-labels.outputs.syntax-only }}
       linux-runner: ${{ steps.check-labels.outputs.linux-runner }}
@@ -67,9 +80,9 @@ jobs:
         id: check-labels
         uses: actions/github-script@v6
         env:
-          TESTING_FORMULAE: ${{needs.tap_syntax.outputs.testing_formulae}}
-          ADDED_FORMULAE: ${{needs.tap_syntax.outputs.added_formulae}}
-          DELETED_FORMULAE: ${{needs.tap_syntax.outputs.deleted_formulae}}
+          TESTING_FORMULAE: ${{needs.formulae_detect.outputs.testing_formulae}}
+          ADDED_FORMULAE: ${{needs.formulae_detect.outputs.added_formulae}}
+          DELETED_FORMULAE: ${{needs.formulae_detect.outputs.deleted_formulae}}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -213,27 +226,42 @@ jobs:
             core.setOutput('test-bot-formulae-args', test_bot_formulae_args.join(" "))
             core.setOutput('test-bot-dependents-args', test_bot_dependents_args.join(" "))
 
+  setup_runners:
+    needs: [formulae_detect, setup_tests]
+    if: >
+      github.event_name == 'pull_request' &&
+      fromJson(needs.setup_tests.outputs.syntax-only) == false
+    runs-on: ubuntu-22.04
+    container:
+      image: ghcr.io/homebrew/ubuntu22.04:master
+    outputs:
+      runners: ${{steps.determine-runners.outputs.runners}}
+      runners_present: ${{steps.determine-runners.outputs.runners_present}}
+    env:
+      HOMEBREW_LINUX_RUNNER: ${{needs.setup_tests.outputs.linux-runner}}
+      HOMEBREW_LINUX_CLEANUP: ${{needs.setup_tests.outputs.cleanup-linux-runner}}
+      TESTING_FORMULAE: ${{needs.formulae_detect.outputs.testing_formulae}}
+      DELETED_FORMULAE: ${{needs.formulae_detect.outputs.deleted_formulae}}
+    steps:
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Determine runners to use for tests job
+        id: determine-runners
+        run: brew determine-test-runners "$TESTING_FORMULAE" "$DELETED_FORMULAE"
+
   tests:
-    needs: setup_tests
-    if: ${{github.event_name == 'pull_request' && fromJson(needs.setup_tests.outputs.syntax-only) == false}}
+    needs: [tap_syntax, setup_tests, setup_runners]
+    if: >
+      github.event_name == 'pull_request' &&
+      fromJson(needs.setup_tests.outputs.syntax-only) == false &&
+      fromJson(needs.setup_runners.outputs.runners_present)
     strategy:
       matrix:
-        include:
-          - runner: "13-arm64-${{github.run_id}}-${{github.run_attempt}}"
-          - runner: "13-${{github.run_id}}-${{github.run_attempt}}"
-          - runner: "12-arm64-${{github.run_id}}-${{github.run_attempt}}"
-          - runner: "12-${{github.run_id}}-${{github.run_attempt}}"
-          - runner: "11-arm64"
-            cleanup: true
-          - runner: "11-${{github.run_id}}-${{github.run_attempt}}"
-          - runner: ${{needs.setup_tests.outputs.linux-runner}}
-            container:
-              image: ghcr.io/homebrew/ubuntu22.04:master
-              options: --user=linuxbrew -e GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED
-            workdir: /github/home
-            timeout: 4320
-            cleanup: ${{fromJson(needs.setup_tests.outputs.cleanup-linux-runner)}}
+        include: ${{fromJson(needs.setup_runners.outputs.runners)}}
       fail-fast: ${{fromJson(needs.setup_tests.outputs.fail-fast)}}
+    name: ${{matrix.name}}
     runs-on: ${{matrix.runner}}
     container: ${{matrix.container}}
     timeout-minutes: ${{ matrix.timeout || fromJson(needs.setup_tests.outputs.timeout-minutes) }}
@@ -265,11 +293,14 @@ jobs:
 
       - run: brew test-bot --only-setup
 
+      - name: Set up bottles directory
+        run: |
+          rm -rvf bottles
+          mkdir bottles
+
       - name: Run brew test-bot ${{ needs.setup_tests.outputs.test-bot-formulae-args }}
         id: brew-test-bot-formulae
         run: |
-          rm -rf bottles
-          mkdir bottles
           cd bottles
           brew test-bot ${{ needs.setup_tests.outputs.test-bot-formulae-args }}
 
@@ -356,27 +387,41 @@ jobs:
           brew test-bot --only-cleanup-after
           rm -rvf bottles
 
-  test_deps:
-    needs: [tap_syntax, setup_tests, tests]
+  setup_dep_runners:
+    needs: [formulae_detect, setup_tests]
     if: >
       github.event_name == 'pull_request' &&
       fromJson(needs.setup_tests.outputs.syntax-only) == false &&
       fromJson(needs.setup_tests.outputs.test-dependents)
+    runs-on: ubuntu-22.04
+    container:
+      image: ghcr.io/homebrew/ubuntu22.04:master
+    outputs:
+      runners: ${{steps.determine-dependent-runners.outputs.runners}}
+      runners_present: ${{steps.determine-dependent-runners.outputs.runners_present}}
+    env:
+      HOMEBREW_LINUX_RUNNER: ${{needs.setup_tests.outputs.linux-runner}}
+      HOMEBREW_LINUX_CLEANUP: ${{needs.setup_tests.outputs.cleanup-linux-runner}}
+      TESTING_FORMULAE: ${{needs.formulae_detect.outputs.testing_formulae}}
+    steps:
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Determine runners to use for test_deps job
+        id: determine-dependent-runners
+        run: brew determine-test-runners --dependents --eval-all "$TESTING_FORMULAE"
+
+  test_deps:
+    needs: [tap_syntax, setup_tests, setup_dep_runners, tests]
+    if: >
+      github.event_name == 'pull_request' &&
+      fromJson(needs.setup_tests.outputs.syntax-only) == false &&
+      fromJson(needs.setup_tests.outputs.test-dependents) &&
+      fromJson(needs.setup_dep_runners.outputs.runners_present)
     strategy:
       matrix:
-        include:
-          - runner: "13-arm64-${{github.run_id}}-${{github.run_attempt}}-deps"
-          - runner: "13-${{github.run_id}}-${{github.run_attempt}}-deps"
-          - runner: "12-arm64-${{github.run_id}}-${{github.run_attempt}}-deps"
-          - runner: "12-${{github.run_id}}-${{github.run_attempt}}-deps"
-          - runner: "11-arm64"
-          - runner: "11-${{github.run_id}}-${{github.run_attempt}}-deps"
-          - runner: ${{needs.setup_tests.outputs.linux-runner}}
-            container:
-              image: ghcr.io/homebrew/ubuntu22.04:master
-              options: --user=linuxbrew -e GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED
-            workdir: /github/home
-            timeout: 4320
+        include: ${{fromJson(needs.setup_dep_runners.outputs.runners)}}
       fail-fast: ${{fromJson(needs.setup_tests.outputs.fail-fast)}}
     runs-on: ${{matrix.runner}}
     container: ${{matrix.container}}
@@ -405,6 +450,7 @@ jobs:
         if: runner.debug
 
       - run: brew test-bot --only-cleanup-before
+        if: matrix.cleanup
 
       - name: Download bottles from GitHub Actions
         uses: actions/download-artifact@v3
@@ -441,7 +487,7 @@ jobs:
           rm -rvf ~/bottles/home
 
       - name: Post cleanup
-        if: always()
+        if: always() && matrix.cleanup
         run: |
           brew test-bot --only-cleanup-after
           rm -rvf ~/bottles
