@@ -28,11 +28,9 @@ class Xmrig < Formula
   depends_on "openssl@3"
 
   def install
-    mkdir "build" do
-      system "cmake", "..", "-DWITH_CN_GPU=OFF", *std_cmake_args
-      system "make"
-      bin.install "xmrig"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    bin.install "build/xmrig"
     pkgshare.install "src/config.json"
   end
 
