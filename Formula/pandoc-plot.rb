@@ -1,8 +1,8 @@
 class PandocPlot < Formula
   desc "Render and include figures in Pandoc documents using many plotting toolkits"
   homepage "https://github.com/LaurentRDC/pandoc-plot"
-  url "https://hackage.haskell.org/package/pandoc-plot-1.6.1/pandoc-plot-1.6.1.tar.gz"
-  sha256 "2352545aaaf87dfd289a2afdcf83502000a2e6b3f3541ea94391f2c656593e0b"
+  url "https://hackage.haskell.org/package/pandoc-plot-1.6.2/pandoc-plot-1.6.2.tar.gz"
+  sha256 "ca53fb5435032b7d367014eeda957ab622ab2a4e164b38db5a98d260ab1e348b"
   license "GPL-2.0-or-later"
 
   bottle do
