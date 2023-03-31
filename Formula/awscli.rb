@@ -3,8 +3,8 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://github.com/aws/aws-cli/archive/2.11.7.tar.gz"
-  sha256 "5b58b78c7c73698f5ba41869e0ace39a31e09a084fdb108da5c5d7d1377d05cb"
+  url "https://github.com/aws/aws-cli/archive/2.11.8.tar.gz"
+  sha256 "4d5f52c4be21c99cdafb61c4f303b057cfb9294e585766080714804fe71da8f4"
   license "Apache-2.0"
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
@@ -22,6 +22,7 @@ class Awscli < Formula
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
+  depends_on "cffi"
   depends_on "docutils"
   depends_on "openssl@1.1"
   depends_on "pycparser"
@@ -37,11 +38,6 @@ class Awscli < Formula
   resource "awscrt" do
     url "https://files.pythonhosted.org/packages/d1/0f/b70b4ee10b4eff4c6db54cd7b9240c4fd47430b1abab3feea935f00463a3/awscrt-0.16.13.tar.gz"
     sha256 "b7ec07435e178400369024450d118834a1c8b01ccfebe8140b82102fb161720d"
-  end
-
-  resource "cffi" do
-    url "https://files.pythonhosted.org/packages/2b/a8/050ab4f0c3d4c1b8aaa805f70e26e84d0e27004907c5b8ecc1d31815f92a/cffi-1.15.1.tar.gz"
-    sha256 "d400bfb9a37b1351253cb402671cea7e89bdecc294e8016a707f6d1d8ac934f9"
   end
 
   resource "colorama" do
@@ -99,6 +95,10 @@ class Awscli < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     # Temporary workaround for Xcode 14's ld causing build failure (without logging a reason):
     # ld: fatal warning(s) induced error (-fatal_warnings)
     # Ref: https://github.com/python/cpython/issues/97524
