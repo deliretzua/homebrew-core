@@ -4,6 +4,7 @@ class Xmrig < Formula
   url "https://github.com/xmrig/xmrig/archive/v6.19.1.tar.gz"
   sha256 "7add542acd5e91099301ec1f8f4a5d41bd31bd4ba13bfa9e1144c1cd790cfc6a"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/xmrig/xmrig.git", branch: "dev"
 
   livecheck do
