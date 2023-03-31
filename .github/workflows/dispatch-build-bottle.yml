@@ -283,8 +283,6 @@ jobs:
             --head "$BOTTLE_BRANCH" \
             --label CI-published-bottle-commits \
             --reviewer '${{github.actor}}'
-          pr="$(gh pr list --head "$BRANCH" | cut -f1)"
-          echo "pull_number=$pr" >> "$GITHUB_OUTPUT"
 
       - name: Enable automerge
         env:
