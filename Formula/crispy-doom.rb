@@ -1,8 +1,8 @@
 class CrispyDoom < Formula
   desc "Limit-removing enhanced-resolution Doom source port based on Chocolate Doom"
   homepage "https://github.com/fabiangreffrath/crispy-doom"
-  url "https://github.com/fabiangreffrath/crispy-doom/archive/crispy-doom-5.12.0.tar.gz"
-  sha256 "d85d6e76aa949385458b7702e6fb594996745b94032ffb13e1790376eeecb462"
+  url "https://github.com/fabiangreffrath/crispy-doom/archive/crispy-doom-6.0.tar.gz"
+  sha256 "2b1462d9fb4600cdd4cb77d77f6559dd2d50d0fe0f023dcc09a2b3eefa740cbe"
   license "GPL-2.0-only"
   head "https://github.com/fabiangreffrath/crispy-doom.git", branch: "master"
 
