@@ -2,9 +2,9 @@ require "language/node"
 
 class AskCli < Formula
   desc "CLI tool for Alexa Skill Kit"
-  homepage "https://www.npmjs.com/package/ask-cli"
-  url "https://registry.npmjs.org/ask-cli/-/ask-cli-2.28.0.tgz"
-  sha256 "2a48779a0caf4609155547a9ac4020f0defd98a78781177d2b1705d54a1d188c"
+  homepage "https://github.com/alexa/ask-cli"
+  url "https://registry.npmjs.org/ask-cli/-/ask-cli-2.29.1.tgz"
+  sha256 "08612ffc50e2dac8a8a5492bda36c7c82fa7f1f44d700f696a50e6d3e6b9f8ed"
   license "Apache-2.0"
 
   bottle do
