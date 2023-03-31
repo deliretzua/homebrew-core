@@ -37,6 +37,7 @@ env:
   GH_PROMPT_DISABLED: 1
   RUN_URL: ${{github.event.repository.html_url}}/actions/runs/${{github.run_id}}
   NON_PUSHABLE_MESSAGE: ":no_entry: It looks like @BrewTestBot cannot push to your PR branch. Please [allow maintainers to edit your PR](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/allowing-changes-to-a-pull-request-branch-created-from-a-fork) so that it can be merged."
+  ORG_FORK_MESSAGE: ":no_entry: It looks like @BrewTestBot cannot push to your PR branch. Please open a new pull request from a non-organization fork so that it can be merged."
 
 permissions:
   contents: read
@@ -94,8 +95,9 @@ jobs:
           pushable="$(jq .maintainer_can_modify <<< "$pr_data")"
           branch="$(jq --raw-output .head.ref <<< "$pr_data")"
           remote="$(jq --raw-output .head.repo.clone_url <<< "$pr_data")"
+          fork_type="$(jq --raw-output .head.repo.owner.type <<< "$pr_data")"
 
-          if [ -z "$pushable" ] || [ -z "$branch" ] || [ -z "$remote" ]
+          if [ -z "$pushable" ] || [ -z "$branch" ] || [ -z "$remote" ] || [ -z "$fork_type" ]
           then
             echo "::error ::Failed to get PR data!"
             exit 1
@@ -104,9 +106,17 @@ jobs:
           echo "branch=$branch" >> "$GITHUB_OUTPUT"
           echo "remote=$remote" >> "$GITHUB_OUTPUT"
 
-          "$pushable" && exit 0
+          if "$pushable" && [ "$fork_type" != "Organization" ]
+          then
+            exit 0
+          elif "$pushable"
+          then
+            MESSAGE="$ORG_FORK_MESSAGE"
+          else
+            MESSAGE="$NON_PUSHABLE_MESSAGE"
+          fi
 
-          gh pr comment '${{inputs.pull_request}}' --body "$NON_PUSHABLE_MESSAGE"
+          gh pr comment '${{inputs.pull_request}}' --body "$MESSAGE"
           gh pr edit --add-label 'no push access' '${{inputs.pull_request}}'
           exit 1
 
