@@ -1,11 +1,19 @@
 class GitAnnex < Formula
   desc "Manage files with git without checking in file contents"
   homepage "https://git-annex.branchable.com/"
-  url "https://hackage.haskell.org/package/git-annex-10.20230329/git-annex-10.20230329.tar.gz"
-  sha256 "a19f7dec686f016772f115c74d5981e8a6f0bab0a9a534fea36299f499f002e6"
   license all_of: ["AGPL-3.0-or-later", "BSD-2-Clause", "BSD-3-Clause",
                    "GPL-2.0-only", "GPL-3.0-or-later", "MIT"]
   head "git://git-annex.branchable.com/", branch: "master"
+
+  stable do
+    url "https://hackage.haskell.org/package/git-annex-10.20230329/git-annex-10.20230329.tar.gz"
+    sha256 "a19f7dec686f016772f115c74d5981e8a6f0bab0a9a534fea36299f499f002e6"
+
+    # git-annex.cabal: Prevent building with unix-compat 0.7
+    # Remove with `stable` block on next release.
+    # http://source.git-annex.branchable.com/?p=source.git;a=commitdiff;h=2b40fa51d32a1103d3d56e422a60024cf9270b7b
+    patch :DATA
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "d3f448ee5adc2252fd0bbc38e16df2b52ef86c9af4dcd03d61d0848093ce388b"
@@ -41,13 +49,6 @@ class GitAnnex < Formula
       packages: ./*.cabal
                 homebrew/bloomfilter/
     EOS
-
-    # Fix "Could not find module ‘System.PosixCompat.User’".
-    # The module was removed in unix-compat-0.7; see:
-    #   https://hackage.haskell.org/package/unix-compat-0.7/changelog
-    # Reported upstream at
-    #   https://git-annex.branchable.com/bugs/System.PosixCompat.User_removed_in_unix-compat-0.7/
-    inreplace "git-annex.cabal", "unix-compat (>= 0.5)", "unix-compat (>= 0.5 && < 0.7)"
 
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args, "--flags=+S3"
@@ -87,3 +88,25 @@ class GitAnnex < Formula
     system "git", "annex", "uninit"
   end
 end
+
+__END__
+--- a/git-annex.cabal
++++ b/git-annex.cabal
+@@ -294,7 +294,7 @@ source-repository head
+   location: git://git-annex.branchable.com/
+ 
+ custom-setup
+-  Setup-Depends: base (>= 4.11.1.0 && < 5.0), split, unix-compat, 
++  Setup-Depends: base (>= 4.11.1.0 && < 5.0), split, unix-compat (< 0.7), 
+     filepath, exceptions, bytestring, IfElse, data-default,
+     filepath-bytestring (>= 1.4.2.1.4),
+     process (>= 1.6.3),
+@@ -318,7 +318,7 @@ Executable git-annex
+    case-insensitive,
+    random,
+    dlist,
+-   unix-compat (>= 0.5),
++   unix-compat (>= 0.5 && < 0.7),
+    SafeSemaphore,
+    async,
+    directory (>= 1.2.7.0),
