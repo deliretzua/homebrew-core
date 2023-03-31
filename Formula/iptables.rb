@@ -37,6 +37,6 @@ class Iptables < Formula
   end
 
   test do
-    assert_match "Permission denied (you must be root)", shell_output("#{bin}/iptables-nft --list-rules 2>&1", 4)
+    assert_match "Permission denied (you must be root)", shell_output("#{sbin}/iptables-nft --list-rules 2>&1", 4)
   end
 end
