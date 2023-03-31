@@ -406,13 +406,13 @@ jobs:
           name: bottles
           path: ~/bottles/
 
-      - name: Run brew test-bot ${{ needs.setup_tests.outputs.test-bot-dependents-args }} --skipped-or-failed-formulae=${{ steps.brew-test-bot-formulae.outputs.skipped_or_failed_formulae }}
+      - name: Run brew test-bot ${{ needs.setup_tests.outputs.test-bot-dependents-args }}
         if: ${{(success() || failure()) && fromJson(needs.setup_tests.outputs.test-dependents)}}
         run: |
           cd ~/bottles
-          brew test-bot ${{ needs.setup_tests.outputs.test-bot-dependents-args }} --skipped-or-failed-formulae=${{ steps.brew-test-bot-formulae.outputs.skipped_or_failed_formulae }}
+          brew test-bot ${{ needs.setup_tests.outputs.test-bot-dependents-args }}
 
-      - name: Failures summary for brew test-bot ${{ needs.setup_tests.outputs.test-bot-dependents-args }} --skipped-or-failed-formulae=${{ steps.brew-test-bot-formulae.outputs.skipped_or_failed_formulae }}
+      - name: Failures summary for brew test-bot ${{ needs.setup_tests.outputs.test-bot-dependents-args }}
         if: ${{always() && fromJson(needs.setup_tests.outputs.test-dependents) == true}}
         uses: Homebrew/actions/failures-summary-and-bottle-result@master
         with:
