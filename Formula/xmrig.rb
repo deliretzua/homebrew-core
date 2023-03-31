@@ -23,7 +23,6 @@ class Xmrig < Formula
 
   depends_on "cmake" => :build
   depends_on "hwloc"
-  depends_on "libmicrohttpd"
   depends_on "libuv"
   depends_on "openssl@3"
 
