@@ -25,7 +25,7 @@ class Xmrig < Formula
   depends_on "hwloc"
   depends_on "libmicrohttpd"
   depends_on "libuv"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
     mkdir "build" do
