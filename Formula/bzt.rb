@@ -3,8 +3,8 @@ class Bzt < Formula
 
   desc "BlazeMeter Taurus"
   homepage "https://gettaurus.org/"
-  url "https://files.pythonhosted.org/packages/9e/92/3537a9b581a1cc2ce8c596137a426991d152552fec6c631bfbfa38b27c48/bzt-1.16.21.tar.gz"
-  sha256 "99e4a353533b3a545fb163bb4f86b258a59124ef5f6a7399354ba6aef731f16a"
+  url "https://files.pythonhosted.org/packages/8c/74/6454459d35b2e4a868ee173102f14e584c77a07b0a7078fb301e125204bc/bzt-1.16.22.tar.gz"
+  sha256 "874e5ae98d4a26243216b72563765a3be553056465d89fdb09319dfde38c07de"
   license "Apache-2.0"
   head "https://github.com/Blazemeter/taurus.git", branch: "master"
 
@@ -20,6 +20,7 @@ class Bzt < Formula
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "libcython"
   depends_on "numpy"
@@ -58,6 +59,11 @@ class Bzt < Formula
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/21/31/3f468da74c7de4fcf9b25591e682856389b3400b4b62f201e65f15ea3e07/attrs-22.2.0.tar.gz"
     sha256 "c9227bfc2f01993c03f68db37d1d15c9690188323c067c641f1a35ca58185f99"
+  end
+
+  resource "bidict" do
+    url "https://files.pythonhosted.org/packages/f2/be/b31e6ea9c94096a323e7a0e2c61480db01f07610bb7e7ea72a06fd1a23a8/bidict-0.22.1.tar.gz"
+    sha256 "1e0f7f74e4860e6d0943a05d4134c63a2fad86f3d4732fb265bd79e4e856d81d"
   end
 
   resource "certifi" do
@@ -160,9 +166,19 @@ class Bzt < Formula
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
+  resource "python-engineio" do
+    url "https://files.pythonhosted.org/packages/7c/04/db91eca6b181d2042b09216f6d446d246c2fa6008e63160ef8b2afc08ae1/python-engineio-4.4.0.tar.gz"
+    sha256 "bcc035c70ecc30acc3cfd49ef19aca6c51fa6caaadd0fa58c2d7480f50d04cf2"
+  end
+
+  resource "python-socketio" do
+    url "https://files.pythonhosted.org/packages/c6/4e/69e98ca93a7aa59b5e868afe54b133c7675828af710805ee5cde955fd732/python-socketio-5.8.0.tar.gz"
+    sha256 "e714f4dddfaaa0cb0e37a1e2deef2bb60590a5b9fea9c343dd8ca5e688416fd9"
+  end
+
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/03/3e/dc5c793b62c60d0ca0b7e58f1fdd84d5aaa9f8df23e7589b39cc9ce20a03/pytz-2022.7.1.tar.gz"
-    sha256 "01a0681c4b9684a28304615eba55d1ab31ae00bf68ec157ec3708a8182dbbcd0"
+    url "https://files.pythonhosted.org/packages/5e/32/12032aa8c673ee16707a9b6cdda2b09c0089131f35af55d443b6a9c69c1d/pytz-2023.3.tar.gz"
+    sha256 "1d8ce29db189191fb55338ee6d0387d82ab59f3d00eac103412d64e0ebd0c588"
   end
 
   resource "PyVirtualDisplay" do
@@ -198,6 +214,11 @@ class Bzt < Formula
   resource "wcwidth" do
     url "https://files.pythonhosted.org/packages/5e/5f/1e4bd82a9cc1f17b2c2361a2d876d4c38973a997003ba5eb400e8a932b6c/wcwidth-0.2.6.tar.gz"
     sha256 "a5220780a404dbe3353789870978e472cfe477761f06ee55077256e509b156d0"
+  end
+
+  resource "websocket-client" do
+    url "https://files.pythonhosted.org/packages/8b/94/696484b0c13234c91b316bc3d82d432f9b589a9ef09d016875a31c670b76/websocket-client-1.5.1.tar.gz"
+    sha256 "3f09e6d8230892547132177f575a4e3e73cfdf06526e20cc02aa1c3b47184d40"
   end
 
   resource "wheel" do
