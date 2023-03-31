@@ -526,7 +526,7 @@
     "exclude_packages": ["six"]
   },
   "prowler": {
-    "exclude_packages": ["six", "tabulate", "typing-extensions", "PyYAML"]
+    "exclude_packages": ["cffi", "pycparser", "six", "tabulate", "typing-extensions", "PyYAML"]
   },
   "ptpython": {
     "exclude_packages": ["Pygments"]
