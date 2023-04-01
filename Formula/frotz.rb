@@ -2,7 +2,7 @@ class Frotz < Formula
   desc "Infocom-style interactive fiction player"
   homepage "https://661.org/proj/if/frotz/"
   url "https://gitlab.com/DavidGriffith/frotz/-/archive/2.54/frotz-2.54.tar.bz2"
-  sha256 "bdf9131e6de49108c9f032200cea3cb4011e5ca0c9fbdbf5b0c05f7c56c81395"
+  sha256 "756d7e11370c9c8e61573e350e2a5071e77fd2781be74c107bd432f817f3abc7"
   license "GPL-2.0-or-later"
   revision 1
   head "https://gitlab.com/DavidGriffith/frotz.git", branch: "master"
