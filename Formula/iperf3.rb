@@ -6,8 +6,8 @@ class Iperf3 < Formula
   license "BSD-3-Clause"
 
   livecheck do
-    url :homepage
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    url "https://downloads.es.net/pub/iperf/"
+    regex(/href=.*?iperf[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
