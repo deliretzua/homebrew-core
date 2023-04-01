@@ -1,10 +1,10 @@
 class GitCinnabar < Formula
   desc "Git remote helper to interact with mercurial repositories"
   homepage "https://github.com/glandium/git-cinnabar"
-  url "https://github.com/glandium/git-cinnabar/archive/0.5.11.tar.gz"
-  sha256 "20f94f6a9b05fff2684e8c5619a1a5703e7d472fd2d0e87b020b20b4190a6338"
+  url "https://github.com/glandium/git-cinnabar.git",
+      tag:      "0.6.0",
+      revision: "c224e301ad05f4e337b0833a57fde97d41154d7d"
   license "GPL-2.0-only"
-  revision 1
   head "https://github.com/glandium/git-cinnabar.git", branch: "master"
 
   bottle do
@@ -18,22 +18,23 @@ class GitCinnabar < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e85cbe77244c8ece4095ca96cb76fcb8a54d322f20226c97339b298478feb3b4"
   end
 
+  depends_on "rust" => :build
+  depends_on "git"
   depends_on "mercurial"
-  depends_on "python@3.11"
 
   uses_from_macos "curl"
 
   conflicts_with "git-remote-hg", because: "both install `git-remote-hg` binaries"
 
   def install
-    system "make", "helper"
-    prefix.install "cinnabar"
-    bin.install "git-cinnabar", "git-cinnabar-helper", "git-remote-hg"
-    bin.env_script_all_files(libexec, PYTHONPATH:          prefix,
-                                      GIT_CINNABAR_PYTHON: which("python3.11"))
+    system "cargo", "install", *std_cargo_args
+    bin.install_symlink bin/"git-cinnabar" => "git-remote-hg"
   end
 
   test do
+    # Protocol \"https\" not supported or disabled in libcurl"
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
     system "git", "clone", "hg::https://www.mercurial-scm.org/repo/hello"
     assert_predicate testpath/"hello/hello.c", :exist?,
                      "hello.c not found in cloned repo"
