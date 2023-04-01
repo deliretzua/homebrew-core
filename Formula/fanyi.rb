@@ -3,8 +3,8 @@ require "language/node"
 class Fanyi < Formula
   desc "Chinese and English translate tool in your command-line"
   homepage "https://github.com/afc163/fanyi"
-  url "https://registry.npmjs.org/fanyi/-/fanyi-8.0.0.tgz"
-  sha256 "0b946e98f7a3d7607c08f836d884be76f24cae0976874e891c5f484e222f4900"
+  url "https://registry.npmjs.org/fanyi/-/fanyi-8.0.2.tgz"
+  sha256 "9638dc2025f20f3fecd5e1e0767165e5fc79ff06ddff2a3f87dd3747d8e2c283"
   license "MIT"
 
   bottle do
