@@ -3,8 +3,8 @@ class GitCola < Formula
 
   desc "Highly caffeinated git GUI"
   homepage "https://git-cola.github.io/"
-  url "https://files.pythonhosted.org/packages/38/e0/b0d4e6a7c048ee8490d21a3c942bdffd6cee3e71dd5be8f33c944312c8a2/git-cola-4.2.0.tar.gz"
-  sha256 "76be2e0fae4e64612ab30adff7f53bc687ab92fb3498e90f54c0301f2135a5c0"
+  url "https://files.pythonhosted.org/packages/1d/08/828a1ae7bf54452b3cd849f4b062f4089c63f3ee48cdc7b4a070277cdfd3/git-cola-4.2.1.tar.gz"
+  sha256 "187fa9003d74a8fb3d110207b37c6bbe44043dafda06ce111e1922d0f0f06213"
   license "GPL-2.0-or-later"
   head "https://github.com/git-cola/git-cola.git", branch: "main"
 
@@ -32,8 +32,8 @@ class GitCola < Formula
   end
 
   resource "QtPy" do
-    url "https://files.pythonhosted.org/packages/b0/96/4f3be023cee0261b1f6cd5d2f6c2a5abea8d8022fc66027da8792373a57e/QtPy-2.3.0.tar.gz"
-    sha256 "0603c9c83ccc035a4717a12908bf6bc6cb22509827ea2ec0e94c2da7c9ed57c5"
+    url "https://files.pythonhosted.org/packages/ad/6b/0e753af1197f82d2359c9aa91cef8abaaef4c547396ffdc71ea6a889e52c/QtPy-2.3.1.tar.gz"
+    sha256 "a8c74982d6d172ce124d80cafd39653df78989683f760f2281ba91a6e7b9de8b"
   end
 
   def install
