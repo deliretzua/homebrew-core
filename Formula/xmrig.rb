@@ -32,7 +32,7 @@ class Xmrig < Formula
     # elseif (APPLE)
     #   set(OPENSSL_USE_STATIC_LIBS TRUE)
     # endif()
-    inreplace "cmake/OpenSSL.cmake", "elseif (APPLE)", "elseif (OFF)"
+    inreplace "cmake/OpenSSL.cmake", "OPENSSL_USE_STATIC_LIBS TRUE", "OPENSSL_USE_STATIC_LIBS FALSE"
 
     # Allow using shared libuv. In cmake/FindUV.cmake:
     # find_library(UV_LIBRARY NAMES libuv.a uv libuv ...)
