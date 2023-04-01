@@ -6,23 +6,12 @@ class Sslyze < Formula
   license "AGPL-3.0-only"
 
   stable do
-    url "https://files.pythonhosted.org/packages/6d/88/78873e6c157ba91a3427ca319f9f82dad708d2531908d90e6bb7f0840b35/sslyze-5.1.2.tar.gz"
-    sha256 "2ca25629f038010134d62a65627c91b0041cba836533947989176ad97c5b4285"
+    url "https://files.pythonhosted.org/packages/13/00/bacbb04d7d3e0d7db3cedec0b7a450a6ee9543aa4929b020a329f184daae/sslyze-5.1.3.tar.gz"
+    sha256 "247eeed21e57cb5bfe8bd5565f83a35988cfad5c8294120fa7b729bd5e5cf949"
 
     resource "nassl" do
-      url "https://github.com/nabla-c0d3/nassl/archive/5.0.0.tar.gz"
-      sha256 "b1529de53e1017a4b69ad656bcef762633aec54c86c9ec016879d657bf463297"
-
-      # type fix patch, remove in next release
-      patch do
-        url "https://github.com/nabla-c0d3/nassl/commit/377a85b32d6914ddba3913389f0a5a3cfbb9f20c.patch?full_index=1"
-        sha256 "c225f9cad6a2bcd4d5e8acbce64ea77cad5408644d53036a65ba8deb43f78a37"
-      end
-      # patch to support arm builds, remove in next release
-      patch do
-        url "https://github.com/nabla-c0d3/nassl/commit/95f466aff36ef553429df2e95a974b3281df7709.patch?full_index=1"
-        sha256 "47af75c41d028ab777781f0f3942570c221e88fc607cd476846346b6b257838f"
-      end
+      url "https://github.com/nabla-c0d3/nassl/archive/refs/tags/5.0.1.tar.gz"
+      sha256 "53302410923e5c1afd54c7f48051f15459eeacbd7005b719d2a5db12ede83042"
     end
   end
 
