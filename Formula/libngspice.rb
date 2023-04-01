@@ -4,8 +4,8 @@ class Libngspice < Formula
   license :cannot_represent
 
   stable do
-    url "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/39/ngspice-39.tar.gz"
-    sha256 "b89c6bbce6e82ca9370b7f5584c9a608b625a7ed25e754758c378a6fb7107925"
+    url "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/40/ngspice-40.tar.gz"
+    sha256 "e303ca7bc0f594e2d6aa84f68785423e6bf0c8dad009bb20be4d5742588e890d"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
