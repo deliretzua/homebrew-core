@@ -3,10 +3,9 @@ class Gnuradio < Formula
 
   desc "SDK for signal processing blocks to implement software radios"
   homepage "https://gnuradio.org/"
-  url "https://github.com/gnuradio/gnuradio/archive/refs/tags/v3.10.5.1.tar.gz"
-  sha256 "85d90147f7f28450bff75eeefd2b44adc88b231d29fe8e86cc3a65437dba6d9f"
+  url "https://github.com/gnuradio/gnuradio/archive/refs/tags/v3.10.6.0.tar.gz"
+  sha256 "c1a8c09f975d224b27dad9c8e2e7fed1f7cde9bc04d30b004afe8e28bb3f45c6"
   license "GPL-3.0-or-later"
-  revision 3
   head "https://github.com/gnuradio/gnuradio.git", branch: "main"
 
   livecheck do
