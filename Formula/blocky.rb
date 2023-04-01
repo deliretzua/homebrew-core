@@ -6,6 +6,16 @@ class Blocky < Formula
   license "Apache-2.0"
   head "https://github.com/0xerr0r/blocky.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ffe13d319d94dae7602bb64dcebbeff8dc770f177110a014c51d6307315471db"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ffe13d319d94dae7602bb64dcebbeff8dc770f177110a014c51d6307315471db"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ffe13d319d94dae7602bb64dcebbeff8dc770f177110a014c51d6307315471db"
+    sha256 cellar: :any_skip_relocation, ventura:        "d330a9a3e573b0031c25272b77eb0ee925cf1dcdbed7d1190eda7fde02e0ef47"
+    sha256 cellar: :any_skip_relocation, monterey:       "d330a9a3e573b0031c25272b77eb0ee925cf1dcdbed7d1190eda7fde02e0ef47"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d330a9a3e573b0031c25272b77eb0ee925cf1dcdbed7d1190eda7fde02e0ef47"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6470b1108a98a6402e21148e4e417a2cb813831c6a1fca25525dd6e55cd8402f"
+  end
+
   depends_on "go" => :build
 
   def install
