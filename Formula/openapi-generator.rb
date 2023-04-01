@@ -11,13 +11,13 @@ class OpenapiGenerator < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3e002f4cd58f4bea0c04bcd3303bca97095309828541363a2113bcd859200bfe"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3e002f4cd58f4bea0c04bcd3303bca97095309828541363a2113bcd859200bfe"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3e002f4cd58f4bea0c04bcd3303bca97095309828541363a2113bcd859200bfe"
-    sha256 cellar: :any_skip_relocation, ventura:        "3e002f4cd58f4bea0c04bcd3303bca97095309828541363a2113bcd859200bfe"
-    sha256 cellar: :any_skip_relocation, monterey:       "3e002f4cd58f4bea0c04bcd3303bca97095309828541363a2113bcd859200bfe"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3e002f4cd58f4bea0c04bcd3303bca97095309828541363a2113bcd859200bfe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8df6e5c27f99aa2d6123880a0795da5bd27665dd9e04c37a9fcfb02a66513d25"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cf5a1b9838752ba22cea753f4e37f1cb655686d5ce60ffc914feeef47c21e316"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cf5a1b9838752ba22cea753f4e37f1cb655686d5ce60ffc914feeef47c21e316"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cf5a1b9838752ba22cea753f4e37f1cb655686d5ce60ffc914feeef47c21e316"
+    sha256 cellar: :any_skip_relocation, ventura:        "cf5a1b9838752ba22cea753f4e37f1cb655686d5ce60ffc914feeef47c21e316"
+    sha256 cellar: :any_skip_relocation, monterey:       "cf5a1b9838752ba22cea753f4e37f1cb655686d5ce60ffc914feeef47c21e316"
+    sha256 cellar: :any_skip_relocation, big_sur:        "cf5a1b9838752ba22cea753f4e37f1cb655686d5ce60ffc914feeef47c21e316"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0394b01e2e74d74251ab76e0994b2deead4b01a2988442a66c94b340b5187329"
   end
 
   head do
