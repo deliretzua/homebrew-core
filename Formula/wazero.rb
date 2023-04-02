@@ -5,6 +5,16 @@ class Wazero < Formula
   sha256 "9cad65fec1043060e77d303765ba7448ba1dce5a4149e830c02cc56d0f72f00f"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6e9b63d81e20b8938c845efedf1879bfa05b657441f802c5732ac95def6a9b4b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6e9b63d81e20b8938c845efedf1879bfa05b657441f802c5732ac95def6a9b4b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6e9b63d81e20b8938c845efedf1879bfa05b657441f802c5732ac95def6a9b4b"
+    sha256 cellar: :any_skip_relocation, ventura:        "321d54413cd37740263421fb0486fe35bd4267ec24b252f9953695a12eaff3c1"
+    sha256 cellar: :any_skip_relocation, monterey:       "321d54413cd37740263421fb0486fe35bd4267ec24b252f9953695a12eaff3c1"
+    sha256 cellar: :any_skip_relocation, big_sur:        "321d54413cd37740263421fb0486fe35bd4267ec24b252f9953695a12eaff3c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68d5d6efa81a9b4e524c0ca1b825c1e7c57a78f883e50501f6b795e7c7b63a39"
+  end
+
   depends_on "go" => :build
   depends_on "wabt" => :test
 
