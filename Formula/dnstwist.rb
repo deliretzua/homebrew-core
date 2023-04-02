@@ -23,6 +23,10 @@ class Dnstwist < Formula
 
   uses_from_macos "libffi"
 
+  on_linux do
+    depends_on "whois"
+  end
+
   resource "aiohttp" do
     url "https://files.pythonhosted.org/packages/c2/fd/1ff4da09ca29d8933fda3f3514980357e25419ce5e0f689041edb8f17dab/aiohttp-3.8.4.tar.gz"
     sha256 "bf2e1a9162c1e441bf805a1fd166e249d574ca04e03b34f97e2928769e91ab5c"
