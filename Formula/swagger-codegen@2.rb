@@ -1,8 +1,8 @@
 class SwaggerCodegenAT2 < Formula
   desc "Generate clients, server stubs, and docs from an OpenAPI spec"
   homepage "https://swagger.io/swagger-codegen/"
-  url "https://github.com/swagger-api/swagger-codegen/archive/v2.4.30.tar.gz"
-  sha256 "2869388e8762f7a3b9ac0397c68c3823cd070389a336a8899eb157236c77a194"
+  url "https://github.com/swagger-api/swagger-codegen/archive/v2.4.31.tar.gz"
+  sha256 "6baceedcfcb8b073f117bd44276f5ea378c0cda468efd7f0a49d740ff4b4a402"
   license "Apache-2.0"
 
   livecheck do
@@ -20,15 +20,15 @@ class SwaggerCodegenAT2 < Formula
   keg_only :versioned_formula
 
   depends_on "maven" => :build
-  depends_on arch: :x86_64 # openjdk@8 is not supported on ARM
-  depends_on "openjdk@8"
+  depends_on "openjdk@11"
 
   def install
-    ENV["JAVA_HOME"] = Language::Java.java_home("1.8")
+    # Need to set JAVA_HOME manually since maven overrides 1.8 with 1.7+
+    ENV["JAVA_HOME"] = Formula["openjdk@11"].opt_prefix
 
     system "mvn", "clean", "package"
     libexec.install "modules/swagger-codegen-cli/target/swagger-codegen-cli.jar"
-    bin.write_jar_script libexec/"swagger-codegen-cli.jar", "swagger-codegen", java_version: "1.8"
+    bin.write_jar_script libexec/"swagger-codegen-cli.jar", "swagger-codegen", java_version: "11"
   end
 
   test do
