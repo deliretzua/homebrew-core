@@ -1,10 +1,10 @@
 class Sipp < Formula
   desc "Traffic generator for the SIP protocol"
   homepage "https://sipp.sourceforge.io/"
-  url "https://github.com/SIPp/sipp/releases/download/v3.6.1/sipp-3.6.1.tar.gz"
-  sha256 "6a560e83aff982f331ddbcadfb3bd530c5896cd5b757dd6eb682133cc860ecb1"
+  url "https://github.com/SIPp/sipp.git",
+      tag:      "v3.7.0",
+      revision: "f9a4ba6cbae7a71a05df653289109b6f7d6d5d53"
   license "GPL-2.0-or-later"
-  revision 1
 
   bottle do
     rebuild 1
@@ -25,8 +25,14 @@ class Sipp < Formula
   uses_from_macos "ncurses"
 
   def install
-    system "cmake", ".", *std_cmake_args, "-DUSE_PCAP=1", "-DUSE_SSL=1"
-    system "make", "install"
+    args = %w[
+      -DUSE_PCAP=1
+      -DUSE_SSL=1
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
