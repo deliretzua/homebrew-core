@@ -16,13 +16,13 @@ class Sslyze < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "51e6f2193028406f4f111ce14ea70d4cf7799d5465e2e47f333268f3891bc5d6"
-    sha256 cellar: :any,                 arm64_monterey: "d876ac135e6290c369e340f574dd0bbd7d305eac4d4862c8c2baa7bad2acc8e5"
-    sha256 cellar: :any,                 arm64_big_sur:  "fbb20963d11b5897e019ad433414d5e15c1638db6a6e7fb67eb1d51ad8d73fb2"
-    sha256 cellar: :any,                 ventura:        "02ab0fa2d54edb2f1db60177434aea2daf175214ae38e00809ac9d9e375868cc"
-    sha256 cellar: :any,                 monterey:       "5b21d05496524c033be6c49a662a1611a4dfa5ad99b462418c5d06fa68458019"
-    sha256 cellar: :any,                 big_sur:        "30e5dd1d57c1ccd843192e286f389fc49b762c5d952efeeeb179e79f143f78e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "96cf2ee7f54a8474e7be42964a4574b8bd0392d3a35ea650ba69a993198e1818"
+    sha256 cellar: :any,                 arm64_ventura:  "4b78c64baa9288800f6d3724d61680822215ac119c914fcfe88d0d07cb42e96b"
+    sha256 cellar: :any,                 arm64_monterey: "2bce9a22e71eca7501b53978f4c790bfe0ea918bc769815fc39db0c913949766"
+    sha256 cellar: :any,                 arm64_big_sur:  "e6db8bf038025808d83b3e44957fc1c7ae5b613b26f375181287c824c5409b35"
+    sha256 cellar: :any,                 ventura:        "cfe2b486e6dc00fc6afa98f69eb7a077cff149589f049bfb452c3b43d2d9fbb3"
+    sha256 cellar: :any,                 monterey:       "8a99c6e0c67b86b0e7095bc09253aab161e467be036c7803c2bf109922876baf"
+    sha256 cellar: :any,                 big_sur:        "c4ea5beb7f8ddfaf0f563f7f9e2015d75f475547af1aaccc79d69cf6422b09fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "31a88b8fcedda31ee10e6d6ab51f1693187fcecb929331896d28b64241aa73ac"
   end
 
   head do
