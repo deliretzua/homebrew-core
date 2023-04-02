@@ -17,10 +17,11 @@ class Snowpack < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "78baacecc857f50f7a6fbe7643c4edad620c4e2c09a0f31e336fcfa52f0576e6"
   end
 
-  depends_on "node"
+  depends_on "node@18"
+  depends_on "python@3.10"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *Language::Node.std_npm_install_args(libexec), "--python=python3.10"
     bin.install_symlink Dir[libexec/"bin/*"]
 
     # Remove incompatible pre-built binaries
@@ -36,6 +37,7 @@ class Snowpack < Formula
   end
 
   test do
+    ENV.prepend_path "PATH", Formula["node@18"].bin
     mkdir "work" do
       system "npm", "init", "-y"
       system bin/"snowpack", "init"
