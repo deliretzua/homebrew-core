@@ -7,10 +7,10 @@ class Libcpuid < Formula
   head "https://github.com/anrieff/libcpuid.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 ventura:      "b197362eee621d3118a68c1a5bd461beba3517c47fe014e1a94667e184f69557"
-    sha256 cellar: :any,                 monterey:     "a0f4c5f49d9d96a02878b347591a648970f5b62c7913a14db6053cbc2ced9cf1"
-    sha256 cellar: :any,                 big_sur:      "8ca0c97e736fb44cbb04e78fc8b952ee3d6fcad4bd4439aaad58ec0c1c3506ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "563a8283a606ee0f6c7e8cc48a1da9c8c444393055a68ce596b2c2b1dc1cc0f7"
+    sha256 cellar: :any,                 ventura:      "84d3564619410abf63cb5dd759bd5c129d9caf273ab972bc1f04ff4fa3fcb29a"
+    sha256 cellar: :any,                 monterey:     "d05aefe01176128d788f2c914d02b8ffc6a111ef2c2e04d142a2c3f3fc46a68b"
+    sha256 cellar: :any,                 big_sur:      "35cae66754dd499614f854c21da717fec919aaf7cfd50ea8e0a3c9b83e332a19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "583ac04b1bd04fde3501f4f18fa0743f38f2302094f91369963b001349230343"
   end
 
   depends_on "autoconf" => :build
