@@ -3,8 +3,8 @@ class Poetry < Formula
 
   desc "Python package management tool"
   homepage "https://python-poetry.org/"
-  url "https://files.pythonhosted.org/packages/10/7d/8014383fafeb34f0e8791b2c4a36781460f0deada75baaa2a925fbe3a2c3/poetry-1.4.1.tar.gz"
-  sha256 "9a0c9f5f862678d475ac2fd2451ea612facd02efb054bb758763893f7d85053e"
+  url "https://files.pythonhosted.org/packages/b2/8f/664c5d6fb391421606f2641b22542fecc1a785b508b6618c8726c2eb0a79/poetry-1.4.2.tar.gz"
+  sha256 "0bd580a42482579635e774c5286ef73b8df3427567123cdb128b286cec671b3c"
   license "MIT"
   head "https://github.com/python-poetry/poetry.git", branch: "master"
 
@@ -27,7 +27,6 @@ class Poetry < Formula
   depends_on "virtualenv"
 
   # `lockfile` is used directly by `poetry` but is not present as a direct dependency.
-  # See https://github.com/python-poetry/poetry/pull/7169
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/21/31/3f468da74c7de4fcf9b25591e682856389b3400b4b62f201e65f15ea3e07/attrs-22.2.0.tar.gz"
     sha256 "c9227bfc2f01993c03f68db37d1d15c9690188323c067c641f1a35ca58185f99"
@@ -74,8 +73,8 @@ class Poetry < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/4f/1f/6e1b740698069650b245744957a25957d599b953550a959ab2a584a8825b/filelock-3.10.0.tar.gz"
-    sha256 "3199fd0d3faea8b911be52b663dfccceb84c95949dd13179aa21436d1a79c4ce"
+    url "https://files.pythonhosted.org/packages/5b/65/5dfde43d5e4d7d31a2392bf4aa20e464b8aa0601f34fd9b050781291f666/filelock-3.10.7.tar.gz"
+    sha256 "892be14aa8efc01673b5ed6589dbccb95f9a8596f0507e232626155495c18105"
   end
 
   resource "html5lib" do
@@ -179,8 +178,8 @@ class Poetry < Formula
   end
 
   resource "rapidfuzz" do
-    url "https://files.pythonhosted.org/packages/15/e5/2ab8375be6955aff1925b69c41429cbe54e32a67461c0b59f94c9b8b1cc5/rapidfuzz-2.13.7.tar.gz"
-    sha256 "8d3e252d4127c79b4d7c2ae47271636cbaca905c8bb46d80c7930ab906cf4b5c"
+    url "https://files.pythonhosted.org/packages/01/8c/cad170708243488e2b2a2e727eb40f30018231efa7fa1a9a3a3dc82d9f42/rapidfuzz-2.15.0.tar.gz"
+    sha256 "1c7e439d1428882d297bdd0db5626fc4626cdebe50d3fbbf4ed898f775ca56d5"
   end
 
   resource "requests" do
@@ -199,8 +198,8 @@ class Poetry < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/ff/04/58b4c11430ed4b7b8f1723a5e4f20929d59361e9b17f0872d69681fd8ffd/tomlkit-0.11.6.tar.gz"
-    sha256 "71b952e5721688937fb02cf9d354dbcf0785066149d2855e44531ebdd2b65d73"
+    url "https://files.pythonhosted.org/packages/4d/4e/6cb8a301134315e37929763f7a45c3598dfb21e8d9b94e6846c87531886c/tomlkit-0.11.7.tar.gz"
+    sha256 "f392ef70ad87a672f02519f99967d28a4d3047133e2d1df936511465fbb3791d"
   end
 
   resource "trove-classifiers" do
