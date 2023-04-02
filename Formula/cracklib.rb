@@ -1,8 +1,8 @@
 class Cracklib < Formula
   desc "LibCrack password checking library"
   homepage "https://github.com/cracklib/cracklib"
-  url "https://github.com/cracklib/cracklib/releases/download/v2.9.10/cracklib-2.9.10.tar.bz2"
-  sha256 "9e0f2546220c6023754d81e5110c87192f92c703a2b0cc58661cd82dbcf07c63"
+  url "https://github.com/cracklib/cracklib/releases/download/v2.9.11/cracklib-2.9.11.tar.bz2"
+  sha256 "ca8b049a3c2d3b2225a1e8d15d613798ebc748e3950388eda2694de507ba6020"
   license "LGPL-2.1-only"
 
   livecheck do
@@ -23,8 +23,8 @@ class Cracklib < Formula
   depends_on "gettext"
 
   resource "cracklib-words" do
-    url "https://github.com/cracklib/cracklib/releases/download/v2.9.10/cracklib-words-2.9.10.bz2"
-    sha256 "19a557eb482332a4499267d9e25089a76bfb9e2bdea7ecf62ea6b6df4fb4c118"
+    url "https://github.com/cracklib/cracklib/releases/download/v2.9.11/cracklib-words-2.9.11.bz2"
+    sha256 "ec25ac4a474588c58d901715512d8902b276542b27b8dd197e9c2ad373739ec4"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
