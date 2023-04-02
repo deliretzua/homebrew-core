@@ -1,8 +1,8 @@
 class UutilsFindutils < Formula
   desc "Cross-platform Rust rewrite of the GNU findutils"
   homepage "https://github.com/uutils/findutils"
-  url "https://github.com/uutils/findutils/archive/refs/tags/0.3.0.tar.gz"
-  sha256 "0ea77daf31b9740cfecb06a9dbd06fcd50bc0ba55592a12b9f9b74f3302f5c41"
+  url "https://github.com/uutils/findutils/archive/refs/tags/0.4.0.tar.gz"
+  sha256 "080d01a7cd27f7afc342c3d6355ea1eb39ec2558c135744201f2064cffe4225d"
   license "MIT"
   head "https://github.com/uutils/findutils.git", branch: "main"
 
@@ -19,7 +19,10 @@ class UutilsFindutils < Formula
   end
 
   depends_on "rust" => :build
-  uses_from_macos "llvm" => :build
+
+  on_linux do
+    depends_on "llvm@15" => :build
+  end
 
   def unwanted_bin_link?(cmd)
     %w[
@@ -28,7 +31,7 @@ class UutilsFindutils < Formula
   end
 
   def install
-    ENV["LIBCLANG_PATH"] = Formula["llvm"].opt_lib.to_s if OS.linux?
+    ENV["LIBCLANG_PATH"] = Formula["llvm@15"].opt_lib.to_s if OS.linux?
     system "cargo", "install", *std_cargo_args(root: libexec)
     mv libexec/"bin", libexec/"uubin"
     Dir.children(libexec/"uubin").each do |cmd|
