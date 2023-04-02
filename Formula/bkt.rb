@@ -1,8 +1,8 @@
 class Bkt < Formula
   desc "Utility for caching the results of shell commands"
   homepage "https://www.bkt.rs"
-  url "https://github.com/dimo414/bkt/archive/refs/tags/0.5.4.tar.gz"
-  sha256 "172c413709dc81ced9dfa2750aaa398864e904d1ed213bd19e51d45d1ff0a8ff"
+  url "https://github.com/dimo414/bkt/archive/refs/tags/0.6.0.tar.gz"
+  sha256 "59c8fe8b29101a47d928896468dce2f8fb3cee7598201d46011804a7bee7f6e2"
   license "MIT"
 
   bottle do
