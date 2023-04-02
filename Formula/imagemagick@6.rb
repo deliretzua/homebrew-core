@@ -1,20 +1,10 @@
 class ImagemagickAT6 < Formula
   desc "Tools and libraries to manipulate images in many formats"
   homepage "https://legacy.imagemagick.org/"
+  url "https://imagemagick.org/archive/releases/ImageMagick-6.9.12-84.tar.xz"
+  sha256 "48e2422a9463b0fabcb14e8e3be5842d92bbdb57a5a96c0c36fa4b337a0050dc"
   license "ImageMagick"
   head "https://github.com/imagemagick/imagemagick6.git", branch: "main"
-
-  stable do
-    url "https://imagemagick.org/archive/releases/ImageMagick-6.9.12-83.tar.xz"
-    sha256 "73c8764a550f40b23615a749ef20438eb78a426128766bf3f63a705fdac142ed"
-
-    # Fix an undeclared `jps_image` variable.
-    # Remove with `stable` block on next release.
-    patch do
-      url "https://github.com/ImageMagick/ImageMagick6/commit/65692230ba98b5735b911565682010afc67c769f.patch?full_index=1"
-      sha256 "e4d8bb4b34b3604e6a95df4833c301ace9fb4c14797f366e950e3aa04aeeb0d5"
-    end
-  end
 
   livecheck do
     url "https://imagemagick.org/archive/"
