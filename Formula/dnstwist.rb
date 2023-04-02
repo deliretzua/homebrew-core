@@ -88,6 +88,11 @@ class Dnstwist < Formula
     sha256 "acc74bb902e6d21b03d39aed740597093c6562185bfe06da9b5272e01c80a1ff"
   end
 
+  resource "py-tlsh" do
+    url "https://files.pythonhosted.org/packages/ba/5b/4d860cffd3e6e7afb277e159d97e11583fc3b611d22355799364dff325f1/py-tlsh-4.7.2.tar.gz"
+    sha256 "5b6943cfd93a168671f33b84828dca34d252278bdedcacf25cbe711fda655e9f"
+  end
+
   resource "requests" do
     url "https://files.pythonhosted.org/packages/9d/ee/391076f5937f0a8cdf5e53b701ffc91753e87b07d66bae4a09aa671897bf/requests-2.28.2.tar.gz"
     sha256 "98b1b2782e3c6c4904938b84c0eb932721069dfdb9134313beff7c83c2df24bf"
@@ -124,9 +129,12 @@ class Dnstwist < Formula
   end
 
   test do
-    output = shell_output("#{bin}/dnstwist -rw --lsh ssdeep brew.sh 2>&1")
+    output_ssdeep = shell_output("#{bin}/dnstwist -rw --lsh ssdeep brew.sh 2>&1")
+    assert_match "brew.sh", output_ssdeep
+    assert_match "NS:ns1.dnsimple.com", output_ssdeep
 
-    assert_match "brew.sh", output
-    assert_match "NS:ns1.dnsimple.com", output
+    output_tlsh = shell_output("#{bin}/dnstwist -rw --lsh tlsh brew.sh 2>&1")
+    assert_match "brew.sh", output_tlsh
+    assert_match "NS:ns1.dnsimple.com", output_tlsh
   end
 end
