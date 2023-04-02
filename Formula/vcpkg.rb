@@ -1,9 +1,9 @@
 class Vcpkg < Formula
   desc "C++ Library Manager"
   homepage "https://github.com/microsoft/vcpkg"
-  url "https://github.com/microsoft/vcpkg-tool/archive/2023-03-14.tar.gz"
-  version "2023.03.14"
-  sha256 "b8ab11635140587b1bad6ca24ab78d1f4036203f098e2b733fd13df951462de5"
+  url "https://github.com/microsoft/vcpkg-tool/archive/2023-03-29.tar.gz"
+  version "2023.03.29"
+  sha256 "7c65aac0e1d6ffa12cc2bfe2c403364c05855518d12e72e704767de400cc322b"
   license "MIT"
   head "https://github.com/microsoft/vcpkg-tool.git", branch: "main"
 
@@ -33,8 +33,10 @@ class Vcpkg < Formula
 
   def install
     # Improve error message when user fails to set `VCPKG_ROOT`.
-    inreplace ["include/vcpkg/base/messages.h", "locales/messages.json"],
-              "If you are trying to use a copy of vcpkg that you've built, y", "Y"
+    inreplace "locales/messages.json" do |s|
+      s.gsub! "If you are trying to use a copy of vcpkg that you've built, y", "Y"
+      s.gsub! " to point to a cloned copy of https://github.com/Microsoft/vcpkg", ""
+    end
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DVCPKG_DEVELOPMENT_WARNINGS=OFF",
@@ -57,7 +59,7 @@ class Vcpkg < Formula
 
   test do
     # DO NOT CHANGE. If the test breaks then the `inreplace` needs fixing.
-    message = "error: Could not detect vcpkg-root. You must define the VCPKG_ROOT environment variable"
+    message = "error: Could not detect vcpkg-root."
     assert_match message, shell_output("#{bin}/vcpkg search sqlite", 1)
   end
 end
