@@ -6,13 +6,13 @@ class PhpCsFixer < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d48c385739512a40e0869076df86ccd3163f5e192357c2096db152e1069d33a0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d48c385739512a40e0869076df86ccd3163f5e192357c2096db152e1069d33a0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d48c385739512a40e0869076df86ccd3163f5e192357c2096db152e1069d33a0"
-    sha256 cellar: :any_skip_relocation, ventura:        "d48c385739512a40e0869076df86ccd3163f5e192357c2096db152e1069d33a0"
-    sha256 cellar: :any_skip_relocation, monterey:       "d48c385739512a40e0869076df86ccd3163f5e192357c2096db152e1069d33a0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d48c385739512a40e0869076df86ccd3163f5e192357c2096db152e1069d33a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ade0a0e546fab844209678be7354beee04efd687f7e7e4031235b4b0ff45cf8e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e205f5eb7fc4f155b5521e1d1ff5e41d5aebc1af9e86bb602a6fbeef1cc1910d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e205f5eb7fc4f155b5521e1d1ff5e41d5aebc1af9e86bb602a6fbeef1cc1910d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e205f5eb7fc4f155b5521e1d1ff5e41d5aebc1af9e86bb602a6fbeef1cc1910d"
+    sha256 cellar: :any_skip_relocation, ventura:        "e205f5eb7fc4f155b5521e1d1ff5e41d5aebc1af9e86bb602a6fbeef1cc1910d"
+    sha256 cellar: :any_skip_relocation, monterey:       "e205f5eb7fc4f155b5521e1d1ff5e41d5aebc1af9e86bb602a6fbeef1cc1910d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e205f5eb7fc4f155b5521e1d1ff5e41d5aebc1af9e86bb602a6fbeef1cc1910d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a445e663601751bd92b49e23045b4ccb2a6964b769c1141970cee5d4bb60edc"
   end
 
   depends_on "php"
