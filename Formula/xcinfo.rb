@@ -1,8 +1,8 @@
 class Xcinfo < Formula
   desc "Tool to get information about and install available Xcode versions"
   homepage "https://github.com/xcodereleases/xcinfo"
-  url "https://github.com/xcodereleases/xcinfo/archive/0.7.0.tar.gz"
-  sha256 "7d5c34c7c4deda28b101c747d89ca6535fd1d50ea26c957e50d18ebeea3da8bb"
+  url "https://github.com/xcodereleases/xcinfo/archive/refs/tags/1.0.3.tar.gz"
+  sha256 "b22f56193e4de8b71bbdaf99c17cec03f291d333d095311ad7aab74b5fb50c5a"
   license "MIT"
 
   bottle do
@@ -15,8 +15,8 @@ class Xcinfo < Formula
     sha256 cellar: :any_skip_relocation, catalina:       "4cd605c355e9c18be2219e5b459847673066ada976afee46c49f4b667c91fba5"
   end
 
-  depends_on xcode: ["12.4", :build]
-  depends_on macos: :catalina
+  depends_on xcode: ["14.2", :build]
+  depends_on macos: :ventura
   depends_on :macos
 
   def install
