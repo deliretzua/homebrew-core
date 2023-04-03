@@ -3,10 +3,10 @@ class Qt < Formula
 
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.4/6.4.3/single/qt-everywhere-src-6.4.3.tar.xz"
-  mirror "https://qt.mirror.constant.com/archive/qt/6.4/6.4.3/single/qt-everywhere-src-6.4.3.tar.xz"
-  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.4/6.4.3/single/qt-everywhere-src-6.4.3.tar.xz"
-  sha256 "29a7eebdbba0ea57978dea6083709c93593a60f0f3133a3de08b9571ee8eaab4"
+  url "https://download.qt.io/official_releases/qt/6.5/6.5.0/single/qt-everywhere-src-6.5.0.tar.xz"
+  mirror "https://qt.mirror.constant.com/archive/qt/6.5/6.5.0/single/qt-everywhere-src-6.5.0.tar.xz"
+  mirror "https://mirrors.ukfast.co.uk/sites/qt.io/archive/qt/6.5/6.5.0/single/qt-everywhere-src-6.5.0.tar.xz"
+  sha256 "dba376e110e53895c7c827eea389dc12aa9c45862cd197d2f0d37ee472baf0b0"
   license all_of: [
     "BSD-3-Clause",
     "GFDL-1.3-no-invariants-only",
@@ -14,7 +14,6 @@ class Qt < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } },
     "LGPL-3.0-only",
   ]
-  revision 3
   head "https://code.qt.io/qt/qt5.git", branch: "dev"
 
   # The first-party website doesn't make version information readily available,
@@ -41,9 +40,8 @@ class Qt < Formula
   depends_on "python@3.11" => :build
   depends_on "six" => :build
   depends_on "vulkan-headers" => [:build, :test]
+  depends_on "vulkan-loader" => [:build, :test]
   depends_on xcode: :build
-
-  depends_on "vulkan-loader" => :test
 
   depends_on "assimp"
   depends_on "brotli"
@@ -70,7 +68,6 @@ class Qt < Formula
   uses_from_macos "bison" => :build
   uses_from_macos "flex"  => :build
   uses_from_macos "gperf" => :build
-  uses_from_macos "perl"  => :build
   uses_from_macos "llvm" => :test # Our test relies on `clang++` in `PATH`.
 
   uses_from_macos "cups"
@@ -132,13 +129,35 @@ class Qt < Formula
 
   # Remove symlink check causing build to bail out and fail.
   # https://gitlab.kitware.com/cmake/cmake/-/issues/23251
+  # Can be removed soon and replaced with QT_ALLOW_SYMLINK_IN_PATHS
+  # https://codereview.qt-project.org/c/qt/qtbase/+/475484
   patch do
     url "https://raw.githubusercontent.com/Homebrew/formula-patches/c363f0edf9e90598d54bc3f4f1bacf95abbda282/qt/qt_internal_check_if_path_has_symlinks.patch"
     sha256 "1afd8bf3299949b2717265228ca953d8d9e4201ddb547f43ed84ac0d7da7a135"
     directory "qtbase"
   end
 
+  # Upstream fix for "use of undeclared identifier 'CharacterClass'"
+  # Remove in next version
+  # https://bugreports.qt.io/browse/QTBUG-113390
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/532d577449fc57c68fea00dd56b05862c5cd064e/qt/6.5.0-QTBUG-113390.diff"
+    sha256 "716d440bc5d31a9a58d5df4ec802449b75f8a6b616fe1ff6f150b95fe12e3d53"
+  end
+
+  # Upstream fix for symlinks in build path, remove in next version
+  # https://bugreports.qt.io/browse/QTBUG-113295
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/b4f15465ea37278cb6bce2d8781bcce2f9caeebe/qt/6.5.0-QTBUG-113295.diff"
+    sha256 "272376e5b2da5a629774664aae81d8bf6e149452399a73abc21f0535d83e25a3"
+  end
+
   def install
+    # Allow -march options to be passed through, as Qt builds
+    # arch-specific code with runtime detection of capabilities:
+    # https://bugreports.qt.io/browse/QTBUG-113391
+    ENV.runtime_cpu_detection
+
     python = "python3.11"
     # Install python dependencies for QtWebEngine
     venv_root = buildpath/"venv"
@@ -187,12 +206,8 @@ class Qt < Formula
     ]
 
     cmake_args = std_cmake_args(install_prefix: HOMEBREW_PREFIX, find_framework: "FIRST") + %w[
-      -DINSTALL_MKSPECSDIR=share/qt/mkspecs
-
       -DFEATURE_pkg_config=ON
-
-      -DQT_FEATURE_avx2=OFF
-
+      -DINSTALL_MKSPECSDIR=share/qt/mkspecs
       -DQT_FEATURE_webengine_proprietary_codecs=ON
       -DQT_FEATURE_webengine_kerberos=ON
     ]
@@ -231,8 +246,6 @@ class Qt < Formula
     system "./configure", *config_args, "--", *cmake_args
     system "cmake", "--build", "."
     system "cmake", "--install", "."
-
-    rm bin/"qt-cmake-private-install.cmake"
 
     inreplace lib/"cmake/Qt6/qt.toolchain.cmake", "#{Superenv.shims_path}/", ""
 
