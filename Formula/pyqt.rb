@@ -4,6 +4,7 @@ class Pyqt < Formula
   url "https://files.pythonhosted.org/packages/28/01/9e4b91cb0c1023934b1dc654c5bbfc29cbabcbf6092f936b74aee46dd637/PyQt6-6.5.0.tar.gz"
   sha256 "b97cb4be9b2c8997904ea668cf3b0a4ae5822196f7792590d05ecde6216a9fbc"
   license "GPL-3.0-only"
+  revision 1
 
   bottle do
     sha256 cellar: :any, arm64_ventura:  "0cdb6cb5278faddfb8850c6a6de69399a79d8141c66d31e7bd0184e029f82246"
