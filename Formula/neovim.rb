@@ -130,6 +130,9 @@ class Neovim < Formula
       end
     end
 
+    # Replace `-dirty` suffix in `--version` output with `-Homebrew`.
+    inreplace "cmake/GenerateVersion.cmake", "--dirty", "--dirty=-Homebrew"
+
     system "cmake", "-S", ".", "-B", "build",
                     "-DLIBLUV_LIBRARY=#{Formula["luv"].opt_lib/shared_library("libluv")}",
                     "-DLIBUV_LIBRARY=#{Formula["libuv"].opt_lib/shared_library("libuv")}",
@@ -149,6 +152,7 @@ class Neovim < Formula
   end
 
   test do
+    refute_match "dirty", shell_output("#{bin}/nvim --version")
     (testpath/"test.txt").write("Hello World from Vim!!")
     system bin/"nvim", "--headless", "-i", "NONE", "-u", "NONE",
                        "+s/Vim/Neovim/g", "+wq", "test.txt"
