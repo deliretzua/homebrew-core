@@ -2,13 +2,12 @@ class IncludeWhatYouUse < Formula
   desc "Tool to analyze #includes in C and C++ source files"
   homepage "https://include-what-you-use.org/"
   license "NCSA"
-  revision 1
 
   stable do
     # TODO: Check if we can use unversioned `llvm` at version bump.
     #       Remove `stable` block then.
-    url "https://include-what-you-use.org/downloads/include-what-you-use-0.19.src.tar.gz"
-    sha256 "2b10157b60ea08adc08e3896b4921c73fcadd5ec4eb652b29a34129d501e5ee0"
+    url "https://include-what-you-use.org/downloads/include-what-you-use-0.20.src.tar.gz"
+    sha256 "75fce1e6485f280f8f13f4c2d090b11d2fd2102b50857507c8413a919b7af899"
     depends_on "llvm@15"
   end
 
