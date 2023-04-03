@@ -99,7 +99,12 @@ jobs:
           head_repo_owner="$(jq --raw-output .head.repo.owner.login <<< "$pr_data")"
           fork_type="$(jq --raw-output .head.repo.owner.type <<< "$pr_data")"
 
-          if [ -z "$pushable" ] || [ -z "$branch" ] || [ -z "$remote" ] || [ -z "$fork_type" ]
+          if [ -z "$pushable" ] ||
+             [ -z "$branch" ] ||
+             [ -z "$remote" ] ||
+             [ -z "$head_repo" ] ||
+             [ -z "$head_repo_owner" ] ||
+             [ -z "$fork_type" ]
           then
             echo "::error ::Failed to get PR data!"
             exit 1
