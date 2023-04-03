@@ -3,8 +3,8 @@ class Dxpy < Formula
 
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
   homepage "https://github.com/dnanexus/dx-toolkit"
-  url "https://files.pythonhosted.org/packages/6b/25/38c9674065722816a8f593b5bd53dd80f2a12fd0878e8e763f940c1bf1be/dxpy-0.343.0.tar.gz"
-  sha256 "239cba799b3f554ffc3cb152dca70575db713d528991060bc3c168ade4cfb7cc"
+  url "https://files.pythonhosted.org/packages/f0/77/6b602e0aa5baa928cb6d4462cc2325514c7c5008f8ddddbf9e0d82d0bcfd/dxpy-0.344.0.tar.gz"
+  sha256 "15d6ab7ed18ae74644bacb8824699671e1c82a30e343f2ad242195e35d30745b"
   license "Apache-2.0"
 
   bottle do
@@ -32,8 +32,8 @@ class Dxpy < Formula
   end
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/12/68/634a053e7e80d33eb031e86fc0f7608a8334e7a8279826a51aac9dcc4a93/argcomplete-3.0.4.tar.gz"
-    sha256 "0424af827a5b1ee0177972e0d938b017448c79f3c82f4bee4219d412af77598c"
+    url "https://files.pythonhosted.org/packages/9d/50/e5b3e9824a387920c4b92870359c9f7dbf21a6cd6d3dff5bf4fd3b50237a/argcomplete-3.0.5.tar.gz"
+    sha256 "fe3ce77125f434a0dd1bffe5f4643e64126d5731ce8d173d36f62fa43d6eb6f7"
   end
 
   resource "certifi" do
