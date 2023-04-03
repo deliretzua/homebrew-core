@@ -95,6 +95,7 @@ jobs:
           pushable="$(jq .maintainer_can_modify <<< "$pr_data")"
           branch="$(jq --raw-output .head.ref <<< "$pr_data")"
           remote="$(jq --raw-output .head.repo.clone_url <<< "$pr_data")"
+          head_repo="$(jq --raw-output .head.repo.full_name <<< "$pr_data")"
           head_repo_owner="$(jq --raw-output .head.repo.owner.login <<< "$pr_data")"
           fork_type="$(jq --raw-output .head.repo.owner.type <<< "$pr_data")"
 
@@ -113,12 +114,14 @@ jobs:
           echo "origin_branch=$branch" >> "$GITHUB_OUTPUT"
           echo "remote=$remote" >> "$GITHUB_OUTPUT"
 
-          if "$pushable" && [ "$fork_type" != "Organization" ]
+          if "$pushable"
           then
-            exit 0
-          elif "$pushable"
-          then
-            MESSAGE="$ORG_FORK_MESSAGE"
+            if [ "$fork_type" != "Organization" ] || [ "$head_repo" = '${{github.repository}}' ]
+            then
+              exit 0
+            else
+              MESSAGE="$ORG_FORK_MESSAGE"
+            fi
           else
             MESSAGE="$NON_PUSHABLE_MESSAGE"
           fi
