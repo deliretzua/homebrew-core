@@ -8,13 +8,13 @@ class Renovate < Formula
   license "AGPL-3.0-only"
 
   bottle do
-    sha256                               arm64_ventura:  "46fb92d2aee7cb801e88c1a0aebd02675e0fd7b70188051399516c4eabf1b256"
-    sha256                               arm64_monterey: "c1a571d8eee4e3f21f512adf1400c3553fc51ea8d992d46b063f8679f6ab3109"
-    sha256                               arm64_big_sur:  "887bc2bd828ac215ab6582c2e94b988874c94a2f7149dc0a4c66090d8e65951b"
-    sha256 cellar: :any_skip_relocation, ventura:        "78e3c257041944071de310454805f0929e62f824c5fc6a5dc7dad1f871e30d0e"
-    sha256 cellar: :any_skip_relocation, monterey:       "2b00123ba29d6d98985ce3657950ab8f420085e7a675833315790d904922f495"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1f43796681770c4583d5ce9e32b90f020cd9d96e34c783e1ae5e79411ee8f2db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7bf73a6eb5c4937f765890441627c0544315ce64f4f0a0b97e77a1e5e30a38fc"
+    sha256                               arm64_ventura:  "028c77678ee726ddbdf047a612cb0c70ca1f97dbd13e91400a57e45a0fee9fed"
+    sha256                               arm64_monterey: "1be20fda499dbad73df4cf21e0eb3415ddefad596fce264257246387008e0931"
+    sha256                               arm64_big_sur:  "f60f015cfa3130dd61c2a5041bf5122f597709c73cf03193b43973daa00b149c"
+    sha256 cellar: :any_skip_relocation, ventura:        "f9b04eb97eae8bfb41ef613b9360469ca40552a5bd0214543de1b8b795dc9b32"
+    sha256 cellar: :any_skip_relocation, monterey:       "ddc37c02c3a0c1d1ca24bc2ab2e709f3712cca50fa6b218931d4c199c6059e67"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6a2e7347810fd507e5264da11b77bbb14db174e18c0c4ba0d084126052cca90e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0e51510e57d8233fec0356273edf08914b2920ab16d86e240634920e5639e010"
   end
 
   depends_on "node"
