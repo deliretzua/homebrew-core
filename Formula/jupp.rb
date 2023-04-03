@@ -1,9 +1,9 @@
 class Jupp < Formula
   desc "Professional screen editor for programmers"
-  homepage "https://www.mirbsd.org/jupp.htm"
-  url "https://www.mirbsd.org/MirOS/dist/jupp/joe-3.1jupp40.tgz"
-  version "3.1jupp40"
-  sha256 "4bed439cde7f2be294e96e49ef3e913ea90fbe5e914db888403e3a27e8035b1a"
+  homepage "http://www.mirbsd.org/jupp.htm"
+  url "http://www.mirbsd.org/MirOS/dist/jupp/joe-3.1jupp41.tgz"
+  version "3.1jupp41"
+  sha256 "7bb8ea8af519befefff93ec3c9e32108d7f2b83216c9bc7b01aef5098861c82f"
   license "GPL-1.0-or-later"
   # Upstream HEAD in CVS: http://www.mirbsd.org/cvs.cgi/contrib/code/jupp/
 
