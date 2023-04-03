@@ -1,8 +1,8 @@
 class Meilisearch < Formula
   desc "Ultra relevant, instant and typo-tolerant full-text search API"
   homepage "https://docs.meilisearch.com/"
-  url "https://github.com/meilisearch/meilisearch/archive/v1.0.2.tar.gz"
-  sha256 "05a38584773121398c6dfe64ef28ad3cae5a973904a5b98c206c9ab2a638aa34"
+  url "https://github.com/meilisearch/meilisearch/archive/v1.1.0.tar.gz"
+  sha256 "793e69d8c8fb8807326d3e1cfbb0d63babe8f74abc33f62e6f7855d03d6faeff"
   license "MIT"
 
   livecheck do
