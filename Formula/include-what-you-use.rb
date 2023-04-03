@@ -4,11 +4,9 @@ class IncludeWhatYouUse < Formula
   license "NCSA"
 
   stable do
-    # TODO: Check if we can use unversioned `llvm` at version bump.
-    #       Remove `stable` block then.
     url "https://include-what-you-use.org/downloads/include-what-you-use-0.20.src.tar.gz"
     sha256 "75fce1e6485f280f8f13f4c2d090b11d2fd2102b50857507c8413a919b7af899"
-    depends_on "llvm@15"
+    depends_on "llvm"
   end
 
   # This omits the 3.3, 3.4, and 3.5 versions, which come from the older
@@ -55,6 +53,7 @@ class IncludeWhatYouUse < Formula
     system "cmake", "--install", "build"
 
     bin.write_exec_script libexec.glob("bin/*")
+    man1.install_symlink libexec.glob("share/man/man1/*")
 
     # include-what-you-use needs a copy of the clang and libc++ headers to be
     # located in specific folders under its resource path. These may need to be
