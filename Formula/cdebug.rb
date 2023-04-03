@@ -1,8 +1,8 @@
 class Cdebug < Formula
   desc "Swiss army knife of container debugging"
   homepage "https://github.com/iximiuz/cdebug"
-  url "https://github.com/iximiuz/cdebug/archive/refs/tags/v0.0.12.tar.gz"
-  sha256 "83ee00f576d4aab396a812ee4c6e1f309dfd8543afd5f48897f706b8b548df2e"
+  url "https://github.com/iximiuz/cdebug/archive/refs/tags/v0.0.13.tar.gz"
+  sha256 "6fd0b8ca494f7f6b1ebbef23af5f909fd073e9cca06186aee667c7b0933b199c"
   license "Apache-2.0"
   head "https://github.com/iximiuz/cdebug.git", branch: "main"
 
@@ -35,7 +35,7 @@ class Cdebug < Formula
     expected = if OS.mac?
       "cdebug: Cannot connect to the Docker daemon"
     else
-      "cdebug: Got permission denied while trying to connect to the Docker daemon"
+      "cdebug: Permission denied while trying to connect to the Docker daemon socket"
     end
     assert_match expected, shell_output("#{bin}/cdebug exec nginx 2>&1", 1)
 
