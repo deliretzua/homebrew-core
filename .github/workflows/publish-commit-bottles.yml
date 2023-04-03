@@ -112,7 +112,7 @@ jobs:
 
           if [ "$branch" = "master" ]
           then
-            echo "branch=$head_repo_owner/$branch" >> "$GITHUB_OUTPUT"
+            echo "branch=$head_repo_owner/master" >> "$GITHUB_OUTPUT"
           else
             echo "branch=$branch" >> "$GITHUB_OUTPUT"
           fi
