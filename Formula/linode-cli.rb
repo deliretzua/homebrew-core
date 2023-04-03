@@ -3,8 +3,8 @@ class LinodeCli < Formula
 
   desc "CLI for the Linode API"
   homepage "https://www.linode.com/products/cli/"
-  url "https://files.pythonhosted.org/packages/14/c3/4ecd315465b419cf2ae0446c9eaa2ed6aa28ed59e8b8f75b9168d9c3e2bb/linode-cli-5.34.1.tar.gz"
-  sha256 "a42a9a732fd2d08cbd3b8df3db14e3b722de9500ce55d872eced15d299bd19eb"
+  url "https://files.pythonhosted.org/packages/b5/23/d307b8cde73d2378eb35f668c04b86728e9ab2b36c8129a1744613859cda/linode-cli-5.35.0.tar.gz"
+  sha256 "4c135c0b47ae8cc141ab71f3117156cdb8001146e6e9885f6143954e5e0e0752"
   license "BSD-3-Clause"
   head "https://github.com/linode/linode-cli.git", branch: "main"
 
@@ -62,9 +62,18 @@ class LinodeCli < Formula
     sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
   end
 
+  # Fix the missing requirements.txt issue in pypi source tarball
+  # https://github.com/linode/linode-cli/pull/435
+  resource "requirements" do
+    url "https://raw.githubusercontent.com/linode/linode-cli/v5.35.0/requirements.txt"
+    sha256 "03139d1844f142725fc9cf14080039c5c0ecee84e0d8e43b36eb824e2d13a8d0"
+  end
+
   def install
+    buildpath.install resource("requirements")
+
     venv = virtualenv_create(libexec, "python3.11", system_site_packages: false)
-    non_pip_resources = %w[terminaltables linode-api-spec]
+    non_pip_resources = %w[terminaltables linode-api-spec requirements]
     venv.pip_install resources.reject { |r| non_pip_resources.include? r.name }
 
     # Switch build-system to poetry-core to avoid rust dependency on Linux.
