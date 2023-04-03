@@ -119,14 +119,17 @@ jobs:
           echo "origin_branch=$branch" >> "$GITHUB_OUTPUT"
           echo "remote=$remote" >> "$GITHUB_OUTPUT"
 
-          if "$pushable"
+          if [ "$head_repo" = '${{github.repository}}' ]
           then
-            if [ "$fork_type" != "Organization" ] || [ "$head_repo" = '${{github.repository}}' ]
-            then
-              exit 0
-            else
-              MESSAGE="$ORG_FORK_MESSAGE"
-            fi
+            exit 0
+          fi
+
+          if "$pushable" && [ "$fork_type" != "Organization" ]
+          then
+            exit 0
+          elif "$pushable"
+          then
+            MESSAGE="$ORG_FORK_MESSAGE"
           else
             MESSAGE="$NON_PUSHABLE_MESSAGE"
           fi
