@@ -1,24 +1,15 @@
 class Isl < Formula
+  # NOTE: Always use tarball instead of git tag for stable version.
+  #
+  # Currently isl detects its version using source code directory name
+  # and update isl_version() function accordingly.  All other names will
+  # result in isl_version() function returning "UNKNOWN" and hence break
+  # package detection.
   desc "Integer Set Library for the polyhedral model"
   homepage "https://libisl.sourceforge.io/"
+  url "https://libisl.sourceforge.io/isl-0.26.tar.xz"
+  sha256 "a0b5cb06d24f9fa9e77b55fabbe9a3c94a336190345c2555f9915bb38e976504"
   license "MIT"
-
-  stable do
-    # NOTE: Always use tarball instead of git tag for stable version.
-    #
-    # Currently isl detects its version using source code directory name
-    # and update isl_version() function accordingly.  All other names will
-    # result in isl_version() function returning "UNKNOWN" and hence break
-    # package detection.
-    url "https://libisl.sourceforge.io/isl-0.25.tar.xz"
-    sha256 "be7b210647ccadf90a2f0b000fca11a4d40546374a850db67adb32fad4b230d9"
-
-    # Fix -flat_namespace being used on Big Sur and later.
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-      sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-    end
-  end
 
   livecheck do
     url :homepage
