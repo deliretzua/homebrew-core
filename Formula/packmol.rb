@@ -1,8 +1,8 @@
 class Packmol < Formula
   desc "Packing optimization for molecular dynamics simulations"
   homepage "https://www.ime.unicamp.br/~martinez/packmol/"
-  url "https://github.com/m3g/packmol/archive/v20.14.0.tar.gz"
-  sha256 "dc39d3c8676c48cf4999a864e902532b664063c616aeecae1962d37478c5a30c"
+  url "https://github.com/m3g/packmol/archive/v20.14.1.tar.gz"
+  sha256 "ef66a006f16dab57a04bd5d6238217f9f969dc99931d56e01f93f1c11dc710db"
   license "MIT"
   head "https://github.com/m3g/packmol.git", branch: "master"
 
