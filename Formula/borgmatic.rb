@@ -3,8 +3,8 @@ class Borgmatic < Formula
 
   desc "Simple wrapper script for the Borg backup software"
   homepage "https://torsion.org/borgmatic/"
-  url "https://files.pythonhosted.org/packages/c3/5e/d43bb63a72d684ac472f2adb139e184ae536b66a8dcbb1c0f2f2b4803da7/borgmatic-1.7.10.tar.gz"
-  sha256 "2478217aad68d1c3a52a9abb8ae19e075d4f47a8ed1dacbb360617abfd0ea914"
+  url "https://files.pythonhosted.org/packages/bc/67/1634584d94b6964d401df59673326ddcd35bbf5ab579d3238026d4ac0d14/borgmatic-1.7.11.tar.gz"
+  sha256 "f12871fed27c80b665bb81040198137e0bde7c6047be21cb4484e9698bda20e7"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -173,13 +173,13 @@ class Borgmatic < Formula
       init --encryption repokey --debug #{repo_path}
       --version
       create #{repo_path}::{hostname}-{now:%Y-%m-%dT%H:%M:%S.%f} /etc /home
-      prune --keep-daily 7 --glob-archives {hostname}-* #{repo_path}
+      prune --keep-daily 7 #{repo_path}
       compact #{repo_path}
       info --json #{repo_path}
-      check --glob-archives {hostname}-* #{repo_path}
+      check #{repo_path}
       --version
       create #{repo_path}::{hostname}-{now:%Y-%m-%dT%H:%M:%S.%f} /etc /home #{testpath}/.borgmatic --json
-      prune --keep-daily 7 --glob-archives {hostname}-* --list #{repo_path}
+      prune --keep-daily 7 --list #{repo_path}
       compact #{repo_path}
       info --json #{repo_path}
     EOS
