@@ -1,8 +1,8 @@
 class Croaring < Formula
   desc "Roaring bitmaps in C (and C++)"
   homepage "https://roaringbitmap.org"
-  url "https://github.com/RoaringBitmap/CRoaring/archive/v1.0.1.tar.gz"
-  sha256 "33cefdc38eebac40c43f6f68c21b24b9d34190eb3ca0636df9acb272e8595eb0"
+  url "https://github.com/RoaringBitmap/CRoaring/archive/v1.1.0.tar.gz"
+  sha256 "b59495578e3e4790a216420ce70578d22c1b6d1987232fc2bf46463a03fb1c06"
   license "Apache-2.0"
   head "https://github.com/RoaringBitmap/CRoaring.git", branch: "master"
 
@@ -19,12 +19,12 @@ class Croaring < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", ".", *std_cmake_args, "-DENABLE_ROARING_TESTS=OFF"
-    system "make", "install"
-    system "make", "clean"
-    system "cmake", ".", *std_cmake_args, "-DROARING_BUILD_STATIC=ON"
-    system "make"
-    lib.install "src/libroaring.a"
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DENABLE_ROARING_TESTS=OFF",
+                    "-DROARING_BUILD_STATIC=ON",
+                    *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
