@@ -1,10 +1,9 @@
 class CheckPostgres < Formula
   desc "Monitor Postgres databases"
   homepage "https://bucardo.org/wiki/Check_postgres"
-  url "https://bucardo.org/downloads/check_postgres-2.25.0.tar.gz"
-  sha256 "11b52f86c44d6cc26e9a4129e67c2589071dbe1b8ac1f8895761517491c6e44b"
+  url "https://bucardo.org/downloads/check_postgres-2.26.0.tar.gz"
+  sha256 "a3b135c1a205179410ee7b694e528704ebc12358781c98d3763d835872366995"
   license "BSD-2-Clause"
-  revision 2
   head "https://github.com/bucardo/check_postgres.git", branch: "master"
 
   livecheck do
