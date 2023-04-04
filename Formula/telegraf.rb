@@ -1,8 +1,8 @@
 class Telegraf < Formula
   desc "Plugin-driven server agent for collecting & reporting metrics"
   homepage "https://www.influxdata.com/time-series-platform/telegraf/"
-  url "https://github.com/influxdata/telegraf/archive/v1.26.0.tar.gz"
-  sha256 "ee6933a16930dfd8b32832f0ed9e0393bb14cdb973abc1a773bfb58976470ea8"
+  url "https://github.com/influxdata/telegraf/archive/refs/tags/v1.26.1.tar.gz"
+  sha256 "6896dddd06e0756df54f2678c77e3eea45354b2ae167ccec1de8352f0554b8cb"
   license "MIT"
   head "https://github.com/influxdata/telegraf.git", branch: "master"
 
@@ -22,6 +22,14 @@ class Telegraf < Formula
   end
 
   depends_on "go" => :build
+
+  # Fix an undefined symbol error on Apple Silicon.
+  # Remove when `github.com/shoenig/go-m1cpu` v0.1.5 is used by upstream.
+  on_macos do
+    on_arm do
+      patch :DATA
+    end
+  end
 
   def install
     ldflags = "-s -w -X github.com/influxdata/telegraf/internal.Version=#{version}"
@@ -49,3 +57,27 @@ class Telegraf < Formula
            "-input-filter", "cpu:mem"
   end
 end
+
+__END__
+--- a/go.mod
++++ b/go.mod
+@@ -388,7 +388,7 @@ require (
+ 	github.com/rogpeppe/fastuuid v1.2.0 // indirect
+ 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
+ 	github.com/samuel/go-zookeeper v0.0.0-20200724154423-2164a8ac840e // indirect
+-	github.com/shoenig/go-m1cpu v0.1.4 // indirect
++	github.com/shoenig/go-m1cpu v0.1.5 // indirect
+ 	github.com/signalfx/com_signalfx_metrics_protobuf v0.0.3 // indirect
+ 	github.com/signalfx/gohistogram v0.0.0-20160107210732-1ccfd2ff5083 // indirect
+ 	github.com/signalfx/sapm-proto v0.7.2 // indirect
+--- a/go.sum
++++ b/go.sum
+@@ -2062,6 +2062,8 @@ github.com/shirou/gopsutil/v3 v3.23.3 h1:Syt5vVZXUDXPEXpIBt5ziWsJ4LdSAAxF4l/xZeQ
+ github.com/shirou/gopsutil/v3 v3.23.3/go.mod h1:lSBNN6t3+D6W5e5nXTxc8KIMMVxAcS+6IJlffjRRlMU=
+ github.com/shoenig/go-m1cpu v0.1.4 h1:SZPIgRM2sEF9NJy50mRHu9PKGwxyyTTJIWvCtgVbozs=
+ github.com/shoenig/go-m1cpu v0.1.4/go.mod h1:Wwvst4LR89UxjeFtLRMrpgRiyY4xPsejnVZym39dbAQ=
++github.com/shoenig/go-m1cpu v0.1.5 h1:LF57Z/Fpb/WdGLjt2HZilNnmZOxg/q2bSKTQhgbrLrQ=
++github.com/shoenig/go-m1cpu v0.1.5/go.mod h1:Wwvst4LR89UxjeFtLRMrpgRiyY4xPsejnVZym39dbAQ=
+ github.com/shoenig/test v0.6.3 h1:GVXWJFk9PiOjN0KoJ7VrJGH6uLPnqxR7/fe3HUPfE0c=
+ github.com/shoenig/test v0.6.3/go.mod h1:byHiCGXqrVaflBLAMq/srcZIHynQPQgeyvkvXnjqq0k=
+ github.com/shopspring/decimal v0.0.0-20180709203117-cd690d0c9e24/go.mod h1:M+9NzErvs504Cn4c5DxATwIqPbtswREoFCre64PpcG4=
