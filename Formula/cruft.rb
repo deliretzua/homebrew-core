@@ -3,8 +3,8 @@ class Cruft < Formula
 
   desc "Utility that creates projects from templates and maintains the cruft afterwards"
   homepage "https://cruft.github.io/cruft/"
-  url "https://files.pythonhosted.org/packages/00/1d/b9f0afed49a884f809fe0bb68bab458e999f22b3c41bbe6b64de2311f560/cruft-2.13.0.tar.gz"
-  sha256 "5b2c15da088126a79fa00be9fc826dadd73498ffb351b5be8af8538e007ed7b6"
+  url "https://files.pythonhosted.org/packages/fb/ee/074d2116f87048955dbba663d769f9a16108c3c88a9cd667e87c3c4bb4ad/cruft-2.14.0.tar.gz"
+  sha256 "ba3d976de1cad437b6a92239b6ec844ea8547e09de796ef505d320c356c45de5"
   license "MIT"
   head "https://github.com/cruft/cruft.git", branch: "master"
 
