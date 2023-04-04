@@ -26,17 +26,20 @@ class WireguardTools < Formula
   depends_on "wireguard-go"
 
   def install
-    cd "src" do
-      inreplace ["completion/wg-quick.bash-completion", "wg-quick/darwin.bash"],
-        " /etc/wireguard", " #{etc}/wireguard"
-      inreplace ["man/wg-quick.8", "wg-quick/linux.bash"], "/etc/wireguard", etc/"wireguard"
-    end
-    system "make", "BASHCOMPDIR=#{bash_completion}", "WITH_BASHCOMPLETION=yes", "WITH_WGQUICK=yes",
-                   "WITH_SYSTEMDUNITS=no", "PREFIX=#{prefix}", "SYSCONFDIR=#{prefix}/etc",
-                   "-C", "src", "install"
+    inreplace ["src/completion/wg-quick.bash-completion", "src/wg-quick/darwin.bash"],
+              " /usr/local/etc/wireguard", " #{etc}/wireguard"
+
+    system "make", "-C", "src",
+                         "BASHCOMPDIR=#{bash_completion}",
+                         "WITH_BASHCOMPLETION=yes",
+                         "WITH_WGQUICK=yes",
+                         "WITH_SYSTEMDUNITS=no",
+                         "PREFIX=#{prefix}",
+                         "SYSCONFDIR=#{etc}",
+                         "install"
   end
 
   test do
-    system "#{bin}/wg", "help"
+    system bin/"wg", "help"
   end
 end
