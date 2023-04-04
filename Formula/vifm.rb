@@ -1,8 +1,8 @@
 class Vifm < Formula
   desc "Ncurses-based file manager with vi-like keybindings"
   homepage "https://vifm.info/"
-  url "https://github.com/vifm/vifm/releases/download/v0.12.1/vifm-0.12.1.tar.bz2"
-  sha256 "8fe2813ebdcccfe99aece02b05d62a20991525d46b0ccfbaec3af614c6655688"
+  url "https://github.com/vifm/vifm/releases/download/v0.13/vifm-0.13.tar.bz2"
+  sha256 "0d9293749a794076ade967ecdc47d141d85e450370594765391bdf1a9bd45075"
   license "GPL-2.0-or-later"
   head "https://github.com/vifm/vifm.git", branch: "master"
 
@@ -30,9 +30,7 @@ class Vifm < Formula
                           "--without-libmagic",
                           "--without-X11"
     system "make"
-    # Run make check only when not root
-    # https://github.com/vifm/vifm/issues/654
-    system "make", "check" unless Process.uid.zero?
+    system "make", "check"
 
     ENV.deparallelize { system "make", "install" }
   end
