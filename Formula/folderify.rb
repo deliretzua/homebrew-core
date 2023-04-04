@@ -1,10 +1,8 @@
 class Folderify < Formula
-  include Language::Python::Virtualenv
-
   desc "Generate pixel-perfect macOS folder icons in the native style"
   homepage "https://github.com/lgarron/folderify"
-  url "https://files.pythonhosted.org/packages/4c/18/a4d6491e4f64cbff4821cefa9fec1cfcb3048e19fc806d7e9af876654b94/folderify-2.4.0.tar.gz"
-  sha256 "daf1f5c64d59528d61d5a223d9ad2ba8f0e10ffd0d9cc2286ccd65b7fa516c24"
+  url "https://github.com/lgarron/folderify/archive/refs/tags/v3.0.6.tar.gz"
+  sha256 "592f230e81ccda26f3366a07501278d7419bc7a5ac48aaa6a725a1b806b15a9b"
   license "MIT"
   head "https://github.com/lgarron/folderify.git", branch: "main"
 
@@ -17,47 +15,24 @@ class Folderify < Formula
     sha256 cellar: :any_skip_relocation, big_sur:        "1a714d0ecddc788eae807a62b55dcd6f7d5d864a3b0da91ba3446dfb5d6b9337"
   end
 
+  depends_on "rust" => :build
   depends_on xcode: :build
   depends_on "imagemagick"
   depends_on :macos
-  depends_on "python@3.11"
-
-  resource "osxiconutils" do
-    url "https://github.com/sveinbjornt/osxiconutils.git",
-        revision: "d3b43f1dd5e1e8ff60d2dbb4df4e872388d2cd10"
-  end
-
-  def python3
-    "python3.11"
-  end
 
   def install
-    venv = virtualenv_create(libexec, python3, system_site_packages: false)
-    venv.pip_install_and_link buildpath
+    system "cargo", "install", *std_cargo_args
 
-    # Replace bundled pre-built `seticon` with one we built ourselves.
-    resource("osxiconutils").stage do
-      xcodebuild "-arch", Hardware::CPU.arch,
-                 "-parallelizeTargets",
-                 "-project", "osxiconutils.xcodeproj",
-                 "-target", "seticon",
-                 "-configuration", "Release",
-                 "CONFIGURATION_BUILD_DIR=build",
-                 "SYMROOT=."
-
-      (libexec/Language::Python.site_packages(python3)/"folderify/lib").install "build/seticon"
-    end
+    generate_completions_from_executable(bin/"folderify", "--completions")
   end
 
   test do
-    # Copies an example icon
-    site_packages = libexec/Language::Python.site_packages(python3)
-    cp(
-      "#{site_packages}/folderify/GenericFolderIcon.Yosemite.iconset/icon_16x16.png",
-      "icon.png",
-    )
+    # Write an example icon to a file.
+    File.write("test.svg", '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="40" fill="transparent" stroke="black" stroke-width="20" /></svg>')
+
     # folderify applies the test icon to a folder
-    system bin/"folderify", "icon.png", testpath.to_s
+    system bin/"folderify", "test.svg", testpath.to_s
     # Tests for the presence of the file icon
     assert_predicate testpath / "Icon\r", :exist?
   end
