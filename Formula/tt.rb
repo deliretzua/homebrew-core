@@ -1,8 +1,8 @@
 class Tt < Formula
   desc "Command-line utility to manage Tarantool applications"
   homepage "https://github.com/tarantool/tt"
-  url "https://github.com/tarantool/tt/releases/download/v1.0.0/tt-1.0.0-complete.tar.gz"
-  sha256 "6f42d30b9d9f9fbad1907a49cf3394f71c2c86e3faa1194fd9372e4d8877c792"
+  url "https://github.com/tarantool/tt/releases/download/v1.0.1/tt-1.0.1-complete.tar.gz"
+  sha256 "b3fa68d2c9aeaded9532d180a5ff73c38ee5b603882a0aff680fe88cf9541d02"
   license "BSD-2-Clause"
 
   bottle do
@@ -33,6 +33,7 @@ class Tt < Formula
   end
 
   test do
+    system bin/"tt", "init"
     system bin/"tt", "create", "cartridge", "--name", "cartridge_app", "-f", "--non-interactive", "-d", testpath
     assert_path_exists testpath/"cartridge_app/init.lua"
   end
