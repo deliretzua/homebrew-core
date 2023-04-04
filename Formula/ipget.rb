@@ -7,13 +7,13 @@ class Ipget < Formula
   head "https://github.com/ipfs/ipget.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "233788748853983df10588bf95efc20dddbb352411f8ed79be206722d03276ac"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0866c1fc5c49c93e7134866aac3ccde371329fa1b207be80be12da2ca6dfc8aa"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2b390872e4c717f8b82d5a50ffa736f460c053e055adb88f8633fdac0d506a44"
-    sha256 cellar: :any_skip_relocation, ventura:        "fe3f442e4e947fce3086ecc6fb930bf9be2dd22a1d7ee3d44ad51fbbe1041e5c"
-    sha256 cellar: :any_skip_relocation, monterey:       "ae383e4e816bf7a335bad7a9a6d89cb29f4ba0b4ad5518d32e836bc9b4d04554"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ad882c162aec3184a504d3de7274ca6fa0c60f7a3affa99b5f3eed834fe50940"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3ca4537a2e1536933ca2cd4a17b9f8907dc0a5c3df4b04f8bdfdc74476cdb74"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "27ae249c58431d50c42006db8f3c10590788dcc12789f7fec095733e16933aed"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "637aee6de5693820f80fb291b96fc96d4d38c5ca0c14e669405f0aab1c4e60a0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1e42ef30c86e3a92c04c520a95bc2e68d51065c18e66537b550f76e122407181"
+    sha256 cellar: :any_skip_relocation, ventura:        "d18b12d7e885b8636217d41eb675e49c88a4fe88e986dc65af371db1d6d37150"
+    sha256 cellar: :any_skip_relocation, monterey:       "d647927bfe8775c8dcb6e30e4f40cc11ba6b645a81ce54de5e3a794c1cfd4662"
+    sha256 cellar: :any_skip_relocation, big_sur:        "19db9c6847816db344a1a73d04fbaf25a582862136054105337b12668df26770"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d86000b64a10489e5ab7066fdc90f528e5009e21853d5ae05baabea71a148bc"
   end
 
   depends_on "go" => :build
