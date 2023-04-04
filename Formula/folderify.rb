@@ -1,8 +1,8 @@
 class Folderify < Formula
   desc "Generate pixel-perfect macOS folder icons in the native style"
   homepage "https://github.com/lgarron/folderify"
-  url "https://github.com/lgarron/folderify/archive/refs/tags/v3.0.6.tar.gz"
-  sha256 "592f230e81ccda26f3366a07501278d7419bc7a5ac48aaa6a725a1b806b15a9b"
+  url "https://github.com/lgarron/folderify/archive/refs/tags/v3.0.7.tar.gz"
+  sha256 "ef35c574533b2cdf3a6427c2c3610614a59048f2936295d2323a8fecf5852e43"
   license "MIT"
   head "https://github.com/lgarron/folderify.git", branch: "main"
 
