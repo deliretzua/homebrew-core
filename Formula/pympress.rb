@@ -9,13 +9,13 @@ class Pympress < Formula
   head "https://github.com/Cimbali/pympress.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7ecd1b41760fe8dd7a96168e48229382a9b5d06aac7bb8c44f11250b4a6dbb0d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "483ba52b484159ed0d3ff9e8bda47bc1188920a88142c03df996f46ac771dd01"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "14c1f8fb383827fa337df9cd5143b81f533d74460e62fca97b4dda8107490157"
-    sha256 cellar: :any_skip_relocation, ventura:        "420751588146ab08f278c27cc55f8725ca6d6c83a50daa0872b3eb2bbd9a8cd5"
-    sha256 cellar: :any_skip_relocation, monterey:       "7998d879b8adb53e8cfecd60e9e9718c65d78f2a70fdf465bd50418f033fdf7b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1790050922cad16eb68f63e73f1b3faf99821283fb44ec088a555072c3fcca68"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2e384c4fbe7ecbe81ddb8e1aa58c317a4db0160684502b858997afcdd6c97e6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a1eeccea821949ac7769026f48017e33d10d4d2a9733050f18e3abef8223c0b9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2272b58efbb36e3f7673c7c2d8e35e92014a8c4b0c693ac3f93847bd5c538bb4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e8fb791e60461fe3c16881d8fa43f4ba8b4b220472e9e8500ba208fc2b940673"
+    sha256 cellar: :any_skip_relocation, ventura:        "56a8e468bac364046adaa3fe9787584d0fab7b1a7e7b09adb6a3cd4187a275b8"
+    sha256 cellar: :any_skip_relocation, monterey:       "9eb46e615ad64fc0aa56875c0b64cd87122050144ebd851661803d2bde03bdc4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "88ec5a52c69b793ed6fab371180a09e9034929ead3f35a175fc1ae17be9fc2d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d7f0ab90532660d2f98bc78b80e11d9fa8a77bf809a71cb36a957aa4a3114587"
   end
 
   depends_on "gobject-introspection"
