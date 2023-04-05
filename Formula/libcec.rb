@@ -40,21 +40,17 @@ class Libcec < Formula
     end
 
     resource("p8-platform").stage do
-      mkdir "build" do
-        system "cmake", "..", *cmake_args
-        system "make"
-        system "make", "install"
-      end
+      system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}", *cmake_args
+      system "cmake", "--build", "build"
+      system "cmake", "--install", "build"
     end
 
-    mkdir "build" do
-      system "cmake", "..", *cmake_args
-      system "make"
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}", *cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
-    system "#{bin}/cec-client", "--info"
+    assert_match "libCEC version: #{version}", shell_output("#{bin}/cec-client --info")
   end
 end
