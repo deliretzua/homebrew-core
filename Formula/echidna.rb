@@ -18,6 +18,8 @@ class Echidna < Formula
   depends_on "ghc@9.2" => :build
   depends_on "haskell-stack" => :build
 
+  depends_on "truffle" => :test
+
   depends_on "crytic-compile"
   depends_on "libff"
   depends_on "secp256k1"
@@ -48,9 +50,10 @@ class Echidna < Formula
   end
 
   test do
-    system "solc-select", "install", "0.7.0"
+    system "truffle", "init"
 
-    (testpath/"test.sol").write <<~EOS
+    (testpath/"contracts/test.sol").write <<~EOS
+      pragma solidity ^0.8.0;
       contract True {
         function f() public returns (bool) {
           return(false);
@@ -61,9 +64,7 @@ class Echidna < Formula
       }
     EOS
 
-    with_env(SOLC_VERSION: "0.7.0") do
-      assert_match(/echidna_true:(\s+)passed!/,
-                   shell_output("#{bin}/echidna --format text #{testpath}/test.sol"))
-    end
+    assert_match(/echidna_true:(\s+)passed!/,
+                 shell_output("#{bin}/echidna --format text #{testpath}"))
   end
 end
