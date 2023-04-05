@@ -15,8 +15,6 @@ class ElanInit < Formula
   end
 
   depends_on "rust" => :build
-  # elan-init will run on arm64 Macs, but will fetch Leans that are x86_64.
-  depends_on arch: :x86_64
   depends_on "coreutils"
   depends_on "gmp"
 
@@ -37,20 +35,20 @@ class ElanInit < Formula
   end
 
   test do
-    system bin/"elan-init", "-y"
+    ENV["ELAN_HOME"] = testpath/".elan"
+
+    system bin/"elan-init", "-y", "--default-toolchain=leanprover/lean4:stable"
     (testpath/"hello.lean").write <<~EOS
       def id' {α : Type} (x : α) : α := x
 
-      inductive tree (α : Type) : Type
-      | node : α → list tree → tree
+      inductive tree {α : Type} : Type
+      | node : α → List tree → tree
 
-      example (a b : Prop) : a ∧ b -> b ∧ a :=
-      begin
-          intro h, cases h,
-          split, repeat { assumption }
-      end
+      example (a b : Prop) : a ∧ b -> b ∧ a := by
+          intro h; cases h with
+          | intro ha hb => constructor; exact hb; exact ha
     EOS
     system bin/"lean", testpath/"hello.lean"
-    system bin/"leanpkg", "help"
+    system bin/"lake", "help"
   end
 end
