@@ -7,12 +7,12 @@ class Folderify < Formula
   head "https://github.com/lgarron/folderify.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c9b18a5d4f4b9c8fcc19a2b1635f78c80db76dd2cf77c47ea07f03a5a11df58e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "73f1d5408df9e2f44a5dded487f3859fb71e2762a78c25548a96895c971a80ca"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d735c8e48e17d9ee934e486af196480bf645ca9f0e22bf183349da8c2ed14042"
-    sha256 cellar: :any_skip_relocation, ventura:        "f9c51e019ba7e1b72e0177465240e18cc035024d11ddd2f11bc91e13cca58461"
-    sha256 cellar: :any_skip_relocation, monterey:       "7686b71b6c1b8cba0b7cb1ba473baab6e9f113321fad263bfdf9b4700e843838"
-    sha256 cellar: :any_skip_relocation, big_sur:        "22bf841a5d444c33f481ba2a190a67bcae2e2d8b714d0fc63e0c6ad81c6508b3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "56fcb79eb80e762364270f237bd43c80704f7a3c5334a96d8a55693e56cad5bb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4a712442c599ee275dc77fb1a9e852baacd358a5ea932304ef9da6b7ae8b8652"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a527edaf52ca1474e0490db9a3ba2c1aa5f896ad76e4b1d86dd061244f053b7c"
+    sha256 cellar: :any_skip_relocation, ventura:        "876498f71f8882ea64664cc337de821fe8ee81023bdb493f04eadec6bc137547"
+    sha256 cellar: :any_skip_relocation, monterey:       "a1ddcf8aaf2eeb3119b5e21ffb9a87f8ad76d7371cc24c401b47f2c8b531b65f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1bef42c8b34680436a2313eebfd84f03816c50eca3939baee7918efb0baaf0bf"
   end
 
   depends_on "rust" => :build
