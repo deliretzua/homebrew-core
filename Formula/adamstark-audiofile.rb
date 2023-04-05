@@ -1,8 +1,8 @@
 class AdamstarkAudiofile < Formula
   desc "C++ Audio File Library by Adam Stark"
   homepage "https://github.com/adamstark/AudioFile"
-  url "https://github.com/adamstark/AudioFile/archive/refs/tags/1.1.0.tar.gz"
-  sha256 "7546e39ca17ac09c653f46bfecce4a9936fae3784209ad53094915c78792a327"
+  url "https://github.com/adamstark/AudioFile/archive/refs/tags/1.1.1.tar.gz"
+  sha256 "664f9d5fbbf1ff6c603ae054a35224f12e9856a1d8680be567909015ccaac328"
   license "MIT"
 
   bottle do
@@ -23,7 +23,7 @@ class AdamstarkAudiofile < Formula
       }
     EOS
 
-    system ENV.cxx, "-std=c++11", \
+    system ENV.cxx, "-std=c++17", \
            "-o", "audiofile", \
            "audiofile.cc", \
             "-L", include.to_s
