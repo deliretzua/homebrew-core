@@ -3,9 +3,8 @@ require "language/node"
 class NetlifyCli < Formula
   desc "Netlify command-line tool"
   homepage "https://www.netlify.com/docs/cli"
-  # netlify-cli should only be updated every 5 releases on multiples of 5
-  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-13.2.0.tgz"
-  sha256 "b8e1570e784ee871d4b623c58bf725f4cf902f674ab248629da2cbe6ffbce894"
+  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-13.2.2.tgz"
+  sha256 "d2833a5548bec0581cffa02094097d89f9a9e6a46230585a21174393aa54a2f1"
   license "MIT"
   head "https://github.com/netlify/cli.git", branch: "main"
 
