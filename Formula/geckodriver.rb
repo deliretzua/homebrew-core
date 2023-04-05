@@ -10,7 +10,7 @@ class Geckodriver < Formula
     # Get long hash via `https://hg.mozilla.org/mozilla-central/rev/<commit-short-hash>`
     hg_revision = "a80e5fd61076eda50fbf755f90bd30440ad12cc7"
     url "https://hg.mozilla.org/mozilla-central/archive/#{hg_revision}.zip/testing/geckodriver/"
-    version "0.32.2"
+    version "0.33.0"
     sha256 "0cc493ff77bb809e6925edd28baf6237b8e60950b7d3d2632847339bd1384b3e"
 
     resource "webdriver" do
