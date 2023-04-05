@@ -1,10 +1,9 @@
 class PythonAT311 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.11.2/Python-3.11.2.tgz"
-  sha256 "2411c74bda5bbcfcddaf4531f66d1adc73f247f529aee981b029513aefdbf849"
+  url "https://www.python.org/ftp/python/3.11.3/Python-3.11.3.tgz"
+  sha256 "1a79f3df32265d9e6625f1a0b31c28eb1594df911403d11f3320ee1da1b3e048"
   license "Python-2.0"
-  revision 1
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -68,19 +67,24 @@ class PythonAT311 < Formula
   link_overwrite "Frameworks/Python.framework/Versions/Current"
 
   # Always update to latest release
+  resource "flit-core" do
+    url "https://files.pythonhosted.org/packages/10/e5/be08751d07b30889af130cec20955c987a74380a10058e6e8856e4010afc/flit_core-3.8.0.tar.gz"
+    sha256 "b305b30c99526df5e63d6022dd2310a0a941a187bd3884f4c8ef0418df6c39f3"
+  end
+
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/b6/21/cb9a8d0b2c8597c83fce8e9c02884bce3d4951e41e807fc35791c6b23d9a/setuptools-65.6.3.tar.gz"
-    sha256 "a7620757bf984b58deaf32fc8a4577a9bbc0850cf92c20e1ce41c38c19e5fb75"
+    url "https://files.pythonhosted.org/packages/cb/46/22ec35f286a77e6b94adf81b4f0d59f402ed981d4251df0ba7b992299146/setuptools-67.6.1.tar.gz"
+    sha256 "257de92a9d50a60b8e22abfcbb771571fde0dbf3ec234463212027a4eeecbe9a"
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/a3/50/c4d2727b99052780aad92c7297465af5fe6eec2dbae490aa9763273ffdc1/pip-22.3.1.tar.gz"
-    sha256 "65fd48317359f3af8e593943e6ae1506b66325085ea64b706a998c6e83eeaf38"
+    url "https://files.pythonhosted.org/packages/6b/8b/0b16094553ecc680e43ded8f920c3873b01b1da79a54274c98f08cb29fca/pip-23.0.1.tar.gz"
+    sha256 "cd015ea1bfb0fcef59d8a286c1f8bebcb983f6317719d415dc5351efb7cd7024"
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/a2/b8/6a06ff0f13a00fc3c3e7d222a995526cbca26c1ad107691b6b1badbbabf1/wheel-0.38.4.tar.gz"
-    sha256 "965f5259b566725405b05e7cf774052044b1ed30119b5d586b2703aafe8719ac"
+    url "https://files.pythonhosted.org/packages/fc/ef/0335f7217dd1e8096a9e8383e1d472aa14717878ffe07c4772e68b6e8735/wheel-0.40.0.tar.gz"
+    sha256 "cd1196f3faee2b31968d626e1731c94f99cbdb67cf5a46e4f5656cbee7738873"
   end
 
   # Modify default sysconfig to match the brew install layout.
@@ -148,7 +152,6 @@ class PythonAT311 < Formula
       --with-openssl=#{Formula["openssl@1.1"].opt_prefix}
       --enable-optimizations
       --with-system-expat
-      --with-system-ffi
       --with-system-libmpdec
       --with-readline=editline
     ]
@@ -291,6 +294,9 @@ class PythonAT311 < Formula
     ]
     whl_build = buildpath/"whl_build"
     system python3, "-m", "venv", whl_build
+    resource("flit-core").stage do
+      system whl_build/"bin/pip3", "install", *common_pip_args, "."
+    end
     resource("wheel").stage do
       system whl_build/"bin/pip3", "install", *common_pip_args, "."
       system whl_build/"bin/pip3", "wheel", *common_pip_args,
