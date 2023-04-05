@@ -4,6 +4,7 @@ class AdamstarkAudiofile < Formula
   url "https://github.com/adamstark/AudioFile/archive/refs/tags/1.1.1.tar.gz"
   sha256 "664f9d5fbbf1ff6c603ae054a35224f12e9856a1d8680be567909015ccaac328"
   license "MIT"
+  head "https://github.com/adamstark/AudioFile.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "7d3026d78153c7dae8d493ed0265c9ef87888d2645a37a1b8b564c202fc897df"
