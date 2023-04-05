@@ -1,8 +1,8 @@
 class Nerdctl < Formula
   desc "ContaiNERD CTL - Docker-compatible CLI for containerd"
   homepage "https://github.com/containerd/nerdctl"
-  url "https://github.com/containerd/nerdctl/archive/refs/tags/v1.2.1.tar.gz"
-  sha256 "ee913c25a8b9cf15d31d1f7bf9405b586a68b02c7e70538194700dec08730b3a"
+  url "https://github.com/containerd/nerdctl/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "86603df0e86720c962c533c052187a38d175295e781cf53735075d44c193c56c"
   license "Apache-2.0"
   head "https://github.com/containerd/nerdctl.git", branch: "master"
 
