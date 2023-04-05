@@ -23,10 +23,10 @@ class AdamstarkAudiofile < Formula
       }
     EOS
 
-    system ENV.cxx, "-std=c++17", \
-           "-o", "audiofile", \
-           "audiofile.cc", \
-            "-L", include.to_s
+    system ENV.cxx, "-std=c++17",
+           "-I#{include}",
+           "-o", "audiofile",
+           "audiofile.cc"
     system "./audiofile"
   end
 end
