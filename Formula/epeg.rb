@@ -1,10 +1,9 @@
 class Epeg < Formula
   desc "JPEG/JPG thumbnail scaling"
   homepage "https://github.com/mattes/epeg"
-  url "https://github.com/mattes/epeg/archive/v0.9.2.tar.gz"
-  sha256 "f8285b94dd87fdc67aca119da9fc7322ed6902961086142f345a39eb6e0c4e29"
+  url "https://github.com/mattes/epeg/archive/v0.9.3.tar.gz"
+  sha256 "efcd7e72c530c3ff46f9efd86ec1dbb042e4a55fc5a7ea75e6ade9f83cf77ba3"
   license "MIT-enna"
-  revision 2
   head "https://github.com/mattes/epeg.git", branch: "master"
 
   bottle do
