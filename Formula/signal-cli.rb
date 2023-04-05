@@ -1,8 +1,8 @@
 class SignalCli < Formula
   desc "CLI and dbus interface for WhisperSystems/libsignal-service-java"
   homepage "https://github.com/AsamK/signal-cli"
-  url "https://github.com/AsamK/signal-cli/archive/refs/tags/v0.11.7.tar.gz"
-  sha256 "ea799b60c7919b51e23228404b078e000b06bb617fd994e92c2d08df6af3c977"
+  url "https://github.com/AsamK/signal-cli/archive/refs/tags/v0.11.8.tar.gz"
+  sha256 "07e8bbc56eb3b54575a4ead5ce4694b037006d2890ecabff2b44b04e9d9a11c1"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -26,8 +26,15 @@ class SignalCli < Formula
 
   depends_on "openjdk"
 
-  uses_from_macos "llvm" => :build # For `libclang`, used by `boring-sys` crate
   uses_from_macos "zip" => :build
+
+  # Use `llvm@15` to work around build failure with Clang 16 described in
+  # rust-lang/rust-bindgen#2312.
+  # TODO: Switch back to `uses_from_macos "llvm" => :build` when `libsignal`
+  # crate's dependency `boring-sys` uses `bindgen` v0.62.0 or newer.
+  on_linux do
+    depends_on "llvm@15" => :build # For `libclang`, used by `boring-sys` crate
+  end
 
   # per https://github.com/AsamK/signal-cli/wiki/Provide-native-lib-for-libsignal#libsignal-client
   # we want the specific libsignal-client version from 'signal-cli-#{version}/lib/libsignal-client-X.X.X.jar'
