@@ -12,13 +12,13 @@ class Telegraf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a09af1c30477e67de05008534850c930d513eee2189be1cdefb22bf788e88653"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "61088bdb72e8f3bd0effd3b4e7dd8256a615179ed36d365ca75887812d01c41f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bf47f5643cb7075f1912a67a354b671cf78cc2683066ddc92e784dc20b234cd8"
-    sha256 cellar: :any_skip_relocation, ventura:        "976f9434e7d01d98b5ad69c19eb35928b4e3fbbf4a31a7d8f49ba0357153ab53"
-    sha256 cellar: :any_skip_relocation, monterey:       "4a57ec81d232c8a0a0293f352ee3e12c1db10bbef82de1700d83e26c7a1becd6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "15da3d8fbbab727d434bee8d13050e7c008b6bdc41d1bc92cc3deee01018e7f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2131a845151bccfd65d829a5114843306b14eac9f2a6fba061b7712326769eb0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "22f5f355511b0b978e286318606c8d5561de75c1c16c3f4d9bfe471ccd272887"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1e551f2b1a7b7bdde2720436597de54448276194e0fdf25f16e1a20304cee08a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e84c4f3f6d8b936b988800dbf221d88b09a030dd6795d0bcc2eff2d8007daca5"
+    sha256 cellar: :any_skip_relocation, ventura:        "f3d5e3915a42a3a9afc5546ca6e892cb7ee0d83701454bd99472c5bd6df4ba81"
+    sha256 cellar: :any_skip_relocation, monterey:       "3c213b73711d4b35bdb9b2176abeee772be7806abe1b9f224c80b13e102ab470"
+    sha256 cellar: :any_skip_relocation, big_sur:        "322ceb458f74ddd66e12a64a404b83ebe0c21d0efebee186d482edb479679792"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f07c5704fe69e312b4485f1342f3672e921163481c7606c4071b96272e4fa49"
   end
 
   depends_on "go" => :build
