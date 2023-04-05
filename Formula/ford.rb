@@ -3,8 +3,8 @@ class Ford < Formula
 
   desc "Automatic documentation generator for modern Fortran programs"
   homepage "https://github.com/Fortran-FOSS-Programmers/ford"
-  url "https://files.pythonhosted.org/packages/53/07/85ad125183522e5ec6c33a3d4e195f2ddfc02a1695b95b40209adab196db/FORD-6.2.3.tar.gz"
-  sha256 "7021d57e6425a4f7b42e977c1160e4e543933f95753bf1eea16e0dacb0e9894c"
+  url "https://files.pythonhosted.org/packages/13/79/27370ac87ff984684d5b51747aeb62583a4ad9fbd90c7d93867961655aa5/FORD-6.2.4.tar.gz"
+  sha256 "76947d73fc38aa469421c52b917a9a3a1c7542f3dac7ec39d40331a5f8ed4c31"
   license "GPL-3.0-or-later"
   head "https://github.com/Fortran-FOSS-Programmers/ford.git", branch: "master"
 
@@ -25,8 +25,8 @@ class Ford < Formula
   uses_from_macos "libxslt"
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/c5/4c/b5b7d6e1d4406973fb7f4e5df81c6f07890fa82548ac3b945deed1df9d48/beautifulsoup4-4.12.0.tar.gz"
-    sha256 "c5fceeaec29d09c84970e47c65f2f0efe57872f7cff494c9691a26ec0ff13234"
+    url "https://files.pythonhosted.org/packages/4e/2f/63c252850ca79759810a988c0555cdfb67a89750743ae3943a1de106a5d2/beautifulsoup4-4.12.1.tar.gz"
+    sha256 "c7bdbfb20a0dbe09518b96a809d93351b2e2bcb8046c0809466fa6632a10c257"
   end
 
   resource "graphviz" do
