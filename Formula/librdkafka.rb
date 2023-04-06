@@ -1,8 +1,8 @@
 class Librdkafka < Formula
   desc "Apache Kafka C/C++ library"
   homepage "https://github.com/edenhill/librdkafka"
-  url "https://github.com/edenhill/librdkafka/archive/refs/tags/v2.0.2.tar.gz"
-  sha256 "f321bcb1e015a34114c83cf1aa7b99ee260236aab096b85c003170c90a47ca9d"
+  url "https://github.com/edenhill/librdkafka/archive/refs/tags/v2.1.0.tar.gz"
+  sha256 "d8e76c4b1cde99e283a19868feaaff5778aa5c6f35790036c5ef44bc5b5187aa"
   license "BSD-2-Clause"
   head "https://github.com/edenhill/librdkafka.git", branch: "master"
 
