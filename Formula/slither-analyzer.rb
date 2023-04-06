@@ -216,23 +216,16 @@ class SlitherAnalyzer < Formula
   end
 
   test do
-    (testpath/"test.sol").write <<~EOS
-      pragma solidity ^0.8.0;
-      contract Test {
-        function incorrect_shift() internal returns (uint a) {
-          assembly {
-            a := shr(a, 8)
-          }
-        }
-      }
-    EOS
+    resource "testdata" do
+      url "https://github.com/crytic/slither/raw/d0a4f5595d7177b3b7d4bd35e1384bf35ebc22d4/tests/ast-parsing/compile/variable-0.8.0.sol-0.8.15-compact.zip", using: :nounzip
+      sha256 "2f165f629882d0250d03a56cb67a84e9741375349195915a04385b0666394478"
+    end
 
-    system "solc-select", "install", "0.8.0"
-
-    with_env(SOLC_VERSION: "0.8.0") do
+    resource("testdata").stage do
       # slither exits with code 255 if high severity findings are found
-      assert_match("1 result(s) found",
-                   shell_output("#{bin}/slither --detect incorrect-shift --fail-high #{testpath}/test.sol 2>&1", 255))
+      assert_match("5 result(s) found",
+                   shell_output("#{bin}/slither --detect uninitialized-state --fail-high " \
+                                "variable-0.8.0.sol-0.8.15-compact.zip 2>&1", 255))
     end
   end
 end
