@@ -1,8 +1,8 @@
 class PythonTkAT310 < Formula
   desc "Python interface to Tcl/Tk"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.10.10/Python-3.10.10.tgz"
-  sha256 "fba64559dde21ebdc953e4565e731573bb61159de8e4d4cedee70fb1196f610d"
+  url "https://www.python.org/ftp/python/3.10.11/Python-3.10.11.tgz"
+  sha256 "f3db31b668efa983508bd67b5712898aa4247899a346f2eb745734699ccd3859"
   license "Python-2.0"
 
   livecheck do
@@ -40,7 +40,7 @@ class PythonTkAT310 < Formula
               ext_modules = [
                 Extension("_tkinter", ["_tkinter.c", "tkappinit.c"],
                           define_macros=[("WITH_APPINIT", 1)],
-                          include_dirs=["#{Formula["tcl-tk"].opt_include}"],
+                          include_dirs=["#{Formula["tcl-tk"].opt_include/"tcl-tk"}"],
                           libraries=["tcl#{tcltk_version}", "tk#{tcltk_version}"],
                           library_dirs=["#{Formula["tcl-tk"].opt_lib}"])
               ]
@@ -48,7 +48,7 @@ class PythonTkAT310 < Formula
       EOS
       system python3, *Language::Python.setup_install_args(libexec, python3),
                       "--install-lib=#{libexec}"
-      rm_r Dir[libexec/"*.egg-info"]
+      rm_r libexec.glob("*.egg-info")
     end
   end
 
