@@ -1,8 +1,8 @@
 class Kubefirst < Formula
   desc "GitOps Infrastructure & Application Delivery Platform for kubernetes"
   homepage "https://kubefirst.io/"
-  url "https://github.com/kubefirst/kubefirst/archive/refs/tags/1.11.1.tar.gz"
-  sha256 "8f90a1b83d88f0a7c383da7b8dfc7c606400f6e0af8e98daa687b8e67c265d20"
+  url "https://github.com/kubefirst/kubefirst/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "2fbaa5c05b159f11f5cd677bbd99cc62c3f42a964b8f3920d7322ce381f48528"
   license "MIT"
   head "https://github.com/kubefirst/kubefirst.git", branch: "main"
 
@@ -27,19 +27,8 @@ class Kubefirst < Formula
 
   test do
     system bin/"kubefirst", "info"
-    assert_match "createdby: installer", (testpath/".kubefirst").read
-    assert_predicate testpath/"logs", :exist?
-
-    output = <<~EOS
-      +------------------+--------------------+
-      | ADDON NAME       | INSTALLED?         |
-      +------------------+--------------------+
-      | Addons Available | Supported by       |
-      +------------------+--------------------+
-      | kusk             | kubeshop/kubefirst |
-      +------------------+--------------------+
-    EOS
-    assert_match output, shell_output("#{bin}/kubefirst addon list")
+    assert_match "k1-paths:", (testpath/".kubefirst").read
+    assert_predicate testpath/".k1/logs", :exist?
 
     assert_match version.to_s, shell_output("#{bin}/kubefirst version")
   end
