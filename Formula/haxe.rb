@@ -1,20 +1,11 @@
 class Haxe < Formula
   desc "Multi-platform programming language"
   homepage "https://haxe.org/"
+  url "https://github.com/HaxeFoundation/haxe.git",
+      tag:      "4.3.0",
+      revision: "731dcd71f10c495a5a820449249fbb3d4b40a7c1"
   license all_of: ["GPL-2.0-or-later", "MIT"]
   head "https://github.com/HaxeFoundation/haxe.git", branch: "development"
-
-  stable do
-    url "https://github.com/HaxeFoundation/haxe.git",
-        tag:      "4.2.5",
-        revision: "e5eec3122454bfc95412437d938d1d8d3e77ed68"
-
-    # Remove when campl5 dependency is bumped to 8.00 in a release
-    patch do
-      url "https://github.com/HaxeFoundation/haxe/commit/db72b31390c51c1627cf5658ca256aace41a81b0.patch?full_index=1"
-      sha256 "95a22f2cc227c4e6d066e60eb88b2a71ad6c278d6f38656fbd87ee905411918a"
-    end
-  end
 
   livecheck do
     url :stable
@@ -38,7 +29,7 @@ class Haxe < Formula
   depends_on "pkg-config" => :build
   depends_on "mbedtls@2"
   depends_on "neko"
-  depends_on "pcre"
+  depends_on "pcre2"
 
   uses_from_macos "m4" => :build
   uses_from_macos "perl" => :build
