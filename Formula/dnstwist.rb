@@ -133,7 +133,7 @@ class Dnstwist < Formula
   end
 
   test do
-    output = shell_output("#{bin}/dnstwist -rw --lsh ssdeep brew.sh 2>&1")
+    output = shell_output("#{bin}/dnstwist --registered --lsh ssdeep brew.sh 2>&1")
 
     assert_match "brew.sh", output
     assert_match "NS:ns1.dnsimple.com", output
