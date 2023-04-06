@@ -6,13 +6,13 @@ class Delve < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "64ccaa15a16d959d300474755b10ca35d21b3c58aac0920aebcfe2160c329a8b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d9e85ebe92b4f75e16dc01a524536f82ec4515cf3b077867228ddb94f4a8bd4b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f0da05254b0868b3bd954f591ad56ad2e5dd0a371a429593877f932d4b6111c8"
-    sha256 cellar: :any_skip_relocation, ventura:        "932cd17b1d87466a1e755db56346ce9fd953724e879628f330a69dea825883e0"
-    sha256 cellar: :any_skip_relocation, monterey:       "a7e57b4ecfb290968e28cedd9e445c41472059ac3641202609696f63bfe3cac3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e8008caa12e9e775ce9dfc93a6081d4b6b42530aa15884b95e0b50ec93eb5068"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7482a316d8ce4eaecf282ef520b6444629884e31c96b21b50421b8d369e6824f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "360209e24909c4c0d6951955b6ba0d6949479a0813a61862abfb6099681c6f4b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "360209e24909c4c0d6951955b6ba0d6949479a0813a61862abfb6099681c6f4b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "360209e24909c4c0d6951955b6ba0d6949479a0813a61862abfb6099681c6f4b"
+    sha256 cellar: :any_skip_relocation, ventura:        "ba76ae52dea3bb3acf49f242e71e58f97f0d1d79eca64140ad5439c81d2de965"
+    sha256 cellar: :any_skip_relocation, monterey:       "ba76ae52dea3bb3acf49f242e71e58f97f0d1d79eca64140ad5439c81d2de965"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ba76ae52dea3bb3acf49f242e71e58f97f0d1d79eca64140ad5439c81d2de965"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ebdd5aaa0f359625f909c4b34a1425dbaabf0f2172d3bd24fededa073635f6f"
   end
 
   depends_on "go" => :build
