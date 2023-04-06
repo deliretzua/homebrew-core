@@ -1,8 +1,9 @@
 class PysideAT2 < Formula
   desc "Official Python bindings for Qt"
   homepage "https://wiki.qt.io/Qt_for_Python"
-  url "https://download.qt.io/official_releases/QtForPython/pyside2/PySide2-5.15.8-src/pyside-setup-opensource-src-5.15.8.tar.xz"
-  sha256 "23436302c8deb5b4cbc769b205d09604e38ba83b40708efccb7bd8c9af6f6b5d"
+  # TODO: Check if we can use unversioned `llvm` at version bump.
+  url "https://download.qt.io/official_releases/QtForPython/pyside2/PySide2-5.15.9-src/pyside-setup-opensource-src-5.15.9.tar.xz"
+  sha256 "2ea5917652036a9007d66ba4dc0aa75f381a3a25ccf0fa70fa2d9e9c8c9dacae"
   license all_of: ["GFDL-1.3-only", "GPL-2.0-only", "GPL-3.0-only", "LGPL-3.0-only"]
 
   livecheck do
@@ -22,7 +23,7 @@ class PysideAT2 < Formula
   keg_only :versioned_formula
 
   depends_on "cmake" => :build
-  depends_on "llvm"
+  depends_on "llvm@15" # Upstream issue ref: https://bugreports.qt.io/browse/PYSIDE-2268
   depends_on "python@3.10"
   depends_on "qt@5"
 
@@ -56,7 +57,7 @@ class PysideAT2 < Formula
   # Ref: https://bugreports.qt.io/browse/PYSIDE-2035
   patch :p3 do
     url "https://code.qt.io/cgit/pyside/pyside-setup.git/patch/sources/shiboken6/libshiboken/sbknumpyarrayconverter.cpp?id=1422cf4a7f277fb13fd209f24a90d6c02641497d"
-    sha256 "8f80bc04be1e22cf3279f8893159d8e7d6f86a6b1021808ff8942549944df40c"
+    sha256 "2148af37249932be15ca417076baa9539d487b38a434ec901a67fa9ede724f52"
     directory "sources/shiboken2"
   end
 
