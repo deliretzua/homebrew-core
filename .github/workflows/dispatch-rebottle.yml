@@ -57,12 +57,13 @@ jobs:
     strategy:
       matrix:
         include: ${{fromJson(needs.setup.outputs.runners)}}
-      fail-fast: ${{fromJson(inputs.fail-fast)}}
+      fail-fast: ${{inputs.fail-fast}}
     runs-on: ${{matrix.runner}}
     container: ${{matrix.container}}
     timeout-minutes: ${{fromJson(inputs.timeout)}}
     defaults:
       run:
+        shell: /bin/bash -e {0}
         working-directory: ${{matrix.workdir || github.workspace}}
     env:
       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -79,7 +80,7 @@ jobs:
       - name: Set environment variables
         if: runner.os == 'macOS'
         run: |
-          echo 'PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin' >> $GITHUB_ENV
+          echo 'PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin' >> "$GITHUB_ENV"
 
       - name: Set up Homebrew
         id: set-up-homebrew
@@ -140,9 +141,10 @@ jobs:
         if: always()
         run: |
           cd bottles
-          count=$(ls *.json | wc -l | xargs echo -n)
-          echo "$count bottles"
-          echo "count=$count" >> $GITHUB_OUTPUT
+          json_files=(*.json)
+          count="${#json_files[@]}"
+          echo "::notice ::$count bottles"
+          echo "count=$count" >> "$GITHUB_OUTPUT"
 
       - name: Upload bottles to GitHub Actions
         if: always() && steps.bottles.outputs.count > 0
@@ -234,9 +236,10 @@ jobs:
         env:
           GH_TOKEN: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
         run: |
+          # shellcheck disable=SC2016
           gh pr create \
             --base master \
-            --body 'Created by `dispatch-rebottle`'\
+            --body 'Created by `dispatch-rebottle`' \
             --fill \
             --head "$BOTTLE_BRANCH" \
             --label CI-published-bottle-commits \

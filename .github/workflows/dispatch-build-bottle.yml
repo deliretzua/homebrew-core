@@ -276,6 +276,7 @@ jobs:
         env:
           GH_TOKEN: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
         run: |
+          # shellcheck disable=SC2016
           gh pr create \
             --base master \
             --body 'Created by `brew dispatch-build-bottle`'\
