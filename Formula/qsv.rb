@@ -1,8 +1,8 @@
 class Qsv < Formula
   desc "Ultra-fast CSV data-wrangling toolkit"
   homepage "https://github.com/jqnatividad/qsv"
-  url "https://github.com/jqnatividad/qsv/archive/refs/tags/0.97.0.tar.gz"
-  sha256 "825f7afe68afd185d61ec6102114f6b24c5a5dfed8f482acbd9d77657649ed1f"
+  url "https://github.com/jqnatividad/qsv/archive/refs/tags/0.98.0.tar.gz"
+  sha256 "9a530b6bee7772a141b0081ba406a96ecb91460077141717652d905931e4fb9a"
   license any_of: ["MIT", "Unlicense"]
   head "https://github.com/jqnatividad/qsv.git", branch: "master"
 
@@ -19,7 +19,7 @@ class Qsv < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args, "--features", "apply,luau,full"
+    system "cargo", "install", *std_cargo_args, "--features", "apply,luau,feature_capable"
   end
 
   test do
