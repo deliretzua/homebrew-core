@@ -5,8 +5,8 @@ class Neovim < Formula
   head "https://github.com/neovim/neovim.git", branch: "master"
 
   stable do
-    url "https://github.com/neovim/neovim/archive/v0.8.3.tar.gz"
-    sha256 "adf45ff160e1d89f519b6114732eba03485ae469beb27919b0f7a4f6b44233c1"
+    url "https://github.com/neovim/neovim/archive/v0.9.0.tar.gz"
+    sha256 "39d79107c54d2f3babcad2cd157c399241c04f6e75e98c18e8afaf2bb5e82937"
 
     # TODO: Consider shipping these as separate formulae instead. See discussion at
     #       https://github.com/orgs/Homebrew/discussions/3611
@@ -16,18 +16,23 @@ class Neovim < Formula
     end
 
     resource "tree-sitter-lua" do
-      url "https://github.com/MunifTanjim/tree-sitter-lua/archive/v0.0.13.tar.gz"
-      sha256 "564594fe0ffd2f2fb3578a15019b723e1bc94ac82cb6a0103a6b3b9ddcc6f315"
+      url "https://github.com/MunifTanjim/tree-sitter-lua/archive/v0.0.14.tar.gz"
+      sha256 "930d0370dc15b66389869355c8e14305b9ba7aafd36edbfdb468c8023395016d"
     end
 
     resource "tree-sitter-vim" do
-      url "https://github.com/vigoux/tree-sitter-viml/archive/v0.2.0.tar.gz"
-      sha256 "608dcc31a7948cb66ae7f45494620e2e9face1af75598205541f80d782ec4501"
+      url "https://github.com/neovim/tree-sitter-vim/archive/v0.3.0.tar.gz"
+      sha256 "403acec3efb7cdb18ff3d68640fc823502a4ffcdfbb71cec3f98aa786c21cbe2"
     end
 
-    resource "tree-sitter-help" do
-      url "https://github.com/neovim/tree-sitter-vimdoc/archive/v1.3.0.tar.gz"
-      sha256 "f33f6d49c7d71feb2fd68ef2b2684da150f9f8e486ad9726213631d673942331"
+    resource "tree-sitter-vimdoc" do
+      url "https://github.com/neovim/tree-sitter-vimdoc/archive/v2.0.0.tar.gz"
+      sha256 "1ff8f4afd3a9599dd4c3ce87c155660b078c1229704d1a254433e33794b8f274"
+    end
+
+    resource "tree-sitter-query" do
+      url "https://github.com/nvim-treesitter/tree-sitter-query/archive/v0.1.0.tar.gz"
+      sha256 "e2b806f80e8bf1c4f4e5a96248393fe6622fc1fc6189d6896d269658f67f914c"
     end
   end
 
@@ -70,8 +75,8 @@ class Neovim < Formula
   # https://github.com/neovim/neovim/blob/v#{version}/third-party/CMakeLists.txt
 
   resource "mpack" do
-    url "https://github.com/libmpack/libmpack-lua/releases/download/1.0.8/libmpack-lua-1.0.8.tar.gz"
-    sha256 "ed6b1b4bbdb56f26241397c1e168a6b1672f284989303b150f7ea8d39d1bc9e9"
+    url "https://github.com/libmpack/libmpack-lua/releases/download/1.0.10/libmpack-lua-1.0.10.tar.gz"
+    sha256 "18e202473c9a255f1d2261b019874522a4f1c6b6f989f80da93d7335933e8119"
   end
 
   resource "lpeg" do
@@ -94,7 +99,7 @@ class Neovim < Formula
 
     cd "deps-build/build/src" do
       %w[
-        mpack/mpack-1.0.8-0.rockspec
+        mpack/mpack-1.0.10-0.rockspec
         lpeg/lpeg-1.0.2-1.src.rock
       ].each do |rock|
         dir, rock = rock.split("/")
