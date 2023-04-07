@@ -3,8 +3,8 @@ class PipTools < Formula
 
   desc "Locking and sync for Pip requirements files"
   homepage "https://pip-tools.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/47/66/836cddfee7c1ee35385b8eb3af6ef735f5e7130918e72ad05a44b535e2a1/pip-tools-6.12.3.tar.gz"
-  sha256 "480d44fae6e09fad3f9bd3d0a7e8423088715d10477e8ef0663440db25e3114f"
+  url "https://files.pythonhosted.org/packages/c1/3f/f121e3a05e46ba07055b3b81d3325f712c22bc0624872b83a73c9f6e2bc1/pip-tools-6.13.0.tar.gz"
+  sha256 "61d46bd2eb8016ed4a924e196e6e5b0a268cd3babd79e593048720db23522bb1"
   license "BSD-3-Clause"
 
   bottle do
@@ -40,8 +40,8 @@ class PipTools < Formula
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/a2/b8/6a06ff0f13a00fc3c3e7d222a995526cbca26c1ad107691b6b1badbbabf1/wheel-0.38.4.tar.gz"
-    sha256 "965f5259b566725405b05e7cf774052044b1ed30119b5d586b2703aafe8719ac"
+    url "https://files.pythonhosted.org/packages/fc/ef/0335f7217dd1e8096a9e8383e1d472aa14717878ffe07c4772e68b6e8735/wheel-0.40.0.tar.gz"
+    sha256 "cd1196f3faee2b31968d626e1731c94f99cbdb67cf5a46e4f5656cbee7738873"
   end
 
   def install
