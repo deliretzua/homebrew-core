@@ -35,6 +35,16 @@ class Carrot2 < Formula
       s.gsub! "yarn: '1.22.15'", "yarn: '#{Formula["yarn"].version}'"
     end
 
+    # Fix `jflex` dependency resolution.
+    jflex_regex = /^de\.jflex:jflex=(.*?)\r?$/
+    jflex_version = (buildpath/"versions.props").read
+                                                .lines
+                                                .grep(jflex_regex)
+                                                .first[jflex_regex, 1]
+    inreplace "gradle/jflex.gradle",
+      'jflex "de.jflex:jflex"',
+      "jflex \"de.jflex:jflex:#{jflex_version}\""
+
     system "gradle", "assemble", "--no-daemon"
 
     cd "distribution/build/dist" do
