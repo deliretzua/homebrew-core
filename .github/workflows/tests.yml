@@ -412,6 +412,54 @@ jobs:
         id: determine-dependent-runners
         run: brew determine-test-runners --dependents --eval-all "$TESTING_FORMULAE"
 
+  conclusion:
+    needs: [tests, setup_tests, setup_runners]
+    if: always() && github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: /bin/bash -e {0}
+    steps:
+      - name: Check `tests` result
+        run: |
+          result='${{ needs.tests.result }}'
+          printf '::notice ::`tests` job status: %s\n' "$result"
+
+          # Possible values are `success`, `failure`, `cancelled` or `skipped`.
+          # https://docs.github.com/en/actions/learn-github-actions/contexts#needs-context
+          if [[ "$result" = "failure" ]] || [[ "$result" = "cancelled" ]]
+          then
+            printf '::error ::`tests` job %s.\n' "$result"
+            exit 1
+          fi
+
+          runners_present='${{ needs.setup_runners.outputs.runners_present }}'
+          syntax_only='${{ needs.setup_tests.outputs.syntax-only }}'
+
+          # The tests job can be skipped only if the PR is syntax-only
+          # or no runners were assigned.
+          if [[ "$result" = "skipped" ]] &&
+             [[ "$runners_present" = "false" || "$syntax_only" = "true" ]]
+          then
+            exit 0
+          fi
+
+          # The test job can succeed only if the PR is not syntax-only
+          # and runners were assigned. Otherwise it must have been skipped.
+          if [[ "$result" = "success" ]] &&
+             [[ "$runners_present" = "true" ]] &&
+             [[ "$syntax_only" = "false" ]]
+          then
+            exit 0
+          fi
+
+          # If we made it here, something went wrong with our workflow run that needs investigating.
+          printf '::error ::Unexpected outcome!\n'
+          printf '::error ::`tests` job result: %s\n' "$result" # success/skipped
+          printf '::error ::runners assigned:   %s\n' "$runners_present" # true/false
+          printf '::error ::syntax-only:        %s\n' "$syntax_only" # true/false
+          exit 1
+
   test_deps:
     needs: [tap_syntax, setup_tests, setup_dep_runners, tests]
     if: >
@@ -425,6 +473,7 @@ jobs:
       matrix:
         include: ${{fromJson(needs.setup_dep_runners.outputs.runners)}}
       fail-fast: ${{fromJson(needs.setup_tests.outputs.fail-fast)}}
+    name: ${{matrix.name}} (deps)
     runs-on: ${{matrix.runner}}
     container: ${{matrix.container}}
     timeout-minutes: ${{ matrix.timeout || fromJson(needs.setup_tests.outputs.timeout-minutes) }}
