@@ -18,14 +18,14 @@ class Epinio < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/epinio/epinio/internal/version.Version=#{version}")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/epinio/epinio/internal/version.Version=v#{version}")
 
     generate_completions_from_executable(bin/"epinio", "completion")
   end
 
   test do
     output = shell_output("#{bin}/epinio version 2>&1")
-    assert_match "Epinio Version: #{version}", output
+    assert_match "Epinio Version: v#{version}", output
 
     output = shell_output("#{bin}/epinio settings update-ca 2>&1")
     assert_match "failed to get kube config", output
