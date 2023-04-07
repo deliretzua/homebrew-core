@@ -7,14 +7,13 @@ class Neomutt < Formula
   head "https://github.com/neomutt/neomutt.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "dfe562773cad7fc3e15ed43c02a18959e51114ed5cdc27fe3873ea4542b7de53"
-    sha256 arm64_monterey: "cb33abce1c1d806a7ec4d7df13b95a9599cc35e7279276a5b474325a04894a06"
-    sha256 arm64_big_sur:  "cb5e81ba3b6e50854bfbf46e9e4cf9f691aaa8b50051a2f6408c942ceaf3dbb3"
-    sha256 ventura:        "59994a21cccbdddf3d99bc7db646ae5b8c61761f48e45e71917c996169bb07ad"
-    sha256 monterey:       "5aa8a643b310ae26c536e79732544e7396459ddf162e5cfe4e097602222b2536"
-    sha256 big_sur:        "a3bc1e42d3a011c1c20d34353973189d7cfd72d469247f7974368b6d31721f02"
-    sha256 x86_64_linux:   "9cd2589f3e22f89dd1c3849741fe1ff29565b1e7a0a4999610d7984d40858690"
+    sha256 arm64_ventura:  "5d1d75187c259fe4736cae143fa000716260e5a371f8cf768631157883d977aa"
+    sha256 arm64_monterey: "86c587c0dec446c9d808087c90d017f19ab0b0880e040707969aefeae55d0637"
+    sha256 arm64_big_sur:  "28c466ffe01de9f7f56a8b5308282e8a29fbe68f2fa767c8fabcf3eb99f464e4"
+    sha256 ventura:        "ae7c3cb919267cdeec06fc0343a239b6ba315e9ff8db949ddbd4c1a076518dbe"
+    sha256 monterey:       "f190f82b685d2b957825c0de0a11e8fe9aec81437664fa5008763e28949d358e"
+    sha256 big_sur:        "e65b85fb0d87bd7ccd2c2225d8f0aad786b92b62943e3f3c9c83067e8041edfd"
+    sha256 x86_64_linux:   "fdc45ba2883a200404e01e73150b7441a2de7333ef90e7bf2e97d2b54b26e9a0"
   end
 
   depends_on "docbook-xsl" => :build
