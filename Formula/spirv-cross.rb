@@ -1,10 +1,21 @@
 class SpirvCross < Formula
   desc "Performing reflection and disassembling SPIR-V"
   homepage "https://github.com/KhronosGroup/SPIRV-Cross"
-  url "https://github.com/KhronosGroup/SPIRV-Cross/archive/2021-01-15.tar.gz"
-  version "2021-01-15"
-  sha256 "d700863b548cbc7f27a678cee305f561669a126eb2cc11d36a7023dfc462b9c4"
-  license "Apache-2.0"
+  url "https://github.com/KhronosGroup/SPIRV-Cross/archive/refs/tags/sdk-1.3.243.0.tar.gz"
+  sha256 "549fff809de2b3484bcc5d710ccd76ca29cbd764dd304c3687252e2f3d034e06"
+  license all_of: [
+    "Apache-2.0",
+    "MIT",
+    "CC-BY-4.0",
+    :cannot_represent, # LicenseRef-KhronosFreeUse
+  ]
+  version_scheme 1
+
+  livecheck do
+    url :homepage
+    strategy :git
+    regex(/^sdk-(\d+\.\d+\.\d+\.\d+)$/i)
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ce681803131b114f973e47e23003394b5e4238473a7c595a21a23c0b90b42fa0"
@@ -35,8 +46,27 @@ class SpirvCross < Formula
   test do
     cp_r Dir[prefix/"samples/cpp/*"], testpath
     inreplace "Makefile", "-I../../include", "-I#{include}"
-    inreplace "Makefile", "../../spirv-cross", "spirv-cross"
+    inreplace "Makefile", "../../spirv-cross", bin/"spirv-cross"
+    inreplace "Makefile", "glslangValidator", Formula["glslang"].bin/"glslangValidator"
 
-    system "make"
+    # fix technically invalid shader code (#version should be first)
+    # allows test to pass with newer glslangValidator
+    before = <<~EOS
+      // Copyright 2016-2021 The Khronos Group Inc.
+      // SPDX-License-Identifier: Apache-2.0
+
+      #version 310 es
+    EOS
+    after = <<~EOS
+      #version 310 es
+      // Copyright 2016-2021 The Khronos Group Inc.
+      // SPDX-License-Identifier: Apache-2.0
+
+    EOS
+    (Dir["*.comp"]).each do |shader_file|
+      inreplace shader_file, before, after
+    end
+
+    system "make", "all"
   end
 end
