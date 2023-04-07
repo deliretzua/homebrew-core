@@ -422,7 +422,7 @@ jobs:
         if: ${{always() && fromJson(needs.setup_tests.outputs.test-dependents) == true}}
         uses: Homebrew/actions/failures-summary-and-bottle-result@master
         with:
-          workdir: ~
+          workdir: '~'
           result_path: bottles/steps_output.txt
           step_name: "Dependent summary on ${{ matrix.runner }}"
           collapse: "true"
