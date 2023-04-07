@@ -3,8 +3,8 @@ class Fava < Formula
 
   desc "Web interface for the double-entry bookkeeping software Beancount"
   homepage "https://beancount.github.io/fava/"
-  url "https://files.pythonhosted.org/packages/82/79/2c5d6675fe08e1db77687b7bd799fc7f8d9f2f6a3266d1dfecf377b633f4/fava-1.24.3.tar.gz"
-  sha256 "78ad09330bbe58ddecea2b02b75db80aef5f8ed2fb2e2837fa689c7b8164c305"
+  url "https://files.pythonhosted.org/packages/06/06/945342d5c5c79f48f0fa61e6d169c9c86613ee12f7090322cb2392847c44/fava-1.24.4.tar.gz"
+  sha256 "92544f7ba350327dc755ac9f086734e6607469f8b7c785a58f7108d1775290c7"
   license "MIT"
   head "https://github.com/beancount/fava.git", branch: "main"
 
@@ -39,8 +39,8 @@ class Fava < Formula
   end
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/c5/4c/b5b7d6e1d4406973fb7f4e5df81c6f07890fa82548ac3b945deed1df9d48/beautifulsoup4-4.12.0.tar.gz"
-    sha256 "c5fceeaec29d09c84970e47c65f2f0efe57872f7cff494c9691a26ec0ff13234"
+    url "https://files.pythonhosted.org/packages/af/0b/44c39cf3b18a9280950ad63a579ce395dda4c32193ee9da7ff0aed547094/beautifulsoup4-4.12.2.tar.gz"
+    sha256 "492bbc69dca35d12daac71c4db1bfff0c876c00ef4a2ffacce226d4638eb72da"
   end
 
   resource "bottle" do
@@ -84,8 +84,8 @@ class Fava < Formula
   end
 
   resource "flask-babel" do
-    url "https://files.pythonhosted.org/packages/a7/b0/83df89e08d13d06f9fdda8cd774ed23a2578beedcfca84dd760ea8e15ad7/flask_babel-3.0.1.tar.gz"
-    sha256 "d408cace25514bea8b92e898fd7e55877fbac79b71bc230e266ff515408eba38"
+    url "https://files.pythonhosted.org/packages/35/83/f31a4ff688168f9c8a73d80ebfc785dcd7703474a0802b25a78d54edd07c/flask_babel-3.1.0.tar.gz"
+    sha256 "be015772c5d7f046f3b99c508dcf618636eb93d21b713b356db79f3e79f69f39"
   end
 
   resource "google-api-core" do
@@ -94,13 +94,13 @@ class Fava < Formula
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/cb/e9/a0e59f0bf6b41d9d38ab7b1bf24032a344e7a65abb67539498a9219dd6eb/google-api-python-client-2.83.0.tar.gz"
-    sha256 "d07509f1b2d2b2427363b454db996f7a15e1751a48cfcaf28427050560dd51cf"
+    url "https://files.pythonhosted.org/packages/4a/e8/4900842c410a62221135073962898818f2d2fcca0c4be584da877ed3c400/google-api-python-client-2.84.0.tar.gz"
+    sha256 "c398fd6f9ead0be23aade3b2704c72c5146df0e3352d8ff9101286077e1b010a"
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/c8/ee/a028aa9ce069fe78d3cf8a86020d366fdb65b54fc33a9e317b4eafa1445e/google-auth-2.17.1.tar.gz"
-    sha256 "8f379b46bad381ad2a0b989dfb0c13ad28d3c2a79f27348213f8946a1d15d55a"
+    url "https://files.pythonhosted.org/packages/e2/bb/d809c7f2ed33c27bd2902dfce8ee1d3c7cac85ec80c11d365c755584aa55/google-auth-2.17.2.tar.gz"
+    sha256 "295c80ebb95eac74003c07a696cf3ef6b414e9230ae8894f3843f8215fd2aa56"
   end
 
   resource "google-auth-httplib2" do
@@ -214,8 +214,8 @@ class Fava < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/03/3e/dc5c793b62c60d0ca0b7e58f1fdd84d5aaa9f8df23e7589b39cc9ce20a03/pytz-2022.7.1.tar.gz"
-    sha256 "01a0681c4b9684a28304615eba55d1ab31ae00bf68ec157ec3708a8182dbbcd0"
+    url "https://files.pythonhosted.org/packages/5e/32/12032aa8c673ee16707a9b6cdda2b09c0089131f35af55d443b6a9c69c1d/pytz-2023.3.tar.gz"
+    sha256 "1d8ce29db189191fb55338ee6d0387d82ab59f3d00eac103412d64e0ebd0c588"
   end
 
   resource "requests" do
@@ -229,8 +229,8 @@ class Fava < Formula
   end
 
   resource "simplejson" do
-    url "https://files.pythonhosted.org/packages/00/cd/62392cee6e24da6768a578651907c8e08ae316fc931d09ba98e5114d561d/simplejson-3.18.4.tar.gz"
-    sha256 "6197cfebe659ac802a686b5408494115a7062b45cdf37679c4d6a9d4f39649b7"
+    url "https://files.pythonhosted.org/packages/c0/5c/61e2afbe62bbe2e328d4d1f426f6e39052b73eddca23b5ba524026561250/simplejson-3.19.1.tar.gz"
+    sha256 "6277f60848a7d8319d27d2be767a7546bc965535b28070e310b3a9af90604a4c"
   end
 
   resource "soupsieve" do
