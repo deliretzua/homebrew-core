@@ -26,7 +26,8 @@ class Typst < Formula
 
   test do
     (testpath/"Hello.typ").write("Hello World!")
-    system bin/"typst", testpath/"Hello.typ"
+    system bin/"typst", "compile", "Hello.typ", "Hello.pdf"
+    assert_predicate testpath/"Hello.pdf", :exist?
 
     assert_match version.to_s, shell_output("#{bin}/typst --version")
   end
