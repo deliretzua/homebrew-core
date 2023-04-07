@@ -1,9 +1,9 @@
 class Marksman < Formula
   desc "Language Server Protocol for Markdown"
   homepage "https://github.com/artempyanykh/marksman"
-  url "https://github.com/artempyanykh/marksman/archive/refs/tags/2023-03-04.tar.gz"
-  version "2023-03-04"
-  sha256 "3e3db71c3b93524aa1931464c0030f642b9b5596d3d6b7a0d4d483ef3bc2fd2d"
+  url "https://github.com/artempyanykh/marksman/archive/refs/tags/2023-04-06.tar.gz"
+  version "2023-04-06"
+  sha256 "c5e49046fe55ede0d8dabf71c83710476ca1735cb218bea240765812f879a9c1"
   license "MIT"
   head "https://github.com/artempyanykh/marksman.git", branch: "main"
 
@@ -17,7 +17,7 @@ class Marksman < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "70a8ab1ea920b45c13604d7228927425922bd7f3fab24391f50497e0456b4ad5"
   end
 
-  depends_on "dotnet@6" => :build
+  depends_on "dotnet" => :build
 
   uses_from_macos "zlib"
 
