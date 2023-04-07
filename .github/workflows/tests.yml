@@ -415,6 +415,8 @@ jobs:
   test_deps:
     needs: [tap_syntax, setup_tests, setup_dep_runners, tests]
     if: >
+      (success() || 
+      (failure() && contains(github.event.pull_request.labels.*.name, 'CI-no-fail-fast'))) &&
       github.event_name == 'pull_request' &&
       fromJson(needs.setup_tests.outputs.syntax-only) == false &&
       fromJson(needs.setup_tests.outputs.test-dependents) &&
@@ -459,13 +461,12 @@ jobs:
           path: ~/bottles/
 
       - name: Run brew test-bot ${{ needs.setup_tests.outputs.test-bot-dependents-args }}
-        if: ${{(success() || failure()) && fromJson(needs.setup_tests.outputs.test-dependents)}}
         run: |
           cd ~/bottles
           brew test-bot ${{ needs.setup_tests.outputs.test-bot-dependents-args }}
 
       - name: Failures summary for brew test-bot ${{ needs.setup_tests.outputs.test-bot-dependents-args }}
-        if: ${{always() && fromJson(needs.setup_tests.outputs.test-dependents) == true}}
+        if: always()
         uses: Homebrew/actions/failures-summary-and-bottle-result@master
         with:
           workdir: '~'
