@@ -12,15 +12,13 @@ class Vlang < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c081325dfa17516e4d8bc5cfca8c610208c15e5d84938ca5a3a75c72a0bbca80"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bd921f6a5fececa1d04ad1361ba19c1da4ae361b88d3862fa02f7747bb87b0cb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9fc0d5fea246584518fc01c59483f07ad89274c78606a70cb4623be28380f7d0"
-    sha256 cellar: :any_skip_relocation, ventura:        "664f602968c98de14dfa5f92f106c2016dc8a0517c2928336ad38e3404502940"
-    sha256 cellar: :any_skip_relocation, monterey:       "4fcb57b3de12ecd576bc4495d7446872ae68218200ec3e32c7889f59f1e8e2c2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "19266863aa98b5a45d9b423db1924fd03470453ed9e5b8ca958fc4abecf6f88c"
-    sha256 cellar: :any_skip_relocation, catalina:       "60e0f440e473d751fdc8ad1704105f8c1ac870a742740d7f7335e39c47a8929f"
-    sha256 cellar: :any_skip_relocation, mojave:         "03d594231e0e381fe454dfde377062e9b1d77f1845e3863896027fc856455829"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a9db9337867f25273de9744c53e8956245e6c17531fde5cc57bf39520ef4763"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "23b1eb45a7fb0257236fed2d7659be487947066ab53a49145a3a63aee5e65585"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cbbf985219083942ab7c194ce4cf6576be2b01a669d2880a4a6c81ef4641e653"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0335da3aff0a5103c72f6377c62dc331a243a603fff56c0548868b0fd44f15e7"
+    sha256 cellar: :any_skip_relocation, ventura:        "dccc6e9e5c8ee1db7e45939f1269132b1580f3014db01aef205c7b7be84ed539"
+    sha256 cellar: :any_skip_relocation, monterey:       "133ae674f8d807e2daa87968b61eec97800c1392981fdbd2d09e9afe7dce79c4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8620b053e2673b1cec444c6d1135b185474167a3580780ec188d35a8981bf612"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc6d555d4e2ad9a5efc63c929e9d030c0d49c9b9dc70b3a3f4e4b5b747a226f6"
   end
 
   depends_on "bdw-gc"
