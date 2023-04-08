@@ -1,8 +1,8 @@
 class Qxmpp < Formula
   desc "Cross-platform C++ XMPP client and server library"
   homepage "https://github.com/qxmpp-project/qxmpp/"
-  url "https://github.com/qxmpp-project/qxmpp/archive/v1.5.3.tar.gz"
-  sha256 "43ef503adcea8ef1a7eb0ce3af408eb693f66875550aaca9fd8309119e1afec8"
+  url "https://github.com/qxmpp-project/qxmpp/archive/v1.5.4.tar.gz"
+  sha256 "e437fdb91aa52c6fd8ca3f922354eb3221df98146ec99ee92e70e20a82c7ad2d"
   license "LGPL-2.1-or-later"
 
   bottle do
@@ -38,12 +38,12 @@ class Qxmpp < Formula
       SOURCES     += test.cpp
       INCLUDEPATH += #{include}
       LIBPATH     += #{lib}
-      LIBS        += -lqxmpp
+      LIBS        += -lQXmppQt6
       QMAKE_RPATHDIR += #{lib}
     EOS
 
     (testpath/"test.cpp").write <<~EOS
-      #include <qxmpp/QXmppClient.h>
+      #include <QXmppQt6/QXmppClient.h>
       int main() {
         QXmppClient client;
         return 0;
