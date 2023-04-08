@@ -31,8 +31,8 @@ class Nvc < Formula
   fails_with gcc: "5" # LLVM is built with GCC
 
   resource "homebrew-test" do
-    url "https://github.com/suoto/vim-hdl-examples.git",
-        revision: "fcb93c287c8e4af7cc30dc3e5758b12ee4f7ed9b"
+    url "https://raw.githubusercontent.com/suoto/vim-hdl-examples/fcb93c287c8e4af7cc30dc3e5758b12ee4f7ed9b/basic_library/very_common_pkg.vhd"
+    sha256 "42560455663d9c42aaa077ca635e2fdc83fda33b7d1ff813da6faa790a7af41a"
   end
 
   # Fix build failure.
@@ -59,10 +59,13 @@ class Nvc < Formula
       system "make", "V=1"
       system "make", "V=1", "install"
     end
+
+    (pkgshare/"examples").install "test/regress/wait1.vhd"
   end
 
   test do
-    resource("homebrew-test").stage testpath
-    system bin/"nvc", "-a", testpath/"basic_library/very_common_pkg.vhd"
+    testpath.install resource("homebrew-test")
+    system bin/"nvc", "-a", testpath/"very_common_pkg.vhd"
+    system bin/"nvc", "-a", pkgshare/"examples/wait1.vhd", "-e", "wait1", "-r"
   end
 end
