@@ -7,6 +7,11 @@ class Typst < Formula
   version_scheme 1
   head "https://github.com/typst/typst.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d74eaf00501438862a3da7d2be76450095f0d8775eb7a8f597c7fb3a3d543534"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "bf7603ebe7c91fa2b3d8d6d50d7fd788bb2abd79275190a5313617cca2cb32a3"
