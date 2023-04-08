@@ -6,13 +6,12 @@ class Telnetd < Formula
   license all_of: ["BSD-4-Clause-UC", "BSD-3-Clause"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b176900762ef22abfd9edce96ec5225009279291bc50b8d9551f9024d1209190"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e0f71c7ca40e07b2d12cc1ebcb547960381088891b4800637752d29999e3fdca"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e1227d7bf27eb7a58adac93e1a210a93c88d940dff07d48017d2858464ddc3b9"
-    sha256 cellar: :any_skip_relocation, ventura:        "e4e977f33a2d9db9ec0f3e7cc588263e9416f7a733ed0564e7eca618c1b1f8f1"
-    sha256 cellar: :any_skip_relocation, monterey:       "70b9f81f506d83c50ba321e3920553aaeaa272c35ce798560afdd15da6e259a9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3fdf31a5dc2042a8ef17900ba7c2d7e87457d27fc656336b023f1b29caaaeac0"
-    sha256 cellar: :any_skip_relocation, catalina:       "5e463bafef10793f46d7c38905445a8a8d4141fac5f2ddfcb38710cc8b802210"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dba6dea88d5fc55f04dfb5add2808353bc8a0d92b55da830fef8c0a9e0a4700d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cf9395dac9ec95948423af592f27d33b4e5b84e3890ed4f331d01d2f76e65441"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "66b6001b5d7d4b96918ea9f1dc09eb5635f1c4b2ffad3b597cce00adf4d6e6b7"
+    sha256 cellar: :any_skip_relocation, ventura:        "59d5ebd74ddd33d27981718ea17686a35940cede1067a06cf6b75fe2051e3288"
+    sha256 cellar: :any_skip_relocation, monterey:       "39a6fd07335f285b0296610c4c7ef6b44bce6ba7528252946751af175271fc57"
+    sha256 cellar: :any_skip_relocation, big_sur:        "767e20e14340204c5e5720320a64128640b983b410897aa116e316e79168b203"
   end
 
   depends_on xcode: :build
