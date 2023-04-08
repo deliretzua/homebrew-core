@@ -4,17 +4,17 @@ class Minetest < Formula
   license "LGPL-2.1-or-later"
 
   stable do
-    url "https://github.com/minetest/minetest/archive/5.6.1.tar.gz"
-    sha256 "1440603e19dca70e2691e86a74c822ee2c4a36fceee32b2d85ae74772149e9a3"
+    url "https://github.com/minetest/minetest/archive/5.7.0.tar.gz"
+    sha256 "0cd0fd48a97f76e337a2e1284599a054f8f92906a84a4ef2122ed321e1b75fa7"
 
     resource "irrlichtmt" do
-      url "https://github.com/minetest/irrlicht/archive/refs/tags/1.9.0mt8.tar.gz"
-      sha256 "27594242da8c7cc1e5ef45922e1dfdd130c37d77719b5d927359eb47992051e0"
+      url "https://github.com/minetest/irrlicht/archive/refs/tags/1.9.0mt10.tar.gz"
+      sha256 "6d00348d8ff513f6a7cee5c930908ef67428ff637e6a9e4d5688409bdb6d547d"
     end
 
     resource "minetest_game" do
-      url "https://github.com/minetest/minetest_game/archive/refs/tags/5.6.1.tar.gz"
-      sha256 "5dc857003d24bb489f126865fcd6bf0d9c0cb146ca4c1c733570699d15abd0e3"
+      url "https://github.com/minetest/minetest_game/archive/refs/tags/5.7.0.tar.gz"
+      sha256 "0787b24cf7b340a8a2be873ca3744cec60c2683011f1d658350a031d1bd5976d"
     end
   end
 
@@ -47,8 +47,8 @@ class Minetest < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "gettext" => :build
   depends_on "freetype"
+  depends_on "gettext"
   depends_on "gmp"
   depends_on "jpeg-turbo"
   depends_on "jsoncpp"
@@ -72,13 +72,8 @@ class Minetest < Formula
   end
 
   def install
-    inreplace "src/CMakeLists.txt" do |s|
-      # These flags are not needed for LuaJIT 2.1 (Ref: https://luajit.org/install.html).
-      # On Apple ARM, the flags results in broken binaries and need to be removed.
-      s.gsub! " -pagezero_size 10000 -image_base 100000000\"", "\""
-      # Disable CMake fixup_bundle to prevent copying dylibs into app bundle
-      s.gsub! "fixup_bundle(", "# \\0"
-    end
+    # Disable CMake fixup_bundle to prevent copying dylibs into app bundle
+    inreplace "src/CMakeLists.txt", "fixup_bundle(", "# \\0"
 
     # Remove bundled libraries to prevent fallback
     %w[lua gmp jsoncpp].each { |lib| (buildpath/"lib"/lib).rmtree }
