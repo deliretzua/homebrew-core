@@ -35,6 +35,13 @@ class Nvc < Formula
         revision: "fcb93c287c8e4af7cc30dc3e5758b12ee4f7ed9b"
   end
 
+  # Fix build failure.
+  # https://github.com/nickg/nvc/issues/667
+  patch do
+    url "https://github.com/nickg/nvc/commit/c857e16c33851f8a5386b97bc0dada2836b5db83.patch?full_index=1"
+    sha256 "8be3f5a0621266dfba89b0efe4f3b48fb9a4f05642f6d0e32e2b63b9661368a0"
+  end
+
   def install
     system "./autogen.sh" if build.head?
 
