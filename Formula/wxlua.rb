@@ -6,6 +6,15 @@ class Wxlua < Formula
   license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
   head "https://github.com/pkulchenko/wxlua.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any, arm64_ventura:  "8323cdc3eb417a827b0573b09ec1ac9174363c34391aab08400ebb441a315136"
+    sha256 cellar: :any, arm64_monterey: "275d472881910487ba3690284d876e350cd9bb0de114d721e025615226a8a370"
+    sha256 cellar: :any, arm64_big_sur:  "24446df354b9fdeff4c0029e14ceecfce69d92489f14487332ac13a78f0944f7"
+    sha256 cellar: :any, ventura:        "abb35ae9d330fac24f731b2e5ce0e2bf9821bb96411d810991432c04de96ae24"
+    sha256 cellar: :any, monterey:       "85fa21b8ff57b2e09b939aa9cdddb4de18499bc88d8ce52f65d248e70aef62b9"
+    sha256 cellar: :any, big_sur:        "5aecd415ce2705001e6ff73cabc0e40f35979e52b4c7962c302779af7d4dd408"
+  end
+
   depends_on "cmake" => :build
   depends_on "lua"
   depends_on "wxwidgets"
