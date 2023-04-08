@@ -1,9 +1,9 @@
 class Sapling < Formula
   desc "Source control client"
   homepage "https://sapling-scm.com"
-  url "https://github.com/facebook/sapling/archive/refs/tags/0.2.20230228-144002-h9440b05e.tar.gz"
-  version "0.2.20230228-144002-h9440b05e"
-  sha256 "70483afad6d0b437cb755447120a34b1996ec09a7e835b40ac8cccdfe44e4b90"
+  url "https://github.com/facebook/sapling/archive/refs/tags/0.2.20230330-193452-h69692651.tar.gz"
+  version "0.2.20230330-193452-h69692651"
+  sha256 "d02130197dcc4be07e3697a55e298a1178c71d2255019287ea25f451f9f42541"
   license "GPL-2.0-or-later"
   head "https://github.com/facebook/sapling.git", branch: "main"
 
@@ -31,11 +31,18 @@ class Sapling < Formula
   depends_on "openssl@1.1"
   depends_on "python@3.11"
 
+  # `setuptools` 66.0.0+ only supports PEP 440 conforming version strings.
+  # Modify the version string to make `setuptools` happy.
+  def modified_version
+    segments = version.to_s.split("-")
+    "#{segments.take(2).join("-")}+#{segments.last}"
+  end
+
   def install
     python3 = "python3.11"
 
     ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
-    ENV["SAPLING_VERSION"] = version.to_s
+    ENV["SAPLING_VERSION"] = modified_version
 
     # Don't allow the build to break our shim configuration.
     inreplace "eden/scm/distutils_rust/__init__.py", '"HOMEBREW_CCCFG"', '"NONEXISTENT"'
@@ -43,7 +50,7 @@ class Sapling < Formula
   end
 
   test do
-    assert_equal("Sapling #{version}", shell_output("#{bin}/sl --version").chomp)
+    assert_equal("Sapling #{modified_version}", shell_output("#{bin}/sl --version").chomp)
     system "#{bin}/sl", "config", "--user", "ui.username", "Sapling <sapling@sapling-scm.com>"
     system "#{bin}/sl", "init", "--git", "foobarbaz"
     cd "foobarbaz" do
