@@ -6,13 +6,13 @@ class Qxmpp < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "99bb34cc1aeff8c463e0d7fdf2eeea628867fb6f54500fd822676729f5f11a31"
-    sha256 cellar: :any,                 arm64_monterey: "b70a6d65d15f6266f48376629cbf1e26f74dd6f9debe97e8f951212508fdba69"
-    sha256 cellar: :any,                 arm64_big_sur:  "65670571f1570a0d6b7d0ac73b3b7c3208affe0b12b35dd1789575c66fd7865a"
-    sha256 cellar: :any,                 ventura:        "e606e07699925b882fe79636695ffd710e0569118c55debfa1315d6315a7c9f4"
-    sha256 cellar: :any,                 monterey:       "dc4b2d884ae2e26f96084af18a02a7521a304aa9efb845a3772cebb4022cacc0"
-    sha256 cellar: :any,                 big_sur:        "fcbdc25186717b0a181076a270f82d212914ba10e7e3398f87e480d2f96b8698"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "70b2150808f860e55682f85f78ab876687a79a69a922d5dae06d353c20fc3f57"
+    sha256 cellar: :any,                 arm64_ventura:  "a101ff51563fbb5b6177278386d3d0f3afc18d3c7f9bb4965f2ceb0caa0d54b8"
+    sha256 cellar: :any,                 arm64_monterey: "81ea3c3e9ceedf4c39dc173d3d2f3b741b6478bf8bf2c563faf9a3bb09eb3c62"
+    sha256 cellar: :any,                 arm64_big_sur:  "61eb4c6bd42337e6a1283ef739c71de934657a237be7eee1515e39ca5072e3f3"
+    sha256 cellar: :any,                 ventura:        "054fa6283164861d33af7bf18e0c23076cd1eb335bdf77c4b555f7bf3ecce169"
+    sha256 cellar: :any,                 monterey:       "e33dba6faf74ee087978c6cc4832c428229adf22037789d5bc8f497cd3c2f097"
+    sha256 cellar: :any,                 big_sur:        "c50266c0c19dfb104fd3522cb39bfeabb81e23a9ee2d681f17ec399ee151cc77"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a65b6e8d9ee87f2dfc6a8f78ee623979b85aaff01c674cc8a7176be879f9b81b"
   end
 
   depends_on "cmake" => :build
