@@ -2,10 +2,9 @@ class SwiftFormat < Formula
   desc "Formatting technology for Swift source code"
   homepage "https://github.com/apple/swift-format"
   url "https://github.com/apple/swift-format.git",
-      tag:      "0.50700.0",
-      revision: "3dd9b517b9e9846435aa782d769ef5825e7c2d65"
+      tag:      "508.0.0",
+      revision: "3330aaa0a97fe07e764a4dc9bb032b23df3a948f"
   license "Apache-2.0"
-  revision 1
   version_scheme 1
   head "https://github.com/apple/swift-format.git", branch: "main"
 
@@ -31,15 +30,7 @@ class SwiftFormat < Formula
   uses_from_macos "swift"
 
   def install
-    # Support Swift 5.7.
-    # Remove when minimum supported Swift >= 5.7.1.
-    inreplace "Package.swift", '.upToNextMinor(from: "0.50700.0")', '.exact("0.50700.0")' if OS.mac? && build.stable?
-    # This can likely be removed with 0.50800.0
-    swift_rpath = if OS.mac?
-      ["-Xlinker", "-rpath", "-Xlinker", "/Library/Developer/CommandLineTools/usr/lib/swift/macosx"]
-    end
-
-    system "swift", "build", "--disable-sandbox", "-c", "release", *swift_rpath
+    system "swift", "build", "--disable-sandbox", "-c", "release"
     bin.install ".build/release/swift-format"
     doc.install "Documentation/Configuration.md"
   end
