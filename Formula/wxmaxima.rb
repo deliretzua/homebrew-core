@@ -7,12 +7,12 @@ class Wxmaxima < Formula
   head "https://github.com/wxMaxima-developers/wxmaxima.git", branch: "main"
 
   bottle do
-    sha256 arm64_ventura:  "8768e12f524ecb1329a4289bcca17b682f9905289eae92f346945597068da542"
-    sha256 arm64_monterey: "8ddfa98b34f7fb7a7a16ff099b79f9d7dbeeecfce5798b2306c47fc2669474f9"
-    sha256 arm64_big_sur:  "20e1d033e91bf84aa4d44fb53fe31d36ce626f4ce5d05616d62eb37fc898ecec"
-    sha256 ventura:        "1266cb56c7309c3a1c9573237c1d0baa0467ea853591cd936efa02fc14abb9ba"
-    sha256 monterey:       "4fdf6f30f72f38bc5536b7bb4b5a47f59a418905e6c1e4e4e5ed1175781f1bd0"
-    sha256 big_sur:        "d08b7f0e10d6082066a165c162563ee25948fdf3d0676fd3632b7b66bb06dda6"
+    sha256 arm64_ventura:  "1f9ba831e39e2d13806002008e2d8d0a60cdf965ba7ef120ecd8779ef896fc95"
+    sha256 arm64_monterey: "dc7aee1df4631401e68c2c126703aac77f2abf551f57a978e80860966bab9474"
+    sha256 arm64_big_sur:  "20c7e38c121db31240c49df646b3b8dd9898b3e3773e7cb96b1f281f1087fe0a"
+    sha256 ventura:        "5cd72f510559f1a20b547b381bfb4b5e782b71cc9f4d63fa93469d7d4b242002"
+    sha256 monterey:       "174f207634004a717baa1684d2a2b595a2246365d569034b09180ab80c179999"
+    sha256 big_sur:        "a042be860717d41146932d42d418d2bcb7a71c751183bb8614a68bc6fbb07606"
   end
 
   depends_on "cmake" => :build
