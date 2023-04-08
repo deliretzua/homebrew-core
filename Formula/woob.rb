@@ -8,13 +8,13 @@ class Woob < Formula
   license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ae273ab982b2405564d288924a208637c4362164511c7d620c6d458a060542c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "686ea92778bdbb364c0d041c633282e7756949e0c793acc6553a6a8e2f63ca16"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1902bd757157749d4f6e75a21dda2c0d021edc281606459ad090083b8c87a605"
-    sha256 cellar: :any_skip_relocation, ventura:        "7016be41ba8905f89a45edb99c8c0d0d6d8cf7cefdb9350f6afacb23803c044d"
-    sha256 cellar: :any_skip_relocation, monterey:       "d8101955b43bdefd77f9d8b2adae0c4e4d971d44f3c2c9ffaedb24cf3785ae2c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c757b1690f85312ca62d6974cf56465fd51b7123cc96cab87c9789ceaaa5283a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "288d8105a811e3460fdacfa26fb46fca342c417b27826b42763205248a1fa048"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e42804a3b5700181fe1c3e02388cc4e54877daf87836ebb8d5a70e2f7c45d297"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "613ef659cc4e9a4eee32e17677e484b563f230214c1dc079b30d41ec9e101578"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ca788b9db92f8cfa4bcc44b54475b282bc50a1f6eed540e9875a1984f5d4c63e"
+    sha256 cellar: :any_skip_relocation, ventura:        "17f44bf0331b1e7a35a3fc885d8b6138c0f65208a9bf8e859c9dcca4b6caae54"
+    sha256 cellar: :any_skip_relocation, monterey:       "6cbefb4a195bae0451f5aac48043f8dcbbbcbc30346c58ad4e9c0b08f543d4ef"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0d456d40f9d7d2ad30ea64be0862a3b2b56e9b188e52c77e900611a967d8d037"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4a6876ba4b9560bc002b0f2336df8d1111e77f8c410923b2784eb69c983e602"
   end
 
   depends_on "gnupg"
