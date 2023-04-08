@@ -38,12 +38,8 @@ jobs:
 
       - run: brew test-bot --only-tap-syntax
 
-      - run: brew test-bot --only-formulae-detect
-        id: formulae-detect
-        if: github.event_name == 'pull_request'
-
   formulae_detect:
-    if: github.repository == 'Homebrew/homebrew-core' && github.event_name == 'pull_request'
+    if: github.repository == 'Homebrew/homebrew-core'
     runs-on: ubuntu-22.04
     container:
       image: ghcr.io/homebrew/ubuntu22.04:master
@@ -58,6 +54,14 @@ jobs:
 
       - run: brew test-bot --only-formulae-detect
         id: formulae-detect
+
+      - name: Fetch detected formulae bottles
+        if: >
+          github.event_name == 'merge_group' ||
+          contains(github.event.pull_request.labels.*.name, 'CI-published-bottle-commits')
+        env:
+          TESTING_FORMULAE: ${{ steps.formulae-detect.outputs.testing_formulae }}
+        run: brew test-bot --only-bottles-fetch --testing-formulae="$TESTING_FORMULAE"
 
   setup_tests:
     permissions:
