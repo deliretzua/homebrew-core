@@ -98,7 +98,9 @@ jobs:
           head_repo="$(jq --raw-output .head.repo.full_name <<< "$pr_data")"
           head_repo_owner="$(jq --raw-output .head.repo.owner.login <<< "$pr_data")"
           fork_type="$(jq --raw-output .head.repo.owner.type <<< "$pr_data")"
+          labels="$(jq --raw-output '.labels[].name' <<< "$pr_data")"
 
+          # We don't check $labels here because it is empty if a PR has no labels.
           if [ -z "$pushable" ] ||
              [ -z "$branch" ] ||
              [ -z "$remote" ] ||
@@ -109,6 +111,18 @@ jobs:
             echo "::error ::Failed to get PR data!"
             exit 1
           fi
+
+          bottles=true
+          for label in ${labels}
+          do
+            if [ "$label" = "CI-syntax-only" ] || [ "$label" = "CI-no-bottles" ]
+            then
+              echo '::notice ::No bottles to publish according to PR labels.'
+              bottles=false
+              break
+            fi
+          done
+          echo "bottles=${bottles}" >> "$GITHUB_OUTPUT"
 
           if [ "$branch" = "master" ]
           then
@@ -139,12 +153,14 @@ jobs:
           exit 1
 
       - name: Checkout PR branch
+        if: fromJson(steps.pr-branch-check.outputs.bottles)
         run: gh pr checkout '${{github.event.inputs.pull_request}}'
         env:
           GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         working-directory: ${{steps.set-up-homebrew.outputs.repository-path}}
 
       - name: Pull and upload bottles to GitHub Packages
+        if: fromJson(steps.pr-branch-check.outputs.bottles)
         env:
           BREWTESTBOT_NAME_EMAIL: "${{ steps.git-user-config.outputs.name }} <${{ steps.git-user-config.outputs.email }}>"
           HOMEBREW_GPG_PASSPHRASE: ${{ secrets.BREWTESTBOT_GPG_SIGNING_SUBKEY_PASSPHRASE }}
@@ -165,6 +181,7 @@ jobs:
             '${{github.event.inputs.pull_request}}'
 
       - name: Push commits
+        if: fromJson(steps.pr-branch-check.outputs.bottles)
         uses: Homebrew/actions/git-try-push@master
         with:
           token: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
@@ -180,6 +197,7 @@ jobs:
           HOMEBREW_GPG_PASSPHRASE: ${{ secrets.BREWTESTBOT_GPG_SIGNING_SUBKEY_PASSPHRASE }}
 
       - name: Add CI-published-bottle-commits label
+        if: fromJson(steps.pr-branch-check.outputs.bottles)
         run: gh pr edit --add-label CI-published-bottle-commits '${{github.event.inputs.pull_request}}'
         env:
           GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -204,6 +222,7 @@ jobs:
           message: "bottle publish failed"
 
       - name: Wait until pull request branch is in sync with local repository
+        if: fromJson(steps.pr-branch-check.outputs.bottles)
         working-directory: ${{steps.set-up-homebrew.outputs.repository-path}}
         run: |
           local_head="$(git rev-parse HEAD)"
