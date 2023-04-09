@@ -3,8 +3,8 @@ class Pdm < Formula
 
   desc "Modern Python package and dependency manager supporting the latest PEP standards"
   homepage "https://pdm.fming.dev"
-  url "https://files.pythonhosted.org/packages/4b/6b/8363b9dca9039674b9bbbe4f57f9f0ed775b150c80ba2d1319862e0d9f02/pdm-2.4.9.tar.gz"
-  sha256 "dbc6ffb195f39ab24b4bcb507fe99789a61a32159d8bf227f3117b94f327f2f2"
+  url "https://files.pythonhosted.org/packages/a7/1c/d3480a95f56654ba1eee80edc22dd626256fca2d34133e895d94f122f544/pdm-2.5.1.tar.gz"
+  sha256 "fed986670b05e89e49d114acefe47120f013807ae555c1e6aad1b27d4c11dee4"
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
@@ -22,8 +22,8 @@ class Pdm < Formula
   depends_on "python@3.11"
 
   resource "blinker" do
-    url "https://files.pythonhosted.org/packages/2b/12/82786486cefb68685bb1c151730f510b0f4e5d621d77f245bc0daf9a6c64/blinker-1.5.tar.gz"
-    sha256 "923e5e2f69c155f2cc42dafbbd70e16e3fde24d2d4aa2ab72fbe386238892462"
+    url "https://files.pythonhosted.org/packages/b2/83/418c03eaeed9f87eab0d5430f7e9d5248d8a7dd64d12b5ab9e5f674e7aa3/blinker-1.6.1.tar.gz"
+    sha256 "2ddfa223483ce8f24ecd2723e0e27cd4388ef19bef1d76b09a3dae93033db231"
   end
 
   resource "CacheControl" do
@@ -47,8 +47,8 @@ class Pdm < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/4f/1f/6e1b740698069650b245744957a25957d599b953550a959ab2a584a8825b/filelock-3.10.0.tar.gz"
-    sha256 "3199fd0d3faea8b911be52b663dfccceb84c95949dd13179aa21436d1a79c4ce"
+    url "https://files.pythonhosted.org/packages/e6/3d/c80975c1028f54e4f0fe6f727d9271362b749321144ea833216b18bfda93/filelock-3.11.0.tar.gz"
+    sha256 "3618c0da67adcc0506b015fd11ef7faf1b493f0b40d87728e19986b536890c37"
   end
 
   resource "findpython" do
@@ -62,8 +62,8 @@ class Pdm < Formula
   end
 
   resource "installer" do
-    url "https://files.pythonhosted.org/packages/c9/ab/a9141dc175ec7b620fffe7e0295251a7b6a0ffb4325d64aeb128dff8c698/installer-0.6.0.tar.gz"
-    sha256 "f3bd36cd261b440a88a1190b1becca0578fee90b4b62decc796932fdd5ae8839"
+    url "https://files.pythonhosted.org/packages/05/18/ceeb4e3ab3aa54495775775b38ae42b10a92f42ce42dfa44da684289b8c8/installer-0.7.0.tar.gz"
+    sha256 "a26d3e3116289bb08216e0d0f7d925fcef0b0194eedfa0c944bcaaa106c4b631"
   end
 
   resource "markdown-it-py" do
@@ -87,8 +87,8 @@ class Pdm < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/79/c4/f98a05535344f79699bbd494e56ac9efc986b7a253fe9f4dba7414a7f505/platformdirs-3.1.1.tar.gz"
-    sha256 "024996549ee88ec1a9aa99ff7f8fc819bb59e2c3477b410d90a16d32d6e707aa"
+    url "https://files.pythonhosted.org/packages/15/04/3f882b46b454ab374ea75425c6f931e499150ec1385a73e55b3f45af615a/platformdirs-3.2.0.tar.gz"
+    sha256 "d5b638ca397f25f979350ff789db335903d7ea010ab28903f57b27e1b16c2b08"
   end
 
   resource "pyproject_hooks" do
@@ -112,13 +112,13 @@ class Pdm < Formula
   end
 
   resource "resolvelib" do
-    url "https://files.pythonhosted.org/packages/73/51/36f96ad70dd8c71274ac77739cda0794fee3ba45640373e7f8c5da7c9455/resolvelib-0.9.0.tar.gz"
-    sha256 "40ab05117c3281b1b160105e10075094c5ab118315003c922b77673a365290e1"
+    url "https://files.pythonhosted.org/packages/ce/10/f699366ce577423cbc3df3280063099054c23df70856465080798c6ebad6/resolvelib-1.0.1.tar.gz"
+    sha256 "04ce76cbd63fded2078ce224785da6ecd42b9564b1390793f64ddecbe997b309"
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/5e/0e/ef0a49be56dbc4052a086888cd2490e15fcc95b0eda79e9d0e737b1ab93d/rich-13.3.2.tar.gz"
-    sha256 "91954fe80cfb7985727a467ca98a7618e5dd15178cc2da10f553b36a93859001"
+    url "https://files.pythonhosted.org/packages/9a/50/672a8d347f92bc752b04c338bbf932fbd0104fbc416c82cc91aa5f7b4b0b/rich-13.3.3.tar.gz"
+    sha256 "dc84400a9d842b3a9c5ff74addd8eb798d155f36c1c91303888e0a66850d2a15"
   end
 
   resource "shellingham" do
@@ -127,13 +127,18 @@ class Pdm < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/ff/04/58b4c11430ed4b7b8f1723a5e4f20929d59361e9b17f0872d69681fd8ffd/tomlkit-0.11.6.tar.gz"
-    sha256 "71b952e5721688937fb02cf9d354dbcf0785066149d2855e44531ebdd2b65d73"
+    url "https://files.pythonhosted.org/packages/4d/4e/6cb8a301134315e37929763f7a45c3598dfb21e8d9b94e6846c87531886c/tomlkit-0.11.7.tar.gz"
+    sha256 "f392ef70ad87a672f02519f99967d28a4d3047133e2d1df936511465fbb3791d"
+  end
+
+  resource "typing-extensions" do
+    url "https://files.pythonhosted.org/packages/d3/20/06270dac7316220643c32ae61694e451c98f8caf4c8eab3aa80a2bedf0df/typing_extensions-4.5.0.tar.gz"
+    sha256 "5cb5f4a79139d699607b3ef622a1dedafa84e115ab0024e0d9c044a9479ca7cb"
   end
 
   resource "unearth" do
-    url "https://files.pythonhosted.org/packages/b4/b2/104164436e7cbdd9db5524fe89055ccb51385570df30f278b7421e5bda5a/unearth-0.8.1.tar.gz"
-    sha256 "62d3493619d181746c0e0586dfcf6cef957b95f4d3b042698eda312fdbf0617b"
+    url "https://files.pythonhosted.org/packages/df/be/bde216e1d98b98e1240c26233988dc60afad387bb7e3b9128b43058415a0/unearth-0.9.0.tar.gz"
+    sha256 "4ce747770f6c571698c7654276ddd0204c81c7d9a470f00a8c401d87bba67524"
   end
 
   resource "urllib3" do
