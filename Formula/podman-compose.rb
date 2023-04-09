@@ -8,15 +8,13 @@ class PodmanCompose < Formula
   license "GPL-2.0-only"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b8a3150b796d0691711da117dde78a8438cc2391206709dd0558506ac1a5cbe5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b8a3150b796d0691711da117dde78a8438cc2391206709dd0558506ac1a5cbe5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b8a3150b796d0691711da117dde78a8438cc2391206709dd0558506ac1a5cbe5"
-    sha256 cellar: :any_skip_relocation, ventura:        "1d695df8b43c37c854857464661f929488002ad7bf745483b5e4fd081803b5dc"
-    sha256 cellar: :any_skip_relocation, monterey:       "1d695df8b43c37c854857464661f929488002ad7bf745483b5e4fd081803b5dc"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1d695df8b43c37c854857464661f929488002ad7bf745483b5e4fd081803b5dc"
-    sha256 cellar: :any_skip_relocation, catalina:       "1d695df8b43c37c854857464661f929488002ad7bf745483b5e4fd081803b5dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "be33e397146ed2ab7795786284cbeb1fda7fe45ca235925c075bd69f19c3f299"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7eab4f78ae279cecaadcbe69296c9494f4d4f82fce5690066b5717f0be00aec0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7eab4f78ae279cecaadcbe69296c9494f4d4f82fce5690066b5717f0be00aec0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7eab4f78ae279cecaadcbe69296c9494f4d4f82fce5690066b5717f0be00aec0"
+    sha256 cellar: :any_skip_relocation, ventura:        "b9d8b85155552c42aba788d8e55e17d3a5273fecd8edba8316b40225d265f720"
+    sha256 cellar: :any_skip_relocation, monterey:       "b9d8b85155552c42aba788d8e55e17d3a5273fecd8edba8316b40225d265f720"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b9d8b85155552c42aba788d8e55e17d3a5273fecd8edba8316b40225d265f720"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "09d1fb4ed1aa41b889adef793317a754c49d5ce088e4dae33ec16c3fedbbf8df"
   end
 
   depends_on "podman"
