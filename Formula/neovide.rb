@@ -39,16 +39,23 @@ class Neovide < Formula
     # https://github.com/burtonageo/cargo-bundle/issues/118
     with_env(TERM: "xterm") { system "cargo", "bundle", "--release" }
     prefix.install "target/release/bundle/osx/Neovide.app"
-    bin.install_symlink prefix/"Neovide.app/Contents/MacOS/neovide"
+    bin.write_exec_script prefix/"Neovide.app/Contents/MacOS/neovide"
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/neovide --version")
 
     test_server = "localhost:#{free_port}"
-    nvim_pid = spawn "nvim", "--headless", "--listen", test_server
+    nvim_cmd = ["nvim", "--headless", "--listen", test_server]
+    ohai nvim_cmd.join(" ")
+    nvim_pid = spawn(*nvim_cmd)
+
     sleep 10
-    neovide_pid = spawn bin/"neovide", "--nofork", "--remote-tcp=#{test_server}"
+
+    neovide_cmd = [bin/"neovide", "--nofork", "--remote-tcp=#{test_server}"]
+    ohai neovide_cmd.join(" ")
+    neovide_pid = spawn(*neovide_cmd)
+
     sleep 10
     system "nvim", "--server", test_server, "--remote-send", ":q<CR>"
 
