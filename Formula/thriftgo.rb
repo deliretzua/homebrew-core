@@ -1,8 +1,8 @@
 class Thriftgo < Formula
   desc "Implementation of thrift compiler in go language with plugin mechanism"
   homepage "https://github.com/cloudwego/thriftgo"
-  url "https://github.com/cloudwego/thriftgo/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "8a5c2d70b0836985d7ad39e7e00a804b7ec76a09503374fee41113b82977cb83"
+  url "https://github.com/cloudwego/thriftgo/archive/refs/tags/v0.2.9.tar.gz"
+  sha256 "d9b2c99f047a5ce98bec4effd8b8ae3e997a1522d745bfc188647a86ec8ed33f"
   license "Apache-2.0"
   head "https://github.com/cloudwego/thriftgo.git", branch: "main"
 
