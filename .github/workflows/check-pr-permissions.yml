@@ -13,13 +13,15 @@ jobs:
       - id: list-maintainers
         name: Get maintainer list
         run: |
-          # Below are the public members of Homebrew, obtained with:
-          #   gh api '/orgs/Homebrew/public_members?per_page=100' --jq '[.[].login] | sort_by(ascii_upcase)'
+          # Below are the public maintainers of Homebrew, obtained with:
+          #   maintainers="$(gh api '/orgs/Homebrew/teams/maintainers/members?per_page=100' --jq '[.[].login] | sort_by(ascii_upcase)')"
+          #   public_members="$(gh api '/orgs/Homebrew/public_members?per_page=100' --jq '[.[].login] | sort_by(ascii_upcase)')"
+          #   jq -cn "$maintainers as \$m | $public_members as \$pm | \$pm - (\$pm - \$m)"
           # TODO: Use `gh api` to get the actual list of Homebrew/core
           # maintainers (@Homebrew/core team members) instead. To do that, we
           # need a token with the "admin:org" scope.
-          homebrew_public_members='["alebcay","bayandin","bevanjkay","Bo98","branchvincent","BrewTestBot","carlocab","chenrui333","cho-m","colindean","danielnachun","dawidd6","DomT4","dtrodrigues","EricFromCanada","fxcoudert","gdams","gromgit","iMichka","issyl0","jacobbednarz","jonchang","lembacon","maxim-belkin","miccal","MikeMcQuaid","mistydemeo","Moisan","nandahkrishna","p-linnane","ran-dall","razvanazamfirei","reitermarkus","Rylan12","samford","scpeters","sjackman","SMillerDev","tani","victorpopkov","vitorgalvao","whoiswillma","woodruffw","xu-cheng","zachauten","zbeekman","ZhongRuoyu","zmwangx"]'
-          echo "maintainers=$homebrew_public_members" >> "$GITHUB_OUTPUT"
+          public_maintainers='["alebcay","bayandin","bevanjkay","Bo98","branchvincent","carlocab","chenrui333","cho-m","danielnachun","dawidd6","dtrodrigues","EricFromCanada","fxcoudert","gdams","iMichka","issyl0","miccal","MikeMcQuaid","Moisan","nandahkrishna","p-linnane","razvanazamfirei","reitermarkus","Rylan12","samford","SMillerDev","ZhongRuoyu"]'
+          echo "maintainers=$public_maintainers" >> "$GITHUB_OUTPUT"
       - name: Dismiss approvals
         if: >
           failure() ||
