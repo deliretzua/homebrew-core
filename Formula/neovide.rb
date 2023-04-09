@@ -7,13 +7,14 @@ class Neovide < Formula
   head "https://github.com/neovide/neovide.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "216995b82984d66c7b65962a968218eb67d6617f2bf49761a9e31552e34e70ec"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "20ca25a283933048ce91ba9d3c9893f42ee85711f35a5678f5052b166cb7c1f7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "11f2eb31f661c1ebae5c33fa01974b03dbf242a07c8a176ac0ccaaafcaa340da"
-    sha256 cellar: :any_skip_relocation, ventura:        "d123eace24b01fe4fecb399771f4036c72137a35fb680521cde543ce331e4fb6"
-    sha256 cellar: :any_skip_relocation, monterey:       "34ea9ea219af51ef0029f562ba3b5fa3c4b3ad07d72a271c815527564f9574b2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "85da07fb510e05140afb3e701b47b8ca87172d9067ef9035e05a7cbe67964ec5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "827029b5ba94040dd0ebc0e5c08d142f3fc69ed0628b4f59c633152a5e239845"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "53f6653ba07240b5556f1ffd7316da13c6ce42ce9058de63f781a8712b2c4eab"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "26b8c020ded5c68e8ed22fad358b78ff3931a8caf74b46831d0fc914449a0dbc"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3c753b8fa4c81190201fb155a3d92d7f7d6e1953f7d13ca767eb631d08322be5"
+    sha256 cellar: :any_skip_relocation, ventura:        "4059d660f957851cfd27cd1d345156af0107361769b5dc635cdd9d10f91837c6"
+    sha256 cellar: :any_skip_relocation, monterey:       "8036c4aa9eded5c2ffc1f7d940b9a3bfbd1df875ddb2665510342e7d9aaa9fc9"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4252db5cb4745079dcd359699d87f702f04623dacc8676d87e561bd496b55f62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b82811eb83d6834822163801665e7e6c119a52bf5851df752cfbff9c1ac400f9"
   end
 
   depends_on "rust" => :build
