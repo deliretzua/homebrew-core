@@ -1,4 +1,4 @@
-name: Dismiss PR approvals on non-maintainer pushes
+name: Check PR pusher permissions
 
 on:
   pull_request:
@@ -6,7 +6,7 @@ on:
       - synchronize
 
 jobs:
-  dismiss-approvals:
+  dismiss-approvals-if-needed:
     if: github.repository == 'Homebrew/homebrew-core'
     runs-on: ubuntu-latest
     steps:
