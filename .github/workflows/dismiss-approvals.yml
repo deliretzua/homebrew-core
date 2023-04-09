@@ -12,17 +12,14 @@ jobs:
     steps:
       - id: list-maintainers
         name: Get maintainer list
-        env:
-          GITHUB_TOKEN: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
         run: |
-          maintainers="$(
-            gh api \
-              --header 'Accept: application/vnd.github+json' \
-              --header 'X-GitHub-Api-Version: 2022-11-28' \
-              /orgs/Homebrew/teams/core/members \
-              --jq '[.[].login]'
-          )"
-          echo "maintainers=$maintainers" >> "$GITHUB_OUTPUT"
+          # Below are the public members of Homebrew, obtained with:
+          #   gh api '/orgs/Homebrew/public_members?per_page=100' --jq '[.[].login] | sort_by(ascii_upcase)'
+          # TODO: Use `gh api` to get the actual list of Homebrew/core
+          # maintainers (@Homebrew/core team members) instead. To do that, we
+          # need a token with the "admin:org" scope.
+          homebrew_public_members='["alebcay","bayandin","bevanjkay","Bo98","branchvincent","BrewTestBot","carlocab","chenrui333","cho-m","colindean","danielnachun","dawidd6","DomT4","dtrodrigues","EricFromCanada","fxcoudert","gdams","gromgit","iMichka","issyl0","jacobbednarz","jonchang","lembacon","maxim-belkin","miccal","MikeMcQuaid","mistydemeo","Moisan","nandahkrishna","p-linnane","ran-dall","razvanazamfirei","reitermarkus","Rylan12","samford","scpeters","sjackman","SMillerDev","tani","victorpopkov","vitorgalvao","whoiswillma","woodruffw","xu-cheng","zachauten","zbeekman","ZhongRuoyu","zmwangx"]'
+          echo "maintainers=$homebrew_public_members" >> "$GITHUB_OUTPUT"
       - name: Dismiss approvals
         if: >
           failure() ||
