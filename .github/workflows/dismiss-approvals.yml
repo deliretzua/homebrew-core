@@ -1,0 +1,35 @@
+name: Dismiss PR approvals on non-maintainer pushes
+
+on:
+  pull_request:
+    types:
+      - synchronize
+
+jobs:
+  dismiss-approvals:
+    if: github.repository == 'Homebrew/homebrew-core'
+    runs-on: ubuntu-latest
+    steps:
+      - id: list-maintainers
+        name: Get maintainer list
+        env:
+          GITHUB_TOKEN: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
+        run: |
+          maintainers="$(
+            gh api \
+              --header 'Accept: application/vnd.github+json' \
+              --header 'X-GitHub-Api-Version: 2022-11-28' \
+              /orgs/Homebrew/teams/core/members \
+              --jq '[.[].login]'
+          )"
+          echo "maintainers=$maintainers" >> "$GITHUB_OUTPUT"
+      - name: Dismiss approvals
+        if: >
+          failure() ||
+          (!contains(fromJson(steps.list-maintainers.outputs.maintainers), github.triggering_actor) &&
+           github.triggering_actor != 'BrewTestBot')
+        uses: Homebrew/actions/dismiss-approvals@master
+        with:
+          token: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
+          pr: ${{github.event.pull_request.number}}
+          message: ":warning: PR branch was modified by a non-maintainer."
