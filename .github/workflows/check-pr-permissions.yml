@@ -1,0 +1,34 @@
+name: Check PR pusher permissions
+
+on:
+  pull_request:
+    types:
+      - synchronize
+
+jobs:
+  dismiss-approvals-if-needed:
+    if: github.repository == 'Homebrew/homebrew-core'
+    runs-on: ubuntu-latest
+    steps:
+      - id: list-maintainers
+        name: Get maintainer list
+        run: |
+          # Below are the public maintainers of Homebrew, obtained with:
+          #   maintainers="$(gh api '/orgs/Homebrew/teams/maintainers/members?per_page=100' --jq '[.[].login] | sort_by(ascii_upcase)')"
+          #   public_members="$(gh api '/orgs/Homebrew/public_members?per_page=100' --jq '[.[].login] | sort_by(ascii_upcase)')"
+          #   jq -cn "$maintainers as \$m | $public_members as \$pm | \$pm - (\$pm - \$m)"
+          # TODO: Use `gh api` to get the actual list of Homebrew/core
+          # maintainers (@Homebrew/core team members) instead. To do that, we
+          # need a token with the "admin:org" scope.
+          public_maintainers='["alebcay","bayandin","bevanjkay","Bo98","branchvincent","carlocab","chenrui333","cho-m","danielnachun","dawidd6","dtrodrigues","EricFromCanada","fxcoudert","gdams","iMichka","issyl0","miccal","MikeMcQuaid","Moisan","nandahkrishna","p-linnane","razvanazamfirei","reitermarkus","Rylan12","samford","SMillerDev","ZhongRuoyu"]'
+          echo "maintainers=$public_maintainers" >> "$GITHUB_OUTPUT"
+      - name: Dismiss approvals
+        if: >
+          failure() ||
+          (!contains(fromJson(steps.list-maintainers.outputs.maintainers), github.triggering_actor) &&
+           github.triggering_actor != 'BrewTestBot')
+        uses: Homebrew/actions/dismiss-approvals@master
+        with:
+          token: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
+          pr: ${{github.event.pull_request.number}}
+          message: ":warning: PR branch was modified by a non-maintainer."
