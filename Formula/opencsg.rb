@@ -22,13 +22,10 @@ class Opencsg < Formula
   depends_on "qt@5" => :build
   depends_on "glew"
 
-  # This patch disabling building examples
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/990b9bb/opencsg/disable-examples.diff"
-    sha256 "12cc799a6352eda4a18706eeefea059d14e23605a627dc12ed2a809f65328d69"
-  end
-
   def install
+    # Disable building examples
+    inreplace "opencsg.pro", "src example", "src"
+
     qt5 = Formula["qt@5"].opt_prefix
     system "#{qt5}/bin/qmake", "-r", "INSTALLDIR=#{prefix}",
       "INCLUDEPATH+=#{Formula["glew"].opt_include}",
