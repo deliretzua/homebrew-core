@@ -1,8 +1,8 @@
 class Gofumpt < Formula
   desc "Stricter gofmt"
   homepage "https://github.com/mvdan/gofumpt"
-  url "https://github.com/mvdan/gofumpt/archive/v0.4.0.tar.gz"
-  sha256 "ba1fd89dd5a36a5443c879cd084b5626d3f8704000ec53c0d1cf5276af2bfa86"
+  url "https://github.com/mvdan/gofumpt/archive/v0.5.0.tar.gz"
+  sha256 "e27f04b8b5619747ebfb955699d6895c1e4c7c5e4478507ca4e2d8b658b8b51c"
   license "BSD-3-Clause"
 
   bottle do
@@ -23,9 +23,6 @@ class Gofumpt < Formula
   end
 
   test do
-    # upstream issue tracker, https://github.com/mvdan/gofumpt/issues/253
-    # assert_match version.to_s, shell_output("#{bin}/gofumpt --version")
-
     (testpath/"test.go").write <<~EOS
       package foo
 
