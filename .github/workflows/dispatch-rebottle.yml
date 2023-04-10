@@ -236,6 +236,7 @@ jobs:
         env:
           GH_TOKEN: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
         run: |
+          # Silence lint error about backtick usage inside single quotes.
           # shellcheck disable=SC2016
           gh pr create \
             --base master \
