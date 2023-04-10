@@ -30,8 +30,8 @@ class Meson < Formula
       dependencies/boost.py
       dependencies/cuda.py
       dependencies/qt.py
+      scripts/python_info.py
       utils/universal.py
-      modules/python.py
     ].map { |f| mesonbuild/f }
     inreplace_files << (bash_completion/"meson")
 
@@ -41,6 +41,7 @@ class Meson < Formula
 
   test do
     (testpath/"helloworld.c").write <<~EOS
+      #include <stdio.h>
       main() {
         puts("hi");
         return 0;
