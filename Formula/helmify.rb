@@ -2,8 +2,8 @@ class Helmify < Formula
   desc "Create Helm chart from Kubernetes yaml"
   homepage "https://github.com/arttor/helmify"
   url "https://github.com/arttor/helmify.git",
-      tag:      "v0.4.0",
-      revision: "950b2f38236c67cd5413f0020a3aab31285ee1da"
+      tag:      "v0.4.1",
+      revision: "9e709ee1587ab637bf811837213670c1f1125ba4"
   license "MIT"
   head "https://github.com/arttor/helmify.git", branch: "main"
 
