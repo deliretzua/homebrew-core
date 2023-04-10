@@ -1,8 +1,8 @@
 class Libxt < Formula
   desc "X.Org: X Toolkit Intrinsics library"
   homepage "https://www.x.org/"
-  url "https://www.x.org/archive/individual/lib/libXt-1.2.1.tar.bz2"
-  sha256 "679cc08f1646dbd27f5e48ffe8dd49406102937109130caab02ca32c083a3d60"
+  url "https://www.x.org/archive/individual/lib/libXt-1.3.0.tar.xz"
+  sha256 "52820b3cdb827d08dc90bdfd1b0022a3ad8919b57a39808b12591973b331bf91"
   license "MIT"
 
   bottle do
