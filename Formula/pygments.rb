@@ -3,8 +3,8 @@ class Pygments < Formula
 
   desc "Generic syntax highlighter"
   homepage "https://pygments.org/"
-  url "https://files.pythonhosted.org/packages/da/6a/c427c06913204e24de28de5300d3f0e809933f376e0b7df95194b2bb3f71/Pygments-2.14.0.tar.gz"
-  sha256 "b3ed06a9e8ac9a9aae5a6f5dbe78a8a58655d17b43b93c078f094ddc476ae297"
+  url "https://files.pythonhosted.org/packages/03/98/c7468f5a1b434cb15b1d240c5f3bd015962af8a822e89e7f10ee11e68928/Pygments-2.15.0.tar.gz"
+  sha256 "f7e36cffc4c517fbc252861b9a6e4644ca0e5abadf9a113c72d1358ad09b9500"
   license "BSD-2-Clause"
   head "https://github.com/pygments/pygments.git", branch: "master"
 
@@ -26,7 +26,7 @@ class Pygments < Formula
 
     pythons.each do |python|
       python_exe = python.opt_libexec/"bin/python"
-      system python_exe, *Language::Python.setup_install_args(libexec, python_exe)
+      system python_exe, "-m", "pip", "install", "--prefix=#{libexec}", "--no-deps", "."
 
       site_packages = Language::Python.site_packages(python_exe)
       pth_contents = "import site; site.addsitedir('#{libexec/site_packages}')\n"
