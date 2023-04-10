@@ -1,8 +1,8 @@
 class Scriptisto < Formula
   desc "Language-agnostic \"shebang interpreter\" to write scripts in compiled languages"
   homepage "https://github.com/igor-petruk/scriptisto"
-  url "https://github.com/igor-petruk/scriptisto/archive/refs/tags/v2.0.1.tar.gz"
-  sha256 "893a06d5349d2462682021f1e053488b07a608eee138dfcc9e68853223d48b81"
+  url "https://github.com/igor-petruk/scriptisto/archive/refs/tags/v2.1.0.tar.gz"
+  sha256 "478684778d3322109d9705e90caf87fbecc91364c9b6097f5979f81a60ea69e4"
   license "Apache-2.0"
 
   bottle do
