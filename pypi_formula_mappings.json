@@ -409,6 +409,11 @@
     "exclude_packages": ["tabulate", "PyYAML", "Pygments"],
     "extra_packages": ["Markdown==2.6.11"]
   },
+  "meta-package-manager": {
+    "exclude_packages": [
+      "docutils", "Pygments", "PyYAML", "tabulate", "typing-extensions"
+    ]
+  },
   "mkdocs": {
     "exclude_packages": ["six", "PyYAML"]
   },
