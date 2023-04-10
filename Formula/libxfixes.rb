@@ -1,8 +1,8 @@
 class Libxfixes < Formula
   desc "X.Org: Header files for the XFIXES extension"
   homepage "https://www.x.org/"
-  url "https://www.x.org/archive/individual/lib/libXfixes-6.0.0.tar.bz2"
-  sha256 "a7c1a24da53e0b46cac5aea79094b4b2257321c621b258729bc3139149245b4c"
+  url "https://www.x.org/archive/individual/lib/libXfixes-6.0.1.tar.xz"
+  sha256 "b695f93cd2499421ab02d22744458e650ccc88c1d4c8130d60200213abc02d58"
   license "MIT"
 
   bottle do
