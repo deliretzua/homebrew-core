@@ -1,8 +1,8 @@
 class ImessageExporter < Formula
   desc "Command-line tool to export and inspect local iMessage database"
   homepage "https://github.com/ReagentX/imessage-exporter"
-  url "https://github.com/ReagentX/imessage-exporter/archive/refs/tags/1.2.0.tar.gz"
-  sha256 "8542c665e59c1ef6bf034118eb2adef4497c51bbc82237bfcb6b4baf0c4a355b"
+  url "https://github.com/ReagentX/imessage-exporter/archive/refs/tags/1.3.0.tar.gz"
+  sha256 "fc792712b2fa626d4f33d43b08dd10464fba678facf405e2ca5eee379644a73d"
   license "GPL-3.0-only"
 
   bottle do
