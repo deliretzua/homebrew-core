@@ -7,6 +7,16 @@ class MetaPackageManager < Formula
   sha256 "8452718bbcec58dac5fd27691b1be621fcc0d25eb54cb3d3a7db89cfd7f2b1d3"
   license "GPL-2.0-or-later"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "148c4e61dc29d373535caf5c1bf21f06a07cb1cd3aadda9e1a5f434b1938ab6d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "70409d719fdf6bc2182492a5290241d8c7b5f49c71d8915decf0b320d683f908"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e96233dbd3ebb5fd7272118ddf510f862b471901e507613e7bab8239410b597d"
+    sha256 cellar: :any_skip_relocation, ventura:        "c5ccdb0aa24e584a32836c765e2098691b885eaac5c40f81e9cb01b1c36467e3"
+    sha256 cellar: :any_skip_relocation, monterey:       "7f0b1802f6976e7193e476fc31c771c295dfae8827dfb970a69d14d059b9fc18"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8b45c59e04e1243f59a94bd7a06e1e9ae30a1da23a3552c4c021a745c37bb99b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5312868876a4869c0b1d0adca64af0dfdd3a20f31db4c8ec2839318a6236e94"
+  end
+
   depends_on "docutils"
   depends_on "pygments"
   depends_on "python-tabulate"
