@@ -2,11 +2,10 @@ class Sysdig < Formula
   desc "System-level exploration and troubleshooting tool"
   homepage "https://sysdig.com/"
   license "Apache-2.0"
-  revision 1
 
   stable do
-    url "https://github.com/draios/sysdig/archive/refs/tags/0.31.4.tar.gz"
-    sha256 "b8f43326506f85e99a3455f51b75ee79bf4db9dc12908ef43af672166274a795"
+    url "https://github.com/draios/sysdig/archive/refs/tags/0.31.5.tar.gz"
+    sha256 "9af98cae7c38273f7429ba0df628c9745bd92c949f444e180b9dd800af14c6dd"
 
     # Update to value of FALCOSECURITY_LIBS_VERSION found in
     # https://github.com/draios/sysdig/blob/#{version}/cmake/modules/falcosecurity-libs.cmake
@@ -15,8 +14,11 @@ class Sysdig < Formula
       sha256 "2a4b37c08bec4ba81326314831f341385aff267062e8d4483437958689662936"
 
       # Fix 'file INSTALL cannot make directory "/sysdig/userspace/libscap"'.
-      # Reported upstream at https://github.com/falcosecurity/libs/issues/995.
-      patch :DATA
+      # Remove when `falcosecurity-libs` is upgraded to 0.11.0 or newer.
+      patch do
+        url "https://github.com/falcosecurity/libs/commit/73020ac4fdd1ba84b53f431e1c069049828480e9.patch?full_index=1"
+        sha256 "97fde5e4aa8e20e91ffaaca4020b7a38751d1ad95d69db02bf10c82588c6595b"
+      end
     end
   end
 
@@ -118,17 +120,3 @@ class Sysdig < Formula
     assert_match "/tmp/sysdig/sample", output
   end
 end
-
-__END__
---- a/cmake/modules/libscap.cmake
-+++ b/cmake/modules/libscap.cmake
-@@ -49,6 +49,9 @@ if(BUILD_LIBSCAP_MODERN_BPF)
-        "${PROJECT_BINARY_DIR}/libpman/libpman.a"
- endif()
- )
-+
-+include(GNUInstallDirs)
-+
- install(FILES ${LIBSCAP_LIBS} DESTINATION "${CMAKE_INSTALL_LIBDIR}/${LIBS_PACKAGE_NAME}"
-                        COMPONENT "scap" OPTIONAL)
- install(DIRECTORY "${LIBSCAP_INCLUDE_DIR}" DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/${LIBS_PACKAGE_NAME}/userspace"
