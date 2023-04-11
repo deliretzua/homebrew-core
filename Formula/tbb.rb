@@ -1,8 +1,8 @@
 class Tbb < Formula
   desc "Rich and complete approach to parallelism in C++"
   homepage "https://github.com/oneapi-src/oneTBB"
-  url "https://github.com/oneapi-src/oneTBB/archive/refs/tags/v2021.8.0.tar.gz"
-  sha256 "eee380323bb7ce864355ed9431f85c43955faaae9e9bce35c62b372d7ffd9f8b"
+  url "https://github.com/oneapi-src/oneTBB/archive/refs/tags/v2021.9.0.tar.gz"
+  sha256 "1ce48f34dada7837f510735ff1172f6e2c261b09460e3bf773b49791d247d24e"
   license "Apache-2.0"
 
   bottle do
@@ -26,16 +26,7 @@ class Tbb < Formula
   end
 
   # Fix installation of Python components
-  # See https://github.com/oneapi-src/oneTBB/issues/343
   patch :DATA
-
-  # Fix thread creation under heavy load.
-  # https://github.com/oneapi-src/oneTBB/pull/824
-  # Needed for mold: https://github.com/rui314/mold/releases/tag/v1.4.0
-  patch do
-    url "https://github.com/oneapi-src/oneTBB/commit/f12c93efd04991bc982a27e2fa6142538c33ca82.patch?full_index=1"
-    sha256 "637a65cca11c81fa696112aca714879a2202a20e426eff2be8d2318e344ae15c"
-  end
 
   def install
     # Prevent `setup.py` from installing tbb4py directly into HOMEBREW_PREFIX.
