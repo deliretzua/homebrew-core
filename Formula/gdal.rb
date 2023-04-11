@@ -26,6 +26,7 @@ class Gdal < Formula
     depends_on "doxygen" => :build
   end
 
+  depends_on "boost" => :build  # for `libkml`
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "apache-arrow"
@@ -42,6 +43,7 @@ class Gdal < Formula
   depends_on "libdap"
   depends_on "libgeotiff"
   depends_on "libheif"
+  depends_on "libkml"
   depends_on "liblerc"
   depends_on "libpng"
   depends_on "libpq"
