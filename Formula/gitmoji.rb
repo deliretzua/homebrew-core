@@ -3,8 +3,8 @@ require "language/node"
 class Gitmoji < Formula
   desc "Interactive command-line tool for using emoji in commit messages"
   homepage "https://gitmoji.dev"
-  url "https://registry.npmjs.org/gitmoji-cli/-/gitmoji-cli-8.0.0.tgz"
-  sha256 "5cbda2eeab0171bbe33f193a051bfbca2138f05a0293fc9229b31b420e543141"
+  url "https://registry.npmjs.org/gitmoji-cli/-/gitmoji-cli-8.1.0.tgz"
+  sha256 "583fb72c36609eb7d62651822ea8c4714c9bb36446ecbc07b64081a8c7df4623"
   license "MIT"
 
   bottle do
