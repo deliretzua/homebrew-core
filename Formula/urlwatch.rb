@@ -8,14 +8,13 @@ class Urlwatch < Formula
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5c6a77e60638644a61731f6455148c73d591a11e8071a32498f9aa5d98ad0610"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d9286909229a207731997c98bbb87b6315554ed22cd9cbb9d9ae5ef3e65bafeb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3b3cab7c4603e7d21bf6be0f902c58e13790a123e13a395eaee5d14ff123af5d"
-    sha256 cellar: :any_skip_relocation, ventura:        "6b8835ae3708fc47ce9d5803ade1cb16b0968d95af125e72d3cc087d17bbb6b6"
-    sha256 cellar: :any_skip_relocation, monterey:       "8ce65dba7f4feda1bd0a211c721b868dbc478c46e586956a657a48cc540f9165"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cbea0b6c157a9a22f4b444161ca4e23dc2c7e06086c8e07f917170d00a2dc0d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c271b410bbce414548ba62cc88f8e41a4282439c745ddc405001c6dba20ac48"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "632ba91ab606b564d66ccfc5156f0862c2f1cfb49669ab088dd593fc515b086f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "85455e98f5a7633d1874ea0067c43f75a5e4c93a360d97061b565b2703af23d6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "50ceab57f3fc33fba33689844c1f125489d821e18eb89003170a67533190b80c"
+    sha256 cellar: :any_skip_relocation, ventura:        "20a67d1c7c918f7ea873ca5362d9b9fa35a6ff374fd9dca0c8fd3125045fddb0"
+    sha256 cellar: :any_skip_relocation, monterey:       "2426e6ca5c8dd47cefbd9313038bfe0ab769e8b4b183d63fe622952542205d0a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "792ba1f673aeeec0e0cce4c35a2201b4e7517011bdcd41bd3c43729945685316"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "27e715e6306f507f6b6e7a87d7984f102e9428a0298359dcd14bcda47add2f9d"
   end
 
   depends_on "python@3.11"
