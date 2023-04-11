@@ -22,7 +22,7 @@ body:
           required: true
         - label: I have resolved all warnings from `brew doctor` and that did not fix my problem.
           required: true
-        - label: I searched for similar open and closed issues at https://github.com/Homebrew/homebrew-core/issues and found no duplicates.
+        - label: I searched for recent similar issues at https://github.com/Homebrew/homebrew-core/issues?q=is%3Aissue and found no duplicates.
           required: true
   - type: textarea
     attributes:
