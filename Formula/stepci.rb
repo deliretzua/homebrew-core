@@ -3,8 +3,8 @@ require "language/node"
 class Stepci < Formula
   desc "API Testing and Monitoring made simple"
   homepage "https://stepci.com"
-  url "https://registry.npmjs.org/stepci/-/stepci-2.6.4.tgz"
-  sha256 "cf47b6af10fa5ed857cb64f29e41228dbde3ac30546f0102ae9c2525172f9631"
+  url "https://registry.npmjs.org/stepci/-/stepci-2.6.6.tgz"
+  sha256 "d79e65355f31170452278fd9863033baf66128a33f7523371a6aa1baf2554bab"
   license "MPL-2.0"
 
   bottle do
@@ -45,8 +45,6 @@ class Stepci < Formula
     EOS
 
     expected = <<~EOS
-      PASS  example
-
       Tests: 0 failed, 1 passed, 1 total
       Steps: 0 failed, 0 skipped, 1 passed, 1 total
     EOS
