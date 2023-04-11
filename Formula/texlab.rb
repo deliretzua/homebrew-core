@@ -1,8 +1,8 @@
 class Texlab < Formula
   desc "Implementation of the Language Server Protocol for LaTeX"
   homepage "https://texlab.netlify.com/"
-  url "https://github.com/latex-lsp/texlab/archive/v5.4.1.tar.gz"
-  sha256 "55354fb23ca222d4a80aaeedba115ce0459a7a0f76ff7a4be385bd35fd97c5fa"
+  url "https://github.com/latex-lsp/texlab/archive/v5.4.2.tar.gz"
+  sha256 "1771f5492938c092ce9cc022b0b2bc5eeabaa2b8d8e9016988f8f8bd3f3e4270"
   license "GPL-3.0-only"
   head "https://github.com/latex-lsp/texlab.git", branch: "master"
 
@@ -19,7 +19,7 @@ class Texlab < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "crates/texlab")
   end
 
   def rpc(json)
