@@ -1,8 +1,8 @@
 class Otf2 < Formula
   desc "Open Trace Format 2 file handling library"
   homepage "https://www.vi-hps.org/projects/score-p/"
-  url "https://perftools.pages.jsc.fz-juelich.de/cicd/otf2/tags/otf2-3.0.2/otf2-3.0.2.tar.gz", using: :homebrew_curl
-  sha256 "ae3a7ad83055d8f873738fee5031470652d31b9bcbf223dd556aea41f5f62303"
+  url "https://perftools.pages.jsc.fz-juelich.de/cicd/otf2/tags/otf2-3.0.3/otf2-3.0.3.tar.gz", using: :homebrew_curl
+  sha256 "18a3905f7917340387e3edc8e5766f31ab1af41f4ecc5665da6c769ca21c4ee8"
   license "BSD-3-Clause"
 
   livecheck do
@@ -53,9 +53,6 @@ class Otf2 < Formula
     cp_r share/"doc/otf2/examples", testpath
     workdir = testpath/"examples"
     chdir "#{testpath}/examples" do
-      # Use -std=gnu99 to work around Linux error when compiling with -std=c99, which
-      # requires _POSIX_C_SOURCE >= 199309L in order to use POSIX time functions/macros.
-      inreplace "Makefile", "-std=c99", "-std=gnu99" if OS.linux?
       # build serial tests
       system "make", "serial", "mpi", "pthread"
       %w[
