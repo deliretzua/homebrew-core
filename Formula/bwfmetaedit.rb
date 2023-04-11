@@ -1,8 +1,8 @@
 class Bwfmetaedit < Formula
   desc "Tool for embedding, validating, and exporting BWF file metadata"
   homepage "https://mediaarea.net/BWFMetaEdit"
-  url "https://mediaarea.net/download/binary/bwfmetaedit/23.01/BWFMetaEdit_CLI_23.01_GNU_FromSource.tar.bz2"
-  sha256 "2cbaa9240e48a6105c8dfd27cc0ac252b41311510db785bc6382c1328dbf0c51"
+  url "https://mediaarea.net/download/binary/bwfmetaedit/23.04/BWFMetaEdit_CLI_23.04_GNU_FromSource.tar.bz2"
+  sha256 "25e2050c853bb5558a339610a527360c51cec9c8343c84d7723f022f3e6cb364"
   license "0BSD"
 
   livecheck do
