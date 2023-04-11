@@ -4,6 +4,7 @@ class Qca < Formula
   url "https://download.kde.org/stable/qca/2.3.5/qca-2.3.5.tar.xz"
   sha256 "91f7d916ab3692bf5991f0a553bf8153161bfdda14bd005d480a2b4e384362e8"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https://invent.kde.org/libraries/qca.git", branch: "master"
 
   livecheck do
@@ -33,6 +34,12 @@ class Qca < Formula
   depends_on "qt@5"
 
   fails_with gcc: "5"
+
+  # upstream PR ref, https://invent.kde.org/libraries/qca/-/merge_requests/96
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/f59e193/qca/botan3.patch"
+    sha256 "c18347df70834668fe049203d33ea68dd63471989acf923e39ec5eaddc42cc36"
+  end
 
   def install
     # Make sure we link with OpenSSL 3 and not OpenSSL 1.1.
