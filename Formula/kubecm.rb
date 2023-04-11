@@ -6,13 +6,13 @@ class Kubecm < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "047e82922986ead98ec56a1047e57f1c1b3ba9c5b8af2fb03405042e3bf0e4ed"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e3beaa86a8b67bbe916c9126c73425c8c214d4b783f049a5ee9bfb81ddc4faa3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e3beaa86a8b67bbe916c9126c73425c8c214d4b783f049a5ee9bfb81ddc4faa3"
-    sha256 cellar: :any_skip_relocation, ventura:        "8467fe8c9ab32d0cf45d0ceadc23dd2fc7ab52ece0c023c554f9937ccbcf67a3"
-    sha256 cellar: :any_skip_relocation, monterey:       "8467fe8c9ab32d0cf45d0ceadc23dd2fc7ab52ece0c023c554f9937ccbcf67a3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8467fe8c9ab32d0cf45d0ceadc23dd2fc7ab52ece0c023c554f9937ccbcf67a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb9da2953a4803c3b3d7c1c11cd90169e10660df7cd45cb445517f0939780b4c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "557f2261da5a7109b982e6e05dd2c581fa6c54f50ef01afe010b927324995093"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "557f2261da5a7109b982e6e05dd2c581fa6c54f50ef01afe010b927324995093"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "557f2261da5a7109b982e6e05dd2c581fa6c54f50ef01afe010b927324995093"
+    sha256 cellar: :any_skip_relocation, ventura:        "37db7eba40c1fd6a127fa1deca3cc6038ab0e88e89ec4b73d689cc2c63c0fd19"
+    sha256 cellar: :any_skip_relocation, monterey:       "37db7eba40c1fd6a127fa1deca3cc6038ab0e88e89ec4b73d689cc2c63c0fd19"
+    sha256 cellar: :any_skip_relocation, big_sur:        "37db7eba40c1fd6a127fa1deca3cc6038ab0e88e89ec4b73d689cc2c63c0fd19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a242c449dcf1d839137991440355b29d4334109ce0c562973339a99e6264e4ec"
   end
 
   depends_on "go" => :build
