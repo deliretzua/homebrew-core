@@ -6,11 +6,6 @@ class Fwknop < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/mrash/fwknop.git", branch: "master"
 
-  livecheck do
-    url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   bottle do
     rebuild 1
     sha256 arm64_monterey: "1855b9dc8ff17dbc1cc3c07512d3ebb81f80b5e45b5ab918da8df3ac48cd86d5"
