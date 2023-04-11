@@ -14,13 +14,13 @@ class Osc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "309fd736f90cc58f187491f874f6691ef7f599dd6c3c01f84870c3c0e773a527"
-    sha256 cellar: :any,                 arm64_monterey: "822fcd3c9f405d5c402b349651bcce4f87e43528065fb9114facd9272d2dc1c0"
-    sha256 cellar: :any,                 arm64_big_sur:  "eaffca207a8de6ab8126be74bf2d08d8925da0f72c34468528d95adc99d233a3"
-    sha256 cellar: :any,                 ventura:        "502eab3861654984b50e02f22824523ac747340d21c17ae1807274892bc81a98"
-    sha256 cellar: :any,                 monterey:       "a7ca3be1a5db1091210e4576ee274fd44301863d674a3652bb76af0ba539afd1"
-    sha256 cellar: :any,                 big_sur:        "59379052addcf32df664f4867b6abac870333b387eb8a00fd23eea46d9b23e94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a65defe547f75de10287b23ad07f14d8072c643552ce5c72a8e2588c19e3c10"
+    sha256 cellar: :any,                 arm64_ventura:  "1b129e08e98aabda7c93c9952d14aa67d73785339681d9928b4822645b0b6b2f"
+    sha256 cellar: :any,                 arm64_monterey: "d74863de809292501ebbf46c1ccc20ae787a58bdbfe43ef0f4b4ccdd9cbf4192"
+    sha256 cellar: :any,                 arm64_big_sur:  "e0876596a6e7ea778e729381d7e5f162a0a384b31e388c6a0299d32a3bc1cb40"
+    sha256 cellar: :any,                 ventura:        "1c1f3f6ff2b8e71f9b0b5570de427629b2c492e7132b31b8ebc6fd8663ed8d26"
+    sha256 cellar: :any,                 monterey:       "bbad5dd20ad775996f8934ace887db652c8e8e1a4f6b35190160d694e68464a2"
+    sha256 cellar: :any,                 big_sur:        "a42aeb351f445f90ceb6708f20eb172df832a75fd76061abf0d3800a8cb7249d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "afa69d08c35fb58783e85f5043a541c07712920606c23ab36651101fd58595b8"
   end
 
   # `pkg-config` and `rust` are for cryptography.
