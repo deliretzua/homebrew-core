@@ -39,7 +39,7 @@ jobs:
       - run: brew test-bot --only-tap-syntax
 
   formulae_detect:
-    if: github.repository == 'Homebrew/homebrew-core'
+    if: github.repository == 'Homebrew/homebrew-core' && github.event_name == 'pull_request'
     runs-on: ubuntu-22.04
     container:
       image: ghcr.io/homebrew/ubuntu22.04:master
