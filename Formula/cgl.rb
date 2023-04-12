@@ -11,14 +11,13 @@ class Cgl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "97457bc867eb58f73da7c39453488704a2a9e6c0a461937239de8b8c5d86deed"
-    sha256 cellar: :any,                 arm64_monterey: "cea5e33d3a1cd912c38bc558e8c962b0ea0495820fa69b1fc29f5fb2d1386dd4"
-    sha256 cellar: :any,                 arm64_big_sur:  "7d100e6e8d3f9366d113cb527c4022c4be871fbab16c9b071d9d3abe9bffd8c1"
-    sha256 cellar: :any,                 ventura:        "02eee3abdaf5ada3a195772fdf76c39b14d42623219e443ab7551ae44ae08e87"
-    sha256 cellar: :any,                 monterey:       "4fedffb360740c5faa5bf6b62ae7d451e2d7a4cba55da63f8ed760c95458368e"
-    sha256 cellar: :any,                 big_sur:        "3c01eba7f47e4fb1bbac2f98f44333e1728ebde00d1ec8439b8c69c8b800bb53"
-    sha256 cellar: :any,                 catalina:       "b32056388c0fe4872ba562a456618e4b51cbfd8fb4d92be6c6a16cd53dc08cc5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81891856e66351a118b8f8640fc6509a10ea93936d46f3ca59132dc3e7a03f5f"
+    sha256 cellar: :any,                 arm64_ventura:  "3ddd93328f7b4eb4ecfaf4dac9164827b49034a2bbbca9ac03901d87ca8dd6ce"
+    sha256 cellar: :any,                 arm64_monterey: "44c8ab710a85a522bae175ac78395e368296cb07bde774805aab214dfb854d99"
+    sha256 cellar: :any,                 arm64_big_sur:  "677dddccb79e3389d017a91a4e4da553c58868ff56185891e02d62567f4ce486"
+    sha256 cellar: :any,                 ventura:        "642be86f74cf36155df032886103b2fa76434b8d297f36c352667c945e964c54"
+    sha256 cellar: :any,                 monterey:       "15e126b054f035a2de747d098d2fd4d9f2c3ff3395607784257cde9544ffb13c"
+    sha256 cellar: :any,                 big_sur:        "b778532577e8b296512ed07940c17019002695c766bbce50c6271d0c0a69d8c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c164298d488e8e71948514edd97154453299a62cf2026306224e24e595297a3d"
   end
 
   depends_on "pkg-config" => :build
