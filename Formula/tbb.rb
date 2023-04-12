@@ -6,14 +6,13 @@ class Tbb < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "46d04d29f58feb35f4fbb7e19ce0c7fab03c105cc6197348dd42db7a385eb23f"
-    sha256 cellar: :any,                 arm64_monterey: "45ee51718a1fdf082e0c1139b63cbb28e5e7e1c6cdad827f4e5fb3b75dd1e926"
-    sha256 cellar: :any,                 arm64_big_sur:  "8d20e75d3d0e7c520864f8781a0cdd3c343be0d78e40f0346e8fcb56008fc844"
-    sha256 cellar: :any,                 ventura:        "9faab40fd71f8a4697e0bd3f07b17e3059ae451ef0d068a0b55e7e468d1e57f5"
-    sha256 cellar: :any,                 monterey:       "854240810a892a3e690e5c75a7160d7c924ccd4853ecdb94586f9ace22f3b2b2"
-    sha256 cellar: :any,                 big_sur:        "5bfb895a4fe45dc2a142288c2ae849f5b01f71fbb18d5e6ef40014bb76f80ea0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f41e9031bc50ebbab21271523fac58c9b72e7ed8fa45ee4a910b255a1e12d99"
+    sha256 cellar: :any,                 arm64_ventura:  "8b0fb0da10b496d0671163b50e1782285cf59caf90f020745d714befacf16880"
+    sha256 cellar: :any,                 arm64_monterey: "97be69a42e06cc72927871a212dced7ee1a772fa6da4b817a779442b33c5b7cd"
+    sha256 cellar: :any,                 arm64_big_sur:  "e90bca15b4f94460841a2f9eb15c752082f103808dd2be8fa488bc42a357ea13"
+    sha256 cellar: :any,                 ventura:        "bda98398575da5a8184d49ac715abff5efeb1f82b3a5dfa6be23eb501cfc0e15"
+    sha256 cellar: :any,                 monterey:       "bf557c58fbc39ba23c3df0714bdf12bbe9e87ec0f5109d09dc0da357de5f19ba"
+    sha256 cellar: :any,                 big_sur:        "173769f4d52a341b0d77cfaad0e611038a5798fd3d32a44a8459ca7a26f141a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "14f6077f8872a9b6b560b2f93ec36fd1e2c26c45e7fa5d38285f11a943284a89"
   end
 
   depends_on "cmake" => :build
