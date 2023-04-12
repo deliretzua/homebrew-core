@@ -2,8 +2,8 @@ class ElmFormat < Formula
   desc "Elm source code formatter, inspired by gofmt"
   homepage "https://github.com/avh4/elm-format"
   url "https://github.com/avh4/elm-format.git",
-      tag:      "0.8.6",
-      revision: "7e80dd48dd9b30994e43f4804b2ea7118664e8e0"
+      tag:      "0.8.7",
+      revision: "b5cca4c26b473dab06e5d73b98148637e4770d45"
   license "BSD-3-Clause"
   head "https://github.com/avh4/elm-format.git", branch: "main"
 
@@ -24,6 +24,7 @@ class ElmFormat < Formula
 
   depends_on "cabal-install" => :build
   depends_on "haskell-stack" => :build
+  depends_on "hpack" => :build
 
   uses_from_macos "xz" => :build # for `haskell-stack` to unpack ghc
 
@@ -42,8 +43,8 @@ class ElmFormat < Formula
 
     # Directly running `cabal v2-install` fails: Invalid file name in tar archive: "avh4-lib-0.0.0.1/../"
     # Instead, we can use the upstream's build.sh script, which utilizes the Shake build system.
-    system "./dev/build.sh", "--", "build"
-    bin.install "_build/elm-format"
+    system "./dev/build.sh", "--", "_build/bin/elm-format/O2/elm-format"
+    bin.install "_build/bin/elm-format/O2/elm-format"
   end
 
   test do
