@@ -193,7 +193,6 @@ env:
     dnscontrol
     dnscrypt-proxy
     dnsx
-    docfx
     docker
     docker-compose
     docker-credential-helper
