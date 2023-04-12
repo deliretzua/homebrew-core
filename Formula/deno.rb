@@ -1,8 +1,8 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https://deno.land/"
-  url "https://github.com/denoland/deno/releases/download/v1.32.3/deno_src.tar.gz"
-  sha256 "c0ccbf75108a3f1853bdac9956829fb4aa1eb090c3896f631a09c1c1d53b108c"
+  url "https://github.com/denoland/deno/releases/download/v1.32.4/deno_src.tar.gz"
+  sha256 "4861b2c88b21473ba635a89f4400777215efd785edac08cb15baf1de75f91c54"
   license "MIT"
   head "https://github.com/denoland/deno.git", branch: "main"
 
@@ -48,7 +48,7 @@ class Deno < Formula
   end
 
   # To find the version of gn used:
-  # 1. Find v8 version: https://github.com/denoland/deno/blob/v#{version}/Cargo.toml#L46
+  # 1. Find v8 version: https://github.com/denoland/deno/blob/v#{version}/Cargo.toml#L44
   # 2. Find ninja_gn_binaries tag: https://github.com/denoland/rusty_v8/tree/v#{v8_version}/tools/ninja_gn_binaries.py#L21
   # 3. Find short gn commit hash from commit message: https://github.com/denoland/ninja_gn_binaries/tree/#{ninja_gn_binaries_tag}
   # 4. Find full gn commit hash: https://gn.googlesource.com/gn.git/+/#{gn_commit}
