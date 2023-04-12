@@ -12,13 +12,13 @@ class AmqpCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "879497853b31aa32312c71aa7f054fa18bf0e8923f904188ce5e1cdcb7f4ed42"
-    sha256 cellar: :any,                 arm64_monterey: "ecda9554ed2b1f5905d81ef767bd8e064b4cf7b536dcfaf35b7f1616eebfc035"
-    sha256 cellar: :any,                 arm64_big_sur:  "839b34c1300d85baee2d171693c79ec2b2bd23ea1ce752717781c51811b3f79f"
-    sha256 cellar: :any,                 ventura:        "1ba249da6004a9e3f68801640adc179a1e7775b5550b8f668a69414edd2236be"
-    sha256 cellar: :any,                 monterey:       "952f86aee2b33d507bb5005c17dd34309de2c816fcdffe26cf825f01202d1858"
-    sha256 cellar: :any,                 big_sur:        "611fd491b28888e4639b7c97d1f5028554d8a924c9185ce44eac50b6a4b6df3b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "76b7a411e86e3e2dadfa1e11cb928a1c75d161858ac1ad0e7b2dc63150202ab8"
+    sha256 cellar: :any,                 arm64_ventura:  "c664632a3a6d58847e0635b11095c9036fab57d9d1be2c6522bae633b3b27991"
+    sha256 cellar: :any,                 arm64_monterey: "cccb7f548595cfeb394736100e555407ea89be4ba98d8395effcec1cfc6b78e2"
+    sha256 cellar: :any,                 arm64_big_sur:  "d32e583ebba0a245f2bff754c4d681cfcea3d768a2fa502ed41f70c00695fcb0"
+    sha256 cellar: :any,                 ventura:        "80c0f5641c0c7bed47d8d1781d94003f46f580d730ffeeaebbf2e4d37a601f38"
+    sha256 cellar: :any,                 monterey:       "58bb8b6767a86f3221850ce4fc1637f0ac9427d39f5534c69eb5d9ac4380c0d7"
+    sha256 cellar: :any,                 big_sur:        "5ce871a66b88d57f80954f503754e273f86b4695201a72ea83b326aaaab3baf8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2bdc57e60ee0048bc982af729db9d3a68f2adba79420558a36ebc8d28ead92c9"
   end
 
   depends_on "cmake" => :build
