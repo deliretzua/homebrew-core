@@ -1,8 +1,8 @@
 class Libxmlsec1 < Formula
   desc "XML security library"
   homepage "https://www.aleksey.com/xmlsec/"
-  url "https://www.aleksey.com/xmlsec/download/xmlsec1-1.2.37.tar.gz"
-  sha256 "5f8dfbcb6d1e56bddd0b5ec2e00a3d0ca5342a9f57c24dffde5c796b2be2871c"
+  url "https://www.aleksey.com/xmlsec/download/xmlsec1-1.3.0.tar.gz"
+  sha256 "df3ad2548288411fc3d44c20879e4c4e90684a1a4fb76a06ae444f957171c9a6"
   license "MIT"
 
   livecheck do
@@ -34,12 +34,6 @@ class Libxmlsec1 < Formula
 
   # Add HOMEBREW_PREFIX/lib to dl load path
   patch :DATA
-
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-  end
 
   def install
     args = ["--disable-dependency-tracking",
