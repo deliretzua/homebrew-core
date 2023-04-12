@@ -1,8 +1,8 @@
 class Sile < Formula
   desc "Modern typesetting system inspired by TeX"
   homepage "https://sile-typesetter.org"
-  url "https://github.com/sile-typesetter/sile/releases/download/v0.14.8/sile-0.14.8.tar.xz"
-  sha256 "09ca6ae29bfccae0d028eb3779fb04735859e40b24dce3b08289318fd8d10064"
+  url "https://github.com/sile-typesetter/sile/releases/download/v0.14.9/sile-0.14.9.tar.xz"
+  sha256 "9a719a490a2bb71136d25d665536fb9ff2a17123fc2cee48d05ce418cb404814"
   license "MIT"
 
   bottle do
@@ -63,10 +63,12 @@ class Sile < Formula
   end
 
   resource "lua-zlib" do
-    url "https://luarocks.org/manifests/brimworks/lua-zlib-1.2-1.rockspec"
-    sha256 "3c61e946b5a1fb150839cd155ad6528143cdf9ce385eb5f580566fb2d25b37a3"
+    url "https://luarocks.org/manifests/brimworks/lua-zlib-1.2-2.rockspec"
+    sha256 "adc3e279ce67fb477ce7bf88cfb87607491d1c50d9c785b1567066c353f192f9"
   end
 
+  # This resource cannot be updated
+  # Ref: https://github.com/Homebrew/homebrew-core/pull/128136#issuecomment-1505583956
   resource "luaexpat" do
     url "https://luarocks.org/manifests/lunarmodules/luaexpat-1.4.1-1.src.rock"
     sha256 "b2b31f62fd09252d7ec0218d083cf9b8d9fc6a20f4594559f96649beee172233"
@@ -95,8 +97,8 @@ class Sile < Formula
 
   # depends on luasocket
   resource "luasec" do
-    url "https://luarocks.org/manifests/brunoos/luasec-1.1.0-1.src.rock"
-    sha256 "534e16ead4bcddb9d536869fdaf0cac049c8bc710a01749f99df3b63b68e2e24"
+    url "https://luarocks.org/manifests/brunoos/luasec-1.2.0-1.src.rock"
+    sha256 "82d9ea7d11688a2b11fc1c4549a2e7b0aca00790b49e67a41dac0c81f2890f1c"
   end
 
   # depends on luafilesystem
@@ -107,8 +109,8 @@ class Sile < Formula
 
   # depends on penlight
   resource "cldr" do
-    url "https://luarocks.org/manifests/alerque/cldr-0.2.0-0.src.rock"
-    sha256 "965e2917b2d06b1c416935be4d7a59aa438e9bad5015b2aefd055f0efdd79758"
+    url "https://luarocks.org/manifests/alerque/cldr-0.3.0-0.src.rock"
+    sha256 "2efc94c10b659ab1009dc191f1694bd332c34379f87f4dd21f827d0e6948ed6d"
   end
 
   # depends on cldr, luaepnf, penlight
@@ -124,8 +126,8 @@ class Sile < Formula
   end
 
   resource "luautf8" do
-    url "https://luarocks.org/manifests/xavier-wang/luautf8-0.1.4-1.src.rock"
-    sha256 "4c530792e2a6143c19214f299dd17addea5f57a839407cc74aea882cf2403686"
+    url "https://luarocks.org/manifests/xavier-wang/luautf8-0.1.5-1.src.rock"
+    sha256 "33ce04dad817a9d9b05ea5e14663aa4b83da6f8a82dea594e556693fd0b8e42a"
   end
 
   resource "vstruct" do
