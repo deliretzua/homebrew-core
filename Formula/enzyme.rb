@@ -2,8 +2,8 @@ class Enzyme < Formula
   desc "High-performance automatic differentiation of LLVM"
   homepage "https://enzyme.mit.edu"
   # TODO: Check if we can use unversioned `llvm` at version bump.
-  url "https://github.com/EnzymeAD/Enzyme/archive/v0.0.52.tar.gz", using: :homebrew_curl
-  sha256 "f73666be7571b36f2a68ac0ed2d61b27fa45c5a82869e8e7c60c9a24381ba2bb"
+  url "https://github.com/EnzymeAD/Enzyme/archive/v0.0.53.tar.gz", using: :homebrew_curl
+  sha256 "74bb882c0b639b3dd002a9a11babc87836b75ee83bdc47b6e1745c5e20032cd6"
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https://github.com/EnzymeAD/Enzyme.git", branch: "main"
 
