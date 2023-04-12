@@ -6,6 +6,16 @@ class Vvdec < Formula
   license "BSD-3-Clause-Clear"
   head "https://github.com/fraunhoferhhi/vvdec.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "fbba911cd7462add2a47e829d49a682ccc2146f23999ca0d461520a62d0c15de"
+    sha256 cellar: :any,                 arm64_monterey: "00937d55751ec2d1aba6509e5a814f381223d9957ff0759ed4e0255ad783d2b4"
+    sha256 cellar: :any,                 arm64_big_sur:  "75d9beb084c1c866c4a6c489f00457d234dabe962e1d5b1f043aa03ef1d00fee"
+    sha256 cellar: :any,                 ventura:        "e03a0d675cb8e785b06de728d022b69949ca403098bd50b9c422aa4168db7357"
+    sha256 cellar: :any,                 monterey:       "acef3db5aecdf1dc02653ba0b18078ba85cdc30cd011ebbe9b162cc802b8241a"
+    sha256 cellar: :any,                 big_sur:        "374b8847719440b5af13e7d4b59bae3d5d3efa0e21bb5ae20280a922d95e7a46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "076c4ed2955883781792470197d9798ade7620ecafa9bcfcf1a7c643d0947fdf"
+  end
+
   depends_on "cmake" => :build
 
   resource("test_video") do
