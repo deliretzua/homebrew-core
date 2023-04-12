@@ -41,7 +41,6 @@ class Gdal < Formula
   depends_on "jpeg-turbo"
   depends_on "jpeg-xl"
   depends_on "json-c"
-  depends_on "libdap"
   depends_on "libgeotiff"
   depends_on "libheif"
   depends_on "libkml"
