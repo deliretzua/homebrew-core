@@ -16,10 +16,10 @@ class Libkml < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "81a8cdd08aa6620f894eae9b3bd37184bb08f25800aba660c234320e4b51ef75"
   end
 
+  depends_on "boost" => [:build, :test]
   depends_on "cmake" => :build
   depends_on "googletest" => :test
   depends_on "pkg-config" => :test
-  depends_on "boost"
   depends_on "minizip"
   depends_on "uriparser"
 
@@ -30,6 +30,12 @@ class Libkml < Formula
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+  end
+
+  def caveats
+    <<~EOS
+      libkml uses boost headers. To develop with libkml, install boost.
+    EOS
   end
 
   test do
