@@ -5,6 +5,11 @@ class Bitrise < Formula
   sha256 "031c51ccb3808ccd1c45c50b62947d31831b853e55b2a4c9e345978786903796"
   license "MIT"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "8c0288ed60ad95d515ea13c417dda3c327e98e5b6b482debdd5ba49ff6fc97ba"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "8c0288ed60ad95d515ea13c417dda3c327e98e5b6b482debdd5ba49ff6fc97ba"
