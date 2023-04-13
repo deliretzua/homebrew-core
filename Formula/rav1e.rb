@@ -10,8 +10,8 @@ class Rav1e < Formula
 
     # keep the version in sync
     resource "Cargo.lock" do
-      url "https://github.com/xiph/rav1e/releases/download/v0.6.3/Cargo.lock"
-      sha256 "f22049598eb6f9948b4d852850eeb48c1236a7a068692db85cbfe72b94498581"
+      url "https://github.com/xiph/rav1e/releases/download/v0.6.4/Cargo.lock"
+      sha256 "e5b8414eb3681e3f4f134625545ed9b1d6744e2278e9bef473aa74ce12632c7e"
     end
   end
 
@@ -49,10 +49,11 @@ class Rav1e < Formula
   end
 
   test do
+    assert_equal version, resource("Cargo.lock").version, "`Cargo.lock` resource needs updating!" unless head?
     resource("homebrew-bus_qcif_7.5fps.y4m").stage do
-      system "#{bin}/rav1e", "--tile-rows=2",
-                                   "bus_qcif_7.5fps.y4m",
-                                   "--output=bus_qcif_15fps.ivf"
+      system bin/"rav1e", "--tile-rows=2",
+                          "bus_qcif_7.5fps.y4m",
+                          "--output=bus_qcif_15fps.ivf"
     end
   end
 end
