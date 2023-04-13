@@ -9,13 +9,12 @@ class OpenaiWhisper < Formula
   head "https://github.com/openai/whisper.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "185d4e04e2dd3241e6444ade684c81dba104cbef606e537a3ce220a09b01ea37"
-    sha256 cellar: :any,                 arm64_monterey: "6d68c2132757002f9faa17928ef069087d567a885060112a9a5b4bdf2bc6d155"
-    sha256 cellar: :any,                 arm64_big_sur:  "6be21db9a90620001d4aadc7fdc167197633665acc42ddf0f7f59852e155c19c"
-    sha256 cellar: :any,                 ventura:        "354589ed95ca65d59bab9aa91985b94528b979c6bb9756109e874da1a1be4cb0"
-    sha256 cellar: :any,                 monterey:       "2998ecd36feb9dd7f6117f086575ee7f15db9abb974934a540dfb780f741102b"
-    sha256 cellar: :any,                 big_sur:        "77ff63caec09aa3d3128f246e83d01474a77449585e8cc91dd10036c991b7ef1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a1cbb5fcf54fc28b3d0d06e9b9fdd13026735620af1621ae07bdcab1c0b855d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "6b153d2d660889b4971b9b87ebe6049316c7eba1e5190e61c52c72d2d432b016"
+    sha256 cellar: :any,                 arm64_monterey: "eee06381097fff92ae09c5f3951f6302beaf76b0e25ce47e25144557e079f6e6"
+    sha256 cellar: :any,                 ventura:        "f3a7602f4a6fecb4f99b2c5d2422e4450cfc1d7af4d09322b196a2777aeec4f1"
+    sha256 cellar: :any,                 monterey:       "7e48e56f3ce9cc76a0bdc2613fc98359254d584685760af1cc005f81cc142e02"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a6865ccdc763b33016614c38a1d3a3ea4a9f75243e2dca43c34c3c2cb4b1248"
   end
 
   depends_on "rust" => :build # for tokenizers
@@ -71,10 +70,13 @@ class OpenaiWhisper < Formula
     venv.pip_install resources.reject { |r| r.name == "test-audio" }
     venv.pip_install_and_link buildpath
 
-    # link the `huggingface-cli` virtualenv to this one
+    # link dependent virtualenvs to this one
     site_packages = Language::Python.site_packages(python3)
-    package = Formula["huggingface-cli"].opt_libexec
-    (libexec/site_packages/"homebrew-huggingface-cli.pth").write package/site_packages
+    paths = %w[pytorch huggingface-cli].map do |package_name|
+      package = Formula[package_name].opt_libexec
+      package/site_packages
+    end
+    (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
   end
 
   test do
