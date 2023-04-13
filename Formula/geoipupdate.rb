@@ -7,13 +7,13 @@ class Geoipupdate < Formula
   head "https://github.com/maxmind/geoipupdate.git", branch: "main"
 
   bottle do
-    sha256 arm64_ventura:  "8b411a54edf33d16456e3ac86db700f90d4313c79034b0be94fd0dba37e342de"
-    sha256 arm64_monterey: "b304bfa0760a34cfc4344068da47eebef7d634a615e4b25c2f8be5c67301cb8b"
-    sha256 arm64_big_sur:  "29e6d0b05fd7a8328d53ca3c916ba74ee7a9c8ef81f143550332482184237504"
-    sha256 ventura:        "0d23c6e2fb59d1d8311beaba35d0d2f9914b2bc3613142024dd42b25a63d54f8"
-    sha256 monterey:       "ee7202d159da1984d49b4babb0351255b7aee1188ae39ac74d29aab8764f26f6"
-    sha256 big_sur:        "5266b7067e3d1c7409588fb3f7535f0e41de206d864a99a6ec367a343bae2b32"
-    sha256 x86_64_linux:   "59aad00f2bb84111337a490072b52181ff2ad21435684e8b37ad147c11fde6f4"
+    sha256 arm64_ventura:  "1a9040f35ba4e041ef57ba674b62fc2b7c6b38b3ec4e083bbc0436ffdb6f897c"
+    sha256 arm64_monterey: "6df61ab837aaaed5c3f12cb5e63f7573237dc3e9ed94731a3e47999b21328304"
+    sha256 arm64_big_sur:  "627ed11da5bb84aeb7c9d08da8b992caf5e56f3366472a675a7a60dd97b36311"
+    sha256 ventura:        "d904079b5b06a8d43c575817ebf5cf16adc9ce37bdcb3cf24ec7f2155c045480"
+    sha256 monterey:       "d6ca0ea0a65a2e706c2a69e65bb23a9bfa4460a45bdd675cee46ace6dd115fb4"
+    sha256 big_sur:        "bc6dda5374a65c38bb7cd889db6110be4e5f493ddf4d10b22ccf1a375eaf3967"
+    sha256 x86_64_linux:   "ebd272ade7faf78f2a96cd7898d8ac05e2cb1985c01a7756f0d369a3ce008de3"
   end
 
   depends_on "go" => :build
