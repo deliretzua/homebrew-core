@@ -3,8 +3,8 @@ class OpenaiWhisper < Formula
 
   desc "General-purpose speech recognition model"
   homepage "https://github.com/openai/whisper"
-  url "https://files.pythonhosted.org/packages/00/c6/fb251c4f7de1c78753a2d54d6aaf1a859ddc3797ed4d6003f15866f4c4a4/openai-whisper-20230124.tar.gz"
-  sha256 "31adf9353bf0e3f891b6618896f22c65cf78cd6f845a4d5b7125aa5102187f79"
+  url "https://files.pythonhosted.org/packages/80/8b/13b7bf32b83fce396a814678661afdb8839b6b4713b3f2f2bc1499888654/openai-whisper-20230314.tar.gz"
+  sha256 "7a8e62334f97a8d143b439ae8ed6638d78f41ad921a0205382354004b7271725"
   license "MIT"
   head "https://github.com/openai/whisper.git", branch: "main"
 
@@ -17,9 +17,10 @@ class OpenaiWhisper < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a6865ccdc763b33016614c38a1d3a3ea4a9f75243e2dca43c34c3c2cb4b1248"
   end
 
-  depends_on "rust" => :build # for tokenizers
+  depends_on "rust" => :build # for tiktoken
   depends_on "ffmpeg"
   depends_on "huggingface-cli"
+  depends_on "llvm@14"
   depends_on "numpy"
   depends_on "python@3.11"
   depends_on "pytorch"
@@ -39,24 +40,24 @@ class OpenaiWhisper < Formula
     sha256 "34a17436ed1e96697a86f9de3d15a3b0be01d8bc8de9c1dffd59fb8234ed5307"
   end
 
-  resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/13/b3/397aa9668da8b1f0c307bc474608653d46122ae0563d1d32f60e24fa0cbd/more-itertools-9.0.0.tar.gz"
-    sha256 "5a6257e40878ef0520b1803990e3e22303a41b5714006c32a3fd8304b26ea1ab"
+  resource "llvmlite" do
+    url "https://files.pythonhosted.org/packages/fe/82/3405e76ec3eac1857002ea79d8ce7e6314e27d025aecddab01e9c0179636/llvmlite-0.40.0rc1.tar.gz"
+    sha256 "f87877f4703bbc73b2c1a872a5487f4720031b9ad7bc8e2bf3dc5fe616db6b15"
+  end
+
+  resource "numba" do
+    url "https://files.pythonhosted.org/packages/1c/b4/7fbe9b83c8b6b132527c62f7e97c15fc135a7f0e1c4c73432c2e43e8a5f7/numba-0.57.0rc1.tar.gz"
+    sha256 "3cd0510f3557524010338e65e395eeb035345fa4bf8cd2375023145334ddcf00"
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/27/b5/92d404279fd5f4f0a17235211bb0f5ae7a0d9afb7f439086ec247441ed28/regex-2022.10.31.tar.gz"
-    sha256 "a3a98921da9a1bf8457aeee6a551948a83601689e5ecdd736894ea9bbec77e83"
+    url "https://files.pythonhosted.org/packages/d8/29/bd8de07107bc952e0e2783243024e1c125e787fd685725a622e4ac7aeb3c/regex-2023.3.23.tar.gz"
+    sha256 "dc80df325b43ffea5cdea2e3eaa97a44f3dd298262b1c7fe9dbb2a9522b956a7"
   end
 
-  resource "tokenizers" do
-    url "https://files.pythonhosted.org/packages/4a/d9/af2821b5934ed871f716eb65fb3bd43e7bc70b99191ec08f20cfd642d0a1/tokenizers-0.13.2.tar.gz"
-    sha256 "f9525375582fd1912ac3caa2f727d36c86ff8c0c6de45ae1aaff90f87f33b907"
-  end
-
-  resource "transformers" do
-    url "https://files.pythonhosted.org/packages/51/3c/d74d92cf18df4d9c6c261e1c85f9db447ed55d4c3bb88c6c04c626238120/transformers-4.26.1.tar.gz"
-    sha256 "32dc474157367f8e551f470af0136a1ddafc9e18476400c3869f1ef4f0c12042"
+  resource "tiktoken" do
+    url "https://files.pythonhosted.org/packages/fb/d9/c38fee002c5979f29c182aee8e28c31538eabf40022e304f97ff82324199/tiktoken-0.3.1.tar.gz"
+    sha256 "8295912429374f5f3c6c6bf053a091ce1de8c1792a62e3b30d4ad36f47fa8b52"
   end
 
   resource "test-audio" do
@@ -64,10 +65,16 @@ class OpenaiWhisper < Formula
     sha256 "63a4b1e4c1dc655ac70961ffbf518acd249df237e5a0152faae9a4a836949715"
   end
 
+  resource "test-model" do
+    url "https://openaipublic.azureedge.net/main/whisper/models/d3dd57d32accea0b295c96e26691aa14d8822fac7d9d27d5dc00b4ca2826dd03/tiny.en.pt"
+    sha256 "d3dd57d32accea0b295c96e26691aa14d8822fac7d9d27d5dc00b4ca2826dd03"
+  end
+
   def install
     python3 = "python3.11"
     venv = virtualenv_create(libexec, python3)
-    venv.pip_install resources.reject { |r| r.name == "test-audio" }
+    ENV["LLVM_CONFIG"] = Formula["llvm@14"].opt_bin/"llvm-config"
+    venv.pip_install resources.reject { |r| r.name.start_with? "test-" }
     venv.pip_install_and_link buildpath
 
     # link dependent virtualenvs to this one
@@ -81,8 +88,9 @@ class OpenaiWhisper < Formula
 
   test do
     testpath.install resource("test-audio")
+    (testpath/"models").install resource("test-model")
     # for some unknown reason, the file is installed as `tests` rather than `jfk.flac`
-    system "#{bin}/whisper", "tests", "--model", "tiny.en", "--output_format", "txt"
+    system "#{bin}/whisper", "tests", "--model", "tiny.en", "--model_dir", "models", "--output_format", "txt"
     transcription = File.read("tests.txt")
     assert_equal transcription, <<~EOS
       And so, my fellow Americans ask not what your country can do for you
