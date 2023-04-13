@@ -6,14 +6,13 @@ class Ahoy < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "53baeb4480be481ee214d7999ec81103af8e4bf17c35538da47f5a044000294c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8a783f4261bfd14a620550e7676dfa45ef7ea840175591948d1fa6ade1fb0d2a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8a783f4261bfd14a620550e7676dfa45ef7ea840175591948d1fa6ade1fb0d2a"
-    sha256 cellar: :any_skip_relocation, ventura:        "509b219ef6d167a4d74fb8f3cc1d5f204a659831d46840c2138ac5c601a418e4"
-    sha256 cellar: :any_skip_relocation, monterey:       "c1260aa580c7499faec17a305e2e1667843a3c71fa5e93601b579c2c13eb789f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c1260aa580c7499faec17a305e2e1667843a3c71fa5e93601b579c2c13eb789f"
-    sha256 cellar: :any_skip_relocation, catalina:       "c1260aa580c7499faec17a305e2e1667843a3c71fa5e93601b579c2c13eb789f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb55ed63e1324d556cb9cfffebd3001460b23e455fa9c4c3f5d591ff3306b856"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c96cbeaccf5a79de7220ee10c49604a73ae9eb0aefe690c4d8b71d040ce4b39b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c96cbeaccf5a79de7220ee10c49604a73ae9eb0aefe690c4d8b71d040ce4b39b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c96cbeaccf5a79de7220ee10c49604a73ae9eb0aefe690c4d8b71d040ce4b39b"
+    sha256 cellar: :any_skip_relocation, ventura:        "92ba3fbb7bf1b3948a9f8a4493ad3d0cda2255ec69b882e4ebf19c60f2bc2238"
+    sha256 cellar: :any_skip_relocation, monterey:       "92ba3fbb7bf1b3948a9f8a4493ad3d0cda2255ec69b882e4ebf19c60f2bc2238"
+    sha256 cellar: :any_skip_relocation, big_sur:        "92ba3fbb7bf1b3948a9f8a4493ad3d0cda2255ec69b882e4ebf19c60f2bc2238"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8591033979f7f12578775befdab7d3ae0b9996ac381b17901df58a57755a9fc"
   end
 
   depends_on "go" => :build
