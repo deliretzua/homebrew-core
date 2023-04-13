@@ -280,7 +280,7 @@ jobs:
       - name: Set environment variables
         if: runner.os == 'macOS'
         run: |
-          echo 'PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin' >> $GITHUB_ENV
+          echo 'PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin' >> "$GITHUB_ENV"
 
       - name: Set up Homebrew
         id: set-up-homebrew
@@ -353,17 +353,20 @@ jobs:
         run: |
           cd bottles
 
-          count=$(ls *.json | wc -l | xargs echo -n)
+          json_files=(*.json)
+          count="${#json_files[@]}"
           echo "$count bottles"
           echo "count=$count" >> "$GITHUB_OUTPUT"
 
-          failures=$(ls failed/*.json | wc -l | xargs echo -n)
+          failed_json_files=(failed/*.json)
+          failures="${#failed_json_files[@]}"
           echo "$failures failed bottles"
           echo "failures=$failures" >> "$GITHUB_OUTPUT"
 
-          skipped_lists=$(ls skipped_or_failed_formulae-*.txt | wc -l | xargs echo -n)
-          echo "$skipped_lists lists of skipped formulae"
-          echo "skipped=$skipped_lists" >> "$GITHUB_OUTPUT"
+          skipped_lists=(skipped_or_failed_formulae-*.txt)
+          skipped="${#skipped_lists[@]}"
+          echo "$skipped lists of skipped formulae"
+          echo "skipped=$skipped" >> "$GITHUB_OUTPUT"
 
       - name: Upload failed bottles
         if: always() && steps.bottles.outputs.failures > 0
@@ -420,19 +423,20 @@ jobs:
     needs: [tests, setup_tests, setup_runners]
     if: always() && github.event_name == 'pull_request'
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: /bin/bash -e {0}
     steps:
       - name: Check `tests` result
         run: |
           result='${{ needs.tests.result }}'
+          # Silence lint error about backtick usage inside single quotes.
+          # shellcheck disable=SC2016
           printf '::notice ::`tests` job status: %s\n' "$result"
 
           # Possible values are `success`, `failure`, `cancelled` or `skipped`.
           # https://docs.github.com/en/actions/learn-github-actions/contexts#needs-context
           if [[ "$result" = "failure" ]] || [[ "$result" = "cancelled" ]]
           then
+            # Silence lint error about backtick usage inside single quotes.
+            # shellcheck disable=SC2016
             printf '::error ::`tests` job %s.\n' "$result"
             exit 1
           fi
@@ -459,6 +463,8 @@ jobs:
 
           # If we made it here, something went wrong with our workflow run that needs investigating.
           printf '::error ::Unexpected outcome!\n'
+          # Silence lint error about backtick usage inside single quotes.
+          # shellcheck disable=SC2016
           printf '::error ::`tests` job result: %s\n' "$result" # success/skipped
           printf '::error ::runners assigned:   %s\n' "$runners_present" # true/false
           printf '::error ::syntax-only:        %s\n' "$syntax_only" # true/false
@@ -492,7 +498,7 @@ jobs:
       - name: Set environment variables
         if: runner.os == 'macOS'
         run: |
-          echo 'PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin' >> $GITHUB_ENV
+          echo 'PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin' >> "$GITHUB_ENV"
 
       - name: Set up Homebrew
         id: set-up-homebrew
