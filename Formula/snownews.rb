@@ -1,8 +1,8 @@
 class Snownews < Formula
   desc "Text mode RSS newsreader"
   homepage "https://sourceforge.net/projects/snownews/"
-  url "https://downloads.sourceforge.net/project/snownews/snownews-1.9.tar.gz"
-  sha256 "f5a16b92254848ca465d578db3ed98af2323b1800ff27bb8c410e20e521bf485"
+  url "https://downloads.sourceforge.net/project/snownews/snownews-1.11.tar.gz"
+  sha256 "afd4db7c770f461a49e78bc36e97711f3066097b485319227e313ba253902467"
   license "GPL-3.0-only"
 
   bottle do
@@ -25,12 +25,6 @@ class Snownews < Formula
 
   uses_from_macos "curl"
   uses_from_macos "libxml2"
-
-  # remove in next release
-  patch do
-    url "https://github.com/msharov/snownews/commit/a43c1811c2bd2921b7e44fd4b28b852915b45072.patch?full_index=1"
-    sha256 "cd64cd6d9493019496b100a71a8e6c10f33b63fb3d29b7863434bc2eee7cdd00"
-  end
 
   def install
     system "./configure", "--prefix=#{prefix}"
