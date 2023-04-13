@@ -6,6 +6,16 @@ class Resvg < Formula
   license "MPL-2.0"
   head "https://github.com/RazrFalcon/resvg.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "33ddc85d0756508c6ef8d0a64de59b2c50e8d1696cb62f6b295a41db953ced32"
+    sha256 cellar: :any,                 arm64_monterey: "4ebd1fa2f888e9a328b3b1888c6eaeaaee99e25ea67cbe022c8f233448db6a30"
+    sha256 cellar: :any,                 arm64_big_sur:  "dbfa2387216f6beb437876fbcac1b691e02aed861603b81101acd248f2ae7e02"
+    sha256 cellar: :any,                 ventura:        "c3a42b46065a7724bdf96405abe499dbdceb0499130c115698daab24ea90aede"
+    sha256 cellar: :any,                 monterey:       "bf28ac8e62f5a2c4e2246fcd138c8a603884e77140ef52b07b93ffdb6d8e970f"
+    sha256 cellar: :any,                 big_sur:        "766ecd7aba07d196816c73fda398d9339ffc714d612a8b5149ad157fbc792e84"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "21bfd55364a99b26c7a4d1d2ad4def4192fb63caf551da9185717cf679783e3f"
+  end
+
   depends_on "rust" => :build
 
   def install
