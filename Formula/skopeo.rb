@@ -1,8 +1,8 @@
 class Skopeo < Formula
   desc "Work with remote images registries"
   homepage "https://github.com/containers/skopeo"
-  url "https://github.com/containers/skopeo/archive/v1.11.2.tar.gz"
-  sha256 "c7d0b0d1c379ae51e03e32ec31e243257d66de810d73704b7e9ac0e87cbec745"
+  url "https://github.com/containers/skopeo/archive/v1.12.0.tar.gz"
+  sha256 "f7bbb3748eeb0c29abf5bfe9b1c1a149464c4ea65705e25686df3b9bcbd7bb89"
   license "Apache-2.0"
 
   bottle do
