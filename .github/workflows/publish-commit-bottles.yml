@@ -49,7 +49,7 @@ jobs:
       image: ghcr.io/homebrew/ubuntu22.04:master
     defaults:
       run:
-        shell: /bin/bash -e {0}
+        shell: bash
     permissions:
       pull-requests: write
     steps:

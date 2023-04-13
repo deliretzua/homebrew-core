@@ -95,7 +95,7 @@ jobs:
       - name: Set environment variables
         if: runner.os == 'macOS'
         run: |
-          echo 'PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin' >> $GITHUB_ENV
+          echo 'PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin' >> "$GITHUB_ENV"
 
       - name: Set up Homebrew
         id: set-up-homebrew
@@ -159,12 +159,16 @@ jobs:
         if: always()
         run: |
           cd bottles
-          count=$(ls *.json | wc -l | xargs echo -n)
+
+          json_files=(*.json)
+          count="${#json_files[@]}"
           echo "$count bottles"
-          echo "count=$count" >> $GITHUB_OUTPUT
-          failures=$(ls failed/*.json | wc -l | xargs echo -n)
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+
+          failed_json_files=(failed/*.json)
+          failures="${#failed_json_files[@]}"
           echo "$failures failed bottles"
-          echo "failures=$failures" >> $GITHUB_OUTPUT
+          echo "failures=$failures" >> "$GITHUB_OUTPUT"
 
       - name: Upload failed bottles
         if: always() && steps.bottles.outputs.failures > 0
