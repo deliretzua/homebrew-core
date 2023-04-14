@@ -27,7 +27,7 @@ class Docuum < Formula
     keep_alive true
     log_path var/"log/docuum.log"
     error_log_path var/"log/docuum.log"
-    environment_variables PATH: std_service_path_env
+    environment_variables PATH: "#{std_service_path_env}:/usr/local/bin"
   end
 
   test do
