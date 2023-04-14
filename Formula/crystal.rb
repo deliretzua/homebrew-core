@@ -4,16 +4,13 @@ class Crystal < Formula
   license "Apache-2.0"
 
   stable do
-    url "https://github.com/crystal-lang/crystal/archive/1.7.3.tar.gz"
-    sha256 "3ad94dd2835a58af8dabf18d6cdf3791eb49cdfc6fdc6fd6a4e59abf0e860a6f"
+    url "https://github.com/crystal-lang/crystal/archive/1.8.0.tar.gz"
+    sha256 "6353c3b3ca5a1ed6c8b3ee80e5141d130856ebc736c30d1684661001279c2fe1"
 
     resource "shards" do
-      url "https://github.com/crystal-lang/shards/archive/v0.17.2.tar.gz"
-      sha256 "ca3963512db8316b3624c0fba57f803419d67502416fe44938a27aa616cf9d70"
+      url "https://github.com/crystal-lang/shards/archive/v0.17.3.tar.gz"
+      sha256 "6512ff51bd69057f4da4783eb6b14c29d9a88b97d35985356d1dc644a08424c7"
     end
-
-    depends_on "llvm@14"
-    depends_on "pcre"
   end
 
   livecheck do
@@ -34,9 +31,6 @@ class Crystal < Formula
   head do
     url "https://github.com/crystal-lang/crystal.git", branch: "master"
 
-    depends_on "llvm@15"
-    depends_on "pcre2"
-
     uses_from_macos "libffi"  # for the interpreter
 
     resource "shards" do
@@ -48,7 +42,9 @@ class Crystal < Formula
   depends_on "gmp" # std uses it but it's not linked
   depends_on "libevent"
   depends_on "libyaml"
+  depends_on "llvm@15"
   depends_on "openssl@1.1" # std uses it but it's not linked
+  depends_on "pcre2"
   depends_on "pkg-config" # @[Link] will use pkg-config if available
 
   on_linux do
