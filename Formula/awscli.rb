@@ -3,8 +3,8 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://github.com/aws/aws-cli/archive/2.11.12.tar.gz"
-  sha256 "b317be38e5d182408613fafa389ef033e0f73f6c596ec062a920750adfd6c298"
+  url "https://github.com/aws/aws-cli/archive/2.11.13.tar.gz"
+  sha256 "f8518a0e5547a4d729b0a8cd0dadc81caa37f57440264d94a83836f9ae55b1ea"
   license "Apache-2.0"
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
@@ -36,8 +36,8 @@ class Awscli < Formula
   # 2. Ignore `docutils` and `six`. Update all other PyPI packages
 
   resource "awscrt" do
-    url "https://files.pythonhosted.org/packages/d1/0f/b70b4ee10b4eff4c6db54cd7b9240c4fd47430b1abab3feea935f00463a3/awscrt-0.16.13.tar.gz"
-    sha256 "b7ec07435e178400369024450d118834a1c8b01ccfebe8140b82102fb161720d"
+    url "https://files.pythonhosted.org/packages/40/01/951868039ea9b91ecf9878afac3fac95e6c81c3a99700354b9eef4187b02/awscrt-0.16.14.tar.gz"
+    sha256 "a9e0e994053796abedec85ac0f2fbdd238ddf5ff61586eda80fded29e1c7f69c"
   end
 
   resource "colorama" do
