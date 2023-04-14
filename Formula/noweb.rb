@@ -8,7 +8,7 @@ class Noweb < Formula
 
   livecheck do
     url "https://deb.debian.org/debian/pool/main/n/noweb/"
-    regex(/href=.*?noweb[._-]v?(\d+(?:\.\d+)+)\.orig\.t/i)
+    regex(/href=.*?noweb[._-]v?(\d+(?:\.\d+)+[a-z]?)\.orig\.t/i)
   end
 
   bottle do
