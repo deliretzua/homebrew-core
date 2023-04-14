@@ -1,6 +1,6 @@
 class Surfraw < Formula
   desc "Shell Users' Revolutionary Front Rage Against the Web"
-  homepage "https://packages.debian.org/sid/surfraw"
+  homepage "https://gitlab.com/surfraw/Surfraw"
   url "https://ftp.openbsd.org/pub/OpenBSD/distfiles/surfraw-2.3.0.tar.gz"
   sha256 "ad0420583c8cdd84a31437e59536f8070f15ba4585598d82638b950e5c5c3625"
   license :public_domain
@@ -20,7 +20,16 @@ class Surfraw < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3928b063fffaf888f0c34a9ad0a4b943fa5c120bad110a1e4b5acc465965acf7"
   end
 
+  head do
+    url "https://gitlab.com/surfraw/Surfraw.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+  end
+
   def install
+    system "autoreconf", "-fiv" if build.head?
     system "./configure", "--prefix=#{prefix}",
                           "--sysconfdir=#{etc}",
                           "--with-graphical-browser=open"
