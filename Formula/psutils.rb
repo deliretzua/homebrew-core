@@ -1,22 +1,9 @@
 class Psutils < Formula
-  desc "Collection of PostScript document handling utilities"
-  homepage "http://knackered.org/angus/psutils/"
-  url "ftp://ftp.knackered.org/pub/psutils/psutils-p17.tar.gz"
-  mirror "https://ftp.osuosl.org/pub/blfs/conglomeration/psutils/psutils-p17.tar.gz"
-  version "p17"
-  sha256 "3853eb79584ba8fbe27a815425b65a9f7f15b258e0d43a05a856bdb75d588ae4"
-  license "psutils"
-
-  # This regex is open-ended (i.e., it doesn't contain a trailing delimiter like
-  # `\.t`), since the homepage only links to an unversioned archive file
-  # (`psutils.tar.gz`) or a versioned archive file with additional trailing text
-  # (`psutils-p17-a4-nt.zip`). Relying on the trailing text of the versioned
-  # archive file remaining the same could make this check liable to break, so
-  # we'll simply leave it looser until/unless it causes a problem.
-  livecheck do
-    url :homepage
-    regex(/href=.*?psutils[._-](p\d+)/i)
-  end
+  desc "Utilities for manipulating PostScript documents"
+  homepage "https://github.com/rrthomas/psutils"
+  url "https://github.com/rrthomas/psutils/releases/download/v2.10/psutils-2.10.tar.gz"
+  sha256 "6f8339fd5322df5c782bfb355d9f89e513353220fca0700a5a28775404d7e98b"
+  license "GPL-3.0-or-later"
 
   bottle do
     rebuild 1
@@ -34,22 +21,36 @@ class Psutils < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3596c25429993fbcfa470fae16bafaa3da785fb610cacf9063d2b8ee26300d42"
   end
 
+  depends_on "libpaper"
+
+  uses_from_macos "perl"
+
+  resource "IPC::Run3" do
+    on_linux do
+      url "https://cpan.metacpan.org/authors/id/R/RJ/RJBS/IPC-Run3-0.048.tar.gz"
+      sha256 "3d81c3cc1b5cff69cca9361e2c6e38df0352251ae7b41e2ff3febc850e463565"
+    end
+  end
+
   def install
-    # This is required, because the makefile expects that its man folder exists
-    man1.mkpath
-    system "make", "-f", "Makefile.unix",
-                         "PERL=/usr/bin/perl",
-                         "BINDIR=#{bin}",
-                         "INCLUDEDIR=#{pkgshare}",
-                         "MANDIR=#{man1}",
-                         "install"
+    if OS.linux?
+      ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
+      resource("IPC::Run3").stage do
+        system "perl", "Makefile.PL", "INSTALLSITELIB=#{pkgshare}"
+        system "make"
+        system "make", "install"
+      end
+    end
+
+    system "./configure", *std_configure_args
+    system "make", "install"
+    pkgshare.install "tests/psbook-3-input.ps"
   end
 
   test do
-    system "sh", "-c", "#{bin}/showchar Palatino B > test.ps"
-    system "#{bin}/psmerge", "-omulti.ps", "test.ps", "test.ps",
-      "test.ps", "test.ps"
-    system "#{bin}/psnup", "-n", "2", "multi.ps", "nup.ps"
-    system "#{bin}/psselect", "-p1", "multi.ps", "test2.ps"
+    test_ps = pkgshare/"psbook-3-input.ps"
+    system bin/"psbook", test_ps, "test.ps"
+    system bin/"psnup", "-n", "2", test_ps, "nup.ps"
+    system bin/"psselect", "-p1", test_ps, "test2.ps"
   end
 end
