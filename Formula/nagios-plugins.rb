@@ -1,8 +1,8 @@
 class NagiosPlugins < Formula
   desc "Plugins for the nagios network monitoring system"
   homepage "https://www.nagios-plugins.org/"
-  url "https://github.com/nagios-plugins/nagios-plugins/releases/download/release-2.4.3/nagios-plugins-2.4.3.tar.gz"
-  sha256 "cb210e6ea037181b15ad85e17b98f70415be7334d0607aef712fb7d1a1c62aaf"
+  url "https://github.com/nagios-plugins/nagios-plugins/releases/download/release-2.4.4/nagios-plugins-2.4.4.tar.gz"
+  sha256 "9eb151c0665b4a9b8fbe0baf95656312e1c830fb1de7fa58aed358972b51c25d"
   license "GPL-3.0-or-later"
   head "https://github.com/nagios-plugins/nagios-plugins.git", branch: "master"
 
