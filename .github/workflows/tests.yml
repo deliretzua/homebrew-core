@@ -52,7 +52,7 @@ jobs:
           echo '```' >> "$GITHUB_STEP_SUMMARY"
 
   formulae_detect:
-    if: github.repository_owner == 'Homebrew'
+    if: github.repository_owner == 'Homebrew' && github.event_name != 'push'
     runs-on: ubuntu-22.04
     container:
       image: ghcr.io/homebrew/ubuntu22.04:master
