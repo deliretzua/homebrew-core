@@ -4,6 +4,7 @@ class CrystalIcr < Formula
   url "https://github.com/crystal-community/icr/archive/v0.9.0.tar.gz"
   sha256 "2530293e94b60d69919a79b49e83270f1462058499ad37a762233df8d6e5992c"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 arm64_ventura:  "a7d8abeeb9c8fc24d04a94fc93744c4c8136c8c72dacf16dcb78f8fd5bd14ddf"
