@@ -4,7 +4,6 @@
   "checkov": 15,
   "contentful-cli": 5,
   "joern": 10,
-  "quicktype": 10,
   "testkube": 5,
   "vim": 50
 }
