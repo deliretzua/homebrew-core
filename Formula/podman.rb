@@ -2,8 +2,8 @@ class Podman < Formula
   desc "Tool for managing OCI containers and pods"
   homepage "https://podman.io/"
   url "https://github.com/containers/podman.git",
-      tag:      "v4.4.4",
-      revision: "c8223435f49a860c8ac4281a85db39232745a7cb"
+      tag:      "v4.5.0",
+      revision: "75e3c12579d391b81d871fd1cded6cf0d043550a"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
   head "https://github.com/containers/podman.git", branch: "main"
 
@@ -63,15 +63,15 @@ class Podman < Formula
 
   resource "netavark" do
     on_linux do
-      url "https://github.com/containers/netavark/archive/refs/tags/v1.5.0.tar.gz"
-      sha256 "303fbcf3fc645b0e8e8fc1759626c92082f85f49b9d07672918aebd496a24d34"
+      url "https://github.com/containers/netavark/archive/refs/tags/v1.6.0.tar.gz"
+      sha256 "3bec9e9b0f3f8f857370900010fb2125ead462d43998ad8f43e4387a5b06f9d6"
     end
   end
 
   resource "aardvark-dns" do
     on_linux do
-      url "https://github.com/containers/aardvark-dns/archive/refs/tags/v1.5.0.tar.gz"
-      sha256 "b7e7ca1b94c1a62c8800f49befb803ec37cc5caf7656352537343a8fb654e4a6"
+      url "https://github.com/containers/aardvark-dns/archive/refs/tags/v1.6.0.tar.gz"
+      sha256 "f3a2ff2d7baf07d8bf2785b6f1c9618db8aa188bd738b7f5cf1b0a31848232f5"
     end
   end
 
@@ -92,8 +92,7 @@ class Podman < Formula
         (libexec/"podman").install "bin/gvproxy"
       end
 
-      # Remove the "-j1" flag at next release
-      system "make", "-j1", "podman-remote-darwin-docs"
+      system "make", "podman-remote-darwin-docs"
       man1.install Dir["docs/build/remote/darwin/*.1"]
 
       bash_completion.install "completions/bash/podman"
