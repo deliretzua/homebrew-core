@@ -6,13 +6,13 @@ class Phpbrew < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "03a4ce471cc9c831a38897771691b9e1089210951a6ad6e2722dfb8aa4ffa716"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "03a4ce471cc9c831a38897771691b9e1089210951a6ad6e2722dfb8aa4ffa716"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "03a4ce471cc9c831a38897771691b9e1089210951a6ad6e2722dfb8aa4ffa716"
-    sha256 cellar: :any_skip_relocation, ventura:        "5782ecc05e283e4a773cfcdc5d9048e82a85d00f7ceb6a598c2f96e7ae6f0592"
-    sha256 cellar: :any_skip_relocation, monterey:       "5782ecc05e283e4a773cfcdc5d9048e82a85d00f7ceb6a598c2f96e7ae6f0592"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5782ecc05e283e4a773cfcdc5d9048e82a85d00f7ceb6a598c2f96e7ae6f0592"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03a4ce471cc9c831a38897771691b9e1089210951a6ad6e2722dfb8aa4ffa716"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e20e3587cdb7bb9d7c599b3c6c886741175f816e15119342408db805d1040afc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e20e3587cdb7bb9d7c599b3c6c886741175f816e15119342408db805d1040afc"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e20e3587cdb7bb9d7c599b3c6c886741175f816e15119342408db805d1040afc"
+    sha256 cellar: :any_skip_relocation, ventura:        "0d565cc6354d5b0a0061356412f79ad79560072774a4bfbc1eb240f80e87c8eb"
+    sha256 cellar: :any_skip_relocation, monterey:       "0d565cc6354d5b0a0061356412f79ad79560072774a4bfbc1eb240f80e87c8eb"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0d565cc6354d5b0a0061356412f79ad79560072774a4bfbc1eb240f80e87c8eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff8a8974f572904d08b66360b914c9198b632e6dcfee59a27e3d0db97aeb1638"
   end
 
   # TODO: When `php` 8.2+ support is landed, switch back to `php`.
