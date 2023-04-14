@@ -9,15 +9,13 @@ class Vit < Formula
   head "https://github.com/vit-project/vit.git", branch: "2.x"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6a9ec60c1bea0b80ec4a455e3947af84a84ac93eec8b76150904bad79685dd8f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "92a82feed66d18761246eed767e5bcefe18cbe17c36f4104e245e9a8fc6ccc9f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b9a265b17cc76cb95b5852d458bc5996af619f85676d8b86ae69888e93d78f41"
-    sha256 cellar: :any_skip_relocation, ventura:        "98d3fa88a855c8aaa0d6c896b0deb0d72bbde2094395f05018413d8d7acae90c"
-    sha256 cellar: :any_skip_relocation, monterey:       "7593aad3669004423effee2c0a1e27ea2e64e1763846f70054df85bf4d7b763e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8f0526731e932d972914287016dac6953abba079b17da0e8dc4900a75ec3a848"
-    sha256 cellar: :any_skip_relocation, catalina:       "fa0b151ea6e6ff4c747d77792843a6e5564318aae35afbd5a6fbbebd83920901"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b268d1e61ed6854790d059dcebcd02ee54fab57bdccbedd113afef01ba71bd0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dc14204fbfe13e997712377e10df24fc7670788bf86dbaa18b91b981c00a20a9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a3a3c84a83a1b6edc62a81dfb4d23142c96329651429579cd453ecc2b92891cb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5638ea75e260f5bd6c5bd9e023e4cca5c77b95847f9705a4c2bb6cc260b3b449"
+    sha256 cellar: :any_skip_relocation, ventura:        "8de8b6c57f7f306b1b58ecbbd54b4cc54dbd8db7d25b73388a4685e8fa115740"
+    sha256 cellar: :any_skip_relocation, monterey:       "d2af69dec0af1e44e2f8572a3f8e1f520d555e2f72181283a5205aed31bf3fda"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bf52cc4de5a6dda6ef2aada13f145fbf864a5cb31a40d701eec65ac4373bc68b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf0cf914988224ef86de7447128bb1cce78e22207bad050cdfbe56fbae12d3b1"
   end
 
   depends_on "python@3.11"
