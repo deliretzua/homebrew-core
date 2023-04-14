@@ -25,7 +25,7 @@ permissions:
 
 jobs:
   tap_syntax:
-    if: github.repository == 'Homebrew/homebrew-core'
+    if: github.repository_owner == 'Homebrew'
     runs-on: ubuntu-22.04
     container:
       image: ghcr.io/homebrew/ubuntu22.04:master
@@ -38,8 +38,21 @@ jobs:
 
       - run: brew test-bot --only-tap-syntax
 
+      - name: Dump merge_group env
+        if: github.event_name != 'pull_request'
+        run: |
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          env | grep -Eiv 'token|key|secret' | tee -a "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Show contents of `GITHUB_EVENT_PATH`
+        run: |
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          jq . < "$GITHUB_EVENT_PATH" | tee -a "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+
   formulae_detect:
-    if: github.repository == 'Homebrew/homebrew-core' && github.event_name == 'pull_request'
+    if: github.repository_owner == 'Homebrew' && github.event_name == 'pull_request'
     runs-on: ubuntu-22.04
     container:
       image: ghcr.io/homebrew/ubuntu22.04:master
@@ -66,7 +79,7 @@ jobs:
   setup_tests:
     permissions:
       pull-requests: read
-    if: github.event_name == 'pull_request' && github.repository == 'Homebrew/homebrew-core'
+    if: github.repository_owner == 'Homebrew' && github.event_name == 'pull_request'
     runs-on: ubuntu-22.04
     needs: formulae_detect
     outputs:
