@@ -3,8 +3,8 @@ class Vit < Formula
 
   desc "Full-screen terminal interface for Taskwarrior"
   homepage "https://taskwarrior.org/news/news.20140406.html"
-  url "https://files.pythonhosted.org/packages/81/30/4fb1a37f4cfbac8df781b378526c8ea91d21912164a416a4f7c0cb3fe1c8/vit-2.2.0.tar.gz"
-  sha256 "e866c8739822b9e73152ab30c9a009c3aef947533c06f7a5cb244d15c4ea296f"
+  url "https://files.pythonhosted.org/packages/44/1c/e92432357d5dd26ad086e4a05ff066c0539e754fbe3dfdd78e0cb206964b/vit-2.3.0.tar.gz"
+  sha256 "f3efd871c607f201251a5d1e0082e5e31e9161dde0df0c6d8b5a3447c76c87c6"
   license "MIT"
   head "https://github.com/vit-project/vit.git", branch: "2.x"
 
@@ -23,29 +23,9 @@ class Vit < Formula
   depends_on "python@3.11"
   depends_on "task"
 
-  resource "pytz" do
-    url "https://files.pythonhosted.org/packages/76/63/1be349ff0a44e4795d9712cc0b2d806f5e063d4d34631b71b832fac715a8/pytz-2022.6.tar.gz"
-    sha256 "e89512406b793ca39f5971bc999cc538ce125c0e51c27941bef4568b460095e2"
-  end
-
-  resource "pytz-deprecation-shim" do
-    url "https://files.pythonhosted.org/packages/94/f0/909f94fea74759654390a3e1a9e4e185b6cd9aa810e533e3586f39da3097/pytz_deprecation_shim-0.1.0.post0.tar.gz"
-    sha256 "af097bae1b616dde5c5744441e2ddc69e74dfdcb0c263129610d85b87445a59d"
-  end
-
   resource "tasklib" do
-    url "https://files.pythonhosted.org/packages/bd/cd/419a4a0db43d579b1d883ad081cf321feb97ba2afe78d875a9a148b75331/tasklib-2.4.3.tar.gz"
-    sha256 "b523bc12893d26c8173a6b8d84b16259c9a9c5acaaf8932bc018117f907b3bc5"
-  end
-
-  resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/5e/9f/63f7187ffd6d01dd5b5255b8c0b1c4f05ecfe79d940e0a243a6198071832/tzdata-2022.6.tar.gz"
-    sha256 "91f11db4503385928c15598c98573e3af07e7229181bee5375bd30f1695ddcae"
-  end
-
-  resource "tzlocal" do
-    url "https://files.pythonhosted.org/packages/7d/b9/164d5f510e0547ae92280d0ca4a90407a15625901afbb9f57a19d9acd9eb/tzlocal-4.2.tar.gz"
-    sha256 "ee5842fa3a795f023514ac2d801c4a81d1743bbe642e3940143326b3a00addd7"
+    url "https://files.pythonhosted.org/packages/3e/50/3e876f39e31bad8783fd3fe117577cbf1dde836e161f8446631bde71aeb4/tasklib-2.5.1.tar.gz"
+    sha256 "5ccd731b52636dd10457a8b8d858cb0d026ffaab1e3e751baf791bf803e37d7b"
   end
 
   resource "urwid" do
