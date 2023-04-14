@@ -1,14 +1,9 @@
 class Jp2a < Formula
   desc "Convert JPG images to ASCII"
-  homepage "https://csl.name/jp2a/"
-  # Do not change source from SourceForge to GitHub until this issue is resolved:
-  # https://github.com/cslarsen/jp2a/issues/8
-  # Currently, GitHub only has jp2a v1.0.7, which is broken as described above.
-  # jp2a v1.0.6 is stable, but it is only available on SourceForge, not GitHub.
-  url "https://downloads.sourceforge.net/project/jp2a/jp2a/1.0.6/jp2a-1.0.6.tar.gz"
-  sha256 "0930ac8a9545c8a8a65dd30ff80b1ae0d3b603f2ef83b04226da0475c7ccce1c"
-  license "GPL-2.0"
-  revision 2
+  homepage "https://github.com/Talinx/jp2a"
+  url "https://github.com/Talinx/jp2a/releases/download/v1.1.1/jp2a-1.1.1.tar.bz2"
+  sha256 "3b91f26f79eca4e963b1b1ae2473722a706bf642218f20bfe4ade5333aebb106"
+  license "GPL-2.0-or-later"
   version_scheme 1
 
   bottle do
@@ -23,6 +18,7 @@ class Jp2a < Formula
   end
 
   depends_on "jpeg-turbo"
+  depends_on "libpng"
 
   def install
     system "./configure", *std_configure_args, "--disable-silent-rules"
