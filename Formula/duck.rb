@@ -110,10 +110,21 @@ class Duck < Formula
       next unless OS.mac?
 
       cd "apple/JavaNativeFoundation" do
-        xcodebuild "VALID_ARCHS=#{Hardware::CPU.arch}", "-project", "JavaNativeFoundation.xcodeproj"
+        xcodebuild "VALID_ARCHS=#{Hardware::CPU.arch}",
+                   "OTHER_CFLAGS=-Wno-strict-prototypes", # Workaround for Xcode 14.3
+                   "-project", "JavaNativeFoundation.xcodeproj"
         buildpath.install "build/Release/JavaNativeFoundation.framework"
       end
     end
+
+    # Set MACOSX_DEPLOYMENT_TARGET to avoid linker errors when building rococoa.
+    xcconfig = buildpath/"Overrides.xcconfig"
+    xcconfig.write <<~EOS
+      OTHER_LDFLAGS = -headerpad_max_install_names
+      VALID_ARCHS=#{Hardware::CPU.arch}
+      MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}
+    EOS
+    ENV["XCODE_XCCONFIG_FILE"] = xcconfig
 
     resource("rococoa").stage do
       next unless OS.mac?
@@ -125,13 +136,6 @@ class Duck < Formula
     end
 
     os = if OS.mac?
-      xcconfig = buildpath/"Overrides.xcconfig"
-      xcconfig.write <<~EOS
-        OTHER_LDFLAGS = -headerpad_max_install_names
-        VALID_ARCHS=#{Hardware::CPU.arch}
-      EOS
-      ENV["XCODE_XCCONFIG_FILE"] = xcconfig
-
       "osx"
     else
       OS.kernel_name.downcase
