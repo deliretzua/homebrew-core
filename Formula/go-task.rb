@@ -4,7 +4,7 @@ class GoTask < Formula
   url "https://github.com/go-task/task/archive/refs/tags/v3.23.0.tar.gz"
   sha256 "c027a9dacb586e4b168300039629b3572a7050d699780624dbfe31ab15ba4b89"
   license "MIT"
-  head "https://github.com/go-task/task.git", branch: "master"
+  head "https://github.com/go-task/task.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "40deac404c30eb31267301e1083685f15db241d0aeac15f4ecb77f010b3c00f0"
