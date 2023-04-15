@@ -1,10 +1,20 @@
 class Svgbob < Formula
   desc "Convert your ascii diagram scribbles into happy little SVG"
   homepage "https://ivanceras.github.io/svgbob-editor/"
-  url "https://github.com/ivanceras/svgbob/archive/0.6.7.tar.gz"
-  sha256 "6f7a61dca076d7e2295e8ed5876cd5aff375b3f435ed03559b875f86a49a4a52"
   license "Apache-2.0"
   head "https://github.com/ivanceras/svgbob.git", branch: "master"
+
+  stable do
+    url "https://github.com/ivanceras/svgbob/archive/0.7.0.tar.gz"
+    sha256 "1600155b968b74b22f83d3ac6fb8b3daf127e4794d0e6acc9ad8e9e548ac6a6b"
+
+    # patch version constraint issue for `svgbob_server/Cargo.toml`
+    # remove in next release
+    patch do
+      url "https://github.com/ivanceras/svgbob/commit/b575ef693c8e2b439f64be8b1e07bd40ac5b0ce2.patch?full_index=1"
+      sha256 "3a48278d2e1e51771d7995e8102c3f89a52fac51bcf95094df6408f95826de0f"
+    end
+  end
 
   bottle do
     rebuild 1
