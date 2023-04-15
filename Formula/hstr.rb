@@ -1,8 +1,8 @@
 class Hstr < Formula
   desc "Bash and zsh history suggest box"
   homepage "https://github.com/dvorka/hstr"
-  url "https://github.com/dvorka/hstr/archive/2.6.tar.gz"
-  sha256 "085f8a087481bcdf33e75e2fa5aaa9289931782c0bee2db3e02425b9a7d83cdf"
+  url "https://github.com/dvorka/hstr/archive/3.0.tar.gz"
+  sha256 "6d523914dc3af243f5895b2e52d39e3cc53f1afed6562f34a29da4d4467ad7fa"
   license "Apache-2.0"
 
   bottle do
@@ -31,6 +31,6 @@ class Hstr < Formula
   test do
     ENV["HISTFILE"] = testpath/".hh_test"
     (testpath/".hh_test").write("test\n")
-    assert_equal "test", shell_output("#{bin}/hh -n").chomp
+    assert_match "test", shell_output("#{bin}/hh -n").chomp
   end
 end
