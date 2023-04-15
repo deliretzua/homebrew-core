@@ -315,11 +315,9 @@ jobs:
           rm -rvf bottles
           mkdir bottles
 
-      - name: Run brew test-bot ${{ needs.setup_tests.outputs.test-bot-formulae-args }}
+      - run: brew test-bot ${{ needs.setup_tests.outputs.test-bot-formulae-args }}
         id: brew-test-bot-formulae
-        run: |
-          cd bottles
-          brew test-bot ${{ needs.setup_tests.outputs.test-bot-formulae-args }}
+        working-directory: ${{matrix.workdir || github.workspace}}/bottles
 
       - name: Failures summary for brew test-bot --only-formulae
         if: always()
@@ -530,18 +528,16 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: bottles
-          path: ~/bottles/
+          path: ${{matrix.workdir || github.workspace}}/bottles
 
-      - name: Run brew test-bot ${{ needs.setup_tests.outputs.test-bot-dependents-args }}
-        run: |
-          cd ~/bottles
-          brew test-bot ${{ needs.setup_tests.outputs.test-bot-dependents-args }}
+      - run: brew test-bot ${{ needs.setup_tests.outputs.test-bot-dependents-args }}
+        working-directory: ${{matrix.workdir || github.workspace}}/bottles
 
       - name: Failures summary for brew test-bot ${{ needs.setup_tests.outputs.test-bot-dependents-args }}
         if: always()
         uses: Homebrew/actions/failures-summary-and-bottle-result@master
         with:
-          workdir: '~'
+          workdir: ${{matrix.workdir || github.workspace}}
           result_path: bottles/steps_output.txt
           step_name: "Dependent summary on ${{ matrix.runner }}"
           collapse: "true"
@@ -551,16 +547,16 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           name: logs-deps-${{ matrix.runner }}
-          path: ~/bottles/logs
+          path: ${{matrix.workdir || github.workspace}}/bottles/logs
 
       - name: Delete logs and home
         if: always()
         run: |
-          rm -rvf ~/bottles/logs
-          rm -rvf ~/bottles/home
+          rm -rvf bottles/logs
+          rm -rvf bottles/home
 
       - name: Post cleanup
         if: always() && matrix.cleanup
         run: |
           brew test-bot --only-cleanup-after
-          rm -rvf ~/bottles
+          rm -rvf bottles
