@@ -6,13 +6,13 @@ class Gucharmap < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_ventura:  "00f964c8f021e758906253670ead429c79f57dfd89ea35d7ba7f66e8be30deae"
-    sha256 arm64_monterey: "ee7a2aec333c215a3f6bace5c3785cf5c09e85f0d4b5a7d2438d7fe067363706"
-    sha256 arm64_big_sur:  "acd3d9cd2ee5ebf337a6052c73a3e5199a96035344f9e55aabd475c74b77980c"
-    sha256 ventura:        "683c632a969b05c6be2d97d5fb58fe1619a46421ecdc3c7705c401d2e653500b"
-    sha256 monterey:       "8ce3dd619faf86166d58107e61d5eae25640b69b4907149caaaa62000f766807"
-    sha256 big_sur:        "e9e480dcdfbe970303bf771d30f1dbf4b44225dae90c0016d7794713c3e60ca9"
-    sha256 x86_64_linux:   "a996a400de1d46836d6499d747e242417f983fb4b79e895d229a3d881bfebd0e"
+    sha256 arm64_ventura:  "a6cc905bd8f7b030c33669b2206a936d5eea7624cda347287c2d4d45d5ebea64"
+    sha256 arm64_monterey: "3a4d12ca000be73e94d1d4cbc9dbf9934b9bac407155c96fe8173c17bbf0c1ec"
+    sha256 arm64_big_sur:  "2de5a4f0c034ec5d64e835929f81e59ee31c3e01a581e1af77af65845a34cb45"
+    sha256 ventura:        "62695da2e8b3d1ed14603b8a9640a41b4333eeca9bf4177b3e8b8aa891227920"
+    sha256 monterey:       "a5fc53ec7eacc87a6d69ea056bf8acf5aa7d4a52641856cf8f221fcebb3941b7"
+    sha256 big_sur:        "5f9512394695d02e16c205c1a3cf6978cc3ba5eab059d5a8e0118945868ad778"
+    sha256 x86_64_linux:   "75c0ad1e82e0a479397f49067c1a4835657642271c1af38e31808c431205df89"
   end
 
   depends_on "desktop-file-utils" => :build
