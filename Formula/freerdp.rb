@@ -55,6 +55,26 @@ class Freerdp < Formula
     system "cmake", "--install", "build"
   end
 
+  def caveats
+    # on_linux also applies Windows Subsystem for Linux (WSL)
+    on_linux do
+      <<~EOS
+        xfreerdp is an X11 application that requires an XServer be installed
+        and running. Lack of a running XServer will cause a "$DISPLAY" error.
+      EOS
+    end
+    on_macos do
+      <<~EOS
+        xfreerdp is an X11 application that requires an XServer be installed
+        and running. Lack of a running XServer will cause a "$DISPLAY" error.
+
+        XQuartz provides an XServer for macOS. The XQuartz can be installed
+        as a package from www.xquartz.org or as a Homebrew cask:
+          brew install --cask xquartz
+      EOS
+    end
+  end
+
   test do
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
