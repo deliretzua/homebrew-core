@@ -1,10 +1,9 @@
 class Coq < Formula
   desc "Proof assistant for higher-order logic"
   homepage "https://coq.inria.fr/"
-  url "https://github.com/coq/coq/archive/V8.16.1.tar.gz"
-  sha256 "583471c8ed4f227cb374ee8a13a769c46579313d407db67a82d202ee48300e4b"
+  url "https://github.com/coq/coq/archive/V8.17.0.tar.gz"
+  sha256 "712890e4c071422b0c414f260a35c5cb504f621be8cd2a2f0edfe6ef7106a1af"
   license "LGPL-2.1-only"
-  revision 1
   head "https://github.com/coq/coq.git", branch: "master"
 
   livecheck do
@@ -36,11 +35,10 @@ class Coq < Formula
     ENV.prepend_path "OCAMLPATH", Formula["ocaml-findlib"].opt_lib/"ocaml"
     system "./configure", "-prefix", prefix,
                           "-mandir", man,
-                          "-docdir", pkgshare/"latex",
-                          "-coqide", "no",
-                          "-with-doc", "no"
-    system "make", "world"
-    ENV.deparallelize { system "make", "install" }
+                          "-docdir", pkgshare/"latex"
+    system "make", "dunestrap"
+    system "dune", "build", "-p", "coq-core,coq-stdlib,coq"
+    system "dune", "install", "--prefix=#{prefix}", "--mandir=#{man}", "coq-core", "coq-stdlib", "coq"
   end
 
   test do
