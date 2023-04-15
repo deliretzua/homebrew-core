@@ -361,8 +361,9 @@ jobs:
       - name: Count bottles
         id: bottles
         if: always()
+        working-directory: ${{matrix.workdir || github.workspace}}/bottles
         run: |
-          cd bottles
+          shopt -s nullglob
 
           json_files=(*.json)
           count="${#json_files[@]}"
