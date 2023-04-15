@@ -1,10 +1,9 @@
 class DiffPdf < Formula
   desc "Visually compare two PDF files"
   homepage "https://vslavik.github.io/diff-pdf/"
-  url "https://github.com/vslavik/diff-pdf/releases/download/v0.5/diff-pdf-0.5.tar.gz"
-  sha256 "e7b8414ed68c838ddf6269d11abccdb1085d73aa08299c287a374d93041f172e"
+  url "https://github.com/vslavik/diff-pdf/releases/download/v0.5.1/diff-pdf-0.5.1.tar.gz"
+  sha256 "017d52cb7ddabdbf63c6a47f39b2e5a1790022b95295b0d047817904e093245c"
   license "GPL-2.0-only"
-  revision 5
 
   bottle do
     rebuild 1
