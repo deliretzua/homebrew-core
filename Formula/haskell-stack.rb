@@ -1,10 +1,18 @@
 class HaskellStack < Formula
   desc "Cross-platform program for developing Haskell projects"
   homepage "https://haskellstack.org/"
-  url "https://github.com/commercialhaskell/stack/archive/v2.9.3.tar.gz"
-  sha256 "52eff38bfc687b1a0ded7001e9cd83a03b9152a4d54347df7cf0b3dd92196248"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/commercialhaskell/stack.git", branch: "master"
+
+  stable do
+    url "https://github.com/commercialhaskell/stack/archive/v2.9.3.tar.gz"
+    sha256 "52eff38bfc687b1a0ded7001e9cd83a03b9152a4d54347df7cf0b3dd92196248"
+
+    # Avoid unix-compat's System.PosixCompat.User.
+    # Remove with `stable` block on next release.
+    patch :DATA
+  end
 
   livecheck do
     url :stable
@@ -54,3 +62,27 @@ class HaskellStack < Formula
     assert_match "# test", (testpath/"test/README.md").read
   end
 end
+
+__END__
+--- a/src/Stack/Config.hs
++++ b/src/Stack/Config.hs
+@@ -89,7 +89,7 @@ import           System.Console.ANSI
+ import           System.Environment
+ import           System.Info.ShortPathName ( getShortPathName )
+ import           System.PosixCompat.Files ( fileOwner, getFileStatus )
+-import           System.PosixCompat.User ( getEffectiveUserID )
++import           System.Posix.User ( getEffectiveUserID )
+ 
+ -- | If deprecated path exists, use it and print a warning.
+ -- Otherwise, return the new path.
+--- a/src/Stack/Docker.hs
++++ b/src/Stack/Docker.hs
+@@ -66,7 +66,7 @@ import           System.IO.Unsafe ( unsafePerformIO )
+ import           System.Posix.Signals
+ import qualified System.Posix.User as PosixUser
+ #endif
+-import qualified System.PosixCompat.User as User
++import qualified System.Posix.User as User
+ import qualified System.PosixCompat.Files as Files
+ import           System.Terminal ( hIsTerminalDeviceOrMinTTY )
+ import           Text.ParserCombinators.ReadP ( readP_to_S )
