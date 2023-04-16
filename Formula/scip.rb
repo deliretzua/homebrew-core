@@ -10,6 +10,16 @@ class Scip < Formula
     regex(/["']name["']:\s*?["']scip[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "e2683ea1ea7ef4ee746ed37f18d569658259b068f8133870325fec0060f220af"
+    sha256 cellar: :any,                 arm64_monterey: "d558dfdbaa7da6c11c8010aa6d14cab0b4d1cc4ccc0a389b43a793735a6af192"
+    sha256 cellar: :any,                 arm64_big_sur:  "a672ad65af2f34e4d261115ceca920f195bd0f56d606963c2e03ee52dfb24574"
+    sha256 cellar: :any,                 ventura:        "0c32b38a5d2eb36dc977132bc43cad9f89cb08fb460b20c130e52ade6158a269"
+    sha256 cellar: :any,                 monterey:       "5b7579f0c5485ce9a25a7dea0c928a3ac8458c5e175d6dccbffc09f9767e315f"
+    sha256 cellar: :any,                 big_sur:        "104b385e43bdf7a3c5d415b98cdcae456f82e3601ced38cc378fe7bd8af0f22a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd5e992bf62418a05ce7c0d921d9b5df50506e04da53bd4005145aa7d8da1062"
+  end
+
   depends_on "cmake" => :build
   depends_on "cppad"
   depends_on "gmp"
