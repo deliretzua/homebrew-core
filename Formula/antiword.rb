@@ -6,8 +6,7 @@ class Antiword < Formula
   sha256 "8e2c000fcbc6d641b0e6ff95e13c846da3ff31097801e86702124a206888f5ac"
 
   livecheck do
-    url "http://www.winfield.demon.nl/linux/"
-    regex(/href=.*?antiword[._-]v?(\d+(?:\.\d+)+)\.t[a-z]+(?:\.[a-z]+)?["' >]/i)
+    skip "Not actively developed or maintained"
   end
 
   bottle do
