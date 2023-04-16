@@ -1,8 +1,8 @@
 class Atuin < Formula
   desc "Improved shell history for zsh and bash"
   homepage "https://github.com/ellie/atuin"
-  url "https://github.com/ellie/atuin/archive/refs/tags/v14.0.0.tar.gz"
-  sha256 "cccff6fcd27ab12038fc4be0f8418197813306d6210512850d21d2b749c6c797"
+  url "https://github.com/ellie/atuin/archive/refs/tags/v14.0.1.tar.gz"
+  sha256 "00ba6eea19f11b3f73652e71af69b3dc7eb221761519f3b9680047f5476915b4"
   license "MIT"
 
   bottle do
@@ -18,7 +18,7 @@ class Atuin < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "atuin")
 
     generate_completions_from_executable(bin/"atuin", "gen-completion", "--shell")
   end
