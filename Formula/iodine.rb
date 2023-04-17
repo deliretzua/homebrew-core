@@ -1,8 +1,8 @@
 class Iodine < Formula
   desc "Tunnel IPv4 traffic through a DNS server"
   homepage "https://code.kryo.se/iodine"
-  url "https://github.com/yarrick/iodine/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "7281e2301804e48029877bab27134f7c0eb04567da4d21a6fcbaa7265cb5849e"
+  url "https://github.com/yarrick/iodine/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "ffc7a58cdde390a01580f4cfc78c446b0965bcb719bde2c68c5e0c27345a8dfc"
   license "ISC"
   head "https://github.com/yarrick/iodine.git", branch: "master"
 
