@@ -56,23 +56,21 @@ class Freerdp < Formula
   end
 
   def caveats
-    # on_linux also applies Windows Subsystem for Linux (WSL)
-    on_linux do
-      <<~EOS
-        xfreerdp is an X11 application that requires an XServer be installed
-        and running. Lack of a running XServer will cause a "$DISPLAY" error.
-      EOS
-    end
+    extra = ""
     on_macos do
-      <<~EOS
-        xfreerdp is an X11 application that requires an XServer be installed
-        and running. Lack of a running XServer will cause a "$DISPLAY" error.
+      extra = <<~EOS
 
         XQuartz provides an XServer for macOS. The XQuartz can be installed
         as a package from www.xquartz.org or as a Homebrew cask:
           brew install --cask xquartz
       EOS
     end
+
+    <<~EOS
+      xfreerdp is an X11 application that requires an XServer be installed
+      and running. Lack of a running XServer will cause a "$DISPLAY" error.
+      #{extra}
+    EOS
   end
 
   test do
