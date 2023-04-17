@@ -7,10 +7,8 @@ class MistCli < Formula
   head "https://github.com/ninxsoft/mist-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c2bb107b9296ff961c6397d425783c20f4203cf9eab2925dfb9de4291ee304ff"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "36341b7ec3eb7e8e7e450c3050932255060e2558aaa098d72196de04f874c270"
-    sha256 cellar: :any_skip_relocation, ventura:        "53e4fd9e88e5b171e3a50f417164d2343a852e34437508fbb36875e14ae3a60d"
-    sha256 cellar: :any_skip_relocation, monterey:       "59dbaea07bd73bd259009939e94f362bcce79c21286576aac533b179e89a027f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f7b77f41870a6428e2d44a2c9226e3d1a7b74f562ed761b3730b9b310f976d48"
+    sha256 cellar: :any_skip_relocation, ventura:       "cd160e84a3164ca48acc56bb3359abba1c87f54e2948a83143f2e53268ff7f25"
   end
 
   # mist-cli requires Swift 5.8
