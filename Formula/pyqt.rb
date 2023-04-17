@@ -7,12 +7,12 @@ class Pyqt < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "0cdb6cb5278faddfb8850c6a6de69399a79d8141c66d31e7bd0184e029f82246"
-    sha256 cellar: :any, arm64_monterey: "3fbe8f97d2c4ff9f2f0b783a9c72ea81c3955420ac39ea93676b9e06292d46d0"
-    sha256 cellar: :any, arm64_big_sur:  "987025a408f3740814de0fc4404dcb13799934b895feab148d11408f29b0c07d"
-    sha256 cellar: :any, ventura:        "c730f857ce574e739a8b9c8ee47e5e319abdf249728353aef8a0b2aa302a84cf"
-    sha256 cellar: :any, monterey:       "1de92092c26ef30b3bcdb1ebbb0c4e8457f9a310eedaeec1a975f077afb82641"
-    sha256 cellar: :any, big_sur:        "18ca50a5a59408977677ec13e151ce6840c773b6e013abca481ca55d7ce0d8db"
+    sha256 cellar: :any, arm64_ventura:  "4280b087fcf9bc68585103768c35ae7f37d67350ce591bd7c32445553cb604e4"
+    sha256 cellar: :any, arm64_monterey: "c8bc749d40f7177ab8b4c93a63f99943fcf404e01ac0ec2bd116596e1244d0e6"
+    sha256 cellar: :any, arm64_big_sur:  "03d59b3d66c74beb46b69953da6385e61d92c184b698cabdaaed0077aa4ef324"
+    sha256 cellar: :any, ventura:        "e88ac73179617a38b7aaa1cb39040e13aa676372e542e809cebdd98a10751bcf"
+    sha256 cellar: :any, monterey:       "adfc74876bba13a6baaddc038e0ee7ab802adf5393db5c93a1d91ae7cd92b944"
+    sha256 cellar: :any, big_sur:        "0ae668632635a5442ad891f5724a29fcc58bd3e427bfaf667661efd581c49439"
   end
 
   depends_on "pyqt-builder" => :build
