@@ -1,9 +1,14 @@
 class Vile < Formula
   desc "Vi Like Emacs Editor"
   homepage "https://invisible-island.net/vile/"
-  url "https://invisible-island.net/archives/vile/current/vile-9.8w.tgz"
-  sha256 "78253ec3f7ae5f4f9d4799a3c8bc35b85b47d456f2ac172810008a48e4609815"
+  url "https://invisible-island.net/archives/vile/current/vile-9.8y.tgz"
+  sha256 "1b67f1ef34f5f2075722ab46184bb149735e8538fa912fc07c985c92f78fe381"
   license "GPL-2.0-or-later"
+
+  livecheck do
+    url "https://invisible-island.net/archives/vile/current/"
+    regex(/href=.*?vile[._-]v?(\d+(?:\.\d+)+[a-z]*)\.t/i)
+  end
 
   bottle do
     sha256 arm64_ventura:  "9fea67ad963f8e76ab09fb3e181acd3ae4af71d8413323e01a51521ff6f4c5cf"
