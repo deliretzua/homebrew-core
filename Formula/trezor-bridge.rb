@@ -2,8 +2,8 @@ class TrezorBridge < Formula
   desc "Trezor Communication Daemon"
   homepage "https://github.com/trezor/trezord-go"
   url "https://github.com/trezor/trezord-go.git",
-      tag:      "v2.0.32",
-      revision: "9aa6576af6fabd557bc298d1a12b73170f467a07"
+      tag:      "v2.0.33",
+      revision: "2680d5e6f7b02f06aefac1c2a9fef2c6052685de"
   license "LGPL-3.0-only"
 
   bottle do
