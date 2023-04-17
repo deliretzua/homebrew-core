@@ -47,7 +47,7 @@ class Octave < Formula
   depends_on "libsndfile"
   depends_on "libtool"
   depends_on "openblas"
-  depends_on "pcre"
+  depends_on "pcre2"
   depends_on "portaudio"
   depends_on "pstoedit"
   depends_on "qhull"
