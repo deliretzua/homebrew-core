@@ -6,7 +6,7 @@ class Mdt < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3dcc98427000e57158014eaca28a0d4e71ed84189b4d9027cc4fa463d2db03c9"
+    sha256 cellar: :any_skip_relocation, all: "ed1819515c70d8eb3c2bf778d6a52ce8da1e399527c429257f52ba8dcbc13c25"
   end
 
   depends_on "gum"
