@@ -1,8 +1,8 @@
 class Algol68g < Formula
   desc "Algol 68 compiler-interpreter"
   homepage "https://jmvdveer.home.xs4all.nl/algol.html"
-  url "https://jmvdveer.home.xs4all.nl/algol68g-3.1.6.tar.gz"
-  sha256 "232d9c99689720f4a7006740d3b239d63d2e853abefe3a8b6bfbcedd2879cf91"
+  url "https://jmvdveer.home.xs4all.nl/algol68g-3.1.7.tar.gz"
+  sha256 "9871163c9df2d4c64381ba4bc7870efc6093265f6e18bd996ebc398d3c0b2423"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -25,6 +25,8 @@ class Algol68g < Formula
   end
 
   def install
+    # Workaround for Xcode 14.3.
+    ENV.append_to_cflags "-Wno-implicit-function-declaration"
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
   end
