@@ -1,8 +1,8 @@
 class CriTools < Formula
   desc "CLI and validation tools for Kubelet Container Runtime Interface (CRI)"
   homepage "https://github.com/kubernetes-sigs/cri-tools"
-  url "https://github.com/kubernetes-sigs/cri-tools/archive/v1.26.1.tar.gz"
-  sha256 "3719689d819b497a1579ea2c605df75f771c7428ca710f37e78ee9396c22f773"
+  url "https://github.com/kubernetes-sigs/cri-tools/archive/v1.27.0.tar.gz"
+  sha256 "bebe1d17217ae6480a9ce8371dd266a96d6289426d5d64a3c3b6f11d6a8d535e"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/cri-tools.git", branch: "master"
 
@@ -34,7 +34,8 @@ class CriTools < Formula
     crictl_output = shell_output(
       "#{bin}/crictl --runtime-endpoint unix:///var/run/nonexistent.sock --timeout 10ms info 2>&1", 1
     )
-    assert_match "Status from runtime service failed", crictl_output
+    error = "transport: Error while dialing dial unix /var/run/nonexistent.sock: connect: no such file or directory"
+    assert_match error, crictl_output
 
     critest_output = shell_output("#{bin}/critest --ginkgo.dryRun 2>&1")
     assert_match "PASS", critest_output
