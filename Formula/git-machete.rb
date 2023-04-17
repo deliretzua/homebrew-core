@@ -3,8 +3,8 @@ class GitMachete < Formula
 
   desc "Git repository organizer & rebase workflow automation tool"
   homepage "https://github.com/VirtusLab/git-machete"
-  url "https://pypi.org/packages/source/g/git-machete/git-machete-3.16.3.tar.gz"
-  sha256 "ad17addd60a8c213fb4bb233c4040a59a16c5b7c3e67f2ee0f4aaff54a794dd1"
+  url "https://pypi.org/packages/source/g/git-machete/git-machete-3.17.0.tar.gz"
+  sha256 "882c6e6ce04cf1123c8c65ed3799b65a97d977d4677378370514a048bb149c49"
   license "MIT"
 
   bottle do
@@ -21,6 +21,8 @@ class GitMachete < Formula
 
   def install
     virtualenv_install_with_resources
+
+    man1.install "docs/man/git-machete.1"
 
     bash_completion.install "completion/git-machete.completion.bash"
     zsh_completion.install "completion/git-machete.completion.zsh"
