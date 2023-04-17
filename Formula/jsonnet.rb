@@ -1,8 +1,8 @@
 class Jsonnet < Formula
   desc "Domain specific configuration language for defining JSON data"
   homepage "https://jsonnet.org/"
-  url "https://github.com/google/jsonnet/archive/v0.19.1.tar.gz"
-  sha256 "f5a20f2dc98fdebd5d42a45365f52fa59a7e6b174e43970fea4f9718a914e887"
+  url "https://github.com/google/jsonnet/archive/v0.20.0.tar.gz"
+  sha256 "77bd269073807731f6b11ff8d7c03e9065aafb8e4d038935deb388325e52511b"
   license "Apache-2.0"
   head "https://github.com/google/jsonnet.git", branch: "master"
 
