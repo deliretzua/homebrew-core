@@ -4,7 +4,7 @@ class Tfel < Formula
   url "https://github.com/thelfer/tfel/archive/refs/tags/TFEL-4.1.0.tar.gz"
   sha256 "7505c41da9df5fb3c281651ff29b58a18fd4d91b92f839322f0267269c5f1375"
   license "GPL-1.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/thelfer/tfel.git", using: :git, branch: "master"
 
   bottle do
@@ -72,7 +72,7 @@ class Tfel < Formula
         fp -= dt*A*pow(seq,m) ;
       }
     EOS
-    system "mfront", "--obuild", "--interface=generic", "test.mfront"
+    system bin/"mfront", "--obuild", "--interface=generic", "test.mfront"
     assert_predicate testpath/"src"/shared_library("libBehaviour"), :exist?
   end
 end
