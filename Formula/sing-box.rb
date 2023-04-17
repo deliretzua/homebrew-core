@@ -7,13 +7,13 @@ class SingBox < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7b6fa3ce9646d7241e507e6022f09daebef3b0ab33c0fad348172787edd9d4ff"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7b6fa3ce9646d7241e507e6022f09daebef3b0ab33c0fad348172787edd9d4ff"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7b6fa3ce9646d7241e507e6022f09daebef3b0ab33c0fad348172787edd9d4ff"
-    sha256 cellar: :any_skip_relocation, ventura:        "7c44c3c59299f606103f62148113b4d14a2ee47888c1f09d4e763c113e9acbec"
-    sha256 cellar: :any_skip_relocation, monterey:       "7c44c3c59299f606103f62148113b4d14a2ee47888c1f09d4e763c113e9acbec"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7c44c3c59299f606103f62148113b4d14a2ee47888c1f09d4e763c113e9acbec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "caa0731210b2c2a3d54fdcf480c645be98cfc7cebc04b8167f81f2c5c73dc81f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fbe8eba9ace96e6eaf5599528e73c06072181596010de7d200adf1e4dfbe788a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fbe8eba9ace96e6eaf5599528e73c06072181596010de7d200adf1e4dfbe788a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fbe8eba9ace96e6eaf5599528e73c06072181596010de7d200adf1e4dfbe788a"
+    sha256 cellar: :any_skip_relocation, ventura:        "f5796ac4b856af49503005ed91a9185531839e97cd77643002aae07410f4a453"
+    sha256 cellar: :any_skip_relocation, monterey:       "f5796ac4b856af49503005ed91a9185531839e97cd77643002aae07410f4a453"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f5796ac4b856af49503005ed91a9185531839e97cd77643002aae07410f4a453"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83b78a23ba9f773923dece28465b9a31d5b65a0562da02a4223f8dd543ba9579"
   end
 
   depends_on "go" => :build
