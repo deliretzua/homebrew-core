@@ -1,8 +1,8 @@
 class Ldc < Formula
   desc "Portable D programming language compiler"
   homepage "https://wiki.dlang.org/LDC"
-  url "https://github.com/ldc-developers/ldc/releases/download/v1.32.0/ldc-1.32.0-src.tar.gz"
-  sha256 "c4ee0bf91b416dd5641353d9b267b6a48600c499c782beb112d2e460e329beac"
+  url "https://github.com/ldc-developers/ldc/releases/download/v1.32.1/ldc-1.32.1-src.tar.gz"
+  sha256 "b3553bfaa89524317ecd21eb2c63c6ea0f9a7080a16275e46fda7e3ab357ea0f"
   license "BSD-3-Clause"
   head "https://github.com/ldc-developers/ldc.git", branch: "master"
 
@@ -24,7 +24,9 @@ class Ldc < Formula
   depends_on "cmake" => :build
   depends_on "libconfig" => :build
   depends_on "pkg-config" => :build
-  depends_on "llvm@14" # LLVM 15 issue: https://github.com/ldc-developers/ldc/issues/4042
+  # TODO: Check if the latest `llvm` can be used:
+  #   https://github.com/ldc-developers/ldc/blob/v#{version}/cmake/Modules/FindLLVM.cmake
+  depends_on "llvm@15"
 
   uses_from_macos "libxml2" => :build
 
