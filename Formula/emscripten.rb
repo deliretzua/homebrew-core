@@ -3,8 +3,8 @@ require "language/node"
 class Emscripten < Formula
   desc "LLVM bytecode to JavaScript compiler"
   homepage "https://emscripten.org/"
-  url "https://github.com/emscripten-core/emscripten/archive/3.1.35.tar.gz"
-  sha256 "61530cf2d51fe00bfad9b0c5d14fd310fc3cffe00de423764dc9839d62071bcb"
+  url "https://github.com/emscripten-core/emscripten/archive/3.1.36.tar.gz"
+  sha256 "829bfcbda97f52b998484e0edd4da29342ff514b57239fd325586818c87cd40a"
   license all_of: [
     "Apache-2.0", # binaryen
     "Apache-2.0" => { with: "LLVM-exception" }, # llvm
@@ -50,7 +50,7 @@ class Emscripten < Formula
   # See llvm resource below for instructions on how to update this.
   resource "binaryen" do
     url "https://github.com/WebAssembly/binaryen.git",
-        revision: "47056c9a00e368969a503209b6b9f5c0bc287058"
+        revision: "d0621e5820b4ce1b72907f5cdb3c68487ce20c60"
   end
 
   # emscripten does not support using the stable version of LLVM.
@@ -62,7 +62,7 @@ class Emscripten < Formula
   # Then use the listed llvm_project_revision for the resource below.
   resource "llvm" do
     url "https://github.com/llvm/llvm-project.git",
-        revision: "6865cff8ea8b07d9f2385fd92cecb422404f0f35"
+        revision: "5084abbea933b1a510556726a9e226b5ae22f19f"
   end
 
   def install
