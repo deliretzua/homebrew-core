@@ -38,6 +38,11 @@ class SolcSelect < Formula
     system bin/"solc-select", "install", "0.8.0"
     system bin/"solc-select", "use", "0.5.7"
 
+    assert_match(/0\.5\.7.*current/, shell_output("#{bin}/solc-select versions"))
+
+    # running solc itself requires an Intel system or Rosetta
+    return if Hardware::CPU.arm?
+
     assert_match("0.5.7", shell_output("#{bin}/solc --version"))
     with_env(SOLC_VERSION: "0.8.0") do
       assert_match("0.8.0", shell_output("#{bin}/solc --version"))
