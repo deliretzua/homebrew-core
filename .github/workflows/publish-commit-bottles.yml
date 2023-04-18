@@ -34,6 +34,11 @@ on:
       message:
         description: "Message to include when autosquashing revision bumps, deletions, and rebuilds (requires autosquash)"
         required: false
+      retry_bottle_merge:
+        description: "Retry a failed bottle merge? (default: true)"
+        type: boolean
+        required: false
+        default: true
 
 env:
   PR: ${{inputs.pull_request}}
@@ -196,11 +201,14 @@ jobs:
     runs-on: ${{inputs.large_runner && 'homebrew-large-bottle-upload' || 'ubuntu-22.04'}}
     container:
       image: ghcr.io/homebrew/ubuntu22.04:master
+    permissions:
+      actions: write # for `gh workflow run`
     defaults:
       run:
         shell: bash
     steps:
       - name: Post comment once started
+        if: inputs.retry_bottle_merge
         uses: Homebrew/actions/post-comment@master
         with:
           token: ${{secrets.GITHUB_TOKEN}}
@@ -302,7 +310,7 @@ jobs:
           bot: BrewTestBot
 
       - name: Dismiss approvals on failure
-        if: ${{!success()}}
+        if: ${{!success() && !inputs.retry_bottle_merge}}
         uses: Homebrew/actions/dismiss-approvals@master
         with:
           token: ${{secrets.GITHUB_TOKEN}}
@@ -379,3 +387,17 @@ jobs:
           body: ":warning: @${{github.actor}} [Failed to enable automerge](${{env.RUN_URL}}). CC @carlocab"
           bot_body: ":warning: [Failed to enable automerge](${{env.RUN_URL}}). CC @carlocab"
           bot: BrewTestBot
+
+      - name: Retry
+        if: failure() && inputs.retry_bottle_merge
+        env:
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        run: |
+          gh workflow run publish-commit-bottles.yml \
+            --ref "$GITHUB_REF_NAME" \
+            --field pull_request="$PR" \
+            --field large_runner='${{inputs.large_runner}}' \
+            --field autosquash='${{inputs.autosquash}}' \
+            --field warn_on_upload_failure=true \
+            --field message='${{inputs.message}}' \
+            --field retry_bottle_merge=false
