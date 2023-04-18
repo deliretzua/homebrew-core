@@ -1,10 +1,8 @@
-require "language/node"
-
 class Rospo < Formula
   desc "🐸 Simple, reliable, persistent ssh tunnels with embedded ssh server"
   homepage "https://github.com/ferama/rospo"
-  url "https://github.com/ferama/rospo/archive/refs/tags/v0.10.5.tar.gz"
-  sha256 "63860eb269b6b9dba003c7e47b42f8afa945d4155e020abfb11f4c71f06e26f9"
+  url "https://github.com/ferama/rospo/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "275645d216b29b430b1c65bc7ae774492a31026c3ac8424a7dc8f278faf3c334"
   license "MIT"
 
   bottle do
@@ -18,13 +16,8 @@ class Rospo < Formula
   end
 
   depends_on "go" => :build
-  depends_on "node" => :build
 
   def install
-    chdir "pkg/web/ui" do
-      system "npm", "install", *Language::Node.local_npm_install_args
-      system "npm", "run", "build"
-    end
     system "go", "build", *std_go_args(ldflags: "-s -w -X 'github.com/ferama/rospo/cmd.Version=#{version}'")
 
     generate_completions_from_executable(bin/"rospo", "completion")
