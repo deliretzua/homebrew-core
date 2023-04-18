@@ -1,18 +1,9 @@
 class BulkExtractor < Formula
   desc "Stream-based forensics tool"
   homepage "https://github.com/simsong/bulk_extractor/wiki"
+  url "https://github.com/simsong/bulk_extractor/releases/download/v2.0.3/bulk_extractor-2.0.3.tar.gz"
+  sha256 "3967225075164f7dc5a0326e594cad4da5a49d4f091cfeaade447cc305541e32"
   license "MIT"
-
-  stable do
-    url "https://github.com/simsong/bulk_extractor/releases/download/v2.0.0/bulk_extractor-2.0.0.tar.gz"
-    sha256 "6b3c7d36217dd9e374f4bb305e27cbed0eb98735b979ad0a899f80444f91c687"
-
-    # Fix --disable-rar build. Remove in the next release.
-    patch do
-      url "https://github.com/simsong/bulk_extractor/commit/1a9fde225aad0fe2ffd634bdc741b4c65586297c.patch?full_index=1"
-      sha256 "1c3cd2c87bae46d3163fe526def879d0e057fb700b3909362b8356be2ba2318e"
-    end
-  end
 
   livecheck do
     url :stable
