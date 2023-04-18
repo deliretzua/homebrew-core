@@ -6,6 +6,10 @@ concurrency:
   group: ${{ github.workflow }}-${{ inputs.pull_request }}
   cancel-in-progress: false
 
+permissions:
+  contents: write # for `gh pr merge`
+  pull-requests: write # for `gh pr edit|comment|review`
+
 on:
   workflow_dispatch:
     inputs:
@@ -47,9 +51,6 @@ env:
 jobs:
   check:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: write
     outputs:
       bottles: ${{steps.pr-branch-check.outputs.bottles}}
       head_sha: ${{steps.pr-branch-check.outputs.head_sha}}
@@ -108,7 +109,7 @@ jobs:
           head_sha="$(jq --raw-output .head.sha <<< "$pr_data")"
           fork_type="$(jq --raw-output .head.repo.owner.type <<< "$pr_data")"
           merged="$(jq --raw-output .merged <<< "$pr_data")"
-          automerge_data="$(jq --raw-output .auto_merge <<< "$pr_data")"
+          automerge_data="$(jq --raw-output '.auto_merge | type' <<< "$pr_data")"
 
           if [[ -z "$pushable" ]] ||
              [[ -z "$branch" ]] ||
@@ -137,7 +138,7 @@ jobs:
             fi
           done < <(jq --raw-output '.labels[].name' <<< "$pr_data")
 
-          if [[ "$merged" = "true" ]] || [[ -n "$automerge_data" ]]
+          if [[ "$merged" = "true" ]] || [[ "$automerge_data" = "object" ]]
           then
             bottles=false
           fi
@@ -159,7 +160,8 @@ jobs:
           } >> "$GITHUB_OUTPUT"
 
           if "$pushable" && [[ "$fork_type" != "Organization" ]] ||
-             [[ "$head_repo" = "$GH_REPO" ]]
+             [[ "$head_repo" = "$GH_REPO" ]] ||
+             [[ "$bottles" = "false" ]]
           then
             exit 0
           elif "$pushable"
@@ -173,15 +175,27 @@ jobs:
           gh pr edit --add-label 'no push access' "$PR"
           exit 1
 
+      - run: gh pr merge --auto --merge "$PR"
+        if: ${{ !fromJson(steps.pr-branch-check.outputs.bottles) }}
+        env:
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Post comment on failure
+        if: ${{!success()}}
+        uses: Homebrew/actions/post-comment@master
+        with:
+          token: ${{secrets.GITHUB_TOKEN}}
+          issue: ${{inputs.pull_request}}
+          body: ":warning: @${{github.actor}} pre-merge checks [failed](${{env.RUN_URL}}). CC @carlocab"
+          bot_body: ":warning: Pre-merge checks [failed](${{env.RUN_URL}}). CC @carlocab"
+          bot: BrewTestBot
+
   upload:
     needs: check
     if: fromJson(needs.check.outputs.bottles)
     runs-on: ${{inputs.large_runner && 'homebrew-large-bottle-upload' || 'ubuntu-22.04'}}
     container:
       image: ghcr.io/homebrew/ubuntu22.04:master
-    permissions:
-      contents: write
-      pull-requests: write
     defaults:
       run:
         shell: bash
