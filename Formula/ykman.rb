@@ -9,13 +9,13 @@ class Ykman < Formula
   head "https://github.com/Yubico/yubikey-manager.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "c6a3e121cdba5f024b645f341e14aaec753b454cd3a003839de177d78c26de40"
-    sha256 cellar: :any,                 arm64_monterey: "7f8c9a093fc951b99114d332ceb25385298fbd1248a34ed96b63013026031682"
-    sha256 cellar: :any,                 arm64_big_sur:  "ed416b97ceeeb04521e5c6d365c3eec35933c472f3301598d433778661b41d42"
-    sha256 cellar: :any,                 ventura:        "b020ce89d8dc4f0e1c5e07e7ad72fe900f2329afca1cc445bbe750b626bea746"
-    sha256 cellar: :any,                 monterey:       "917a5521e62d81b2d0380b282d0505634f03fa7da74329f67ddaf897fc98630d"
-    sha256 cellar: :any,                 big_sur:        "a6942371ce9f176a298ea68f8c56da8b24a1380ff2d3d0c63e804515d66f52e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cdfd2e70e761faf8cecde3e80b67009432239c007d42a671a2238c9722fde113"
+    sha256 cellar: :any,                 arm64_ventura:  "85a28fdf28cf3a3f6db55f6ed508a5425052526ccb211a47fa53aeba2fe27f91"
+    sha256 cellar: :any,                 arm64_monterey: "c41044eac91b8ebd5255f80208516059bb1fa4a19c26dc2c03b76f14eeae4874"
+    sha256 cellar: :any,                 arm64_big_sur:  "d58baa331aea92922e02d7bee489d06bf3b33114f3892acfc38e366d5d285462"
+    sha256 cellar: :any,                 ventura:        "2041984764a0c6749181310aca5cd64bcb8652509e295ef7ca8fb54c89f1eb57"
+    sha256 cellar: :any,                 monterey:       "4d52aa92a7b540e01d1aa6cd0ef013a27ef73341caf61f0bfec2498315991801"
+    sha256 cellar: :any,                 big_sur:        "fa2733c85675d3ba91816a4ba60f0721ab4c427ae4a073ed81111dd61bec483a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26471b0ee7704ee830fccbd47271c4316fb3242dd888e9d5af4d15a9816ae59b"
   end
 
   # `pkg-config` and `rust` are for cryptography.
