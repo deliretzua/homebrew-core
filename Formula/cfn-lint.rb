@@ -3,8 +3,8 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https://github.com/aws-cloudformation/cfn-lint/"
-  url "https://files.pythonhosted.org/packages/2b/c4/649627d11b35df8d6028bff1156e2dcecfaff240daae4f21c6837cf92855/cfn-lint-0.77.0.tar.gz"
-  sha256 "a1cf0499a0a17028431d2728cb41fe196e7d4365984a4a42002774ff5c1706c6"
+  url "https://files.pythonhosted.org/packages/3c/aa/3d0fa2b5d250e3238cb34030cfda527cd52c6acf58aeb5cb239766f9ce46/cfn-lint-0.77.1.tar.gz"
+  sha256 "f2861748ef8ba4bcb9f47bd12ea396f11b0f29ff50ca98fec39de52695544b61"
   license "MIT-0"
 
   bottle do
@@ -23,8 +23,8 @@ class CfnLint < Formula
   depends_on "six"
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/21/31/3f468da74c7de4fcf9b25591e682856389b3400b4b62f201e65f15ea3e07/attrs-22.2.0.tar.gz"
-    sha256 "c9227bfc2f01993c03f68db37d1d15c9690188323c067c641f1a35ca58185f99"
+    url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
+    sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
   end
 
   resource "aws-sam-translator" do
@@ -33,13 +33,13 @@ class CfnLint < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/27/cb/86d83c450d1471e1bf6deee4b47be7228154306eab564568165908e30c11/boto3-1.26.109.tar.gz"
-    sha256 "d388cb7f54f1a3056f91ffcfb5cf18b226454204e5df7a5c10774718c3fbb166"
+    url "https://files.pythonhosted.org/packages/78/a8/b07686bd9a56e2556708d562c6b8ade423f3cf4cb1b7c3cbc9ed6c24d022/boto3-1.26.115.tar.gz"
+    sha256 "2272a060005bf8299f7342cbf1344304eb44b7060cddba6784f676e3bc737bb8"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/32/7b/7d139b04f4c9554e6fdd25ad22ed91376f3b6433cf329a78cf0a23f75211/botocore-1.29.109.tar.gz"
-    sha256 "2e449525f0ccedb31fdb962a77caac48b4c486c23515b84c5989a39a1823a024"
+    url "https://files.pythonhosted.org/packages/9e/00/4560081a431aaa14c2257040d43f56c2ccba816d8bce3b8e1577a19f4076/botocore-1.29.115.tar.gz"
+    sha256 "58eee8cf8f4f3e515df29f6dc535dd86ed3f4cea40999c5bc74640ff40bdc71f"
   end
 
   resource "jmespath" do
