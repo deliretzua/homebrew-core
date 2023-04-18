@@ -1,8 +1,8 @@
 class Rsyslog < Formula
   desc "Enhanced, multi-threaded syslogd"
   homepage "https://www.rsyslog.com/"
-  url "https://www.rsyslog.com/files/download/rsyslog/rsyslog-8.2302.0.tar.gz"
-  sha256 "25415f85b662615ce3c83077d53758029e8743cb5929044bfd3564e3d626a3b9"
+  url "https://www.rsyslog.com/files/download/rsyslog/rsyslog-8.2304.0.tar.gz"
+  sha256 "d090e90283eb4b80de8b43e5ffc6e4b59c4e3970f2aa91e63beef0a11720d74d"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later", "LGPL-3.0-or-later"]
 
   livecheck do
@@ -28,8 +28,8 @@ class Rsyslog < Formula
   uses_from_macos "zlib"
 
   resource "libfastjson" do
-    url "https://download.rsyslog.com/libfastjson/libfastjson-0.99.9.tar.gz"
-    sha256 "a330e1bdef3096b7ead53b4bad1a6158f19ba9c9ec7c36eda57de7729d84aaee"
+    url "https://download.rsyslog.com/libfastjson/libfastjson-1.2304.0.tar.gz"
+    sha256 "ef30d1e57a18ec770f90056aaac77300270c6203bbe476f4181cc83a2d5dc80c"
   end
 
   def install
