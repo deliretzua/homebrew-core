@@ -1,8 +1,8 @@
 class Gomplate < Formula
   desc "Command-line Golang template processor"
   homepage "https://gomplate.hairyhenderson.ca/"
-  url "https://github.com/hairyhenderson/gomplate/archive/v3.11.4.tar.gz"
-  sha256 "03d2ca995ec470293cbf7446c8f6a79b2a9fa8943fb51025139dca7810f1431b"
+  url "https://github.com/hairyhenderson/gomplate/archive/v3.11.5.tar.gz"
+  sha256 "49d68aef8c0358b5f292444f378bdf40361a71f26ab0292f5468c701367142d8"
   license "MIT"
   head "https://github.com/hairyhenderson/gomplate.git", branch: "master"
 
@@ -16,9 +16,7 @@ class Gomplate < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "621a2a033543fc50ce3ad023d16b1d36949e6acc611ecfe9aeef3c75f9c04217"
   end
 
-  # upstream issue report, https://github.com/hairyhenderson/gomplate/issues/1614
-  # update to use go@1.20 when the issue is resolved
-  depends_on "go@1.19" => :build
+  depends_on "go" => :build
 
   def install
     system "make", "build", "VERSION=#{version}"
