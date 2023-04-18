@@ -8,13 +8,13 @@ class Sceptre < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d1aedd6f2cf07bb436c749b0b1e9a55602cdd5f6dd34c0bd92e87f492cbd0cb0"
-    sha256 cellar: :any,                 arm64_monterey: "9c7fee627be4d355745cc09202478c686f538c8e047e0c827d4c7db2239d877f"
-    sha256 cellar: :any,                 arm64_big_sur:  "021a6538a6acdb51da29ffc3378c6b8612b1468cd30ff1d81c4cda6face06ca3"
-    sha256 cellar: :any,                 ventura:        "5a22166f93b148432ade992e412bfb247dc82225b5b437e2d73164d74571f91d"
-    sha256 cellar: :any,                 monterey:       "dd2df42bebb9bdf253535f60e8a6462bd6c114cb02a9c4abdab2766730134796"
-    sha256 cellar: :any,                 big_sur:        "de7d303b2f8f90e1cbb82aae72b1f0983005f6c1a9179b4e36d89c5dc1fe0565"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "65b686e112c7fbb990346fe33f5339e98e56e67421b426def9e0ae2cf06f2b76"
+    sha256 cellar: :any,                 arm64_ventura:  "c6dfff3665bee93eeb262071c89239653b26f8540eed8ff3c5bf2084ac3b552f"
+    sha256 cellar: :any,                 arm64_monterey: "9453f75f42bf7cebc4c169e66421ea4c9f6b25444b59ae53369adde45a56c6c5"
+    sha256 cellar: :any,                 arm64_big_sur:  "d8b7cea5d58074b0b66ea4d43c403a143f52d45d6521bc4a11e84b23986762b0"
+    sha256 cellar: :any,                 ventura:        "118623cb9fc889d0c9b10c957bc67a47c9dd8d0cf0396dec01f2b4f48b071a84"
+    sha256 cellar: :any,                 monterey:       "98f613176705b164547bb9b316b0644bfe4957f859b995c7c8281ca07cea1907"
+    sha256 cellar: :any,                 big_sur:        "60a74103080fda91bae4f374dd067ad6d892a45095149f6a141fc24b88b12438"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "db30a8a1f7aa618252b5ddfbc90406fac8c8548b44376964741224d42073462d"
   end
 
   depends_on "libyaml"
