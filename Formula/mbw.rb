@@ -1,9 +1,9 @@
 class Mbw < Formula
   desc "Memory Bandwidth Benchmark"
   homepage "https://github.com/raas/mbw/"
-  url "https://github.com/raas/mbw/archive/refs/tags/v1.5.tar.gz"
-  sha256 "3c396ce09bb78c895e4d45e99b1ae07f80e3ea5eee59d78ed2048a7f2ae591ae"
-  license "LGPL-2.1-only"
+  url "https://github.com/raas/mbw/archive/refs/tags/v2.0.tar.gz"
+  sha256 "557f670e13ff663086fe239e4184d8ca6154b004bd5fde2b0a748e5aa543c87f"
+  license "GPL-3.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "84b2b28f7a45137c8aeab4f923b75e6f2e24c582094f2ef5fc74c971c272c06d"
