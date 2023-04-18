@@ -7,13 +7,13 @@ class Diesel < Formula
   head "https://github.com/diesel-rs/diesel.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9bd06313de12df90154f96ed9311db56de5a446c2d7252247bee4e2397a2ef61"
-    sha256 cellar: :any,                 arm64_monterey: "a77c958dbac820081c59906e1701c644448252d5a38f784ba8702ac65fc2b265"
-    sha256 cellar: :any,                 arm64_big_sur:  "20bc84154eadbcaf44381f1e9e54bd56b77a90ce1223120e68ec51fc903e233f"
-    sha256 cellar: :any,                 ventura:        "ed638384944cae8ec4c9fea5b7c8841b81265b790581207ad70dc9be9b8430f4"
-    sha256 cellar: :any,                 monterey:       "3c64ceeb9f857809cbf88b5f9c2f54460181ee6210a022b3813f6a6f2812963e"
-    sha256 cellar: :any,                 big_sur:        "26fcd4600843f3e05fbdd9cf44178c8b2498d6724c8915aa5a97b4d808498c73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c409d05e9ac6c034979bbe5e9e944266789666feccbd18c3f9877b8f4dc69915"
+    sha256 cellar: :any,                 arm64_ventura:  "97b46da4270d14795eaf0facac440dea66bf5b06f2fc9b0d7cf981d147f017f7"
+    sha256 cellar: :any,                 arm64_monterey: "9b93d5f2f5cd99716be34a38edb73322e77361f1a6717244c98434c3e73e075e"
+    sha256 cellar: :any,                 arm64_big_sur:  "478667bb92b30918b21c34ec3c1c570d0334918d2c8689ceaceb0a06f32b6677"
+    sha256 cellar: :any,                 ventura:        "2a49116e3dee26b3c3788b36ddd78dfc4af626fe59af24bb4682596fa36fea69"
+    sha256 cellar: :any,                 monterey:       "2bb74a52d94e1dae41f3be70d5f183967e7de1c68850a5a9702b0b6a7a95a238"
+    sha256 cellar: :any,                 big_sur:        "2b3f37e34b9c03de77234f8c130e1ae31d1504f2fbe5e14637d96ff1c261146f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c54e022112e08bb1c9250e87afd8722c5ebfca579b4179568587a97891e3a8b1"
   end
 
   depends_on "rust" => [:build, :test]
