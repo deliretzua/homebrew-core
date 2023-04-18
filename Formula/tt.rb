@@ -29,6 +29,7 @@ class Tt < Formula
     system "mage", "build"
     bin.install "tt"
     (etc/"tarantool").install "tt.yaml.default" => "tt.yaml"
+    generate_completions_from_executable(bin/"tt", "completion", shells: [:bash, :zsh])
   end
 
   test do
