@@ -7,12 +7,13 @@ class Echidna < Formula
   head "https://github.com/crytic/echidna.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "dcf170112210f244abb4dc4e07a75a09b59409ae71d5fe7250c07e3d12d5f029"
-    sha256 cellar: :any,                 arm64_big_sur:  "ae9ac5a51425f596df283f53aa33fd4031ed5dcb22515c870ca3a3665c1e1d1f"
-    sha256 cellar: :any,                 ventura:        "db742b78045169900941a6d043afe932a823fe037bf0f5ffb76be023f1095e63"
-    sha256 cellar: :any,                 monterey:       "65a6b9f6498f796b56e83c1c2e43ea44948a8d4649cf2d596dea61ebaae2af78"
-    sha256 cellar: :any,                 big_sur:        "244b94288758683a58c0114074e384ba813c4e30d7635ef9bcb0ebc163a6a45d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0e99cc1a243c861749b77d044ff8623b4cc7f168fde8c8fda85c82abfe3bdbe3"
+    sha256 cellar: :any,                 arm64_ventura:  "28f75549b1838d14214ec81f75c90e694cad0b087634d5da52d3abe4bb56b381"
+    sha256 cellar: :any,                 arm64_monterey: "c1ac3ee2372466e35501dd1471f9905518eb0137f65038b38ec915af8f2c89dc"
+    sha256 cellar: :any,                 arm64_big_sur:  "c2b884ab6dc70487b7e663fbc44611b0fb5212740684ae123e14e858d1f4021e"
+    sha256 cellar: :any,                 ventura:        "eafd1a179506c069bbf2a1a2e39bac218885f2f2d632075395b1cc8ba4d86180"
+    sha256 cellar: :any,                 monterey:       "c1bf97c0dabb58da077a6a952208da6f5906f7c8a6855f1481ee080461f0de62"
+    sha256 cellar: :any,                 big_sur:        "a43f323a93f21234bdd69b3c919e369a67e02cd9a462995a539d3b665aa2b55c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b671ae14db0385936f048b9be8f98aa7f2baabadf037bb3e15769667487df28"
   end
 
   depends_on "ghc@9.2" => :build
