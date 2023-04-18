@@ -1,8 +1,8 @@
 class Libxpm < Formula
   desc "X.Org: X Pixmap (XPM) image file format library"
   homepage "https://www.x.org/"
-  url "https://www.x.org/archive/individual/lib/libXpm-3.5.15.tar.gz"
-  sha256 "2a9bd419e31270593e59e744136ee2375ae817322447928d2abb6225560776f9"
+  url "https://www.x.org/archive/individual/lib/libXpm-3.5.16.tar.gz"
+  sha256 "43a70e6f9b67215fb223ca270d83bdcb868c513948441d5b781ea0765df6bfb4"
   license "MIT"
 
   bottle do
