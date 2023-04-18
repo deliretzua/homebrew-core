@@ -1,8 +1,8 @@
 class Dexter < Formula
   desc "Automatic indexer for Postgres"
   homepage "https://github.com/ankane/dexter"
-  url "https://github.com/ankane/dexter/archive/v0.4.3.tar.gz"
-  sha256 "68d840020c87b5792ab9eb3e12939cf3b5944427c1e28cf8a34d5737223de2a0"
+  url "https://github.com/ankane/dexter/archive/v0.5.0.tar.gz"
+  sha256 "bc50758bd06c25b9042c48274b4bbda79bd8bf715b86c390e2bf077f54f12776"
   license "MIT"
 
   bottle do
@@ -17,12 +17,11 @@ class Dexter < Formula
 
   depends_on "postgresql@15" => :test
   depends_on "libpq"
-
-  uses_from_macos "ruby"
+  depends_on "ruby"
 
   resource "google-protobuf" do
-    url "https://rubygems.org/gems/google-protobuf-3.22.2.gem"
-    sha256 "d516c13248500fb4e1af469c2d71e8b6ecffacb6f55e9be203f01b7d0ff01eff"
+    url "https://rubygems.org/gems/google-protobuf-3.22.3.gem"
+    sha256 "09db2a54fcdf2c8ec04d2c10b2818fd6ee0990578317b42e839811f2fd288ff5"
   end
 
   resource "pg" do
@@ -31,8 +30,8 @@ class Dexter < Formula
   end
 
   resource "pg_query" do
-    url "https://rubygems.org/gems/pg_query-2.2.1.gem"
-    sha256 "6086972bbf4eab86d8425b35f14ca8b6fe41e4341423582801c1ec86ff5f8cea"
+    url "https://rubygems.org/gems/pg_query-4.2.0.gem"
+    sha256 "ab3059025d9f0471004b12036ad272e0147f1d4ddbab011dd96075c0abce899f"
   end
 
   resource "slop" do
@@ -72,7 +71,7 @@ class Dexter < Formula
 
     begin
       output = shell_output("#{bin}/dexter -d postgres -p #{port} -s SELECT 1 2>&1", 1)
-      assert_match 'extension "hypopg" is not available', output
+      assert_match "Install HypoPG", output
     ensure
       system pg_ctl, "stop", "-D", testpath/"test"
     end
