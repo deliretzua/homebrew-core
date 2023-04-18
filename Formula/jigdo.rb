@@ -1,13 +1,10 @@
-# Jigdo is dead upstream. It consists of two components: Jigdo, a GTK+ using GUI,
-# which is LONG dead and completely unfunctional, and jigdo-lite, a command-line
-# tool that has been on life support and still works. Only build the CLI tool.
 class Jigdo < Formula
   desc "Tool to distribute very large files over the internet"
   homepage "https://www.einval.com/~steve/software/jigdo/"
-  url "http://atterer.org/sites/atterer/files/2009-08/jigdo/jigdo-0.7.3.tar.bz2"
-  sha256 "875c069abad67ce67d032a9479228acdb37c8162236c0e768369505f264827f0"
+  url "https://www.einval.com/~steve/software/jigdo/download/jigdo-0.8.1.tar.xz"
+  sha256 "b1f08c802dd7977d90ea809291eb0a63888b3984cc2bf4c920ecc2a1952683da"
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
-  revision 8
+  head "https://git.einval.com/git/jigdo.git", branch: "upstream"
 
   livecheck do
     url "https://www.einval.com/~steve/software/jigdo/download/"
@@ -32,31 +29,39 @@ class Jigdo < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
-  # Use MacPorts patch for compilation on 10.9. Remove when updating to 0.8+.
-  patch :p0 do
-    on_macos do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/e101570/jigdo/patch-src-compat.hh.diff"
-      sha256 "a21aa8bcc5a03a6daf47e0ab4e04f16e611e787a7ada7a6a87c8def738585646"
-    end
-  end
-
-  # Use Fedora patch for compilation with GCC. Remove when updating to 0.8+.
-  patch do
-    on_linux do
-      url "https://src.fedoraproject.org/rpms/jigdo/raw/27c01e27168b62157e98c7ffad1aa0b4aad405e9/f/jigdo-0.7.3-gcc43.patch"
-      sha256 "57e13ca6c283cb086d1c5ceb5ed3562fab548fa19e1d14ecc045c3a23fa7d44a"
-    end
+  on_linux do
+    depends_on "gettext" => :build # for msgfmt
   end
 
   def install
-    system "./configure", *std_configure_args,
-                          "--disable-x11",
-                          "--mandir=#{man}"
+    # Find our docbook catalog
+    ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
+    system "./configure", *std_configure_args, "--mandir=#{man}"
+
+    # replace non-existing function
+    inreplace "src/compat.hh", "return truncate64(path, length);", "return truncate(path, length);" if OS.mac?
+
+    # disable documentation building
+    (buildpath/"doc/Makefile").atomic_write "all:\n\techo hello"
+
+    # disable documentation installing
+    inreplace "Makefile", "$(INSTALL) \"$$x\" $(DESTDIR)$(mandir)/man1", "echo \"$$x\""
+
     system "make"
     system "make", "install"
   end
 
   test do
-    assert_match "version #{version}", shell_output("#{bin}/jigdo-file -v")
+    system bin/"jigdo-file", "make-template", "--image=#{test_fixtures("test.png")}",
+                                              "--template=#{testpath}/template.tmp",
+                                              "--jigdo=#{testpath}/test.jigdo"
+
+    assert_path_exists testpath/"test.jigdo"
+    assert_path_exists testpath/"template.tmp"
+    system bin/"jigdo-file", "make-image", "--image=#{testpath/"test.png"}",
+                                           "--template=#{testpath}/template.tmp",
+                                           "--jigdo=#{testpath}/test.jigdo"
+    system bin/"jigdo-file", "verify", "--image=#{testpath/"test.png"}",
+                                       "--template=#{testpath}/template.tmp"
   end
 end
