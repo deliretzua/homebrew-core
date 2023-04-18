@@ -276,6 +276,7 @@ jobs:
           HOMEBREW_GPG_PASSPHRASE: ${{ secrets.BREWTESTBOT_GPG_SIGNING_SUBKEY_PASSPHRASE }}
 
       - name: Open PR with bottle commit
+        id: create-pr
         working-directory: ${{steps.set-up-homebrew.outputs.repository-path}}
         env:
           GH_TOKEN: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
@@ -287,15 +288,20 @@ jobs:
             --body 'Created by `brew dispatch-build-bottle`'\
             --fill \
             --head "$BOTTLE_BRANCH" \
-            --label CI-published-bottle-commits \
             --reviewer '${{github.actor}}'
 
+          # There is a GitHub bug where labels are not properly recognised by workflows
+          # when added by `gh pr create`. We use the CI-published-bottle-commits label in
+          # the `formulae_detect` step in `tests.yml`, so let's add the label separately
+          # to avoid the bug.
+          pull_number="$(gh pr list --head "$BOTTLE_BRANCH" | cut -f1 | tr -d '\n')"
+          gh pr edit "$pull_number" --add-label CI-published-bottle-commits
+          echo "pull_number=$pull_number" >> "$GITHUB_OUTPUT"
+
       - name: Enable automerge
+        run: gh pr merge --auto --merge '${{steps.create-pr.outputs.pull_number}}'
         env:
           GH_TOKEN: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
-        run: |
-          pull_number="$(gh pr list --head "$BOTTLE_BRANCH" | cut -f1 | tr -d '\n')"
-          gh pr merge --auto --merge "$pull_number"
 
       - name: Post comment on failure
         if: ${{!success() && inputs.issue > 0}}
