@@ -3,8 +3,8 @@ class SvtplayDl < Formula
 
   desc "Download videos from https://www.svtplay.se/"
   homepage "https://svtplay-dl.se/"
-  url "https://files.pythonhosted.org/packages/49/26/84f65fa3eb09d3ddaf6e0b052068a743f2eaae734632e20a4674cf2304ae/svtplay-dl-4.19.tar.gz"
-  sha256 "ab227d5585f2657627f715b00a520558dd9ee239e311138d61dee07f1f9e3670"
+  url "https://files.pythonhosted.org/packages/52/8a/343ac9dcbccc45e6ea4acfb082ccc86654ba658513fbde8d812eb3672cb5/svtplay-dl-4.20.tar.gz"
+  sha256 "2a939fce98a1161c226b86661f256490b2259c2673867883f78b0253ed036116"
   license "MIT"
 
   bottle do
@@ -38,8 +38,8 @@ class SvtplayDl < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/fa/f3/f4b8c175ea9a1de650b0085858059050b7953a93d66c97ed89b93b232996/cryptography-39.0.2.tar.gz"
-    sha256 "bc5b871e977c8ee5a1bbc42fa8d19bcc08baf0c51cbf1586b0e87a2694dde42f"
+    url "https://files.pythonhosted.org/packages/f7/80/04cc7637238b78f8e7354900817135c5a23cf66dfb3f3a216c6d630d6833/cryptography-40.0.2.tar.gz"
+    sha256 "c33c0d32b8594fa647d2e01dbccc303478e16fdd7cf98652d5b3ed11aa5e5c99"
   end
 
   resource "idna" do
