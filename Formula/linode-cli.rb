@@ -3,8 +3,8 @@ class LinodeCli < Formula
 
   desc "CLI for the Linode API"
   homepage "https://www.linode.com/products/cli/"
-  url "https://files.pythonhosted.org/packages/b5/23/d307b8cde73d2378eb35f668c04b86728e9ab2b36c8129a1744613859cda/linode-cli-5.35.0.tar.gz"
-  sha256 "4c135c0b47ae8cc141ab71f3117156cdb8001146e6e9885f6143954e5e0e0752"
+  url "https://files.pythonhosted.org/packages/b8/15/d9aaea64ea509cf17cb441b7dfe8c1df8c919eec1e42b5bc2e3b4e2ca201/linode-cli-5.36.0.tar.gz"
+  sha256 "ff93095d7e906c789af0a449ca04ab3ac7bd3a1a65f1c7e772e6d00e01f66b6d"
   license "BSD-3-Clause"
   head "https://github.com/linode/linode-cli.git", branch: "main"
 
@@ -23,8 +23,8 @@ class LinodeCli < Formula
   depends_on "pyyaml"
 
   resource "linode-api-spec" do
-    url "https://raw.githubusercontent.com/linode/linode-api-docs/refs/tags/v4.145.0/openapi.yaml"
-    sha256 "c4075487eab4a92c73f1a2e747628440555a1c00aff44c7bc1217fde83385e36"
+    url "https://raw.githubusercontent.com/linode/linode-api-docs/refs/tags/v4.151.1/openapi.yaml"
+    sha256 "3c5c8dd87fb2cb7c2b1b14593e3cdcacd6010a34d24d48f3008f8270a6d12bed"
   end
 
   resource "certifi" do
@@ -43,8 +43,8 @@ class LinodeCli < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/47/d5/aca8ff6f49aa5565df1c826e7bf5e85a6df852ee063600c1efa5b932968c/packaging-23.0.tar.gz"
-    sha256 "b6ad297f8907de0fa2fe1ccbd26fdaf387f5f47c7275fedf8cce89f99446cf97"
+    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
+    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   resource "requests" do
@@ -62,16 +62,7 @@ class LinodeCli < Formula
     sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
   end
 
-  # Fix the missing requirements.txt issue in pypi source tarball
-  # https://github.com/linode/linode-cli/pull/435
-  resource "requirements" do
-    url "https://raw.githubusercontent.com/linode/linode-cli/v5.35.0/requirements.txt"
-    sha256 "03139d1844f142725fc9cf14080039c5c0ecee84e0d8e43b36eb824e2d13a8d0"
-  end
-
   def install
-    buildpath.install resource("requirements")
-
     venv = virtualenv_create(libexec, "python3.11", system_site_packages: false)
     non_pip_resources = %w[terminaltables linode-api-spec requirements]
     venv.pip_install resources.reject { |r| non_pip_resources.include? r.name }
