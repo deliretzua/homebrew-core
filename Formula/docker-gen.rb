@@ -7,13 +7,13 @@ class DockerGen < Formula
   head "https://github.com/nginx-proxy/docker-gen.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "133d139896cffc5686dcb8f5c05ea0788d4a639ffa94285c998f4aa3c6a49f1e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "133d139896cffc5686dcb8f5c05ea0788d4a639ffa94285c998f4aa3c6a49f1e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "133d139896cffc5686dcb8f5c05ea0788d4a639ffa94285c998f4aa3c6a49f1e"
-    sha256 cellar: :any_skip_relocation, ventura:        "79ae1949ebb9bf7a85ac01a263bfdeeca5ad7a67c668478dfd4c8e2ba52e414a"
-    sha256 cellar: :any_skip_relocation, monterey:       "79ae1949ebb9bf7a85ac01a263bfdeeca5ad7a67c668478dfd4c8e2ba52e414a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "79ae1949ebb9bf7a85ac01a263bfdeeca5ad7a67c668478dfd4c8e2ba52e414a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "50b0db1057d4a985e3ba53f459c5f701ff3e7902d626d6fcd6130627d81f97ea"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9e574ad2d5ca71f67768d30a43a7e3b21ce9506ff66b72cde41b8ee3644d2f11"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9e574ad2d5ca71f67768d30a43a7e3b21ce9506ff66b72cde41b8ee3644d2f11"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9e574ad2d5ca71f67768d30a43a7e3b21ce9506ff66b72cde41b8ee3644d2f11"
+    sha256 cellar: :any_skip_relocation, ventura:        "b526141b801a270b85aa1765ffd249bb45f65113186e277f1e952db66e3c4401"
+    sha256 cellar: :any_skip_relocation, monterey:       "b526141b801a270b85aa1765ffd249bb45f65113186e277f1e952db66e3c4401"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b526141b801a270b85aa1765ffd249bb45f65113186e277f1e952db66e3c4401"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb73cb9feed232bb32da903e6cb3739676fd365be3c8529586ef186d7af5ebf1"
   end
 
   depends_on "go" => :build
