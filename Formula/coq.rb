@@ -4,6 +4,7 @@ class Coq < Formula
   url "https://github.com/coq/coq/archive/V8.17.0.tar.gz"
   sha256 "712890e4c071422b0c414f260a35c5cb504f621be8cd2a2f0edfe6ef7106a1af"
   license "LGPL-2.1-only"
+  revision 1
   head "https://github.com/coq/coq.git", branch: "master"
 
   livecheck do
@@ -37,8 +38,13 @@ class Coq < Formula
                           "-mandir", man,
                           "-docdir", pkgshare/"latex"
     system "make", "dunestrap"
-    system "dune", "build", "-p", "coq-core,coq-stdlib,coq"
-    system "dune", "install", "--prefix=#{prefix}", "--mandir=#{man}", "coq-core", "coq-stdlib", "coq"
+    system "dune", "build", "-p", "coq-core,coq-stdlib,coqide-server,coq"
+    system "dune", "install", "--prefix=#{prefix}",
+                              "--mandir=#{man}",
+                              "coq-core",
+                              "coq-stdlib",
+                              "coqide-server",
+                              "coq"
   end
 
   test do
