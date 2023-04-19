@@ -59,7 +59,7 @@ jobs:
       origin_branch: ${{steps.pr-branch-check.outputs.origin_branch}}
       remote: ${{steps.pr-branch-check.outputs.remote}}
     permissions:
-      contents: write # for `gh pr merge`
+      contents: read
       pull-requests: write # for `gh pr edit|comment|review`
     steps:
       - name: Check PR approval
@@ -182,7 +182,7 @@ jobs:
       - run: gh pr merge --auto --merge "$PR"
         if: ${{ !fromJson(steps.pr-branch-check.outputs.bottles) }}
         env:
-          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GH_TOKEN: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
 
       - name: Post comment on failure
         if: ${{!success()}}
@@ -201,8 +201,8 @@ jobs:
     container:
       image: ghcr.io/homebrew/ubuntu22.04:master
     permissions:
+      contents: read
       actions: write # for `gh workflow run`
-      contents: write # for `gh pr merge`
       pull-requests: write # for `gh pr edit|review`
     defaults:
       run:
@@ -352,10 +352,14 @@ jobs:
             exit 1
           fi
 
-      - name: Approve PR and enable automerge
-        id: automerge
+      - run: gh pr review --approve "$PR"
         env:
           GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Enable automerge
+        id: automerge
+        env:
+          GH_TOKEN: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
           EXPECTED_SHA: ${{steps.pr-pull.outputs.head_sha}}
         working-directory: ${{steps.set-up-homebrew.outputs.repository-path}}
         run: |
@@ -373,7 +377,6 @@ jobs:
           fi
 
           gh pr merge --auto --merge "$PR"
-          gh pr review --approve "$PR"
 
       - name: Post comment on failure
         if: >
