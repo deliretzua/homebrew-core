@@ -12,13 +12,13 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "fa6c7ab26abd2b904cc463aa2eccb2641f19872743ce943a37ebd5933d791f6d"
-    sha256 arm64_monterey: "18f558df0dff12861c4df877034ebe946ba03c7acfed9674d1ea6c179c2e94e3"
-    sha256 arm64_big_sur:  "85ae48cb18386ac2e3291641c4e6a7605c9c1898d8091abd0e309fbfde58d6de"
-    sha256 ventura:        "1b50af8867ec68abcc54bb5de93aa2e1cdd15f4018ad7dd9419d63ae22c8f4fc"
-    sha256 monterey:       "ec3e37ee0037deaa41fa648bfe71f7af827e8b1c092262a864e4dbeec851f84d"
-    sha256 big_sur:        "e99546625cdea624e5ec69814f5d1c0f1b2afa3357b5902e35cd44e3be20936d"
-    sha256 x86_64_linux:   "a810942d399a1903baf31831f42ae6c072e5badb00e90156a20f34fbabbe1a4a"
+    sha256 arm64_ventura:  "79e977abb4b1d9336b1107cad304aea5e817f416619f5e35d54f627e41595f34"
+    sha256 arm64_monterey: "fdebb7a3aa26633497510d38d15e5b724c4086d60c802d0195e823b386235d87"
+    sha256 arm64_big_sur:  "738539cb990a546f23865134094a84b86c08b0cb7bcb94b7a49509f3b67382ca"
+    sha256 ventura:        "70773a58c083f5de2467c395a652b183f0611a41f0240e57e812eaf406caf44a"
+    sha256 monterey:       "3aa274482cb785dd8f7fd8d773bcb265795ea3e40d10a8f908884177bff1f0c8"
+    sha256 big_sur:        "4c7b56fbccd2511388bf127403da422bbc68fd366ca6700805d0c78967e04ac2"
+    sha256 x86_64_linux:   "9518c193871e333e4ae9e199cc322d3cf5b4d6f9218f61548b32d054c477c1c9"
   end
 
   depends_on "pkg-config" => :build
