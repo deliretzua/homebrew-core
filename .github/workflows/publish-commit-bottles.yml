@@ -112,6 +112,7 @@ jobs:
           head_repo_owner="$(jq --raw-output .head.repo.owner.login <<< "$pr_data")"
           head_sha="$(jq --raw-output .head.sha <<< "$pr_data")"
           fork_type="$(jq --raw-output .head.repo.owner.type <<< "$pr_data")"
+          state="$(jq --raw-output .state <<< "$pr_data")"
           merged="$(jq --raw-output .merged <<< "$pr_data")"
           automerge_data="$(jq --raw-output '.auto_merge | type' <<< "$pr_data")"
 
@@ -122,10 +123,17 @@ jobs:
              [[ -z "$head_repo_owner" ]] ||
              [[ -z "$head_sha" ]] ||
              [[ -z "$fork_type" ]] ||
+             [[ -z "$state" ]] ||
              [[ -z "$merged" ]] ||
              [[ -z "$automerge_data" ]]
           then
             echo "::error ::Failed to get PR data!"
+            exit 1
+          fi
+
+          if [[ "$state" = "closed" ]]
+          then
+            echo "::error ::PR #$PR is closed!"
             exit 1
           fi
 
