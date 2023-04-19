@@ -2,23 +2,15 @@ class Gstreamer < Formula
   desc "Development framework for multimedia applications"
   homepage "https://gstreamer.freedesktop.org/"
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
-  revision 2
 
   stable do
-    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.22.1/gstreamer-1.22.1.tar.gz"
-    sha256 "e8fc50d9f68c83bea3c7f04d78de2a9d54511c69b3449a7df8e4e2edf80f1e00"
+    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.22.2/gstreamer-1.22.2.tar.gz"
+    sha256 "04e799a42a01dde86ee95d13deaea4739bca182a63223c0f64c9b645ff449018"
 
     # When updating this resource, use the tag that matches the GStreamer version.
     resource "rs" do
-      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.22.1/gst-plugins-rs-gstreamer-1.22.1.tar.gz"
-      sha256 "65a8d76fda5f8b4a4ce088c574d055a823e9955352e1c6415e644dca4a655bae"
-
-      # Fix build failure on macOS.
-      # https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/issues/332
-      patch do
-        url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/commit/825fe9a4e29a464f3110e7e4e18e21c21d865144.diff"
-        sha256 "45b97f9ca6fd12ac11eb939947d65e4736a4d6e093ecaa588bf4f22a5587eefd"
-      end
+      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.22.2/gst-plugins-rs-gstreamer-1.22.2.tar.gz"
+      sha256 "b3591b1ffdc7f1f201043ba6e8995c0df217ce5a598a262187963407eb0cf15e"
     end
   end
 
