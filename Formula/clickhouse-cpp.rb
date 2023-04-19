@@ -28,6 +28,7 @@ class ClickhouseCpp < Formula
   def install
     # `cityhash` does not provide a pkg-config or CMake config file.
     # Help CMake find it.
+    # Remove when merged: https://github.com/ClickHouse/clickhouse-cpp/pull/301
     inreplace "CMakeLists.txt", "FIND_PACKAGE(cityhash REQUIRED)",
                                 "FIND_LIBRARY(CITYHASH NAMES cityhash REQUIRED)"
     inreplace "clickhouse/CMakeLists.txt", "cityhash::cityhash", "cityhash"
