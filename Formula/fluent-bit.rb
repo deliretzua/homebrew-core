@@ -1,8 +1,8 @@
 class FluentBit < Formula
   desc "Fast and Lightweight Logs and Metrics processor"
   homepage "https://github.com/fluent/fluent-bit"
-  url "https://github.com/fluent/fluent-bit/archive/v2.0.11.tar.gz"
-  sha256 "ada2a71066fd259d064bfd4800ad959a6b811606a6d3b6a8949ebb406889cbff"
+  url "https://github.com/fluent/fluent-bit/archive/v2.1.0.tar.gz"
+  sha256 "5d59b86919613e63f6f7a890764a12b13565f26552173244d4ad82e0ecec632f"
   license "Apache-2.0"
   head "https://github.com/fluent/fluent-bit.git", branch: "master"
 
@@ -32,7 +32,7 @@ class FluentBit < Formula
   def install
     # Prevent fluent-bit to install files into global init system
     # For more information see fluent/fluent-bit#3393
-    inreplace "src/CMakeLists.txt", "if(IS_DIRECTORY /lib/systemd/system)", "if(False)"
+    inreplace "src/CMakeLists.txt", "if(NOT SYSTEMD_UNITDIR AND IS_DIRECTORY /lib/systemd/system)", "if(False)"
     inreplace "src/CMakeLists.txt", "elseif(IS_DIRECTORY /usr/share/upstart)", "elif(False)"
 
     # Per https://luajit.org/install.html: If MACOSX_DEPLOYMENT_TARGET
