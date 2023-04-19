@@ -34,7 +34,6 @@ class ApacheArrow < Formula
   depends_on "snappy"
   depends_on "thrift"
   depends_on "utf8proc"
-  depends_on "z3"
   depends_on "zstd"
   uses_from_macos "python" => :build
 
