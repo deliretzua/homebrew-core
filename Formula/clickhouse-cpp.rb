@@ -7,14 +7,13 @@ class ClickhouseCpp < Formula
   head "https://github.com/ClickHouse/clickhouse-cpp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d416b409e0b3ea994d1862f98423903676b157bcb394b17b3ebbbd955f720620"
-    sha256 cellar: :any,                 arm64_monterey: "ad860cfc340915f420ac3a0f9f43a4ededae2af88f1f9d82d325ee78b59b7a81"
-    sha256 cellar: :any,                 arm64_big_sur:  "c1c3be5c26eba1691038d78ae71872f9b05674bde112b59f8f829045a82808a4"
-    sha256 cellar: :any,                 ventura:        "b0546b51446c0e27351f1890de99746d2fbd3b85053b8d21f299861515d15294"
-    sha256 cellar: :any,                 monterey:       "1c76150b5684c38b6cafc40fdf26a4eec68f664fab64b5cf672d9bd3623e50b0"
-    sha256 cellar: :any,                 big_sur:        "55b7fde1c2ac15a34defc526a4ccb12107c757263f5202ac7fc72d81d91ef572"
-    sha256 cellar: :any,                 catalina:       "b1a57158ed078088f38ce5da4207b4c10544e9268c35a17dd867e5788807ae7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "59b4a9754fd3934831f20c2efe2398c4a56b4e7fb0de43aff7a50642e80b4bf6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d5d522cddfcb58177aa8838f06ca2676f6fb8f925db7df257b74375b2b0ae16c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "129076d2815b9e9db3706ef2fc2a6d58d6397749aea33373db4123c136b12398"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1d00957ebb77520a38a00b2adc585473b22bbc76d80513221ccee03267999b8f"
+    sha256 cellar: :any_skip_relocation, ventura:        "180b9823ab1a33dd3eee7adc2e483f5e85eb8efa78397e09f9b7a2e706c90ae5"
+    sha256 cellar: :any_skip_relocation, monterey:       "feaa3c3899460b7eefd811683febd8656369acafcfb6779a71c493ccbe81ceae"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f9a20f558db8842cf7df6047b8a718cf38e65c7e65308de7ba51355d8751e95b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d027b532abf0e8cb16ee988be58b30919feb22761bd3a5875de8ea8b26b5de4"
   end
 
   depends_on "cmake" => :build
