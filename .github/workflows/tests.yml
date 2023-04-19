@@ -128,14 +128,6 @@ jobs:
               core.setOutput('cleanup-linux-runner', 'false')
             }
 
-            if (label_names.includes('CI-no-fail-fast')) {
-              console.log('CI-no-fail-fast label found. Continuing tests despite failing matrix builds.')
-              core.setOutput('fail-fast', 'false')
-            } else {
-              console.log('No CI-no-fail-fast label found. Stopping tests on first failing matrix build.')
-              core.setOutput('fail-fast', 'true')
-            }
-
             if (label_names.includes('CI-skip-dependents')) {
               console.log('CI-skip-dependents label found. Skipping brew test-bot --only-formulae-dependents.')
               core.setOutput('test-dependents', 'false')
@@ -264,7 +256,7 @@ jobs:
     strategy:
       matrix:
         include: ${{fromJson(needs.setup_runners.outputs.runners)}}
-      fail-fast: ${{fromJson(needs.setup_tests.outputs.fail-fast)}}
+      fail-fast: ${{ !contains(github.event.pull_request.labels.*.name, 'CI-no-fail-fast') }}
     name: ${{matrix.name}}
     runs-on: ${{matrix.runner}}
     container: ${{matrix.container}}
@@ -481,7 +473,7 @@ jobs:
     strategy:
       matrix:
         include: ${{fromJson(needs.setup_dep_runners.outputs.runners)}}
-      fail-fast: ${{fromJson(needs.setup_tests.outputs.fail-fast)}}
+      fail-fast: ${{ !contains(github.event.pull_request.labels.*.name, 'CI-no-fail-fast') }}
     name: ${{matrix.name}} (deps)
     runs-on: ${{matrix.runner}}
     container: ${{matrix.container}}
