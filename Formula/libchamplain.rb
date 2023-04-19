@@ -1,10 +1,9 @@
 class Libchamplain < Formula
   desc "ClutterActor for displaying maps"
   homepage "https://wiki.gnome.org/Projects/libchamplain"
-  url "https://download.gnome.org/sources/libchamplain/0.12/libchamplain-0.12.20.tar.xz"
-  sha256 "0232b4bfcd130a1c5bda7b6aec266bf2d06e701e8093df1886f1e26bc1ba3066"
-  license "LGPL-2.1"
-  revision 3
+  url "https://download.gnome.org/sources/libchamplain/0.12/libchamplain-0.12.21.tar.xz"
+  sha256 "a915cd172a0c52944c5579fcb4683f8a878c571bf5e928254b5dafefc727e5a7"
+  license "LGPL-2.1-only"
 
   bottle do
     rebuild 1
@@ -32,7 +31,7 @@ class Libchamplain < Formula
   depends_on "clutter"
   depends_on "clutter-gtk"
   depends_on "gtk+3"
-  depends_on "libsoup@2"
+  depends_on "libsoup"
   depends_on "sqlite" # try to change to uses_from_macos after python is not a dependency
 
   on_linux do
@@ -40,11 +39,9 @@ class Libchamplain < Formula
   end
 
   def install
-    mkdir "build" do
-      system "meson", *std_meson_args, ".."
-      system "ninja"
-      system "ninja", "install"
-    end
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do
@@ -71,7 +68,7 @@ class Libchamplain < Formula
     json_glib = Formula["json-glib"]
     libepoxy = Formula["libepoxy"]
     libpng = Formula["libpng"]
-    libsoup = Formula["libsoup@2"]
+    libsoup = Formula["libsoup"]
     pango = Formula["pango"]
     pixman = Formula["pixman"]
     flags = %W[
@@ -92,7 +89,7 @@ class Libchamplain < Formula
       -I#{json_glib.opt_include}/json-glib-1.0
       -I#{libepoxy.opt_include}
       -I#{libpng.opt_include}/libpng16
-      -I#{libsoup.opt_include}/libsoup-2.4
+      -I#{libsoup.opt_include}/libsoup-3.0
       -I#{pango.opt_include}/pango-1.0
       -I#{pixman.opt_include}/pixman-1
       -D_REENTRANT
