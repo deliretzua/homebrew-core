@@ -361,6 +361,7 @@ jobs:
           fi
 
       - run: gh pr review --approve "$PR"
+        id: approve
         env:
           GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
@@ -389,7 +390,8 @@ jobs:
       - name: Post comment on failure
         if: >
           failure() &&
-          (steps.wait-until-in-sync.conclusion == 'failure' ||
+          (steps.approve.conclusion == 'failure' ||
+           steps.wait-until-in-sync.conclusion == 'failure' ||
            steps.automerge.conclusion == 'failure')
         uses: Homebrew/actions/post-comment@master
         with:
