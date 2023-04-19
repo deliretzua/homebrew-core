@@ -15,10 +15,10 @@ class Prestodb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, ventura:      "0c2010256dcdf398f3ef943a1738b82e65f7d640683603aa0ba73a1ce30a0ebd"
-    sha256 cellar: :any_skip_relocation, monterey:     "0c2010256dcdf398f3ef943a1738b82e65f7d640683603aa0ba73a1ce30a0ebd"
-    sha256 cellar: :any_skip_relocation, big_sur:      "0c2010256dcdf398f3ef943a1738b82e65f7d640683603aa0ba73a1ce30a0ebd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "27e88a69342cebc79f166c78d6f4db18f92c6c4c4a6e29895f0c60ec4e5f793c"
+    sha256 cellar: :any_skip_relocation, ventura:      "62601819e084fa096d6901bf67ba9573b8ecdaf22a82b6dbf327cbc38664afe9"
+    sha256 cellar: :any_skip_relocation, monterey:     "62601819e084fa096d6901bf67ba9573b8ecdaf22a82b6dbf327cbc38664afe9"
+    sha256 cellar: :any_skip_relocation, big_sur:      "62601819e084fa096d6901bf67ba9573b8ecdaf22a82b6dbf327cbc38664afe9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f59ecdd01165a7e05fadb65fa20dc7535fe32c5705391bf216043ce69d677207"
   end
 
   # https://github.com/prestodb/presto/issues/17146
