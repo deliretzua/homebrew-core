@@ -41,7 +41,7 @@ class Pygments < Formula
       pyversion = Language::Python.major_minor_version(python_exe)
       bin.install libexec/"bin/pygmentize" => "pygmentize-#{pyversion}"
 
-      next unless python == pythons.max_by(&:version)
+      next if python != pythons.max_by(&:version)
 
       # The newest one is used as the default
       bin.install_symlink "pygmentize-#{pyversion}" => "pygmentize"
@@ -63,7 +63,7 @@ class Pygments < Formula
 
       (testpath/"test.html").unlink
 
-      next unless python == pythons.max_by(&:version)
+      next if python != pythons.max_by(&:version)
 
       system bin/"pygmentize", "-f", "html", "-o", "test.html", testpath/"test.py"
       assert_predicate testpath/"test.html", :exist?
