@@ -6,14 +6,13 @@ class Sjk < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ce4c75268949b89a47d762e67ccbefdf55a8685188edb27f1827f58ebddc4a6e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ce4c75268949b89a47d762e67ccbefdf55a8685188edb27f1827f58ebddc4a6e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ce4c75268949b89a47d762e67ccbefdf55a8685188edb27f1827f58ebddc4a6e"
-    sha256 cellar: :any_skip_relocation, ventura:        "ce4c75268949b89a47d762e67ccbefdf55a8685188edb27f1827f58ebddc4a6e"
-    sha256 cellar: :any_skip_relocation, monterey:       "ce4c75268949b89a47d762e67ccbefdf55a8685188edb27f1827f58ebddc4a6e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ce4c75268949b89a47d762e67ccbefdf55a8685188edb27f1827f58ebddc4a6e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fea69e36de5ec022d12ae2f14d868fef4cfecb66fe339a698ca137cbcad21561"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ad0ceb71f9c1ed966e05b7ac8816579f0a7b72cc1cae547609533d1ab1a64f2e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ad0ceb71f9c1ed966e05b7ac8816579f0a7b72cc1cae547609533d1ab1a64f2e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ad0ceb71f9c1ed966e05b7ac8816579f0a7b72cc1cae547609533d1ab1a64f2e"
+    sha256 cellar: :any_skip_relocation, ventura:        "ad0ceb71f9c1ed966e05b7ac8816579f0a7b72cc1cae547609533d1ab1a64f2e"
+    sha256 cellar: :any_skip_relocation, monterey:       "ad0ceb71f9c1ed966e05b7ac8816579f0a7b72cc1cae547609533d1ab1a64f2e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ad0ceb71f9c1ed966e05b7ac8816579f0a7b72cc1cae547609533d1ab1a64f2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae7d27a086b25de39f9cc6cdeb402f7fc1fab711a23828cb7617c72b427de088"
   end
 
   depends_on "openjdk"
