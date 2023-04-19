@@ -7,7 +7,7 @@ class OpenclClhppHeaders < Formula
   head "https://github.com/KhronosGroup/OpenCL-CLHPP.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "13485d197d76212d440b096bbe0b2efa3090c22b76580b75f74242ea00bbb0bf"
+    sha256 cellar: :any_skip_relocation, all: "2e9201e4a39a35c727407e1851a1c528426b26b8fabafbcc3918006d9e69983c"
   end
 
   keg_only :shadowed_by_macos, "macOS provides OpenCL.framework"
