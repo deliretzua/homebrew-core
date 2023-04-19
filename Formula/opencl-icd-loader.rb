@@ -7,13 +7,13 @@ class OpenclIcdLoader < Formula
   head "https://github.com/KhronosGroup/OpenCL-ICD-Loader.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "ef4b4ddf4ffe2965d782ea7bbc6ea16467f0dbfc8ea20f376c91a32456f0d914"
-    sha256 cellar: :any,                 arm64_monterey: "addb20a0f656d8bb3e96a6fe4c51aaef87dcd646beacf7dfc42b60531453a29c"
-    sha256 cellar: :any,                 arm64_big_sur:  "79efc87595a1567dc62b6fc9db6f5c98e260dbe59e7ba7f96cbb02c7fd9bbfc7"
-    sha256 cellar: :any,                 ventura:        "fb3b1778f00b994cfc1867c41c471e7506f36da3f77bff0cc1db1df841396da9"
-    sha256 cellar: :any,                 monterey:       "dcbb872e7a609aeac916ff8e6396249e3cb85af57973880e1527b9fafee35eb5"
-    sha256 cellar: :any,                 big_sur:        "1646ea2eb71e83c0b915a10201cfa2fdfbddd8e0720227f7cfc0110694ed54e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "534ec812897b7428a9964791c342b50b90e82de936d5e964436851fc125f050f"
+    sha256 cellar: :any,                 arm64_ventura:  "70649fdb781ddc422081204849419bdcb28cd7ed44ff7a676938690028a90435"
+    sha256 cellar: :any,                 arm64_monterey: "83849eb94958bbc677f36d9c25d4d726f8250670fe04bb8281805fb3cda6c0b5"
+    sha256 cellar: :any,                 arm64_big_sur:  "c957def164ce93872beb07e0ed347fb1d84641172db8fee3da512e04e759039c"
+    sha256 cellar: :any,                 ventura:        "cb670002a1bb0c9cd2802bcbd7c4a433dbcfc183991ebd52f7a02e0c32d95a20"
+    sha256 cellar: :any,                 monterey:       "59f53963c7f6f0451abb1e65d97bf49304d1ef6dd05dd5192781aedd53f33f04"
+    sha256 cellar: :any,                 big_sur:        "e8f020c775ad82a447c9e07182aa9a3619fe1c67cd53053dcb66cae3c9e2f51a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c3cf98dad47d2f96e9ec3bd6cf2e1e41ef10259ef4de754c2927ce560b85ae16"
   end
 
   keg_only :shadowed_by_macos, "macOS provides OpenCL.framework"
