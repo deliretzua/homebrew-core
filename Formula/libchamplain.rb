@@ -6,14 +6,14 @@ class Libchamplain < Formula
   license "LGPL-2.1-only"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_ventura: "da5655b6623f754f33d3b47d6eee772353f0bbe59a3cd5ebfeed8113aa6e83f5"
-    sha256 cellar: :any, arm64_big_sur: "4c338a3a4dbeec5732e73a531aecaaf1cb862ed9e87030fc05e2c25ed9a1f585"
-    sha256 cellar: :any, ventura:       "906af9a5b433a6732e4863005961549f3972fb2292d10a10f9146eb14c9ef7ae"
-    sha256 cellar: :any, monterey:      "be1d7594f805bd7c358011a1669f5eb479c04157330cca2434392fc46eaefa9c"
-    sha256 cellar: :any, big_sur:       "492db68c8120ff8435f6d96b87cdc4db83afe2d47b0da7b1bc164bbb60af015b"
-    sha256 cellar: :any, catalina:      "2b4c4d1e01b47b3598b56d92b27a42b944a56c83b73f1e175e6854210dfe465e"
-    sha256               x86_64_linux:  "292cd694f9167c38d48b8aba733960db987135857f6954bfff79908a57878413"
+    sha256 cellar: :any, arm64_ventura:  "5178bf3638a2027f1d5664fa78e2347879e0882d7a3181166dbad9b49121dab9"
+    sha256 cellar: :any, arm64_monterey: "2f252ae4637021bb9f29636cfc2b20d3dab10b04207d06152b4a47d812c52058"
+    sha256 cellar: :any, arm64_big_sur:  "33c868d4bc619d31a4938952dece38e447aee5e4c18f89994b29d41eb3dd411d"
+    sha256 cellar: :any, ventura:        "9962bd6ca9db0599c17a63e2f207342e88d7cdafc6230a982c2e91cfc26ac92d"
+    sha256 cellar: :any, monterey:       "c5c68414f285b6ffc0ce1c3f2cf160083d45596ad64454e7260bb266812730c3"
+    sha256 cellar: :any, big_sur:        "2945d61373d9f1d984c48b40be8718b79defe25033f65d8ad70662a143328b01"
+    sha256 cellar: :any, catalina:       "2b4c4d1e01b47b3598b56d92b27a42b944a56c83b73f1e175e6854210dfe465e"
+    sha256               x86_64_linux:   "5a616be881e0a1a0cd3a9c1064006c14f5e909df6366abbf5527523b380ef3e3"
   end
 
   # It needs deprecated `cogl` and `clutter`. There isn't a plan to rewrite and homepage says:
