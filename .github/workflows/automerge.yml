@@ -29,6 +29,7 @@ jobs:
        github.event.workflow_run.name != 'CI')
     outputs:
       pull-number: ${{ steps.pr.outputs.number }}
+      publishable: ${{ steps.check-labels.outputs.publishable }}
       approved: ${{ steps.approval-status.outputs.approved }}
       complete: ${{ steps.approval-status.outputs.complete }}
       mergeable: ${{ steps.approval-status.outputs.mergeable }}
@@ -52,7 +53,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR: ${{ steps.pr.outputs.number }}
         run: |
-          publishable=yes
+          publishable=true
           while IFS='' read -r label
           do
             if [[ "$label" = "do not merge" ]] ||
@@ -60,7 +61,7 @@ jobs:
                [[ "$label" = "automerge-skip" ]] ||
                [[ "$label" = "CI-published-bottle-commits" ]]
             then
-              publishable=no
+              publishable=false
               break
             fi
           done < <(
@@ -73,7 +74,7 @@ jobs:
           echo "publishable=$publishable" >> "$GITHUB_OUTPUT"
 
       - name: Get approval and CI status
-        if: steps.check-labels.outputs.publishable == 'yes'
+        if: fromJson(steps.check-labels.outputs.publishable)
         id: approval-status
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -150,6 +151,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: status-check
     if: >
+      fromJson(needs.status-check.outputs.publishable) &&
       fromJson(needs.status-check.outputs.approved) &&
       fromJson(needs.status-check.outputs.complete) &&
       fromJson(needs.status-check.outputs.mergeable)
