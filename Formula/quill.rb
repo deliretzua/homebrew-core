@@ -1,8 +1,8 @@
 class Quill < Formula
   desc "C++17 Asynchronous Low Latency Logging Library"
   homepage "https://github.com/odygrd/quill"
-  url "https://github.com/odygrd/quill/archive/refs/tags/v2.7.0.tar.gz"
-  sha256 "10b8912e4c463a3a86b809076b95bec49aa08393d9ae6b92196cd46314236b87"
+  url "https://github.com/odygrd/quill/archive/refs/tags/v2.8.0.tar.gz"
+  sha256 "0461a6c314e3d882f3b9ada487ef1bf558925272509ee41a9fd25f7776db6075"
   license "MIT"
   head "https://github.com/odygrd/quill.git", branch: "master"
 
@@ -23,9 +23,7 @@ class Quill < Formula
 
   def install
     mkdir "quill-build" do
-      args = std_cmake_args
-      args << ".."
-      system "cmake", *args
+      system "cmake", *std_cmake_args, ".."
       system "make", "install"
     end
   end
@@ -36,8 +34,8 @@ class Quill < Formula
       int main()
       {
         quill::start();
-        quill::Handler* file_handler = quill::file_handler("#{testpath}/basic-log.txt", "w");
-        quill::Logger* logger = quill::create_logger("logger_bar", file_handler);
+        std::shared_ptr< quill::Handler > file_handler = quill::file_handler("#{testpath}/basic-log.txt", "w");
+        quill::Logger* logger = quill::create_logger("logger_bar", std::move(file_handler));
         LOG_INFO(logger, "Test");
       }
     EOS
