@@ -21,6 +21,20 @@ jobs:
     permissions:
       pull-requests: write # for `gh pr edit`
     steps:
+      - name: Dump event JSON
+        run: |
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          jq . "$GITHUB_EVENT_PATH" | tee -a "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          jq .workflow_run "$GITHUB_EVENT_PATH" | tee -a "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          jq .workflow_run.pull_requests "$GITHUB_EVENT_PATH" | tee -a "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+
       - name: Remove `CI-long-timeout` label
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
