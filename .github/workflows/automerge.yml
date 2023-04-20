@@ -58,6 +58,7 @@ jobs:
             if [[ "$label" = "do not merge" ]] ||
                [[ "$label" = "new formula" ]] ||
                [[ "$label" = "automerge-skip" ]] ||
+               [[ "$label" = "pre-release" ]] ||
                [[ "$label" = "CI-published-bottle-commits" ]]
             then
               publishable=no
