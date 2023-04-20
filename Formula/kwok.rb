@@ -1,8 +1,8 @@
 class Kwok < Formula
   desc "Kubernetes WithOut Kubelet - Simulates thousands of Nodes and Clusters"
   homepage "https://kwok.sigs.k8s.io"
-  url "https://github.com/kubernetes-sigs/kwok/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "3bfcde29f5fac4a045f55003320e2d53901e4b27899485c24f6f558ef69e03cc"
+  url "https://github.com/kubernetes-sigs/kwok/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "b92c76283e83d26d32767ea0e723805f82658892ef075a239e01ed2310b5365f"
   license "Apache-2.0"
 
   bottle do
@@ -33,7 +33,9 @@ class Kwok < Formula
 
     assert_match version.to_s, shell_output("#{bin}/kwok --version")
     assert_match version.to_s, shell_output("#{bin}/kwokctl --version")
-    output = shell_output("#{bin}/kwokctl --name=brew-test create cluster", 1)
-    assert_match "Creating cluster", output
+
+    create_cluster_cmd = "#{bin}/kwokctl --name=brew-test create cluster"
+    output = OS.mac? ? shell_output(create_cluster_cmd, 1) : shell_output(create_cluster_cmd)
+    assert_match "Cluster is creating", output
   end
 end
