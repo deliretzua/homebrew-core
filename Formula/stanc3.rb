@@ -3,8 +3,8 @@ class Stanc3 < Formula
   homepage "https://github.com/stan-dev/stanc3"
   # git is needed for dune subst
   url "https://github.com/stan-dev/stanc3.git",
-      tag:      "v2.31.0",
-      revision: "554a2ab9aa2c1d3afbd450a93aa19a587d8ed5f1"
+      tag:      "v2.32.0",
+      revision: "2081cb65f00081dc98cbf0431dcce24462deb23c"
   license "BSD-3-Clause"
 
   bottle do
