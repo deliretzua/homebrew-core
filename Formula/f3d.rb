@@ -6,6 +6,11 @@ class F3d < Formula
   license "BSD-3-Clause"
   revision 3
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "1cbcf70cc4bc2f12cf397c61a3126d0142840ed495871b796b2dde3604629b32"
     sha256 cellar: :any,                 arm64_monterey: "741d7927dcc4c2c80f9653fd66fd3715f894fd64c990e6022316ec1252e3585b"
