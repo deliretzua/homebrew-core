@@ -19,28 +19,22 @@ jobs:
       github.repository_owner == 'Homebrew' &&
       github.event.workflow_run.event == 'pull_request'
     permissions:
+      actions: read # for `gh run download`
       pull-requests: write # for `gh pr edit`
     steps:
-      - name: Dump event JSON
-        run: |
-          echo '```' >> "$GITHUB_STEP_SUMMARY"
-          jq . "$GITHUB_EVENT_PATH" | tee -a "$GITHUB_STEP_SUMMARY"
-          echo '```' >> "$GITHUB_STEP_SUMMARY"
+      - name: Download `pull-number` artifact
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WORKFLOW_ID: ${{ github.event.workflow_run.id }}
+        run: gh run download --name pull-number "$WORKFLOW_ID"
 
-          echo '```' >> "$GITHUB_STEP_SUMMARY"
-          jq .workflow_run "$GITHUB_EVENT_PATH" | tee -a "$GITHUB_STEP_SUMMARY"
-          echo '```' >> "$GITHUB_STEP_SUMMARY"
-
-          echo '```' >> "$GITHUB_STEP_SUMMARY"
-          jq .workflow_run.pull_requests "$GITHUB_EVENT_PATH" | tee -a "$GITHUB_STEP_SUMMARY"
-          echo '```' >> "$GITHUB_STEP_SUMMARY"
+      - run: echo "number=$(cat number)" >> "$GITHUB_OUTPUT"
+        id: pr
 
       - name: Remove `CI-long-timeout` label
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PULLS: ${{ toJson(github.event.workflow_run.pull_requests.*.number) }}
+          PR: ${{ steps.pr.outputs.number }}
         run: |
-          while read -r PR
-          do
-            gh pr edit "$PR" --remove-label CI-long-timeout
-          done < <(jq --raw-output '.[]' <<< "$PULLS")
+          echo "::notice ::Removing \`CI-long-timeout\` label from PR #$PR"
+          gh pr edit "$PR" --remove-label CI-long-timeout
