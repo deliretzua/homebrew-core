@@ -5,6 +5,11 @@ class Sparse < Formula
   sha256 "6ab28b4991bc6aedbd73550291360aa6ab3df41f59206a9bde9690208a6e387c"
   head "https://git.kernel.org/pub/scm/devel/sparse/sparse.git", branch: "master"
 
+  livecheck do
+    url "https://mirrors.edge.kernel.org/pub/software/devel/sparse/dist/"
+    regex(/href=.*?sparse[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c1c53b9ca28fe2ce54ff72f0f9642289704ccae97868a2a90e2cb02095e8d7df"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "3afb8b9256e015fcb1fc49608cea9fe6c02e6a93fa1df0a7720a30c5e8057699"
