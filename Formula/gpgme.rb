@@ -11,13 +11,13 @@ class Gpgme < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9decafe66ad24f1a8bb93df58020043ad069042f32180ef464e4dda97d486f33"
-    sha256 cellar: :any,                 arm64_monterey: "fe38d5bd1dd1fe42fada2b9b1530e84ef50563d9698d35417f86e29e976cccb1"
-    sha256 cellar: :any,                 arm64_big_sur:  "2b9e01bcea5576c72532d1356f6fffeb37d125b9493f75ad6c319765ff4aa6d0"
-    sha256 cellar: :any,                 ventura:        "10ef09d6f4fc711dedc115d77dfc2cd00bb23aef67a1cdd4d600a6d8a5190921"
-    sha256 cellar: :any,                 monterey:       "3cdfe6c74bd7be4a3d006b868f44f0e35a28308fe5082abd516a4fd07a5fae5a"
-    sha256 cellar: :any,                 big_sur:        "22eff205c6e8eed22a91c94e051756f4635146c0ed66b8bd11b559a36442f5ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "21424619b3068e7a30f8ae086cd033e0421627d280c89d05ddeaf960d4f1c293"
+    sha256 cellar: :any,                 arm64_ventura:  "1d9d41fb09043965efda2748025243994a0457ec2da37afce988d9fe9733aae4"
+    sha256 cellar: :any,                 arm64_monterey: "f60a8b787ff8754d7da6a547456c78792df6c8235d0bf57e7466b15c3c387fcd"
+    sha256 cellar: :any,                 arm64_big_sur:  "f6eebdfc1790e0179b2be7d90f53fcc2235f39a093ab41ab4928b9bf545cc56b"
+    sha256 cellar: :any,                 ventura:        "c1c3454c7d75beb3d28865d2c56684ce5f847dba45d9a6cc934ceb92c81fd126"
+    sha256 cellar: :any,                 monterey:       "99ab338b41d3e48743a87b1e8de6ead43d93439e745e7a4a6e428b5fe144e790"
+    sha256 cellar: :any,                 big_sur:        "ce65ea6d51cf28a53345a291bb0a765b1b3e3fa96800df3b5cb4462961568d6d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e2ce80404f5a3e01de4000babe8d8edb0a217adef098b79917619ca150fbf7f"
   end
 
   depends_on "python@3.11" => [:build, :test]
