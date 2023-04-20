@@ -33,6 +33,7 @@ env:
 
 permissions:
   contents: read
+  issues: write # for Homebrew/actions/post-comment
 
 jobs:
   prepare:
@@ -200,7 +201,7 @@ jobs:
         if: ${{!success() && inputs.issue > 0}}
         uses: Homebrew/actions/post-comment@master
         with:
-          token: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
+          token: ${{secrets.GITHUB_TOKEN}}
           issue: ${{inputs.issue}}
           body: ":x: @${{github.actor}} bottle request for ${{inputs.formula}} [failed](${{env.RUN_URL}})."
           bot_body: ":x: Bottle request for ${{inputs.formula}} [failed](${{env.RUN_URL}})."
@@ -307,7 +308,7 @@ jobs:
         if: ${{!success() && inputs.issue > 0}}
         uses: Homebrew/actions/post-comment@master
         with:
-          token: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
+          token: ${{secrets.GITHUB_TOKEN}}
           issue: ${{github.event.inputs.issue}}
           body: ":x: @${{github.actor}} bottle request for ${{inputs.formula}} [failed](${{env.RUN_URL}})."
           bot_body: ":x: Bottle request for ${{inputs.formula}} [failed](${{env.RUN_URL}})."
