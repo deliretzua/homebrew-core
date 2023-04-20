@@ -3,7 +3,7 @@ name: Publish and commit bottles
 run-name: "Publish PR #${{ inputs.pull_request }}"
 
 concurrency:
-  group: ${{ github.workflow }}-${{ inputs.pull_request }}
+  group: ${{ github.workflow }}-${{ github.event.inputs.pull_request }}
   cancel-in-progress: false
 
 on:
