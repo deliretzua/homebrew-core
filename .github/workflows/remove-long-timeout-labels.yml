@@ -18,17 +18,15 @@ jobs:
     if: >
       github.repository_owner == 'Homebrew' &&
       github.event.workflow_run.event == 'pull_request'
-    strategy:
-      matrix:
-        # Remove `fromJson` and `toJson` when the following issue is resolved:
-        # https://github.com/rhysd/actionlint/issues/294
-        PR: ${{ fromJson(toJson(github.event.workflow_run.pull_requests.*.number)) }}
-      fail-fast: false
     permissions:
       pull-requests: write # for `gh pr edit`
     steps:
       - name: Remove `CI-long-timeout` label
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR: ${{ matrix.PR }}
-        run: gh pr edit "$PR" --remove-label CI-long-timeout
+          PULLS: ${{ toJson(github.event.workflow_run.pull_requests.*.number) }}
+        run: |
+          while read -r PR
+          do
+            gh pr edit "$PR" --remove-label CI-long-timeout
+          done < <(jq --raw-output '.[]' <<< "$PULLS")
