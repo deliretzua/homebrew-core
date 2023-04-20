@@ -3,8 +3,8 @@ require "language/node"
 class Truffle < Formula
   desc "Development environment, testing framework and asset pipeline for Ethereum"
   homepage "https://trufflesuite.com"
-  url "https://registry.npmjs.org/truffle/-/truffle-5.8.2.tgz"
-  sha256 "26d0fcb1ea24a4cf4841c65d15214f428933d24da359279dc7061d7b15ab43a9"
+  url "https://registry.npmjs.org/truffle/-/truffle-5.8.3.tgz"
+  sha256 "3a0f26d4156c719cff9451742d9d3c18b11972fe99e927dda459056b5204d7e4"
   license "MIT"
 
   bottle do
@@ -29,8 +29,9 @@ class Truffle < Formula
     %w[
       **/node_modules/*
       node_modules/ganache/node_modules/@trufflesuite/bigint-buffer
+      node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial
     ].each do |pattern|
-      truffle_dir.glob("#{pattern}/prebuilds/*").each do |dir|
+      truffle_dir.glob("#{pattern}/{prebuilds,binaries}/*").each do |dir|
         if OS.mac? && dir.basename.to_s == "darwin-x64+arm64"
           # Replace universal binaries with their native slices
           deuniversalize_machos dir/"node.napi.node"
