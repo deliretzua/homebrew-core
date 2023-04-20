@@ -7,12 +7,12 @@ class IosDeploy < Formula
   head "https://github.com/ios-control/ios-deploy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "70ee426a92f9c051982e92df8d46723cc89b8fecb7d696b99720c13d3b98007b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "da920d213de78388f4dfeb2c87e8c93f188aaa3acc506eef86ce3e6762dec43a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5d047f57995db0f9c5897455967d85c8ddd8413b853ffda376467c04a8d47960"
-    sha256 cellar: :any_skip_relocation, ventura:        "96daffa7e01337c33d71ca1afdba51b34e100327d171a4c08a0b390b404237a9"
-    sha256 cellar: :any_skip_relocation, monterey:       "9b8206addd8b1d07a8b50fa2a88c9c9ebf8697a9fefa21835336019193ca9102"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ea7341be8f08529d848ffe7fe7bfb75cbbb42e0d7d017667c704de1f0a12a4e0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5c87b96b6692afa7b56724cb2e1a0f1cf1e8065f803266c8d83a7d5623496896"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "eae3172eaea91a064b40f05f508d4d4a3d9c18cdba920fec27be57477cfd5ec4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8eddbc577a5cfa12da1fa5e0c6a40ae19f2b20c275326f3e9db6ce95bef0c640"
+    sha256 cellar: :any_skip_relocation, ventura:        "9c9ca5f1ced69ffa9d96409dce25c135560edce0082391f24c84493b8822fd04"
+    sha256 cellar: :any_skip_relocation, monterey:       "245e3e9a9334e2fc2ee3e1123493849bbfdec93dd33fad32c45dff32da512e96"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b04cc3456def885207da127501db9e3e8defb9b108f1aae2f358e8498d6e8f16"
   end
 
   depends_on xcode: :build
