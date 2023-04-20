@@ -16,11 +16,13 @@ class Libsais < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3bb77bd69880572993056ff586102ad1b6c19248e400452c25e587a1271def1"
   end
 
-  depends_on "gcc" => :build
-
   def install
-    system "make", "all", "PLIBS=libsais.a"
-    system "make", "install", "PREFIX=#{prefix}", "MANS=#{man}", "PLIBS=libsais.a"
+    system ENV.cc, "-c", *Dir.glob("*.c")
+    system ENV.cc, "-shared", "-o", shared_library("libsais"), *Dir.glob("*.o")
+    system "ar", "rcs", "libsais.a", *Dir.glob("*.o")
+
+    include.install Dir.glob("*.h")
+    lib.install shared_library("libsais"), "libsais.a"
   end
 
   test do
@@ -45,7 +47,7 @@ class Libsais < Formula
         return 1;
       }
     EOS
-    system ENV.cc, "-o", "test", "test.c", "-L#{lib}", "-lsais"
+    system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lsais", "-o", "test"
     system "./test"
   end
 end
