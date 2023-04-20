@@ -1,13 +1,10 @@
 class IosDeploy < Formula
   desc "Install and debug iPhone apps from the command-line"
   homepage "https://github.com/ios-control/ios-deploy"
+  url "https://github.com/ios-control/ios-deploy/archive/1.12.2.tar.gz"
+  sha256 "2a1e9836192967f60194334261e7af4de2ba72e4047a3e54376e5caa57a1db70"
   license all_of: ["GPL-3.0-or-later", "BSD-3-Clause"]
   head "https://github.com/ios-control/ios-deploy.git", branch: "master"
-
-  stable do
-    url "https://github.com/ios-control/ios-deploy/archive/1.12.1.tar.gz"
-    sha256 "635cc36b027ec36cd9f5ebd4136f0e1274caa60049c1f6e4fd15d45d7bef5bc3"
-  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "70ee426a92f9c051982e92df8d46723cc89b8fecb7d696b99720c13d3b98007b"
