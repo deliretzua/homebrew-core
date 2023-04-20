@@ -1,8 +1,8 @@
 class SynergyCore < Formula
   desc "Synergy, the keyboard and mouse sharing tool"
   homepage "https://symless.com/synergy"
-  url "https://github.com/symless/synergy-core/archive/refs/tags/1.14.5.17.tar.gz"
-  sha256 "ed48717ad664773aa3492e34f085873cab43fb84e8fe3717db485588b67ae1d1"
+  url "https://github.com/symless/synergy-core/archive/refs/tags/1.14.6.18-stable.tar.gz"
+  sha256 "7f1bbf457f7134ff6110269e63740fb6346660a229adaf1e1bf2f1ee735271c1"
 
   # The synergy-core/LICENSE file contains the following preamble:
   #   This program is released under the GPL with the additional exemption
