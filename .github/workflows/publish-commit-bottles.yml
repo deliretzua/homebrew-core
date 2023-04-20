@@ -200,7 +200,7 @@ jobs:
           issue: ${{inputs.pull_request}}
           body: ":warning: @${{github.actor}} pre-merge checks [failed](${{env.RUN_URL}}). CC @carlocab"
           bot_body: ":warning: Pre-merge checks [failed](${{env.RUN_URL}}). CC @carlocab"
-          bot: BrewTestBot
+          bot: github-actions[bot]
 
   upload:
     needs: check
@@ -222,8 +222,8 @@ jobs:
           token: ${{secrets.GITHUB_TOKEN}}
           issue: ${{inputs.pull_request}}
           body: ":shipit: @${{github.actor}} has [requested bottles to be published to this PR](${{env.RUN_URL}})."
-          bot_body: ":robot: A scheduled task has [requested bottles to be published to this PR](${{env.RUN_URL}})."
-          bot: BrewTestBot
+          bot_body: ":robot: An automated task has [requested bottles to be published to this PR](${{env.RUN_URL}})."
+          bot: github-actions[bot]
 
       - name: Set up Homebrew
         id: set-up-homebrew
@@ -315,7 +315,7 @@ jobs:
           issue: ${{inputs.pull_request}}
           body: ":warning: @${{github.actor}} bottle publish [failed](${{env.RUN_URL}}). CC @carlocab"
           bot_body: ":warning: Bottle publish [failed](${{env.RUN_URL}}). CC @carlocab"
-          bot: BrewTestBot
+          bot: github-actions[bot]
 
       - name: Dismiss approvals on failure
         if: ${{!success() && !inputs.retry_bottle_merge}}
@@ -399,7 +399,7 @@ jobs:
           issue: ${{inputs.pull_request}}
           body: ":warning: @${{github.actor}} [Failed to enable automerge](${{env.RUN_URL}}). CC @carlocab"
           bot_body: ":warning: [Failed to enable automerge](${{env.RUN_URL}}). CC @carlocab"
-          bot: BrewTestBot
+          bot: github-actions[bot]
 
       - name: Retry
         if: failure() && inputs.retry_bottle_merge
