@@ -380,7 +380,11 @@ jobs:
             exit 1
           fi
 
-          gh pr merge --auto --merge "$PR"
+          gh pr merge "$PR" \
+            --auto \
+            --merge \
+            --delete-branch \
+            --match-head-commit "$EXPECTED_SHA"
 
       - name: Post comment on failure
         if: >
