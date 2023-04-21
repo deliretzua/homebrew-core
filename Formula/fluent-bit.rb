@@ -31,7 +31,7 @@ class FluentBit < Formula
 
   def install
     # Prevent fluent-bit to install files into global init system
-    # For more information see fluent/fluent-bit#3393
+    # For more information see https://github.com/fluent/fluent-bit/issues/3393
     inreplace "src/CMakeLists.txt", "if(NOT SYSTEMD_UNITDIR AND IS_DIRECTORY /lib/systemd/system)", "if(False)"
     inreplace "src/CMakeLists.txt", "elseif(IS_DIRECTORY /usr/share/upstart)", "elif(False)"
 
