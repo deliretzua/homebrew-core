@@ -363,7 +363,6 @@ jobs:
       - name: Enable automerge
         id: automerge
         env:
-          GIT_COMMITTER_EMAIL: ${{ steps.git-user-config.outputs.email }}
           GH_TOKEN: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
           EXPECTED_SHA: ${{steps.pr-pull.outputs.head_sha}}
         working-directory: ${{steps.set-up-homebrew.outputs.repository-path}}
@@ -381,12 +380,7 @@ jobs:
             exit 1
           fi
 
-          gh pr merge "$PR" \
-            --auto \
-            --merge \
-            --author-email "$GIT_COMMITTER_EMAIL" \
-            --delete-branch \
-            --match-head-commit "$EXPECTED_SHA"
+          gh pr merge --auto --merge "$PR"
 
       - name: Post comment on failure
         if: >
