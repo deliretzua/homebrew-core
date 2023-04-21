@@ -5,15 +5,15 @@ class Gcc < Formula
   head "https://gcc.gnu.org/git/gcc.git", branch: "master"
 
   stable do
-    url "https://ftp.gnu.org/gnu/gcc/gcc-12.2.0/gcc-12.2.0.tar.xz"
-    mirror "https://ftpmirror.gnu.org/gcc/gcc-12.2.0/gcc-12.2.0.tar.xz"
-    sha256 "e549cf9cf3594a00e27b6589d4322d70e0720cdd213f39beb4181e06926230ff"
+    url "https://ftp.gnu.org/gnu/gcc/gcc-13.1.0/gcc-13.1.0.tar.xz"
+    mirror "https://ftpmirror.gnu.org/gcc/gcc-13.1.0/gcc-13.1.0.tar.xz"
+    sha256 "61d684f0aa5e76ac6585ad8898a2427aade8979ed5e7f85492286c4dfc13ee86"
 
     # Branch from the Darwin maintainer of GCC, with a few generic fixes and
-    # Apple Silicon support, located at https://github.com/iains/gcc-12-branch
+    # Apple Silicon support, located at https://github.com/iains/gcc-13-branch
     patch do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/1d184289/gcc/gcc-12.2.0-arm.diff"
-      sha256 "a7843b5c6bf1401e40c20c72af69c8f6fc9754ae980bb4a5f0540220b3dcb62d"
+      url "https://raw.githubusercontent.com/Homebrew/formula-patches/5c206c47/gcc/gcc-13.1.0.diff"
+      sha256 "cb4e8a89387f748a744da0273025d0dc2e3c76780cc390b18ada704676afea11"
     end
   end
 
