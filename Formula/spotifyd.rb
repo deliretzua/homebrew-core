@@ -12,13 +12,13 @@ class Spotifyd < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b92d7d114bfe738a57c9c4284d6a312fd8f3ba2a0d44218020f3e5f716834b1a"
-    sha256 cellar: :any,                 arm64_monterey: "f793e1e8cb7fd679cd5c9ec60cf73856ff5b9f7f4a76cf4b164cd92e0b0882e8"
-    sha256 cellar: :any,                 arm64_big_sur:  "ccc7f7fe6e4ae88ae96ae74bf9baad7d47830be43402fb9d686ddfec8f0d59e5"
-    sha256 cellar: :any,                 ventura:        "1d944210d57b183d8d2a2826789afb82421a95ef7437be9e69aa46daf550449e"
-    sha256 cellar: :any,                 monterey:       "5d43646e1a07cd5d5f63c7c0e3de2715f4b628908d1d48da329b1b4a6fcaaf31"
-    sha256 cellar: :any,                 big_sur:        "2e72cfea42555845a7fd16aef8bef293fca0156072cfab80e19ccd4c7d056596"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1636dfcdb9652e50f923dbc251dfb878dec8fddeef997beac892f41c436fc698"
+    sha256 cellar: :any,                 arm64_ventura:  "c20ff1077a0340d3b3f8324bb0476a277e173a4454c9738b4d85d3864333ef8a"
+    sha256 cellar: :any,                 arm64_monterey: "2cdbfff4f46c77b505cb10d50f7779baaf31682f34998d60a744c4ac902791f7"
+    sha256 cellar: :any,                 arm64_big_sur:  "dd7e1f611771ad76903e7f9ab922d3ad8f01266390a0e28361e526a75fea58e8"
+    sha256 cellar: :any,                 ventura:        "64249703160dc45cc48743e309d85165ce37cd220550fcbf1a460e221353d453"
+    sha256 cellar: :any,                 monterey:       "464c5f5825b68ba8c81340314467d078537b8c72fe1a0176d6c671756b2f2b18"
+    sha256 cellar: :any,                 big_sur:        "7ffffa9cb731bc19954c5c39163183aafd74cfc6aaedd7275ebf17ee8ce1bb62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d34d078fa63f06d7ee94589559b01b92d50cd22ddc5425b3628512800e8e36ae"
   end
 
   depends_on "pkg-config" => :build
