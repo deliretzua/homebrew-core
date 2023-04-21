@@ -1,8 +1,8 @@
 class Moarvm < Formula
   desc "VM with adaptive optimization and JIT compilation, built for Rakudo"
   homepage "https://moarvm.org"
-  url "https://github.com/MoarVM/MoarVM/releases/download/2023.02/MoarVM-2023.02.tar.gz"
-  sha256 "67e214d44d5f626787ca7f04424043a639308a43a7777b6fa41926b7240e0dc5"
+  url "https://github.com/MoarVM/MoarVM/releases/download/2023.04/MoarVM-2023.04.tar.gz"
+  sha256 "8e83e894a3e04a213adb340552520f30181d4d280c77a576b5c1ee2214a03364"
   license "Artistic-2.0"
 
   livecheck do
