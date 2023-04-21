@@ -11,13 +11,13 @@ class Gradle < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b4fd5709290e61b807c872dff001f33c397109eb5931b6398b5b22f7200fa708"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b4fd5709290e61b807c872dff001f33c397109eb5931b6398b5b22f7200fa708"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b4fd5709290e61b807c872dff001f33c397109eb5931b6398b5b22f7200fa708"
-    sha256 cellar: :any_skip_relocation, ventura:        "47b4f6b12ef507b767a73bb7494542c337fe56f44b61c79b3715022ff0ef9328"
-    sha256 cellar: :any_skip_relocation, monterey:       "47b4f6b12ef507b767a73bb7494542c337fe56f44b61c79b3715022ff0ef9328"
-    sha256 cellar: :any_skip_relocation, big_sur:        "47b4f6b12ef507b767a73bb7494542c337fe56f44b61c79b3715022ff0ef9328"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b4fd5709290e61b807c872dff001f33c397109eb5931b6398b5b22f7200fa708"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5fcce570e18961f14e5b01fda3fd537f6f03ea7f12baed460ed657f5fd2ce59b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5fcce570e18961f14e5b01fda3fd537f6f03ea7f12baed460ed657f5fd2ce59b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5fcce570e18961f14e5b01fda3fd537f6f03ea7f12baed460ed657f5fd2ce59b"
+    sha256 cellar: :any_skip_relocation, ventura:        "87bb0bb08afc69fc272388d8b79d727d0438afd46367ef99df0031fa7dfc9070"
+    sha256 cellar: :any_skip_relocation, monterey:       "87bb0bb08afc69fc272388d8b79d727d0438afd46367ef99df0031fa7dfc9070"
+    sha256 cellar: :any_skip_relocation, big_sur:        "87bb0bb08afc69fc272388d8b79d727d0438afd46367ef99df0031fa7dfc9070"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5fcce570e18961f14e5b01fda3fd537f6f03ea7f12baed460ed657f5fd2ce59b"
   end
 
   # TODO: Switch to `openjdk` on 8.2 release. 8.0 and 8.1 series cannot be run
