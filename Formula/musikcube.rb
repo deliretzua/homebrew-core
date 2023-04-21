@@ -1,10 +1,9 @@
 class Musikcube < Formula
   desc "Terminal-based audio engine, library, player and server"
   homepage "https://musikcube.com"
-  url "https://github.com/clangen/musikcube/archive/0.99.8.tar.gz"
-  sha256 "7209a875851e03ce89db3e2150ed3c1fabec5d39c0adfd74e2f37b7b2d180f48"
+  url "https://github.com/clangen/musikcube/archive/3.0.0.tar.gz"
+  sha256 "b857980c214f86f17cc288eda4562b51683cd42a843a4a4d8d8e60169cf87345"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/clangen/musikcube.git", branch: "master"
 
   livecheck do
