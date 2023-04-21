@@ -4,16 +4,17 @@ class Glab < Formula
   url "https://gitlab.com/gitlab-org/cli/-/archive/v1.28.0/cli-v1.28.0.tar.gz"
   sha256 "9a0b433c02033cf3d257405d845592e2b7c2e38741027769bb97a8fd763aeeac"
   license "MIT"
+  revision 1
   head "https://gitlab.com/gitlab-org/cli.git", branch: "trunk"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b259c365e6cc17761f54499c5d2e69822ff6ef9d9e6749f1a970e238b96b54ff"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b259c365e6cc17761f54499c5d2e69822ff6ef9d9e6749f1a970e238b96b54ff"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b259c365e6cc17761f54499c5d2e69822ff6ef9d9e6749f1a970e238b96b54ff"
-    sha256 cellar: :any_skip_relocation, ventura:        "ebeedbe5bbe28dfd229dcda24cdc6474cc59784497b745b86d904e0c41edc60f"
-    sha256 cellar: :any_skip_relocation, monterey:       "ebeedbe5bbe28dfd229dcda24cdc6474cc59784497b745b86d904e0c41edc60f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ebeedbe5bbe28dfd229dcda24cdc6474cc59784497b745b86d904e0c41edc60f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8978018577501848319044677a541f9aa13dbc4533f314062532e5df09b793e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7dcb2706505e18ad794a5896005d6d5f6ef843614b63d201b64feed9b94e89a4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7dcb2706505e18ad794a5896005d6d5f6ef843614b63d201b64feed9b94e89a4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7dcb2706505e18ad794a5896005d6d5f6ef843614b63d201b64feed9b94e89a4"
+    sha256 cellar: :any_skip_relocation, ventura:        "b1715d553b6fc34819146707396df21e1b57d2ffff9a447acab7cc96382522f7"
+    sha256 cellar: :any_skip_relocation, monterey:       "b1715d553b6fc34819146707396df21e1b57d2ffff9a447acab7cc96382522f7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b1715d553b6fc34819146707396df21e1b57d2ffff9a447acab7cc96382522f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "282b33215334949a1f586ec1b23b9c0db94159138933abfab38952b7d6f754b4"
   end
 
   depends_on "go" => :build
@@ -21,7 +22,7 @@ class Glab < Formula
   def install
     ENV["CGO_ENABLED"] = "1" if OS.mac?
 
-    system "make", "GLAB_VERSION=#{version}"
+    system "make", "GLAB_VERSION=v#{version}"
     bin.install "bin/glab"
     generate_completions_from_executable(bin/"glab", "completion", "--shell")
   end
