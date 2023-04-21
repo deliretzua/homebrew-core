@@ -9,13 +9,13 @@ class Yamllint < Formula
   head "https://github.com/adrienverge/yamllint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a9e48760cd61aa821b263077fb123ec5883b204006e4465e0e9498b314c70f4c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "824bc9dfe283be5d80c20c65359e9b72419574378173c147b45a7f6906a53ed2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e34e5c84909e5de30410c7688a6ed80698f1bd193ba29fcd6b2820f4c96617b5"
-    sha256 cellar: :any_skip_relocation, ventura:        "23580d4eb305d08a304ccdd52c5c443923a6a4bd57b7e8fe23a6e62f0dfb3ce3"
-    sha256 cellar: :any_skip_relocation, monterey:       "f4cf06199f8afb3ed51f6d790417cb38dcbb3d16b95614c8a800093dbdba6d0c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7697fe5c9a4e47120e95893b9b28310e9b144550ede127622bdce1b3cfd2086a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4f870bd463043da954c37dbf18b809733afaa607f150cfb6ba56b16f91f52cb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "53f3c7903eaeb3d30cbbcd274543630b4bca01b4b96bd3f01d6a9799c7766248"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "49801b4c46a1a12c1f1290e6f4fbe6088547b91c54ee3c3a925e90cdfdb01ee3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9ee50b9280e263540533d0399f23b33c6769dd6fa4024fd0ea9b50184d358989"
+    sha256 cellar: :any_skip_relocation, ventura:        "9870e8d4699fb36a3fb45b30b56c31e318cca50e7fbd35d561b9b3a89384d59c"
+    sha256 cellar: :any_skip_relocation, monterey:       "f0778a3c27d3f34eda9e9334aed31b85175e6e59c1385902dc0539a60904add7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "14b1c39e31746ee79e6067937b57f4d5e577a229b9cac5229af9601042f26a53"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "802a95e5c466c8583614272ba48a3328f85aad6387e91d1c9708ed31649cfc01"
   end
 
   depends_on "python@3.11"
