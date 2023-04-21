@@ -4,6 +4,7 @@ class Glab < Formula
   url "https://gitlab.com/gitlab-org/cli/-/archive/v1.28.0/cli-v1.28.0.tar.gz"
   sha256 "9a0b433c02033cf3d257405d845592e2b7c2e38741027769bb97a8fd763aeeac"
   license "MIT"
+  revision 1
   head "https://gitlab.com/gitlab-org/cli.git", branch: "trunk"
 
   bottle do
@@ -21,7 +22,7 @@ class Glab < Formula
   def install
     ENV["CGO_ENABLED"] = "1" if OS.mac?
 
-    system "make", "GLAB_VERSION=#{version}"
+    system "make", "GLAB_VERSION=v#{version}"
     bin.install "bin/glab"
     generate_completions_from_executable(bin/"glab", "completion", "--shell")
   end
