@@ -1,8 +1,8 @@
 class Libsais < Formula
   desc "Fast linear time suffix array, lcp array and bwt construction"
   homepage "https://github.com/IlyaGrebnov/libsais"
-  url "https://github.com/IlyaGrebnov/libsais/archive/refs/tags/v2.7.2.tar.gz"
-  sha256 "16863b9e593733df38ecb1e58675f66dd6f8e72d5dd2175ec4bc62efa8edc7a7"
+  url "https://github.com/IlyaGrebnov/libsais/archive/refs/tags/v2.7.3.tar.gz"
+  sha256 "45d37dc12975c4d40db786f322cd6dcfd9f56a8f23741205fcd0fca6ec0bf246"
   license "Apache-2.0"
   head "https://github.com/IlyaGrebnov/libsais.git", branch: "master"
 
@@ -16,13 +16,16 @@ class Libsais < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "57ef2fd00a0946441ec53636ae21ff16296106aede9d363ec3a9823d892b3b91"
   end
 
-  def install
-    system ENV.cc, "-c", *Dir.glob("*.c")
-    system ENV.cc, "-shared", "-o", shared_library("libsais"), *Dir.glob("*.o")
-    system "ar", "rcs", "libsais.a", *Dir.glob("*.o")
+  depends_on "cmake" => :build
 
-    include.install Dir.glob("*.h")
-    lib.install shared_library("libsais"), "libsais.a"
+  def install
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DLIBSAIS_BUILD_SHARED_LIB=ON",
+                    *std_cmake_args
+    system "cmake", "--build", "build"
+    lib.install shared_library("build/liblibsais")
+    lib.install_symlink shared_library("liblibsais") => shared_library("libsais")
+    include.install "include/libsais.h"
   end
 
   test do
