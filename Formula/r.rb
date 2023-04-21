@@ -1,8 +1,8 @@
 class R < Formula
   desc "Software environment for statistical computing"
   homepage "https://www.r-project.org/"
-  url "https://cran.r-project.org/src/base/R-4/R-4.2.3.tar.gz"
-  sha256 "55e4a9a6d43be314e2c03d0266a6fa5444afdce50b303bfc3b82b3979516e074"
+  url "https://cran.r-project.org/src/base/R-4/R-4.3.0.tar.gz"
+  sha256 "45dcc48b6cf27d361020f77fde1a39209e997b81402b3663ca1c010056a6a609"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -51,15 +51,6 @@ class R < Formula
   fails_with :gcc do
     version "11"
     cause "Unknown. FIXME."
-  end
-
-  # Patch to fix build on macOS Ventura, remove in next release
-  # https://bugs.r-project.org/show_bug.cgi?id=18426
-  patch do
-    on_ventura :or_newer do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/1b1104166dc06444e691dd1b2bec3606b095e382/r/ventura.diff"
-      sha256 "de146793532e4498480014f824bf2446e02aa70206284851127561f6c37108bf"
-    end
   end
 
   def install
