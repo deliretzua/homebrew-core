@@ -1,8 +1,8 @@
 class Jql < Formula
   desc "JSON query language CLI tool"
   homepage "https://github.com/yamafaktory/jql"
-  url "https://github.com/yamafaktory/jql/archive/v5.2.0.tar.gz"
-  sha256 "2908caad0104bb34ac7a4b49ca92ed97353d98db05d69885b51dfe68556b3052"
+  url "https://github.com/yamafaktory/jql/archive/refs/tags/jql-v6.0.3.tar.gz"
+  sha256 "8fed179bea6d3456ddc1c1c14ef65d5f3aaa52490af30af5e628841e3ebc364d"
   license "MIT"
   head "https://github.com/yamafaktory/jql.git", branch: "main"
 
@@ -19,7 +19,7 @@ class Jql < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "crates/jql")
   end
 
   test do
