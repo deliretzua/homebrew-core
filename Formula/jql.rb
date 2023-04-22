@@ -3,7 +3,7 @@ class Jql < Formula
   homepage "https://github.com/yamafaktory/jql"
   url "https://github.com/yamafaktory/jql/archive/refs/tags/jql-v6.0.3.tar.gz"
   sha256 "8fed179bea6d3456ddc1c1c14ef65d5f3aaa52490af30af5e628841e3ebc364d"
-  license "MIT"
+  license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/yamafaktory/jql.git", branch: "main"
 
   bottle do
@@ -28,7 +28,7 @@ class Jql < Formula
         "cats": [{ "first": "Pixie" }, { "second": "Kitkat" }, { "third": "Misty" }]
       }
     EOS
-    output = shell_output("#{bin}/jql --raw-output '\"cats\".[2:1].[0].\"third\"' example.json")
-    assert_equal "Misty\n", output
+    output = shell_output("#{bin}/jql --inline --raw-string '\"cats\" [2:1] [0]' example.json")
+    assert_equal "[{\"third\":\"Misty\"}]\n", output
   end
 end
