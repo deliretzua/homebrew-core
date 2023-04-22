@@ -46,13 +46,13 @@ class Graphviz < Formula
       --disable-swig
       --disable-tcl
       --with-quartz
-      --without-freetype2
       --without-gdk
-      --without-gdk-pixbuf
       --without-gtk
       --without-poppler
       --without-qt
       --without-x
+      --with-freetype2
+      --with-gdk-pixbuf
       --with-gts
     ]
 
