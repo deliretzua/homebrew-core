@@ -1,7 +1,8 @@
 class Dmd < Formula
-  desc "D programming language compiler for macOS"
+  desc "Digital Mars D compiler"
   homepage "https://dlang.org/"
   license "BSL-1.0"
+  revision 1
 
   stable do
     # make sure resources also use the same version
@@ -11,11 +12,6 @@ class Dmd < Formula
     resource "phobos" do
       url "https://github.com/dlang/phobos/archive/refs/tags/v2.103.0.tar.gz"
       sha256 "65d0d5ff4bce2ea881fc5db5140ec14f7567e87d4dfcdb16f400e1e4457e9221"
-    end
-
-    resource "tools" do
-      url "https://github.com/dlang/tools/archive/refs/tags/v2.103.0.tar.gz"
-      sha256 "591bf56d7c8aa45205a3533438fef5bd48007756446f5cf032fcabcc077afdd1"
     end
 
     # Fix build on Ventura when newer Xcode is used
@@ -38,10 +34,6 @@ class Dmd < Formula
 
     resource "phobos" do
       url "https://github.com/dlang/phobos.git", branch: "master"
-    end
-
-    resource "tools" do
-      url "https://github.com/dlang/tools.git", branch: "master"
     end
   end
 
@@ -72,11 +64,6 @@ class Dmd < Formula
 
     (buildpath/"phobos").install resource("phobos")
     system "make", "-C", "phobos", "VERSION=#{buildpath}/VERSION", *make_args
-
-    resource("tools").stage do
-      inreplace "posix.mak", "install: $(TOOLS) $(CURL_TOOLS)", "install: $(TOOLS) $(ROOT)/dustmite"
-      system "make", "install", *make_args
-    end
 
     kernel_name = OS.mac? ? "osx" : OS.kernel_name.downcase
     bin.install "generated/#{kernel_name}/release/64/dmd"
