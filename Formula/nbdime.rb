@@ -3,10 +3,9 @@ class Nbdime < Formula
 
   desc "Jupyter Notebook Diff and Merge tools"
   homepage "https://nbdime.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/e1/36/28232d030c1b4a25116799f1aa3cd26208964f302daa324c314fd576820a/nbdime-3.1.1.tar.gz"
-  sha256 "67767320e971374f701a175aa59abd3a554723039d39fae908e72d16330d648b"
+  url "https://files.pythonhosted.org/packages/60/a4/0745920f04986eaf47447a18cf445a179d76cf5789430badf4b681a50ec3/nbdime-3.2.0.tar.gz"
+  sha256 "e50d1a0cf672e02356e10e6d3d0aea8e8612a534ae6e1b9bfd59ac3b60c405eb"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a7c5b33b28d93fad13dac3b0928b65e223161cde5f3626d69a6a72047630c160"
@@ -34,8 +33,8 @@ class Nbdime < Formula
   end
 
   resource "GitPython" do
-    url "https://files.pythonhosted.org/packages/ef/8d/50658d134d89e080bb33eb8e2f75d17563b5a9dfb75383ea1a78e1df6fff/GitPython-3.1.30.tar.gz"
-    sha256 "769c2d83e13f5d938b7688479da374c4e3d49f71549aaf462b646db9602ea6f8"
+    url "https://files.pythonhosted.org/packages/5f/11/2b0f60686dbda49028cec8c66bd18a5e82c96d92eef4bc34961e35bb3762/GitPython-3.1.31.tar.gz"
+    sha256 "8ce3bcf69adfdf7c7d503e78fd3b1c492af782d58893b650adb2ac8912ddd573"
   end
 
   resource "jupyter-server-mathjax" do
@@ -47,11 +46,6 @@ class Nbdime < Formula
     url "https://files.pythonhosted.org/packages/21/2d/39c6c57032f786f1965022563eec60623bb3e1409ade6ad834ff703724f3/smmap-5.0.0.tar.gz"
     sha256 "c840e62059cd3be204b0c9c9f74be2c09d5648eddd4580d9314c3ecde0b30936"
   end
-
-  # Backport fix to build with Python 3.11. Upstream commit doesn't apply due
-  # to CRLF line terminators used in PyPI tarball. Remove in the next release.
-  # Ref: https://github.com/jupyter/nbdime/commit/f50376344db8ba01f1aff0b65f39ead7a3ed2405
-  patch :DATA
 
   def python3
     "python3.11"
@@ -159,18 +153,3 @@ class Nbdime < Formula
     assert_match(/\+\+\+ new.ipynb  \d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{6}/, diff_output)
   end
 end
-
-__END__
-diff --git a/setupbase.py b/setupbase.py
-index 6a63572..aebfd41 100644
---- a/setupbase.py
-+++ b/setupbase.py
-@@ -661,7 +661,7 @@ def _translate_glob(pat):
-         translated_parts.append(_translate_glob_part(part))
-     os_sep_class = '[%s]' % re.escape(SEPARATORS)
-     res = _join_translated(translated_parts, os_sep_class)
--    return '{res}\\Z(?ms)'.format(res=res)
-+    return '(?ms){res}\\Z'.format(res=res)
- 
- 
- def _join_translated(translated_parts, os_sep_class):
