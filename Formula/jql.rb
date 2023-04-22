@@ -1,8 +1,8 @@
 class Jql < Formula
   desc "JSON query language CLI tool"
   homepage "https://github.com/yamafaktory/jql"
-  url "https://github.com/yamafaktory/jql/archive/refs/tags/jql-v6.0.3.tar.gz"
-  sha256 "8fed179bea6d3456ddc1c1c14ef65d5f3aaa52490af30af5e628841e3ebc364d"
+  url "https://github.com/yamafaktory/jql/archive/refs/tags/jql-v6.0.4.tar.gz"
+  sha256 "daf2e6e8343ad7eca2b0cc430ae08c8e970f9277a8eb62e06a9781ec4d057216"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/yamafaktory/jql.git", branch: "main"
 
@@ -29,6 +29,6 @@ class Jql < Formula
       }
     EOS
     output = shell_output("#{bin}/jql --inline --raw-string '\"cats\" [2:1] [0]' example.json")
-    assert_equal "[{\"third\":\"Misty\"}]\n", output
+    assert_equal '{"third":"Misty"}', output.chomp
   end
 end
