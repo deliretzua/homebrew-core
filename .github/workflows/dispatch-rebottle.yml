@@ -91,13 +91,15 @@ jobs:
 
       - run: brew test-bot --only-setup
 
-      - name: Run brew test-bot --only-formulae --only-json-tab --skip-online-checks --skip-dependents
+      - name: Set up bottles directory
+        run: |
+          rm -rvf bottles
+          mkdir bottles
+
+      - run: brew test-bot --only-formulae --only-json-tab --skip-online-checks --skip-dependents '${{inputs.formula}}'
+        working-directory: ${{matrix.workdir || github.workspace}}/bottles
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        run: |
-          mkdir bottles
-          cd bottles
-          brew test-bot --only-formulae --only-json-tab --skip-online-checks --skip-dependents '${{inputs.formula}}'
 
       - name: Failures summary for brew test-bot --only-formulae
         if: always()
@@ -140,8 +142,10 @@ jobs:
       - name: Count bottles
         id: bottles
         if: always()
+        working-directory: ${{matrix.workdir || github.workspace}}/bottles
         run: |
-          cd bottles
+          shopt -s nullglob
+
           json_files=(*.json)
           count="${#json_files[@]}"
           echo "::notice ::$count bottles"

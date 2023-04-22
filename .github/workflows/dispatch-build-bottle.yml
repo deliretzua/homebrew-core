@@ -106,10 +106,14 @@ jobs:
 
       - run: brew test-bot --only-setup
 
-      - name: Run brew test-bot --only-formulae --keep-old --only-json-tab --skip-online-checks --skip-dependents ${{inputs.formula}}
+      - name: Set up bottles directory
         run: |
+          rm -rvf bottles
           mkdir bottles
-          cd bottles
+
+      - name: Run brew test-bot --only-formulae --keep-old --only-json-tab --skip-online-checks --skip-dependents ${{inputs.formula}}
+        working-directory: ${{matrix.workdir || github.workspace}}/bottles
+        run: |
           brew test-bot \
             --only-formulae \
             --keep-old \
@@ -158,8 +162,9 @@ jobs:
       - name: Count bottles
         id: bottles
         if: always()
+        working-directory: ${{matrix.workdir || github.workspace}}/bottles
         run: |
-          cd bottles
+          shopt -s nullglob
 
           json_files=(*.json)
           count="${#json_files[@]}"
