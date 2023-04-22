@@ -6,6 +6,8 @@ class Zpaqfranz < Formula
   license all_of: [:public_domain, "MIT", "Zlib", "Unlicense", "BSD-2-Clause", "Apache-2.0"]
   head "https://github.com/fcorbelli/zpaqfranz.git", branch: "main"
 
+  # Some versions using a stable tag format are marked as pre-release on GitHub,
+  # so it's necessary to check release versions instead of tags.
   livecheck do
     url :url
     strategy :github_latest
