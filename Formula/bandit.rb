@@ -18,6 +18,7 @@ class Bandit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f773304d077124de18019c2d141e85b5ef8360afc4775a347064a8c3d904fea"
   end
 
+  depends_on "pygments"
   depends_on "python@3.11"
   depends_on "pyyaml"
 
@@ -44,11 +45,6 @@ class Bandit < Formula
   resource "pbr" do
     url "https://files.pythonhosted.org/packages/02/d8/acee75603f31e27c51134a858e0dea28d321770c5eedb9d1d673eb7d3817/pbr-5.11.1.tar.gz"
     sha256 "aefc51675b0b533d56bb5fd1c8c6c0522fe31896679882e1c4c63d5e4a0fccb3"
-  end
-
-  resource "Pygments" do
-    url "https://files.pythonhosted.org/packages/da/6a/c427c06913204e24de28de5300d3f0e809933f376e0b7df95194b2bb3f71/Pygments-2.14.0.tar.gz"
-    sha256 "b3ed06a9e8ac9a9aae5a6f5dbe78a8a58655d17b43b93c078f094ddc476ae297"
   end
 
   resource "rich" do

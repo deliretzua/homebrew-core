@@ -71,7 +71,7 @@
     "exclude_packages": ["six"]
   },
   "bandit": {
-    "exclude_packages": ["PyYAML"]
+    "exclude_packages": ["PyYAML", "pygments"]
   },
   "beancount": {
     "exclude_packages": ["six"]
