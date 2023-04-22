@@ -140,6 +140,9 @@
     "exclude_packages": ["six"],
     "extra_packages": ["wheel"]
   },
+  "chatblade": {
+    "exclude_packages": ["PyYAML", "pygments"]
+  },
   "checkov": {
     "exclude_packages": ["six", "tabulate", "PyYAML", "typing-extensions"]
   },
