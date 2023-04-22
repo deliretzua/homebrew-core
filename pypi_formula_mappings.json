@@ -263,6 +263,9 @@
   "fonttools": {
     "extra_packages": ["Brotli"]
   },
+  "ford": {
+    "exclude_packages": ["pygments"]
+  },
   "gcalcli": {
     "exclude_packages": ["six"]
   },
