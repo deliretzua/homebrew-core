@@ -19,6 +19,7 @@ class Ford < Formula
   end
 
   depends_on "graphviz"
+  depends_on "pygments"
   depends_on "python@3.11"
 
   uses_from_macos "libxml2"
@@ -52,11 +53,6 @@ class Ford < Formula
   resource "MarkupSafe" do
     url "https://files.pythonhosted.org/packages/95/7e/68018b70268fb4a2a605e2be44ab7b4dd7ce7808adae6c5ef32e34f4b55a/MarkupSafe-2.1.2.tar.gz"
     sha256 "abcabc8c2b26036d62d4c746381a6f7cf60aafcc653198ad678306986b09450d"
-  end
-
-  resource "Pygments" do
-    url "https://files.pythonhosted.org/packages/59/0f/eb10576eb73b5857bc22610cdfc59e424ced4004fe7132c8f2af2cc168d3/Pygments-2.12.0.tar.gz"
-    sha256 "5eb116118f9612ff1ee89ac96437bb6b49e8f04d8a13b514ba26f620208e26eb"
   end
 
   resource "python-markdown-math" do
