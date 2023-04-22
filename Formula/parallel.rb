@@ -24,6 +24,7 @@ class Parallel < Formula
 
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
+    bash_completion.install share/"bash-completion/completions/parallel"
 
     inreplace_files = [
       bin/"parallel",
