@@ -16,6 +16,7 @@ class Touca < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7e7ca51c66bf0bea069149bbbec11cecc77b0fc834dfb031c1714db914002ad"
   end
 
+  depends_on "pygments"
   depends_on "python@3.11"
 
   resource "certifi" do
@@ -31,11 +32,6 @@ class Touca < Formula
   resource "flatbuffers" do
     url "https://files.pythonhosted.org/packages/0d/0a/2e88943de46df2d69a037427099323a973489d4697058043e99ace188f3b/flatbuffers-23.1.21.tar.gz"
     sha256 "a948913bbb5d83c43a1193d7943c90e6c0ab732e7f2983111104250aeb61ff85"
-  end
-
-  resource "Pygments" do
-    url "https://files.pythonhosted.org/packages/59/0f/eb10576eb73b5857bc22610cdfc59e424ced4004fe7132c8f2af2cc168d3/Pygments-2.12.0.tar.gz"
-    sha256 "5eb116118f9612ff1ee89ac96437bb6b49e8f04d8a13b514ba26f620208e26eb"
   end
 
   resource "rich" do

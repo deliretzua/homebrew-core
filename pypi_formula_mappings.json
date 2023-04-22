@@ -704,6 +704,9 @@
   "todoman": {
     "exclude_packages": ["six", "tabulate"]
   },
+  "touca": {
+    "exclude_packages": ["pygments"]
+  },
   "trailscraper": {
     "exclude_packages": ["six"]
   },
