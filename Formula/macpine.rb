@@ -40,6 +40,11 @@ class Macpine < Formula
     generate_completions_from_executable(bin/"alpine", "completion", base_name: "alpine")
   end
 
+  service do
+    run macos: [opt_bin/"alpine", "start", "+launchctl-autostart"]
+    environment_variables PATH: std_service_path_env
+  end
+
   test do
     assert_match "NAME OS STATUS SSH PORTS ARCH PID", shell_output("#{bin}/alpine list")
   end
