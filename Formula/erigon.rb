@@ -1,10 +1,17 @@
 class Erigon < Formula
   desc "Implementation of Ethereum (execution client), on the efficiency frontier"
   homepage "https://github.com/ledgerwatch/erigon"
-  url "https://github.com/ledgerwatch/erigon/archive/refs/tags/v2.42.0.tar.gz"
-  sha256 "3495357190899816fdee35b48777fe8f6155d4f69137091460db973c58976b3b"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later"]
   head "https://github.com/ledgerwatch/erigon.git", branch: "devel"
+
+  stable do
+    url "https://github.com/ledgerwatch/erigon/archive/refs/tags/v2.43.0.tar.gz"
+    sha256 "7af31bf972d24ffb0e1dd15d0ee1106619f4b9aeff8cab7885f306794f5a7776"
+
+    # patch to use go-m1cpu v0.1.5
+    # upstream commit ref, https://github.com/ledgerwatch/erigon/commit/fe30cf8c6f8ca8999cf55c94383ee9c34b3c0640
+    patch :DATA
+  end
 
   livecheck do
     url :stable
@@ -22,8 +29,7 @@ class Erigon < Formula
   end
 
   depends_on "gcc" => :build
-  # Build fails with Go 1.20 on arm64 due to https://github.com/prysmaticlabs/gohashtree/issues/6
-  depends_on "go@1.19" => :build
+  depends_on "go" => :build
   depends_on "make" => :build
 
   conflicts_with "ethereum", because: "both install `evm` binaries"
@@ -62,6 +68,36 @@ class Erigon < Formula
       --log.dir.path #{testpath}
     ]
     system "#{bin}/erigon", *args, "init", "genesis.json"
-    assert_predicate testpath/"debug-user.log", :exist?
+    assert_predicate testpath/"erigon.log", :exist?
   end
 end
+
+__END__
+diff --git a/go.mod b/go.mod
+index 38a4f09..618e77c 100644
+--- a/go.mod
++++ b/go.mod
+@@ -233,7 +233,7 @@ require (
+ 	github.com/rogpeppe/go-internal v1.9.0 // indirect
+ 	github.com/rs/dnscache v0.0.0-20211102005908-e0241e321417 // indirect
+ 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
+-	github.com/shoenig/go-m1cpu v0.1.4 // indirect
++	github.com/shoenig/go-m1cpu v0.1.5 // indirect
+ 	github.com/spaolacci/murmur3 v1.1.0 // indirect
+ 	github.com/supranational/blst v0.3.10 // indirect
+ 	github.com/tklauser/go-sysconf v0.3.11 // indirect
+diff --git a/go.sum b/go.sum
+index 5b2a3ad..2f119ca 100644
+--- a/go.sum
++++ b/go.sum
+@@ -717,8 +717,9 @@ github.com/sergi/go-diff v1.1.0 h1:we8PVUC3FE2uYfodKH/nBHMSetSfHDR6scGdBi+erh0=
+ github.com/sergi/go-diff v1.1.0/go.mod h1:STckp+ISIX8hZLjrqAeVduY0gWCT9IjLuqbuNXdaHfM=
+ github.com/shirou/gopsutil/v3 v3.23.3 h1:Syt5vVZXUDXPEXpIBt5ziWsJ4LdSAAxF4l/xZeQgSEE=
+ github.com/shirou/gopsutil/v3 v3.23.3/go.mod h1:lSBNN6t3+D6W5e5nXTxc8KIMMVxAcS+6IJlffjRRlMU=
+-github.com/shoenig/go-m1cpu v0.1.4 h1:SZPIgRM2sEF9NJy50mRHu9PKGwxyyTTJIWvCtgVbozs=
+ github.com/shoenig/go-m1cpu v0.1.4/go.mod h1:Wwvst4LR89UxjeFtLRMrpgRiyY4xPsejnVZym39dbAQ=
++github.com/shoenig/go-m1cpu v0.1.5 h1:LF57Z/Fpb/WdGLjt2HZilNnmZOxg/q2bSKTQhgbrLrQ=
++github.com/shoenig/go-m1cpu v0.1.5/go.mod h1:Wwvst4LR89UxjeFtLRMrpgRiyY4xPsejnVZym39dbAQ=
+ github.com/shoenig/test v0.6.3 h1:GVXWJFk9PiOjN0KoJ7VrJGH6uLPnqxR7/fe3HUPfE0c=
+ github.com/shoenig/test v0.6.3/go.mod h1:byHiCGXqrVaflBLAMq/srcZIHynQPQgeyvkvXnjqq0k=
+ github.com/shurcooL/component v0.0.0-20170202220835-f88ec8f54cc4/go.mod h1:XhFIlyj5a1fBNx5aJTbKoIq0mNaPvOagO+HjB3EtxrY=
