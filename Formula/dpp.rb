@@ -22,6 +22,14 @@ class Dpp < Formula
   uses_from_macos "llvm" # for libclang
 
   def install
+    # Use actual rdmd once it is separated out of the dmd formula
+    (buildpath/"rdmd-bin/rdmd").write <<~EOS
+      #!/bin/sh
+      ldc2 -run $@
+    EOS
+    (buildpath/"rdmd-bin/rdmd").chmod 0755
+    ENV.prepend_path "PATH", buildpath/"rdmd-bin"
+
     if OS.mac?
       toolchain_paths = []
       toolchain_paths << MacOS::CLT::PKG_PATH if MacOS::CLT.installed?
