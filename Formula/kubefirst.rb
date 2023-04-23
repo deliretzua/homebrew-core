@@ -1,8 +1,8 @@
 class Kubefirst < Formula
   desc "GitOps Infrastructure & Application Delivery Platform for kubernetes"
   homepage "https://kubefirst.io/"
-  url "https://github.com/kubefirst/kubefirst/archive/refs/tags/v2.0.7.tar.gz"
-  sha256 "50e7e7a7489eb0f0b1ebec827690641d9e7f968ce7ee4475456d53df1a646cc4"
+  url "https://github.com/kubefirst/kubefirst/archive/refs/tags/v2.0.8.tar.gz"
+  sha256 "3bc11839eb73728dd1d42e8a3fee17321469486b56b6c79d3dc3a59e2e36b668"
   license "MIT"
   head "https://github.com/kubefirst/kubefirst.git", branch: "main"
 
