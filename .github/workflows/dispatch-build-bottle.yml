@@ -33,7 +33,6 @@ env:
 
 permissions:
   contents: read
-  issues: write # for Homebrew/actions/post-comment
 
 jobs:
   prepare:
@@ -75,6 +74,9 @@ jobs:
     runs-on: ${{matrix.runner}}
     container: ${{matrix.container}}
     timeout-minutes: ${{fromJson(github.event.inputs.timeout)}}
+    permissions:
+      contents: read
+      issues: write # for Homebrew/actions/post-comment
     defaults:
       run:
         shell: /bin/bash -e {0}
@@ -214,10 +216,17 @@ jobs:
 
   upload:
     permissions:
-      pull-requests: write
-    runs-on: ubuntu-22.04
+      contents: read
+      issues: write # for Homebrew/actions/post-comment
+      pull-requests: write # for `gh pr edit`
+    runs-on: ubuntu-latest
     needs: bottle
     if: inputs.upload
+    container:
+      image: ghcr.io/homebrew/ubuntu22.04:master
+    defaults:
+      run:
+        shell: bash
     env:
       HOMEBREW_SIMULATE_MACOS_ON_LINUX: 1
       GH_REPO: ${{github.repository}}
@@ -228,6 +237,8 @@ jobs:
       - name: Set up Homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
+        with:
+          test-bot: false
 
       - name: Download bottles from GitHub Actions
         uses: actions/download-artifact@v3
@@ -258,7 +269,7 @@ jobs:
 
       - name: Checkout branch for bottle commit
         working-directory: ${{steps.set-up-homebrew.outputs.repository-path}}
-        run: git checkout -b "$BOTTLE_BRANCH"
+        run: git checkout -b "$BOTTLE_BRANCH" origin/master
 
       - name: Upload bottles to GitHub Packages
         env:
@@ -296,18 +307,26 @@ jobs:
             --head "$BOTTLE_BRANCH" \
             --reviewer '${{github.actor}}'
 
-          # There is a GitHub bug where labels are not properly recognised by workflows
-          # when added by `gh pr create`. We use the CI-published-bottle-commits label in
-          # the `formulae_detect` step in `tests.yml`, so let's add the label separately
-          # to avoid the bug.
           pull_number="$(gh pr list --head "$BOTTLE_BRANCH" | cut -f1 | tr -d '\n')"
-          gh pr edit "$pull_number" --add-label CI-published-bottle-commits
           echo "pull_number=$pull_number" >> "$GITHUB_OUTPUT"
+          echo "head_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      # There is a GitHub bug where labels are not properly recognised by workflows
+      # when added by `gh pr create`. We use the CI-published-bottle-commits label in
+      # the `formulae_detect` step in `tests.yml`, so let's add the label separately
+      # to avoid the bug.
+      - name: Label PR
+        env:
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          PR: ${{steps.create-pr.outputs.pull_number}}
+        run: gh pr edit --add-label CI-published-bottle-commits "$PR"
 
       - name: Enable automerge
-        run: gh pr merge --auto --merge '${{steps.create-pr.outputs.pull_number}}'
+        run: gh pr merge --auto --merge --delete-branch --match-head-commit "$SHA" "$PR"
         env:
           GH_TOKEN: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
+          PR: ${{steps.create-pr.outputs.pull_number}}
+          SHA: ${{steps.create-pr.outputs.head_sha}}
 
       - name: Post comment on failure
         if: ${{!success() && inputs.issue > 0}}
