@@ -1,18 +1,18 @@
 class Tengo < Formula
   desc "Fast script language for Go"
   homepage "https://tengolang.com"
-  url "https://github.com/d5/tengo/archive/v2.15.0.tar.gz"
-  sha256 "99c929b8bbe3a7aeac455d8a546516d862dedf68b5581521d5ae9f59595ab0df"
+  url "https://github.com/d5/tengo/archive/v2.16.0.tar.gz"
+  sha256 "eb7587816ac735319795b73d0d9ad69b2a422c8530f5ece1820fbbbf9e86baa9"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cce6c41aadf51e0ce88f4ef2f28a28a69a27eaba8d329898c56b790270817b52"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cce6c41aadf51e0ce88f4ef2f28a28a69a27eaba8d329898c56b790270817b52"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cce6c41aadf51e0ce88f4ef2f28a28a69a27eaba8d329898c56b790270817b52"
-    sha256 cellar: :any_skip_relocation, ventura:        "a6e49afb6897ec5d5f866bcaa84ee0225a65b27b18bba46a7cfd7493995503f5"
-    sha256 cellar: :any_skip_relocation, monterey:       "a6e49afb6897ec5d5f866bcaa84ee0225a65b27b18bba46a7cfd7493995503f5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a6e49afb6897ec5d5f866bcaa84ee0225a65b27b18bba46a7cfd7493995503f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "51425e7a5e94e81c5022a47a7ce7fcd17f65bcb0bb8000007557570cc6db6203"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b5df19745e01c3474e66bd17f8afb9868405717256f0c7edf6d07c2cf189bfe4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b5df19745e01c3474e66bd17f8afb9868405717256f0c7edf6d07c2cf189bfe4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b5df19745e01c3474e66bd17f8afb9868405717256f0c7edf6d07c2cf189bfe4"
+    sha256 cellar: :any_skip_relocation, ventura:        "e5ec80cb4941843dceb188100ed76455b1725e1e4ede6ae0c70b5c2b2cc19ffe"
+    sha256 cellar: :any_skip_relocation, monterey:       "e5ec80cb4941843dceb188100ed76455b1725e1e4ede6ae0c70b5c2b2cc19ffe"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e5ec80cb4941843dceb188100ed76455b1725e1e4ede6ae0c70b5c2b2cc19ffe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5b1aa188d79affe705f0b0bfd0c70b2c89a27fc85324ded965365f75273f4c3"
   end
 
   depends_on "go" => :build
