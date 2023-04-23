@@ -20,6 +20,7 @@ class SearchThatHash < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d1a05a8de843e1e0316c1c3ad05e74702fd3cda2036b40bfce54ab035bf688b"
   end
 
+  depends_on "name-that-hash"
   depends_on "pygments"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
@@ -39,11 +40,6 @@ class SearchThatHash < Formula
     sha256 "ebea339af930f8ca5d7a699b921106c6e29c617fe9606fa7baa043c1cdae326f"
   end
 
-  resource "click" do
-    url "https://files.pythonhosted.org/packages/27/6f/be940c8b1f1d69daceeb0032fee6c34d7bd70e3e649ccac0951500b4720e/click-7.1.2.tar.gz"
-    sha256 "d2b5255c7c6349bc1bd1e59e08cd12acbbd63ce649f2588755783aa94dfb6b1a"
-  end
-
   resource "cloudscraper" do
     url "https://files.pythonhosted.org/packages/09/ba/71b989352ceee1fbbc1bbfc658ac677a506b4bbfdc0f527b6f81435cf3fa/cloudscraper-1.2.68.tar.gz"
     sha256 "4d02aceffa90abd4dabc75b79bafa31636309baa7c0f2ee665e2d345aadb8863"
@@ -57,11 +53,6 @@ class SearchThatHash < Formula
   resource "coloredlogs" do
     url "https://files.pythonhosted.org/packages/cc/c7/eed8f27100517e8c0e6b923d5f0845d0cb99763da6fdee00478f91db7325/coloredlogs-15.0.1.tar.gz"
     sha256 "7c991aa71a4577af2f82600d8f8f3a89f936baeaf9b50a9c197da014e5bf16b0"
-  end
-
-  resource "commonmark" do
-    url "https://files.pythonhosted.org/packages/60/48/a60f593447e8f0894ebb7f6e6c1f25dafc5e89c5879fdc9360ae93ff83f0/commonmark-0.9.1.tar.gz"
-    sha256 "452f9dc859be7f06631ddcb328b6919c67984aca654e5fefb3914d54691aed60"
   end
 
   resource "humanfriendly" do
@@ -79,11 +70,6 @@ class SearchThatHash < Formula
     sha256 "b28e72ac7a98be3d28ad28570299a393dfcd32e5e3f6a353dec94675767b6319"
   end
 
-  resource "name-that-hash" do
-    url "https://files.pythonhosted.org/packages/32/58/1f4052bd4999c5aceb51c813cc8ef32838561c8fb18f90cf4b86df6bd818/name-that-hash-1.10.0.tar.gz"
-    sha256 "aabe1a3e23f5f8ca1ef6522eb1adcd5c69b5fed3961371ed84a22fc86ee648a2"
-  end
-
   resource "pyparsing" do
     url "https://files.pythonhosted.org/packages/71/22/207523d16464c40a0310d2d4d8926daffa00ac1f5b1576170a32db749636/pyparsing-3.0.9.tar.gz"
     sha256 "2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb"
@@ -97,11 +83,6 @@ class SearchThatHash < Formula
   resource "requests-toolbelt" do
     url "https://files.pythonhosted.org/packages/0c/4c/07f01c6ac44f7784fa399137fbc8d0cdc1b5d35304e8c0f278ad82105b58/requests-toolbelt-0.10.1.tar.gz"
     sha256 "62e09f7ff5ccbda92772a29f394a49c3ad6cb181d568b1337626b2abb628a63d"
-  end
-
-  resource "rich" do
-    url "https://files.pythonhosted.org/packages/ae/f6/6ffb46f6cf0bb584e44279accd3321cb838b78b324031feb8fd9adf63ed2/rich-9.13.0.tar.gz"
-    sha256 "d59e94a0e3e686f0d268fe5c7060baa1bd6744abca71b45351f5850a3aaa6764"
   end
 
   resource "toml" do
@@ -125,6 +106,14 @@ class SearchThatHash < Formula
     inreplace "pyproject.toml", 'build-backend = "poetry.masonry.api"', 'build-backend = "poetry.core.masonry.api"'
 
     virtualenv_install_with_resources
+
+    # link dependent virtualenvs to this one
+    site_packages = Language::Python.site_packages(python3)
+    paths = %w[name-that-hash].map do |package_name|
+      package = Formula[package_name].opt_libexec
+      package/site_packages
+    end
+    (libexec/site_packages/"homebrew-deps.pth").write paths.join("\n")
 
     site_packages = Language::Python.site_packages(python3)
     pth_contents = "import site; site.addsitedir('#{libexec/site_packages}')\n"
