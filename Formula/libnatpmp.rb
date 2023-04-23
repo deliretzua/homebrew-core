@@ -1,8 +1,8 @@
 class Libnatpmp < Formula
   desc "NAT port mapping protocol library"
   homepage "http://miniupnp.free.fr/libnatpmp.html"
-  url "http://miniupnp.free.fr/files/download.php?file=libnatpmp-20150609.tar.gz"
-  sha256 "e1aa9c4c4219bc06943d6b2130f664daee213fb262fcb94dd355815b8f4536b0"
+  url "http://miniupnp.free.fr/files/download.php?file=libnatpmp-20230423.tar.gz"
+  sha256 "0684ed2c8406437e7519a1bd20ea83780db871b3a3a5d752311ba3e889dbfc70"
   license "BSD-3-Clause"
 
   livecheck do
@@ -30,5 +30,17 @@ class Libnatpmp < Formula
     # https://miniupnp.tuxfamily.org/forum/viewtopic.php?t=978
     inreplace "Makefile", "-Wl,-install_name,$(SONAME)", "-Wl,-install_name,$(INSTALLDIRLIB)/$(SONAME)"
     system "make", "INSTALLPREFIX=#{prefix}", "install"
+  end
+
+  test do
+    # Use a non-existent gateway.
+    output = shell_output("#{bin}/natpmpc -g 0.0.0.0 2>&1", 1)
+    [
+      "initnatpmp() returned 0 (SUCCESS)",
+      "sendpublicaddressrequest returned 2 (SUCCESS)",
+      "readnatpmpresponseorretry() failed : the gateway does not support nat-pmp",
+    ].each do |expected_match|
+      assert_match expected_match, output
+    end
   end
 end
