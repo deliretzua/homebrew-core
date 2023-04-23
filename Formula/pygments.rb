@@ -1,6 +1,4 @@
 class Pygments < Formula
-  include Language::Python::Virtualenv
-
   desc "Generic syntax highlighter"
   homepage "https://pygments.org/"
   url "https://files.pythonhosted.org/packages/89/6b/2114e54b290824197006e41be3f9bbe1a26e9c39d1f5fa20a6d62945a0b3/Pygments-2.15.1.tar.gz"
@@ -32,14 +30,15 @@ class Pygments < Formula
 
     pythons.each do |python|
       python_exe = python.opt_libexec/"bin/python"
-      system python_exe, "-m", "pip", "install", "--prefix=#{libexec}", "--no-deps", "."
-
-      site_packages = Language::Python.site_packages(python_exe)
-      pth_contents = "import site; site.addsitedir('#{libexec/site_packages}')\n"
-      (prefix/site_packages/"homebrew-pygments.pth").write pth_contents
+      system python_exe, "-m", "pip", "install", "--prefix=#{prefix}", "--no-deps", "."
 
       pyversion = Language::Python.major_minor_version(python_exe)
-      bin.install libexec/"bin/pygmentize" => "pygmentize-#{pyversion}"
+      bin.install bin/"pygmentize" => "pygmentize-#{pyversion}"
+
+      # Get rid of the `dist-info` directory to ensure uniform checksums across builds.
+      # This directory only contains metadata that aren't useful for us.
+      site_packages = Language::Python.site_packages(python_exe)
+      (prefix/site_packages/"Pygments-#{version}.dist-info").rmtree
 
       next if python != pythons.max_by(&:version)
 
