@@ -1,4 +1,4 @@
-name: Remove `CI-long-timeout` labels
+name: Remove long timeout labels
 
 on:
   workflow_run:
@@ -11,16 +11,21 @@ env:
   GH_REPO: ${{ github.repository }}
   GH_NO_UPDATE_NOTIFIER: 1
   GH_PROMPT_DISABLED: 1
+  LONG_TIMEOUT_LABEL: CI-long-timeout
 
 jobs:
-  remove-labels:
+  check-label:
     runs-on: ubuntu-latest
     if: >
       github.repository_owner == 'Homebrew' &&
       github.event.workflow_run.event == 'pull_request'
+    outputs:
+      pull-number: ${{ steps.pr.outputs.number }}
+      long-timeout: ${{ steps.check.outputs.long-timeout }}
     permissions:
+      contents: read
       actions: read # for `gh run download`
-      pull-requests: write # for `gh pr edit`
+      pull-requests: read # for `gh api`
     steps:
       - name: Download `pull-number` artifact
         env:
@@ -31,10 +36,68 @@ jobs:
       - run: echo "number=$(cat number)" >> "$GITHUB_OUTPUT"
         id: pr
 
-      - name: Remove `CI-long-timeout` label
+      - name: Check PR labels
+        id: check
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR: ${{ steps.pr.outputs.number }}
         run: |
-          echo "::notice ::Removing \`CI-long-timeout\` label from PR #$PR"
-          gh pr edit "$PR" --remove-label CI-long-timeout
+          # LONG_TIMEOUT_LABEL is set in the top-level runner env
+          # shellcheck disable=SC2153
+          long_timeout_label="$(
+            gh api \
+              --header 'Accept: application/vnd.github+json' \
+              --header 'X-GitHub-Api-Version: 2022-11-28' \
+              "repos/$GH_REPO/pulls/$PR" \
+              --jq "any(.labels[].name; .== \"$LONG_TIMEOUT_LABEL\")"
+          )"
+          echo "long-timeout=$long_timeout_label" >> "$GITHUB_OUTPUT"
+
+  remove-label:
+    needs: check-label
+    if: >
+      github.repository_owner == 'Homebrew' &&
+      github.event.workflow_run.event == 'pull_request' &&
+      fromJson(needs.check-label.outputs.long-timeout)
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/homebrew/ubuntu22.04:master
+    defaults:
+      run:
+        shell: bash
+    env:
+      HOMEBREW_PR: ${{ needs.check-label.outputs.pull-number }}
+    permissions:
+      contents: read
+      actions: read # for `GitHub.get_workflow_run`
+      checks: read # for `GitHub.get_workflow_run`
+      pull-requests: write # for `gh pr edit`
+    steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - run: sleep 10
+
+      - name: Check if CI was restarted
+        id: check
+        uses: Homebrew/actions/brew-script@master
+        with:
+          script: |
+            owner, repo = ENV.fetch("GITHUB_REPOSITORY").split("/")
+            pr = ENV.fetch("HOMEBREW_PR").to_i
+            workflow_runs, = GitHub.get_workflow_run(owner, repo, pr, workflow_id: "tests.yml")
+            status = workflow_runs.last.fetch("status")
+
+            puts "::notice ::PR ##{pr} CI status: #{status}"
+            github_output = ENV.fetch("GITHUB_OUTPUT")
+            File.open(github_output, "a") do |f|
+              f.puts("status=#{status}")
+            end
+
+      - name: Remove long timeout label
+        if: steps.check.outputs.status == 'COMPLETED'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "::notice ::Removing \`$LONG_TIMEOUT_LABEL\` label from PR #$HOMEBREW_PR"
+          gh pr edit "$HOMEBREW_PR" --remove-label "$LONG_TIMEOUT_LABEL"
