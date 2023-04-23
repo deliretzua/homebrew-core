@@ -6,13 +6,13 @@ class Opendht < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9d0999453ac71c67535b9eb5864720a604afb6ad1bbde960a2d7d1109b7e5cb7"
-    sha256 cellar: :any,                 arm64_monterey: "468967ad08d017b1b64ad39d611f9929d8c333a4cdc3dc2ed4576c7523319779"
-    sha256 cellar: :any,                 arm64_big_sur:  "0b4e60467a3d4248b54265f6dc9e0fa226671ee4cfe041b7605ed1762ae7915e"
-    sha256 cellar: :any,                 ventura:        "35f9b1af66e2e5f24067e86cd1490b21f19aeaf92f1e906eec5e63cb72ffb455"
-    sha256 cellar: :any,                 monterey:       "e9019d2eaf73d5ced3eb1ae993b08b9f49e9f6975b02f3070c38bf8952daa223"
-    sha256 cellar: :any,                 big_sur:        "d1e1ee7b751b943d0b21e6232f9fa27a2ed37ef34ec59026b319841ad4e1aec7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f819c2fc688ab01c58d34916a9e31a3895a36732ffa4525feb800cca8373ad8d"
+    sha256 cellar: :any,                 arm64_ventura:  "c47ec54a74b27e7c1fe4e5cb9245b44bd64a81f3a84169e64331202835ebf0b2"
+    sha256 cellar: :any,                 arm64_monterey: "bfd84233086fb8ecbb4f920cde9b0b5440b8bdc82a3c8cb864171bd4862551bd"
+    sha256 cellar: :any,                 arm64_big_sur:  "8e3275f216ae19bc923b37f13ea36382de4e3bcb834984fe2edb1daf6efa17d8"
+    sha256 cellar: :any,                 ventura:        "b90fcb95087da7e12ea792dec26a9b2aead0549a68e62751fb655e6c22e6ff4b"
+    sha256 cellar: :any,                 monterey:       "68860d2c42df668cc8875d1b10140814fee27e6e3e93a47c4d1ec80f8df8d3ec"
+    sha256 cellar: :any,                 big_sur:        "f4f3207ffa9b907c9c7423917904102c0de482962be2db82a6a82d6544bd366d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cbf26a63005f858bc76b8198c096f8e3e08af8ce1023d0d2551000cf0cddfb8c"
   end
 
   depends_on "cmake" => :build
