@@ -80,9 +80,8 @@ jobs:
 
       - name: Check if CI was restarted
         id: check
-        uses: Homebrew/actions/brew-script@master
-        with:
-          script: |
+        run: |
+          brew ruby <<RUBY
             owner, repo = ENV.fetch("GITHUB_REPOSITORY").split("/")
             pr = ENV.fetch("HOMEBREW_PR").to_i
             workflow_runs, = GitHub.get_workflow_run(owner, repo, pr, workflow_id: "tests.yml")
@@ -93,6 +92,7 @@ jobs:
             File.open(github_output, "a") do |f|
               f.puts("status=#{status}")
             end
+          RUBY
 
       - name: Remove long timeout label
         if: steps.check.outputs.status == 'COMPLETED'
