@@ -80,6 +80,8 @@ jobs:
 
       - name: Check if CI was restarted
         id: check
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           brew ruby <<RUBY
             owner, repo = ENV.fetch("GITHUB_REPOSITORY").split("/")
