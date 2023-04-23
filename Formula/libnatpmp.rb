@@ -11,18 +11,13 @@ class Libnatpmp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "354cbe379ee3003657c8249507c1b3154c3a18b953e4aa8b020e507c997e76dc"
-    sha256 cellar: :any,                 arm64_monterey: "6e47414293d016589ebba6a965daf4c2716613fce6759ba5d98e067b517d1c8e"
-    sha256 cellar: :any,                 arm64_big_sur:  "748f4fea8075f967191c0f1862c2e20289bee92883c816b191490a35e0d0a9d4"
-    sha256 cellar: :any,                 ventura:        "213b2dd8f39ddb4e425b8cf13a6516eaadeb20da42bf3603d905b3be4202b21d"
-    sha256 cellar: :any,                 monterey:       "1fbd6904aea36ed66fe55fa4d0cd9a532542f4384df0bd6351e9fba663270dc8"
-    sha256 cellar: :any,                 big_sur:        "b62f39f2cf735ed55841676e6d55473aa1fb5d9247c10151b71184ba20dccba1"
-    sha256 cellar: :any,                 catalina:       "69bd0b362260f89b76113fbfec36235ec6265434c365d18790e8bb1a4988ae67"
-    sha256 cellar: :any,                 mojave:         "1f0e89186c04cd7c7ce9ba88bee87ae31be9c6f5b0ebbcee46f38876d90bfb78"
-    sha256 cellar: :any,                 high_sierra:    "04c286ebb17bf08728749e390dd9ccabf3fcc4b660ffe4b6f315dcf89012f15a"
-    sha256 cellar: :any,                 sierra:         "d1aaa97c827918f7d35d121399cb8f59b4442b94c3283a51b7931f0e008ff934"
-    sha256 cellar: :any,                 el_capitan:     "667fe1a26fdd6e1a36f6e7b263f2f8e3d01f884da9d9edeb182dbb40b08475ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "730ab2eb6c6b4e9bc470d78033d161fb669622a9bc555ca989720e992144b3cf"
+    sha256 cellar: :any,                 arm64_ventura:  "5cbc86e7961c27660615db095ed871533441d5fe6d25b603207175c055ae2f63"
+    sha256 cellar: :any,                 arm64_monterey: "ee662cfd4f0cd0c0b2e4e41d4b78dc6b869a2a9b879b99b2bbd2f9c95449817e"
+    sha256 cellar: :any,                 arm64_big_sur:  "e1dc94e564f2390fabcffb750cd4b0a8a3f25679dc8d960cce9387668b25f6ab"
+    sha256 cellar: :any,                 ventura:        "bd45f955745ed2788cd2515f882162846bdce682b95010b070e22335157c2819"
+    sha256 cellar: :any,                 monterey:       "a2d116b11fd0e979c2af60c047b962f272118a955057c223c6e26bbd861edea5"
+    sha256 cellar: :any,                 big_sur:        "df74dfd28a0c684d13de2dcd3d655c424210eb89b6c42f81c371ad0a356b27fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "71a7aca17fef233ad343105dc86f13bf2d1ad39514cc7ea5c9890f5c7b52baa1"
   end
 
   def install
