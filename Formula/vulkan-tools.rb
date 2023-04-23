@@ -6,6 +6,16 @@ class VulkanTools < Formula
   license "Apache-2.0"
   head "https://github.com/KhronosGroup/Vulkan-Tools.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "bbca7853efe7c2c4dadedb0c848165f582205ced98217fab3956943b300abc2e"
+    sha256 cellar: :any,                 arm64_monterey: "b6a2424d44dde6292ebc5bc28bd6a29a7d61a684af6c3aa2cc6b95e4f957acfc"
+    sha256 cellar: :any,                 arm64_big_sur:  "9829572bfd2b5f07fbf13ebb0f9f9a5fddf15e7329af1f8021360473b8b3f94f"
+    sha256 cellar: :any,                 ventura:        "e79fdee19f661477106a72a1c949d0a318792c73aa9ebeac0b7e8c573d6f0bf6"
+    sha256 cellar: :any,                 monterey:       "b4f733eae3b532462b5efa4cd5b2aa6a595401a2981e83e264b79c8dc02896fc"
+    sha256 cellar: :any,                 big_sur:        "9879d034ead09df11da7d8b334413d8596740a41f80222b77f6533e3e4d7d92a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "01c13694f17007d7d0845463c0771052be4042c16c5b178a1d7b2dfb4efe0ca7"
+  end
+
   depends_on "cmake" => :build
   depends_on "python@3.11" => :build
   depends_on "glslang"
