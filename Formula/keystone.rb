@@ -18,6 +18,7 @@ class Keystone < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "python@3.11" => :build
 
   def install
     system "cmake", ".", *std_cmake_args
