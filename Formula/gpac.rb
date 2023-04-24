@@ -9,8 +9,8 @@
 class Gpac < Formula
   desc "Multimedia framework for research and academic purposes"
   homepage "https://gpac.wp.mines-telecom.fr/"
-  url "https://github.com/gpac/gpac/archive/v2.2.0.tar.gz"
-  sha256 "c20c204b57da76e4726109993c1abcdb3231a9b2ee2c8e21126d000cda7fc00d"
+  url "https://github.com/gpac/gpac/archive/v2.2.1.tar.gz"
+  sha256 "8173ecc4143631d7f2c59f77e1144b429ccadb8de0d53a4e254389fb5948d8b8"
   license "LGPL-2.1-or-later"
   head "https://github.com/gpac/gpac.git", branch: "master"
 
