@@ -42,16 +42,14 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR: ${{ steps.pr.outputs.number }}
         run: |
-          # LONG_TIMEOUT_LABEL is set in the top-level runner env
-          # shellcheck disable=SC2153
-          long_timeout_label="$(
+          long_timeout="$(
             gh api \
               --header 'Accept: application/vnd.github+json' \
               --header 'X-GitHub-Api-Version: 2022-11-28' \
               "repos/$GH_REPO/pulls/$PR" \
               --jq "any(.labels[].name; .== \"$LONG_TIMEOUT_LABEL\")"
           )"
-          echo "long-timeout=$long_timeout_label" >> "$GITHUB_OUTPUT"
+          echo "long-timeout=$long_timeout" >> "$GITHUB_OUTPUT"
 
   remove-label:
     needs: check-label
@@ -80,6 +78,8 @@ jobs:
 
       - name: Check if CI was restarted
         id: check
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           brew ruby <<RUBY
             owner, repo = ENV.fetch("GITHUB_REPOSITORY").split("/")
