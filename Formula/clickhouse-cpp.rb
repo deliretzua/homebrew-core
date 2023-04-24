@@ -18,7 +18,6 @@ class ClickhouseCpp < Formula
 
   depends_on "cmake" => :build
   depends_on "abseil"
-  depends_on "cityhash"
   depends_on "lz4"
   depends_on "openssl@3"
 
@@ -26,23 +25,22 @@ class ClickhouseCpp < Formula
   fails_with gcc: "6"
 
   def install
-    # `cityhash` does not provide a pkg-config or CMake config file.
-    # Help CMake find it.
-    # Remove when merged: https://github.com/ClickHouse/clickhouse-cpp/pull/301
-    inreplace "CMakeLists.txt", "FIND_PACKAGE(cityhash REQUIRED)",
-                                "FIND_LIBRARY(CITYHASH NAMES cityhash REQUIRED)"
-    inreplace "clickhouse/CMakeLists.txt", "cityhash::cityhash", "cityhash"
-
+    # We use the vendored version (1.0.2) of `cityhash` because newer versions
+    # break hash compatibility. See:
+    #   https://github.com/ClickHouse/clickhouse-cpp/pull/301#issuecomment-1520592157
     args = %W[
       -DWITH_OPENSSL=ON
       -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
       -DWITH_SYSTEM_ABSEIL=ON
-      -DWITH_SYSTEM_CITYHASH=ON
+      -DWITH_SYSTEM_CITYHASH=OFF
       -DWITH_SYSTEM_LZ4=ON
     ]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+
+    # Install vendored `cityhash`.
+    (libexec/"lib").install "build/contrib/cityhash/cityhash/libcityhash.a"
   end
 
   test do
@@ -90,10 +88,10 @@ class ClickhouseCpp < Formula
       -I#{include}
       -L#{lib}
       -lclickhouse-cpp-lib
+      -L#{libexec}/lib
+      -lcityhash
       -L#{Formula["openssl@3"].opt_lib}
       -lcrypto -lssl
-      -L#{Formula["cityhash"].opt_lib}
-      -lcityhash
       -L#{Formula["lz4"].opt_lib}
       -llz4
     ]
