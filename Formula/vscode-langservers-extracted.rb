@@ -8,7 +8,7 @@ class VscodeLangserversExtracted < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "969ee0fb2fde9d26e639337f7c48db4ffa4890fb7840eecdf90e21a84584634e"
+    sha256 cellar: :any_skip_relocation, all: "5af2c304517f720a9fb73623cdc83b7cbd4807a048a2d7b49e0bf2b5d2ba687c"
   end
 
   depends_on "node"
