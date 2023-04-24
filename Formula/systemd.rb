@@ -26,6 +26,7 @@ class Systemd < Formula
   depends_on "python@3.11" => :build
   depends_on "rsync" => :build
   depends_on "expat"
+  depends_on "glib"
   depends_on "libcap"
   depends_on :linux
   depends_on "lz4"
