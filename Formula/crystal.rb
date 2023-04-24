@@ -44,10 +44,6 @@ class Crystal < Formula
   depends_on "pcre2"
   depends_on "pkg-config" # @[Link] will use pkg-config if available
 
-  on_linux do
-    depends_on arch: :x86_64
-  end
-
   fails_with gcc: "5"
 
   # It used to be the case that every new crystal release was built from a
