@@ -4,6 +4,7 @@ on:
   workflow_run:
     workflows:
       - CI
+      - Manage long timeout labels
     types:
       - completed
 
