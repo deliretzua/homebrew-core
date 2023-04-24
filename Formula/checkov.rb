@@ -4,8 +4,8 @@ class Checkov < Formula
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
   # checkov should only be updated every 15 releases on multiples of 15
-  url "https://files.pythonhosted.org/packages/b5/b5/25d3fd91bd2ceaf8f54777fa0d0c6b0f5ae2ea9a2bce07108a04e4f97fdc/checkov-2.3.180.tar.gz"
-  sha256 "0ca1fcd30467e3e3a7a74fdf551bf8311260685a935f5fc36bc6c04e61037034"
+  url "https://files.pythonhosted.org/packages/62/8d/adbbee1ba7340c8c47cc97ad1b77b6c6a794e3fd92d5f2cf6144556f8caf/checkov-2.3.195.tar.gz"
+  sha256 "a35f9c6331a29b8c87c783d3a2ab31da07359aaa1c0fe8b0c2b192961f1eff3f"
   license "Apache-2.0"
 
   bottle do
@@ -46,8 +46,8 @@ class Checkov < Formula
   end
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/9d/50/e5b3e9824a387920c4b92870359c9f7dbf21a6cd6d3dff5bf4fd3b50237a/argcomplete-3.0.5.tar.gz"
-    sha256 "fe3ce77125f434a0dd1bffe5f4643e64126d5731ce8d173d36f62fa43d6eb6f7"
+    url "https://files.pythonhosted.org/packages/42/cd/fdb872d826b76b65b23147e83b1ca4c033445bbff59f8836a118657dd050/argcomplete-3.0.8.tar.gz"
+    sha256 "b9ca96448e14fa459d7450a4ab5a22bbf9cee4ba7adddf03e65c398b5daeea28"
   end
 
   resource "async-timeout" do
@@ -61,8 +61,8 @@ class Checkov < Formula
   end
 
   resource "bc-detect-secrets" do
-    url "https://files.pythonhosted.org/packages/31/c1/4ab1b54418977a5234547e284e032eac45baed2b6e1313d893fa6e2f570c/bc-detect-secrets-1.4.16.tar.gz"
-    sha256 "16338bd88cf7a3375b73fbb7c73ca6651322c4112fa3d7a48d6d111aa013e9eb"
+    url "https://files.pythonhosted.org/packages/51/c0/21e496367f7f4d4865f277b54cd33ce8b7e98b63515657b84fd6ea4c862d/bc-detect-secrets-1.4.21.tar.gz"
+    sha256 "ca710849a0c0c9b9cbab55e3903c5c4b9771cbac38b89e9ebbea72d83c26727c"
   end
 
   resource "bc-jsonpath-ng" do
@@ -81,13 +81,13 @@ class Checkov < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/78/a8/b07686bd9a56e2556708d562c6b8ade423f3cf4cb1b7c3cbc9ed6c24d022/boto3-1.26.115.tar.gz"
-    sha256 "2272a060005bf8299f7342cbf1344304eb44b7060cddba6784f676e3bc737bb8"
+    url "https://files.pythonhosted.org/packages/a6/d9/ddbeadc10d99d8b34cc37331d86668a804f2ab9e6262a8e5c517ef1ccbaf/boto3-1.26.118.tar.gz"
+    sha256 "d0ed43228952b55c9f44d1c733f74656418c39c55dbe36bc37feeef6aa583ded"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/9e/00/4560081a431aaa14c2257040d43f56c2ccba816d8bce3b8e1577a19f4076/botocore-1.29.115.tar.gz"
-    sha256 "58eee8cf8f4f3e515df29f6dc535dd86ed3f4cea40999c5bc74640ff40bdc71f"
+    url "https://files.pythonhosted.org/packages/3d/76/ca0f41de48c48c6c2731680b0915632076c94dd40f9d10cdfacdb697f1de/botocore-1.29.118.tar.gz"
+    sha256 "b51fc5d50cbc43edaf58b3ec4fa933b82755801c453bf8908c8d3e70ae1142c1"
   end
 
   resource "cached-property" do
@@ -201,8 +201,8 @@ class Checkov < Formula
   end
 
   resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/9d/ce/dc7221b3044c7382d5abad27d2599e63b0e0ccabc49491244203ee1ded96/importlib_metadata-6.5.0.tar.gz"
-    sha256 "7a8bdf1bc3a726297f5cfbc999e6e7ff6b4fa41b26bba4afc580448624460045"
+    url "https://files.pythonhosted.org/packages/0b/1f/9de392c2b939384e08812ef93adf37684ec170b5b6e7ea302d9f163c2ea0/importlib_metadata-6.6.0.tar.gz"
+    sha256 "92501cdf9cc66ebd3e612f1b4f0c0765dfa42f0fa38ffb319b6bd84dd675d705"
   end
 
   resource "Jinja2" do
@@ -351,8 +351,8 @@ class Checkov < Formula
   end
 
   resource "termcolor" do
-    url "https://files.pythonhosted.org/packages/e5/4e/b2a54a21092ad2d5d70b0140e4080811bee06a39cc8481651579fe865c89/termcolor-2.2.0.tar.gz"
-    sha256 "dfc8ac3f350788f23b2947b3e6cfa5a53b630b612e6cd8965a015a776020b99a"
+    url "https://files.pythonhosted.org/packages/b8/85/147a0529b4e80b6b9d021ca8db3a820fcac53ec7374b87073d004aaf444c/termcolor-2.3.0.tar.gz"
+    sha256 "b5b08f68937f138fe92f6c089b99f1e2da0ae56c52b78bf7075fd95420fd9a5a"
   end
 
   resource "texttable" do
@@ -396,8 +396,8 @@ class Checkov < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/c4/1e/1b204050c601d5cd82b45d5c8f439cb6f744a2ce0c0a6f83be0ddf0dc7b2/yarl-1.8.2.tar.gz"
-    sha256 "49d43402c6e3013ad0978602bf6bf5328535c48d192304b91b97a3c6790b1562"
+    url "https://files.pythonhosted.org/packages/ed/02/695dd9ec40214fbad98ffc82e97bbe15d99cb798b837c5af38b5649a20cd/yarl-1.9.1.tar.gz"
+    sha256 "5ce0bcab7ec759062c818d73837644cde567ab8aa1e0d6c45db38dfb7c284441"
   end
 
   resource "zipp" do
