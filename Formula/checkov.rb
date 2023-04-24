@@ -9,13 +9,13 @@ class Checkov < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a3472ff5dd0ef8a42ba530b714bd30238560a754a631022e71188442ceead9b8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7259b8a0b2193fa98c11524787351b689d07f075d0f7a0634b0f0a4ac56a1c03"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a1d0c47ed7a84c9203fad5964cdfeae0020e7a1ea80e450f2b89e43ce9d0e022"
-    sha256 cellar: :any_skip_relocation, ventura:        "ed6f5c93324e4b112cde977a6f0c710f1d124fe300d6fb2908941d62ee1c769e"
-    sha256 cellar: :any_skip_relocation, monterey:       "cd33c24e206924a17358ff3cd2ec47872180140959a8aab7a6b8f32e6fe77b87"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1e6ba8ce984cc8b4be26e2bd9a505b82ff061a3145b5d93f1e8abd27c7a92731"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b7c61fc2acdd1afac489d19f72c409d5133c8785046c359e0850e940d59dc1a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c5b12f4714941b8e5d93ff5af1e9b62f68ab991ed9fcff4e2aac8d77cca234bf"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "10381ccd7c8727b9888cddb62693da932118a973168d194c7a7292ace6332d61"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2fc6be6f905cd13a2bbfdf0e19639073e9a75f3942d47c9bebf727defaac0b53"
+    sha256 cellar: :any_skip_relocation, ventura:        "7f11feb8c175d6c6e799c69010880e2b052eec1e106696b1cafe4436ac26cfba"
+    sha256 cellar: :any_skip_relocation, monterey:       "9643afb57f7a31c3fbd43bbc255e56da9a224340503fed900136542f2e01385e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e45a08f70f89f9919b23a984c4255831d2398b532fc2e0faac37b2956cc99900"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f76dd91661da7da5678d8fa4995c0cbe9ef816c3adb78b47a101631a93f27f2a"
   end
 
   depends_on "cmake" => :build # for igraph
