@@ -6,6 +6,16 @@ class Millet < Formula
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/azdavis/millet.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9c7b646cff2f580ca55439caf5477436a67e97ebd2ad7d506fafe13ec2cdef2b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "34a4733bbb7fd2d1a2dd2af5bf6f8cb3f5d217e7d049a2a90a5dd04fdbcdbbf4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "11e46965ddfef829edecbc438d6ae7bd76263d237765e48862a41b842c0ed376"
+    sha256 cellar: :any_skip_relocation, ventura:        "dc44f56dbb64d7e95a7c0e24c2a90e9d3743608d0cab02aadd1f1cfc6ea75384"
+    sha256 cellar: :any_skip_relocation, monterey:       "c41fd9812e966a10d7a17f2573acf65e860d21b81a2183a6c1ae06304a57602b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "26168ed53f7745426e57202c9b794efb5061d3b768a1c6411fd0c4889164e8ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d473d1c268d09b8a877a0aabd2296be5c182382660b029e2832f8cda41533068"
+  end
+
   depends_on "rust" => :build
 
   def install
