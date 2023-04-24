@@ -42,6 +42,7 @@ class Czmq < Formula
   depends_on "asciidoc" => :build
   depends_on "pkg-config" => :build
   depends_on "xmlto" => :build
+  depends_on "lz4"
   depends_on "zeromq"
 
   def install
