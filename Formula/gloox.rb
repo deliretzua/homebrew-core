@@ -1,8 +1,8 @@
 class Gloox < Formula
   desc "C++ Jabber/XMPP library that handles the low-level protocol"
   homepage "https://camaya.net/gloox/"
-  url "https://camaya.net/download/gloox-1.0.26.tar.bz2"
-  sha256 "6b45b390d3b0346a3cf6cc118d5ccafcdf10d51be57a02b0076edf064033ab6f"
+  url "https://camaya.net/download/gloox-1.0.27.tar.bz2"
+  sha256 "0b8b7371439bc58d9e51384b616c964b18b7b41b87af1b7855104380eda86ffb"
   license "GPL-3.0-only" => { with: "openvpn-openssl-exception" }
 
   livecheck do
