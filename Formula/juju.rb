@@ -1,9 +1,8 @@
 class Juju < Formula
   desc "DevOps management tool"
   homepage "https://juju.is/"
-  url "https://github.com/juju/juju.git",
-      tag:      "juju-3.1.1",
-      revision: "0a2659b7b4f74b0f914e2d150a34724998ddd6c1"
+  url "https://launchpad.net/juju/3.1/3.1.2/+download/juju-core_3.1.2.tar.gz"
+  sha256 "14970a2b1fb5099a72786dda183a3a03b9b798875e7c49df9060e35d31d6e7b2"
   license "AGPL-3.0-only"
   version_scheme 1
   head "https://github.com/juju/juju.git", branch: "develop"
@@ -29,14 +28,11 @@ class Juju < Formula
   depends_on "go" => :build
 
   def install
-    ld_flags = %W[
-      -s -w
-      -X version.GitCommit=#{Utils.git_head}
-      -X version.GitTreeState=clean
-    ]
-    system "go", "build", *std_go_args(ldflags: ld_flags), "./cmd/juju"
-    system "go", "build", *std_go_args(output: bin/"juju-metadata", ldflags: ld_flags), "./cmd/plugins/juju-metadata"
-    bash_completion.install "etc/bash_completion.d/juju"
+    cd "src/github.com/juju/juju" do
+      system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/juju"
+      system "go", "build", *std_go_args(output: bin/"juju-metadata", ldflags: "-s -w"), "./cmd/plugins/juju-metadata"
+      bash_completion.install "etc/bash_completion.d/juju"
+    end
   end
 
   test do
