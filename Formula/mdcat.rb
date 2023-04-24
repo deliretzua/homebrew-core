@@ -1,8 +1,8 @@
 class Mdcat < Formula
   desc "Show markdown documents on text terminals"
   homepage "https://github.com/swsnr/mdcat"
-  url "https://github.com/swsnr/mdcat/archive/refs/tags/mdcat-2.0.2.tar.gz"
-  sha256 "db22edd1a05938202f67f76a65c8d298ac0a1f8ce2d8538d7a25e2591c7d7590"
+  url "https://github.com/swsnr/mdcat/archive/refs/tags/mdcat-2.0.3.tar.gz"
+  sha256 "18003b2fbbbd8e4d0c19826aa180c8e432a2fed391a398d4a8ae4f118d4b3010"
   license "MPL-2.0"
   head "https://github.com/swsnr/mdcat.git", branch: "main"
 
