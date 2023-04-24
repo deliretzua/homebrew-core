@@ -15,6 +15,7 @@ env:
   GH_REPO: ${{github.repository}}
   GH_NO_UPDATE_NOTIFIER: 1
   GH_PROMPT_DISABLED: 1
+  SCRIPTS_PATH: .github/workflows/scripts
 
 concurrency:
   group: "tests-${{ github.ref }}"
@@ -105,7 +106,6 @@ jobs:
           TESTING_FORMULAE: ${{needs.formulae_detect.outputs.testing_formulae}}
           ADDED_FORMULAE: ${{needs.formulae_detect.outputs.added_formulae}}
           DELETED_FORMULAE: ${{needs.formulae_detect.outputs.deleted_formulae}}
-          SCRIPTS_PATH: .github/scripts
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           retries: 3
@@ -369,7 +369,6 @@ jobs:
           TESTING_FORMULAE: ${{needs.formulae_detect.outputs.testing_formulae}}
           ADDED_FORMULAE: ${{needs.formulae_detect.outputs.added_formulae}}
           DELETED_FORMULAE: ${{needs.formulae_detect.outputs.deleted_formulae}}
-          SCRIPTS_PATH: .github/scripts
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           retries: 3
@@ -418,7 +417,9 @@ jobs:
     needs: [tap_syntax, setup_dep_tests, setup_dep_runners, tests]
     if: >
       (success() || 
-      (failure() && !fromJson(needs.setup_dep_tests.outputs.fail-fast))) &&
+      (failure() &&
+       !fromJson(needs.setup_dep_tests.outputs.fail-fast) &&
+       needs.tap_syntax.result == 'success')) &&
       github.event_name == 'pull_request' &&
       !fromJson(needs.setup_dep_tests.outputs.syntax-only) &&
       fromJson(needs.setup_dep_tests.outputs.test-dependents) &&
