@@ -1,8 +1,8 @@
 class Gf < Formula
   desc "App development framework of Golang"
   homepage "https://goframe.org"
-  url "https://github.com/gogf/gf/archive/refs/tags/v2.3.3.tar.gz"
-  sha256 "973c0582b933f9dc575aeff8ef93fb78dfa8e0c8179c9bff247f8051c0abc133"
+  url "https://github.com/gogf/gf/archive/refs/tags/v2.4.0.tar.gz"
+  sha256 "ebff69bb1edfb8828fbe2ebcf10314c2571faee88923ab687e46e78127cf8c6e"
   license "MIT"
   head "https://github.com/gogf/gf.git", branch: "master"
 
@@ -16,7 +16,7 @@ class Gf < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fbb5568ad408f2dbe307a65a990b861513b3e077d004e526bf67798f9ff5ecad"
   end
 
-  depends_on "go" => :build
+  depends_on "go" => [:build, :test]
 
   def install
     cd "cmd/gf" do
