@@ -11,6 +11,7 @@ class RubyBuild < Formula
   end
 
   depends_on "autoconf"
+  depends_on "libyaml"
   depends_on "pkg-config"
   depends_on "readline"
 
