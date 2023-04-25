@@ -176,6 +176,7 @@ class Freeswitch < Formula
     args << "--disable-libvpx" if Hardware::CPU.arm?
 
     ENV.append_to_cflags "-D_ANSI_SOURCE" if OS.linux?
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" # Workaround for Xcode 14.3.
     system "./configure", *std_configure_args, *args
     system "make", "all"
     system "make", "install"
