@@ -8,13 +8,14 @@ class Breezy < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "230e71c407e4fec67229957ead35048f038192d0f34034fa1b2c7b366b486ad4"
-    sha256 cellar: :any,                 arm64_monterey: "1701a27a93849535e27ce4812b5fac62d018a2073eaf3a5e2ebfdf090ed49240"
-    sha256 cellar: :any,                 arm64_big_sur:  "22f05db8be7601e058b2254e104fa59573a4b6336df85410a4146f810d417d81"
-    sha256 cellar: :any,                 ventura:        "4754073301e729bc055d682d3308f401507ccb6768c4e7f410f351dddc8b0f30"
-    sha256 cellar: :any,                 monterey:       "4a8a3a8fa0b745669c7895a332e4e30541faf7e488cba066940bbf81799904fa"
-    sha256 cellar: :any,                 big_sur:        "6e1991c4886348d9de5f963d46ec61104c839723fa36167dbf8df7e109ac961f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e63c0e98e6474db8498d9b6296a23fa4d2fc2fce5c2bd96c16228310a441ccc4"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "224651cd7faea114a055d3cc35a7913f158768bcf4ac20c4fed2d75a70148318"
+    sha256 cellar: :any,                 arm64_monterey: "d61c300c34b887daa26ac68c94f328bcd9e5a467aadc878b5fe92ba99d43a641"
+    sha256 cellar: :any,                 arm64_big_sur:  "97d4bcd9dec6c1470f3df15dfea2a935d992682e9d7592f49b6ecdd1f33383bd"
+    sha256 cellar: :any,                 ventura:        "0ae0b19cd1f1dc9be42da4fb80d4f75166dcb988a265ea95b121596bbcca847b"
+    sha256 cellar: :any,                 monterey:       "3f3b04785489b87270f4c391d97df33c1adb76de9a53b4da8efa93824d5e681b"
+    sha256 cellar: :any,                 big_sur:        "524b7e7e2318c8263b55ca9c786294c6cbc10c61fadb1ce54ee8660fcab6cd1b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05e9add50ad42837fb5c5be5f598c4051b922ebc5a1167422f9e5c47522b3b21"
   end
 
   depends_on "gettext" => :build
