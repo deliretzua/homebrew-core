@@ -1,10 +1,27 @@
 class Mpfr < Formula
   desc "C library for multiple-precision floating-point computations"
   homepage "https://www.mpfr.org/"
-  url "https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.0.tar.xz"
-  mirror "https://ftpmirror.gnu.org/mpfr/mpfr-4.2.0.tar.xz"
-  sha256 "06a378df13501248c1b2db5aa977a2c8126ae849a9d9b7be2546fb4a9c26d993"
   license "LGPL-3.0-or-later"
+
+  stable do
+    url "https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.0.tar.xz"
+    mirror "https://ftpmirror.gnu.org/mpfr/mpfr-4.2.0.tar.xz"
+    sha256 "06a378df13501248c1b2db5aa977a2c8126ae849a9d9b7be2546fb4a9c26d993"
+    version "4.2.0-p4"
+
+    # Upstream patches, list at https://www.mpfr.org/mpfr-current/#fixed
+    %w[
+      01 2e465c31689e780a93b24bf2959917443fb882da85b7f1ef23ae53d3de614aa4
+      02 e1ef3d4dab999f4e0ad5ee046c3a2823d3a9395fb8092c3dcb85d3fe29994b52
+      03 a906f9ed8e4a7230980322a0154702664164690614e5ff55ae7049c3fae55584
+      04 ece14ee57596dc2e4f67d2e857c5c6b23d76b20183a50a8b6759b640df001b78
+    ].each_slice(2) do |p, checksum|
+      patch do
+        url "https://www.mpfr.org/mpfr-4.2.0/patch#{p}"
+        sha256 checksum
+      end
+    end
+  end
 
   livecheck do
     url "https://www.mpfr.org/mpfr-current/"
