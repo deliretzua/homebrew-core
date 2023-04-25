@@ -3,8 +3,8 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https://commitizen-tools.github.io/commitizen/"
-  url "https://files.pythonhosted.org/packages/b1/1a/0e5ff7131d0f3378c1b99479754d81203738d9dbb594d2c23f02275df4f4/commitizen-3.0.1.tar.gz"
-  sha256 "ca917109412afcf21fd95831b01b444133764f337db1cbd9e2cf33ebaf2f8b2f"
+  url "https://files.pythonhosted.org/packages/d6/05/e99bf5855a35f81b5dd2dfcf8fd5af0e9c49e2ce602d9ea0be84ffc9382a/commitizen-3.1.0.tar.gz"
+  sha256 "b09999c2a411ec5e9dbbb40aca43cff355e4a3da5f3dca69fbaed7a87d1559c2"
   license "MIT"
   head "https://github.com/commitizen-tools/commitizen.git", branch: "master"
 
@@ -73,8 +73,8 @@ class Commitizen < Formula
   end
 
   resource "termcolor" do
-    url "https://files.pythonhosted.org/packages/e5/4e/b2a54a21092ad2d5d70b0140e4080811bee06a39cc8481651579fe865c89/termcolor-2.2.0.tar.gz"
-    sha256 "dfc8ac3f350788f23b2947b3e6cfa5a53b630b612e6cd8965a015a776020b99a"
+    url "https://files.pythonhosted.org/packages/b8/85/147a0529b4e80b6b9d021ca8db3a820fcac53ec7374b87073d004aaf444c/termcolor-2.3.0.tar.gz"
+    sha256 "b5b08f68937f138fe92f6c089b99f1e2da0ae56c52b78bf7075fd95420fd9a5a"
   end
 
   resource "tomlkit" do
