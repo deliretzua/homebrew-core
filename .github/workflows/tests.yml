@@ -247,24 +247,9 @@ jobs:
       - name: Count bottles
         id: bottles
         if: always()
-        working-directory: ${{ env.BOTTLES_DIR }}
-        run: |
-          shopt -s nullglob
-
-          json_files=(*.json)
-          count="${#json_files[@]}"
-          echo "$count bottles"
-          echo "count=$count" >> "$GITHUB_OUTPUT"
-
-          failed_json_files=(failed/*.json)
-          failures="${#failed_json_files[@]}"
-          echo "$failures failed bottles"
-          echo "failures=$failures" >> "$GITHUB_OUTPUT"
-
-          skipped_lists=(skipped_or_failed_formulae-*.txt)
-          skipped="${#skipped_lists[@]}"
-          echo "$skipped lists of skipped formulae"
-          echo "skipped=$skipped" >> "$GITHUB_OUTPUT"
+        uses: Homebrew/actions/count-bottles@master
+        with:
+          working-directory: ${{ env.BOTTLES_DIR }}
 
       - name: Upload failed bottles
         if: always() && steps.bottles.outputs.failures > 0
