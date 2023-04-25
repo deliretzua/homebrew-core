@@ -57,12 +57,10 @@ class VulkanExtensionlayer < Formula
     ENV["VK_ICD_FILENAMES"] = Formula["vulkan-tools"].lib/"mock_icd/VkICD_mock_icd.json"
 
     ver = Formula["vulkan-headers"].version
-    # Update count and add
-    #   VK_LAYER_KHRONOS_shader_object      Shader object layer              #{ver}  version 1
-    # on the next release
     expected = <<~EOS
-      Instance Layers: count = 2
+      Instance Layers: count = 3
       --------------------------
+      VK_LAYER_KHRONOS_shader_object      Shader object layer              #{ver}  version 1
       VK_LAYER_KHRONOS_synchronization2   Khronos Synchronization2 layer   #{ver}  version 1
       VK_LAYER_KHRONOS_timeline_semaphore Khronos timeline Semaphore layer #{ver}  version 1
     EOS
