@@ -2,8 +2,8 @@ class Git < Formula
   desc "Distributed revision control system"
   homepage "https://git-scm.com"
   # Don't forget to update the documentation resources along with the url!
-  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.40.0.tar.xz"
-  sha256 "b17a598fbf58729ef13b577465eb93b2d484df1201518b708b5044ff623bf46d"
+  url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.40.1.tar.xz"
+  sha256 "4893b8b98eefc9fdc4b0e7ca249e340004faa7804a433d17429e311e1fef21d2"
   license "GPL-2.0-only"
   head "https://github.com/git/git.git", branch: "master"
 
@@ -35,13 +35,13 @@ class Git < Formula
   end
 
   resource "html" do
-    url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-htmldocs-2.40.0.tar.xz"
-    sha256 "3da9fbe542e7d565b4168ea15872e8e1b13324e4bb5ab65604ca9a333dfe37bb"
+    url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-htmldocs-2.40.1.tar.xz"
+    sha256 "8c08b31087566e719f6a7d16bb102255a8b9b970aefba6e306d6340eefe368ee"
   end
 
   resource "man" do
-    url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-manpages-2.40.0.tar.xz"
-    sha256 "5766aecf137370015e3fd72e355b83c73dc2aa2ee14a42546049346442c3356e"
+    url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-manpages-2.40.1.tar.xz"
+    sha256 "fe059c948ba3d169537b5b6b24f19726881057dfd4e5987f37789884d42fde13"
   end
 
   resource "Net::SMTP::SSL" do
