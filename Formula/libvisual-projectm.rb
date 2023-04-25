@@ -5,6 +5,16 @@ class LibvisualProjectm < Formula
   sha256 "eb8269c2a923546600d3f40ff90c011f03a215847215ee8bef44bfae305b4dd7"
   license "GPL-3.0-or-later"
 
+  bottle do
+    sha256                               arm64_ventura:  "7e9ba6250e71e8005b0e00cc6f50f9991cf5158272a439788c0e4f024d9e8eb5"
+    sha256                               arm64_monterey: "2d7f170c6c1b1d8fcb45fe09e6a7e44c3662a6d56f78e48fbfe818e8881a39e9"
+    sha256                               arm64_big_sur:  "b9730a62abfc75a28d7794640a4430455764f03632ab68f830123ef493a66bcb"
+    sha256                               ventura:        "d1990c6f162f68c59d59443f0e97de4ca3150bc097d3e964354f74812fb7d76f"
+    sha256                               monterey:       "5f4a2bfcb6a2984b30ed79ba3234f11caa02423d0843a748c4b0400daed2dc0e"
+    sha256                               big_sur:        "f7a682871eb5ab4e001262bbeda434afe1f8520aa80254146e03963b4ddfd9e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c3a37a24bcd329cb8da341dab08f396654c1ccf7f8e0c7e63adba1626997458"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "libvisual-plugins" => :test
