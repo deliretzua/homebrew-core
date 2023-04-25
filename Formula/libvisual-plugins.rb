@@ -5,6 +5,16 @@ class LibvisualPlugins < Formula
   sha256 "55988403682b180d0de5e6082f804f3cf066d9a08e887b10eb6a315eb40d9f87"
   license all_of: ["GPL-2.0-or-later", "GPL-3.0-or-later", "LGPL-2.1-or-later"]
 
+  bottle do
+    sha256 arm64_ventura:  "09cc228afa0d75814145656bd4ccc19417bd91267f76e536a031e1e6774fd09b"
+    sha256 arm64_monterey: "1ed5a81fc26770e18092cf6ed205635a0a14986a2a9f8b7d1b066125a31db4bc"
+    sha256 arm64_big_sur:  "d52b13029a9a4e0d7343edde6d215c43394a236d7eb47cd91d725f6b0c310909"
+    sha256 ventura:        "2ee6827428dd600d21412a543dda3adfd279f80645850904860722bbab683d4f"
+    sha256 monterey:       "977213a56b8ee0e6dc046a117ca5578d2c3e03e9d9430f32365a16ef224eddf4"
+    sha256 big_sur:        "b2202a454a452bb02d49db40379395481fd4a21888a73a0a462b4675ef703052"
+    sha256 x86_64_linux:   "dfb02d238ee8abe6fa95c0a0d1d9f4fdc77e5d1946ef670b4bfdae9f481f95b3"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "xorg-server" => :test
 
