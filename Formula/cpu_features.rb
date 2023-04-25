@@ -1,8 +1,8 @@
 class CpuFeatures < Formula
   desc "Cross platform C99 library to get cpu features at runtime"
   homepage "https://github.com/google/cpu_features"
-  url "https://github.com/google/cpu_features/archive/v0.7.0.tar.gz"
-  sha256 "df80d9439abf741c7d2fdcdfd2d26528b136e6c52976be8bd0cd5e45a27262c0"
+  url "https://github.com/google/cpu_features/archive/v0.8.0.tar.gz"
+  sha256 "a3fc6a08ebbf40c538456d6a20ab294658bcebc8d0918457f33cb86f868f16a2"
   license "Apache-2.0"
   head "https://github.com/google/cpu_features.git", branch: "main"
 
