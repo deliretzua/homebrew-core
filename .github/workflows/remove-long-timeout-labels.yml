@@ -19,7 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     if: >
       github.repository_owner == 'Homebrew' &&
-      github.event.workflow_run.event == 'pull_request'
+      (github.event.workflow_run.event == 'pull_request' ||
+       github.event.workflow_run.name == 'Manage long timeout labels')
     outputs:
       pull-number: ${{ steps.pr.outputs.number }}
       long-timeout: ${{ steps.check.outputs.long-timeout }}
@@ -54,10 +55,7 @@ jobs:
 
   remove-label:
     needs: check-label
-    if: >
-      github.repository_owner == 'Homebrew' &&
-      github.event.workflow_run.event == 'pull_request' &&
-      fromJson(needs.check-label.outputs.long-timeout)
+    if: needs.check-label.result == 'success'
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/homebrew/ubuntu22.04:master
