@@ -59,6 +59,7 @@ class Netpbm < Formula
     end
 
     ENV.deparallelize
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" # Workaround for Xcode 14.3.
     system "make"
     system "make", "package", "pkgdir=#{buildpath}/stage"
 
