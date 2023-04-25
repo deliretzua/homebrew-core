@@ -3,8 +3,8 @@ class AzureCli < Formula
 
   desc "Microsoft Azure CLI 2.0"
   homepage "https://docs.microsoft.com/cli/azure/overview"
-  url "https://github.com/Azure/azure-cli/archive/azure-cli-2.48.0.tar.gz"
-  sha256 "8e3e1578a22300dd051c8d11fbfaf9897cae316a2e4cd4c1ff4d87574d08a970"
+  url "https://github.com/Azure/azure-cli/archive/azure-cli-2.48.1.tar.gz"
+  sha256 "e6e500efd685e63ed09014244b1252d66c6013dfa1339cab9a908164c1cbd47a"
   license "MIT"
   head "https://github.com/Azure/azure-cli.git", branch: "dev"
 
@@ -15,13 +15,13 @@ class AzureCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "54b6a5416a7ca8a07d67710b966f16e6410c4f5aa279a12e5ecfd60bba08ac6b"
-    sha256 cellar: :any,                 arm64_monterey: "496f2d83232062a6e14a61a15b94977ce6e46ff292aa79ef533cc453a2626788"
-    sha256 cellar: :any,                 arm64_big_sur:  "76b451993990ff4a3a24b0459ed66622419f7da71fae82bfc6a2a31f8964046e"
-    sha256 cellar: :any,                 ventura:        "c6ba2c95106a68812e7fd352737bfac9c6d75d52051b066d292ee36315014431"
-    sha256 cellar: :any,                 monterey:       "01e2f56418f2287f958a9451612ca75d66b9ba4b4ac8ffdb03707ed2aa29a037"
-    sha256 cellar: :any,                 big_sur:        "dfe375ff0977d3fef98023bd6878380de7ee4c2fbfccf0dd20a2c6005f8d1322"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3aefece4d3b4bf87832b99cbe6875204c4c219ededdbd0fc1df432258d45ffb8"
+    sha256 cellar: :any,                 arm64_ventura:  "814a285c64fcf011fa358cbf8c39b63c0996b9824027d13f6ce7734b5208deb5"
+    sha256 cellar: :any,                 arm64_monterey: "28d115db444dd056a12101301baa6c0c05c79cd23a49f26301b14cee55b87844"
+    sha256 cellar: :any,                 arm64_big_sur:  "68282fd16700842b119622f9bde1cd629241fdec13442e4059464abdc6d675ca"
+    sha256 cellar: :any,                 ventura:        "b628039856cddde21c845b381fc1ea6f9d5d4ed35e9505dbd99947ef618ac04e"
+    sha256 cellar: :any,                 monterey:       "405238ba7b810492bc943a79497fd515ee43bf7f3fe1399bad64249319d3c9f6"
+    sha256 cellar: :any,                 big_sur:        "72a4ea70930bebaea06a147da73438f20e3b543ca50d2e1b7b609dde7d5b7bbc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9f12e9e55735aa525401a1f69c9f941c8bd4a0c844f74e5e047bf626ea20a98"
   end
 
   depends_on "rust" => :build # for cryptography
