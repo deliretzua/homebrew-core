@@ -19,7 +19,9 @@ class Flintrock < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d612d02cba4d04b5d128e9e72a7a07ec100f1dc47299e32aa55dd576a2c34d9d"
   end
 
-  depends_on "rust" => :build
+  depends_on "pkg-config" => :build # for `cryptography`
+  depends_on "rust" => :build # for `cryptography`
+  depends_on "openssl@1.1" # for `cryptography`
   depends_on "python@3.11"
   depends_on "six"
 
@@ -49,8 +51,8 @@ class Flintrock < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/6a/f5/a729774d087e50fffd1438b3877a91e9281294f985bda0fd15bf99016c78/cryptography-39.0.1.tar.gz"
-    sha256 "d1f6198ee6d9148405e49887803907fe8962a23e6c6f83ea7d98f1c0de375695"
+    url "https://files.pythonhosted.org/packages/f7/80/04cc7637238b78f8e7354900817135c5a23cf66dfb3f3a216c6d630d6833/cryptography-40.0.2.tar.gz"
+    sha256 "c33c0d32b8594fa647d2e01dbccc303478e16fdd7cf98652d5b3ed11aa5e5c99"
   end
 
   resource "jmespath" do
@@ -89,11 +91,13 @@ class Flintrock < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c5/52/fe421fb7364aa738b3506a2d99e4f3a56e079c0a798e9f4fa5e14c60922f/urllib3-1.26.14.tar.gz"
-    sha256 "076907bf8fd355cde77728471316625a4d2f7e713c125f51953bb5b3eecf4f72"
+    url "https://files.pythonhosted.org/packages/21/79/6372d8c0d0641b4072889f3ff84f279b738cd8595b64c8e0496d4e848122/urllib3-1.26.15.tar.gz"
+    sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
   end
 
   def install
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
     virtualenv_install_with_resources
   end
 
