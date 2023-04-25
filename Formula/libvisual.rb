@@ -5,6 +5,16 @@ class Libvisual < Formula
   sha256 "63085fd9835c42c9399ea6bb13a7ebd4b1547ace75c4595ce8e9759512bd998a"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
+  bottle do
+    sha256 cellar: :any, arm64_ventura:  "ba00f3f40ff28fe23cfea28a9a4782dd8e344e51d318cd9843c74fc3d52fe65a"
+    sha256 cellar: :any, arm64_monterey: "f9faaf86d813119e9c592781ec40405057118cc8567838bc77e30e757c6088da"
+    sha256 cellar: :any, arm64_big_sur:  "b789ada9eec40f397f5fc4e203abdbdce87da28c353e6b31f503a2b87f684c93"
+    sha256 cellar: :any, ventura:        "de0973df1bed9f47df99760b65c9e32fc44302b0931e5b41e47768cb3f6ea01e"
+    sha256 cellar: :any, monterey:       "8cf0b4866dee89d477602b4de996f10ad8115158c7a1fc0a04bfdf6b55ab7084"
+    sha256 cellar: :any, big_sur:        "6912bc1436fd9aa261090f4c0877c3b17b1aa8301defdb17c66f5f3410d060e1"
+    sha256               x86_64_linux:   "ceefedcaeb4e18c06c22c2a210e35d3439783f2f457107090d91d2b777e788f2"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "sdl12-compat"
 
