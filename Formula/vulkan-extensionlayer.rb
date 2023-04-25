@@ -6,6 +6,16 @@ class VulkanExtensionlayer < Formula
   license "Apache-2.0"
   head "https://github.com/KhronosGroup/Vulkan-ExtensionLayer.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "f6ab85457b92d3609b4b9d93a6a5ad05b86b3f5e39c9dfa6a5542fc8ad7620c4"
+    sha256 cellar: :any,                 arm64_monterey: "31f0df71950d51bf5c7cee6d16a4483a3a0f84f3730b7e134d7d5aba5a0dd838"
+    sha256 cellar: :any,                 arm64_big_sur:  "3ed199451e804a638a2c48fc60ac9fb21639eb4111da26ee96786505579f062c"
+    sha256 cellar: :any,                 ventura:        "632b2d721b362d30c236fea25f8e39f364fb61abba9b7efaca294b55e75b9d87"
+    sha256 cellar: :any,                 monterey:       "9535d606b37779b42429c4bcb4093c827f51dd8a4c48bea04cb314803171c0ce"
+    sha256 cellar: :any,                 big_sur:        "e26230e42f396af17a145d7c0ea644e7ffc6021ed3fff9425ef95943bcfd012c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a0c41733c932dd98622e1312a328f0d1d61c531b9c4ed25f2e468cca92f1d10"
+  end
+
   depends_on "cmake" => :build
   depends_on "googletest" => :build
   depends_on "python@3.11" => :build
