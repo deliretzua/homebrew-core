@@ -20,7 +20,7 @@ class Flyway < Formula
     rm Dir["*.cmd"]
     chmod "g+x", "flyway"
     libexec.install Dir["*"]
-    (bin/"flyway").write_env_script libexec/"flyway", JAVA_HOME: Formula["openjdk"].opt_prefix
+    (bin/"flyway").write_env_script libexec/"flyway", Language::Java.overridable_java_home_env
   end
 
   test do
