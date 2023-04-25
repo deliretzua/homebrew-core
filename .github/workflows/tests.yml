@@ -139,6 +139,7 @@ jobs:
     env:
       HOMEBREW_LINUX_RUNNER: ${{needs.setup_tests.outputs.linux-runner}}
       HOMEBREW_LINUX_CLEANUP: ${{needs.setup_tests.outputs.cleanup-linux-runner}}
+      HOMEBREW_MACOS_TIMEOUT: ${{needs.setup_tests.outputs.timeout-minutes}}
       TESTING_FORMULAE: ${{needs.formulae_detect.outputs.testing_formulae}}
       DELETED_FORMULAE: ${{needs.formulae_detect.outputs.deleted_formulae}}
     steps:
@@ -163,7 +164,7 @@ jobs:
     name: ${{matrix.name}}
     runs-on: ${{matrix.runner}}
     container: ${{matrix.container}}
-    timeout-minutes: ${{ matrix.timeout || fromJson(needs.setup_tests.outputs.timeout-minutes) }}
+    timeout-minutes: ${{ matrix.timeout }}
     defaults:
       run:
         shell: /bin/bash -e {0}
@@ -403,6 +404,7 @@ jobs:
     env:
       HOMEBREW_LINUX_RUNNER: ${{needs.setup_dep_tests.outputs.linux-runner}}
       HOMEBREW_LINUX_CLEANUP: ${{needs.setup_dep_tests.outputs.cleanup-linux-runner}}
+      HOMEBREW_MACOS_TIMEOUT: ${{needs.setup_dep_tests.outputs.timeout-minutes}}
       TESTING_FORMULAE: ${{needs.formulae_detect.outputs.testing_formulae}}
     steps:
       - name: Set up Homebrew
@@ -431,7 +433,7 @@ jobs:
     name: ${{matrix.name}} (deps)
     runs-on: ${{matrix.runner}}
     container: ${{matrix.container}}
-    timeout-minutes: ${{ matrix.timeout || fromJson(needs.setup_dep_tests.outputs.timeout-minutes) }}
+    timeout-minutes: ${{ matrix.timeout }}
     defaults:
       run:
         shell: /bin/bash -e {0}
