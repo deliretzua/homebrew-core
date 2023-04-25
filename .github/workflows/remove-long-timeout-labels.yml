@@ -19,8 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     if: >
       github.repository_owner == 'Homebrew' &&
-      (github.event.workflow_run.event == 'pull_request' ||
-       github.event.workflow_run.name == 'Manage long timeout labels')
+      contains(fromJson('["pull_request", "pull_request_target"]'), github.event.workflow_run.event)
     outputs:
       pull-number: ${{ steps.pr.outputs.number }}
       long-timeout: ${{ steps.check.outputs.long-timeout }}

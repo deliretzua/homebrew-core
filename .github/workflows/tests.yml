@@ -419,7 +419,7 @@ jobs:
       (success() || 
       (failure() &&
        !fromJson(needs.setup_dep_tests.outputs.fail-fast) &&
-       needs.tap_syntax.result == 'success')) &&
+       !contains(fromJson('["skipped", "cancelled"]'), needs.tests.result))) &&
       github.event_name == 'pull_request' &&
       !fromJson(needs.setup_dep_tests.outputs.syntax-only) &&
       fromJson(needs.setup_dep_tests.outputs.test-dependents) &&
