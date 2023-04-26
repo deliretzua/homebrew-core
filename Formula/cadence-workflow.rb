@@ -2,8 +2,8 @@ class CadenceWorkflow < Formula
   desc "Distributed, scalable, durable, and highly available orchestration engine"
   homepage "https://cadenceworkflow.io/"
   url "https://github.com/uber/cadence.git",
-      tag:      "v0.25.0",
-      revision: "eb2911866c5c66bdfd8949e533565471899b7ec4"
+      tag:      "v1.0.0",
+      revision: "8e81044769ddd11a10db66795b98146687beeb41"
   license "MIT"
   head "https://github.com/uber/cadence.git", branch: "master"
 
@@ -22,7 +22,12 @@ class CadenceWorkflow < Formula
   conflicts_with "cadence", because: "both install an `cadence` executable"
 
   def install
-    system "make", ".fake-codegen"
+    # `go` version is hardcoded in Makefile
+    inreplace "Makefile" do |s|
+      s.change_make_var! "EXPECTED_GO_VERSION", Formula["go"].version.to_s
+    end
+
+    system "make", ".just-build"
     make_args = %w[
       cadence
       cadence-server
