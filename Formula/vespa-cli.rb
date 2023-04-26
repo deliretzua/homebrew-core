@@ -1,8 +1,8 @@
 class VespaCli < Formula
   desc "Command-line tool for Vespa.ai"
   homepage "https://vespa.ai"
-  url "https://github.com/vespa-engine/vespa/archive/v8.156.36.tar.gz"
-  sha256 "a9a769b020f8265592152d21c7c52aec8f974045486902df54e2000f38e744de"
+  url "https://github.com/vespa-engine/vespa/archive/v8.157.14.tar.gz"
+  sha256 "ad0421383e1ec61e5841025d7bf938649b98f1a7489ad887837c4cea481a778c"
   license "Apache-2.0"
 
   livecheck do
