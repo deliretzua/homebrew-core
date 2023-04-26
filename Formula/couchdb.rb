@@ -47,6 +47,8 @@ class Couchdb < Formula
 
   def install
     spidermonkey = Formula["spidermonkey"]
+    inreplace "configure", '[ ! -d "/usr/local/include/${SM_HEADERS}" ]',
+                           "[ ! -d \"#{spidermonkey.opt_include}/${SM_HEADERS}\" ]"
     inreplace "src/couch/rebar.config.script" do |s|
       s.gsub! "-I/usr/local/include/mozjs", "-I#{spidermonkey.opt_include}/mozjs"
       s.gsub! "-L/usr/local/lib", "-L#{spidermonkey.opt_lib} -L#{HOMEBREW_PREFIX}/lib"
