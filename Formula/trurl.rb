@@ -18,13 +18,6 @@ class Trurl < Formula
 
   uses_from_macos "curl", since: :ventura # uses CURLUE_NO_ZONEID, available since curl 7.81.0
 
-  # Makefile: fix build with GNU Make 3.x
-  # Remove on next release.
-  patch do
-    url "https://github.com/curl/trurl/commit/017f91cd4e89a6df4fca32602680e785149ad9c2.patch?full_index=1"
-    sha256 "0fabbb8f377b4a7a7535fac1dad8a7ffb1b86ddfdf716a72f5dd636afb2fdb98"
-  end
-
   def install
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
