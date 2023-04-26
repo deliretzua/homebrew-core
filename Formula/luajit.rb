@@ -62,6 +62,9 @@ class Luajit < Formula
     # is not set then it's forced to 10.4, which breaks compile on Mojave.
     ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
 
+    # Help the FFI module find Homebrew-installed libraries.
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath(target: HOMEBREW_PREFIX/"lib")}" if HOMEBREW_PREFIX.to_s != "/usr/local"
+
     # Pass `Q= E=@:` to build verbosely.
     verbose_args = %w[Q= E=@:]
 
