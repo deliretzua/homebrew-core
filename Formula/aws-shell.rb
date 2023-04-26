@@ -9,14 +9,14 @@ class AwsShell < Formula
   revision 2
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3361fc41a62782fc562fd072da1806b60609d4492cf2897a0f390fed91383220"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7b1a379d61a90727e0f225cd330d8c8bd4aed02f1b32ee3ffcbd159813828e46"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a7257c4dff90a2561ef1ee56d3fe75d44bd2ebc8ba692c24dd601a97f6639a42"
-    sha256 cellar: :any_skip_relocation, ventura:        "5c0bf6d98c3de9c8a1e4779b658771edbda2fbb0a87062aa4cc8d4f0625cc888"
-    sha256 cellar: :any_skip_relocation, monterey:       "48fce13e9f934774bf2aa39467874541504b9f73f68fb433af84c74dd8009312"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d09f258f5e29652f55aab150dc37003d03746da250e1f8babe7b35253dccc1e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f75692ce0acde795353a66573b2158b5d5e8552501d0e495d844303ed57cd68"
+    rebuild 5
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8a47bf639c985ed72434b5f185ff09dbe56ea9022845b8d762f9673bb051d967"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ee36e0e61c0c4ad30a96d5aa3ab3d2e10831642c955baa5e9142cd14c5740b78"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7ca859d0735d0ca2b8b4ccbc2c5f6324fc91adfa8c860bb736c44ea5e7a59f29"
+    sha256 cellar: :any_skip_relocation, ventura:        "8b7bd74a023bf46c10acda18c6fa466f6783787d1d1b3abb2849106559649ab0"
+    sha256 cellar: :any_skip_relocation, monterey:       "3755cb1b87cc4a13ea66fd89e1eafc16639bc92af46327570f3470b12f931689"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b50381b8fe3bcd3d8ea60677778bf579d28da65965ad693dae62e5f58646a8bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5eec8860d76bb71772d0add843e71e6cd916ad23bbe753198ee0ba4fa3aa6f81"
   end
 
   depends_on "docutils"
