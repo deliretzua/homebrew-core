@@ -35,6 +35,7 @@ class Gegl < Formula
 
   on_linux do
     depends_on "cairo"
+    depends_on "poppler"
   end
 
   def install
