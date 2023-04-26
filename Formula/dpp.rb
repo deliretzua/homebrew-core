@@ -21,7 +21,28 @@ class Dpp < Formula
 
   uses_from_macos "llvm" # for libclang
 
+  # Match versions from dub.selections.json
+  resource "libclang" do
+    url "https://code.dlang.org/packages/libclang/0.3.1.zip"
+    sha256 "ff6c8d5d53e3f59dbb280b8d370d19cb001e63aad6da99c02bdd2b48bfb31449"
+  end
+
+  resource "sumtype" do
+    url "https://code.dlang.org/packages/sumtype/0.7.1.zip"
+    sha256 "e27e026505bd9a7eb8f11cda12a3030c190a3d93f6b8dccfe7b22ffc36694e4e"
+  end
+
+  resource "unit-threaded" do
+    url "https://code.dlang.org/packages/unit-threaded/2.1.3.zip"
+    sha256 "bb306506cc69f51e3ff712590c9ce02dba16832171d34c0a6243a47ba4a936d6"
+  end
+
   def install
+    resources.each do |r|
+      r.stage buildpath/"dub-packages"/r.name
+      system "dub", "add-local", buildpath/"dub-packages"/r.name, r.version
+    end
+
     # Use actual rdmd once it is separated out of the dmd formula
     (buildpath/"rdmd-bin/rdmd").write <<~EOS
       #!/bin/sh
@@ -44,7 +65,7 @@ class Dpp < Formula
       ENV["DFLAGS"] = dflags.join(" ")
     end
     system "dub", "add-local", buildpath
-    system "dub", "build", "dpp"
+    system "dub", "build", "--skip-registry=all", "dpp"
     bin.install "bin/d++"
   end
 
