@@ -48,6 +48,10 @@ class Exiftran < Formula
   end
 
   def install
+    # Work around failure from GCC 10+ using default of `-fno-common`
+    # multiple definition of `...'; ....o:(.bss+0x0): first defined here
+    ENV.append_to_cflags "-fcommon" if OS.linux?
+
     system "make"
     system "make", "prefix=#{prefix}", "RESDIR=#{share}", "install"
   end
