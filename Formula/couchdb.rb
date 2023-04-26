@@ -1,11 +1,10 @@
 class Couchdb < Formula
   desc "Apache CouchDB database server"
   homepage "https://couchdb.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=couchdb/source/3.3.1/apache-couchdb-3.3.1.tar.gz"
-  mirror "https://archive.apache.org/dist/couchdb/source/3.3.1/apache-couchdb-3.3.1.tar.gz"
-  sha256 "9b89d7b54f7ef52b42bd51a6a0a2d3b1b06cce395df2c99d8f1f47f9355e2bee"
+  url "https://www.apache.org/dyn/closer.lua?path=couchdb/source/3.3.2/apache-couchdb-3.3.2.tar.gz"
+  mirror "https://archive.apache.org/dist/couchdb/source/3.3.2/apache-couchdb-3.3.2.tar.gz"
+  sha256 "3d6823d42d10cf0d4f86c9c4fe59c9932c89d68578fcb6c4b4278dc769308daa"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url :homepage
