@@ -8,14 +8,14 @@ class CyralGimmeDbToken < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 5
-    sha256 cellar: :any,                 arm64_ventura:  "81bfb30f7bcd25c4d00f026162d661e4a8fb7b136ba34d3f06144a408960c6c8"
-    sha256 cellar: :any,                 arm64_monterey: "75f1d9ecf4e20d058a99f17cc956c114f19d15be37312c1e5800ee180309967b"
-    sha256 cellar: :any,                 arm64_big_sur:  "1eafce8aac303b114a6dcf81487c33600b35a549fe71d6638ba3a2e05204341a"
-    sha256 cellar: :any,                 ventura:        "c20a5a5e8d436eb1c9971a86caa4a69cfeee46dc5d389382ac66d801a3830036"
-    sha256 cellar: :any,                 monterey:       "35d12f35587eb6bb604c66876b20f995bbc2ab4722a6d334801e521080a0a384"
-    sha256 cellar: :any,                 big_sur:        "beda33066823eddc0b541961f0acfbe209b09aebc68157cb3097ea230ac40475"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6ee1093d99dc2d1fdfac0c2f18590dcfdf44bf3fdd655761da5e17281c096ce"
+    rebuild 6
+    sha256 cellar: :any,                 arm64_ventura:  "536ae89f33c9df246cc4ab1d29682df03e4acfab2472f9a3b9a93a5f5039f634"
+    sha256 cellar: :any,                 arm64_monterey: "31a5cf2b99344379ce6eb69d57b70ac4935172ed975831783326ccfd4f799e49"
+    sha256 cellar: :any,                 arm64_big_sur:  "3e8deabdd1a24e834e9430606360e7c99ae37447fb29ae12ec61c5dced50aa08"
+    sha256 cellar: :any,                 ventura:        "ba41e6a2e31fd9764e827afca30f59486dfa3600554d25297134e09ebddd1fb0"
+    sha256 cellar: :any,                 monterey:       "788801d2dc92121b5029bebee69bfce892e3e726b36c637cd0c628df1475e94b"
+    sha256 cellar: :any,                 big_sur:        "241b2c66e8be80bf630e0f159e5aceaadca1407a4722afeaf6e4b0c350639676"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3f422a672af9bfad3c054d8f8886d844ad4842e682fc1aa5a5400c146bfcf3d"
   end
 
   depends_on "rust" => :build # for cryptography
