@@ -30,13 +30,13 @@ class CyralGimmeDbToken < Formula
   end
 
   resource "awscli" do
-    url "https://files.pythonhosted.org/packages/f0/83/23008808deafef9fe0d1d09a9a61d0a2811c04bacfc6eae0a90d885c9af4/awscli-1.27.69.tar.gz"
-    sha256 "2a8e646277d762f47b150ad7e71dfa88867411658a4943b416f35d9be7be4dd8"
+    url "https://files.pythonhosted.org/packages/d2/c2/6f69eae34e0beaea5db1dbfcdf3198b50ce9ccd7f25d980776f20c1b26c6/awscli-1.27.120.tar.gz"
+    sha256 "9d91193e85ab56f2f21b06da84223007d5dc6e2b81f907292473419e377e2200"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/db/31/720ac07bd096fdd24fbeb42111638b41fd220e618790b94ada77a6bd1f3e/botocore-1.29.69.tar.gz"
-    sha256 "7e1bebca013544fbc298cb58603bfccd5f71b49c720a5c33c07cf5dfc8145a1f"
+    url "https://files.pythonhosted.org/packages/ba/d0/680c56d416eb3f6801a729f0ff26fb7776b2ad34cb34f3433c3cf9c612d5/botocore-1.29.120.tar.gz"
+    sha256 "82de714c06fcefbcf2f3854b81c51bf0c529ec902c6e927156ff47988aaeeb7a"
   end
 
   resource "certifi" do
@@ -50,8 +50,8 @@ class CyralGimmeDbToken < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/96/d7/1675d9089a1f4677df5eb29c3f8b064aa1e70c1251a0a8a127803158942d/charset-normalizer-3.0.1.tar.gz"
-    sha256 "ebea339af930f8ca5d7a699b921106c6e29c617fe9606fa7baa043c1cdae326f"
+    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
+    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
   end
 
   resource "click" do
@@ -85,8 +85,8 @@ class CyralGimmeDbToken < Formula
   end
 
   resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/a4/db/fffec68299e6d7bad3d504147f9094830b704527a7fc098b721d38cc7fa7/pyasn1-0.4.8.tar.gz"
-    sha256 "aef77c9fb94a3ac588e87841208bdec464471d9871bd5050a287cc9a475cd0ba"
+    url "https://files.pythonhosted.org/packages/61/ef/945a8bcda7895717c8ba4688c08a11ef6454f32b8e5cb6e352a9004ee89d/pyasn1-0.5.0.tar.gz"
+    sha256 "97b7290ca68e62a832558ec3976f15cbf911bf5d7c7039d8b861c2a0ece69fde"
   end
 
   resource "pycparser" do
@@ -120,8 +120,8 @@ class CyralGimmeDbToken < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/c5/52/fe421fb7364aa738b3506a2d99e4f3a56e079c0a798e9f4fa5e14c60922f/urllib3-1.26.14.tar.gz"
-    sha256 "076907bf8fd355cde77728471316625a4d2f7e713c125f51953bb5b3eecf4f72"
+    url "https://files.pythonhosted.org/packages/21/79/6372d8c0d0641b4072889f3ff84f279b738cd8595b64c8e0496d4e848122/urllib3-1.26.15.tar.gz"
+    sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
   end
 
   # patch to use latest poetry_core to fix build
