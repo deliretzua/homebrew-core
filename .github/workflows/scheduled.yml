@@ -26,6 +26,8 @@ jobs:
       - name: Set up Homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
+        with:
+          test-bot: false
 
       - id: matrix
         run: |
@@ -53,6 +55,8 @@ jobs:
       - name: Set up Homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
+        with:
+          test-bot: false
 
       - name: Check formula for missing upstreams etc.
         run: brew audit --online --skip-style --only github_repository_archived,gitlab_repository_archived,homepage ${{ matrix.formula }}

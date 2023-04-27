@@ -159,6 +159,7 @@ jobs:
 
           if [[ "$merged" = "true" ]] || [[ "$automerge_data" = "object" ]]
           then
+            echo '::notice ::Pull request is either already merged or queued to merge.'
             bottles=false
           fi
 
@@ -170,15 +171,13 @@ jobs:
             origin_branch="$branch"
           fi
 
-          replace="$AUTOSQUASH"
-
           {
             echo "bottles=$bottles"
             echo "head_sha=$head_sha"
             echo "branch=$branch"
             echo "origin_branch=$origin_branch"
             echo "remote=$remote"
-            echo "replace=$replace"
+            echo "replace=$AUTOSQUASH"
           } >> "$GITHUB_OUTPUT"
 
           if "$pushable" && [[ "$fork_type" != "Organization" ]] ||
@@ -198,7 +197,9 @@ jobs:
           gh pr edit --add-label 'no push access' "$PR"
 
       - name: Dispatch replacement pull request
-        if: fromJson(steps.pr-branch-check.outputs.replace)
+        if: >
+          fromJson(steps.pr-branch-check.outputs.replace) &&
+          fromJson(steps.pr-branch-check.outputs.bottles)
         env:
           GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
           MESSAGE: ${{ inputs.message }}
@@ -297,11 +298,11 @@ jobs:
           # Don't quote arguments that might be empty; this causes errors.
           brew pr-pull \
             --debug \
+            --clean \
             --no-cherry-pick \
             --workflows=tests.yml \
             --committer="$BREWTESTBOT_NAME_EMAIL" \
             --root-url="https://ghcr.io/v2/homebrew/core" \
-            '${{inputs.autosquash && '--autosquash' || '--clean'}}' \
             ${{inputs.warn_on_upload_failure && '--warn-on-upload-failure' || ''}} \
             ${{inputs.message && '--message="$MESSAGE"' || ''}} \
             "$PR"
@@ -316,8 +317,6 @@ jobs:
           remote: ${{needs.check.outputs.remote}}
           branch: ${{needs.check.outputs.branch}}
           origin_branch: ${{needs.check.outputs.origin_branch}}
-          force: ${{inputs.autosquash}}
-          no_lease: ${{inputs.autosquash}}
         env:
           GIT_COMMITTER_NAME: ${{ steps.git-user-config.outputs.name }}
           GIT_COMMITTER_EMAIL: ${{ steps.git-user-config.outputs.email }}
@@ -436,7 +435,7 @@ jobs:
             --ref "$GITHUB_REF_NAME" \
             --field pull_request="$PR" \
             --field large_runner='${{inputs.large_runner}}' \
-            --field autosquash='${{inputs.autosquash}}' \
+            --field autosquash=false \
             --field warn_on_upload_failure=true \
             --field message='${{inputs.message}}' \
             --field retry_bottle_merge=false
