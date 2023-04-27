@@ -11,6 +11,7 @@ class Wrk < Formula
   #     distribute, whether in Source or Object form, except as required
   #     in copyright, patent, trademark, and attribution notices.
   license :cannot_represent
+  revision 1
   head "https://github.com/wg/wrk.git", branch: "master"
 
   bottle do
@@ -25,7 +26,8 @@ class Wrk < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bd6d51e49ac6dc2dbbb7ac18aa1569dc615f04d241491517afb427e173c3d8e8"
   end
 
-  depends_on "luajit"
+  # TODO: Switch to luajit when https://github.com/wg/wrk/issues/516 is resolved.
+  depends_on "luajit-openresty"
   depends_on "openssl@3"
 
   conflicts_with "wrk-trello", because: "both install `wrk` binaries"
@@ -33,9 +35,9 @@ class Wrk < Formula
   def install
     ENV.deparallelize
     ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
-    ENV.append_to_cflags "-I#{Formula["luajit"].opt_include}/luajit-2.1"
+    ENV.append_to_cflags "-I#{Formula["luajit-openresty"].opt_include}/luajit-2.1"
     args = %W[
-      WITH_LUAJIT=#{Formula["luajit"].opt_prefix}
+      WITH_LUAJIT=#{Formula["luajit-openresty"].opt_prefix}
       WITH_OPENSSL=#{Formula["openssl@3"].opt_prefix}
     ]
     args << "VER=#{version}" unless build.head?
