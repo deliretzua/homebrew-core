@@ -58,13 +58,13 @@ class Mycli < Formula
   end
 
   resource "importlib-resources" do
-    url "https://files.pythonhosted.org/packages/2e/f8/be5c59ff2545362397cbc989f5cd3835326fc4092433d50dfaf21616bc71/importlib_resources-5.10.2.tar.gz"
-    sha256 "e4a96c8cc0339647ff9a5e0550d9f276fc5a01ffa276012b58ec108cfd7b8484"
+    url "https://files.pythonhosted.org/packages/4e/a2/3cab1de83f95dd15297c15bdc04d50902391d707247cada1f021bbfe2149/importlib_resources-5.12.0.tar.gz"
+    sha256 "4be82589bf5c1d7999aedf2a45159d10cb3ca4f19b2271f8792bc8e6da7b22f6"
   end
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/fb/93/180be2342f89f16543ec4eb3f25083b5b84eba5378f68efff05409fb39a9/prompt_toolkit-3.0.36.tar.gz"
-    sha256 "3e163f254bef5a03b146397d7c1963bd3e2812f0964bb9a24e6ec761fd28db63"
+    url "https://files.pythonhosted.org/packages/4b/bb/75cdcd356f57d17b295aba121494c2333d26bfff1a837e6199b8b83c415a/prompt_toolkit-3.0.38.tar.gz"
+    sha256 "23ac5d50538a9a38c8bde05fecb47d0b403ecd0662857a86f886f798563d5b9b"
   end
 
   resource "pyaes" do
@@ -77,9 +77,9 @@ class Mycli < Formula
     sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
   end
 
-  resource "PyMySQL" do
-    url "https://files.pythonhosted.org/packages/60/ea/33b8430115d9b617b713959b21dfd5db1df77425e38efea08d121e83b712/PyMySQL-1.0.2.tar.gz"
-    sha256 "816927a350f38d56072aeca5dfb10221fe1dc653745853d30a216637f5d7ad36"
+  resource "pymysql" do
+    url "https://files.pythonhosted.org/packages/7a/6f/b3fadf41239b9ca7ea3857c440c499fd2e9e0f410bb942bd8d593dce4bd6/PyMySQL-1.0.3.tar.gz"
+    sha256 "3dda943ef3694068a75d69d071755dbecacee1adf9a1fc5b206830d2b67d25e8"
   end
 
   resource "pyperclip" do
@@ -88,13 +88,13 @@ class Mycli < Formula
   end
 
   resource "sqlglot" do
-    url "https://files.pythonhosted.org/packages/9f/94/e28696f966305c717710fc93ce297ab64b294dde2d6d56d13b611c444818/sqlglot-11.0.1.tar.gz"
-    sha256 "2bdeeaa20c215d48ec28a61057d76568d6a9aeb19af79b0470f7c2e42619aa0c"
+    url "https://files.pythonhosted.org/packages/94/0b/69ee9183fd6598bfb0de087dec5231a6282eccf2565aca761892b1427b81/sqlglot-11.6.0.tar.gz"
+    sha256 "c7e6cb1f70b51a8fc167536cbe2abe3ac120e500905d8fc9be5dc89a20cbd006"
   end
 
   resource "sqlparse" do
-    url "https://files.pythonhosted.org/packages/ba/fa/5b7662b04b69f3a34b8867877e4dbf2a37b7f2a5c0bbb5a9eed64efd1ad1/sqlparse-0.4.3.tar.gz"
-    sha256 "69ca804846bb114d2ec380e4360a8a340db83f0ccf3afceeb1404df028f57268"
+    url "https://files.pythonhosted.org/packages/65/16/10f170ec641ed852611b6c9441b23d10b5702ab5288371feab3d36de2574/sqlparse-0.4.4.tar.gz"
+    sha256 "d446183e84b8349fa3061f0fe7f06ca94ba65b426946ffebe6e3e8295332420c"
   end
 
   resource "wcwidth" do
