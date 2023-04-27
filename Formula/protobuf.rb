@@ -72,6 +72,7 @@ class Protobuf < Formula
 
     system "cmake", "-S", ".", "-B", "static",
                     "-Dprotobuf_BUILD_SHARED_LIBS=OFF",
+                    "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
                     "-DWITH_PROTOC=#{bin}/protoc",
                     *cmake_args
     system "cmake", "--build", "static"
