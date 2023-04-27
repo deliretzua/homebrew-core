@@ -6,13 +6,13 @@ class Openfortivpn < Formula
   license "GPL-3.0-or-later" => { with: "openvpn-openssl-exception" }
 
   bottle do
-    sha256 arm64_ventura:  "1e20140f29ff6464bab208319a6e354b5f901e8f606e2eaa15a038e14858e35d"
-    sha256 arm64_monterey: "998fdd38c2a49f71032db7080f903145bb935d2d208bfce33c9169a2209554c3"
-    sha256 arm64_big_sur:  "6fadba8b3269fdc7858878aeb6964a5de898cc2b37481a5a0ccb7e90ca2a7fff"
-    sha256 ventura:        "8c665659c92748f15ccb99ac0996d3d2606dd28db7743cb93529b72793b9dc0b"
-    sha256 monterey:       "7726a275dc6cdf004296fdf9e7154b3fc6bbd26682ce6774f2bbaeee93bfc850"
-    sha256 big_sur:        "7f40301f138068b60a05bc991cb69707ba9183ea16ce04b0daa3e92c9cd1354d"
-    sha256 x86_64_linux:   "1d0a65ed65ba9ce156414f7ee08998fa69ae34d2488f15694fd4edbda5d898fc"
+    sha256 arm64_ventura:  "e3a9c691d7a51422a2c35ac6e239fc9ef9304584f91883d9ed0c091dc5c6f1f3"
+    sha256 arm64_monterey: "9746608c8ed7ddf5290fad6c8244d01dc7d7c70927066478e0758b008fca21bc"
+    sha256 arm64_big_sur:  "41f216f0d00cef883c98c4c316dbd77b57bc78319e733897ceca5526ad8acf60"
+    sha256 ventura:        "0db5a930ac0fd64c1e1dc75df5827cb054c52727ea0a631a1f7aab577b21a60b"
+    sha256 monterey:       "12d9e8053498c7c2ddb26291e8bf7b9ade07c13a4de4fb87c3b5c84ffdf2bfe6"
+    sha256 big_sur:        "a973e13c12003567b92db73d493b7c432ec5bced9a56da6d7ec9b20a9f980bfd"
+    sha256 x86_64_linux:   "8ca29df0bae094a16b70de2f3880b7a1eeb81f859399ab22ddd6a908b9d9d0a7"
   end
 
   depends_on "autoconf" => :build
