@@ -26,8 +26,8 @@ class Railway < Formula
   end
 
   test do
-    output = shell_output("#{bin}/railway init 2>&1", 1)
-    assert_match "Error: Unauthorized. Please login with `railway login`", output
+    output = shell_output("#{bin}/railway init 2>&1", 1).chomp
+    assert_match "Unauthorized. Please login with `railway login`", output
 
     assert_equal "railwayapp #{version}", shell_output("#{bin}/railway --version").chomp
   end
