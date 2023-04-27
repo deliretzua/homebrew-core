@@ -8,14 +8,13 @@ class Dtrx < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "79d57f98e77e7db091fca4366b4ba5b802dd6701f8f6cdd2319e33b97bce6e99"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ee4717644293fb60d28aa52cba2e97377942553a935fe244298630e8186673c1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d7b411cf09d028d15d21385f5ecf776ab2dcf0d0266d8645fba5e89bd0ae68a6"
-    sha256 cellar: :any_skip_relocation, ventura:        "04ec6cffb870d361258a407cd9c3902b4958e648884a4e73b24b0f8f7b797e3d"
-    sha256 cellar: :any_skip_relocation, monterey:       "2f5c95bff48c1abf26d3f9f50af103b6637bd83fd99c55e27e1a0c96e30011ab"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c2a9e723f04f09663bc8f46c90932dd5d75a7c4f1ab9ed78b62f5cb6a9910656"
-    sha256 cellar: :any_skip_relocation, catalina:       "3043ce0dcaacd4f746682a7c2c31b914e2942adebed523409087579c6e1b7707"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d5acc79a0c95cc06c9bd6154330218642fdba6bb676817f153eaf6fa45036de1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e4c713499fdbc61e419be44dbdd0666528a86c71ad1391601903bfba4f6e25ef"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "116cc345259aa1259fa55332e8e4fc7f92ddd15784bc0714cbe8be5a19df8a77"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d9be0297da4adb68b6932820c6689451a2182bcebfc68c471ca2c45df1e5ca02"
+    sha256 cellar: :any_skip_relocation, ventura:        "8da7d5224e42c3a694cf26f2ffda4daa112192ecdb8bf1fb790ff2606008e09f"
+    sha256 cellar: :any_skip_relocation, monterey:       "d25fe203713960aa25bdc1a6c2f69b212f10319113f73802b082472cf6e47154"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8c2521c71630734069eba5fa16187aed88e01bbf01966a81fc8cc027dd7ea205"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56bce4bb0603902c60931742a535c8a182c8e330dd76725c0eac2bb3e02e1d06"
   end
 
   # Include a few common decompression handlers in addition to the python dep
