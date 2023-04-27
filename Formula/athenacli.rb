@@ -9,14 +9,14 @@ class Athenacli < Formula
   revision 2
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "39cdf687e2d97e08f1db362a3d1b6a6e0b7bb011e925ae4d2d6c6bb157ad9e4e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "203de1d4c3ad4f5774aa087eee90c02218baf006eed96ffbd9e5930b1e9e137d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1c7606de95c751451104e01861a370f36c1fb47ff559d430d51a7b6859aa17bc"
-    sha256 cellar: :any_skip_relocation, ventura:        "59020abac7a6e10dc69422701a435ce451bb83a7f11039cb896c931add20f430"
-    sha256 cellar: :any_skip_relocation, monterey:       "e0a0e34d203cb27e8e4f28daa0b1bc29a7a38b2b8a47bf0c73408e9ca7720de9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d7ac9ee386e6b4cae0610c6ad05de11e9536d32600f72eb228c0ed5e2878e2b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c5327fff5efaa6ad42c76b71062ee380276b5461ff25b2769fbd98c9749aace"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "19abdd458c36309d2ad2100dae56ce5bc4faa927b6e9b56080141deb08ecadc7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3301f4e7df42efbe11e59d6c9f23c627954675b5d306ae6dfce0a1d03dbe167e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f7352cc00a19e95a24c91b399d31127d90f68136b29966db6d1d8520284400d1"
+    sha256 cellar: :any_skip_relocation, ventura:        "1d0ddb8308bd53ea087a9977352b942785fdd33a192c51f727b810b14dc84568"
+    sha256 cellar: :any_skip_relocation, monterey:       "d913515ae10f7d4cc012624f2f2b20e87cfbe91572b15538623b7a534704bfb8"
+    sha256 cellar: :any_skip_relocation, big_sur:        "12907a64698643c40fb0fdb3a7a5fd791dbd617177dced1dc993e0dcd3ecfc15"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ecfb036ceb566cc93d605e2feadf27d0fffbb0c82719eb9ac11b40e6c08ceac9"
   end
 
   depends_on "python-tabulate"
@@ -68,7 +68,7 @@ class Athenacli < Formula
     sha256 "aebb8254dd7b2a450841ee3552bf443002a2deaed93fae0ae6f4258b5eb2d367"
   end
 
-  resource "Pygments" do
+  resource "pygments" do
     url "https://files.pythonhosted.org/packages/15/53/5345177cafa79a49e02c27102019a01ef1682ab170d2138deca47a4c8924/Pygments-2.11.1.tar.gz"
     sha256 "59b895e326f0fb0d733fd28c6839bd18ad0687ba20efc26d4277fd1d30b971f4"
   end
