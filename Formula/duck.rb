@@ -142,7 +142,7 @@ class Duck < Formula
     end
 
     revision = version.to_s.rpartition(".").last
-    system "mvn", "-DskipTests", "-Dgit.commitsCount=#{revision}",
+    system "mvn", "-DskipTests", "-Dconfiguration=default", "-Dgit.commitsCount=#{revision}",
                   "--projects", "cli/#{os}", "--also-make", "verify"
 
     libdir, bindir = if OS.mac?
@@ -166,7 +166,7 @@ class Duck < Formula
       rm_r libexec/"Contents/PlugIns/Runtime.jre"
       ln_s Formula["openjdk"].libexec/"openjdk.jdk", libexec/"Contents/PlugIns/Runtime.jre"
     else
-      libexec.install Dir["cli/linux/target/release/duck/*"]
+      libexec.install Dir["cli/linux/target/default/duck/*"]
     end
 
     rm libdir/shared_library("libjnidispatch")
