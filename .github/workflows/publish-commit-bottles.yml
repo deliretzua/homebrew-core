@@ -61,7 +61,7 @@ jobs:
       bottles: ${{steps.pr-branch-check.outputs.bottles}}
       head_sha: ${{steps.pr-branch-check.outputs.head_sha}}
       branch: ${{steps.pr-branch-check.outputs.branch}}
-      origin_branch: ${{steps.pr-branch-check.outputs.origin_branch}}
+      remote_branch: ${{steps.pr-branch-check.outputs.remote_branch}}
       remote: ${{steps.pr-branch-check.outputs.remote}}
       replace: ${{steps.pr-branch-check.outputs.replace}}
     permissions:
@@ -166,16 +166,16 @@ jobs:
           if [[ "$branch" = "master" ]]
           then
             branch="$head_repo_owner/master"
-            origin_branch="master"
+            remote_branch="master"
           else
-            origin_branch="$branch"
+            remote_branch="$branch"
           fi
 
           {
             echo "bottles=$bottles"
             echo "head_sha=$head_sha"
             echo "branch=$branch"
-            echo "origin_branch=$origin_branch"
+            echo "remote_branch=$remote_branch"
             echo "remote=$remote"
             echo "replace=$AUTOSQUASH"
           } >> "$GITHUB_OUTPUT"
@@ -316,7 +316,7 @@ jobs:
           directory: ${{steps.set-up-homebrew.outputs.repository-path}}
           remote: ${{needs.check.outputs.remote}}
           branch: ${{needs.check.outputs.branch}}
-          origin_branch: ${{needs.check.outputs.origin_branch}}
+          remote_branch: ${{needs.check.outputs.remote_branch}}
         env:
           GIT_COMMITTER_NAME: ${{ steps.git-user-config.outputs.name }}
           GIT_COMMITTER_EMAIL: ${{ steps.git-user-config.outputs.email }}
