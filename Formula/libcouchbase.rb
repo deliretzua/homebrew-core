@@ -1,8 +1,8 @@
 class Libcouchbase < Formula
   desc "C library for Couchbase"
   homepage "https://docs.couchbase.com/c-sdk/current/hello-world/start-using-sdk.html"
-  url "https://packages.couchbase.com/clients/c/libcouchbase-3.3.5.tar.gz"
-  sha256 "75bf6770b1a98289bbc079c302fe40286f2e7003aaffe64403fe04aaa84e0fc1"
+  url "https://packages.couchbase.com/clients/c/libcouchbase-3.3.6.tar.gz"
+  sha256 "3c2029ae06e4b84ea6c8ed99636ce918e965eb702cbc4a326b19d23bdef725d9"
   license "Apache-2.0"
   head "https://github.com/couchbase/libcouchbase.git", branch: "master"
 
@@ -23,14 +23,14 @@ class Libcouchbase < Formula
   depends_on "openssl@1.1"
 
   def install
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args,
-                            "-DLCB_NO_TESTS=1",
-                            "-DLCB_BUILD_LIBEVENT=ON",
-                            "-DLCB_BUILD_LIBEV=ON",
-                            "-DLCB_BUILD_LIBUV=ON"
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DLCB_NO_TESTS=1",
+                    "-DLCB_BUILD_LIBEVENT=ON",
+                    "-DLCB_BUILD_LIBEV=ON",
+                    "-DLCB_BUILD_LIBUV=ON",
+                    *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
