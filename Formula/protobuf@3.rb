@@ -43,7 +43,7 @@ class ProtobufAT3 < Formula
     ENV.cxx11
 
     system "./autogen.sh" if build.head?
-    system "./configure", *std_configure_args, "--with-zlib"
+    system "./configure", *std_configure_args, "--with-zlib", "--with-pic"
     system "make"
     system "make", "install"
 
