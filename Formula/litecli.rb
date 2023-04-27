@@ -9,14 +9,14 @@ class Litecli < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5da1f7dea09d44b2ff9affbb2775f0df78e3db5bcbcfb540ff4f2d5994fd1e1e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "39e05aef55a4bef5cedb2392bd231bac77248ef16ddb9868512b2bcdf4d9dba7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "24f74a7040bf91fe5de379c5d6e884281d50e6f5948955fd7299e2b35ed945d4"
-    sha256 cellar: :any_skip_relocation, ventura:        "d4a559e3d03bd4baf95b33cd915d0e6aff3ae2af7f0ff78029a5697ab075080b"
-    sha256 cellar: :any_skip_relocation, monterey:       "0e56976717e0a01cd33f6e575f52087476035d90cefe7b1cefe0feacc41905d4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d6cd645d981824e518484b523d67ec2ccd2b590f642a1f13e7a1e6edc5282e8d"
-    sha256 cellar: :any_skip_relocation, catalina:       "05a5004d955ef6fef211ecdfce7c8bdc16ae78fad89caffdb78c15c01692b1fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b01d5f27e46df045d675b99812fd38741e4b603b8c31e031b4817c1e66a4c8b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2618c03ff17b69f184b999495b951fc26bb4a9652c3961f1055ecbc4dea086f6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "613988a3efa691f02653b6b87f7065f2feb8fd431da44b9e4885299fbbc3689c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1bc5767abe4c184c34cefa19b898209751a00b8e6f14456827e7cab2a23102b3"
+    sha256 cellar: :any_skip_relocation, ventura:        "14dd2e29b9744a192eb3b27fa8b2ad7cd1555139069016f8618740b30e8d2e15"
+    sha256 cellar: :any_skip_relocation, monterey:       "2f63b90f072ba5c92210a46179bb9d578bc3261add44ac8c6793f432b0ab346e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bde83959ec036f1cd351d6f525d2444d60dcb65521d131310a54a3158dfed950"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45312ee667d44cd0696f50815f5541fb1a2caa7d137bd6e889e050243c8803af"
   end
 
   depends_on "pygments"
