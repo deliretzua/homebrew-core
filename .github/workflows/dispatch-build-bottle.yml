@@ -289,16 +289,14 @@ jobs:
         env:
           GH_TOKEN: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
         run: |
-          # Silence lint error about backtick usage inside single quotes.
-          # shellcheck disable=SC2016
           gh pr create \
-            --base master \
-            --body 'Created by `brew dispatch-build-bottle`'\
+            --base "$GITHUB_REF" \
+            --body "Created by [\`brew dispatch-build-bottle\`]($RUN_URL)" \
             --fill \
             --head "$BOTTLE_BRANCH" \
             --reviewer '${{github.actor}}'
 
-          pull_number="$(gh pr list --head "$BOTTLE_BRANCH" | cut -f1 | tr -d '\n')"
+          pull_number="$(gh pr list --head "$BOTTLE_BRANCH" --limit 1 --json number --jq '.[].number')"
           echo "pull_number=$pull_number" >> "$GITHUB_OUTPUT"
           echo "head_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
