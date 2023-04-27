@@ -117,11 +117,10 @@ jobs:
                 --header 'X-GitHub-Api-Version: 2022-11-28' \
                 "repos/$GH_REPO/pulls/$PR"
             )"
-            mergeable_state="$(jq --raw-output .mergeable_state <<< "$pr_data")"
-            draft="$(jq --raw-output .draft <<< "$pr_data")"
 
             # See https://github.com/octokit/octokit.net/issues/1763 for possible values.
-            if [[ "$draft" = "false" ]] && [[ "$mergeable_state" = "clean" ]]
+            if jq --exit-status '.mergeable_state == "clean"' <<< "$pr_data" &&
+               jq --exit-status '.draft | not' <<< "$pr_data"
             then
               mergeable=true
             fi
