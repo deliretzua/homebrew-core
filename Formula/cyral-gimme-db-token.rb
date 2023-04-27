@@ -8,14 +8,14 @@ class CyralGimmeDbToken < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 7
-    sha256 cellar: :any,                 arm64_ventura:  "ba58474387889b48cbe42d8f40c000f4c321c60e3c9421fc001db1b09c4a2f8c"
-    sha256 cellar: :any,                 arm64_monterey: "07a7da8b1143fdbcdafe0ee6bd7d8f3d0ad6abc1d17713eaf406499660b5927b"
-    sha256 cellar: :any,                 arm64_big_sur:  "df8b0ba47bbed2e8db60c5a10502f00ad3b361687ac5080d2e097e5bdab218df"
-    sha256 cellar: :any,                 ventura:        "e7392b122dc91d2fcc96188d0f30cca4a27d2b320be70ae02df37dd65a747985"
-    sha256 cellar: :any,                 monterey:       "e9703f159d2284e9830ca264df91b2c1930b83d472cec611082c498988793735"
-    sha256 cellar: :any,                 big_sur:        "a92e36a40c27c41289dfb023ffec5e6f347c27f3471a7ab6c81dbfcc91cbc1eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5dd50a74592e50cd596a12e9c16305224d55b1c45a636e10f96815616be4a050"
+    rebuild 8
+    sha256 cellar: :any,                 arm64_ventura:  "36fb4dea738ea933b82c39ec0f4b5a251857d7c40f3ce2414f4774dc651c9574"
+    sha256 cellar: :any,                 arm64_monterey: "67556eb641fd2b0a2ea1c650361a05df85a7d44e1e94a6ae36b075dd38fdec85"
+    sha256 cellar: :any,                 arm64_big_sur:  "0cc3497c4e926abe461d09c2d4943055ac17bbb8ce6f551694eb42fafecd7e4c"
+    sha256 cellar: :any,                 ventura:        "a5c5c83c2150da2fcb11f572de9b4a911bcf3945c44fe64228dde9eb605135fa"
+    sha256 cellar: :any,                 monterey:       "1c5434195a774ff7ff7da3a422095a550212c9d7621b85d04b2da0dd3ec7f1b9"
+    sha256 cellar: :any,                 big_sur:        "3fe82aaa3ba1abbf2ea5e7a629739a3c8e2e2d7ef4fea6232b6c3e3d83ebcb65"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4fd62e5c5de4e8234c453acf61d861bf040b9f488ba6183f7f9ecf8126d2038"
   end
 
   depends_on "rust" => :build # for cryptography
@@ -99,7 +99,7 @@ class CyralGimmeDbToken < Formula
     sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
-  resource "PyYAML" do
+  resource "pyyaml" do
     url "https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz"
     sha256 "607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"
   end
