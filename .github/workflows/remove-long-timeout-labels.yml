@@ -71,8 +71,8 @@ jobs:
     steps:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
-
-      - run: sleep 10
+        with:
+          test-bot: false
 
       - name: Check if CI was restarted
         id: check

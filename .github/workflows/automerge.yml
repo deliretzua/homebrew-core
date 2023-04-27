@@ -168,6 +168,8 @@ jobs:
     steps:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
+        with:
+          test-bot: false
 
       - run: brew pr-publish "$PR"
         env:

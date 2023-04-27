@@ -146,6 +146,8 @@ jobs:
       - name: Set up Homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
+        with:
+          test-bot: false
 
       - name: Determine runners to use for tests job
         id: determine-runners
@@ -395,6 +397,8 @@ jobs:
       - name: Set up Homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
+        with:
+          test-bot: false
 
       - name: Determine runners to use for test_deps job
         id: determine-dependent-runners
