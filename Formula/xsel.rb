@@ -7,15 +7,13 @@ class Xsel < Formula
   head "https://github.com/kfish/xsel.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "30abd9f1f7e2ff38f890f01f3c7919a9fcad59ada8c530b933583421cfcf6232"
-    sha256 cellar: :any,                 arm64_monterey: "de069e6eb3b7f2ab28641b1be7c7df88a0ea59587e01e59b79ddc680e0226194"
-    sha256 cellar: :any,                 arm64_big_sur:  "b32e829803d81ea7d09bb0911b31a20ac6c75fdbc67fa3c4c9184458e3d3ecb3"
-    sha256 cellar: :any,                 ventura:        "358506ddb783e7b8ede9380e03c66bfc70d6d2846e5f5a10411d9eac286c55cd"
-    sha256 cellar: :any,                 monterey:       "834b49b7669f077df30e1e791037b5ebabc657aef2d9b1c6c4c8425b8c401754"
-    sha256 cellar: :any,                 big_sur:        "f596d08cffadf2bff12804cc18fc61ddb4cdf47599f869d938c7ebd860e1950d"
-    sha256 cellar: :any,                 catalina:       "18f72e215611df386415475668dd769e37c6b715715e477ba39866f17a95c1f2"
-    sha256 cellar: :any,                 mojave:         "8fd34073cf958d18b31d51f0e3d05f7a93e0a71b00cc696bdf4d4018409b3c46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "81062fbb7f2a56e6510ab0103c795e5f0091dafa810100d03a83b3295b3f577f"
+    sha256 cellar: :any,                 arm64_ventura:  "29489463a6b648ef30fbc0e363941121d979bac946ed00592c0d2f513717554f"
+    sha256 cellar: :any,                 arm64_monterey: "bc9e0c0ca69e907dfa5b3416a57300bc7aa1a5a1f08d313175cebb4d0a00b401"
+    sha256 cellar: :any,                 arm64_big_sur:  "8d46290837243fe999ac0f72b739104dbc8eb05b2ad78282bc4f2398c9bda4c5"
+    sha256 cellar: :any,                 ventura:        "46abd92de37296f5be3201a7d4b50e92e10c42a63a4bfd29cf51055cd81d099f"
+    sha256 cellar: :any,                 monterey:       "6258269b70ace163a73341c5acb23161660f2bc0b1605086d93540845b926373"
+    sha256 cellar: :any,                 big_sur:        "b52227ff66ee16f9e91938370c77e2658ceff2ec2f13ac812ba2920861322450"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "508a55a542e6d8fbc46e3d5b0356bab11270e898353dada474a76f6ea1369891"
   end
 
   depends_on "autoconf" => :build
