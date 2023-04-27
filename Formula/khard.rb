@@ -8,13 +8,14 @@ class Khard < Formula
   license "GPL-3.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cd1e2cf55cf4db6d949fb5d323ae5f012879b708509e42ca653063219646b457"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "74d3bb85f5dffdd698f66e289163ec068a4dd20f40063bee9430cee827283d44"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3b17fcb88bffbe52279883633a3ade7c39eb89b82495f6f8013f795d0f22c8c1"
-    sha256 cellar: :any_skip_relocation, ventura:        "e0a97ec63cdef5c1e383053591966a0ca5872b9b96f0a733431611567551c475"
-    sha256 cellar: :any_skip_relocation, monterey:       "1966589c1fbf696ab701e65f171ec517601a3de20f05d01a0f484767b2603ed1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "80506ea07260b9e958ad9e41b752308ba6b1b963585aa30a7919f94e412e0042"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ecdd8b889de9800958f6b364b1399bd2bbe22e5dd64380dede70bc012172a2d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "409592f6ff6ffea909484fd8c115aa2c4aa6b4b0d0170b42ecddf80dcf249aa8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b837a9313e783300c92e2896bee4554b7bcf5424dcdb8ebb2485257718eb6f34"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "278d880ca2b822670a98a2a7203252859329defdb0ffb3feb4f6ebfc6f940fde"
+    sha256 cellar: :any_skip_relocation, ventura:        "5c8a61f99d6b323cae5a95b5ae24b22bc8391a45174e78b5d0718609f5d593b4"
+    sha256 cellar: :any_skip_relocation, monterey:       "f87bd7173d4c5cbbaee5c59b0ba1a305646c7b7f575967ff47eb050ed986bcfd"
+    sha256 cellar: :any_skip_relocation, big_sur:        "aad76bb070916c7c233d9442cd2ca86e0a1149058cde1bd7ca9834baeac24332"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "481e5a7841122a4b4a4b221b0f3cbe56f8215f3267d6950c7ca868a050719553"
   end
 
   depends_on "python@3.11"
