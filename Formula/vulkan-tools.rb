@@ -4,6 +4,7 @@ class VulkanTools < Formula
   url "https://github.com/KhronosGroup/Vulkan-Tools/archive/refs/tags/v1.3.248.tar.gz"
   sha256 "9f06f13e588034e323df9222532b76518ace8bf5e4eb4ca9fbc6960addf03a93"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/KhronosGroup/Vulkan-Tools.git", branch: "main"
 
   bottle do
@@ -55,12 +56,12 @@ class VulkanTools < Formula
       "-DBUILD_CUBE=ON",
       "-DBUILD_VULKANINFO=ON",
       "-DINSTALL_ICD=OFF", # we will manually place it in a nonconflicting location
-      "-DGLSLANG_INSTALL_DIR=#{Formula["glslang"].prefix}",
-      "-DVULKAN_HEADERS_INSTALL_DIR=#{Formula["vulkan-headers"].prefix}",
-      "-DVULKAN_LOADER_INSTALL_DIR=#{Formula["vulkan-loader"].prefix}",
+      "-DGLSLANG_INSTALL_DIR=#{Formula["glslang"].opt_prefix}",
+      "-DVULKAN_HEADERS_INSTALL_DIR=#{Formula["vulkan-headers"].opt_prefix}",
+      "-DVULKAN_LOADER_INSTALL_DIR=#{Formula["vulkan-loader"].opt_prefix}",
     ]
     args += if OS.mac?
-      ["-DMOLTENVK_REPO_ROOT=#{Formula["molten-vk"].prefix}"]
+      ["-DMOLTENVK_REPO_ROOT=#{Formula["molten-vk"].opt_prefix}"]
     else
       [
         "-DBUILD_WSI_DIRECTFB_SUPPORT=OFF",
