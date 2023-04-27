@@ -24,7 +24,6 @@ module.exports = async ({github, context, core}, formulae_detect) => {
 
     if (label_names.includes('CI-linux-self-hosted')) {
       core.setOutput('linux-runner', 'linux-self-hosted-1')
-      core.setOutput('cleanup-linux-runner', true)
     } else {
       if (label_names.includes('CI-linux-large-runner')) {
         core.setOutput('linux-runner', 'homebrew-large-bottle-build')
@@ -32,7 +31,6 @@ module.exports = async ({github, context, core}, formulae_detect) => {
         core.setOutput('linux-runner', 'ubuntu-22.04')
       }
       core.setOutput('logs-dir', '/github/home/.cache/Homebrew/Logs')
-      core.setOutput('cleanup-linux-runner', false)
     }
 
     if (label_names.includes('CI-no-fail-fast')) {

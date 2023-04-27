@@ -95,7 +95,6 @@ jobs:
       timeout-minutes: ${{ steps.check-labels.outputs.timeout-minutes }}
       test-bot-formulae-args: ${{ steps.check-labels.outputs.test-bot-formulae-args }}
       test-bot-dependents-args: ${{ steps.check-labels.outputs.test-bot-dependents-args }}
-      cleanup-linux-runner: ${{ steps.check-labels.outputs.cleanup-linux-runner }}
     steps:
       - uses: actions/checkout@v3
 
@@ -138,7 +137,6 @@ jobs:
       runners_present: ${{steps.determine-runners.outputs.runners_present}}
     env:
       HOMEBREW_LINUX_RUNNER: ${{needs.setup_tests.outputs.linux-runner}}
-      HOMEBREW_LINUX_CLEANUP: ${{needs.setup_tests.outputs.cleanup-linux-runner}}
       HOMEBREW_MACOS_TIMEOUT: ${{needs.setup_tests.outputs.timeout-minutes}}
       TESTING_FORMULAE: ${{needs.formulae_detect.outputs.testing_formulae}}
       DELETED_FORMULAE: ${{needs.formulae_detect.outputs.deleted_formulae}}
@@ -346,7 +344,6 @@ jobs:
       timeout-minutes: ${{ steps.check-labels.outputs.timeout-minutes }}
       test-bot-formulae-args: ${{ steps.check-labels.outputs.test-bot-formulae-args }}
       test-bot-dependents-args: ${{ steps.check-labels.outputs.test-bot-dependents-args }}
-      cleanup-linux-runner: ${{ steps.check-labels.outputs.cleanup-linux-runner }}
     steps:
       - uses: actions/checkout@v3
 
@@ -390,7 +387,6 @@ jobs:
       runners_present: ${{steps.determine-dependent-runners.outputs.runners_present}}
     env:
       HOMEBREW_LINUX_RUNNER: ${{needs.setup_dep_tests.outputs.linux-runner}}
-      HOMEBREW_LINUX_CLEANUP: ${{needs.setup_dep_tests.outputs.cleanup-linux-runner}}
       HOMEBREW_MACOS_TIMEOUT: ${{needs.setup_dep_tests.outputs.timeout-minutes}}
       TESTING_FORMULAE: ${{needs.formulae_detect.outputs.testing_formulae}}
     steps:
