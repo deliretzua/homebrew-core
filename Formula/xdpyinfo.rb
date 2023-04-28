@@ -1,8 +1,8 @@
 class Xdpyinfo < Formula
   desc "X.Org: Utility for displaying information about an X server"
   homepage "https://www.x.org/"
-  url "https://www.x.org/archive/individual/app/xdpyinfo-1.3.3.tar.xz"
-  sha256 "356d5fd62f3e98ee36d6becf1b32d4ab6112d618339fb4b592ccffbd9e0fc206"
+  url "https://www.x.org/archive/individual/app/xdpyinfo-1.3.4.tar.xz"
+  sha256 "a8ada581dbd7266440d7c3794fa89edf6b99b8857fc2e8c31042684f3af4822b"
   license "MIT"
 
   bottle do
