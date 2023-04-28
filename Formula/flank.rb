@@ -11,13 +11,13 @@ class Flank < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5c865b27467c18d0fb7e55291bd38ada7154c8e6a6632377018763649c1334bf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5c865b27467c18d0fb7e55291bd38ada7154c8e6a6632377018763649c1334bf"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5c865b27467c18d0fb7e55291bd38ada7154c8e6a6632377018763649c1334bf"
-    sha256 cellar: :any_skip_relocation, ventura:        "5c865b27467c18d0fb7e55291bd38ada7154c8e6a6632377018763649c1334bf"
-    sha256 cellar: :any_skip_relocation, monterey:       "5c865b27467c18d0fb7e55291bd38ada7154c8e6a6632377018763649c1334bf"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5c865b27467c18d0fb7e55291bd38ada7154c8e6a6632377018763649c1334bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2cd34cf514a5610bb4c159e568815bf2ffafd07aa98d5ece1ae988eef9c3b23b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3b7dc37f1865f70e6eb12ae132fdb8e142210217798ff43eb46dad35600bbeeb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3b7dc37f1865f70e6eb12ae132fdb8e142210217798ff43eb46dad35600bbeeb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3b7dc37f1865f70e6eb12ae132fdb8e142210217798ff43eb46dad35600bbeeb"
+    sha256 cellar: :any_skip_relocation, ventura:        "3b7dc37f1865f70e6eb12ae132fdb8e142210217798ff43eb46dad35600bbeeb"
+    sha256 cellar: :any_skip_relocation, monterey:       "3b7dc37f1865f70e6eb12ae132fdb8e142210217798ff43eb46dad35600bbeeb"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3b7dc37f1865f70e6eb12ae132fdb8e142210217798ff43eb46dad35600bbeeb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aaa8f8cfa815a13653d987f7fb22f70ced225b1c147e0fa6654e063b814beab6"
   end
 
   depends_on "openjdk"
