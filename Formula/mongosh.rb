@@ -3,8 +3,8 @@ require "language/node"
 class Mongosh < Formula
   desc "MongoDB Shell to connect, configure, query, and work with your MongoDB database"
   homepage "https://github.com/mongodb-js/mongosh#readme"
-  url "https://registry.npmjs.org/@mongosh/cli-repl/-/cli-repl-1.8.1.tgz"
-  sha256 "8592568c0a6adf6702d84ad449a97ff3c3de921187150f96607125190440101e"
+  url "https://registry.npmjs.org/@mongosh/cli-repl/-/cli-repl-1.8.2.tgz"
+  sha256 "f5164883413373722ff208df554e650984f3cfca4c8f6abf250e2b04013b7cfd"
   license "Apache-2.0"
 
   bottle do
