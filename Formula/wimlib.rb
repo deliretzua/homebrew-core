@@ -1,8 +1,8 @@
 class Wimlib < Formula
   desc "Library to create, extract, and modify Windows Imaging files"
   homepage "https://wimlib.net/"
-  url "https://wimlib.net/downloads/wimlib-1.14.0.tar.gz"
-  sha256 "7a5d84ff5a4626ac03de18a7222293f579cd7061b0159d024a9b315aef23ed4c"
+  url "https://wimlib.net/downloads/wimlib-1.14.1.tar.gz"
+  sha256 "494a15375616f2e0e9ab050245c3dc3286def21ac2002dc064bcc2b187636f42"
   license "GPL-3.0-or-later"
 
   livecheck do
