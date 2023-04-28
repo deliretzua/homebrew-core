@@ -5,6 +5,11 @@ class Epinio < Formula
   sha256 "61721f2c6599358353eae6325c1ea4ba769cdaee29f1e5602bb0fc279dc65cb0"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a03f3cddb27ff713c3275ff8f51f9a28eb3ee6cef10d05a3d87d989141f35de6"
