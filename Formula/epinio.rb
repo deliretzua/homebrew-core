@@ -5,6 +5,8 @@ class Epinio < Formula
   sha256 "61721f2c6599358353eae6325c1ea4ba769cdaee29f1e5602bb0fc279dc65cb0"
   license "Apache-2.0"
 
+  # Upstream creates a stable version tag ahead of release but a version isn't
+  # considered released until they create the GitHub release.
   livecheck do
     url :stable
     strategy :github_latest
