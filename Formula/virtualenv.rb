@@ -3,8 +3,8 @@ class Virtualenv < Formula
 
   desc "Tool for creating isolated virtual python environments"
   homepage "https://virtualenv.pypa.io/"
-  url "https://files.pythonhosted.org/packages/12/c5/9e9c1dca8838e1eca43b23e5d8a34a6ad5065f15d702ee703c91b7e64b79/virtualenv-20.22.0.tar.gz"
-  sha256 "278753c47aaef1a0f14e6db8a4c5e1e040e90aea654d0fc1dc7e0d8a42616cc3"
+  url "https://files.pythonhosted.org/packages/d6/37/3ff25b2ad0d51cfd752dc68ee0ad4387f058a5ceba4d89b47ac478de3f59/virtualenv-20.23.0.tar.gz"
+  sha256 "a85caa554ced0c0afbd0d638e7e2d7b5f92d23478d05d17a76daeac8f279f924"
   license "MIT"
   head "https://github.com/pypa/virtualenv.git", branch: "main"
 
@@ -31,8 +31,8 @@ class Virtualenv < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/15/04/3f882b46b454ab374ea75425c6f931e499150ec1385a73e55b3f45af615a/platformdirs-3.2.0.tar.gz"
-    sha256 "d5b638ca397f25f979350ff789db335903d7ea010ab28903f57b27e1b16c2b08"
+    url "https://files.pythonhosted.org/packages/91/17/3836ffe140abb245726d0e21c5b9b984e2569e7027c20d12e969ec69bd8a/platformdirs-3.5.0.tar.gz"
+    sha256 "7954a68d0ba23558d753f73437c55f89027cf8f5108c19844d4b82e5af396335"
   end
 
   def install
