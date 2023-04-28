@@ -1,8 +1,8 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https://deno.land/"
-  url "https://github.com/denoland/deno/releases/download/v1.32.5/deno_src.tar.gz"
-  sha256 "a386b9cd660a0d1339352868201eb47f1fac1632514c66cfb3d55051911c5fbb"
+  url "https://github.com/denoland/deno/releases/download/v1.33.1/deno_src.tar.gz"
+  sha256 "e48cdaa3438f810479f82f46f9fa27f16b4364e33c4aebd48f8b58ee95187227"
   license "MIT"
   head "https://github.com/denoland/deno.git", branch: "main"
 
@@ -38,18 +38,20 @@ class Deno < Formula
   # We use the crate as GitHub tarball lacks submodules and this allows us to avoid git overhead.
   # TODO: Remove this and `v8` resource when https://github.com/denoland/rusty_v8/issues/1065 is resolved
   resource "rusty-v8" do
-    url "https://static.crates.io/crates/v8/v8-0.68.0.crate"
-    sha256 "81c69410b7435f1b74e82e243ba906d71e8b9bb350828291418b9311dbd77222"
+    url "https://static.crates.io/crates/v8/v8-0.71.0.crate"
+    sha256 "51a173a437bebab13d587a4aaf0a1e7a49433226538c9a78ca3b4ce3b8c6aeb6"
   end
 
+  # Use the latest tagged revision in https://github.com/denoland/v8/tags.
   resource "v8" do
-    url "https://github.com/denoland/v8/archive/bc8470cdd2383c1dca3fb3f648752fdea8a80091.tar.gz"
-    sha256 "db7a2a95ef718be7d7ea49ee15d19531564e33aa560f09e26c16a004927a5ca1"
+    url "https://github.com/denoland/v8/archive/09b1430e7090eb1d3f1397276221c4e92403de57.tar.gz"
+    sha256 "991cc00f37d037d69ca38716f04522f0bb261e67bbc7adf9b224266a93b62df2"
   end
 
   # To find the version of gn used:
   # 1. Find v8 version: https://github.com/denoland/deno/blob/v#{version}/Cargo.toml#L44
-  # 2. Find ninja_gn_binaries tag: https://github.com/denoland/rusty_v8/tree/v#{v8_version}/tools/ninja_gn_binaries.py#L21
+  #    1.1. Update `rusty-v8` resource to use this version.
+  # 2. Find ninja_gn_binaries tag: https://github.com/denoland/rusty_v8/blob/v#{v8_version}/tools/ninja_gn_binaries.py#L21
   # 3. Find short gn commit hash from commit message: https://github.com/denoland/ninja_gn_binaries/tree/#{ninja_gn_binaries_tag}
   # 4. Find full gn commit hash: https://gn.googlesource.com/gn.git/+/#{gn_commit}
   resource "gn" do
