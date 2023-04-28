@@ -1,8 +1,8 @@
 class Xinput < Formula
   desc "Utility to configure and test X input devices"
   homepage "https://gitlab.freedesktop.org/xorg/app/xinput"
-  url "https://www.x.org/pub/individual/app/xinput-1.6.3.tar.bz2"
-  sha256 "35a281dd3b9b22ea85e39869bb7670ba78955d5fec17c6ef7165d61e5aeb66ed"
+  url "https://www.x.org/pub/individual/app/xinput-1.6.4.tar.xz"
+  sha256 "ad04d00d656884d133110eeddc34e9c69e626ebebbbab04dc95791c2907057c8"
   license "MIT"
 
   bottle do
