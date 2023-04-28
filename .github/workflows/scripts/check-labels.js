@@ -22,16 +22,13 @@ module.exports = async ({github, context, core}, formulae_detect) => {
       return
     }
 
+    var linux_runner = 'ubuntu-22.04'
     if (label_names.includes('CI-linux-self-hosted')) {
-      core.setOutput('linux-runner', 'linux-self-hosted-1')
-    } else {
-      if (label_names.includes('CI-linux-large-runner')) {
-        core.setOutput('linux-runner', 'homebrew-large-bottle-build')
-      } else {
-        core.setOutput('linux-runner', 'ubuntu-22.04')
-      }
-      core.setOutput('logs-dir', '/github/home/.cache/Homebrew/Logs')
+      linux_runner = 'linux-self-hosted-1'
+    } else if (label_names.includes('CI-linux-large-runner')) {
+      linux_runner = 'homebrew-large-bottle-build'
     }
+    core.setOutput('linux-runner', linux_runner)
 
     if (label_names.includes('CI-no-fail-fast')) {
       console.log('CI-no-fail-fast label found. Continuing tests despite failing matrix builds.')
