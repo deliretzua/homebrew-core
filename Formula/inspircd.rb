@@ -1,8 +1,8 @@
 class Inspircd < Formula
   desc "Modular C++ Internet Relay Chat daemon"
   homepage "https://www.inspircd.org/"
-  url "https://github.com/inspircd/inspircd/archive/v3.15.0.tar.gz"
-  sha256 "c3d201dd3577917bc94257ed8aa373c24bc03c456e55886497eb87e8520f2d4d"
+  url "https://github.com/inspircd/inspircd/archive/refs/tags/v3.16.0.tar.gz"
+  sha256 "8d9e657e70f1252d9625d3d31623a56abbb3121cebf6be2f4f5791162919c657"
   license "GPL-2.0-only"
 
   livecheck do
@@ -32,6 +32,7 @@ class Inspircd < Formula
   skip_clean "logs"
 
   def install
+    ENV.cxx11
     system "./configure", "--enable-extras",
                           "argon2 ldap mysql pgsql regex_posix regex_stdlib ssl_gnutls sslrehashsignal"
     system "./configure", "--disable-auto-extras",
