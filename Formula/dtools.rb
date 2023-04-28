@@ -6,6 +6,16 @@ class Dtools < Formula
   license "BSL-1.0"
   head "https://github.com/dlang/tools.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "da384aaa300b1648c3a70e6463d2c641b00a13be22faefeaf4f4dec6130cf151"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "99c6a4a0b5bad3798f2053e3dca62252794653495d94cf52c3486e8aef573752"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5df4564d0f6e520ef2b26b7fa45f731665d76160ce14fd8994348d2467a00e16"
+    sha256 cellar: :any_skip_relocation, ventura:        "0c02f89a54244c2bdfdde3daf118884a42aaa34c3baf67653defcdfab6405849"
+    sha256 cellar: :any_skip_relocation, monterey:       "4ee28720d94f43b42b3587f64544149324b92d3045271a53536a0cecb3a5c9fe"
+    sha256 cellar: :any_skip_relocation, big_sur:        "be2da167f0f3dee53712e3ef5f8674eba2ebc17ef0de5f63afd4c69449fe7cf2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2d05ff8532ac2cc4eb3d6b96ff4b175ec8a7e2b5f4f3f255b46de05037791cb"
+  end
+
   depends_on "dub" => :build
   depends_on "ldc" => [:build, :test]
 
