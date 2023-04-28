@@ -131,10 +131,10 @@ jobs:
           step_name: '`brew bottle` output on ${{ matrix.runner }}'
 
       - name: Upload logs
-        if: failure()
+        if: always()
         uses: actions/upload-artifact@main
         with:
-          name: logs
+          name: logs-${{ matrix.runner }}
           path: ${{ env.BOTTLES_DIR }}/logs
 
       - name: Delete logs and home
