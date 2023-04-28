@@ -202,77 +202,14 @@ jobs:
         id: brew-test-bot-formulae
         working-directory: ${{ env.BOTTLES_DIR }}
 
-      - name: Failures summary for brew test-bot --only-formulae
+      - name: Post-build steps
         if: always()
-        uses: Homebrew/actions/failures-summary-and-bottle-result@master
+        uses: Homebrew/actions/post-build@master
         with:
-          workdir: ${{ env.BOTTLES_DIR }}
-          result_path: steps_output.txt
-          step_name: "Build summary on ${{ matrix.runner }}"
-
-      - name: Output brew linkage result
-        if: always()
-        uses: Homebrew/actions/failures-summary-and-bottle-result@master
-        with:
-          workdir: ${{ env.BOTTLES_DIR }}
-          result_path: linkage_output.txt
-          step_name: "`brew linkage` output on ${{ matrix.runner }}"
-          collapse: "true"
-
-      - name: Output brew bottle result
-        if: always()
-        uses: Homebrew/actions/failures-summary-and-bottle-result@master
-        with:
-          workdir: ${{ env.BOTTLES_DIR }}
-          result_path: bottle_output.txt
-          step_name: "`brew bottle` output on ${{ matrix.runner }}"
-          collapse: "true"
-
-      - name: Upload logs
-        if: always()
-        uses: actions/upload-artifact@main
-        with:
-          name: logs-${{ matrix.runner }}
-          path: ${{ format('{0}/logs', env.BOTTLES_DIR) }}
-
-      - name: Delete logs and home
-        if: always()
-        run: |
-          rm -rvf "${BOTTLES_DIR:?}/logs"
-          rm -rvf "${BOTTLES_DIR:?}/home"
-
-      - name: Count bottles
-        id: bottles
-        if: always()
-        uses: Homebrew/actions/count-bottles@master
-        with:
-          working-directory: ${{ env.BOTTLES_DIR }}
-
-      - name: Upload failed bottles
-        if: always() && steps.bottles.outputs.failures > 0
-        uses: actions/upload-artifact@main
-        with:
-          name: bottles-${{ matrix.runner }}
-          path: ${{ env.BOTTLES_DIR }}/failed
-
-      # Must be run before the `Upload bottles` step so that failed
-      # bottles are not included in the `bottles` artifact.
-      - name: Delete failed bottles
-        if: always()
-        run: rm -rvf "${BOTTLES_DIR:?}/failed"
-
-      - name: Upload bottles
-        if: always() && (steps.bottles.outputs.count > 0 || steps.bottles.outputs.skipped > 0)
-        uses: actions/upload-artifact@main
-        with:
-          name: bottles
-          path: ${{ env.BOTTLES_DIR }}
-
-      - name: Post cleanup
-        if: always() && matrix.cleanup
-        run: |
-          brew test-bot --only-cleanup-after
-          rm -rvf "${BOTTLES_DIR:?}"
+          runner: ${{ matrix.runner }}
+          cleanup: ${{ matrix.cleanup }}
+          bottles-directory: ${{ env.BOTTLES_DIR }}
+          logs-directory: ${{ format('{0}/logs', env.BOTTLES_DIR) }}
 
   conclusion:
     needs: [tests, setup_tests, setup_runners]
@@ -450,30 +387,11 @@ jobs:
       - run: brew test-bot ${{ needs.setup_dep_tests.outputs.test-bot-dependents-args }}
         working-directory: ${{ env.BOTTLES_DIR }}
 
-      - name: Failures summary for brew test-bot ${{ needs.setup_dep_tests.outputs.test-bot-dependents-args }}
+      - name: Steps summary and cleanup
         if: always()
-        uses: Homebrew/actions/failures-summary-and-bottle-result@master
+        uses: Homebrew/actions/post-build@master
         with:
-          workdir: ${{ env.BOTTLES_DIR }}
-          result_path: steps_output.txt
-          step_name: "Dependent summary on ${{ matrix.runner }}"
-          collapse: "true"
-
-      - name: Upload logs
-        if: always()
-        uses: actions/upload-artifact@main
-        with:
-          name: logs-deps-${{ matrix.runner }}
-          path: ${{ format('{0}/logs', env.BOTTLES_DIR) }}
-
-      - name: Delete logs and home
-        if: always()
-        run: |
-          rm -rvf "${BOTTLES_DIR:?}/logs"
-          rm -rvf "${BOTTLES_DIR:?}/home"
-
-      - name: Post cleanup
-        if: always() && matrix.cleanup
-        run: |
-          brew test-bot --only-cleanup-after
-          rm -rvf "${BOTTLES_DIR:?}"
+          runner: ${{ matrix.runner }}
+          cleanup: ${{ matrix.cleanup }}
+          bottles-directory: ${{ env.BOTTLES_DIR }}
+          logs-directory: ${{ format('{0}/logs', env.BOTTLES_DIR) }}
