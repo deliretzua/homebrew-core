@@ -114,8 +114,7 @@ jobs:
           rm -rvf "${BOTTLES_DIR}"
           mkdir "${BOTTLES_DIR}"
 
-      - name: Run brew test-bot --only-formulae --keep-old --only-json-tab --skip-online-checks --skip-dependents ${{inputs.formula}}
-        working-directory: ${{ env.BOTTLES_DIR }}
+      - working-directory: ${{ env.BOTTLES_DIR }}
         run: |
           brew test-bot \
             --only-formulae \
@@ -125,75 +124,13 @@ jobs:
             --skip-dependents \
             '${{inputs.formula}}'
 
-      - name: Failures summary for brew test-bot --only-formulae
+      - name: Post-build steps
         if: always()
-        uses: Homebrew/actions/failures-summary-and-bottle-result@master
+        uses: Homebrew/actions/post-build@master
         with:
-          workdir: ${{ env.BOTTLES_DIR }}
-          result_path: steps_output.txt
-          step_name: "Build summary on ${{ matrix.runner }}"
-
-      - name: Output brew linkage result
-        if: always()
-        uses: Homebrew/actions/failures-summary-and-bottle-result@master
-        with:
-          workdir: ${{ env.BOTTLES_DIR }}
-          result_path: linkage_output.txt
-          step_name: "`brew linkage` output on ${{ matrix.runner }}"
-
-      - name: Output brew bottle result
-        if: always()
-        uses: Homebrew/actions/failures-summary-and-bottle-result@master
-        with:
-          workdir: ${{ env.BOTTLES_DIR }}
-          result_path: bottle_output.txt
-          step_name: "`brew bottle` output on ${{ matrix.runner }}"
-
-      - name: Upload logs
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: logs-${{ matrix.runner }}
-          path: ${{ env.BOTTLES_DIR }}/logs
-
-      - name: Delete logs and home
-        if: always()
-        run: |
-          rm -rvf "${BOTTLES_DIR}/logs"
-          rm -rvf "${BOTTLES_DIR:?}/home"
-
-      - name: Count bottles
-        id: bottles
-        if: always()
-        uses: Homebrew/actions/count-bottles@master
-        with:
-          working-directory: ${{ env.BOTTLES_DIR }}
-
-      - name: Upload failed bottles
-        if: always() && steps.bottles.outputs.failures > 0
-        uses: actions/upload-artifact@v3
-        with:
-          name: bottles-${{ matrix.runner }}
-          path: ${{ env.BOTTLES_DIR }}/failed
-
-      # Must be run before the `Upload bottles` step so that failed
-      # bottles are not included in the `bottles` artifact.
-      - name: Delete failed bottles
-        if: always()
-        run: rm -rvf "${BOTTLES_DIR}/failed"
-
-      - name: Upload bottles
-        if: always() && steps.bottles.outputs.count > 0
-        uses: actions/upload-artifact@v3
-        with:
-          name: bottles
-          path: ${{ env.BOTTLES_DIR }}
-
-      - name: Post cleanup
-        if: always()
-        run: |
-          brew test-bot --only-cleanup-after
-          rm -rvf "${BOTTLES_DIR}"
+          runner: ${{ matrix.runner }}
+          bottles-directory: ${{ env.BOTTLES_DIR }}
+          logs-directory: ${{ env.BOTTLES_DIR }}/logs
 
       - name: Post comment on failure
         if: ${{!success() && inputs.issue > 0}}
