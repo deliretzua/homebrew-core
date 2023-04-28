@@ -17,6 +17,13 @@ class Dmd < Formula
       url "https://github.com/dlang/tools/archive/refs/tags/v2.103.0.tar.gz"
       sha256 "591bf56d7c8aa45205a3533438fef5bd48007756446f5cf032fcabcc077afdd1"
     end
+
+    # Fix build on Ventura when newer Xcode is used
+    # Patch merged upstream (https://github.com/dlang/dmd/pull/15139), remove on next version bump
+    patch do
+      url "https://github.com/dlang/dmd/commit/deaf1b81986c57d31a1b1163301ca4d157505220.patch?full_index=1"
+      sha256 "e16eb257c861a612b7fa3a8486e292b7f7faa0bd38a71e0c45d4afada790b7c3"
+    end
   end
 
   bottle do
