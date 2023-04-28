@@ -102,6 +102,12 @@ class Dmd < Formula
     install_new_dmd_conf
   end
 
+  def caveats
+    <<~EOS
+      Ancillary tools (e.g. ddemangle, dustmite, rdmd) are now in the `dtools` formula.
+    EOS
+  end
+
   test do
     system bin/"dmd", "-fPIC", pkgshare/"samples/hello.d"
     system "./hello"
