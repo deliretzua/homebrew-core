@@ -20,6 +20,12 @@ class Libnatpmp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "71a7aca17fef233ad343105dc86f13bf2d1ad39514cc7ea5c9890f5c7b52baa1"
   end
 
+  # Fix missing header. Remove when no longer applicable.
+  patch do
+    url "https://github.com/miniupnp/libnatpmp/commit/5f4a7c65837a56e62c133db33c28cd1ea71db662.patch?full_index=1"
+    sha256 "4643048d7e24f8aed4e11e572f3e22f79eae97bb289ae1bbf103b84e8e32f61a"
+  end
+
   def install
     # Reported upstream:
     # https://miniupnp.tuxfamily.org/forum/viewtopic.php?t=978
