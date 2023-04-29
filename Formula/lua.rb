@@ -43,10 +43,6 @@ class Lua < Formula
     end
   end
 
-  # Fix crash issue in luac when invoked with multiple files.
-  # http://lua-users.org/lists/lua-l/2022-02/msg00113.html
-  patch :DATA
-
   def install
     if OS.linux?
       # Fix: /usr/bin/ld: lapi.o: relocation R_X86_64_32 against `luaO_nilobject_' can not be used
@@ -125,17 +121,3 @@ class Lua < Formula
     assert_match "Homebrew is awesome!", shell_output("#{bin}/lua -e \"print ('Homebrew is awesome!')\"")
   end
 end
-
-__END__
-diff --git a/src/luac.c b/src/luac.c
-index f6db9cf..ba0a81e 100644
---- a/src/luac.c
-+++ b/src/luac.c
-@@ -156,6 +156,7 @@ static const Proto* combine(lua_State* L, int n)
-    if (f->p[i]->sizeupvalues>0) f->p[i]->upvalues[0].instack=0;
-   }
-   luaM_freearray(L,f->lineinfo,f->sizelineinfo);
-+  f->lineinfo = NULL;
-   f->sizelineinfo=0;
-   return f;
-  }
