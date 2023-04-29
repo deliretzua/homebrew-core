@@ -160,7 +160,7 @@ jobs:
       GH_REPO: ${{github.repository}}
       GH_NO_UPDATE_NOTIFIER: 1
       GH_PROMPT_DISABLED: 1
-      BOTTLE_BRANCH: ${{github.actor}}/dispatch/${{inputs.formula}}-${{github.run_id}}
+      BOTTLE_BRANCH: ${{github.actor}}/dispatch/${{inputs.formula}}/${{github.run_id}}
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
@@ -229,7 +229,7 @@ jobs:
           gh pr create \
             --base "$GITHUB_REF" \
             --body "Created by [\`brew dispatch-build-bottle\`]($RUN_URL)" \
-            --fill \
+            --title "$(git log -1 --format='%s' "$BOTTLE_BRANCH")" \
             --head "$BOTTLE_BRANCH" \
             --reviewer '${{github.actor}}'
 
