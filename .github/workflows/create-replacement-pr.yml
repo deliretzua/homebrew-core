@@ -93,7 +93,7 @@ jobs:
         if: fromJson(steps.reviewers.outputs.approved)
         uses: Homebrew/actions/dismiss-approvals@master
         with:
-          token: ${{ secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           pr: ${{ env.PR }}
           message: Replacement PR dispatched
 
