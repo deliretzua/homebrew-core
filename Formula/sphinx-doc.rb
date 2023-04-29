@@ -3,8 +3,8 @@ class SphinxDoc < Formula
 
   desc "Tool to create intelligent and beautiful documentation"
   homepage "https://www.sphinx-doc.org/"
-  url "https://files.pythonhosted.org/packages/0f/6d/392defcc95ca48daf62aecb89550143e97a4651275e62a3d7755efe35a3a/Sphinx-6.2.1.tar.gz"
-  sha256 "6d56a34697bb749ffa0152feafc4b19836c755d90a7c59b72bc7dfd371b9cc6b"
+  url "https://files.pythonhosted.org/packages/0a/41/0c3785bce311f85a6e47b151563fec269676f4abdf1171d310d79e8098bb/Sphinx-7.0.0.tar.gz"
+  sha256 "283c44aa28922bb4223777b44ac0d59af50a279ac7690dfe945bb2b9575dc41b"
   license "BSD-2-Clause"
 
   bottle do
@@ -31,7 +31,7 @@ class SphinxDoc < Formula
     sha256 "a27a4a084d5e690e16e01e03ad2b2e552c61a65469419b907243193de1a84ae2"
   end
 
-  resource "Babel" do
+  resource "babel" do
     url "https://files.pythonhosted.org/packages/ba/42/54426ba5d7aeebde9f4aaba9884596eb2fe02b413ad77d62ef0b0422e205/Babel-2.12.1.tar.gz"
     sha256 "cc2d99999cd01d44420ae725a21c9e3711b3aadc7976d6147f622d8581963455"
   end
@@ -56,12 +56,12 @@ class SphinxDoc < Formula
     sha256 "69150444affb9cb0d5cc5a92b3676f0b2fb7cd9ae39e947a5e11a36b4497cd4a"
   end
 
-  resource "Jinja2" do
+  resource "jinja2" do
     url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
     sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
   end
 
-  resource "MarkupSafe" do
+  resource "markupsafe" do
     url "https://files.pythonhosted.org/packages/95/7e/68018b70268fb4a2a605e2be44ab7b4dd7ce7808adae6c5ef32e34f4b55a/MarkupSafe-2.1.2.tar.gz"
     sha256 "abcabc8c2b26036d62d4c746381a6f7cf60aafcc653198ad678306986b09450d"
   end
@@ -77,8 +77,8 @@ class SphinxDoc < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/9d/ee/391076f5937f0a8cdf5e53b701ffc91753e87b07d66bae4a09aa671897bf/requests-2.28.2.tar.gz"
-    sha256 "98b1b2782e3c6c4904938b84c0eb932721069dfdb9134313beff7c83c2df24bf"
+    url "https://files.pythonhosted.org/packages/4c/d2/70fc708727b62d55bc24e43cc85f073039023212d482553d853c44e57bdb/requests-2.29.0.tar.gz"
+    sha256 "f2e34a75f4749019bb0e3effb66683630e4ffeaf75819fb51bebef1bf5aef059"
   end
 
   resource "snowballstemmer" do
