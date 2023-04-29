@@ -1,8 +1,8 @@
 class GdriveDownloader < Formula
   desc "Download a gdrive folder or file easily, shell ftw"
   homepage "https://github.com/Akianonymus/gdrive-downloader"
-  url "https://github.com/Akianonymus/gdrive-downloader/archive/refs/tags/v1.0.tar.gz"
-  sha256 "26c726bce41bff3b58c1f819a5c1f2e54d66b4ee3d592a5d52088de605c48d95"
+  url "https://github.com/Akianonymus/gdrive-downloader/archive/refs/tags/v1.1.tar.gz"
+  sha256 "aa1bf1a0a2cd6cc714292b2e83cf38fa37b99aac8f9d80ee92d619f156ddf4ba"
   license "Unlicense"
   head "https://github.com/Akianonymus/gdrive-downloader.git", branch: "master"
 
