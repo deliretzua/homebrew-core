@@ -3,10 +3,9 @@ class SshAudit < Formula
 
   desc "SSH server & client auditing"
   homepage "https://github.com/jtesta/ssh-audit"
-  url "https://files.pythonhosted.org/packages/ae/72/44b29342575dee57470a11b92b12430b3afb63a963aa356c356b0b747522/ssh-audit-2.5.0.tar.gz"
-  sha256 "3397f751bc7b9997e4236aece2d41973c766f1e44b15bc6d51a1420a14bf05b6"
+  url "https://files.pythonhosted.org/packages/09/71/aa82438fa0660fc0bc63fd84bcc4be8c3f7456752ce31d4fd1221bd63b4c/ssh-audit-2.9.0.tar.gz"
+  sha256 "7e68baaaa1fa42b68bcf5eefc81eb02805631e421bd84b6ae639d0cb86eb893d"
   license "MIT"
-  revision 1
   head "https://github.com/jtesta/ssh-audit.git", branch: "master"
 
   bottle do
