@@ -9,15 +9,13 @@ class SshAudit < Formula
   head "https://github.com/jtesta/ssh-audit.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "88da564fe01d5d804574d2942814cb310731f827cc9183ff3c9266543c83b33d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "88da564fe01d5d804574d2942814cb310731f827cc9183ff3c9266543c83b33d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "88da564fe01d5d804574d2942814cb310731f827cc9183ff3c9266543c83b33d"
-    sha256 cellar: :any_skip_relocation, ventura:        "9294b5cdcc5f45014d5d4f8289c7976037adfa7a6f4f82d713026df126c1dabf"
-    sha256 cellar: :any_skip_relocation, monterey:       "9294b5cdcc5f45014d5d4f8289c7976037adfa7a6f4f82d713026df126c1dabf"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9294b5cdcc5f45014d5d4f8289c7976037adfa7a6f4f82d713026df126c1dabf"
-    sha256 cellar: :any_skip_relocation, catalina:       "9294b5cdcc5f45014d5d4f8289c7976037adfa7a6f4f82d713026df126c1dabf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "49de8dbf2d2f30886de11f3398c04ea45dccd76285b7c8b4f9afafd778ed1490"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "52cdbe85ff2ae19e72029ac6751cd5553f96ea158f1fee1f9f1f76659aef3e91"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "52cdbe85ff2ae19e72029ac6751cd5553f96ea158f1fee1f9f1f76659aef3e91"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "52cdbe85ff2ae19e72029ac6751cd5553f96ea158f1fee1f9f1f76659aef3e91"
+    sha256 cellar: :any_skip_relocation, ventura:        "0a10628210e4b2003ae24c7ecac43bbfbedcbc9f99ec51d5ce23fa54a140da27"
+    sha256 cellar: :any_skip_relocation, monterey:       "0a10628210e4b2003ae24c7ecac43bbfbedcbc9f99ec51d5ce23fa54a140da27"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0a10628210e4b2003ae24c7ecac43bbfbedcbc9f99ec51d5ce23fa54a140da27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "62e991c6ee5e1bf92d4e687acaf9d27b941386bc4cb9466db881fc44b45eca4e"
   end
 
   depends_on "python@3.11"
