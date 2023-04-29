@@ -21,7 +21,7 @@ class Onefetch < Formula
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
-  depends_on "libgit2@1.5"
+  depends_on "libgit2"
 
   def install
     system "cargo", "install", *std_cargo_args
@@ -46,7 +46,7 @@ class Onefetch < Formula
     linkage_with_libgit2 = (bin/"onefetch").dynamically_linked_libraries.any? do |dll|
       next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
 
-      File.realpath(dll) == (Formula["libgit2@1.5"].opt_lib/shared_library("libgit2")).realpath.to_s
+      File.realpath(dll) == (Formula["libgit2"].opt_lib/shared_library("libgit2")).realpath.to_s
     end
 
     assert linkage_with_libgit2, "No linkage with libgit2! Cargo is likely using a vendored version."
