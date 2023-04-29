@@ -48,7 +48,7 @@ class Jackett < Formula
   service do
     run opt_bin/"jackett"
     keep_alive true
-    working_dir libexec
+    working_dir opt_libexec
     log_path var/"log/jackett.log"
     error_log_path var/"log/jackett.log"
   end
