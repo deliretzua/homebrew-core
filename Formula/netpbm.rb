@@ -76,6 +76,11 @@ class Netpbm < Formula
       lib.install buildpath.glob("staticlink/*.a"), buildpath.glob("sharedlink/#{shared_library("*")}")
       (lib/"pkgconfig").install "pkgconfig_template" => "netpbm.pc"
     end
+
+    # We don't run `make install`, so an unversioned library symlink is never generated.
+    # FIXME: Check whether we can call `make install` instead of creating this manually.
+    libnetpbm = lib.glob(shared_library("libnetpbm", "*")).reject(&:symlink?).first.basename
+    lib.install_symlink libnetpbm => shared_library("libnetpbm")
   end
 
   test do
