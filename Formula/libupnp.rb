@@ -1,8 +1,8 @@
 class Libupnp < Formula
   desc "Portable UPnP development kit"
   homepage "https://pupnp.sourceforge.io/"
-  url "https://github.com/pupnp/pupnp/releases/download/release-1.14.16/libupnp-1.14.16.tar.bz2"
-  sha256 "6cb2b1019e41be06032f6932070d37d2051a84ea68a035837b28dbf8cdc60dd9"
+  url "https://github.com/pupnp/pupnp/releases/download/release-1.14.17/libupnp-1.14.17.tar.bz2"
+  sha256 "9b877242eba0428c7f949af4d6e7b7b908ce5ebc67cc13475ee6eb0d9bcb6ffb"
   license "BSD-3-Clause"
 
   livecheck do
