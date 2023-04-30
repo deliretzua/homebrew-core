@@ -2,8 +2,8 @@ class Ppsspp < Formula
   desc "PlayStation Portable emulator"
   homepage "https://ppsspp.org/"
   url "https://github.com/hrydgard/ppsspp.git",
-      tag:      "v1.14.4",
-      revision: "cd535263c1ad65fd03869591a8bd706680cbf04b"
+      tag:      "v1.15.2",
+      revision: "4d4c325765c4f8d08a80b30d496c2fa28af68710"
   license all_of: ["GPL-2.0-or-later", "BSD-3-Clause"]
   head "https://github.com/hrydgard/ppsspp.git", branch: "master"
 
@@ -41,6 +41,13 @@ class Ppsspp < Formula
     # ARM uses a bundled, unreleased libpng.
     # Make unconditional when we have libpng 1.7.
     depends_on "libpng"
+  end
+
+  # Support using brewed SDL2.
+  # Remove once https://github.com/hrydgard/ppsspp/pull/17413 lands in a tag.
+  patch do
+    url "https://github.com/hrydgard/ppsspp/commit/8ef17b166299bcec1bfa2617b7ec54d755b9ab60.patch?full_index=1"
+    sha256 "5f9f49a41f28ef0c50177b91d01bb043bb6a111f23cb6633c0fb9a759ea7da86"
   end
 
   def install
@@ -84,7 +91,6 @@ class Ppsspp < Formula
         # Replace app bundles with symlinks to allow dependencies to be updated
         app_frameworks = prefix/"PPSSPPSDL.app/Contents/Frameworks"
         ln_sf (Formula["molten-vk"].opt_lib/"libMoltenVK.dylib").relative_path_from(app_frameworks), app_frameworks
-        ln_sf (Formula["sdl2"].opt_lib/"libSDL2-2.0.0.dylib").relative_path_from(app_frameworks), app_frameworks
       else
         bin.install "PPSSPPSDL" => "ppsspp"
       end
@@ -96,7 +102,6 @@ class Ppsspp < Formula
     if OS.mac?
       app_frameworks = prefix/"PPSSPPSDL.app/Contents/Frameworks"
       assert_predicate app_frameworks/"libMoltenVK.dylib", :exist?, "Broken linkage with `molten-vk`"
-      assert_predicate app_frameworks/"libSDL2-2.0.0.dylib", :exist?, "Broken linkage with `sdl2`"
     end
   end
 end
