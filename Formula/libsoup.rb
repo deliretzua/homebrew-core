@@ -1,8 +1,8 @@
 class Libsoup < Formula
   desc "HTTP client/server library for GNOME"
   homepage "https://wiki.gnome.org/Projects/libsoup"
-  url "https://download.gnome.org/sources/libsoup/3.4/libsoup-3.4.1.tar.xz"
-  sha256 "530b867b1b166cb9bca2750f1d15e5187318b5d948efb81d5899af3d75614504"
+  url "https://download.gnome.org/sources/libsoup/3.4/libsoup-3.4.2.tar.xz"
+  sha256 "78c8fa37cb152d40ec8c4a148d6155e2f6947f3f1602a7cda3a31ad40f5ee2f3"
   license "LGPL-2.0-or-later"
 
   bottle do
@@ -30,11 +30,9 @@ class Libsoup < Formula
   uses_from_macos "sqlite"
 
   def install
-    mkdir "build" do
-      system "meson", *std_meson_args, ".."
-      system "ninja", "-v"
-      system "ninja", "install", "-v"
-    end
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do
