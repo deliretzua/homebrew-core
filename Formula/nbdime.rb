@@ -8,13 +8,13 @@ class Nbdime < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cca12c01508b85397210edf46ae1d2e650738981352f866197722e6bc485b9d3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ef4f3c5270f894e30268dac8561067c1504c915993f6c39ec432b66f1e3ca453"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "99462e3922cb7fea876de0e9c06f913c24bdd9574c61fa509f7bcb3ac26ce1b8"
-    sha256 cellar: :any_skip_relocation, ventura:        "2b8cd1aed0e6a4d9bc5c2d8ebf04e2a85bfebd36cc6f6877c187e2d48697e61e"
-    sha256 cellar: :any_skip_relocation, monterey:       "3f29e570a8b06bd471002a2cd6dce38e06d103001c77094f5aa939df684aa3a9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e55477537b2e1b10cc3509951c6d764e55c7ae84d93decc364ef291edcf4d5bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7cddf7f566d8a5fc110e1c43ce993ef5603275c5fb1a1da9600dd016633258a3"
+    sha256 cellar: :any,                 arm64_ventura:  "b91ce1c75bf9499459239e97a5522b76bf01a8efe8fb31963ff4a3b0091e5b51"
+    sha256 cellar: :any,                 arm64_monterey: "077bb9b63d137e36d463b086b157dac335fc5c98707656ff589ee79ab8ff2757"
+    sha256 cellar: :any,                 arm64_big_sur:  "e624000b099aa57a29a2fc655497c0a913cf2398de0c449e42a6eed3be9cbd7d"
+    sha256 cellar: :any,                 ventura:        "bc0318d1f3bc71eb532901cbd16ae9c1b972b15ad4baf93ebbdce3cc6e989e43"
+    sha256 cellar: :any,                 monterey:       "a857817dd7a0b75da64cf2724e4b3bb010fb9102b06816fc743a7f0595c62935"
+    sha256 cellar: :any,                 big_sur:        "84bfc86b57c5e4f04e842c6f4b3acb57573d2949e67effb1499b8634375bc4d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "32436235a1dea105c7cf846c4b97d19fde89ca4136366c1daad0231914aa9536"
   end
 
   depends_on "ipython"
