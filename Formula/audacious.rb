@@ -2,15 +2,14 @@ class Audacious < Formula
   desc "Lightweight and versatile audio player"
   homepage "https://audacious-media-player.org/"
   license "BSD-2-Clause"
-  revision 1
 
   stable do
-    url "https://distfiles.audacious-media-player.org/audacious-4.3.tar.bz2"
-    sha256 "27584dc845c7e70db8c9267990945f17322a1ecc80ff8b452e9ca916a0ce9091"
+    url "https://distfiles.audacious-media-player.org/audacious-4.3.1.tar.bz2"
+    sha256 "85e9e26841505b51e342ee72a2d05f19bef894f567a029ebb3f3e0c1adb42042"
 
     resource "plugins" do
-      url "https://distfiles.audacious-media-player.org/audacious-plugins-4.3.tar.bz2"
-      sha256 "662ef6c8c4bd70d0f35fd1c5f08b91549b9436638b65f8a1a33956b09df89fc6"
+      url "https://distfiles.audacious-media-player.org/audacious-plugins-4.3.1.tar.bz2"
+      sha256 "2dea26e3af583a2d684df240b27b2b2932bcd653df4db500a85f4fe5d5fdc8a6"
     end
   end
 
