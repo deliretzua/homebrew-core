@@ -3,8 +3,8 @@ class Jc < Formula
 
   desc "Serializes the output of command-line tools to structured JSON output"
   homepage "https://github.com/kellyjonbrazil/jc"
-  url "https://files.pythonhosted.org/packages/67/4f/092f0393f4d9ef95d4601586ee9775a2b8a27993cbec62c010518df968d1/jc-1.23.1.tar.gz"
-  sha256 "a0f3d7bb2f25a186bc80606927b33e55dd0c1fe2ebc3ad4d58b149b7e299b4ba"
+  url "https://files.pythonhosted.org/packages/01/19/473df85a39986476cd3d10c478a3f5ed65dc949b3bf4e1982f68085c48e2/jc-1.23.2.tar.gz"
+  sha256 "a784745fa378ca76c6d44e752d30a628ea26ea18240e72a171f01b6895076266"
   license "MIT"
 
   bottle do
@@ -20,7 +20,7 @@ class Jc < Formula
   depends_on "pygments"
   depends_on "python@3.11"
 
-  resource "ruamel.yaml" do
+  resource "ruamel-yaml" do
     url "https://files.pythonhosted.org/packages/46/a9/6ed24832095b692a8cecc323230ce2ec3480015fbfa4b79941bd41b23a3c/ruamel.yaml-0.17.21.tar.gz"
     sha256 "8b7ce697a2f212752a35c1ac414471dc16c424c9573be4926b56ff3f5d23b7af"
   end
