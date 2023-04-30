@@ -33,9 +33,9 @@ class F3d < Formula
       -DBUILD_TESTING:BOOL=OFF
       -DCMAKE_INSTALL_RPATH:STRING=#{rpath}
       -DF3D_MACOS_BUNDLE:BOOL=OFF
-      -DF3D_MODULE_ALEMBIC:BOOL=ON
-      -DF3D_MODULE_ASSIMP:BOOL=ON
-      -DF3D_MODULE_OCCT:BOOL=ON
+      -DF3D_PLUGIN_BUILD_ALEMBIC:BOOL=ON
+      -DF3D_PLUGIN_BUILD_ASSIMP:BOOL=ON
+      -DF3D_PLUGIN_BUILD_OCCT:BOOL=ON
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
