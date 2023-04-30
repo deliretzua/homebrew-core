@@ -4,6 +4,7 @@ class F3d < Formula
   url "https://github.com/f3d-app/f3d/archive/refs/tags/v2.0.0.tar.gz"
   sha256 "5b335de78a9f68903d7023d947090d4b36fa15b9e165749906a82153e0f56d05"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -28,19 +29,20 @@ class F3d < Formula
 
   def install
     args = %W[
-      -DF3D_MACOS_BUNDLE:BOOL=OFF
       -DBUILD_SHARED_LIBS:BOOL=ON
       -DBUILD_TESTING:BOOL=OFF
-      -DF3D_INSTALL_DEFAULT_CONFIGURATION_FILE:BOOL=ON
+      -DCMAKE_INSTALL_RPATH:STRING=#{rpath}
+      -DF3D_MACOS_BUNDLE:BOOL=OFF
       -DF3D_MODULE_ALEMBIC:BOOL=ON
       -DF3D_MODULE_ASSIMP:BOOL=ON
       -DF3D_MODULE_OCCT:BOOL=ON
-      -DCMAKE_INSTALL_RPATH:STRING=#{rpath}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+    system "cmake", "--install", "build", "--component", "configuration"
+    system "cmake", "--install", "build", "--component", "sdk"
   end
 
   test do
