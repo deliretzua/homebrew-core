@@ -7,7 +7,7 @@ class TCompletion < Formula
   head "https://github.com/sferik/t.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6735212e9fee5e04fce9adaa96e09c20cc7508b8d26e1d85658825b0c50e85c7"
+    sha256 cellar: :any_skip_relocation, all: "b4000f3501fea5f4c7b817a5f83f35b6d7a2a864a8b665e0850b2e9da45cd389"
   end
 
   def install
