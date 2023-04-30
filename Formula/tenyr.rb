@@ -22,6 +22,13 @@ class Tenyr < Formula
   uses_from_macos "flex" => :build
 
   def install
+    inreplace "src/devices/sdlvga.c", "SDL_image.h", "SDL2/SDL_image.h"
+    inreplace "src/devices/sdlled.c", "SDL_image.h", "SDL2/SDL_image.h"
+
+    # Work around failure from GCC 10+ using default of `-fno-common`
+    # multiple definition of `...'; ....o:(.bss+0x0): first defined here
+    ENV.append_to_cflags "-fcommon" if OS.linux?
+
     system "make", "BISON=#{Formula["bison"].opt_bin}/bison",
                    "JIT=0", "BUILDDIR=build/homebrew"
 
