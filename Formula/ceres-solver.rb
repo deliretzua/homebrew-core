@@ -59,7 +59,7 @@ class CeresSolver < Formula
       target_link_libraries(helloworld Ceres::ceres)
     EOS
 
-    system "cmake", "-DCeres_DIR=#{share}/Ceres", "."
+    system "cmake", "."
     system "make"
     assert_match "CONVERGENCE", shell_output("./helloworld")
   end
