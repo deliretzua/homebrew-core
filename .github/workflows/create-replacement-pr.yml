@@ -2,8 +2,8 @@ name: Create replacement pull request
 run-name: "Replace PR #${{ inputs.pull_request }}"
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.inputs.pull_request }}
-  cancel-in-progress: false
+  group: ${{ github.workflow }}-${{ github.event.inputs.pull_request }}-${{ github.event.inputs.upload }}
+  cancel-in-progress: ${{ !fromJson(github.event.inputs.upload) }}
 
 on:
   workflow_dispatch:
@@ -42,7 +42,7 @@ env:
   GH_NO_UPDATE_NOTIFIER: 1
   GH_PROMPT_DISABLED: 1
   RUN_URL: ${{ github.event.repository.html_url }}/actions/runs/${{ github.run_id }}
-  REPLACEMENT_BRANCH: PR-${{ inputs.pull_request }}-${{ github.run_id }}
+  REPLACEMENT_BRANCH: PR/${{ inputs.pull_request }}
 
 jobs:
   create:
@@ -71,6 +71,23 @@ jobs:
         with:
           test-bot: false
 
+      - name: Configure Git user
+        id: git-user-config
+        uses: Homebrew/actions/git-user-config@master
+        with:
+          username: BrewTestBot
+
+      - name: Checkout replacement PR branch
+        working-directory: ${{ steps.set-up-homebrew.outputs.repository-path }}
+        run: |
+          if git ls-remote --exit-code --heads origin "$REPLACEMENT_BRANCH"
+          then
+            echo "::error ::Branch $REPLACEMENT_BRANCH already exists!"
+            exit 1
+          fi
+
+          git checkout -b "$REPLACEMENT_BRANCH" origin/master
+
       - name: Get reviewers
         id: reviewers
         env:
@@ -96,16 +113,6 @@ jobs:
           token: ${{ secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN }}
           pr: ${{ env.PR }}
           message: Replacement PR dispatched
-
-      - name: Configure Git user
-        id: git-user-config
-        uses: Homebrew/actions/git-user-config@master
-        with:
-          username: BrewTestBot
-
-      - name: Checkout replacement PR branch
-        working-directory: ${{ steps.set-up-homebrew.outputs.repository-path }}
-        run: git checkout -b "$REPLACEMENT_BRANCH" origin/master
 
       - name: Set up commit signing
         uses: Homebrew/actions/setup-commit-signing@master
@@ -166,11 +173,11 @@ jobs:
             --base "$GITHUB_REF" \
             --title "Replacement for #$PR"\
             --body-file body.txt \
-            --head "$BOTTLE_BRANCH" \
+            --head "$REPLACEMENT_BRANCH" \
             --reviewer "$REVIEWERS" \
             --label "$LABELS"
 
-          pull_number="$(gh pr list --head "$BOTTLE_BRANCH" --limit 1 --json number --jq '.[].number')"
+          pull_number="$(gh pr list --head "$REPLACEMENT_BRANCH" --limit 1 --json number --jq '.[].number')"
           echo "pull_number=$pull_number" >> "$GITHUB_OUTPUT"
 
       - name: Label PR
