@@ -12,13 +12,13 @@ class F3d < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "a447954a1ff2bfb443080a828c516c904525b56c1880bb3245dc86422d787cb3"
-    sha256 cellar: :any,                 arm64_monterey: "7db7bc844612e18b57487981d5e34c9e190d0e7dd34a08deb39ca6634730af92"
-    sha256 cellar: :any,                 arm64_big_sur:  "d45e2fbacc28240b02c1387efd673c715d2d43281d6e97ccf5c6d250cdbf5b86"
-    sha256 cellar: :any,                 ventura:        "572968e3215ae319245d6bc64c04946a6653ee4150dd44ba5f7dae2c4f458b6a"
-    sha256 cellar: :any,                 monterey:       "ab222c40a4e03f59f3694cca5032113e15a99f1e9a277d93c6cdd55c09873773"
-    sha256 cellar: :any,                 big_sur:        "d15f5979071c9b0a391665abb79078f29e979f2a8bdf01ebcbd453911c1bcd47"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ffc42a929c64005071d87f3455edeb1e802fba134c45d9ef71491935a7c6c600"
+    sha256 cellar: :any,                 arm64_ventura:  "375043e50e75bbf477f46bcd1aee256809d55b0760fb837e808586251ad6294c"
+    sha256 cellar: :any,                 arm64_monterey: "44edf8af2be7df7b2d68d59f264d5f8fb55c0fef28c9f478f4e32ba20f483e62"
+    sha256 cellar: :any,                 arm64_big_sur:  "c52af95dfa27753e917b62dd9c42083b2d354ac7c8c5c9fa981335041d82b348"
+    sha256 cellar: :any,                 ventura:        "3f80d0b7942c1a9dad126b5ad4920b51bb9542c0d8783f4544098dae37172e63"
+    sha256 cellar: :any,                 monterey:       "53a1b52a358e7c078d02ebc1ae4043ff6e0916897e0baf3075fbbd6784faee62"
+    sha256 cellar: :any,                 big_sur:        "4d160a73cb12efb0b77bc2f24fc74b85a529bc126b364020c4d4384ae3f3fae0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e43dce6a8e651c86a482d1b60eca81973d0728447ee07a9338834b5b460721e4"
   end
 
   depends_on "cmake" => :build
