@@ -1,8 +1,8 @@
 class Himalaya < Formula
   desc "CLI email client written in Rust"
   homepage "https://github.com/soywod/himalaya"
-  url "https://github.com/soywod/himalaya/archive/v0.7.1.tar.gz"
-  sha256 "79ad75e765a5298c5c597beb175cec1d2982eead2172bc78daa7a9f159c99861"
+  url "https://github.com/soywod/himalaya/archive/v0.7.3.tar.gz"
+  sha256 "5bfadca9d6141834c3a97d53a43bdd317e59ee4f893bcc00e6fcbf9fc0f5b55a"
   license "MIT"
 
   bottle do
