@@ -185,7 +185,7 @@ jobs:
       - name: Push commits
         uses: Homebrew/actions/git-try-push@master
         with:
-          token: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
+          token: ${{secrets.GITHUB_TOKEN}}
           directory: ${{steps.set-up-homebrew.outputs.repository-path}}
           branch: ${{env.BOTTLE_BRANCH}}
         env:
@@ -226,6 +226,12 @@ jobs:
           GH_TOKEN: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
           PR: ${{steps.create-pr.outputs.pull_number}}
           SHA: ${{steps.create-pr.outputs.head_sha}}
+
+      - name: Approve PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ steps.create-pr.outputs.pull_number }}
+        run: gh pr review --approve "$PR"
 
       - name: Post comment on failure
         if: ${{!success() && inputs.issue > 0}}
