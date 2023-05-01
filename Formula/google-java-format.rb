@@ -8,13 +8,13 @@ class GoogleJavaFormat < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f22cf26e206413e8918181eee06baa5c8e84447d40bf45277ee572c26246ac2f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f22cf26e206413e8918181eee06baa5c8e84447d40bf45277ee572c26246ac2f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f22cf26e206413e8918181eee06baa5c8e84447d40bf45277ee572c26246ac2f"
-    sha256 cellar: :any_skip_relocation, ventura:        "f22cf26e206413e8918181eee06baa5c8e84447d40bf45277ee572c26246ac2f"
-    sha256 cellar: :any_skip_relocation, monterey:       "f22cf26e206413e8918181eee06baa5c8e84447d40bf45277ee572c26246ac2f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f22cf26e206413e8918181eee06baa5c8e84447d40bf45277ee572c26246ac2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "221be794ab1ab9dd5227f2e94eeb2cac036a6ed7bfa9a7ae3e27bf1d3c855f20"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "054e43aaed2400e8859c99041b1a5d60dfda0049f18e0c7e33746810867ff68b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "054e43aaed2400e8859c99041b1a5d60dfda0049f18e0c7e33746810867ff68b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "054e43aaed2400e8859c99041b1a5d60dfda0049f18e0c7e33746810867ff68b"
+    sha256 cellar: :any_skip_relocation, ventura:        "054e43aaed2400e8859c99041b1a5d60dfda0049f18e0c7e33746810867ff68b"
+    sha256 cellar: :any_skip_relocation, monterey:       "054e43aaed2400e8859c99041b1a5d60dfda0049f18e0c7e33746810867ff68b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "054e43aaed2400e8859c99041b1a5d60dfda0049f18e0c7e33746810867ff68b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9cd1aff51148daf13a673de54db9a8c784abce912022214cadc682245f04f500"
   end
 
   depends_on "openjdk"
