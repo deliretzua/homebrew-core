@@ -169,20 +169,10 @@ jobs:
           test-bot: false
 
       - name: Download bottles from GitHub Actions
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@main
         with:
           name: bottles
           path: ~/bottles/
-
-      - name: Cache gems
-        uses: actions/cache@v3
-        with:
-          path: ${{steps.set-up-homebrew.outputs.gems-path}}
-          key: ${{runner.os}}-rubygems-v2-${{steps.set-up-homebrew.outputs.gems-hash}}
-          restore-keys: ${{runner.os}}-rubygems-v2-
-
-      - name: Install gems
-        run: brew install-bundler-gems
 
       - name: Configure Git user
         id: git-user-config
@@ -253,6 +243,12 @@ jobs:
           GH_TOKEN: ${{secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN}}
           PR: ${{steps.create-pr.outputs.pull_number}}
           SHA: ${{steps.create-pr.outputs.head_sha}}
+
+      - name: Approve PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ steps.create-pr.outputs.pull_number }}
+        run: gh pr review --approve "$PR"
 
       - name: Post comment on failure
         if: ${{!success() && inputs.issue > 0}}
