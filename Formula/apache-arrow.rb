@@ -1,11 +1,10 @@
 class ApacheArrow < Formula
   desc "Columnar in-memory analytics layer designed to accelerate big data"
   homepage "https://arrow.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=arrow/arrow-11.0.0/apache-arrow-11.0.0.tar.gz"
-  mirror "https://archive.apache.org/dist/arrow/arrow-11.0.0/apache-arrow-11.0.0.tar.gz"
-  sha256 "2dd8f0ea0848a58785628ee3a57675548d509e17213a2f5d72b0d900b43f5430"
+  url "https://www.apache.org/dyn/closer.lua?path=arrow/arrow-12.0.0/apache-arrow-12.0.0.tar.gz"
+  mirror "https://archive.apache.org/dist/arrow/arrow-12.0.0/apache-arrow-12.0.0.tar.gz"
+  sha256 "ddd8347882775e53af7d0965a1902b7d8fcd0a030fd14f783d4f85e821352d52"
   license "Apache-2.0"
-  revision 3
   head "https://github.com/apache/arrow.git", branch: "main"
 
   bottle do
@@ -46,6 +45,7 @@ class ApacheArrow < Formula
 
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DARROW_ACERO=ON
       -DARROW_COMPUTE=ON
       -DARROW_CSV=ON
       -DARROW_DATASET=ON
@@ -57,7 +57,6 @@ class ApacheArrow < Formula
       -DARROW_JSON=ON
       -DARROW_ORC=ON
       -DARROW_PARQUET=ON
-      -DARROW_PLASMA=ON
       -DARROW_PROTOBUF_USE_SHARED=ON
       -DARROW_S3=ON
       -DARROW_WITH_BZ2=ON
