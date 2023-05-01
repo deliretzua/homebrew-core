@@ -1,11 +1,10 @@
 class Cpio < Formula
   desc "Copies files into or out of a cpio or tar archive"
   homepage "https://www.gnu.org/software/cpio/"
-  url "https://ftp.gnu.org/gnu/cpio/cpio-2.13.tar.bz2"
-  mirror "https://ftpmirror.gnu.org/cpio/cpio-2.13.tar.bz2"
-  sha256 "eab5bdc5ae1df285c59f2a4f140a98fc33678a0bf61bdba67d9436ae26b46f6d"
+  url "https://ftp.gnu.org/gnu/cpio/cpio-2.14.tar.bz2"
+  mirror "https://ftpmirror.gnu.org/cpio/cpio-2.14.tar.bz2"
+  sha256 "fcdc15d60f7267a6fc7efcd6b9db7b6c8966c4f2fbbb964c24d41336fd3f2c12"
   license "GPL-3.0-or-later"
-  revision 3
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a52647dfa0fc91821508e340b67e09ddb7827b66644ef4006df040502dc5f249"
@@ -19,12 +18,6 @@ class Cpio < Formula
   end
 
   keg_only :shadowed_by_macos, "macOS provides cpio"
-
-  # Fix build with GCC 10 or later (-fno-common). Remove in the next release.
-  patch do
-    url "https://git.savannah.gnu.org/cgit/cpio.git/patch/?id=641d3f489cf6238bb916368d4ba0d9325a235afb"
-    sha256 "cdc04006fee03b60ab42bccae9a9bf146e3a4655d0e76a7a0a24689176a79ed0"
-  end
 
   def install
     system "./configure", *std_configure_args, "--disable-silent-rules"
