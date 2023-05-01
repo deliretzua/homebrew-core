@@ -5,7 +5,7 @@ class Octave < Formula
   mirror "https://ftpmirror.gnu.org/octave/octave-8.2.0.tar.xz"
   sha256 "b7b9d6e5004ff039450cfedd2a59ddbe2a3c22296df927a8af994182eb2670de"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
     sha256 arm64_ventura:  "94fd01c5691243c2f00063b5209d681c157d7cbda42d98f9df568fdbd1f7d440"
