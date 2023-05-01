@@ -2,8 +2,8 @@ class Vlang < Formula
   desc "V programming language"
   homepage "https://vlang.io"
   # NOTE: Keep this in sync with V compiler below when updating
-  url "https://github.com/vlang/v/archive/refs/tags/0.3.3.tar.gz"
-  sha256 "6f0fc24a941b766ad34fb0a5a64e076a0a88e3f91cac0520790b2a53676dd08a"
+  url "https://github.com/vlang/v/archive/refs/tags/0.3.4.tar.gz"
+  sha256 "7e251dd1748d16090348da4a29abd85dfe8c48aebc47bd9c23e91ed18e0c5ba1"
   license "MIT"
 
   livecheck do
@@ -28,7 +28,13 @@ class Vlang < Formula
     # "[v:master] {short SHA of the vlang release commit} - {vlang version number}".
     # The sources of this V compiler commit need to be used here
     url "https://github.com/vlang/vc.git",
-        revision: "1f7f0244f352d41122bb306446d98ae3de4e6b02"
+        revision: "6be6daffdbd8227595aea70cc981bf4c634decb7"
+    on_big_sur :or_older do
+      patch do
+        url "https://raw.githubusercontent.com/Homebrew/formula-patches/4a51a527e534534c3ddc6801c45d3a3a2c8fbd5a/vlang/vc.patch"
+        sha256 "0e0a2de7e37c0b22690599c0ee0a1176c2c767ea95d5fade009dd9c1f5cbf85d"
+      end
+    end
   end
 
   # upstream discussion, https://github.com/vlang/v/issues/16776
@@ -39,7 +45,7 @@ class Vlang < Formula
     inreplace "vlib/builtin/builtin_d_gcboehm.c.v", "@PREFIX@", Formula["bdw-gc"].opt_prefix
 
     resource("vc").stage do
-      system ENV.cc, "-std=gnu11", "-w", "-o", buildpath/"v1", "v.c", "-lm"
+      system ENV.cc, "-std=gnu99", "-w", "-o", buildpath/"v1", "v.c", "-lm"
     end
     system "./v1", "-no-parallel", "-o", buildpath/"v2", "cmd/v"
     system "./v2", "-o", buildpath/"v", "cmd/v"
