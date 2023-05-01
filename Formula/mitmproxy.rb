@@ -9,15 +9,14 @@ class Mitmproxy < Formula
   head "https://github.com/mitmproxy/mitmproxy.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "98d9f541706eda4c06ed24f0854c27575dc7f55caa1fcabc460bb02fc96b1252"
-    sha256 cellar: :any,                 arm64_monterey: "6bab66d66035f6779694d6ad0f9cb271fee7f87dc8b802484e2b582251f18c0f"
-    sha256 cellar: :any,                 arm64_big_sur:  "3eb503970b3a17bb3ccdcc4fbd618534061be99cabfc90039d08be4ec0c31501"
-    sha256 cellar: :any,                 ventura:        "b29651bf1341d424e27702f5a637ad73ae6d80d17c9e265764343327992c3185"
-    sha256 cellar: :any,                 monterey:       "f158e6ca720aed4936b6487c95d2ba4fb3ecd5d6107005e3b2deee9d4039c1b9"
-    sha256 cellar: :any,                 big_sur:        "cd450032bd1ee71af40a837cb0a81f2fba08c241106c99269b0503b79bb6ba88"
-    sha256 cellar: :any,                 catalina:       "b2919d57ba80c0198d92de70e6e2d42f6a668a8e29db58bbef7d309addc18318"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a2465de264be58a8d000209158ad22e69d7e69228a3800a836143c6fcc4e6262"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "d5717914a6aa0e482e996529ce74b4031ac0f53c76172ac297fe187b75ef110f"
+    sha256 cellar: :any,                 arm64_monterey: "83a3292604a34f2d74ccfd3b89d2d3a795f34c5967b58498505c36422da1a29d"
+    sha256 cellar: :any,                 arm64_big_sur:  "8263e1c90ec4944c5a918b7c6f6cf6db6f928d209fba052d32f95e8a27927975"
+    sha256 cellar: :any,                 ventura:        "5577b1d9fc8dee4fba8932f6fe7a87b0af4e3f4266a8edcd17b68580e4402b7f"
+    sha256 cellar: :any,                 monterey:       "84a21d89eebc3261e1478f1196f7e4e45d451268e4cbfbef22c797a3f1a5a0e3"
+    sha256 cellar: :any,                 big_sur:        "a36319deccc4c44f8790f73c8f84793d1411e6c452ad5ccc0275e511ef38eaa5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1538dfd6da5bc3a8a7786d5354bd20854e1931c99dbaf42198394337f29be1f8"
   end
 
   depends_on "rust" => :build # for cryptography
