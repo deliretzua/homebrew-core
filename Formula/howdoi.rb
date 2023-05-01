@@ -8,14 +8,14 @@ class Howdoi < Formula
   license "MIT"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "385428175489a8d6e02fd301786e1f9219185e96d143bd5452e27eeb780d3b64"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "78c4080f8095eaed404b8328662e0d38ec9100dc57fb7034f4d870ed93985042"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "db44aa34be96fc4e680d7f3a1d5f417faac2593eb9ff218347bc2ee2528e4ba0"
-    sha256 cellar: :any_skip_relocation, ventura:        "c0131faa1a555c5b239e3cdb6997febedfa94c9a5df9e1c89a6154a4647ebd8e"
-    sha256 cellar: :any_skip_relocation, monterey:       "bbab48025e63623be10af86a151d657c885077da46f4edcaf131f74761d9ac5d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8df2fdcbc7b190089145693b4fc7530b907bff9cd3631b311514d286bde26263"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "939ecaed13930b01fdc9c7ccb22869528ea4cb149d8ff131bd96e368a8464003"
+    rebuild 4
+    sha256 cellar: :any,                 arm64_ventura:  "414db7a6911daf8d5fa0fed006bfdfdf77b5d25d05e6c08f716ed425d3404424"
+    sha256 cellar: :any,                 arm64_monterey: "e48fb32db462425d2a1f865211204e3b21f91ab3bd15031f995da64adb070f25"
+    sha256 cellar: :any,                 arm64_big_sur:  "e2551cea4f2b004adff4c453f2ad49db8777212ff119acd1d31faef825c997f6"
+    sha256 cellar: :any,                 ventura:        "e41b5590c354dc78ba61d9361b47eb3679c1c75a0c7d000fcffd5c6bcfe2a5d8"
+    sha256 cellar: :any,                 monterey:       "3e23e425053e86b37a4ed79f3593fad184ad2420b90ba07c2ed88e1ee9dfb769"
+    sha256 cellar: :any,                 big_sur:        "7d0017e01da82b94a67a064f326d7e5b01709bfb4df43e37c20df2bd9e8d8933"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "11e17bde898468684d16f7fcbf76dc9610e2e42ae69777729d3bc007fd5adc6b"
   end
 
   # `pkg-config`, `rust`, and `openssl@1.1` are for cryptography.
