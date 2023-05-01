@@ -1,8 +1,8 @@
 class Faudio < Formula
   desc "Accuracy-focused XAudio reimplementation for open platforms"
   homepage "https://fna-xna.github.io/"
-  url "https://github.com/FNA-XNA/FAudio/archive/23.04.tar.gz"
-  sha256 "8e0bbf107103aa5f7d05710cdb27d66551a5dd18d78a41f2da79b58dc09361f2"
+  url "https://github.com/FNA-XNA/FAudio/archive/23.05.tar.gz"
+  sha256 "1c9a3bcb33e3ccad75a11a48affdc7dc13752ce280f2a4c63213ca6ed7ea0e99"
   license "Zlib"
   head "https://github.com/FNA-XNA/FAudio.git", branch: "master"
 
