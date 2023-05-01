@@ -2,16 +2,15 @@ class Dmd < Formula
   desc "Digital Mars D compiler"
   homepage "https://dlang.org/"
   license "BSL-1.0"
-  revision 1
 
   stable do
     # make sure resources also use the same version
-    url "https://github.com/dlang/dmd/archive/refs/tags/v2.103.0.tar.gz"
-    sha256 "98d02ae197dc3ec7959343f6a61ec18294d4e57d61f7749287c6d56270c3891f"
+    url "https://github.com/dlang/dmd/archive/refs/tags/v2.103.1.tar.gz"
+    sha256 "25570505289e0c402095ac168fc62e33f6b34b5e6d06f781d32954cc3d45e803"
 
     resource "phobos" do
-      url "https://github.com/dlang/phobos/archive/refs/tags/v2.103.0.tar.gz"
-      sha256 "65d0d5ff4bce2ea881fc5db5140ec14f7567e87d4dfcdb16f400e1e4457e9221"
+      url "https://github.com/dlang/phobos/archive/refs/tags/v2.103.1.tar.gz"
+      sha256 "d6956b70d582311ffbf0c3464dcd7531eb0bda3dc27a2051ca78fa6b045a0c9f"
     end
 
     # Fix build on Ventura when newer Xcode is used
