@@ -22,6 +22,12 @@ class Arturo < Formula
 
   def install
     inreplace "build.nims", /ROOT_DIR\s*=\s*r"\{getHomeDir\(\)\}.arturo".fmt/, "ROOT_DIR=\"#{prefix}\""
+
+    # Work around issues with Xcode 14.3
+    # @mhelpers@swebviews.nim.c:1116:2: error: call to undeclared function 'generateDefaultMainMenu';
+    # ISO C99 and later do not support implicit function declarations
+    inreplace "build.nims", "--passC:'-flto'", "--passC:'-flto' --passC:'-Wno-implicit-function-declaration'"
+
     # Use mini install on Linux to avoid webkit2gtk dependency, which does not have a formula.
     args = ["log", "release"]
     args << "mini" if OS.linux?
