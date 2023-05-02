@@ -3,8 +3,8 @@ class Pyinvoke < Formula
 
   desc "Pythonic task management & command execution"
   homepage "https://www.pyinvoke.org/"
-  url "https://files.pythonhosted.org/packages/b0/29/a509301332714aacc10ff98b7fe6539a9a1f96b18698efe9666ceae1485c/invoke-2.1.0.tar.gz"
-  sha256 "277894c57fa2b77f22ed3c7726fb8689773301e4497ccb2a59f19bc7bbbe5b4a"
+  url "https://files.pythonhosted.org/packages/fc/ed/75616c70c3e96bdfec93f6a171e87f0463d9da21b061ff8af8ae7ecda17e/invoke-2.1.1.tar.gz"
+  sha256 "7dcf054c4626b89713da650635c29e9dfeb8a1dd0a14edc60bd3e16f751292ff"
   license "BSD-2-Clause"
   head "https://github.com/pyinvoke/invoke.git", branch: "main"
 
