@@ -10,6 +10,10 @@ class Liblxi < Formula
     depends_on :linux
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "997b6e87729a9b05f5cbefce050d43f223e881f07ac7ff395e316bd32014f36b"
+  end
+
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
