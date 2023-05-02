@@ -1,8 +1,8 @@
 class Zpaqfranz < Formula
   desc "Deduplicating command-line archiver and backup tool"
   homepage "https://github.com/fcorbelli/zpaqfranz"
-  url "https://github.com/fcorbelli/zpaqfranz/archive/refs/tags/57.5.tar.gz"
-  sha256 "c0ba86c33cb061fea909cfaf629305a46ab712eb4715b0b8ef2e49438055f97e"
+  url "https://github.com/fcorbelli/zpaqfranz/archive/refs/tags/58.2.tar.gz"
+  sha256 "7b66c94bb22ff03205777c0be0e70747a0f7ef8eff9b99e2b1ac384aa495977f"
   license all_of: [:public_domain, "MIT", "Zlib", "Unlicense", "BSD-2-Clause", "Apache-2.0"]
   head "https://github.com/fcorbelli/zpaqfranz.git", branch: "main"
 
@@ -21,17 +21,6 @@ class Zpaqfranz < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "5a7078257b14dae4d22d4d563bcb983c580a28718ba068cc485cfb2bd21f137b"
     sha256 cellar: :any_skip_relocation, big_sur:        "13ed30b4cf87c0f341c2c88d7b105c9610c9e60e9c6524d8413f5650eff4339b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ada8e2725825db710b34e3bd86bf4b9231071bfb61b774e5ea4bbcf504bfcf4c"
-  end
-
-  # Use a C++ compiler instead of a C compiler.
-  # Reported at: https://github.com/fcorbelli/zpaqfranz/pull/51
-  patch do
-    url "https://github.com/fcorbelli/zpaqfranz/commit/298e496647373570b54307f4d4130bbd915ba9f6.patch?full_index=1"
-    sha256 "ad02acdf3922946f09203bca4e0b926c3ea15953f04ae759e9ee8efc1cebf8d7"
-  end
-  patch do
-    url "https://github.com/fcorbelli/zpaqfranz/commit/4cc32b6ffa599e3b9528c4c97d52b6ebcc697efa.patch?full_index=1"
-    sha256 "a86ed4ff7f223e65a6720438aa6c2d2f3bc42d8959ee827e95d1798d9d8b10c0"
   end
 
   def install
