@@ -45,8 +45,8 @@ class VirtManager < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/a1/34/44964211e5410b051e4b8d2869c470ae8a68ae274953b1c7de6d98bbcf94/charset-normalizer-2.1.1.tar.gz"
-    sha256 "5a3d016c7c547f69d6f81fb0db9449ce888b418b5b9952cc5e6e66843e9dd845"
+    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
+    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
   end
 
   resource "idna" do
@@ -55,13 +55,13 @@ class VirtManager < Formula
   end
 
   resource "libvirt-python" do
-    url "https://files.pythonhosted.org/packages/38/15/eb5fdcca34fd4d9515f216ee9d87db97ca5ab6794ed7e62b1bdaa21316bd/libvirt-python-9.2.0.tar.gz"
-    sha256 "95cc190c57cb84e8ed2e1b8205b01a937e1a4bc19cc8865df19ca4470e6d7c1b"
+    url "https://files.pythonhosted.org/packages/1e/36/dbfdbad0ed4dd910b26df2eee1da16068aae1e5ae0fdab726b542be05f30/libvirt-python-9.3.0.tar.gz"
+    sha256 "9c761d88b4ddcf65b324043944da4f18f82471c74d9371d2372d3b4e0f19861b"
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/9d/ee/391076f5937f0a8cdf5e53b701ffc91753e87b07d66bae4a09aa671897bf/requests-2.28.2.tar.gz"
-    sha256 "98b1b2782e3c6c4904938b84c0eb932721069dfdb9134313beff7c83c2df24bf"
+    url "https://files.pythonhosted.org/packages/4c/d2/70fc708727b62d55bc24e43cc85f073039023212d482553d853c44e57bdb/requests-2.29.0.tar.gz"
+    sha256 "f2e34a75f4749019bb0e3effb66683630e4ffeaf75819fb51bebef1bf5aef059"
   end
 
   resource "urllib3" do
