@@ -12,13 +12,13 @@ class Sentencepiece < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9b36a3c0fc29d90ec426644be41399640d6c9706d1b497f22a36b08dd8dc7fc5"
-    sha256 cellar: :any,                 arm64_monterey: "686225ddaf22ba07f1fe7f3acd55452e92d38043bbd6fa38101ebf12ca9d6b8e"
-    sha256 cellar: :any,                 arm64_big_sur:  "fd8e5145036602da24eb35eabca6282e905670d28fb69940a46322672f80918d"
-    sha256 cellar: :any,                 ventura:        "735344bd583fe161fd5e5776d35cdd5e42a1011a2d23cc0348ec4e9c04832d51"
-    sha256 cellar: :any,                 monterey:       "9b20edccc7a7ae3a3c51d3ac8d11fd7f1ff5749edcc62e6e277d3f409094f5f1"
-    sha256 cellar: :any,                 big_sur:        "0d3bd5bbace4a103ff57b80d65cb678f1cb99bf670376423a31ad0335db713e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "25beba2a3a3b0e376f588fd5057986eec5446340d2c29e76f076e5d33ce7c97f"
+    sha256 cellar: :any,                 arm64_ventura:  "e87ca15b0001e4f83f245683724d620bad421a568eb85cdfed53db941438a4cd"
+    sha256 cellar: :any,                 arm64_monterey: "37d69ef235e82f82414f1490cd60b71efc2be89850857a22ad38c4b3e72846c7"
+    sha256 cellar: :any,                 arm64_big_sur:  "fa97fafd3633dbc1531169adbdbe36d9b39b13a94db6f44b9a719f14c59ba346"
+    sha256 cellar: :any,                 ventura:        "15713cf96fc6eafd2c7b85748a784b9f14fbed557091427b83c35bb5d325632c"
+    sha256 cellar: :any,                 monterey:       "7f88d1c72fff0ae96318ef9d00dd62ce8552b014109e3221f004ddef74db018b"
+    sha256 cellar: :any,                 big_sur:        "79e0e90606d60e71c77e81d7704dae54f3cfc1fef62421dded430c326a487da9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ce99d2fdf1b07079488bfc65ffc164e2ee20e20a9fdb0e4acbe993716b20721"
   end
 
   depends_on "cmake" => :build
