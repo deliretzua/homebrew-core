@@ -1,8 +1,8 @@
 class Sentencepiece < Formula
   desc "Unsupervised text tokenizer and detokenizer"
   homepage "https://github.com/google/sentencepiece"
-  url "https://github.com/google/sentencepiece/archive/v0.1.98.tar.gz"
-  sha256 "e8e09beffacd9667ed40c4652306f7e7990100164dfa26d8bd8a66b097471cb2"
+  url "https://github.com/google/sentencepiece/archive/v0.1.99.tar.gz"
+  sha256 "63617eaf56c7a3857597dcd8780461f57dd21381b56a27716ef7d7e02e14ced4"
   license "Apache-2.0"
   head "https://github.com/google/sentencepiece.git", branch: "master"
 
