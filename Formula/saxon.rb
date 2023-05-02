@@ -1,9 +1,9 @@
 class Saxon < Formula
   desc "XSLT and XQuery processor"
   homepage "https://github.com/Saxonica/Saxon-HE"
-  url "https://github.com/Saxonica/Saxon-HE/blob/main/12/Java/SaxonHE12-1J.zip?raw=true"
-  version "12.1"
-  sha256 "efd00db987f76f36c472f92f4ece8d9899aa02e667fd6bec5ed2afd4adc6afd8"
+  url "https://github.com/Saxonica/Saxon-HE/blob/main/12/Java/SaxonHE12-2J.zip?raw=true"
+  version "12.2"
+  sha256 "eaeaf67c3538839406482c4dfcdf0a386e68acbcaaaa094f207c7696136681d0"
   license all_of: ["BSD-3-Clause", "MIT", "MPL-2.0"]
 
   livecheck do
@@ -38,7 +38,8 @@ class Saxon < Formula
       </xsl:stylesheet>
     EOS
     assert_equal <<~EOS.chop, shell_output("#{bin}/saxon test.xml test.xsl")
-      <!DOCTYPE HTML><html>
+      <!DOCTYPE HTML>
+      <html>
          <body>
             <p>It works!</p>
          </body>
