@@ -12,13 +12,13 @@ class Verapdf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8931cc645e7b446827d1bdab86dfb5be3e0b7c58b6a47135f9294f52a3fc8301"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8602d73eef14cd51f4e18d81faa361ef45a46cc15fff61ae0e574dffda7cfb24"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "896ec8cbebfed3e5e04d28fb3df83835e31e2a61028bccf76b7307ebaef9da48"
-    sha256 cellar: :any_skip_relocation, ventura:        "a4825c7f7a19ece4be0360b8ed059507bf2e0e7d78e9be58fd05c2dbebe08705"
-    sha256 cellar: :any_skip_relocation, monterey:       "c7d7b27b82821a6625f8cc548693a680ab93b2559e954224f0e73691a361f003"
-    sha256 cellar: :any_skip_relocation, big_sur:        "88d4d94a63fc584773563ad6f0c3e6022ae1b260bc76298a9eb21958ee5a6a79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3dcabad0c14f6e5e855dd6a65318ba3e382a65a80536389f768bc426269114a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7b06a669d51b7b7ff421a019023769ae8a566ce0ad1dcb147958a58148d68c0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a34d063681ff2220b28015d63c49542c99051ddc08c2d1b30aeab10d248624ac"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c5e934a442c8c1cc8d7c9c690b1dcc46be051172f5c6f5619f56bb9088aad1fa"
+    sha256 cellar: :any_skip_relocation, ventura:        "bb08d29593be72f5ba380c1a48b878cc1958bacf8df4859a5fa96dcb173f941c"
+    sha256 cellar: :any_skip_relocation, monterey:       "4962bac2e26371b90b1ca8e2ccc21c7c1c36c7179daf3b37f204cebf55e1cbd2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b51203a472bf1758e563c45991437e1ca683ebd26241ba1e10aa4c7150ad88f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e143b3ab2bdbe0c56d718ddba6cf8b4667df271e22779f317ba53fe06455bbc3"
   end
 
   depends_on "maven" => :build
