@@ -1,8 +1,8 @@
 class Tlsx < Formula
   desc "Fast and configurable TLS grabber focused on TLS based data collection"
   homepage "https://github.com/projectdiscovery/tlsx"
-  url "https://github.com/projectdiscovery/tlsx/archive/v1.0.8.tar.gz"
-  sha256 "b0decd8eb94bcb524305d663934a378d9044291c17849757da40ab22f2cbee52"
+  url "https://github.com/projectdiscovery/tlsx/archive/v1.0.9.tar.gz"
+  sha256 "036fb003412b05407c84424311c59fb4c41a63b63ad5300f226e5fa4fd7b439c"
   license "MIT"
   head "https://github.com/projectdiscovery/tlsx.git", branch: "main"
 
