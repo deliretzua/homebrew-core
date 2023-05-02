@@ -1,8 +1,8 @@
 class Flavours < Formula
   desc "Easy to use base16 scheme manager that integrates with any workflow"
   homepage "https://github.com/Misterio77/flavours"
-  url "https://github.com/Misterio77/flavours/archive/refs/tags/v0.6.1.tar.gz"
-  sha256 "48c7659031d399ff125a07b71419935946e0da8d3ef1817a9f89dda32c2dcac1"
+  url "https://github.com/Misterio77/flavours/archive/refs/tags/v0.7.1.tar.gz"
+  sha256 "207002728cc270d92f4cd437384925e767c611d30520ec8a29816dfe600d7f61"
   license "MIT"
   head "https://github.com/Misterio77/flavours.git", branch: "master"
 
@@ -30,24 +30,25 @@ class Flavours < Formula
   test do
     resource("homebrew-testdata").stage do
       cmd = "#{bin}/flavours generate --stdout dark razer-wallpapers-page-hero-mobile.jpg"
-      expected = /scheme:\s"Generated"\n
-        author:\s"Flavours"\n
+      expected = /---\n
+        scheme:\sGenerated\n
+        author:\sFlavours\n
         base00:\s"[0-9a-fA-F]{6}"\n
-        base01:\s"[0-9a-fA-F]{6}"\n
-        base02:\s"[0-9a-fA-F]{6}"\n
-        base03:\s"[0-9a-fA-F]{6}"\n
-        base04:\s"[0-9a-fA-F]{6}"\n
-        base05:\s"[0-9a-fA-F]{6}"\n
-        base06:\s"[0-9a-fA-F]{6}"\n
-        base07:\s"[0-9a-fA-F]{6}"\n
-        base08:\s"[0-9a-fA-F]{6}"\n
-        base09:\s"[0-9a-fA-F]{6}"\n
-        base0A:\s"[0-9a-fA-F]{6}"\n
-        base0B:\s"[0-9a-fA-F]{6}"\n
-        base0C:\s"[0-9a-fA-F]{6}"\n
-        base0D:\s"[0-9a-fA-F]{6}"\n
-        base0E:\s"[0-9a-fA-F]{6}"\n
-        base0F:\s"[0-9a-fA-F]{6}"\n
+        base01:\s[0-9a-fA-F]{6}\n
+        base02:\s[0-9a-fA-F]{6}\n
+        base03:\s[0-9a-fA-F]{6}\n
+        base04:\s[0-9a-fA-F]{6}\n
+        base05:\s[0-9a-fA-F]{6}\n
+        base06:\s[0-9a-fA-F]{6}\n
+        base07:\s[0-9a-fA-F]{6}\n
+        base08:\s[0-9a-fA-F]{6}\n
+        base09:\s[0-9a-fA-F]{6}\n
+        base0A:\s[0-9a-fA-F]{6}\n
+        base0B:\s[0-9a-fA-F]{6}\n
+        base0C:\s[0-9a-fA-F]{6}\n
+        base0D:\s[0-9a-fA-F]{6}\n
+        base0E:\s[0-9a-fA-F]{6}\n
+        base0F:\s[0-9a-fA-F]{6}\n
       /x
       assert_match(expected, shell_output(cmd))
     end
