@@ -125,11 +125,11 @@ class Cp2k < Formula
       bin.install "exe/#{arch}/cp2k_shell.#{exe}"
     end
 
-    (pkgshare/"tests").install "tests/Fist/water512.inp"
+    (pkgshare/"tests").install "tests/Fist/water.inp"
   end
 
   test do
-    system bin/"cp2k.ssmp", pkgshare/"tests/water512.inp"
-    system "mpirun", bin/"cp2k.psmp", pkgshare/"tests/water512.inp"
+    system bin/"cp2k.ssmp", pkgshare/"tests/water.inp"
+    system "mpirun", bin/"cp2k.psmp", pkgshare/"tests/water.inp"
   end
 end
