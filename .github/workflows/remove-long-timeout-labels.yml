@@ -68,6 +68,7 @@ jobs:
       actions: read # for `GitHub.get_workflow_run`
       checks: read # for `GitHub.get_workflow_run`
       pull-requests: write # for `gh pr edit`
+      repository-projects: write # for `gh pr edit`
     steps:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
@@ -76,21 +77,20 @@ jobs:
 
       - name: Check if CI was restarted
         id: check
+        shell: brew ruby {0}
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          brew ruby <<RUBY
-            owner, repo = ENV.fetch("GITHUB_REPOSITORY").split("/")
-            pr = ENV.fetch("HOMEBREW_PR").to_i
-            workflow_runs, = GitHub.get_workflow_run(owner, repo, pr, workflow_id: "tests.yml")
-            status = workflow_runs.last.fetch("status")
+          owner, repo = ENV.fetch("GITHUB_REPOSITORY").split("/")
+          pr = ENV.fetch("HOMEBREW_PR").to_i
+          workflow_runs, = GitHub.get_workflow_run(owner, repo, pr, workflow_id: "tests.yml")
+          status = workflow_runs.last&.fetch("status")
 
-            puts "::notice ::PR ##{pr} CI status: #{status}"
-            github_output = ENV.fetch("GITHUB_OUTPUT")
-            File.open(github_output, "a") do |f|
-              f.puts("status=#{status}")
-            end
-          RUBY
+          puts "::notice ::PR ##{pr} CI status: #{status}"
+          github_output = ENV.fetch("GITHUB_OUTPUT")
+          File.open(github_output, "a") do |f|
+            f.puts("status=#{status}")
+          end
 
       - name: Remove long timeout label
         if: steps.check.outputs.status == 'COMPLETED'
