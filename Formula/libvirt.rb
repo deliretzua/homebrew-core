@@ -1,8 +1,8 @@
 class Libvirt < Formula
   desc "C virtualization API"
   homepage "https://libvirt.org/"
-  url "https://download.libvirt.org/libvirt-9.2.0.tar.xz"
-  sha256 "a07f501e99093ac1374888312be32182e799de17407ed7547d0e469fae8188c5"
+  url "https://download.libvirt.org/libvirt-9.3.0.tar.xz"
+  sha256 "751179b08e5a73b6cfd93200d110df199eaa3973f3554ba2ebcbd71e272bebe1"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
   head "https://gitlab.com/libvirt/libvirt.git", branch: "master"
 
