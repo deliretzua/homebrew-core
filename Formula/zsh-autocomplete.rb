@@ -1,8 +1,8 @@
 class ZshAutocomplete < Formula
   desc "Real-time type-ahead completion for Zsh"
   homepage "https://github.com/marlonrichert/zsh-autocomplete"
-  url "https://github.com/marlonrichert/zsh-autocomplete/archive/refs/tags/22.01.21.tar.gz"
-  sha256 "3e725a8f603796a87cc915d02f26736d967c828b3ec1335543991ca6cbb1b753"
+  url "https://github.com/marlonrichert/zsh-autocomplete/archive/refs/tags/23.05.02.tar.gz"
+  sha256 "389eeb63352797d25f38ef134228f9d43f11e4c18ae414a2f76f58e0ee570023"
   license "MIT"
   head "https://github.com/marlonrichert/zsh-autocomplete.git", branch: "main"
 
@@ -31,8 +31,14 @@ class ZshAutocomplete < Formula
     EOS
   end
   test do
+    (testpath/"run-tests.zsh").write <<~EOS
+      #!/bin/zsh -f
+
+      env -i HOME=$HOME PATH=$PATH FPATH=$FPATH zsh -f -- \
+          =clitest --progress dot --prompt '%' -- $PWD/.clitest/*.md
+    EOS
     cd pkgshare do
-      system "zsh", "./run-tests.zsh"
+      system "zsh", testpath/"run-tests.zsh"
     end
   end
 end
