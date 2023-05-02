@@ -7,13 +7,13 @@ class Vvdec < Formula
   head "https://github.com/fraunhoferhhi/vvdec.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "fbba911cd7462add2a47e829d49a682ccc2146f23999ca0d461520a62d0c15de"
-    sha256 cellar: :any,                 arm64_monterey: "00937d55751ec2d1aba6509e5a814f381223d9957ff0759ed4e0255ad783d2b4"
-    sha256 cellar: :any,                 arm64_big_sur:  "75d9beb084c1c866c4a6c489f00457d234dabe962e1d5b1f043aa03ef1d00fee"
-    sha256 cellar: :any,                 ventura:        "e03a0d675cb8e785b06de728d022b69949ca403098bd50b9c422aa4168db7357"
-    sha256 cellar: :any,                 monterey:       "acef3db5aecdf1dc02653ba0b18078ba85cdc30cd011ebbe9b162cc802b8241a"
-    sha256 cellar: :any,                 big_sur:        "374b8847719440b5af13e7d4b59bae3d5d3efa0e21bb5ae20280a922d95e7a46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "076c4ed2955883781792470197d9798ade7620ecafa9bcfcf1a7c643d0947fdf"
+    sha256 cellar: :any,                 arm64_ventura:  "8847792c12b9763dde04ed6f4662517a188eab3417790133f4e032ea3f3bba46"
+    sha256 cellar: :any,                 arm64_monterey: "31c2a8892dc5b4f1d1d38da3a442bd9c394f69ddf282d8b8720762d9328db1bf"
+    sha256 cellar: :any,                 arm64_big_sur:  "76c315c22a663356d665e915a5aec2e17c1b684ca6887e081e6c0eb542b506f9"
+    sha256 cellar: :any,                 ventura:        "b547a32c07864128ae97703716c952e21cf78b896a6dc4886bf404323d7e90d2"
+    sha256 cellar: :any,                 monterey:       "261d0d1f760ccbc965f2a554d4d74841d936f02bae34d34ce28a3f9433da8026"
+    sha256 cellar: :any,                 big_sur:        "479c1f5d902f08c235f982e90299f51d44cd6b246f2ddff08a1f714254bca64c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "16d476747e71a454990e8884633a4f86567f14212c928d69afb0487af5e87ac4"
   end
 
   depends_on "cmake" => :build
