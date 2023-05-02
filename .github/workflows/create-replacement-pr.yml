@@ -52,6 +52,7 @@ jobs:
     permissions:
       contents: read
       pull-requests: write # for `post-comment`, `gh api`, `gh pr edit`
+      repository-projects: write # for `gh pr edit`
     defaults:
       run:
         shell: bash

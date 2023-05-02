@@ -68,6 +68,7 @@ jobs:
       contents: read
       actions: write # for `gh workflow run`
       pull-requests: write # for `gh pr edit|comment|review`
+      repository-projects: write # for `gh pr edit`
     steps:
       - name: Check PR approval
         env:
@@ -234,6 +235,7 @@ jobs:
       contents: read
       actions: write # for `gh workflow run`
       pull-requests: write # for `gh pr edit|review`
+      repository-projects: write # for `gh pr edit`
     defaults:
       run:
         shell: bash
