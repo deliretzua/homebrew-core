@@ -1,9 +1,9 @@
 class GoAT119 < Formula
   desc "Open source programming language to build simple/reliable/efficient software"
   homepage "https://go.dev/"
-  url "https://go.dev/dl/go1.19.8.src.tar.gz"
-  mirror "https://fossies.org/linux/misc/go1.19.8.src.tar.gz"
-  sha256 "1d7a67929dccafeaf8a29e55985bc2b789e0499cb1a17100039f084e3238da2f"
+  url "https://go.dev/dl/go1.19.9.src.tar.gz"
+  mirror "https://fossies.org/linux/misc/go1.19.9.src.tar.gz"
+  sha256 "131190a4697a70c5b1d232df5d3f55a3f9ec0e78e40516196ffb3f09ae6a5744"
   license "BSD-3-Clause"
 
   livecheck do
