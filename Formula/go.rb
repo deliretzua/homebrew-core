@@ -13,13 +13,13 @@ class Go < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "771302acc4a2dbdedfd822e0a0fd0747fe2457891ab5bbc3bcf7dd177de66c68"
-    sha256 arm64_monterey: "771302acc4a2dbdedfd822e0a0fd0747fe2457891ab5bbc3bcf7dd177de66c68"
-    sha256 arm64_big_sur:  "771302acc4a2dbdedfd822e0a0fd0747fe2457891ab5bbc3bcf7dd177de66c68"
-    sha256 ventura:        "c011832c003ec5c8ea31bd548935362ca99b3d1abe4244830fdc802bb9b424aa"
-    sha256 monterey:       "c011832c003ec5c8ea31bd548935362ca99b3d1abe4244830fdc802bb9b424aa"
-    sha256 big_sur:        "c011832c003ec5c8ea31bd548935362ca99b3d1abe4244830fdc802bb9b424aa"
-    sha256 x86_64_linux:   "a58a644000147352a8f0d745a4505aa4098af6328d905b18bbf06ad78212dbd5"
+    sha256 arm64_ventura:  "b764080c5d6961d44e3e41619c3f5be34cced56ff5d3ef11ffaeed902fc25f53"
+    sha256 arm64_monterey: "b764080c5d6961d44e3e41619c3f5be34cced56ff5d3ef11ffaeed902fc25f53"
+    sha256 arm64_big_sur:  "b764080c5d6961d44e3e41619c3f5be34cced56ff5d3ef11ffaeed902fc25f53"
+    sha256 ventura:        "d21e7841f24e756b7c2b9121f4beb1f72d3696956c9114982fef5d26f0d64904"
+    sha256 monterey:       "d21e7841f24e756b7c2b9121f4beb1f72d3696956c9114982fef5d26f0d64904"
+    sha256 big_sur:        "d21e7841f24e756b7c2b9121f4beb1f72d3696956c9114982fef5d26f0d64904"
+    sha256 x86_64_linux:   "6b434c4a680971507951cd93f389b5aaed1af05b12340b6749ccc5800ddef49c"
   end
 
   # Don't update this unless this version cannot bootstrap the new version.
