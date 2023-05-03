@@ -7,13 +7,13 @@ class Tepl < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_ventura:  "c1f4deb31e9f3b9e268809b60fe33ffe84f1e07aa13a4be2e52e0c63bab43ecf"
-    sha256 arm64_monterey: "48465cb9e278da6d098bef4f140fb4bfae6c4b07cfe4a49ae6f6658d9793288b"
-    sha256 arm64_big_sur:  "2e6e64936fb82c70aa0facdff1e2775659acc0f3ee8aa96062d8c41f6cdc6213"
-    sha256 ventura:        "e2878978ee1f7caeb5eaedb453f761c29a9a3d51de92d589cefb780cb715339b"
-    sha256 monterey:       "0b9626e24201eb636eda4178b0ec21ac4b15c83b7f45f5fdbe77146b0dad8f94"
-    sha256 big_sur:        "d7639d7f7ad349c7dcf8534f2a5fb9a81f9554a60d876d1185c52ff378a27023"
-    sha256 x86_64_linux:   "c790748f0d700a100da671e93a64e46204b8604a560a05ebb7516f0a8846bf12"
+    sha256 arm64_ventura:  "5788791a08385b22360a0f69acb250e05f5ca3de8c738384c9c15725345aa71e"
+    sha256 arm64_monterey: "255947b5ee0aabd2758071408d7012426a8ac37d39598bda7ded12125caa1180"
+    sha256 arm64_big_sur:  "649a341a700c3b1a616fb39d5ce81c04d8ac800b343fa233a944cbb0b7c7ba64"
+    sha256 ventura:        "f7f5f82c475f7eca28f73dfe3725ad742e4aac2293b76d35d92c2bd9d8dd24fa"
+    sha256 monterey:       "375a7dd294784611cc602993d9c46c502a6691f87ef4164fe89f31baaf74bb14"
+    sha256 big_sur:        "0abf48af71006cde55fd103a5a0d626bea02174b2dc9e523e8ae4fd6f67bf73e"
+    sha256 x86_64_linux:   "23f9885cea72b38468f5d5df6a4adfc5e8620ddb29573d16b4e66f79272df6ef"
   end
 
   depends_on "gobject-introspection" => :build
