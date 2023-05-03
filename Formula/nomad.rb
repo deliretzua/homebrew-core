@@ -12,13 +12,13 @@ class Nomad < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b5816c06ad084e6780c533660322c8b7117beb7b123c87d9a2ddccf93fefb446"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a4624e9ca5cf478cd8b6524c9f7910c47fd92fa7a3c3c696ab7ab2de7cd7a82f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9aebaa1f0270d4bfb70681a35fafc8c8e74d1071916048ad7167cc2e32a28481"
-    sha256 cellar: :any_skip_relocation, ventura:        "e1526fd21474e7342c6176b6bc3a02449a652eb1e138e61a7018d75826377c07"
-    sha256 cellar: :any_skip_relocation, monterey:       "52b285970a37cca7e25581591dcbcb9feb18d68f75853c90bd10c0cb0e54db46"
-    sha256 cellar: :any_skip_relocation, big_sur:        "95a5bcb0ed3b0811647c3384517e95d4d24a276c16db1f65f23644ce72d361ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c9ef8c4a487383d32d1fd2c1ab24d49ff4df543e7305461865eb4c109a177b1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3472055120e588aadb3f2ecbb917f0a2c2c6f0321bb79cbdab823d99942cc8b8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "47269986b55fa829327c749e47675c010ff93ae34d5528b960172c722a1d073c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3df9b33a3db0a116b7812c5d78d9d8bb8955ccca9d1dbb76a84f0b65d2aa0c0f"
+    sha256 cellar: :any_skip_relocation, ventura:        "e97c76f591febcb56e8000f647e5536ec7c4477d2a40047ef33df2a4a460815c"
+    sha256 cellar: :any_skip_relocation, monterey:       "ae12ccd642863facb7f35e23e9a686260f7e9ae6eea3566c611ed82cc7d9843f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5b8ecfbd0c8f4291e771ae38ed88dc896375e29e3ad9b11dcd7bc9aa1c4ef1ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9884de46123828e99978a1be04083ca79ad24b7c325e59f63f317affdeb0777"
   end
 
   depends_on "go" => :build
