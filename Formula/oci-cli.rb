@@ -3,8 +3,8 @@ class OciCli < Formula
 
   desc "Oracle Cloud Infrastructure CLI"
   homepage "https://docs.cloud.oracle.com/iaas/Content/API/Concepts/cliconcepts.htm"
-  url "https://files.pythonhosted.org/packages/96/84/a631549d43613361828289cb8e58aa925d7b96a87ecd042f35644f9429a7/oci-cli-3.25.4.tar.gz"
-  sha256 "4ef53ddfa3bbf81f0b853b312c86bd1a807e8adaa0307adef6e1c1db6e8120fb"
+  url "https://files.pythonhosted.org/packages/f8/d4/cfe6ab7cbb917f1e9e26d04bc995df9487c55fa20c980f5b5ce757c06c8f/oci-cli-3.26.0.tar.gz"
+  sha256 "698f7c821f3997ec5e920ccc7bdfd428e0a1c2a936e7946918eddea5f0b6b2bc"
   license any_of: ["UPL-1.0", "Apache-2.0"]
   head "https://github.com/oracle/oci-cli.git", branch: "master"
 
@@ -58,8 +58,8 @@ class OciCli < Formula
   end
 
   resource "oci" do
-    url "https://files.pythonhosted.org/packages/8f/3f/4d237aeedaa8d6cb488beefd362f4e0024342ac507be45fc223132c6f3a6/oci-2.99.1.tar.gz"
-    sha256 "f506b117a73f4d40f0f04f2fe51820ce17566093af7a20100ad53c16602d1857"
+    url "https://files.pythonhosted.org/packages/20/88/37bbba074a437b665b7821f8657fcb49c091002b26e227317e3d0efd74b7/oci-2.100.0.tar.gz"
+    sha256 "6300ad0cf6b8492a1fb1e2a46765cf2268bb15f33f7b6e56c779bb20115cb63b"
   end
 
   resource "prompt-toolkit" do
@@ -72,7 +72,7 @@ class OciCli < Formula
     sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
   end
 
-  resource "pyOpenSSL" do
+  resource "pyopenssl" do
     url "https://files.pythonhosted.org/packages/8f/72/f1d9e92f5d3a58aba3b71ad512de19eb9f82e7b98795662bf7b796be71e5/pyOpenSSL-23.1.1.tar.gz"
     sha256 "841498b9bec61623b1b6c47ebbc02367c07d60e0e195f19790817f10cc8db0b7"
   end
@@ -87,7 +87,7 @@ class OciCli < Formula
     sha256 "1d8ce29db189191fb55338ee6d0387d82ab59f3d00eac103412d64e0ebd0c588"
   end
 
-  resource "PyYAML" do
+  resource "pyyaml" do
     url "https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz"
     sha256 "607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"
   end
