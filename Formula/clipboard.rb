@@ -1,8 +1,8 @@
 class Clipboard < Formula
   desc "Cut, copy, and paste anything, anywhere, all from the terminal"
   homepage "https://getclipboard.app"
-  url "https://github.com/Slackadays/Clipboard/archive/refs/tags/0.6.0.tar.gz"
-  sha256 "8e87800d376f6649ae489d5aeb5af35ee079ca2e56e75902e1a45b4167180065"
+  url "https://github.com/Slackadays/Clipboard/archive/refs/tags/0.7.0.tar.gz"
+  sha256 "56eb36ffcc0aa52e96dedcdc9c31a09871b442b118a75e2fd56a83c06bb71b66"
   license "GPL-3.0-or-later"
   head "https://github.com/Slackadays/Clipboard.git", branch: "main"
 
@@ -38,8 +38,8 @@ class Clipboard < Formula
   test do
     ENV["CLIPBOARD_FORCETTY"] = "1"
     ENV["CLIPBOARD_NOGUI"] = "1"
-    system bin/"clipboard", "copy", test_fixtures("test.png")
-    system bin/"clipboard", "paste"
+    system bin/"cb", "copy", test_fixtures("test.png")
+    system bin/"cb", "paste"
     assert_predicate testpath/"test.png", :exist?
   end
 end
