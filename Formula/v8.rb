@@ -2,8 +2,8 @@ class V8 < Formula
   desc "Google's JavaScript engine"
   homepage "https://github.com/v8/v8/wiki"
   # Track V8 version from Chrome stable: https://omahaproxy.appspot.com
-  url "https://github.com/v8/v8/archive/11.2.214.14.tar.gz"
-  sha256 "1774792074228ba61af841009eb3158fbbd5fb5f830d64b9fe0f41694cfdd7ef"
+  url "https://github.com/v8/v8/archive/11.3.244.8.tar.gz"
+  sha256 "9dee1c6d3c9b566fa62063825b006700f59f5a9e9b0fcd69cf61b78d96b616fe"
   license "BSD-3-Clause"
 
   livecheck do
@@ -37,10 +37,10 @@ class V8 < Formula
   fails_with gcc: "5"
 
   # Look up the correct resource revisions in the DEP file of the specific releases tag
-  # e.g. for CIPD dependency gn: https://chromium.googlesource.com/v8/v8.git/+/refs/tags/11.2.214.14/DEPS#59
+  # e.g. for CIPD dependency gn: https://chromium.googlesource.com/v8/v8.git/+/refs/tags/11.3.244.8/DEPS#59
   resource "gn" do
     url "https://gn.googlesource.com/gn.git",
-        revision: "b25a2f8c2d33f02082f0f258350f5e22c0973108"
+        revision: "41fef642de70ecdcaaa26be96d56a0398f95abd4"
   end
 
   resource "v8/base/trace_event/common" do
@@ -50,7 +50,7 @@ class V8 < Formula
 
   resource "v8/build" do
     url "https://chromium.googlesource.com/chromium/src/build.git",
-        revision: "4d96c496d92cb76c10b201cf9affb2d2027e3a86"
+        revision: "9e9a4341dd24e68cba0f228567a6edbaff1c665b"
   end
 
   resource "v8/third_party/googletest/src" do
@@ -60,7 +60,7 @@ class V8 < Formula
 
   resource "v8/third_party/icu" do
     url "https://chromium.googlesource.com/chromium/deps/icu.git",
-        revision: "c6b68522318204f795a8f04caebf6c0beb679cc4"
+        revision: "1e49ac26ddc712b1ab702f69023cbc57e9ae6628"
   end
 
   resource "v8/third_party/jinja2" do
@@ -75,7 +75,7 @@ class V8 < Formula
 
   resource "v8/third_party/zlib" do
     url "https://chromium.googlesource.com/chromium/src/third_party/zlib.git",
-        revision: "ab0d470309eab637f990878965d0f10ca34f60fc"
+        revision: "5edb52d4302d7aef232d585ec9ae27ef5c3c5438"
   end
 
   def install
