@@ -9,13 +9,13 @@ class Commitizen < Formula
   head "https://github.com/commitizen-tools/commitizen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4fb4982607177f6536de795b46d5d408999cf0a8fe00324617eb3e2900bf66eb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fbf72cedf6702343a6269d32c5a568664cf280c3e16b1d02b4ef92d2674db032"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "58d5bd5038f2fc226324af48a6533ad635af16db94b49bbf3832e69c8acca60a"
-    sha256 cellar: :any_skip_relocation, ventura:        "abc6e46a3ddfeac7ff7d76b62505e0db35f905e5fa4f0e23b6588c5d3e1c53e3"
-    sha256 cellar: :any_skip_relocation, monterey:       "7aa9ad64857a5b69d940b7ad3815b175fcb133260f610b2a985e85100e64cc91"
-    sha256 cellar: :any_skip_relocation, big_sur:        "aa5eb1c03ef44a59408f413f9c560e54b462717668ad2b91eec0cb2ebbbef772"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23006a1a695077e974b1269be2e13e88e32fe8ef6c21ee232099ccf7073d4d36"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "de80b7e2e396dac4ce626e889f94b2ed6e1b5de40293c9c734f28b5fbfcf6f2c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "75f53fbc7fca98ef707e78763ddbb1e645dfe74819acd4f9820df9ed48219cd9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "97861c1a0a90cfcad8e1435f7d48e144a066781573b573925ed285573c1164c4"
+    sha256 cellar: :any_skip_relocation, ventura:        "6f6a9de1d43e82ca0b9addc68429f5247d6077e27b71c935be9878264821b681"
+    sha256 cellar: :any_skip_relocation, monterey:       "f412bf7648c4820b8a18c6207caf2471bdf952551828ea19cfb51abcecd2dce0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "672ec14ad1d7f938bbb1011b0850efba3e1d4b7bba73908366c4f2d5167e4659"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c463ca48d81a39818becd996b32635929679f43922463ff9d67b3f0e76af4e51"
   end
 
   depends_on "python-typing-extensions"
