@@ -3,8 +3,8 @@ class Pythran < Formula
 
   desc "Ahead of Time compiler for numeric kernels"
   homepage "https://pythran.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/6b/ab/fa91b9a43381d966b96b88883eb819ae26cef446a0e0be8288d2845212b3/pythran-0.13.0.tar.gz"
-  sha256 "1eb7ca772e96e21204f92483c982ad9ba6a950863075df62ea97cd06b2d11786"
+  url "https://files.pythonhosted.org/packages/8d/d8/b27e8dc3f3a03dcd317d40d9df0ae07ebbd85444585973ceba07716934d0/pythran-0.13.1.tar.gz"
+  sha256 "8aad08162f010e5425a7b254dd68d83311b430bb29f9252dce2eff3ba39497dd"
   license "BSD-3-Clause"
   head "https://github.com/serge-sans-paille/pythran.git", branch: "master"
 
