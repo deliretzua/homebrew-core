@@ -5,6 +5,16 @@ class Gitoxide < Formula
   sha256 "098bb18e1cae42ab7597b6b442538d3f51b57935a848ea121e20e2921d6a4693"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "50cc3507a201317ca4efcd66ec1ca950e7116327ab5c9db9679e8c67e5f692d6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "775e274a1b105542f6bc761fd1f8497b1e7414b0b6fd25ffdf7ea9d54530694c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f5dad4fb5bfdb7dcc43ead6595a953729e8315a1482e038a32cad68d45e965e5"
+    sha256 cellar: :any_skip_relocation, ventura:        "499573e3931e0c8c1b19227ae324d121a236c789447d6ec2242009d604935c13"
+    sha256 cellar: :any_skip_relocation, monterey:       "9e93326fcd0a656d7a2aefde7ddbdfece5f9b99b00520f4e1adabd9c1c091e91"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ddc27d56225489774b1ef7f4e620fbda93870f49ca43288fcd129198f7152b8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "265373aa1df3eed94736023ce31f79f9670d37f242ee5abf1c5e51993998454e"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   uses_from_macos "curl"
