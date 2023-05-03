@@ -1,8 +1,8 @@
 class Nomad < Formula
   desc "Distributed, Highly Available, Datacenter-Aware Scheduler"
   homepage "https://www.nomadproject.io"
-  url "https://github.com/hashicorp/nomad/archive/v1.5.3.tar.gz"
-  sha256 "f974ee06ef47b4b2bdf1981466e3498b509242a56a1e8a813b2405182e04601b"
+  url "https://github.com/hashicorp/nomad/archive/v1.5.4.tar.gz"
+  sha256 "9773ec61998a88b89652f32eb15f5b8da8c0d2f572d75d124d62b89f854fac0b"
   license "MPL-2.0"
   head "https://github.com/hashicorp/nomad.git", branch: "main"
 
@@ -22,6 +22,12 @@ class Nomad < Formula
   end
 
   depends_on "go" => :build
+
+  # Fix build on Big Sur. Remove when release includes this commit.
+  patch do
+    url "https://github.com/hashicorp/nomad/commit/780fcf9043f271caa249c8aceba69338db52dfbf.patch?full_index=1"
+    sha256 "67222324f824e18f7a7e4cf83a22d8b759e37e4053dd2c8c2a90772dff5f9ccc"
+  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "-tags", "ui"
