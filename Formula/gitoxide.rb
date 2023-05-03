@@ -5,14 +5,17 @@ class Gitoxide < Formula
   sha256 "098bb18e1cae42ab7597b6b442538d3f51b57935a848ea121e20e2921d6a4693"
   license "Apache-2.0"
 
-  # Cmake is here as only rust install wasn't enough (explained in PR)
-  depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   uses_from_macos "curl"
+  uses_from_macos "zlib"
 
   def install
-    system "cargo", "install", *std_cargo_args
+    # Avoid requiring CMake or building a vendored zlib-ng.
+    # `max` feature is the default.
+    inreplace "gix/Cargo.toml", "zlib-ng", "zlib-stock"
+    features = %w[max gix-features/zlib-stock]
+    system "cargo", "install", "--features=#{features.join(",")}", *std_cargo_args
   end
 
   test do
