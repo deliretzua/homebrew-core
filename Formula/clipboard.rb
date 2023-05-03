@@ -7,11 +7,11 @@ class Clipboard < Formula
   head "https://github.com/Slackadays/Clipboard.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "567881d4b39b83a7ec810cfebe0b7bfc6828164e497e791e019f50cdbb0dab62"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9d56b78f9633fed6e047f1b595a09c627ffb48bf2b0ad68a351045ea3c9449fa"
-    sha256 cellar: :any_skip_relocation, ventura:        "5ba34ebe7146091c0581985c61a3160614dd49490cb6d32bb9ede23b1a039492"
-    sha256 cellar: :any_skip_relocation, monterey:       "4f605675ed9fc4989bd2c7766a1ed30e75b7faf761898ed3aff8580d112be331"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "826afa3681f29ed730159a7d0ca15ac0cedad1a60ec82b75fe9f576b2882df55"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "980246451f5c390826547fce2d514806080ac74a7d45ec80f145e2bb66d8d01a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "087df7f6a25cfc0045f5373ab5ba65fb99024998926d4e8f304a296a8b5dafc6"
+    sha256 cellar: :any_skip_relocation, ventura:        "7e64358c2bbc53a4170694c34433d10b58920469555c9e847d9313b0d09b759c"
+    sha256 cellar: :any_skip_relocation, monterey:       "379934949d6927b2962e8dc801060e0a44d87702dfd55c671a2d9fae43d8c078"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d487efaac4d307265d99b9fb0d2dd106d02df13ba7b12ef08242b6714c5db957"
   end
 
   depends_on "cmake" => :build
