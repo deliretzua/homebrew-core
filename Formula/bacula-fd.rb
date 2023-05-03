@@ -1,8 +1,8 @@
 class BaculaFd < Formula
   desc "Network backup solution"
   homepage "https://www.bacula.org/"
-  url "https://downloads.sourceforge.net/project/bacula/bacula/13.0.2/bacula-13.0.2.tar.gz"
-  sha256 "6e08bcbe6a4ab070e17e9e9c4e9bc4e944d2e5bd376521ca342c6fe96a20687d"
+  url "https://downloads.sourceforge.net/project/bacula/bacula/13.0.3/bacula-13.0.3.tar.gz"
+  sha256 "0949c32be1090585e88e4c01d828002e87603136d87c598a29dff42bb3ed2a40"
   license "AGPL-3.0-only" => { with: "openvpn-openssl-exception" }
 
   bottle do
