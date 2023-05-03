@@ -1,8 +1,8 @@
 class D2 < Formula
   desc "Modern diagram scripting language that turns text to diagrams"
   homepage "https://d2lang.com/"
-  url "https://github.com/terrastruct/d2/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "abfc926a7dbb090c73012c8bf37558a8ae49d5c6045211b50a3386d8cd60b8dd"
+  url "https://github.com/terrastruct/d2/archive/refs/tags/v0.4.2.tar.gz"
+  sha256 "5a7fb24f2116ff63f7350c60933134a80d93f0e4f298f7d2b654e2e3ee58378a"
   license "MPL-2.0"
   head "https://github.com/terrastruct/d2.git", branch: "master"
 
