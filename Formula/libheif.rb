@@ -1,8 +1,8 @@
 class Libheif < Formula
   desc "ISO/IEC 23008-12:2017 HEIF file format decoder and encoder"
   homepage "https://www.libde265.org/"
-  url "https://github.com/strukturag/libheif/releases/download/v1.15.2/libheif-1.15.2.tar.gz"
-  sha256 "7a4c6077f45180926583e2087571371bdd9cb21b6e6fada85a6fbd544f26a0e2"
+  url "https://github.com/strukturag/libheif/releases/download/v1.16.1/libheif-1.16.1.tar.gz"
+  sha256 "ac15b54b6d7c315710e156d119b8a1bfc89f29621e99222b2750b1f31c9c3558"
   license "LGPL-3.0-only"
 
   bottle do
@@ -15,6 +15,7 @@ class Libheif < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d4e7ec91a69c67812ce959e25871af7412966f82e15cbcb9a873cce3389df1c"
   end
 
+  depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "aom"
   depends_on "jpeg-turbo"
@@ -24,8 +25,9 @@ class Libheif < Formula
   depends_on "x265"
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
     pkgshare.install "examples/example.heic"
     pkgshare.install "examples/example.avif"
   end
