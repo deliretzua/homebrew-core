@@ -7,7 +7,13 @@ class Liblxi < Formula
   head "https://github.com/lxi-tools/liblxi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "997b6e87729a9b05f5cbefce050d43f223e881f07ac7ff395e316bd32014f36b"
+    sha256 cellar: :any,                 arm64_ventura:  "63bcb7e9f147d03a0d64312d8c163c69b0e7f16981abc5a9bbb7cc83e6bc3519"
+    sha256 cellar: :any,                 arm64_monterey: "2365317da14265abfb1e2234b0f56eeb00c22e9b81f78d13ede32f315382d02e"
+    sha256 cellar: :any,                 arm64_big_sur:  "aa692d16c6e2efe4256a321e87f8a1802d41425a9d7abb29efda7cdb79b86f4b"
+    sha256 cellar: :any,                 ventura:        "f2e5e6d30a77edb1816d10122ec6e21fb344ff8259caf98fa9cd8911fa659337"
+    sha256 cellar: :any,                 monterey:       "acfb74e8fc1865fb79b3c40fb8e4bca8562b3021ea99bedf251b2fdb97eeb4e3"
+    sha256 cellar: :any,                 big_sur:        "db54fd22f37bf410a22a395c442bbcb4be27d0d02aa139eda873fc6c1e7a4467"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb3842da1429bdb1cd1cd8a620df78bb26610e7de6abf19281904b19c6b30c1d"
   end
 
   depends_on "meson" => :build
