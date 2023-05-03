@@ -3,8 +3,8 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/49/13/d21b4dd28a9fa9aed3313e9d545e28a70ea944977d62aa4ee9a4abefdb8a/dvc-2.55.0.tar.gz"
-  sha256 "3ee239ae1e946fe1ac8999fc829ccb570e03c248938e5b8235f5647cf1dce806"
+  url "https://files.pythonhosted.org/packages/47/ea/f58fe9d38ac927645d7fe4000c2926f96f43e837f1327924df27d7fa3ab3/dvc-2.56.0.tar.gz"
+  sha256 "927dcde2ae658b434ba428a0b93247a014f23ef383c23a07a9040ad22c5bbcf7"
   license "Apache-2.0"
 
   bottle do
@@ -65,6 +65,11 @@ class Dvc < Formula
   resource "aioitertools" do
     url "https://files.pythonhosted.org/packages/4a/e6/888e1d726f0846c84e14a0f2f57873819eff9278b394d632aed979c98fbd/aioitertools-0.11.0.tar.gz"
     sha256 "42c68b8dd3a69c2bf7f2233bf7df4bb58b557bca5252ac02ed5187bbc67d6831"
+  end
+
+  resource "aiooss2" do
+    url "https://files.pythonhosted.org/packages/a7/e8/28994262c4fb5e79720a3051e67cce609684f2127e586314bc5e89d0bd41/aiooss2-0.2.5.tar.gz"
+    sha256 "49db023f2b9c8bd8c9ed5d241c2ff3b42831b468b2cfa1b96ac6700b94fd053d"
   end
 
   resource "aiosignal" do
@@ -298,8 +303,8 @@ class Dvc < Formula
   end
 
   resource "dvc-render" do
-    url "https://files.pythonhosted.org/packages/40/e5/27520c46ce0e0a8861364a378b76c8fc18919f78b3b01cf8f673b78d5d13/dvc-render-0.3.1.tar.gz"
-    sha256 "af718d813017db9b2e688576f33a8ce27398949620340894afae4f1023f0e07a"
+    url "https://files.pythonhosted.org/packages/20/c4/b6120434efe182242cc6a5c8abb7acd1b2310d9356717c4e3fdcd46d0646/dvc-render-0.4.0.tar.gz"
+    sha256 "a1e382d85f20e1d955c4adc294f55c977fba23170c2e9bd1d311146f5789196a"
   end
 
   resource "dvc-s3" do
@@ -658,8 +663,8 @@ class Dvc < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/46/a9/6ed24832095b692a8cecc323230ce2ec3480015fbfa4b79941bd41b23a3c/ruamel.yaml-0.17.21.tar.gz"
-    sha256 "8b7ce697a2f212752a35c1ac414471dc16c424c9573be4926b56ff3f5d23b7af"
+    url "https://files.pythonhosted.org/packages/eb/a4/e056a6f778bfc01d653dd777e5ff57c1f1b48fcaa889d75bac0ef9650768/ruamel.yaml-0.17.22.tar.gz"
+    sha256 "c22ec58aaca5105f771cb8f7ac45ad631b5e8b00454ebe1822d442fb696e9e62"
   end
 
   resource "s3fs" do
