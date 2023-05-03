@@ -77,8 +77,6 @@ class Dynare < Formula
   end
 
   def install
-    ENV.cxx11
-
     resource("slicot").stage do
       system "make", "lib", "OPTS=-fPIC", "SLICOTLIB=../libslicot_pic.a",
              "FORTRAN=gfortran", "LOADER=gfortran"
@@ -89,13 +87,13 @@ class Dynare < Formula
       (buildpath/"slicot/lib").install "libslicot_pic.a", "libslicot64_pic.a"
     end
 
+    gcc = Formula["gcc"]
+
     # GCC is the only compiler supported by upstream
     # https://git.dynare.org/Dynare/dynare/-/blob/master/README.md#general-instructions
-    gcc = Formula["gcc"]
-    gcc_major_ver = gcc.any_installed_version.major
-    ENV["CC"] = Formula["gcc"].opt_bin/"gcc-#{gcc_major_ver}"
-    ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{gcc_major_ver}"
-    ENV.append "LDFLAGS", "-static-libgcc"
+    ENV.public_send(:"gcc-#{gcc.any_installed_version.major}") if OS.mac?
+    # Prevent superenv from adding `-stdlib=libc++` to compiler invocations.
+    ENV.remove "HOMEBREW_CCCFG", "g"
 
     # Remove `Hardware::CPU.arm?` when the patch is no longer needed.
     system "autoreconf", "--force", "--install", "--verbose" if build.head? || Hardware::CPU.arm?
@@ -109,7 +107,7 @@ class Dynare < Formula
                           "--with-slicot=#{buildpath}/slicot"
 
     # Octave hardcodes its paths which causes problems on GCC minor version bumps
-    flibs = "-L#{gcc.lib}/gcc/#{gcc_major_ver} -lgfortran -lquadmath -lm"
+    flibs = "-L#{gcc.opt_lib}/gcc/current -lgfortran -lquadmath -lm"
     system "make", "install", "FLIBS=#{flibs}"
   end
 
