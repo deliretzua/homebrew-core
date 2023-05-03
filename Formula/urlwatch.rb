@@ -3,8 +3,8 @@ class Urlwatch < Formula
 
   desc "Get notified when a webpage changes"
   homepage "https://thp.io/2008/urlwatch/"
-  url "https://files.pythonhosted.org/packages/05/40/ce24dc7f98a3b4b9d0cc001e116eb12e647eddff58b1896c02e65595faab/urlwatch-2.26.tar.gz"
-  sha256 "b14bbe23d87b7d4ac8b4e71a51fd2066908a947ccf7b557c3e4f87b09f455e8f"
+  url "https://files.pythonhosted.org/packages/ef/6d/28df22a0912d40e294cfde709ead82e36441018ff9c0137c9e768ce9084e/urlwatch-2.28.tar.gz"
+  sha256 "911df3abbd8923e46ec167a9657a812436caf93f7f9917cb7c95ebd73d28cce5"
   license "BSD-3-Clause"
 
   bottle do
@@ -49,11 +49,11 @@ class Urlwatch < Formula
   end
 
   resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/c2/84/ab374b7e05fbdeecf867294660ac0fdb23aa286aca68a31d587f67d181ad/importlib_metadata-6.3.0.tar.gz"
-    sha256 "23c2bcae4762dfb0bbe072d358faec24957901d75b6c4ab11172c0c982532402"
+    url "https://files.pythonhosted.org/packages/0b/1f/9de392c2b939384e08812ef93adf37684ec170b5b6e7ea302d9f163c2ea0/importlib_metadata-6.6.0.tar.gz"
+    sha256 "92501cdf9cc66ebd3e612f1b4f0c0765dfa42f0fa38ffb319b6bd84dd675d705"
   end
 
-  resource "jaraco.classes" do
+  resource "jaraco-classes" do
     url "https://files.pythonhosted.org/packages/bf/02/a956c9bfd2dfe60b30c065ed8e28df7fcf72b292b861dca97e951c145ef6/jaraco.classes-3.2.3.tar.gz"
     sha256 "89559fa5c1d3c34eff6f631ad80bb21f378dbcbb35dd161fd2c6b93f5be2f98a"
   end
@@ -79,8 +79,8 @@ class Urlwatch < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/9d/ee/391076f5937f0a8cdf5e53b701ffc91753e87b07d66bae4a09aa671897bf/requests-2.28.2.tar.gz"
-    sha256 "98b1b2782e3c6c4904938b84c0eb932721069dfdb9134313beff7c83c2df24bf"
+    url "https://files.pythonhosted.org/packages/4c/d2/70fc708727b62d55bc24e43cc85f073039023212d482553d853c44e57bdb/requests-2.29.0.tar.gz"
+    sha256 "f2e34a75f4749019bb0e3effb66683630e4ffeaf75819fb51bebef1bf5aef059"
   end
 
   resource "urllib3" do
