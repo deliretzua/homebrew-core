@@ -7,13 +7,13 @@ class Lazygit < Formula
   head "https://github.com/jesseduffield/lazygit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "401a0c31032572f855a5f2207d78f318edfa082cfced8c586911d9aff711dfab"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "56dcb01075d98bac3834eca8f5023822b255c955e4087d58c8a420516eea8d3c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "564d259b773bf98fd0f5cc5e5c0ccffed6b948d2f0c64cb72bc23d064cdd0979"
-    sha256 cellar: :any_skip_relocation, ventura:        "7a7f25fdb5cb29c582e1b2fabaaec87064f295bb6d545b52bba7f19c34605b01"
-    sha256 cellar: :any_skip_relocation, monterey:       "908b7ccde3658256507427bb9586d594797d65bda3e846e029a10076658bab59"
-    sha256 cellar: :any_skip_relocation, big_sur:        "01e9bc26a8b7cc95dc8f667a10fffb680436c2b19b2f8c58bee05f04396005f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "35c4642f0ce88752b94add6464bbf519120ba4fd3d40407b654923c05ca1e8e9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "40dafb9962149161d30f6bbcd8dbdc4e4e893354416c0711e978dbc636011963"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "40dafb9962149161d30f6bbcd8dbdc4e4e893354416c0711e978dbc636011963"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "40dafb9962149161d30f6bbcd8dbdc4e4e893354416c0711e978dbc636011963"
+    sha256 cellar: :any_skip_relocation, ventura:        "2cd6cea246579a68682f8c9e735024547589283f7a00e8247c222f3970282874"
+    sha256 cellar: :any_skip_relocation, monterey:       "2cd6cea246579a68682f8c9e735024547589283f7a00e8247c222f3970282874"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2cd6cea246579a68682f8c9e735024547589283f7a00e8247c222f3970282874"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ce9273c0493b10bd1839ee45cf2ab646043f5dde577472bcdb967c3ef5e3175"
   end
 
   depends_on "go" => :build
