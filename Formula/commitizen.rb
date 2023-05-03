@@ -3,8 +3,8 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https://commitizen-tools.github.io/commitizen/"
-  url "https://files.pythonhosted.org/packages/0d/9c/46deca09905c4af72eeafc14ec91cf95e0ccfafa706160edaa387a797382/commitizen-3.2.0.tar.gz"
-  sha256 "2c2b9b72b66bfa82cf8041ca2577443cbc96e964c3ef676b11d837e2aa8ea487"
+  url "https://files.pythonhosted.org/packages/70/56/7431f3085f3d0ac50121bebc0e53dca9481a0f909940948ff7fe25be7029/commitizen-3.2.1.tar.gz"
+  sha256 "2d62fd099e81b5126d1870ada6c7e96ebb561cc27357bd2ce6930c0f5c573c21"
   license "MIT"
   head "https://github.com/commitizen-tools/commitizen.git", branch: "master"
 
@@ -43,8 +43,8 @@ class Commitizen < Formula
   end
 
   resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/55/12/ab288357b884ebc807e3f4eff63ce5ba6b941ba61499071bf19f1bbc7f7f/importlib_metadata-4.13.0.tar.gz"
-    sha256 "dd0173e8f150d6815e098fd354f6414b0f079af4644ddfe90c71e2fc6174346d"
+    url "https://files.pythonhosted.org/packages/0b/1f/9de392c2b939384e08812ef93adf37684ec170b5b6e7ea302d9f163c2ea0/importlib_metadata-6.6.0.tar.gz"
+    sha256 "92501cdf9cc66ebd3e612f1b4f0c0765dfa42f0fa38ffb319b6bd84dd675d705"
   end
 
   resource "jinja2" do
