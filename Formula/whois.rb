@@ -1,8 +1,8 @@
 class Whois < Formula
   desc "Lookup tool for domain names and other internet resources"
   homepage "https://packages.debian.org/sid/whois"
-  url "https://deb.debian.org/debian/pool/main/w/whois/whois_5.5.16.tar.xz"
-  sha256 "0a818f56c4bb909cf8665766cb683931de52901d6a33627d51b1005add3cdb27"
+  url "https://deb.debian.org/debian/pool/main/w/whois/whois_5.5.17.tar.xz"
+  sha256 "effe86e6d75101c2f33a0b3d2d948ab54aa57893fedc3b9983ffd55e881e2521"
   license "GPL-2.0-or-later"
   head "https://github.com/rfc1036/whois.git", branch: "next"
 
@@ -23,6 +23,8 @@ class Whois < Formula
 
   def install
     ENV.append "LDFLAGS", "-L/usr/lib -liconv" if OS.mac?
+    # Workaround for Xcode 14.3.
+    ENV.append_to_cflags "-Wno-implicit-function-declaration"
 
     have_iconv = if OS.mac?
       "HAVE_ICONV=1"
