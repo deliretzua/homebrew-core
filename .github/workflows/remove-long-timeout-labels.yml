@@ -13,6 +13,7 @@ env:
   GH_NO_UPDATE_NOTIFIER: 1
   GH_PROMPT_DISABLED: 1
   LONG_TIMEOUT_LABEL: CI-long-timeout
+  HOMEBREW_NO_INSTALL_FROM_API: 1
 
 jobs:
   check-label:
@@ -54,7 +55,9 @@ jobs:
 
   remove-label:
     needs: check-label
-    if: needs.check-label.result == 'success'
+    if: >
+      needs.check-label.result == 'success' &&
+      fromJson(needs.check-label.outputs.long-timeout)
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/homebrew/ubuntu22.04:master
@@ -62,7 +65,7 @@ jobs:
       run:
         shell: bash
     env:
-      HOMEBREW_PR: ${{ needs.check-label.outputs.pull-number }}
+      PR: ${{ needs.check-label.outputs.pull-number }}
     permissions:
       contents: read
       actions: read # for `GitHub.get_workflow_run`
@@ -75,27 +78,16 @@ jobs:
         with:
           test-bot: false
 
-      - name: Check if CI was restarted
+      - name: Check CI status
         id: check
-        shell: brew ruby {0}
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          owner, repo = ENV.fetch("GITHUB_REPOSITORY").split("/")
-          pr = ENV.fetch("HOMEBREW_PR").to_i
-          workflow_runs, = GitHub.get_workflow_run(owner, repo, pr, workflow_id: "tests.yml")
-          status = workflow_runs.last&.fetch("status")
-
-          puts "::notice ::PR ##{pr} CI status: #{status}"
-          github_output = ENV.fetch("GITHUB_OUTPUT")
-          File.open(github_output, "a") do |f|
-            f.puts("status=#{status}")
-          end
+        run: brew check-ci-status "$PR"
 
       - name: Remove long timeout label
-        if: steps.check.outputs.status == 'COMPLETED'
+        if: fromJson(steps.check.outputs.allow-long-timeout-label-removal)
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "::notice ::Removing \`$LONG_TIMEOUT_LABEL\` label from PR #$HOMEBREW_PR"
-          gh pr edit "$HOMEBREW_PR" --remove-label "$LONG_TIMEOUT_LABEL"
+          echo "::notice ::Removing \`$LONG_TIMEOUT_LABEL\` label from PR #$PR"
+          gh pr edit "$PR" --remove-label "$LONG_TIMEOUT_LABEL"
