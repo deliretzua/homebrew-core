@@ -5,6 +5,7 @@ class OpenshiftCli < Formula
       tag:      "openshift-clients-4.12.0-202208031327",
       revision: "3c85519af6c4979c02ebb1886f45b366bbccbf55"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/openshift/oc.git", branch: "master"
 
   livecheck do
