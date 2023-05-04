@@ -7,16 +7,13 @@ class Serve < Formula
   head "https://github.com/syntaqx/serve.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "96f731178a714c1e820ec2aa8f4471f745e66e2b6c01d00d9a17792cb567a487"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7f453c52d159e364237cf66103ba3a09d6abb0d2cb25701f78ec5640ea9f69ee"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "99f115fe9c19d946db2604146c1bc1f1b85b5d2bb840951f0d105e031e4b0f0d"
-    sha256 cellar: :any_skip_relocation, ventura:        "7b30e2b530d54d40e4772277135823412a17ff8f22fc47c76e9a5e629c889e77"
-    sha256 cellar: :any_skip_relocation, monterey:       "da0614469aa0f0e59e54689c9e0d63e6dd442822548d5a9cbc11bf0d1e1005ef"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b56e69171f148421442997d819297a608316565d3664d04b771f1c7b67f8c4fa"
-    sha256 cellar: :any_skip_relocation, catalina:       "b6358efb493acb673bf7513a252f9f48e9ebb2c6a7824208d89ae631cfad9439"
-    sha256 cellar: :any_skip_relocation, mojave:         "9521fba08dd7bcfd843464b3c12a4f841007f28052104072768e052c194de6aa"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "0735a5f8002970bc5d1cb1ca68681713de9dfcffc7eeb30bcdcb7fc33bc58551"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "683623afac3844c56554be98423121f2e3bb488f48afdb0ad173e3392180dc22"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2bf7effe016ef9a0cef9f6325983d0071b6f7ab8097b99c6b79c926efd2519a1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2bf7effe016ef9a0cef9f6325983d0071b6f7ab8097b99c6b79c926efd2519a1"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2bf7effe016ef9a0cef9f6325983d0071b6f7ab8097b99c6b79c926efd2519a1"
+    sha256 cellar: :any_skip_relocation, ventura:        "205cfdc9a632e8c90d415bea94ab53e9a029afffb7d870fac8018bb937e43b98"
+    sha256 cellar: :any_skip_relocation, monterey:       "205cfdc9a632e8c90d415bea94ab53e9a029afffb7d870fac8018bb937e43b98"
+    sha256 cellar: :any_skip_relocation, big_sur:        "205cfdc9a632e8c90d415bea94ab53e9a029afffb7d870fac8018bb937e43b98"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "40325f69042fb626e7100fb49097752721fa1cc376bcf3cf2f53f5e49b215efc"
   end
 
   depends_on "go" => :build
