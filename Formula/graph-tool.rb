@@ -13,13 +13,13 @@ class GraphTool < Formula
   end
 
   bottle do
-    sha256                               arm64_ventura:  "6cd262a983e609c37416f094fe09b88e20a5f9a0036eb6bb1caf4a77eeb60d65"
-    sha256                               arm64_monterey: "4866941350d613c58f8bc890cfb92030f207e58caf16899bac182c7b830232f9"
-    sha256                               arm64_big_sur:  "c596b713e36735a8e2cdcd82c70bb803fe01cc0c5262a0d386168d5024d1510a"
-    sha256                               ventura:        "e7ebecf57590440e62ccf3bbe88b50cc6d90cfd63aa054721a5be177ae9c47b5"
-    sha256                               monterey:       "1d958a8b37d14a1f2b0ccfeadaf753cba67dd5e3eddb13448564915410e3b6ce"
-    sha256                               big_sur:        "b1668eee4be69d4290c13d8d0da5c2b38a00ccfe5bea2dc7553b4acda7aaf823"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "706cbc581fadd978980bb1faedd5d481537bd15c01087ce882fbd2c53496714f"
+    sha256                               arm64_ventura:  "d058ec4c90b8c258b45aeb7d44b4fa1608220726184515c01f1885ef4168974a"
+    sha256                               arm64_monterey: "a7a9375b701fd16af9129605b8a88bff6d96c715fb4b37fc3c929dd6ccceb7a5"
+    sha256                               arm64_big_sur:  "b3d8c30a676a8c529e3cc6fc59cb43864a56db773ebe127228b1eacef02a5097"
+    sha256                               ventura:        "e9072cdf6b5e6a72b7ffd75d658c4eb41cb134e61027e8ddca73aab6fe87016f"
+    sha256                               monterey:       "895fbf0fd7f5573a9940d74d221e500586addb54b8af64bd695730a0e5f362c3"
+    sha256                               big_sur:        "ebf15f2659ce5065bf82d3598d0d907ad1d7b4119830729e117c710ebda829a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a68b8790d17983e3e957aaf6d280cb7777de3051ca95ef246bcd8212725684a"
   end
 
   depends_on "autoconf" => :build
