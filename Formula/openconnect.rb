@@ -1,11 +1,10 @@
 class Openconnect < Formula
   desc "Open client for Cisco AnyConnect VPN"
   homepage "https://www.infradead.org/openconnect/"
-  url "ftp://ftp.infradead.org/pub/openconnect/openconnect-9.01.tar.gz"
-  mirror "https://fossies.org/linux/privat/openconnect-9.01.tar.gz"
-  sha256 "b3d7faf830e9793299d6a41e81d84cd4a3e2789c148c9e598e4585010090e4c7"
+  url "ftp://ftp.infradead.org/pub/openconnect/openconnect-9.10.tar.gz"
+  mirror "https://fossies.org/linux/privat/openconnect-9.10.tar.gz"
+  sha256 "f1e0c4eed0ba79b87d6a0406a1500775c145c7b8392fa82094fc3e37dfab6547"
   license "LGPL-2.1-only"
-  revision 2
 
   livecheck do
     url "https://www.infradead.org/openconnect/download.html"
@@ -37,8 +36,8 @@ class Openconnect < Formula
   depends_on "stoken"
 
   resource "vpnc-script" do
-    url "https://gitlab.com/openconnect/vpnc-scripts/raw/e52f8e66391c4c55ee818841d236ebbb6ae284ed/vpnc-script"
-    sha256 "6d95e3625cceb51e77628196055adb58c3e8325b9f66fcc8e97269caf42b8575"
+    url "https://gitlab.com/openconnect/vpnc-scripts/raw/22756827315bc875303190abb3756b5b1dd147ce/vpnc-script"
+    sha256 "46c0413e26f1d918d95755d323cf833bf1b7540400a3b75ebbb2ac4c906f7f7f"
   end
 
   def install
