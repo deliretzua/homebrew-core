@@ -3,8 +3,8 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/67/f7/49b66193c5c9e7e5863b236bc6c33985bf458c602d2a81ba9c78af10f9fa/snakemake-7.25.2.tar.gz"
-  sha256 "616652da63f200b37a62dc08bef74efeb165fa2d38191625db981244b01e3ae8"
+  url "https://files.pythonhosted.org/packages/b3/1e/fde49381c0c59a3c98eaba1a51d361a1282172d794ecb87f869f06880ed9/snakemake-7.25.3.tar.gz"
+  sha256 "993a304d6a9bf12b6b55b45e77dd3b98897394b205a5bcefb7e180dec2095ee4"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
@@ -140,8 +140,8 @@ class Snakemake < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/4c/d2/70fc708727b62d55bc24e43cc85f073039023212d482553d853c44e57bdb/requests-2.29.0.tar.gz"
-    sha256 "f2e34a75f4749019bb0e3effb66683630e4ffeaf75819fb51bebef1bf5aef059"
+    url "https://files.pythonhosted.org/packages/e0/69/122171604bcef06825fa1c05bd9e9b1d43bc9feb8c6c0717c42c92cc6f3c/requests-2.30.0.tar.gz"
+    sha256 "239d7d4458afcb28a692cdd298d87542235f4ca8d36d03a15bfc128a6559a2f4"
   end
 
   resource "reretry" do
@@ -180,8 +180,8 @@ class Snakemake < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/21/79/6372d8c0d0641b4072889f3ff84f279b738cd8595b64c8e0496d4e848122/urllib3-1.26.15.tar.gz"
-    sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
+    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
+    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
   end
 
   resource "wrapt" do
