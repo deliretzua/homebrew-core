@@ -2,8 +2,8 @@ class Joern < Formula
   desc "Open-source code analysis platform based on code property graphs"
   homepage "https://joern.io/"
   # joern should only be updated every 10 releases on multiples of 10
-  url "https://github.com/joernio/joern/archive/refs/tags/v1.1.1660.tar.gz"
-  sha256 "4d376dbf33f320027543bb9b4939a7dba937cab726c440e984ae156212b9e323"
+  url "https://github.com/joernio/joern/archive/refs/tags/v1.1.1670.tar.gz"
+  sha256 "c70f1b8f6df501d826988ed000f40eec09ff20f6aa6d79f8e22b05748630f3a4"
   license "Apache-2.0"
 
   livecheck do
