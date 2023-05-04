@@ -8,7 +8,6 @@ class RosaCli < Formula
 
   livecheck do
     url :stable
-    regex(%r{href=.*?/tag/v?(\d+\.\d+\.\d+)["' >]}i)
     strategy :github_latest
   end
 
