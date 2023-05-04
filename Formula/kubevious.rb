@@ -3,8 +3,8 @@ require "language/node"
 class Kubevious < Formula
   desc "Detects and prevents Kubernetes misconfigurations and violations"
   homepage "https://github.com/kubevious/cli"
-  url "https://registry.npmjs.org/kubevious/-/kubevious-1.0.53.tgz"
-  sha256 "5601a17c83787ad9d75d11a31ce9806fd3747ae4e2cc6970c2fba1d8960cf4c8"
+  url "https://registry.npmjs.org/kubevious/-/kubevious-1.0.55.tgz"
+  sha256 "d2d9b27b097bf66be001f3f2ae72568fe0137894323c7d3c82bdd8f0e825dce5"
   license "Apache-2.0"
 
   bottle do
@@ -17,18 +17,11 @@ class Kubevious < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "da31fe013744f20dcbc4680380525055eab1590f38059412c27039d27503adb7"
   end
 
-  # Match deprecation date of `node@14`.
-  # TODO: Remove if migrated to `node@18` or `node`. Update date if migrated to `node@16`.
-  # Issue ref: https://github.com/kubevious/cli/issues/8
-  deprecate! date: "2023-04-30", because: "uses deprecated `node@14`"
-
-  # upstream issue to track node@18 support
-  # https://github.com/kubevious/cli/issues/8
-  depends_on "node@14"
+  depends_on "node@18"
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    (bin/"kubevious").write_env_script libexec/"bin/kubevious", PATH: "#{Formula["node@14"].opt_bin}:$PATH"
+    (bin/"kubevious").write_env_script libexec/"bin/kubevious", PATH: "#{Formula["node@18"].opt_bin}:$PATH"
   end
 
   test do
