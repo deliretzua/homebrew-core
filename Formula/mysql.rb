@@ -11,13 +11,13 @@ class Mysql < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "6cca8387c02ad0932892d792711395359df3f14ae62f7968b9ece17ff7f01d6d"
-    sha256 arm64_monterey: "6bcaa04f58dceb28478a81ff49dd2fc9886523270e5aae26ed7b6a433c6ba549"
-    sha256 arm64_big_sur:  "aa3e16c17c365fbcb8ed69d59b529d7abc02d686c8fc23ea529edc8a803002c6"
-    sha256 ventura:        "133aa61d00aeffaa026f5920a41634c7e1f73948582e66cf6dfaac054d41ac2d"
-    sha256 monterey:       "427395db33ab3143886f6c25b0aa28b51ac651037d887bfb4547af7b2e0f8496"
-    sha256 big_sur:        "8678cc4dc2a4881e0b3fbba64ffece73f153254966ed7ae8816ee76cd5e14daa"
-    sha256 x86_64_linux:   "4cfda2a94eec80f35024aa3c80f4ee47c40397869853ebae29571907227c9ae5"
+    sha256 arm64_ventura:  "162738bc3fd654490b6c66acb95729c5f583d63915a65235f91ab49e4d5e704f"
+    sha256 arm64_monterey: "3c828685f23c08a5b5247b2b2c1b53445e942148b6bfb984a437d0015e6f2716"
+    sha256 arm64_big_sur:  "e0522eb5d67966b999e1623cadd9e047d041eb2394d555f0ec72497734594119"
+    sha256 ventura:        "063304d285e9279e9dd1bb92d357d1c07b4b5b0d901f9e2a720771d569143a64"
+    sha256 monterey:       "2e8aa6f84049f870e3e411d8f8007b83b93ea1504c64567dded9e4bed7ebad63"
+    sha256 big_sur:        "7ccd48dcd9759c264572e92b205dfd18d16f5e40ba631756d3df9ba8b95274f5"
+    sha256 x86_64_linux:   "ac8e852decf93ace7313bb39142d27150e85556ffbc77e0a3c50e01683857d24"
   end
 
   depends_on "cmake" => :build
