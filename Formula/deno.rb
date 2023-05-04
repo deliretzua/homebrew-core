@@ -1,8 +1,8 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https://deno.land/"
-  url "https://github.com/denoland/deno/releases/download/v1.33.1/deno_src.tar.gz"
-  sha256 "e48cdaa3438f810479f82f46f9fa27f16b4364e33c4aebd48f8b58ee95187227"
+  url "https://github.com/denoland/deno/releases/download/v1.33.2/deno_src.tar.gz"
+  sha256 "fdb13159aaf8915610ece90d024ccd0af4c36f23fabcefe8dd86f4b1fb3e2aa5"
   license "MIT"
   head "https://github.com/denoland/deno.git", branch: "main"
 
@@ -44,8 +44,8 @@ class Deno < Formula
 
   # Use the latest tagged revision in https://github.com/denoland/v8/tags.
   resource "v8" do
-    url "https://github.com/denoland/v8/archive/09b1430e7090eb1d3f1397276221c4e92403de57.tar.gz"
-    sha256 "991cc00f37d037d69ca38716f04522f0bb261e67bbc7adf9b224266a93b62df2"
+    url "https://github.com/denoland/v8/archive/refs/tags/11.4.183.6-denoland-768874361e5884e9eab3.tar.gz"
+    sha256 "5d8b8276da6ef4c64c57383b33ada66d9df40a7244bdcb2eff8ec9e0174ebacc"
   end
 
   # To find the version of gn used:
