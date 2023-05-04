@@ -26,7 +26,7 @@ class OpenapiGenerator < Formula
     depends_on "maven" => :build
   end
 
-  depends_on "openjdk"
+  depends_on "openjdk@11"
 
   def install
     if build.head?
@@ -36,31 +36,39 @@ class OpenapiGenerator < Formula
       libexec.install "openapi-generator-cli-#{version}.jar" => "openapi-generator-cli.jar"
     end
 
-    (bin/"openapi-generator").write <<~EOS
-      #!/bin/bash
-      exec "#{Formula["openjdk"].opt_bin}/java" $JAVA_OPTS -jar "#{libexec}/openapi-generator-cli.jar" "$@"
-    EOS
+    bin.write_jar_script libexec/"openapi-generator-cli.jar", "openapi-generator", java_version: "11"
   end
 
   test do
+    # From the OpenAPI Spec website
+    # https://web.archive.org/web/20230505222426/https://swagger.io/docs/specification/basic-structure/
     (testpath/"minimal.yaml").write <<~EOS
       ---
-      swagger: '2.0'
+      openapi: 3.0.3
       info:
         version: 0.0.0
-        title: Simple API
-      host: localhost
-      basePath: /v2
-      schemes:
-        - http
+        title: Sample API
+      servers:
+        - url: http://api.example.com/v1
+          description: Optional server description, e.g. Main (production) server
+        - url: http://staging-api.example.com
+          description: Optional server description, e.g. Internal staging server for testing
       paths:
-        /:
+        /users:
           get:
-            operationId: test_operation
+            summary: Returns a list of users.
             responses:
-              200:
-                description: OK
+              '200':
+                description: A JSON array of user names
+                content:
+                  application/json:
+                    schema:
+                      type: array
+                      items:
+                        type: string
     EOS
     system bin/"openapi-generator", "generate", "-i", "minimal.yaml", "-g", "openapi", "-o", "./"
+    # Python is broken for (at least) Java 20
+    system bin/"openapi-generator", "generate", "-i", "minimal.yaml", "-g", "python", "-o", "./"
   end
 end
