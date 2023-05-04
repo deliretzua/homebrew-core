@@ -6,13 +6,13 @@ class OktaAwsCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f3b0b89fd9e05755dc7d79592c7c6923ad774f522d3b9d009ac3ebab924e14f2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f3b0b89fd9e05755dc7d79592c7c6923ad774f522d3b9d009ac3ebab924e14f2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f3b0b89fd9e05755dc7d79592c7c6923ad774f522d3b9d009ac3ebab924e14f2"
-    sha256 cellar: :any_skip_relocation, ventura:        "8e158d95d1b218ca49f05b8d9ae80ee3ab20a6d61efc13011f156cccfc67b64a"
-    sha256 cellar: :any_skip_relocation, monterey:       "8e158d95d1b218ca49f05b8d9ae80ee3ab20a6d61efc13011f156cccfc67b64a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8e158d95d1b218ca49f05b8d9ae80ee3ab20a6d61efc13011f156cccfc67b64a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a03f1ea2f40ba0f913a0c7de1c4bffc00420585830be3cceae77ebfc5e1b18a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ec32cc9e4af7d003a60f6a52edd771a9e75a3d6f937442f6ffd411876d8ab042"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ec32cc9e4af7d003a60f6a52edd771a9e75a3d6f937442f6ffd411876d8ab042"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ec32cc9e4af7d003a60f6a52edd771a9e75a3d6f937442f6ffd411876d8ab042"
+    sha256 cellar: :any_skip_relocation, ventura:        "223457815c8b59c578dab2bb01264b668cc5d611549a53d4206881f110fe3b5a"
+    sha256 cellar: :any_skip_relocation, monterey:       "223457815c8b59c578dab2bb01264b668cc5d611549a53d4206881f110fe3b5a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "223457815c8b59c578dab2bb01264b668cc5d611549a53d4206881f110fe3b5a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b132d83c017990a528ff0ac8ca6767a03e8cf286160bd7fb19d0f85b388ca15"
   end
 
   depends_on "go" => :build
