@@ -1,8 +1,8 @@
 class CargoNextest < Formula
   desc "Next-generation test runner for Rust"
   homepage "https://nexte.st"
-  url "https://github.com/nextest-rs/nextest/archive/refs/tags/cargo-nextest-0.9.51.tar.gz"
-  sha256 "fb86dc11ff727a34c1c7b81644f4cbbb33f0b23e9d64a84a7fe258491f35533a"
+  url "https://github.com/nextest-rs/nextest/archive/refs/tags/cargo-nextest-0.9.52.tar.gz"
+  sha256 "bf1726e5a57d734093abca10e26f1c9201ff606f8f35b294f644efa42a07c74b"
   license "Apache-2.0"
 
   livecheck do
@@ -23,10 +23,6 @@ class CargoNextest < Formula
   depends_on "rust" # uses `cargo` at runtime
 
   def install
-    # Fix a performance regression. This can be removed once Rust 1.64 is stable.
-    # See https://github.com/nextest-rs/nextest/releases/tag/cargo-nextest-0.9.30
-    ENV["RUSTC_BOOTSTRAP"] = "1"
-    ENV["RUSTFLAGS"] = "--cfg process_group --cfg process_group_bootstrap_hack"
     system "cargo", "install", "--no-default-features", "--features", "default-no-update",
                     *std_cargo_args(path: "cargo-nextest")
   end
