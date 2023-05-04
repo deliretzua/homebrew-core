@@ -9,15 +9,14 @@ class Httpie < Formula
   head "https://github.com/httpie/httpie.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d20fde2e0abd50cc69df40164aae3a8ba0feb7ffc7138ea74f07fa3bf06b6583"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f484f1b4f058b715152491e81ad3a72318b0f43fe10532560a114d73b02f885a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6db8708b200e112506664720eed917f9e8ff6dec3b9577115fe7deffec40d68a"
-    sha256 cellar: :any_skip_relocation, ventura:        "83bf75aa2d4149c12a717462f0ad4aae9bb64bb9fac2cd8d3da7674a74faab04"
-    sha256 cellar: :any_skip_relocation, monterey:       "2bf69380d76561198246a8b45327dd72ae56afed53a4ec2af6a5c05c43089a12"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fd1ea3ef55a3df249f465c71fe07e2615cca6a503c6d16e2d9741485362489c0"
-    sha256 cellar: :any_skip_relocation, catalina:       "b9fccdffbdb469053b38e9138f5b5ec95d43545c90d6611a4b1ff97aec940ce9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a8b5057b8a4c1f589d89ebfd4fe70bc99deb1ba9939faa748f112ee0574c87f2"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6b25ec0104ca8f51617b2a05b2b30a43296b8c99a4091e665848ef45db034946"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4289d44032d4cae9d7e16c71248c4099409023a449ad765ef55e47bf3a0e3b72"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7ab6c17d9491ba595d5b1908cdca03c9c1285aa7980933cb808fb4a0423d98c2"
+    sha256 cellar: :any_skip_relocation, ventura:        "e9a4a4545962feadc7faf1ef0737b9ab547d09dff56e1c04ced8b6d8dfb6df48"
+    sha256 cellar: :any_skip_relocation, monterey:       "422e76aec454a175ca555b58dde8cf9c91398d939e98ba35d6663e4782cea475"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a0f69e18dab0b985a31b3338b2a3f16465d8acb4ec22133687c37bb258350af0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "514b4e77852434c5c070d452c604f81274481f5516fa3d2f0552f9048bf08f8a"
   end
 
   depends_on "pygments"
