@@ -8,7 +8,7 @@ class Gauche < Formula
 
   livecheck do
     url :stable
-    regex(%r{href=["']?[^"' >]*?/tag/\D*?(\d+(?:[._]\d+)+(?:[._-]?p\d+)?)["' >]}i)
+    regex(/\D*?(\d+(?:[._]\d+)+(?:[._-]?p\d+)?)/i)
     strategy :github_latest do |page, regex|
       page.scan(regex).map { |match| match[0].tr("_", ".") }
     end
