@@ -3,8 +3,8 @@ class Pdm < Formula
 
   desc "Modern Python package and dependency manager supporting the latest PEP standards"
   homepage "https://pdm.fming.dev"
-  url "https://files.pythonhosted.org/packages/c5/97/93c28d460c96efb53fcd99e78bde982b863ebb2801073e89405bcd0e7967/pdm-2.5.4.tar.gz"
-  sha256 "37dd3352ed95cd18a777683124b35ed074782ef3d1bffe420e4eaf283efe5a8f"
+  url "https://files.pythonhosted.org/packages/ab/6c/ee79e47fde243fc7af0e88e5548b3ce1d71f80b66456a4ac85ef46522977/pdm-2.5.5.tar.gz"
+  sha256 "7386691ded52f7761109396316baf7058d30adc226cbd7bf07a7d6163f21c181"
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
@@ -142,8 +142,8 @@ class Pdm < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/21/79/6372d8c0d0641b4072889f3ff84f279b738cd8595b64c8e0496d4e848122/urllib3-1.26.15.tar.gz"
-    sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
+    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
+    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
   end
 
   resource "virtualenv" do
