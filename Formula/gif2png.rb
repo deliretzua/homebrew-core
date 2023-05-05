@@ -1,8 +1,14 @@
 class Gif2png < Formula
   desc "Convert GIFs to PNGs"
   homepage "http://www.catb.org/~esr/gif2png/"
-  url "http://www.catb.org/~esr/gif2png/gif2png-3.0.2.tar.gz"
-  sha256 "ee1a15156a1056e5688430083c51bc6335cfdcbd856837a84d0de50d84afb528"
+
+  # Use canonical URL http://www.catb.org/~esr/gif2png/gif2png-<version>.tar.gz instead
+  # once it starts to include go.mod/go.sum
+  # See https://gitlab.com/esr/gif2png/-/issues/14#note_1373069233.
+  url "https://gitlab.com/esr/gif2png/-/archive/3.0.2/gif2png-3.0.2.tar.bz2"
+  sha256 "4f3a77c481d040be6e249e788291f19345668ce867bda12043e30409726b67de"
+  license "BSD-2-Clause"
+  head "https://gitlab.com/esr/gif2png.git", branch: "master"
 
   livecheck do
     url :homepage
@@ -23,9 +29,14 @@ class Gif2png < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a7b0bd58ff5306f1624a6854cf51d42411f489a5223f5c70ae44fb42bd3c7537"
   end
 
-  depends_on "libpng"
+  depends_on "go" => :build
+  depends_on "xmlto" => :build
+
+  uses_from_macos "python" # for web2png
 
   def install
+    ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
+
     system "make", "install", "prefix=#{prefix}"
   end
 
