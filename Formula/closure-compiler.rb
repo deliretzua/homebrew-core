@@ -11,13 +11,13 @@ class ClosureCompiler < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "74fef15bfb9a587731a44551611685d448d6bca7d1443172600780ffa2e4f77f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "74fef15bfb9a587731a44551611685d448d6bca7d1443172600780ffa2e4f77f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "74fef15bfb9a587731a44551611685d448d6bca7d1443172600780ffa2e4f77f"
-    sha256 cellar: :any_skip_relocation, ventura:        "74fef15bfb9a587731a44551611685d448d6bca7d1443172600780ffa2e4f77f"
-    sha256 cellar: :any_skip_relocation, monterey:       "74fef15bfb9a587731a44551611685d448d6bca7d1443172600780ffa2e4f77f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "74fef15bfb9a587731a44551611685d448d6bca7d1443172600780ffa2e4f77f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a66b8cd30f5c1c8750fe89da50eeec0f6d239ceded9efa94a46bb1b230032dc9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ac4a390a67013f890c4ce007ccd40b0492adef1cc0e6415f52407b3954c1a63f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ac4a390a67013f890c4ce007ccd40b0492adef1cc0e6415f52407b3954c1a63f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ac4a390a67013f890c4ce007ccd40b0492adef1cc0e6415f52407b3954c1a63f"
+    sha256 cellar: :any_skip_relocation, ventura:        "ac4a390a67013f890c4ce007ccd40b0492adef1cc0e6415f52407b3954c1a63f"
+    sha256 cellar: :any_skip_relocation, monterey:       "ac4a390a67013f890c4ce007ccd40b0492adef1cc0e6415f52407b3954c1a63f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ac4a390a67013f890c4ce007ccd40b0492adef1cc0e6415f52407b3954c1a63f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7dac41e1d0eadbef230b6c8209b0ed93861f8bc5630a97231c329a3648fdbb9b"
   end
 
   depends_on "openjdk"
