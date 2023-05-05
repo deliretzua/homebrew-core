@@ -69,32 +69,16 @@ jobs:
         env:
           GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
-          approved=false
-          changes_requested=false
-          while IFS='' read -r review
-          do
-            if [[ "$review" = "APPROVED" ]]
-            then
-              approved=true
-            fi
-
-            if [[ "$review" = "CHANGES_REQUESTED" ]]
-            then
-              changes_requested=true
-            fi
-          done < <(
-            gh api \
-              --header 'Accept: application/vnd.github+json' \
-              --header 'X-GitHub-Api-Version: 2022-11-28' \
-              "repos/$GH_REPO/pulls/$PR/reviews" \
-              --jq '.[].state'
-          )
-
-          if [[ "$approved" != "true" ]] || [[ "$changes_requested" = "true" ]]
+          if jq --exit-status 'all(.[].state; .!= "APPROVED")'
           then
             echo "::error ::PR #$PR is not approved!"
             exit 1
-          fi
+          fi < <(
+            gh api \
+              --header 'Accept: application/vnd.github+json' \
+              --header 'X-GitHub-Api-Version: 2022-11-28' \
+              "repos/{owner}/{repo}/pulls/$PR/reviews"
+          )
 
       - name: Check PR branch for mergeability
         id: pr-branch-check
