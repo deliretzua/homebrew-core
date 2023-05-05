@@ -7,7 +7,7 @@ class ZshAutocomplete < Formula
   head "https://github.com/marlonrichert/zsh-autocomplete.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "fe7a87395db7c45ca43b46ea2a784e05d0610f3106ec74a300a7c8210c701627"
+    sha256 cellar: :any_skip_relocation, all: "61e45093eb0979a79b48589c0d98d19c59fda98ca6bd821f87a4ddf14d3dcf79"
   end
 
   depends_on "clitest" => :test
