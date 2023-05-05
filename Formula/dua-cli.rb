@@ -1,8 +1,8 @@
 class DuaCli < Formula
   desc "View disk space usage and delete unwanted data, fast"
   homepage "https://lib.rs/crates/dua-cli"
-  url "https://github.com/Byron/dua-cli/archive/refs/tags/v2.19.2.tar.gz"
-  sha256 "5d508ea6374702f04f4b21f6dfb3d287922d3b7d5860dfc3fce2366128f371a0"
+  url "https://github.com/Byron/dua-cli/archive/refs/tags/v2.20.1.tar.gz"
+  sha256 "05ce2d74ec1282803c6825b0436d8b268eef176060b844ae29746a3d338fe658"
   license "MIT"
 
   bottle do
@@ -26,12 +26,24 @@ class DuaCli < Formula
     (testpath/"empty.txt").write("")
     (testpath/"file.txt").write("01")
 
-    expected = <<~EOS
+    # upstream discussions, https://github.com/Byron/dua-cli/issues/163
+    # need update after this PR, https://github.com/Byron/dua-cli/pull/158
+    expected_macos = <<~EOS
       \e[32m      0  B\e[39m #{testpath}/empty.txt
       \e[32m      2  B\e[39m #{testpath}/file.txt
       \e[32m      2  B\e[39m total
     EOS
 
-    assert_equal expected, shell_output("#{bin}/dua -A #{testpath}/*.txt")
+    expected_linux = <<~EOS
+      \e[32m     0   B\e[39m #{testpath}/empty.txt
+      \e[32m     2   B\e[39m #{testpath}/file.txt
+      \e[32m     2   B\e[39m total
+    EOS
+
+    if OS.mac?
+      assert_equal expected_macos, shell_output("#{bin}/dua -A #{testpath}/*.txt")
+    else
+      assert_equal expected_linux, shell_output("#{bin}/dua -A #{testpath}/*.txt")
+    end
   end
 end
