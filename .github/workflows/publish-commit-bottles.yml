@@ -218,6 +218,12 @@ jobs:
           bot_body: ":warning: Pre-merge checks [failed](${{env.RUN_URL}}). CC @carlocab"
           bot: github-actions[bot]
 
+      - name: Enable automerge
+        if: (!fromJson(steps.pr-branch-check.outputs.bottles))
+        env:
+          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN }}
+        run: gh pr merge "$PR" --auto --merge --delete-branch
+
   upload:
     needs: check
     if: >
