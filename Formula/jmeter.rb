@@ -10,7 +10,7 @@ class Jmeter < Formula
     sha256 cellar: :any_skip_relocation, all: "ad4c2d2fd4fe481f9443824e6555240d68b26bd01a7ce8444f755fe20f32e51e"
   end
 
-  depends_on "openjdk"
+  depends_on "openjdk@17"
 
   resource "jmeter-plugins-manager" do
     url "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-manager/1.7/jmeter-plugins-manager-1.7.jar"
@@ -22,7 +22,7 @@ class Jmeter < Formula
     rm_f Dir["bin/*.bat"]
     prefix.install_metafiles
     libexec.install Dir["*"]
-    (bin/"jmeter").write_env_script libexec/"bin/jmeter", JAVA_HOME: Formula["openjdk"].opt_prefix
+    (bin/"jmeter").write_env_script libexec/"bin/jmeter", JAVA_HOME: Formula["openjdk@17"].opt_prefix
 
     resource("jmeter-plugins-manager").stage do
       (libexec/"lib/ext").install Dir["*"]
@@ -30,6 +30,41 @@ class Jmeter < Formula
   end
 
   test do
-    system "#{bin}/jmeter", "--version"
+    (testpath/"test.jmx").write <<~EOS
+      <?xml version="1.0" encoding="UTF-8"?>
+      <jmeterTestPlan version="1.2" properties="5.0" jmeter="5.5">
+        <hashTree>
+          <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+          </TestPlan>
+          <hashTree>
+            <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+              <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+              <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+                <boolProp name="LoopController.continue_forever">false</boolProp>
+                <stringProp name="LoopController.loops">1</stringProp>
+              </elementProp>
+              <stringProp name="ThreadGroup.num_threads">1</stringProp>
+            </ThreadGroup>
+            <hashTree>
+              <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+              </DebugSampler>
+              <hashTree>
+                <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
+                  <stringProp name="cacheKey">true</stringProp>
+                  <stringProp name="script">import java.util.Random
+      Random rand = new Random();
+      // This will break unless Groovy accepts the current version of the JDK
+      int rand_int1 = rand.nextInt(1000);
+      </stringProp>
+                  <stringProp name="scriptLanguage">groovy</stringProp>
+                </JSR223PostProcessor>
+                <hashTree/>
+              </hashTree>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+      </jmeterTestPlan>
+    EOS
+    refute_match "Uncaught Exception", shell_output("#{bin}/jmeter -n -t test.jmx 2>&1")
   end
 end
