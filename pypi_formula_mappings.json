@@ -58,6 +58,9 @@
   "awscli@1": {
     "exclude_packages": ["six", "PyYAML", "docutils"]
   },
+  "awscurl": {
+    "exclude_packages": ["cffi", "pycparser"]
+  },
   "awslogs": {
     "exclude_packages": ["six"]
   },
