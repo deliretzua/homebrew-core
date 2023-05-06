@@ -24,7 +24,7 @@ class Simde < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2b76aa4bfc8e2fe4c0af7a594e7f25aba0575b4f0ca9babef7057215e9cafe74"
+    sha256 cellar: :any_skip_relocation, all: "173687e8a3088c99f7044df92c359fee930ab93f0d0708957c1ec359a29a348d"
   end
 
   depends_on "meson" => :build
