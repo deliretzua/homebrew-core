@@ -3,8 +3,8 @@ class Johnnydep < Formula
 
   desc "Display dependency tree of Python distribution"
   homepage "https://github.com/wimglenn/johnnydep"
-  url "https://files.pythonhosted.org/packages/b7/12/8fbc18d41ca9b0d19334f2748a67d150e6eb21277ff58e829f8a71636f71/johnnydep-1.18.0.tar.gz"
-  sha256 "e18ea3dfe5be21ff194e28155f0188f4aaefeb54ba83485ef2b387f22d577ce7"
+  url "https://files.pythonhosted.org/packages/dd/06/5379720d3319782a62aac89bc8b0a8dc4d2a52bba7c4b897406564c9ed3a/johnnydep-1.19.0.tar.gz"
+  sha256 "b4f4f9cd419f82d0db55c6a8ae9f245d4f2ab4c6c788c276fa3cd147497015cb"
   license "MIT"
 
   bottle do
