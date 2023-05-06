@@ -1,8 +1,8 @@
 class Bas55 < Formula
   desc "Minimal BASIC programming language interpreter as defined by ECMA-55"
   homepage "https://jorgicor.niobe.org/bas55/"
-  url "https://jorgicor.niobe.org/bas55/bas55-1.19.tar.gz"
-  sha256 "566097e216dab029d51afefdacf7806f249d57d117ca3e875e27c6cf61098ee0"
+  url "https://jorgicor.niobe.org/bas55/bas55-2.0.tar.gz"
+  sha256 "640b296df2ee22c2e14e90b23e0edad646682c80b3226652772847fa0614f293"
   license "MIT"
 
   livecheck do
