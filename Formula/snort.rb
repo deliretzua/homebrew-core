@@ -1,9 +1,9 @@
 class Snort < Formula
   desc "Flexible Network Intrusion Detection System"
   homepage "https://www.snort.org"
-  url "https://github.com/snort3/snort3/archive/3.1.60.0.tar.gz"
-  mirror "https://fossies.org/linux/misc/snort3-3.1.60.0.tar.gz"
-  sha256 "295bbeea93ead7835379d9c9332b1f82f9ecdd3741aeed267caf85bb887126a1"
+  url "https://github.com/snort3/snort3/archive/3.1.61.0.tar.gz"
+  mirror "https://fossies.org/linux/misc/snort3-3.1.61.0.tar.gz"
+  sha256 "207963ece2eddd3c85ad90c9e2dabe33dc67eaa485ba9576e2b244f7ac45fc5d"
   license "GPL-2.0-only"
   head "https://github.com/snort3/snort3.git", branch: "master"
 
@@ -50,13 +50,6 @@ class Snort < Formula
   end
 
   fails_with gcc: "5"
-
-  # build patch, remove when it is available
-  # upstream PR ref, https://github.com/snort3/snort3/pull/286
-  patch do
-    url "https://github.com/snort3/snort3/commit/02e60e50d1a4a18d27643d5f4474bfc0c4709e14.patch?full_index=1"
-    sha256 "25fcf002f9613a1fcc06127c72ed2315c93580a6da2c0afd2e82e081f35dd9fc"
-  end
 
   def install
     # These flags are not needed for LuaJIT 2.1 (Ref: https://luajit.org/install.html).
