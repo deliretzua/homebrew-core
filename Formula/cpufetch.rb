@@ -1,27 +1,10 @@
 class Cpufetch < Formula
   desc "CPU architecture fetching tool"
   homepage "https://github.com/Dr-Noob/cpufetch"
+  url "https://github.com/Dr-Noob/cpufetch/archive/v1.04.tar.gz"
+  sha256 "1505161fedd58d72b936f68b55dc9b027ef910454475c33e1061999496b30ff6"
   license "GPL-2.0-only"
   head "https://github.com/Dr-Noob/cpufetch.git", branch: "master"
-
-  stable do
-    url "https://github.com/Dr-Noob/cpufetch/archive/v1.03.tar.gz"
-    sha256 "550168e0523240a1fb837e85073e0aa69de1894f1b89ec3a5721a5d935679afb"
-
-    # Upstream issue ref: https://github.com/Dr-Noob/cpufetch/issues/168
-    # Remove in next release
-    patch do
-      url "https://github.com/Dr-Noob/cpufetch/commit/22a80d817d57814fc552365ad553c0a22f065fcd.patch?full_index=1"
-      sha256 "063b602cd5013ba7c2c5ea4e134c911164ec49b2ed14209c313c2ef005bd3d42"
-    end
-
-    # Upstream issue ref: https://github.com/Dr-Noob/cpufetch/issues/168
-    # Remove in next release
-    patch do
-      url "https://github.com/Dr-Noob/cpufetch/commit/095bbfb784f0b367558741e9b02f6278126e1c93.patch?full_index=1"
-      sha256 "494756db04ab00a0a57d519704f5032d2b77e7539d4c0233b789c5a6178fbab8"
-    end
-  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_monterey: "e5149d2074889219c812f6ca2505e83347ca1534eb9f0892d998a18da03bd404"
@@ -39,16 +22,22 @@ class Cpufetch < Formula
   end
 
   test do
-    actual = shell_output("#{bin}/cpufetch -d").each_line.first.strip
-
-    expected = if OS.linux?
-      "cpufetch v#{version} (Linux #{Hardware::CPU.arch} build)"
-    elsif Hardware::CPU.arm?
-      "cpufetch v#{version} (macOS ARM build)"
+    ephemeral_arm = ENV["HOMEBREW_GITHUB_ACTIONS"].present? &&
+                    Hardware::CPU.arm? &&
+                    MacOS.version > :big_sur
+    expected_result, line = if ephemeral_arm
+      [1, 1]
+    elsif OS.mac? && Hardware::CPU.intel?
+      [0, 1]
     else
-      "cpufetch is computing APIC IDs, please wait..."
+      [0, 0]
     end
+    actual = shell_output("#{bin}/cpufetch --debug 2>&1", expected_result).lines[line].strip
 
-    assert_equal expected, actual
+    system_name = OS.mac? ? "macOS" : OS.kernel_name
+    arch = (OS.mac? && Hardware::CPU.arm?) ? "ARM" : Hardware::CPU.arch
+    expected = "cpufetch v#{version} (#{system_name} #{arch} build)"
+
+    assert_match expected, actual
   end
 end
