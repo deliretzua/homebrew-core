@@ -2,8 +2,8 @@ class OdoDev < Formula
   desc "Developer-focused CLI for Kubernetes and OpenShift"
   homepage "https://odo.dev"
   url "https://github.com/redhat-developer/odo.git",
-      tag:      "v3.9.0",
-      revision: "8cb53c2a04312adbd44d240fcc48c1e122f23b98"
+      tag:      "v3.10.0",
+      revision: "039ef07320e8dce076223fa10949b96648e1de15"
   license "Apache-2.0"
   head "https://github.com/redhat-developer/odo.git", branch: "main"
 
