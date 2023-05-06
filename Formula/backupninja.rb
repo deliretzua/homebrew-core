@@ -1,14 +1,13 @@
 class Backupninja < Formula
   desc "Backup automation tool"
-  homepage "https://0xacab.org/riseuplabs/backupninja"
-  url "https://sourcearchive.raspbian.org/main/b/backupninja/backupninja_1.2.1.orig.tar.gz"
-  mirror "https://debian.ethz.ch/ubuntu/ubuntu/pool/universe/b/backupninja/backupninja_1.2.1.orig.tar.gz"
-  sha256 "833277d36993ddf684b164b581a504b38bbcff16221e416428c90aaf63ed85d4"
-  license "GPL-2.0"
+  homepage "https://0xacab.org/liberate/backupninja"
+  url "https://0xacab.org/liberate/backupninja/-/archive/backupninja_upstream/1.2.2/backupninja-backupninja_upstream-1.2.2.tar.gz"
+  sha256 "93ddc72f085d46145b289d35dac1d72e998c15bec1833db78e474b53c9768774"
+  license "GPL-2.0-or-later"
 
   livecheck do
-    url "https://sourcearchive.raspbian.org/main/b/backupninja/"
-    regex(/href=.*?backupninja[._-]v?(\d+(?:\.\d+)+)\.orig\.t/i)
+    url "https://0xacab.org/liberate/backupninja/-/tags"
+    regex(/href=.*?backupninja[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -29,8 +28,8 @@ class Backupninja < Formula
   skip_clean "etc/backup.d"
 
   def install
-    system "./configure", "--disable-silent-rules",
-                          "--prefix=#{prefix}",
+    system "./configure", *std_configure_args,
+                          "--disable-silent-rules",
                           "--sysconfdir=#{etc}",
                           "--localstatedir=#{var}",
                           "BASH=#{Formula["bash"].opt_bin}/bash"
