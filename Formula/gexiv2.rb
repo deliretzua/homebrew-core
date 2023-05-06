@@ -1,10 +1,9 @@
 class Gexiv2 < Formula
   desc "GObject wrapper around the Exiv2 photo metadata library"
   homepage "https://wiki.gnome.org/Projects/gexiv2"
-  url "https://download.gnome.org/sources/gexiv2/0.14/gexiv2-0.14.0.tar.xz"
-  sha256 "e58279a6ff20b6f64fa499615da5e9b57cf65ba7850b72fafdf17221a9d6d69e"
+  url "https://download.gnome.org/sources/gexiv2/0.14/gexiv2-0.14.1.tar.xz"
+  sha256 "ec3ee3ec3860b9c78958a55da89cf76ae2305848e12f41945b7b52124d8f6cf9"
   license "GPL-2.0-or-later"
-  revision 1
 
   bottle do
     rebuild 1
@@ -28,9 +27,8 @@ class Gexiv2 < Formula
   depends_on "glib"
 
   def install
-    site_packages = prefix/Language::Python.site_packages("python3.11")
-
-    system "meson", *std_meson_args, "build", "-Dpython3_girdir=#{site_packages}/gi/overrides"
+    # Update to use c++17 when `exiv2` is updated to use c++17
+    system "meson", *std_meson_args, "build", "-Dcpp_std=c++11"
     system "meson", "compile", "-C", "build", "-v"
     system "meson", "install", "-C", "build"
   end
