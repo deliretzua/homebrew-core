@@ -202,11 +202,39 @@ jobs:
           bot_body: ":warning: Pre-merge checks [failed](${{env.RUN_URL}}). CC @carlocab"
           bot: github-actions[bot]
 
-      - name: Enable automerge
+      - name: Enqueue PR for merge
         if: (!fromJson(steps.pr-branch-check.outputs.bottles))
         env:
           GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN }}
-        run: gh pr merge "$PR" --auto --merge --delete-branch
+          QUERY: |-
+            query ($owner: String!, $name: String!, $pr: Int!) {
+              repository(owner: $owner, name: $name) {
+                pullRequest(number: $pr) {
+                  id
+                }
+              }
+            }
+          MUTATION: |-
+            mutation ($input: EnqueuePullRequestInput!) {
+              enqueuePullRequest(input: $input) {
+                clientMutationId
+              }
+            }
+        run: |
+          # TODO Try using `gh pr merge` when the following is resolved:
+          #   https://github.com/cli/cli/issues/7213
+          pull_request_id="$(
+            gh api graphql \
+              --field owner='{owner}' \
+              --field name='{repo}' \
+              --field pr="$PR" \
+              --raw-field query="$QUERY" \
+              --jq '.data.repository.pullRequest.id'
+          )"
+
+          gh api graphql \
+            --field "input[pullRequestId]=$pull_request_id" \
+            --raw-field query="$MUTATION"
 
   upload:
     needs: check
