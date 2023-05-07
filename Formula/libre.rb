@@ -1,8 +1,8 @@
 class Libre < Formula
   desc "Toolkit library for asynchronous network I/O with protocol stacks"
   homepage "https://github.com/baresip/re"
-  url "https://github.com/baresip/re/archive/refs/tags/v2.12.0.tar.gz"
-  sha256 "efc387c9f06cac3f0a70e14a8da9d986cb15580e4712a496df66f3fb0257ac9b"
+  url "https://github.com/baresip/re/archive/refs/tags/v3.1.0.tar.gz"
+  sha256 "93943cff5f6dad0d603954a718fca99df0284a33b584b5fb6b6c5e13413e6bee"
   license "BSD-3-Clause"
 
   bottle do
@@ -21,8 +21,8 @@ class Libre < Formula
   uses_from_macos "zlib"
 
   def install
-    system "cmake", "-B", "build", "-DCMAKE_BUILD_TYPE=Release", *std_cmake_args
-    system "cmake", "--build", "build", "-j"
+    system "cmake", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
@@ -34,6 +34,6 @@ class Libre < Formula
         return libre_init();
       }
     EOS
-    system ENV.cc, "test.c", "-L#{lib}", "-lre"
+    system ENV.cc, "-I#{include}", "-I#{include}/re", "test.c", "-L#{lib}", "-lre"
   end
 end
