@@ -1,8 +1,8 @@
 class Smartdns < Formula
   desc "Rule-based DNS server for fast IP resolution, DoT/DoH/DoQ supported"
   homepage "https://github.com/mokeyish/smartdns-rs"
-  url "https://github.com/mokeyish/smartdns-rs/archive/refs/tags/0.6.0.tar.gz"
-  sha256 "5850c04c9ba279c1dddd66b9406cc9ba7820661eee8b71c7e9a3424c2edbe1ba"
+  url "https://github.com/mokeyish/smartdns-rs/archive/refs/tags/0.6.1.tar.gz"
+  sha256 "fb888f14bfd036dc7bfc49b2a9826126f927c4dd43390f0d4ef996d8f70b6855"
   license "GPL-3.0-only"
   head "https://github.com/mokeyish/smartdns-rs.git", branch: "main"
 
