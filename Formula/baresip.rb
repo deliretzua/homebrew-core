@@ -1,8 +1,8 @@
 class Baresip < Formula
   desc "Modular SIP useragent"
   homepage "https://github.com/baresip/baresip"
-  url "https://github.com/baresip/baresip/archive/refs/tags/v2.12.0.tar.gz"
-  sha256 "784dceac625094367a8d4983ca1e432e51742d614e1be8e75ab3d1804bdaa80d"
+  url "https://github.com/baresip/baresip/archive/refs/tags/v3.1.0.tar.gz"
+  sha256 "de69823a54ecd057a9ffc0ca6f9b3cf9562848da1f15d5df8a97a4ae6f8daf37"
   license "BSD-3-Clause"
 
   bottle do
@@ -18,16 +18,12 @@ class Baresip < Formula
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "libre"
-  depends_on "librem"
 
   def install
     libre = Formula["libre"]
-    librem = Formula["librem"]
     args = %W[
-      -DCMAKE_BUILD_TYPE=Release
       -DCMAKE_INSTALL_RPATH=#{rpath}
       -DRE_INCLUDE_DIR=#{libre.opt_include}/re
-      -DREM_INCLUDE_DIR=#{librem.opt_include}/rem
     ]
     system "cmake", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build", "-j"
