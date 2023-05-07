@@ -6,7 +6,7 @@ class Squashfuse < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b55b7786381a508c76bfe3d278e2a669d28755ec59d458a728fd12b760802d2a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "6eca564934b0ffda9166b03feabb2ef7a3ceed9daa0da5b894636719c7c76151"
   end
 
   depends_on "autoconf" => :build
