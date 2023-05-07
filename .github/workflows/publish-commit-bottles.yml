@@ -206,7 +206,7 @@ jobs:
           bot: github-actions[bot]
 
       - name: Enqueue PR for merge
-        if: (!fromJson(steps.pr-branch-check.outputs.bottles))
+        if: (!fromJson(steps.pr-branch-check.outputs.bottles) && !inputs.autosquash)
         env:
           GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN }}
           ID: ${{ steps.pr-branch-check.outputs.node_id }}
