@@ -20,7 +20,7 @@ jobs:
     outputs:
       json: ${{ steps.matrix.outputs.json }}
     env:
-      TEST_COUNT: 20
+      TEST_COUNT: 50
       TAP: homebrew/core
     steps:
       - name: Set up Homebrew
