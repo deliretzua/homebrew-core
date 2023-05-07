@@ -3,8 +3,8 @@ class Pdm < Formula
 
   desc "Modern Python package and dependency manager supporting the latest PEP standards"
   homepage "https://pdm.fming.dev"
-  url "https://files.pythonhosted.org/packages/ab/6c/ee79e47fde243fc7af0e88e5548b3ce1d71f80b66456a4ac85ef46522977/pdm-2.5.5.tar.gz"
-  sha256 "7386691ded52f7761109396316baf7058d30adc226cbd7bf07a7d6163f21c181"
+  url "https://files.pythonhosted.org/packages/c1/2e/6f292b67f61a1019e50b30cd3ee977f4cb3a3a0692dc2712bdd998c595a0/pdm-2.5.6.tar.gz"
+  sha256 "441a75d7085945330adeb9361c3457b27417d07e120be4f21622f428d5bda340"
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
@@ -32,8 +32,8 @@ class Pdm < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/37/f7/2b1b0ec44fdc30a3d31dfebe52226be9ddc40cd6c0f34ffc8923ba423b69/certifi-2022.12.7.tar.gz"
-    sha256 "35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3"
+    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
+    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
   end
 
   resource "charset-normalizer" do
