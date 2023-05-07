@@ -29,6 +29,12 @@ jobs:
       actions: read # for `gh run download`
       pull-requests: read # for `gh api`
     steps:
+      - name: Dump debug output
+        run: |
+          printf '```\n' >> "$GITHUB_STEP_SUMMARY"
+          jq . "$GITHUB_EVENT_PATH" | tee -a "$GITHUB_STEP_SUMMARY"
+          printf '```\n' >> "$GITHUB_STEP_SUMMARY"
+
       - name: Download `pull-number` artifact
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
