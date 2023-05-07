@@ -26,15 +26,37 @@ class VorbisTools < Formula
   end
 
   depends_on "pkg-config" => :build
-  # FIXME: This should be `uses_from_macos "curl"`, but linkage with Homebrew curl
-  #        is unavoidable because this does `using: :homebrew_curl` above.
-  depends_on "curl"
   depends_on "flac"
   depends_on "libao"
   depends_on "libogg"
   depends_on "libvorbis"
 
+  uses_from_macos "curl"
+
+  on_monterey :or_newer do
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+
+    # Fix mistaken recursive `.a` files.
+    patch :DATA
+  end
+
   def install
+    # Prevent linkage with Homebrew Curl on macOS because of `using: :homebrew_curl` above.
+    if OS.mac?
+      ENV.remove "HOMEBREW_DEPENDENCIES", "curl"
+      ENV.remove "HOMEBREW_INCLUDE_PATHS", Formula["curl"].opt_include
+      ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["curl"].opt_lib
+    end
+
+    # Workaround for Xcode 14 ld.
+    system "autoreconf", "--force", "--install", "--verbose" if MacOS.version >= :monterey
+
+    # Work around "-Werror,-Wimplicit-function-declaration" issues with
+    # configure scripts on Xcode 14:
+    ENV.append "CFLAGS", "-Wno-implicit-function-declaration"
+
     system "./configure", *std_configure_args, "--disable-nls"
     system "make", "install"
   end
@@ -46,3 +68,18 @@ class VorbisTools < Formula
     assert_match "20.625000 kb/s", output
   end
 end
+
+__END__
+diff --git a/share/Makefile.am b/share/Makefile.am
+index 1011f1d..bd69a67 100644
+--- a/share/Makefile.am
++++ b/share/Makefile.am
+@@ -11,7 +11,7 @@ libgetopt_a_SOURCES = getopt.c getopt1.c
+ libbase64_a_SOURCES = base64.c
+ 
+ libpicture_a_SOURCES = picture.c
+-libpicture_a_LIBADD = libbase64.a
++libpicture_a_LIBADD = base64.o
+ 
+ EXTRA_DIST = charmaps.h makemap.c charset_test.c charsetmap.h
+ 
