@@ -7,9 +7,9 @@ class Expat < Formula
 
   livecheck do
     url :stable
-    regex(/\D*?(\d+(?:[._]\d+)*)/i)
-    strategy :github_latest do |page, regex|
-      page.scan(regex).map { |match| match[0].tr("_", ".") }
+    regex(/^\D*?(\d+(?:[._]\d+)*)$/i)
+    strategy :github_latest do |json, regex|
+      json["tag_name"]&.scan(regex)&.map { |match| match[0].tr("_", ".") }
     end
   end
 
