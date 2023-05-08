@@ -1,15 +1,17 @@
 class Genders < Formula
   desc "Static cluster configuration database for cluster management"
   homepage "https://github.com/chaos/genders"
-  url "https://github.com/chaos/genders/archive/genders-1-27-3.tar.gz"
-  version "1.27.3"
-  sha256 "c176045a7dd125313d44abcb7968ded61826028fe906028a2967442426229894"
-  license "GPL-2.0"
+  url "https://github.com/chaos/genders/archive/genders-1-28-1.tar.gz"
+  version "1.28.1"
+  sha256 "3ca8b4771b2bf39383a3c383d36d308fa113de5c481e16fdef9cabd643359d09"
+  license "GPL-2.0-or-later"
 
   livecheck do
     url :stable
-    regex(%r{href=.*?/tag/genders[._-]v?(\d+(?:[.-]\d+)+)["' >]}i)
-    strategy :github_latest
+    regex(/^genders[._-]v?(\d+(?:[.-]\d+)+)$/i)
+    strategy :git do |tags, regex|
+      tags.map { |tag| tag[regex, 1]&.tr("-", ".") }
+    end
   end
 
   bottle do
