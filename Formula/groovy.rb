@@ -1,8 +1,8 @@
 class Groovy < Formula
   desc "Java-based scripting language"
   homepage "https://www.groovy-lang.org/"
-  url "https://groovy.jfrog.io/artifactory/dist-release-local/groovy-zips/apache-groovy-binary-4.0.11.zip"
-  sha256 "335fe28bc7d93ab9f73e0d21bfc3591c63f4532572e7e1f93dc22cb0401ab422"
+  url "https://groovy.jfrog.io/artifactory/dist-release-local/groovy-zips/apache-groovy-binary-4.0.12.zip"
+  sha256 "174c28429f63f5ba31cccb3350fd50a2b62a18833be4ac59180b8a43df52dd90"
   license "Apache-2.0"
 
   livecheck do
@@ -47,6 +47,9 @@ class Groovy < Formula
     if OS.mac?
       jline_jar = buildpath/"lib/jline-2.14.6.jar"
       resource("jansi-native").stage do
+        # Workaround for Xcode 14.3.
+        ENV.append_to_cflags "-Wno-implicit-function-declaration"
+
         system "mvn", "-Dplatform=osx", "prepare-package"
         system "zip", "-d", jline_jar, "META-INF/native/*"
         system "jar", "-uvf", jline_jar,
