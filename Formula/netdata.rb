@@ -1,8 +1,8 @@
 class Netdata < Formula
   desc "Diagnose infrastructure problems with metrics, visualizations & alarms"
   homepage "https://netdata.cloud/"
-  url "https://github.com/netdata/netdata/releases/download/v1.38.1/netdata-v1.38.1.tar.gz"
-  sha256 "e32a5427f0c00550210dbbf0046c2621313955256edf836db686e2bc270b8d10"
+  url "https://github.com/netdata/netdata/releases/download/v1.39.0/netdata-v1.39.0.tar.gz"
+  sha256 "77f4ff42adadad2bd3cc71078e3e2daea8f990983ed79d54c9812c8f364fdb3e"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -22,9 +22,11 @@ class Netdata < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  depends_on "m4" => :build
   depends_on "pkg-config" => :build
   depends_on "json-c"
   depends_on "libuv"
+  depends_on "libyaml"
   depends_on "lz4"
   depends_on "openssl@3"
   depends_on "protobuf-c"
