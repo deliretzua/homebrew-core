@@ -7,7 +7,7 @@ class Gopls < Formula
 
   livecheck do
     url :stable
-    regex(/(?:gopls%2F)v?(\d+(?:\.\d+)+)/i)
+    regex(%r{^(?:gopls/)?v?(\d+(?:\.\d+)+)$}i)
     strategy :github_latest
   end
 
