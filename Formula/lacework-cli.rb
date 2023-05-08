@@ -8,13 +8,13 @@ class LaceworkCli < Formula
   head "https://github.com/lacework/go-sdk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a238f144303d92be143b104e65dd27752a50210af41b2e4668f434c888713695"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dbee788d3828d31053aea243eac653ab1ad139f38eb2dd7d356a9e10e0095e74"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a98fc1a944a0d6988c37f6d2e82a1a07c3e33f7fa26b6b9972d33c34011d88ab"
-    sha256 cellar: :any_skip_relocation, ventura:        "7f55afb86bbf7a125e8d517f6680b3e2c5e602227a7653f0c96b9c2cf19008a0"
-    sha256 cellar: :any_skip_relocation, monterey:       "86b8c2be2b938fa28425a34d8bc9b502904d2e4434c15cf2ccb7320dc6107235"
-    sha256 cellar: :any_skip_relocation, big_sur:        "19fe7bf30aba8fedc467ef9256d5f14502e88ec423d22076774e502c792360b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b89fdf845f6891fc65745f82b938a7cb028b38593af2c82ba6273ede0e52cadd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d8d3ca30c92496e8891f9e38f011146f396d603d7696d6d32404199301cbd667"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c78761b2e9784c1cac47ff28e4b5c688174af426d5d1e51e82a262fd2241e7cf"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9fafa1de5401ae53d286748afff60c43ed8cea063959ff93e568ffc29a1861ed"
+    sha256 cellar: :any_skip_relocation, ventura:        "17c303dbadba3f8fa272e0005e15182cccce2f29db9c1827f9dd4bf0c9ba310b"
+    sha256 cellar: :any_skip_relocation, monterey:       "46da7a48969d9471aed8cd1a11fc6a1b47019a26a13d1e609de135e029980e94"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bc100c9236d4c44b99997f5e95e5bd429364153c190beff79d8b4976cf39eb66"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a1c44313143cb74b8fee8b77f197a51fb0a4628a75146d3cbdca015b7a091a72"
   end
 
   depends_on "go" => :build
