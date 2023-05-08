@@ -1,8 +1,8 @@
 class AdaUrl < Formula
   desc "WHATWG-compliant and fast URL parser written in modern C++"
   homepage "https://github.com/ada-url/ada"
-  url "https://github.com/ada-url/ada/archive/refs/tags/v2.3.1.tar.gz"
-  sha256 "298992ec0958979090566c7835ea60c14f5330d6372ee092ef6eee1d2e6ac079"
+  url "https://github.com/ada-url/ada/archive/refs/tags/v2.4.0.tar.gz"
+  sha256 "14624f1dfd966fee85272688064714172ff70e6e304a1e1850f352a07e4c6dc7"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/ada-url/ada.git", branch: "main"
 
