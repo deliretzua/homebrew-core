@@ -5,10 +5,9 @@ class Pytorch < Formula
   homepage "https://pytorch.org/"
   # TODO: Check if we can use unversioned `protobuf` at version bump
   url "https://github.com/pytorch/pytorch.git",
-      tag:      "v2.0.0",
-      revision: "c263bd43e8e8502d4726643bc6fd046f0130ac0e"
+      tag:      "v2.0.1",
+      revision: "e9ebda29d87ce0916ab08c06ab26fd3766a870e5"
   license "BSD-3-Clause"
-  revision 1
 
   livecheck do
     url :stable
@@ -31,7 +30,6 @@ class Pytorch < Formula
   depends_on macos: :monterey # MPS backend only supports 12.3 and above
   depends_on "numpy"
   depends_on "openblas"
-  depends_on "openssl@1.1"
   depends_on "protobuf@21"
   depends_on "pybind11"
   depends_on "python-typing-extensions"
@@ -42,8 +40,8 @@ class Pytorch < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/4f/1f/6e1b740698069650b245744957a25957d599b953550a959ab2a584a8825b/filelock-3.10.0.tar.gz"
-    sha256 "3199fd0d3faea8b911be52b663dfccceb84c95949dd13179aa21436d1a79c4ce"
+    url "https://files.pythonhosted.org/packages/24/85/cf4df939cc0a037ebfe18353005e775916faec24dcdbc7a2f6539ad9d943/filelock-3.12.0.tar.gz"
+    sha256 "fc03ae43288c013d2ea83c8597001b1129db351aad9c57fe2409327916b8e718"
   end
 
   resource "Jinja2" do
@@ -57,8 +55,8 @@ class Pytorch < Formula
   end
 
   resource "networkx" do
-    url "https://files.pythonhosted.org/packages/99/f9/d45c9ecf50a6b67a200e0bbd324201b5cd777dfc0e6c8f6d1620ce5a7ada/networkx-3.0.tar.gz"
-    sha256 "9a9992345353618ae98339c2b63d8201c381c2944f38a2ab49cb45a4c667e412"
+    url "https://files.pythonhosted.org/packages/fd/a1/47b974da1a73f063c158a1f4cc33ed0abf7c04f98a19050e80c533c31f0c/networkx-3.1.tar.gz"
+    sha256 "de346335408f84de0eada6ff9fafafff9bcda11f0a0dfaa931133debb146ab61"
   end
 
   resource "opt-einsum" do
@@ -72,7 +70,6 @@ class Pytorch < Formula
   end
 
   def install
-    openssl_root = Formula["openssl@1.1"].opt_prefix
     python_exe = Formula["python@3.11"].opt_libexec/"bin/python"
     args = %W[
       -GNinja
@@ -81,7 +78,6 @@ class Pytorch < Formula
       -DBUILD_PYTHON=ON
       -DCMAKE_CXX_COMPILER=#{ENV.cxx}
       -DCMAKE_C_COMPILER=#{ENV.cc}
-      -DOPENSSL_ROOT_DIR=#{openssl_root}
       -DPYTHON_EXECUTABLE=#{python_exe}
       -DUSE_CUDA=OFF
       -DUSE_DISTRIBUTED=ON
