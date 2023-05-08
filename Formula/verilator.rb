@@ -36,6 +36,14 @@ class Verilator < Formula
     # `make` and `make install` need to be separate for parallel builds
     system "make"
     system "make", "install"
+
+    # Avoid hardcoding build-time references that may not be valid at runtime.
+    inreplace pkgshare/"include/verilated.mk" do |s|
+      s.change_make_var! "CXX", "c++"
+      s.change_make_var! "LINK", "c++"
+      s.change_make_var! "PERL", "perl"
+      s.change_make_var! "PYTHON3", "python3"
+    end
   end
 
   test do
