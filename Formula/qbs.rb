@@ -1,8 +1,8 @@
 class Qbs < Formula
   desc "Build tool for developing projects across multiple platforms"
   homepage "https://wiki.qt.io/Qbs"
-  url "https://download.qt.io/official_releases/qbs/2.0.0/qbs-src-2.0.0.tar.gz"
-  sha256 "d78555691ea732949346860e56f68c7c44e9384011359722b032a49b52dfccfd"
+  url "https://download.qt.io/official_releases/qbs/2.0.1/qbs-src-2.0.1.tar.gz"
+  sha256 "475a170fc4a117c2a93b30356f3c884eb73059b2cb06fed9f090a5f679aa5555"
   license :cannot_represent
   head "https://code.qt.io/qbs/qbs.git", branch: "master"
 
@@ -22,13 +22,13 @@ class Qbs < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "qt@5"
+  depends_on "qt"
 
   fails_with gcc: "5"
 
   def install
-    qt5 = Formula["qt@5"].opt_prefix
-    system "cmake", ".", "-DQt5_DIR=#{qt5}/lib/cmake/Qt5", "-DQBS_ENABLE_RPATH=NO",
+    qt = Formula["qt"].opt_prefix
+    system "cmake", ".", "-DQt6_DIR=#{qt}/lib/cmake/Qt6", "-DQBS_ENABLE_RPATH=NO",
                          *std_cmake_args
     system "cmake", "--build", "."
     system "cmake", "--install", "."
