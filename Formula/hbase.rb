@@ -1,9 +1,9 @@
 class Hbase < Formula
   desc "Hadoop database: a distributed, scalable, big data store"
   homepage "https://hbase.apache.org"
-  url "https://www.apache.org/dyn/closer.lua?path=hbase/2.5.3/hbase-2.5.3-bin.tar.gz"
-  mirror "https://archive.apache.org/dist/hbase/2.5.3/hbase-2.5.3-bin.tar.gz"
-  sha256 "874f239c341a6a4a646051c79fda9e838242481b70463bf8daa28ba7239576c2"
+  url "https://www.apache.org/dyn/closer.lua?path=hbase/2.5.4/hbase-2.5.4-bin.tar.gz"
+  mirror "https://archive.apache.org/dist/hbase/2.5.4/hbase-2.5.4-bin.tar.gz"
+  sha256 "ffb929d1ffcaf0309e1617833f3b36645a9c9d9c10b47d6baccc7e50c6d0ed33"
   # We bundle hadoop-lzo which is GPL-3.0-or-later
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
 
@@ -61,7 +61,8 @@ class Hbase < Formula
 
       # Fixed upstream: https://github.com/cloudera/hadoop-lzo/blob/HEAD/build.xml#L235
       ENV["CLASSPATH"] = Dir["#{libexec}/lib/hadoop-common-*.jar"].first
-      ENV["CFLAGS"] = "-m64"
+      # Workaround for Xcode 14.3.
+      ENV["CFLAGS"] = "-m64 -Wno-implicit-function-declaration"
       ENV["CXXFLAGS"] = "-m64"
       ENV["CPPFLAGS"] = "-I#{Formula["openjdk@11"].include}"
       system "ant", "compile-native", "tar"
