@@ -7,6 +7,14 @@ class LaceworkCli < Formula
   license "Apache-2.0"
   head "https://github.com/lacework/go-sdk.git", branch: "main"
 
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a238f144303d92be143b104e65dd27752a50210af41b2e4668f434c888713695"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "dbee788d3828d31053aea243eac653ab1ad139f38eb2dd7d356a9e10e0095e74"
