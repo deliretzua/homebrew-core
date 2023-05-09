@@ -18,7 +18,11 @@ class Grin < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cdcbd7bcb60160cbd90c54e362650a191b64fb33d356991896c0778ced854ecf"
   end
 
-  depends_on "llvm" => :build # for libclang
+  # Use `llvm@15` to work around build failure with Clang 16 described in
+  # https://github.com/rust-lang/rust-bindgen/issues/2312.
+  # TODO: Switch back to `uses_from_macos "llvm" => :build` when `bindgen` is
+  # updated to 0.62.0 or newer. There is a check in the `install` method.
+  depends_on "llvm@15" => :build # for libclang
   depends_on "rust" => :build
 
   uses_from_macos "ncurses"
@@ -28,7 +32,16 @@ class Grin < Formula
     # REMOVE ME in the next release.
     system "cargo", "update", "--package", "socket2", "--precise", "0.3.16"
 
-    ENV["CLANG_PATH"] = Formula["llvm"].opt_bin/"clang"
+    bindgen_version = Version.new(
+      (buildpath/"Cargo.lock").read
+                              .match(/name = "bindgen"\nversion = "(.*)"/)[1],
+    )
+    if bindgen_version >= "0.62.0"
+      odie "`bindgen` crate is updated to 0.62.0 or newer! Please remove " \
+           'this check and try switching to `uses_from_macos "llvm" => :build`.'
+    end
+
+    ENV["CLANG_PATH"] = Formula["llvm@15"].opt_bin/"clang"
 
     system "cargo", "install", *std_cargo_args
   end
