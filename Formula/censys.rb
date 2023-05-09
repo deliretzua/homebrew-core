@@ -3,8 +3,8 @@ class Censys < Formula
 
   desc "Command-line interface for the Censys APIs (censys.io)"
   homepage "https://github.com/censys/censys-python"
-  url "https://files.pythonhosted.org/packages/0b/39/d9e82da6b0777a9b825ed6680eb129fa635b0c0f74e963b92e767a8d5b0f/censys-2.2.1.tar.gz"
-  sha256 "49f1785f655de1882384633c9b4244ee369359939cacb5bb8aa347c36d1966f2"
+  url "https://files.pythonhosted.org/packages/b5/ac/8ed03674e06b7a15c08695ef1addbfa09c75e7cccecd988d07fc0a67cb17/censys-2.2.2.tar.gz"
+  sha256 "3099c91db4a97018a000265a2279a8e413bf40664f0cdd6c6eee1b550d4bf9d5"
   license "Apache-2.0"
 
   bottle do
@@ -66,8 +66,8 @@ class Censys < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
-    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
+    url "https://files.pythonhosted.org/packages/21/79/6372d8c0d0641b4072889f3ff84f279b738cd8595b64c8e0496d4e848122/urllib3-1.26.15.tar.gz"
+    sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
   end
 
   def install
