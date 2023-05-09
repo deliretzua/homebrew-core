@@ -22,6 +22,8 @@ class Lmdb < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e38babc366e6564e3c0971db2df8a09d9d71225c5f90c924a43c2f6b8c0bc87"
   end
 
+  depends_on "pkg-config" => :test
+
   def install
     cd "libraries/liblmdb" do
       args = []
@@ -29,9 +31,31 @@ class Lmdb < Formula
       system "make", *args
       system "make", "install", *args, "prefix=#{prefix}"
     end
+
+    (lib/"pkgconfig/lmdb.pc").write pc_file
+    (lib/"pkgconfig").install_symlink "lmdb.pc" => "liblmdb.pc"
+  end
+
+  def pc_file
+    <<~EOS
+      prefix=#{opt_prefix}
+      exec_prefix=${prefix}
+      libdir=${prefix}/lib
+      includedir=${prefix}/include
+
+      Name: lmdb
+      Description: #{desc}
+      URL: #{homepage}
+      Version: #{version}
+      Libs: -L${libdir} -llmdb
+      Cflags: -I${includedir}
+    EOS
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/mdb_dump -V")
+
+    # Make sure our `lmdb.pc` can be read by `pkg-config`.
+    system "pkg-config", "lmdb"
   end
 end
