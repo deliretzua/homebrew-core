@@ -1,8 +1,8 @@
 class Flatbuffers < Formula
   desc "Serialization library for C++, supporting Java, C#, and Go"
   homepage "https://google.github.io/flatbuffers"
-  url "https://github.com/google/flatbuffers/archive/v23.3.3.tar.gz"
-  sha256 "8aff985da30aaab37edf8e5b02fda33ed4cbdd962699a8e2af98fdef306f4e4d"
+  url "https://github.com/google/flatbuffers/archive/v23.5.8.tar.gz"
+  sha256 "55b75dfa5b6f6173e4abf9c35284a10482ba65db886b39db511eba6c244f1e88"
   license "Apache-2.0"
   head "https://github.com/google/flatbuffers.git", branch: "master"
 
