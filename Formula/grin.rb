@@ -7,15 +7,14 @@ class Grin < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8d3e499b338d6eb3a0921258ea0876261a18a7957b4338b382278f7f099ec062"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8d6664533cd67da4715371d48f3bc8eecef589cfdd2efe5e19af14472f91f0bc"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "064eb5619f52ca1f2123ee82e6017e6380889b38b87b9654f01a946ef31bf0b8"
-    sha256 cellar: :any_skip_relocation, ventura:        "acfb62e9c0cc12c65c9caf71d79b371209017d6434c6f91a98c01889828472c4"
-    sha256 cellar: :any_skip_relocation, monterey:       "cf3066f5430c31b31d00f9c1f56b0e4c5824efd00606231d719dbe24ad1c4de4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4d4bea4bf9a3195bbe5aec65908e60834b2a55579f88c7ec9fe5856b2d8a009d"
-    sha256 cellar: :any_skip_relocation, catalina:       "45d21d3e03f2af974b5ddd36636c013cef9beedbecab2cfb0606168a77981f4d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cdcbd7bcb60160cbd90c54e362650a191b64fb33d356991896c0778ced854ecf"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1fab9195a99a295a16188c052518879bd5dadedc2ebcbd8c320ed498facf1f28"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6401984d8253b18d9b6ddb50d7804d53e77df627b97430a4dc7403f24e8ee2de"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e85a55594c77f1a6864064b8764221e543b679b673adab978e586c21945bee4b"
+    sha256 cellar: :any_skip_relocation, ventura:        "33b88a2920ae853a8945fb31b60fb913b729618811a1ed2059bf34ac862011fa"
+    sha256 cellar: :any_skip_relocation, monterey:       "379a7ae7790a3e4eaa6d43da60a43e9d431dd94cb9c21165be3cd5ce640b8161"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2c30855732887dd75a1fdb3e88127a42c3f748f2787cf133c5643ba8bf976f34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4be0f608e09ddd44d9f897f6cdf080411306d47967b135a806c616931e89c84"
   end
 
   # Use `llvm@15` to work around build failure with Clang 16 described in
