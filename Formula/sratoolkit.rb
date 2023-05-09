@@ -2,15 +2,14 @@ class Sratoolkit < Formula
   desc "Data tools for INSDC Sequence Read Archive"
   homepage "https://github.com/ncbi/sra-tools"
   license all_of: [:public_domain, "GPL-3.0-or-later", "MIT"]
-  revision 1
 
   stable do
-    url "https://github.com/ncbi/sra-tools/archive/refs/tags/3.0.3.tar.gz"
-    sha256 "ea4b9a4b2e6e40e6b2bf36b01eb8df2b50280ef9dcdc66b504c1d1296600afbd"
+    url "https://github.com/ncbi/sra-tools/archive/refs/tags/3.0.5.tar.gz"
+    sha256 "6dca9889ca9cfa83e9ce1c39bf7ae5654576fc79c4f608e902272a49573a05e0"
 
     resource "ncbi-vdb" do
-      url "https://github.com/ncbi/ncbi-vdb/archive/refs/tags/3.0.2.tar.gz"
-      sha256 "275ccb225ddb156688c8c71f772f73276cb18ebff773a51150f86f8002ed2d59"
+      url "https://github.com/ncbi/ncbi-vdb/archive/refs/tags/3.0.5.tar.gz"
+      sha256 "a32672d7f76507a77ceb29f023855eaf5bf4d150ddd21b55c013b499f3b83735"
     end
   end
 
