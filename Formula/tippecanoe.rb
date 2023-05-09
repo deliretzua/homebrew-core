@@ -1,8 +1,8 @@
 class Tippecanoe < Formula
   desc "Build vector tilesets from collections of GeoJSON features"
   homepage "https://github.com/felt/tippecanoe"
-  url "https://github.com/felt/tippecanoe/archive/refs/tags/2.24.0.tar.gz"
-  sha256 "bc5be791ad74eed596b89f9c423d4c5ed864fabc9aed3e13536251e7862ce49c"
+  url "https://github.com/felt/tippecanoe/archive/refs/tags/2.26.0.tar.gz"
+  sha256 "6f38a94f166d5cc975b675055ebe15b7368ac52d91eb00a9a643eef700d0b8bc"
   license "BSD-2-Clause"
 
   bottle do
@@ -19,7 +19,6 @@ class Tippecanoe < Formula
   uses_from_macos "zlib"
 
   def install
-    system "make"
     system "make", "install", "PREFIX=#{prefix}"
   end
 
