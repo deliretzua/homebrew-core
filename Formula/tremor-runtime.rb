@@ -19,11 +19,18 @@ class TremorRuntime < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
+  depends_on "librdkafka"
+  depends_on "oniguruma"
+  depends_on "xz" # for liblzma
 
   on_linux do
-    depends_on "pkg-config" => :build
-    depends_on "llvm"
+    # Use `llvm@15` to work around build failure with Clang 16 described in
+    # https://github.com/rust-lang/rust-bindgen/issues/2312.
+    # TODO: Switch back to `uses_from_macos "llvm" => :build` when `bindgen` is
+    # updated to 0.62.0 or newer. There is a check in the `install` method.
+    depends_on "llvm@15" => :build
     depends_on "openssl@1.1"
   end
 
@@ -33,7 +40,26 @@ class TremorRuntime < Formula
   fails_with gcc: "7"
   fails_with gcc: "8"
 
+  # Fix invalid usage of `macro_export`.
+  # Remove on next release.
+  patch do
+    url "https://github.com/tremor-rs/tremor-runtime/commit/986fae5cf1022790e60175125b848dc84f67214f.patch?full_index=1"
+    sha256 "ff772097264185213cbea09addbcdacc017eda4f90c97d0dad36b0156e3e9dbc"
+  end
+
   def install
+    ENV["CARGO_FEATURE_DYNAMIC_LINKING"] = "1" # for librdkafka
+    ENV["RUSTONIG_DYNAMIC_LIBONIG"] = "1"
+
+    bindgen_version = Version.new(
+      (buildpath/"Cargo.lock").read
+                              .match(/name = "bindgen"\nversion = "(.*)"/)[1],
+    )
+    if bindgen_version >= "0.62.0"
+      odie "`bindgen` crate is updated to 0.62.0 or newer! Please remove " \
+           'this check and try switching to `uses_from_macos "llvm" => :build`.'
+    end
+
     inreplace ".cargo/config", "+avx,+avx2,", ""
 
     system "cargo", "install", *std_cargo_args(path: "tremor-cli")
