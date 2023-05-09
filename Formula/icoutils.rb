@@ -25,7 +25,18 @@ class Icoutils < Formula
 
   depends_on "libpng"
 
+  on_monterey :or_newer do
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+  end
+
   def install
+    inreplace "common/Makefile.am", "libcommon_a_LIBADD", "libcommon_la_LIBADD"
+
+    # Workaround for Xcode 14 ld.
+    system "autoreconf", "--force", "--install" if MacOS.version >= :monterey
+
     system "./configure", "--disable-dependency-tracking",
                           "--disable-rpath",
                           "--prefix=#{prefix}"
