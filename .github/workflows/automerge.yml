@@ -40,9 +40,10 @@ jobs:
       actions: read
     steps:
       - name: Download `pull-number` artifact
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh run download --name pull-number "$WORKFLOW_ID"
+        uses: Homebrew/actions/gh-try-download@master
+        with:
+          artifact-name: pull-number
+          workflow-id: ${{ github.event.workflow_run.id }}
 
       - name: Dump debug info in case of failure
         if: failure()
