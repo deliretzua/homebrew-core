@@ -1,11 +1,10 @@
 class Ddd < Formula
   desc "Graphical front-end for command-line debuggers"
   homepage "https://www.gnu.org/s/ddd/"
-  url "https://ftp.gnu.org/gnu/ddd/ddd-3.3.12.tar.gz"
-  mirror "https://ftpmirror.gnu.org/ddd/ddd-3.3.12.tar.gz"
-  sha256 "3ad6cd67d7f4b1d6b2d38537261564a0d26aaed077bf25c51efc1474d0e8b65c"
+  url "https://ftp.gnu.org/gnu/ddd/ddd-3.4.0.tar.gz"
+  mirror "https://ftpmirror.gnu.org/ddd/ddd-3.4.0.tar.gz"
+  sha256 "5d4cbc8a0bb0458543866d679308c53a3ef066e402fe5a1918e19698a3d3580f"
   license all_of: ["GPL-3.0-only", "GFDL-1.1-or-later"]
-  revision 1
 
   bottle do
     rebuild 2
@@ -31,33 +30,10 @@ class Ddd < Formula
   depends_on "libxt"
   depends_on "openmotif"
 
-  # https://savannah.gnu.org/bugs/?41997
-  patch do
-    url "https://savannah.gnu.org/patch/download.php?file_id=31132"
-    sha256 "f3683f23c4b4ff89ba701660031d4b5ef27594076f6ef68814903ff3141f6714"
-  end
-
-  # Patch to fix compilation with Xcode 9
-  # https://savannah.gnu.org/bugs/?52175
-  patch :p0 do
-    url "https://raw.githubusercontent.com/macports/macports-ports/a71fa9f4/devel/ddd/files/patch-unknown-type-name-a_class.diff"
-    sha256 "c187a024825144f186f0cf9cd175f3e972bb84590e62079793d0182cb15ca183"
-  end
-
-  # Patch to fix compilation with Xt 1.2.0
-  # https://savannah.gnu.org/patch/?9992
-  patch do
-    url "https://savannah.gnu.org/patch/download.php?file_id=50229"
-    sha256 "140a1493ab640710738abf67838e63fbb8328590d1d3ab0212e7ca1f378a9ee7"
-  end
-
   def install
-    if OS.linux?
-      # Patch to fix compilation error
-      # https://savannah.gnu.org/bugs/?33960
-      # Remove with next release
-      inreplace "ddd/strclass.C", "#include <stdlib.h>", "#include <stdlib.h>\n#include <cstdio>"
-    end
+    # ioctl is not found without this flag
+    # Upstream issue ref: https://savannah.gnu.org/bugs/index.php?64188
+    ENV.append_to_cflags "-DHAVE_SYS_IOCTL_H" if OS.mac?
 
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
