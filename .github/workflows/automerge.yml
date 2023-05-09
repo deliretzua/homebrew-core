@@ -32,6 +32,8 @@ jobs:
       approved: ${{ steps.approval-status.outputs.approved }}
       complete: ${{ steps.approval-status.outputs.complete }}
       mergeable: ${{ steps.approval-status.outputs.mergeable }}
+    env:
+      WORKFLOW_ID: ${{ github.event.workflow_run.id }}
     permissions:
       contents: read
       pull-requests: read
@@ -40,8 +42,20 @@ jobs:
       - name: Download `pull-number` artifact
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          WORKFLOW_ID: ${{ github.event.workflow_run.id }}
         run: gh run download --name pull-number "$WORKFLOW_ID"
+
+      - name: Dump debug info in case of failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          printf '```\n' >> "$GITHUB_STEP_SUMMARY"
+          gh run view "$WORKFLOW_ID" | tee -a "$GITHUB_STEP_SUMMARY"
+          printf '```\n' >> "$GITHUB_STEP_SUMMARY"
+
+          printf '```\n' >> "$GITHUB_STEP_SUMMARY"
+          gh api "repos/{owner}/{repo}/actions/runs/$WORKFLOW_ID" | jq . | tee -a "$GITHUB_STEP_SUMMARY"
+          printf '```\n' >> "$GITHUB_STEP_SUMMARY"
 
       - run: echo "number=$(cat number)" >> "$GITHUB_OUTPUT"
         id: pr
