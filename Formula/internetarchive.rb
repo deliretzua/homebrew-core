@@ -8,13 +8,13 @@ class Internetarchive < Formula
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cadd8c1791e6880c0790e954e0ec7e6d7bd516053518b0b17f66d8577bb4dc58"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "23f3ad41ec2541e05318dca52e571e3e4c387d733b9ec6eb8790afe93b52a34f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a9313d2d0dac856180a2f1f0e7461045e9c7ba9de0da282430964f00169411e8"
-    sha256 cellar: :any_skip_relocation, ventura:        "6c6c1a7efa6558dae94c8044e00f9d77fbe6db70fe2a8053417add76bbfd13a9"
-    sha256 cellar: :any_skip_relocation, monterey:       "94d3b09cd976eed7a100dcee4f982af7e78637144d2c09234996b044d22940a0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c6037c038d4c788b7a03fff91cd08eb07554c63aac7ac83a3d4900b9d75f20bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "11fb4374e7fbd3d21d180e6ee799ae4a304270150615119ff037bc8e1a868fee"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "625d91489683a2e0968628b43c0ebc9869a2c7ca8f06091e8629c7be2ee7f94d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "68674e3de3058bb5632a33a190cf239672dd447c6a87d9ff9596b1309cedd50d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "153aff0daab82634b7e794770441be6bf25dedca46728cdd2712700cd0fb32f1"
+    sha256 cellar: :any_skip_relocation, ventura:        "6bf13f1d5a64d2fff1cbe95f4b9b4c2598914004c4cff77afe3e0b153e85326d"
+    sha256 cellar: :any_skip_relocation, monterey:       "0a7220531b36f14740abc671d49765f8fa580a1336e03b39c6a1d96c51decaca"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c5b6e788f2e8e4dc8e6f0ea7acaf0535a04f0843fde5a31ea2c0bec8747fb15a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "309312cd0f7c38bd094e5645b7daa41599cb86f880dfe4c88af91862c1098b9e"
   end
 
   depends_on "python@3.11"
