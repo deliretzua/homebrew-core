@@ -1,8 +1,8 @@
 class Pkcs11Tools < Formula
   desc "Tools to manage objects on PKCS#11 crypotographic tokens"
   homepage "https://github.com/Mastercard/pkcs11-tools"
-  url "https://github.com/Mastercard/pkcs11-tools/releases/download/v2.5.0/pkcs11-tools-2.5.0.tar.gz"
-  sha256 "4e2933ba19eef64a4448dfee194083a1db1db5842cd043edb93bbf0a62a63970"
+  url "https://github.com/Mastercard/pkcs11-tools/releases/download/v2.5.1/pkcs11-tools-2.5.1.tar.gz"
+  sha256 "d7d30438cbdaeae208040b3f04c8f984cfb6af43b69b53206c6c23a2b6c0d29f"
   license "Apache-2.0"
 
   bottle do
@@ -58,8 +58,8 @@ class Pkcs11Tools < Formula
     ENV["PKCS11PASSWORD"] = "0000"
 
     system "softhsm2-util", "--init-token", "--slot", "0", "--label", "test", "--pin", "0000", "--so-pin", "0000"
-    system "p11keygen", "-i", "test", "-k", "aes", "-b", "128", "encrypt"
-    system "p11kcv", "seck/test"
-    system "p11ls"
+    system "#{bin}/p11keygen", "-i", "test", "-k", "aes", "-b", "128", "encrypt"
+    system "#{bin}/p11kcv", "seck/test"
+    system "#{bin}/p11ls"
   end
 end
