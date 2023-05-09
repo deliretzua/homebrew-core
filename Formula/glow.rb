@@ -6,13 +6,13 @@ class Glow < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c54012038ed3634d1ad94db5f90621ac50d0d30533a88850ddb651a8f6399ac6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "04c5124e2c3780ad5519ded1c6a469563c0b45d8b020dbd14d7ca1bea4dc9cad"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5ccdcf167ae756191b74445065bade50ac36489c7427d67ee7a5331760de34da"
-    sha256 cellar: :any_skip_relocation, ventura:        "0bfda1b6f367cd6f5f2dd5d109f3326bd42f20275435166e003779f69366466a"
-    sha256 cellar: :any_skip_relocation, monterey:       "567a9f5ad2f29621ca3bb54579f429d47c4bc1b208d5e53a2069b8026ff84ecb"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ce0134788a482449b01b09604d19675471f014f94b727f5fa961f5ee91530e4b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2cc968cb56ef6328c33319040d72bc8af1817a9d01240797ab4e9c155a7b2984"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3c0d7b294dd4a8a12bca0eb53c9dec78c43a98c28436bd949074ba22b6a55380"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3c0d7b294dd4a8a12bca0eb53c9dec78c43a98c28436bd949074ba22b6a55380"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3c0d7b294dd4a8a12bca0eb53c9dec78c43a98c28436bd949074ba22b6a55380"
+    sha256 cellar: :any_skip_relocation, ventura:        "b6552b824d49b18f65dda0a80364c88952e6ec64513ce3fdcff8fb748acccbbe"
+    sha256 cellar: :any_skip_relocation, monterey:       "b6552b824d49b18f65dda0a80364c88952e6ec64513ce3fdcff8fb748acccbbe"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b6552b824d49b18f65dda0a80364c88952e6ec64513ce3fdcff8fb748acccbbe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc5970c0f0ab674039f840c12fdb5e3764bf90c879831e6038bdb6c55ba12382"
   end
 
   depends_on "go" => :build
