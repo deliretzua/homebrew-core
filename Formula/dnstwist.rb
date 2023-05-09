@@ -3,8 +3,8 @@ class Dnstwist < Formula
 
   desc "Test domains for typo squatting, phishing and corporate espionage"
   homepage "https://github.com/elceef/dnstwist"
-  url "https://files.pythonhosted.org/packages/d6/29/fd443d1730c3da3679bf1f6bf2d870688c1a2d55dec60b650309de744712/dnstwist-20230413.tar.gz"
-  sha256 "fb3b0f1d94c801c3b14af22db1f73984284c61ce659c334695b80cc9a1ed6eda"
+  url "https://files.pythonhosted.org/packages/dc/7e/e473c19e6a885cdebfd6c6d18fcdb4c1f00d9caf17d72112a366023628e9/dnstwist-20230509.tar.gz"
+  sha256 "153f1f833d456dff8a70b622f13a5699af392782415d69fc38dd26f98eb4740c"
   license "Apache-2.0"
 
   bottle do
@@ -43,13 +43,13 @@ class Dnstwist < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/21/31/3f468da74c7de4fcf9b25591e682856389b3400b4b62f201e65f15ea3e07/attrs-22.2.0.tar.gz"
-    sha256 "c9227bfc2f01993c03f68db37d1d15c9690188323c067c641f1a35ca58185f99"
+    url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
+    sha256 "6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/37/f7/2b1b0ec44fdc30a3d31dfebe52226be9ddc40cd6c0f34ffc8923ba423b69/certifi-2022.12.7.tar.gz"
-    sha256 "35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3"
+    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
+    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
   end
 
   resource "charset-normalizer" do
@@ -98,8 +98,8 @@ class Dnstwist < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/9d/ee/391076f5937f0a8cdf5e53b701ffc91753e87b07d66bae4a09aa671897bf/requests-2.28.2.tar.gz"
-    sha256 "98b1b2782e3c6c4904938b84c0eb932721069dfdb9134313beff7c83c2df24bf"
+    url "https://files.pythonhosted.org/packages/e0/69/122171604bcef06825fa1c05bd9e9b1d43bc9feb8c6c0717c42c92cc6f3c/requests-2.30.0.tar.gz"
+    sha256 "239d7d4458afcb28a692cdd298d87542235f4ca8d36d03a15bfc128a6559a2f4"
   end
 
   resource "tld" do
@@ -118,8 +118,8 @@ class Dnstwist < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/c4/1e/1b204050c601d5cd82b45d5c8f439cb6f744a2ce0c0a6f83be0ddf0dc7b2/yarl-1.8.2.tar.gz"
-    sha256 "49d43402c6e3013ad0978602bf6bf5328535c48d192304b91b97a3c6790b1562"
+    url "https://files.pythonhosted.org/packages/5f/3f/04b3c5e57844fb9c034b09c5cb6d2b43de5d64a093c30529fd233e16cf09/yarl-1.9.2.tar.gz"
+    sha256 "04ab9d4b9f587c06d801c2abfe9317b77cdf996c65a90d5e84ecc45010823571"
   end
 
   def install
