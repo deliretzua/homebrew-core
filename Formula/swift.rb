@@ -17,13 +17,13 @@ class Swift < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7cda451bea8fde5ac0af7be622a22a894c6b10aea23787f7e085c9ff00b3c01c"
-    sha256 cellar: :any,                 arm64_monterey: "0ebba248c9898ccefa2d4b7e314a183228a829fd6df18bf7a360964c35491364"
-    sha256 cellar: :any,                 arm64_big_sur:  "24f19c42284a03c33aaa6ede1d82fee8fb692e93cf84bc228ca865279d482e74"
-    sha256 cellar: :any,                 ventura:        "2cf036d76c04e0dc3561ed6ae5392578083d5a238ec5007503734788ef1aa990"
-    sha256 cellar: :any,                 monterey:       "4b99cef90637fa8b47ee3a45cc8dd58ebe0f4a52ef04d2981f54fda445c73d66"
-    sha256 cellar: :any,                 big_sur:        "84a10d3f1750533f0df55c00d2cb065a579d4fca9ca18d65d86d9e64b93f9f5d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8bbec799afcc3e710667b0e610cc4518f9c3c851103d093ba27a06c44ea31808"
+    sha256 cellar: :any,                 arm64_ventura:  "f410b93f46e8ad6284f6fa0d77e9c10e175612ffcf6a9db5b3e991f3bddb80ba"
+    sha256 cellar: :any,                 arm64_monterey: "a44517686d9775dd46f1b876b81d0686b32302ac769260413df37113bf85d203"
+    sha256 cellar: :any,                 arm64_big_sur:  "3033df7b3a912e0997b82c3f7fd8713412488a9a594de53d891c77d02e5d1773"
+    sha256 cellar: :any,                 ventura:        "f4bb582bf95e1f0030f3892135be126bef54926227751e99c610db69491d8858"
+    sha256 cellar: :any,                 monterey:       "a023277080bae71623cd81b0a4bde429d8aa60a8bb6f9f07d3920a87bd3049fe"
+    sha256 cellar: :any,                 big_sur:        "98120da805e03a9d459ed6e666243e51cc1fbbc1625e321429e8b811a37b1cce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52820df701452a42ffae7c3b7c8ab3a568ec2bfc3a34ec698bfd53743b21d3b0"
   end
 
   keg_only :provided_by_macos
