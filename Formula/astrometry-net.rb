@@ -6,6 +6,7 @@ class AstrometryNet < Formula
   url "https://github.com/dstndstn/astrometry.net/releases/download/0.94/astrometry.net-0.94.tar.gz"
   sha256 "38c0d04171ecae42033ce5c9cd0757d8c5fc1418f2004d85e858f29aee383c5f"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -37,6 +38,13 @@ class AstrometryNet < Formula
   resource "fitsio" do
     url "https://files.pythonhosted.org/packages/1f/0e/b312ff3f6b588c13fc2256a5df4c4d63c527a07e176012d0593136af53ee/fitsio-1.1.8.tar.gz"
     sha256 "61f569b2682a0cadce52c9653f0c9b81f951d000522cef645ce1cb49f78300f9"
+  end
+
+  # https://github.com/Homebrew/homebrew-core/issues/130484
+  # Review for removal on next release
+  patch do
+    url "https://github.com/dstndstn/astrometry.net/commit/f85136190b6e39393049e9be1cf14ac32b89b538.patch?full_index=1"
+    sha256 "82f8968805dacfd66961ea7cfea7e190be6faaaaa5367f2b86b0b5a62f160706"
   end
 
   def install
@@ -78,8 +86,12 @@ class AstrometryNet < Formula
       index index-9918.fits
     EOS
     system bin/"solve-field", "--config", "99.cfg", prefix/"examples/apod4.jpg",
-                              "--continue", "--dir", "."
-    assert_predicate testpath/"apod4.solved", :exist?
-    assert_predicate testpath/"apod4.wcs", :exist?
+                              "--continue", "--dir", "jpg"
+    assert_predicate testpath/"jpg/apod4.solved", :exist?
+    assert_predicate testpath/"jpg/apod4.wcs", :exist?
+    system bin/"solve-field", "--config", "99.cfg", prefix/"examples/apod4.xyls",
+                              "--continue", "--dir", "xyls"
+    assert_predicate testpath/"xyls/apod4.solved", :exist?
+    assert_predicate testpath/"xyls/apod4.wcs", :exist?
   end
 end
