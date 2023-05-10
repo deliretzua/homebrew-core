@@ -1,10 +1,9 @@
 class Docutils < Formula
   desc "Text processing system for reStructuredText"
   homepage "https://docutils.sourceforge.io"
-  url "https://downloads.sourceforge.net/project/docutils/docutils/0.19/docutils-0.19.tar.gz"
-  sha256 "33995a6753c30b7f577febfc2c50411fec6aac7f7ffeb7c4cfe5991072dcf9e6"
+  url "https://downloads.sourceforge.net/project/docutils/docutils/0.20/docutils-0.20.tar.gz"
+  sha256 "f75a5a52fbcacd81b47e42888ad2b380748aaccfb3f13af0fe69deb759f01eb6"
   license all_of: [:public_domain, "BSD-2-Clause", "GPL-3.0-or-later", "Python-2.0"]
-  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "80e64efdb51243a4399e19e4dbf5efe01b855a7cad82ca79c0c6026042f7a00c"
@@ -28,7 +27,10 @@ class Docutils < Formula
   end
 
   test do
-    system bin/"rst2man.py", prefix/"HISTORY.txt"
-    system bin/"rst2man", prefix/"HISTORY.txt"
+    cp prefix/"README.txt", testpath
+    mkdir_p testpath/"docs"
+    touch testpath/"docs"/"header0.txt"
+    system bin/"rst2man.py", testpath/"README.txt"
+    system bin/"rst2man", testpath/"README.txt"
   end
 end
