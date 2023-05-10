@@ -1,8 +1,8 @@
 class Livekit < Formula
   desc "Scalable, high-performance WebRTC server"
   homepage "https://livekit.io"
-  url "https://github.com/livekit/livekit/archive/refs/tags/v1.4.1.tar.gz"
-  sha256 "04196867f5cd9b5f0829e5e96b1df9ff9a9d9b3bcb5a39f44651ed3fa9336cb8"
+  url "https://github.com/livekit/livekit/archive/refs/tags/v1.4.2.tar.gz"
+  sha256 "d72542c2699440805e74075825e0c1425ba039a3db6603c3f20566c8a757b3f8"
   license "Apache-2.0"
   head "https://github.com/livekit/livekit.git", branch: "master"
 
@@ -31,7 +31,7 @@ class Livekit < Formula
     sleep 3
     assert_match "OK", shell_output("curl -s http://localhost:#{http_port}")
 
-    output = shell_output("#{bin}/livekit-server --version", 1)
+    output = shell_output("#{bin}/livekit-server --version")
     assert_match "livekit-server version #{version}", output
   end
 end
