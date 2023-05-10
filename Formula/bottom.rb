@@ -1,8 +1,8 @@
 class Bottom < Formula
   desc "Yet another cross-platform graphical process/system monitor"
   homepage "https://clementtsang.github.io/bottom/"
-  url "https://github.com/ClementTsang/bottom/archive/0.8.0.tar.gz"
-  sha256 "0fe6a826d18570ab33b2af3b26ce28c61e3aa830abb2b622f2c3b81da802437a"
+  url "https://github.com/ClementTsang/bottom/archive/0.9.0.tar.gz"
+  sha256 "0b5ba825905748a6146307517cf5e148bbc7ce13070a8448cc2d38ee68c1a42c"
   license "MIT"
   head "https://github.com/ClementTsang/bottom.git", branch: "master"
 
@@ -35,6 +35,6 @@ class Bottom < Formula
 
   test do
     assert_equal "bottom #{version}", shell_output(bin/"btm --version").chomp
-    assert_match "error: Found argument '--invalid'", shell_output(bin/"btm --invalid 2>&1", 2)
+    assert_match "error: unexpected argument '--invalid' found", shell_output(bin/"btm --invalid 2>&1", 2)
   end
 end
