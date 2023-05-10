@@ -5,8 +5,8 @@ class Gif2png < Formula
   # Use canonical URL http://www.catb.org/~esr/gif2png/gif2png-<version>.tar.gz instead
   # once it starts to include go.mod/go.sum
   # See https://gitlab.com/esr/gif2png/-/issues/14#note_1373069233.
-  url "https://gitlab.com/esr/gif2png/-/archive/3.0.2/gif2png-3.0.2.tar.bz2"
-  sha256 "4f3a77c481d040be6e249e788291f19345668ce867bda12043e30409726b67de"
+  url "https://gitlab.com/esr/gif2png/-/archive/3.0.3/gif2png-3.0.3.tar.bz2"
+  sha256 "5d2770dce994e08ef54871ea4b0774e0ec0476aad5b3e47e21b4af59fdc8158b"
   license "BSD-2-Clause"
   head "https://gitlab.com/esr/gif2png.git", branch: "master"
 
