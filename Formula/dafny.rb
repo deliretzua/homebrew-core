@@ -1,8 +1,8 @@
 class Dafny < Formula
   desc "Verification-aware programming language"
   homepage "https://github.com/dafny-lang/dafny/blob/master/README.md"
-  url "https://github.com/dafny-lang/dafny/archive/refs/tags/v4.0.0.tar.gz"
-  sha256 "f1d7fd7f438bc9f7772b4035aa0065d518e62a55711a38822ecadcad4d65e446"
+  url "https://github.com/dafny-lang/dafny/archive/refs/tags/v4.1.0.tar.gz"
+  sha256 "63f9cf593efb1c1c75d3083d9b207f572839efba381af21cdab958ab127366c4"
   license "MIT"
 
   livecheck do
@@ -40,14 +40,14 @@ class Dafny < Formula
   test do
     (testpath/"test.dfy").write <<~EOS
       method Main() {
-        var i: nat;
+        var i: nat :| true;
         assert i as int >= -1;
         print "hello, Dafny\\n";
       }
     EOS
     assert_equal "\nDafny program verifier finished with 1 verified, 0 errors\n",
-                  shell_output("#{bin}/dafny /compile:0 #{testpath}/test.dfy")
-    assert_equal "\nDafny program verifier finished with 1 verified, 0 errors\nRunning...\n\nhello, Dafny\n",
-                  shell_output("#{bin}/dafny /compile:3 #{testpath}/test.dfy")
+                  shell_output("#{bin}/dafny verify #{testpath}/test.dfy")
+    assert_equal "\nDafny program verifier finished with 1 verified, 0 errors\nhello, Dafny\n",
+                  shell_output("#{bin}/dafny run #{testpath}/test.dfy")
   end
 end
