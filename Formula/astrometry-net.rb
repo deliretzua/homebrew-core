@@ -14,13 +14,13 @@ class AstrometryNet < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "08c8f0b1dd36fb4cb76a54018a7e815f2ae47f7c9c3130cb4082f717fc0c678f"
-    sha256 cellar: :any,                 arm64_monterey: "7d54a8b1b7829e05bc47a8526b452cceef2c2a320488b1ecaf2190e0dd26fb62"
-    sha256 cellar: :any,                 arm64_big_sur:  "305e68b923b72c22667e849c081c75ac6b086ef150aac843d0a6f6fd1430cd79"
-    sha256 cellar: :any,                 ventura:        "d8d8d929a55325a6395625c06ba0140598bc8a732129a5ccc609556c9c43b969"
-    sha256 cellar: :any,                 monterey:       "f6ccef7ffdfeec25d4eb0bd2f4389e67956399d29e1741c385d5d0defb3a400b"
-    sha256 cellar: :any,                 big_sur:        "e4a5e887cdcff3f1bfb16bb0814a9e9ecdc5ad926211825fece76b5862d09e0c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c1b699a8930839af7cbb20f6fe2241151fbe382048ce2548900846d653425dd"
+    sha256 cellar: :any,                 arm64_ventura:  "1e1dd4ca98634847a4cca6c0898e1e0785be7a460b8a91a1ba923eb8e4f54193"
+    sha256 cellar: :any,                 arm64_monterey: "f1fe0247102eca1ceee3d7a6ea1ac3c54e500946ebfe52254f7e1a51477002f3"
+    sha256 cellar: :any,                 arm64_big_sur:  "74130a63e3eb338b5b77ef505b216f4bcd7a7d421cf3e40c96b038e3c7ffcd65"
+    sha256 cellar: :any,                 ventura:        "42b242fc7dc1c5c9a60b4ca1ce5368db5b92700f8d233cf848a2aa34d09098f6"
+    sha256 cellar: :any,                 monterey:       "eafeaf9929cbce8b0a6fb8cd3efe312e3c203285466ed747dd669c3fd7d8c2e1"
+    sha256 cellar: :any,                 big_sur:        "14847578626078f3c588cf231977d34f4ccebd195e4424a8c5516d374b2b4de0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd984b5e0e8aaa946a22648142f75f8b61c1c511d044946c00bd8867d8178e7f"
   end
 
   depends_on "pkg-config" => :build
