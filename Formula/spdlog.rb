@@ -4,6 +4,7 @@ class Spdlog < Formula
   url "https://github.com/gabime/spdlog/archive/v1.11.0.tar.gz"
   sha256 "ca5cae8d6cac15dae0ec63b21d6ad3530070650f68076f3a4a862ca293a858bb"
   license "MIT"
+  revision 1
   head "https://github.com/gabime/spdlog.git", branch: "v1.x"
 
   bottle do
