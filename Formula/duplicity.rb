@@ -123,9 +123,11 @@ class Duplicity < Formula
     sha256 "dc9d1ad3f745c43f4bbedbca30f9ffe8905a8c028c9926e61077847d5ea257ab"
   end
 
+  # Using GitHub tarball as the release is missing on PyPI.
+  # Issue ref: https://github.com/dropbox/dropbox-sdk-python/issues/469
   resource "dropbox" do
-    url "https://files.pythonhosted.org/packages/89/d7/42792461014f5c434e070c8d4727a7e8aa1ed1e24726a62bbececc7b49dd/dropbox-11.36.0.tar.gz"
-    sha256 "830ce522d8bc3905b4a99b67dc009aa9542550d1de9fa1743c1927de70888b47"
+    url "https://github.com/dropbox/dropbox-sdk-python/archive/refs/tags/v11.36.1.tar.gz"
+    sha256 "29e57afad30db4bba282dbb38a30e77565b9524944c69502a891965d0aaad0ac"
   end
 
   resource "ecdsa" do
