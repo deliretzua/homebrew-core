@@ -1,8 +1,8 @@
 class Fmt < Formula
   desc "Open-source formatting library for C++"
   homepage "https://fmt.dev/"
-  url "https://github.com/fmtlib/fmt/archive/9.1.0.tar.gz"
-  sha256 "5dea48d1fcddc3ec571ce2058e13910a0d4a6bab4cc09a809d8b1dd1c88ae6f2"
+  url "https://github.com/fmtlib/fmt/archive/10.0.0.tar.gz"
+  sha256 "ede1b6b42188163a3f2e0f25ad5c0637eca564bd8df74d02e31a311dd6b37ad8"
   license "MIT"
   head "https://github.com/fmtlib/fmt.git", branch: "master"
 
@@ -20,12 +20,13 @@ class Fmt < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", ".", "-DBUILD_SHARED_LIBS=TRUE", *std_cmake_args
-    system "make", "install"
-    system "make", "clean"
-    system "cmake", ".", "-DBUILD_SHARED_LIBS=FALSE", *std_cmake_args
-    system "make"
-    lib.install "libfmt.a"
+    system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=TRUE", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+
+    system "cmake", "-S", ".", "-B", "build-static", "-DBUILD_SHARED_LIBS=FALSE", *std_cmake_args
+    system "cmake", "--build", "build-static"
+    lib.install "build-static/libfmt.a"
   end
 
   test do
