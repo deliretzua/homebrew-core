@@ -4,6 +4,7 @@ class Edencommon < Formula
   url "https://github.com/facebookexperimental/edencommon/archive/refs/tags/v2023.05.15.00.tar.gz"
   sha256 "f1ad243fc528a50f1c2715d3077f78a8b582075994b2f0eb2c32ec163b4c47be"
   license "MIT"
+  revision 1
   head "https://github.com/facebookexperimental/edencommon.git", branch: "main"
 
   bottle do
