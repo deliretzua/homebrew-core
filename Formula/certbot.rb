@@ -3,8 +3,8 @@ class Certbot < Formula
 
   desc "Tool to obtain certs from Let's Encrypt and autoenable HTTPS"
   homepage "https://certbot.eff.org/"
-  url "https://files.pythonhosted.org/packages/c7/b4/c690a764b762d0c5e2e757094d8b97b1db710fbcf38ae9db74e787f9a500/certbot-2.5.0.tar.gz"
-  sha256 "76e6e5305021d3ee54c42fc471f8f0ed5dba790e6fd7fef6713060b0e42b97d7"
+  url "https://files.pythonhosted.org/packages/0e/fd/192cb7d79f798432b1b2e7a9998b2f12dd589c50ff88e31553d95143b01c/certbot-2.6.0.tar.gz"
+  sha256 "c4de6bb0d092729650ed90a5bdb513932bdc47ec5f7f98049180ab8e4a835dab"
   license "Apache-2.0"
   head "https://github.com/certbot/certbot.git", branch: "master"
 
@@ -32,23 +32,23 @@ class Certbot < Formula
   uses_from_macos "libffi"
 
   resource "acme" do
-    url "https://files.pythonhosted.org/packages/22/90/4de0868b48415b757ccc8afd9a51092123050d121b70bbfa0a0dbdb626d9/acme-2.5.0.tar.gz"
-    sha256 "9c760b115c54f55f692321abe5d09f5c70ce437e61f9f22340341621d9909a5a"
+    url "https://files.pythonhosted.org/packages/fd/8e/166279430adea94c9fa72079fcef10f5d0a382faaa233ef9e99c3210c108/acme-2.6.0.tar.gz"
+    sha256 "607360db73e458150ab63825a82b220bdf04badbd81c6d3218e5d993c6be491c"
   end
 
   resource "certbot-apache" do
-    url "https://files.pythonhosted.org/packages/76/d6/278abc6c93c1594af92a403caea758a4718045a48a8927acadc77e0fb809/certbot-apache-2.5.0.tar.gz"
-    sha256 "96c9cd62ed57c2307282d7203d07d378d929ce644d6ea0bee6d6cff72a85ac70"
+    url "https://files.pythonhosted.org/packages/49/e8/b92124ffadbf600d4c0921514f70b2f6e5c2d37ca26ab7ecade6b304ba22/certbot-apache-2.6.0.tar.gz"
+    sha256 "9fa677d8bb286c84f6fed9c109fe7ba4b88d4074f1c18e6b43230a7d5954160c"
   end
 
   resource "certbot-nginx" do
-    url "https://files.pythonhosted.org/packages/1e/89/dbec566e2aedbdd77a10896be218f7d23d0eff130ea5d00b531d4d659077/certbot-nginx-2.5.0.tar.gz"
-    sha256 "499fc15de782689a1dc2a224e8978e5de8369f6aef63262698ea2cc48e8028b5"
+    url "https://files.pythonhosted.org/packages/51/01/4c2776e7154b972277d46fa63eff87accd5f026ffa6aa6204a3fe438640f/certbot-nginx-2.6.0.tar.gz"
+    sha256 "426038336f0eb305579aa1bd71d021cfbbfa0925d165198054763b7225d64a05"
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/37/f7/2b1b0ec44fdc30a3d31dfebe52226be9ddc40cd6c0f34ffc8923ba423b69/certifi-2022.12.7.tar.gz"
-    sha256 "35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3"
+    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
+    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
   end
 
   resource "charset-normalizer" do
@@ -67,8 +67,8 @@ class Certbot < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/15/d9/c679e9eda76bfc0d60c9d7a4084ca52d0631d9f24ef04f818012f6d1282e/cryptography-40.0.1.tar.gz"
-    sha256 "2803f2f8b1e95f614419926c7e6f55d828afc614ca5ed61543877ae668cc3472"
+    url "https://files.pythonhosted.org/packages/f7/80/04cc7637238b78f8e7354900817135c5a23cf66dfb3f3a216c6d630d6833/cryptography-40.0.2.tar.gz"
+    sha256 "c33c0d32b8594fa647d2e01dbccc303478e16fdd7cf98652d5b3ed11aa5e5c99"
   end
 
   resource "distro" do
@@ -119,13 +119,13 @@ class Certbot < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/9d/ee/391076f5937f0a8cdf5e53b701ffc91753e87b07d66bae4a09aa671897bf/requests-2.28.2.tar.gz"
-    sha256 "98b1b2782e3c6c4904938b84c0eb932721069dfdb9134313beff7c83c2df24bf"
+    url "https://files.pythonhosted.org/packages/e0/69/122171604bcef06825fa1c05bd9e9b1d43bc9feb8c6c0717c42c92cc6f3c/requests-2.30.0.tar.gz"
+    sha256 "239d7d4458afcb28a692cdd298d87542235f4ca8d36d03a15bfc128a6559a2f4"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/21/79/6372d8c0d0641b4072889f3ff84f279b738cd8595b64c8e0496d4e848122/urllib3-1.26.15.tar.gz"
-    sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
+    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
+    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
   end
 
   def install
