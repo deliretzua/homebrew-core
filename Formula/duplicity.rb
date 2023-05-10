@@ -18,6 +18,7 @@ class Duplicity < Formula
   end
 
   depends_on "gettext" => :build # for msgfmt
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build # for cryptography
   depends_on "cffi"
   depends_on "gnupg"
