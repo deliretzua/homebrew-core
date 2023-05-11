@@ -5,6 +5,10 @@ class Quantumxx < Formula
   sha256 "b2d0f84a4726be71e45dc03ad0556ff22f7e6b92c19676391899e1df9091c061"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "25f0978a1210e41d858153f27477b0b41a2a976f01c00e9c9de7e11e3e2b5820"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "eigen"
 
