@@ -2,8 +2,8 @@ class Access < Formula
   desc "Easiest way to request and grant access without leaving your terminal"
   homepage "https://indent.com"
   url "https://github.com/indentapis/access.git",
-      tag:      "v0.10.10",
-      revision: "f8269b5ec3260b848507cec67d6bfacdbf714b82"
+      tag:      "v0.10.11",
+      revision: "dd71b8b3d12e86c3d87dd78f10873469d97dc66c"
   license "Apache-2.0"
   head "https://github.com/indentapis/access.git", branch: "main"
 
