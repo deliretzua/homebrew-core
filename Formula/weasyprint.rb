@@ -3,8 +3,8 @@ class Weasyprint < Formula
 
   desc "Convert HTML to PDF"
   homepage "https://www.courtbouillon.org/weasyprint"
-  url "https://files.pythonhosted.org/packages/6d/65/e23a2b71b3d7c2032633ea51023640f9abb13148994adb88cd789513d304/weasyprint-58.1.tar.gz"
-  sha256 "6173009e313be65807fefbf78a8051ceb7a93776efda7ebbb88c13f5769794f3"
+  url "https://files.pythonhosted.org/packages/1d/69/11343bbb46d4f2a311677058e19cc2f7bc55a769b64c547a64ea1e2b6045/weasyprint-59.0.tar.gz"
+  sha256 "223a76636b3744eaa4ab8a2885f50cf46cf8ebb1acb99b5276d02feccf507492"
   license "BSD-3-Clause"
 
   bottle do
@@ -46,13 +46,13 @@ class Weasyprint < Formula
   end
 
   resource "pydyf" do
-    url "https://files.pythonhosted.org/packages/f4/4c/6d31b36a46714d8206b8ca84b8dc9aaf42093415b1f50471538552abe501/pydyf-0.5.0.tar.gz"
-    sha256 "51e751ae1504037c1fc1f4815119137b011802cd5f6c3539db066c455b14a7e1"
+    url "https://files.pythonhosted.org/packages/9d/c5/d5e4536968c36c0838459b5c482b9228e9aae839847837623d0d04576ba0/pydyf-0.6.0.tar.gz"
+    sha256 "b44a38855d7e47b740b3cd31ab63a2f5b9b2793931d50b0ccaed3bb7b86912fc"
   end
 
   resource "pyphen" do
-    url "https://files.pythonhosted.org/packages/46/12/aeb28a1e1a3f3cede967cea98ef3a1da844418ab8296a4bb9513f232736c/pyphen-0.13.2.tar.gz"
-    sha256 "847f57a043a58408f24670ae0184ff6edfb5fd5731743208228c028ddc514438"
+    url "https://files.pythonhosted.org/packages/4b/52/46b119f94b3f68e4193ada36941606d8e26852b67bb6e099b0e310540b41/pyphen-0.14.0.tar.gz"
+    sha256 "596c8b3be1c1a70411ba5f6517d9ccfe3083c758ae2b94a45f2707346d8e66fa"
   end
 
   resource "tinycss2" do
@@ -63,6 +63,11 @@ class Weasyprint < Formula
   resource "webencodings" do
     url "https://files.pythonhosted.org/packages/0b/02/ae6ceac1baeda530866a85075641cec12989bd8d31af6d5ab4a3e8c92f47/webencodings-0.5.1.tar.gz"
     sha256 "b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923"
+  end
+
+  resource "zopfli" do
+    url "https://files.pythonhosted.org/packages/9a/ed/d004d5737f9546167eecf0ecd995ee1a796703e512deb2f2ea26cdbe4b3e/zopfli-0.2.2.zip"
+    sha256 "2d49db7540d9991976af464ebc1b9ed12988c04d90691bcb51dc4a373a9e2afc"
   end
 
   def install
