@@ -22,7 +22,7 @@ class Calabash < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e47f5c89d637416c72ab2fea895044a4f861dd1ccdb8b54496b8f94d59f4d0c4"
+    sha256 cellar: :any_skip_relocation, all: "8013c68877bb6698bf8690e4e845344a114d3d33663b6a2647672764effef5bf"
   end
 
   depends_on "openjdk"
