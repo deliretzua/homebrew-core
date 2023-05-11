@@ -6,7 +6,7 @@ class FuseOverlayfs < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4ff1b2b105f6445a44d53f26b2a6d9d3348df472b16b6e2de3f027941e8e1ad4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "41d31dad0d480ec7797e82976c8b6b6639d4dcaf2ad623c0ccc609be7e69ca32"
   end
 
   depends_on "autoconf" => :build
