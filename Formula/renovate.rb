@@ -3,9 +3,20 @@ require "language/node"
 class Renovate < Formula
   desc "Automated dependency updates. Flexible so you don't need to be"
   homepage "https://github.com/renovatebot/renovate"
-  url "https://registry.npmjs.org/renovate/-/renovate-35.53.0.tgz"
-  sha256 "e6fe6cbcd456b2701f34d93191c99d0e76d22a56e26fbe66daebc582e3fc4061"
+  url "https://registry.npmjs.org/renovate/-/renovate-35.78.0.tgz"
+  sha256 "c79b5d7dcda3f165edae12a3f06bb9c4dc0bebb492ed635c4c56a5ea3bafa597"
   license "AGPL-3.0-only"
+
+  # There are thousands of renovate releases on npm and page the `Npm` strategy
+  # checks is several MB in size and can time out before the request resolves.
+  # This checks the "latest" release, which doesn't have the same issues.
+  livecheck do
+    url "https://registry.npmjs.org/renovate/latest"
+    regex(/v?(\d+(?:\.\d+)+)/i)
+    strategy :json do |json, regex|
+      json["version"]&.scan(regex) { |match| match[0] }
+    end
+  end
 
   bottle do
     sha256                               arm64_ventura:  "4f5494ca552ed7a622c684bedcdc5d3bc7ac5bf6c453bbdaaad666ae1b67f00a"
