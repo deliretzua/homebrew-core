@@ -1,8 +1,8 @@
 class PostgresqlAT12 < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v12.14/postgresql-12.14.tar.bz2"
-  sha256 "785610237d382c842d356e347138e58c06ffeae240e6cc0b52ac5ebcc30d043e"
+  url "https://ftp.postgresql.org/pub/source/v12.15/postgresql-12.15.tar.bz2"
+  sha256 "bb5206e2864c1c4579938b96ea6096d155f22abf2d2cc2aa57571e3c4cb12b36"
   license "PostgreSQL"
 
   livecheck do
