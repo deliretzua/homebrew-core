@@ -23,6 +23,12 @@ class Spdlog < Formula
   # error: specialization of 'template<class T, ...> struct fmt::v8::formatter' in different namespace
   fails_with gcc: "5"
 
+  # Add support for fmt 10.0.0
+  patch do
+    url "https://github.com/gabime/spdlog/commit/0ca574ae168820da0268b3ec7607ca7b33024d05.patch?full_index=1"
+    sha256 "31b22a9bfa6790fdabff186c0a9b0fd588439485f05cbef5e661231d15fec49b"
+  end
+
   def install
     ENV.cxx11
 
@@ -32,20 +38,18 @@ class Spdlog < Formula
       #endif
     EOS
 
-    mkdir "spdlog-build" do
-      args = std_cmake_args + %W[
-        -Dpkg_config_libdir=#{lib}
-        -DSPDLOG_BUILD_BENCH=OFF
-        -DSPDLOG_BUILD_TESTS=OFF
-        -DSPDLOG_FMT_EXTERNAL=ON
-      ]
-      system "cmake", "..", "-DSPDLOG_BUILD_SHARED=ON", *args
-      system "make", "install"
-      system "make", "clean"
-      system "cmake", "..", "-DSPDLOG_BUILD_SHARED=OFF", *args
-      system "make"
-      lib.install "libspdlog.a"
-    end
+    args = std_cmake_args + %W[
+      -Dpkg_config_libdir=#{lib}
+      -DSPDLOG_BUILD_BENCH=OFF
+      -DSPDLOG_BUILD_TESTS=OFF
+      -DSPDLOG_FMT_EXTERNAL=ON
+    ]
+    system "cmake", "-S", ".", "-B", "build", "-DSPDLOG_BUILD_SHARED=ON", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    system "cmake", "-S", ".", "-B", "build", "-DSPDLOG_BUILD_SHARED=OFF", *args
+    system "cmake", "--build", "build"
+    lib.install "build/libspdlog.a"
   end
 
   test do
