@@ -3,14 +3,23 @@ require "language/node"
 class Emscripten < Formula
   desc "LLVM bytecode to JavaScript compiler"
   homepage "https://emscripten.org/"
-  url "https://github.com/emscripten-core/emscripten/archive/3.1.37.tar.gz"
-  sha256 "4e599a166301162589fbe3a35a24fbefe4b167b8d2c37419faf84a87aa0c111f"
   license all_of: [
     "Apache-2.0", # binaryen
     "Apache-2.0" => { with: "LLVM-exception" }, # llvm
     any_of: ["MIT", "NCSA"], # emscripten
   ]
   head "https://github.com/emscripten-core/emscripten.git", branch: "main"
+
+  stable do
+    url "https://github.com/emscripten-core/emscripten/archive/3.1.38.tar.gz"
+    sha256 "e392f4631385193a1e3b4c50f06e918b95975caa8e57c1f905c077f2ac1a832b"
+
+    # Fix `$preloadPlugins` ref in `library_dylink.js`, remove in next release
+    patch do
+      url "https://github.com/emscripten-core/emscripten/commit/9677b7df77e61db0b2eb91f5c7525429968cb084.patch?full_index=1"
+      sha256 "709ce886f7f4661f39df48dde33bdebdd74844d3186088b73e4dbf5a04d4cef9"
+    end
+  end
 
   livecheck do
     url :stable
@@ -51,7 +60,7 @@ class Emscripten < Formula
   # See llvm resource below for instructions on how to update this.
   resource "binaryen" do
     url "https://github.com/WebAssembly/binaryen.git",
-        revision: "f7706ad4999a087140924f073e1a2135d4ea9074"
+        revision: "ee738ac1f838a090cac74ba8981e2104b6c02d44"
   end
 
   # emscripten does not support using the stable version of LLVM.
@@ -63,7 +72,7 @@ class Emscripten < Formula
   # Then use the listed llvm_project_revision for the resource below.
   resource "llvm" do
     url "https://github.com/llvm/llvm-project.git",
-        revision: "86339ef088e9aac6cf52cf9022d7a5bd144d4c42"
+        revision: "004bf170c6cbaa049601bcf92f86a9459aec2dc2"
   end
 
   def install
