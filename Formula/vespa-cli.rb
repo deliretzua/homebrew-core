@@ -1,8 +1,8 @@
 class VespaCli < Formula
   desc "Command-line tool for Vespa.ai"
   homepage "https://vespa.ai"
-  url "https://github.com/vespa-engine/vespa/archive/v8.161.74.tar.gz"
-  sha256 "d459cc5df62ab9a10c302a5d9c634a60ca09220e2d22e618fd60525ef1f5596f"
+  url "https://github.com/vespa-engine/vespa/archive/v8.162.29.tar.gz"
+  sha256 "ad73cc219f0c0decb0208a18b03c1655c3af2844ccfb29fa4dadfc17d1e7191e"
   license "Apache-2.0"
 
   livecheck do
@@ -26,7 +26,7 @@ class VespaCli < Formula
   def install
     cd "client/go" do
       with_env(VERSION: version.to_s, PREFIX: prefix.to_s) do
-        system "make", "all", "manpages"
+        system "make", "install", "manpages"
       end
       generate_completions_from_executable(bin/"vespa", "completion")
     end
