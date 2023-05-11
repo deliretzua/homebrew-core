@@ -8,13 +8,13 @@ class Prowler < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "dbba7f3de85f27f76635a6583fd5977b57bab7803389c60d162f483f994e0aff"
-    sha256 cellar: :any,                 arm64_monterey: "5fd9f4a041f388b8b502870127f2778d48ce75f0728deb74dda25f2e27d11b0d"
-    sha256 cellar: :any,                 arm64_big_sur:  "8f77047f7068cbc719247c127f6b56ab446affaec09cb2b99b36779e28b7da53"
-    sha256 cellar: :any,                 ventura:        "648a328249d2d9c67f88295571db9ec8e9b98d87257b11f369b4782a0b74c185"
-    sha256 cellar: :any,                 monterey:       "5e8a7fece805598d8058b987d2ee694887fb0409ffc3e92e627724c2559028a6"
-    sha256 cellar: :any,                 big_sur:        "4b0c2d769377236e8d9fb0ff127567e94f8fa5fc1e85c759b4f046b6300a8093"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "882f14ce3a647456aaed1a6ff9b355a451abda91580b8ef15d68d1fd5131c437"
+    sha256 cellar: :any,                 arm64_ventura:  "4d6d3162d3bd19d1ca93eda5130f98f46aab0432556aea709a02ba747739ccb1"
+    sha256 cellar: :any,                 arm64_monterey: "c039d8e18bdbc0ff4976b1ae468530ff98b760f7573ad3fb5de226ba5f8ffa13"
+    sha256 cellar: :any,                 arm64_big_sur:  "81d3416e7922c5a8f348b8c6d9a55b566185c8740976354b97ee04a9754b5a6d"
+    sha256 cellar: :any,                 ventura:        "ba1efa276603b715164c430f0e1e841d6dae902eed2b5063de74e3b725ca5928"
+    sha256 cellar: :any,                 monterey:       "045efcbc79648a622f3b1f475b7fcb43c5f93de29310496462f1283b2bf06654"
+    sha256 cellar: :any,                 big_sur:        "16bef7eb3affac366eba5c0082228f2dad8b55c8bef5762cfb25fa3e3372232f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8036cbd7e096f7e537313017b98283531517ea03be6e70f178f10463ba40edc"
   end
 
   # `pkg-config`, `rust`, and `openssl@1.1` are for cryptography.
