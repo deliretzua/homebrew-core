@@ -3,8 +3,8 @@ class Cruft < Formula
 
   desc "Utility that creates projects from templates and maintains the cruft afterwards"
   homepage "https://cruft.github.io/cruft/"
-  url "https://files.pythonhosted.org/packages/fb/ee/074d2116f87048955dbba663d769f9a16108c3c88a9cd667e87c3c4bb4ad/cruft-2.14.0.tar.gz"
-  sha256 "ba3d976de1cad437b6a92239b6ec844ea8547e09de796ef505d320c356c45de5"
+  url "https://files.pythonhosted.org/packages/d8/59/bb9e052fba37972e4b27db74d0bc770bade501d48336dec3c89fe57e9513/cruft-2.15.0.tar.gz"
+  sha256 "9802af66037418655e7e4b6f30b531591e0761939b3ff5dd45d27c3a3f588abe"
   license "MIT"
   head "https://github.com/cruft/cruft.git", branch: "master"
 
@@ -27,7 +27,7 @@ class Cruft < Formula
     sha256 "6eb990b69df4e15bad899ea868dc46572c3f75339735663b81de79b06f17eb9a"
   end
 
-  resource "GitPython" do
+  resource "gitpython" do
     url "https://files.pythonhosted.org/packages/5f/11/2b0f60686dbda49028cec8c66bd18a5e82c96d92eef4bc34961e35bb3762/GitPython-3.1.31.tar.gz"
     sha256 "8ce3bcf69adfdf7c7d503e78fd3b1c492af782d58893b650adb2ac8912ddd573"
   end
@@ -38,8 +38,13 @@ class Cruft < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/e1/45/bcbc581f87c8d8f2a56b513eb994d07ea4546322818d95dc6a3caf2c928b/typer-0.7.0.tar.gz"
-    sha256 "ff797846578a9f2a201b53442aedeb543319466870fbe1c701eab66dd7681165"
+    url "https://files.pythonhosted.org/packages/5b/49/39f10d0f75886439ab3dac889f14f8ad511982a754e382c9b6ca895b29e9/typer-0.9.0.tar.gz"
+    sha256 "50922fd79aea2f4751a8e0408ff10d2662bd0c8bbfa84755a699f3bada2978b2"
+  end
+
+  resource "typing-extensions" do
+    url "https://files.pythonhosted.org/packages/d3/20/06270dac7316220643c32ae61694e451c98f8caf4c8eab3aa80a2bedf0df/typing_extensions-4.5.0.tar.gz"
+    sha256 "5cb5f4a79139d699607b3ef622a1dedafa84e115ab0024e0d9c044a9479ca7cb"
   end
 
   def install
