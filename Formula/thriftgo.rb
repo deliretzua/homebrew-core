@@ -7,13 +7,13 @@ class Thriftgo < Formula
   head "https://github.com/cloudwego/thriftgo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a32c5a2b0338c47a94cffb02b1f07bded134bfe919ce4caef3303c003ff01065"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a32c5a2b0338c47a94cffb02b1f07bded134bfe919ce4caef3303c003ff01065"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a32c5a2b0338c47a94cffb02b1f07bded134bfe919ce4caef3303c003ff01065"
-    sha256 cellar: :any_skip_relocation, ventura:        "b63b0642fff4e5a648011d202c40fbd980bab73a8b9a817e29f5b46537476fd6"
-    sha256 cellar: :any_skip_relocation, monterey:       "b63b0642fff4e5a648011d202c40fbd980bab73a8b9a817e29f5b46537476fd6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b63b0642fff4e5a648011d202c40fbd980bab73a8b9a817e29f5b46537476fd6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "89284f600e2384f1378c5c7a0fb33c7624b0bb95529ef0872f60115d75f7c644"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b0a5111274c7dd35a06da67d6b13d82cc007176939c95d9c9fd70220fdc6ac7c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b0a5111274c7dd35a06da67d6b13d82cc007176939c95d9c9fd70220fdc6ac7c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b0a5111274c7dd35a06da67d6b13d82cc007176939c95d9c9fd70220fdc6ac7c"
+    sha256 cellar: :any_skip_relocation, ventura:        "ee090440e841e632694c8dc8493abbec7b5436030f5aab8a71ed6e5bd987623b"
+    sha256 cellar: :any_skip_relocation, monterey:       "ee090440e841e632694c8dc8493abbec7b5436030f5aab8a71ed6e5bd987623b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ee090440e841e632694c8dc8493abbec7b5436030f5aab8a71ed6e5bd987623b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4904032dbb21c0ebeaa662e4f56ea2e6497ca7b5b4a95b637637a4b8fcd01ba1"
   end
 
   depends_on "go" => :build
