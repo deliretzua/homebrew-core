@@ -57,6 +57,15 @@ class Petsc < Formula
     if OS.mac? || File.foreach("#{lib}/petsc/conf/petscvariables").any? { |l| l[Superenv.shims_path.to_s] }
       inreplace lib/"petsc/conf/petscvariables", "#{Superenv.shims_path}/", ""
     end
+
+    # Avoid references to cellar paths.
+    gcc = Formula["gcc"]
+    open_mpi = Formula["open-mpi"]
+    inreplace (lib/"pkgconfig").glob("*.pc") do |s|
+      s.gsub! prefix, opt_prefix
+      s.gsub! gcc.prefix.realpath, gcc.opt_prefix
+      s.gsub! open_mpi.prefix.realpath, open_mpi.opt_prefix
+    end
   end
 
   test do
