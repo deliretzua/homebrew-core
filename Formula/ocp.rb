@@ -1,8 +1,8 @@
 class Ocp < Formula
   desc "UNIX port of the Open Cubic Player"
   homepage "https://stian.cubic.org/project-ocp.php"
-  url "https://stian.cubic.org/ocp/ocp-0.2.103.tar.xz"
-  sha256 "b526d27e983e292453d2ccc36946ee3efd3ba33ee0489507a9815f2f05a23b5e"
+  url "https://stian.cubic.org/ocp/ocp-0.2.104.tar.xz"
+  sha256 "e07dce02c3e72233a82903a670d392dac0f6b082ed4d4a72eddd9da48ef77b8b"
   license "GPL-2.0-or-later"
   head "https://github.com/mywave82/opencubicplayer.git", branch: "master"
 
@@ -50,6 +50,13 @@ class Ocp < Formula
   patch do
     url "https://github.com/mywave82/opencubicplayer/commit/6ad481d04cf34f29755b12aac9e9e3c046cfe764.patch?full_index=1"
     sha256 "85943335fe93e577ef42c427f32b9a3759ec52beed86930e289205b2f5a30d1a"
+  end
+
+  # Remove a redundant semicolon.
+  # Sent upstream at https://github.com/mywave82/opencubicplayer/pull/100.
+  patch do
+    url "https://github.com/mywave82/opencubicplayer/commit/907bb7aeba27a1b64e9ac4942aa144f216f5eded.patch?full_index=1"
+    sha256 "c6cc5d011601615657455a1a65d86fe7680a664a1a14fa0d6007ca628eb89f8d"
   end
 
   def install
