@@ -6,6 +6,7 @@ class Enex2notion < Formula
   url "https://files.pythonhosted.org/packages/b0/65/301a9406734eff3185d1724e86bdb62c697973771086f457910e550037d5/enex2notion-0.2.26.tar.gz"
   sha256 "cd9a5a2ccb9a320d5f1cb81bbdbe8e464582f317aa6401135ddc9242ae6ccc73"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0eb24a7281032576c9fc58ac9b22b2e81087e9d13de4809ee31740bf5caeb5d5"
