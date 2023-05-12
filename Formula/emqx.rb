@@ -1,8 +1,8 @@
 class Emqx < Formula
   desc "MQTT broker for IoT"
   homepage "https://www.emqx.io/"
-  url "https://github.com/emqx/emqx/archive/refs/tags/v5.0.24.tar.gz"
-  sha256 "ff9afdee1eb4c5e715da70224b8645a0bcb253ff96348e092cff665f4bf3a62f"
+  url "https://github.com/emqx/emqx/archive/refs/tags/v5.0.25.tar.gz"
+  sha256 "05e414ff5a803531084ceaa7ef01a7e678d996042f1ecd2c4f9d6d091b92f8df"
   license "Apache-2.0"
   head "https://github.com/emqx/emqx.git", branch: "master"
 
@@ -39,7 +39,7 @@ class Emqx < Formula
     ENV["PKG_VSN"] = version.to_s
     touch(".prepare")
     system "make", "emqx"
-    system "tar", "xzf", "_build/emqx/rel/emqx/emqx-#{version}.tar.gz", "-C", prefix
+    prefix.install Dir["_build/emqx/rel/emqx/*"]
     %w[emqx.cmd emqx_ctl.cmd no_dot_erlang.boot].each do |f|
       rm bin/f
     end
