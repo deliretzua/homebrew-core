@@ -6,13 +6,13 @@ class JavaServiceWrapper < Formula
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d2e4906d059d501ea1db569c91ca01de2941d846afa1ab28f1536a46364933a3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f32ef7d29fb9bdeb59b64d750c83e0128b002f71f7ab573cb77c9cb4eb3cc0d2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d947bf6622eb15597757d2a240ba3bdd7f859f46c2b4a6a1c29434ab3d323fbf"
-    sha256 cellar: :any_skip_relocation, ventura:        "4bf2af977b03796c94e6a220f52b7ecff45ef92fb85c31719ae7af4a3d0c304e"
-    sha256 cellar: :any_skip_relocation, monterey:       "27792472bb02861081e3cbb2ddd8126268798414d8f740215a324d0d2e108d65"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ca7b33bcc992e892fde65936484749ac9c21dbcd1ce959de7d798c4941006c6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d8f13e531a6ef5b28963a6eb9084c07b52c1c75e2bdeee58afc2ffcd21b3082"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "963631c202195828963a0e4f51084c653932146cc4f7a07df6d71c3093385a24"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "978679a0359ccff57bd4c390ca3b177769d6ad7a0696e318456d467166dce13d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8bbc33e86bc1420382447510fc97ed045646cfdd0e9926aa9671a2ddcdb1a78c"
+    sha256 cellar: :any_skip_relocation, ventura:        "c6dbfbdfb09a5403b653648ece2f749d074b22b1d45168801f209469c74f1d9e"
+    sha256 cellar: :any_skip_relocation, monterey:       "364d3b98e673d49034f8cef5ef18392d22e9053c064a54906cba8f3549f6b481"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d6e62d97d66dcd8fc9a6fc48ea07b15cc0f049f160760dff6363959f3839dbfa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "36f48798bf4a7f995c03626fd3ed94267fb3847c112d804da52a1fd45403aab6"
   end
 
   depends_on "ant" => :build
