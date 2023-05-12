@@ -6,13 +6,13 @@ class Bundletool < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6507a950951ddc371137d1a34a55be2569fd3ded57c3383b9e03bd038dc799a2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6507a950951ddc371137d1a34a55be2569fd3ded57c3383b9e03bd038dc799a2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6507a950951ddc371137d1a34a55be2569fd3ded57c3383b9e03bd038dc799a2"
-    sha256 cellar: :any_skip_relocation, ventura:        "6507a950951ddc371137d1a34a55be2569fd3ded57c3383b9e03bd038dc799a2"
-    sha256 cellar: :any_skip_relocation, monterey:       "6507a950951ddc371137d1a34a55be2569fd3ded57c3383b9e03bd038dc799a2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6507a950951ddc371137d1a34a55be2569fd3ded57c3383b9e03bd038dc799a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6584f0e5f4cdba5138c57610c732f18861f3b5a0661b26c2e6416201d17033e7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e1833145a45256ec6fee17c57acc8ff46ad2f7164a8af5b9c33f92e45a0999b6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e1833145a45256ec6fee17c57acc8ff46ad2f7164a8af5b9c33f92e45a0999b6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e1833145a45256ec6fee17c57acc8ff46ad2f7164a8af5b9c33f92e45a0999b6"
+    sha256 cellar: :any_skip_relocation, ventura:        "e1833145a45256ec6fee17c57acc8ff46ad2f7164a8af5b9c33f92e45a0999b6"
+    sha256 cellar: :any_skip_relocation, monterey:       "e1833145a45256ec6fee17c57acc8ff46ad2f7164a8af5b9c33f92e45a0999b6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e1833145a45256ec6fee17c57acc8ff46ad2f7164a8af5b9c33f92e45a0999b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e82dccd51eff3e8929fa6b17d8b94e415d029392ea4be0e3275ff108b8f62b7"
   end
 
   depends_on "openjdk"
