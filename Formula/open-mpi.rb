@@ -34,8 +34,10 @@ class OpenMpi < Formula
   conflicts_with "mpich", because: "both install MPI compiler wrappers"
 
   def install
-    # Otherwise libmpi_usempi_ignore_tkr gets built as a static library
-    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
+    if OS.mac?
+      # Otherwise libmpi_usempi_ignore_tkr gets built as a static library
+      ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
+    end
 
     # Avoid references to the Homebrew shims directory
     inreplace_files = %w[
@@ -74,6 +76,9 @@ class OpenMpi < Formula
     # Fortran bindings install stray `.mod` files (Fortran modules) in `lib`
     # that need to be moved to `include`.
     include.install lib.glob("*.mod")
+
+    # Avoid references to cellar paths.
+    inreplace (lib/"pkgconfig").glob("*.pc"), prefix, opt_prefix, false
   end
 
   test do
