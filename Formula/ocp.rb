@@ -1,8 +1,8 @@
 class Ocp < Formula
   desc "UNIX port of the Open Cubic Player"
   homepage "https://stian.cubic.org/project-ocp.php"
-  url "https://stian.cubic.org/ocp/ocp-0.2.104.tar.xz"
-  sha256 "e07dce02c3e72233a82903a670d392dac0f6b082ed4d4a72eddd9da48ef77b8b"
+  url "https://stian.cubic.org/ocp/ocp-0.2.105.tar.xz"
+  sha256 "1a87b3c572679fb681a25bf158bdc1cc078018d0507965e1557610c17fcccfc5"
   license "GPL-2.0-or-later"
   head "https://github.com/mywave82/opencubicplayer.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Ocp < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "c7ca36aa0c6454dd1f81e8e14a423465c51a77352e40f5504da636afc82541b1"
-    sha256 arm64_monterey: "8281c50015ce281c42737566047f8067d3cc30f973b9d5719bd1c2045b84f705"
-    sha256 arm64_big_sur:  "dc2d44a29374c9b486fe34fd7da877d5bf95c5e7c826c1639ee3b433763d18f4"
-    sha256 ventura:        "43de7f95a135e2d6a162a91a70ec85618b0ade0e5874999a2fbc52793e4e3008"
-    sha256 monterey:       "5a658ff7cfc819108c2a9da564f12269a760a8dd95a55aaf38c38946eef03b45"
-    sha256 big_sur:        "3753e014db06bbacda637ecfea2db9ca3730e31e81ef543a09c0032a4537cf56"
-    sha256 x86_64_linux:   "d63ae73b95e1be93b2b684db74c08a056dcd995dcfdc42c7d01cc6bc0d786f25"
+    sha256 arm64_ventura:  "3690f47824577f3df596994371ce56932d68a875a6d2d4e0d9e19e442d9624d4"
+    sha256 arm64_monterey: "1ba0669652567aecd14feb6c517ec77b5b0ee5964de54e4e69ad78030efb9296"
+    sha256 arm64_big_sur:  "bbcbda1ecb8bad6dad0db51abfc171e82b558223a20ec67cf9b948259c8d0973"
+    sha256 ventura:        "02825ed5010ac2760131fe2bb0737c6e14d11a9066039b36ccf9687e2e1da77a"
+    sha256 monterey:       "eb34a21ed728ffe4598edc3664094045fe4ad11ce29beb797e17776b9857fdc1"
+    sha256 big_sur:        "614c28d5a6ab0df1385e37168354df743aeb68b1fad5c8672129be20ec277056"
+    sha256 x86_64_linux:   "8d9e1a49c80862bf0940bdddf2302b6646cd5d936a02d1683f293a9143683c2d"
   end
 
   depends_on "pkg-config" => :build
@@ -50,13 +50,6 @@ class Ocp < Formula
   patch do
     url "https://github.com/mywave82/opencubicplayer/commit/6ad481d04cf34f29755b12aac9e9e3c046cfe764.patch?full_index=1"
     sha256 "85943335fe93e577ef42c427f32b9a3759ec52beed86930e289205b2f5a30d1a"
-  end
-
-  # Remove a redundant semicolon.
-  # Sent upstream at https://github.com/mywave82/opencubicplayer/pull/100.
-  patch do
-    url "https://github.com/mywave82/opencubicplayer/commit/907bb7aeba27a1b64e9ac4942aa144f216f5eded.patch?full_index=1"
-    sha256 "c6cc5d011601615657455a1a65d86fe7680a664a1a14fa0d6007ca628eb89f8d"
   end
 
   def install
