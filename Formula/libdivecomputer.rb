@@ -1,8 +1,8 @@
 class Libdivecomputer < Formula
   desc "Library for communication with various dive computers"
   homepage "https://www.libdivecomputer.org/"
-  url "https://www.libdivecomputer.org/releases/libdivecomputer-0.7.0.tar.gz"
-  sha256 "80d9f194ea24502039df98598482e0afc6b0e333de79db34c29b2d68934d25b9"
+  url "https://www.libdivecomputer.org/releases/libdivecomputer-0.8.0.tar.gz"
+  sha256 "275ecce7923644ed581faab9dcb4f1a69ad251bceb0721c4e5f85fb631617a0e"
   license "LGPL-2.1-or-later"
   head "https://github.com/libdivecomputer/libdivecomputer.git", branch: "master"
 
