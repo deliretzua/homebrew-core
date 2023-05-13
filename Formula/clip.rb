@@ -1,10 +1,16 @@
 class Clip < Formula
   desc "Create high-quality charts from the command-line"
   homepage "https://github.com/asmuth/clip"
-  url "https://github.com/asmuth/clip/archive/v0.7.tar.gz"
-  sha256 "f38f455cf3e9201614ac71d8a871e4ff94a6e4cf461fd5bf81bdf457ba2e6b3e"
   license "Apache-2.0"
   revision 2
+  head "https://github.com/asmuth/clip.git", branch: "master"
+
+  stable do
+    url "https://github.com/asmuth/clip/archive/v0.7.tar.gz"
+    sha256 "f38f455cf3e9201614ac71d8a871e4ff94a6e4cf461fd5bf81bdf457ba2e6b3e"
+    # Fix build with fmt 10, the issue is fixed on HEAD because the logic was changed
+    patch :DATA
+  end
 
   bottle do
     rebuild 1
@@ -29,9 +35,9 @@ class Clip < Formula
   fails_with gcc: "5" # for C++17
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
     pkgshare.install "test"
   end
 
@@ -42,3 +48,18 @@ class Clip < Formula
     assert_predicate testpath/"chart.svg", :exist?
   end
 end
+
+__END__
+diff --git a/src/graphics/export_svg.cc b/src/graphics/export_svg.cc
+index 12aa4ef7..2316063b 100644
+--- a/src/graphics/export_svg.cc
++++ b/src/graphics/export_svg.cc
+@@ -159,7 +159,7 @@ Status svg_add_path(
+       case StrokeStyle::DASH: {
+         std::string dash_pattern;
+         for (const auto& v : stroke_style.dash_pattern) {
+-          dash_pattern += fmt::format("{} ", v);
++          dash_pattern += fmt::format("{} ", v.value);
+         }
+ 
+         stroke_opts += svg_attr("stroke-dasharray", dash_pattern);
