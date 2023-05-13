@@ -179,7 +179,7 @@
     "exclude_packages": [
       "six", "PyYAML", "cookiecutter", "arrow", "binaryornot", "certifi", "chardet", "charset-normalizer",
       "click", "idna", "Jinja2", "jinja2-time", "MarkupSafe", "python-dateutil",
-      "python-slugify", "requests", "text-unidecode", "urllib3"
+      "python-slugify", "requests", "text-unidecode", "urllib3", "typing-extensions"
     ]
   },
   "csvkit": {

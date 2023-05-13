@@ -19,6 +19,7 @@ class Cruft < Formula
   end
 
   depends_on "cookiecutter"
+  depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -40,11 +41,6 @@ class Cruft < Formula
   resource "typer" do
     url "https://files.pythonhosted.org/packages/5b/49/39f10d0f75886439ab3dac889f14f8ad511982a754e382c9b6ca895b29e9/typer-0.9.0.tar.gz"
     sha256 "50922fd79aea2f4751a8e0408ff10d2662bd0c8bbfa84755a699f3bada2978b2"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/d3/20/06270dac7316220643c32ae61694e451c98f8caf4c8eab3aa80a2bedf0df/typing_extensions-4.5.0.tar.gz"
-    sha256 "5cb5f4a79139d699607b3ef622a1dedafa84e115ab0024e0d9c044a9479ca7cb"
   end
 
   def install
