@@ -2,9 +2,19 @@ class Tepl < Formula
   desc "GNOME Text Editor Product Line"
   homepage "https://gitlab.gnome.org/swilmet/tepl"
   url "https://gitlab.gnome.org/swilmet/tepl.git",
-      tag:      "6.5.1",
-      revision: "606de78acb7a2b3268d59eb8e975bcac0ecf1691"
+      tag:      "6.4.0",
+      revision: "d1e9cc2e4a0738f68d9002f13724b7239f075844"
   license "LGPL-2.1-or-later"
+  revision 2
+  version_scheme 1
+
+  # https://gitlab.gnome.org/swilmet/tepl/-/blob/main/docs/more-information.md
+  # Tepl follows the even/odd minor version scheme. Odd minor versions are
+  # development snapshots; even minor versions are stable.
+  livecheck do
+    url :stable
+    regex(/^v?(\d+\.\d*[02468](?:\.\d+)*)$/i)
+  end
 
   bottle do
     sha256 arm64_ventura:  "5788791a08385b22360a0f69acb250e05f5ca3de8c738384c9c15725345aa71e"
@@ -21,8 +31,8 @@ class Tepl < Formula
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "amtk"
+  depends_on "gtksourceview4"
   depends_on "icu4c"
-  depends_on "libgedit-gtksourceview"
   depends_on "uchardet"
 
   def install
@@ -50,7 +60,7 @@ class Tepl < Formula
     gettext = Formula["gettext"]
     glib = Formula["glib"]
     gtkx3 = Formula["gtk+3"]
-    gtksourceview = Formula["libgedit-gtksourceview"]
+    gtksourceview4 = Formula["gtksourceview4"]
     harfbuzz = Formula["harfbuzz"]
     libepoxy = Formula["libepoxy"]
     libpng = Formula["libpng"]
@@ -70,7 +80,7 @@ class Tepl < Formula
       -I#{glib.opt_include}/gio-unix-2.0/
       -I#{glib.opt_include}/glib-2.0
       -I#{glib.opt_lib}/glib-2.0/include
-      -I#{gtksourceview.opt_include}/libgedit-gtksourceview-300
+      -I#{gtksourceview4.opt_include}/gtksourceview-4
       -I#{gtkx3.opt_include}/gtk-3.0
       -I#{harfbuzz.opt_include}/harfbuzz
       -I#{include}/tepl-#{version.major}
@@ -87,7 +97,7 @@ class Tepl < Formula
       -L#{gdk_pixbuf.opt_lib}
       -L#{gettext.opt_lib}
       -L#{glib.opt_lib}
-      -L#{gtksourceview.opt_lib}
+      -L#{gtksourceview4.opt_lib}
       -L#{gtkx3.opt_lib}
       -L#{lib}
       -L#{pango.opt_lib}
@@ -102,7 +112,7 @@ class Tepl < Formula
       -lgobject-2.0
       -ltepl-6
       -lgtk-3
-      -lgedit-gtksourceview-300
+      -lgtksourceview-4
       -lpango-1.0
       -lpangocairo-1.0
     ]
