@@ -1,8 +1,8 @@
 class Ldc < Formula
   desc "Portable D programming language compiler"
   homepage "https://wiki.dlang.org/LDC"
-  url "https://github.com/ldc-developers/ldc/releases/download/v1.32.1/ldc-1.32.1-src.tar.gz"
-  sha256 "b3553bfaa89524317ecd21eb2c63c6ea0f9a7080a16275e46fda7e3ab357ea0f"
+  url "https://github.com/ldc-developers/ldc/releases/download/v1.32.2/ldc-1.32.2-src.tar.gz"
+  sha256 "bfa4aaee74320a1268843c88e229f339b2df0953a4bcb4fced52ebe0dda1cd95"
   license "BSD-3-Clause"
   head "https://github.com/ldc-developers/ldc.git", branch: "master"
 
