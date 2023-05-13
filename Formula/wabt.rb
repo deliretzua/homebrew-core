@@ -2,8 +2,8 @@ class Wabt < Formula
   desc "Web Assembly Binary Toolkit"
   homepage "https://github.com/WebAssembly/wabt"
   url "https://github.com/WebAssembly/wabt.git",
-      tag:      "1.0.32",
-      revision: "e5b042a72e6b6395e1d77901e7a413d6af87ae67"
+      tag:      "1.0.33",
+      revision: "963f973469b45969ce198e0c86d3af316790a780"
   license "Apache-2.0"
 
   livecheck do
@@ -23,6 +23,7 @@ class Wabt < Formula
 
   depends_on "cmake" => :build
   depends_on "python@3.11" => :build
+  depends_on "openssl@3"
 
   fails_with gcc: "5" # C++17
 
