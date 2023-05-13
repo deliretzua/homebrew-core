@@ -454,7 +454,7 @@
   },
   "nbdime": {
     "exclude_packages": [
-      "jupyterlab", "ipython",
+      "jupyterlab", "ipython", "pyyaml",
       "anyio", "argon2-cffi", "bleach", "certifi", "cffi", "charset-normalizer",
       "defusedxml", "entrypoints", "idna", "ipython_genutils", "Jinja2",
       "jupyter-client", "jupyter-core", "jupyter-server", "jupyterlab-pygments",

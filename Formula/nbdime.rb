@@ -20,6 +20,7 @@ class Nbdime < Formula
   depends_on "ipython"
   depends_on "jupyterlab"
   depends_on "python@3.11"
+  depends_on "pyyaml"
   depends_on "six"
 
   resource "argon2-cffi-bindings" do
@@ -110,11 +111,6 @@ class Nbdime < Formula
   resource "python-json-logger" do
     url "https://files.pythonhosted.org/packages/4f/da/95963cebfc578dabd323d7263958dfb68898617912bb09327dd30e9c8d13/python-json-logger-2.0.7.tar.gz"
     sha256 "23e7ec02d34237c5aa1e29a070193a4ea87583bb4e7f8fd06d3de8264c4b2e1c"
-  end
-
-  resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/36/2b/61d51a2c4f25ef062ae3f74576b01638bebad5e045f747ff12643df63844/PyYAML-6.0.tar.gz"
-    sha256 "68fb519c14306fec9720a2a5b45bc9f0c8d1b9c72adf45c37baedfcd949c35a2"
   end
 
   resource "rfc3339-validator" do
