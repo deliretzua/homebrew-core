@@ -3,8 +3,8 @@ class Johnnydep < Formula
 
   desc "Display dependency tree of Python distribution"
   homepage "https://github.com/wimglenn/johnnydep"
-  url "https://files.pythonhosted.org/packages/dd/06/5379720d3319782a62aac89bc8b0a8dc4d2a52bba7c4b897406564c9ed3a/johnnydep-1.19.0.tar.gz"
-  sha256 "b4f4f9cd419f82d0db55c6a8ae9f245d4f2ab4c6c788c276fa3cd147497015cb"
+  url "https://files.pythonhosted.org/packages/39/3c/cdf81f3aba3e0c35aab9ce45f9cf761e442279e1258a40c8d5f8f0181f03/johnnydep-1.20.0.tar.gz"
+  sha256 "f95ea0fa52b0dc93e68bd39b27011010f7a865cdef092e8e9472bc391f349409"
   license "MIT"
 
   bottle do
@@ -40,11 +40,6 @@ class Johnnydep < Formula
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
     sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
-  end
-
-  resource "pkginfo" do
-    url "https://files.pythonhosted.org/packages/b4/1c/89b38e431c20d6b2389ed8b3926c2ab72f58944733ba029354c6d9f69129/pkginfo-1.9.6.tar.gz"
-    sha256 "8fd5896e8718a4372f0ea9cc9d96f6417c9b986e23a4d116dda26b62cc29d046"
   end
 
   resource "structlog" do
