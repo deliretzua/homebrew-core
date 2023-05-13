@@ -559,6 +559,9 @@
   "pygit2": {
     "exclude_packages": ["cffi", "pycparser"]
   },
+  "pyinstaller": {
+    "extra_packages": ["macholib"]
+  },
   "pylint": {
     "exclude_packages": ["isort", "typing-extensions"]
   },
