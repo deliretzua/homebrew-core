@@ -38,6 +38,11 @@ class Cherrytree < Formula
 
   fails_with gcc: "5" # Needs std::optional
 
+  patch do
+    url "https://github.com/giuspen/cherrytree/commit/dacf5ba650b4495705184e63d495ac730c4e00b0.patch?full_index=1"
+    sha256 "e427653dbe91e00cab0243fa996afae1bcd7fd0f97cc433e5d0a08a7941d1974"
+  end
+
   def install
     system "cmake", ".", "-DBUILD_TESTING=''", "-GNinja", *std_cmake_args
     system "ninja"
