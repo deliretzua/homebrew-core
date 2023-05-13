@@ -1,8 +1,8 @@
 class Sheldon < Formula
   desc "Fast, configurable, shell plugin manager"
   homepage "https://sheldon.cli.rs"
-  url "https://github.com/rossmacarthur/sheldon/archive/0.7.1.tar.gz"
-  sha256 "22357b913483232623b8729820e157d826fd94a487a731b372dbdca1138ddf20"
+  url "https://github.com/rossmacarthur/sheldon/archive/0.7.2.tar.gz"
+  sha256 "8ce4b93376f4365e436d04b2ac5aaf18d1b90285f7d833901e7a78c32f6200db"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/rossmacarthur/sheldon.git", branch: "trunk"
 
@@ -19,6 +19,7 @@ class Sheldon < Formula
 
   depends_on "rust" => :build
   depends_on "curl"
+  depends_on "libgit2"
   depends_on "openssl@1.1"
 
   uses_from_macos "zlib"
@@ -28,6 +29,14 @@ class Sheldon < Formula
   end
 
   def install
+    # Ensure the declared `openssl@1.1` dependency will be picked up.
+    # https://docs.rs/openssl/latest/openssl/#manual
+    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
+    # Replace vendored `libgit2` with our formula
+    inreplace "Cargo.toml", /features = \["vendored-libgit2"\]/, "features = []"
+
     system "cargo", "install", *std_cargo_args
 
     bash_completion.install "completions/sheldon.bash" => "sheldon"
