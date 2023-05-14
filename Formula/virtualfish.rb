@@ -8,6 +8,16 @@ class Virtualfish < Formula
   license "MIT"
   head "https://github.com/justinmayer/virtualfish.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a0e0cc677febba260aab7df92b1c7dcb129c18a17fb456f1dda5042c334dc0a1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "34627b7e4f36609c1f8d644bf50e1253d8c48e5051c3023cb619f46dfd36c1cc"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7702bc920a867e3b00c329ed4019f32537260f79698d93f699c2602fac1f6b1a"
+    sha256 cellar: :any_skip_relocation, ventura:        "4efedd58a9b4f7f5729d6a6f48c95caac465cce605f99f61320c8da8531b7c90"
+    sha256 cellar: :any_skip_relocation, monterey:       "ad8acef6081ca8056bff84170a35a1e34b0d120f5464081bda62c7ef77e593c0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7f0797f44a77c01d99676e37d6f5ecb9ac4ce2bdd05a433bcbf67fa0c00134a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "62d85d58ec0c5c531c7222c0921bb14d60fd78be2e41c533247e79f228a51cea"
+  end
+
   depends_on "fish"
   depends_on "python@3.11"
 
