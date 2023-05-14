@@ -12,13 +12,14 @@ class Lpeg < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "22325d9fc7125511176621bf0bc1ab1490875255258e613b7646d688fb65895b"
-    sha256 cellar: :any,                 arm64_monterey: "3f7b628261f3db631abd0af83e6f579504838b4b00f52dd4ad83ec8bb87a3a7c"
-    sha256 cellar: :any,                 arm64_big_sur:  "2cf8b5089a23d86f10ae205d93bfd335af81a449acc4d40c25e2675a06e6d33b"
-    sha256 cellar: :any,                 ventura:        "da6e45a73eb1e54264b5d04fc04c13605bc799606e15afc37e592e420ef8f813"
-    sha256 cellar: :any,                 monterey:       "46819d3db41b35eacab885a8314f69de5417dd33f1dd8a7931292bb214687479"
-    sha256 cellar: :any,                 big_sur:        "4c18893291c3fcbcfa98991fce241f95357af66df9160a3bbee5520a8573d5bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e3da90255288f5b4ebdb5d9fea1b4a40704dd20b393643cf42cea8259a5706a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "282c9c955bae5e974497dade90f5672109e5675fa3a1f0fc1f8f3f7ac21eb784"
+    sha256 cellar: :any,                 arm64_monterey: "af85bc4d6170db54d20760fc9f04a9aac6a178d78373e861f8ad1fcb6f17288d"
+    sha256 cellar: :any,                 arm64_big_sur:  "a61a8c4a5c6c0eb71bfe6bca496b0d3a53caab80ff67402973fff7736f4b65e5"
+    sha256 cellar: :any,                 ventura:        "d2c938cf8932c1d631515f8b47e96477391caf5712566c113d7b3f59efc6c81e"
+    sha256 cellar: :any,                 monterey:       "cfcd6d7c3ed399f591e3a2f27812a712b56ad5763c9896805eae1c1919f5e97c"
+    sha256 cellar: :any,                 big_sur:        "9b0c78d78808cd381d5cf3124d2587ce297e998122e61e118397603c2b151ea4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3f772ba0aa45c832c10465a8012b47bdbd43beda1f2121f8b939802ecca030d"
   end
 
   depends_on "lua" => [:build, :test]
