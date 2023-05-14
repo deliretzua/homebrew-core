@@ -17,13 +17,13 @@ class Tepl < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "5788791a08385b22360a0f69acb250e05f5ca3de8c738384c9c15725345aa71e"
-    sha256 arm64_monterey: "255947b5ee0aabd2758071408d7012426a8ac37d39598bda7ded12125caa1180"
-    sha256 arm64_big_sur:  "649a341a700c3b1a616fb39d5ce81c04d8ac800b343fa233a944cbb0b7c7ba64"
-    sha256 ventura:        "f7f5f82c475f7eca28f73dfe3725ad742e4aac2293b76d35d92c2bd9d8dd24fa"
-    sha256 monterey:       "375a7dd294784611cc602993d9c46c502a6691f87ef4164fe89f31baaf74bb14"
-    sha256 big_sur:        "0abf48af71006cde55fd103a5a0d626bea02174b2dc9e523e8ae4fd6f67bf73e"
-    sha256 x86_64_linux:   "23f9885cea72b38468f5d5df6a4adfc5e8620ddb29573d16b4e66f79272df6ef"
+    sha256 arm64_ventura:  "367e5253125896f13c40afdc94a71b990de9743f19b0912b4049abecb11a9532"
+    sha256 arm64_monterey: "12cf90cf07aea8aab681fb3c5b87bd8ee9646585b54b4897e8c36d5b0c2b2092"
+    sha256 arm64_big_sur:  "c12be58c7929b1f3544862f51a652343bb1a19f67c1206e8c02ebb61ea228038"
+    sha256 ventura:        "7e09f6e437b0962e74411b8f5f05e4157941bec7bd6472a5dcbff25103363c50"
+    sha256 monterey:       "140bc30076dffb594077253cbb02e7960f4df5e6fdb0a030fb8c85669b0701a3"
+    sha256 big_sur:        "10adeee6ba95c667db511230249a3da81b9c8eb444cdaf5ea029aaee14a2a90a"
+    sha256 x86_64_linux:   "f6f478393265158cb1bc2cb6bf17b800565b79645af1d397e783145fd997a36d"
   end
 
   depends_on "gobject-introspection" => :build
