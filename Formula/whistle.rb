@@ -8,13 +8,13 @@ class Whistle < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0e067fec03428cd10308eb713328b4e5615c28f45f85d98af6bb7b5d73f1d8f2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0e067fec03428cd10308eb713328b4e5615c28f45f85d98af6bb7b5d73f1d8f2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0e067fec03428cd10308eb713328b4e5615c28f45f85d98af6bb7b5d73f1d8f2"
-    sha256 cellar: :any_skip_relocation, ventura:        "603bd46e7a221288582013076110457ed7b08d709d9d244e7145d325411ae5d0"
-    sha256 cellar: :any_skip_relocation, monterey:       "603bd46e7a221288582013076110457ed7b08d709d9d244e7145d325411ae5d0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "603bd46e7a221288582013076110457ed7b08d709d9d244e7145d325411ae5d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "603bd46e7a221288582013076110457ed7b08d709d9d244e7145d325411ae5d0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6ccb2079f45c8f07deb1db8a5a26d280c8b2074b267090b6b441a46ede030a32"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6ccb2079f45c8f07deb1db8a5a26d280c8b2074b267090b6b441a46ede030a32"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6ccb2079f45c8f07deb1db8a5a26d280c8b2074b267090b6b441a46ede030a32"
+    sha256 cellar: :any_skip_relocation, ventura:        "ba5ee166cceb27c23bed0e8d8f46a6e775fe0ce2392a5807279921603b66a88b"
+    sha256 cellar: :any_skip_relocation, monterey:       "ba5ee166cceb27c23bed0e8d8f46a6e775fe0ce2392a5807279921603b66a88b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ba5ee166cceb27c23bed0e8d8f46a6e775fe0ce2392a5807279921603b66a88b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba5ee166cceb27c23bed0e8d8f46a6e775fe0ce2392a5807279921603b66a88b"
   end
 
   depends_on "node"
