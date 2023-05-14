@@ -1,8 +1,8 @@
 class Tetra < Formula
   desc "Tetragon CLI to observe, manage and troubleshoot Tetragon instances"
   homepage "https://github.com/cilium/tetragon"
-  url "https://github.com/cilium/tetragon/archive/refs/tags/v0.8.4.tar.gz"
-  sha256 "99c3c758c4bd9e9b95100d0ff0eab9b6788e70c44a0edc026d3331982fd1754e"
+  url "https://github.com/cilium/tetragon/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "4d6c08d00f13e5d886bf6800a9c978e578f25bc865fa42ef2f05aae6920c6150"
   license "Apache-2.0"
 
   livecheck do
@@ -22,7 +22,15 @@ class Tetra < Formula
 
   depends_on "go" => :build
 
+  # Build patch for OS compatibility, remove in next release
+  patch do
+    url "https://github.com/cilium/tetragon/commit/09809a686482f83047f44fc921363822893b0967.patch?full_index=1"
+    sha256 "46fa04a794d8f0325caeac47ef7e787d3c31e233c4841c4a5f47791cee0c00ef"
+  end
+
   def install
+    # remove patched empty files, remove in next release
+    rm_f ["cmd/tetra/full_commands.go", "cmd/tetra/standalone_commands.go"]
     ldflags = "-s -w -X github.com/cilium/tetragon/pkg/version.Version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags, output: bin/"tetra"), "./cmd/tetra"
 
