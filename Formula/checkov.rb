@@ -4,8 +4,8 @@ class Checkov < Formula
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
   # checkov should only be updated every 15 releases on multiples of 15
-  url "https://files.pythonhosted.org/packages/30/dd/5949da2d7cd8be9c9e9d0fff150b51dbdea6944567d45ea9c5200d95d068/checkov-2.3.225.tar.gz"
-  sha256 "29136e292849ec750bcbbd5304fedb2b2de6d7f516c35bcf157acac5d97ba57d"
+  url "https://files.pythonhosted.org/packages/5e/eb/049d86bab800f235475e35ecde75ee50af6cd17fda5f2e26f62eb722a9e5/checkov-2.3.240.tar.gz"
+  sha256 "f78851392901a8d3e2fae32baffcbc9fcc78ea480a96b4c98576f64fdf842249"
   license "Apache-2.0"
 
   bottle do
@@ -61,8 +61,8 @@ class Checkov < Formula
   end
 
   resource "bc-detect-secrets" do
-    url "https://files.pythonhosted.org/packages/91/6a/7f542469e66c139053cbf138c505226f912d46869a6c50624d8eda575419/bc-detect-secrets-1.4.26.tar.gz"
-    sha256 "ade5e85478e2d052d0dee1250cf869638c170500827f3cebe1fdeccebc299855"
+    url "https://files.pythonhosted.org/packages/30/75/c59bee758d948fe50d44e7b376bf312699f60fcd8ca6a15992e4a15835c1/bc-detect-secrets-1.4.27.tar.gz"
+    sha256 "4a09c2d0269c601e4364512ca28fc5d501584ecd32fd339364092a9ae169763f"
   end
 
   resource "bc-jsonpath-ng" do
@@ -81,13 +81,13 @@ class Checkov < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/ae/2e/d9c18ab1bd53aa9878ef28d95faeb52229e0e5e6f3369b3dbcd48e9cf585/boto3-1.26.129.tar.gz"
-    sha256 "0686a62f424c4f3375a706555b765d1e24d03d70e7d317ffcb2d411b39aa8139"
+    url "https://files.pythonhosted.org/packages/31/88/f2193143fcd68df2dc82f039983e6c613cdc2b9e2169d14d4c551ad24d9e/boto3-1.26.133.tar.gz"
+    sha256 "8ff0af0b25266a01616396abc19eb34dc3d44bd867fa4158985924128b9034fb"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/6d/31/dd5a9286d1a1f50437884100bc08db3dbeb6f9b0e869f83882796f78ec2e/botocore-1.29.129.tar.gz"
-    sha256 "80370e835ccf12e0429d4c6cc0e9d03cf47b72c41ec5916b01fb9544765f314d"
+    url "https://files.pythonhosted.org/packages/38/97/75a3c20c4de2ba12da8a8af4c52da2024488c1e12cfe6d94aec53708835b/botocore-1.29.133.tar.gz"
+    sha256 "7b38e540f73c921d8cb0ac72794072000af9e10758c04ba7f53d5629cc52fa87"
   end
 
   resource "cached-property" do
@@ -161,8 +161,8 @@ class Checkov < Formula
   end
 
   resource "docker" do
-    url "https://files.pythonhosted.org/packages/af/24/4356f92e5f879ce60f78eb55d9d8c4369fd61242e7812700c60aa1d0e6e7/docker-6.1.1.tar.gz"
-    sha256 "5ec18b9c49d48ee145a5b5824bb126dc32fc77931e18444783fc07a7724badc0"
+    url "https://files.pythonhosted.org/packages/d4/5f/48add223bfc02f7645b990418d1d3e01f6d4de7e6fcee31919f40129e893/docker-6.1.2.tar.gz"
+    sha256 "dcc088adc2ec4e7cfc594e275d8bd2c9738c56c808de97476939ef67db5af8c2"
   end
 
   resource "dockerfile-parse" do
