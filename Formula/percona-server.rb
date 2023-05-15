@@ -1,10 +1,9 @@
 class PerconaServer < Formula
   desc "Drop-in MySQL replacement"
   homepage "https://www.percona.com"
-  url "https://downloads.percona.com/downloads/Percona-Server-8.0/Percona-Server-8.0.29-21/source/tarball/percona-server-8.0.29-21.tar.gz"
-  sha256 "a54c45b23719d4f6ba1e409bb2916c59dc0c9aaae98e24299ff26f150ad4f735"
+  url "https://downloads.percona.com/downloads/Percona-Server-8.0/Percona-Server-8.0.32-24/source/tarball/percona-server-8.0.32-24.tar.gz"
+  sha256 "2867706e914597cb3a5161751573c5463caf8343684ed7eeafcad1eb8f2d081e"
   license "BSD-3-Clause"
-  revision 3
 
   livecheck do
     url "https://www.percona.com/downloads/Percona-Server-LATEST/"
@@ -27,23 +26,20 @@ class PerconaServer < Formula
   depends_on "libevent"
   depends_on "libfido2"
   depends_on "lz4"
+  depends_on "openldap" # Needs `ldap_set_urllist_proc`, not provided by LDAP.framework
   depends_on "openssl@1.1"
   depends_on "protobuf"
+  depends_on "zlib" # Zlib 1.2.13+
   depends_on "zstd"
 
   uses_from_macos "curl"
   uses_from_macos "cyrus-sasl"
   uses_from_macos "libedit"
-  uses_from_macos "openldap"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "patchelf" => :build
     depends_on "libtirpc"
     depends_on "readline"
-
-    # Fix build with OpenLDAP 2.5+, which merged libldap_r into libldap
-    patch :DATA
   end
 
   conflicts_with "mariadb", "mysql", because: "percona, mariadb, and mysql install the same binaries"
@@ -71,11 +67,14 @@ class PerconaServer < Formula
   # This should not be necessary when building inside `brew`.
   # https://github.com/Homebrew/homebrew-test-bot/pull/820
   patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/030f7433e89376ffcff836bb68b3903ab90f9cdc/percona-server/boost-check.patch"
-    sha256 "3223f7eebd04b471de1c21104c46b2cdec3fe7b26e13535bdcd0d7b8fd341bde"
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/030f7433e89376ffcff836bb68b3903ab90f9cdc/mysql/boost-check.patch"
+    sha256 "af27e4b82c84f958f91404a9661e999ccd1742f57853978d8baec2f993b51153"
   end
 
   def install
+    # Find Homebrew OpenLDAP instead of the macOS framework
+    inreplace "cmake/ldap.cmake", "NAMES ldap_r ldap", "NAMES ldap"
+
     # Fix mysqlrouter_passwd RPATH to link to metadata_cache.so
     inreplace "router/src/http/src/CMakeLists.txt",
               "ADD_INSTALL_RPATH(mysqlrouter_passwd \"${ROUTER_INSTALL_RPATH}\")",
@@ -86,7 +85,6 @@ class PerconaServer < Formula
 
     # -DINSTALL_* are relative to `CMAKE_INSTALL_PREFIX` (`prefix`)
     args = %W[
-      -DFORCE_INSOURCE_BUILD=1
       -DCOMPILATION_COMMENT=Homebrew
       -DDEFAULT_CHARSET=utf8mb4
       -DDEFAULT_COLLATION=utf8mb4_0900_ai_ci
@@ -129,9 +127,9 @@ class PerconaServer < Formula
     # https://bugs.launchpad.net/percona-server/+bug/1531446
     args << "-DWITHOUT_TOKUDB=1"
 
-    system "cmake", ".", *std_cmake_args, *args
-    system "make"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
     (prefix/"mysql-test").cd do
       test_args = ["--vardir=#{Dir.mktmpdir}"]
@@ -217,16 +215,3 @@ class PerconaServer < Formula
     system "#{bin}/mysqladmin", "--port=#{port}", "--user=root", "--password=", "shutdown"
   end
 end
-
-__END__
---- a/plugin/auth_ldap/CMakeLists.txt
-+++ b/plugin/auth_ldap/CMakeLists.txt
-@@ -36,7 +36,7 @@ IF(WITH_LDAP)
-
-   # libler?
-   MYSQL_ADD_PLUGIN(authentication_ldap_simple ${ALP_SOURCES_SIMPLE}
--    LINK_LIBRARIES ldap_r MODULE_ONLY MODULE_OUTPUT_NAME "authentication_ldap_simple")
-+    LINK_LIBRARIES ldap MODULE_ONLY MODULE_OUTPUT_NAME "authentication_ldap_simple")
-
-   IF(UNIX)
-     IF(INSTALL_MYSQLTESTDIR)
