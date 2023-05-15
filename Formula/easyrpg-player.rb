@@ -41,6 +41,12 @@ class EasyrpgPlayer < Formula
 
   fails_with gcc: "5"
 
+  # Add support for fmt 10
+  patch do
+    url "https://github.com/EasyRPG/Player/commit/a4672d2e30db4e4918c8f3580236faed3c9d04c1.patch?full_index=1"
+    sha256 "026df27331e441116d2b678992d729f9aec3c30b52ffde98089527a5a25c79eb"
+  end
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
