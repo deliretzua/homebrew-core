@@ -12,13 +12,8 @@ class Luarocks < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8c82ed75f35abd93f042561f4ed3b1e350a4ead7596bea57b8100adc73fb066d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8c82ed75f35abd93f042561f4ed3b1e350a4ead7596bea57b8100adc73fb066d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8c82ed75f35abd93f042561f4ed3b1e350a4ead7596bea57b8100adc73fb066d"
-    sha256 cellar: :any_skip_relocation, ventura:        "77d0eb8f6d9d3a509f48f11c34f84d13de71d106ab71ac13466b1f5cf3b61d9a"
-    sha256 cellar: :any_skip_relocation, monterey:       "77d0eb8f6d9d3a509f48f11c34f84d13de71d106ab71ac13466b1f5cf3b61d9a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "77d0eb8f6d9d3a509f48f11c34f84d13de71d106ab71ac13466b1f5cf3b61d9a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c82ed75f35abd93f042561f4ed3b1e350a4ead7596bea57b8100adc73fb066d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "86bc3a1641c84a2554d393406f56aa448a5478f9f5f911ac7f2572045765e416"
   end
 
   depends_on "lua@5.3" => :test
