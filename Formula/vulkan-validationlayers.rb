@@ -1,10 +1,17 @@
 class VulkanValidationlayers < Formula
   desc "Vulkan layers that enable developers to verify correct use of the Vulkan API"
   homepage "https://github.com/KhronosGroup/Vulkan-ValidationLayers"
-  url "https://github.com/KhronosGroup/Vulkan-ValidationLayers/archive/refs/tags/v1.3.249.tar.gz"
-  sha256 "631582fb19be0344a884758338e6e17cef8596e709c86bcd6a3ab5cd845af58b"
   license "Apache-2.0"
   head "https://github.com/KhronosGroup/Vulkan-ValidationLayers.git", branch: "main"
+
+  stable do
+    url "https://github.com/KhronosGroup/Vulkan-ValidationLayers/archive/refs/tags/v1.3.250.tar.gz"
+    sha256 "1c3609321c1167f9af5d3687a443885e2cb1e8e5150df16356200e84bef685f3"
+
+    # upstream commit ref, https://github.com/KhronosGroup/SPIRV-Tools/commit/d4c0abdcad60325a2ab3c00a81847e2dbdc927a2
+    # remove in next release
+    patch :DATA
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "a0b7c4feb0803c33f7c3e993a7cbd2535922567ecdf640a77acf0461d26cf388"
@@ -77,3 +84,17 @@ class VulkanValidationlayers < Formula
     assert_match Regexp.new(expected), actual
   end
 end
+
+__END__
+diff --git a/layers/gpu_validation/gpu_validation.h b/layers/gpu_validation/gpu_validation.h
+index 8183fdf..0f2ea6b 100644
+--- a/layers/gpu_validation/gpu_validation.h
++++ b/layers/gpu_validation/gpu_validation.h
+@@ -330,3 +330,7 @@ class GpuAssisted : public GpuAssistedBase {
+     bool descriptor_indexing = false;
+     bool buffer_device_address;
+ };
++
++namespace spvtools {
++    static const int kDebugInputBindlessMaxDescSets = 32;
++}
