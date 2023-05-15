@@ -1,8 +1,8 @@
 class Mmv < Formula
   desc "Move, copy, append, and link multiple files"
   homepage "https://github.com/rrthomas/mmv"
-  url "https://github.com/rrthomas/mmv/releases/download/v2.3/mmv-2.3.tar.gz"
-  sha256 "bb5bd39e4df944143acefb5bf1290929c0c0268154da3345994059e6f9ac503a"
+  url "https://github.com/rrthomas/mmv/releases/download/v2.4/mmv-2.4.tar.gz"
+  sha256 "5a328bea0259c9fb7eaaab6e5f4bb1b056daccd30879ff102dc00db482f2f6a1"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -20,6 +20,9 @@ class Mmv < Formula
   depends_on "bdw-gc"
 
   def install
+    # Workaround for Xcode 14.3.
+    ENV.append_to_cflags "-Wno-implicit-function-declaration"
+
     system "./configure", *std_configure_args
     system "make", "install"
   end
