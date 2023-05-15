@@ -3,8 +3,8 @@ class LinodeCli < Formula
 
   desc "CLI for the Linode API"
   homepage "https://www.linode.com/products/cli/"
-  url "https://files.pythonhosted.org/packages/62/d6/84a279b17e4dea68a7d83309e70b835c754f7aa4325b259f847b24bfc22c/linode-cli-5.37.0.tar.gz"
-  sha256 "12be4353f962b72a59f3042e06401b77846b8f43576fa279f49f7393cad11c6f"
+  url "https://files.pythonhosted.org/packages/e2/af/a254ec7040c44bb4bba74c5b5b727314711ea04b994ded037e023e4c3e2d/linode-cli-5.38.0.tar.gz"
+  sha256 "1c2876ff833b6d78fdc9cb25fbcdf61bbc2a925c11756cd46c07a4036a9eb1d1"
   license "BSD-3-Clause"
   head "https://github.com/linode/linode-cli.git", branch: "main"
 
@@ -28,8 +28,8 @@ class LinodeCli < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/37/f7/2b1b0ec44fdc30a3d31dfebe52226be9ddc40cd6c0f34ffc8923ba423b69/certifi-2022.12.7.tar.gz"
-    sha256 "35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3"
+    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
+    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
   end
 
   resource "charset-normalizer" do
