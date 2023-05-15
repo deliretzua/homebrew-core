@@ -1,10 +1,8 @@
 class Stgit < Formula
-  include Language::Python::Shebang
-
   desc "Manage Git commits as a stack of patches"
   homepage "https://stacked-git.github.io"
-  url "https://github.com/stacked-git/stgit/releases/download/v2.2.3/stgit-2.2.3.tar.gz"
-  sha256 "4f182007e658258e2dffffe0d01582f3c7e21e524eee04fb29153cdf38b0f6af"
+  url "https://github.com/stacked-git/stgit/releases/download/v2.2.4/stgit-2.2.4.tar.gz"
+  sha256 "858929098bbe156bc73b2518a870e51bc63f6ebef1ac7dc61f6cebc2d2553a43"
   license "GPL-2.0-only"
   head "https://github.com/stacked-git/stgit.git", branch: "master"
 
@@ -18,15 +16,12 @@ class Stgit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e6554884a5f8c21bb49444f04bd95a8b341c73d495be23fff995c20b9fe1a9d"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "git"
 
   uses_from_macos "curl"
   uses_from_macos "zlib"
-
-  on_linux do
-    depends_on "pkg-config" => :build
-  end
 
   def install
     system "cargo", "install", *std_cargo_args
