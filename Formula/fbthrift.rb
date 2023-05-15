@@ -1,8 +1,8 @@
 class Fbthrift < Formula
   desc "Facebook's branch of Apache Thrift, including a new C++ server"
   homepage "https://github.com/facebook/fbthrift"
-  url "https://github.com/facebook/fbthrift/archive/refs/tags/v2023.05.08.00.tar.gz"
-  sha256 "264761857ce444a073776e99946ecb83c431020e5b864904e91d2597f636ddd0"
+  url "https://github.com/facebook/fbthrift/archive/refs/tags/v2023.05.15.00.tar.gz"
+  sha256 "c939d9e97b0cfde6e8f1ad35ae481300a542d7f7dcfe4461981efc39135dbfa5"
   license "Apache-2.0"
   head "https://github.com/facebook/fbthrift.git", branch: "main"
 
@@ -44,6 +44,9 @@ class Fbthrift < Formula
 
   fails_with gcc: "5" # C++ 17
 
+  # Add missing source to CMakeLists.txt.
+  patch :DATA
+
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
 
@@ -75,3 +78,17 @@ class Fbthrift < Formula
     assert_predicate testpath/"gen-cpp2", :directory?
   end
 end
+
+__END__
+diff --git a/thrift/lib/cpp2/CMakeLists.txt b/thrift/lib/cpp2/CMakeLists.txt
+index 9adf60ff54..c8d34d8949 100644
+--- a/thrift/lib/cpp2/CMakeLists.txt
++++ b/thrift/lib/cpp2/CMakeLists.txt
+@@ -250,6 +250,7 @@ add_library(
+   server/ParallelConcurrencyController.cpp
+   server/TokenBucketConcurrencyController.cpp
+   server/StandardConcurrencyController.cpp
++  server/TMConcurrencyController.cpp
+   server/ThreadManagerLoggingWrapper.cpp
+   server/RequestDebugLog.cpp
+   server/RequestPileBase.cpp
