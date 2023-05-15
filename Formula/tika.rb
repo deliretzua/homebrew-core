@@ -7,13 +7,13 @@ class Tika < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d86136672a2ab4e05aec55c8e0c3f48b1e7c87e783bb19d38d2f64f40e467f0c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d86136672a2ab4e05aec55c8e0c3f48b1e7c87e783bb19d38d2f64f40e467f0c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d86136672a2ab4e05aec55c8e0c3f48b1e7c87e783bb19d38d2f64f40e467f0c"
-    sha256 cellar: :any_skip_relocation, ventura:        "d86136672a2ab4e05aec55c8e0c3f48b1e7c87e783bb19d38d2f64f40e467f0c"
-    sha256 cellar: :any_skip_relocation, monterey:       "d86136672a2ab4e05aec55c8e0c3f48b1e7c87e783bb19d38d2f64f40e467f0c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d86136672a2ab4e05aec55c8e0c3f48b1e7c87e783bb19d38d2f64f40e467f0c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e11bbd53a562a16f00e2703f75273b000abe4717d5954488ceaf8c9184e4d91a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bc95e707d8595028782ebbeefed63b2de9a047aca71d018d1e407e47385d9cee"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bc95e707d8595028782ebbeefed63b2de9a047aca71d018d1e407e47385d9cee"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bc95e707d8595028782ebbeefed63b2de9a047aca71d018d1e407e47385d9cee"
+    sha256 cellar: :any_skip_relocation, ventura:        "bc95e707d8595028782ebbeefed63b2de9a047aca71d018d1e407e47385d9cee"
+    sha256 cellar: :any_skip_relocation, monterey:       "bc95e707d8595028782ebbeefed63b2de9a047aca71d018d1e407e47385d9cee"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bc95e707d8595028782ebbeefed63b2de9a047aca71d018d1e407e47385d9cee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "022a467234ccdceaaa41e7053cad45cf1e97945476d292d759957222f46cf527"
   end
 
   depends_on "openjdk"
