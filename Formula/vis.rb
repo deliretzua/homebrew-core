@@ -17,42 +17,23 @@ class Vis < Formula
     sha256 x86_64_linux:   "4834ecf328d90d800adf9b273af959d540b6b783bf5eb782ecdd3c73dbf64acd"
   end
 
-  depends_on "luarocks" => :build
   depends_on "pkg-config" => :build
   depends_on "libtermkey"
+  depends_on "lpeg"
   depends_on "lua"
 
   uses_from_macos "unzip" => :build
   uses_from_macos "ncurses"
 
-  resource "lpeg" do
-    url "https://luarocks.org/manifests/gvvaughan/lpeg-1.0.1-1.src.rock"
-    sha256 "149be31e0155c4694f77ea7264d9b398dd134eca0d00ff03358d91a6cfb2ea9d"
-  end
-
   def install
-    # Make sure I point to the right version!
-    lua = Formula["lua"]
-
-    luapath = libexec/"vendor"
-    ENV["LUA_PATH"] = "#{luapath}/share/lua/#{lua.version.major_minor}/?.lua"
-    ENV["LUA_CPATH"] = "#{luapath}/lib/lua/#{lua.version.major_minor}/?.so"
-
-    resource("lpeg").stage do
-      system "luarocks", "build", "lpeg", "--tree=#{luapath}"
-    end
-
     system "./configure", "--prefix=#{prefix}", "--enable-lua"
     system "make", "install"
 
-    luaenv = { LUA_PATH: ENV["LUA_PATH"], LUA_CPATH: ENV["LUA_CPATH"] }
-    bin.env_script_all_files(libexec/"bin", luaenv)
+    return unless OS.mac?
 
-    if OS.mac?
-      # Rename vis & the matching manpage to avoid clashing with the system.
-      mv bin/"vis", bin/"vise"
-      mv man1/"vis.1", man1/"vise.1"
-    end
+    # Rename vis & the matching manpage to avoid clashing with the system.
+    mv bin/"vis", bin/"vise"
+    mv man1/"vis.1", man1/"vise.1"
   end
 
   def caveats
