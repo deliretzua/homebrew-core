@@ -1,8 +1,8 @@
 class Cweb < Formula
   desc "Literate documentation system for C, C++, and Java"
   homepage "https://cs.stanford.edu/~knuth/cweb.html"
-  url "https://github.com/ascherer/cweb/archive/cweb-4.8.1.tar.gz"
-  sha256 "3d1468408aaf2853bc8fbbc64b0f06e9be9c3c89638d78da907bf6f4656d52ce"
+  url "https://github.com/ascherer/cweb/archive/cweb-4.9.tar.gz"
+  sha256 "188b3b040d2a7f894a5f8e15318c2ab89ab9a655c0c04fd3d695228762bb242c"
   # See disucssions in this thread, https://github.com/ascherer/cweb/issues/29
   license :cannot_represent
 
