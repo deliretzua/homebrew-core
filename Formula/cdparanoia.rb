@@ -5,6 +5,7 @@ class Cdparanoia < Formula
   mirror "https://ftp.osuosl.org/pub/xiph/releases/cdparanoia/cdparanoia-III-10.2.src.tgz"
   sha256 "005db45ef4ee017f5c32ec124f913a0546e77014266c6a1c50df902a55fe64df"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
+  revision 1
 
   livecheck do
     url "https://ftp.osuosl.org/pub/xiph/releases/cdparanoia/?C=M&O=D"
@@ -26,14 +27,17 @@ class Cdparanoia < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "260243bbe3a8e726d4a9e8207c1905086fbe2375c29c10c91bd31ddd3a4f8f40"
   end
 
+  # see https://github.com/orgs/Homebrew/discussions/4154
+  deprecate! date: "2023-05-15", because: :unmaintained
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
 
   # Patches via MacPorts
   patch do
     on_macos do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/2a22152/cdparanoia/osx_interface.patch"
-      sha256 "3eca8ff34d2617c460056f97457b5ac62db1983517525e5c73886a2dea9f06d9"
+      url "https://raw.githubusercontent.com/Homebrew/formula-patches/8e0aff2/cdparanoia/osx_interface.patch"
+      sha256 "c4e22315b639535f41afd904188d8cc875e1642fcf59672c8b9ee06fc77e6b68"
     end
   end
 
@@ -46,6 +50,9 @@ class Cdparanoia < Formula
 
   def install
     ENV.deparallelize
+
+    # Workaround for Xcode 14.3
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
     # Libs are installed as keg-only because most software that searches for cdparanoia
     # will fail to link against it cleanly due to our patches
