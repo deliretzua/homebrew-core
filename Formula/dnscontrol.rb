@@ -7,7 +7,7 @@ class Dnscontrol < Formula
   version_scheme 1
 
   # Upstream appears to use GitHub releases to indicate that a version is
-  # released (and they also recall some of the unreleased tags in the past), so it's
+  # released and they sometimes re-tag versions before that point, so it's
   # necessary to check release versions instead of tags.
   livecheck do
     url :stable
