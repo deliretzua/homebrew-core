@@ -22,18 +22,13 @@ class Corsixth < Formula
   depends_on xcode: :build
   depends_on "ffmpeg"
   depends_on "freetype"
+  depends_on "lpeg"
   depends_on "lua"
   depends_on "sdl2"
   depends_on "sdl2_mixer"
 
   on_linux do
     depends_on "mesa"
-  end
-
-  resource "lpeg" do
-    url "http://www.inf.puc-rio.br/~roberto/lpeg/lpeg-1.0.2.tar.gz"
-    mirror "https://sources.voidlinux.org/lua-lpeg-1.0.2/lpeg-1.0.2.tar.gz"
-    sha256 "48d66576051b6c78388faad09b70493093264588fcd0f258ddaab1cdd4a15ffe"
   end
 
   resource "luafilesystem" do
@@ -49,8 +44,9 @@ class Corsixth < Formula
     ENV["FULL_PRODUCT_NAME"] = "CorsixTH.app"
 
     luapath = libexec/"vendor"
-    ENV["LUA_PATH"] = luapath/"share/lua"/lua.version.major_minor/"?.lua"
-    ENV["LUA_CPATH"] = luapath/"lib/lua"/lua.version.major_minor/"?.so"
+    # Append `;;` to keep default search path.
+    ENV["LUA_PATH"] = luapath/"share/lua"/lua.version.major_minor/"?.lua;;"
+    ENV["LUA_CPATH"] = luapath/"lib/lua"/lua.version.major_minor/"?.so;;"
 
     resources.each do |r|
       r.stage do
