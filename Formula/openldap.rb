@@ -77,8 +77,11 @@ class Openldap < Formula
     (var/"run").mkpath
 
     # https://github.com/Homebrew/homebrew-dupes/pull/452
-    chmod 0755, Dir[etc/"openldap/*"]
-    chmod 0755, Dir[etc/"openldap/schema/*"]
+    chmod 0755, etc.glob("openldap/*")
+    chmod 0755, etc.glob("openldap/schema/*")
+
+    # Don't embed prefix references in files installed in `etc`.
+    inreplace etc.glob("openldap/slapd.{conf,ldif}"), prefix, opt_prefix
   end
 
   test do
