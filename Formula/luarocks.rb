@@ -32,6 +32,20 @@ class Luarocks < Formula
                           "--sysconfdir=#{etc}",
                           "--rocks-tree=#{HOMEBREW_PREFIX}"
     system "make", "install"
+
+    return if HOMEBREW_PREFIX.to_s == "/usr/local"
+
+    # Make bottles uniform to make an `:all` bottle
+    luaversion = Formula["lua"].version.major_minor
+    inreplace_files = %w[
+      cmd/config
+      cmd/which
+      core/cfg
+      core/path
+      deps
+      loader
+    ].map { |file| share/"lua"/luaversion/"luarocks/#{file}.lua" }
+    inreplace inreplace_files, "/usr/local", HOMEBREW_PREFIX
   end
 
   def caveats
@@ -48,11 +62,15 @@ class Luarocks < Formula
     luas = [
       Formula["lua"],
       Formula["lua@5.3"],
+      Formula["luajit"],
     ]
 
     luas.each do |lua|
-      luaversion = lua.version.major_minor
-      luaexec = "#{lua.bin}/lua-#{luaversion}"
+      luaversion, luaexec = case lua.name
+      when "luajit" then ["5.1", lua.opt_bin/"luajit"]
+      else [lua.version.major_minor, lua.opt_bin/"lua-#{lua.version.major_minor}"]
+      end
+
       ENV["LUA_PATH"] = "#{testpath}/share/lua/#{luaversion}/?.lua"
       ENV["LUA_CPATH"] = "#{testpath}/lib/lua/#{luaversion}/?.so"
 
@@ -71,12 +89,6 @@ class Luarocks < Formula
         EOS
 
         system luaexec, "lfs_#{luaversion}test.lua"
-        assert_predicate testpath/"blank_space", :directory?,
-          "Luafilesystem failed to create the expected directory"
-
-        # LuaJIT is compatible with lua5.1, so we can also test it here
-        rmdir testpath/"blank_space"
-        system Formula["luajit"].bin/"luajit", "lfs_#{luaversion}test.lua"
         assert_predicate testpath/"blank_space", :directory?,
           "Luafilesystem failed to create the expected directory"
       else
