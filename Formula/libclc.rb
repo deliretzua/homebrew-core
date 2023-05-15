@@ -5,6 +5,16 @@ class Libclc < Formula
   sha256 "b8f11158cd298062602285391496bb2acaf7219923fdd13b93927753c491e7c1"
   license "Apache-2.0" => { with: "LLVM-exception" }
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f7e7a45d8c7df305449d1082b281ec250762eef12c0219fce56904635f68a2b6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f7e7a45d8c7df305449d1082b281ec250762eef12c0219fce56904635f68a2b6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f7e7a45d8c7df305449d1082b281ec250762eef12c0219fce56904635f68a2b6"
+    sha256 cellar: :any_skip_relocation, ventura:        "f7e7a45d8c7df305449d1082b281ec250762eef12c0219fce56904635f68a2b6"
+    sha256 cellar: :any_skip_relocation, monterey:       "f7e7a45d8c7df305449d1082b281ec250762eef12c0219fce56904635f68a2b6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f7e7a45d8c7df305449d1082b281ec250762eef12c0219fce56904635f68a2b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1294b05ecd01ca464cfd8e001b19312775c6db69d50cf9858bfd58ebb02ce84e"
+  end
+
   depends_on "cmake" => :build
   depends_on "llvm" => [:build, :test]
   depends_on "spirv-llvm-translator" => :build
