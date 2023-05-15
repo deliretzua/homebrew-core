@@ -13,18 +13,13 @@ class Cdparanoia < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "361426040e284704a73d9359498e8cc825bd339bed43f7c949dddcae1c31f179"
-    sha256 cellar: :any,                 arm64_monterey: "d985bd81e9a8f5bb4f9f01a43138f1b89b385337ea2e48a22511634869496446"
-    sha256 cellar: :any,                 arm64_big_sur:  "79d03f652937117697ae235b7bbb8558be9cb86edc42c330316204a288d5cb59"
-    sha256 cellar: :any,                 ventura:        "262d34a4414ff6cc2194c3055ef340cebf9688a19460ade745d4b5fdb085947f"
-    sha256 cellar: :any,                 monterey:       "ffe04653654cb899301fe3d0a65a207928ac26b712ef81952f9c46a06f64185d"
-    sha256 cellar: :any,                 big_sur:        "2b7649f89581be2a35b246e4aab15e936573d3920f794ae5187e23b796874dbf"
-    sha256 cellar: :any,                 catalina:       "9a2def6e4aa8db0e7f35392dd73e2bbaf86a52ddc5cb6ff80e1fcf6f34f6133e"
-    sha256 cellar: :any,                 mojave:         "68b478e2d9e8f7121040f99551a45cab8dd8cd91d94e8690ea17103d884daeaf"
-    sha256 cellar: :any,                 high_sierra:    "8b8b1eeb36773ce01ef09232e2e7270fc759aedd1814218cbd8eb9f668a4bf73"
-    sha256 cellar: :any,                 sierra:         "709190d769f7b8c61d19867ae2faf902a2f84dec6f0d5506bd71c56a99e4a67a"
-    sha256 cellar: :any,                 el_capitan:     "135250473fe692dc976ecbf7324676fa8cef3cdb48a091287bb183c31548fed9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "260243bbe3a8e726d4a9e8207c1905086fbe2375c29c10c91bd31ddd3a4f8f40"
+    sha256 cellar: :any,                 arm64_ventura:  "5fce8011bf8533e069b7f6047defb5ef911f63ba9da06d6675091c97a7e7e227"
+    sha256 cellar: :any,                 arm64_monterey: "5d8b1e73627d9349a554277257c4307708cb545241de318059226c30ddaff163"
+    sha256 cellar: :any,                 arm64_big_sur:  "7f6df3210edceca8bc7efb2ad83d51bbb07df9d114dff57d0907f8a095eb6317"
+    sha256 cellar: :any,                 ventura:        "baa6da0e6a60da3c6a3417c48e967bee871661dcdd0fee3fa5d05463b0ae9623"
+    sha256 cellar: :any,                 monterey:       "947c11b5f0535b78e5917e3c37ab1e1669bb5984df3e8a833656463a66a4bc9b"
+    sha256 cellar: :any,                 big_sur:        "3254c96c3809aed7f6190abe33cfb95056532cc932de14591435e2dddb1d8cd2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b198eb38176c050af6da82d82ef25035dc43a1bfc94a02f064b9103b85a5593"
   end
 
   # see https://github.com/orgs/Homebrew/discussions/4154
