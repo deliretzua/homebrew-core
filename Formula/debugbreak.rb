@@ -5,6 +5,10 @@ class Debugbreak < Formula
   sha256 "62089680cc1cd0857519e2865b274ed7534bfa7ddfce19d72ffee41d4921ae2f"
   license "BSD-2-Clause"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "28fd8c0c9145f462c3a20f34c9ddc837f6719446cc562473f9822539321b8d36"
+  end
+
   def install
     include.install "debugbreak.h"
     pkgshare.install "debugbreak-gdb.py"
