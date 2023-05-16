@@ -12,7 +12,7 @@ class Tkdiff < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "59fd6426bcef5f58c200294a6bff1736866e5844d301fa3a8cd8d33cebb81a1b"
+    sha256 cellar: :any_skip_relocation, all: "fc433422fcd956c6826fca97e0dc7c8ce6a0e9c4cd3c7d17be9e15bca261c6e8"
   end
 
   uses_from_macos "tcl-tk", since: :monterey
