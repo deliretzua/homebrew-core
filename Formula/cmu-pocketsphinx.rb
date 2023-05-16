@@ -1,8 +1,8 @@
 class CmuPocketsphinx < Formula
   desc "Lightweight speech recognition engine for mobile devices"
   homepage "https://cmusphinx.github.io/"
-  url "https://github.com/cmusphinx/pocketsphinx/archive/v5.0.0.tar.gz"
-  sha256 "78ffe5b60b6981b08667435dd26c5a179b612b8ca372bd9c23c896a8b2239a20"
+  url "https://github.com/cmusphinx/pocketsphinx/archive/v5.0.1.tar.gz"
+  sha256 "33fb553af4bf1efe2defbd20790d7438da9fcf3b9913a37ff64e94c2f7632780"
   license "BSD-2-Clause"
   head "https://github.com/cmusphinx/pocketsphinx.git", branch: "master"
 
@@ -23,14 +23,10 @@ class CmuPocketsphinx < Formula
 
   depends_on "cmake" => :build
 
-  # Fix header installation. Can be removed in next release after 5.0.0.
-  patch do
-    url "https://github.com/cmusphinx/pocketsphinx/commit/74a5ec86468a481cae2a6167a0921455354232d3.patch?full_index=1"
-    sha256 "ef9ad6edbba721cc3e4fe0cf9ba0dd14ed18b9f4cb4be079e021f0e28221160a"
-  end
-
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DBUILD_SHARED_LIBS=ON"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
+                                              "-DBUILD_SHARED_LIBS=ON",
+                                              "-DCMAKE_INSTALL_RPATH=#{rpath}"
     system "cmake", "--build", "build"
     system "cmake", "--build", "build", "--target", "install"
   end
