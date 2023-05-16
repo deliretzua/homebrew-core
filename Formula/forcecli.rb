@@ -1,8 +1,8 @@
 class Forcecli < Formula
   desc "Command-line interface to Force.com"
   homepage "https://force-cli.herokuapp.com/"
-  url "https://github.com/ForceCLI/force/archive/v1.0.1.tar.gz"
-  sha256 "3e3e4e3ac333813055e1f4423386917cd065d2f258359c876428232f2fb2bcb3"
+  url "https://github.com/ForceCLI/force/archive/v1.0.2.tar.gz"
+  sha256 "b52441b0aab0c17e9303a33d1d1e27394639cb45ca1a18b9a85e06efe741fdef"
   license "MIT"
   head "https://github.com/ForceCLI/force.git", branch: "master"
 
