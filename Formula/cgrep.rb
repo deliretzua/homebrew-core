@@ -1,8 +1,8 @@
 class Cgrep < Formula
   desc "Context-aware grep for source code"
   homepage "https://github.com/awgn/cgrep"
-  url "https://github.com/awgn/cgrep/archive/v7.0.0.tar.gz"
-  sha256 "87c596447882b3acf0a754ac52ac1b5314961e652708a25ffc49ec5977b1f11a"
+  url "https://github.com/awgn/cgrep/archive/v7.1.0.tar.gz"
+  sha256 "4d590b00ff63fe2d9b3c57ec16f91d73b4f21ea012036b4e4d7ee2f40bdce417"
   license "GPL-2.0-or-later"
   head "https://github.com/awgn/cgrep.git", branch: "master"
 
