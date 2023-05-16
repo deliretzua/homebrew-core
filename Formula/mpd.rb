@@ -1,11 +1,17 @@
 class Mpd < Formula
   desc "Music Player Daemon"
   homepage "https://web.archive.org/web/20230506090801/https://www.musicpd.org/"
-  url "https://github.com/MusicPlayerDaemon/MPD/archive/refs/tags/v0.23.12.tar.gz"
-  sha256 "592192b75d33e125eacef43824901cab98a621f5f7f655da66d3072955508c69"
   license "GPL-2.0-or-later"
   revision 1
   head "https://github.com/MusicPlayerDaemon/MPD.git", branch: "master"
+
+  stable do
+    url "https://github.com/MusicPlayerDaemon/MPD/archive/refs/tags/v0.23.12.tar.gz"
+    sha256 "592192b75d33e125eacef43824901cab98a621f5f7f655da66d3072955508c69"
+    # Add support for fmt 10.0.0, the hunk on NEWS does not apply
+    # See https://github.com/MusicPlayerDaemon/MPD/commit/f869593ac8913e52c711e974257bd6dc0d5dbf26
+    patch :DATA
+  end
 
   bottle do
     rebuild 1
@@ -122,3 +128,16 @@ class Mpd < Formula
     end
   end
 end
+
+__END__
+diff --git a/src/TimePrint.cxx b/src/TimePrint.cxx
+index 5bf05f6238b106250335fbe20e775443f41317b8..d47f3178bbd2c78b45b38651e179ffeedaa7d16c 100644
+--- a/src/TimePrint.cxx
++++ b/src/TimePrint.cxx
+@@ -20,5 +20,5 @@ time_print(Response &r, const char *name,
+ 		return;
+ 	}
+ 
+-	r.Fmt(FMT_STRING("{}: {}\n"), name, s);
++	r.Fmt(FMT_STRING("{}: {}\n"), name, s.c_str());
+ }
