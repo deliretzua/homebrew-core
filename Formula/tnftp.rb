@@ -1,9 +1,9 @@
 class Tnftp < Formula
   desc "NetBSD's FTP client"
   homepage "https://cdn.netbsd.org/pub/NetBSD/misc/tnftp/"
-  url "https://cdn.netbsd.org/pub/NetBSD/misc/tnftp/tnftp-20210827.tar.gz"
-  mirror "https://www.mirrorservice.org/sites/ftp.netbsd.org/pub/NetBSD/misc/tnftp/tnftp-20210827.tar.gz"
-  sha256 "101901e90b656c223ec8106370dd0d783fb63d26aa6f0b2a75f40e86a9f06ea2"
+  url "https://cdn.netbsd.org/pub/NetBSD/misc/tnftp/tnftp-20230507.tar.gz"
+  mirror "https://www.mirrorservice.org/sites/ftp.netbsd.org/pub/NetBSD/misc/tnftp/tnftp-20230507.tar.gz"
+  sha256 "be0134394bd7d418a3b34892b0709eeb848557e86474e1786f0d1a887d3a6580"
   license "BSD-4-Clause"
 
   livecheck do
@@ -38,6 +38,9 @@ class Tnftp < Formula
   end
 
   test do
+    # Errno::EIO: Input/output error @ io_fillbuf - fd:5 /dev/pts/0
+    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+
     require "pty"
     require "expect"
 
