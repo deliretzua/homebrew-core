@@ -3,8 +3,8 @@ require "language/node"
 class BalenaCli < Formula
   desc "Command-line tool for interacting with the balenaCloud and balena API"
   homepage "https://www.balena.io/docs/reference/cli/"
-  url "https://registry.npmjs.org/balena-cli/-/balena-cli-15.2.3.tgz"
-  sha256 "689e4936f012aad2b914213ab17d8b8e22c2e4212e00f277af2426329b6fbebf"
+  url "https://registry.npmjs.org/balena-cli/-/balena-cli-16.2.0.tgz"
+  sha256 "84048db60da2ef9112d06cbeb251067cd59932f77782ebbbfb1c41ca1d9d1f05"
   license "Apache-2.0"
 
   livecheck do
@@ -22,22 +22,22 @@ class BalenaCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb9e7c3ffc78f7d06993e24a5c7952b54702796965a14c0a0f2bb89de013f6a5"
   end
 
-  # Match deprecation date of `node@14`.
-  # TODO: Remove if migrated to `node@18` or `node`. Update date if migrated to `node@16`.
-  # Issue ref: https://github.com/balena-io/balena-cli/issues/2221
-  # Issue ref: https://github.com/balena-io/balena-cli/issues/2403
-  deprecate! date: "2023-04-30", because: "uses deprecated `node@14`"
-
-  depends_on "node@14"
+  depends_on "node@16"
 
   on_macos do
     depends_on "macos-term-size"
   end
 
+  on_linux do
+    depends_on "libusb"
+    depends_on "systemd" # for libudev
+    depends_on "xz" # for liblzma
+  end
+
   def install
     ENV.deparallelize
-    system Formula["node@14"].opt_bin/"npm", "install", *Language::Node.std_npm_install_args(libexec)
-    (bin/"balena").write_env_script libexec/"bin/balena", PATH: "#{Formula["node@14"].opt_bin}:${PATH}"
+    system Formula["node@16"].opt_bin/"npm", "install", *Language::Node.std_npm_install_args(libexec)
+    (bin/"balena").write_env_script libexec/"bin/balena", PATH: "#{Formula["node@16"].opt_bin}:${PATH}"
 
     # Remove incompatible pre-built binaries
     os = OS.kernel_name.downcase
@@ -45,6 +45,9 @@ class BalenaCli < Formula
     node_modules = libexec/"lib/node_modules/balena-cli/node_modules"
     node_modules.glob("{ffi-napi,ref-napi}/prebuilds/*")
                 .each { |dir| dir.rmtree if dir.basename.to_s != "#{os}-#{arch}" }
+
+    (node_modules/"lzma-native/build").rmtree
+    (node_modules/"usb").rmtree if OS.linux?
 
     term_size_vendor_dir = node_modules/"term-size/vendor"
     term_size_vendor_dir.rmtree # remove pre-built binaries
