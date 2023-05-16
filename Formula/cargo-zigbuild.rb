@@ -1,8 +1,8 @@
 class CargoZigbuild < Formula
   desc "Compile Cargo project with zig as linker"
   homepage "https://github.com/rust-cross/cargo-zigbuild"
-  url "https://github.com/rust-cross/cargo-zigbuild/archive/refs/tags/v0.16.7.tar.gz"
-  sha256 "c9c2291b6b47742722288d4d7a24ed6d572a66463df0c946a02fecec67adb144"
+  url "https://github.com/rust-cross/cargo-zigbuild/archive/refs/tags/v0.16.8.tar.gz"
+  sha256 "fd7dbc78cd16a5e4fa6bb9e4af398fc54eef889044f463b601c083adcf0ac960"
   license "MIT"
   head "https://github.com/rust-cross/cargo-zigbuild.git", branch: "main"
 
