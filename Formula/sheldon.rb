@@ -1,19 +1,19 @@
 class Sheldon < Formula
   desc "Fast, configurable, shell plugin manager"
   homepage "https://sheldon.cli.rs"
-  url "https://github.com/rossmacarthur/sheldon/archive/0.7.2.tar.gz"
-  sha256 "8ce4b93376f4365e436d04b2ac5aaf18d1b90285f7d833901e7a78c32f6200db"
+  url "https://github.com/rossmacarthur/sheldon/archive/0.7.3.tar.gz"
+  sha256 "cf8844dce853156d076a6956733420ad7a9365e16a928e419b11de8bc634fc67"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/rossmacarthur/sheldon.git", branch: "trunk"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "36e78d9197e6664785a1f34a693d9dd2057b45381d7609f2b3c5acd412bcf925"
-    sha256 cellar: :any,                 arm64_monterey: "1c113f576dc3db9a92c46d26d7adc8be093be5cba376e12acbbbeecbf254475e"
-    sha256 cellar: :any,                 arm64_big_sur:  "179bf43b9c8d72b289e10735c6e1d0ce78915a6fea2fa6e340c02f5e63beedd7"
-    sha256 cellar: :any,                 ventura:        "5261fe8dfadee55061f0696f5c41a466071cff81630da3620952eed25d786742"
-    sha256 cellar: :any,                 monterey:       "e44425b595a71aea3cfdb1cd495ac3e3be98177928a81c97872ae136209dc059"
-    sha256 cellar: :any,                 big_sur:        "9408cf7ef6b68fb80bd240af43ddc94753715036677becf76c7d8a1e501cd58e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5f0528fb470638d4fccc6235ac982148ccd254c473a25f8828ab7fcd41da333"
+    sha256 cellar: :any,                 arm64_ventura:  "477d8d3f1311841c8dc38095cdcc58e41776940e7a94e15d3cab99022a4e223c"
+    sha256 cellar: :any,                 arm64_monterey: "caa8e70400a4522793d79b52fc9d95e340017289a7346b67c162217046e897c2"
+    sha256 cellar: :any,                 arm64_big_sur:  "88d9d05b05f3a469f998566f92bc829f33626480ea5069ac2cc244e05f1fe02a"
+    sha256 cellar: :any,                 ventura:        "d4037a06d2b489bbfae6ccd3253c0a27f1c641e858f5da0ef1bf9304e129f3e9"
+    sha256 cellar: :any,                 monterey:       "c576c653a4afdfcb24a555983d031a012e24e033346ce099b58560932b324da2"
+    sha256 cellar: :any,                 big_sur:        "9387fda14c7f8d45beb23c30993d43129c68062c307519e4b91d79a440c1245f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f5c55430e3d99ef18ea8648cf076c522b08c27005b2aaff21b29373beb8071b9"
   end
 
   depends_on "rust" => :build
