@@ -359,11 +359,11 @@
     "exclude_packages": ["PyYAML"]
   },
   "jupyterlab": {
-    "extra_packages": ["jupyter-console"],
+    "extra_packages": ["jupyter-console", "notebook"],
     "exclude_packages": [
-      "ipython", "appnope", "asttokens", "backcall", "decorator", "executing", "jedi",
+      "appnope", "asttokens", "backcall", "cffi", "decorator", "executing", "ipython", "jedi",
       "matplotlib-inline", "parso", "pexpect", "pickleshare", "prompt-toolkit", "ptyprocess",
-      "pure-eval", "Pygments", "six", "stack-data", "traitlets", "wcwidth", "PyYAML"
+      "pure-eval", "pycparser", "Pygments", "PyYAML", "six", "stack-data", "traitlets", "wcwidth"
     ]
   },
   "keepkey-agent": {
