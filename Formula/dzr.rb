@@ -6,6 +6,10 @@ class Dzr < Formula
   license "Unlicense"
   head "https://github.com/yne/dzr.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "e3ca7733ac4d0dec77a12b4fd7f985d0bd8fbe0e4615e40b2ca08398f42891d0"
+  end
+
   depends_on "dialog"
   depends_on "jq"
   depends_on "mpv"
