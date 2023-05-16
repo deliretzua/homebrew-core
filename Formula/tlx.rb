@@ -1,8 +1,8 @@
 class Tlx < Formula
   desc "Collection of Sophisticated C++ Data Structures, Algorithms and Helpers"
   homepage "https://tlx.github.io"
-  url "https://github.com/tlx/tlx/archive/v0.5.20200222.tar.gz"
-  sha256 "99e63691af3ada066682243f3a65cd6eb32700071cdd6cfedb18777b5ff5ff4d"
+  url "https://github.com/tlx/tlx/archive/v0.5.20230516.tar.gz"
+  sha256 "528f08411174a0a98bf7c5c3b47cb383037904a59c5152554c3fcbf4df779871"
   license "BSL-1.0"
 
   bottle do
