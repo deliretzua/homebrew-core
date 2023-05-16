@@ -3,8 +3,8 @@ class Prowler < Formula
 
   desc "Open Source Security tool to perform Cloud Security best practices"
   homepage "https://prowler.pro/"
-  url "https://files.pythonhosted.org/packages/88/95/f75f7d8910277bf17355f633b6773b5544f89ef5669432ac50b76a1a34b2/prowler-3.5.0.tar.gz"
-  sha256 "7da30bd1a5d14129623858ebc2cd18256f7cb69783ebb453481cf73c107624aa"
+  url "https://files.pythonhosted.org/packages/d6/69/2c322196bb6f1e526dd628ab352a081def79f8b1af08cd61d84c00948660/prowler-3.5.1.tar.gz"
+  sha256 "7f8180f48391eb8f624b8ff920e368ca00fa0b74e5958630ee426f465fb6f7f0"
   license "Apache-2.0"
 
   bottle do
@@ -95,8 +95,8 @@ class Prowler < Formula
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/81/f9/31fd079836f54470e5aa7c53f8487653d0720304b592e168f51c516a08b9/botocore-1.29.125.tar.gz"
-    sha256 "3005a7ffee083315e69938acdf1bfeaf9e21fe1fe1643d6573ee817721f4ffcd"
+    url "https://files.pythonhosted.org/packages/92/a4/8a215c0ab0f28019af2d39ad23768dd16c70dc5806ee559b5338e0faa833/botocore-1.29.134.tar.gz"
+    sha256 "0e907b0cab771ab7c9e25efd6b6bc0041ec1b17eb0bab316fd012ef2f8fd99ba"
   end
 
   resource "cachetools" do
@@ -285,8 +285,8 @@ class Prowler < Formula
   end
 
   resource "shodan" do
-    url "https://files.pythonhosted.org/packages/fd/e3/8a76f8cb021d712ba966f7385d3635165a70222e5ca1a92a8887470dd1a0/shodan-1.28.0.tar.gz"
-    sha256 "18bd2ae81114b70836e0e3315227325e14398275223998a8c235b099432f4b0b"
+    url "https://files.pythonhosted.org/packages/7c/0a/98fc79a7ca9f220234879f17ad6a847b5296ab2522b893f5a4e95942d009/shodan-1.29.0.tar.gz"
+    sha256 "ebea6dbc1944497e9139263423ea4d103dcd58c085c5ddbf4d6ab1db6eb1d142"
   end
 
   resource "slack-sdk" do
