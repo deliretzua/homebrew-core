@@ -20,7 +20,7 @@ jobs:
     outputs:
       json: ${{ steps.matrix.outputs.json }}
     env:
-      TEST_COUNT: 20
+      TEST_COUNT: 50
       TAP: homebrew/core
     steps:
       - name: Set up Homebrew
@@ -49,6 +49,7 @@ jobs:
     env:
       HOMEBREW_GITHUB_API_TOKEN: "${{ github.token }}"
     strategy:
+      fail-fast: false
       matrix:
         formula: ${{ fromJson(needs.create_matrix.outputs.json) }}
     steps:
