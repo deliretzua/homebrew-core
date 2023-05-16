@@ -2,8 +2,8 @@ class Docker < Formula
   desc "Pack, ship and run any application as a lightweight container"
   homepage "https://www.docker.com/"
   url "https://github.com/docker/cli.git",
-      tag:      "v23.0.6",
-      revision: "ef23cbc4315ae76c744e02d687c09548ede461bd"
+      tag:      "v24.0.0",
+      revision: "98fdcd769bcd137f7538f898b37348f919536ea4"
   license "Apache-2.0"
   head "https://github.com/docker/cli.git", branch: "master"
 
@@ -54,7 +54,7 @@ class Docker < Formula
   test do
     assert_match "Docker version #{version}", shell_output("#{bin}/docker --version")
 
-    expected = "Client:\n Context:    default\n Debug Mode: false\n\nServer:"
+    expected = "Client: Docker Engine - Community\n Version:    #{version}\n Context:    default\n Debug Mode: false\n\nServer:"
     assert_match expected, shell_output("#{bin}/docker info", 1)
   end
 end
