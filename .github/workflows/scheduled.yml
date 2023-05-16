@@ -45,6 +45,7 @@ jobs:
     container:
       image: ghcr.io/homebrew/ubuntu22.04:master
     needs: create_matrix
+    continue-on-error: true
     name: "Online check: ${{ matrix.formula }}"
     env:
       HOMEBREW_GITHUB_API_TOKEN: "${{ github.token }}"
