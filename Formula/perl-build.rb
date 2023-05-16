@@ -7,14 +7,13 @@ class PerlBuild < Formula
   head "https://github.com/tokuhirom/perl-build.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8d9608da782685ddfb59db4495bec0eaaf9a2dd1626a83996c45c97bd12e2354"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8d9608da782685ddfb59db4495bec0eaaf9a2dd1626a83996c45c97bd12e2354"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "558af15f28cb87935cda530e36419a86a843b15507c502e83de36ddf6549d75c"
-    sha256 cellar: :any_skip_relocation, ventura:        "2bfab1553d4dd92516f1047494f7cf5dc18929bf2d55db241d01cf4957c90059"
-    sha256 cellar: :any_skip_relocation, monterey:       "2bfab1553d4dd92516f1047494f7cf5dc18929bf2d55db241d01cf4957c90059"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c6cde594d2cc9c52a19a46e4dbd874ade410ef6972a52e39ca92cdbe32edd33c"
-    sha256 cellar: :any_skip_relocation, catalina:       "4edfe560c51cd7bbfc534d902f25073ea977e2fd145cb135872ef60020860b49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2c7d90c53829a1270a2a5bcddc11a53aef64e130f6198cadbbe0046dc605ce87"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "88242c3173ebedeb662528ee8d076253fbe18c189cdef42768efc5e377bec466"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "88242c3173ebedeb662528ee8d076253fbe18c189cdef42768efc5e377bec466"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "18c043e60df07f020af0785e1f6dcad1ad1b3782e8f596efb8a5363c78669ccb"
+    sha256 cellar: :any_skip_relocation, ventura:        "9c09caf60e490235fc8366f3d47d32d8be9cf887d71cc3f80213700ef3443a65"
+    sha256 cellar: :any_skip_relocation, monterey:       "9c09caf60e490235fc8366f3d47d32d8be9cf887d71cc3f80213700ef3443a65"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8699ea1e8465d1906944894a63767c339312afe64a850620dea4f0e2f05f3017"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "11ad390432ffb57a2afbb7884722b2539fdd4a9951074eb88c06488d943eb348"
   end
 
   uses_from_macos "perl"
