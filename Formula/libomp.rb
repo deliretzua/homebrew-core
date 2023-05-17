@@ -1,8 +1,8 @@
 class Libomp < Formula
   desc "LLVM's OpenMP runtime library"
   homepage "https://openmp.llvm.org/"
-  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.3/openmp-16.0.3.src.tar.xz"
-  sha256 "6ff2bb78c95d9b430203dcba50e41433e1f72696af7b2196c8056ac4bc9f2516"
+  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.4/openmp-16.0.4.src.tar.xz"
+  sha256 "7e88b67dc53f24bfacc58782e756ae34458261fe6d2820173454debb56ab26e4"
   license "MIT"
 
   livecheck do
@@ -32,8 +32,8 @@ class Libomp < Formula
   end
 
   resource "cmake" do
-    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.3/cmake-16.0.3.src.tar.xz"
-    sha256 "b6d83c91f12757030d8361dedc5dd84357b3edb8da406b5d0850df8b6f7798b1"
+    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.4/cmake-16.0.4.src.tar.xz"
+    sha256 "1a366c5f7a7a0efa2f7ede960717f26f5332df28adc9b3c47516a859de2ccf7b"
   end
 
   def install
