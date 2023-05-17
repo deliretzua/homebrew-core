@@ -12,13 +12,13 @@ class Openconnect < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "3df4b53a0b6d916b5cdca928b0d70a8f9d8d2b0704126aa0eea2a475e4261514"
-    sha256 arm64_monterey: "93fae97cd8a542a3ef6efc22f448fde68dff891d280c2210f1da47aa16645adc"
-    sha256 arm64_big_sur:  "c3d8358a28d9c25c3e79e9d9463ea0f8093029f5ae2431c2a2cf42329a698e6f"
-    sha256 ventura:        "21ff1ee3c34373ddea492d1ae2d1fc3ac0c69eeffcb794fb2e8ba9009619a15a"
-    sha256 monterey:       "db61b015f86a0d30c11279c5379c90db64844ae117a26aaa75e7c46d94426e36"
-    sha256 big_sur:        "a6abb0db9058e11c23d7e3969b32ffc5613956a9183b0197b1c98b908ef38669"
-    sha256 x86_64_linux:   "60bf232d6bfe8ad31bfa597fcf526037443ad8ee73c32b3e6647918e9d269d48"
+    sha256 arm64_ventura:  "4c6cbc54440c7c62a7816ab6a2751de284aedf3f7e0fdc5c5e2bb257eb5d30d6"
+    sha256 arm64_monterey: "632379312ace173ee8df4ab6a34b8790cda132fbb04c5e8699f66a750bb40338"
+    sha256 arm64_big_sur:  "116f5cf88b9018e4b5de451de7867a0472a3789792366527d145b4e333c8f86f"
+    sha256 ventura:        "b2df25b2d3fe41f6f692f11bd600f0612c8d416a0824871a74bce9eb44776017"
+    sha256 monterey:       "12bcdba25dcefcd693c93aaa5fc570fe9599e02cce5ccfdbff2d4f3cbc4c1dff"
+    sha256 big_sur:        "2d9860fd935442d985c608c044b00318bd5c43ed1e7226e3b4112c0a925c18f7"
+    sha256 x86_64_linux:   "e2d6425aa942d399b1cec3e39d4d35a447ecf4cbe46a2e22243fc305659f9d23"
   end
 
   head do
