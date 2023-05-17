@@ -1,8 +1,8 @@
 class Resvg < Formula
   desc "SVG rendering tool and library"
   homepage "https://github.com/RazrFalcon/resvg"
-  url "https://github.com/RazrFalcon/resvg/archive/refs/tags/v0.32.0.tar.gz"
-  sha256 "5505810ae114c445730de878c214eacad3f3297428f1dade3b3e5c62128dc929"
+  url "https://github.com/RazrFalcon/resvg/archive/refs/tags/v0.33.0.tar.gz"
+  sha256 "134bf993de98566239ea9a0bd917e0e7f0c4041604cd28e7e91bf5a0d68018ca"
   license "MPL-2.0"
   head "https://github.com/RazrFalcon/resvg.git", branch: "master"
 
@@ -19,11 +19,11 @@ class Resvg < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "usvg")
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "crates/usvg")
+    system "cargo", "install", *std_cargo_args(path: "crates/resvg")
 
-    system "cargo", "build", "--locked", "--lib", "--manifest-path", "c-api/Cargo.toml", "--release"
-    include.install "c-api/resvg.h", "c-api/ResvgQt.h"
+    system "cargo", "build", "--locked", "--lib", "--manifest-path", "crates/c-api/Cargo.toml", "--release"
+    include.install "crates/c-api/resvg.h", "crates/c-api/ResvgQt.h"
     lib.install "target/release/#{shared_library("libresvg")}", "target/release/libresvg.a"
   end
 
