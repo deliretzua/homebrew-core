@@ -1,8 +1,8 @@
 class Dmagnetic < Formula
   desc "Magnetic Scrolls Interpreter"
   homepage "https://www.dettus.net/dMagnetic/"
-  url "https://www.dettus.net/dMagnetic/dMagnetic_0.36.tar.bz2"
-  sha256 "0b7614e47f6711ce58cfbee7188d56d17a92c104004f51ab61798b318e897d8f"
+  url "https://www.dettus.net/dMagnetic/dMagnetic_0.37.tar.bz2"
+  sha256 "ad812bb515bc972e23930d643d5abeaed971d550768b1b3f371bd0f72c3c2e89"
   license "BSD-2-Clause"
 
   livecheck do
@@ -22,6 +22,7 @@ class Dmagnetic < Formula
 
   def install
     # Look for configuration and other data within the Homebrew prefix rather than the default paths
+    inreplace "Makefile", "DESTDIR?=/usr/local", "DESTDIR?=$(PREFIX)"
     inreplace "src/frontends/default/pathnames.h" do |s|
       s.gsub! "/etc/", "#{etc}/"
       s.gsub! "/usr/local/", "#{HOMEBREW_PREFIX}/"
