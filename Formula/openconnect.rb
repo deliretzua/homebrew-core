@@ -1,8 +1,7 @@
 class Openconnect < Formula
   desc "Open client for Cisco AnyConnect VPN"
   homepage "https://www.infradead.org/openconnect/"
-  url "ftp://ftp.infradead.org/pub/openconnect/openconnect-9.11.tar.gz"
-  mirror "https://fossies.org/linux/privat/openconnect-9.11.tar.gz"
+  url "https://www.infradead.org/openconnect/download/openconnect-9.11.tar.gz"
   sha256 "a3c63441395ebc073995a5f4713ab5599af63c04f7492b9b48df11a7fbcb06c7"
   license "LGPL-2.1-only"
 
