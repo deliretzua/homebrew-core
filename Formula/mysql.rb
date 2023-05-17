@@ -74,7 +74,6 @@ class Mysql < Formula
 
     # -DINSTALL_* are relative to `CMAKE_INSTALL_PREFIX` (`prefix`)
     args = %W[
-      -DFORCE_INSOURCE_BUILD=1
       -DCOMPILATION_COMMENT=Homebrew
       -DINSTALL_DOCDIR=share/doc/#{name}
       -DINSTALL_INCLUDEDIR=include/mysql
@@ -100,9 +99,13 @@ class Mysql < Formula
       -DWITH_INNODB_MEMCACHED=ON
     ]
 
-    system "cmake", ".", *std_cmake_args, *args
-    system "make"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+
+    # Fix bad linker flags in `mysql_config`.
+    # https://bugs.mysql.com/bug.php?id=111011
+    inreplace bin/"mysql_config", "-lzlib", "-lz"
 
     (prefix/"mysql-test").cd do
       system "./mysql-test-run.pl", "status", "--vardir=#{Dir.mktmpdir}"
