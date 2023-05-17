@@ -38,6 +38,13 @@ class Watchman < Formula
 
   fails_with gcc: "5"
 
+  # Add support for fmt 10
+  # See https://github.com/facebook/watchman/pull/1141
+  patch do
+    url "https://github.com/facebook/watchman/commit/e9be5564fbff3b9efd21caed524cd72e33584773.patch?full_index=1"
+    sha256 "dc3ef949b0a4be7dd67267eb057fb855926b3708e0ce1df310f431fd157721ca"
+  end
+
   def install
     # Fix "Process terminated due to timeout" by allowing a longer timeout.
     inreplace "CMakeLists.txt",
