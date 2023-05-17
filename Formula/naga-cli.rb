@@ -1,8 +1,8 @@
 class NagaCli < Formula
   desc "Shader translation command-line tool"
   homepage "https://github.com/gfx-rs/naga"
-  url "https://github.com/gfx-rs/naga/archive/refs/tags/v0.11.0.tar.gz"
-  sha256 "b59cfa8e11895fa5badf053dede122185afa9f4e48779ec0b4b163daff4427b2"
+  url "https://github.com/gfx-rs/naga/archive/refs/tags/v0.12.0.tar.gz"
+  sha256 "d4ac5e0e7aae58e812ed8b81b1946d430308594249963753705a8da7c56ae8f2"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/gfx-rs/naga.git", branch: "master"
 
@@ -122,11 +122,11 @@ class NagaCli < Formula
       		label="Fragment/'derivatives'"
       		node [ style=filled ]
       		ep0_e0 [ color="#8dd3c7" label="[1] Argument[0]" ]
-      		ep0_e1 [ color="#fccde5" label="[2] dX" ]
+      		ep0_e1 [ color="#fccde5" label="[2] dXNone" ]
       		ep0_e0 -> ep0_e1 [ label="" ]
-      		ep0_e2 [ color="#fccde5" label="[3] dY" ]
+      		ep0_e2 [ color="#fccde5" label="[3] dYNone" ]
       		ep0_e0 -> ep0_e2 [ label="" ]
-      		ep0_e3 [ color="#fccde5" label="[4] dWidth" ]
+      		ep0_e3 [ color="#fccde5" label="[4] dWidthNone" ]
       		ep0_e0 -> ep0_e3 [ label="" ]
       		ep0_e4 [ color="#fdb462" label="[5] Add" ]
       		ep0_e2 -> ep0_e4 [ label="right" ]
