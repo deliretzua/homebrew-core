@@ -11,13 +11,13 @@ class Libclc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f7e7a45d8c7df305449d1082b281ec250762eef12c0219fce56904635f68a2b6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f7e7a45d8c7df305449d1082b281ec250762eef12c0219fce56904635f68a2b6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f7e7a45d8c7df305449d1082b281ec250762eef12c0219fce56904635f68a2b6"
-    sha256 cellar: :any_skip_relocation, ventura:        "f7e7a45d8c7df305449d1082b281ec250762eef12c0219fce56904635f68a2b6"
-    sha256 cellar: :any_skip_relocation, monterey:       "f7e7a45d8c7df305449d1082b281ec250762eef12c0219fce56904635f68a2b6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f7e7a45d8c7df305449d1082b281ec250762eef12c0219fce56904635f68a2b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1294b05ecd01ca464cfd8e001b19312775c6db69d50cf9858bfd58ebb02ce84e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3acb4609096d7bb2c64fa3b211e0e12463bb63902c2887d0f73a2b167d425d13"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3acb4609096d7bb2c64fa3b211e0e12463bb63902c2887d0f73a2b167d425d13"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3acb4609096d7bb2c64fa3b211e0e12463bb63902c2887d0f73a2b167d425d13"
+    sha256 cellar: :any_skip_relocation, ventura:        "3acb4609096d7bb2c64fa3b211e0e12463bb63902c2887d0f73a2b167d425d13"
+    sha256 cellar: :any_skip_relocation, monterey:       "3acb4609096d7bb2c64fa3b211e0e12463bb63902c2887d0f73a2b167d425d13"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3acb4609096d7bb2c64fa3b211e0e12463bb63902c2887d0f73a2b167d425d13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f9029d415ad9154d96b1778e2858ed042f1ba22782792a08825e933764be2dd"
   end
 
   depends_on "cmake" => :build
