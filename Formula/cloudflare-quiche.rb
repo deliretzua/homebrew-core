@@ -22,9 +22,22 @@ class CloudflareQuiche < Formula
 
   def install
     system "cargo", "install", *std_cargo_args(path: "apps")
+
+    system "cargo", "build", "--offline", "--lib", "--features", "ffi", "--release"
+    lib.install "target/release/#{shared_library("libquiche")}"
+    include.install "quiche/include/quiche.h"
   end
 
   test do
     assert_match "it does support HTTP/3!", shell_output("#{bin}/quiche-client https://http3.is/")
+    (testpath/"test.c").write <<~EOS
+      #include <quiche.h>
+      int main() {
+        quiche_config *config = quiche_config_new(0xbabababa);
+        return 0;
+      }
+    EOS
+    system ENV.cc, "test.c", "-L#{lib}", "-lquiche", "-o", "test"
+    system "./test"
   end
 end
