@@ -6,14 +6,13 @@ class GnuGetopt < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e007ef087b220f61b6ab26ace9bc2459883f0e2c437cfce298c916bc2b588820"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5ff319b6a576b32e06c5c3227eff3d3aeb9cc4c4ecf82fe894d43b4594735ef0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "257fddc790f816ced676ce58a3bdfccebceb2c0357d4f0d64fe43fb88fd7cd8a"
-    sha256 cellar: :any_skip_relocation, ventura:        "764658575d964274c12b57a38df3cd5877ddd2b1b5b47c42c9d9580870408e37"
-    sha256 cellar: :any_skip_relocation, monterey:       "a2ec1d844554f167042583afb86dadeae8a63fd1351c8abb88a2d59a95ea8261"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c25031c8bc41e5edb2ee9e52fd163ed31be33cdfa9eb41583c77880e9e8df9fb"
-    sha256 cellar: :any_skip_relocation, catalina:       "2be0ba0cdb76b0f56f5032f1097f5e42897075ca87454b776eae0c6062ed42a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d2f5de09e2e8b566cb82a21602389c3c76eb39c04082f11e601127e70d32cb7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2a25a9ee12cceed43085d92626a1268619c7198ef38add73abd873237b754de9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6df9bdc36257e33dc33c6f3785d1594cde0aac1e81806b9b7e2659d2e7b4feb2"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cd9665ac14b832407a6ea353a5a0142491848417b3198b6871038a29ebcf50f4"
+    sha256 cellar: :any_skip_relocation, ventura:        "dd9c73190ef0b2af8fcfe7107f8e99df44d4fd7cdb16c2428775e2a1abee02d7"
+    sha256 cellar: :any_skip_relocation, monterey:       "b3db35769d97b8f07431fbb83777e423d15ce9471d97a60ce0a4f1ebabadcbbd"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e1b3803d0efe078bc4dbe1f2817b2e8f9b6301a291dbc599089eb5a5c03888a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab20209c18ea3fb93140b90a43740129d3f3edb385c5745489a7a2fea58df65d"
   end
 
   keg_only :provided_by_macos
