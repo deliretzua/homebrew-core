@@ -1,8 +1,8 @@
 class UtilLinux < Formula
   desc "Collection of Linux utilities"
   homepage "https://github.com/util-linux/util-linux"
-  url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.38/util-linux-2.38.1.tar.xz"
-  sha256 "60492a19b44e6cf9a3ddff68325b333b8b52b6c59ce3ebd6a0ecaa4c5117e84f"
+  url "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.39/util-linux-2.39.tar.xz"
+  sha256 "32b30a336cda903182ed61feb3e9b908b762a5e66fe14e43efb88d37162075cb"
   license all_of: [
     "BSD-3-Clause",
     "BSD-4-Clause-UC",
@@ -40,21 +40,8 @@ class UtilLinux < Formula
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
-  # Everything in following macOS block is for temporary patches other than `gettext`.
-  # TODO: Remove in the next release.
   on_macos do
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "gtk-doc" => :build
-    depends_on "libtool" => :build
-    depends_on "pkg-config" => :build
     depends_on "gettext" # for libintl
-
-    # Fix lib/procfs.c:9:10: fatal error: 'sys/vfs.h' file not found
-    patch do
-      url "https://github.com/util-linux/util-linux/commit/3671d4a878fb58aa953810ecf9af41809317294f.patch?full_index=1"
-      sha256 "d38c9ae06c387da151492dd5862c58551559dd6d2b1877c74cc1e11754221fe4"
-    end
   end
 
   on_linux do
@@ -66,9 +53,6 @@ class UtilLinux < Formula
   end
 
   def install
-    # Temporary work around for patches. Remove in the next release.
-    system "autoreconf", "--force", "--install", "--verbose" if OS.mac?
-
     args = %w[--disable-silent-rules --disable-asciidoc]
 
     if OS.mac?
