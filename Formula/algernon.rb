@@ -13,14 +13,13 @@ class Algernon < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0847b46518e3a13df5fea6b9f2ce7041ac04783caeb63d0bbfa662cecab98c54"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b3a10d9df74f1d8b83ca5d25baa94b835d8afb8d5aa48e131239a01bd2509ca0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d78426493c03ad68d59c8a8d8a0b404e09654cae38fbce211f68b0c0746ddfd9"
-    sha256 cellar: :any_skip_relocation, ventura:        "64f3fbe6f770b0148199a0a60d9dc8720a799c154addf42da4641c333fa1ac1a"
-    sha256 cellar: :any_skip_relocation, monterey:       "b4da942b8ad07b1887b4d2580f3773a7ac91dd014d8f9a9fde6052966162fda8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d0a3a8a255f39ea72c98c289f23230016e8ba5492fa6c44437792741d4cb1e24"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a03f96f82ddf6c79892267dfa6cfb456fdb51d57876bf7f8e2d830540e97637"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6b2494fd9e642b337ab13dcb12857ca081ccd35a1013dc5fd7c3ce9f4ef38201"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8ec5df7efb2dfdd48330d0fa0e623712bb9e7732a9299682a7415710c6e0424d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "25a4376620fd94659d1f5c764014872b4b636ed73df3bce60d1e1390444d60b7"
+    sha256 cellar: :any_skip_relocation, ventura:        "4f701b6ab0a3788159ffceb0d6a72fedbd7837771059f761df389a8907f23e6a"
+    sha256 cellar: :any_skip_relocation, monterey:       "703600ef005e236eecee78ecab48a1d1f0ee7728783d86c1104378428705beb7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1a73076e60f90b23057b31092c8f8b88a845b46bec36c995f6deaaaf25fd5a8f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b184f747532e43eecba31c2edf1f430664b3169ba1c8124117d99e4497ee743b"
   end
 
   # Support for go 1.20 is merged upstream but not yet landed in a tag:
