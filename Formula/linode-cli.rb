@@ -3,8 +3,8 @@ class LinodeCli < Formula
 
   desc "CLI for the Linode API"
   homepage "https://www.linode.com/products/cli/"
-  url "https://files.pythonhosted.org/packages/e2/af/a254ec7040c44bb4bba74c5b5b727314711ea04b994ded037e023e4c3e2d/linode-cli-5.38.0.tar.gz"
-  sha256 "1c2876ff833b6d78fdc9cb25fbcdf61bbc2a925c11756cd46c07a4036a9eb1d1"
+  url "https://files.pythonhosted.org/packages/a2/df/6cbef1216e071e6f6d9dc283fe7bfd2369e2869b70efd630c1841c83d5a1/linode-cli-5.39.0.tar.gz"
+  sha256 "5d91d2bd79ce404e45e280722fa780eea7137a95064932de7d2b336020d47e9d"
   license "BSD-3-Clause"
   head "https://github.com/linode/linode-cli.git", branch: "main"
 
@@ -23,8 +23,8 @@ class LinodeCli < Formula
   depends_on "pyyaml"
 
   resource "linode-api-spec" do
-    url "https://raw.githubusercontent.com/linode/linode-api-docs/refs/tags/v4.151.1/openapi.yaml"
-    sha256 "3c5c8dd87fb2cb7c2b1b14593e3cdcacd6010a34d24d48f3008f8270a6d12bed"
+    url "https://raw.githubusercontent.com/linode/linode-api-docs/refs/tags/v4.153.2/openapi.yaml"
+    sha256 "86dd8f7b9137cdb3030b9a6920a75f1a8b9a3318816a72e94f0e84741ad49ee7"
   end
 
   resource "certifi" do
