@@ -7,13 +7,13 @@ class Kind < Formula
   head "https://github.com/kubernetes-sigs/kind.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6e69152a1b3d0334ef2c7db7edb9372666aa1c654696c0bb12af3b998b9e7bbc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6e69152a1b3d0334ef2c7db7edb9372666aa1c654696c0bb12af3b998b9e7bbc"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6e69152a1b3d0334ef2c7db7edb9372666aa1c654696c0bb12af3b998b9e7bbc"
-    sha256 cellar: :any_skip_relocation, ventura:        "9dcea9b6e7a434bec192cd288ef757183f5433f4a8328154c5b3b33f04e11f5f"
-    sha256 cellar: :any_skip_relocation, monterey:       "9dcea9b6e7a434bec192cd288ef757183f5433f4a8328154c5b3b33f04e11f5f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9dcea9b6e7a434bec192cd288ef757183f5433f4a8328154c5b3b33f04e11f5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f031cff7b35fef93215d95b977f48e33ba6ab2694c6ff5820c1227661a0ed37"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b059d88340bd3ca3e64207ba7d880ff02726b4fcfec3cacf2fe7351af6a39217"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b059d88340bd3ca3e64207ba7d880ff02726b4fcfec3cacf2fe7351af6a39217"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b059d88340bd3ca3e64207ba7d880ff02726b4fcfec3cacf2fe7351af6a39217"
+    sha256 cellar: :any_skip_relocation, ventura:        "f5c4e816c7d937bdb7b4efb5bc273c55aba869dc12f904cf7cea56deff78d9a7"
+    sha256 cellar: :any_skip_relocation, monterey:       "f5c4e816c7d937bdb7b4efb5bc273c55aba869dc12f904cf7cea56deff78d9a7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f5c4e816c7d937bdb7b4efb5bc273c55aba869dc12f904cf7cea56deff78d9a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "42924e632198aadd0ed22b20d0c8f7b6942ee15895ba0498c15b85b3c1b4ce50"
   end
 
   depends_on "go" => :build
