@@ -1,9 +1,9 @@
 class Openconnect < Formula
   desc "Open client for Cisco AnyConnect VPN"
   homepage "https://www.infradead.org/openconnect/"
-  url "ftp://ftp.infradead.org/pub/openconnect/openconnect-9.10.tar.gz"
-  mirror "https://fossies.org/linux/privat/openconnect-9.10.tar.gz"
-  sha256 "f1e0c4eed0ba79b87d6a0406a1500775c145c7b8392fa82094fc3e37dfab6547"
+  url "ftp://ftp.infradead.org/pub/openconnect/openconnect-9.11.tar.gz"
+  mirror "https://fossies.org/linux/privat/openconnect-9.11.tar.gz"
+  sha256 "a3c63441395ebc073995a5f4713ab5599af63c04f7492b9b48df11a7fbcb06c7"
   license "LGPL-2.1-only"
 
   livecheck do
@@ -35,8 +35,8 @@ class Openconnect < Formula
   depends_on "stoken"
 
   resource "vpnc-script" do
-    url "https://gitlab.com/openconnect/vpnc-scripts/raw/22756827315bc875303190abb3756b5b1dd147ce/vpnc-script"
-    sha256 "46c0413e26f1d918d95755d323cf833bf1b7540400a3b75ebbb2ac4c906f7f7f"
+    url "https://gitlab.com/openconnect/vpnc-scripts/-/raw/473d3e810b8fe8223058ab580fac20c53204e677/vpnc-script"
+    sha256 "4e0d4367806c8b54da76aaae4bb550993d8155894006705d21b16eabdbf47559"
   end
 
   def install
@@ -56,7 +56,10 @@ class Openconnect < Formula
     ]
 
     system "./configure", *args
-    system "make", "install"
+
+    # We pass noinst_PROGRAMS to avoid a failure with os-tcp-mtu, which is optional
+    # Issue ref: https://gitlab.com/openconnect/openconnect/-/issues/612#note_1394913896
+    system "make", "install", "noinst_PROGRAMS="
   end
 
   def caveats
