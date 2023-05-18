@@ -4,6 +4,7 @@ class Libxc < Formula
   url "https://gitlab.com/libxc/libxc/-/archive/6.1.0/libxc-6.1.0.tar.bz2"
   sha256 "04dcfbdb89ab0d9ae05d8534c46edf4f9ba60dd6b7633ce72f6cb3c9773bb344"
   license "MPL-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "0948e1952d8f9c82cb40b92e85b307abb90695ead9e1feacdd649aacd1950f2f"
@@ -15,21 +16,20 @@ class Libxc < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "50be3c335300036209e21277788fa9fba694265c3e66dd56f09327924f087825"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
+  depends_on "cmake" => [:build, :test]
   depends_on "gcc" # for gfortran
 
   def install
-    system "autoreconf", "-fiv"
-    system "./configure", "--prefix=#{prefix}",
-                          "--enable-shared",
-                          "FCCPP=gfortran -E -x c",
-                          "CC=#{ENV.cc}"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DENABLE_FORTRAN=ON",
+                    "-DBUILD_SHARED_LIBS=ON",
+                    *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
+    # Common test files for both cmake and plain
     (testpath/"test.c").write <<~EOS
       #include <stdio.h>
       #include <xc.h>
@@ -40,14 +40,29 @@ class Libxc < Formula
         printf("%d.%d.%d", major, minor, micro);
       }
     EOS
-    system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-lxc", "-o", "ctest", "-lm"
-    system "./ctest"
-
     (testpath/"test.f90").write <<~EOS
       program lxctest
         use xc_f03_lib_m
       end program lxctest
     EOS
+    # Simple cmake example
+    (testpath / "CMakeLists.txt").write <<~EOS
+      cmake_minimum_required(VERSION 3.6)
+      project(test_libxc LANGUAGES C Fortran)
+      find_package(Libxc CONFIG REQUIRED)
+      add_executable(test_c test.c)
+      target_link_libraries(test_c PRIVATE Libxc::xc)
+      add_executable(test_fortran test.f90)
+      target_link_libraries(test_fortran PRIVATE Libxc::xcf03)
+    EOS
+    # Test cmake build
+    system "cmake", "-B", "build"
+    system "cmake", "--build", "build"
+    system "./build/test_c"
+    system "./build/test_fortran"
+    # Test compilers directly
+    system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-lxc", "-o", "ctest", "-lm"
+    system "./ctest"
     system "gfortran", "test.f90", "-L#{lib}", "-lxc", "-I#{include}",
                        "-o", "ftest"
     system "./ftest"
