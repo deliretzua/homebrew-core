@@ -3,8 +3,8 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/8a/2f/c11cbb3ff889a67c3c011229d7c590682131419b41cbada0433481ed49e6/dvc-2.57.1.tar.gz"
-  sha256 "07a37d973049df877ba326adb04ae28e2910b7a9d1ca02e877bb1854b030ee39"
+  url "https://files.pythonhosted.org/packages/6e/3c/9a51b0cdf41a5dfe4b51d0793a99bbd7d8c5158bfb934cdb45bc1a2429a0/dvc-2.57.2.tar.gz"
+  sha256 "711f3c65a9a2c10e677b00c6fb05c70b391647e347d75820ebd4a9bae0afafb4"
   license "Apache-2.0"
 
   bottle do
@@ -388,8 +388,8 @@ class Dvc < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/dd/8b/0f8678165d3136ad7637784b076c851d65d223e2e8cec3b9503540bb3518/google-auth-2.18.0.tar.gz"
-    sha256 "c66b488a8b005b23ccb97b1198b6cece516c91869091ac5b7c267422db2733c7"
+    url "https://files.pythonhosted.org/packages/ab/ad/cf556edf0df277935e7fe443a3d5e2c0db2441a4d1e02b816b2487a47b9d/google-auth-2.18.1.tar.gz"
+    sha256 "d7a3249027e7f464fbbfd7ee8319a08ad09d2eea51578575c4bd360ffa049ccb"
   end
 
   resource "google-auth-httplib2" do
@@ -438,8 +438,8 @@ class Dvc < Formula
   end
 
   resource "httpcore" do
-    url "https://files.pythonhosted.org/packages/41/16/c809655d32fd93e688b9e2a1aaba1008118369d1eda00818f6f65eb509f8/httpcore-0.17.0.tar.gz"
-    sha256 "cc045a3241afbf60ce056202301b4d8b6af08845e3294055eb26b09913ef903c"
+    url "https://files.pythonhosted.org/packages/a3/b8/5a0ebcb51cea6f86c4c2520e606018675dc1c9f4c3419356bfd8adc9fc76/httpcore-0.17.1.tar.gz"
+    sha256 "caf508597c525f9b8bfff187e270666309f63115af30f7d68b16143a403c8356"
   end
 
   resource "httplib2" do
