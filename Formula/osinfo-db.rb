@@ -11,7 +11,7 @@ class OsinfoDb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2ce9db70179ea130c8af357e652e18c8a1ba29b6473e71fffc70103fa5db713b"
+    sha256 cellar: :any_skip_relocation, all: "52a059a312cfdfc45728e42cde507536badc89e4c6976927c6c40e9d2255a400"
   end
 
   depends_on "osinfo-db-tools" => [:build, :test]
