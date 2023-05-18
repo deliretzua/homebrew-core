@@ -3,8 +3,8 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/27/40/e050a9eaaa7e1b191959a808ad2014b81accc48aef0f410df8826c0afbb8/esphome-2023.5.0.tar.gz"
-  sha256 "c6831408c70cf61fbcb9bcd6c952dd0af39f607aff34e544f5a466c2dedf2a83"
+  url "https://files.pythonhosted.org/packages/97/0c/7083b5a6cd1e8e7b149f782d27e6e9db1b86e7314e125a8d22800ca5a5e7/esphome-2023.5.1.tar.gz"
+  sha256 "5c043b9481f8504a8ddcf8cabec666921582e1e2a26f5121ce8581a2c0b0beaa"
   license "MIT"
 
   bottle do
@@ -19,7 +19,9 @@ class Esphome < Formula
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build # for cryptography
+  depends_on "cffi"
   depends_on "protobuf"
+  depends_on "pycparser"
   depends_on "python-tabulate"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -63,11 +65,6 @@ class Esphome < Formula
   resource "certifi" do
     url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
     sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
-  end
-
-  resource "cffi" do
-    url "https://files.pythonhosted.org/packages/2b/a8/050ab4f0c3d4c1b8aaa805f70e26e84d0e27004907c5b8ecc1d31815f92a/cffi-1.15.1.tar.gz"
-    sha256 "d400bfb9a37b1351253cb402671cea7e89bdecc294e8016a707f6d1d8ac934f9"
   end
 
   resource "charset-normalizer" do
@@ -148,11 +145,6 @@ class Esphome < Formula
   resource "platformio" do
     url "https://files.pythonhosted.org/packages/0b/49/0af5d39d7940ba1e6595f451b0d04712dddc4500db553af73b201d5edd4f/platformio-6.1.6.tar.gz"
     sha256 "d0214c4da22454269220c0344214eb1fe1f65ca1c9dc19a3d160653a92343af4"
-  end
-
-  resource "pycparser" do
-    url "https://files.pythonhosted.org/packages/5e/0b/95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46de/pycparser-2.21.tar.gz"
-    sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
   end
 
   resource "pyelftools" do
