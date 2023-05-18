@@ -1,10 +1,9 @@
 class Tectonic < Formula
   desc "Modernized, complete, self-contained TeX/LaTeX engine"
   homepage "https://tectonic-typesetting.github.io/"
-  url "https://github.com/tectonic-typesetting/tectonic/archive/tectonic@0.12.0.tar.gz"
-  sha256 "96a53ab5ba29d2bf263f19b6f07450471118bf2067c610b362a1492d0b9b989f"
+  url "https://github.com/tectonic-typesetting/tectonic/archive/tectonic@0.13.0.tar.gz"
+  sha256 "fe49a46419ac2ae6713cd91c68bf817e4026857b5202bedec9b18a8df427773e"
   license "MIT"
-  revision 1
   head "https://github.com/tectonic-typesetting/tectonic.git", branch: "master"
 
   # As of writing, only the tags starting with `tectonic@` are release versions.
@@ -36,7 +35,7 @@ class Tectonic < Formula
 
   def install
     ENV.cxx11
-    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version # needed for CLT-only builds
+    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s # needed for CLT-only builds
     ENV.delete("HOMEBREW_SDKROOT") if MacOS.version == :high_sierra
 
     # Ensure that the `openssl` crate picks up the intended library.
