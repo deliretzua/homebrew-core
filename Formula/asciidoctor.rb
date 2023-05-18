@@ -6,14 +6,13 @@ class Asciidoctor < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "069f1cbf25162d559b175ba51c56136ef8dfbe9eaa33b1448a27523e05ccf4c5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "069f1cbf25162d559b175ba51c56136ef8dfbe9eaa33b1448a27523e05ccf4c5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "069f1cbf25162d559b175ba51c56136ef8dfbe9eaa33b1448a27523e05ccf4c5"
-    sha256 cellar: :any_skip_relocation, ventura:        "4be9e6805e72a2fdffd8e68b51ead783834e81d10ebf3fe9652a57a09625c953"
-    sha256 cellar: :any_skip_relocation, monterey:       "4be9e6805e72a2fdffd8e68b51ead783834e81d10ebf3fe9652a57a09625c953"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4be9e6805e72a2fdffd8e68b51ead783834e81d10ebf3fe9652a57a09625c953"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0842aaa19a6475f3c21e2127cd45723d79e18200920734810a9c14a025e2896"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "de9d20e07c91250d0fdd9304358b61f83d3d3b6c40103be6b19382e6802ec477"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "de9d20e07c91250d0fdd9304358b61f83d3d3b6c40103be6b19382e6802ec477"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "de9d20e07c91250d0fdd9304358b61f83d3d3b6c40103be6b19382e6802ec477"
+    sha256 cellar: :any_skip_relocation, ventura:        "6972e56f00ae26dc956d59f0c45c688b88fd8d28009f25788839adb334eadc86"
+    sha256 cellar: :any_skip_relocation, monterey:       "6972e56f00ae26dc956d59f0c45c688b88fd8d28009f25788839adb334eadc86"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6972e56f00ae26dc956d59f0c45c688b88fd8d28009f25788839adb334eadc86"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b93306fb303f3e3bcb47982f697966618426ab0a05555060283e4da3c3203d7b"
   end
 
   # Some gems require >= ruby 2.7
