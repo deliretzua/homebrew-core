@@ -9,15 +9,13 @@ class MongoOrchestration < Formula
   head "https://github.com/10gen/mongo-orchestration.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "405127e453e31ede09efe2d9f227f1c3eb73284d83acfdfd6b7e8f933cf98ae5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6d23d95a71adb37e14c4e38e026d7e764af41480dd90841d74a7a2422f7f1f0d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "90a4581f44b9dbdeb3acd2178844740b9c972d9ab482012fd621e0298fd2f2e6"
-    sha256 cellar: :any_skip_relocation, ventura:        "2ae530fa702c4b5ab68fe65c83ce5311fc4196685fc406b824c29368c55468ce"
-    sha256 cellar: :any_skip_relocation, monterey:       "9cd9b0ad3bfdda51c34bf4ae6fb0a8389b8d0eb2706f0bd08225d5ee8e0c66ed"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ba9a03b8247ec1bdb1beb5dcc3ba9ec4d92950af2e1a15db1eefc9f2b4d802f9"
-    sha256 cellar: :any_skip_relocation, catalina:       "6653fea0b774f6007ac75652a1a90c4719c3e913d8b35f3af9e0616baa7fc46c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b7a67022d7990bbe34724e0ebc0b5ffb3b5f7833f4b89bfb0ffb3614750264c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a06ce02d6a9b93278e2d6b43dbf5b32ece9f9e895c082d1f87bdfa218b3cc854"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "942938d2b5985f89accaead5cfb09e12892bb3652e055ad8cdd7b0a9bee5a91c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3808852e9905b936c4bfbb928da122af00ec4f49419413461c9c80459b46f671"
+    sha256 cellar: :any_skip_relocation, ventura:        "50c404211547694f824a0f46ee3a4fda06f839806ba827a4914cb9c3899fd357"
+    sha256 cellar: :any_skip_relocation, monterey:       "84bce58621089b5a77c1cbdab9fbf7c66c7f22ddca968f5afcc495f54641299d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b618bdef5b18b51882246e308b4e328682c4359af9c44df88bd6508011819d23"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "126515cdb0585bbf77051fae3045322477dbc3d6aa85dc02185b36c44de6cf36"
   end
 
   depends_on "python@3.11"
