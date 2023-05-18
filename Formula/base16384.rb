@@ -1,8 +1,8 @@
 class Base16384 < Formula
   desc "Encode binary files to printable utf16be"
   homepage "https://github.com/fumiama/base16384"
-  url "https://github.com/fumiama/base16384/archive/refs/tags/v2.2.2.tar.gz"
-  sha256 "948da6d9eca3af64123a7df1aa0f71a81e38ab02815ab2218e71a7aface0035e"
+  url "https://github.com/fumiama/base16384/archive/refs/tags/v2.2.3.tar.gz"
+  sha256 "2e8f293a141608e26488bdf02b06a9a9696989e2efe42065255f61df7a03a5c6"
   license "GPL-3.0-or-later"
   head "https://github.com/fumiama/base16384.git", branch: "master"
 
