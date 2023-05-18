@@ -1,18 +1,18 @@
 class Asciidoctor < Formula
   desc "Text processor and publishing toolchain for AsciiDoc"
   homepage "https://asciidoctor.org/"
-  url "https://github.com/asciidoctor/asciidoctor/archive/v2.0.19.tar.gz"
-  sha256 "a911d10b55e5a2c513f6ca41ecbe793236304b16fb4fbf0c780fb8157ac6fa2c"
+  url "https://github.com/asciidoctor/asciidoctor/archive/v2.0.20.tar.gz"
+  sha256 "e38d8e15e0bf0f28811e35e3e24ca30b9f5424669ffd9e8e4c208b21f45dbdea"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "de9d20e07c91250d0fdd9304358b61f83d3d3b6c40103be6b19382e6802ec477"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "de9d20e07c91250d0fdd9304358b61f83d3d3b6c40103be6b19382e6802ec477"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "de9d20e07c91250d0fdd9304358b61f83d3d3b6c40103be6b19382e6802ec477"
-    sha256 cellar: :any_skip_relocation, ventura:        "6972e56f00ae26dc956d59f0c45c688b88fd8d28009f25788839adb334eadc86"
-    sha256 cellar: :any_skip_relocation, monterey:       "6972e56f00ae26dc956d59f0c45c688b88fd8d28009f25788839adb334eadc86"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6972e56f00ae26dc956d59f0c45c688b88fd8d28009f25788839adb334eadc86"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b93306fb303f3e3bcb47982f697966618426ab0a05555060283e4da3c3203d7b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "987d9a5584cd331ed4c922c595e1e25e24314def4deaef7bd9c2764d74727224"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "987d9a5584cd331ed4c922c595e1e25e24314def4deaef7bd9c2764d74727224"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "987d9a5584cd331ed4c922c595e1e25e24314def4deaef7bd9c2764d74727224"
+    sha256 cellar: :any_skip_relocation, ventura:        "9833ecbbc05e19319c2ddb83c5310a05202bad47dfa5fb739c01e27f6ddbbd55"
+    sha256 cellar: :any_skip_relocation, monterey:       "9833ecbbc05e19319c2ddb83c5310a05202bad47dfa5fb739c01e27f6ddbbd55"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9833ecbbc05e19319c2ddb83c5310a05202bad47dfa5fb739c01e27f6ddbbd55"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c05e33e2d036fc68a2b6cb4489108f241d1daa445d68534ebcbafde9c47a05dd"
   end
 
   # Some gems require >= ruby 2.7
