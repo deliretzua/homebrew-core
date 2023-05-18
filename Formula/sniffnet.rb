@@ -1,8 +1,8 @@
 class Sniffnet < Formula
   desc "Cross-platform application to monitor your network traffic"
   homepage "https://github.com/GyulyVGC/sniffnet"
-  url "https://github.com/GyulyVGC/sniffnet/archive/refs/tags/v1.1.4.tar.gz"
-  sha256 "ca236168b2ddee9e3fe056e0aa56fd961931e099919d2af250c23c73b8415f97"
+  url "https://github.com/GyulyVGC/sniffnet/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "4ed7375aec49c76ef4410f1adb93264f896a113c222d49bf1244985449b84ad3"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/GyulyVGC/sniffnet.git", branch: "main"
 
