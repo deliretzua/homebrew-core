@@ -5,6 +5,10 @@ class Libabigail < Formula
   sha256 "bc214c89f3b7ab8f20113a7c7aa40a207d41574d7ec25c2520501420d8019eb0"
   license "Apache-2.0" => { with: "LLVM-exception" }
 
+  bottle do
+    sha256 x86_64_linux: "cb5c436669736319907ae4b9cc16c0f6549f86e3a01c0d8488bb4b33fc0c47c2"
+  end
+
   head do
     url "https://sourceware.org/git/libabigail.git", branch: "master"
 
