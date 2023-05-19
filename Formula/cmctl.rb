@@ -2,8 +2,8 @@ class Cmctl < Formula
   desc "Command-line tool to manage cert-manager"
   homepage "https://cert-manager.io"
   url "https://github.com/cert-manager/cert-manager.git",
-      tag:      "v1.11.2",
-      revision: "4767427a40e0e193c976fd6bc228f50de8950572"
+      tag:      "v1.12.0",
+      revision: "bd192c4f76dd883f9ee908035b894ffb49002384"
   license "Apache-2.0"
   head "https://github.com/cert-manager/cert-manager.git", branch: "master"
 
@@ -27,7 +27,11 @@ class Cmctl < Formula
       -X github.com/cert-manager/cert-manager/pkg/util.AppVersion=v#{version}
       -X github.com/cert-manager/cert-manager/pkg/util.AppGitCommit=#{Utils.git_head}
     ]
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/ctl"
+
+    cd "cmd/ctl" do
+      system "go", "build", *std_go_args(ldflags: ldflags)
+    end
+
     generate_completions_from_executable(bin/"cmctl", "completion")
   end
 
@@ -37,7 +41,7 @@ class Cmctl < Formula
     assert_match "cmctl", shell_output("#{bin}/cmctl help")
     # We can't make a Kuberntes cluster in test, so we check that when we use a remote command
     # we find the error about connecting
-    assert_match "connect: connection refused", shell_output("#{bin}/cmctl check api 2>&1", 1)
+    assert_empty shell_output("#{bin}/cmctl check api 2>&1", 1)
     # The convert command *can* be tested locally.
     (testpath/"cert.yaml").write <<~EOF
       apiVersion: cert-manager.io/v1beta1
