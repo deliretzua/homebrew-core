@@ -5,8 +5,8 @@ class Erigon < Formula
   head "https://github.com/ledgerwatch/erigon.git", branch: "devel"
 
   stable do
-    url "https://github.com/ledgerwatch/erigon/archive/refs/tags/v2.43.0.tar.gz"
-    sha256 "7af31bf972d24ffb0e1dd15d0ee1106619f4b9aeff8cab7885f306794f5a7776"
+    url "https://github.com/ledgerwatch/erigon/archive/refs/tags/v2.43.1.tar.gz"
+    sha256 "0d6f77f76f0b3a5d3290fd58d786fbbe472d0d891265c929517ef4879d8d9a66"
 
     # patch to use go-m1cpu v0.1.5
     # upstream commit ref, https://github.com/ledgerwatch/erigon/commit/fe30cf8c6f8ca8999cf55c94383ee9c34b3c0640
