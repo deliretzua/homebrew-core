@@ -4,7 +4,7 @@ class Distcc < Formula
   url "https://github.com/distcc/distcc/releases/download/v3.4/distcc-3.4.tar.gz"
   sha256 "2b99edda9dad9dbf283933a02eace6de7423fe5650daa4a728c950e5cd37bd7d"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/distcc/distcc.git", branch: "master"
 
   livecheck do
@@ -32,6 +32,12 @@ class Distcc < Formula
     sha256 "9df153d69914c0f5a9145e0abbb248e72feebab6777c712a30f1c3b8c19047d4"
   end
 
+  # Python 3.10+ compatibility
+  patch do
+    url "https://github.com/distcc/distcc/commit/83e030a852daf1d4d8c906e46f86375d421b781e.patch?full_index=1"
+    sha256 "d65097b7c13191e18699d3a9c7c9df5566bba100f8da84088aa4e49acf46b6a7"
+  end
+
   def install
     ENV["PYTHON"] = python3 = which("python3.11")
     site_packages = prefix/Language::Python.site_packages(python3)
@@ -57,7 +63,7 @@ class Distcc < Formula
   end
 
   service do
-    run [opt_bin/"distcc", "--allow=192.168.0.1/24"]
+    run [opt_bin/"distccd", "--allow=192.168.0.1/24"]
     keep_alive true
     working_dir opt_prefix
   end
@@ -72,9 +78,9 @@ class Distcc < Formula
     assert_match "distcc hosts list does not contain any hosts", shell_output("#{bin}/pump make 2>&1", 1)
 
     # `pump make` timeout on linux runner and is not reproducible, so only run this test for macOS runners
-    if OS.mac?
-      ENV["DISTCC_POTENTIAL_HOSTS"] = "localhost"
-      assert_match "Homebrew\n", shell_output("#{bin}/pump make")
-    end
+    return unless OS.mac?
+
+    ENV["DISTCC_POTENTIAL_HOSTS"] = "localhost"
+    assert_match "Homebrew\n", shell_output("#{bin}/pump make")
   end
 end
