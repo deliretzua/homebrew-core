@@ -41,10 +41,9 @@ class Neo4j < Formula
     # Adjust UDC props
     # Suppress the empty, focus-stealing java gui.
     (libexec/"conf/neo4j.conf").append_lines <<~EOS
-      wrapper.java.additional=-Djava.awt.headless=true
-      wrapper.java.additional.4=-Dneo4j.ext.udc.source=homebrew
-      dbms.directories.data=#{var}/neo4j/data
-      dbms.directories.logs=#{var}/log/neo4j
+      server.jvm.additional=-Djava.awt.headless=true-Dunsupported.dbms.udc.source=homebrew
+      server.directories.data=#{var}/neo4j/data
+      server.directories.logs=#{var}/log/neo4j
     EOS
   end
 
