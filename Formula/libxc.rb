@@ -7,13 +7,13 @@ class Libxc < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "0948e1952d8f9c82cb40b92e85b307abb90695ead9e1feacdd649aacd1950f2f"
-    sha256 cellar: :any,                 arm64_monterey: "197c0a86d1003f63d6ef7232686e5ef20933a21106ff579402276e517e641b54"
-    sha256 cellar: :any,                 arm64_big_sur:  "65146c97950799978716834f772b374e2b794f332b7e6f0487aefe9b29b90149"
-    sha256 cellar: :any,                 ventura:        "03d69df473f57031fb1e9c1768d72a334842c0c7b8cc1d7eedc51b46dfb66e47"
-    sha256 cellar: :any,                 monterey:       "1169534fc5a3ecdaa1b7aa6e9c54ec8a89a45df1ddab0b254104aac933ada32b"
-    sha256 cellar: :any,                 big_sur:        "dd56b362469199f447b6b2fe6dfe9caa85e1c6047bbbac30497777d7c49a94e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "50be3c335300036209e21277788fa9fba694265c3e66dd56f09327924f087825"
+    sha256 cellar: :any,                 arm64_ventura:  "ada5e03bcd73422dca8fd176801f5dec75d892b02c70b9bd0dc64388036d4f86"
+    sha256 cellar: :any,                 arm64_monterey: "ad8cf4c12bbccad4ac2601ec1ed34f18bcaa34470f8cd0fb5d5543b8b13878c0"
+    sha256 cellar: :any,                 arm64_big_sur:  "86931b29ee7e9c1e17bd63a148f581186a7032e370125bed8539236930bfd63a"
+    sha256 cellar: :any,                 ventura:        "b4b0c05e12b1ac3082ea9ee7bf9d7c34ae0634e13d8afa13dc8efecdbe65be81"
+    sha256 cellar: :any,                 monterey:       "2df2ac59256d66177a9d45751f0740b39e3b33bda49789c3085ec758380a488b"
+    sha256 cellar: :any,                 big_sur:        "2f22964420dbdd122b50c39d24d7c2e48933c88c0572eb3aadd30f5d9e78ee43"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a02aa7e2e8cbf80689337ead9b89c6342baeabb092445a02f62f2bb4a260ca37"
   end
 
   depends_on "cmake" => [:build, :test]
