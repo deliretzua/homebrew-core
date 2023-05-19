@@ -1,8 +1,8 @@
 class Mydumper < Formula
   desc "How MySQL DBA & support engineer would imagine 'mysqldump' ;-)"
   homepage "https://launchpad.net/mydumper"
-  url "https://github.com/mydumper/mydumper/archive/v0.14.3-1.tar.gz"
-  sha256 "aafb9c0914b720e175988a41d9c340271348e50e3a00556035a9c4afcf80c982"
+  url "https://github.com/mydumper/mydumper/archive/v0.14.5-1.tar.gz"
+  sha256 "d4ee18d60b7b3931009e906f927fd003437866e149baccf3063247b6d14a0894"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -34,6 +34,9 @@ class Mydumper < Formula
   fails_with gcc: "5"
 
   def install
+    # Avoid installing config into /etc
+    inreplace "CMakeLists.txt", "/etc", etc
+
     # Override location of mysql-client
     args = std_cmake_args + %W[
       -DMYSQL_CONFIG_PREFER_PATH=#{Formula["mysql-client"].opt_bin}
