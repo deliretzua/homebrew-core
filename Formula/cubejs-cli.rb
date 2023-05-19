@@ -3,8 +3,8 @@ require "language/node"
 class CubejsCli < Formula
   desc "Cube.js command-line interface"
   homepage "https://cube.dev/"
-  url "https://registry.npmjs.org/cubejs-cli/-/cubejs-cli-0.33.8.tgz"
-  sha256 "5d8f7d2910ec0bfda7bb28f84f11fb941ed4b545b43ae68dea2b8fc8505c70dd"
+  url "https://registry.npmjs.org/cubejs-cli/-/cubejs-cli-0.33.9.tgz"
+  sha256 "a54d73d7607045672faf566f403b568f3d1041a0a3efc73940d82d284b404279"
   license "Apache-2.0"
 
   bottle do
@@ -27,6 +27,6 @@ class CubejsCli < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/cubejs --version")
     system bin/"cubejs", "create", "hello-world", "-d", "postgres"
-    assert_predicate testpath/"hello-world/schema/Orders.js", :exist?
+    assert_predicate testpath/"hello-world/model/cubes/orders.yml", :exist?
   end
 end
