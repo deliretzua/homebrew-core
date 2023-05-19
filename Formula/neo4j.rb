@@ -12,13 +12,14 @@ class Neo4j < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ae220a0f1d8c226aae8897ef10856815c18270a5165eb947729f83eeeec3371b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ae220a0f1d8c226aae8897ef10856815c18270a5165eb947729f83eeeec3371b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ae220a0f1d8c226aae8897ef10856815c18270a5165eb947729f83eeeec3371b"
-    sha256 cellar: :any_skip_relocation, ventura:        "2ae1d15a05723ae17508cacbbf1c39a79f6d8e4d74778416a605726d8cb9c993"
-    sha256 cellar: :any_skip_relocation, monterey:       "2ae1d15a05723ae17508cacbbf1c39a79f6d8e4d74778416a605726d8cb9c993"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2ae1d15a05723ae17508cacbbf1c39a79f6d8e4d74778416a605726d8cb9c993"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae220a0f1d8c226aae8897ef10856815c18270a5165eb947729f83eeeec3371b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cdaf734d6f5a77464ebf9a7752d2f362640bcf15f657bedeb1664977c7358b55"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cdaf734d6f5a77464ebf9a7752d2f362640bcf15f657bedeb1664977c7358b55"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cdaf734d6f5a77464ebf9a7752d2f362640bcf15f657bedeb1664977c7358b55"
+    sha256 cellar: :any_skip_relocation, ventura:        "637239bbbcb9aba412e1b0eb40745e2a70743bfb4c17fc37877954d6cda4d8dc"
+    sha256 cellar: :any_skip_relocation, monterey:       "637239bbbcb9aba412e1b0eb40745e2a70743bfb4c17fc37877954d6cda4d8dc"
+    sha256 cellar: :any_skip_relocation, big_sur:        "637239bbbcb9aba412e1b0eb40745e2a70743bfb4c17fc37877954d6cda4d8dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cdaf734d6f5a77464ebf9a7752d2f362640bcf15f657bedeb1664977c7358b55"
   end
 
   depends_on "openjdk"
