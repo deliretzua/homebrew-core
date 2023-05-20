@@ -3,8 +3,8 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/3f/de/76fbef3c41c7700d42929e093e35829117c48c277cb09e2a849bfabc98ff/schemathesis-3.19.1.tar.gz"
-  sha256 "be9b87bfd92a856cbff9518d5f6f0ef9172240c6571ca272bdd8045a405c60c0"
+  url "https://files.pythonhosted.org/packages/f3/27/66e3cebf5272f196e1da14e33045eea0ad04e2745fe9182a95d77d718e28/schemathesis-3.19.2.tar.gz"
+  sha256 "d6a0347d0397e5f5ed729f37290f332f98be14e3af385e7c155df7e95453d75a"
   license "MIT"
 
   bottle do
@@ -74,13 +74,13 @@ class Schemathesis < Formula
   end
 
   resource "httpcore" do
-    url "https://files.pythonhosted.org/packages/41/16/c809655d32fd93e688b9e2a1aaba1008118369d1eda00818f6f65eb509f8/httpcore-0.17.0.tar.gz"
-    sha256 "cc045a3241afbf60ce056202301b4d8b6af08845e3294055eb26b09913ef903c"
+    url "https://files.pythonhosted.org/packages/a3/b8/5a0ebcb51cea6f86c4c2520e606018675dc1c9f4c3419356bfd8adc9fc76/httpcore-0.17.1.tar.gz"
+    sha256 "caf508597c525f9b8bfff187e270666309f63115af30f7d68b16143a403c8356"
   end
 
   resource "httpx" do
-    url "https://files.pythonhosted.org/packages/ae/23/f7beaf11a8b95fc173b8979c4bfd23ea7711c5ebd458d657d24a59df7e9f/httpx-0.24.0.tar.gz"
-    sha256 "507d676fc3e26110d41df7d35ebd8b3b8585052450f4097401c9be59d928c63e"
+    url "https://files.pythonhosted.org/packages/f8/2a/114d454cb77657dbf6a293e69390b96318930ace9cd96b51b99682493276/httpx-0.24.1.tar.gz"
+    sha256 "5853a43053df830c20f8110c5e69fe44d035d850b2dfe795e196f00fdb774bdd"
   end
 
   resource "hypothesis" do
