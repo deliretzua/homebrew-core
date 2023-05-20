@@ -7,6 +7,7 @@ class Mavsdk < Formula
       tag:      "v1.4.15",
       revision: "8b9b5b810c08ecf582ba0a4bffdb76b35d0a8007"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -29,10 +30,10 @@ class Mavsdk < Formula
   depends_on "abseil"
   depends_on "c-ares"
   depends_on "curl"
-  depends_on "grpc"
+  depends_on "grpc@1.54"
   depends_on "jsoncpp"
   depends_on "openssl@1.1"
-  depends_on "protobuf"
+  depends_on "protobuf@21"
   depends_on "re2"
   depends_on "tinyxml2"
 
