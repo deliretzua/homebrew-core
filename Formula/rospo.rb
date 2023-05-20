@@ -1,8 +1,8 @@
 class Rospo < Formula
   desc "🐸 Simple, reliable, persistent ssh tunnels with embedded ssh server"
   homepage "https://github.com/ferama/rospo"
-  url "https://github.com/ferama/rospo/archive/refs/tags/v0.11.1.tar.gz"
-  sha256 "27c9979966dab1f0fb52520f20edf15eabb756ddf1720e88b1fcec5b8b3f9656"
+  url "https://github.com/ferama/rospo/archive/refs/tags/v0.11.2.tar.gz"
+  sha256 "002f39034440c4319ef4a38027120e47002aa0cda86414ed5a5943bbfe8db276"
   license "MIT"
 
   bottle do
