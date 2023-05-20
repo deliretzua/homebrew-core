@@ -1,14 +1,25 @@
 class Julia < Formula
   desc "Fast, Dynamic Programming Language"
   homepage "https://julialang.org/"
-  # Use the `-full` tarball to avoid having to download during the build.
-  #
-  # TODO: Use system `suite-sparse` when `julia` supports v7.
-  # Issue ref: https://github.com/JuliaLang/julia/issues/47884
-  url "https://github.com/JuliaLang/julia/releases/download/v1.9.0/julia-1.9.0-full.tar.gz"
-  sha256 "222eb533c9dc54734949eb3a4169f54aefa1bc20be385fc1cf798c8219fe6400"
   license all_of: ["MIT", "BSD-3-Clause", "Apache-2.0", "BSL-1.0"]
   head "https://github.com/JuliaLang/julia.git", branch: "master"
+
+  # TODO: Remove stable block when patch is no longer needed.
+  stable do
+    # Use the `-full` tarball to avoid having to download during the build.
+    #
+    # TODO: Use system `suite-sparse` when `julia` supports v7.
+    # Issue ref: https://github.com/JuliaLang/julia/issues/47884
+    url "https://github.com/JuliaLang/julia/releases/download/v1.9.0/julia-1.9.0-full.tar.gz"
+    sha256 "222eb533c9dc54734949eb3a4169f54aefa1bc20be385fc1cf798c8219fe6400"
+
+    # Fix printing of BigFloats with new MPFR.
+    # https://github.com/Homebrew/homebrew-core/issues/131422
+    patch do
+      url "https://github.com/JuliaLang/julia/commit/5d43397ee52323f1c015513b2be3909078b646ef.patch?full_index=1"
+      sha256 "15f9f2a7b6ae21aa5de8655970c673a953e1d46018e901f7fff98aead8e4a929"
+    end
+  end
 
   bottle do
     sha256 cellar: :any, arm64_ventura:  "fc3c149750185023cad024493bf0609bdd9a2acb84c597a887ad93162aa077e2"
