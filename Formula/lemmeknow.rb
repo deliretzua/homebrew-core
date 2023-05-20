@@ -1,8 +1,8 @@
 class Lemmeknow < Formula
   desc "Fastest way to identify anything!"
   homepage "https://github.com/swanandx/lemmeknow"
-  url "https://github.com/swanandx/lemmeknow/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "c2edf419aed5d2f9428d094dad627a6205b18da84ac25bbc2879f0ebc39c3801"
+  url "https://github.com/swanandx/lemmeknow/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "46f42e80cf2c142641fc52826bcf73e00e26dbb93f20397a282e04b786a7cfe8"
   license "MIT"
   head "https://github.com/swanandx/lemmeknow.git", branch: "main"
 
