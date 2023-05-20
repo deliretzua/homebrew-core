@@ -5,6 +5,7 @@ class Wownero < Formula
       tag:      "v0.11.0.3",
       revision: "e921c3b8a35bc497ef92c4735e778e918b4c4f99"
   license "BSD-3-Clause"
+  revision 1
 
   # The `strategy` code below can be removed if/when this software exceeds
   # version 10.0.0. Until then, it's used to omit a malformed tag that would
@@ -40,7 +41,7 @@ class Wownero < Formula
   depends_on "libsodium"
   depends_on "libusb"
   depends_on "openssl@1.1"
-  depends_on "protobuf"
+  depends_on "protobuf@21"
   depends_on "readline"
   depends_on "unbound"
   depends_on "zeromq"
@@ -48,15 +49,13 @@ class Wownero < Formula
   conflicts_with "monero", because: "both install a wallet2_api.h header"
 
   def install
-    args = std_cmake_args
-
     # Need to help CMake find `readline` when not using /usr/local prefix
-    args << "-DReadline_ROOT_DIR=#{Formula["readline"].opt_prefix}"
+    args = %W[-DReadline_ROOT_DIR=#{Formula["readline"].opt_prefix}]
 
     # Build a portable binary (don't set -march=native)
-    args << "-DARCH=default"
+    args << "-DARCH=default" if build.bottle?
 
-    system "cmake", "-S", ".", "-B", "build", *args
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
