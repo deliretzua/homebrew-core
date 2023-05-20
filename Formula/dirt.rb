@@ -3,7 +3,7 @@ class Dirt < Formula
   homepage "https://github.com/tidalcycles/Dirt"
   url "https://github.com/tidalcycles/Dirt/archive/1.1.tar.gz"
   sha256 "bb1ae52311813d0ea3089bf3837592b885562518b4b44967ce88a24bc10802b6"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
   revision 1
   head "https://github.com/tidalcycles/Dirt.git", branch: "master"
 
@@ -24,8 +24,13 @@ class Dirt < Formula
 
   depends_on "jack"
   depends_on "liblo"
+  depends_on "libsndfile"
 
   def install
+    # Work around failure from GCC 10+ using default of `-fno-common`
+    # multiple definition of `...'; ....o:(.bss+0x0): first defined here
+    ENV.append_to_cflags "-fcommon" if OS.linux?
+
     system "make", "PREFIX=#{prefix}", "install"
   end
 
