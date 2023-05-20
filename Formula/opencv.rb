@@ -4,7 +4,7 @@ class Opencv < Formula
   url "https://github.com/opencv/opencv/archive/refs/tags/4.7.0.tar.gz"
   sha256 "8df0079cdbe179748a18d44731af62a245a45ebf5085223dc03133954c662973"
   license "Apache-2.0"
-  revision 4
+  revision 5
 
   livecheck do
     url :stable
@@ -35,7 +35,7 @@ class Opencv < Formula
   depends_on "openblas"
   depends_on "openexr"
   depends_on "openjpeg"
-  depends_on "protobuf"
+  depends_on "protobuf@21"
   depends_on "python@3.11"
   depends_on "tbb"
   depends_on "vtk"
@@ -115,7 +115,7 @@ class Opencv < Formula
         -DOPENEXR_ILMIMF_LIBRARY=#{Formula["openexr"].opt_lib}/libIlmImf.so
         -DOPENEXR_ILMTHREAD_LIBRARY=#{Formula["openexr"].opt_lib}/libIlmThread.so
         -DPNG_LIBRARY=#{Formula["libpng"].opt_lib}/libpng.so
-        -DPROTOBUF_LIBRARY=#{Formula["protobuf"].opt_lib}/libprotobuf.so
+        -DPROTOBUF_LIBRARY=#{Formula["protobuf@21"].opt_lib}/libprotobuf.so
         -DTIFF_LIBRARY=#{Formula["libtiff"].opt_lib}/libtiff.so
         -DWITH_V4L=OFF
         -DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.so
