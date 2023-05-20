@@ -3,7 +3,7 @@ class Darkice < Formula
   homepage "http://www.darkice.org/"
   url "https://github.com/rafael2k/darkice/releases/download/v1.4/darkice-1.4.tar.gz"
   sha256 "e6a8ec2b447cf5b4ffaf9b62700502b6bdacebf00b476f4e9bf9f9fe1e3dd817"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
 
   livecheck do
     url :stable
@@ -33,15 +33,15 @@ class Darkice < Formula
 
   def install
     ENV.cxx11
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
+    system "./configure", *std_configure_args,
                           "--sysconfdir=#{etc}",
                           "--with-lame-prefix=#{Formula["lame"].opt_prefix}",
                           "--with-faac-prefix=#{Formula["faac"].opt_prefix}",
                           "--with-twolame",
                           "--with-jack",
                           "--with-vorbis",
-                          "--with-samplerate"
+                          "--with-samplerate",
+                          "--without-opus"
     system "make", "install"
   end
 
