@@ -16,7 +16,9 @@ class Libmatio < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "97948be20c34c6b824647b45d7a301576a04b301b605164221e951e11a6f75f6"
   end
 
+  depends_on "pkg-config" => :test
   depends_on "hdf5"
+  uses_from_macos "zlib"
 
   resource "homebrew-test_mat_file" do
     url "https://web.uvic.ca/~monahana/eos225/poc_data.mat.sfx"
@@ -25,14 +27,13 @@ class Libmatio < Formula
 
   def install
     args = %W[
-      --prefix=#{prefix}
       --enable-extended-sparse=yes
       --enable-mat73=yes
       --with-hdf5=#{Formula["hdf5"].opt_prefix}
-      --with-zlib=/usr
     ]
+    args << "--with-zlib=#{Formula["zlib"].opt_prefix}" unless OS.mac?
 
-    system "./configure", *args
+    system "./configure", *std_configure_args, *args
     system "make", "install"
   end
 
@@ -68,5 +69,7 @@ class Libmatio < Formula
     EOS
     system ENV.cc, "mat.c", "-o", "mat", "-I#{include}", "-L#{lib}", "-lmatio"
     system "./mat", "poc_data.mat.sfx"
+
+    refute_includes shell_output("pkg-config --cflags matio"), "-I/usr/include"
   end
 end
