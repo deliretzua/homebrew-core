@@ -1,9 +1,14 @@
 class Mpage < Formula
   desc "Many to one page printing utility"
   homepage "https://mesa.nl/pub/mpage/README"
-  url "https://mesa.nl/pub/mpage/mpage-2.5.7.tgz"
-  sha256 "51ab9c4e5fdd37e03c90df6756f30c0b61a34f066cb625f8924feedc4b3ec3fe"
+  url "https://mesa.nl/pub/mpage/mpage-2.5.8.tgz"
+  sha256 "2351e91d25794b358df6618f17a7013a28d350ec20408fe06f8123dc4673fe93"
   license "GPL-2.0-or-later"
+
+  livecheck do
+    url "https://mesa.nl/pub/mpage/"
+    regex(/href=.*?mpage[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
     sha256 arm64_ventura:  "cd01e6be613230f334dc99b55c4dfa89a2007261233079513a91f762b6274604"
