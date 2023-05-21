@@ -1,8 +1,8 @@
 class Openconnect < Formula
   desc "Open client for Cisco AnyConnect VPN"
   homepage "https://www.infradead.org/openconnect/"
-  url "https://www.infradead.org/openconnect/download/openconnect-9.11.tar.gz"
-  sha256 "a3c63441395ebc073995a5f4713ab5599af63c04f7492b9b48df11a7fbcb06c7"
+  url "https://www.infradead.org/openconnect/download/openconnect-9.12.tar.gz"
+  sha256 "a2bedce3aa4dfe75e36e407e48e8e8bc91d46def5335ac9564fbf91bd4b2413e"
   license "LGPL-2.1-only"
 
   livecheck do
@@ -55,10 +55,7 @@ class Openconnect < Formula
     ]
 
     system "./configure", *args
-
-    # We pass noinst_PROGRAMS to avoid a failure with os-tcp-mtu, which is optional
-    # Issue ref: https://gitlab.com/openconnect/openconnect/-/issues/612#note_1394913896
-    system "make", "install", "noinst_PROGRAMS="
+    system "make", "install"
   end
 
   def caveats
