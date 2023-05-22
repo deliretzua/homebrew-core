@@ -1,11 +1,9 @@
 class C2rust < Formula
   desc "Migrate C code to Rust"
   homepage "https://github.com/immunant/c2rust"
-  # TODO: Check if we can use unversioned `llvm` at version bump.
-  url "https://github.com/immunant/c2rust/archive/refs/tags/v0.17.0.tar.gz"
-  sha256 "7a178ad0f858e6169aa5c0edc85e04c754b954de4d0c3336d90a98ec8f583512"
+  url "https://github.com/immunant/c2rust/archive/refs/tags/v0.18.0.tar.gz"
+  sha256 "cf72bd59cac5ff31553c5d1626f130167d4f72eaabcffc27630dee2a95f4707e"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "46c07e6c24ff13a0a1296c80f20e3d1c44b19b95029ed9b538a9b69554c3e525"
@@ -19,7 +17,7 @@ class C2rust < Formula
 
   depends_on "cmake" => [:build, :test]
   depends_on "rust" => :build
-  depends_on "llvm@15"
+  depends_on "llvm"
 
   fails_with gcc: "5"
 
