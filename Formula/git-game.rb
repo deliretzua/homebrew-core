@@ -6,7 +6,7 @@ class GitGame < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c700a65b591b1e95ab45bcd0349a75aeb8fdc9915480c7323a34830cd27075fd"
+    sha256 cellar: :any_skip_relocation, all: "8161b713aa176c7a8a48b525d71c18ed66d6adff46de2fbdef9b52a2602671b9"
   end
 
   uses_from_macos "ruby"
