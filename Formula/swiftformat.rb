@@ -7,13 +7,13 @@ class Swiftformat < Formula
   head "https://github.com/nicklockwood/SwiftFormat.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bbb01c5c7fcde4f8b17945c2c8386b099848c9cd4fda8bcfd032c2420d5d1b65"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f04596d4567e86f46e0740ea3e9d1e2e19fa1cdf137a70287342b6ce937ddf8d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d8b6f0f30662dd4c2e1eb64d614fe2765ad664e2ac10a346004f94ed6ed6cdf2"
-    sha256 cellar: :any_skip_relocation, ventura:        "dc2be8c829dc26595577f8b5daa071324f341c4f144cc46bf0a47520d44fc76e"
-    sha256 cellar: :any_skip_relocation, monterey:       "a88b992a2316fa06dd13944c6bb16d00522de0cc21aae17ede07e65d700c6800"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ba2cf56b5845bb33265a3e32737c5defa6e310987f785e1dfe6e7dc114a12555"
-    sha256                               x86_64_linux:   "d1f82ed96ee9f8f239e9396bff00a0feac937fe12840d05fb6d5c01fe9161f03"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dd9153d1900b702142f5ec614ce1aa60c6d81c5723ef730633cda666045f4227"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2eb131e54b00a0bbe0314125455ce89747eaccfd472ef47a912a9c3697743389"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5937151917c57ba44639566b00f067be01cf7fbfab8c6406d5277b6192ea7d23"
+    sha256 cellar: :any_skip_relocation, ventura:        "6708a400377466b834031509ea37f90e70b2aa8f1067e6f4360d31cb67134a7e"
+    sha256 cellar: :any_skip_relocation, monterey:       "7b7d95159ad3938fbf5042aeabe365f80f92776a0b99d73c81da12668bdaa12e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9f288e41f451ef8aba863ce7de908d87c46015d8470902b316ad16c76a90c701"
+    sha256                               x86_64_linux:   "6b511ce8015d306915f68730d8d0a9bcbf28e44889cbabd882002fb68f429537"
   end
 
   depends_on xcode: ["10.1", :build]
