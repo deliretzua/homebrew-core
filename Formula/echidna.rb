@@ -1,8 +1,8 @@
 class Echidna < Formula
   desc "Ethereum smart contract fuzzer"
   homepage "https://github.com/crytic/echidna"
-  url "https://github.com/crytic/echidna/archive/refs/tags/v2.1.1.tar.gz"
-  sha256 "49236096e7b99c569cdb9d8a0976a32dbdfa910028af29391d7f5666da67977b"
+  url "https://github.com/crytic/echidna/archive/refs/tags/v2.2.0.tar.gz"
+  sha256 "919a46d5820acdc26c119d2dc36b2abadb2383217a801ba07b1335aac1d07ee1"
   license "AGPL-3.0-only"
   head "https://github.com/crytic/echidna.git", branch: "master"
 
@@ -70,7 +70,7 @@ class Echidna < Formula
       }
     EOS
 
-    assert_match(/echidna_true:(\s+)passed!/,
+    assert_match("echidna_true: passing",
                  shell_output("#{bin}/echidna --format text --contract True #{testpath}"))
   end
 end
