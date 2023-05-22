@@ -3,8 +3,8 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/8a/cc/9f465318b97070d92e15490aacc6548872ab8abe8a000cfebd0b5da8e88a/snakemake-7.25.4.tar.gz"
-  sha256 "e89146fd0df196a9135dcf41c9c70841551aa4735a18da9e0402bda6746afdcc"
+  url "https://files.pythonhosted.org/packages/63/5c/6468ec1f7309d49de92d0c952f8861f6e36bcda67ebe6b700b9eaa40da6b/snakemake-7.26.0.tar.gz"
+  sha256 "5e5b4750a943f73a1b62979ccac203f4bc87876559f5e44d0ce9305ac198aff0"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
@@ -60,13 +60,13 @@ class Snakemake < Formula
   end
 
   resource "dpath" do
-    url "https://files.pythonhosted.org/packages/e2/c6/560d012e89b10b440d9f796ac0f97d2fbdcb5095d22442e1fc0d58c8387a/dpath-2.1.5.tar.gz"
-    sha256 "ccd964db839baad4aa820612b4b8731b09f40a245d401b723156ce4ef45b22b7"
+    url "https://files.pythonhosted.org/packages/0a/81/044f03129b6006fc594654bb26c22a9417346037261c767ac6e0773ca1dd/dpath-2.1.6.tar.gz"
+    sha256 "f1e07c72e8605c6a9e80b64bc8f42714de08a789c7de417e49c3f87a19692e47"
   end
 
   resource "fastjsonschema" do
-    url "https://files.pythonhosted.org/packages/62/70/0b49eee4a6aef4b67699e65fe8b8f4a3a25d39971bcd6f1c930a91141f3b/fastjsonschema-2.16.3.tar.gz"
-    sha256 "4a30d6315a68c253cfa8f963b9697246315aa3db89f98b97235e345dedfb0b8e"
+    url "https://files.pythonhosted.org/packages/a4/e1/cda97fa4447e138f1f0ccfdaf678fa247415f7e9f4942d856fd63c7d863c/fastjsonschema-2.17.1.tar.gz"
+    sha256 "f4eeb8a77cef54861dbf7424ac8ce71306f12cbb086c45131bcba2c6a4f726e3"
   end
 
   resource "gitdb" do
