@@ -3,8 +3,8 @@ require "language/node"
 class YamlLanguageServer < Formula
   desc "Language Server for Yaml Files"
   homepage "https://github.com/redhat-developer/yaml-language-server"
-  url "https://registry.npmjs.org/yaml-language-server/-/yaml-language-server-1.12.0.tgz"
-  sha256 "38739615283eb32371959ea808869009a315e12faddbdc32b536a463354a2df4"
+  url "https://registry.npmjs.org/yaml-language-server/-/yaml-language-server-1.13.0.tgz"
+  sha256 "814b90421009b951319daee5bdad4c7084ffbddcfd4ad6b2de8e5aa92c138b87"
   license "MIT"
 
   bottle do
