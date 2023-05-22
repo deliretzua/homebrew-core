@@ -8,13 +8,7 @@ class YamlLanguageServer < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b87e88ec455f481a6f67e95a02f9e2b88638c75955722c9148d4de1b27854e1c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b87e88ec455f481a6f67e95a02f9e2b88638c75955722c9148d4de1b27854e1c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b87e88ec455f481a6f67e95a02f9e2b88638c75955722c9148d4de1b27854e1c"
-    sha256 cellar: :any_skip_relocation, ventura:        "7c9e2035a2629025130aef99e439be0178c72b6647b910a170dd4f52bd1a9081"
-    sha256 cellar: :any_skip_relocation, monterey:       "7c9e2035a2629025130aef99e439be0178c72b6647b910a170dd4f52bd1a9081"
-    sha256 cellar: :any_skip_relocation, big_sur:        "7c9e2035a2629025130aef99e439be0178c72b6647b910a170dd4f52bd1a9081"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b87e88ec455f481a6f67e95a02f9e2b88638c75955722c9148d4de1b27854e1c"
+    sha256 cellar: :any_skip_relocation, all: "9fcd778e6f4eaf87b983322eb364a6b047067c53c73d1ad49d8bbdf0e3ebfc6e"
   end
 
   depends_on "node"
