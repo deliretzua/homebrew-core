@@ -7,12 +7,12 @@ class Simdutf < Formula
   head "https://github.com/simdutf/simdutf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "60fdd6b1d7531a08e6563c1fadb06b44afd0282cd9d2933e8dd0fca6d9e9e94d"
-    sha256 cellar: :any, arm64_monterey: "3ef0ebf6ad59569bc42daa950ab17f440538b225301ab832de84b3371a9b0fda"
-    sha256 cellar: :any, arm64_big_sur:  "1de3c9c5cd071dc8e39cb43f140d8c17451837be0a7053da6d22e2e4302d1999"
-    sha256 cellar: :any, ventura:        "931b66433cfc6a0136b3c91e02d50dcf4e1dbdae8aa0d788b7a691bfe794053d"
-    sha256 cellar: :any, monterey:       "2a96c6b3d59eae11d5cbd058a383554b037e7322832ec3b990799860b2f81078"
-    sha256 cellar: :any, big_sur:        "9fff31dca61857ec784b70ba5fb4f580a0888be714e97c5bb10748a54095d96e"
+    sha256 cellar: :any, arm64_ventura:  "c0594d81464e1291f83d394fb8cfc2e25ab39da49ebe5fa93c45811140b7ee2d"
+    sha256 cellar: :any, arm64_monterey: "0a50a8879cf5817f1c07bf3d771447158ec1f516a5a37a0403de373eec2b76f9"
+    sha256 cellar: :any, arm64_big_sur:  "0f54253a00f2d4def2237349925cd1aeed3f0c53b4046a35aa25da6b1a92ee2b"
+    sha256 cellar: :any, ventura:        "cf78cb1917caeb75d6182d237b1c2bc76e62e562661cdcf232822b0ec22a90c0"
+    sha256 cellar: :any, monterey:       "884b1ef2ebea97ee05fc8a28d7488338da246b6974c99d4de1e93062fb52789e"
+    sha256 cellar: :any, big_sur:        "f271e8061c6858ca0f2cf6fcc80b39510030579c1055d162303afd9432ea9af1"
   end
 
   depends_on "cmake" => :build
