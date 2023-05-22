@@ -9,13 +9,14 @@ class AivenClient < Formula
   head "https://github.com/aiven/aiven-client.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ce354e85c6f7f6d1de5370ff5c2f4002a33745a61c0698c347693c4d50087b9e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b37d5dfa7d3763ffcf1ef8b11c0ce69ca4269737ca0a8121bae19292b7bcbc94"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dd9e293b9dd3d2c482642b7dacd41fa4509ebe674fb06242f5a51767dd76ba29"
-    sha256 cellar: :any_skip_relocation, ventura:        "be7b7aed8f3db4a8503b7ec21ca6f96e5e19b23788d5f26700ef44db4f126f5f"
-    sha256 cellar: :any_skip_relocation, monterey:       "6d72e266b15812c48f951673224c4f2ef90370f0a98cc6dc00476e362366363f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "91d7c373fb675d2d8c74a9416a5eb3deb69299f6fd3eb786a2bfebcaf1eaadee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13d9062d25342099f1f87ab92c85e1b0c899c6f3b7be09997ae506c68f5d6e03"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f9d325d764e9a770c7e5c8a156419f85b44b14b89c3f31e40b924ad3c67e8e6c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c250fedefe4c182d94e5e69cfaf9d17fbafc5ec06829149396498bee9bb3ee0d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4eedc80e474f0e5be58c833a60d7f3a292a448af8b2766085a52db2da6df5c50"
+    sha256 cellar: :any_skip_relocation, ventura:        "07a5a30b8906985b8527b9233da5cd1bbadf2a07bdcd3c43e5f4f19d6d88c4df"
+    sha256 cellar: :any_skip_relocation, monterey:       "f4ce396c2d85fbe99f510c476b1c8cb3b50532c1e350b31a0528c47e88566f32"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b6dd6056dd3700bbdfa684e4d93c242c5953f225fb5cafd2c3caf4acabe70305"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d358234694ac4b4305698df1e8c168159248b36119b9c0b7e64f82cb81064d0c"
   end
 
   depends_on "python@3.11"
