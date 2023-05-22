@@ -1,8 +1,8 @@
 class S3fs < Formula
   desc "FUSE-based file system backed by Amazon S3"
   homepage "https://github.com/s3fs-fuse/s3fs-fuse/wiki"
-  url "https://github.com/s3fs-fuse/s3fs-fuse/archive/refs/tags/v1.91.tar.gz"
-  sha256 "f130fec375dc6972145c56f53e83ea7c98c82621406d0208a328989e5d900b0f"
+  url "https://github.com/s3fs-fuse/s3fs-fuse/archive/refs/tags/v1.92.tar.gz"
+  sha256 "76ebea3c0784c5c0f6b84e009d555806aff86258886ced39eee316bf02ae8750"
   license "GPL-2.0-or-later"
   head "https://github.com/s3fs-fuse/s3fs-fuse.git", branch: "master"
 
