@@ -1,8 +1,8 @@
 class Solana < Formula
   desc "Web-Scale Blockchain for decentralized apps and marketplaces"
   homepage "https://solana.com"
-  url "https://github.com/solana-labs/solana/archive/v1.13.7.tar.gz"
-  sha256 "97ebe8441163b269cdc55cb2ed58e5900d0f409f3c562567e08305ea66023a0c"
+  url "https://github.com/solana-labs/solana/archive/v1.14.17.tar.gz"
+  sha256 "30678dd133a82d149684e59353f1c99645d44bcc630a4ae13ac8c29461f87a32"
   license "Apache-2.0"
   version_scheme 1
 
@@ -37,11 +37,6 @@ class Solana < Formula
   end
 
   def install
-    # Fix for error: cannot find derive macro `Deserialize` in this scope.
-    # Can remove if backported to 1.13.x or when 1.14.x has a stable release.
-    # Ref: https://github.com/solana-labs/solana/commit/12e24a90a009d7b8ab1ed5bb5bd42e36a4927deb
-    inreplace "net-shaper/Cargo.toml", /^serde = ("[\d.]+")$/, "serde = { version = \\1, features = [\"derive\"] }"
-
     %w[
       cli
       bench-streamer
