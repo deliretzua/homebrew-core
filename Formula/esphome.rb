@@ -3,8 +3,8 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/34/3c/d6403e48ed653d18d73ea52830126045ae86421e58a719aa1fe3f74b707b/esphome-2023.5.2.tar.gz"
-  sha256 "27a52506ece0f460a4ca7d0e64f98a22988836ca75ba14f63f60b60ea6bc3476"
+  url "https://files.pythonhosted.org/packages/e8/94/a31c5a1bf1d7355fb334f4f1b934ea3a54df4ef0caeefa9ab40e535d238d/esphome-2023.5.3.tar.gz"
+  sha256 "e50517c77b5da5e08a94463dcd7ade472d1eff6465f7d45f328583509a40e5c5"
   license "MIT"
 
   bottle do
@@ -168,8 +168,8 @@ class Esphome < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e0/69/122171604bcef06825fa1c05bd9e9b1d43bc9feb8c6c0717c42c92cc6f3c/requests-2.30.0.tar.gz"
-    sha256 "239d7d4458afcb28a692cdd298d87542235f4ca8d36d03a15bfc128a6559a2f4"
+    url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
+    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
   resource "semantic-version" do
