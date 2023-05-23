@@ -1,8 +1,8 @@
 class Mx < Formula
   desc "Command-line tool used for the development of Graal projects"
   homepage "https://github.com/graalvm/mx"
-  url "https://github.com/graalvm/mx/archive/refs/tags/6.23.7.tar.gz"
-  sha256 "84b596ffe9709c87beb5f5ba8724625619a6bd41621d5917efc4cc774f79339c"
+  url "https://github.com/graalvm/mx/archive/refs/tags/6.23.8.tar.gz"
+  sha256 "2a18cbf5a222880922bdb43526384dae5e6abfce28c5bdbd4bba6ea0bb9277ab"
   license "GPL-2.0-only"
 
   livecheck do
@@ -18,8 +18,8 @@ class Mx < Formula
   depends_on "python@3.11"
 
   resource "homebrew-testdata" do
-    url "https://github.com/oracle/graal/archive/refs/tags/vm-22.3.0.tar.gz"
-    sha256 "410a003b8bab17af86fbc072d549e02e795b862a8396d08af9794febee17bad4"
+    url "https://github.com/oracle/graal/archive/refs/tags/vm-22.3.2.tar.gz"
+    sha256 "77c7801038f0568b3c2ef65924546ae849bd3bf2175e2d248c35ba27fd9d4967"
   end
 
   def install
