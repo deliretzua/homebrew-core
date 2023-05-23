@@ -3,18 +3,18 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/6e/3c/9a51b0cdf41a5dfe4b51d0793a99bbd7d8c5158bfb934cdb45bc1a2429a0/dvc-2.57.2.tar.gz"
-  sha256 "711f3c65a9a2c10e677b00c6fb05c70b391647e347d75820ebd4a9bae0afafb4"
+  url "https://files.pythonhosted.org/packages/35/d4/007ebda590744e2511e6dc4c819e5c6b03e7f6d79d3b8593e6ee9a008aa8/dvc-2.58.0.tar.gz"
+  sha256 "e6bab5de1027e5cf7b6561a58402d107772bbf6d4f5bf0e4670886f37d5e05c7"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "5ab3493123f2adf0d6c52490640e79a0f6f550411ec526fccac366ede52dfe69"
-    sha256 cellar: :any,                 arm64_monterey: "2808f62ecbda6e57594378e4fdd2b2618324c438f17666763c2a5e09a314c075"
-    sha256 cellar: :any,                 arm64_big_sur:  "25e1d593b0d2e95aac12d5cf666a5b1faa28ebd1a2722605488afae016cfda11"
-    sha256 cellar: :any,                 ventura:        "460f238d607f0d23f931ce85d50932398d680ec128d1f4e5cdfeaf1240bcaeea"
-    sha256 cellar: :any,                 monterey:       "d45024b1cf336355fd487aa44973a0d6d67e31998085e30d6d8259d8e723eabf"
-    sha256 cellar: :any,                 big_sur:        "875799b6544ab7edd4584cc1eba7e9fe175f83ef2bb315f82dcd34efb5810dec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "114ac2a8bb5c51335ec7b10e6675d89408b6c3b626e3b3c9a72687d81924581d"
+    sha256 cellar: :any,                 arm64_ventura:  "037ce9bcf8aeb4549ab09666b1f92683ca4b0f1ebc4a9dde301ab2913a56eac3"
+    sha256 cellar: :any,                 arm64_monterey: "2c7e5bf3cae7d430d65e96b91db1a706ac6885fa882e6854ecded33b60e218f2"
+    sha256 cellar: :any,                 arm64_big_sur:  "f6b2bbd208af06fb9e074c2a94ebe6153cb2a819657e500545bb9ad1e265e646"
+    sha256 cellar: :any,                 ventura:        "73bb4f91fc00fbd3d351ada995f63283ba3d471eb7a083d52ed8393a9f696614"
+    sha256 cellar: :any,                 monterey:       "bf78450e29023d7cde31fc607f2ac6bea2162a892038b4cda8f4690d4d47a924"
+    sha256 cellar: :any,                 big_sur:        "6c34ca257cbe6267b1541014248ef898a529e0174233b527f0a7fd6eeeab4334"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "85873bb3e35413fe15b4fc08db5473eeabd1f4f0b9260397eb3b23c5117d6f08"
   end
 
   depends_on "openjdk" => :build # for hydra-core
@@ -248,8 +248,8 @@ class Dvc < Formula
   end
 
   resource "dpath" do
-    url "https://files.pythonhosted.org/packages/e2/c6/560d012e89b10b440d9f796ac0f97d2fbdcb5095d22442e1fc0d58c8387a/dpath-2.1.5.tar.gz"
-    sha256 "ccd964db839baad4aa820612b4b8731b09f40a245d401b723156ce4ef45b22b7"
+    url "https://files.pythonhosted.org/packages/0a/81/044f03129b6006fc594654bb26c22a9417346037261c767ac6e0773ca1dd/dpath-2.1.6.tar.gz"
+    sha256 "f1e07c72e8605c6a9e80b64bc8f42714de08a789c7de417e49c3f87a19692e47"
   end
 
   resource "dulwich" do
@@ -298,8 +298,8 @@ class Dvc < Formula
   end
 
   resource "dvc-render" do
-    url "https://files.pythonhosted.org/packages/0f/32/f3ba48fafb77133352404e6dc88eb5cb6e159f0cb2ee648102ca19afe4df/dvc-render-0.5.2.tar.gz"
-    sha256 "e322b2dacb7d27515bb1840ef217ede62cb88cd1f884608842a569882294d3b4"
+    url "https://files.pythonhosted.org/packages/90/bf/09a963c059405d188dd9290f26855893f0b8fa91e839f4631293ef94449d/dvc-render-0.5.3.tar.gz"
+    sha256 "009dc09db44e416285c719324d8e101f675a58d7d846822a9faef307df22c7f2"
   end
 
   resource "dvc-s3" do
@@ -448,8 +448,8 @@ class Dvc < Formula
   end
 
   resource "httpx" do
-    url "https://files.pythonhosted.org/packages/ae/23/f7beaf11a8b95fc173b8979c4bfd23ea7711c5ebd458d657d24a59df7e9f/httpx-0.24.0.tar.gz"
-    sha256 "507d676fc3e26110d41df7d35ebd8b3b8585052450f4097401c9be59d928c63e"
+    url "https://files.pythonhosted.org/packages/f8/2a/114d454cb77657dbf6a293e69390b96318930ace9cd96b51b99682493276/httpx-0.24.1.tar.gz"
+    sha256 "5853a43053df830c20f8110c5e69fe44d035d850b2dfe795e196f00fdb774bdd"
   end
 
   resource "hydra-core" do
@@ -594,8 +594,8 @@ class Dvc < Formula
   end
 
   resource "pycryptodome" do
-    url "https://files.pythonhosted.org/packages/b8/2e/cf9cfd1ae6429381d3d9c14c8df79d91ae163929972f245a76058ea9d37d/pycryptodome-3.17.tar.gz"
-    sha256 "bce2e2d8e82fcf972005652371a3e8731956a0c1fbb719cc897943b3695ad91b"
+    url "https://files.pythonhosted.org/packages/b9/05/0e7547c445bbbc96c538d870e6c5c5a69a9fa5df0a9df3e27cb126527196/pycryptodome-3.18.0.tar.gz"
+    sha256 "c9adee653fc882d98956e33ca2c1fb582e23a8af7ac82fee75bd6113c55a0413"
   end
 
   resource "pydot" do
@@ -604,8 +604,8 @@ class Dvc < Formula
   end
 
   resource "pydrive2" do
-    url "https://files.pythonhosted.org/packages/70/8c/4ed8457af9f445e3cdaa51bc5bbe60c43a2628c4196b2c9e830caafac79b/PyDrive2-1.15.3.tar.gz"
-    sha256 "a8f50d996c9dc76e51c003bcc0770fe97222fa01fb0e6ea9d027f0acf7ece7ae"
+    url "https://files.pythonhosted.org/packages/45/74/b591079fa588351cec61861b85ba26f7deb96f3b445556c100e17db5572b/PyDrive2-1.15.4.tar.gz"
+    sha256 "0c011b74ebc24f3c6ca72820626b77f1dfe0ae88f5740c5a5cf96e83dd79ba99"
   end
 
   resource "pygtrie" do
@@ -639,8 +639,8 @@ class Dvc < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e0/69/122171604bcef06825fa1c05bd9e9b1d43bc9feb8c6c0717c42c92cc6f3c/requests-2.30.0.tar.gz"
-    sha256 "239d7d4458afcb28a692cdd298d87542235f4ca8d36d03a15bfc128a6559a2f4"
+    url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
+    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
   resource "requests-oauthlib" do
