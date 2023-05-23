@@ -7,13 +7,13 @@ class Hidapi < Formula
   head "https://github.com/libusb/hidapi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "5aea99e710bcf73d1fac8accd3e9a09b89371e01a4af2a82a24805a49dfb0a2b"
-    sha256 cellar: :any,                 arm64_monterey: "bec6eb58d49ead05696b6161b5a6983d3db8ce3bee11f8ff84015553f7f67e79"
-    sha256 cellar: :any,                 arm64_big_sur:  "8cfe0a3418efdc673f600642ff6f3a2e00da8b1a0dfd8ae69522d498313d3899"
-    sha256 cellar: :any,                 ventura:        "c7e6be14f96decf0f3347679f8039ee6681159bee08b47b30d192d5bd201a1af"
-    sha256 cellar: :any,                 monterey:       "78132127798d995319ef6d20380d380627af1510d5c4a0f42bca00a0f744c550"
-    sha256 cellar: :any,                 big_sur:        "ac26c708492a75aeb308e29efc2631c0545aba947fef08fe51ebd16c416c5d8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b93d511f9c55afb290edc18e5c2c70662068940718c6990dada78bda990309a"
+    sha256 cellar: :any,                 arm64_ventura:  "a51ee174536f9f73d398c2b6a998df28c812a5baac14e4f07e8bb17c846d53cf"
+    sha256 cellar: :any,                 arm64_monterey: "4330e0a273dcb943f27e2be002fad07c385737bd308478b73bf24be2898c9bf5"
+    sha256 cellar: :any,                 arm64_big_sur:  "18184e80f9d6ce6e702068b67d4e887dbb28d3fb753c379b6e97c6fbed3cdf97"
+    sha256 cellar: :any,                 ventura:        "7198e6d7a9946aa995eee2dcb7595dddb362aa5ed3ed5bcc7b3eeb08fb5cb9e4"
+    sha256 cellar: :any,                 monterey:       "94a5ead30ea58235a8e1cfe884f55c10756efdd580954e1b0565f2298f9f0376"
+    sha256 cellar: :any,                 big_sur:        "7c131edf18d63b5cc8844cda43f8347808a5fd4668739b577c2d1a72f779df4f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8c0fe481208e93135393bb11e970917dd10438ccfdbc180bc5efb97aec7ce52"
   end
 
   depends_on "cmake" => :build
