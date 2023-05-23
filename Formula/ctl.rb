@@ -2,7 +2,7 @@ class Ctl < Formula
   desc "Programming language for digital color management"
   homepage "https://github.com/ampas/CTL"
   license "AMPAS"
-  revision 10
+  revision 11
   head "https://github.com/ampas/CTL.git", branch: "master"
 
   stable do
