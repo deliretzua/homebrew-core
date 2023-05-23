@@ -9,15 +9,13 @@ class Rbtools < Formula
   head "https://github.com/reviewboard/rbtools.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b0c78646c9b3f5bf3901902122d0835e00c8adbeb34886d765888a34c6505960"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "259be5e7eac1be107f3ab7f0cd97e39a48376ab4ebb6f4e08f0e56b6d21a01ba"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "57bc64193f6c2b156e719f5d60779693a487060279542274b4142ae33251eb1c"
-    sha256 cellar: :any_skip_relocation, ventura:        "3e19b6d11c68dce31cac490b0c41c366eb7f2fbe76cd1bae0fcf6fa86a0fc07b"
-    sha256 cellar: :any_skip_relocation, monterey:       "2f2aac7ec3b8ee6cb675a780d4d75e758f302948c7ab72a335969d356d5f683c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5ad603c0a25683d3350949e6796beab8f558138bd31521d04617df17ad542203"
-    sha256 cellar: :any_skip_relocation, catalina:       "e6616acfb3f1df1b2896644a3c5f9e9bdd9e41e12ce9a8d977a15630861b424a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e9a2e1211ddb4c3a444602a0977e6d00cc7b9acad2a0676c5771cbaae8ad89c0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5e975997b40ab9dc103ee682f0833c038d42e2e9ee8940a1f0949c467ce7414d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "69012845e651178a9e85e50cf8d0e168b77e76c7984519deb2f354831b1d8014"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "36d4cf877244f1cc2fb24a751ad235e4bef79d889501c757fd10f1fa14974ed6"
+    sha256 cellar: :any_skip_relocation, ventura:        "4d2c2867e1eedc50b0f68789afffd43f0485f98f43e7ced05f2d611b383172ba"
+    sha256 cellar: :any_skip_relocation, monterey:       "395d556690693f09ebee1783966f5b02de18bb95cc7b0d3de80488244028e2d8"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4db34762cde42858275f0c85a9b948bb46f976b747455f3f21aadee64426404f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2387a79a508fb0503e7271cea7ae635323f01aeb208adc37cc06b34fc251eb23"
   end
 
   depends_on "python-typing-extensions"
