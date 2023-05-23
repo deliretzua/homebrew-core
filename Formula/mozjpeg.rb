@@ -1,8 +1,8 @@
 class Mozjpeg < Formula
   desc "Improved JPEG encoder"
   homepage "https://github.com/mozilla/mozjpeg"
-  url "https://github.com/mozilla/mozjpeg/archive/v4.1.1.tar.gz"
-  sha256 "66b1b8d6b55d263f35f27f55acaaa3234df2a401232de99b6d099e2bb0a9d196"
+  url "https://github.com/mozilla/mozjpeg/archive/v4.1.3.tar.gz"
+  sha256 "f6ce89f616b30c498d1fb3b0f0940914557d8393a79c9e7aafff72032446bca0"
   license "BSD-3-Clause"
 
   livecheck do
@@ -26,6 +26,13 @@ class Mozjpeg < Formula
   depends_on "cmake" => :build
   depends_on "nasm" => :build
   depends_on "libpng"
+
+  # Fixes multi-threading failures
+  # PR ref: https://github.com/mozilla/mozjpeg/pull/432
+  patch do
+    url "https://github.com/mozilla/mozjpeg/commit/86cfd539d1064df572667844885500e40b063322.patch?full_index=1"
+    sha256 "c3bba20fb8a7917410bf917e75d4fe59ac36add3eae7e634e66d34687d2a55f9"
+  end
 
   def install
     mkdir "build" do
