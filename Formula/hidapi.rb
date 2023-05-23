@@ -1,8 +1,8 @@
 class Hidapi < Formula
   desc "Library for communicating with USB and Bluetooth HID devices"
   homepage "https://github.com/libusb/hidapi"
-  url "https://github.com/libusb/hidapi/archive/hidapi-0.13.1.tar.gz"
-  sha256 "476a2c9a4dc7d1fc97dd223b84338dbea3809a84caea2dcd887d9778725490e3"
+  url "https://github.com/libusb/hidapi/archive/hidapi-0.14.0.tar.gz"
+  sha256 "a5714234abe6e1f53647dd8cba7d69f65f71c558b7896ed218864ffcf405bcbd"
   license :cannot_represent
   head "https://github.com/libusb/hidapi.git", branch: "master"
 
@@ -25,13 +25,12 @@ class Hidapi < Formula
   end
 
   def install
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args, "-DHIDAPI_BUILD_HIDTEST=ON"
-      system "make", "install"
-
-      # hidtest/.libs/hidtest does not exist for Linux, install it for macOS only
-      bin.install "hidtest/hidtest" if OS.mac?
-    end
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DHIDAPI_BUILD_HIDTEST=ON",
+                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
+                    *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
