@@ -16,13 +16,13 @@ class MariadbConnectorC < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "e3e26fcd4c4ca515a1266a046e72ae3968936795deb3ef1da17e5f35eae9d634"
-    sha256 arm64_monterey: "2fd04d6f77123312ee272e5695324a1a7bd79730cbeab7471a9089c7ed60605e"
-    sha256 arm64_big_sur:  "fb69795d4731538d86fdcc5892051b39ad150a68eb26dd112f6bef18df2ff8a7"
-    sha256 ventura:        "a7281ed033f530a89ba1922479c6441780de87d49ba83dcaab5635c09962b63c"
-    sha256 monterey:       "40429aff8742a48d41c83408cfacbbacf199193ee85000b7ca5e835d1abbafac"
-    sha256 big_sur:        "b75ad7f21b40bdb2299101ed2150a7fd5531093a233b84d6d9b8a533300649db"
-    sha256 x86_64_linux:   "b467dc55a2be180b0e73b8babda386bd3eccd7b565e757717c6c75d6cf5922fd"
+    sha256 arm64_ventura:  "238bbf5adca4e691f766dee350f8af0cc705980f0f5be1da5b985f6fe378c45f"
+    sha256 arm64_monterey: "4fc0eb95fef5ee0f11fae8278659026d16bdac5796f5d114bf721ff4a4cbd255"
+    sha256 arm64_big_sur:  "7ae35f16069e8b28c152145f9e02fbb29bba54ddeb03bf3ca2ed919249202ce6"
+    sha256 ventura:        "603965733c9df0c47ca7427933407c1f4b053854fed4bffc80c952e38a6bf051"
+    sha256 monterey:       "4ff8d7b387ed475af53e2536e572435a44883557ab497601e158cae2c946725b"
+    sha256 big_sur:        "feefbbdb0fe5d1f33621f7e5269b1faed14da08b2235d83439dee78c820ea29e"
+    sha256 x86_64_linux:   "3f13a332a0135ac91b8f44616ef01d9da363d6296cc08ab67023f36c90ae62a2"
   end
 
   depends_on "cmake" => :build
