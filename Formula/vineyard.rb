@@ -3,8 +3,8 @@ class Vineyard < Formula
 
   desc "In-memory immutable data manager. (Project under CNCF)"
   homepage "https://v6d.io"
-  url "https://github.com/v6d-io/v6d/releases/download/v0.14.5/v6d-0.14.5.tar.gz"
-  sha256 "b8f6c7b148f86a3d68bf7c49282dacf00f1811c1313a1c18b557347cf3359485"
+  url "https://github.com/v6d-io/v6d/releases/download/v0.14.6/v6d-0.14.6.tar.gz"
+  sha256 "2b524cf52c6366d4ffe9caddcead4902ad7e69d7a3f11b5e45b7bbc94cc39190"
   license "Apache-2.0"
 
   bottle do
@@ -26,9 +26,11 @@ class Vineyard < Formula
   depends_on "etcd-cpp-apiv3"
   depends_on "gflags"
   depends_on "glog"
+  depends_on "hiredis"
   depends_on "libgrape-lite"
   depends_on "open-mpi"
   depends_on "openssl@1.1"
+  depends_on "redis"
 
   fails_with gcc: "5"
 
@@ -42,8 +44,11 @@ class Vineyard < Formula
                     "-DCMAKE_CXX_STANDARD_REQUIRED=TRUE",
                     "-DPYTHON_EXECUTABLE=#{which(python)}",
                     "-DUSE_EXTERNAL_ETCD_LIBS=ON",
+                    "-DUSE_EXTERNAL_REDIS_LIBS=ON",
+                    "-DUSE_EXTERNAL_HIREDIS_LIBS=ON",
                     "-DBUILD_VINEYARD_TESTS=OFF",
                     "-DUSE_LIBUNWIND=OFF",
+                    "-DLIBGRAPELITE_INCLUDE_DIRS=#{Formula["libgrape-lite"].opt_include}",
                     "-DOPENSSL_ROOT_DIR=#{Formula["openssl@1.1"].opt_prefix}",
                     *std_cmake_args
     system "cmake", "--build", "build"
