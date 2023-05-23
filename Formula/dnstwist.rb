@@ -68,8 +68,8 @@ class Dnstwist < Formula
   end
 
   resource "geoip2" do
-    url "https://files.pythonhosted.org/packages/03/51/3fb1651db4bcb44d69a19b5e82e037f4de1b077974c7549adf8f3d42218b/geoip2-4.6.0.tar.gz"
-    sha256 "f0e80bce80b06bb38bd08bf4877d5a84e354e932095e6ccfb4d27bb598fa4f83"
+    url "https://files.pythonhosted.org/packages/9b/cc/4d544e59233664aca348053d2343ffdc878a5f851a7f6896fc2b7d5a63f6/geoip2-4.7.0.tar.gz"
+    sha256 "3bdde4994f6bc917eafab5b51e772d737b2ae00037a5b85001fb06dc68f779df"
   end
 
   resource "idna" do
@@ -78,8 +78,8 @@ class Dnstwist < Formula
   end
 
   resource "maxminddb" do
-    url "https://files.pythonhosted.org/packages/64/56/fa6d67569af1038a253d2499a3d8cb0566228ff623527cda5ac570a2d165/maxminddb-2.2.0.tar.gz"
-    sha256 "e37707ec4fab115804670e0fb7aedb4b57075a8b6f80052bdc648d3c005184e5"
+    url "https://files.pythonhosted.org/packages/4b/7d/7e8dc4fa6f6d60ba0398ad7822a9fce5e44f5b6955941d0eb9e347ab7ffb/maxminddb-2.3.0.tar.gz"
+    sha256 "120920dddd955f32ae48c207c6cef6fd5dc8874a889ba94b0f2c1f736ecdf308"
   end
 
   resource "multidict" do
@@ -98,8 +98,8 @@ class Dnstwist < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e0/69/122171604bcef06825fa1c05bd9e9b1d43bc9feb8c6c0717c42c92cc6f3c/requests-2.30.0.tar.gz"
-    sha256 "239d7d4458afcb28a692cdd298d87542235f4ca8d36d03a15bfc128a6559a2f4"
+    url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
+    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
   resource "tld" do
@@ -108,8 +108,8 @@ class Dnstwist < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/21/79/6372d8c0d0641b4072889f3ff84f279b738cd8595b64c8e0496d4e848122/urllib3-1.26.15.tar.gz"
-    sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
+    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
+    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
   end
 
   resource "whois" do
