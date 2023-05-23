@@ -19,6 +19,7 @@ class Woob < Formula
 
   depends_on "gnupg"
   depends_on "pillow"
+  depends_on "pygments"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -79,11 +80,6 @@ class Woob < Formula
   resource "pycountry" do
     url "https://files.pythonhosted.org/packages/33/24/033604d30f6cf82d661c0f9dfc2c71d52cafc2de516616f80d3b0600cb7c/pycountry-22.3.5.tar.gz"
     sha256 "b2163a246c585894d808f18783e19137cb70a0c18fb36748dc01fc6f109c1646"
-  end
-
-  resource "pygments" do
-    url "https://files.pythonhosted.org/packages/89/6b/2114e54b290824197006e41be3f9bbe1a26e9c39d1f5fa20a6d62945a0b3/Pygments-2.15.1.tar.gz"
-    sha256 "8ace4d3c1dd481894b2005f560ead0f9f19ee64fe983366be1a21e171d12775c"
   end
 
   resource "python-dateutil" do

@@ -769,7 +769,7 @@
     "exclude_packages": ["six", "PyYAML"]
   },
   "woob": {
-    "exclude_packages": ["pillow", "six", "PyYAML"],
+    "exclude_packages": ["pillow", "Pygments", "PyYAML", "six"],
     "extra_packages": ["colorama"]
   },
   "wxpython": {
