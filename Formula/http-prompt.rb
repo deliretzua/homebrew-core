@@ -10,14 +10,14 @@ class HttpPrompt < Formula
   head "https://github.com/httpie/http-prompt.git", branch: "master"
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0c5fc200bb098b5e09f0acbbd12fea3723290cb3273236880a73e79dbb365738"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "134c454f0a4c4801343e81472c3d7baab1082a9e13596c6536190b2da8d225e8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "04f139e1965769af1d02fc6fb355193358923f61284e2a35834395c48c46ba14"
-    sha256 cellar: :any_skip_relocation, ventura:        "2be943ef04f173cca6b0872b06cc268e8ce8a0730b34d351e04fef450a0e811d"
-    sha256 cellar: :any_skip_relocation, monterey:       "305ca267b3c55e58a1b700298f7ad57cd03aaf76cb588f32d4acbae5652e0a93"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b6ffac70b8d5f6fbd59f1e5fd6d3aad5d07ae07ddc23496b6864e25689b74ed2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "569a8dc48963d771cf14a41135eac5beee7b4265ee5f23110cf45af93883450d"
+    rebuild 5
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ab4b3971ca605c9f52c5df60955ad604de236d74cb26a7db72cff81b28e5bc9e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a1065335966512e36471fdbcdcebbd6ae97dacc01fae2e05e6553e87eda35cba"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a0bfab97c88d284e7e6a6b9f4a7d8cc3c226949f2dfd8bdda427f4f46f98941e"
+    sha256 cellar: :any_skip_relocation, ventura:        "3a915cdea46f71f1a71383003c5326f8d901b168db1fa2688e1dc4a4c9604e78"
+    sha256 cellar: :any_skip_relocation, monterey:       "0fe64d6a6ee1761233f81c97a9821006ba06d689e94f719133eed9b5d68d6a3e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "fb66b542c821c02ed271278f52149d93526ebc7f2683e618d552ba6a5cc31e62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "631b03d12e981ac5e90149ac858644e35513844859d129d6691c86a0103280a2"
   end
 
   depends_on "pygments"
