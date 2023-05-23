@@ -4,8 +4,8 @@ class ContentfulCli < Formula
   desc "Contentful command-line tools"
   homepage "https://github.com/contentful/contentful-cli"
   # contentful-cli should only be updated every 5 releases on multiples of 5
-  url "https://registry.npmjs.org/contentful-cli/-/contentful-cli-2.6.5.tgz"
-  sha256 "2119a9e82f4da71ebe64b8e8f10eb38bd62d63224b72131ea8fcb407a2304dc3"
+  url "https://registry.npmjs.org/contentful-cli/-/contentful-cli-2.6.10.tgz"
+  sha256 "c771d9f52c790c9497b250cd0c6ba189ece677d088ffee414201b62055be1d1e"
   license "MIT"
   head "https://github.com/contentful/contentful-cli.git", branch: "master"
 
