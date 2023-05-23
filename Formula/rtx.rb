@@ -1,8 +1,8 @@
 class Rtx < Formula
   desc "Polyglot runtime manager (asdf rust clone)"
   homepage "https://github.com/jdxcode/rtx"
-  url "https://github.com/jdxcode/rtx/archive/refs/tags/v1.30.3.tar.gz"
-  sha256 "489689e79655a341a0cecf13b81eba471bd9497a4888a159a5eed0d90b3c9fa7"
+  url "https://github.com/jdxcode/rtx/archive/refs/tags/v1.30.4.tar.gz"
+  sha256 "f6521d05860db8261b67284ab9349d0fb393186dc3f7f81348c603d234179148"
   license "MIT"
   head "https://github.com/jdxcode/rtx.git", branch: "main"
 
