@@ -50,8 +50,8 @@ class MetaPackageManager < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/37/f7/2b1b0ec44fdc30a3d31dfebe52226be9ddc40cd6c0f34ffc8923ba423b69/certifi-2022.12.7.tar.gz"
-    sha256 "35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3"
+    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
+    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
   end
 
   resource "charset-normalizer" do
@@ -75,8 +75,8 @@ class MetaPackageManager < Formula
   end
 
   resource "cloup" do
-    url "https://files.pythonhosted.org/packages/4e/ad/39b9ff9333d89577a36f8cc31ae025855ca62171169947ad5300c2e08ebc/cloup-2.0.0.post1.tar.gz"
-    sha256 "1430c9075062e09cb64cd84ab7afe5d5acd28adf561d6ab3109eb1975bbd7b6b"
+    url "https://files.pythonhosted.org/packages/cf/27/a155eab49cab519659fba04df294a33d6796739f1328e410622588f2e29d/cloup-2.1.0.tar.gz"
+    sha256 "dd42c7c9cd493fadc53a4236f96178a3f118bbbd945a7f8adafcd5034d826971"
   end
 
   resource "commentjson" do
@@ -145,8 +145,8 @@ class MetaPackageManager < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e0/69/122171604bcef06825fa1c05bd9e9b1d43bc9feb8c6c0717c42c92cc6f3c/requests-2.30.0.tar.gz"
-    sha256 "239d7d4458afcb28a692cdd298d87542235f4ca8d36d03a15bfc128a6559a2f4"
+    url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
+    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
   resource "snowballstemmer" do
