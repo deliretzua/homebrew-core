@@ -480,6 +480,9 @@
   "ocrmypdf": {
     "exclude_packages": ["pillow", "pycparser"]
   },
+  "okta-awscli": {
+    "exclude_packages": ["six"]
+  },
   "onlykey-agent": {
     "exclude_packages": ["six", "Cython"]
   },
