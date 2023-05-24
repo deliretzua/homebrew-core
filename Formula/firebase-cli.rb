@@ -9,13 +9,13 @@ class FirebaseCli < Formula
   head "https://github.com/firebase/firebase-tools.git", branch: "master"
 
   bottle do
-    sha256                               arm64_ventura:  "2b988c054d141d743d66624d7f3e9cf11b896779243cf9000be9bd276075edd9"
-    sha256                               arm64_monterey: "53433f382f2e342824ddcf2874d5067c4e9eaed1c69bb5b9845fc4a47443f85c"
-    sha256                               arm64_big_sur:  "afe0997ea690375c41b9c0d2cebf281097fea57133eb6181580f3052298bc7e9"
-    sha256                               ventura:        "0f2aabd2218e4d853aa5e53b3489bf0ae6f8a23e0641ce5b2b1863a9c563cc1c"
-    sha256                               monterey:       "32a8a97d590faa4d49065d05085081ac871f1c10fdcd86962812decf99b3452e"
-    sha256                               big_sur:        "d01082b6a121bdb9375d19395054ab02758a6fdfc0abd83685c9dcde8a80e829"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7dd75247f8eadaada9b41fc6cb643b759d5d2c6085aa806b2171f84492578f9e"
+    sha256                               arm64_ventura:  "224d2a1270d6fad0ccaee43f5d29ea83935a9c5bebdd382991b461a77ef1ff89"
+    sha256                               arm64_monterey: "2859e376d7cc6971a63f0e18c0bf00c478a75cdea9842274d52c705df9433f62"
+    sha256                               arm64_big_sur:  "e026a289666bed363827915bc49ba273437a5eae2c3eb01267188bf3f8b8b82a"
+    sha256                               ventura:        "f4b2d3d058a75762a83d7ed2b02dfdf61542d3ea1aa0aedeafa907fff47afb82"
+    sha256                               monterey:       "bf32e27a779b95102f2e1c3802530920d39e6fa897229fd362da3b5166428b68"
+    sha256                               big_sur:        "2e0682ec9649a306d073cf9ab0044942c27a7a87c6d941c12bfab8724a4f2278"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "35d92f924d640d91f12cf7b66f638f14c90c543e2f337a663dd5bbf04d77b836"
   end
 
   depends_on "node"
