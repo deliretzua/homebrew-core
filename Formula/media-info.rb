@@ -4,6 +4,8 @@ class MediaInfo < Formula
   url "https://mediaarea.net/download/binary/mediainfo/23.04/MediaInfo_CLI_23.04_GNU_FromSource.tar.bz2"
   sha256 "bc7da8717ff74d89d1d69d886af812f5c47b1e502c1a4e05360e41c47450ff30"
   license "BSD-2-Clause"
+  revision 1
+  head "https://github.com/MediaArea/MediaInfo.git", branch: "master"
 
   livecheck do
     url "https://mediaarea.net/en/MediaInfo/Download/Source"
@@ -21,32 +23,12 @@ class MediaInfo < Formula
   end
 
   depends_on "pkg-config" => :build
+  depends_on "libmediainfo"
+  depends_on "libzen"
 
-  uses_from_macos "curl"
   uses_from_macos "zlib"
 
   def install
-    cd "ZenLib/Project/GNU/Library" do
-      args = ["--disable-debug",
-              "--disable-dependency-tracking",
-              "--enable-static",
-              "--enable-shared",
-              "--prefix=#{prefix}"]
-      system "./configure", *args
-      system "make", "install"
-    end
-
-    cd "MediaInfoLib/Project/GNU/Library" do
-      args = ["--disable-debug",
-              "--disable-dependency-tracking",
-              "--with-libcurl",
-              "--enable-static",
-              "--enable-shared",
-              "--prefix=#{prefix}"]
-      system "./configure", *args
-      system "make", "install"
-    end
-
     cd "MediaInfo/Project/GNU/CLI" do
       system "./configure", "--disable-debug", "--disable-dependency-tracking",
                             "--prefix=#{prefix}"
