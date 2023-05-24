@@ -9,14 +9,14 @@ class OnlykeyAgent < Formula
   revision 1
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_ventura:  "e3a75311e00fd26a36aca0f0652016b49510ee79f60fd4b73921fcaed368a66d"
-    sha256 cellar: :any,                 arm64_monterey: "f9d2a26b325eb55337dd1397c6772d3eca95ca797f771862e3f045afe18ccc34"
-    sha256 cellar: :any,                 arm64_big_sur:  "92dd0caa3ae58fb1b68de5e01b3a746be2a04c97653b3918a9284dbb3398409e"
-    sha256 cellar: :any,                 ventura:        "2feadbc4ac694e79e9c31acc88de51b0531c5ea1082d6e295b80280f554a9d61"
-    sha256 cellar: :any,                 monterey:       "15e7737d43c436ae9e560988d7b91555ab2793710f1a8df2f4218733741cae55"
-    sha256 cellar: :any,                 big_sur:        "53b299868f6180585a7e316da8dec39b79e3e914df0c1904e32efef97d1e98f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b925815505ff5273264385bfcfdd13c5a6c0906f086f3fe552490ba28aa85ca"
+    rebuild 4
+    sha256 cellar: :any,                 arm64_ventura:  "9b631682be9dad2d61d3b5ccfbf93dc27cc6ee79b4655ed0ba4b12b2c33b24b0"
+    sha256 cellar: :any,                 arm64_monterey: "1ed4a49fb373a8f79e49321bdf90c8b3dc75e496b6cf0e29c955b2c03b19155d"
+    sha256 cellar: :any,                 arm64_big_sur:  "2ddf251cd336f2dd7bafa6f69b74f59527b85ca4d652209e51689504ef9e294f"
+    sha256 cellar: :any,                 ventura:        "555508e6b5d2edec05e9f310d6b9d9d57ade813eef8ae5eaa6865bd9978e91f9"
+    sha256 cellar: :any,                 monterey:       "3b23f9477adad5f24027ad127e9c213cf1464a1502de55e87a0c53242098ab3c"
+    sha256 cellar: :any,                 big_sur:        "92e6c78e7283b1894ec7de44696020c0c181e804686b2ac6b82a956c81bb8359"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5598d8d272755bdb2a089fae8a7a037021eba17db1054e3d0838ea2fcaf9a96f"
   end
 
   # `pkg-config`, `rust`, and `openssl@1.1` are for cryptography.
