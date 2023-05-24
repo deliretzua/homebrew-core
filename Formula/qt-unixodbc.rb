@@ -1,8 +1,8 @@
 class QtUnixodbc < Formula
   desc "Qt SQL Database Driver"
   homepage "https://www.qt.io/"
-  url "https://download.qt.io/official_releases/qt/6.5/6.5.0/submodules/qtbase-everywhere-src-6.5.0.tar.xz"
-  sha256 "fde1aa7b4fbe64ec1b4fc576a57f4688ad1453d2fab59cbadd948a10a6eaf5ef"
+  url "https://download.qt.io/official_releases/qt/6.5/6.5.1/submodules/qtbase-everywhere-src-6.5.1.tar.xz"
+  sha256 "db56fa1f4303a1189fe33418d25d1924931c7aef237f89eea9de58e858eebfed"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only", "LGPL-3.0-only"]
 
   livecheck do
