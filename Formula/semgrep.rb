@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https://semgrep.dev"
   url "https://github.com/returntocorp/semgrep.git",
-      tag:      "v1.22.0",
-      revision: "9780088f5aa0de69644961d3a1ec07e4f3becc57"
+      tag:      "v1.23.0",
+      revision: "ccdd44e23d58de1cd7183173eaba7b07efb05555"
   license "LGPL-2.1-only"
   head "https://github.com/returntocorp/semgrep.git", branch: "develop"
 
@@ -210,7 +210,6 @@ class Semgrep < Formula
       system "opam", "exec", "--", "make", "core"
       system "opam", "exec", "--", "make", "core-install"
       bin.install "_build/install/default/bin/semgrep-core" => "semgrep-core"
-      bin.install "_build/install/default/bin/spacegrep" => "spacegrep"
     end
 
     ENV["SEMGREP_SKIP_BIN"] = "1"
