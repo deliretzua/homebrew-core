@@ -4,6 +4,8 @@ class Libmediainfo < Formula
   url "https://mediaarea.net/download/source/libmediainfo/23.04/libmediainfo_23.04.tar.xz"
   sha256 "3650edea326fe54d3f634614764499508fbeec4ae984002f086adf1d0c071926"
   license "BSD-2-Clause"
+  revision 1
+  head "https://github.com/MediaArea/MediaInfoLib.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "786102667949622b0bae2d70c78f9035eaed9043693aa8889b14b5c0a6ba81fa"
@@ -16,10 +18,17 @@ class Libmediainfo < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "pkg-config" => :build
   depends_on "libmms"
   depends_on "libzen"
 
   uses_from_macos "curl"
+
+  # These files used to be distributed as part of the media-info formula
+  link_overwrite "include/MediaInfo/*"
+  link_overwrite "include/MediaInfoDLL/*"
+  link_overwrite "lib/pkgconfig/libmediainfo.pc"
+  link_overwrite "lib/libmediainfo.*"
 
   def install
     system "cmake", "-S", "Project/CMake", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
