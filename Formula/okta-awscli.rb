@@ -8,13 +8,14 @@ class OktaAwscli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bb56c5d56ec55e7611c1a41e88a21abf6d4f0c7cf859762387aa533abcb4260e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9b30f6470faa9a54d9e1a94706d6d481e764029d0e73dc4484db71da46e6b328"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8ebaa6d7eabbf75ba7dd0b47cdd83a55d3d0ab56f6af6336933039451cd5fc5e"
-    sha256 cellar: :any_skip_relocation, ventura:        "f40579bbb5e2d79c4480122aec13338be1db9fbb97fda27ca2a6d9ddf4e36d8a"
-    sha256 cellar: :any_skip_relocation, monterey:       "01963e103b1e330f105c41cb011bd97f762195bed9a8db5ef6f0705589c3596d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "044d1003fa0f973a9090450680b037dc6323b22954af9b8cb3e314658bb0a9e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "036b43b6c9764835be710366ac71dcd7d34de056393049191ff42c91fa2a2203"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "25516d5b5d65bd1bba979b11ec324f02b9fb15d9ece07ddcc316e4ee093f3e3f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e9acb53e831e376f62c8beb0506ed4be7da288db83ae068cf4c9ee649344afa4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6000175b6b0ea35e8739edd1455afc1b088c90bb5fff2f9c9e474da53d7618d9"
+    sha256 cellar: :any_skip_relocation, ventura:        "3514597c084a2c790b7ac9b880d3cfd8e0235034640e7e150492aee49d8c5ab9"
+    sha256 cellar: :any_skip_relocation, monterey:       "1eb4044aad333a7997bad8fbe02cfdec7ccf72bd6d77bde100eb26abee0a45c7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4574145bbe6b765ac7fe4d471a17afc56e8f0efb6f624323c145a2ad109a1789"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "10cd8efd42292bf90554bb5fc619744f15c9a760d4fc1b00ae451a8cad401f5a"
   end
 
   depends_on "python@3.11"
