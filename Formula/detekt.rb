@@ -11,8 +11,13 @@ class Detekt < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "0803c5a28780fc4fca5d86aeb440624d9a3477f8aceff76d70726528796d090c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "42c506a148d0cf161d78f79b7389f85319e90b83b6900cc7cbeaea621b78e8bc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "42c506a148d0cf161d78f79b7389f85319e90b83b6900cc7cbeaea621b78e8bc"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "42c506a148d0cf161d78f79b7389f85319e90b83b6900cc7cbeaea621b78e8bc"
+    sha256 cellar: :any_skip_relocation, ventura:        "42c506a148d0cf161d78f79b7389f85319e90b83b6900cc7cbeaea621b78e8bc"
+    sha256 cellar: :any_skip_relocation, monterey:       "42c506a148d0cf161d78f79b7389f85319e90b83b6900cc7cbeaea621b78e8bc"
+    sha256 cellar: :any_skip_relocation, big_sur:        "42c506a148d0cf161d78f79b7389f85319e90b83b6900cc7cbeaea621b78e8bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0eb9d906989f2b1b7cb8d874ec9aff4e11e627a9b72b58f11ee8b07f3e34134b"
   end
 
   depends_on "openjdk@17"
