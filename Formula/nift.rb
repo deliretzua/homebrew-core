@@ -1,10 +1,9 @@
 class Nift < Formula
   desc "Cross-platform open source framework for managing and generating websites"
   homepage "https://nift.dev/"
-  url "https://github.com/nifty-site-manager/nsm/archive/v2.4.12.tar.gz"
-  sha256 "7a28987114cd5e4717b31a96840c0be505d58a07e20dcf26b25add7dbdf2668b"
+  url "https://github.com/nifty-site-manager/nsm/archive/refs/tags/v3.0.0.tar.gz"
+  sha256 "9e89a6cdfd65d8db582f5d6a60c7265db5fd67dc582ed24deaac4ccca8ca5737"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "85df1cbad4d3966ee1b85af44f19693aa446136d3e5ca89890e62fa85c6e3e41"
