@@ -4,6 +4,7 @@ class Libzen < Formula
   url "https://mediaarea.net/download/source/libzen/0.4.41/libzen_0.4.41.tar.bz2"
   sha256 "eb237d7d3dca6dc6ba068719420a27de0934a783ccaeb2867562b35af3901e2d"
   license "Zlib"
+  revision 1
   head "https://github.com/MediaArea/ZenLib.git", branch: "master"
 
   bottle do
@@ -17,6 +18,12 @@ class Libzen < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "pkg-config" => :build
+
+  # These files used to be distributed as part of the media-info formula
+  link_overwrite "include/ZenLib/*"
+  link_overwrite "lib/pkgconfig/libzen.pc"
+  link_overwrite "lib/libzen.*"
 
   def install
     system "cmake", "-S", "Project/CMake", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
