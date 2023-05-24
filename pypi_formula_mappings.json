@@ -445,7 +445,7 @@
   },
   "moto": {
     "package_name": "moto[all,server]",
-    "exclude_packages": ["six", "PyYAML", "typing-extensions"]
+    "exclude_packages": ["cffi", "cfn-lint", "pycparser", "PyYAML", "six", "typing-extensions"]
   },
   "mycli": {
     "exclude_packages": ["six", "tabulate", "Pygments"]
