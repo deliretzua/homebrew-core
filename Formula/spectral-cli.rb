@@ -3,8 +3,8 @@ require "language/node"
 class SpectralCli < Formula
   desc "JSON/YAML linter and support OpenAPI v3.1/v3.0/v2.0, and AsyncAPI v2.x"
   homepage "https://stoplight.io/open-source/spectral"
-  url "https://registry.npmjs.org/@stoplight/spectral-cli/-/spectral-cli-6.6.0.tgz"
-  sha256 "be10eda3f272cd2cab3f6a43a24826b1c1f99ac22e46303695c88820ca5655f3"
+  url "https://registry.npmjs.org/@stoplight/spectral-cli/-/spectral-cli-6.8.0.tgz"
+  sha256 "f06a4497b9e7a142f587e1da095857937929e72f602be66ec3d3947a0f254237"
   license "MIT"
 
   bottle do
@@ -25,8 +25,8 @@ class SpectralCli < Formula
   end
 
   resource "homebrew-streetlights-mqtt.yml" do
-    url "https://raw.githubusercontent.com/asyncapi/spec/1e3ec47f/examples/streetlights-mqtt.yml"
-    sha256 "e32f08644e3af724a9bc7ea622e6a6285a93dc4b8ee1be2b7c957c460a3182ba"
+    url "https://raw.githubusercontent.com/asyncapi/spec/1824379b/examples/streetlights-mqtt.yml"
+    sha256 "7e17c9b465437a5a12decd93be49e37ca7ecfc48ff6f10e830d8290e9865d3af"
   end
 
   def install
