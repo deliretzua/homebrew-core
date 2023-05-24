@@ -11,7 +11,12 @@ class Fits < Formula
   end
 
   bottle do
-    sha256 cellar: :any, all: "cd4ac00bed12a2221f0f5b43e13c6605bb53c8cbcb4f518beec8eebb8bef820f"
+    sha256 cellar: :any, arm64_ventura:  "83066fb495a516bd75b4d36e08b5861a0b1520d3803e650a111db6a235f73b12"
+    sha256 cellar: :any, arm64_monterey: "83066fb495a516bd75b4d36e08b5861a0b1520d3803e650a111db6a235f73b12"
+    sha256 cellar: :any, arm64_big_sur:  "9285f4607050a49b97d5a76565d75e706b5b376967eda49516e40aa0d8b1bdfe"
+    sha256 cellar: :any, ventura:        "6113f4769d039c7e57371e31ddaf5acf0382a0f65d37232ae2aecb35ca3ec269"
+    sha256 cellar: :any, monterey:       "6113f4769d039c7e57371e31ddaf5acf0382a0f65d37232ae2aecb35ca3ec269"
+    sha256 cellar: :any, big_sur:        "6113f4769d039c7e57371e31ddaf5acf0382a0f65d37232ae2aecb35ca3ec269"
   end
 
   depends_on "exiftool"
