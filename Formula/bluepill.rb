@@ -2,8 +2,8 @@ class Bluepill < Formula
   desc "Testing tool for iOS that runs UI tests using multiple simulators"
   homepage "https://github.com/MobileNativeFoundation/bluepill"
   url "https://github.com/MobileNativeFoundation/bluepill.git",
-      tag:      "v5.12.2",
-      revision: "304ddfb49eb73fa9d27104329e98d4fa2b62e856"
+      tag:      "v5.12.3",
+      revision: "a7fcb47aa61b7be6732193c82b697719bf11b813"
   license "BSD-2-Clause"
   head "https://github.com/MobileNativeFoundation/bluepill.git", branch: "master"
 
@@ -33,6 +33,7 @@ class Bluepill < Formula
     xcodebuild "-workspace", "Bluepill.xcworkspace",
                "-scheme", "bluepill",
                "-configuration", "Release",
+               "-IDECustomDerivedDataLocation=#{buildpath}",
                "SYMROOT=../",
                "ARCHS=#{Hardware::CPU.arch}"
     bin.install "Release/bluepill", "Release/bp"
