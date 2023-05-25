@@ -1,9 +1,9 @@
 class PerconaXtrabackup < Formula
   desc "Open source hot backup tool for InnoDB and XtraDB databases"
   homepage "https://www.percona.com/software/mysql-database/percona-xtrabackup"
-  url "https://downloads.percona.com/downloads/Percona-XtraBackup-LATEST/Percona-XtraBackup-8.0.29-22/source/tarball/percona-xtrabackup-8.0.29-22.tar.gz"
-  sha256 "7c3bdfaf0b02ec4c09b3cdb41b2a7f18f79dce9c5d396ada36fbc2557562ff55"
-  revision 2
+  url "https://downloads.percona.com/downloads/Percona-XtraBackup-LATEST/Percona-XtraBackup-8.0.32-26/source/tarball/percona-xtrabackup-8.0.32-26.tar.gz"
+  sha256 "2a1c23497ffd5905d6dc20bdb5a801d1b8baeb3245ec11ed115dee0d78b7a5e2"
+  license "GPL-2.0-only"
 
   livecheck do
     url "https://www.percona.com/downloads/Percona-XtraBackup-LATEST/"
@@ -29,7 +29,7 @@ class PerconaXtrabackup < Formula
   depends_on "libfido2"
   depends_on "libgcrypt"
   depends_on "lz4"
-  depends_on "mysql-client"
+  depends_on "mysql"
   depends_on "openssl@1.1"
   depends_on "protobuf"
   depends_on "zstd"
@@ -44,6 +44,8 @@ class PerconaXtrabackup < Formula
   on_linux do
     depends_on "patchelf" => :build
     depends_on "libaio"
+    # Incompatable with procps-4 https://jira.percona.com/browse/PXB-2993
+    depends_on "procps@3"
   end
 
   conflicts_with "percona-server", because: "both install a `kmip.h`"
@@ -76,19 +78,13 @@ class PerconaXtrabackup < Formula
     sha256 "fc9f85fc030e233142908241af7a846e60630aa7388de9a5fafb1f3a26840854"
   end
 
-  # Fix CMake install error with manpages.
-  # https://github.com/percona/percona-xtrabackup/pull/1266
-  patch do
-    url "https://github.com/percona/percona-xtrabackup/commit/1d733eade782dd9fdf8ef66b9e9cb9e00f572606.patch?full_index=1"
-    sha256 "9b38305b4e4bae23b085b3ef9cb406451fa3cc14963524e95fc1e6cbf761c7cf"
-  end
-
   # Patch out check for Homebrew `boost`.
   # This should not be necessary when building inside `brew`.
   # https://github.com/Homebrew/homebrew-test-bot/pull/820
+  # Re-using variant from mysql
   patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/030f7433e89376ffcff836bb68b3903ab90f9cdc/percona-server/boost-check.patch"
-    sha256 "3223f7eebd04b471de1c21104c46b2cdec3fe7b26e13535bdcd0d7b8fd341bde"
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/030f7433e89376ffcff836bb68b3903ab90f9cdc/mysql/boost-check.patch"
+    sha256 "af27e4b82c84f958f91404a9661e999ccd1742f57853978d8baec2f993b51153"
   end
 
   def install
