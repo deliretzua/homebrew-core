@@ -1,8 +1,8 @@
 class CargoEdit < Formula
   desc "Utility for managing cargo dependencies from the command-line"
   homepage "https://killercup.github.io/cargo-edit/"
-  url "https://github.com/killercup/cargo-edit/archive/v0.11.11.tar.gz"
-  sha256 "9ce140e840498d61c1573ff4206214d0c41c8db24048f0f0f27b7f4464310f9a"
+  url "https://github.com/killercup/cargo-edit/archive/v0.12.0.tar.gz"
+  sha256 "a8168ea2320c095f55d2b32f8bede8c814dcdc4290c250df36dc8ce0f6fb2095"
   license "MIT"
 
   bottle do
@@ -16,7 +16,7 @@ class CargoEdit < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "libgit2@1.5"
+  depends_on "libgit2"
   depends_on "openssl@1.1"
   depends_on "rust" # uses `cargo` at runtime
 
@@ -63,12 +63,12 @@ class CargoEdit < Formula
       system bin/"cargo-set-version", "set-version", "0.2.0"
       assert_match 'version = "0.2.0"', (crate/"Cargo.toml").read
 
-      system bin/"cargo-rm", "rm", "clap"
+      system "cargo", "rm", "clap"
       refute_match(/clap/, (crate/"Cargo.toml").read)
     end
 
     [
-      Formula["libgit2@1.5"].opt_lib/shared_library("libgit2"),
+      Formula["libgit2"].opt_lib/shared_library("libgit2"),
       Formula["openssl@1.1"].opt_lib/shared_library("libssl"),
       Formula["openssl@1.1"].opt_lib/shared_library("libcrypto"),
     ].each do |library|
