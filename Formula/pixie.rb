@@ -2,8 +2,8 @@ class Pixie < Formula
   desc "Observability tool for Kubernetes applications"
   homepage "https://px.dev/"
   url "https://github.com/pixie-io/pixie.git",
-      tag:      "release/cli/v0.8.0",
-      revision: "3b68a8ea8bf9ec1b6e2af72bdb90adb9f1128c0d"
+      tag:      "release/cli/v0.8.1",
+      revision: "12308c6ac140554eb63dc02f3f44aa7c308ac1ab"
   license "Apache-2.0"
   head "https://github.com/pixie-io/pixie.git", branch: "main"
 
