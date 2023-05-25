@@ -3,8 +3,8 @@ class Coconut < Formula
 
   desc "Simple, elegant, Pythonic functional programming"
   homepage "http://coconut-lang.org/"
-  url "https://files.pythonhosted.org/packages/24/f7/efd7ba4c501ee49295b55f2e95ba102dbe987a7811e79bce6d8c02a1ad03/coconut-3.0.0.tar.gz"
-  sha256 "a43e6b42f0bff1e4a868e2d1aa24e9a9dca9a106ab72047d03a1d73e9a4dc378"
+  url "https://files.pythonhosted.org/packages/af/92/a55e44eab3d943263f53396e3051fddb2e672b3ae260770a5d9eeca4f153/coconut-3.0.1.tar.gz"
+  sha256 "3760aaf7f0286282b18f47a663d62be91308aa543e2076a45dd3af3b67ed8dfe"
   license "Apache-2.0"
 
   bottle do
