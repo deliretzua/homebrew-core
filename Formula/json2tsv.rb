@@ -1,8 +1,8 @@
 class Json2tsv < Formula
   desc "JSON to TSV converter"
   homepage "https://codemadness.org/json2tsv.html"
-  url "https://codemadness.org/releases/json2tsv/json2tsv-1.0.tar.gz"
-  sha256 "04e6a60d6b33603a8a19d28e94038b63b17d49c65a0495cd761cf7f22616de9b"
+  url "https://codemadness.org/releases/json2tsv/json2tsv-1.1.tar.gz"
+  sha256 "eebe7e6286558af0aa0db7c552a4c1ff1e350eb662ec665155c2611990a9c34a"
   license "ISC"
 
   livecheck do
