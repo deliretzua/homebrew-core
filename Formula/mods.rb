@@ -1,8 +1,8 @@
 class Mods < Formula
   desc "GPT-4 on the command-line"
   homepage "https://github.com/charmbracelet/mods"
-  url "https://github.com/charmbracelet/mods/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "2e855a621406289b374068ebcca4a9613d1c64ce64754695c269322698ce73e9"
+  url "https://github.com/charmbracelet/mods/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "553a405cd496b85fbcaa29aa2ad0c1170b55063f63903050eb886eb976e2b55e"
   license "MIT"
 
   bottle do
