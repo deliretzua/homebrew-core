@@ -1,8 +1,8 @@
 class GpgTui < Formula
   desc "Manage your GnuPG keys with ease! 🔐"
   homepage "https://github.com/orhun/gpg-tui"
-  url "https://github.com/orhun/gpg-tui/archive/v0.9.5.tar.gz"
-  sha256 "b5f4b3aa1d66e3de4c2885cc65434a9271f18a7abe4b84dcffa435c5ee871b4a"
+  url "https://github.com/orhun/gpg-tui/archive/v0.9.6.tar.gz"
+  sha256 "ee07347b1a354b39449ed2c1c97acb719c7d35d914002ba1ebaee0ab6e49bc85"
   license "MIT"
 
   bottle do
