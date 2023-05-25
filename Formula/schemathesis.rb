@@ -3,8 +3,8 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/f3/27/66e3cebf5272f196e1da14e33045eea0ad04e2745fe9182a95d77d718e28/schemathesis-3.19.2.tar.gz"
-  sha256 "d6a0347d0397e5f5ed729f37290f332f98be14e3af385e7c155df7e95453d75a"
+  url "https://files.pythonhosted.org/packages/45/e8/57cc5fd57bcd364321aa5a3f78d5208a58286da37e217161b9e50856a58f/schemathesis-3.19.3.tar.gz"
+  sha256 "4c2ce9cd5cad61eee4d229a3c664ec59daa5c3621ff5aa72b317de8667486b78"
   license "MIT"
 
   bottle do
@@ -73,8 +73,8 @@ class Schemathesis < Formula
   end
 
   resource "httpcore" do
-    url "https://files.pythonhosted.org/packages/a3/b8/5a0ebcb51cea6f86c4c2520e606018675dc1c9f4c3419356bfd8adc9fc76/httpcore-0.17.1.tar.gz"
-    sha256 "caf508597c525f9b8bfff187e270666309f63115af30f7d68b16143a403c8356"
+    url "https://files.pythonhosted.org/packages/b3/ad/7002a6f8e6ce0a246c991e00ba79b26ad06d307421a160214df24de5651f/httpcore-0.17.2.tar.gz"
+    sha256 "125f8375ab60036db632f34f4b627a9ad085048eef7cb7d2616fea0f739f98af"
   end
 
   resource "httpx" do
@@ -158,8 +158,8 @@ class Schemathesis < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/9d/ee/391076f5937f0a8cdf5e53b701ffc91753e87b07d66bae4a09aa671897bf/requests-2.28.2.tar.gz"
-    sha256 "98b1b2782e3c6c4904938b84c0eb932721069dfdb9134313beff7c83c2df24bf"
+    url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
+    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
   resource "sniffio" do
@@ -193,8 +193,8 @@ class Schemathesis < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/21/79/6372d8c0d0641b4072889f3ff84f279b738cd8595b64c8e0496d4e848122/urllib3-1.26.15.tar.gz"
-    sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
+    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
+    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
   end
 
   resource "werkzeug" do
