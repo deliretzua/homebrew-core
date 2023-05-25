@@ -14,6 +14,11 @@ class Gdbgui < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "0f8e35829f3e228ddbc5c3965eb3b1f103d18e934e95700f51f80afb8d106235"
   end
 
+  # No activity since June, 2022 (https://github.com/cs01/gdbgui).
+  # Dependencies declared in the repo are no longer compatible with recent
+  # Python versions.
+  deprecate! date: "2023-05-25", because: :unmaintained
+
   depends_on arch: :x86_64 # gdb is not supported on macOS ARM
   depends_on "gdb"
   depends_on "python@3.11"
