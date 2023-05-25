@@ -1,8 +1,8 @@
 class Mle < Formula
   desc "Flexible terminal-based text editor"
   homepage "https://github.com/adsr/mle"
-  url "https://github.com/adsr/mle/archive/refs/tags/v1.5.0.tar.gz"
-  sha256 "569316485fa3775d0bb7559ac176a63adb29467c7098b14c0072c821feb6226b"
+  url "https://github.com/adsr/mle/archive/refs/tags/v1.7.2.tar.gz"
+  sha256 "5275fcfc58d3d4890d074077d94497db488b2648287b3e48e67b00ea517b02ba"
   license "Apache-2.0"
 
   bottle do
@@ -18,13 +18,9 @@ class Mle < Formula
 
   depends_on "uthash" => :build
   depends_on "lua"
-  depends_on "pcre"
+  depends_on "pcre2"
 
   def install
-    # TUI hangs on macOS due to https://github.com/adsr/mle/issues/71
-    # Fix implemented upstream, extra flag should not be needed on next release
-    ENV.append_to_cflags "-DTB_OPT_SELECT" if OS.mac?
-
     system "make", "install", "prefix=#{prefix}"
   end
 
