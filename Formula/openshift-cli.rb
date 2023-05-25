@@ -2,10 +2,9 @@ class OpenshiftCli < Formula
   desc "OpenShift command-line interface tools"
   homepage "https://www.openshift.com/"
   url "https://github.com/openshift/oc.git",
-      tag:      "openshift-clients-4.12.0-202208031327",
-      revision: "3c85519af6c4979c02ebb1886f45b366bbccbf55"
+      tag:      "openshift-clients-4.13.0-202304190216",
+      revision: "92b1a3d0e5d092430b523f6541aa0c504b2222b3"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/openshift/oc.git", branch: "master"
 
   livecheck do
