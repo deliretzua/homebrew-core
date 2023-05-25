@@ -6,14 +6,13 @@ class Mle < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "e220e1bc7b95b0b716fcad8c8e3db661bf9f191f44af78c7b450906d6c605316"
-    sha256 cellar: :any,                 arm64_monterey: "01678f6f819e2caaa4739e9c0d00b52a3c9c5229ba834c0e498b7b0e790e63d5"
-    sha256 cellar: :any,                 arm64_big_sur:  "fd31fe9d1e34cbed3c01748bf0e874f9094159ad68c13be97605171f52311d97"
-    sha256 cellar: :any,                 ventura:        "91c633473d9937df89dcf08965dc3381bac95e549ce7747c10fba2b815307ca5"
-    sha256 cellar: :any,                 monterey:       "313e12d493c3ae1a1093d7cfe59c96c644555a85032a999553c31250e4a7be61"
-    sha256 cellar: :any,                 big_sur:        "b66e997509ab41cbf2031e6deab8a1df2fb5a9c31c3276480966300e63535b9e"
-    sha256 cellar: :any,                 catalina:       "87f1b28bd92f3deb1ae274486faf19dca29593b1168efbed9522628c6d186c43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d60127a0f3de29ddcaed1c0da64c1ca6747013db10fdb59c5041cb778cee596"
+    sha256 cellar: :any,                 arm64_ventura:  "ddeba783462112b24a7d5fbb7c29630207fdbb51a673ce8ec92faf612c4f077d"
+    sha256 cellar: :any,                 arm64_monterey: "056a20a65b133842b690b2fdc939fe6895701c465853fdfbcc48d0a17e6002f2"
+    sha256 cellar: :any,                 arm64_big_sur:  "d40a5279f04a3104a425a739b3f734fcca7abd025f2510c078684cbc910f2f86"
+    sha256 cellar: :any,                 ventura:        "50f5723f83057f3e3ff647cfa5a7de27757dc30bf7f95be6cfe8b4be663648a5"
+    sha256 cellar: :any,                 monterey:       "e12c72f828b8b070527cafc5a54fdd1dfc4bd9b2200f235fba457785de2b62c3"
+    sha256 cellar: :any,                 big_sur:        "493774af04dcfd335301a1845db88772a9b100fa8f4478f891ca5c9ad4e09c05"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b163c0cdfde98734db406062d8f829d2c64d178c31ef3b7dad8ca75619e58cc5"
   end
 
   depends_on "uthash" => :build
