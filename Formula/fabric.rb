@@ -3,8 +3,8 @@ class Fabric < Formula
 
   desc "Library and command-line tool for SSH"
   homepage "https://www.fabfile.org/"
-  url "https://files.pythonhosted.org/packages/bb/5a/21c5e4684dd56cddcecbc36d60f51d3744320d7b95bf02462e86f753404c/fabric-3.0.1.tar.gz"
-  sha256 "65af8199f3e90c226db0aa03984989084099b9758315d9a4001f5e32c8599a84"
+  url "https://files.pythonhosted.org/packages/d8/b0/fc6880fd6e24b60ccb5e3e1b673cec847d56b8176311f77c63f542fe9fd4/fabric-3.1.0.tar.gz"
+  sha256 "ea1c5ea3956d196b5990ba720cc8ee457fa1b9c6f265ab3b643ff63b05e8970a"
   license "BSD-2-Clause"
   head "https://github.com/fabric/fabric.git", branch: "main"
 
@@ -46,8 +46,8 @@ class Fabric < Formula
   end
 
   resource "paramiko" do
-    url "https://files.pythonhosted.org/packages/e8/53/e614a5b7bcc658d20e6eff6ae068863becb06bf362c2f135f5c290d8e6a2/paramiko-3.1.0.tar.gz"
-    sha256 "6950faca6819acd3219d4ae694a23c7a87ee38d084f70c1724b0c0dbb8b75769"
+    url "https://files.pythonhosted.org/packages/87/62/cee9551811c846e9735f749dbdf05d4f9f0dbcecd66eae35b5daacf9a117/paramiko-3.2.0.tar.gz"
+    sha256 "93cdce625a8a1dc12204439d45033f3261bdb2c201648cfcdc06f9fd0f94ec29"
   end
 
   resource "pycparser" do
