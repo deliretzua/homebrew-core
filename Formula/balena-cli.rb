@@ -3,8 +3,8 @@ require "language/node"
 class BalenaCli < Formula
   desc "Command-line tool for interacting with the balenaCloud and balena API"
   homepage "https://www.balena.io/docs/reference/cli/"
-  url "https://registry.npmjs.org/balena-cli/-/balena-cli-16.2.7.tgz"
-  sha256 "0f4d6c6867d3e55f7fa90070604c9c59f718ed353aad8ece1cc29a09aa9a35c7"
+  url "https://registry.npmjs.org/balena-cli/-/balena-cli-16.4.0.tgz"
+  sha256 "a804af7db5f5f2d36d5eb3a0475ecf9787ab6bbff89753c045ed18457a85000b"
   license "Apache-2.0"
 
   livecheck do
@@ -13,13 +13,13 @@ class BalenaCli < Formula
   end
 
   bottle do
-    sha256                               arm64_ventura:  "28bcaee3dc0a7331c31abbe88bd7bb8f4a838d96199ff7156428bb9395d81944"
-    sha256                               arm64_monterey: "fe7ed3067f0020cb8346cf2d0a60e6c4d0f873076d8ccaa458a4a37264953de7"
-    sha256                               arm64_big_sur:  "2e8a921f50cbd6c5c3b7494a7e5ae5e6e9f5f5cf859a7adced0f147f946a5004"
-    sha256                               ventura:        "aebd2a254395effb746916e982394237ec6b2d74dac8af6a9de8dc0acbad4558"
-    sha256                               monterey:       "555e31bd0df0ffcb21e43460eb3c56d6d0060c3d10bc2389b3ffe2e6336248bc"
-    sha256                               big_sur:        "45fb570fd4d5aa53d8088e6b1beb4e8af8fab5e7872fe9c161b343ccd4921a8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9361e1c0ce1bfd9a729ba3bf36bd0806d56fc772a130cbcf731de28584e95e0"
+    sha256                               arm64_ventura:  "4b480347e5b70276f4f7389924a30fd8ab8f0d49d0c4df348319b4ffbb9789b5"
+    sha256                               arm64_monterey: "d1e3f4c53b007fc12992a9ee016b37a801adc4ad48814bdccf94c341196ca0b3"
+    sha256                               arm64_big_sur:  "0cf7e3867e38ca55bf6d44e55edd73a971eee201821a6e7fce1d47bdf3528d4b"
+    sha256                               ventura:        "0700ddfe2094b3ca89c0b8b8134c7ab1681328f59c96d1bd1a6425c0b5d85c25"
+    sha256                               monterey:       "b81b117a2423de59e3ddc3b0f643b7995e31eb5df73de1803caf3ac41ba2cae1"
+    sha256                               big_sur:        "11be3403cb5d0094bfa7d899ed4e871a86fcd0c8684aae959f3c64aa68b98760"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b912d8a8d4f48bb77e3daeea9b445130a677fde4acfaa0d073f2afa6da8f0e68"
   end
 
   depends_on "node@16"
