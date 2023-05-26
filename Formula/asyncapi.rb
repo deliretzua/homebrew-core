@@ -3,8 +3,8 @@ require "language/node"
 class Asyncapi < Formula
   desc "All in one CLI for all AsyncAPI tools"
   homepage "https://github.com/asyncapi/cli"
-  url "https://registry.npmjs.org/@asyncapi/cli/-/cli-0.44.1.tgz"
-  sha256 "bb302d8af88ab553c0c397c7354c7938f1f07790ee99b0d08087c71e4019dc5b"
+  url "https://registry.npmjs.org/@asyncapi/cli/-/cli-0.44.2.tgz"
+  sha256 "56668d1af167090b123b563da17f35b5c3be9df404058467ca4f14244b22c520"
   license "Apache-2.0"
 
   bottle do
