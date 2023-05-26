@@ -29,6 +29,7 @@ class A2ps < Formula
                           "--with-packager-version=#{pkg_version}",
                           "--with-packager-bug-reports=#{tap.issues_url}"
     system "make", "install"
+    inreplace etc/"a2ps.cfg", prefix, opt_prefix
   end
 
   test do
