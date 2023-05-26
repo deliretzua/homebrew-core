@@ -23,27 +23,13 @@ class Rsyslog < Formula
   depends_on "pkg-config" => :build
   depends_on "gnutls"
   depends_on "libestr"
+  depends_on "libfastjson"
 
   uses_from_macos "curl"
   uses_from_macos "zlib"
 
-  resource "libfastjson" do
-    url "https://download.rsyslog.com/libfastjson/libfastjson-1.2304.0.tar.gz"
-    sha256 "ef30d1e57a18ec770f90056aaac77300270c6203bbe476f4181cc83a2d5dc80c"
-  end
-
   def install
-    resource("libfastjson").stage do
-      system "./configure", "--disable-dependency-tracking",
-                            "--disable-silent-rules",
-                            "--prefix=#{libexec}"
-      system "make", "install"
-    end
-
-    ENV.prepend_path "PKG_CONFIG_PATH", libexec/"lib/pkgconfig"
-
-    system "./configure", "--prefix=#{prefix}",
-                          "--disable-dependency-tracking",
+    system "./configure", *std_configure_args,
                           "--enable-imfile",
                           "--enable-usertools",
                           "--enable-diagtools",
