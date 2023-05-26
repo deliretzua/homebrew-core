@@ -7,14 +7,14 @@ class Libogg < Formula
   head "https://gitlab.xiph.org/xiph/ogg.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "273ec2cb3abd99d4aee0c8ac2523f5f3140457e6fc658b02168678a557299a43"
-    sha256 cellar: :any,                 arm64_monterey: "ce419864291a500b33b1e0cc7afa0c8a060cecf4adf2ef50d2d213f35f021822"
-    sha256 cellar: :any,                 arm64_big_sur:  "0f44d59f86d7cd828aa3fd70ba363455fdbfa01bcec6364a286c1db1f7168c29"
-    sha256 cellar: :any,                 ventura:        "52e5a973dfdfcb61357e7c80c4e3250742a56dec94650c9546a4a640b749192e"
-    sha256 cellar: :any,                 monterey:       "d4d289f5ab37ed438ceecb653ef3cbe23bbac53dbeb550a54c3ebef39f109681"
-    sha256 cellar: :any,                 big_sur:        "39a4c4d11e1a495a1cd167183c935634c10e9a75c222185d1e99df1710ffd353"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f32a15a651d53059f085695d189c2cfdbd7ee281ee3056b1b107eb07cead6965"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "d241e81018d3b64ec0d491d5d43f5409496747d57fb8d0eff75c534bd84dd19a"
+    sha256 cellar: :any,                 arm64_monterey: "aa2b793e007a3eb86a8b225b91561ecf1dc941071596d23f810ca41e83904d5d"
+    sha256 cellar: :any,                 arm64_big_sur:  "e528165137cd229e4ac1147bd9c5f6de5aafb815c25d00682a923baaa621bc1d"
+    sha256 cellar: :any,                 ventura:        "517e16f78d047709c010bd3f31e6497c93c562db71f9b2022395f0a2fcb4c62d"
+    sha256 cellar: :any,                 monterey:       "6e8d8540b1cd602e3ed6f6713fcb82c423a69ca1620f447f4c67b03fe04589c2"
+    sha256 cellar: :any,                 big_sur:        "7871f4d805f54347ab3ac20a7dbd31d78a122bf0cd2da441a45a2b1cf732551c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "be528587bb8d4c822dfbee4bb30705c9511908d86ae5f5859eb9c59eb7459ef3"
   end
 
   depends_on "cmake" => :build
