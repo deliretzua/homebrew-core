@@ -3,8 +3,8 @@ class Grayskull < Formula
 
   desc "Recipe generator for Conda"
   homepage "https://github.com/conda/grayskull"
-  url "https://files.pythonhosted.org/packages/8f/83/c684c8fc47cd777391a417627920d9d0d9177dec03ae97d92db207bad181/grayskull-2.3.0.tar.gz"
-  sha256 "826702c4165731c044d30af49230a761ffc753bda8f6be38be9be642fd367037"
+  url "https://files.pythonhosted.org/packages/71/93/27ffbfcb57281a6051d738d9c8c35f9748a8b3c1f406249160006fa3aca2/grayskull-2.3.1.tar.gz"
+  sha256 "41dd1cc94c8b8951571af7628ffa97146ae76e99295918a20d8db84b2f60b5e7"
   license "Apache-2.0"
 
   bottle do
@@ -82,8 +82,8 @@ class Grayskull < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/8c/0d/32f86bfad2755763b926f988252f57f4edbba32f876cb5e6d6f5c57b5f05/ruamel.yaml-0.17.26.tar.gz"
-    sha256 "baa2d0a5aad2034826c439ce61c142c07082b76f4791d54145e131206e998059"
+    url "https://files.pythonhosted.org/packages/8c/4e/faa94211c1cc468cfa38990955181c52be9a249008f37751d8406ff4d9d9/ruamel.yaml-0.17.28.tar.gz"
+    sha256 "3bf6df1c481d2463a633be6ee86e8aece941bb3298a9a0cd6d0865f47b1ddce6"
   end
 
   resource "ruamel-yaml-clib" do
@@ -97,8 +97,8 @@ class Grayskull < Formula
   end
 
   resource "semver" do
-    url "https://files.pythonhosted.org/packages/31/a9/b61190916030ee9af83de342e101f192bbb436c59be20a4cb0cdb7256ece/semver-2.13.0.tar.gz"
-    sha256 "fa0fe2722ee1c3f57eac478820c3a5ae2f624af8264cbdf9000c980ff7f75e3f"
+    url "https://files.pythonhosted.org/packages/9f/93/b7389cdd7e573e70cfbeb4b0bbe101af1050a6681342f5d2bc6f1bf2d150/semver-3.0.0.tar.gz"
+    sha256 "94df43924c4521ec7d307fc86da1531db6c2c33d9d5cdc3e64cca0eb68569269"
   end
 
   resource "soupsieve" do
