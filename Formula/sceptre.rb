@@ -3,8 +3,8 @@ class Sceptre < Formula
 
   desc "Build better AWS infrastructure"
   homepage "https://docs.sceptre-project.org/"
-  url "https://files.pythonhosted.org/packages/ce/1b/64be41a3accf8e6a319e70609cfb7931bb9959b586f9b4c059a90b13cbf5/sceptre-4.1.0.tar.gz"
-  sha256 "5345afce3728d31682f08db120280413f13030171816908903a7271141ed2688"
+  url "https://files.pythonhosted.org/packages/1e/67/9b11178fe2eac3920a87b1be50e769ad93d96412d83fa8b5d453a0be994c/sceptre-4.2.0.tar.gz"
+  sha256 "22de72698ca143d033202f6a4ad21f2413eb1af8ed03bdd938e2673409d5df87"
   license "Apache-2.0"
 
   bottle do
@@ -28,13 +28,13 @@ class Sceptre < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/7f/17/595fa7f8a7782e5b76cee89b12cb44c767fc439a0a4a5177e45087e49f96/boto3-1.26.139.tar.gz"
-    sha256 "fe19d287bc8ede385e1b9136f135ee8f93eab81404ad1445b1a70cabfe3f7087"
+    url "https://files.pythonhosted.org/packages/06/70/9ffc65f8930b23f035f6797a5508eb0e991a638dd794161c8ca9077ac2d9/boto3-1.26.141.tar.gz"
+    sha256 "152def2fcc9854dcc42383d2b53e2ed2c9ccb5ff6cc0f3ada20f1ab54418ede4"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/85/e0/32053bd0dc53a495013fb76d1cdd9b03d9da8dde9bba14dae6c36785c7ac/botocore-1.29.139.tar.gz"
-    sha256 "acc62710bdf11e47f4f26fb290a9082ff00377d7e93a16e1f080f9c789898114"
+    url "https://files.pythonhosted.org/packages/dd/c9/92fdc5d97a9936cd72a95148bc99cf050a492a6a110482953d4dd1f0c985/botocore-1.29.141.tar.gz"
+    sha256 "e86e1633f98838317b9e1b5c874c4d85339b77f6b7e55c2a4d83913f6166f9ad"
   end
 
   resource "certifi" do
@@ -58,8 +58,8 @@ class Sceptre < Formula
   end
 
   resource "colorama" do
-    url "https://files.pythonhosted.org/packages/d8/53/6f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4/colorama-0.4.6.tar.gz"
-    sha256 "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"
+    url "https://files.pythonhosted.org/packages/82/75/f2a4c0c94c85e2693c229142eb448840fba0f9230111faa889d1f541d12d/colorama-0.4.3.tar.gz"
+    sha256 "e96da0d330793e2cb9485e9ddfd918d456036c7149416295932478192f4436a1"
   end
 
   resource "deepdiff" do
