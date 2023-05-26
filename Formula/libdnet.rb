@@ -1,8 +1,8 @@
 class Libdnet < Formula
   desc "Portable low-level networking library"
   homepage "https://github.com/ofalk/libdnet"
-  url "https://github.com/ofalk/libdnet/archive/libdnet-1.14.tar.gz"
-  sha256 "592599c54a57102a177270f3a2caabda2c2ac7768b977d7458feba97da923dfe"
+  url "https://github.com/ofalk/libdnet/archive/libdnet-1.16.4.tar.gz"
+  sha256 "7df1f0a3db9cf03b48cf50ab273fd6a20c1be99eb9344b9663fe3fd9ed9dab65"
   license "BSD-3-Clause"
 
   livecheck do
@@ -26,15 +26,15 @@ class Libdnet < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
+  depends_on "pkg-config" => :build
 
   def install
     # autoreconf to get '.dylib' extension on shared lib
     ENV.append_path "ACLOCAL_PATH", "config"
     system "autoreconf", "-ivf"
 
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}"
+    args = std_configure_args - ["--disable-debug"]
+    system "./configure", *args, "--mandir=#{man}", "--disable-check"
     system "make", "install"
   end
 
