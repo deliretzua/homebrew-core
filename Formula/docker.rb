@@ -13,13 +13,13 @@ class Docker < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e785d858b7d64c1e0f5292c2478ed4bfe1773c261e3aca4611a7be612ad2fec6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e785d858b7d64c1e0f5292c2478ed4bfe1773c261e3aca4611a7be612ad2fec6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e785d858b7d64c1e0f5292c2478ed4bfe1773c261e3aca4611a7be612ad2fec6"
-    sha256 cellar: :any_skip_relocation, ventura:        "afbce2ea98b4feaec6fa42647f7d7757e09f2c073b9378c9e3e4012898e32ad8"
-    sha256 cellar: :any_skip_relocation, monterey:       "afbce2ea98b4feaec6fa42647f7d7757e09f2c073b9378c9e3e4012898e32ad8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "afbce2ea98b4feaec6fa42647f7d7757e09f2c073b9378c9e3e4012898e32ad8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3212a273bd090ee308b692b8f37c1226e6dc80476e89d775c55a5e6259f1afa4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "af41aa7f6dbdc06e6da2a2ea4c51ab4432a87214944e5f10436066684208eba0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "af41aa7f6dbdc06e6da2a2ea4c51ab4432a87214944e5f10436066684208eba0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "af41aa7f6dbdc06e6da2a2ea4c51ab4432a87214944e5f10436066684208eba0"
+    sha256 cellar: :any_skip_relocation, ventura:        "8c94c95aaba3da26954bb04ef3c2f74c80a225b8a0646f19c3d77b5d3d69321e"
+    sha256 cellar: :any_skip_relocation, monterey:       "8c94c95aaba3da26954bb04ef3c2f74c80a225b8a0646f19c3d77b5d3d69321e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8c94c95aaba3da26954bb04ef3c2f74c80a225b8a0646f19c3d77b5d3d69321e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a939fd758546b8c0826da45c3ea01d1b026f6d36e15abfb251ad02c3ebc7d49e"
   end
 
   depends_on "go" => :build
