@@ -5,8 +5,8 @@ class FreeradiusServer < Formula
   head "https://github.com/FreeRADIUS/freeradius-server.git", branch: "master"
 
   stable do
-    url "https://github.com/FreeRADIUS/freeradius-server/archive/refs/tags/release_3_2_2.tar.gz"
-    sha256 "c1526742249d584f069e1738541528847eb1f84ac580c52c9664f2a8463d4f36"
+    url "https://github.com/FreeRADIUS/freeradius-server/archive/refs/tags/release_3_2_3.tar.gz"
+    sha256 "65cdb744471895ea1da49069454a9a73cc0851fba97251f96b40673d3d54bd8f"
 
     # Fix -flat_namespace being used
     patch do
