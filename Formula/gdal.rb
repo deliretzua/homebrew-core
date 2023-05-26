@@ -1,10 +1,9 @@
 class Gdal < Formula
   desc "Geospatial Data Abstraction Library"
   homepage "https://www.gdal.org/"
-  url "http://download.osgeo.org/gdal/3.6.4/gdal-3.6.4.tar.xz"
-  sha256 "889894cfff348c04ac65b462f629d03efc53ea56cf04de7662fbe81a364e3df1"
+  url "https://github.com/OSGeo/gdal/releases/download/v3.7.1/gdal-3.7.1.tar.gz"
+  sha256 "c131a39d0f7c2a76f02dd648f2906179ddb38958673461eee1da4f9c9a166e76"
   license "MIT"
-  revision 8
 
   livecheck do
     url "https://download.osgeo.org/gdal/CURRENT/"
@@ -29,6 +28,7 @@ class Gdal < Formula
   depends_on "boost" => :build  # for `libkml`
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+  depends_on "swig" => :build
   depends_on "apache-arrow"
   depends_on "cfitsio"
   depends_on "epsilon"
@@ -40,6 +40,7 @@ class Gdal < Formula
   depends_on "jpeg-turbo"
   depends_on "jpeg-xl"
   depends_on "json-c"
+  depends_on "libarchive"
   depends_on "libgeotiff"
   depends_on "libheif"
   depends_on "libkml"
