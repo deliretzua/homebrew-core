@@ -8,7 +8,7 @@ class Lit < Formula
   license "Apache-2.0" => { with: "LLVM-exception" }
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "63660ab39b4316c0c9845533720e8890aaf49bd2c97288f0d6a49fe0c0ca2053"
+    sha256 cellar: :any_skip_relocation, all: "1ae9a86060f0441b9e8810b7b5526c410c9b9f5dd76774bf3e1f2aad73b858a9"
   end
 
   depends_on "llvm" => :test
