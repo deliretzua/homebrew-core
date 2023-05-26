@@ -6,6 +6,7 @@ class Dvc < Formula
   url "https://files.pythonhosted.org/packages/b4/2f/7bbbc279bffe43a8fb050da1626bf52f2b0f605ecb96744b767453700752/dvc-2.58.2.tar.gz"
   sha256 "d40fff99b76719d1d524f103ad9dc64141bb363492abb9b8a61c6e70efe5a4dc"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "4d056f5d2e70b919e8d939fb4ab6d524a8a96ed2ac6ffc0cc3fed2f8397949ff"
@@ -24,7 +25,7 @@ class Dvc < Formula
   depends_on "cffi"
   depends_on "numpy"
   depends_on "openssl@1.1"
-  depends_on "protobuf"
+  depends_on "protobuf@21"
   depends_on "pycparser"
   depends_on "pygit2"
   depends_on "pygments"
@@ -777,6 +778,13 @@ class Dvc < Formula
     virtualenv_install_with_resources
 
     generate_completions_from_executable(bin/"dvc", "completion", "-s", shells: [:bash, :zsh])
+
+    # Remove the lines below when we depend on unversioned protobuf.
+    # This is needed because protobuf@21 is keg-only.
+    odie "`.pth` file writing can be removed!" if deps.none? { |d| d.name.start_with?("protobuf@") }
+    site_packages = Language::Python.site_packages("python3")
+    protobuf = Formula["protobuf@21"].opt_prefix
+    (libexec/site_packages/"homebrew-protobuf.pth").write protobuf/site_packages
   end
 
   test do
