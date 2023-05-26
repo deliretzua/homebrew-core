@@ -8,6 +8,16 @@ class Shodan < Formula
   license "MIT"
   head "https://github.com/achillean/shodan-python.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b41ebfd443fe1fd2f0b0d4b7d02783338c65e14a3dfa3463a549d806aba4e2a0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e770568f5e5eee2061d88d22863fb4811ce7d4b50928199aa2e275de1b1f976f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "190e3aabb56346d8492c835f4ccf565cb80edb3814bae046c2185736ef90baf8"
+    sha256 cellar: :any_skip_relocation, ventura:        "2bbf981ec55f53696776fa7bf106077ecc7680f0d9d5a7956481d83497a99f82"
+    sha256 cellar: :any_skip_relocation, monterey:       "227d25bbdad24fc25b4d2457128cc149ec6be8ee6fcfb94dc41aca200d43f747"
+    sha256 cellar: :any_skip_relocation, big_sur:        "4eaaf8be65132a8b0263aa6c7ad99100b9849113af386f74d9b8ad1dec8062a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "191fe010f23249dcbf13996f37dd51809f38800cb5523d0208f451ce811f7c84"
+  end
+
   depends_on "python@3.11"
 
   resource "certifi" do
