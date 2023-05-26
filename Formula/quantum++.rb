@@ -6,7 +6,7 @@ class Quantumxx < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8bd09168b0ea0b3e07ce918b681c30594331dbf7c55581549798385e3f27e33f"
+    sha256 cellar: :any_skip_relocation, all: "4f404a5248761b3ae66153f4ccf95cd074294a49c0b05e5bba035a9c4b944b76"
   end
 
   depends_on "cmake" => [:build, :test]
