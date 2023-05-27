@@ -1,8 +1,8 @@
 class PipeRename < Formula
   desc "Rename your files using your favorite text editor"
   homepage "https://github.com/marcusbuffett/pipe-rename"
-  url "https://crates.io/api/v1/crates/pipe-rename/1.6.3/download"
-  sha256 "7f69604f7a1f7fa9914aeef8491ee2281b8b1e3fab2eaf4f63c1e5d57e37d654"
+  url "https://crates.io/api/v1/crates/pipe-rename/1.6.4/download"
+  sha256 "02043732ad9b47b2c2485599ef7b6e3bb8d23b13ef7362ee4c16ef32e39815d1"
   license "MIT"
 
   bottle do
