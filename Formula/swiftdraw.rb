@@ -1,8 +1,8 @@
 class Swiftdraw < Formula
   desc "Convert SVG into PDF, PNG, JPEG or SF Symbol"
   homepage "https://github.com/swhitty/SwiftDraw"
-  url "https://github.com/swhitty/SwiftDraw/archive/0.13.3.tar.gz"
-  sha256 "70890ec01ab523fcf250c1ec2bbf4391dc5b1b0fbd76f1061de00fa3ea119d73"
+  url "https://github.com/swhitty/SwiftDraw/archive/0.14.0.tar.gz"
+  sha256 "c61f611660306f5870dbbd037b55f8ff77db0cda03bbfa98cbc0032a31e6fa4d"
   license "Zlib"
   head "https://github.com/swhitty/SwiftDraw.git", branch: "main"
 
