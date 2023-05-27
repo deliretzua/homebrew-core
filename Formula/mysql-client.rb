@@ -64,6 +64,10 @@ class MysqlClient < Formula
 
     system "cmake", ".", *std_cmake_args, *args
     system "make", "install"
+
+    # Fix bad linker flags in `mysql_config`.
+    # https://bugs.mysql.com/bug.php?id=111011
+    inreplace bin/"mysql_config", "-lzlib", "-lz"
   end
 
   test do
