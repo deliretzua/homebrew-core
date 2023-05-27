@@ -1,8 +1,8 @@
 class Pocketbase < Formula
   desc "Open source backend for your next project in 1 file"
   homepage "https://pocketbase.io/"
-  url "https://github.com/pocketbase/pocketbase/archive/refs/tags/v0.16.2.tar.gz"
-  sha256 "28f9de0e231e304c49d9169603d67efb50362de691f8f3bf493cee3fb08808bc"
+  url "https://github.com/pocketbase/pocketbase/archive/refs/tags/v0.16.3.tar.gz"
+  sha256 "39c616f073772e041025c80398a261f76491d6370f1ac0cab1d61926d02b9809"
   license "MIT"
 
   bottle do
@@ -17,6 +17,8 @@ class Pocketbase < Formula
 
   depends_on "go" => :build
 
+  uses_from_macos "netcat" => :test
+
   def install
     ENV["CGO_ENABLED"] = "0"
 
@@ -26,7 +28,12 @@ class Pocketbase < Formula
   test do
     assert_match "pocketbase version #{version}", shell_output("#{bin}/pocketbase --version")
 
-    system "#{bin}/pocketbase", "--dir", testpath/"pb_data"
+    port = free_port
+    _, _, pid = PTY.spawn("#{bin}/pocketbase serve --dir #{testpath}/pb_data --http 127.0.0.1:#{port}")
+    sleep 5
+
+    system "nc", "-z", "localhost", port
+    Process.kill "SIGINT", pid
 
     assert_predicate testpath/"pb_data", :exist?, "pb_data directory should exist"
     assert_predicate testpath/"pb_data", :directory?, "pb_data should be a directory"
