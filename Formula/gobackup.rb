@@ -1,8 +1,8 @@
 class Gobackup < Formula
   desc "CLI tool for backup your databases, files to cloud storages"
   homepage "https://gobackup.github.io"
-  url "https://github.com/gobackup/gobackup/archive/v2.1.0.tar.gz"
-  sha256 "9e0a72b140a4d9337ed8671a1cd009eefa8fb51b4b1633e26c189fd0af9df919"
+  url "https://github.com/gobackup/gobackup/archive/v2.2.0.tar.gz"
+  sha256 "276a3685d91918e92eaa032a7e41980638210635a929ffa23573011ac27ff65b"
   license "MIT"
   head "https://github.com/gobackup/gobackup.git", branch: "main"
 
