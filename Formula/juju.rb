@@ -1,8 +1,8 @@
 class Juju < Formula
   desc "DevOps management tool"
   homepage "https://juju.is/"
-  url "https://launchpad.net/juju/3.1/3.1.2/+download/juju-core_3.1.2.tar.gz"
-  sha256 "14970a2b1fb5099a72786dda183a3a03b9b798875e7c49df9060e35d31d6e7b2"
+  url "https://launchpad.net/juju/3.2/3.2.0/+download/juju-core_3.2.0.tar.gz"
+  sha256 "cd761ff63ff46f96b51ff94ec0b6871c519b242fb5966b5393a3a417386162f8"
   license "AGPL-3.0-only"
   version_scheme 1
   head "https://github.com/juju/juju.git", branch: "develop"
