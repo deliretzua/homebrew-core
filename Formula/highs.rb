@@ -1,8 +1,8 @@
 class Highs < Formula
   desc "Linear optimization software"
   homepage "https://www.maths.ed.ac.uk/hall/HiGHS/"
-  url "https://github.com/ERGO-Code/HiGHS/archive/refs/tags/v1.5.1.tar.gz"
-  sha256 "4b9441cb991e372b2d4fa4a85e89db199befa1b0017a3275b45ad5ef734efaca"
+  url "https://github.com/ERGO-Code/HiGHS/archive/refs/tags/v1.5.3.tar.gz"
+  sha256 "ce1a7d2f008e60cc69ab06f8b16831bd0fcd5f6002d3bbebae9d7a3513a1d01d"
   license "MIT"
 
   bottle do
@@ -21,7 +21,9 @@ class Highs < Formula
   uses_from_macos "zlib"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build",
+                    *std_cmake_args,
+                    "-DCMAKE_INSTALL_RPATH=#{rpath}"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     pkgshare.install "check", "examples"
