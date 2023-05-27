@@ -6,6 +6,16 @@ class Melange < Formula
   license "Apache-2.0"
   head "https://github.com/chainguard-dev/melange.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "32cb2f6f46b6731a310f922512acb5d81cd4da8d63db4c7683fdd6a1c0bbe6d2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "32cb2f6f46b6731a310f922512acb5d81cd4da8d63db4c7683fdd6a1c0bbe6d2"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "32cb2f6f46b6731a310f922512acb5d81cd4da8d63db4c7683fdd6a1c0bbe6d2"
+    sha256 cellar: :any_skip_relocation, ventura:        "88682a1f07535f4788f235804063ec70a071ea56f0baee51a77acb65972fb2f3"
+    sha256 cellar: :any_skip_relocation, monterey:       "88682a1f07535f4788f235804063ec70a071ea56f0baee51a77acb65972fb2f3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "88682a1f07535f4788f235804063ec70a071ea56f0baee51a77acb65972fb2f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab37aa3a03d97e56962f320dfdafcf07539e74dd3a656504d8fb3620cf4b0c3b"
+  end
+
   depends_on "go" => :build
 
   def install
