@@ -4,6 +4,7 @@ class OpentelemetryCpp < Formula
   url "https://github.com/open-telemetry/opentelemetry-cpp/archive/refs/tags/v1.8.2.tar.gz"
   sha256 "20fa97e507d067e9e2ab0c1accfc334f5a4b10d01312e55455dc3733748585f4"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/open-telemetry/opentelemetry-cpp.git", branch: "main"
 
   bottle do
@@ -18,10 +19,10 @@ class OpentelemetryCpp < Formula
 
   depends_on "cmake" => :build
   depends_on "boost"
-  depends_on "grpc"
+  depends_on "grpc@1.54"
   depends_on "nlohmann-json"
   depends_on "prometheus-cpp"
-  depends_on "protobuf"
+  depends_on "protobuf@21"
   uses_from_macos "curl"
 
   def install
