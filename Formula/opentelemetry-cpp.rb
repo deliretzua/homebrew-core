@@ -2,10 +2,9 @@ class OpentelemetryCpp < Formula
   desc "OpenTelemetry C++ Client"
   homepage "https://opentelemetry.io/"
   # TODO: Check if we can use unversioned `grpc` and `protobuf` at version bump.
-  url "https://github.com/open-telemetry/opentelemetry-cpp/archive/refs/tags/v1.8.2.tar.gz"
-  sha256 "20fa97e507d067e9e2ab0c1accfc334f5a4b10d01312e55455dc3733748585f4"
+  url "https://github.com/open-telemetry/opentelemetry-cpp/archive/refs/tags/v1.9.1.tar.gz"
+  sha256 "668de24f81c8d36d75092ad9dcb02a97cd41473adbe72485ece05e336db48249"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/open-telemetry/opentelemetry-cpp.git", branch: "main"
 
   bottle do
@@ -28,6 +27,7 @@ class OpentelemetryCpp < Formula
   uses_from_macos "curl"
 
   def install
+    ENV.append "LDFLAGS", "-Wl,-undefined,dynamic_lookup" if OS.mac?
     system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_CXX_STANDARD=17", # Keep in sync with C++ standard in abseil.rb
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
@@ -79,8 +79,8 @@ class OpentelemetryCpp < Formula
                     "-I#{include}", "-L#{lib}",
                     "-I#{Formula["protobuf@21"].opt_include}",
                     "-lopentelemetry_resources",
-                    "-lopentelemetry_trace",
                     "-lopentelemetry_exporter_ostream_span",
+                    "-lopentelemetry_trace",
                     "-lopentelemetry_common",
                     "-pthread",
                     "-o", "simple-example"
