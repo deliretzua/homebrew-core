@@ -24,14 +24,13 @@ class UtilLinux < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_ventura:  "bae699a799d47cd4eefebfe710026caddb884c0c1b12946cf97178d69bc3e87b"
-    sha256 arm64_monterey: "d9968a649c0c89be84375cc3ec5f83173a522a6a8afa66e377bc61af7e8be83f"
-    sha256 arm64_big_sur:  "5254f2f95a81467864c46d96abaae044bfa98c13f6c386a1fd25facd67a32df8"
-    sha256 ventura:        "00275051b0a85c337ce82a7b410580b8a12947034d93b7536a5a56a4a62d18f2"
-    sha256 monterey:       "63fa7a684e7b4d4b652b54f9ba5dfe6ff1f20b974bf0509f76aaea26a97ef31d"
-    sha256 big_sur:        "f4091ecbc585f0cf9a244b5be177a5ac7bd49bf1650a0a5d79bbe28dfb7b9744"
-    sha256 x86_64_linux:   "aa2192315d8696997a44fac1681386ff0978d354a326477090cc0e940dbfa4b6"
+    sha256 arm64_ventura:  "a4373e2e2ae7bbac3cb1a438fd6e1060c8946546bd9e29a2895ac58eb649e47a"
+    sha256 arm64_monterey: "f4e0cea186b075296b029cfc79db6eb1ccf7212b0c14d8b3343870dce97cdc4f"
+    sha256 arm64_big_sur:  "f85e6dbb933044802b756ef0aa2840ec22a3d061df97ce45dd20ea1c43f71e9e"
+    sha256 ventura:        "36546268d5754a3fba6eb82e5fedcb2eb72ee8dee68605ae165717f577c6dcac"
+    sha256 monterey:       "6e1ad1639e256a73c96d79b6d91660744693d5d9a12600aa60ca10f498856d82"
+    sha256 big_sur:        "6c99d5affbfd0dc4850eb6b302624b2183aaa016138ed7a5aeef05f5b2d4f508"
+    sha256 x86_64_linux:   "74f536ca720c942aa944c4bca645e6446b19bec1f65e41b2cf78b9fb1eec5655"
   end
 
   keg_only :shadowed_by_macos, "macOS provides the uuid.h header"
