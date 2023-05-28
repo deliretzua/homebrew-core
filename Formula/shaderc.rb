@@ -65,12 +65,14 @@ class Shaderc < Formula
       res.stage(buildpath/"third_party"/res.name)
     end
 
+    # Avoid installing packages that conflict with other formulae.
+    inreplace "third_party/CMakeLists.txt", "${SHADERC_SKIP_INSTALL}", "ON"
     system "cmake", "-S", ".", "-B", "build",
-           "-DSHADERC_SKIP_TESTS=ON",
-           "-DSKIP_GLSLANG_INSTALL=ON",
-           "-DSKIP_SPIRV_TOOLS_INSTALL=OFF",
-           "-DSKIP_GOOGLETEST_INSTALL=ON",
-           *std_cmake_args
+                    "-DSHADERC_SKIP_TESTS=ON",
+                    "-DSKIP_GLSLANG_INSTALL=ON",
+                    "-DSKIP_SPIRV_TOOLS_INSTALL=ON",
+                    "-DSKIP_GOOGLETEST_INSTALL=ON",
+                    *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
