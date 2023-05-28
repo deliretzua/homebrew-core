@@ -5,6 +5,16 @@ class LibomemoC < Formula
   sha256 "03195a24ef7a86c339cdf9069d7f7569ed511feaf55e853bfcb797d2698ba983"
   license "GPL-3.0-only"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "dccc667b31642b280a1ae140c1626efc9a407476f9223008520a78282842478b"
+    sha256 cellar: :any,                 arm64_monterey: "c90a3715e044536c4650463c4a1def1c66b3cd31231cae668d3bfa2e6c616218"
+    sha256 cellar: :any,                 arm64_big_sur:  "ade5ce2ed49545cd401c2f96ef600f36efa1a41701ecd4c3783bed067a66846b"
+    sha256 cellar: :any,                 ventura:        "91d4e7871b7e7f3cac1352590e5da0f6a0ba2e29194d4f5c37c9f4743c2107ca"
+    sha256 cellar: :any,                 monterey:       "dfdf9c205d14096770df1c4e7ce0b45e857f379c3ce3d23b14f8f7e09c93afad"
+    sha256 cellar: :any,                 big_sur:        "345ad0738741a9d382abd1ac18116128c68f4774785cda97966f9c89fca86693"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "222d7b3ada83cc778fb993e4706db5e6b03891379ad8c0f8272f6cb5693c01c0"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :test
   depends_on "protobuf-c"
