@@ -7,13 +7,13 @@ class Resvg < Formula
   head "https://github.com/RazrFalcon/resvg.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "8c5e8fb410d5c325d3e2b7db0ce72b4fac7b9d8a062faadcf6a9f80649eec111"
-    sha256 cellar: :any,                 arm64_monterey: "a81aa75c21d4f1ec772aea359cc049d9f8dd84da3f5c6db04a7934e41b3d1dda"
-    sha256 cellar: :any,                 arm64_big_sur:  "7f9c787c23e97e3c6e22a9a171261a8ac055910f4d3f65d2beb5113a50cd0a71"
-    sha256 cellar: :any,                 ventura:        "13ad19f8168c290670920959a982bc0dddc5091346115c4eb4a17c6309ab19ea"
-    sha256 cellar: :any,                 monterey:       "70173648f608370c4973bbfbf265eb54ed7d7eb98667d090173f2dea7558f5ad"
-    sha256 cellar: :any,                 big_sur:        "b84605508025283e3e386ac52f751594ddafff00b726bd072a1d7b4af5cabedc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5753b4a05857d34502ff0fb8e73cee8f502e755e54592d4eee37798b2e49978"
+    sha256 cellar: :any,                 arm64_ventura:  "08f3221692e99871cc47569e75be49f796f8c9f6adb8d0f2eba2664b12b89895"
+    sha256 cellar: :any,                 arm64_monterey: "2f1125e9bb399f46431cf29e8ca8c573c3e969c9e99275b048b0b96faec0e753"
+    sha256 cellar: :any,                 arm64_big_sur:  "ca8926cb9b55e47e19c0d3ef02b22dd827f0a88531a24f6e38a86c0562c79f9f"
+    sha256 cellar: :any,                 ventura:        "e7c140e29c8b5d4ff5dec4ba055f5f3ddacff8b03f96d3fff517fc8cd79c168f"
+    sha256 cellar: :any,                 monterey:       "303a71a0df3ca4c33dad27e58e4ad60f21ce42b09e130805e3114d723f178056"
+    sha256 cellar: :any,                 big_sur:        "9685826d6663177dd2e08fb619ac4a0a72b907785f891206756f52ce95cc22ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "898566ef7a7ccbe1f12b1d0acc4592b735899fdba96ddae8525f4c432e1ef750"
   end
 
   depends_on "rust" => :build
