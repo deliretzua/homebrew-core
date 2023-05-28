@@ -1,8 +1,8 @@
 class Lego < Formula
   desc "Let's Encrypt client and ACME library"
   homepage "https://go-acme.github.io/lego/"
-  url "https://github.com/go-acme/lego/archive/v4.11.0.tar.gz"
-  sha256 "c1d8c0d826781c71724bab35e08bf2e22c63423a39c674f96c5800396d251433"
+  url "https://github.com/go-acme/lego/archive/v4.12.0.tar.gz"
+  sha256 "eda9f756c5afd22d6358940914f364a87bb7a7a4de71c50038b9ea9e9deeecb6"
   license "MIT"
 
   bottle do
