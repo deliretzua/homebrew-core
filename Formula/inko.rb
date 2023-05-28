@@ -1,10 +1,10 @@
 class Inko < Formula
   desc "Safe and concurrent object-oriented programming language"
   homepage "https://inko-lang.org/"
-  url "https://releases.inko-lang.org/0.10.0.tar.gz"
-  sha256 "d38e13532a71290386164246ac8cf7efb884131716dba6553b66a170dd3a2796"
+  url "https://releases.inko-lang.org/0.11.0.tar.gz"
+  sha256 "fd1b492d0fc4d0e4930e3b3a547957ccb01898306797b1a1afbc4512eb045566"
   license "MPL-2.0"
-  head "https://gitlab.com/inko-lang/inko.git", branch: "master"
+  head "https://github.com/inko-lang/inko.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "07d8357f8d0d21e359588df7b846f5959c08aa193121bfc7b5f8b905c60acf73"
@@ -18,13 +18,16 @@ class Inko < Formula
   end
 
   depends_on "coreutils" => :build
+  depends_on "llvm@15" => :build
   depends_on "rust" => :build
+  depends_on "zstd"
 
   uses_from_macos "libffi", since: :catalina
   uses_from_macos "ruby", since: :sierra
 
   def install
-    system "make", "build", "PREFIX=#{prefix}", "FEATURES=libffi/system"
+    ENV.prepend_path "PATH", Formula["coreutils"].opt_libexec/"gnubin"
+    system "make", "build", "PREFIX=#{prefix}"
     system "make", "install", "PREFIX=#{prefix}"
   end
 
@@ -38,6 +41,6 @@ class Inko < Formula
         }
       }
     EOS
-    assert_equal "Hello, world!\n", shell_output("#{bin}/inko hello.inko")
+    assert_equal "Hello, world!\n", shell_output("#{bin}/inko run hello.inko")
   end
 end
