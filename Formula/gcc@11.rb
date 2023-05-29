@@ -1,9 +1,9 @@
 class GccAT11 < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
-  url "https://ftp.gnu.org/gnu/gcc/gcc-11.3.0/gcc-11.3.0.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gcc/gcc-11.3.0/gcc-11.3.0.tar.xz"
-  sha256 "b47cf2818691f5b1e21df2bb38c795fac2cfbd640ede2d0a5e1c89e338a3ac39"
+  url "https://ftp.gnu.org/gnu/gcc/gcc-11.4.0/gcc-11.4.0.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gcc/gcc-11.4.0/gcc-11.4.0.tar.xz"
+  sha256 "3f2db222b007e8a4a23cd5ba56726ef08e8b1f1eb2055ee72c1402cea73a8dd9"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
 
   livecheck do
@@ -44,15 +44,8 @@ class GccAT11 < Formula
   # Branch from the Darwin maintainer of GCC, with a few generic fixes and
   # Apple Silicon support, located at https://github.com/iains/gcc-11-branch
   patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/07e71538/gcc/gcc-11.3.0-arm.diff"
-    sha256 "857390a7f32dbfc4c7e6163a3b3b9d5e1d392e5d9c74c3ebb98701c1d0629565"
-  end
-
-  # Fix build on macOS Ventura
-  # https://github.com/iains/gcc-11-branch/issues/5
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/86fa3c4b/gcc/gcc-11.3-ventura.diff"
-    sha256 "70499af2e5745c91ef4e886c0083cd70d7e94b7b45ba7b1276449bbb102df93b"
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/c233b1a8d81b9c9f5827510d8d285080ee11de2e/gcc/gcc-11.4.0.diff"
+    sha256 "440f6e965966c86a7925506e63eb06f7f54c00b1d146db8d0c567bdb8820072f"
   end
 
   def install
