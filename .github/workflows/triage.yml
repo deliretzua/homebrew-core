@@ -13,6 +13,23 @@ permissions:
   statuses: write
 
 jobs:
+  upload-metadata:
+    if: always() && github.repository_owner == 'Homebrew'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Save pull request number
+        run: echo '${{ github.event.number }}' > number
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: pull-number
+          path: number
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: event_payload
+          path: ${{ github.event_path }}
+
   triage:
     runs-on: ubuntu-22.04
     steps:
