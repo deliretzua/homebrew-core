@@ -6,6 +6,16 @@ class Openfga < Formula
   license "Apache-2.0"
   head "https://github.com/openfga/openfga.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a2fed5e9c2cb89df90a9ab3e11b92cc354838edf58e2e10bc60a841e8422e40b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a2fed5e9c2cb89df90a9ab3e11b92cc354838edf58e2e10bc60a841e8422e40b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a2fed5e9c2cb89df90a9ab3e11b92cc354838edf58e2e10bc60a841e8422e40b"
+    sha256 cellar: :any_skip_relocation, ventura:        "8ae75a911c2afdcfbf02e7a5958d2072b434c590dfbecda9df5122e7492d70a6"
+    sha256 cellar: :any_skip_relocation, monterey:       "8ae75a911c2afdcfbf02e7a5958d2072b434c590dfbecda9df5122e7492d70a6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8ae75a911c2afdcfbf02e7a5958d2072b434c590dfbecda9df5122e7492d70a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2c7e0022865423a46575c3684ac853646f360b49854621c6b54fa41dacd3fc5e"
+  end
+
   depends_on "go" => :build
 
   def install
