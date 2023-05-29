@@ -1,8 +1,8 @@
 class DsdaDoom < Formula
   desc "Fork of prboom+ with a focus on speedrunning"
   homepage "https://github.com/kraflab/dsda-doom"
-  url "https://github.com/kraflab/dsda-doom/archive/refs/tags/v0.25.6.tar.gz"
-  sha256 "9855cdb2f403058cd81947486e86fa9c965f352360b0743af62c26a09174825c"
+  url "https://github.com/kraflab/dsda-doom/archive/refs/tags/v0.26.0.tar.gz"
+  sha256 "2cae87531db025813314ea09dbe75937f398f7b2c65839be0640409ff7cba02e"
   license "GPL-2.0-only"
   head "https://github.com/kraflab/dsda-doom.git", branch: "master"
 
@@ -25,6 +25,7 @@ class DsdaDoom < Formula
   depends_on "dumb"
   depends_on "fluid-synth"
   depends_on "libvorbis"
+  depends_on "libzip"
   depends_on "mad"
   depends_on "portmidi"
   depends_on "sdl2"
@@ -50,7 +51,6 @@ class DsdaDoom < Formula
                     "-DWITH_MAD=ON",
                     "-DWITH_PORTMIDI=ON",
                     "-DWITH_VORBISFILE=ON",
-                    "-DWITH_ZLIB=ON",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
