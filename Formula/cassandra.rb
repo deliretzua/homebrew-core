@@ -4,9 +4,9 @@ class Cassandra < Formula
 
   desc "Eventually consistent, distributed key-value store"
   homepage "https://cassandra.apache.org"
-  url "https://www.apache.org/dyn/closer.lua?path=cassandra/4.1.1/apache-cassandra-4.1.1-bin.tar.gz"
-  mirror "https://archive.apache.org/dist/cassandra/4.1.1/apache-cassandra-4.1.1-bin.tar.gz"
-  sha256 "7ce3103a76b8af76ffd8488d6bf484e1f175119617f3205ae0526c71d816c6f7"
+  url "https://www.apache.org/dyn/closer.lua?path=cassandra/4.1.2/apache-cassandra-4.1.2-bin.tar.gz"
+  mirror "https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-bin.tar.gz"
+  sha256 "856b2401ee4c5c147ad46a1b4297a03fdd36b48799107e710274645750027700"
   license "Apache-2.0"
 
   bottle do
