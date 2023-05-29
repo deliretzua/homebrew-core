@@ -3,19 +3,10 @@ class Poetry < Formula
 
   desc "Python package management tool"
   homepage "https://python-poetry.org/"
+  url "https://files.pythonhosted.org/packages/ab/42/1c8769483f4e72d17fd7b827d11be37a48289d38df40b1d8640ef53d7b33/poetry-1.5.1.tar.gz"
+  sha256 "cc7ea4524d1a11558006224bfe8ba8ed071417d4eb5ef6c89decc6a37d437eeb"
   license "MIT"
   head "https://github.com/python-poetry/poetry.git", branch: "master"
-
-  stable do
-    url "https://files.pythonhosted.org/packages/8d/e3/60a9675b72c1a2c2a6d528b4aa794ea9930ef9ebb6697ec31ad8833e8d8b/poetry-1.5.0.tar.gz"
-    sha256 "4fc7d37cf400739dcfcbb666db97fd74c46eaae119dd6ed9c8d5dd7e32c6f06a"
-
-    # fix check for in-project-venv
-    patch do
-      url "https://github.com/python-poetry/poetry/commit/846aee3a6b08b99fd7cc63ec591ba7e64019eade.patch?full_index=1"
-      sha256 "c4bbe89059897cd25bfc3afbce99f235340475c7b4b9e73411b0b44ab81b0bbe"
-    end
-  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3819338d53ec582f32bcd8d8397254cfd34c7b4374d48c22cb7888a2e477768c"
@@ -158,13 +149,13 @@ class Poetry < Formula
   end
 
   resource "poetry-core" do
-    url "https://files.pythonhosted.org/packages/b8/7d/8654777b23919a77ff34f0ef5ba048102fb0d87e23515ccd715e53ac726d/poetry_core-1.6.0.tar.gz"
-    sha256 "a9c7296a12d6c8e4f8aa50a66ef3c967b2b50fba634da144d358e676fad9989f"
+    url "https://files.pythonhosted.org/packages/20/e8/e0a80cc355bc207fb1760160344e978f39d683c35e1230f71b8916bf3a50/poetry_core-1.6.1.tar.gz"
+    sha256 "0f9b0de39665f36d6594657e7d57b6f463cc10f30c28e6d1c3b9ff54c26c9ac3"
   end
 
   resource "poetry-plugin-export" do
-    url "https://files.pythonhosted.org/packages/ff/2c/d30a094c516a4fe87976b9369624ff7fcc0301cc3422cd80b44ed8675823/poetry_plugin_export-1.3.1.tar.gz"
-    sha256 "d949742757a8a5f0b5810495bffaf4ed8a767f2e2ffda9887cf72f896deabf84"
+    url "https://files.pythonhosted.org/packages/d0/a7/e6aeb797f4dd965e28700dc72fa1c44a2c956a2336ab181a9c7259752585/poetry_plugin_export-1.4.0.tar.gz"
+    sha256 "f16974cd9f222d4ef640fa97a8d661b04d4fb339e51da93973f1bc9d578e183f"
   end
 
   resource "ptyprocess" do
@@ -188,8 +179,8 @@ class Poetry < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/e0/69/122171604bcef06825fa1c05bd9e9b1d43bc9feb8c6c0717c42c92cc6f3c/requests-2.30.0.tar.gz"
-    sha256 "239d7d4458afcb28a692cdd298d87542235f4ca8d36d03a15bfc128a6559a2f4"
+    url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
+    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
   end
 
   resource "requests-toolbelt" do
@@ -208,13 +199,13 @@ class Poetry < Formula
   end
 
   resource "trove-classifiers" do
-    url "https://files.pythonhosted.org/packages/33/75/4e87c5021949ece4171eddebb11ef30d7e787a99c4d24c7dc383dd306a6c/trove-classifiers-2023.5.2.tar.gz"
-    sha256 "c46d6e40a9581599b16c712e0164fec3764872a4085c673c07559787caedb867"
+    url "https://files.pythonhosted.org/packages/4a/ed/789b86a020378341936d0edc570130451915cee92db440bb513cd5b712a1/trove-classifiers-2023.5.24.tar.gz"
+    sha256 "fd5a1546283be941f47540a135bdeae8fb261380a6a204d9c18012f2a1b0ceae"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/21/79/6372d8c0d0641b4072889f3ff84f279b738cd8595b64c8e0496d4e848122/urllib3-1.26.15.tar.gz"
-    sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
+    url "https://files.pythonhosted.org/packages/e2/7d/539e6f0cf9f0b95b71dd701a56dae89f768cd39fd8ce0096af3546aeb5a3/urllib3-1.26.16.tar.gz"
+    sha256 "8f135f6502756bde6b2a9b28989df5fbe87c9970cecaa69041edcce7f0589b14"
   end
 
   resource "webencodings" do
@@ -241,7 +232,7 @@ class Poetry < Formula
       (libexec/site_packages/"homebrew-#{package_name}.pth").write package/site_packages
     end
 
-    generate_completions_from_executable(libexec/"bin/poetry", "completions")
+    generate_completions_from_executable(bin/"poetry", "completions")
   end
 
   test do
