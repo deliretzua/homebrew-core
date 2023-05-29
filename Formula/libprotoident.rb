@@ -6,13 +6,11 @@ class Libprotoident < Formula
   license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "d93974ec737d62f1b54f6aafeec74cccf2632954e81daa60043632e5446292f2"
-    sha256 cellar: :any,                 arm64_big_sur:  "d0686f33c93e2853ca605f256486c9d8569b56b1538d0881b32fa4f0d7a49dfa"
-    sha256 cellar: :any,                 monterey:       "94f6535531ea76727db897dd49009a111652cb1c47fa3a592515c71a97b1aebf"
-    sha256 cellar: :any,                 big_sur:        "1928a4cc164177352292b8872fa6ed498247af16b1c25ffbf6cc80983e6ac43a"
-    sha256 cellar: :any,                 catalina:       "7ea19cf1a0ae1423dcadebe59d08cd2c65433e4210a9e434e9d1e8dfce65abb0"
-    sha256 cellar: :any,                 mojave:         "06f18aa299bc9b53991ac448d20d318625a3f1d55fe6bb093c45045b4accbb5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "24938f68759726bc0549a5388e71184d56795bfbaff25f9d341b5cd0f79bc9a0"
+    sha256 cellar: :any,                 arm64_monterey: "e27cc2aed2ad9540fcc59f31c44e344563791b7e4d9bc32666fa0985c6207c5c"
+    sha256 cellar: :any,                 arm64_big_sur:  "a691563d3544dbf21b11e113c8824abfe4032ec1a9ee7747dc19efeb80e57142"
+    sha256 cellar: :any,                 monterey:       "d4cb3998fdb1ee58414f3aeb749e599c7ec90d09c93c3308adf4157846fb0018"
+    sha256 cellar: :any,                 big_sur:        "2d9d6b65eea9e1a878a3eb12929ddc7752f295998be449e8ceca0cb24231ae24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "99a441a0da1600b386ed225d9c305889b84898371d7b3d926e27c2b071066c1e"
   end
 
   depends_on "autoconf" => :build
