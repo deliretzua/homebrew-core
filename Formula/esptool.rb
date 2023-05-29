@@ -2,48 +2,44 @@ class Esptool < Formula
   include Language::Python::Virtualenv
 
   desc "ESP8266 and ESP32 serial bootloader utility"
-  homepage "https://github.com/espressif/esptool"
+  homepage "https://docs.espressif.com/projects/esptool/en/latest/esp32/"
   url "https://files.pythonhosted.org/packages/04/80/8eb97d1793cfaf830a4c0a7ea1d8f0674ccba8c23b7d02dcce074b5f44ea/esptool-4.5.1.tar.gz"
   sha256 "e3eb59836123e5ebf793ef639311f7d85645526487d8b1c2b51159b455106b9a"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "1dab219df9238fe198ba107ba322ef69c9cfb3f79b8cdbc20d119ab3a67347b1"
-    sha256 cellar: :any,                 arm64_monterey: "9dc3109ba3f9fdd1a37f46cc0b43b5ee6202dd265fe2beebcf3672b6a3cbe9b4"
-    sha256 cellar: :any,                 arm64_big_sur:  "b90fa538f945ac31dcfd85a467fba0742665b52fc34a34437ea83c6ace2b94a2"
-    sha256 cellar: :any,                 ventura:        "60f2803b784b668872d20ca95035cbd56b5bc41dda9e2e3729e1c47c3f83d7dc"
-    sha256 cellar: :any,                 monterey:       "0c66d2df293f340feeef204bf756e2bab76f159369ceb4a2a95f6a0a54cd8d4c"
-    sha256 cellar: :any,                 big_sur:        "63bf386b0e1186dd109da9ad3ebbf3ee1a8ce8a0f325496a2f469545d7b71b30"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "36ebd1053d6bd9e40b7d518970c5eb3da6fbb330e9530be81de02f3117cda416"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "707c4e48ca93591495c74c466345c27823570a9e5fb4f8c019267745e4bc1172"
+    sha256 cellar: :any,                 arm64_monterey: "c7b49b7c9bf1bc15385df5c7e372f79e07428912c44d0bd77649db5026227c00"
+    sha256 cellar: :any,                 arm64_big_sur:  "5ed1723a7593c5be8a26d6f03e1fd063b85fa4e8631c28bc5333cd8be3a83989"
+    sha256 cellar: :any,                 ventura:        "740d3f55b618b98eac6a62a51ce4c963aefbf361eb3fb77161c933de2848617a"
+    sha256 cellar: :any,                 monterey:       "b41b9f0998229cbd7823c9e3e58b1fd95281b07c5fa7081eaf7ebb4acdce6910"
+    sha256 cellar: :any,                 big_sur:        "0268da5655880f71c0a91a78965da494269b0838de96e9d57b334ff31099fee8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cadee8179beb68240f585759e34e0c00240076c9f2668dfe02a3d20c5c73ad9a"
   end
 
+  # `pkg-config`, `rust`, and `openssl@1.1` are for cryptography.
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
+  depends_on "cffi"
+  depends_on "openssl@1.1"
+  depends_on "pycparser"
   depends_on "python@3.11"
   depends_on "six"
 
   resource "bitstring" do
-    url "https://files.pythonhosted.org/packages/d2/64/e733b18349be383a4b7859c865d6c9e5ccc5845e9b4258504055607ec1cb/bitstring-4.0.1.tar.gz"
-    sha256 "7719f08f6df89ce28453a5e580d4a8ec1d1bda892dbb033466da0ccd9bdcb706"
-  end
-
-  resource "cffi" do
-    url "https://files.pythonhosted.org/packages/2b/a8/050ab4f0c3d4c1b8aaa805f70e26e84d0e27004907c5b8ecc1d31815f92a/cffi-1.15.1.tar.gz"
-    sha256 "d400bfb9a37b1351253cb402671cea7e89bdecc294e8016a707f6d1d8ac934f9"
+    url "https://files.pythonhosted.org/packages/b5/f1/f55f568ef587fe7a74f46a9ae869dbbda10575b2a404c831d2bc0567b7de/bitstring-4.0.2.tar.gz"
+    sha256 "a391db8828ac4485dd5ce72c80b27ebac3e7b989631359959e310cd9729723b2"
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/6a/f5/a729774d087e50fffd1438b3877a91e9281294f985bda0fd15bf99016c78/cryptography-39.0.1.tar.gz"
-    sha256 "d1f6198ee6d9148405e49887803907fe8962a23e6c6f83ea7d98f1c0de375695"
+    url "https://files.pythonhosted.org/packages/f7/80/04cc7637238b78f8e7354900817135c5a23cf66dfb3f3a216c6d630d6833/cryptography-40.0.2.tar.gz"
+    sha256 "c33c0d32b8594fa647d2e01dbccc303478e16fdd7cf98652d5b3ed11aa5e5c99"
   end
 
   resource "ecdsa" do
     url "https://files.pythonhosted.org/packages/ff/7b/ba6547a76c468a0d22de93e89ae60d9561ec911f59532907e72b0d8bc0f1/ecdsa-0.18.0.tar.gz"
     sha256 "190348041559e21b22a1d65cee485282ca11a6f81d503fddb84d5017e9ed1e49"
-  end
-
-  resource "pycparser" do
-    url "https://files.pythonhosted.org/packages/5e/0b/95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46de/pycparser-2.21.tar.gz"
-    sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
   end
 
   resource "pyserial" do
