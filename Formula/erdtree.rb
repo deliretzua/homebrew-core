@@ -6,19 +6,21 @@ class Erdtree < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "488e7376862936f4849a2b82c491c4bb839cb0816e1b1ff6bde785092729cef5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a03b7db6b5780e026c1928236e3d894c0cf6637eec6bd72d3de1b3e6d8dfd9be"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "29573f028e196d637735b894c45863f869288d796928c13bb195d38edcf904de"
-    sha256 cellar: :any_skip_relocation, ventura:        "e98f2bdf9ff25960669a65726c5484185bc1843dfd184ab9c93e4d09dd1226d5"
-    sha256 cellar: :any_skip_relocation, monterey:       "59d1f42bf032ab7e8228c6f62e5e69c38e6716add6468fb5645eb98fe7650ed0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2249383419f59b7147680631400340cd6abbd8b5896eaf8e201a1c19d3f180b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0e90a6aa5ca61b282f460df598e15b48c83133a686fe715d4a788949fb5a3f32"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bb26977ddddf17bcf3d9591512deac360158ebc30fb66debb08fc740658440e7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6077a98f466c08b8bf62cada9c540d8eabb377e86860eaa695e8b7cb5f997975"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "902ad43280298b7f901a5ea321ee2d905ff163097d12a3b8006fb74b76aa9fbc"
+    sha256 cellar: :any_skip_relocation, ventura:        "f66a1bae3a8774e18ca848aa7f4072018b1ee6870a6ddef543ea2e9e31cb43b0"
+    sha256 cellar: :any_skip_relocation, monterey:       "d4f9d81ed17b4c8ac612f1948e3b1479f315c521ab6d97c28bde1cf55fd0f712"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5dd3b9c09a32bfc9347765ee47e225bbbc30191ae5144547d10cebe86350c2f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "86e25757756d23106c10c214930a09170c242b462d476780169bcf613617063f"
   end
 
   depends_on "rust" => :build
 
   def install
     system "cargo", "install", *std_cargo_args
+    generate_completions_from_executable(bin/"erd", "--completions")
   end
 
   test do
