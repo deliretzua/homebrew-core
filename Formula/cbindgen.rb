@@ -6,13 +6,13 @@ class Cbindgen < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8701a4777cdc4478d935bcf9ad523d5f3415588d1e989b562659ae7fb6cf6eb5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "80afabe544aa9dfab277af2d727d045ebfc9870528e4a827130dd6d4a79d8d8b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ed3c8e486ca6a066f52b7a46ae121b801f09b32481f5808cbe9c28ca8d79b01b"
-    sha256 cellar: :any_skip_relocation, ventura:        "d6449d51d30926c6b3f7eae252c077ce1f9fe875aa0d7faee2fca8b0a6e73f45"
-    sha256 cellar: :any_skip_relocation, monterey:       "06a3a8dc1ed2d826af80b44d7599b954f81c49d4b3f155bd413a02ebb4b1b495"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e117f2e823e930f4b76aff6399104641edcb10750259bceb6be04bef16914586"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "86ef1a5238cabd9309b31bc933fd9b39d3b5a300e4f04c6d2299000018098963"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dfb36ae83126a7f665df0ef9937b50af7e192f55fa5ef0c3d299e772177f6220"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bc79e6a057cbd90fc56f9898ea678a15f8769dd3bd12d063f36b495103b6946f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0c5d4d66e352912d60f00bfba39205981a0bf97e74fec50597b6d9e938b3623a"
+    sha256 cellar: :any_skip_relocation, ventura:        "d0eae7379abd5e9147d4f3319e9c6bfa8ed47cd71db5456d3cce2b6b9e6d94a1"
+    sha256 cellar: :any_skip_relocation, monterey:       "e104b0d29d737e3e39a9585a91fcdca423eb300e592538e39beed43c53858d6f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2f7c7fdabc2ada18d88e813633340db35de3eb6953662d340edef4fdf34467ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1878296f17995643b0741031f65197fe657c212b5aa842d6e3d92e2202e4c1c3"
   end
 
   depends_on "rust" => :build
