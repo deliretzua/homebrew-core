@@ -1,10 +1,9 @@
 class Matplotplusplus < Formula
   desc "C++ Graphics Library for Data Visualization"
   homepage "https://github.com/alandefreitas/matplotplusplus"
-  url "https://github.com/alandefreitas/matplotplusplus/archive/v1.1.0.tar.gz"
-  sha256 "5c3a1bdfee12f5c11fd194361040fe4760f57e334523ac125ec22b2cb03f27bb"
+  url "https://github.com/alandefreitas/matplotplusplus/archive/v1.2.0.tar.gz"
+  sha256 "42e24edf717741fcc721242aaa1fdb44e510fbdce4032cdb101c2258761b2554"
   license "MIT"
-  revision 4
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "63df998410641e7a87ef3f803656ba9a5e4db197e2a2f67b457b61ab042c4c2e"
