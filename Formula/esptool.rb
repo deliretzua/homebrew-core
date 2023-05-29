@@ -8,14 +8,13 @@ class Esptool < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "707c4e48ca93591495c74c466345c27823570a9e5fb4f8c019267745e4bc1172"
-    sha256 cellar: :any,                 arm64_monterey: "c7b49b7c9bf1bc15385df5c7e372f79e07428912c44d0bd77649db5026227c00"
-    sha256 cellar: :any,                 arm64_big_sur:  "5ed1723a7593c5be8a26d6f03e1fd063b85fa4e8631c28bc5333cd8be3a83989"
-    sha256 cellar: :any,                 ventura:        "740d3f55b618b98eac6a62a51ce4c963aefbf361eb3fb77161c933de2848617a"
-    sha256 cellar: :any,                 monterey:       "b41b9f0998229cbd7823c9e3e58b1fd95281b07c5fa7081eaf7ebb4acdce6910"
-    sha256 cellar: :any,                 big_sur:        "0268da5655880f71c0a91a78965da494269b0838de96e9d57b334ff31099fee8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cadee8179beb68240f585759e34e0c00240076c9f2668dfe02a3d20c5c73ad9a"
+    sha256 cellar: :any,                 arm64_ventura:  "27cc783c5bc7c50cb9eceee1ae8384475cae91d9e6c9374df2d247a36456d023"
+    sha256 cellar: :any,                 arm64_monterey: "742ad38d7737c49a59cbe3d7a864b5595ef03281130ffc981755daf21e58e7ea"
+    sha256 cellar: :any,                 arm64_big_sur:  "0d000264c353858a57e7a2ff1a7e488014027135eb6f7c49ac93611209f7d35a"
+    sha256 cellar: :any,                 ventura:        "e7f56e0bbd4ac7ad6f2feb07ee9b39fa92c805b709cd5e7a1b96fd44779053a3"
+    sha256 cellar: :any,                 monterey:       "10aeaadaec1335c6b83758065aea4274fd7e4576c7e4ba743b8945a7b8ed4084"
+    sha256 cellar: :any,                 big_sur:        "daca9b8d4d915af3be6c8004a48a6dd932e08fd2b89ccb0f5b160c5f8c95be51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f64f25054224d284d7970e362c971f445449a4d3e1397ff16496705920701871"
   end
 
   # `pkg-config`, `rust`, and `openssl@1.1` are for cryptography.
