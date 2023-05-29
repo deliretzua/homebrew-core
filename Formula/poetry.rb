@@ -18,13 +18,13 @@ class Poetry < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ce0efbf455e6ff29488a9f13bf7cb8674f6901c682901ca896e027c96d0d9ac"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "67608e40b337826f82280ec76b7cf599fef543da2c21f31d37523b8498e72a62"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "13cff85a3647b6ae252ef088a6c9bcc0041cbad867f096fb513a22f96fc71821"
-    sha256 cellar: :any_skip_relocation, ventura:        "36a049ba4a398a0281b2d40c719c74615c4537fe8430eb218159aba18f12279c"
-    sha256 cellar: :any_skip_relocation, monterey:       "2834a2ac59e5b6e365465c9e8b7f5a4bedb6c377a10cbab3655cafedcfa34b60"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4a3dfa88ef593e0cf467bf721b9179977a9e37c38a2bea03d78168a02a2ef063"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f151e4857f0e130e266e83c7c0fde65a56d9a3d27ebab02788323ac71edd8596"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3819338d53ec582f32bcd8d8397254cfd34c7b4374d48c22cb7888a2e477768c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "466be398f4a55ed99c20d03e83b353386b6452a5472c529780994d99805c16aa"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "90d40f62bbc4120c341b994f0f2634be6b1c790480ceeddb7502d957b046f6fc"
+    sha256 cellar: :any_skip_relocation, ventura:        "2aa109936ee6d2a49b7f3529d2b3ab52f645a428d8db785cacecd5621b6bb178"
+    sha256 cellar: :any_skip_relocation, monterey:       "05bf948aa40b65e7e769c8a7bcc3c2b2861999e8e06259da6aec2f448d2c6308"
+    sha256 cellar: :any_skip_relocation, big_sur:        "933bca22e2a0b4293d715c9f7347f47a3a5f46af6e681c2661cfd722206334e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d43f629c15094fa3cb050d9ed7a80d8c1d8c9d6c4c44db9df2739c9fc9e083d9"
   end
 
   # `rapidfuzz` requires `cmake` to build
