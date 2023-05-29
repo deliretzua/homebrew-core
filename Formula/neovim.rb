@@ -4,8 +4,8 @@ class Neovim < Formula
   license "Apache-2.0"
 
   stable do
-    url "https://github.com/neovim/neovim/archive/v0.9.0.tar.gz"
-    sha256 "39d79107c54d2f3babcad2cd157c399241c04f6e75e98c18e8afaf2bb5e82937"
+    url "https://github.com/neovim/neovim/archive/v0.9.1.tar.gz"
+    sha256 "8db17c2a1f4776dcda00e59489ea0d98ba82f7d1a8ea03281d640e58d8a3a00e"
 
     # Remove when `mpack` resource is removed.
     depends_on "luarocks" => :build
@@ -27,8 +27,8 @@ class Neovim < Formula
     end
 
     resource "tree-sitter-lua" do
-      url "https://github.com/MunifTanjim/tree-sitter-lua/archive/v0.0.14.tar.gz"
-      sha256 "930d0370dc15b66389869355c8e14305b9ba7aafd36edbfdb468c8023395016d"
+      url "https://github.com/MunifTanjim/tree-sitter-lua/archive/v0.0.17.tar.gz"
+      sha256 "8963fd0a185d786c164dfca3824941c7eaec497ce49a3a0bc24bf753f5e0e59c"
     end
 
     resource "tree-sitter-vim" do
