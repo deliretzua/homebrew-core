@@ -1,8 +1,8 @@
 class Libansilove < Formula
   desc "Library for converting ANSI, ASCII, and other formats to PNG"
   homepage "https://www.ansilove.org"
-  url "https://github.com/ansilove/libansilove/releases/download/1.4.0/libansilove-1.4.0.tar.gz"
-  sha256 "f023a9a19549e2dce9fcc4fdba657c4c8df8d385adc65af5c28d32d1df36e71f"
+  url "https://github.com/ansilove/libansilove/releases/download/1.4.1/libansilove-1.4.1.tar.gz"
+  sha256 "c6aa32bcef54b05b9af535c621f7044156295a49cea3cfaf1c868e359be59203"
   license "BSD-2-Clause"
 
   bottle do
