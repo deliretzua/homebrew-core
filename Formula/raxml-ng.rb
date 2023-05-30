@@ -7,15 +7,13 @@ class RaxmlNg < Formula
   license "AGPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "6e3db16bc310a565d8af3c0ca2b9775bf760f9e07f89ef776ef198b6ab6404a5"
-    sha256 cellar: :any,                 arm64_monterey: "2229ebeb6fa282a4e3f97896ef02ba2d32671d497bc65188dc118d13239693d8"
-    sha256 cellar: :any,                 arm64_big_sur:  "0236a1f00a663905ad3f3a8eb0cff275900f7f0b29a4ff65616b82384bb01467"
-    sha256 cellar: :any,                 ventura:        "d4b7f0b7df9d8c4179a237e9317561e7a6e3904d62a16231be25d6eff815440c"
-    sha256 cellar: :any,                 monterey:       "ffce4563023dbcd2e0eea0f6c06a0f33157561f412557cab49ed4c412c32562e"
-    sha256 cellar: :any,                 big_sur:        "c6cb8ca0d17b1d5a2c074e236c63d0fcd848db96d026393566e1c4fec4d82f9d"
-    sha256 cellar: :any,                 catalina:       "e62985fdf3fc153cb53c87a4ab230b4e33b9b55a0c990cabd774c27a1ab7d6d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1b99fec129377549ae701ce7eae61eb0289fe34f9e33d11c452c5bf0b1b584d"
+    sha256 cellar: :any,                 arm64_ventura:  "5dd0d18757ed8322bf8672537cceeb471282fa9b04524e3fe8585c9f791afc37"
+    sha256 cellar: :any,                 arm64_monterey: "cf0cb888b93104fffe0cced735061f7cf3a88979972dec9766c6a116368e1303"
+    sha256 cellar: :any,                 arm64_big_sur:  "708f6103476f7b943910ecc3048537e44592c336e60a89c434eabed1b1794957"
+    sha256 cellar: :any,                 ventura:        "2ea060156ee247a24ba70f338eb23d8a90563624f77418e7df55dc0586a05879"
+    sha256 cellar: :any,                 monterey:       "f126aea85e829545d56f1632354e7e12de6e62bc9b72504f63a27fc938c9d40e"
+    sha256 cellar: :any,                 big_sur:        "5a5a3ab547ff228ed8a5283ed133d2bbe498eeee5bd1735264977d6ef82b7526"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e69bccbc5f0a041d07a157481e885ed3bf94b31abf8d242f9313c5aa711ea14a"
   end
 
   depends_on "bison" => :build # fix syntax error with `parse_utree.y`
