@@ -6,13 +6,13 @@ class Ghorg < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c36d5f9b360ae87c4d666813ca4a971014dfd066726740b51f4c24ea9ac568a9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c36d5f9b360ae87c4d666813ca4a971014dfd066726740b51f4c24ea9ac568a9"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c36d5f9b360ae87c4d666813ca4a971014dfd066726740b51f4c24ea9ac568a9"
-    sha256 cellar: :any_skip_relocation, ventura:        "2cb2eb14d13a13113c415f0477f20b48e773ec0cbc8b4725fe54fd26d33a14d6"
-    sha256 cellar: :any_skip_relocation, monterey:       "2cb2eb14d13a13113c415f0477f20b48e773ec0cbc8b4725fe54fd26d33a14d6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2cb2eb14d13a13113c415f0477f20b48e773ec0cbc8b4725fe54fd26d33a14d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "24414c2246a3b8d0aa556de7fb389f3048bb4dddfc91383182f471f93fd9a3ab"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "521551bc8f0b00f06469bd34737c77e5f0c8586cc80182254c3be494f67cc409"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "521551bc8f0b00f06469bd34737c77e5f0c8586cc80182254c3be494f67cc409"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "521551bc8f0b00f06469bd34737c77e5f0c8586cc80182254c3be494f67cc409"
+    sha256 cellar: :any_skip_relocation, ventura:        "ea2db9988ef6c52b3555f2c08cff8ba0be217b6fb3ecb1815aeef9af24305b4e"
+    sha256 cellar: :any_skip_relocation, monterey:       "ea2db9988ef6c52b3555f2c08cff8ba0be217b6fb3ecb1815aeef9af24305b4e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ea2db9988ef6c52b3555f2c08cff8ba0be217b6fb3ecb1815aeef9af24305b4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "82df65e5906e23fd7cf001ee11ba9c1cb8edfe60cb8e73a33ecc78f4a8f9b9da"
   end
 
   depends_on "go" => :build
