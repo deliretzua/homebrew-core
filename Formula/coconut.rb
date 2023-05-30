@@ -8,13 +8,13 @@ class Coconut < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "09c8a4b0992cf3d6df2e3d8ed1b6299426480f0ebb7ba43420ad4323d535b879"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "938a843cbee131731bc3d9bcfc8bbed2ef23d35ff1bde9a1d386192402080e42"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f895edbf996d74ef0af9b16d3a0264079420849edd75ff05d368d05012918263"
-    sha256 cellar: :any_skip_relocation, ventura:        "c8c8cce1563d1490b0cc969aecc8010b815d475dde1f8c8b8b4ce3536f0990f0"
-    sha256 cellar: :any_skip_relocation, monterey:       "2a92c26fea8d3ade642bdd85881053841af81a74a925e2b8c0df3f8baf216042"
-    sha256 cellar: :any_skip_relocation, big_sur:        "61ad7f2f0f1b5761a219257369a32645d492f77cd4ff993de94757957aee3c42"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "392de157c0fcf638d1443f0df9a38ec72d09f1957a045e5f0ebef06eb6a417f3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bef8e02b3b249ec15d61e993785227b15c901fdc8b7a3596a7b099012dccf2d8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8f8737fb4b260193a71712c46821fb3e82925b3c2c24f7d8e51e470b01ee60ff"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "94efa7b9e8c8a676bb82c1d05182079b0e8b108ff29d547a6302e6d35e1a7a1d"
+    sha256 cellar: :any_skip_relocation, ventura:        "b3e763c9fef5cdf13c8501d1977ba1a4ad0d538d35f230fcb3f4b6a27d335e2c"
+    sha256 cellar: :any_skip_relocation, monterey:       "fa2f82fc28a34771fa46219672e261224856e44a547d8739e4aad3c7b5459e1d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1c13cae16b3249b5485a869aeca0985b457a501825d50264275a9751b0e54790"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b5cde0a080c0d6cf63a8c7b2f67d4b209542e83ce5818519d25efecea6b93a3"
   end
 
   depends_on "pygments"
