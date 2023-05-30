@@ -1,9 +1,11 @@
 class Rpl < Formula
+  include Language::Python::Virtualenv
+
   desc "Text replacement utility"
-  homepage "http://www.laffeycomputer.com/rpl.html"
-  url "https://web.archive.org/web/20170106105512/downloads.laffeycomputer.com/current_builds/rpl-1.4.1.tar.gz"
-  sha256 "291055dc8763c855bab76142b5f7e9625392bcefa524b796bc4ddbcf941a1310"
-  license "GPL-2.0"
+  homepage "https://github.com/rrthomas/rpl"
+  url "https://files.pythonhosted.org/packages/0b/ff/d3c4712469b296e16d6704ec4a5c5ca02479d824db0de83caee10455cb9d/rpl-1.15.4.tar.gz"
+  sha256 "d89c20c3b02079db9e9a6738a0e9c0237b15623a368b6f53fa95cd866ed2630f"
+  license "GPL-3.0-or-later"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "286dbe82c334c92999af55394d6ae990ece5617563f39afe1d7e5d1e7b0510c0"
@@ -20,12 +22,25 @@ class Rpl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d343c559dc0109ebc9ea3c19568ab9a6aa222feeb21c3b94e6f17c98f67f76e3"
   end
 
+  depends_on "python@3.11"
+
+  resource "chainstream" do
+    url "https://files.pythonhosted.org/packages/44/fd/ec0c4df1e2b00080826b3e2a9df81c912c8dc7dbab757b55d68af3a51dcf/chainstream-1.0.1.tar.gz"
+    sha256 "df4d8fd418b112690e0e6faa4cb6706962e4b6b95ff5c133890fd32157c8d3b7"
+  end
+
+  resource "chardet" do
+    url "https://files.pythonhosted.org/packages/41/32/cdc91dcf83849c7385bf8e2a5693d87376536ed000807fa07f5eab33430d/chardet-5.1.0.tar.gz"
+    sha256 "0d62712b956bc154f85fb0a266e2a3c5913c2967e00348701b32411d6def31e5"
+  end
+
+  resource "regex" do
+    url "https://files.pythonhosted.org/packages/77/5d/98efc9cf46d60f3704cf00f8b3bd81319493639fd4367efb5d02fd29ffc1/regex-2023.5.5.tar.gz"
+    sha256 "7d76a8a1fc9da08296462a18f16620ba73bcbf5909e42383b253ef34d9d5141e"
+  end
+
   def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}"
-    system "make", "install"
+    virtualenv_install_with_resources
   end
 
   test do
