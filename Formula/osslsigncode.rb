@@ -1,8 +1,8 @@
 class Osslsigncode < Formula
   desc "OpenSSL based Authenticode signing for PE/MSI/Java CAB files"
   homepage "https://github.com/mtrojnar/osslsigncode"
-  url "https://github.com/mtrojnar/osslsigncode/archive/2.3.tar.gz"
-  sha256 "b842d6d49d423f7e234674678e9a107aa7b77e95b480677b020ee61dd160b2e3"
+  url "https://github.com/mtrojnar/osslsigncode/archive/refs/tags/2.6.tar.gz"
+  sha256 "7f84bce7a6e9373e8c4df4fa90e723ca1d380cf303c80bbb3e02191179d0efc4"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -17,18 +17,24 @@ class Osslsigncode < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5fb951865556495e94c381859b33bef7fe74c02f4bf4867f4419cd5cf3f1e4cb"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "cmake" => :build
   depends_on "openssl@3"
 
   uses_from_macos "curl"
 
+  on_linux do
+    depends_on "python@3.11"
+  end
+
+  # Fix permission issue when installing bash completionn
+  patch :DATA
+
   def install
-    system "./bootstrap"
-    system "./configure", *std_configure_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+
+    bash_completion.install "osslsigncode.bash" => "osslsigncode"
   end
 
   test do
@@ -36,3 +42,17 @@ class Osslsigncode < Formula
     assert_match "osslsigncode", shell_output("#{bin}/osslsigncode --version")
   end
 end
+
+__END__
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 2ffeb4e..7e2bc01 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -33,7 +33,6 @@ include(FindCURL)
+
+ # load CMake project modules
+ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake")
+-include(SetBashCompletion)
+ include(FindHeaders)
+
+ # define the target
