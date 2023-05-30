@@ -1,10 +1,9 @@
 class Postgis < Formula
   desc "Adds support for geographic objects to PostgreSQL"
   homepage "https://postgis.net/"
-  url "https://download.osgeo.org/postgis/source/postgis-3.3.2.tar.gz"
-  sha256 "9a2a219da005a1730a39d1959a1c7cec619b1efb009b65be80ffc25bad299068"
+  url "https://download.osgeo.org/postgis/source/postgis-3.3.3.tar.gz"
+  sha256 "74eb356e3f85f14233791013360881b6748f78081cc688ff9d6f0f673a762d13"
   license "GPL-2.0-or-later"
-  revision 2
 
   livecheck do
     url "https://download.osgeo.org/postgis/source/"
@@ -40,7 +39,7 @@ class Postgis < Formula
   depends_on "protobuf-c" # for MVT (map vector tiles) support
   depends_on "sfcgal" # for advanced 2D/3D functions
 
-  fails_with gcc: "5"
+  fails_with gcc: "5" # C++17
 
   def postgresql
     Formula["postgresql@14"]
@@ -48,6 +47,9 @@ class Postgis < Formula
 
   def install
     ENV.deparallelize
+
+    # C++17 is required.
+    ENV.append "CXXFLAGS", "-std=c++17"
 
     ENV["PG_CONFIG"] = postgresql.opt_bin/"pg_config"
 
