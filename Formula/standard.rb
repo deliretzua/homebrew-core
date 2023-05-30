@@ -3,8 +3,8 @@ require "language/node"
 class Standard < Formula
   desc "JavaScript Style Guide, with linter & automatic code fixer"
   homepage "https://standardjs.com/"
-  url "https://registry.npmjs.org/standard/-/standard-17.0.0.tgz"
-  sha256 "af6ceb9e3d9a61b0ea80ca64164773f7c0b090e04e844a665958ebb03726e79c"
+  url "https://registry.npmjs.org/standard/-/standard-17.1.0.tgz"
+  sha256 "84ce1ab5180ebb73e0a4b56f37b59823aec3ab34a53540c09eeaf533de5aee53"
   license "MIT"
 
   bottle do
