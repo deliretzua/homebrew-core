@@ -11,13 +11,13 @@ class PerconaServer < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "c2d03d8e4dd0ae1ae636ff1b7683d8e8a1494399fb778eedd204834564f4b938"
-    sha256 arm64_monterey: "1166d85bdd80dcd9b437880f4d32d7ddf69cdbcf9f8fa43afb1ea393586724f2"
-    sha256 arm64_big_sur:  "6d69eb5755ca3c7d0a008017babdf92223bfbc5ba615a81f25c3dc3cf4bfb079"
-    sha256 ventura:        "7dce6314814400498a8bf479b3a44c2e4b7a43ad75e4a71757f5b2e5ae82e401"
-    sha256 monterey:       "09665b01e35b7d8a29febc571d8c69f4e27d5f79ede6861c4c3c245a2d5cfc82"
-    sha256 big_sur:        "e6a9b2b55edb32cd05d6a89270f8bf1f5fb418044722f9b1fd47fb27976f68d2"
-    sha256 x86_64_linux:   "af7cc153112107813c463d05a46a619e6ae8fcc94e9e226e77e0a15010c742cb"
+    sha256 arm64_ventura:  "0fa7b89ba29abcc92aa45e3a6316803474031f64b8dec1589741ab2381726736"
+    sha256 arm64_monterey: "f5166caa3dc0d43d05890f6c14c728ea043ef16a7a1cd3dcc335f0101c90ed38"
+    sha256 arm64_big_sur:  "7d5ef676fc7d5fca3b01afd54a53354d423b8f129dbc6ba1850b2a8241de0a6e"
+    sha256 ventura:        "f209115a52851008f5351d8924594e63e89f5249ac14e3ad845a5dd729397158"
+    sha256 monterey:       "44e586b8a541ba5bd90c624d703c1d0bc68e95bcc45b0d3fb3225c68652ab5bd"
+    sha256 big_sur:        "14198a25437f94849b286605cb332ed9094cfef05a28d3e612a2e4625cad47fe"
+    sha256 x86_64_linux:   "6cc85893376bd28e65251ff6f079236ead3e3a36c5037fed15131e29789ccd27"
   end
 
   depends_on "cmake" => :build
