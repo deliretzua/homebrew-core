@@ -3,8 +3,8 @@ class Ansible < Formula
 
   desc "Automate deployment, configuration, and upgrading"
   homepage "https://www.ansible.com/"
-  url "https://files.pythonhosted.org/packages/e8/88/4309077c4a2ca9b322ae0b5e98c699fc7d871a49260e8aafabcec769dd80/ansible-7.6.0.tar.gz"
-  sha256 "4159a266f2caf91adf16daca6a23d132b987ce3acde9c0f2f3089e80d8048f2e"
+  url "https://files.pythonhosted.org/packages/bf/d2/41bfb43774c98b6df721170ec2070d517e7ee20ff106edeaa2e29dc0fa7e/ansible-8.0.0.tar.gz"
+  sha256 "8670c7c46021c188cac235e9fde7adadbb3c380c2436a3b0c1c493c4ba10bcab"
   license "GPL-3.0-or-later"
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
@@ -55,8 +55,8 @@ class Ansible < Formula
 
   # Automatically updated resources
   resource "ansible-core" do
-    url "https://files.pythonhosted.org/packages/7f/be/3a64a1f892d451e2a447e301c6da9061443cf96b681de709891de26b66fd/ansible-core-2.14.6.tar.gz"
-    sha256 "0cddb0df454561981f1c541db7ac5398d5e9de452ea1f01847acbd031fd7d2b2"
+    url "https://files.pythonhosted.org/packages/12/10/9f3bed762e4f867c7fd32f125cf4d11a9dfb8e60e6565e14a1b4f2bf3396/ansible-core-2.15.0.tar.gz"
+    sha256 "cf690fd4ebb40590e00c5acdc0624758ca4c58d1e4b2b02ec026a034070ebf4d"
   end
 
   resource "apache-libcloud" do
@@ -85,18 +85,18 @@ class Ansible < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/7f/17/595fa7f8a7782e5b76cee89b12cb44c767fc439a0a4a5177e45087e49f96/boto3-1.26.139.tar.gz"
-    sha256 "fe19d287bc8ede385e1b9136f135ee8f93eab81404ad1445b1a70cabfe3f7087"
+    url "https://files.pythonhosted.org/packages/76/40/5fac9b875f823ac8450a62d0436e2c6baea1d70dace760b9d1a9e1d58a3e/boto3-1.26.143.tar.gz"
+    sha256 "d973751c5ea2db7743f80ee8552043cace8f18a2472cae1ab93ffbfb6889b825"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/85/e0/32053bd0dc53a495013fb76d1cdd9b03d9da8dde9bba14dae6c36785c7ac/botocore-1.29.139.tar.gz"
-    sha256 "acc62710bdf11e47f4f26fb290a9082ff00377d7e93a16e1f080f9c789898114"
+    url "https://files.pythonhosted.org/packages/1a/a2/7b5752267ae7cd17f2688a65636ffa93ad7b410a383621a1f24ab305b7b9/botocore-1.29.143.tar.gz"
+    sha256 "e5b8dd2fa750f0476667753dc018c2b14a542fec7e20edd3a7613b6d2df2c32a"
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/4d/91/5837e9f9e77342bb4f3ffac19ba216eef2cd9b77d67456af420e7bafe51d/cachetools-5.3.0.tar.gz"
-    sha256 "13dfddc7b8df938c21a940dfa6557ce6e94a2f1cdfa58eb90c805721d58f2c14"
+    url "https://files.pythonhosted.org/packages/9d/8b/8e2ebf5ee26c21504de5ea2fb29cc6ae612b35fd05f959cdb641feb94ec4/cachetools-5.3.1.tar.gz"
+    sha256 "dce83f2d9b4e1f732a8cd44af8e8fab2dbe46201467fc98b3ef8f269092bf62b"
   end
 
   resource "certifi" do
@@ -155,8 +155,8 @@ class Ansible < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/ab/ad/cf556edf0df277935e7fe443a3d5e2c0db2441a4d1e02b816b2487a47b9d/google-auth-2.18.1.tar.gz"
-    sha256 "d7a3249027e7f464fbbfd7ee8319a08ad09d2eea51578575c4bd360ffa049ccb"
+    url "https://files.pythonhosted.org/packages/97/e8/a3e918ab46e91e87019e2f96aec2390e11177da536b7bc75d14c8534d9c9/google-auth-2.19.0.tar.gz"
+    sha256 "f39d528077ac540793dd3c22a8706178f157642a67d874db25c640b7fead277e"
   end
 
   resource "idna" do
@@ -320,8 +320,8 @@ class Ansible < Formula
   end
 
   resource "paramiko" do
-    url "https://files.pythonhosted.org/packages/e8/53/e614a5b7bcc658d20e6eff6ae068863becb06bf362c2f135f5c290d8e6a2/paramiko-3.1.0.tar.gz"
-    sha256 "6950faca6819acd3219d4ae694a23c7a87ee38d084f70c1724b0c0dbb8b75769"
+    url "https://files.pythonhosted.org/packages/87/62/cee9551811c846e9735f749dbdf05d4f9f0dbcecd66eae35b5daacf9a117/paramiko-3.2.0.tar.gz"
+    sha256 "93cdce625a8a1dc12204439d45033f3261bdb2c201648cfcdc06f9fd0f94ec29"
   end
 
   resource "passlib" do
@@ -455,8 +455,8 @@ class Ansible < Formula
   end
 
   resource "resolvelib" do
-    url "https://files.pythonhosted.org/packages/ac/20/9541749d77aebf66dd92e2b803f38a50e3a5c76e7876f45eb2b37e758d82/resolvelib-0.8.1.tar.gz"
-    sha256 "c6ea56732e9fb6fca1b2acc2ccc68a0b6b8c566d8f3e78e0443310ede61dbd37"
+    url "https://files.pythonhosted.org/packages/ce/10/f699366ce577423cbc3df3280063099054c23df70856465080798c6ebad6/resolvelib-1.0.1.tar.gz"
+    sha256 "04ce76cbd63fded2078ce224785da6ecd42b9564b1390793f64ddecbe997b309"
   end
 
   resource "rfc3986" do
