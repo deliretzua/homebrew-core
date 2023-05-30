@@ -1,8 +1,8 @@
 class LibgrapeLite < Formula
   desc "C++ library for parallel graph processing"
   homepage "https://github.com/alibaba/libgrape-lite"
-  url "https://github.com/alibaba/libgrape-lite/archive/refs/tags/v0.2.4.tar.gz"
-  sha256 "e6379a9494302b78d13b75cd05fe05aaa1643f00e52b6bf86018d650dda2ac53"
+  url "https://github.com/alibaba/libgrape-lite/archive/refs/tags/v0.2.5.tar.gz"
+  sha256 "b251f7c0614d74d4c311b9821015dd722e2eb8c7b2d80bf0cf17183a60e4dd85"
   license "Apache-2.0"
 
   bottle do
