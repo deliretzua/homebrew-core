@@ -3,8 +3,8 @@ class Coconut < Formula
 
   desc "Simple, elegant, Pythonic functional programming"
   homepage "http://coconut-lang.org/"
-  url "https://files.pythonhosted.org/packages/af/92/a55e44eab3d943263f53396e3051fddb2e672b3ae260770a5d9eeca4f153/coconut-3.0.1.tar.gz"
-  sha256 "3760aaf7f0286282b18f47a663d62be91308aa543e2076a45dd3af3b67ed8dfe"
+  url "https://files.pythonhosted.org/packages/8d/e5/4097e94b7c45536499e03f319a30fd88173e9ec9da79fee2234559d29be8/coconut-3.0.2.tar.gz"
+  sha256 "51934e6f6a70a0346827075c914a2904ef1e2f07f6d9d48f22132319fec442bc"
   license "Apache-2.0"
 
   bottle do
@@ -33,6 +33,11 @@ class Coconut < Formula
   resource "psutil" do
     url "https://files.pythonhosted.org/packages/d6/0f/96b7309212a926c1448366e9ce69b081ea79d63265bde33f11cc9cfc2c07/psutil-5.9.5.tar.gz"
     sha256 "5410638e4df39c54d957fc51ce03048acd8e6d60abc0f5107af51e5fb566eb3c"
+  end
+
+  resource "typing-extensions" do
+    url "https://files.pythonhosted.org/packages/be/fc/3d12393d634fcb31d5f4231c28feaf4ead225124ba08021046317d5f450d/typing_extensions-4.6.2.tar.gz"
+    sha256 "06006244c70ac8ee83fa8282cb188f697b8db25bc8b4df07be1873c43897060c"
   end
 
   resource "wcwidth" do
