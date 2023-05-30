@@ -1,8 +1,8 @@
 class Zabbix < Formula
   desc "Availability and monitoring solution"
   homepage "https://www.zabbix.com/"
-  url "https://cdn.zabbix.com/zabbix/sources/stable/6.4/zabbix-6.4.2.tar.gz"
-  sha256 "3aa55a70e1cf93766e15fa855332dc54601b5e2aaebd3edd324c7fe413ea9ac9"
+  url "https://cdn.zabbix.com/zabbix/sources/stable/6.4/zabbix-6.4.3.tar.gz"
+  sha256 "7747461f83db46399e0aba9bd92f541a865f8a5c80dedd4ad3be378b843c46d2"
   license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
   head "https://github.com/zabbix/zabbix.git", branch: "master"
 
