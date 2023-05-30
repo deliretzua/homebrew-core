@@ -2,8 +2,8 @@ class ErlangAT24 < Formula
   desc "Programming language for highly scalable real-time systems"
   homepage "https://www.erlang.org/"
   # Download tarball from GitHub; it is served faster than the official tarball.
-  url "https://github.com/erlang/otp/releases/download/OTP-24.3.4.11/otp_src_24.3.4.11.tar.gz"
-  sha256 "0e63cd975f126ae9f17c36062d63e8629bb984e013b18a8a13ad634035dc414f"
+  url "https://github.com/erlang/otp/releases/download/OTP-24.3.4.12/otp_src_24.3.4.12.tar.gz"
+  sha256 "0361252c3efb600d60033c15f2a6d97c552ce0272719f7b23af11304bee2d69c"
   license "Apache-2.0"
 
   livecheck do
@@ -30,8 +30,8 @@ class ErlangAT24 < Formula
   uses_from_macos "libxslt" => :build # for xsltproc
 
   resource "html" do
-    url "https://github.com/erlang/otp/releases/download/OTP-24.3.4.11/otp_doc_html_24.3.4.11.tar.gz"
-    sha256 "4b77099afa3a8fa516fc14bbfb36715bf945cc2bc43e4a8c0419540b3d05e0b5"
+    url "https://github.com/erlang/otp/releases/download/OTP-24.3.4.12/otp_doc_html_24.3.4.12.tar.gz"
+    sha256 "5c4d03313b1fcafb40987e826e8a88daa8b0651b7c16e5da7d8bea81acc51e37"
   end
 
   def install
@@ -84,6 +84,8 @@ class ErlangAT24 < Formula
   end
 
   test do
+    assert_equal version, resource("html").version, "`html` resource needs updating!"
+
     system "#{bin}/erl", "-noshell", "-eval", "crypto:start().", "-s", "init", "stop"
     (testpath/"factorial").write <<~EOS
       #!#{bin}/escript
