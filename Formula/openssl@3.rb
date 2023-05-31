@@ -12,13 +12,13 @@ class OpensslAT3 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "1dd3c96c86bcd743dc8a7e1b0d18c7d76eb4d733ce7768e3931ad027f7b1d1fd"
-    sha256 arm64_monterey: "cb8b2e4bbf311516addc310c067e9655aca5e4f697b134580d3147624616aa5f"
-    sha256 arm64_big_sur:  "b994e140d306335dc48a85bb41aea685e0e41dd67978027261acd6c0b6aaa532"
-    sha256 ventura:        "64e237e99be9d8ee4ddfd3813384ace1920f28ed1f74fac2730908839aaddc40"
-    sha256 monterey:       "a6327ea42283c5fdc582b431da337a6aa371ed9ca019e1ca9d8a40e273535a0d"
-    sha256 big_sur:        "2f678f6bb7b0ca91b17aada633fe617dd0f2b05eafd1c9cc2497535a4a8f3f86"
-    sha256 x86_64_linux:   "20295ac304dcaf92f82260fa8fcb2e28a85a2860e571e514f17e7411b45ea1aa"
+    sha256 arm64_ventura:  "ec0a9f2f744809e81aca2a8953479b490b2c5341238615540c15c74019187ac0"
+    sha256 arm64_monterey: "e2a9c60c7f74f099b7d2d49854d6dd54c9176654f47237cc9a12d99c2eeced32"
+    sha256 arm64_big_sur:  "a6dafdaa88a2a2488270a4077c51b1636c68b3299de8ef656e7ab453f2182b15"
+    sha256 ventura:        "a2a6fca7d2c56c542508c4d274b7a466ac183d7304e8268c94a2eee7949b8c5e"
+    sha256 monterey:       "4d997c330db3f49f64eb436d8bf503d292ceaad23ffe4989030312276ffd8502"
+    sha256 big_sur:        "d9f16998b8f53c9962476317d2b2d9bc14453f73fda935c1640dfb43c4e94b6f"
+    sha256 x86_64_linux:   "1d2e71765c0e459ba1d465a4ac4ded77f13fbcd446a74bc40d40e444dca56e78"
   end
 
   keg_only :shadowed_by_macos, "macOS provides LibreSSL"
