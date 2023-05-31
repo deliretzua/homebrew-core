@@ -7,7 +7,7 @@ class WpCliCompletion < Formula
   head "https://github.com/wp-cli/wp-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "69e4f608a405f861788445d6c22e9975f2fbdf0b5659001d5ca96ea112036e91"
+    sha256 cellar: :any_skip_relocation, all: "d0832bc22a2fd5b786440e414173ab8ece0bd087c356e2111fa1e1b157c6ca9d"
   end
 
   def install
