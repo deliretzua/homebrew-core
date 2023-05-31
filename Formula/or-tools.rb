@@ -4,7 +4,7 @@ class OrTools < Formula
   url "https://github.com/google/or-tools/archive/v9.6.tar.gz"
   sha256 "bc4b07dc9c23f0cca43b1f5c889f08a59c8f2515836b03d4cc7e0f8f2c879234"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/google/or-tools.git", branch: "stable"
 
   livecheck do
@@ -42,6 +42,13 @@ class OrTools < Formula
   # Fix definition duplicated from Protobuf.
   # https://github.com/google/or-tools/issues/3826
   patch :DATA
+
+  # Also, fix use of StringPiece for new re2.
+  # https://github.com/google/or-tools/pull/3840
+  patch do
+    url "https://github.com/google/or-tools/commit/8844e557bfc36c1b171b84048a5c40b6dbc97206.patch?full_index=1"
+    sha256 "c884d9d011548e28b503a424ac1d2be8197b0090d3f473708f3330b319130da0"
+  end
 
   def install
     args = %w[
