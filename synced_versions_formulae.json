@@ -54,5 +54,6 @@
   ["qt", "qt-libiodbc", "qt-mariadb", "qt-mysql", "qt-percona-server", "qt-postgresql", "qt-unixodbc"],
   ["qwt", "qwt-qt5"],
   ["telnet", "telnetd"],
-  ["tmuxinator", "tmuxinator-completion"]
+  ["tmuxinator", "tmuxinator-completion"],
+  ["wp-cli", "wp-cli-completion"]
 ]
