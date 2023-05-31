@@ -331,7 +331,7 @@ jobs:
         working-directory: ${{steps.set-up-homebrew.outputs.repository-path}}
 
       - name: Post comment on failure
-        if: ${{!success()}}
+        if: failure()
         uses: Homebrew/actions/post-comment@master
         with:
           token: ${{secrets.GITHUB_TOKEN}}
@@ -339,14 +339,6 @@ jobs:
           body: ":warning: @${{github.actor}} bottle publish [failed](${{env.RUN_URL}}). CC @carlocab"
           bot_body: ":warning: Bottle publish [failed](${{env.RUN_URL}}). CC @carlocab"
           bot: github-actions[bot]
-
-      - name: Dismiss approvals on failure
-        if: failure()
-        uses: Homebrew/actions/dismiss-approvals@master
-        with:
-          token: ${{secrets.GITHUB_TOKEN}}
-          pr: ${{inputs.pull_request}}
-          message: "bottle publish failed"
 
       - name: Wait until pull request branch is in sync with local repository
         id: wait-until-in-sync
