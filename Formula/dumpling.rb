@@ -12,13 +12,13 @@ class Dumpling < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ed7c4087cf5b7d70ef51912cfb942ef61e87e210036bb506141e6cf17bc70633"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "054db56e85fb785f7d86ab62508328af5af2a247662ee21571561f2defd01e38"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "02053804b86b0c0f04a47b38b7e9d9cb0ed5d2973edd8a7d403e58c025fe462d"
-    sha256 cellar: :any_skip_relocation, ventura:        "537256bf8428d641f23397b4c9a0c95a738d6c6d3e6b08292c5074be2c4729f7"
-    sha256 cellar: :any_skip_relocation, monterey:       "d771b904e91d4f6e70eb0a166745c6a0e0b1730019e3a06857d95b6a26306aa6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "27caf6466d45f1e24294ca728687648ea1a02d62fbda0eac22f01ef1df2a5521"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "40fa874b92532003de28228ea0d7365c2d171a674a7444a97a97f26f4522655c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aea812b0a9e30b8f6874ab2dffc90e977d08b74434447a8767d8e876f45c0590"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "16d258f1821389bc9981d133b21f6d62eda30e8b6fa760e7f0169b33d7c2e005"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d3408543a833ec5b87f492b6d008876bc8e82b1a70ae62fc2e32bda17e98b32d"
+    sha256 cellar: :any_skip_relocation, ventura:        "9455bd4e50d140b5789c2286573353c5c9872d8356bae6915f84f99213052ee4"
+    sha256 cellar: :any_skip_relocation, monterey:       "97c2eccc66cdb8aa3633e252816dc3891ca46ce0c046510c6138e40840041452"
+    sha256 cellar: :any_skip_relocation, big_sur:        "418cc5b4680eed400d6dc66975b35c4af4cc4b93676890cfe5d829fb35f8cb9d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af83945c1cd90c528fcacbe80375e046ccb6c198e5f077113771825377480454"
   end
 
   depends_on "go" => :build
