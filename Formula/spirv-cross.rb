@@ -1,8 +1,8 @@
 class SpirvCross < Formula
   desc "Performing reflection and disassembling SPIR-V"
   homepage "https://github.com/KhronosGroup/SPIRV-Cross"
-  url "https://github.com/KhronosGroup/SPIRV-Cross/archive/refs/tags/sdk-1.3.246.1.tar.gz"
-  sha256 "44d1aef7e6e247b4b7ec6a1ef0bbb43cc9b681ee689393db90ac815d240808b1"
+  url "https://github.com/KhronosGroup/SPIRV-Cross/archive/refs/tags/sdk-1.3.250.0.tar.gz"
+  sha256 "dac4b3dabd3f166f0c2941cf72045331e2672591a06cdeaa72e550d403f3150c"
   license all_of: [
     "Apache-2.0",
     "MIT",
