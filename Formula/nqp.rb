@@ -1,8 +1,8 @@
 class Nqp < Formula
   desc "Lightweight Raku-like environment for virtual machines"
   homepage "https://github.com/Raku/nqp"
-  url "https://github.com/Raku/nqp/releases/download/2023.04/nqp-2023.04.tar.gz"
-  sha256 "6735e5e601921cd427651e99bdf63be8338f4b815520803a97985dec488e50b5"
+  url "https://github.com/Raku/nqp/releases/download/2023.05/nqp-2023.05.tar.gz"
+  sha256 "1402db7e3ca6f2f3dfc1e98aa32e0e2a937e49b2a777a74c62268a98abb3bbd2"
   license "Artistic-2.0"
 
   livecheck do
@@ -30,6 +30,8 @@ class Nqp < Formula
   conflicts_with "rakudo-star", because: "rakudo-star currently ships with nqp included"
 
   def install
+    ENV.deparallelize
+
     # Work around Homebrew's directory structure and help find moarvm libraries
     inreplace "tools/build/gen-version.pl", "$libdir, 'MAST'", "'#{Formula["moarvm"].opt_share}/nqp/lib/MAST'"
 
