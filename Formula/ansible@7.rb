@@ -7,6 +7,16 @@ class AnsibleAT7 < Formula
   sha256 "4159a266f2caf91adf16daca6a23d132b987ce3acde9c0f2f3089e80d8048f2e"
   license "GPL-3.0-or-later"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "29d8ed5c43148ff3101c3c845770ce96a802bbd92fb8d68ce2f2a09a49e74aa8"
+    sha256 cellar: :any,                 arm64_monterey: "084eac8bc1c8ad122dc29e22114b14f32d9360829a1eac2d28c9d6cb3ab525ce"
+    sha256 cellar: :any,                 arm64_big_sur:  "72c7177687e8dff130c1519e12d77cfa50967c5b735c98384ff85e0cbab6988d"
+    sha256 cellar: :any,                 ventura:        "66e54d8147aa51c942756ef1f4ea911d1399b82b7a17239430cee9507eda0d12"
+    sha256 cellar: :any,                 monterey:       "4fff4d120d656826e938c2ff9cd6b46288980a45b924caa7bd5e6f3328b0f617"
+    sha256 cellar: :any,                 big_sur:        "7de77c1d733b0c38fa25aa153903fe91bda19d7e024954b399d798186144b129"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05c04510ae106b4f8b48a56d02f0270bc04a590605bf27e4f9883bb19119cf0a"
+  end
+
   keg_only :versioned_formula
 
   depends_on "pkg-config" => :build
