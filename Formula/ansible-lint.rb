@@ -3,8 +3,8 @@ class AnsibleLint < Formula
 
   desc "Checks ansible playbooks for practices and behaviour"
   homepage "https://ansible-lint.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/7f/96/f6e8f6a33d5bbc8b3868a9551056c52f1ba7f8766e0f0a54b50436199648/ansible-lint-6.16.2.tar.gz"
-  sha256 "93ad8a04adcda6025d4ff218a10694120fe70cb91da8ac9f85c5dc82b32456e4"
+  url "https://files.pythonhosted.org/packages/4f/dc/71378858218b8f8bdbc33daaaae093dfaa6a1774f8e40bc84ccb811bf1f8/ansible-lint-6.17.0.tar.gz"
+  sha256 "c6da12e9eb6dd58223b0a48400aaa25e677af6cac3d9db41fb1b62006ddebb36"
   license all_of: ["MIT", "GPL-3.0-or-later"]
 
   bottle do
@@ -24,6 +24,11 @@ class AnsibleLint < Formula
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "yamllint"
+
+  resource "ansible-compat" do
+    url "https://files.pythonhosted.org/packages/4c/bd/da3a8a432147c77eb9f6624760454a54caeb18e19fff7d327c41cc8202c6/ansible-compat-4.1.1.tar.gz"
+    sha256 "9ace0482066dc5ede3d074b3d9d28debc45a940743b39e09969c2f9c91198db1"
+  end
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/97/90/81f95d5f705be17872843536b1868f351805acf6971251ff07c1b8334dbb/attrs-23.1.0.tar.gz"
@@ -71,8 +76,8 @@ class AnsibleLint < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/8c/0d/32f86bfad2755763b926f988252f57f4edbba32f876cb5e6d6f5c57b5f05/ruamel.yaml-0.17.26.tar.gz"
-    sha256 "baa2d0a5aad2034826c439ce61c142c07082b76f4791d54145e131206e998059"
+    url "https://files.pythonhosted.org/packages/39/97/03674459c459b9b69ef71eba039205a72867e5c6c409df3136858f6836f3/ruamel.yaml-0.17.31.tar.gz"
+    sha256 "098ed1eb6d338a684891a72380277c1e6fc4d4ae0e120de9a447275056dda335"
   end
 
   resource "ruamel-yaml-clib" do
