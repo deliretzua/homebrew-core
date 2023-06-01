@@ -8,13 +8,14 @@ class AnsibleAT7 < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "29d8ed5c43148ff3101c3c845770ce96a802bbd92fb8d68ce2f2a09a49e74aa8"
-    sha256 cellar: :any,                 arm64_monterey: "084eac8bc1c8ad122dc29e22114b14f32d9360829a1eac2d28c9d6cb3ab525ce"
-    sha256 cellar: :any,                 arm64_big_sur:  "72c7177687e8dff130c1519e12d77cfa50967c5b735c98384ff85e0cbab6988d"
-    sha256 cellar: :any,                 ventura:        "66e54d8147aa51c942756ef1f4ea911d1399b82b7a17239430cee9507eda0d12"
-    sha256 cellar: :any,                 monterey:       "4fff4d120d656826e938c2ff9cd6b46288980a45b924caa7bd5e6f3328b0f617"
-    sha256 cellar: :any,                 big_sur:        "7de77c1d733b0c38fa25aa153903fe91bda19d7e024954b399d798186144b129"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05c04510ae106b4f8b48a56d02f0270bc04a590605bf27e4f9883bb19119cf0a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "24488e4a7e1ac1f983aa8a8cb839eb137d071cc4ecfb7abbfd197b5ddac9bccd"
+    sha256 cellar: :any,                 arm64_monterey: "cf362c6a9f6a2b6290b1d58da3d4db13129716b7dac41f557ee1cff09c93bea9"
+    sha256 cellar: :any,                 arm64_big_sur:  "51bc0bc9cabcee7667fc3311cb2c1ceb48dae913d8b63ce7d420c9a7164bd159"
+    sha256 cellar: :any,                 ventura:        "d776113f71d8d6bdbff7f158624ba109a71461b452520d4c494d804f577ca4c7"
+    sha256 cellar: :any,                 monterey:       "ddf3e19ecec707ae8b2d6cf02c01ed8b187c8841db1aeac7cf321f3795a7b631"
+    sha256 cellar: :any,                 big_sur:        "a1dfa930aea1150294507daaac99b5fa953c2146b0a7d520ad91b301555e4c2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1161219a37aaf8dbdb3e39989e35ec2d9a81903d6defdda9fa5e4c93bd753f70"
   end
 
   keg_only :versioned_formula
