@@ -4,7 +4,7 @@ on:
   workflow_run:
     workflows:
       - CI
-      - Manage long timeout labels
+      - Manage pull request labels
     types:
       - completed
 
