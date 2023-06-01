@@ -86,18 +86,18 @@ class AnsibleAT7 < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/7f/17/595fa7f8a7782e5b76cee89b12cb44c767fc439a0a4a5177e45087e49f96/boto3-1.26.139.tar.gz"
-    sha256 "fe19d287bc8ede385e1b9136f135ee8f93eab81404ad1445b1a70cabfe3f7087"
+    url "https://files.pythonhosted.org/packages/02/1d/639dbc4008726139fc54bd1ab3d0527fa38cb86d8666182f0a57824d7763/boto3-1.26.144.tar.gz"
+    sha256 "5b7e9f2674fe8aa99e2d168744023a3f66da12d9c51e0624489dd0db7aafe30d"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/85/e0/32053bd0dc53a495013fb76d1cdd9b03d9da8dde9bba14dae6c36785c7ac/botocore-1.29.139.tar.gz"
-    sha256 "acc62710bdf11e47f4f26fb290a9082ff00377d7e93a16e1f080f9c789898114"
+    url "https://files.pythonhosted.org/packages/28/3b/8ec4150134811b7f2747b59c1413ab0e34c29d3c8f39aa6e26859f0cbd50/botocore-1.29.144.tar.gz"
+    sha256 "c60b9158cbc7447411abdec77b87a71d86d9404064702e92d317dca6a1ec9a5b"
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/4d/91/5837e9f9e77342bb4f3ffac19ba216eef2cd9b77d67456af420e7bafe51d/cachetools-5.3.0.tar.gz"
-    sha256 "13dfddc7b8df938c21a940dfa6557ce6e94a2f1cdfa58eb90c805721d58f2c14"
+    url "https://files.pythonhosted.org/packages/9d/8b/8e2ebf5ee26c21504de5ea2fb29cc6ae612b35fd05f959cdb641feb94ec4/cachetools-5.3.1.tar.gz"
+    sha256 "dce83f2d9b4e1f732a8cd44af8e8fab2dbe46201467fc98b3ef8f269092bf62b"
   end
 
   resource "certifi" do
@@ -121,8 +121,8 @@ class AnsibleAT7 < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/f7/80/04cc7637238b78f8e7354900817135c5a23cf66dfb3f3a216c6d630d6833/cryptography-40.0.2.tar.gz"
-    sha256 "c33c0d32b8594fa647d2e01dbccc303478e16fdd7cf98652d5b3ed11aa5e5c99"
+    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
+    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
   end
 
   resource "debtcollector" do
@@ -141,8 +141,8 @@ class AnsibleAT7 < Formula
   end
 
   resource "docker" do
-    url "https://files.pythonhosted.org/packages/d4/5f/48add223bfc02f7645b990418d1d3e01f6d4de7e6fcee31919f40129e893/docker-6.1.2.tar.gz"
-    sha256 "dcc088adc2ec4e7cfc594e275d8bd2c9738c56c808de97476939ef67db5af8c2"
+    url "https://files.pythonhosted.org/packages/f0/73/f7c9a14e88e769f38cb7fb45aa88dfd795faa8e18aea11bababf6e068d5e/docker-6.1.3.tar.gz"
+    sha256 "aa6d17830045ba5ef0168d5eaa34d37beeb113948c413affe1d5991fc11f9a20"
   end
 
   resource "dogpile-cache" do
@@ -156,8 +156,8 @@ class AnsibleAT7 < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/ab/ad/cf556edf0df277935e7fe443a3d5e2c0db2441a4d1e02b816b2487a47b9d/google-auth-2.18.1.tar.gz"
-    sha256 "d7a3249027e7f464fbbfd7ee8319a08ad09d2eea51578575c4bd360ffa049ccb"
+    url "https://files.pythonhosted.org/packages/97/e8/a3e918ab46e91e87019e2f96aec2390e11177da536b7bc75d14c8534d9c9/google-auth-2.19.0.tar.gz"
+    sha256 "f39d528077ac540793dd3c22a8706178f157642a67d874db25c640b7fead277e"
   end
 
   resource "idna" do
@@ -321,8 +321,8 @@ class AnsibleAT7 < Formula
   end
 
   resource "paramiko" do
-    url "https://files.pythonhosted.org/packages/e8/53/e614a5b7bcc658d20e6eff6ae068863becb06bf362c2f135f5c290d8e6a2/paramiko-3.1.0.tar.gz"
-    sha256 "6950faca6819acd3219d4ae694a23c7a87ee38d084f70c1724b0c0dbb8b75769"
+    url "https://files.pythonhosted.org/packages/87/62/cee9551811c846e9735f749dbdf05d4f9f0dbcecd66eae35b5daacf9a117/paramiko-3.2.0.tar.gz"
+    sha256 "93cdce625a8a1dc12204439d45033f3261bdb2c201648cfcdc06f9fd0f94ec29"
   end
 
   resource "passlib" do
