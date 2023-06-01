@@ -7,6 +7,16 @@ class AwsAmplify < Formula
   sha256 "3bad1aad93f0e226cdeed8d742d912a0d149abc0618a4258acb8549205092310"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e722bb17a9c1eb9f9267f6c9951351a164af4850f3c05bf62d6fd2ad4d7ea45d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e722bb17a9c1eb9f9267f6c9951351a164af4850f3c05bf62d6fd2ad4d7ea45d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e722bb17a9c1eb9f9267f6c9951351a164af4850f3c05bf62d6fd2ad4d7ea45d"
+    sha256 cellar: :any_skip_relocation, ventura:        "e31e6465b25f1aff918e037cd47af183d996dd0d4f2888ce9494754c0dc2c951"
+    sha256 cellar: :any_skip_relocation, monterey:       "e31e6465b25f1aff918e037cd47af183d996dd0d4f2888ce9494754c0dc2c951"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e31e6465b25f1aff918e037cd47af183d996dd0d4f2888ce9494754c0dc2c951"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "609241699fcb1575326b11b3675ac743ba0271c55d75b664fe9e89f8f74fc204"
+  end
+
   depends_on "node"
 
   def install
