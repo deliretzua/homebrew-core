@@ -18,13 +18,14 @@ class CiliumCli < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/cilium/cilium-cli/internal/cli/cmd.Version=#{version}"
+    ldflags = "-s -w -X github.com/cilium/cilium-cli/cli.Version=v#{version}"
     system "go", "build", *std_go_args(output: bin/"cilium", ldflags: ldflags), "./cmd/cilium"
 
     generate_completions_from_executable(bin/"cilium", "completion", base_name: "cilium")
   end
 
   test do
+    assert_match("cilium-cli: v#{version}", shell_output("#{bin}/cilium version 2>&1"))
     assert_match('Cluster name "" is not valid', shell_output("#{bin}/cilium install 2>&1", 1))
     assert_match("Error: Unable to enable Hubble", shell_output("#{bin}/cilium hubble enable 2>&1", 1))
   end
