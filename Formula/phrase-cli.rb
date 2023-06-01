@@ -6,13 +6,13 @@ class PhraseCli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "424dd9851a367ed4e1336d62e80e76942d91f49ab1baf087d9bdbcbc8cda1de2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "424dd9851a367ed4e1336d62e80e76942d91f49ab1baf087d9bdbcbc8cda1de2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "424dd9851a367ed4e1336d62e80e76942d91f49ab1baf087d9bdbcbc8cda1de2"
-    sha256 cellar: :any_skip_relocation, ventura:        "a58f12799316a3881708e501ac336fe8b0ea657eef10d137ae5e814ed058e9d1"
-    sha256 cellar: :any_skip_relocation, monterey:       "a58f12799316a3881708e501ac336fe8b0ea657eef10d137ae5e814ed058e9d1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a58f12799316a3881708e501ac336fe8b0ea657eef10d137ae5e814ed058e9d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a92ae7b9254e1e7109a586ac2a1cf8e699457897a8f58e0cd36bead4f382ed85"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fdefb98ecc3278a57aac442a3f2423b43c5919b0bf2d01e9bf8d57cbe5c42dd7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fdefb98ecc3278a57aac442a3f2423b43c5919b0bf2d01e9bf8d57cbe5c42dd7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fdefb98ecc3278a57aac442a3f2423b43c5919b0bf2d01e9bf8d57cbe5c42dd7"
+    sha256 cellar: :any_skip_relocation, ventura:        "ac06971b962c8817e257c2b276b1e16616695f559e73961f1a97da00679038d9"
+    sha256 cellar: :any_skip_relocation, monterey:       "ac06971b962c8817e257c2b276b1e16616695f559e73961f1a97da00679038d9"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ac06971b962c8817e257c2b276b1e16616695f559e73961f1a97da00679038d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e3a135580ba1e06ee7bca26c9e463df1bae4e9b8ca778da375702a08af4a1a3e"
   end
 
   depends_on "go" => :build
