@@ -4,7 +4,7 @@ class Votca < Formula
   url "https://github.com/votca/votca/archive/refs/tags/v2022.1.tar.gz"
   sha256 "4710a7552f94789936324d76d2e0830b576de8d3f1c605748e2d20947d018100"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "e5280df285ba79120a1960cec2ac51ce3b6f2b8e7cb897d3fa5b7279a29b1cc2"
@@ -22,8 +22,11 @@ class Votca < Formula
   depends_on "eigen"
   depends_on "fftw"
   depends_on "gcc" # for OpenMP
-  # add gromacs back once it was built with clang
+  # add gromacs dep back once it was built with clang
   depends_on "hdf5"
+  depends_on "libecpint"
+  depends_on "libint"
+  depends_on "libxc"
   depends_on "python@3.11"
 
   uses_from_macos "expat"
@@ -36,7 +39,7 @@ class Votca < Formula
     args = [
       "-DINSTALL_RC_FILES=OFF",
       "-DINSTALL_CSGAPPS=ON",
-      "-DBUILD_XTP=OFF",
+      "-DBUILD_XTP=ON",
       "-DCMAKE_DISABLE_FIND_PACKAGE_GROMACS=ON",
       "-DENABLE_RPATH_INJECT=ON",
     ]
