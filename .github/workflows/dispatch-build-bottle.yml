@@ -52,7 +52,7 @@ jobs:
                                                 .filter(Boolean)
                                                 .map(s => {
               if (intelMacOSRegex.test(s) || s == "13-arm64") // Ephemeral runners
-                return {runner: `${s}-${context.runId}-${process.env.GITHUB_RUN_ATTEMPT}`};
+                return {runner: `${s}-${context.runId}`};
               else if (linuxRegex.test(s))
                 return {
                   runner:    s,
