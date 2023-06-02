@@ -1,8 +1,8 @@
 class Gebug < Formula
   desc "Debug Dockerized Go applications better"
   homepage "https://github.com/moshebe/gebug"
-  url "https://github.com/moshebe/gebug/archive/refs/tags/v1.0.3.tar.gz"
-  sha256 "1fc4ca057db026b23e62d8db67107ebfe648b68d7ec656abd10b2bfd684f29a2"
+  url "https://github.com/moshebe/gebug/archive/refs/tags/v1.0.7.tar.gz"
+  sha256 "3dac2b9b1f9a3d5fa8c19fceb7f77ea8ce003504239a2744bfc3c492b96a2e56"
   license "Apache-2.0"
   head "https://github.com/moshebe/gebug.git", branch: "master"
 
