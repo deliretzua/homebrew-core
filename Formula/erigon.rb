@@ -1,17 +1,10 @@
 class Erigon < Formula
   desc "Implementation of Ethereum (execution client), on the efficiency frontier"
   homepage "https://github.com/ledgerwatch/erigon"
+  url "https://github.com/ledgerwatch/erigon/archive/refs/tags/v2.44.0.tar.gz"
+  sha256 "dd9da0fc581d37d0fe386693cc611a37cf7b890bf8bc7549cc0c88674322f72a"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later"]
   head "https://github.com/ledgerwatch/erigon.git", branch: "devel"
-
-  stable do
-    url "https://github.com/ledgerwatch/erigon/archive/refs/tags/v2.43.1.tar.gz"
-    sha256 "0d6f77f76f0b3a5d3290fd58d786fbbe472d0d891265c929517ef4879d8d9a66"
-
-    # patch to use go-m1cpu v0.1.5
-    # upstream commit ref, https://github.com/ledgerwatch/erigon/commit/fe30cf8c6f8ca8999cf55c94383ee9c34b3c0640
-    patch :DATA
-  end
 
   livecheck do
     url :stable
@@ -71,33 +64,3 @@ class Erigon < Formula
     assert_predicate testpath/"erigon.log", :exist?
   end
 end
-
-__END__
-diff --git a/go.mod b/go.mod
-index 38a4f09..618e77c 100644
---- a/go.mod
-+++ b/go.mod
-@@ -233,7 +233,7 @@ require (
- 	github.com/rogpeppe/go-internal v1.9.0 // indirect
- 	github.com/rs/dnscache v0.0.0-20211102005908-e0241e321417 // indirect
- 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
--	github.com/shoenig/go-m1cpu v0.1.4 // indirect
-+	github.com/shoenig/go-m1cpu v0.1.5 // indirect
- 	github.com/spaolacci/murmur3 v1.1.0 // indirect
- 	github.com/supranational/blst v0.3.10 // indirect
- 	github.com/tklauser/go-sysconf v0.3.11 // indirect
-diff --git a/go.sum b/go.sum
-index 5b2a3ad..2f119ca 100644
---- a/go.sum
-+++ b/go.sum
-@@ -717,8 +717,9 @@ github.com/sergi/go-diff v1.1.0 h1:we8PVUC3FE2uYfodKH/nBHMSetSfHDR6scGdBi+erh0=
- github.com/sergi/go-diff v1.1.0/go.mod h1:STckp+ISIX8hZLjrqAeVduY0gWCT9IjLuqbuNXdaHfM=
- github.com/shirou/gopsutil/v3 v3.23.3 h1:Syt5vVZXUDXPEXpIBt5ziWsJ4LdSAAxF4l/xZeQgSEE=
- github.com/shirou/gopsutil/v3 v3.23.3/go.mod h1:lSBNN6t3+D6W5e5nXTxc8KIMMVxAcS+6IJlffjRRlMU=
--github.com/shoenig/go-m1cpu v0.1.4 h1:SZPIgRM2sEF9NJy50mRHu9PKGwxyyTTJIWvCtgVbozs=
- github.com/shoenig/go-m1cpu v0.1.4/go.mod h1:Wwvst4LR89UxjeFtLRMrpgRiyY4xPsejnVZym39dbAQ=
-+github.com/shoenig/go-m1cpu v0.1.5 h1:LF57Z/Fpb/WdGLjt2HZilNnmZOxg/q2bSKTQhgbrLrQ=
-+github.com/shoenig/go-m1cpu v0.1.5/go.mod h1:Wwvst4LR89UxjeFtLRMrpgRiyY4xPsejnVZym39dbAQ=
- github.com/shoenig/test v0.6.3 h1:GVXWJFk9PiOjN0KoJ7VrJGH6uLPnqxR7/fe3HUPfE0c=
- github.com/shoenig/test v0.6.3/go.mod h1:byHiCGXqrVaflBLAMq/srcZIHynQPQgeyvkvXnjqq0k=
- github.com/shurcooL/component v0.0.0-20170202220835-f88ec8f54cc4/go.mod h1:XhFIlyj5a1fBNx5aJTbKoIq0mNaPvOagO+HjB3EtxrY=
