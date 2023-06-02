@@ -18,15 +18,8 @@ class SpacemanDiff < Formula
   end
 
   test do
-    output = shell_output("#{bin}/spaceman-diff")
-    assert_match "USAGE", output
-
-    png = test_fixtures("test.png")
-    cmd = if OS.linux?
-      ["script", "-q", "/dev/null", "-c", bin/"spaceman-diff"]
-    else
-      ["script", "-q", "/dev/null", bin/"spaceman-diff"]
-    end
-    system(*cmd, png, "a190ba", "100644", png, "000000", "100644")
+    # need to configure to use with git-diff
+    output = shell_output(bin/"spaceman-diff")
+    assert_match "spaceman-diff fileA shaA modeA fileB shaB modeB", output
   end
 end
