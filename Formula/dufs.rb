@@ -1,8 +1,8 @@
 class Dufs < Formula
   desc "Static file server"
   homepage "https://github.com/sigoden/dufs"
-  url "https://github.com/sigoden/dufs/archive/refs/tags/v0.34.0.tar.gz"
-  sha256 "996898f6f85add5d3378e3a54bb8ddb2f51cebc6b3f169d5d174ebdbcd2c6732"
+  url "https://github.com/sigoden/dufs/archive/refs/tags/v0.34.1.tar.gz"
+  sha256 "bd3cdc7951c9822369bd7b5c6f21a2bfdf2f85ae40fb5e02832e4e024964d025"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
