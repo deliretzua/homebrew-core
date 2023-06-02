@@ -31,6 +31,8 @@ class Libclc < Formula
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+
+    inreplace share/"pkgconfig/libclc.pc", prefix, opt_prefix
   end
 
   test do
