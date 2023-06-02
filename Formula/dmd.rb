@@ -5,19 +5,12 @@ class Dmd < Formula
 
   stable do
     # make sure resources also use the same version
-    url "https://github.com/dlang/dmd/archive/refs/tags/v2.103.1.tar.gz"
-    sha256 "25570505289e0c402095ac168fc62e33f6b34b5e6d06f781d32954cc3d45e803"
+    url "https://github.com/dlang/dmd/archive/refs/tags/v2.104.0.tar.gz"
+    sha256 "de9f8bb78b3980051b7b410fb348e57121204a47194170ef3c810a64c9c9c37c"
 
     resource "phobos" do
-      url "https://github.com/dlang/phobos/archive/refs/tags/v2.103.1.tar.gz"
-      sha256 "d6956b70d582311ffbf0c3464dcd7531eb0bda3dc27a2051ca78fa6b045a0c9f"
-    end
-
-    # Fix build on Ventura when newer Xcode is used
-    # Patch merged upstream (https://github.com/dlang/dmd/pull/15139), remove on next version bump
-    patch do
-      url "https://github.com/dlang/dmd/commit/deaf1b81986c57d31a1b1163301ca4d157505220.patch?full_index=1"
-      sha256 "e16eb257c861a612b7fa3a8486e292b7f7faa0bd38a71e0c45d4afada790b7c3"
+      url "https://github.com/dlang/phobos/archive/refs/tags/v2.104.0.tar.gz"
+      sha256 "cc0f9b8429a526356ae4c6fbc007a6406cb3da4be8ed92d8d10c6d84ee1088a6"
     end
   end
 
