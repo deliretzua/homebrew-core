@@ -3,8 +3,8 @@ require "language/node"
 class ReleaseIt < Formula
   desc "Generic CLI tool to automate versioning and package publishing related tasks"
   homepage "https://github.com/release-it/release-it"
-  url "https://registry.npmjs.org/release-it/-/release-it-15.10.3.tgz"
-  sha256 "fa300de186cbfc0c79d2ee4d5b5b07349b45fa7307ef8bac0904c9df99c73206"
+  url "https://registry.npmjs.org/release-it/-/release-it-15.10.5.tgz"
+  sha256 "b2fa2d3333b4cd723b639aa75afebd900d2075abd889a4c0f67805894f7276c7"
   license "MIT"
 
   bottle do
