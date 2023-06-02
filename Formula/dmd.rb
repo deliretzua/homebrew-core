@@ -15,10 +15,10 @@ class Dmd < Formula
   end
 
   bottle do
-    sha256 ventura:      "2c0f4ef63d746054f52d50f7b1b7d7704fde017676521fc9bfdaf4b7764de359"
-    sha256 monterey:     "32665bb76aabe97c94c0cf90f8dc7f22b6e1b717ccc9cc1dc00d39b723c57c82"
-    sha256 big_sur:      "3384609eb4981d5e75d4e313d2d60d177be2256b6c4122c5d91bbd247ad53bff"
-    sha256 x86_64_linux: "bcde5e16ee044846dde8e48bee336820e0604909580ade6a0773d91e09275d40"
+    sha256 ventura:      "54a9f47f936490a881e84e738faa9f9906ca9f3d2317dcdb2ffa9b2e8acc77fa"
+    sha256 monterey:     "e84a79b8005a9e0bcc68cdf415cc2ac1dc92e13f854b19cd19a9a6ade5cb687b"
+    sha256 big_sur:      "117bc5d831565507d7c60ba12df59d901c6da530ed05783064f0a38f1484d62d"
+    sha256 x86_64_linux: "0a29379a78998309cf9d96b9b1ef377db9dba22a533f7e0a580a0914eec73ae5"
   end
 
   head do
