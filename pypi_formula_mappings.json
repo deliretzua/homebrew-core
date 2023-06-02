@@ -558,6 +558,7 @@
   "prowler": {
     "exclude_packages": ["cffi", "pycparser", "six", "tabulate", "typing-extensions", "PyYAML"]
   },
+  "psutils": "pspdfutils",
   "ptpython": {
     "exclude_packages": ["Pygments"]
   },
