@@ -1,8 +1,8 @@
 class Fastgron < Formula
   desc "High-performance JSON to GRON converter"
   homepage "https://github.com/adamritter/fastgron"
-  url "https://github.com/adamritter/fastgron/archive/refs/tags/v0.4.11.tar.gz"
-  sha256 "0c43c22132d5169cd074df84d445daa4a28b2dd4fb79d7291e01fdcbb1dfbacd"
+  url "https://github.com/adamritter/fastgron/archive/v0.4.13.tar.gz"
+  sha256 "8a7c48c1f96a97662aaf38e623655a85d17561740892b671fa6c29d1b7a5b27d"
   license "MIT"
 
   bottle do
@@ -18,12 +18,6 @@ class Fastgron < Formula
   depends_on "cmake" => :build
 
   uses_from_macos "curl"
-
-  # fix version setup, remove in next release
-  patch do
-    url "https://github.com/adamritter/fastgron/commit/ebf75de517bd903ea76bbd3d900bedd1830d980c.patch?full_index=1"
-    sha256 "249cbc9c7bb8a60eaa8f1cca98abf71eaf4f092a8c2f2e7318486c2cb44012db"
-  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
