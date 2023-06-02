@@ -41,7 +41,7 @@ jobs:
               --header 'Accept: application/vnd.github+json' \
               --header 'X-GitHub-Api-Version: 2022-11-28' \
               'repos/{owner}/{repo}/pulls/${{ github.event.number }}/files' \
-              --jq '.[].filename | map(startswith(".github/workflows")) | any'
+              --jq 'any(.[].filename; startswith(".github/workflows"))'
           )"
           echo "workflow_modified=${workflow_modified}" >> "${GITHUB_OUTPUT}"
 
