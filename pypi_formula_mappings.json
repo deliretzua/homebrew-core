@@ -803,5 +803,8 @@
   },
   "yamllint": {
     "exclude_packages": ["PyYAML"]
+  },
+  "ykman": {
+    "exclude_packages": ["cffi", "keyring", "pycparser"]
   }
 }
