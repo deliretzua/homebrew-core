@@ -1,8 +1,8 @@
 class Utftex < Formula
   desc "Pretty print math in monospace fonts, using a TeX-like syntax"
   homepage "https://github.com/bartp5/libtexprintf"
-  url "https://github.com/bartp5/libtexprintf/archive/refs/tags/v1.18.tar.gz"
-  sha256 "ff39c33629ae9bc6f8782b9fdfa14a240a75ee3a3bf80d02f95bf31c522f9e31"
+  url "https://github.com/bartp5/libtexprintf/archive/refs/tags/v1.21.tar.gz"
+  sha256 "8089e77257d1686d7cdd72c390288615def720619bea2db4408c2659f993562d"
   license "GPL-3.0-only"
 
   bottle do
@@ -18,13 +18,6 @@ class Utftex < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-
-  # Fixes race condition in Makefile
-  # Remove in next release
-  patch do
-    url "https://github.com/bartp5/libtexprintf/commit/65fb91ab307f3185278fca354f21f4c282cc7154.patch?full_index=1"
-    sha256 "23d67a77fc27ecfb7c9c600db2eeb58eb78fe0ef1d23e00415e9cc08fdd1620a"
-  end
 
   def install
     system "./autogen.sh"
