@@ -1,8 +1,8 @@
 class Fastgron < Formula
   desc "High-performance JSON to GRON converter"
   homepage "https://github.com/adamritter/fastgron"
-  url "https://github.com/adamritter/fastgron/archive/v0.4.13.tar.gz"
-  sha256 "8a7c48c1f96a97662aaf38e623655a85d17561740892b671fa6c29d1b7a5b27d"
+  url "https://github.com/adamritter/fastgron/archive/v0.4.14.tar.gz"
+  sha256 "e4476eb8a523751ed9a11c0926081a07296b0a27c11c782813c444ec1e8c81fc"
   license "MIT"
 
   bottle do
