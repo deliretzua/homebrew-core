@@ -6,13 +6,13 @@ class Utftex < Formula
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "af1e18aa043166b7bc501d7df5339acbb34172e08e8bd0f268c815cb22bf21f4"
-    sha256 cellar: :any,                 arm64_monterey: "8e9f5976d421de534701d624b895104e3a30c6084bba822c57cf57c0f73d3a1b"
-    sha256 cellar: :any,                 arm64_big_sur:  "2e948b5fdd3bb115fd246de90cac5cccb68e73c65ea36a854dac6736582a19db"
-    sha256 cellar: :any,                 ventura:        "11e61d5f0a3430fa190488d403606f7ca80a43ca8781dd8899c271338d1835c5"
-    sha256 cellar: :any,                 monterey:       "ab61d9f5c135fea6412d46690cb01b6e4a9b65faa4e07aab129f7c31414d5201"
-    sha256 cellar: :any,                 big_sur:        "398f48bcc28daa596e91c5a4cc27d3702de79ad16ab72ad5667dbae6260e1a84"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5ba1f8f606e664f5c662287c4ffdf5c829cd5f81c489d225959046fe9d2f767"
+    sha256 cellar: :any,                 arm64_ventura:  "f82c51a29753666beb91009df42ba0abcbda4fb3cff19415e79c4cb6ef807770"
+    sha256 cellar: :any,                 arm64_monterey: "8554b290f634b0b9a55f25cf202f1d1d261ff40fe3f9b4973050aea74cf4d3bb"
+    sha256 cellar: :any,                 arm64_big_sur:  "6becfa946ecc1a87471adba47cb940ee866097ae0ced51bf906f0ae42319da1b"
+    sha256 cellar: :any,                 ventura:        "91a55d196421bcc355b7f2d566c3e2b895c096ab24a9ffa47f38cb16738e065c"
+    sha256 cellar: :any,                 monterey:       "e9e62ff4e698548256fd9d03595565398e4b98136e9cf06caa6ed5cbbbed013d"
+    sha256 cellar: :any,                 big_sur:        "489ec075341f2c9563098adc762b651dd17906b17b543c3cc3a7805f8d14f2c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "edcbad8d8b39072f85fd33bbc2e4d77434cebd848f0c2e1fc57a0047640b6886"
   end
 
   depends_on "autoconf" => :build
