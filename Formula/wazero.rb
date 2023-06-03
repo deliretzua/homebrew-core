@@ -6,13 +6,13 @@ class Wazero < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "02485506e65a1835faa717e0efe5900b1980f687647bc0c45b6b3be99769a66d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "02485506e65a1835faa717e0efe5900b1980f687647bc0c45b6b3be99769a66d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "02485506e65a1835faa717e0efe5900b1980f687647bc0c45b6b3be99769a66d"
-    sha256 cellar: :any_skip_relocation, ventura:        "5926d67b224b23dba6acede6ffa258c56b9c6c229704d18846aef9b128d6cd1e"
-    sha256 cellar: :any_skip_relocation, monterey:       "5926d67b224b23dba6acede6ffa258c56b9c6c229704d18846aef9b128d6cd1e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5926d67b224b23dba6acede6ffa258c56b9c6c229704d18846aef9b128d6cd1e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "56415ce0d57f40f64c22d06adda0b2596bae82e104b19a0ea14fad896142a3b9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "22fe9370989601f83c3a207b3aa4818e3e2bffd1c07a280ac8650834a07e8011"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "22fe9370989601f83c3a207b3aa4818e3e2bffd1c07a280ac8650834a07e8011"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "22fe9370989601f83c3a207b3aa4818e3e2bffd1c07a280ac8650834a07e8011"
+    sha256 cellar: :any_skip_relocation, ventura:        "40a0e6daec7c6a7899c82cbf2ff66971023406d0223c166b4c73dae3f8a92e16"
+    sha256 cellar: :any_skip_relocation, monterey:       "40a0e6daec7c6a7899c82cbf2ff66971023406d0223c166b4c73dae3f8a92e16"
+    sha256 cellar: :any_skip_relocation, big_sur:        "40a0e6daec7c6a7899c82cbf2ff66971023406d0223c166b4c73dae3f8a92e16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d0ad8c41b4d9fdadd312a976d6a3685f3591ad1ab6c42a972c3c5cc8c1eaaba"
   end
 
   depends_on "go" => :build
