@@ -8,14 +8,14 @@ class Mathlibtools < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_ventura:  "543dafe2984cfd84da964f4d1bab2b6e9888bfc8763bb8bb1bf4ef9d83fafa02"
-    sha256 cellar: :any,                 arm64_monterey: "c7c6150c7bdd014f39775db901049c233c6abfce783b5439f997568f2c1ceb84"
-    sha256 cellar: :any,                 arm64_big_sur:  "a2b5a8a9b216b26c0c74fa7a32d50efd80e0a5e7febe21c65c220f61344a3a58"
-    sha256 cellar: :any,                 ventura:        "6c85aa2c2f295cc0bf085cf626796067f7487f4392e12fc201e94b5c628fc5cd"
-    sha256 cellar: :any,                 monterey:       "06efa2a3feb78d39dfea90eb6f031550753ac7de35f73037c85765e5f9b31101"
-    sha256 cellar: :any,                 big_sur:        "6ad40bd0e939899d42a3f97210c02dc5379869e33de1ecd953ff2ee3dfc4bb7e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aedee17074163eb74e390b7246467646be1672b1809eb27c2da399738b54c2c8"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_ventura:  "a4bd3c63885268a1bc2c399a2d0e6150356444b2860640b1fc36987679b4b01e"
+    sha256 cellar: :any,                 arm64_monterey: "931851fd9ffede580ea44ebdb35cbf67921885851654050a552fe4e6140d389d"
+    sha256 cellar: :any,                 arm64_big_sur:  "83f4479a24f0a2373fcdfdd9b5959778ad270353b11fbdf6fe66653f45fdbd66"
+    sha256 cellar: :any,                 ventura:        "b61c6b20f959e0d0402ece75251179c57ea3a5bd8c4dc94af165cef15f331084"
+    sha256 cellar: :any,                 monterey:       "25696fe95f9445a914387a62da9a2d5ac99db2fb366930e15be96c0b6ed27796"
+    sha256 cellar: :any,                 big_sur:        "fef63b4c99d265eb5e920e12a5fa8b5988d017cb4056dd3161b8865890279e5e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e8d66ec042a4f93640872eec0cc6657588b3382bef80c79492ecbb9ae54a985"
   end
 
   depends_on "rust" => :build
