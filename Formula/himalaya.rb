@@ -1,8 +1,8 @@
 class Himalaya < Formula
   desc "CLI email client written in Rust"
-  homepage "https://github.com/soywod/himalaya"
-  url "https://github.com/soywod/himalaya/archive/v0.7.3.tar.gz"
-  sha256 "5bfadca9d6141834c3a97d53a43bdd317e59ee4f893bcc00e6fcbf9fc0f5b55a"
+  homepage "https://pimalaya.org/himalaya/"
+  url "https://github.com/soywod/himalaya/archive/v0.8.0.tar.gz"
+  sha256 "c9bf62c802b05d3c98e105513042eafbbcbed4c5ed61aec7addae185accc5b40"
   license "MIT"
 
   bottle do
@@ -45,15 +45,17 @@ class Himalaya < Formula
       imap-host = "imap.gmail.com"
       imap-port = 993
       imap-login = "your.email@gmail.com"
-      imap-passwd-cmd = "pass show gmail"
+      imap-auth  = "passwd"
+      imap-passwd = { cmd = "echo password" }
 
       sender = "smtp"
       smtp-host = "smtp.gmail.com"
       smtp-port = 465
       smtp-login = "your.email@gmail.com"
-      smtp-passwd-cmd = "security find-internet-password -gs gmail -w"
+      smtp-auth  = "passwd"
+      smtp-passwd = { cmd = "echo password" }
     EOS
 
-    assert_match "Error: cannot get imap password: password is empty", shell_output("#{bin}/himalaya 2>&1", 1)
+    assert_match "Error: cannot login to imap server", shell_output(bin/"himalaya 2>&1", 1)
   end
 end
