@@ -18,6 +18,13 @@ class Actionlint < Formula
   depends_on "go" => :build
   depends_on "ronn" => :build
 
+  # Support macos-13 GitHub-hosted runners.
+  # Remove at next release.
+  patch do
+    url "https://github.com/rhysd/actionlint/commit/7aab63e3872d169984ad86d10db293355f24fb7b.patch?full_index=1"
+    sha256 "b54f30a848db091915008abd435fa36c1b73e087a85b9a90ba358243afa6ad6f"
+  end
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/rhysd/actionlint.version=#{version}"), "./cmd/actionlint"
     system "ronn", "man/actionlint.1.ronn"
