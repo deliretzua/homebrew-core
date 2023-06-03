@@ -3,8 +3,8 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/45/e8/57cc5fd57bcd364321aa5a3f78d5208a58286da37e217161b9e50856a58f/schemathesis-3.19.3.tar.gz"
-  sha256 "4c2ce9cd5cad61eee4d229a3c664ec59daa5c3621ff5aa72b317de8667486b78"
+  url "https://files.pythonhosted.org/packages/d6/0b/f71302789035165c317944c150fd0f4f805d6b177b38f7d16156d74501f9/schemathesis-3.19.5.tar.gz"
+  sha256 "0570a2d6f0672e360acd5334e428eb20bb5f77565e60d02280fab558afef43cc"
   license "MIT"
 
   bottle do
@@ -23,8 +23,8 @@ class Schemathesis < Formula
   depends_on "six"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/8b/94/6928d4345f2bc1beecbff03325cad43d320717f51ab74ab5a571324f4f5a/anyio-3.6.2.tar.gz"
-    sha256 "25ea0d673ae30af41a0c442f81cf3b38c7e79fdc7b60335a4c14e05eb0947421"
+    url "https://files.pythonhosted.org/packages/c6/b3/fefbf7e78ab3b805dec67d698dc18dd505af7a18a8dd08868c9b4fa736b5/anyio-3.7.0.tar.gz"
+    sha256 "275d9973793619a5374e1c89a4f4ad3f4b0a5510a2b5b939444bee8f4c4d37ce"
   end
 
   resource "attrs" do
@@ -83,8 +83,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/ca/bb/5e142069484aba2f1d34050b2b50518a19fb72fb25987da7bb4b8606084e/hypothesis-6.75.3.tar.gz"
-    sha256 "15cdadb80a7ac59087581624d266a4fb585b5cce9b7f88f506c481a9f0e583f6"
+    url "https://files.pythonhosted.org/packages/9d/71/dfbabcf58e8c6abb04543a1db9f779d65efb15f04db06e875efc56573ee8/hypothesis-6.75.9.tar.gz"
+    sha256 "d006279cbfaef990ac60273fc598a5052a10ae40ea30b7860ade0a767a2e6fc2"
   end
 
   resource "hypothesis-graphql" do
@@ -118,8 +118,8 @@ class Schemathesis < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/95/7e/68018b70268fb4a2a605e2be44ab7b4dd7ce7808adae6c5ef32e34f4b55a/MarkupSafe-2.1.2.tar.gz"
-    sha256 "abcabc8c2b26036d62d4c746381a6f7cf60aafcc653198ad678306986b09450d"
+    url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
+    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
   end
 
   resource "multidict" do
