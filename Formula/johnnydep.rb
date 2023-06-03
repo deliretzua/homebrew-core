@@ -3,8 +3,8 @@ class Johnnydep < Formula
 
   desc "Display dependency tree of Python distribution"
   homepage "https://github.com/wimglenn/johnnydep"
-  url "https://files.pythonhosted.org/packages/4f/5f/69b55f7ffaf6fac2fbf990b35c569d50163959aba0a807070fc14d321152/johnnydep-1.20.1.tar.gz"
-  sha256 "5827dd477401f95a3d2a9eed1940891e62eb0557761c389c7fcabd7706315cae"
+  url "https://files.pythonhosted.org/packages/01/74/b42da2690d994ff3d1998417d63682bd42600b2fc49cc8a3e90db5246247/johnnydep-1.20.2.tar.gz"
+  sha256 "21d361ca4c25ffc043e7a47acd9c619c68880bef91cb4be820e4ce2d085726d0"
   license "MIT"
 
   bottle do
@@ -28,8 +28,8 @@ class Johnnydep < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/4d/91/5837e9f9e77342bb4f3ffac19ba216eef2cd9b77d67456af420e7bafe51d/cachetools-5.3.0.tar.gz"
-    sha256 "13dfddc7b8df938c21a940dfa6557ce6e94a2f1cdfa58eb90c805721d58f2c14"
+    url "https://files.pythonhosted.org/packages/9d/8b/8e2ebf5ee26c21504de5ea2fb29cc6ae612b35fd05f959cdb641feb94ec4/cachetools-5.3.1.tar.gz"
+    sha256 "dce83f2d9b4e1f732a8cd44af8e8fab2dbe46201467fc98b3ef8f269092bf62b"
   end
 
   resource "oyaml" do
