@@ -1,8 +1,8 @@
 class Algernon < Formula
   desc "Pure Go web server with Lua, Markdown, HTTP/2 and template support"
   homepage "https://github.com/xyproto/algernon"
-  url "https://github.com/xyproto/algernon/archive/refs/tags/v1.15.1.tar.gz"
-  sha256 "023779d8516da9ce5f3b1af9d0173652f2f1fab0d036b636e4185c3b8d5242c5"
+  url "https://github.com/xyproto/algernon/archive/refs/tags/v1.15.2.tar.gz"
+  sha256 "eb693954feaac8e589818f41c619c362256bac774e57c69d24c4ab08201974ee"
   license "BSD-3-Clause"
   version_scheme 1
   head "https://github.com/xyproto/algernon.git", branch: "main"
@@ -22,10 +22,7 @@ class Algernon < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d54da360b720e08a23181afb845b62bcea6d0a6624a0a1c7546a931b4d5841da"
   end
 
-  # Support for go 1.20 is merged upstream but not yet landed in a tag:
-  # https://github.com/xyproto/algernon/commit/00f29f8bcd0da772041a96fa9b57f7e1e21a6654
-  # Remove on next release.
-  depends_on "go@1.19" => :build
+  depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "-mod=vendor"
