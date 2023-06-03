@@ -34,18 +34,18 @@ class Credstash < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/f7/d4/0448f83fa6fb5de4bafaf5490d105683ad82bb97d95ce82ec26c48180a8a/boto3-1.26.142.tar.gz"
-    sha256 "8f4b5c93a7f0c8e40ae1983cfbefd017bd625e554426544c78dceb4045648911"
+    url "https://files.pythonhosted.org/packages/6f/d9/7fffa68720d8d1a255fc8a8635d9d5a7673ffc7ab6fabdc4f7f023f78c10/boto3-1.26.146.tar.gz"
+    sha256 "3d7f1b43d2e5a10ee29d4940e714d72a2f6f1a6f6ba856c82ba9328d83062605"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/fd/40/df47658153a2458cf92c45bbcb878b96e860dfc30ac935117ff7905d3d21/botocore-1.29.142.tar.gz"
-    sha256 "512d2f48fc1471f169bc210eede662f8da66be3cebc1515dfb5411a18b2aeabf"
+    url "https://files.pythonhosted.org/packages/61/6f/f124fbf71d9a327bf1abbca92b7809010224a381fb740226477bac7d6c88/botocore-1.29.146.tar.gz"
+    sha256 "77f7793cb36074eb84d606a23ad6e1d57c20f7a2eeab7d9136d3e63c584e0504"
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/f7/80/04cc7637238b78f8e7354900817135c5a23cf66dfb3f3a216c6d630d6833/cryptography-40.0.2.tar.gz"
-    sha256 "c33c0d32b8594fa647d2e01dbccc303478e16fdd7cf98652d5b3ed11aa5e5c99"
+    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
+    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
   end
 
   resource "jmespath" do
