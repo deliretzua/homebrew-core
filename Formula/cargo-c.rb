@@ -1,8 +1,8 @@
 class CargoC < Formula
   desc "Helper program to build and install c-like libraries"
   homepage "https://github.com/lu-zero/cargo-c"
-  url "https://github.com/lu-zero/cargo-c/archive/refs/tags/v0.9.19.tar.gz"
-  sha256 "c2633ff22e52da9985394f30c8ef5e9abbac4d14c9b79e3690c8e95cf500ab97"
+  url "https://github.com/lu-zero/cargo-c/archive/refs/tags/v0.9.20.tar.gz"
+  sha256 "6a89125c4b59279e73f977ef8a7aa5d83240bdf5d1d7ef1a53b8d1f2201a5f41"
   license "MIT"
 
   livecheck do
@@ -21,7 +21,7 @@ class CargoC < Formula
   end
 
   depends_on "rust" => :build
-  depends_on "libgit2@1.5"
+  depends_on "libgit2"
   depends_on "libssh2"
   depends_on "openssl@1.1"
 
@@ -55,7 +55,7 @@ class CargoC < Formula
     assert_match cargo_error, shell_output("#{bin}/cargo-cbuild cbuild 2>&1", 1)
 
     [
-      Formula["libgit2@1.5"].opt_lib/shared_library("libgit2"),
+      Formula["libgit2"].opt_lib/shared_library("libgit2"),
       Formula["libssh2"].opt_lib/shared_library("libssh2"),
       Formula["openssl@1.1"].opt_lib/shared_library("libssl"),
       Formula["openssl@1.1"].opt_lib/shared_library("libcrypto"),
