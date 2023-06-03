@@ -24,18 +24,17 @@ class Wrk < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a2f57e3e9591a16d1b26a5daaed5b2528d06c0af6b9f1093a195dd913cc868d"
   end
 
-  # TODO: Switch to luajit when https://github.com/wg/wrk/issues/516 is resolved.
-  depends_on "luajit-openresty"
+  depends_on "luajit"
   depends_on "openssl@3"
 
   conflicts_with "wrk-trello", because: "both install `wrk` binaries"
 
   def install
     ENV.deparallelize
-    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
-    ENV.append_to_cflags "-I#{Formula["luajit-openresty"].opt_include}/luajit-2.1"
+    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s
+    ENV.append_to_cflags "-I#{Formula["luajit"].opt_include}/luajit-2.1"
     args = %W[
-      WITH_LUAJIT=#{Formula["luajit-openresty"].opt_prefix}
+      WITH_LUAJIT=#{Formula["luajit"].opt_prefix}
       WITH_OPENSSL=#{Formula["openssl@3"].opt_prefix}
     ]
     args << "VER=#{version}" unless build.head?
@@ -44,6 +43,6 @@ class Wrk < Formula
   end
 
   test do
-    system "#{bin}/wrk", "-c", "1", "-t", "1", "-d", "1", "https://example.com/"
+    system bin/"wrk", "-c", "1", "-t", "1", "-d", "1", "https://example.com/"
   end
 end
