@@ -6,6 +6,16 @@ class Wzprof < Formula
   license "Apache-2.0"
   head "https://github.com/stealthrocket/wzprof.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2f8d9399ca250920f073e0c6f2d821a8e8681e81c5029071ee8f8943412ce77d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2f8d9399ca250920f073e0c6f2d821a8e8681e81c5029071ee8f8943412ce77d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2f8d9399ca250920f073e0c6f2d821a8e8681e81c5029071ee8f8943412ce77d"
+    sha256 cellar: :any_skip_relocation, ventura:        "8b4e097e071ae5e9900bcfb3f8cbd7574c70acfbd6baf26e5eadce385fbe67a0"
+    sha256 cellar: :any_skip_relocation, monterey:       "8b4e097e071ae5e9900bcfb3f8cbd7574c70acfbd6baf26e5eadce385fbe67a0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8b4e097e071ae5e9900bcfb3f8cbd7574c70acfbd6baf26e5eadce385fbe67a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "00a4b0daa0c7d11abb4dbdd683cff224c544a5e9602ae2d187a56f1637736399"
+  end
+
   depends_on "go" => :build
 
   def install
