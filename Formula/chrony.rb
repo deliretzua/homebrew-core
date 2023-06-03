@@ -4,6 +4,7 @@ class Chrony < Formula
   url "https://download.tuxfamily.org/chrony/chrony-4.3.tar.gz"
   sha256 "9d0da889a865f089a5a21610ffb6713e3c9438ce303a63b49c2fb6eaff5b8804"
   license "GPL-2.0-only"
+  revision 1
 
   livecheck do
     url "https://chrony.tuxfamily.org/download.html"
