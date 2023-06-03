@@ -43,10 +43,16 @@ jobs:
               'repos/{owner}/{repo}/pulls/${{ github.event.number }}/files' \
               --jq 'any(.[].filename; startswith(".github/workflows"))'
           )"
-          echo "workflow_modified=${workflow_modified}" >> "${GITHUB_OUTPUT}"
+          # Fail closed.
+          echo "workflow_modified=${workflow_modified:-true}" >> "${GITHUB_OUTPUT}"
+
+      # Wait briefly in case of failure to make sure we don't end up
+      # hitting the same API error when trying `gh pr edit`.
+      - if: failure()
+        run: sleep 30
 
       - name: Label PR
-        if: fromJson(steps.files.outputs.workflow_modified)
+        if: always() && fromJson(steps.files.outputs.workflow_modified)
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh pr edit --add-label workflows '${{ github.event.number }}'
