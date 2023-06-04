@@ -17,6 +17,7 @@ class Libint < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  depends_on "libtool" => :build
   depends_on "pkg-config" => [:build, :test]
   depends_on "boost"
   depends_on "eigen"
@@ -24,8 +25,9 @@ class Libint < Formula
   depends_on "python@3.11"
 
   def install
+    system "glibtoolize", "--install", "--force"
     system "./autogen.sh"
-    system "./configure", *std_configure_args
+    system "./configure", "--enable-shared", "--disable-static", *std_configure_args
     system "make"
     system "make", "install"
     pkgshare.install "tests/hartree-fock/hartree-fock.cc"
