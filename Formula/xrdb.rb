@@ -1,8 +1,8 @@
 class Xrdb < Formula
   desc "X resource database utility"
   homepage "https://gitlab.freedesktop.org/xorg/app/xrdb"
-  url "https://www.x.org/releases/individual/app/xrdb-1.2.1.tar.bz2"
-  sha256 "4f5d031c214ffb88a42ae7528492abde1178f5146351ceb3c05f3b8d5abee8b4"
+  url "https://www.x.org/releases/individual/app/xrdb-1.2.2.tar.xz"
+  sha256 "31f5fcab231b38f255b00b066cf7ea3b496df712c9eb2d0d50c670b63e5033f4"
   license "MIT-open-group"
 
   bottle do
