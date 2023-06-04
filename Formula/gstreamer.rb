@@ -168,13 +168,17 @@ class Gstreamer < Formula
     args << "-Dgstreamer:ptp-helper-permissions=none"
 
     # Prevent the build from downloading an x86-64 version of bison.
+    args << "-Dbuild-tools-source=system" if build.head? # make unconditional in 1.24+
     inreplace "meson.build", "subproject('macos-bison-binary')", ""
+    odie "`macos-bison-binary` workaround should be removed!" if build.stable? && version >= "1.24"
 
     # Set `RPATH` since `cargo-c` doesn't seem to.
     # https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/issues/279
     plugin_dir = lib/"gstreamer-1.0"
     rpath_args = [loader_path, rpath(source: plugin_dir)].map { |path| "-rpath,#{path}" }
-    ENV["RUSTFLAGS"] = "--codegen link-args=-Wl,#{rpath_args.join(",")}"
+    inreplace "subprojects/gst-plugins-rs/meson.build",
+              "rust_flags = []",
+              "rust_flags = ['--codegen', 'link-args=-Wl,#{rpath_args.join(",")}']"
 
     # Make sure the `openssl-sys` crate uses our OpenSSL.
     ENV["OPENSSL_NO_VENDOR"] = "1"
