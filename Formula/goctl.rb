@@ -1,8 +1,8 @@
 class Goctl < Formula
   desc "Generates server-side and client-side code for web and RPC services"
   homepage "https://go-zero.dev"
-  url "https://github.com/zeromicro/go-zero/archive/refs/tags/tools/goctl/v1.5.2.tar.gz"
-  sha256 "79c23e42b98ee76f9593da6e69ba55ec1453a3cc1895b7751de68a8c270a70ec"
+  url "https://github.com/zeromicro/go-zero/archive/refs/tags/tools/goctl/v1.5.3.tar.gz"
+  sha256 "50611a3acf261642d7b422428b5c72b935c408d13a9be82030a3703a0d730567"
   license "MIT"
 
   bottle do
@@ -19,7 +19,7 @@ class Goctl < Formula
 
   def install
     chdir "tools/goctl" do
-      system "go", "build", *std_go_args(ldflags: "-s -w", output: bin/"goctl"), "goctl.go"
+      system "go", "build", *std_go_args(ldflags: "-s -w"), "goctl.go"
     end
 
     generate_completions_from_executable(bin/"goctl", "completion")
@@ -27,7 +27,11 @@ class Goctl < Formula
 
   test do
     assert_match "goctl version #{version}", shell_output("#{bin}/goctl --version")
-    system bin/"goctl", "template", "init", "--home=#{testpath}/goctl-tpl-#{version}"
-    assert_predicate testpath/"goctl-tpl-#{version}", :exist?, "goctl install fail"
+    # configure project path
+    %w[api model rpc docker kube mongo newapi gateway].each do |f|
+      mkdir_p testpath/"#{version}/#{f}"
+    end
+    system bin/"goctl", "template", "init", "--home=#{testpath}"
+    assert_predicate testpath/"api/main.tpl", :exist?, "goctl install fail"
   end
 end
