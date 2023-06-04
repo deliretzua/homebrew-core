@@ -1,7 +1,7 @@
 class Tern < Formula
   include Language::Python::Virtualenv
 
-  desc "General-purpose speech recognition model"
+  desc "Software Bill of Materials (SBOM) tool"
   homepage "https://github.com/tern-tools/tern"
   url "https://files.pythonhosted.org/packages/8d/80/3b10e38f14985674a1422eeedfdc4f8ff5c613f0af7bc099903b558708d1/tern-2.12.0.tar.gz"
   sha256 "5ef84a7bb99fd3d36bdec6e930e28e3badc743ef6d86096e534da21087564a98"
