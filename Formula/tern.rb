@@ -8,6 +8,16 @@ class Tern < Formula
   license "BSD-2-Clause"
   head "https://github.com/tern-tools/tern.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c62f3c3547a824fe5afb8beaece0a68e0a32f7015dba6af558a353afe0914b5a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d7a8b9abcf0a3a54da3ee63384ebebade882f31b91a4eb81ccb42e4f5c8db3c1"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2811c75b416bf57f11ccb28c968d4c75a08e5aa0cd86e7b05998d9bf2ec54855"
+    sha256 cellar: :any_skip_relocation, ventura:        "7e1864f9445360314d46bdba43ab48fcad32f932ae3b7c391a34b02b5df94c60"
+    sha256 cellar: :any_skip_relocation, monterey:       "a6bd644df3852024bdacf644c3ce7fc992e29ee6b6ad436ae257e35bfd2efe10"
+    sha256 cellar: :any_skip_relocation, big_sur:        "38af31f47abe3b76d6819ca9817348f4aaedb5aba8fda72eef25c23ad043ebfb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "80826de5fa482cc65a83e7f610eaf9e20fc715cd8cb50d3dfc670c6ab847f720"
+  end
+
   depends_on "python@3.11"
 
   on_linux do
