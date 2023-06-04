@@ -3,8 +3,8 @@ require "language/node"
 class Httpyac < Formula
   desc "Quickly and easily send REST, SOAP, GraphQL and gRPC requests"
   homepage "https://httpyac.github.io/"
-  url "https://registry.npmjs.org/httpyac/-/httpyac-6.4.4.tgz"
-  sha256 "bff576342ac3028e97a64fd515aeb713250fd5358d6ee04c0523df76d2393717"
+  url "https://registry.npmjs.org/httpyac/-/httpyac-6.4.5.tgz"
+  sha256 "c93d8916b63e0812f413761b7bd62c9f4a9e93cdfcf5751ef58ccf00d08517a1"
   license "MIT"
 
   bottle do
