@@ -3,8 +3,8 @@ class Borgmatic < Formula
 
   desc "Simple wrapper script for the Borg backup software"
   homepage "https://torsion.org/borgmatic/"
-  url "https://files.pythonhosted.org/packages/1f/14/fbd3778371894fffa8b2c0453a3386c8e7c045c2033de757aa8df7bf6398/borgmatic-1.7.13.tar.gz"
-  sha256 "af7a6a2f0ae1d9866761bc02aaecc34168d3f059046671f2e157f0ee2985e4b8"
+  url "https://files.pythonhosted.org/packages/13/48/a5537cb049211322eba829fac600cedc7564cbb692911fdeeeec5bfc7626/borgmatic-1.7.14.tar.gz"
+  sha256 "ac00497ddad5f83dafeb21e901bce3ff431219cf5ba38f69c17102e393269a59"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -66,8 +66,8 @@ class Borgmatic < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/8c/0d/32f86bfad2755763b926f988252f57f4edbba32f876cb5e6d6f5c57b5f05/ruamel.yaml-0.17.26.tar.gz"
-    sha256 "baa2d0a5aad2034826c439ce61c142c07082b76f4791d54145e131206e998059"
+    url "https://files.pythonhosted.org/packages/39/97/03674459c459b9b69ef71eba039205a72867e5c6c409df3136858f6836f3/ruamel.yaml-0.17.31.tar.gz"
+    sha256 "098ed1eb6d338a684891a72380277c1e6fc4d4ae0e120de9a447275056dda335"
   end
 
   resource "ruamel-yaml-clib" do
