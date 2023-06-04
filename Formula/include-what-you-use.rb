@@ -2,6 +2,7 @@ class IncludeWhatYouUse < Formula
   desc "Tool to analyze #includes in C and C++ source files"
   homepage "https://include-what-you-use.org/"
   license "NCSA"
+  revision 1
 
   stable do
     url "https://include-what-you-use.org/downloads/include-what-you-use-0.20.src.tar.gz"
