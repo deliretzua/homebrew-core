@@ -1,8 +1,8 @@
 class Wego < Formula
   desc "Weather app for the terminal"
   homepage "https://github.com/schachmat/wego"
-  url "https://github.com/schachmat/wego/archive/2.1.tar.gz"
-  sha256 "cebfa622789aa8e7045657d81754cb502ba189f4b4bebd1a95192528e06969a6"
+  url "https://github.com/schachmat/wego/archive/2.2.tar.gz"
+  sha256 "e7a6d40cb44f4408aedceebbed5854b3b992936cc762df6b76f5a9dca7909321"
   license "ISC"
   head "https://github.com/schachmat/wego.git", branch: "master"
 
