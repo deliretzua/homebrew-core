@@ -1,8 +1,8 @@
 class Libdmx < Formula
   desc "X.Org: X Window System DMX (Distributed Multihead X) extension library"
   homepage "https://www.x.org/"
-  url "https://www.x.org/archive/individual/lib/libdmx-1.1.4.tar.bz2"
-  sha256 "253f90005d134fa7a209fbcbc5a3024335367c930adf0f3203e754cf32747243"
+  url "https://www.x.org/archive/individual/lib/libdmx-1.1.5.tar.xz"
+  sha256 "35a4e26a8b0b2b4fe36441dca463645c3fa52d282ac3520501a38ea942cbf74f"
   license "MIT"
 
   bottle do
