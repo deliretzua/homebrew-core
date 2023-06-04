@@ -1,8 +1,8 @@
 class Asciidoctorj < Formula
   desc "Java wrapper and bindings for Asciidoctor"
   homepage "https://github.com/asciidoctor/asciidoctorj"
-  url "https://search.maven.org/remotecontent?filepath=org/asciidoctor/asciidoctorj/2.5.9/asciidoctorj-2.5.9-bin.zip"
-  sha256 "d2a1dd165037de1ea3fe3dfb52aee8f6c4ecf60f90c2ca544691009ec35cee1f"
+  url "https://search.maven.org/remotecontent?filepath=org/asciidoctor/asciidoctorj/2.5.10/asciidoctorj-2.5.10-bin.zip"
+  sha256 "292db5e831192982ce485d1a1ffa37590b17d5e3757f11052145f07b6d1161bd"
   license "Apache-2.0"
 
   livecheck do
