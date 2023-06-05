@@ -1,8 +1,8 @@
 class Envoy < Formula
   desc "Cloud-native high-performance edge/middle/service proxy"
   homepage "https://www.envoyproxy.io/index.html"
-  url "https://github.com/envoyproxy/envoy/archive/refs/tags/v1.26.1.tar.gz"
-  sha256 "e8efbb73ef281206261396d7bcefb00c4b9f915a6758b5cff26a714adf966d18"
+  url "https://github.com/envoyproxy/envoy/archive/refs/tags/v1.26.2.tar.gz"
+  sha256 "7bd7a084f310a4a6a081d0814f75b3ac55897e89aafdddcceeea881db68984e6"
   license "Apache-2.0"
   head "https://github.com/envoyproxy/envoy.git", branch: "main"
 
@@ -46,7 +46,7 @@ class Envoy < Formula
   def install
     # Per https://luajit.org/install.html: If MACOSX_DEPLOYMENT_TARGET
     # is not set then it's forced to 10.4, which breaks compile on Mojave.
-    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
+    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s
 
     env_path = "#{HOMEBREW_PREFIX}/bin:/usr/bin:/bin"
     args = %W[
