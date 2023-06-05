@@ -11,6 +11,10 @@ class Xbyak < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "2fceb1afcee5c23550e10414285e5eeb429e89b054655b7899ae31b75c0d0df9"
+  end
+
   depends_on "cmake" => :build
 
   def install
