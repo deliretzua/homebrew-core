@@ -3,8 +3,8 @@ class Moto < Formula
 
   desc "Mock AWS services"
   homepage "http://getmoto.org/"
-  url "https://files.pythonhosted.org/packages/e7/0b/b2e1b377d2b78de2f94715ba43cae3f0bc63ae2dc10623be1b563de315e1/moto-4.1.10.tar.gz"
-  sha256 "65e15fc3e80a9589f50f8a5267b9a99f327224ed4d5cc44fe20edcbdb9248e06"
+  url "https://files.pythonhosted.org/packages/59/a4/94e5f7d521bfe916361dfa4a738b40fb496f7cc1f3f8531fc2ee93cd01a5/moto-4.1.11.tar.gz"
+  sha256 "f3e966ba1460751e19eab5356545813b29c05478b47eb0da445d688949339be2"
   license "Apache-2.0"
 
   bottle do
@@ -212,8 +212,8 @@ class Moto < Formula
   end
 
   resource "py-partiql-parser" do
-    url "https://files.pythonhosted.org/packages/9a/75/d86c9f4cf746a99eb61724653aefc90dd10f38bfcc3f9afb16b6e9a3fe2c/py-partiql-parser-0.3.0.tar.gz"
-    sha256 "d4350fa8d812f4760b92f87d0715cc955d1e894a967b26cadd1c8a38121591f7"
+    url "https://files.pythonhosted.org/packages/93/e4/9a718409473643b22e12accd47ccdecbdb9a2c989581b94e2309d00cc986/py-partiql-parser-0.3.3.tar.gz"
+    sha256 "351672721dfaaa00bbd82c4a3340d5d2defb589d2dd5baaecf6e493910f1c033"
   end
 
   resource "pyasn1" do
@@ -247,8 +247,8 @@ class Moto < Formula
   end
 
   resource "regex" do
-    url "https://files.pythonhosted.org/packages/77/5d/98efc9cf46d60f3704cf00f8b3bd81319493639fd4367efb5d02fd29ffc1/regex-2023.5.5.tar.gz"
-    sha256 "7d76a8a1fc9da08296462a18f16620ba73bcbf5909e42383b253ef34d9d5141e"
+    url "https://files.pythonhosted.org/packages/18/df/401fd39ffd50062ff1e0344f95f8e2c141de4fd1eca1677d2f29609e5389/regex-2023.6.3.tar.gz"
+    sha256 "72d1a25bf36d2050ceb35b517afe13864865268dfb45910e2e17a84be6cbfeb0"
   end
 
   resource "requests" do
