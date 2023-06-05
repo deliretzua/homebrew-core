@@ -1,8 +1,9 @@
 class Abnfgen < Formula
   desc "Quickly generate random documents that match an ABFN grammar"
   homepage "https://www.quut.com/abnfgen/"
-  url "https://www.quut.com/abnfgen/abnfgen-0.20.tar.gz"
-  sha256 "73ce23ab8f95d649ab9402632af977e11666c825b3020eb8c7d03fa4ca3e7514"
+  url "https://www.quut.com/abnfgen/abnfgen-0.21.tar.gz"
+  sha256 "5bf784e6010b4b67e38fa18632b7e2b221c1a7a43a0907be0379a4909f5e536e"
+  license :cannot_represent
 
   livecheck do
     url :homepage
