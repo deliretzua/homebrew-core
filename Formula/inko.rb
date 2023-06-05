@@ -1,8 +1,8 @@
 class Inko < Formula
   desc "Safe and concurrent object-oriented programming language"
   homepage "https://inko-lang.org/"
-  url "https://releases.inko-lang.org/0.11.0.tar.gz"
-  sha256 "fd1b492d0fc4d0e4930e3b3a547957ccb01898306797b1a1afbc4512eb045566"
+  url "https://releases.inko-lang.org/0.12.0.tar.gz"
+  sha256 "56584ece9d1522401d0855d3d103ee7e53fee74f12441a5e26b32f8d5eb934b8"
   license "MPL-2.0"
   head "https://github.com/inko-lang/inko.git", branch: "master"
 
