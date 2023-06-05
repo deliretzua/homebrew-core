@@ -1,8 +1,8 @@
 class DdnsGo < Formula
   desc "Simple and easy-to-use DDNS"
   homepage "https://github.com/jeessy2/ddns-go"
-  url "https://github.com/jeessy2/ddns-go/archive/refs/tags/v5.3.1.tar.gz"
-  sha256 "afca100b1b2d2b5bdcb0f6d061709136a567978e9cca85b9c0867d9219ead3f5"
+  url "https://github.com/jeessy2/ddns-go/archive/refs/tags/v5.3.2.tar.gz"
+  sha256 "f04b0f373695beeb97bea760671f2c677db7d37970609ce3d95c653c33540bc3"
   license "MIT"
   head "https://github.com/jeessy2/ddns-go.git", branch: "master"
 
@@ -28,6 +28,8 @@ class DdnsGo < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/ddns-go -v")
+
     port = free_port
     spawn "#{bin}/ddns-go -l :#{port} -c #{testpath}/ddns-go.yaml"
     sleep 1
