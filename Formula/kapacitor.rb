@@ -1,20 +1,19 @@
 class Kapacitor < Formula
   desc "Open source time series data processor"
   homepage "https://github.com/influxdata/kapacitor"
-
   license "MIT"
   head "https://github.com/influxdata/kapacitor.git", branch: "master"
 
   stable do
     url "https://github.com/influxdata/kapacitor.git",
-        tag:      "v1.6.5",
-        revision: "c6c917f3097573544574ae94b5ef955a15256772"
+        tag:      "v1.6.6",
+        revision: "79897085a4802304bb2fb052035bac4d16913302"
 
     # build patch to upgrade flux so that it can be built with rust 1.66.0
-    # upstream PR, https://github.com/influxdata/kapacitor/pull/2738
+    # upstream bug report, https://github.com/influxdata/kapacitor/issues/2769
     patch do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/58a8918/kapacitor/1.6.5-flux.patch"
-      sha256 "6b03f69d4139ecfff128e7eac088b73b6b11ef395451e44ee33c2e7556661fa1"
+      url "https://raw.githubusercontent.com/Homebrew/formula-patches/38549b7/kapacitor/1.6.6.patch"
+      sha256 "32bba2e397d25afb7fed8128f5f924e0fd3368371b959b7ef2a68260f32110e4"
     end
   end
 
@@ -55,8 +54,7 @@ class Kapacitor < Formula
     ENV.prepend_path "PATH", buildpath/"bootstrap"
 
     ldflags = %W[
-      -s
-      -w
+      -s -w
       -X main.version=#{version}
       -X main.commit=#{Utils.git_head}
     ]
