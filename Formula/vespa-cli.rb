@@ -1,8 +1,8 @@
 class VespaCli < Formula
   desc "Command-line tool for Vespa.ai"
   homepage "https://vespa.ai"
-  url "https://github.com/vespa-engine/vespa/archive/v8.168.43.tar.gz"
-  sha256 "7fcafac8c43c969f01c26dbb306f5ec2a66917e52107b832e8264e9643ad9d4b"
+  url "https://github.com/vespa-engine/vespa/archive/v8.170.18.tar.gz"
+  sha256 "3ebed22edae749a16284b0551c6dc7b3634141d815e1145a781113f60d5109e2"
   license "Apache-2.0"
 
   livecheck do
@@ -36,7 +36,7 @@ class VespaCli < Formula
     ENV["VESPA_CLI_HOME"] = testpath
     assert_match "Vespa CLI version #{version}", shell_output("#{bin}/vespa version")
     doc_id = "id:mynamespace:music::a-head-full-of-dreams"
-    assert_match "Error: Request failed", shell_output("#{bin}/vespa document get #{doc_id} 2>&1", 1)
+    assert_match "Error: Container (document API)", shell_output("#{bin}/vespa document get #{doc_id} 2>&1", 1)
     system "#{bin}/vespa", "config", "set", "target", "cloud"
     assert_match "target = cloud", shell_output("#{bin}/vespa config get target")
   end
