@@ -31,6 +31,7 @@ class Faiss < Formula
     args = *std_cmake_args + %w[
       -DFAISS_ENABLE_GPU=OFF
       -DFAISS_ENABLE_PYTHON=OFF
+      -DFAISS_ENABLE_C_API=ON
       -DBUILD_SHARED_LIBS=ON
     ]
     system "cmake", "-B", "build", ".", *args
