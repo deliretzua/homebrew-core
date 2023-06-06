@@ -1,8 +1,8 @@
 class Httm < Formula
   desc "Interactive, file-level Time Machine-like tool for ZFS/btrfs"
   homepage "https://github.com/kimono-koans/httm"
-  url "https://github.com/kimono-koans/httm/archive/refs/tags/0.27.2.tar.gz"
-  sha256 "6aa5daf82ff5039434b6b8fce84e2138ee38fa56d804d78ee610ddd6cb6c529f"
+  url "https://github.com/kimono-koans/httm/archive/refs/tags/0.28.0.tar.gz"
+  sha256 "a50efc82d914ab2db08b980181aa419f6d664509c6dbc242fbbe575c00e735bb"
   license "MPL-2.0"
   head "https://github.com/kimono-koans/httm.git", branch: "master"
 
@@ -17,6 +17,13 @@ class Httm < Formula
   end
 
   depends_on "rust" => :build
+
+  # fix version config, remove in next release
+  # upstream PR ref, https://github.com/kimono-koans/httm/pull/80
+  patch do
+    url "https://github.com/kimono-koans/httm/commit/ecb98af057b52148f11073df4b99237d67571672.patch?full_index=1"
+    sha256 "cab499a3c6994323af6b1a27aa2bd8a5cdff4ce4c3fdea639675c5fad9e6ad5f"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
