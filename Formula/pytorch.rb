@@ -3,6 +3,7 @@ class Pytorch < Formula
 
   desc "Tensors and dynamic neural networks"
   homepage "https://pytorch.org/"
+  # TODO: Check if we can use unversioned `protobuf` at version bump
   url "https://github.com/pytorch/pytorch.git",
       tag:      "v2.0.0",
       revision: "c263bd43e8e8502d4726643bc6fd046f0130ac0e"
@@ -27,7 +28,7 @@ class Pytorch < Formula
   depends_on xcode: :build
   depends_on "eigen"
   depends_on "libuv"
-  depends_on macos: :monterey  # MPS backend only supports 12.3 and above
+  depends_on macos: :monterey # MPS backend only supports 12.3 and above
   depends_on "numpy"
   depends_on "openblas"
   depends_on "openssl@1.1"
