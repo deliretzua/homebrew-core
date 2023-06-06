@@ -1,6 +1,7 @@
 class Wownero < Formula
   desc "Official wallet and node software for the Wownero cryptocurrency"
   homepage "https://wownero.org"
+  # TODO: Check if we can use unversioned `protobuf` at version bump
   url "https://git.wownero.com/wownero/wownero.git",
       tag:      "v0.11.0.3",
       revision: "e921c3b8a35bc497ef92c4735e778e918b4c4f99"
