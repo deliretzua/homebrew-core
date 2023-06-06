@@ -5,6 +5,16 @@ class ProtobufAT21 < Formula
   sha256 "2c6a36c7b5a55accae063667ef3c55f2642e67476d96d355ff0acb13dbb47f09"
   license "BSD-3-Clause"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "d0909077ab9abd27d47a7990c7bcea6622805421de263ff5a5366beef171bf74"
+    sha256 cellar: :any,                 arm64_monterey: "4f147f89429d04ac3ed6c2c8265b0c1915e00fe220e54725e6b0619de22bb4b7"
+    sha256 cellar: :any,                 arm64_big_sur:  "8f82f5c9e0fd457a11bbd8d5932a7beab5b816d1dd295ccf2a700f845b29e015"
+    sha256 cellar: :any,                 ventura:        "3f04c152bc512c647617a667557ba211f3cbabb49a0029c04214488ce52840c6"
+    sha256 cellar: :any,                 monterey:       "d273a25298c6bb40374e7741ef20047d62b975fbb55840aa88b63f6d0e687e3d"
+    sha256 cellar: :any,                 big_sur:        "76f714caba9825918e0456538f14b8945f7a595b71e205a662ae9ce4f3515dbc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "57404e662da5768d45c06790cd227171205fcc0e1f775d4e1f2a91cad8ec45cc"
+  end
+
   keg_only :versioned_formula
 
   depends_on "cmake" => :build
