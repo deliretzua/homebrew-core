@@ -3,8 +3,8 @@ class Pdm < Formula
 
   desc "Modern Python package and dependency manager supporting the latest PEP standards"
   homepage "https://pdm.fming.dev"
-  url "https://files.pythonhosted.org/packages/66/c2/fdbf899e84cfdf8068d022296426ce9e02d58e280e93902c6e2027aeb4a4/pdm-2.7.0.tar.gz"
-  sha256 "e1dcaefe778c157fd4d51b88d19101cdd6ce3481ef756cafa72d46bb988c01c8"
+  url "https://files.pythonhosted.org/packages/40/6b/eadb814acf1f0ad3c5444f4248b613bc6c9565b7b929c0e3e0ca2535d50e/pdm-2.7.1.tar.gz"
+  sha256 "fd3a358e831504f8cb09ac7230956b139269ab3b1ee4f0c100a43e269ee0b56e"
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
@@ -26,9 +26,9 @@ class Pdm < Formula
     sha256 "4afd3de66ef3a9f8067559fb7a1cbe555c17dcbe15971b05d1b625c3e7abe213"
   end
 
-  resource "cacheyou" do
-    url "https://files.pythonhosted.org/packages/8e/6e/8a9d13f938789b29e89b78cfeb9d0a9e002c67272ead73060c8306b74fc8/cacheyou-23.3.tar.gz"
-    sha256 "7e408f15f4978fea2247734b308621f75f7fe169b461679519c72e8a85d61d5d"
+  resource "cachecontrol" do
+    url "https://files.pythonhosted.org/packages/9d/47/9bdf134012537324bbdebe84c144cc8fab08f148fc6c9ce89b8eefff1cb0/CacheControl-0.13.0.tar.gz"
+    sha256 "fd3fd2cb0ca66b9a6c1d56cc9709e7e49c63dbd19b1b1bcbd8d3f94cedfe8ce5"
   end
 
   resource "certifi" do
@@ -117,8 +117,8 @@ class Pdm < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/3d/0b/8dd34d20929c4b5e474db2e64426175469c2b7fea5ba71c6d4b3397a9729/rich-13.3.5.tar.gz"
-    sha256 "2d11b9b8dd03868f09b4fffadc84a6a8cda574e40dc90821bd845720ebb8e89c"
+    url "https://files.pythonhosted.org/packages/02/97/0046b5e3c6a5057b5817e5e6c51a776d410b953e6a9c67ae249dafdd2999/rich-13.4.1.tar.gz"
+    sha256 "76f6b65ea7e5c5d924ba80e322231d7cb5b5981aa60bfc1e694f1bc097fe6fe1"
   end
 
   resource "shellingham" do
