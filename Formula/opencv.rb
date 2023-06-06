@@ -1,6 +1,7 @@
 class Opencv < Formula
   desc "Open source computer vision library"
   homepage "https://opencv.org/"
+  # TODO: Check if we can use unversioned `protobuf` at version bump
   url "https://github.com/opencv/opencv/archive/refs/tags/4.7.0.tar.gz"
   sha256 "8df0079cdbe179748a18d44731af62a245a45ebf5085223dc03133954c662973"
   license "Apache-2.0"

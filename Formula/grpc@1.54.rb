@@ -1,6 +1,7 @@
 class GrpcAT154 < Formula
   desc "Next generation open source RPC library and framework"
   homepage "https://grpc.io/"
+  # TODO: Check if we can use unversioned `protobuf` at version bump
   url "https://github.com/grpc/grpc.git",
       tag:      "v1.54.2",
       revision: "8871dab19b4ab5389e28474d25cfeea61283265c"

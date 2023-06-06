@@ -3,6 +3,7 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
+  # TODO: Check if we can use unversioned `protobuf` at version bump
   url "https://files.pythonhosted.org/packages/b4/2f/7bbbc279bffe43a8fb050da1626bf52f2b0f605ecb96744b767453700752/dvc-2.58.2.tar.gz"
   sha256 "d40fff99b76719d1d524f103ad9dc64141bb363492abb9b8a61c6e70efe5a4dc"
   license "Apache-2.0"

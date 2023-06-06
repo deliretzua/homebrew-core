@@ -3,6 +3,7 @@ class Trzsz < Formula
 
   desc "Simple file transfer tools, similar to lrzsz (rz/sz), and compatible with tmux"
   homepage "https://trzsz.github.io"
+  # TODO: Check if we can use unversioned `protobuf` at version bump
   url "https://files.pythonhosted.org/packages/0c/e5/00c95527d18445cbd3b3b2c5c28a383c94c9ac5291e886796004727b25aa/trzsz-1.1.2.tar.gz"
   sha256 "dfc9606fb7ae76490c8559ec297b307a788688351ab57108f6a733105b206052"
   license "MIT"
