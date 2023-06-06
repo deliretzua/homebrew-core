@@ -9,6 +9,16 @@ class Iredis < Formula
   revision 1
   head "https://github.com/laixintao/iredis.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "361aba6cf307062ef8d530b9702e49e264337b4c67251f7ac4ed97fcd686f287"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "61b2e41c3e6ffaa4b394b621cbbae7df6ec3f633215e154719f2563373a6e6a5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3021922c1f6c88a3997b87060822802da5a880b9e3d80fe36f88353327f1e970"
+    sha256 cellar: :any_skip_relocation, ventura:        "00ab3cf67918c0e688c25723fa4a1e1a960dd90b91ee8f563c117da86d580feb"
+    sha256 cellar: :any_skip_relocation, monterey:       "71a40038670cb86cb6962235dd88d232626732a0cb026a54530abfcab1df3e7b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "cc924745baa12ee39b800ead31018213a224ea3dcde19e500ab06bc92d1c96e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e3a8c1d2e387bf6729bc4c87120da4156e0446e9b8ce82103743883cc26560b"
+  end
+
   depends_on "pygments"
   depends_on "python@3.11"
   depends_on "six"
