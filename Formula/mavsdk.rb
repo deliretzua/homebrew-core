@@ -3,6 +3,7 @@ class Mavsdk < Formula
 
   desc "API and library for MAVLink compatible systems written in C++17"
   homepage "https://mavsdk.mavlink.io"
+  # TODO: Check if we can use unversioned `grpc` and `protobuf` at version bump
   url "https://github.com/mavlink/MAVSDK.git",
       tag:      "v1.4.15",
       revision: "8b9b5b810c08ecf582ba0a4bffdb76b35d0a8007"
