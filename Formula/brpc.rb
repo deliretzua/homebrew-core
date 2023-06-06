@@ -1,6 +1,7 @@
 class Brpc < Formula
   desc "Better RPC framework"
   homepage "https://brpc.apache.org/"
+  # TODO: Check if we can use unversioned `protobuf` at version bump
   url "https://dlcdn.apache.org/brpc/1.5.0/apache-brpc-1.5.0-src.tar.gz"
   sha256 "8afa1367d0c0ddb471decc8660ab7bdbfd45a027f7dfb6d18303990954f70105"
   license "Apache-2.0"
