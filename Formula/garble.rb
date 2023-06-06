@@ -8,13 +8,13 @@ class Garble < Formula
   head "https://github.com/burrowers/garble.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b8e99bff1195617bdfc4952b1dc42913a1a12fdf7d0eafdd54d9f37f8db54e65"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b8e99bff1195617bdfc4952b1dc42913a1a12fdf7d0eafdd54d9f37f8db54e65"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b8e99bff1195617bdfc4952b1dc42913a1a12fdf7d0eafdd54d9f37f8db54e65"
-    sha256 cellar: :any_skip_relocation, ventura:        "ee6453fb1894e8ab04a98abf64de3ec9ecae92c8dba256b617faf63978ba8a39"
-    sha256 cellar: :any_skip_relocation, monterey:       "ee6453fb1894e8ab04a98abf64de3ec9ecae92c8dba256b617faf63978ba8a39"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ee6453fb1894e8ab04a98abf64de3ec9ecae92c8dba256b617faf63978ba8a39"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "90cec08c40208a4ce3498c9ff2e75c772131bf5604af9b2d780ddd28d62206a4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b8990edabaf932bdd92235fde4d67e8d8d65dadaec022df057838be6a187f8ad"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b8990edabaf932bdd92235fde4d67e8d8d65dadaec022df057838be6a187f8ad"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b8990edabaf932bdd92235fde4d67e8d8d65dadaec022df057838be6a187f8ad"
+    sha256 cellar: :any_skip_relocation, ventura:        "c410a13d2c1515a558d650569855279fdd19b7b705cb616334d69363ceb6659d"
+    sha256 cellar: :any_skip_relocation, monterey:       "c410a13d2c1515a558d650569855279fdd19b7b705cb616334d69363ceb6659d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c410a13d2c1515a558d650569855279fdd19b7b705cb616334d69363ceb6659d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18b98146dd41ae532c5f29a106793ce0118022310cd5eaf1041ae0cc735b4366"
   end
 
   depends_on "go" => [:build, :test]
