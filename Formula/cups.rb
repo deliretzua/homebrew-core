@@ -3,8 +3,8 @@ class Cups < Formula
   homepage "https://github.com/OpenPrinting/cups"
   # This is the author's fork of CUPS. Debian have switched to this fork:
   # https://lists.debian.org/debian-printing/2020/12/msg00006.html
-  url "https://github.com/OpenPrinting/cups/releases/download/v2.4.2/cups-2.4.2-source.tar.gz"
-  sha256 "f03ccb40b087d1e30940a40e0141dcbba263f39974c20eb9f2521066c9c6c908"
+  url "https://github.com/OpenPrinting/cups/releases/download/v2.4.4/cups-2.4.4-source.tar.gz"
+  sha256 "209259e8fe8df9112af49f4e5765f50dad6da1f869296de41d6eaab1b98003cb"
   license "Apache-2.0"
   head "https://github.com/OpenPrinting/cups.git", branch: "master"
 
@@ -27,6 +27,10 @@ class Cups < Formula
 
   keg_only :provided_by_macos
 
+  # https://developer.apple.com/documentation/security/3747134-sectrustcopycertificatechain
+  # `SecTrustCopyCertificateChain` is on available in monterey or newer
+  depends_on macos: :monterey
+
   uses_from_macos "krb5"
   uses_from_macos "zlib"
 
@@ -35,11 +39,9 @@ class Cups < Formula
   end
 
   def install
-    system "./configure", "--disable-debug",
+    system "./configure", *std_configure_args,
                           "--with-components=core",
-                          "--without-bundledir",
-                          "--prefix=#{prefix}",
-                          "--libdir=#{lib}"
+                          "--without-bundledir"
     system "make", "install"
   end
 
