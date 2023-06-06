@@ -6,13 +6,13 @@ class AstGrep < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "23d6e0f9f05487772c36a245911caa028777b3bbe903d250db52f5438253fa7d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4c629f5f7d2ee9f58823e63d859e2f7042a6663428590c3ce2adafeb13a961c6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3aee26f197f2f8b253e5f29d4516d0d9723f2e5ad8411a3e3c4cdab40aa386a8"
-    sha256 cellar: :any_skip_relocation, ventura:        "b7332822a8ed62066e31dd0967aa8f518d2d9e4b22013b51ba6a6e2b6bc15583"
-    sha256 cellar: :any_skip_relocation, monterey:       "a0d639f8b673f647134b39368151dc9653000b9c1a1da7d2bc49ae30512e066e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b2ca5e3f0a1dee46a0737e9e968eb31c4a3f7729bb989282a1ab669d6b916917"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "82c0e746a1df5fcd1a6df52d61c74e29829aa6b7c66c1b818abd63c8f706f2cf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "da41965ffdc57f671ec4d72b148fe226dddfaaa39018c217107ce4d8b7def286"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "09c444d475b4a610e1e28bcfd9c6c21dd82496847b73d58fe3735a7953dd882a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7a6edec825a723dff8d3a0421c338a650543028021f923c9662cc425c3159064"
+    sha256 cellar: :any_skip_relocation, ventura:        "a9a8571b9e3a81b91c03cd831195547fd2d0e41ccc5faff1cf3b104df48b6846"
+    sha256 cellar: :any_skip_relocation, monterey:       "073c51c889a1a88f7a1c969a006a6b577dc87cfd3e6ec02ad3337f67c669174d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3d36b03616fc727d1c2029b929e35844cf8321f3417a2da36841ab8e0dc9f09d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "919927edd9ad6b4181c26a4cc62a6ef5254b071e6bdf22e64038c85db3b7077b"
   end
 
   depends_on "rust" => :build
