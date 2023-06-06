@@ -45,7 +45,12 @@ class Mosh < Formula
     # PATH to support launching outside shell e.g. via launcher
     inreplace "scripts/mosh.pl", "'mosh-client", "'#{bin}/mosh-client"
 
-    system "./autogen.sh" if build.head?
+    if build.head?
+      # Prevent mosh from reporting `-dirty` in the version string.
+      inreplace "Makefile.am", "--dirty", "--dirty=-Homebrew"
+      system "./autogen.sh"
+    end
+
     system "./configure", "--prefix=#{prefix}", "--enable-completion"
     system "make", "install"
   end
