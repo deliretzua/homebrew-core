@@ -6,6 +6,10 @@ class Argparse < Formula
   license "MIT"
   head "https://github.com/p-ranav/argparse.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "b06b4b33d861e3940c10cfcebc48c96a7154bd0495beb206206ac39e0c7e5fb2"
+  end
+
   depends_on "cmake" => :build
 
   def install
