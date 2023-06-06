@@ -1,30 +1,31 @@
-class Grpc < Formula
+class GrpcAT154 < Formula
   desc "Next generation open source RPC library and framework"
   homepage "https://grpc.io/"
   url "https://github.com/grpc/grpc.git",
-      tag:      "v1.55.0",
-      revision: "0bf4a618b17a3f0ed61c22364913c7f66fc1c61a"
+      tag:      "v1.54.2",
+      revision: "8871dab19b4ab5389e28474d25cfeea61283265c"
   license "Apache-2.0"
-  head "https://github.com/grpc/grpc.git", branch: "master"
 
   # The "latest" release on GitHub is sometimes for an older major/minor and
   # there's sometimes a notable gap between when a version is tagged and
   # released, so we have to check the releases page instead.
   livecheck do
     url "https://github.com/grpc/grpc/releases?q=prerelease%3Afalse"
-    regex(%r{href=["']?[^"' >]*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+    regex(%r{href=["']?[^"' >]*?/tag/v?(1\.54(?:\.\d+)+)["' >]}i)
     strategy :page_match
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b41fdfbc1060cac273c8b07c212b2fa247429885da8c01c4b643f41f15abf6a8"
-    sha256 cellar: :any,                 arm64_monterey: "7eed80b256121aac9024e9370983e15dad205f879b7ba39552eb20fdd059d419"
-    sha256 cellar: :any,                 arm64_big_sur:  "27b95daeb7f92a7c5ef1a33bff46b2bb99868a94bf72142abb5a0c2c10d1763c"
-    sha256 cellar: :any,                 ventura:        "f4fe6ef8b2f20a0afefca2a20c4c063d08375e1dd2dec283ed1dadcd28d911de"
-    sha256 cellar: :any,                 monterey:       "d82f9409256e54701a1c01a729d8b2aa2e6d0cd77cf1732c82b59af999d0e2fb"
-    sha256 cellar: :any,                 big_sur:        "50614291803ccd3628e4a41ea7350906516bcc9ad7eb2766819f226e773e3d8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a43bc9ddd4623e705b703bcbff5d1c0a60b319487f2cb0b77ebab1dd7105f51"
+    sha256 cellar: :any,                 arm64_ventura:  "709ef74670286413abda1811a0ad355dbcbf0acdad9bfc6b9ca18961b2d1eb15"
+    sha256 cellar: :any,                 arm64_monterey: "9192db44aa60c8cdc1a9d64418f4eeea3c229dc152ab9cf370628ed5d567583b"
+    sha256 cellar: :any,                 arm64_big_sur:  "0fd8c82f65fcd972b9112af1afab693bb98b412aeed694f772fd9557b25bdd77"
+    sha256 cellar: :any,                 ventura:        "b511af9c7d1a114532e1b95926ec9a82736872a938aff47badafb3dd915b1190"
+    sha256 cellar: :any,                 monterey:       "f0772015864308bd9a33d4398d2d4cce79f89665dd4ea6242886e6fd3520bd2e"
+    sha256 cellar: :any,                 big_sur:        "b9a371b3579217575d6350a15a95739b7e3ff5d6bdfaf2fa5d1c5b8febf7358b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b45a0c6157ade4f84545f06e6531a686634e20d47459a526293da06fc5d5f6d8"
   end
+
+  keg_only :versioned_formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
@@ -34,7 +35,7 @@ class Grpc < Formula
   depends_on "abseil"
   depends_on "c-ares"
   depends_on "openssl@1.1"
-  depends_on "protobuf"
+  depends_on "protobuf@21"
   depends_on "re2"
 
   uses_from_macos "zlib"
@@ -100,6 +101,8 @@ class Grpc < Formula
         return GRPC_STATUS_OK;
       }
     EOS
+    ENV.prepend_path "PKG_CONFIG_PATH", lib/"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["protobuf@21"].opt_lib/"pkgconfig"
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["openssl@1.1"].opt_lib/"pkgconfig"
     pkg_config_flags = shell_output("pkg-config --cflags --libs libcares protobuf re2 grpc++").chomp.split
     system ENV.cc, "test.cpp", "-L#{Formula["abseil"].opt_lib}", *pkg_config_flags, "-o", "test"

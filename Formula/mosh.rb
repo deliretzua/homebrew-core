@@ -4,16 +4,16 @@ class Mosh < Formula
   url "https://github.com/mobile-shell/mosh/releases/download/mosh-1.4.0/mosh-1.4.0.tar.gz"
   sha256 "872e4b134e5df29c8933dff12350785054d2fd2839b5ae6b5587b14db1465ddd"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_ventura:  "1e37122ddf9eec43006108b5ebda33cbaacdf1806cb9e36f55a51e9d63127ab9"
-    sha256 cellar: :any,                 arm64_monterey: "d1ee93489325ff25e04fb13721dbb9e1b6c00fee6bcd60d29bccf03175222e4b"
-    sha256 cellar: :any,                 arm64_big_sur:  "570b3ac2282ed39584f61c70029d7613360e3b91f985282ccb3fc75b4a0af61b"
-    sha256 cellar: :any,                 ventura:        "ab239b2556be43b941fd4e78db5fabf44531df964c0cb079351bb0e85a0a5f3e"
-    sha256 cellar: :any,                 monterey:       "3cb8d2d82216e9e9c5c2f41586ccaa7d8c576031741b443213dbce184db65f79"
-    sha256 cellar: :any,                 big_sur:        "ef136ae9e3ee88e154e4907753d5f3ad6d5cf2ec6102f5a13e195d4445b089e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dbae285ac8d5c5a52d2e3ef4be2ed7277e64bff69b48d37778e7401c6e930c7c"
+    sha256 cellar: :any,                 arm64_ventura:  "0546a5e9cadb4d0e3959383c9c751b53c3cd53d643f3c4e0eb83802d7eea1aed"
+    sha256 cellar: :any,                 arm64_monterey: "83f89191a353e41ed16c771a240dcc3f474558807a6796edb1c5c3930cadaa41"
+    sha256 cellar: :any,                 arm64_big_sur:  "ca391cf3436bbe61806a2107f3b4229fdee1d077bc4b91117afaa8b8ace5f361"
+    sha256 cellar: :any,                 ventura:        "5f5a943e524f95b4d71221748ac6997a59ce2ba419a28a417f0fa1247f9084f0"
+    sha256 cellar: :any,                 monterey:       "529d7ca3089ed1ce09c2fba2cbec952aa08e3245d8ea360341fa961d1bad6ed9"
+    sha256 cellar: :any,                 big_sur:        "2cc0d541e3b5e2ac9238a6bb6d3677c97e5a863b8bdc6894f1ed6501264093a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b3819088a3a5963d0e428e5c102c1ece212e854f0416c74072e1f96f70056b7"
   end
 
   head do
@@ -38,6 +38,8 @@ class Mosh < Formula
 
     # https://github.com/protocolbuffers/protobuf/issues/9947
     ENV.append_to_cflags "-DNDEBUG"
+    # Keep C++ standard in sync with abseil.rb
+    ENV.append "CXXFLAGS", "-std=c++17"
 
     # teach mosh to locate mosh-client without referring
     # PATH to support launching outside shell e.g. via launcher
