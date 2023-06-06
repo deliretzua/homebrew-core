@@ -15,6 +15,16 @@ class GrpcAT154 < Formula
     strategy :page_match
   end
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "709ef74670286413abda1811a0ad355dbcbf0acdad9bfc6b9ca18961b2d1eb15"
+    sha256 cellar: :any,                 arm64_monterey: "9192db44aa60c8cdc1a9d64418f4eeea3c229dc152ab9cf370628ed5d567583b"
+    sha256 cellar: :any,                 arm64_big_sur:  "0fd8c82f65fcd972b9112af1afab693bb98b412aeed694f772fd9557b25bdd77"
+    sha256 cellar: :any,                 ventura:        "b511af9c7d1a114532e1b95926ec9a82736872a938aff47badafb3dd915b1190"
+    sha256 cellar: :any,                 monterey:       "f0772015864308bd9a33d4398d2d4cce79f89665dd4ea6242886e6fd3520bd2e"
+    sha256 cellar: :any,                 big_sur:        "b9a371b3579217575d6350a15a95739b7e3ff5d6bdfaf2fa5d1c5b8febf7358b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b45a0c6157ade4f84545f06e6531a686634e20d47459a526293da06fc5d5f6d8"
+  end
+
   keg_only :versioned_formula
 
   depends_on "autoconf" => :build
