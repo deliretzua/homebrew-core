@@ -1,9 +1,20 @@
 class Protobuf < Formula
   desc "Protocol buffers (Google's data interchange format)"
   homepage "https://protobuf.dev/"
-  url "https://github.com/protocolbuffers/protobuf/releases/download/v23.2/protobuf-23.2.tar.gz"
-  sha256 "ddf8c9c1ffccb7e80afd183b3bd32b3b62f7cc54b106be190bf49f2bc09daab5"
   license "BSD-3-Clause"
+
+  # TODO: Remove `stable` block when patch is no longer needed.
+  stable do
+    url "https://github.com/protocolbuffers/protobuf/releases/download/v23.2/protobuf-23.2.tar.gz"
+    sha256 "ddf8c9c1ffccb7e80afd183b3bd32b3b62f7cc54b106be190bf49f2bc09daab5"
+
+    # Fix missing unexported symbols.
+    # https://github.com/protocolbuffers/protobuf/issues/12932
+    patch do
+      url "https://github.com/protocolbuffers/protobuf/commit/fc1c5512e524e0c00a276aa9a38b2cdb8fdf45c7.patch?full_index=1"
+      sha256 "2ef672ecc95e0b35e2ef455ebbbaaaf0d5a89a341b5bbbe541c6285dfca48508"
+    end
+  end
 
   livecheck do
     url :stable
@@ -94,7 +105,7 @@ class Protobuf < Formula
     system bin/"protoc", "test.proto", "--cpp_out=."
 
     pythons.each do |python|
-      system python, "-c", "import google.protobuf"
+      system python, "-c", "from google.protobuf.pyext import _message"
     end
   end
 end
