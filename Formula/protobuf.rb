@@ -1,8 +1,8 @@
 class Protobuf < Formula
   desc "Protocol buffers (Google's data interchange format)"
   homepage "https://protobuf.dev/"
-  url "https://github.com/protocolbuffers/protobuf/releases/download/v22.5/protobuf-22.5.tar.gz"
-  sha256 "26859db86e2516bf447b5c73ad484c72016376dad179d96591d489911e09cdc2"
+  url "https://github.com/protocolbuffers/protobuf/releases/download/v23.2/protobuf-23.2.tar.gz"
+  sha256 "ddf8c9c1ffccb7e80afd183b3bd32b3b62f7cc54b106be190bf49f2bc09daab5"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,13 +11,13 @@ class Protobuf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "f93b1ff92035a29f7440afb2fa544cf0d4e7f4bd2132666dbdb2ffd5a030ef57"
-    sha256 cellar: :any,                 arm64_monterey: "71c70490362c17d144fa49a0fe9adf79898303cc41378a851442cdb00795a6ec"
-    sha256 cellar: :any,                 arm64_big_sur:  "27431a5cbc23a0f9d755c34b5d4f2b88e5e4257ab6c34d1709ad4f86f4410153"
-    sha256 cellar: :any,                 ventura:        "b44e22503221d74441c4d8f1712f3a53ed6c0f6a4f56a4ea101b163398a6ca9b"
-    sha256 cellar: :any,                 monterey:       "6ccf9bf10da42b5d8100cab7ab1fc6494b87182db4a8af818e235574efafd609"
-    sha256 cellar: :any,                 big_sur:        "924b69c32c6f6e8659f6c3d8eca264472e31079fdfe062c54aab879497c7c2cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fbc46502e4a2f3eb17198723e33f6a3a45b23a5a7877a3ae14fe644ec09ccbb7"
+    sha256 cellar: :any,                 arm64_ventura:  "e969047bde848e06e3fc5ba173d3333dfd7ee98355ea6781ec2d88c1282cc89c"
+    sha256 cellar: :any,                 arm64_monterey: "162ef2d8fee02efd112b446dc38e230174c23de201d8b0c2c3551a9121a9dde5"
+    sha256 cellar: :any,                 arm64_big_sur:  "b3fb6b1f4c33c714e1ac76b2aa7376daaf53f5d169ccbb4397cacc356705870a"
+    sha256 cellar: :any,                 ventura:        "e72244f822ab8b34f361e4f1d2ef555e3406a5511a054cc32b4a8ddd56cc2f2d"
+    sha256 cellar: :any,                 monterey:       "bba0e37d3242957997deac64d658bf4b33ef94e9b9dee31eb14efc52b8323c0a"
+    sha256 cellar: :any,                 big_sur:        "d305c1a139f5f3c1cd48e771aa6b322ea63fbfb3f2b1d361d0537d88a9eab5db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c74f6a322b8e208c9bdee72732cc9de205e2de2e53dd1e0578d3306c56a21457"
   end
 
   head do
