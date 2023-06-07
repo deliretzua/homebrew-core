@@ -1,8 +1,8 @@
 class Jhead < Formula
   desc "Extract Digicam setting info from EXIF JPEG headers"
   homepage "https://github.com/Matthias-Wandel/jhead"
-  url "https://github.com/Matthias-Wandel/jhead/archive/3.06.0.1.tar.gz"
-  sha256 "5c5258c3d7a840bf831e22174e4a24cb1de3baf442f7cb73d5ab31b4ae0b0058"
+  url "https://github.com/Matthias-Wandel/jhead/archive/3.08.tar.gz"
+  sha256 "999a81b489c7b2a7264118f194359ecf4c1b714996a2790ff6d5d2f3940f1e9f"
   license :public_domain
 
   bottle do
@@ -15,15 +15,6 @@ class Jhead < Formula
     sha256 cellar: :any_skip_relocation, catalina:       "57866edae4ac5a6b63988d3f7c9c1d261fa33eaff6dc1e6833a086fda2a7671f"
     sha256 cellar: :any_skip_relocation, mojave:         "1d772617f005a7b1381d78c133e2745e9ca7e31cb6a5fd5428bd2f973bcfae45"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "15b04dc8681a47de34f7d95028ad979706403157d88bef21cdfc97b5f89393cf"
-  end
-
-  # Patch to provide a proper install target to the Makefile. A variation
-  # of this patch has been submitted upstream at
-  # https://github.com/Matthias-Wandel/jhead/pull/45. We need to
-  # carry this patch until upstream decides to incorporate it.
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/e3288f753931921027d0def5e8d2c3dbf7073b10/jhead/3.06.0.1.patch"
-    sha256 "520929fe37097fde24f36d7e0fd59ded889d1a3cbea684133398492b14628179"
   end
 
   def install
