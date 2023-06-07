@@ -2,8 +2,8 @@ class Asymptote < Formula
   desc "Powerful descriptive vector graphics language"
   homepage "https://asymptote.sourceforge.io"
   # Keep version in sync with manual below
-  url "https://downloads.sourceforge.net/project/asymptote/2.85/asymptote-2.85.src.tgz"
-  sha256 "4c0559b62c41f947b5fbf044b4d091bd3cf0abe599c85138087069809875ec87"
+  url "https://downloads.sourceforge.net/project/asymptote/2.86/asymptote-2.86.src.tgz"
+  sha256 "c4ebad1fc3c7b3ce52d89f5fd7e731830d2e6147de7e4c04f8f5cd36cff3c91f"
   license "LGPL-3.0-only"
 
   livecheck do
@@ -36,8 +36,8 @@ class Asymptote < Formula
   end
 
   resource "manual" do
-    url "https://downloads.sourceforge.net/project/asymptote/2.85/asymptote.pdf"
-    sha256 "fcc4fd1adbb73347bd731f0bcf8c206a55acc65cdeb8e2aee74611230778cfef"
+    url "https://downloads.sourceforge.net/project/asymptote/2.86/asymptote.pdf"
+    sha256 "ea28952b1f6d827a84526709d23b3d2d3003a11a008ff4713bd714ef5c8d1c56"
   end
 
   def install
@@ -55,6 +55,8 @@ class Asymptote < Formula
   end
 
   test do
+    assert_equal version, resource("manual").version, "`manual` resource needs updating!"
+
     (testpath/"line.asy").write <<~EOF
       settings.outformat = "pdf";
       size(200,0);
