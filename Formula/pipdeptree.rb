@@ -3,8 +3,8 @@ class Pipdeptree < Formula
 
   desc "CLI to display dependency tree of the installed Python packages"
   homepage "https://github.com/tox-dev/pipdeptree"
-  url "https://files.pythonhosted.org/packages/c1/bb/ff31a8c576dea526bef404d7547398936d18f240a4058521c1a185eada27/pipdeptree-2.8.0.tar.gz"
-  sha256 "43dde399510b0e746d2c923f03b3b1c44b094a80ca6fa0784d36608174096b07"
+  url "https://files.pythonhosted.org/packages/24/e1/6487323228477c0f68ea1f853ff78e9909736d209fdc38351d2772ca0346/pipdeptree-2.9.0.tar.gz"
+  sha256 "b2e89d19b832f40c19e124a81857c1a4c313cd601e32300ea837ba4797ef9af3"
   license "MIT"
 
   bottle do
