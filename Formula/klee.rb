@@ -3,27 +3,10 @@ class Klee < Formula
 
   desc "Symbolic Execution Engine"
   homepage "https://klee.github.io/"
+  url "https://github.com/klee/klee/archive/v3.0.tar.gz"
+  sha256 "204ebf0cb739886f574b1190b04fa9ed9088770c0634984782e9633d1aa4bdc9"
   license "NCSA"
-  revision 4
   head "https://github.com/klee/klee.git", branch: "master"
-
-  stable do
-    url "https://github.com/klee/klee/archive/v2.3.tar.gz"
-    sha256 "6155fcaa4e86e7af8a73e8e4b63102abaea3a62d17e4021beeec47b0a3a6eff9"
-
-    # Fix ARM build.
-    # https://github.com/klee/klee/pull/1530
-    patch do
-      url "https://github.com/klee/klee/commit/885997a9841ab666ccf1f1b573b980aa8c84a339.patch?full_index=1"
-      sha256 "6b070c676e002d455d7a4064c937b9b7c46eb576862cc85aba29dc7e6eecee91"
-    end
-
-    # Fix build with z3.
-    patch do
-      url "https://github.com/klee/klee/commit/39f8069db879e1f859c60c821092452748b4ba37.patch?full_index=1"
-      sha256 "f03ddac150c320af8cefae33c958870cc649f1908e54c3309f1ae4791c4e84e1"
-    end
-  end
 
   bottle do
     sha256 arm64_ventura:  "a135fc9431d9e03c9cd0131c01360090986300754fffbe8baa7deb057afc124f"
@@ -37,8 +20,7 @@ class Klee < Formula
 
   depends_on "cmake" => :build
   depends_on "gperftools"
-  # LLVM 14 support in progress at https://github.com/klee/klee/pull/1477
-  depends_on "llvm@13"
+  depends_on "llvm@14"
   depends_on "python-tabulate"
   depends_on "python@3.11"
   depends_on "sqlite"
@@ -52,8 +34,8 @@ class Klee < Formula
 
   # klee needs a version of libc++ compiled with wllvm
   resource "libcxx" do
-    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-13.0.1/llvm-project-13.0.1.src.tar.xz"
-    sha256 "326335a830f2e32d06d0a36393b5455d17dc73e0bd1211065227ee014f92cbf8"
+    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-14.0.6/llvm-project-14.0.6.src.tar.xz"
+    sha256 "8b3cfd7bc695bd6cea0f37f53f0981f34f87496e79e2529874fd03a2f9dd3a8a"
   end
 
   def llvm
@@ -114,9 +96,12 @@ class Klee < Formula
     inreplace "runtime/CMakeLists.txt", "\"-I${CMAKE_SOURCE_DIR}/include\"",
       "\"-I${CMAKE_SOURCE_DIR}/include\"\n-I/usr/include/x86_64-linux-gnu"
 
+    # Avoid building 32-bit runtime
+    inreplace "CMakeLists.txt", "M32_SUPPORTED 1", "M32_SUPPORTED 0"
+
     # CMake options are documented at
     # https://github.com/klee/klee/blob/v#{version}/README-CMake.md
-    args = std_cmake_args + %W[
+    args = %W[
       -DKLEE_RUNTIME_BUILD_TYPE=Release
       -DKLEE_LIBCXX_DIR=#{libcxx_install_dir}
       -DKLEE_LIBCXX_INCLUDE_DIR=#{libcxx_install_dir}/include/c++/v1
@@ -138,12 +123,9 @@ class Klee < Formula
       -DENABLE_UNIT_TESTS=OFF
     ]
 
-    mkdir "build" do
-      system "cmake", "..", *args
-      system "make"
-      system "make", "install"
-    end
-
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
     rewrite_shebang detected_python_shebang, *bin.children
   end
 
