@@ -11,7 +11,7 @@ class LttngUst < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "0f019a9945b2c99f4c1df697fa8e120465b20626154d295f854c36bcf99ee321"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "048d559474d84b5c809e86c6308e0fe7538d852c7ef089ca1973886b4ddd84c7"
   end
 
   depends_on "pkg-config" => :build
