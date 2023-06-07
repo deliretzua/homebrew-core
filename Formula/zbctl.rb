@@ -2,8 +2,8 @@ class Zbctl < Formula
   desc "Zeebe CLI client"
   homepage "https://docs.camunda.io/docs/apis-clients/cli-client/index/"
   url "https://github.com/camunda/zeebe.git",
-      tag:      "8.2.5",
-      revision: "141a856f81627d1216c771960f4a0bc8b02b6b7e"
+      tag:      "8.2.6",
+      revision: "e3fe321264899ca4994e52591c0422804bd89461"
   license "Apache-2.0"
   head "https://github.com/camunda/zeebe.git", branch: "develop"
 
@@ -47,7 +47,7 @@ class Zbctl < Formula
     status_error_message =
       "Error: rpc error: code = " \
       "Unavailable desc = connection error: " \
-      "desc = \"transport: Error while dialing dial tcp 127.0.0.1:26500: connect: connection refused\""
+      "desc = \"transport: Error while dialing: dial tcp 127.0.0.1:26500: connect: connection refused\""
     output = shell_output("#{bin}/zbctl status 2>&1", 1)
     assert_match status_error_message, output
     # Check version
