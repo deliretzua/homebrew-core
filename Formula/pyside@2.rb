@@ -2,8 +2,8 @@ class PysideAT2 < Formula
   desc "Official Python bindings for Qt"
   homepage "https://wiki.qt.io/Qt_for_Python"
   # TODO: Check if we can use unversioned `llvm` at version bump.
-  url "https://download.qt.io/official_releases/QtForPython/pyside2/PySide2-5.15.9-src/pyside-setup-opensource-src-5.15.9.tar.xz"
-  sha256 "2ea5917652036a9007d66ba4dc0aa75f381a3a25ccf0fa70fa2d9e9c8c9dacae"
+  url "https://download.qt.io/official_releases/QtForPython/pyside2/PySide2-5.15.10-src/pyside-setup-opensource-src-5.15.10.tar.xz"
+  sha256 "2af691d3613a41f83a60439b46568fc2c696dbfae42f7cd7b07152d115ead33a"
   license all_of: ["GFDL-1.3-only", "GPL-2.0-only", "GPL-3.0-only", "LGPL-3.0-only"]
 
   livecheck do
@@ -43,16 +43,8 @@ class PysideAT2 < Formula
     sha256 "ede69549176b7b083f2825f328ca68bd99ebf8f42d245908abd320093bac60c9"
   end
 
-  # Fix build using ArchLinux patch. The corresponding code in shiboken6 was modified
-  # in a later commit. Can remove when upstream decides to backport a fix to shiboken2.
-  # Ref: https://codereview.qt-project.org/c/pyside/pyside-setup/+/365002
-  patch do
-    url "https://raw.githubusercontent.com/archlinux/svntogit-packages/7a6b2d1862ed9cbdd7ebcbcc9d6635e67cd1feab/trunk/fix-build.patch"
-    sha256 "4f8815840b5df2e1e3b9f201a3402126821b0d9702920cefdc18050639143ad1"
-  end
-
   # Fix error: use of undeclared identifier 'NPY_ARRAY_UPDATEIFCOPY'.
-  # Remove in v5.15.10 as PYSIDE-2035 mentions fix was backported there.
+  # Remove when the patch available in the next release.
   # Ref: https://codereview.qt-project.org/c/pyside/pyside-setup/+/418321
   # Ref: https://bugreports.qt.io/browse/PYSIDE-2035
   patch :p3 do
