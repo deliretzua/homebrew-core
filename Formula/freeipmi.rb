@@ -7,13 +7,13 @@ class Freeipmi < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_ventura:  "49668adaf966f1af503e4f612615d45f5d376abccd9d66428ca9dbeb21020f78"
-    sha256 arm64_monterey: "0b1f4ff5e7d3a55464a2fa059ac7f23bdc43051a7df6ecafe49f1dfb95833155"
-    sha256 arm64_big_sur:  "2dbc659ce5d464a950ee96519777b21934dbd13a1af071a27316b70af05552ea"
-    sha256 ventura:        "82e08449d2df553f0ab475768755f393ebb8dc1940c0aeafb221863e767efc77"
-    sha256 monterey:       "e619cd689cf79cbfee94d8808febe6acdf6f39b5446a27e3c74be8d048edc9d2"
-    sha256 big_sur:        "39b2817bc31c4eaacddb10eb5ed645684537fa2aa568df840753eb7e711a5851"
-    sha256 x86_64_linux:   "7e39faf9884060fa6f1babb4acf2e72dcbc4cb5cefee4c0fe52d708c776a1e11"
+    sha256 arm64_ventura:  "8583260c6e5706eaf7c94372a1b03d8491fb52669b153ba60bd1a11df5edb61f"
+    sha256 arm64_monterey: "fae01f9999f4cc95527066f13b8c4447a5d6e703bc986fbd512069ef3111ffb6"
+    sha256 arm64_big_sur:  "8308830e5d4c33dc7d403285ec97545878cce100d122d6b4fa20aa7641eb839e"
+    sha256 ventura:        "09f1d39558a5b8e602cab29926918522d88724471892bcd190e57806e92ec377"
+    sha256 monterey:       "4001216e0fe3a051849feddbf0dc1ff908919fa240344794576988bbd0e3ebae"
+    sha256 big_sur:        "eb31c3a6c89b3666c4eeee2e6fde67b9715febef14441fba601319c4b0f30b5f"
+    sha256 x86_64_linux:   "b5764abf88b9dcc6f4a2dd253d49ad46bb74c1065ae41e92b61bde93fa0e79ea"
   end
 
   depends_on "texinfo" => :build
