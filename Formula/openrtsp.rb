@@ -1,10 +1,10 @@
 class Openrtsp < Formula
   desc "Command-line RTSP client"
   homepage "http://www.live555.com/openRTSP"
-  url "http://www.live555.com/liveMedia/public/live.2023.05.10.tar.gz"
-  mirror "https://download.videolan.org/pub/videolan/testing/contrib/live555/live.2023.05.10.tar.gz"
+  url "http://www.live555.com/liveMedia/public/live.2023.06.08.tar.gz"
+  mirror "https://download.videolan.org/pub/videolan/testing/contrib/live555/live.2023.06.08.tar.gz"
   # Keep a mirror as upstream tarballs are removed after each version
-  sha256 "ea987dc7851810b924255204f6bdb9c9c73934e61b3dc800cbd2d165e6ef1856"
+  sha256 "db0485b1c3f8d62771db56be43c58f90708b19df9f2e7c30a534e83ad8b0c5bf"
   license "LGPL-3.0-or-later"
 
   livecheck do
@@ -32,6 +32,8 @@ class Openrtsp < Formula
   end
 
   def install
+    ENV.cxx11
+
     # Avoid linkage to system OpenSSL
     libs = [
       Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
