@@ -1,9 +1,9 @@
 class Freeipmi < Formula
   desc "In-band and out-of-band IPMI (v1.5/2.0) software"
   homepage "https://www.gnu.org/software/freeipmi/"
-  url "https://ftp.gnu.org/gnu/freeipmi/freeipmi-1.6.10.tar.gz"
-  mirror "https://ftpmirror.gnu.org/freeipmi/freeipmi-1.6.10.tar.gz"
-  sha256 "fce4a1e401b6189c103d2b1203261d0bfbf45985c6f3fa44c51b186b13fe7a7d"
+  url "https://ftp.gnu.org/gnu/freeipmi/freeipmi-1.6.11.tar.gz"
+  mirror "https://ftpmirror.gnu.org/freeipmi/freeipmi-1.6.11.tar.gz"
+  sha256 "65fbd6910fc010457748695414f27c5755b4e8d75734221221f3858c6230a897"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -30,6 +30,9 @@ class Freeipmi < Formula
   end
 
   def install
+    # Workaround for Xcode 14.3.
+    ENV.append_to_cflags "-Wno-implicit-function-declaration"
+
     # Hardcode CPP_FOR_BUILD to work around cpp shim issue:
     # https://github.com/Homebrew/brew/issues/5153
     inreplace "man/Makefile.in",
