@@ -1,4 +1,6 @@
 class Nmap < Formula
+  include Language::Python::Shebang
+
   desc "Port scanning utility for large networks"
   homepage "https://nmap.org/"
   license :cannot_represent
@@ -62,6 +64,18 @@ class Nmap < Formula
     system "make", "install"
 
     bin.glob("uninstall_*").map(&:unlink) # Users should use brew uninstall.
+    return unless (bin/"ndiff").exist? # Needs Python
+
+    rewrite_shebang detected_python_shebang(use_python_from_path: true), bin/"ndiff"
+  end
+
+  def caveats
+    on_macos do
+      <<~EOS
+        To use `ndiff`, you must do:
+          chmod go-w #{HOMEBREW_CELLAR}
+      EOS
+    end
   end
 
   test do
