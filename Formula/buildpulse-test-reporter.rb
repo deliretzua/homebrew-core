@@ -1,10 +1,9 @@
 class BuildpulseTestReporter < Formula
   desc "Connect your CI to BuildPulse to detect, track, and rank flaky tests"
   homepage "https://buildpulse.io"
-  url "https://github.com/buildpulse/test-reporter/archive/refs/tags/v0.24.2.tar.gz"
-  sha256 "63604db79aa165eff8fb31e08432b4c95685748b44022dd2b97f1bf5cca71e01"
+  url "https://github.com/buildpulse/test-reporter/archive/refs/tags/v0.25.0.tar.gz"
+  sha256 "5fecd09586dd5e28e18278c55dc60d1c69a6fbf8aeaa437d72700c2d601a530b"
   license "MIT"
-  revision 1
   head "https://github.com/buildpulse/test-reporter.git", branch: "main"
 
   livecheck do
@@ -24,10 +23,6 @@ class BuildpulseTestReporter < Formula
 
   depends_on "go" => :build
 
-  # Fix support for 64-bit GITHUB_RUN_ID.
-  # Remove with the next release.
-  patch :DATA
-
   def install
     goldflags = %W[
       -s -w
@@ -45,18 +40,3 @@ class BuildpulseTestReporter < Formula
     assert_match "Received args: #{fake_dir}", shell_output("#{binary} submit #{fake_dir}", 1)
   end
 end
-
-__END__
-diff --git a/internal/metadata/providers.go b/internal/metadata/providers.go
-index 7ac32fe..13892b1 100644
---- a/internal/metadata/providers.go
-+++ b/internal/metadata/providers.go
-@@ -183,7 +183,7 @@ type githubMetadata struct {
- 	GithubRepoNWO    string `env:"GITHUB_REPOSITORY" yaml:"-"`
- 	GithubRepoURL    string `yaml:":github_repo_url"`
- 	GithubRunAttempt uint   `env:"GITHUB_RUN_ATTEMPT" yaml:":github_run_attempt"`
--	GithubRunID      uint   `env:"GITHUB_RUN_ID" yaml:":github_run_id"`
-+	GithubRunID      uint64 `env:"GITHUB_RUN_ID" yaml:":github_run_id"`
- 	GithubRunNumber  uint   `env:"GITHUB_RUN_NUMBER" yaml:":github_run_number"`
- 	GithubServerURL  string `env:"GITHUB_SERVER_URL" yaml:"-"`
- 	GithubSHA        string `env:"GITHUB_SHA" yaml:"-"`
