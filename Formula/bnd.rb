@@ -11,7 +11,13 @@ class Bnd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "faddfc13cab1ed991703417f3bbf2ca69cdc4eb93121732f18b091d139188c36"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a72b84f857a282a23dac9e995d4462d59c74430da39cd71eb0e28aefba8111cc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a72b84f857a282a23dac9e995d4462d59c74430da39cd71eb0e28aefba8111cc"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a72b84f857a282a23dac9e995d4462d59c74430da39cd71eb0e28aefba8111cc"
+    sha256 cellar: :any_skip_relocation, ventura:        "a72b84f857a282a23dac9e995d4462d59c74430da39cd71eb0e28aefba8111cc"
+    sha256 cellar: :any_skip_relocation, monterey:       "a72b84f857a282a23dac9e995d4462d59c74430da39cd71eb0e28aefba8111cc"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a72b84f857a282a23dac9e995d4462d59c74430da39cd71eb0e28aefba8111cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "721b378810b533d58c4ed3d98dd94e31949cad601665f2eec90704e2bf4165fc"
   end
 
   depends_on "openjdk"
