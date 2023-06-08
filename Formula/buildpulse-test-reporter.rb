@@ -12,13 +12,13 @@ class BuildpulseTestReporter < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "10ebba7785369dec61ca485c4255be696fb39607b86a942999c803969786f09c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "10ebba7785369dec61ca485c4255be696fb39607b86a942999c803969786f09c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "10ebba7785369dec61ca485c4255be696fb39607b86a942999c803969786f09c"
-    sha256 cellar: :any_skip_relocation, ventura:        "9c60179834de6ef9d87089bfb80e0bb8ce04f4c52cc479de59ef2ecd05fadafa"
-    sha256 cellar: :any_skip_relocation, monterey:       "9c60179834de6ef9d87089bfb80e0bb8ce04f4c52cc479de59ef2ecd05fadafa"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9c60179834de6ef9d87089bfb80e0bb8ce04f4c52cc479de59ef2ecd05fadafa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fff5d675a148310f2cc6766c3ecd33b65427f4023c023e6f909e48c7da0edb05"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1cde69112052e2eae04c9236383b62d5ee040e9e4281ee9ab4e749ad5bb316d0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1cde69112052e2eae04c9236383b62d5ee040e9e4281ee9ab4e749ad5bb316d0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1cde69112052e2eae04c9236383b62d5ee040e9e4281ee9ab4e749ad5bb316d0"
+    sha256 cellar: :any_skip_relocation, ventura:        "69bd8a6950f1c4dbdc2ff34fef0883356582795b5f3e5903f26df4aca6bb9a13"
+    sha256 cellar: :any_skip_relocation, monterey:       "69bd8a6950f1c4dbdc2ff34fef0883356582795b5f3e5903f26df4aca6bb9a13"
+    sha256 cellar: :any_skip_relocation, big_sur:        "69bd8a6950f1c4dbdc2ff34fef0883356582795b5f3e5903f26df4aca6bb9a13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "221768ce6503a0a64cc5493cb6fd94a3e82e14634cb6e4f4f64c2efa33637577"
   end
 
   depends_on "go" => :build
