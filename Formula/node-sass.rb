@@ -8,13 +8,13 @@ class NodeSass < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "359010fdb45544c44471f65ff3d27b5f10c9a31d50fa779697a09a816e433eb5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "359010fdb45544c44471f65ff3d27b5f10c9a31d50fa779697a09a816e433eb5"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "359010fdb45544c44471f65ff3d27b5f10c9a31d50fa779697a09a816e433eb5"
-    sha256 cellar: :any_skip_relocation, ventura:        "359010fdb45544c44471f65ff3d27b5f10c9a31d50fa779697a09a816e433eb5"
-    sha256 cellar: :any_skip_relocation, monterey:       "359010fdb45544c44471f65ff3d27b5f10c9a31d50fa779697a09a816e433eb5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "359010fdb45544c44471f65ff3d27b5f10c9a31d50fa779697a09a816e433eb5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c3e874df1251d1fd31404adde98feba84d0c5f8c44f117899730ce81ae98fe2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f7910b601cf7929147fbf0bfb31c13c8e231b58338f29a0b421df1a9d014550d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f7910b601cf7929147fbf0bfb31c13c8e231b58338f29a0b421df1a9d014550d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f7910b601cf7929147fbf0bfb31c13c8e231b58338f29a0b421df1a9d014550d"
+    sha256 cellar: :any_skip_relocation, ventura:        "f7910b601cf7929147fbf0bfb31c13c8e231b58338f29a0b421df1a9d014550d"
+    sha256 cellar: :any_skip_relocation, monterey:       "f7910b601cf7929147fbf0bfb31c13c8e231b58338f29a0b421df1a9d014550d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f7910b601cf7929147fbf0bfb31c13c8e231b58338f29a0b421df1a9d014550d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "80381de9386b1ac9a5ae05016617b2d6a76a01fc26f6e55673bb565865af1f1d"
   end
 
   depends_on "node"
