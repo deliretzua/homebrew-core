@@ -1,9 +1,9 @@
 class Xorriso < Formula
   desc "ISO9660+RR manipulation tool"
   homepage "https://www.gnu.org/software/xorriso/"
-  url "https://ftp.gnu.org/gnu/xorriso/xorriso-1.5.4.tar.gz"
-  mirror "https://ftpmirror.gnu.org/xorriso/xorriso-1.5.4.tar.gz"
-  sha256 "3ac155f0ca53e8dbeefacc7f32205a98f4f27d2d348de39ee0183ba8a4c9e392"
+  url "https://ftp.gnu.org/gnu/xorriso/xorriso-1.5.6.tar.gz"
+  mirror "https://ftpmirror.gnu.org/xorriso/xorriso-1.5.6.tar.gz"
+  sha256 "d4b6b66bd04c49c6b358ee66475d806d6f6d7486e801106a47d331df1f2f8feb"
   license "GPL-2.0-or-later"
 
   bottle do
@@ -20,6 +20,10 @@ class Xorriso < Formula
 
   uses_from_macos "zlib"
 
+  # Submit the patch into the upstream, see:
+  # https://lists.gnu.org/archive/html/bug-xorriso/2023-06/msg00000.html
+  patch :DATA
+
   def install
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
@@ -33,6 +37,21 @@ class Xorriso < Formula
   end
 
   test do
-    system bin/"xorriso", "--help"
+    assert_match "List of xorriso extra features", shell_output("#{bin}/xorriso -list_extras")
+    assert_match version.to_s, shell_output("#{bin}/xorriso -version")
   end
 end
+
+__END__
+diff --git a/libisofs/rockridge.h b/libisofs/rockridge.h
+index 5649eb7..01c4224 100644
+--- a/libisofs/rockridge.h
++++ b/libisofs/rockridge.h
+@@ -41,6 +41,8 @@
+
+ #include "ecma119.h"
+
++/* For ssize_t */
++#include <unistd.h>
+
+ #define SUSP_SIG(entry, a, b) ((entry->sig[0] == a) && (entry->sig[1] == b))
