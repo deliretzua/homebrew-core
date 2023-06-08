@@ -1,10 +1,8 @@
 class Wxpython < Formula
-  include Language::Python::Virtualenv
-
   desc "Python bindings for wxWidgets"
   homepage "https://www.wxpython.org/"
-  url "https://files.pythonhosted.org/packages/d9/33/b616c7ed4742be6e0d111ca375b41379607dc7cc7ac7ff6aead7a5a0bf53/wxPython-4.2.0.tar.gz"
-  sha256 "663cebc4509d7e5d113518865fe274f77f95434c5d57bc386ed58d65ceed86c7"
+  url "https://files.pythonhosted.org/packages/aa/64/d749e767a8ce7bdc3d533334e03bb1106fc4e4803d16f931fada9007ee13/wxPython-4.2.1.tar.gz"
+  sha256 "e48de211a6606bf072ec3fa778771d6b746c00b7f4b970eb58728ddf56d13d5c"
   license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
 
   bottle do
@@ -31,17 +29,12 @@ class Wxpython < Formula
     depends_on "gtk+3"
   end
 
-  # Fix build scripts depending on attrdict3 even though only used on Windows.
-  # Remove once upstream PR is merged and in release.
-  # PR ref: https://github.com/wxWidgets/Phoenix/pull/2224
-  patch do
-    url "https://github.com/wxWidgets/Phoenix/commit/2e9169effa9abf14f34f8436a791b8829eea7774.patch?full_index=1"
-    sha256 "932b3decf8fe5bd982c857796f0b9d936c6a080616733b98ffbd2d3229692e20"
+  def python
+    "python3.11"
   end
 
   def install
     ENV["DOXYGEN"] = Formula["doxygen"].opt_bin/"doxygen"
-    python = "python3.11"
     system python, "-u", "build.py", "dox", "touch", "etg", "sip", "build_py",
                    "--release",
                    "--use_syswx",
@@ -55,7 +48,6 @@ class Wxpython < Formula
   end
 
   test do
-    python = Formula["python@3.11"].opt_bin/"python3.11"
     output = shell_output("#{python} -c 'import wx ; print(wx.__version__)'")
     assert_match version.to_s, output
   end
