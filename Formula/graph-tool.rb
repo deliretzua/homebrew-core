@@ -3,8 +3,8 @@ class GraphTool < Formula
 
   desc "Efficient network analysis for Python 3"
   homepage "https://graph-tool.skewed.de/"
-  url "https://downloads.skewed.de/graph-tool/graph-tool-2.55.tar.bz2"
-  sha256 "75728e55b774af734954cd48f3d80ba64cf08864ef6143408f3a7422474834b4"
+  url "https://downloads.skewed.de/graph-tool/graph-tool-2.56.tar.bz2"
+  sha256 "a4979e4b84ca84d2c41adb8b03aad6730ee2739e228d55e32321d9c6b4d7b7e4"
   license "LGPL-3.0-or-later"
 
   livecheck do
