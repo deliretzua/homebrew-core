@@ -673,7 +673,7 @@
   },
   "semgrep": {
     "package_name": "semgrep",
-    "exclude_packages": ["typing-extensions"]
+    "exclude_packages": ["typing-extensions", "Pygments"]
   },
   "sgr": {
     "exclude_packages": ["typing-extensions"]
