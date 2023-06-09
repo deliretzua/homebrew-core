@@ -18,6 +18,7 @@ class Coconut < Formula
   end
 
   depends_on "pygments"
+  depends_on "python-typing-extensions"
   depends_on "python@3.11"
 
   resource "cpyparsing" do
@@ -33,11 +34,6 @@ class Coconut < Formula
   resource "psutil" do
     url "https://files.pythonhosted.org/packages/d6/0f/96b7309212a926c1448366e9ce69b081ea79d63265bde33f11cc9cfc2c07/psutil-5.9.5.tar.gz"
     sha256 "5410638e4df39c54d957fc51ce03048acd8e6d60abc0f5107af51e5fb566eb3c"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/be/fc/3d12393d634fcb31d5f4231c28feaf4ead225124ba08021046317d5f450d/typing_extensions-4.6.2.tar.gz"
-    sha256 "06006244c70ac8ee83fa8282cb188f697b8db25bc8b4df07be1873c43897060c"
   end
 
   resource "wcwidth" do

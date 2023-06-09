@@ -122,7 +122,7 @@
     "exclude_packages": ["pycparser"]
   },
   "coconut": {
-    "exclude_packages": ["Pygments"]
+    "exclude_packages": ["Pygments", "typing-extensions"]
   },
   "cfn-flip": {
     "exclude_packages": ["six", "PyYAML"]
