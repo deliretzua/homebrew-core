@@ -19,6 +19,7 @@ class Tern < Formula
   end
 
   depends_on "python@3.11"
+  depends_on "pyyaml"
 
   on_linux do
     depends_on "attr" # for `getfattr`
@@ -102,11 +103,6 @@ class Tern < Formula
   resource "prettytable" do
     url "https://files.pythonhosted.org/packages/ba/b6/8e78337766d4c324ac22cb887ecc19487531f508dbf17d922b91492d55bb/prettytable-3.6.0.tar.gz"
     sha256 "2e0026af955b4ea67b22122f310b90eae890738c08cb0458693a49b6221530ac"
-  end
-
-  resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/36/2b/61d51a2c4f25ef062ae3f74576b01638bebad5e045f747ff12643df63844/PyYAML-6.0.tar.gz"
-    sha256 "68fb519c14306fec9720a2a5b45bc9f0c8d1b9c72adf45c37baedfcd949c35a2"
   end
 
   resource "regex" do
