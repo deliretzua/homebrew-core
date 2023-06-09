@@ -24,6 +24,7 @@ class Esptool < Formula
   depends_on "openssl@1.1"
   depends_on "pycparser"
   depends_on "python@3.11"
+  depends_on "pyyaml"
   depends_on "six"
 
   resource "bitstring" do
@@ -44,11 +45,6 @@ class Esptool < Formula
   resource "pyserial" do
     url "https://files.pythonhosted.org/packages/1e/7d/ae3f0a63f41e4d2f6cb66a5b57197850f919f59e558159a4dd3a818f5082/pyserial-3.5.tar.gz"
     sha256 "3c77e014170dfffbd816e6ffc205e9842efb10be9f58ec16d3e8675b4925cddb"
-  end
-
-  resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/36/2b/61d51a2c4f25ef062ae3f74576b01638bebad5e045f747ff12643df63844/PyYAML-6.0.tar.gz"
-    sha256 "68fb519c14306fec9720a2a5b45bc9f0c8d1b9c72adf45c37baedfcd949c35a2"
   end
 
   resource "reedsolo" do
