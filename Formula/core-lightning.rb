@@ -5,6 +5,7 @@ class CoreLightning < Formula
       tag:      "v23.05.1",
       revision: "484d4476256815056e5d82991d677553c74315c1"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -27,6 +28,7 @@ class CoreLightning < Formula
   depends_on "gnu-sed" => :build
   depends_on "libsodium" => :build
   depends_on "libtool" => :build
+  depends_on "lowdown" => :build
   depends_on "pkg-config" => :build
   depends_on "poetry" => :build
   depends_on "protobuf" => :build
@@ -36,9 +38,7 @@ class CoreLightning < Formula
   uses_from_macos "sqlite"
 
   def install
-    File.open("external/lowdown/configure.local", "a") do |configure_local|
-      configure_local.puts "HAVE_SANDBOX_INIT=0"
-    end
+    remove_dir("external/lowdown")
     system "poetry", "env", "use", "3.8"
     system "poetry", "install"
     system "./configure", "--prefix=#{prefix}"
