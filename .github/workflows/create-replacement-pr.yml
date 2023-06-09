@@ -81,7 +81,7 @@ jobs:
             gh api \
               --header 'Accept: application/vnd.github+json' \
               --header 'X-GitHub-Api-Version: 2022-11-28' \
-              "repos/$GH_REPO/pulls/$PR/reviews"
+              "repos/{owner}/{repo}/pulls/$PR/reviews"
           )"
 
           reviewers="$(jq --compact-output '[.[].user.login]' <<< "$review_data")"
