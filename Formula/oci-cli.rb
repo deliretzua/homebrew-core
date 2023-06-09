@@ -20,6 +20,7 @@ class OciCli < Formula
 
   depends_on "rust" => :build
   depends_on "python@3.11"
+  depends_on "pyyaml"
   depends_on "six"
 
   resource "arrow" do
@@ -85,11 +86,6 @@ class OciCli < Formula
   resource "pytz" do
     url "https://files.pythonhosted.org/packages/5e/32/12032aa8c673ee16707a9b6cdda2b09c0089131f35af55d443b6a9c69c1d/pytz-2023.3.tar.gz"
     sha256 "1d8ce29db189191fb55338ee6d0387d82ab59f3d00eac103412d64e0ebd0c588"
-  end
-
-  resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/36/2b/61d51a2c4f25ef062ae3f74576b01638bebad5e045f747ff12643df63844/PyYAML-6.0.tar.gz"
-    sha256 "68fb519c14306fec9720a2a5b45bc9f0c8d1b9c72adf45c37baedfcd949c35a2"
   end
 
   resource "terminaltables" do
