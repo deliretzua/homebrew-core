@@ -8,13 +8,13 @@ class WikibaseCli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "afb9733a63ff3044aecd917d89847a92ff774cc7b320e22b5a2c55814a84383b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "afb9733a63ff3044aecd917d89847a92ff774cc7b320e22b5a2c55814a84383b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "afb9733a63ff3044aecd917d89847a92ff774cc7b320e22b5a2c55814a84383b"
-    sha256 cellar: :any_skip_relocation, ventura:        "9c7b1ab36fd1ad23fa0c508069ec061b498331b45c82135da681b10ba77c5211"
-    sha256 cellar: :any_skip_relocation, monterey:       "9c7b1ab36fd1ad23fa0c508069ec061b498331b45c82135da681b10ba77c5211"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9c7b1ab36fd1ad23fa0c508069ec061b498331b45c82135da681b10ba77c5211"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "afb9733a63ff3044aecd917d89847a92ff774cc7b320e22b5a2c55814a84383b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "53eccf447a9261e6aeda07e2201556701dcb15c3539ff9055463bd8b13a12a01"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "53eccf447a9261e6aeda07e2201556701dcb15c3539ff9055463bd8b13a12a01"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "53eccf447a9261e6aeda07e2201556701dcb15c3539ff9055463bd8b13a12a01"
+    sha256 cellar: :any_skip_relocation, ventura:        "112d5e043bc67d3c38c44c02702bd19245e3a5cdb3f9d913a9843166503a5ded"
+    sha256 cellar: :any_skip_relocation, monterey:       "112d5e043bc67d3c38c44c02702bd19245e3a5cdb3f9d913a9843166503a5ded"
+    sha256 cellar: :any_skip_relocation, big_sur:        "112d5e043bc67d3c38c44c02702bd19245e3a5cdb3f9d913a9843166503a5ded"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "53eccf447a9261e6aeda07e2201556701dcb15c3539ff9055463bd8b13a12a01"
   end
 
   depends_on "node"
