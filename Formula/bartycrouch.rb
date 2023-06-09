@@ -2,8 +2,8 @@ class Bartycrouch < Formula
   desc "Incrementally update/translate your Strings files"
   homepage "https://github.com/FlineDev/BartyCrouch"
   url "https://github.com/FlineDev/BartyCrouch.git",
-      tag:      "4.14.2",
-      revision: "a81a6ab4cc5c5346f942ae1becc7dfbc4498ab57"
+      tag:      "4.15.1",
+      revision: "fe88110ab0af3d1281138b63159e20a7450383fa"
   license "MIT"
   head "https://github.com/FlineDev/BartyCrouch.git", branch: "main"
 
@@ -19,9 +19,6 @@ class Bartycrouch < Formula
 
   def install
     system "make", "install", "prefix=#{prefix}"
-
-    # lib_InternalSwiftSyntaxParser is taken from Xcode, so it's a universal binary.
-    deuniversalize_machos(lib/"lib_InternalSwiftSyntaxParser.dylib")
   end
 
   test do
