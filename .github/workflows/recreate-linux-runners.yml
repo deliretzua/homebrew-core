@@ -49,8 +49,8 @@ jobs:
                     commit {
                       checkSuites(last: 100) {
                         nodes {
-                          databaseId
                           workflowRun {
+                            databaseId
                             workflow {
                               name
                             }
@@ -69,7 +69,7 @@ jobs:
               --raw-field query="$QUERY" \
               --jq '.data.resource.checkSuite.commit.checkSuites.nodes |
                       map(select(.workflowRun.workflow.name == "Triage tasks")) |
-                      last | .databaseId'
+                      last | .workflowRun.databaseId'
           )"
           echo "run-id=$run_id" >> "$GITHUB_OUTPUT"
 
