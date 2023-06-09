@@ -6,13 +6,13 @@ class Bittwist < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9dbd2f2b385f253d0b2adcf076c8c71836a153934c273fc1ef429d44faa4d78a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "23c74492b097bdc7ccd53a2eef8065793a2d130a06a338953591b0a36b8d463e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bae24b9cd57deba3efa2047cd75f2cfa020b9121855933eeeb67dafc59944cd8"
-    sha256 cellar: :any_skip_relocation, ventura:        "cf77a149cb319450d0b04f3c3d46538828d1187c7df3e3c29d49906b91f9f489"
-    sha256 cellar: :any_skip_relocation, monterey:       "716fcfbc18d08fa5cc7dc9c28391127a76e35a46c12ebbd92a1ba2c9c1acf024"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b1112494b4d22a954a7a58667a2c81e00d02c85e97433dbc3eb416209fbfce76"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e87220f23b6e808c71055923a28b09a67877a98ac7d8bf7bffbefaea7e96f27b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1d978d2788aa2b68247122810b593398eae384ee8de8d953595a39490aa6ea55"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1d77bb81d474e27c2efccdd75d06cf5f1179f610d23b2ce8a571d2b52dce58c6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bce8fac5206045522a0bf9d05827ab3c999f73c2f0f2115ad2deb5fb51b76020"
+    sha256 cellar: :any_skip_relocation, ventura:        "eac3ded832b408891c94042dc62902ff3012e059b4c47d2390dfa280611b9a80"
+    sha256 cellar: :any_skip_relocation, monterey:       "d038eaf597396d77f076f21524ed3df68d51de1c7d4d72842e3dd42ff8c560d5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7fdc2daeb7d2dd35d03f6d16feda1c9ca23f14195a343fe8fc5ada41cb1cc389"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "69bf861ba59b7c7077f87d651d1e19482dd253b02b88dc8d3cb3dc1ead6813cd"
   end
 
   uses_from_macos "libpcap"
