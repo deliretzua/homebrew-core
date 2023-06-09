@@ -2,8 +2,8 @@ class Csfml < Formula
   # Don't update CSFML until there's a corresponding SFML release
   desc "SMFL bindings for C"
   homepage "https://www.sfml-dev.org/"
-  url "https://github.com/SFML/CSFML/archive/2.5.1.tar.gz"
-  sha256 "0c6693805b700c53552565149405a041a00dbe898c2efb828e91999ab8b6b1d4"
+  url "https://github.com/SFML/CSFML/archive/2.5.2.tar.gz"
+  sha256 "2671f1cd2a4e54e86f7483c4683132466c01a6ca90fa010bc4964a8820c36f06"
   license "Zlib"
   head "https://github.com/SFML/CSFML.git", branch: "master"
 
