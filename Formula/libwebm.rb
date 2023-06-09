@@ -1,8 +1,8 @@
 class Libwebm < Formula
   desc "WebM container"
   homepage "https://www.webmproject.org/code/"
-  url "https://github.com/webmproject/libwebm/archive/libwebm-1.0.0.29.tar.gz"
-  sha256 "a07e6640906e0c7fd3c6274b9bf3e9872bd36729bfcc0b83776d90e52e257521"
+  url "https://github.com/webmproject/libwebm/archive/libwebm-1.0.0.30.tar.gz"
+  sha256 "6c1381fd1a66e86e095b76028ede696724e198ea0e39957c9649af5f0718b96a"
   license "BSD-3-Clause"
 
   bottle do
@@ -37,11 +37,11 @@ class Libwebm < Formula
       #include <mkvwriter.hpp>
       int main()
       {
-        mkvmuxer::MkvWriter writer();
+        mkvmuxer::MkvWriter writer;
         return 0;
       }
     EOS
-    system ENV.cxx, "test.cpp", "-L#{lib}", "-lwebm", "-o", "test"
+    system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-lwebm", "-o", "test"
     system "./test"
   end
 end
