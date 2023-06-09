@@ -484,7 +484,7 @@
   },
   "nvchecker": "nvchecker[pypi]",
   "oci-cli": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "PyYAML"]
   },
   "ocrmypdf": {
     "exclude_packages": ["pillow", "pycparser"]
