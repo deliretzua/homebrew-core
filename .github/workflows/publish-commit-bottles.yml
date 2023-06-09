@@ -191,7 +191,7 @@ jobs:
             --ref "$GITHUB_REF_NAME" \
             --field pull_request="$PR" \
             --field autosquash="$AUTOSQUASH" \
-            --field upload=false \
+            --field upload='${{ !inputs.autosquash }}' \
             --field warn_on_upload_failure=false \
             --field message="$MESSAGE"
 
