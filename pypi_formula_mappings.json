@@ -714,6 +714,9 @@
   "tarsnapper": {
     "exclude_packages": ["six", "PyYAML"]
   },
+  "tern": {
+    "exclude_packages": ["PyYAML"]
+  },
   "termius": {
     "package_name": "termius",
     "exclude_packages": ["six", "PyYAML"]
