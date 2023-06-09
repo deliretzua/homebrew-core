@@ -3,8 +3,8 @@ class Dxpy < Formula
 
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
   homepage "https://github.com/dnanexus/dx-toolkit"
-  url "https://files.pythonhosted.org/packages/4d/8e/427c4613ed50522f110b52979a17c3a8a201546b7c709c6755536248587b/dxpy-0.347.0.tar.gz"
-  sha256 "994aa2ac4e04939bbb113f34d319c171c1b7a9c6150e319199eed18ef3d57f82"
+  url "https://files.pythonhosted.org/packages/56/b0/89185209a36f3c628910008edcd2446fcefca71b10abc35bd4c7f6b2714d/dxpy-0.348.0.tar.gz"
+  sha256 "83b9e271121bdc581ffec433f00ac0794b43d154a8df1e7561d7f23cd9d88590"
   license "Apache-2.0"
 
   bottle do
@@ -82,8 +82,8 @@ class Dxpy < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/21/79/6372d8c0d0641b4072889f3ff84f279b738cd8595b64c8e0496d4e848122/urllib3-1.26.15.tar.gz"
-    sha256 "8a388717b9476f934a21484e8c8e61875ab60644d29b9b39e11e4b9dc1c6b305"
+    url "https://files.pythonhosted.org/packages/e2/7d/539e6f0cf9f0b95b71dd701a56dae89f768cd39fd8ce0096af3546aeb5a3/urllib3-1.26.16.tar.gz"
+    sha256 "8f135f6502756bde6b2a9b28989df5fbe87c9970cecaa69041edcce7f0589b14"
   end
 
   resource "websocket-client" do
