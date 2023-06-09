@@ -15,13 +15,14 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "2fdaefd916b9795dbe0f6148f043a77e72106376dfa4b3874dc192449a16493f"
-    sha256 cellar: :any, arm64_monterey: "7196d42b716c9c8cbbec30ef100c3abfd6e04308fbcdcb1353e9fa162bfaa004"
-    sha256 cellar: :any, arm64_big_sur:  "df1c0f59def28073044a0f334fa6e996536ddc8111cbc77c114267e3d60a1c22"
-    sha256 cellar: :any, ventura:        "b5fafa35a04a68249cd070eebd8d96e864c1d3e754303d43e5b8b50a1709686c"
-    sha256 cellar: :any, monterey:       "554fc8f3ae86dfc2eeeec4b5f2035fb65c2a3f45efe1fa91cfbf77747c2fc63b"
-    sha256 cellar: :any, big_sur:        "a5c9a0577ebf0ce66fae22516fc811f1263474f3b057c9ee76b27445ec4f5daa"
-    sha256               x86_64_linux:   "a4cf1175e333205efc33a84a95afe8c417b68281a02c3bf7f85ecea10e1569bc"
+    rebuild 1
+    sha256 cellar: :any, arm64_ventura:  "bae63815c9ec2db233e6c3f6a12c82bfce9b3ac84e31af2f1682210a2abf4609"
+    sha256 cellar: :any, arm64_monterey: "c7fbe7c109e935cd05e58ecafd600f3c9c299215f24015c58569149035b0218d"
+    sha256 cellar: :any, arm64_big_sur:  "ac2957a401cfdf6eedd8a8cfe299d3aeeec5d44a9545ef5ace011a4ddc633093"
+    sha256 cellar: :any, ventura:        "00c3d414b834265b8c04ffd6649af23e55ad1854a9b0e7631041e27257ae157f"
+    sha256 cellar: :any, monterey:       "74e0e50065180a8c4b84fd8caeb7b2fb38bfcb670266f8c93fe38632fe49d52e"
+    sha256 cellar: :any, big_sur:        "aec130854d575f0a35a437ec607b21b45546cbdd949af0dbcf32472ac80d713c"
+    sha256               x86_64_linux:   "cd6c08c1291df6d313f73e7440de6cc39b286cdb2c41359177e7e390f813a21b"
   end
 
   depends_on "cmake" => :build
@@ -33,6 +34,7 @@ class Semgrep < Formula
   depends_on "pkg-config" => :build
   depends_on "gmp"
   depends_on "pcre"
+  depends_on "pygments"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "tree-sitter"
@@ -124,11 +126,6 @@ class Semgrep < Formula
   resource "peewee" do
     url "https://files.pythonhosted.org/packages/a9/50/1dd5ea74c559df4afb8391f8d05f0fec685dbe8effba13bb9072901eb288/peewee-3.16.2.tar.gz"
     sha256 "10769981198c7311f84a0ca8db892fa213303a8eb1305deb795a71e7bd606a91"
-  end
-
-  resource "pygments" do
-    url "https://files.pythonhosted.org/packages/89/6b/2114e54b290824197006e41be3f9bbe1a26e9c39d1f5fa20a6d62945a0b3/Pygments-2.15.1.tar.gz"
-    sha256 "8ace4d3c1dd481894b2005f560ead0f9f19ee64fe983366be1a21e171d12775c"
   end
 
   resource "pyrsistent" do
