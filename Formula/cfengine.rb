@@ -1,8 +1,8 @@
 class Cfengine < Formula
   desc "Help manage and understand IT infrastructure"
   homepage "https://cfengine.com/"
-  url "https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-community-3.21.1.tar.gz"
-  sha256 "a4ff3acfc97362042ecb6f9ae03bc3ca5951c3b0c5ba08de8ca89078519960da"
+  url "https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-community-3.21.2.tar.gz"
+  sha256 "e3f733433ff9ad86a01513b779f646da223afed8568e8de6e89c4e5aa8c6b256"
   license all_of: ["BSD-3-Clause", "GPL-2.0-or-later", "GPL-3.0-only", "LGPL-2.0-or-later"]
 
   livecheck do
@@ -31,8 +31,8 @@ class Cfengine < Formula
   end
 
   resource "masterfiles" do
-    url "https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-masterfiles-3.21.1.tar.gz"
-    sha256 "0ac6b06d2135260e9e047669bb34a3555b2b0e7ef8918a12fe71b59e95bae64f"
+    url "https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-masterfiles-3.21.2.tar.gz"
+    sha256 "6fbaa12d602db8a94c89a6a4fec52f1e29bf27053ad8a35036c6f11e61827b1c"
   end
 
   def install
@@ -67,6 +67,8 @@ class Cfengine < Formula
   end
 
   test do
+    assert_equal version, resource("masterfiles").version, "`masterfiles` resource needs updating!"
+
     assert_equal "CFEngine Core #{version}", shell_output("#{bin}/cf-agent -V").chomp
   end
 end
