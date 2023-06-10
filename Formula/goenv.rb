@@ -1,8 +1,8 @@
 class Goenv < Formula
   desc "Go version management"
   homepage "https://github.com/syndbg/goenv"
-  url "https://github.com/syndbg/goenv/archive/2.0.7.tar.gz"
-  sha256 "b2415dcd29e72ae42fbe8f0710c65c050faaa02b773ac68fd8393243aad5c409"
+  url "https://github.com/syndbg/goenv/archive/2.0.8.tar.gz"
+  sha256 "026ebcecdd6dc97f1d2127ce3baf918f4ff18bc09e099a3a98b19169b7c8bb33"
   license "MIT"
   version_scheme 1
   head "https://github.com/syndbg/goenv.git", branch: "master"
