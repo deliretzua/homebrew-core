@@ -1,8 +1,8 @@
 class Ortp < Formula
   desc "Real-time transport protocol (RTP, RFC3550) library"
   homepage "https://linphone.org/"
-  url "https://gitlab.linphone.org/BC/public/ortp/-/archive/5.2.64/ortp-5.2.64.tar.bz2"
-  sha256 "2706d0ba39a75106f4286837dbc5e4827960d59ecf3bd95d71c8d5b1ecfb70fd"
+  url "https://gitlab.linphone.org/BC/public/ortp/-/archive/5.2.70/ortp-5.2.70.tar.bz2"
+  sha256 "df96998570b776aa2a9effc9d364dd8d6beebd6aba9ec7118bbbc67a2557507c"
   license "GPL-3.0-or-later"
   head "https://gitlab.linphone.org/BC/public/ortp.git", branch: "master"
 
@@ -24,8 +24,8 @@ class Ortp < Formula
   # https://github.com/BelledonneCommunications/bctoolbox
   resource "bctoolbox" do
     # Don't forget to change both instances of the version in the URL.
-    url "https://gitlab.linphone.org/BC/public/bctoolbox/-/archive/5.2.64/bctoolbox-5.2.64.tar.bz2"
-    sha256 "a056f4db62a1ddb6fce9d8b36186b40af3b3ca59cf7748997744a646e6ad25d2"
+    url "https://gitlab.linphone.org/BC/public/bctoolbox/-/archive/5.2.70/bctoolbox-5.2.70.tar.bz2"
+    sha256 "d2b0eef4627c0c67020f54eb8370424cbfbf7c575b39d3161bb3e3f2b8021043"
   end
 
   def install
