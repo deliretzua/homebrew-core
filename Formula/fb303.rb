@@ -1,8 +1,8 @@
 class Fb303 < Formula
   desc "Thrift functions for querying information from a service"
   homepage "https://github.com/facebook/fb303"
-  url "https://github.com/facebook/fb303/archive/refs/tags/v2023.05.22.00.tar.gz"
-  sha256 "6d4f4ae4534c2a15c05410d4925e764db9c3321fed39abc78b6a728a6c1a9aca"
+  url "https://github.com/facebook/fb303/archive/refs/tags/v2023.06.08.00.tar.gz"
+  sha256 "78e62ed2c4fdfd4ec4c25aedab38951a06a2356b162b9c444743b61a7cf1105b"
   license "Apache-2.0"
   head "https://github.com/facebook/fb303.git", branch: "main"
 
