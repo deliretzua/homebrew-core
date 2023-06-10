@@ -4,6 +4,7 @@ class Lfe < Formula
   url "https://github.com/lfe/lfe/archive/v2.1.1.tar.gz"
   sha256 "e5abacd57dc2f357dda46d8336a40046be806f5c6776f95612676c4b45f6d56b"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/lfe/lfe.git", branch: "develop"
 
   bottle do
@@ -17,17 +18,20 @@ class Lfe < Formula
   end
 
   depends_on "emacs" => :build
-  depends_on "erlang"
+  depends_on "erlang@25"
 
   def install
     system "make"
     system "make", "MANINSTDIR=#{man}", "install-man"
     system "make", "emacs"
-    libexec.install "bin", "ebin"
-    bin.install_symlink (libexec/"bin").children
-    doc.install Dir["doc/*.txt"]
+
+    libexec.install "ebin"
     pkgshare.install "dev", "examples", "test"
-    elisp.install Dir["emacs/*.elc"]
+    doc.install Pathname.glob("doc/*.txt")
+    elisp.install Pathname.glob("emacs/*.elc")
+
+    prefix.install "bin"
+    bin.env_script_all_files libexec/"bin", PATH: "#{Formula["erlang@25"].opt_bin}:${PATH}"
   end
 
   test do
