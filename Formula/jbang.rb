@@ -6,7 +6,7 @@ class Jbang < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2fb131865203dfcd18a6d0755eace835f50c4810d7db8641fc491fa71a05a6ea"
+    sha256 cellar: :any_skip_relocation, all: "d6adcd5aee45fb39082db6ab69d23c874299142e505325245495cf7b2acba212"
   end
 
   depends_on "openjdk"
