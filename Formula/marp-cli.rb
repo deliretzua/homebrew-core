@@ -3,8 +3,8 @@ require "language/node"
 class MarpCli < Formula
   desc "Easily convert Marp Markdown files into static HTML/CSS, PDF, PPT and images"
   homepage "https://github.com/marp-team/marp-cli"
-  url "https://registry.npmjs.org/@marp-team/marp-cli/-/marp-cli-2.5.0.tgz"
-  sha256 "c0ded8770e2efa66c8768ffb9d7373890da5be9c80bb7a092dfeab5aa2d7967f"
+  url "https://registry.npmjs.org/@marp-team/marp-cli/-/marp-cli-3.0.0.tgz"
+  sha256 "6c548934bd21d1512d87ce3766bf2e762730bcebf80bee9d53d3e7af7ea7be61"
   license "MIT"
 
   bottle do
