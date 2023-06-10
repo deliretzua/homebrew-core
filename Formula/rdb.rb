@@ -1,8 +1,8 @@
 class Rdb < Formula
   desc "Redis RDB parser"
   homepage "https://github.com/HDT3213/rdb/"
-  url "https://github.com/HDT3213/rdb/archive/refs/tags/v1.0.9.tar.gz"
-  sha256 "7b123989ea855ffc8e11220d45d0705e385e13079165626a634bc6572dc12827"
+  url "https://github.com/HDT3213/rdb/archive/refs/tags/v1.0.10.tar.gz"
+  sha256 "a9916307b08300bd4e023b36e08f8cada0b8c003358278e0591cf298b4016de0"
   license "Apache-2.0"
 
   bottle do
