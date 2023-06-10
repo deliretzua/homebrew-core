@@ -1,8 +1,8 @@
 class Geph4 < Formula
   desc "Modular Internet censorship circumvention system to deal with national filtering"
   homepage "https://geph.io/"
-  url "https://github.com/geph-official/geph4-client/archive/refs/tags/v4.8.5.tar.gz"
-  sha256 "478d4d028c2306931691e2dd4943fec05b1776de7c5fa7ea22b74318f197cdef"
+  url "https://github.com/geph-official/geph4-client/archive/refs/tags/v4.8.7.tar.gz"
+  sha256 "042e3cc12e4043635a923f0198a060691253bc66db1fe2714599768e9c0972ce"
   license "GPL-3.0-only"
   head "https://github.com/geph-official/geph4-client.git", branch: "master"
 
