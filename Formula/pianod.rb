@@ -1,8 +1,8 @@
 class Pianod < Formula
   desc "Pandora client with multiple control interfaces"
   homepage "https://deviousfish.com/pianod/"
-  url "https://deviousfish.com/Downloads/pianod2/pianod2-392.tar.gz"
-  sha256 "d3e24ec34677bb17307e61e79f42ae2b22441228db7a31cf056d452a92447cec"
+  url "https://deviousfish.com/Downloads/pianod2/pianod2-394.tar.gz"
+  sha256 "0a88dae7f9df137eae718116b548aabe7b3a47e7cec44d0a2f379994d9a16b8b"
   license "MIT"
 
   livecheck do
@@ -23,10 +23,12 @@ class Pianod < Formula
   end
 
   depends_on "pkg-config" => :build
+  depends_on "gstreamer"
   depends_on "json-c"
   depends_on "libao"
   depends_on "libgcrypt"
 
+  uses_from_macos "curl"
   uses_from_macos "libxcrypt"
 
   on_macos do
@@ -34,8 +36,6 @@ class Pianod < Formula
   end
 
   on_linux do
-    # pianod uses avfoundation on macOS, ffmpeg on Linux
-    depends_on "ffmpeg@4"
     depends_on "gnutls"
     depends_on "libbsd"
   end
