@@ -16,17 +16,29 @@ class Wxpython < Formula
     sha256               x86_64_linux:   "5e3bfb9bd3e427fbd65d5b0e565aa7ee6f31c2eab1e3447a0c4b813b664a3d7a"
   end
 
-  depends_on "doxygen" => :build
+  # FIXME: Build is currently broken with Doxygen 1.9.7+.
+  # FIXME: depends_on "doxygen" => :build
+  depends_on "bison" => :build # for `doxygen` resource
+  depends_on "cmake" => :build # for `doxygen` resource
   depends_on "sip" => :build
   depends_on "numpy"
   depends_on "pillow"
   depends_on "python@3.11"
   depends_on "six"
   depends_on "wxwidgets"
+  uses_from_macos "flex" => :build, since: :big_sur # for `doxygen` resource
 
   on_linux do
     depends_on "pkg-config" => :build
     depends_on "gtk+3"
+  end
+
+  # Build is broken with Doxygen 1.9.7+.
+  # TODO: Try to use Homebrew `doxygen` at next release.
+  resource "doxygen" do
+    url "https://doxygen.nl/files/doxygen-1.9.6.src.tar.gz"
+    mirror "https://downloads.sourceforge.net/project/doxygen/rel-1.9.6/doxygen-1.9.6.src.tar.gz"
+    sha256 "297f8ba484265ed3ebd3ff3fe7734eb349a77e4f95c8be52ed9977f51dea49df"
   end
 
   def python
@@ -34,7 +46,17 @@ class Wxpython < Formula
   end
 
   def install
-    ENV["DOXYGEN"] = Formula["doxygen"].opt_bin/"doxygen"
+    odie "Check if `doxygen` resource can be removed!" if build.bottle? && version > "4.2.1"
+    # TODO: Try removing the block below at the next release.
+    resource("doxygen").stage do
+      system "cmake", "-S", ".", "-B", "build",
+                      "-DPYTHON_EXECUTABLE=#{which(python)}",
+                      *std_cmake_args(install_prefix: buildpath/".brew_home")
+      system "cmake", "--build", "build"
+      system "cmake", "--install", "build"
+    end
+
+    ENV["DOXYGEN"] = buildpath/".brew_home/bin/doxygen" # Formula["doxygen"].opt_bin/"doxygen"
     system python, "-u", "build.py", "dox", "touch", "etg", "sip", "build_py",
                    "--release",
                    "--use_syswx",
