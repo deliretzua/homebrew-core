@@ -6,14 +6,13 @@ class Wxpython < Formula
   license "LGPL-2.0-or-later" => { with: "WxWindows-exception-3.1" }
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_ventura:  "9cf04be9fe96667a6243e0b6e0b9c34f1f15e86f83e817bd7d3d7dbec997e9b5"
-    sha256 cellar: :any, arm64_monterey: "1999911bf51dd73f60c0adc99a3278fa573152a1535de68ef9553cc478ee5a66"
-    sha256 cellar: :any, arm64_big_sur:  "fc912d301dc9e189cb9415d0401213e23ce43752dbe1eef499a02cd4154e3334"
-    sha256 cellar: :any, ventura:        "4f8b6ad5e9a3645c207d07b2c8b67fba06cc830932a8503c9cfefc76120ddd28"
-    sha256 cellar: :any, monterey:       "2fa4ada01a2f338678543fbac2f1acd148b257aa84a9735914f27d9a8a4fea7b"
-    sha256 cellar: :any, big_sur:        "981eb95dcd1bc38c7f2a1999858c729b9ceef686f3e066c234bb11312640b115"
-    sha256               x86_64_linux:   "5e3bfb9bd3e427fbd65d5b0e565aa7ee6f31c2eab1e3447a0c4b813b664a3d7a"
+    sha256 cellar: :any, arm64_ventura:  "ecc9ba51d7c1ecccfa9e95a93e6dd9a1b3ae9389bcfd6c59ea78f64a516e21a2"
+    sha256 cellar: :any, arm64_monterey: "c4ec5d486f312f880810185ff172f3cf1ad6e29d3ae134bd35dd49aa435176c3"
+    sha256 cellar: :any, arm64_big_sur:  "1efd83b12803dc94280d18db9faf7c7908b923a84443b2369af4661923690d47"
+    sha256 cellar: :any, ventura:        "9ead65dce312c062a772fad1589434665706e509b6ffd7aa5f320ec9476483e5"
+    sha256 cellar: :any, monterey:       "79304e35ef5f033aa46da09e3f668ce0bb1651f482c6ee853719f34f12dca430"
+    sha256 cellar: :any, big_sur:        "50bbd5fb5ebf30a376cd174829ece3d81be8432fc6ae872c4e69d0fbeb0bf1a7"
+    sha256               x86_64_linux:   "2b0a727845e44862bd0f74d23e0c1e2e8c91959e32d85aebff3ead82a0a10fb5"
   end
 
   # FIXME: Build is currently broken with Doxygen 1.9.7+.
