@@ -1,8 +1,8 @@
 class Karchive < Formula
   desc "Reading, creating, and manipulating file archives"
   homepage "https://api.kde.org/frameworks/karchive/html/index.html"
-  url "https://download.kde.org/stable/frameworks/5.106/karchive-5.106.0.tar.xz"
-  sha256 "fc1e5a8e94bb000ba30a5e7ba975126363c97acec98112ab58aaec1069d5a596"
+  url "https://download.kde.org/stable/frameworks/5.107/karchive-5.107.0.tar.xz"
+  sha256 "e88cb94b9af8a88f360e627b3ae7a2b99ccdfe3fe9e1961452056b2a00f04a7f"
   license all_of: [
     "BSD-2-Clause",
     "LGPL-2.0-only",
