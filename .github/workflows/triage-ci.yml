@@ -62,6 +62,8 @@ jobs:
               "repos/{owner}/{repo}/pulls/$PR"
           )"
 
+          jq . <<< "$response" >> "$GITHUB_STEP_SUMMARY"
+
           pip_audit_filter='.body | contains("brew-pip-audit")'
           new_contributor_filter='.author_association == "FIRST_TIME_CONTRIBUTOR"'
           new_contributor_comment_posted_filter='any(.[].body; contains("'"$NEW_CONTRIBUTOR_MESSAGE"'"))'
