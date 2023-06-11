@@ -3,8 +3,8 @@ class Pipenv < Formula
 
   desc "Python dependency management tool"
   homepage "https://github.com/pypa/pipenv"
-  url "https://files.pythonhosted.org/packages/4d/18/2cde6115704e6f471b0058e7b144ae4a8a8d0844d453aa9d2e30d1abcf7d/pipenv-2023.6.2.tar.gz"
-  sha256 "be42b0a6d4e7d2c3fdeae4d825a91038610bc6be3c3e7eb26f35d8da7b3485ad"
+  url "https://files.pythonhosted.org/packages/be/65/79411d93b377cc1cf47da3e00ebdb4e5bfbeb49a4664f7587a1dd8265996/pipenv-2023.6.11.tar.gz"
+  sha256 "223f8ba0a659974fe32cdc54b266800b799482c3adc64142e5ebb9d2fb8f0b3d"
   license "MIT"
 
   bottle do
@@ -30,13 +30,13 @@ class Pipenv < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/24/85/cf4df939cc0a037ebfe18353005e775916faec24dcdbc7a2f6539ad9d943/filelock-3.12.0.tar.gz"
-    sha256 "fc03ae43288c013d2ea83c8597001b1129db351aad9c57fe2409327916b8e718"
+    url "https://files.pythonhosted.org/packages/31/73/5b47f2a0b8543c105f26f74e2a680ea74799379cf53802f0f979e9be9b7a/filelock-3.12.1.tar.gz"
+    sha256 "82b1f7da46f0ae42abf1bc78e548667f484ac59d2bcec38c713cee7e2eb51e83"
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/9c/0e/ae9ef1049d4b5697e79250c4b2e72796e4152228e67733389868229c92bb/platformdirs-3.5.1.tar.gz"
-    sha256 "412dae91f52a6f84830f39a8078cecd0e866cb72294a5c66808e74d5e88d251f"
+    url "https://files.pythonhosted.org/packages/d2/5d/29eed8861e07378ef46e956650615a9677f8f48df7911674f923236ced2b/platformdirs-3.5.3.tar.gz"
+    sha256 "e48fabd87db8f3a7df7150a4a5ea22c546ee8bc39bc2473244730d4b56d2cc4e"
   end
 
   resource "virtualenv" do
