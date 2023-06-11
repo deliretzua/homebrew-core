@@ -65,7 +65,7 @@ jobs:
           pip_audit_filter='.body | contains("brew-pip-audit")'
           new_contributor_filter='.author_association == "FIRST_TIME_CONTRIBUTOR" or .author_association == "NONE"'
           new_contributor_comment_posted_filter='any(.[].body; contains("'"$NEW_CONTRIBUTOR_MESSAGE"'"))'
-          comments_api_url="$(jq --raw-output '._links.comments.href' <<< "$response")"
+          comments_api_url="$(jq --raw-output '.comments_url' <<< "$response")"
 
           if jq --exit-status "$pip_audit_filter"
           then
