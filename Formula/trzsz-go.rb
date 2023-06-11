@@ -1,8 +1,8 @@
 class TrzszGo < Formula
   desc "Simple file transfer tools, similar to lrzsz (rz/sz), and compatible with tmux"
   homepage "https://trzsz.github.io"
-  url "https://github.com/trzsz/trzsz-go/archive/refs/tags/v1.1.2.tar.gz"
-  sha256 "765bec16c9216860f11c2d84c94894e4180db1344fc52b389770180fac5cf581"
+  url "https://github.com/trzsz/trzsz-go/archive/refs/tags/v1.1.3.tar.gz"
+  sha256 "ac52d4e468c983e03ddb76483789a95cbaf1426450fd65da79a9972882300f72"
   license "MIT"
 
   bottle do
