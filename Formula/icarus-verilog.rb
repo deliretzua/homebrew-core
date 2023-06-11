@@ -1,9 +1,9 @@
 class IcarusVerilog < Formula
   desc "Verilog simulation and synthesis tool"
   homepage "http://iverilog.icarus.com/"
-  url "https://github.com/steveicarus/iverilog/archive/v11_0.tar.gz"
-  mirror "https://deb.debian.org/debian/pool/main/i/iverilog/iverilog_11.0.orig.tar.gz"
-  sha256 "6327fb900e66b46803d928b7ca439409a0dc32731d82143b20387be0833f1c95"
+  url "https://github.com/steveicarus/iverilog/archive/v12_0.tar.gz"
+  mirror "https://deb.debian.org/debian/pool/main/i/iverilog/iverilog_12.0.orig.tar.gz"
+  sha256 "a68cb1ef7c017ef090ebedb2bc3e39ef90ecc70a3400afb4aa94303bc3beaa7d"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
   head "https://github.com/steveicarus/iverilog.git", branch: "master"
 
@@ -26,10 +26,7 @@ class IcarusVerilog < Formula
     sha256 x86_64_linux:   "edee1d331189156e7929b50aa7c7515ad15e8721650d936028905aade9e8fccb"
   end
 
-  # support for autoconf >= 2.70 was added after the current release
-  # switch to `autoconf` in the next release
-  # ref: https://github.com/steveicarus/iverilog/commit/4b3e1099e5517333dd690ba948bce1236466a395
-  depends_on "autoconf@2.69" => :build
+  depends_on "autoconf" => :build
   # parser is subtly broken when processed with an old version of bison
   depends_on "bison" => :build
 
@@ -45,8 +42,6 @@ class IcarusVerilog < Formula
   def install
     system "autoconf"
     system "./configure", "--prefix=#{prefix}"
-    # https://github.com/steveicarus/iverilog/issues/85
-    ENV.deparallelize
     system "make", "install", "BISON=#{Formula["bison"].opt_bin}/bison"
   end
 
@@ -60,12 +55,20 @@ class IcarusVerilog < Formula
           end
       endmodule
     EOS
-    system bin/"iverilog", "-otest", "test.v"
-    assert_equal "Boop", shell_output("./test").chomp
+    system bin/"iverilog", "-o", "test", "test.v"
+
+    expected = <<~EOS
+      Boop
+      test.v:5: $finish called at 0 (1s)
+    EOS
+    assert_equal expected, shell_output("./test")
 
     # test syntax errors do not cause segfaults
     (testpath/"error.v").write "error;"
-    assert_equal "-:1: error: variable declarations must be contained within a module.",
-      shell_output("#{bin}/iverilog error.v 2>&1", 1).chomp
+    expected = <<~EOS
+      error.v:1: syntax error
+      I give up.
+    EOS
+    assert_equal expected, shell_output("#{bin}/iverilog error.v 2>&1", 2)
   end
 end
