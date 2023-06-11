@@ -1,8 +1,8 @@
 class Fclones < Formula
   desc "Efficient Duplicate File Finder"
   homepage "https://github.com/pkolaczk/fclones"
-  url "https://github.com/pkolaczk/fclones/archive/refs/tags/v0.31.1.tar.gz"
-  sha256 "9c006cfd23f09315fb2cfedf6c4204986d39560b30f02f782b531f13b3df82e5"
+  url "https://github.com/pkolaczk/fclones/archive/refs/tags/v0.32.1.tar.gz"
+  sha256 "313d4dad30ed1db4d74abd78f30a7a9917c361918d2bc6d84c9d97a2a8c7c5cb"
   license "MIT"
 
   bottle do
@@ -18,7 +18,7 @@ class Fclones < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "fclones")
   end
 
   test do
