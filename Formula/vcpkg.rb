@@ -1,11 +1,10 @@
 class Vcpkg < Formula
   desc "C++ Library Manager"
   homepage "https://github.com/microsoft/vcpkg"
-  url "https://github.com/microsoft/vcpkg-tool/archive/2023-04-07.tar.gz"
-  version "2023.04.07"
-  sha256 "3ded5bf84ce56fc8e9e179a333eaa343cc1f4ac9246d20251a47efcfbc1fd101"
+  url "https://github.com/microsoft/vcpkg-tool/archive/2023-06-08.tar.gz"
+  version "2023.06.08"
+  sha256 "b13cd88b019a64a7c169dcca753e44e677b351d461df5b133fc92b1aa982f63a"
   license "MIT"
-  revision 1
   head "https://github.com/microsoft/vcpkg-tool.git", branch: "main"
 
   # The source repository has pre-release tags with the same
@@ -31,13 +30,6 @@ class Vcpkg < Formula
   depends_on "ninja" # This will install its own copy at runtime if one isn't found.
 
   fails_with gcc: "5"
-
-  # Add support for fmt 10
-  # See https://github.com/microsoft/vcpkg-tool/pull/1063
-  patch do
-    url "https://github.com/microsoft/vcpkg-tool/commit/f147c75eaa3570310a586eed8d313797f7d3f110.patch?full_index=1"
-    sha256 "0d253e653115298aefbbf7165dcb3204eef243bca59fae3540cc2544ea5fcae4"
-  end
 
   def install
     # Improve error message when user fails to set `VCPKG_ROOT`.
