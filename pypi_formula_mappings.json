@@ -806,5 +806,8 @@
   },
   "ykman": {
     "exclude_packages": ["cffi", "keyring", "pycparser"]
+  },
+  "yle-dl": {
+    "exclude_packages": ["cffi", "pycparser"]
   }
 }
