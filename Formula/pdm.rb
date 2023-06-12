@@ -3,8 +3,8 @@ class Pdm < Formula
 
   desc "Modern Python package and dependency manager supporting the latest PEP standards"
   homepage "https://pdm.fming.dev"
-  url "https://files.pythonhosted.org/packages/40/6b/eadb814acf1f0ad3c5444f4248b613bc6c9565b7b929c0e3e0ca2535d50e/pdm-2.7.1.tar.gz"
-  sha256 "fd3a358e831504f8cb09ac7230956b139269ab3b1ee4f0c100a43e269ee0b56e"
+  url "https://files.pythonhosted.org/packages/3b/9e/5667d571c876cb81904bf292206086a8f9c7c8ef98bb9539bc50ae818d97/pdm-2.7.2.tar.gz"
+  sha256 "45fbf0298b687ced906459da2ac4315ab2306b1bf1f42d91e873bf6da8ab175e"
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
@@ -27,8 +27,8 @@ class Pdm < Formula
   end
 
   resource "cachecontrol" do
-    url "https://files.pythonhosted.org/packages/9d/47/9bdf134012537324bbdebe84c144cc8fab08f148fc6c9ce89b8eefff1cb0/CacheControl-0.13.0.tar.gz"
-    sha256 "fd3fd2cb0ca66b9a6c1d56cc9709e7e49c63dbd19b1b1bcbd8d3f94cedfe8ce5"
+    url "https://files.pythonhosted.org/packages/9e/65/3356cfc87bdee0cdf62d941235e936a26c205e4f1e1f2c85dbd952d7533a/cachecontrol-0.13.1.tar.gz"
+    sha256 "f012366b79d2243a6118309ce73151bf52a38d4a5dac8ea57f09bd29087e506b"
   end
 
   resource "certifi" do
@@ -47,8 +47,8 @@ class Pdm < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/24/85/cf4df939cc0a037ebfe18353005e775916faec24dcdbc7a2f6539ad9d943/filelock-3.12.0.tar.gz"
-    sha256 "fc03ae43288c013d2ea83c8597001b1129db351aad9c57fe2409327916b8e718"
+    url "https://files.pythonhosted.org/packages/31/73/5b47f2a0b8543c105f26f74e2a680ea74799379cf53802f0f979e9be9b7a/filelock-3.12.1.tar.gz"
+    sha256 "82b1f7da46f0ae42abf1bc78e548667f484ac59d2bcec38c713cee7e2eb51e83"
   end
 
   resource "findpython" do
@@ -87,8 +87,8 @@ class Pdm < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/9c/0e/ae9ef1049d4b5697e79250c4b2e72796e4152228e67733389868229c92bb/platformdirs-3.5.1.tar.gz"
-    sha256 "412dae91f52a6f84830f39a8078cecd0e866cb72294a5c66808e74d5e88d251f"
+    url "https://files.pythonhosted.org/packages/d2/5d/29eed8861e07378ef46e956650615a9677f8f48df7911674f923236ced2b/platformdirs-3.5.3.tar.gz"
+    sha256 "e48fabd87db8f3a7df7150a4a5ea22c546ee8bc39bc2473244730d4b56d2cc4e"
   end
 
   resource "pyproject-hooks" do
@@ -137,8 +137,8 @@ class Pdm < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
-    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
+    url "https://files.pythonhosted.org/packages/d6/af/3b4cfedd46b3addab52e84a71ab26518272c23c77116de3c61ead54af903/urllib3-2.0.3.tar.gz"
+    sha256 "bee28b5e56addb8226c96f7f13ac28cb4c301dd5ea8a6ca179c0b9835e032825"
   end
 
   resource "virtualenv" do
