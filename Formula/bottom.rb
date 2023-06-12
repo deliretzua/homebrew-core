@@ -1,8 +1,8 @@
 class Bottom < Formula
   desc "Yet another cross-platform graphical process/system monitor"
   homepage "https://clementtsang.github.io/bottom/"
-  url "https://github.com/ClementTsang/bottom/archive/0.9.1.tar.gz"
-  sha256 "15136784ba4783c994bbfc1fe978ccf47360b2f2aa14ce37f8d5f93871ec9d57"
+  url "https://github.com/ClementTsang/bottom/archive/0.9.2.tar.gz"
+  sha256 "c6b1f6eefa814607cbc6f1ebf6358a070293413d09583963970d650b724a3b3a"
   license "MIT"
   head "https://github.com/ClementTsang/bottom.git", branch: "master"
 
