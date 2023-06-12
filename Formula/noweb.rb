@@ -1,15 +1,9 @@
 class Noweb < Formula
   desc "WEB-like literate-programming tool"
   homepage "https://www.cs.tufts.edu/~nr/noweb/"
-  # new canonical url (for newer versions): http://mirrors.ctan.org/web/noweb.zip
-  url "https://deb.debian.org/debian/pool/main/n/noweb/noweb_2.11b.orig.tar.gz"
-  sha256 "c913f26c1edb37e331c747619835b4cade000b54e459bb08f4d38899ab690d82"
-  license "Noweb"
-
-  livecheck do
-    url "https://deb.debian.org/debian/pool/main/n/noweb/"
-    regex(/href=.*?noweb[._-]v?(\d+(?:\.\d+)+[a-z]?)\.orig\.t/i)
-  end
+  url "https://github.com/nrnrnr/noweb/archive/refs/tags/v2_12.tar.gz"
+  sha256 "34e3903bce9771345ff392b1998f7877389b66c71b3292834e8aaf448837a7f0"
+  license "BSD-2-Clause"
 
   bottle do
     rebuild 2
@@ -26,6 +20,15 @@ class Noweb < Formula
   end
 
   depends_on "icon"
+
+  # add missing `lib/toascii`, remove in next release
+  patch do
+    url "https://github.com/nrnrnr/noweb/commit/7ebfd30f9fbeec9a2744c4dd483bd3d1068da352.patch?full_index=1"
+    sha256 "8f33cacd62b39dd750f577ad496a93b6bfe38400bd79e92ddfcc791cabfb0f5f"
+  end
+
+  # remove pdcached ops, see discussions in https://github.com/nrnrnr/noweb/issues/31
+  patch :DATA
 
   def texpath
     prefix/"tex/generic/noweb"
@@ -103,3 +106,32 @@ class Noweb < Formula
                  pipe_output("#{bin}/htmltoc", shell_output("#{bin}/noweave -filter l2h -index -html test.nw"))
   end
 end
+
+__END__
+diff --git a/src/icon/Makefile b/src/icon/Makefile
+index 7d9b8db..dbda2eb 100644
+--- a/src/icon/Makefile
++++ b/src/icon/Makefile
+@@ -10,11 +10,11 @@ LIBEXECS=totex disambiguate noidx tohtml elide l2h docs2comments \
+ 	autodefs.promela autodefs.lrtl autodefs.asdl autodefs.mmix xchunks pipedocs
+ LIBSPECIAL=autodefs.cee
+ BINEXECS=noindex sl2h htmltoc
+-EXECS=$(LIBEXECS) $(BINEXECS) $(LIBSPECIAL) pdcached
++EXECS=$(LIBEXECS) $(BINEXECS) $(LIBSPECIAL)
+ SRCS=totex.icn disambiguate.icn noidx.icn texdefs.icn icondefs.icn \
+         yaccdefs.icn noindex.icn smldefs.icn tohtml.icn cdefs.icn elide.icn \
+ 	l2h.icn sl2h.icn pascaldefs.icn promeladefs.icn lrtldefs.icn asdldefs.icn \
+-	mmixdefs.icn htmltoc.icn xchunks.icn docs2comments.icn pipedocs.icn pdcached.icn
++	mmixdefs.icn htmltoc.icn xchunks.icn docs2comments.icn pipedocs.icn
+
+ .SUFFIXES: .nw .icn .html .tex .dvi
+ .nw.icn:
+@@ -141,9 +141,6 @@ elide: elide.icn
+ pipedocs: pipedocs.icn
+ 	$(ICONT) pipedocs.icn
+
+-pdcached: pdcached.icn
+-	$(ICONT) pdcached.icn
+-
+ disambiguate: disambiguate.icn
+ 	$(ICONT) disambiguate.icn
