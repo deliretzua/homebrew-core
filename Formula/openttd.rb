@@ -1,8 +1,8 @@
 class Openttd < Formula
   desc "Simulation game based upon Transport Tycoon Deluxe"
   homepage "https://www.openttd.org/"
-  url "https://cdn.openttd.org/openttd-releases/13.2.1/openttd-13.2.1-source.tar.xz"
-  sha256 "baa4b39ad0158bd13f6aee472667a0fbf655c7576d4f8d18b1005c8ffa866576"
+  url "https://cdn.openttd.org/openttd-releases/13.3/openttd-13.3-source.tar.xz"
+  sha256 "aafa16d2fb67165134c73a888f79f7a5ed7da17a04cf6e9ecf672c9cb89e7192"
   license "GPL-2.0-only"
   head "https://github.com/OpenTTD/OpenTTD.git", branch: "master"
 
@@ -97,7 +97,7 @@ class Openttd < Formula
       if OS.mac?
         (buildpath/"#{app}/Contents/Resources/baseset/#{r.name}").install r
       else
-        (share/"openttd/baseset"/r.name).install r
+        (pkgshare/"baseset"/r.name).install r
       end
     end
 
