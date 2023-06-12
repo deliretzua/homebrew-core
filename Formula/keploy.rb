@@ -3,8 +3,8 @@ require "language/node"
 class Keploy < Formula
   desc "Testing Toolkit creates test-cases and data mocks from API calls, DB queries"
   homepage "https://keploy.io"
-  url "https://github.com/keploy/keploy/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "8bf2041e8d5c7247e73e7d5b750bc17bd5e6c25e45092aa1434d113dcfdcc58d"
+  url "https://github.com/keploy/keploy/archive/refs/tags/v0.9.1.tar.gz"
+  sha256 "3f3691d1a9c6b78ca3395b60aa3445f62c1fc2abeab6c2cb02952508c00c6fc8"
   license "Apache-2.0"
 
   bottle do
