@@ -4,7 +4,7 @@ class Luvit < Formula
   url "https://github.com/luvit/luvit/archive/2.18.1.tar.gz"
   sha256 "b792781d77028edb7e5761e96618c96162bd68747b8fced9a6fc52f123837c2c"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/luvit/luvit.git", branch: "master"
 
   bottle do
@@ -23,7 +23,7 @@ class Luvit < Formula
   depends_on "libuv"
   depends_on "luajit"
   depends_on "luv"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pcre"
 
   # To update this resource, check LIT_VERSION in the Makefile:
@@ -70,6 +70,13 @@ class Luvit < Formula
     end
   end
 
+  # Needed for OpenSSL 3 support. Remove when the `luvi`
+  # resource has a new enough version as a submodule.
+  resource "lua-openssl" do
+    url "https://github.com/zhaozg/lua-openssl/releases/download/0.8.3-1/openssl-0.8.3-1.tar.gz"
+    sha256 "d8c50601cb0a04e2dfbd8d8e57f4cf16a4fe59bdca8036deb8bc26f700f2eb8c"
+  end
+
   def install
     ENV["PREFIX"] = prefix
     luajit = Formula["luajit"]
@@ -85,9 +92,12 @@ class Luvit < Formula
       # Reported in the issue linked above.
       ENV["LPEGLIB_DIR"] = "deps/lpeg"
 
+      Pathname("deps/lua-openssl").tap(&:rmtree)
+                                  .install resource("lua-openssl")
+
       # CMake flags adapted from
       # https://github.com/luvit/luvi/blob/#{luvi_version}/Makefile#L73-L74
-      luvi_args = std_cmake_args + %W[
+      luvi_args = %W[
         -DWithOpenSSL=ON
         -DWithSharedOpenSSL=ON
         -DWithPCRE=ON
@@ -100,7 +110,7 @@ class Luvit < Formula
         -DLUAJIT_LIBRARIES=#{luajit.opt_lib/shared_library("libluajit")}
       ]
 
-      system "cmake", ".", "-B", "build", *luvi_args
+      system "cmake", ".", "-B", "build", *luvi_args, *std_cmake_args
       system "cmake", "--build", "build"
       buildpath.install "build/luvi"
     end
