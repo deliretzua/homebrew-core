@@ -1,8 +1,8 @@
 class Libmd < Formula
   desc "BSD Message Digest library"
   homepage "https://www.hadrons.org/software/libmd/"
-  url "https://libbsd.freedesktop.org/releases/libmd-1.0.4.tar.xz"
-  sha256 "f51c921042e34beddeded4b75557656559cf5b1f2448033b4c1eec11c07e530f"
+  url "https://libbsd.freedesktop.org/releases/libmd-1.1.0.tar.xz"
+  sha256 "1bd6aa42275313af3141c7cf2e5b964e8b1fd488025caf2f971f43b00776b332"
   license "BSD-3-Clause"
 
   livecheck do
@@ -21,16 +21,8 @@ class Libmd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "10df9063da043dc8dc8a2b5b0018f2fc7f4f055fe9ee5d7ad2640c26472e877f"
   end
 
-  # build patch, https://github.com/macports/macports-ports/blob/master/devel/libmd/files/patch-symbol-alias.diff
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/62ea945/libmd/patch-symbol-alias.diff"
-    sha256 "a9bb67cbc2243d12fe81b6c9f998dddbe2f58f11570749f98ee23b07d9a02d53"
-  end
-
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
   end
 
