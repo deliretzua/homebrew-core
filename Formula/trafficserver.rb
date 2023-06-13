@@ -1,9 +1,9 @@
 class Trafficserver < Formula
   desc "HTTP/1.1 compliant caching proxy server"
   homepage "https://trafficserver.apache.org/"
-  url "https://downloads.apache.org/trafficserver/trafficserver-9.2.0.tar.bz2"
-  mirror "https://archive.apache.org/dist/trafficserver/trafficserver-9.2.0.tar.bz2"
-  sha256 "45cc8198e2b0a12fad41d1cdc7e59675a64e1a38c6845923924de7bcfb5f74e4"
+  url "https://downloads.apache.org/trafficserver/trafficserver-9.2.1.tar.bz2"
+  mirror "https://archive.apache.org/dist/trafficserver/trafficserver-9.2.1.tar.bz2"
+  sha256 "c9080a521758f258391ff7ceb99b824bcc652b3fd9125a3580697bb2e5eb43b2"
   license "Apache-2.0"
 
   bottle do
@@ -49,7 +49,7 @@ class Trafficserver < Formula
   def install
     # Per https://luajit.org/install.html: If MACOSX_DEPLOYMENT_TARGET
     # is not set then it's forced to 10.4, which breaks compile on Mojave.
-    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
+    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s
 
     args = %W[
       --prefix=#{prefix}
