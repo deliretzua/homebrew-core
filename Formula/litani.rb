@@ -4,8 +4,8 @@ class Litani < Formula
   desc "Metabuild system"
   homepage "https://awslabs.github.io/aws-build-accumulator/"
   url "https://github.com/awslabs/aws-build-accumulator.git",
-      tag:      "1.28.0",
-      revision: "00e2dda4e8ce2c6fb11e3904861e986af228099e"
+      tag:      "1.29.0",
+      revision: "8002c240ef4f424039ed3cc32e076c0234d01768"
   license "Apache-2.0"
 
   bottle do
@@ -28,25 +28,14 @@ class Litani < Formula
   depends_on "python@3.11"
   depends_on "pyyaml"
 
-  resource "Jinja2" do
+  resource "jinja2" do
     url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
     sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
   end
 
-  resource "MarkupSafe" do
-    url "https://files.pythonhosted.org/packages/95/7e/68018b70268fb4a2a605e2be44ab7b4dd7ce7808adae6c5ef32e34f4b55a/MarkupSafe-2.1.2.tar.gz"
-    sha256 "abcabc8c2b26036d62d4c746381a6f7cf60aafcc653198ad678306986b09450d"
-  end
-
-  # Support Python 3.11, remove on next release
-  patch do
-    url "https://github.com/awslabs/aws-build-accumulator/commit/632b58cbbcffec0f0b57fdb6ca92fa67d1e5656d.patch?full_index=1"
-    sha256 "6fb6d8fe2c707691513cbaaba5b3ed582775fee567458d1b08b719d1fe0a768e"
-  end
-
-  patch do
-    url "https://github.com/awslabs/aws-build-accumulator/commit/d189541fcbaad28649f489e6823c2c4ca2c6aa33.patch?full_index=1"
-    sha256 "f3d79ea8ccf5ff8524a4da3495c8ffd0a2bd1099aaab1d8c52785ca80e13aee7"
+  resource "markupsafe" do
+    url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
+    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
   end
 
   def install
