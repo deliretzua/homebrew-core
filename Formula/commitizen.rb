@@ -3,8 +3,8 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https://commitizen-tools.github.io/commitizen/"
-  url "https://files.pythonhosted.org/packages/c8/28/bc979f5406ed681cd098ae337073f9f3fde70a159aa9dcb16dddf5d57dde/commitizen-3.2.2.tar.gz"
-  sha256 "62e06077e657ab6156baa8656a8d5e54db7c5c3f51feab6ea4d7b867ddeab325"
+  url "https://files.pythonhosted.org/packages/fd/26/238263de7aacafab72bae12ffb651281e8e8f70581cfdbb04945b47deb0a/commitizen-3.3.0.tar.gz"
+  sha256 "b1d81366c9e6a3f426dbf72a34de043d826045a382aa8cd9bc7d9289e84e66a8"
   license "MIT"
   head "https://github.com/commitizen-tools/commitizen.git", branch: "master"
 
@@ -38,8 +38,8 @@ class Commitizen < Formula
   end
 
   resource "decli" do
-    url "https://files.pythonhosted.org/packages/56/2f/3fc5689255b35918179fee6319fab19e68f8394bb570b963c6afad6265be/decli-0.6.0.tar.gz"
-    sha256 "2915a55525ef2b1a0ce88b8ccba62ac22df5b6ff3ed2094448e0f951f08e7ba5"
+    url "https://files.pythonhosted.org/packages/2e/9c/b76485e6120795c8b632707bafb4a9a4a2b75584ca5277e3e175c5d02225/decli-0.6.1.tar.gz"
+    sha256 "ed88ccb947701e8e5509b7945fda56e150e2ac74a69f25d47ac85ef30ab0c0f0"
   end
 
   resource "importlib-metadata" do
@@ -53,8 +53,8 @@ class Commitizen < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/95/7e/68018b70268fb4a2a605e2be44ab7b4dd7ce7808adae6c5ef32e34f4b55a/MarkupSafe-2.1.2.tar.gz"
-    sha256 "abcabc8c2b26036d62d4c746381a6f7cf60aafcc653198ad678306986b09450d"
+    url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
+    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
   end
 
   resource "packaging" do
