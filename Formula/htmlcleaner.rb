@@ -1,8 +1,8 @@
 class Htmlcleaner < Formula
   desc "HTML parser written in Java"
   homepage "https://htmlcleaner.sourceforge.io"
-  url "https://downloads.sourceforge.net/project/htmlcleaner/htmlcleaner/htmlcleaner%20v2.27/htmlcleaner-2.27-src.zip"
-  sha256 "908a837f55760e8aa72f3ac516b66f2216d2b99b9b3bede56a767966401b75c4"
+  url "https://downloads.sourceforge.net/project/htmlcleaner/htmlcleaner/htmlcleaner%20v2.28/htmlcleaner-2.28-src.zip"
+  sha256 "1493cefbd33278d604ddc1112b85324e7fbf1e301df238983cb8607e6134a05e"
   license "BSD-3-Clause"
 
   bottle do
