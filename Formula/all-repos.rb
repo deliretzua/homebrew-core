@@ -3,8 +3,8 @@ class AllRepos < Formula
 
   desc "Clone all your repositories and apply sweeping changes"
   homepage "https://github.com/asottile/all-repos"
-  url "https://files.pythonhosted.org/packages/00/54/c9f28df541c717bbe1e1920ddb99a4a52c6a2accd69ce56602632b2f03c3/all_repos-1.25.0.tar.gz"
-  sha256 "06fdef4b4d0984c79b1887e012e8c90e03ddea0273ac692d4127ba44c6b34d99"
+  url "https://files.pythonhosted.org/packages/9a/ea/cdabb519e8afc76df7d70b900403d4f118404c90665d4468c88101265c47/all_repos-1.26.0.tar.gz"
+  sha256 "52fd543c17064af11c06cfe344bb43eda550f5a69de2be767d5c98661a0783b2"
   license "MIT"
 
   bottle do
@@ -20,13 +20,13 @@ class AllRepos < Formula
   depends_on "python@3.11"
 
   resource "identify" do
-    url "https://files.pythonhosted.org/packages/6b/c1/dcb61490b9324dd6c4b071835ce89840536a636512100e300e67e27ab447/identify-2.5.17.tar.gz"
-    sha256 "93cc61a861052de9d4c541a7acb7e3dcc9c11b398a2144f6e52ae5285f5f4f06"
+    url "https://files.pythonhosted.org/packages/c4/f8/498e13e408d25ee6ff04aa0acbf91ad8e9caae74be91720fc0e811e649b7/identify-2.5.24.tar.gz"
+    sha256 "0aac67d5b4812498056d28a9a512a483f5085cc28640b02b258a59dac34301d4"
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/47/d5/aca8ff6f49aa5565df1c826e7bf5e85a6df852ee063600c1efa5b932968c/packaging-23.0.tar.gz"
-    sha256 "b6ad297f8907de0fa2fe1ccbd26fdaf387f5f47c7275fedf8cce89f99446cf97"
+    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
+    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
   def install
@@ -48,7 +48,7 @@ class AllRepos < Formula
       {"discussions": "https://github.com/Homebrew/discussions"}
     EOS
 
-    system "all-repos-clone"
+    system bin/"all-repos-clone"
     assert_predicate testpath/"out/discussions", :exist?
     output = shell_output("#{bin}/all-repos-grep discussions")
     assert_match "out/discussions:README.md", output
