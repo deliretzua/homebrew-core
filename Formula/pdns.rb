@@ -4,7 +4,7 @@ class Pdns < Formula
   url "https://downloads.powerdns.com/releases/pdns-4.8.0.tar.bz2"
   sha256 "61a96bbaf8b0ca49a9225a2254b9443c4ff8e050d337437d85af4de889e10127"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://downloads.powerdns.com/releases/"
@@ -33,7 +33,7 @@ class Pdns < Formula
   depends_on "pkg-config" => :build
   depends_on "boost"
   depends_on "lua"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "sqlite"
 
   uses_from_macos "curl"
@@ -45,7 +45,7 @@ class Pdns < Formula
       --prefix=#{prefix}
       --sysconfdir=#{etc}/powerdns
       --with-lua
-      --with-libcrypto=#{Formula["openssl@1.1"].opt_prefix}
+      --with-libcrypto=#{Formula["openssl@3"].opt_prefix}
       --with-sqlite3
       --with-modules=gsqlite3
     ]
