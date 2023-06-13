@@ -53,6 +53,9 @@
   "athenacli": {
     "exclude_packages": ["six", "tabulate"]
   },
+  "aws-elasticbeanstalk": {
+    "exclude_packages": ["cffi"]
+  },
   "aws-google-auth": {
     "exclude_packages": ["pillow", "six", "tabulate"]
   },
