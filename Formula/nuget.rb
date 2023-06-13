@@ -1,8 +1,8 @@
 class Nuget < Formula
   desc "Package manager for Microsoft development platform including .NET"
   homepage "https://www.nuget.org/"
-  url "https://dist.nuget.org/win-x86-commandline/v6.5.0/nuget.exe" # make sure libexec.install below matches case
-  sha256 "d5fce5185de92b7356ea9264b997a620e35c6f6c3c061e471e0dc3a84b3d74fd"
+  url "https://dist.nuget.org/win-x86-commandline/v6.6.1/nuget.exe" # make sure libexec.install below matches case
+  sha256 "d9e2d4db12ff444b684a40cbeb2775a2adf3f65980e8a55f3c006faec2b89b7c"
   license "MIT"
 
   livecheck do
