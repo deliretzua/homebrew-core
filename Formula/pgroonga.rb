@@ -1,8 +1,8 @@
 class Pgroonga < Formula
   desc "PostgreSQL plugin to use Groonga as index"
   homepage "https://pgroonga.github.io/"
-  url "https://github.com/pgroonga/pgroonga/releases/download/3.0.6/pgroonga-3.0.6.tar.gz"
-  sha256 "d35779a47ed02bbda8aedb5b7a54f3ab0a43052f7ea986209fb71cf6a199fd12"
+  url "https://packages.groonga.org/source/pgroonga/pgroonga-3.0.7.tar.gz"
+  sha256 "885ff3878cc30e9030e5fc56d561bc8b66df3ede1562c9d802bc0ea04fe5c203"
   license "PostgreSQL"
 
   livecheck do
@@ -48,8 +48,6 @@ class Pgroonga < Formula
 
     system pg_ctl, "initdb", "-D", testpath/"test"
     (testpath/"test/postgresql.conf").write <<~EOS, mode: "a+"
-
-      shared_preload_libraries = 'pgroonga'
       port = #{port}
     EOS
     system pg_ctl, "start", "-D", testpath/"test", "-l", testpath/"log"
