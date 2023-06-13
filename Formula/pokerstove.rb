@@ -4,7 +4,7 @@ class Pokerstove < Formula
   url "https://github.com/andrewprock/pokerstove/archive/v1.0.tar.gz"
   sha256 "68503e7fc5a5b2bac451c0591309eacecba738d787874d5421c81f59fde2bc74"
   license "BSD-3-Clause"
-  revision 4
+  revision 5
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "4a777f6a3af03539d0c4f88b758cf177734f28642b98d82ce897c9a900be9bc8"
@@ -22,7 +22,7 @@ class Pokerstove < Formula
 
   depends_on "cmake" => :build
   depends_on "googletest" => :build
-  depends_on "boost"
+  depends_on "boost@1.76"
 
   # Build against our googletest instead of the included one
   # Works around https://github.com/andrewprock/pokerstove/issues/74
@@ -31,18 +31,11 @@ class Pokerstove < Formula
   def install
     rm_rf "src/ext/googletest"
 
-    # Temporary Homebrew-specific work around for linker flag ordering problem in Ubuntu 16.04.
-    # Remove after migration to 18.04.
-    unless OS.mac?
-      inreplace "src/lib/pokerstove/util/CMakeLists.txt",
-                "gtest_main", "gtest_main pthread"
-    end
-
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args
-      system "make"
-      bin.install Dir["bin/*"]
-    end
+    # Our `googletest` requires a newer C++ standard.
+    inreplace "CMakeLists.txt", " -std=c++0x", ""
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_CXX_STANDARD=14", *std_cmake_args
+    system "cmake", "--build", "build"
+    prefix.install "build/bin"
   end
 
   test do
