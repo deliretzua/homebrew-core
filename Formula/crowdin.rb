@@ -11,7 +11,7 @@ class Crowdin < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "c417d14326d570341a558fd475551fca2a5a34873c0e17236f340ffb80c87906"
+    sha256 cellar: :any_skip_relocation, all: "0a4f85e2c5da785300024e6cda3f62d335925545c57388ab8ee944344d2612ad"
   end
 
   depends_on "openjdk"
