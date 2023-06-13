@@ -2,6 +2,7 @@ class Burp < Formula
   desc "Network backup and restore"
   homepage "https://burp.grke.org/"
   license "AGPL-3.0-only" => { with: "openvpn-openssl-exception" }
+  revision 1
 
   stable do
     url "https://github.com/grke/burp/releases/download/2.4.0/burp-2.4.0.tar.bz2"
@@ -43,7 +44,7 @@ class Burp < Formula
 
   depends_on "pkg-config" => :build
   depends_on "librsync"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
