@@ -6,7 +6,7 @@ class Libpulsar < Formula
   mirror "https://archive.apache.org/dist/pulsar/pulsar-client-cpp-3.2.0/apache-pulsar-client-cpp-3.2.0.tar.gz"
   sha256 "e1d007d140906e4e7fc2b47414d551f3c7024bd9d35c8be1bbde3078dc2bddbc"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "169f1433c214fdfa10e8808e43ed32386757d96548bf924c258b308e7c74c393"
@@ -21,7 +21,7 @@ class Libpulsar < Formula
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "boost"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "protobuf@21"
   depends_on "snappy"
   depends_on "zstd"
