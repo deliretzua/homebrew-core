@@ -7,6 +7,16 @@ class CondaLock < Formula
   sha256 "580975ff4de1c74cdca29b4c87e6d9784ecaf7586bc8ec1244e8ff0dcb11993f"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ade00e431c71e2b0e1d1157ac6b22fb59d25287544aba500dcaae67310a480dd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "95c1d66fa2e30191b9657f3e370e95ae762065278d75787d66908c0c8c988571"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d9d44b717c9dd4e2d9ec8c7677e1d8cc165d42b53df3543ca0bc791c4211fc27"
+    sha256 cellar: :any_skip_relocation, ventura:        "721cf96476f789ddbf0fe4c8c7ac9270bca926a0a1e3afded0b8929c2b158814"
+    sha256 cellar: :any_skip_relocation, monterey:       "2db0b7e4af98a842b1568e6a85dee9ada1995dd00021762d7e2d72619ac1a39b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "408d6e45562d70a6ef76f3cb764eb08349472fc83c3539ed617ea9ec1765196a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c8c96a41b06a3b7753102f4a19dc271ca403a6064a11a07454d638e4d81fec3"
+  end
+
   depends_on "keyring"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
