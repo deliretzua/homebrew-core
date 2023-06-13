@@ -5,6 +5,7 @@ class Nghttp2 < Formula
   mirror "http://fresh-center.net/linux/www/nghttp2-1.54.0.tar.gz"
   sha256 "890cb0761d2fac570f0aa7bce085cd7d3c77bcfd56510456b6ea0278cde812f0"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 arm64_ventura:  "aafcfbd2131f0d6c6db4015306122db9b93304ee2563da0f6470647995b9e31d"
@@ -29,7 +30,7 @@ class Nghttp2 < Formula
   depends_on "jemalloc"
   depends_on "libev"
   depends_on "libnghttp2"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
