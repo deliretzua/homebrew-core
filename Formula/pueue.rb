@@ -1,8 +1,8 @@
 class Pueue < Formula
   desc "Command-line tool for managing long-running shell commands"
   homepage "https://github.com/Nukesor/pueue"
-  url "https://github.com/Nukesor/pueue/archive/v3.1.2.tar.gz"
-  sha256 "653eac9b7fc111cc4b9bddacbbf514932a8d273a059b20b1cc66af74e500eb5e"
+  url "https://github.com/Nukesor/pueue/archive/v3.2.0.tar.gz"
+  sha256 "0c3126579661f894fb02a0d8c0e138ab23b277e97cea2d85e48d3d2b9fb1c372"
   license "MIT"
   head "https://github.com/Nukesor/pueue.git", branch: "main"
 
@@ -63,7 +63,7 @@ class Pueue < Formula
       Process.kill("TERM", pid)
     end
 
-    assert_match "Pueue daemon #{version}", shell_output("#{bin}/pueued --version")
-    assert_match "Pueue client #{version}", shell_output("#{bin}/pueue --version")
+    assert_match "pueued #{version}", shell_output("#{bin}/pueued --version")
+    assert_match "pueue #{version}", shell_output("#{bin}/pueue --version")
   end
 end
