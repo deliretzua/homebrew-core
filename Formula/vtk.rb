@@ -69,10 +69,14 @@ class Vtk < Formula
   def install
     ENV.llvm_clang if DevelopmentTools.clang_build_version == 1316 && Hardware::CPU.arm?
 
+    python = "python3.11"
+    qml_plugin_dir = lib/"qml/VTK.#{version.major_minor}"
+    vtkmodules_dir = prefix/Language::Python.site_packages(python)/"vtkmodules"
+    rpaths = [rpath, rpath(source: qml_plugin_dir), rpath(source: vtkmodules_dir)]
+
     args = %W[
       -DBUILD_SHARED_LIBS:BOOL=ON
-      -DCMAKE_INSTALL_NAME_DIR:STRING=#{opt_lib}
-      -DCMAKE_INSTALL_RPATH:STRING=#{rpath}
+      -DCMAKE_INSTALL_RPATH:STRING=#{rpaths.join(";")}
       -DCMAKE_DISABLE_FIND_PACKAGE_ICU:BOOL=ON
       -DVTK_WRAP_PYTHON:BOOL=ON
       -DVTK_PYTHON_VERSION:STRING=3
@@ -100,7 +104,7 @@ class Vtk < Formula
       -DVTK_MODULE_USE_EXTERNAL_VTK_tiff:BOOL=ON
       -DVTK_MODULE_USE_EXTERNAL_VTK_utf8:BOOL=ON
       -DVTK_MODULE_USE_EXTERNAL_VTK_zlib:BOOL=ON
-      -DPython3_EXECUTABLE:FILEPATH=#{which("python3.11")}
+      -DPython3_EXECUTABLE:FILEPATH=#{which(python)}
       -DVTK_GROUP_ENABLE_Qt:STRING=YES
       -DVTK_QT_VERSION:STRING=5
     ]
@@ -110,7 +114,7 @@ class Vtk < Formula
 
     args << "-DVTK_USE_COCOA:BOOL=ON" if OS.mac?
 
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
