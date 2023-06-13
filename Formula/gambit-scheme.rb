@@ -4,7 +4,7 @@ class GambitScheme < Formula
   url "https://github.com/gambit/gambit/archive/v4.9.3.tar.gz"
   sha256 "a5e4e5c66a99b6039fa7ee3741ac80f3f6c4cff47dc9e0ff1692ae73e13751ca"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   livecheck do
     url :stable
@@ -24,13 +24,14 @@ class GambitScheme < Formula
     sha256 x86_64_linux:   "279db92ba64c71c31bf9a57df2414b0b47f497b47fd1c7a2fc39657be3b47db4"
   end
 
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
     args = %W[
       --prefix=#{prefix}
+      --docdir=#{doc}
+      --infodir=#{info}
       --enable-single-host
-      --enable-multiple-versions
       --enable-default-runtime-options=f8,-8,t8
       --enable-openssl
     ]
@@ -39,17 +40,18 @@ class GambitScheme < Formula
 
     # Fixed in gambit HEAD, but they haven't cut a release
     inreplace "config.status" do |s|
-      s.gsub! %r{/usr/local/opt/openssl(?!@1\.1)}, "/usr/local/opt/openssl@1.1"
+      s.gsub! %r{/usr/local/opt/openssl(?!@1\.1)}, "/usr/local/opt/openssl@3"
+      s.gsub! %r{/usr/local/opt/openssl(@\d(\.\d)?)?}, Formula["openssl@3"].opt_prefix
     end
     system "./config.status"
 
     system "make"
     ENV.deparallelize
     system "make", "install"
+    elisp.install share/"emacs/site-lisp/gambit.el"
   end
 
   test do
-    assert_equal "0123456789",
-      shell_output("#{prefix}/current/bin/gsi -e \"(for-each write '(0 1 2 3 4 5 6 7 8 9))\"")
+    assert_equal "0123456789", shell_output("#{bin}/gsi -e \"(for-each write '(0 1 2 3 4 5 6 7 8 9))\"")
   end
 end
