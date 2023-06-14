@@ -12,13 +12,13 @@ class Plantuml < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dc6d8f807f0c5328d32a9a2bb777a463b7802d001400ae79d768c1dc3de816a2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dc6d8f807f0c5328d32a9a2bb777a463b7802d001400ae79d768c1dc3de816a2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "dc6d8f807f0c5328d32a9a2bb777a463b7802d001400ae79d768c1dc3de816a2"
-    sha256 cellar: :any_skip_relocation, ventura:        "dc6d8f807f0c5328d32a9a2bb777a463b7802d001400ae79d768c1dc3de816a2"
-    sha256 cellar: :any_skip_relocation, monterey:       "dc6d8f807f0c5328d32a9a2bb777a463b7802d001400ae79d768c1dc3de816a2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "dc6d8f807f0c5328d32a9a2bb777a463b7802d001400ae79d768c1dc3de816a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c58899f8702c0275b6d9705321408bf644a53ad3a9acbf01a6add9cba074c7a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "89ca1bb859169db555f0d9849c36df4297090ddd9708056d3e035fe1ea92bf7e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "89ca1bb859169db555f0d9849c36df4297090ddd9708056d3e035fe1ea92bf7e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "89ca1bb859169db555f0d9849c36df4297090ddd9708056d3e035fe1ea92bf7e"
+    sha256 cellar: :any_skip_relocation, ventura:        "89ca1bb859169db555f0d9849c36df4297090ddd9708056d3e035fe1ea92bf7e"
+    sha256 cellar: :any_skip_relocation, monterey:       "89ca1bb859169db555f0d9849c36df4297090ddd9708056d3e035fe1ea92bf7e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "89ca1bb859169db555f0d9849c36df4297090ddd9708056d3e035fe1ea92bf7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b13ccdeb6a40b2ba6d4f6a4a727539624d190ac93c6dc2a4705703d016898e1d"
   end
 
   depends_on "graphviz"
