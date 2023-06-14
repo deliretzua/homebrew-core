@@ -32,6 +32,7 @@ class AwsGoogleAuth < Formula
   on_linux do
     depends_on "pkg-config" => :build
     depends_on "rust" => :build
+    depends_on "cffi"
   end
 
   resource "beautifulsoup4" do
@@ -142,20 +143,6 @@ class AwsGoogleAuth < Formula
   resource "zipp" do
     url "https://files.pythonhosted.org/packages/00/27/f0ac6b846684cecce1ee93d32450c45ab607f65c2e0255f0092032d91f07/zipp-3.15.0.tar.gz"
     sha256 "112929ad649da941c23de50f356a2b5570c954b65150642bccdd66bf194d224b"
-  end
-
-  resource "pycparser" do
-    on_linux do
-      url "https://files.pythonhosted.org/packages/5e/0b/95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46de/pycparser-2.21.tar.gz"
-      sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
-    end
-  end
-
-  resource "cffi" do
-    on_linux do
-      url "https://files.pythonhosted.org/packages/2b/a8/050ab4f0c3d4c1b8aaa805f70e26e84d0e27004907c5b8ecc1d31815f92a/cffi-1.15.1.tar.gz"
-      sha256 "d400bfb9a37b1351253cb402671cea7e89bdecc294e8016a707f6d1d8ac934f9"
-    end
   end
 
   resource "cryptography" do
