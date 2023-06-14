@@ -419,7 +419,7 @@
     "exclude_packages": ["six"]
   },
   "magic-wormhole": {
-    "exclude_packages": ["six", "typing-extensions"],
+    "exclude_packages": ["six", "typing-extensions", "cffi", "pycparser"],
     "extra_packages": ["wheel"]
   },
   "mapproxy": {
