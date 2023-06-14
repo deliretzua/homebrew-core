@@ -11,13 +11,13 @@ class Gwyddion < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "4a49b940a99205827652c8fc6f1315f6bd0859da8c70aac8ed58d10afde2418f"
-    sha256 arm64_monterey: "8900ac4fdac23c65cbd1482eee05447c1a772c58254efa2328e715d6ef04b7ab"
-    sha256 arm64_big_sur:  "f9e978c7ceff5be6f41e24a8fb67f3d9e5a130e147e124ceadb02b07324c8ebb"
-    sha256 ventura:        "020b98c6bec6683132eb2880c47b7ccf01cf6de9c1f5d2a3dcec909c2f091d5e"
-    sha256 monterey:       "555150f246c5bcbe0ac084eab5cba816e1452d5e5c1ff02ed5f88cc713641ff2"
-    sha256 big_sur:        "e60db9093d3e1115e810b3e8d40792c1887dede197f536e22310018c4be8f4d4"
-    sha256 x86_64_linux:   "11eb01da39aa1cfc4611f5427f8c284d22e091b99a2fd5d44a1db93d857d0304"
+    sha256 arm64_ventura:  "d3c1514b6223703e6ee86bccd1b65ef1a069348f93bd85cf58d9172f1df989e1"
+    sha256 arm64_monterey: "9e222c291217ea8edb89a2a38db7f9134688ae17b241a7d6484a4203fe306c97"
+    sha256 arm64_big_sur:  "d584e56ce7ec0e6ce276291ccd4736c5789a74a66e86c67afce5cda13d16934b"
+    sha256 ventura:        "6d7cb651783e738c339c0ebdc34a37d13d4d59aceabf14a05cae8d3638408530"
+    sha256 monterey:       "1c5c6b71147ae9f0aa759aeef371921b5f311d3749e7f439a99f3aab365b1ea2"
+    sha256 big_sur:        "ae68bb295a84085c97e725e406fc6f6680c22e82708b048c646f22c82c84ef1c"
+    sha256 x86_64_linux:   "63bf4dce8b7644885ba8951250a2fcbaf6e615c495e42fc79749dbaf237c9bf2"
   end
 
   depends_on "pkg-config" => :build
