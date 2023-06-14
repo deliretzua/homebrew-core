@@ -2,8 +2,8 @@ class Syft < Formula
   desc "CLI for generating a Software Bill of Materials from container images"
   homepage "https://github.com/anchore/syft"
   url "https://github.com/anchore/syft.git",
-      tag:      "v0.83.0",
-      revision: "1764e1c3f6bd66781f8350d957a1f95e4d9ad3de"
+      tag:      "v0.83.1",
+      revision: "a1bba36d514c3ff0f34635b9cdc9f07a92ea793b"
   license "Apache-2.0"
   head "https://github.com/anchore/syft.git", branch: "main"
 
