@@ -4,12 +4,12 @@ class Picotool < Formula
   license "BSD-3-Clause"
 
   stable do
-    url "https://github.com/raspberrypi/picotool/archive/refs/tags/1.1.1.tar.gz"
-    sha256 "2d824dbe48969ab9ae4c5311b15bca3449f5758c43602575c2dc3af13fcba195"
+    url "https://github.com/raspberrypi/picotool/archive/refs/tags/1.1.2.tar.gz"
+    sha256 "f1746ead7815c13be1152f0645db8ea3b277628eb0110d42a0a186db37d40a91"
 
     resource "pico-sdk" do
-      url "https://github.com/raspberrypi/pico-sdk/releases/download/1.5.0/sdk1.5.0-with-submodules.zip"
-      sha256 "59a09e619cab67b614d5f4e928a82f6bd055ce6083eb84f1b6caa269f1e3a559"
+      url "https://github.com/raspberrypi/pico-sdk/archive/refs/tags/1.5.1.tar.gz"
+      sha256 "95f5e522be3919e36a47975ffd3b208c38880c14468bd489ac672cfe3cec803c"
     end
   end
 
