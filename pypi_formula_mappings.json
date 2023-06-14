@@ -159,7 +159,7 @@
     "exclude_packages": ["PyYAML", "pygments"]
   },
   "checkov": {
-    "exclude_packages": ["six", "tabulate", "PyYAML", "typing-extensions"]
+    "exclude_packages": ["six", "tabulate", "PyYAML", "typing-extensions", "cffi", "pycparser"]
   },
   "cloudiscovery": {
     "exclude_packages": ["six"]
