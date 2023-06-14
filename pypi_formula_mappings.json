@@ -449,7 +449,7 @@
       "six", "PyYAML", "Pygments",
       "cookiecutter", "arrow", "binaryornot", "certifi", "chardet", "charset-normalizer",
       "click", "idna", "Jinja2", "jinja2-time", "MarkupSafe", "python-dateutil",
-      "python-slugify", "requests", "text-unidecode", "urllib3"
+      "python-slugify", "requests", "text-unidecode", "urllib3", "cffi", "pycparser"
     ]
   },
   "mongo-orchestration": {
