@@ -9,13 +9,13 @@ class CheckJsonschema < Formula
   head "https://github.com/python-jsonschema/check-jsonschema.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "574630fc0201e613e988e1d3ef0d5341f7bd93024c21e617ddde5ca8756ca128"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "25b5a8872aaa4bb3fbb3a06eb2477fe64deb4da7fafbfa24b0845cf07365c9a6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4c3e556eb4725ac27aa3526f5e62af881bed2a1e8abbaba197abe58b617d8489"
-    sha256 cellar: :any_skip_relocation, ventura:        "eb7bd22d9211cf957ccac029604eb49848a1fb27d2352b025565de2f5ae7b59e"
-    sha256 cellar: :any_skip_relocation, monterey:       "e48d1e7256a5dd411505a3f9717c9c89e719b441452b257cd3669cee1afdd432"
-    sha256 cellar: :any_skip_relocation, big_sur:        "67b7f85ac04557c7f37585ad7e3905b8c19b06b4b097bc6b9d408c3d09ca832b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6964a5f420373c2748c8cc89bcfbd204cd3699340b4ee1f1191c5506709d46e8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "790dbf375a5a3f670c51926d9946967db27c43ccefe4f24539f102443cae4e44"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "2a3fdde92077cf627018542b9e317e9387279fb72fd948b110a93556d74b4b7f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e9ce09c35d38a6ef1cfa4c7ccf79abfcfaef4c6457c3ac4fe4c3fe4a952aa6a1"
+    sha256 cellar: :any_skip_relocation, ventura:        "01f659610db385e697cec5b8dbdb1116ad9a5ff9533980fe6e57f177e3c7396b"
+    sha256 cellar: :any_skip_relocation, monterey:       "d0b29fd90d469a02b230828f6aa4ad238ec7779d89dadf8100fce47163fba757"
+    sha256 cellar: :any_skip_relocation, big_sur:        "27a282131223ff248bc40e6b2ad9bee2ae56efb836eb966f5745145e8201dd66"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d79cc6e15e8bffc017d0a3f8d72156961b3df1e1de5f71b338e58090c31f5731"
   end
 
   depends_on "python@3.11"
