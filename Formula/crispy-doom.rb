@@ -2,8 +2,10 @@ class CrispyDoom < Formula
   desc "Limit-removing enhanced-resolution Doom source port based on Chocolate Doom"
   homepage "https://github.com/fabiangreffrath/crispy-doom"
   url "https://github.com/fabiangreffrath/crispy-doom/archive/crispy-doom-6.0.tar.gz"
-  sha256 "2b1462d9fb4600cdd4cb77d77f6559dd2d50d0fe0f023dcc09a2b3eefa740cbe"
+  sha256 "2b85649c615efeac7573883370e9434255af301222b323120692cb9649b7f420"
   license "GPL-2.0-only"
+  revision 1
+
   head "https://github.com/fabiangreffrath/crispy-doom.git", branch: "master"
 
   bottle do
@@ -19,6 +21,7 @@ class CrispyDoom < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "pkg-config" => :build
+  depends_on "fluid-synth"
   depends_on "libpng"
   depends_on "libsamplerate"
   depends_on "sdl2"
