@@ -198,7 +198,7 @@
     "exclude_packages": ["six"]
   },
   "cyral-gimme-db-token": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "cffi", "pycparser"]
   },
   "datasette": {
     "exclude_packages": ["six", "PyYAML", "typing-extensions"]
