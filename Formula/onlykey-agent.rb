@@ -24,6 +24,7 @@ class OnlykeyAgent < Formula
   depends_on "rust" => :build
 
   depends_on "cffi"
+  depends_on "docutils"
   depends_on "gnupg"
   depends_on "hidapi"
   depends_on "libcython"
@@ -71,11 +72,6 @@ class OnlykeyAgent < Formula
   resource "cryptography" do
     url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
     sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
-  end
-
-  resource "docutils" do
-    url "https://files.pythonhosted.org/packages/1f/53/a5da4f2c5739cf66290fac1431ee52aff6851c7c8ffd8264f13affd7bcdd/docutils-0.20.1.tar.gz"
-    sha256 "f08a4e276c3a1583a86dce3e34aba3fe04d02bba2dd51ed16106244e8a923e3b"
   end
 
   resource "ecdsa" do
