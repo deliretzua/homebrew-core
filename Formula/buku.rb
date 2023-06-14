@@ -9,13 +9,14 @@ class Buku < Formula
   head "https://github.com/jarun/buku.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "0e4381fd81d2a487c87023322cc618c3a5dad733156ef6a045f9980248e51ae5"
-    sha256 cellar: :any,                 arm64_monterey: "0b219fa12ae287d3823dcff58cc0238bb8a810f90a653682a3e1bb92a5b0c793"
-    sha256 cellar: :any,                 arm64_big_sur:  "a042183bf0cee330dff22d22751358aa4d72e227be8bc8217eafcdebe7b67821"
-    sha256 cellar: :any,                 ventura:        "13b23c58e60b6c1a692c34974a8dd6dabc6bdbdc4eaa40f4426a4b2aa86c3def"
-    sha256 cellar: :any,                 monterey:       "78f1657543a1e42531a84fd5f71a89a5781fdd857c9d0577441ca287b28ddcd9"
-    sha256 cellar: :any,                 big_sur:        "d36e93729b47c6a97a2ab09640c677ae0bea8ffe89440838f62d6c7307b08375"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2bed4610d230f9271fdb65b486418e7f9378b4e9f02f23f614fafc27c397af08"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_ventura:  "5585794403918cad4d4b6c8b88370bc2ff6af831a0a4217ac325a24c7853f0c5"
+    sha256 cellar: :any,                 arm64_monterey: "d6fc80d832668f1a241bd0e157cb30f92731554b8de6fb225149bdb80bcb5cb8"
+    sha256 cellar: :any,                 arm64_big_sur:  "11bae78fd66e7933094f871646df352a9b14d2c05e0702ad06eaa329d1eb9efc"
+    sha256 cellar: :any,                 ventura:        "189db8d8c5bdd3866aa3d26d72ebda4ca3640ebd5ed7b25bc4d1b2367b3c72e1"
+    sha256 cellar: :any,                 monterey:       "ae608449c09a744a010f18c90a26fa51131a5bbe4655867300d23caaa8d81c51"
+    sha256 cellar: :any,                 big_sur:        "9a3d21f73231f7cb9bf2a3468f64f4668943409ac3f1c5bc3a334eaf961d7f0d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2fe56e6cdac0c26792456b213992259caa7bf625ccdf07a0b8094f80446d8945"
   end
 
   depends_on "rust" => :build
