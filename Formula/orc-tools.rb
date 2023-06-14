@@ -11,13 +11,13 @@ class OrcTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6f344899ccd86674a3401f5c0413e2835a204175805a68ee92bd4e14c978c5fc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6f344899ccd86674a3401f5c0413e2835a204175805a68ee92bd4e14c978c5fc"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6f344899ccd86674a3401f5c0413e2835a204175805a68ee92bd4e14c978c5fc"
-    sha256 cellar: :any_skip_relocation, ventura:        "6f344899ccd86674a3401f5c0413e2835a204175805a68ee92bd4e14c978c5fc"
-    sha256 cellar: :any_skip_relocation, monterey:       "6f344899ccd86674a3401f5c0413e2835a204175805a68ee92bd4e14c978c5fc"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6f344899ccd86674a3401f5c0413e2835a204175805a68ee92bd4e14c978c5fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83f1383190fe72f08440fc53f8bedb12be18ab6c005f29fb19c3b7d23dc1fc5d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "097babecb8fd175d89765c66221143da8e05b583fdce62ee20aa595ffae35404"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "097babecb8fd175d89765c66221143da8e05b583fdce62ee20aa595ffae35404"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "097babecb8fd175d89765c66221143da8e05b583fdce62ee20aa595ffae35404"
+    sha256 cellar: :any_skip_relocation, ventura:        "097babecb8fd175d89765c66221143da8e05b583fdce62ee20aa595ffae35404"
+    sha256 cellar: :any_skip_relocation, monterey:       "097babecb8fd175d89765c66221143da8e05b583fdce62ee20aa595ffae35404"
+    sha256 cellar: :any_skip_relocation, big_sur:        "097babecb8fd175d89765c66221143da8e05b583fdce62ee20aa595ffae35404"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3abc701d3c8cfd9caa4121c16cae97c105586aa9ca232001da412ab8e58d5e2"
   end
 
   depends_on "openjdk"
