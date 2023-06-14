@@ -22,17 +22,17 @@ class Libtiff < Formula
   end
 
   depends_on "jpeg-turbo"
+  depends_on "xz"
   depends_on "zstd"
-
   uses_from_macos "zlib"
 
   def install
     args = %W[
       --prefix=#{prefix}
-      --enable-zstd
       --disable-dependency-tracking
-      --disable-lzma
       --disable-webp
+      --enable-zstd
+      --enable-lzma
       --with-jpeg-include-dir=#{Formula["jpeg-turbo"].opt_include}
       --with-jpeg-lib-dir=#{Formula["jpeg-turbo"].opt_lib}
       --without-x
