@@ -17,13 +17,13 @@ class Fizz < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "3cc3b03e10ec27cc567e2646644b35543c60c23c59166a3896867bcaa06a3e8d"
-    sha256 cellar: :any,                 arm64_monterey: "4a97ac61f52485ac80a1787a8d698f34894bce548f6c8acdcde4d4388536e1f6"
-    sha256 cellar: :any,                 arm64_big_sur:  "a6f040134973c2fe6d9070e60901d6ba488d4cd415ecc4a3cacb56b844b67a63"
-    sha256 cellar: :any,                 ventura:        "b97d1dd8406e69c09c620b21bf42ddc5211ea63a60c62d3881cd688605d90525"
-    sha256 cellar: :any,                 monterey:       "50905b18f9fe3bc0ed6c181666da3994fa50f5dab9817a00fc24b8de0c9ced99"
-    sha256 cellar: :any,                 big_sur:        "d99eb48a4f8aa3b126ba9571cecd680c35653aa95cf8b8bebda04d8e0fa5ec7e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc46b0f170242367881f47ea2405cd1a8bcec9d6ab867a26a4ba713646da19f6"
+    sha256 cellar: :any,                 arm64_ventura:  "2014c9349557f0b3acec6022e1b1afbca56f27208c68d7ce66f58506b54a62d2"
+    sha256 cellar: :any,                 arm64_monterey: "6aa34176d4c99440fa9e9f482c2dfd847b24967937721e10704367e643fc7fe7"
+    sha256 cellar: :any,                 arm64_big_sur:  "d55a4fafea490127b948b1965e49526945b25cfbcd8bd0a533e9cb557718e93c"
+    sha256 cellar: :any,                 ventura:        "aa1fe992ac94117009f4638a4667dbc011d5b4d66133ec2d2a40ade95f6d3364"
+    sha256 cellar: :any,                 monterey:       "e04055a7e720d0f15d62ab42156129b7041d4b085ecb2a5e17f98999b2da9106"
+    sha256 cellar: :any,                 big_sur:        "62065700db55af3156a492c0f34903fd404dabb12ae3cee3d22cfe10b4f397f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "789c1d80b631dd05e1eb79ffd0f6865b880f9bf8f91f58838fdd3eda6eaa7be2"
   end
 
   depends_on "cmake" => :build
