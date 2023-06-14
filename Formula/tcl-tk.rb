@@ -126,7 +126,9 @@ class TclTk < Formula
         --prefix=#{prefix}
         --exec-prefix=#{prefix}
         --with-tcl=#{lib}
+        --with-tclinclude=#{include}/tcl-tk
         --with-tk=#{lib}
+        --with-tkinclude=#{include}/tcl-tk
         --with-itcl=#{itcl_dir}
       ]
       system "./configure", *args
