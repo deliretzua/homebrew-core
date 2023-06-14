@@ -380,7 +380,7 @@
     ]
   },
   "keepkey-agent": {
-    "exclude_packages": ["six", "docutils"]
+    "exclude_packages": ["six", "docutils", "cffi", "pycparser"]
   },
   "keyring": {
     "exclude_packages": ["cffi", "pycparser"]
