@@ -491,7 +491,7 @@
     "exclude_packages": ["six", "PyYAML"]
   },
   "ocrmypdf": {
-    "exclude_packages": ["pillow", "pycparser"]
+    "exclude_packages": ["pillow", "cffi", "pycparser"]
   },
   "okta-awscli": {
     "exclude_packages": ["six"]
