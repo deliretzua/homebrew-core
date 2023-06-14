@@ -20,6 +20,7 @@ class Fdroidserver < Formula
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
+  depends_on "cffi"
   depends_on "fonttools"
   depends_on "ipython"
   depends_on "numpy"
@@ -65,11 +66,6 @@ class Fdroidserver < Formula
   resource "certifi" do
     url "https://files.pythonhosted.org/packages/37/f7/2b1b0ec44fdc30a3d31dfebe52226be9ddc40cd6c0f34ffc8923ba423b69/certifi-2022.12.7.tar.gz"
     sha256 "35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3"
-  end
-
-  resource "cffi" do
-    url "https://files.pythonhosted.org/packages/2b/a8/050ab4f0c3d4c1b8aaa805f70e26e84d0e27004907c5b8ecc1d31815f92a/cffi-1.15.1.tar.gz"
-    sha256 "d400bfb9a37b1351253cb402671cea7e89bdecc294e8016a707f6d1d8ac934f9"
   end
 
   resource "charset-normalizer" do
@@ -167,11 +163,6 @@ class Fdroidserver < Formula
     sha256 "905f84c712230b2c592c19470d3ca8d552de726050d1d1716282a1f6146be65e"
   end
 
-  resource "pycparser" do
-    url "https://files.pythonhosted.org/packages/5e/0b/95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46de/pycparser-2.21.tar.gz"
-    sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
-  end
-
   resource "pydot" do
     url "https://files.pythonhosted.org/packages/13/6e/916cdf94f9b38ae0777b254c75c3bdddee49a54cc4014aac1460a7a172b3/pydot-1.4.2.tar.gz"
     sha256 "248081a39bcb56784deb018977e428605c1c758f10897a339fce1dd728ff007d"
@@ -236,10 +227,9 @@ class Fdroidserver < Formula
     venv = virtualenv_create(libexec, "python3.11")
 
     venv.pip_install resource("lxml")
-    venv.pip_install resource("cffi") # or bcrypt fails to build
     venv.pip_install resource("wheel") # or kiwisolver fails to build
 
-    res = resources.to_set(&:name) - %w[cffi lxml ptyprocess wheel]
+    res = resources.to_set(&:name) - %w[lxml ptyprocess wheel]
 
     res.each do |r|
       venv.pip_install resource(r)
