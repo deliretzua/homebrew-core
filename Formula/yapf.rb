@@ -8,13 +8,13 @@ class Yapf < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "231981acae588f6bfe8fbb434609c00a985d8e1d57fefa12debd9965fe7f82e9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3402f5d670fa80ecbc1a6afca035b796bce209411b56aa3ca3dcc99a52311e31"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "be9fd597d3052e65bc35ff92f5abac0e63f0854361364b7cbf318f8e786a160e"
-    sha256 cellar: :any_skip_relocation, ventura:        "87164b623df7a3e536e404b5183b68b499655387ee65872a46a8b26f810de206"
-    sha256 cellar: :any_skip_relocation, monterey:       "4dc3753f25ecd807fe3226141d86e7f1dbe67b8045b8c458a517413aed24a4db"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0a9d42d1e2d7f88c6ca9fe9489d18013efa70186dad5b365ad50f84f8f924882"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2741a25f9a4f7d99c66aaad53f5d71a7a875d2bd05dacee831a25d43194ec650"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d94edba2aa3f312400cb2052e2d06b681934ce129ffd9cd10121433087fd9025"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d8586415ede493322d25f331243d5c4a414478f0592f15c374ecf6bf66e2d429"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f44cb2fe57107ae36b5db7b9c1f3fa872979d81a1adc9eb9fc5731c0c183729b"
+    sha256 cellar: :any_skip_relocation, ventura:        "a7458aab0ccaadf00f6893c60efbbb8472bb76785917af41154c0ae6be3bf627"
+    sha256 cellar: :any_skip_relocation, monterey:       "cef5ad2a599e78703379b69593bad443bc21ed185b4d46ef6d177ee28ac33f17"
+    sha256 cellar: :any_skip_relocation, big_sur:        "70bdfd814ea123998380d6a59c5205979551e8e9ea2c5ae68e6d0a5a1eb1f29a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f24badd2b57c365ea0ce2e6497e746f6f7b9842449889d40e9b735d95eea8b0"
   end
 
   depends_on "python@3.11"
