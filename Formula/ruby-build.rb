@@ -1,8 +1,8 @@
 class RubyBuild < Formula
   desc "Install various Ruby versions and implementations"
   homepage "https://github.com/rbenv/ruby-build"
-  url "https://github.com/rbenv/ruby-build/archive/v20230614.tar.gz"
-  sha256 "9c09337d8b1e033771c3c74d08c2f73979b82f34f44612eb12a0ec6a65a3691b"
+  url "https://github.com/rbenv/ruby-build/archive/v20230615.tar.gz"
+  sha256 "92a00671ecf388cb0c5cde3e8eca126314d1c07ab087a510bf0e4bd5755e18fa"
   license "MIT"
   head "https://github.com/rbenv/ruby-build.git", branch: "master"
 
