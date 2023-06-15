@@ -3,8 +3,8 @@ require "language/node"
 class VercelCli < Formula
   desc "Command-line interface for Vercel"
   homepage "https://vercel.com/home"
-  url "https://registry.npmjs.org/vercel/-/vercel-30.2.1.tgz"
-  sha256 "b11730a863f08b57d9858a5714b121d3aa9b3f1ed3463f8081051f7341aeee43"
+  url "https://registry.npmjs.org/vercel/-/vercel-30.2.2.tgz"
+  sha256 "b37bce119a64283619018905726850e31a303dd61edcbce39bdde91b303a6198"
   license "Apache-2.0"
 
   bottle do
