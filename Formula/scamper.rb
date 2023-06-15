@@ -1,8 +1,8 @@
 class Scamper < Formula
   desc "Advanced traceroute and network measurement utility"
   homepage "https://www.caida.org/catalog/software/scamper/"
-  url "https://www.caida.org/catalog/software/scamper/code/scamper-cvs-20230605.tar.gz"
-  sha256 "63bb36e33cc22649c88cdfab1041b461ee8b3f29ab48714943ee4a17c1d0766b"
+  url "https://www.caida.org/catalog/software/scamper/code/scamper-cvs-20230614.tar.gz"
+  sha256 "26f11ea025a4fdb0d07ef76c5c3b850f9a0a93c1e1aa88d352d600a907259276"
   license "GPL-2.0-only"
 
   livecheck do
@@ -32,6 +32,12 @@ class Scamper < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/scamper -v 2>&1", 255)
+    expected = if OS.mac?
+      "dl_bpf_open_dev"
+    else
+      "scamper_privsep_init"
+    end
+    assert_match expected, shell_output("#{bin}/scamper -i 127.0.0.1 2>&1", 255)
+    assert_match version.to_s, shell_output("#{bin}/scamper -v")
   end
 end
