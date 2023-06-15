@@ -4,7 +4,7 @@ class GnustepBase < Formula
   url "https://github.com/gnustep/libs-base/releases/download/base-1_28_0/gnustep-base-1.28.0.tar.gz"
   sha256 "c7d7c6e64ac5f5d0a4d5c4369170fc24ed503209e91935eb0e2979d1601039ed"
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
 
   livecheck do
     url :stable
@@ -28,45 +28,52 @@ class GnustepBase < Formula
   end
 
   depends_on "gnustep-make" => :build
+  depends_on "pkg-config" => :build
   depends_on "gmp"
   depends_on "gnutls"
 
-  # While libobjc2 is built with clang on Linux, it does not use any LLVM runtime libraries.
-  uses_from_macos "llvm" => [:build, :test]
   uses_from_macos "icu4c"
   uses_from_macos "libffi"
   uses_from_macos "libxslt"
 
   on_linux do
+    # Needs to be built with Clang for Objective-C, but fails with LLVM 16.
+    depends_on "llvm@15" => :build
     depends_on "libobjc2"
   end
 
-  # Clang must be used on Linux because GCC Objective-C support is insufficient.
-  fails_with :gcc
+  # Fix build with new libxml2.
+  # https://github.com/gnustep/libs-base/pull/295
+  patch do
+    url "https://github.com/gnustep/libs-base/commit/37913d006d96a6bdcb963f4ca4889888dcce6094.patch?full_index=1"
+    sha256 "57e353fedc530c82036184da487c25e006a75a4513e2a9ee33e5109446cf0534"
+  end
 
   def install
     ENV.prepend_path "PATH", Formula["gnustep-make"].libexec
     ENV["GNUSTEP_MAKEFILES"] = if OS.mac?
       Formula["gnustep-make"].opt_prefix/"Library/GNUstep/Makefiles"
     else
+      ENV.clang # To use `llvm@15` clang
       Formula["gnustep-make"].share/"GNUstep/Makefiles"
     end
 
-    if OS.mac?
-      ENV["ICU_CFLAGS"] = "-I#{MacOS.sdk_path}/usr/include"
-      ENV["ICU_LIBS"] = "-L#{MacOS.sdk_path}/usr/lib -licucore"
+    if OS.mac? && (sdk = MacOS.sdk_path_if_needed)
+      ENV["ICU_CFLAGS"] = "-I#{sdk}/usr/include"
+      ENV["ICU_LIBS"] = "-L#{sdk}/usr/lib -licucore"
+      # Workaround for implicit function declaration error.
+      ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version == 1403
     end
 
     # Don't let gnustep-base try to install its makefiles in cellar of gnustep-make.
     inreplace "Makefile.postamble", "$(DESTDIR)$(GNUSTEP_MAKEFILES)", share/"GNUstep/Makefiles"
 
     system "./configure", *std_configure_args, "--disable-silent-rules"
-    system "make", "install",
-      "GNUSTEP_HEADERS=#{include}",
-      "GNUSTEP_LIBRARY=#{share}",
-      "GNUSTEP_LOCAL_DOC_MAN=#{man}",
-      "GNUSTEP_LOCAL_LIBRARIES=#{lib}",
-      "GNUSTEP_LOCAL_TOOLS=#{bin}"
+    system "make", "install", "GNUSTEP_HEADERS=#{include}",
+                              "GNUSTEP_LIBRARY=#{share}",
+                              "GNUSTEP_LOCAL_DOC_MAN=#{man}",
+                              "GNUSTEP_LOCAL_LIBRARIES=#{lib}",
+                              "GNUSTEP_LOCAL_TOOLS=#{bin}"
   end
 
   test do
