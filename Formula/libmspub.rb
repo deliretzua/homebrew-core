@@ -12,13 +12,13 @@ class Libmspub < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7bc328cf9f8886c9fbb18d3fd5a1cb0c6330c17d941372e17f5095c1d3d36118"
-    sha256 cellar: :any,                 arm64_monterey: "94da79b408e3d0b1ebcf13bdb30c6228c145335f1ba8e7509492e18429d8e9bc"
-    sha256 cellar: :any,                 arm64_big_sur:  "e77f76c818866f04bf253365ad8a880861267f1f5d640f096338efbec174d60f"
-    sha256 cellar: :any,                 ventura:        "2b1533aaf31b11c0ddf727683f9c17bf3305c3f7b4634ac59c753a61a6f71d6e"
-    sha256 cellar: :any,                 monterey:       "05c0143012b367fbc2c081c4e7000b1df13d3e8aa416cfd6f778ede271cd8e34"
-    sha256 cellar: :any,                 big_sur:        "fd5d1981f11da0aab7a72097998832763ae7ba5236fc67de93495b63e961356e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7e50ba82f3e5e71c1f6c2aeea355ef2431c24a449b4ceef0c8bb097ac94388b4"
+    sha256 cellar: :any,                 arm64_ventura:  "f53ba0f603ff82e1be6edf58ea68ddc5cf15618ecc9425bf7d25686600ffaa6e"
+    sha256 cellar: :any,                 arm64_monterey: "d3f278ac26e5f228b769821daf271faf2ad535eddace9459cc0931daabd2adff"
+    sha256 cellar: :any,                 arm64_big_sur:  "7eb5fddbb726a0d7f26fe9617651d47cf4ac9808c3210dcc42379841a618a5a5"
+    sha256 cellar: :any,                 ventura:        "3e127402489dc095a2b0716a21ac188f22c4cfc7bcd1a19724a123cc0bd1559b"
+    sha256 cellar: :any,                 monterey:       "f5f6346fb4dae4e768dec30a28a8cefd01b45e3d029b3074dca1f5022f28136f"
+    sha256 cellar: :any,                 big_sur:        "9245461f9a2f04aa3216a72fa1d2de594bf4a979b83a90d0b88fa72658b67647"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2c6660cd4a5cd1b0ab0040ae7a22251ebac88ac84d6d38a3631e47b5f21d8254"
   end
 
   depends_on "boost" => :build
