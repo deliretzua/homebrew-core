@@ -1,28 +1,9 @@
 class Protobuf < Formula
   desc "Protocol buffers (Google's data interchange format)"
   homepage "https://protobuf.dev/"
+  url "https://github.com/protocolbuffers/protobuf/releases/download/v23.3/protobuf-23.3.tar.gz"
+  sha256 "3a5f47ad3aa10192c5577ff086b24b9739a36937c34ceab6db912a16a3ef7f8e"
   license "BSD-3-Clause"
-  revision 1
-
-  # TODO: Remove `stable` block when patches are no longer needed.
-  stable do
-    url "https://github.com/protocolbuffers/protobuf/releases/download/v23.2/protobuf-23.2.tar.gz"
-    sha256 "ddf8c9c1ffccb7e80afd183b3bd32b3b62f7cc54b106be190bf49f2bc09daab5"
-
-    # Fix missing unexported symbols.
-    # https://github.com/protocolbuffers/protobuf/issues/12932
-    patch do
-      url "https://github.com/protocolbuffers/protobuf/commit/fc1c5512e524e0c00a276aa9a38b2cdb8fdf45c7.patch?full_index=1"
-      sha256 "2ef672ecc95e0b35e2ef455ebbbaaaf0d5a89a341b5bbbe541c6285dfca48508"
-    end
-
-    # Use the same ABI for static and shared objects.
-    # https://github.com/protocolbuffers/protobuf/pull/12983
-    patch do
-      url "https://github.com/protocolbuffers/protobuf/commit/4329fde9cf3fab7d1b3a9abe0fbeee1ad8a8b111.patch?full_index=1"
-      sha256 "03c52f9207618fcb91cdb8b21dea4b447edcc6ea041f1837b5ff873e6c283b80"
-    end
-  end
 
   livecheck do
     url :stable
