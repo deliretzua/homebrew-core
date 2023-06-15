@@ -14,11 +14,11 @@ class ClickhouseOdbc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "7db18ffe67c8d28059a4bfd6835f053fd48a6c12a21ad385df2aabf84ab87e60"
-    sha256 cellar: :any,                 arm64_big_sur:  "8178a93f509e725ba63e318059851183ed8d599c6a9eda6a1918258f63400ab5"
-    sha256 cellar: :any,                 monterey:       "ceebc52bec28c344c2b06206ec8763336fb2b7f77224f7aacb183a8f25aee609"
-    sha256 cellar: :any,                 big_sur:        "6c41f4bd5a0404c135d2fb608e0a8086881cd71fc06ae7af95a1ccb52fe99bb2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7ded074aefd6929a7a4660eb4f77175d6cb4cac2691067bfd0b7710b06a15b0"
+    sha256 cellar: :any,                 arm64_monterey: "6d3da8f25a679d578fc9fbca684018833ad363535bfd3e85a4ddd736f6b32e78"
+    sha256 cellar: :any,                 arm64_big_sur:  "edd276cf440f60a578c73b6bd97f28405b4832794dce0b11e7bed991650e47f7"
+    sha256 cellar: :any,                 monterey:       "f0bb5c75237871886d291229e6ba60ffedb04c3d8a5e2feae411968cf83537c6"
+    sha256 cellar: :any,                 big_sur:        "b8ba8ebeb1a452406829d7c81315c9137a2e583f8699edd6fdc9cc7827cb3463"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d6e08e8ba3cdeff98402a304e88bc44c416081b13aa0147d9ab9c82e6404982"
   end
 
   # https://github.com/facebook/folly/issues/1867
