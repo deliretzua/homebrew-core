@@ -4,7 +4,7 @@ class Libmspub < Formula
   url "https://dev-www.libreoffice.org/src/libmspub/libmspub-0.1.4.tar.xz"
   sha256 "ef36c1a1aabb2ba3b0bedaaafe717bf4480be2ba8de6f3894be5fd3702b013ba"
   license "MPL-2.0"
-  revision 13
+  revision 14
 
   livecheck do
     url "https://dev-www.libreoffice.org/src/"
@@ -30,11 +30,8 @@ class Libmspub < Formula
 
   # Fix for missing include needed to build with recent GCC. Remove in the next release.
   # Commit ref: https://git.libreoffice.org/libmspub/+/698bed839c9129fa7a90ca1b5a33bf777bc028d1%5E%21
-  patch do
-    on_linux do
-      url "https://gerrit.libreoffice.org/changes/libmspub~73814/revisions/2/patch?zip"
-      sha256 "4c50ba6cc609b64d6769449f3296c26082f470d4011d35ec53599c336387fa38"
-    end
+  on_linux do
+    patch :DATA
   end
 
   def install
@@ -64,3 +61,28 @@ class Libmspub < Formula
     system "./test"
   end
 end
+
+__END__
+From 698bed839c9129fa7a90ca1b5a33bf777bc028d1 Mon Sep 17 00:00:00 2001
+From: Stephan Bergmann <sbergman@redhat.com>
+Date: Tue, 11 Jun 2019 12:15:28 +0200
+Subject: [PATCH] missing include
+
+Change-Id: I3c5c085f55223688cdc7b972f7c7981411881263
+Reviewed-on: https://gerrit.libreoffice.org/73814
+Reviewed-by: Michael Stahl <Michael.Stahl@cib.de>
+Tested-by: Michael Stahl <Michael.Stahl@cib.de>
+---
+
+diff --git a/src/lib/MSPUBMetaData.h b/src/lib/MSPUBMetaData.h
+index 9167f4f..27bdd4f 100644
+--- a/src/lib/MSPUBMetaData.h
++++ b/src/lib/MSPUBMetaData.h
+@@ -13,6 +13,7 @@
+ #include <map>
+ #include <utility>
+ #include <vector>
++#include <stdint.h>
+ 
+ #include <librevenge/librevenge.h>
+ 
