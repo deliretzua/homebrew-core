@@ -18,13 +18,13 @@ class Ki18n < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7b871925a173d894872917b2317786dbb7bb4f167e3eb2334e549155fa1ab87c"
-    sha256 cellar: :any,                 arm64_monterey: "1ad6ccae98eea0d69e5918681619c5ea8ae4f509b70fd4b70c84cd61dc12269e"
-    sha256 cellar: :any,                 arm64_big_sur:  "f7b35542ca33ac7d80417552d24502d933729ac4f559ed0648ac6b927b37aac6"
-    sha256 cellar: :any,                 ventura:        "8732bbd24f3d452bc95a8771a5a21bfefdfea1347aa41abbedaef194bbfd9d04"
-    sha256 cellar: :any,                 monterey:       "a0a52fa2391d369738bc603ec0b136cefaef072cb6c603d86a594745bfe4f38e"
-    sha256 cellar: :any,                 big_sur:        "f6396d49a09a1c0db7e11a1201fc65683a93df045a7b95c383323e44c7cb1576"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a14dab85a8c8735bc63f0ec0a70aac53d4077fab4f4a1a6fe2bfb151c8119609"
+    sha256 cellar: :any,                 arm64_ventura:  "ebab121393dcf85524ad154930719820f0dd40ec233752709262a9f04d5e2862"
+    sha256 cellar: :any,                 arm64_monterey: "ac55d21a0064e0fa93c5012425398143db64e5914a4dd2820ec3564feeaf0433"
+    sha256 cellar: :any,                 arm64_big_sur:  "7728442ef394506cb9d80478ac0f4ff47ad6dff9fbf847adeab582abef2bd6bb"
+    sha256 cellar: :any,                 ventura:        "7bd591d7a9b43acbeb5bfbc800cac097d386b2302251f13a4073d535ecc2c6ed"
+    sha256 cellar: :any,                 monterey:       "5587af96ddcde6be8db3fb3ee99aa707580db75bbbeaba173e7a239106cf6554"
+    sha256 cellar: :any,                 big_sur:        "ad77188e38893475ad67a9fbb79c226bcf4b474da44b747df83d77f1c0240236"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e55d850b4faa25bca14efa73170affbec784857185393f6310b1babaaa2024c9"
   end
 
   depends_on "cmake" => [:build, :test]
