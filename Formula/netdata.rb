@@ -11,13 +11,13 @@ class Netdata < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "00b8ad57eadb73b6d47562088d95bce37d452166f6c0848e028565b304553e47"
-    sha256 arm64_monterey: "20a1103ef17f0e65c24c26c7242aedf8248df90193e5009e24dabe60202ab817"
-    sha256 arm64_big_sur:  "c14020ba33c3666582a41eedb205c7ee0cabf8a6265c6d4f3095a5210988d2fb"
-    sha256 ventura:        "d47c43dba07e6d9a65c20224176e688ed2cca3f8fbc56c4ced5dd3ea63650605"
-    sha256 monterey:       "3b959dc540f77de5da88306bad9f62034ea6a8a0370616ee8cf5b67d2d0a1375"
-    sha256 big_sur:        "1bda435003f2ed3c5040fe7bc6adc137b97f51bfd3632c1cce26c333021fef5b"
-    sha256 x86_64_linux:   "06c08720b1be2243edfbb79bdd75ded1d85f2756ed704dd481664d53d7d27d55"
+    sha256 arm64_ventura:  "2c0d84de57d2132951d72b129cf47ed9b9597d974e00d4635e68785ee122db90"
+    sha256 arm64_monterey: "337b79d895787f0c2fa985b23ff477ff7ee5771cb9ea97bdd70bb2de622a4faf"
+    sha256 arm64_big_sur:  "a37969d992ee1fa2633c2384153b61cc216d368b7f9a8de346a981c868d7c0a7"
+    sha256 ventura:        "0ec29100f5703f2902a1c890ffbea439e127ba549e2e45b1a7b9944a360dcb0c"
+    sha256 monterey:       "0b9b14761e94c9d7cb2362e80a833074da629778391060abaa9ef72ce454e1f9"
+    sha256 big_sur:        "f0c5be93bfbc14d7ec871b9a58859f75df323d071109c39781d49c85daf4dc21"
+    sha256 x86_64_linux:   "c923d1ce61f3340e4ffac02b49c0d4a7469b906c3d583db73d2424291a3a2142"
   end
 
   depends_on "autoconf" => :build
