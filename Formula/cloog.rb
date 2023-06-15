@@ -1,8 +1,8 @@
 class Cloog < Formula
   desc "Generate code for scanning Z-polyhedra"
   homepage "https://github.com/periscop/cloog"
-  url "https://github.com/periscop/cloog/releases/download/cloog-0.20.0/cloog-0.20.0.tar.gz"
-  sha256 "835c49951ff57be71dcceb6234d19d2cc22a3a5df84aea0a9d9760d92166fc72"
+  url "https://github.com/periscop/cloog/releases/download/cloog-0.21.0/cloog-0.21.0.tar.gz"
+  sha256 "7bdd1bcfca1f9157186ea837e9b111bae7a595b24435e63099bac7c6763b376d"
   license "LGPL-2.1-or-later"
 
   bottle do
@@ -19,12 +19,6 @@ class Cloog < Formula
   depends_on "pkg-config" => :build
   depends_on "gmp"
   depends_on "isl"
-
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-  end
 
   def install
     # Avoid doc build.
