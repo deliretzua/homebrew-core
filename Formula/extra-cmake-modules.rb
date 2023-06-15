@@ -14,13 +14,13 @@ class ExtraCmakeModules < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "edf00ddfc43daca68624c5c112946699f236516b46529600bbc96ed7538429df"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "edf00ddfc43daca68624c5c112946699f236516b46529600bbc96ed7538429df"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "edf00ddfc43daca68624c5c112946699f236516b46529600bbc96ed7538429df"
-    sha256 cellar: :any_skip_relocation, ventura:        "d7a3597c408ba48862820926b5ecb5d0691e02e3ef7c7da7a4f7b0937dd90d51"
-    sha256 cellar: :any_skip_relocation, monterey:       "d7a3597c408ba48862820926b5ecb5d0691e02e3ef7c7da7a4f7b0937dd90d51"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d7a3597c408ba48862820926b5ecb5d0691e02e3ef7c7da7a4f7b0937dd90d51"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ee3218ad6709e1529b6ca85cbc3b4d61119088b546d05975d00f86fe0b360df"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fbab540f7a766e4b3a76e39846057ea3f59414e0f5cb85c8193f8b4330f8bb71"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a8bb98a517e9df58ffca2d02e095c2464bc970321ccd4b402fd0e02cdc5e66ed"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fbab540f7a766e4b3a76e39846057ea3f59414e0f5cb85c8193f8b4330f8bb71"
+    sha256 cellar: :any_skip_relocation, ventura:        "fee3be8be93946e1fc41094d503220fe3dca820d76defa3e44be30d099e77fae"
+    sha256 cellar: :any_skip_relocation, monterey:       "fee3be8be93946e1fc41094d503220fe3dca820d76defa3e44be30d099e77fae"
+    sha256 cellar: :any_skip_relocation, big_sur:        "fee3be8be93946e1fc41094d503220fe3dca820d76defa3e44be30d099e77fae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b105adb7599bd6a42f056b7c1a0e0c4cb77e7183fe1e0ff0ea2e79c50b5859a"
   end
 
   depends_on "cmake" => [:build, :test]
