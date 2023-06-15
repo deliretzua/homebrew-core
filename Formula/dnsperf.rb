@@ -1,8 +1,8 @@
 class Dnsperf < Formula
   desc "Measure DNS performance by simulating network conditions"
   homepage "https://www.dns-oarc.net/tools/dnsperf"
-  url "https://www.dns-oarc.net/files/dnsperf/dnsperf-2.12.0.tar.gz"
-  sha256 "1ff94f71ac8b6274042ba9ee62402bdd57d7fc4795c5d7135bcce1660584cd43"
+  url "https://www.dns-oarc.net/files/dnsperf/dnsperf-2.13.0.tar.gz"
+  sha256 "a31caa1899c67f35f28b970abe1f31f1d9c6b1f8b20ea24187ca1a82baac53cb"
   license "Apache-2.0"
 
   livecheck do
