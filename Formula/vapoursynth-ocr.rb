@@ -1,10 +1,9 @@
 class VapoursynthOcr < Formula
   desc "VapourSynth filters - Tesseract OCR filter"
   homepage "https://www.vapoursynth.com"
-  url "https://github.com/vapoursynth/vs-ocr/archive/R1.tar.gz"
-  sha256 "a551354c78fdbe9bcaf29f9a29ee9a7d257ed74d1b6a8403049fcd57855fa0f4"
+  url "https://github.com/vapoursynth/vs-ocr/archive/R2.tar.gz"
+  sha256 "64ee82a6c9c59ab2aa0f5ab54224e42b027e39ea44be9784861d9e11c8532fb0"
   license "MIT"
-  revision 1
   version_scheme 1
 
   head "https://github.com/vapoursynth/vs-ocr.git", branch: "master"
@@ -25,13 +24,6 @@ class VapoursynthOcr < Formula
   depends_on "pkg-config" => :build
   depends_on "tesseract"
   depends_on "vapoursynth"
-
-  # Upstream has added a build system, but it's not present in the current release.
-  # Remove patch on next update.
-  patch do
-    url "https://github.com/vapoursynth/vs-ocr/commit/d1e80c6a9d6efe7921300c01ffc0f311927ba443.patch?full_index=1"
-    sha256 "6d4ec06e2d3dd5a2b071035775e76475e108cd191f9302ee89b3973420d69925"
-  end
 
   def install
     # Upstream build system wants to install directly into vapoursynth's libdir and does not respect
