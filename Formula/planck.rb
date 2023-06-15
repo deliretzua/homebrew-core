@@ -4,7 +4,7 @@ class Planck < Formula
   url "https://github.com/planck-repl/planck/archive/2.27.0.tar.gz"
   sha256 "d69be456efd999a8ace0f8df5ea017d4020b6bd806602d94024461f1ac36fe41"
   license "EPL-1.0"
-  revision 1
+  revision 2
   head "https://github.com/planck-repl/planck.git", branch: "master"
 
   bottle do
@@ -36,6 +36,10 @@ class Planck < Formula
 
   fails_with gcc: "5"
 
+  # Don't mix our ICU4C headers with the system `libicucore`.
+  # TODO: Upstream this.
+  patch :DATA
+
   def install
     ENV["JAVA_HOME"] = Formula["openjdk"].opt_prefix
 
@@ -61,3 +65,29 @@ class Planck < Formula
     assert_equal "0", shell_output("#{bin}/planck -e '(- 1 1)'").chomp
   end
 end
+
+__END__
+diff --git a/planck-c/CMakeLists.txt b/planck-c/CMakeLists.txt
+index ec0dd3a..9bf1496 100644
+--- a/planck-c/CMakeLists.txt
++++ b/planck-c/CMakeLists.txt
+@@ -104,17 +104,12 @@ elseif(UNIX)
+     target_link_libraries(planck ${JAVASCRIPTCORE_LDFLAGS})
+ endif(APPLE)
+ 
+-if(APPLE)
+-   add_definitions(-DU_DISABLE_RENAMING)
+-   include_directories(/usr/local/opt/icu4c/include)
+-   find_library(ICU4C icucore)
+-   target_link_libraries(planck ${ICU4C})
+-elseif(UNIX)
++if(UNIX)
+    pkg_check_modules(ICU_UC REQUIRED icu-uc)
+    pkg_check_modules(ICU_IO REQUIRED icu-io)
+    include_directories(${ICU_UC_INCLUDE_DIRS} ${ICU_IO_INCLUDE_DIRS})
+    target_link_libraries(planck ${ICU_UC_LDFLAGS} ${ICU_IO_LDFLAGS})
+-endif(APPLE)
++endif(UNIX)
+ 
+ if(APPLE)
+ elseif(UNIX)
