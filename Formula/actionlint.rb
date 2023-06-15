@@ -1,8 +1,8 @@
 class Actionlint < Formula
   desc "Static checker for GitHub Actions workflow files"
   homepage "https://rhysd.github.io/actionlint/"
-  url "https://github.com/rhysd/actionlint/archive/v1.6.24.tar.gz"
-  sha256 "0dc8b31c8541a719486b5678e6f0401c8c13ce7baf79013570f3799f380c1dc1"
+  url "https://github.com/rhysd/actionlint/archive/v1.6.25.tar.gz"
+  sha256 "7592aaddc49146b15a9822e97d90d917a1bd8ca33a4fb71cd98ef8c8c06eb3cf"
   license "MIT"
 
   bottle do
@@ -18,13 +18,6 @@ class Actionlint < Formula
 
   depends_on "go" => :build
   depends_on "ronn" => :build
-
-  # Support macos-13 GitHub-hosted runners.
-  # Remove at next release.
-  patch do
-    url "https://github.com/rhysd/actionlint/commit/7aab63e3872d169984ad86d10db293355f24fb7b.patch?full_index=1"
-    sha256 "b54f30a848db091915008abd435fa36c1b73e087a85b9a90ba358243afa6ad6f"
-  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.com/rhysd/actionlint.version=#{version}"), "./cmd/actionlint"
