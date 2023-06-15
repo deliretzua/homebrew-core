@@ -18,10 +18,10 @@ class Chakra < Formula
   depends_on arch: :x86_64 # https://github.com/chakra-core/ChakraCore/issues/6860
   depends_on "icu4c"
 
-  uses_from_macos "llvm" => [:build, :test]
-
-  # Currently requires Clang.
-  fails_with :gcc
+  on_linux do
+    # Currently requires Clang, but fails with LLVM 16.
+    depends_on "llvm@15" => :build
+  end
 
   # Fix build with modern compilers.
   # Remove with 1.12.
@@ -38,9 +38,11 @@ class Chakra < Formula
   end
 
   def install
+    ENV.clang if OS.linux? # Currently fails to build with LLVM 16.
+
     args = %W[
-      --icu=#{Formula["icu4c"].opt_include}
-      -j=#{ENV.make_jobs}
+      --custom-icu=#{Formula["icu4c"].opt_include}
+      --jobs=#{ENV.make_jobs}
       -y
     ]
     # LTO requires ld.gold, but Chakra has no way to specify to use that over regular ld.
