@@ -1,8 +1,8 @@
 class Cfengine < Formula
   desc "Help manage and understand IT infrastructure"
   homepage "https://cfengine.com/"
-  url "https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-community-3.21.2.tar.gz"
-  sha256 "e3f733433ff9ad86a01513b779f646da223afed8568e8de6e89c4e5aa8c6b256"
+  url "https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-community-3.22.0.tar.gz"
+  sha256 "c2e7ac88d2371fda2809e0bbd3a3908cab50592b6c1479353bd18ba809b93528"
   license all_of: ["BSD-3-Clause", "GPL-2.0-or-later", "GPL-3.0-only", "LGPL-2.0-or-later"]
 
   livecheck do
@@ -31,8 +31,8 @@ class Cfengine < Formula
   end
 
   resource "masterfiles" do
-    url "https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-masterfiles-3.21.2.tar.gz"
-    sha256 "6fbaa12d602db8a94c89a6a4fec52f1e29bf27053ad8a35036c6f11e61827b1c"
+    url "https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-masterfiles-3.22.0.tar.gz"
+    sha256 "5eae6ba6881de1aef4f8115cd6b6ecb0c0809c7ea956b7097a99d62c014506ea"
   end
 
   def install
