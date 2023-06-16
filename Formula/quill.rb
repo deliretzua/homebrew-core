@@ -7,13 +7,13 @@ class Quill < Formula
   head "https://github.com/odygrd/quill.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "46217ada5e7ff7141e63a01f2371d04c5761a92594290c2d098a6d7aab64c813"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "09f4e8e0b504af8151a5f60c0dbad0fb7bf9fdc625d18e4b596c411642a42bd6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8bebde3ba8cd3c8ff6d221034084d9044edf5fc477f4349bf63120cf71e7c87d"
-    sha256 cellar: :any_skip_relocation, ventura:        "f9c1b5057aa11eb1137842f1972e147e47c830ba2a1f4d15c44d91ed18ce306d"
-    sha256 cellar: :any_skip_relocation, monterey:       "fe72e852d9b7b41a88962f9a18c393397b0f887d677814de50e05be1830ae15c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "efa326590e09b24e3c6cf762ac4452bfc404afe6c120bb5cacff001fe4290d34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a12717112b9b93be8d3d14d09cf6878eeba1f5a6b9714ec99e34010e670109a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "108550d24829939ac5fca6bee9008f529dfd41075fa20b57963558ccd008fec6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca622bf3e9410b9451ebeca0d1c665a5fcaac4d056352e53e66ceef1e2dd79be"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2a06055d130fb0f37ed578ca976864fdfd3b145313d0c586bacd7418eca9e5db"
+    sha256 cellar: :any_skip_relocation, ventura:        "4151a07fee4643640161532f9b41f1f8cbc2f628c8743e8caee4c9e8ab0e1e59"
+    sha256 cellar: :any_skip_relocation, monterey:       "313575c71a07d4c660564cc53138444d772b96298fba016c2fedb063b58f5d87"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e6258d361c595d065a288ad2474001ad7ea7f8b45c261ef98471af2582364f17"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a25aa4dfdad9c9bf272dd9013872d68ec99904aed0f77a0d631d5189184dfed0"
   end
 
   depends_on "cmake" => :build
