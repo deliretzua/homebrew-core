@@ -201,8 +201,8 @@ jobs:
         run: gh pr edit --add-label automerge-skip --add-label superseded "$PR"
 
       - name: Mark replaced PR as draft
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        env: # We need a PAT here. https://github.com/github/docs/issues/8925#issuecomment-970255180
+          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_PUBLIC_REPO_TOKEN  }}
         run: gh pr ready --undo "$PR"
 
       - name: Post comment on success
