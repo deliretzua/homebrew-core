@@ -1,8 +1,8 @@
 class Libhttpserver < Formula
   desc "C++ library of embedded Rest HTTP server"
   homepage "https://github.com/etr/libhttpserver"
-  url "https://github.com/etr/libhttpserver/archive/0.18.2.tar.gz"
-  sha256 "1dfe548ac2add77fcb6c05bd00222c55650ffd02b209f4e3f133a6e3eb29c89d"
+  url "https://github.com/etr/libhttpserver/archive/0.19.0.tar.gz"
+  sha256 "b108769ed68d72c58961c517ab16c3a64e4efdc4c45687723bb45bb9e04c5193"
   license "LGPL-2.1-or-later"
   head "https://github.com/etr/libhttpserver.git", branch: "master"
 
@@ -49,7 +49,7 @@ class Libhttpserver < Formula
                                          "create_webserver(#{port})"
 
     system ENV.cxx, "minimal_hello_world.cpp",
-      "-std=c++11", "-o", "minimal_hello_world", "-L#{lib}", "-lhttpserver", "-lcurl"
+      "-std=c++17", "-o", "minimal_hello_world", "-L#{lib}", "-lhttpserver", "-lcurl"
 
     fork { exec "./minimal_hello_world" }
     sleep 3 # grace time for server start
