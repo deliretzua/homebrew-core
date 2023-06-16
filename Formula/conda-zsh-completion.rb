@@ -1,8 +1,8 @@
 class CondaZshCompletion < Formula
   desc "Zsh completion for conda"
   homepage "https://github.com/conda-incubator/conda-zsh-completion"
-  url "https://github.com/conda-incubator/conda-zsh-completion/archive/refs/tags/v0.9.tar.gz"
-  sha256 "beb79bfe083551628cad3fe6bb6e39cd638c1c44f83a3c9c7f251ec4d20b5ade"
+  url "https://github.com/conda-incubator/conda-zsh-completion/archive/refs/tags/v0.10.tar.gz"
+  sha256 "b80cc42581d8764a3a33b996aeb1326bc1a5b6451ff834f30253bb723378c23c"
   license "WTFPL"
   head "https://github.com/conda-incubator/conda-zsh-completion.git", branch: "master"
 
