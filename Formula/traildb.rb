@@ -26,40 +26,22 @@ class Traildb < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "python@3.10" => :build
+  depends_on "judy"
   depends_on "libarchive"
 
-  resource "judy" do
-    url "https://downloads.sourceforge.net/project/judy/judy/Judy-1.0.5/Judy-1.0.5.tar.gz"
-    sha256 "d2704089f85fdb6f2cd7e77be21170ced4b4375c03ef1ad4cf1075bd414a63eb"
-  end
+  uses_from_macos "python" => :build
 
   # Update waf script for Python 3
-  patch do
-    url "https://github.com/traildb/traildb/commit/12ccff42e73219e2732ffd7f4ee42eb4791bed41.patch?full_index=1"
-    sha256 "603f05c8c1eb3117f574eadbd6d0e9c52325245f5a4ba841ac7f0dfc13b37a34"
+  # Use resource instead of patch since applying corrupts waf
+  resource "waf" do
+    url "https://raw.githubusercontent.com/traildb/traildb/053ed8e5d0301c792f3ee703cd9936c49ecf41a1/waf"
+    sha256 "2e0cf83a63843da127610420cef1d3126f1187d8e572b6b3a28052fc2250d4bf"
   end
 
   def install
-    # We build judy as static library, so we don't need to install it
-    # into the real prefix
-    judyprefix = buildpath/"resources/judy"
-
-    resource("judy").stage do
-      ENV.append_to_cflags "-fPIC" if OS.linux?
-      system "./configure", "--disable-debug", "--disable-dependency-tracking",
-          "--disable-shared", "--prefix=#{judyprefix}"
-
-      # Parallel build is broken
-      ENV.deparallelize do
-        system "make", "-j1", "install"
-      end
-    end
-
     ENV["PREFIX"] = prefix
-    ENV.append "CFLAGS", "-I#{judyprefix}/include"
-    ENV.append "LDFLAGS", "-L#{judyprefix}/lib"
-    system "python3.10", "./waf", "configure", "install"
+    buildpath.install resource("waf")
+    system "python3", "./waf", "configure", "install"
   end
 
   test do
