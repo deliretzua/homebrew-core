@@ -1,14 +1,9 @@
 class Xmp < Formula
   desc "Command-line player for module music formats (MOD, S3M, IT, etc)"
   homepage "https://xmp.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/xmp/xmp/4.1.0/xmp-4.1.0.tar.gz"
-  sha256 "1dbd61074783545ac7bef5b5daa772fd2110764cb70f937af8c3fad30f73289e"
-  license "GPL-2.0"
-
-  livecheck do
-    url :stable
-    regex(%r{url=.*?/xmp[._-]v?(\d+(?:\.\d+)+)\.t}i)
-  end
+  url "https://github.com/libxmp/xmp-cli/releases/download/xmp-4.2.0/xmp-4.2.0.tar.gz"
+  sha256 "dc54513af9a4681029a1243fd0c9cdf153d813a1125de6c782926674285bc5ae"
+  license "GPL-2.0-or-later"
 
   bottle do
     rebuild 1
@@ -25,7 +20,7 @@ class Xmp < Formula
   end
 
   head do
-    url "https://git.code.sf.net/p/xmp/xmp-cli.git", branch: "master"
+    url "https://github.com/libxmp/xmp-cli.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -45,5 +40,10 @@ class Xmp < Formula
 
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
+  end
+
+  test do
+    assert_match "Fast Tracker II", shell_output("#{bin}/xmp --list-formats")
+    assert_match "Extended Module Player #{version}", shell_output("#{bin}/xmp --version")
   end
 end
