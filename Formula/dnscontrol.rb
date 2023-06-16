@@ -28,11 +28,20 @@ class Dnscontrol < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.SHA=#{version}")
+    go_ldflags = %W[
+      -s -w
+      -X main.SHA=#{tap.user}
+      -X main.Version=#{version}
+      -X main.BuildTime=#{time.iso8601}
+    ]
+    system "go", "build", *std_go_args(ldflags: go_ldflags)
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/dnscontrol version")
+    version_output = shell_output("#{bin}/dnscontrol version")
+    assert_match version.to_s, version_output
+    assert_match tap.user, version_output
+
     (testpath/"dnsconfig.js").write <<~EOS
       var namecom = NewRegistrar("name.com", "NAMEDOTCOM");
       var r53 = NewDnsProvider("r53", "ROUTE53")
