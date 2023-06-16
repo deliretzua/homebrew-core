@@ -12,14 +12,13 @@ class Libtiff < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "a01418573c4dbf4ac60650c7fab3900127e8471e4fce6ee0cbfc33ec74cc04db"
-    sha256 cellar: :any,                 arm64_monterey: "62a47b8372cd44881fd42ae569a24e54ce586a8f08fd5001b01e06598afcaafd"
-    sha256 cellar: :any,                 arm64_big_sur:  "19a48db80f239f0053784cec21a56ac53d14ac087aa22e11d635e438a1f562c2"
-    sha256 cellar: :any,                 ventura:        "3cf444bc3b46ad0df9ca926dc096df241ee1f61cd91c4e5ef847b24bd90e6920"
-    sha256 cellar: :any,                 monterey:       "d76edd707b0e7b4a2f9f50f972081894d14bbbbee73ef2cfa4c944ac2f334597"
-    sha256 cellar: :any,                 big_sur:        "a5d977aa7b41797ba50d7a9d4be3965fae8839a1b66e90b29fc7a23dd2017633"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "391ea7224b48f2f336d92fe6cf45b7d0651e2e5916257de223f7a85536ca3a65"
+    sha256 cellar: :any,                 arm64_ventura:  "c9ec64c61687ec04d3d98e017c2a7ec5c23ff8a061cdeaf54209197fdbfa53e7"
+    sha256 cellar: :any,                 arm64_monterey: "d5de595a3c6f8564e7164e07909374b376a954c360e2c5232ba1431b3ed4de98"
+    sha256 cellar: :any,                 arm64_big_sur:  "760ba837679b14af360309108cdc3e682ddfed4c969ac1cec744927a7fcab67e"
+    sha256 cellar: :any,                 ventura:        "d802af35e9f79c5a0d230862219aa237761c310354ca181dc21ef80b4f35da40"
+    sha256 cellar: :any,                 monterey:       "78185275989220e1296ebe0f9aa6f3200c028f208fe0c0a6f3a5bedcf26ae751"
+    sha256 cellar: :any,                 big_sur:        "18bd9c73f730afa03c4c5dd3c9b23d810a827e32464d325beafd1499161e47ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "06e9e7ee377e29c7417acc0399c5d38ebeb282b5c1516a69cde4e4b1803954ee"
   end
 
   depends_on "jpeg-turbo"
