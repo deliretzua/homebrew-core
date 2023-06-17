@@ -11,12 +11,4 @@ jobs:
       github.event.review.state == 'approved'
     runs-on: ubuntu-latest
     steps:
-      - name: Save pull request number
-        run: |
-          mkdir -p pr
-          echo '${{ github.event.pull_request.number }}' > pr/number
-
-      - uses: actions/upload-artifact@v3
-        with:
-          name: pull-number
-          path: pr
+      - run: true # This suffices to trigger `automerge.yml`.
