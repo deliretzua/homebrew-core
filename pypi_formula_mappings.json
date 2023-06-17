@@ -127,6 +127,9 @@
   "coconut": {
     "exclude_packages": ["Pygments", "typing-extensions"]
   },
+  "conda-lock" : {
+    "exclude_packages": ["keyring", "PyYAML", "six", "typing-extensions", "virtualenv"]
+  },
   "cfn-flip": {
     "exclude_packages": ["six", "PyYAML"]
   },
