@@ -1,10 +1,9 @@
 class Geeqie < Formula
   desc "Lightweight Gtk+ based image viewer"
   homepage "https://www.geeqie.org/"
-  url "https://github.com/BestImageViewer/geeqie/releases/download/v2.0.1/geeqie-2.0.1.tar.xz"
-  sha256 "89c1a7574cfe3888972d10723f4cf3a277249bea494fd9c630aa8d0df944555d"
+  url "https://github.com/BestImageViewer/geeqie/releases/download/v2.1/geeqie-2.1.tar.xz"
+  sha256 "d0511b7840169d37e457880d1ab2a787c52b609a0ab8fa1a8a391e841fdd2dde"
   license "GPL-2.0-or-later"
-  revision 3
 
   livecheck do
     url :stable
@@ -23,32 +22,35 @@ class Geeqie < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
+  depends_on "pandoc" => :build # for README.html
   depends_on "pkg-config" => :build
+  depends_on "yelp-tools" => :build # for help files
+
   depends_on "adwaita-icon-theme"
   depends_on "atk"
   depends_on "cairo"
+  depends_on "evince" # for print preview support
   depends_on "exiv2"
+  depends_on "ffmpegthumbnailer"
   depends_on "gdk-pixbuf"
   depends_on "gettext"
   depends_on "glib"
+  depends_on "gspell" # for spell checks support
   depends_on "gtk+3"
   depends_on "imagemagick"
   depends_on "jpeg-turbo"
+  depends_on "libarchive"
   depends_on "libtiff"
   depends_on "libx11"
   depends_on "little-cms2"
   depends_on "pango"
+  depends_on "poppler" # for pdf support # for video thumbnails support
+  depends_on "webp-pixbuf-loader" # for webp support
 
   uses_from_macos "vim" => :build # for xxd
 
-  # Fix detection of strverscmp. Remove in the next release
-  patch do
-    url "https://github.com/BestImageViewer/geeqie/commit/87042fa51da7c14a7600bbf8420105dd91675757.patch?full_index=1"
-    sha256 "c80bd1606fae1c772e7890a3f87725b424c4063a9e0b87bcc17fb9b19c0ee80d"
-  end
-
   def install
-    system "meson", *std_meson_args, "build"
+    system "meson", "setup", "build", "-Dlua=disabled", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
