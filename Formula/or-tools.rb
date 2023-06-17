@@ -1,11 +1,10 @@
 class OrTools < Formula
   desc "Google's Operations Research tools"
   homepage "https://developers.google.com/optimization/"
-  # TODO: Check if we can use unversioned `protobuf` at version bump
   url "https://github.com/google/or-tools/archive/v9.6.tar.gz"
   sha256 "bc4b07dc9c23f0cca43b1f5c889f08a59c8f2515836b03d4cc7e0f8f2c879234"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/google/or-tools.git", branch: "stable"
 
   livecheck do
@@ -33,14 +32,15 @@ class OrTools < Formula
   depends_on "eigen"
   depends_on "openblas"
   depends_on "osi"
-  depends_on "protobuf@21"
+  depends_on "protobuf"
   depends_on "re2"
 
   uses_from_macos "zlib"
 
   fails_with gcc: "5"
 
-  # Add missing <errno.h> include to numbers.cc
+  # Fix definition duplicated from Protobuf.
+  # https://github.com/google/or-tools/issues/3826
   patch :DATA
 
   def install
@@ -58,40 +58,46 @@ class OrTools < Formula
   end
 
   test do
-    # manual protobuf includes can be removed when this uses unversioned protobuf.
     # Linear Solver & Glop Solver
-    system ENV.cxx, "-std=c++17", "-I#{Formula["protobuf@21"].opt_include}", pkgshare/"simple_lp_program.cc",
-           "-I#{include}", "-L#{lib}", "-lortools",
-           *shell_output("pkg-config --cflags --libs absl_check absl_log").chomp.split,
-           "-o", "simple_lp_program"
+    system ENV.cxx, "-std=c++17", pkgshare/"simple_lp_program.cc",
+                    "-I#{include}", "-L#{lib}", "-lortools",
+                    *shell_output("pkg-config --cflags --libs absl_check absl_log").chomp.split,
+                    "-o", "simple_lp_program"
     system "./simple_lp_program"
 
     # Routing Solver
-    system ENV.cxx, "-std=c++17", "-I#{Formula["protobuf@21"].opt_include}", pkgshare/"simple_routing_program.cc",
-           "-I#{include}", "-L#{lib}", "-lortools",
-           *shell_output("pkg-config --cflags --libs absl_check absl_log").chomp.split,
-           "-o", "simple_routing_program"
+    system ENV.cxx, "-std=c++17", pkgshare/"simple_routing_program.cc",
+                    "-I#{include}", "-L#{lib}", "-lortools",
+                    *shell_output("pkg-config --cflags --libs absl_check absl_log").chomp.split,
+                    "-o", "simple_routing_program"
     system "./simple_routing_program"
 
     # Sat Solver
-    system ENV.cxx, "-std=c++17", "-I#{Formula["protobuf@21"].opt_include}", pkgshare/"simple_sat_program.cc",
-           "-I#{include}", "-L#{lib}", "-lortools",
-           *shell_output("pkg-config --cflags --libs absl_log absl_raw_hash_set").chomp.split,
-           "-o", "simple_sat_program"
+    system ENV.cxx, "-std=c++17", pkgshare/"simple_sat_program.cc",
+                    "-I#{include}", "-L#{lib}", "-lortools",
+                    *shell_output("pkg-config --cflags --libs absl_log absl_raw_hash_set").chomp.split,
+                    "-o", "simple_sat_program"
     system "./simple_sat_program"
   end
 end
 
 __END__
-diff --git a/ortools/base/numbers.cc b/ortools/base/numbers.cc
-index e9f5a57..e49182c 100644
---- a/ortools/base/numbers.cc
-+++ b/ortools/base/numbers.cc
-@@ -16,6 +16,7 @@
-
- #include "ortools/base/numbers.h"
-
-+#include <errno.h>
- #include <cfloat>
- #include <cstdint>
- #include <cstdlib>
+diff --git a/ortools/base/logging.h b/ortools/base/logging.h
+index 7f570f9..183b3a4 100644
+--- a/ortools/base/logging.h
++++ b/ortools/base/logging.h
+@@ -52,6 +52,7 @@ enum LogSeverity {
+ };
+ }  // namespace google
+ 
++#if GOOGLE_PROTOBUF_VERSION <= 3021012
+ // Implementation of the `AbslStringify` interface. This adds `DebugString()`
+ // to the sink. Do not rely on exact format.
+ namespace google {
+@@ -62,5 +63,6 @@ void AbslStringify(Sink& sink, const Message& msg) {
+ }
+ }  // namespace protobuf
+ }  // namespace google
++#endif
+ 
+ #endif  // OR_TOOLS_BASE_LOGGING_H_
