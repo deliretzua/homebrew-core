@@ -1,8 +1,8 @@
 class Bittwist < Formula
   desc "Libcap-based Ethernet packet generator"
   homepage "https://bittwist.sourceforge.io"
-  url "https://downloads.sourceforge.net/project/bittwist/macOS/Bit-Twist%203.5/bittwist-macos-3.5.tar.gz"
-  sha256 "d9ee045802ccf81620c22a7a626828b58151b2438d032d949c8f258f5730537f"
+  url "https://downloads.sourceforge.net/project/bittwist/macOS/Bit-Twist%203.6/bittwist-macos-3.6.tar.gz"
+  sha256 "484339e5672c454aeef7ee834e33acad2d2fc04a4c9a9dc32924c0316a2530dc"
   license "GPL-2.0-or-later"
 
   bottle do
