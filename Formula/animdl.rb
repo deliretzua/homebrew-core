@@ -9,13 +9,13 @@ class Animdl < Formula
   head "https://github.com/justfoolingaround/animdl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "044c69e1ce10b8f30cbd98a2c97b3090e18ca6fbf53a9fcadbc7cf3fc5192eeb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5e85a3cb9d21fa99220ad981a3d0b9d111a551e18bad6d080c60d244e2a539a8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e6115c76d5bebc580147c34904b6ff98a551bb6456f09b396dadbe7048b19371"
-    sha256 cellar: :any_skip_relocation, ventura:        "3085daabddfa6ae63363adbcb9474968f6fe14b82ab3b4f8aa37fdaac22534d3"
-    sha256 cellar: :any_skip_relocation, monterey:       "096701606f143d2a4f5d95fc93c5b72e16b3c44843a4efb7aa58890b04f157f1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e0bea5823e47ec761a50a688e1b5721664e42aedb2fbf50182e573d4fb3fcfdc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c14d3d66b927de55d7fabff584635763a2e8564cf68414edfc52e717c9405ded"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "84bccd04eda3458fee487bee797abcfbbe1c953888e31e65e3f09de06a117391"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bcce6f0973cb61781384493e829cc349e7aa42bf9c830f5c80d60214197fff76"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "846403df67600bdc42f3f888634a1ce4b2ea4033e7064738014531d1b20e7b0d"
+    sha256 cellar: :any_skip_relocation, ventura:        "c92854cb5af6ebe1bbf4762edcc796e44b88595d06f81cdb48efea4f1b930402"
+    sha256 cellar: :any_skip_relocation, monterey:       "b624f46b03405a9e6cb4217235bdc09379b71b6fb1046d98c23090453691a027"
+    sha256 cellar: :any_skip_relocation, big_sur:        "40cee79176bb0c766d8e14e44214c4487bb272756d3f30b1b6e1753381730212"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f60b3abf3bba8e09b201e35b04c885b470a04ee3fa2996103575d3db1763e572"
   end
 
   depends_on "pygments"
