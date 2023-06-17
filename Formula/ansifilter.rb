@@ -1,8 +1,8 @@
 class Ansifilter < Formula
   desc "Strip or convert ANSI codes into HTML, (La)Tex, RTF, or BBCode"
   homepage "http://www.andre-simon.de/doku/ansifilter/ansifilter.html"
-  url "http://www.andre-simon.de/zip/ansifilter-2.19.tar.bz2"
-  sha256 "f9c27b1883914a1b1d4965f4c49b2be502e2a9fc9dd3f61123abeae989c354bc"
+  url "http://www.andre-simon.de/zip/ansifilter-2.20.tar.bz2"
+  sha256 "35ec9d71a7f4e5601337937c7734b32a6e346c0f054f4d316376823cfe679067"
   license "GPL-3.0-or-later"
 
   livecheck do
