@@ -4,6 +4,7 @@ class Goplus < Formula
   url "https://github.com/goplus/gop/archive/v1.1.5.tar.gz"
   sha256 "ce93d5ff9a939a3fb3fd8d0f8c2db6ed38b799c302028ce222bfa41c01992210"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/goplus/gop.git", branch: "main"
 
   bottle do
@@ -16,22 +17,17 @@ class Goplus < Formula
     sha256 x86_64_linux:   "ddee63d2da99c663f77c56a9d7e0162a2a1b3594ef6d452a0d9b19f677e1fb5e"
   end
 
-  # Move to go1.20 once https://github.com/goplus/gop/issues/1350 is resolved
-  depends_on "go@1.19"
+  depends_on "go"
 
   def install
     ENV["GOPROOT_FINAL"] = libexec
     system "go", "run", "cmd/make.go", "--install"
 
     libexec.install Dir["*"] - Dir[".*"]
-    libexec.glob("bin/*").each do |file|
-      (bin/file.basename).write_env_script file, PATH: "#{Formula["go@1.19"].opt_bin}:$PATH"
-    end
+    bin.install_symlink Dir[libexec/"bin/*"]
   end
 
   test do
-    ENV["GOROOT"] = Formula["go@1.19"].opt_libexec
-
     (testpath/"hello.gop").write <<~EOS
       println("Hello World")
     EOS
@@ -47,7 +43,7 @@ class Goplus < Formula
       module hello
     EOS
 
-    system Formula["go@1.19"].opt_bin/"go", "get", "github.com/goplus/gop/builtin"
+    system "go", "get", "github.com/goplus/gop/builtin"
     system bin/"gop", "build", "-o", "hello"
     assert_equal "Hello World\n", shell_output("./hello")
   end
