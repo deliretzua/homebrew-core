@@ -1,8 +1,8 @@
 class Circumflex < Formula
   desc "Hacker News in your terminal"
   homepage "https://github.com/bensadeh/circumflex"
-  url "https://github.com/bensadeh/circumflex/archive/refs/tags/3.0.tar.gz"
-  sha256 "a2e641d020b5dbd9bbfbeffe14983a29f481bdb22440e5971139cac3c1de6390"
+  url "https://github.com/bensadeh/circumflex/archive/refs/tags/3.1.tar.gz"
+  sha256 "81212e22899057c5cd85e9295582580ee7c5cc0c186c6635d2b824573999919d"
   license "AGPL-3.0-only"
 
   bottle do
