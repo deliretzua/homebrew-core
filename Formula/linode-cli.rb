@@ -9,13 +9,13 @@ class LinodeCli < Formula
   head "https://github.com/linode/linode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bcd782599b728bf5b775e14196a2d8a8303fd8564f1e79d36193e8ab7729ea18"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "694d2276211eb294b77ba3de9b46ffca9fb88f9b96e3e3540314101a636def32"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "44aa1b55b9a74ffb304c8820c16df3dc3d3e9d6a8c6ab5334ad0f86d6c909fb4"
-    sha256 cellar: :any_skip_relocation, ventura:        "f0ca8095574a346a4a1b7dbb3d747fe014d768a4833da01fe03571e90b644e57"
-    sha256 cellar: :any_skip_relocation, monterey:       "350ff86d097a37b9f8b51fc98e61d5958c30bd4505c83d66401e468174c51409"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fa597cd4aca47cd794dc83cc83c4487c822694ce7ea0490c74a6eaa6d85b3776"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "693b3596147a11caff32839d4a3830203eeee2914702fd690dddda6071d65fca"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a2b656ca09522d89886790af058bfc94ddcb3dc9d077f2cc56e28bb30666c368"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "000a451a5930e42f72220d01d04f98446ce722b9965d95e52164f2b20e40c7c7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "087ac4fd16b2f172312cd0c46a02a03e4f73fc91bf62d6c3faa7fe88ca00b9b0"
+    sha256 cellar: :any_skip_relocation, ventura:        "0ea9002e98d06671d7c2095c9c4e7077cadd4c3f6d32edb5594170e6e20943ba"
+    sha256 cellar: :any_skip_relocation, monterey:       "9482d95fda935915ccd27e766369e7cd076652ac8c608f5032ba3556a9c6f8de"
+    sha256 cellar: :any_skip_relocation, big_sur:        "22e2889d7a5cbfc8419001470b172cf06d47bb5152c3ce23ddc3d1c3d7e1ea6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ef12721472a13a69d91fdd6e7768f53a1e6262a45d90ddcb24e113220a7fd84"
   end
 
   depends_on "openssl@1.1"
