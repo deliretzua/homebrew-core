@@ -1,8 +1,8 @@
 class Httm < Formula
   desc "Interactive, file-level Time Machine-like tool for ZFS/btrfs"
   homepage "https://github.com/kimono-koans/httm"
-  url "https://github.com/kimono-koans/httm/archive/refs/tags/0.29.0.tar.gz"
-  sha256 "bed1302e23c058193865382f4fef8e86764e96682ded86e80d3624ceb48acfc9"
+  url "https://github.com/kimono-koans/httm/archive/refs/tags/0.29.1.tar.gz"
+  sha256 "f12377191871e60164560624c0660c90090d469f3d879067189969064279d2d5"
   license "MPL-2.0"
   head "https://github.com/kimono-koans/httm.git", branch: "master"
 
