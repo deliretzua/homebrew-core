@@ -1,8 +1,8 @@
 class Trurl < Formula
   desc "Command-line tool for URL parsing and manipulation"
   homepage "https://curl.se/trurl/"
-  url "https://github.com/curl/trurl/archive/refs/tags/trurl-0.7.tar.gz"
-  sha256 "11616a4c3d255ff3347cb8fc65ea4f890526f327800ec556d78e88881e2cbfa7"
+  url "https://github.com/curl/trurl/archive/refs/tags/trurl-0.8.tar.gz"
+  sha256 "7baccde1620062cf8c670121125480269b41bdc81bd4015b7aabe33debb022c6"
   license "curl"
   head "https://github.com/curl/trurl.git", branch: "master"
 
