@@ -29,17 +29,20 @@ class Mosh < Formula
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
+  on_macos do
+    depends_on "tmux" => :build # for `make check`
+  end
+
   on_linux do
     depends_on "openssl@3" # Uses CommonCrypto on macOS
   end
 
   def install
-    ENV.cxx11
-
     # https://github.com/protocolbuffers/protobuf/issues/9947
     ENV.append_to_cflags "-DNDEBUG"
-    # Keep C++ standard in sync with abseil.rb
-    ENV.append "CXXFLAGS", "-std=c++17"
+    # Keep C++ standard in sync with abseil.rb.
+    # Use `gnu++17` since Mosh allows use of GNU extensions (-std=gnu++11).
+    ENV.append "CXXFLAGS", "-std=gnu++17"
 
     # teach mosh to locate mosh-client without referring
     # PATH to support launching outside shell e.g. via launcher
@@ -51,7 +54,11 @@ class Mosh < Formula
       system "./autogen.sh"
     end
 
-    system "./configure", "--prefix=#{prefix}", "--enable-completion"
+    # `configure` does not recognise `--disable-debug` in `std_configure_args`.
+    system "./configure", "--prefix=#{prefix}", "--enable-completion", "--disable-silent-rules"
+    # We insist on a newer C++ standard than the project expects, so
+    # let's run the tests to make sure we didn't break anything.
+    system "make", "check" if OS.mac? # Fails on Linux.
     system "make", "install"
   end
 
