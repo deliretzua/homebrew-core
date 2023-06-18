@@ -463,7 +463,7 @@
     "exclude_packages": ["cffi", "cfn-lint", "pycparser", "PyYAML", "six", "typing-extensions"]
   },
   "mycli": {
-    "exclude_packages": ["six", "tabulate", "Pygments"]
+    "exclude_packages": ["six", "tabulate", "Pygments", "cffi", "pycparser"]
   },
   "name-that-hash": {
     "exclude_packages": ["Pygments"]
