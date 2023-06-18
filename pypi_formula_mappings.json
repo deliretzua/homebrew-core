@@ -503,7 +503,7 @@
     "exclude_packages": ["cffi", "six", "Cython", "pycparser", "docutils"]
   },
   "openai-whisper": {
-    "exclude_packages": ["torch", "numpy", "PyYAML", "huggingface_hub"]
+    "exclude_packages": ["torch", "PyYAML", "huggingface_hub"]
   },
   "openstackclient": {
     "extra_packages": ["python-heatclient", "python-octaviaclient"],

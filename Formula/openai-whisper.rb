@@ -20,7 +20,6 @@ class OpenaiWhisper < Formula
   depends_on "ffmpeg"
   depends_on "huggingface-cli"
   depends_on "llvm@14"
-  depends_on "numpy"
   depends_on "python@3.11"
   depends_on "pytorch"
   depends_on "pyyaml"
@@ -47,6 +46,12 @@ class OpenaiWhisper < Formula
   resource "numba" do
     url "https://files.pythonhosted.org/packages/1c/b4/7fbe9b83c8b6b132527c62f7e97c15fc135a7f0e1c4c73432c2e43e8a5f7/numba-0.57.0rc1.tar.gz"
     sha256 "3cd0510f3557524010338e65e395eeb035345fa4bf8cd2375023145334ddcf00"
+  end
+
+  # numba needs to support numpy 1.25, https://github.com/numba/numba/issues/8698
+  resource "numpy" do
+    url "https://files.pythonhosted.org/packages/2c/d4/590ae7df5044465cc9fa2db152ae12468694d62d952b1528ecff328ef7fc/numpy-1.24.3.tar.gz"
+    sha256 "ab344f1bf21f140adab8e47fdbc7c35a477dc01408791f8ba00d018dd0bc5155"
   end
 
   resource "regex" do
