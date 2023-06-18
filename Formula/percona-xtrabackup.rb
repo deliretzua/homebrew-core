@@ -2,10 +2,9 @@ class PerconaXtrabackup < Formula
   desc "Open source hot backup tool for InnoDB and XtraDB databases"
   homepage "https://www.percona.com/software/mysql-database/percona-xtrabackup"
   # TODO: Check if we can use unversioned `protobuf` at version bump
-  url "https://downloads.percona.com/downloads/Percona-XtraBackup-LATEST/Percona-XtraBackup-8.0.32-26/source/tarball/percona-xtrabackup-8.0.32-26.tar.gz"
-  sha256 "2a1c23497ffd5905d6dc20bdb5a801d1b8baeb3245ec11ed115dee0d78b7a5e2"
+  url "https://downloads.percona.com/downloads/Percona-XtraBackup-LATEST/Percona-XtraBackup-8.0.33-27/source/tarball/percona-xtrabackup-8.0.33-27.tar.gz"
+  sha256 "64b3b0ecaab5a5ee50af02ec40f12664bfe4c94f929ff0c189705ae886da0b12"
   license "GPL-2.0-only"
-  revision 2
 
   livecheck do
     url "https://docs.percona.com/percona-xtrabackup/latest/"
@@ -66,8 +65,8 @@ class PerconaXtrabackup < Formula
 
   # Should be installed before DBD::mysql
   resource "Devel::CheckLib" do
-    url "https://cpan.metacpan.org/authors/id/M/MA/MATTN/Devel-CheckLib-1.14.tar.gz"
-    sha256 "f21c5e299ad3ce0fdc0cb0f41378dca85a70e8d6c9a7599f0e56a957200ec294"
+    url "https://cpan.metacpan.org/authors/id/M/MA/MATTN/Devel-CheckLib-1.16.tar.gz"
+    sha256 "869d38c258e646dcef676609f0dd7ca90f085f56cf6fd7001b019a5d5b831fca"
   end
 
   # This is not part of the system Perl on Linux and on macOS since Mojave
@@ -94,6 +93,14 @@ class PerconaXtrabackup < Formula
   patch do
     url "https://raw.githubusercontent.com/Homebrew/formula-patches/030f7433e89376ffcff836bb68b3903ab90f9cdc/mysql/boost-check.patch"
     sha256 "af27e4b82c84f958f91404a9661e999ccd1742f57853978d8baec2f993b51153"
+  end
+
+  # Fix for "Cannot find system zlib libraries" even though they are installed.
+  # https://bugs.mysql.com/bug.php?id=110745
+  # https://bugs.mysql.com/bug.php?id=111467
+  patch do
+    url "https://bugs.mysql.com/file.php?id=32361&bug_id=111467"
+    sha256 "3fe1ebb619583fc1778b249042184ef48a4f85555c573fb3618697cf024d19cc"
   end
 
   def install
