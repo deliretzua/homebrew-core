@@ -1,8 +1,8 @@
 class Tflint < Formula
   desc "Linter for Terraform files"
   homepage "https://github.com/terraform-linters/tflint"
-  url "https://github.com/terraform-linters/tflint/archive/v0.46.1.tar.gz"
-  sha256 "a37f2095765a7706e7c2dbdd7f2cd7a14f11b1ff2b7186c61f92c6414d729932"
+  url "https://github.com/terraform-linters/tflint/archive/v0.47.0.tar.gz"
+  sha256 "2e9cefebb18e4fb15faa217dd2005feda2fdcabb7948d1298773b8458bb04abe"
   license "MPL-2.0"
   head "https://github.com/terraform-linters/tflint.git", branch: "master"
 
@@ -39,8 +39,7 @@ class Tflint < Formula
     EOS
 
     # tflint returns exitstatus: 0 (no issues), 2 (errors occured), 3 (no errors but issues found)
-    assert_match "", shell_output("#{bin}/tflint test.tf")
-    assert_equal 0, $CHILD_STATUS.exitstatus
+    assert_empty shell_output("#{bin}/tflint --filter=test.tf")
     assert_match version.to_s, shell_output("#{bin}/tflint --version")
   end
 end
