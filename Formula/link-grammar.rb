@@ -1,15 +1,10 @@
 class LinkGrammar < Formula
   desc "Carnegie Mellon University's link grammar parser"
-  homepage "https://www.abisource.com/projects/link-grammar/"
-  url "https://www.abisource.com/downloads/link-grammar/5.12.0/link-grammar-5.12.0.tar.gz"
-  sha256 "3f113daca2bd3ec8c20c7f86d5ef7e56cf8f80135f903bb7569924d6d0720383"
+  homepage "https://github.com/opencog/link-grammar"
+  url "https://github.com/opencog/link-grammar/archive/refs/tags/link-grammar-5.12.3.tar.gz"
+  sha256 "e0cd1b94cc9af20e5bd9a04604a714e11efe21ae5e453b639cdac050b6ac4150"
   license "LGPL-2.1-or-later"
   head "https://github.com/opencog/link-grammar.git", branch: "master"
-
-  livecheck do
-    url :homepage
-    regex(/href=.*?link-grammar[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
 
   bottle do
     rebuild 1
@@ -29,19 +24,22 @@ class LinkGrammar < Formula
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "python@3.11" => :build
+  depends_on "swig" => :build
 
   uses_from_macos "flex" => :build
   uses_from_macos "libedit"
   uses_from_macos "sqlite"
 
-  # Fix for fatal error: 'threads.h' file not found
-  # remove in next release
+  # upstream build patch ref, https://github.com/opencog/link-grammar/pull/1473
   patch do
-    url "https://github.com/opencog/link-grammar/commit/725de848e4ac832ba7cd876e01f3d6a67d6e578b.patch?full_index=1"
-    sha256 "e167c0c5a2713b539099ea1839c31801709e3fd5c9368eae9aa3f480fa5f1f13"
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/6de1efe/link-grammar/5.12.3.patch"
+    sha256 "20d2c503ee2b50198d09ce5b69e39b4b88d9e8df849621e7b9f493f45c78ed1d"
   end
 
   def install
+    # Workaround for Xcode 14.3.
+    ENV.append_to_cflags "-Wno-implicit-function-declaration"
+
     ENV["PYTHON_LIBS"] = "-undefined dynamic_lookup"
     inreplace "bindings/python/Makefile.am", "$(PYTHON_LDFLAGS) -module -no-undefined",
                                              "$(PYTHON_LDFLAGS) -module"
