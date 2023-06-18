@@ -6,6 +6,16 @@ class Shush < Formula
   license "MIT"
   head "https://github.com/realestate-com-au/shush.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "04d35e69dcee48532071a02c70af5858b6d9297d4361d1a541501902ca0c51ca"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "04d35e69dcee48532071a02c70af5858b6d9297d4361d1a541501902ca0c51ca"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "04d35e69dcee48532071a02c70af5858b6d9297d4361d1a541501902ca0c51ca"
+    sha256 cellar: :any_skip_relocation, ventura:        "2645da3c73c6c1feb774393d5660475f835f0d32c81077942b91e42d3cabb154"
+    sha256 cellar: :any_skip_relocation, monterey:       "2645da3c73c6c1feb774393d5660475f835f0d32c81077942b91e42d3cabb154"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2645da3c73c6c1feb774393d5660475f835f0d32c81077942b91e42d3cabb154"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "105e00c20659fb62b2e0ca42914d109ab87beb7aca584a841c707fc6e86f25d6"
+  end
+
   depends_on "go" => :build
 
   def install
