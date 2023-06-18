@@ -114,7 +114,7 @@ class OpenMpi < Formula
       call MPI_FINALIZE(ierror)
       end
     EOS
-    system bin/"mpif90", "hellof.f90", "-o", "hellof"
+    system bin/"mpifort", "hellof.f90", "-o", "hellof"
     system "./hellof"
     system bin/"mpirun", "./hellof"
   end
