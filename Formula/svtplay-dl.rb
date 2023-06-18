@@ -3,8 +3,8 @@ class SvtplayDl < Formula
 
   desc "Download videos from https://www.svtplay.se/"
   homepage "https://svtplay-dl.se/"
-  url "https://files.pythonhosted.org/packages/cf/c0/da6cecbf6c7d3cbd57b94d6bc9c473093aa0e7049d24fdfb685532201ab9/svtplay-dl-4.22.tar.gz"
-  sha256 "2f4336fad32a65fe8b93704acebd751c8ec1bcd2fcccf2ec4bc6e57acbb3e7c1"
+  url "https://files.pythonhosted.org/packages/e1/34/a5e61f64991f1bb399f74b8708cdf3834a7fda1e91c5cdb49389710537a7/svtplay-dl-4.23.tar.gz"
+  sha256 "e8e89036893c6fc0cc62fbbe61ae4e47db2187940d71538b88876f4a4075d00d"
   license "MIT"
 
   bottle do
@@ -59,8 +59,8 @@ class SvtplayDl < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
-    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
+    url "https://files.pythonhosted.org/packages/d6/af/3b4cfedd46b3addab52e84a71ab26518272c23c77116de3c61ead54af903/urllib3-2.0.3.tar.gz"
+    sha256 "bee28b5e56addb8226c96f7f13ac28cb4c301dd5ea8a6ca179c0b9835e032825"
   end
 
   def install
