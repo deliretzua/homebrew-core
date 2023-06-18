@@ -5,6 +5,16 @@ class Typical < Formula
   sha256 "9f6895454d97c0c3b0e44e0bfe0e68a6558b8ac8c06a52ee6a04c37b4932173e"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "04f006e87de37040a84b5fdd2a9ecb008cfeeabb5dc14b10ff3a0f8c63a2d962"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "887d809889aa4f52bac43f45a40463c7fae5e6b92475c628a98209e599763f43"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1f1ee0813fcd5d3c081c762069dbd435bb91981451fa6b55f2c010787eb59fd5"
+    sha256 cellar: :any_skip_relocation, ventura:        "c9a4977eb9924d3f8e27cbbcfad0f04713f23898f62f9690ba3f842c38e232da"
+    sha256 cellar: :any_skip_relocation, monterey:       "d05ed6d00876f6cea6459286a5d79ebc6f729cfeb6218c63c7ceeb61ccbcfab0"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2d15a7bebb195cda07b3b3eddb52e2bd885946e501fecfabaf3d82360132762b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d6ac806c8862454fd75a2a6ea2721b3c28801db80df5febaf38798c2265e45a5"
+  end
+
   depends_on "rust" => :build
 
   def install
