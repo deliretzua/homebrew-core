@@ -1,12 +1,11 @@
 class Libpulsar < Formula
   desc "Apache Pulsar C++ library"
   homepage "https://pulsar.apache.org/"
-  # TODO: Check if we can use unversioned `protobuf` at version bump
   url "https://dlcdn.apache.org/pulsar/pulsar-client-cpp-3.2.0/apache-pulsar-client-cpp-3.2.0.tar.gz"
   mirror "https://archive.apache.org/dist/pulsar/pulsar-client-cpp-3.2.0/apache-pulsar-client-cpp-3.2.0.tar.gz"
   sha256 "e1d007d140906e4e7fc2b47414d551f3c7024bd9d35c8be1bbde3078dc2bddbc"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "1d5954454a678d3b0af7bbcaa76397840de44410d7efdaa863112ddee67d2d99"
@@ -22,20 +21,25 @@ class Libpulsar < Formula
   depends_on "pkg-config" => :build
   depends_on "boost"
   depends_on "openssl@3"
-  depends_on "protobuf@21"
+  depends_on "protobuf"
   depends_on "snappy"
   depends_on "zstd"
 
   uses_from_macos "curl"
 
   def install
-    system "cmake", ".", *std_cmake_args,
+    # Needed for `protobuf`, which depends on `abseil`.
+    inreplace "CMakeLists.txt", "CMAKE_CXX_STANDARD 11", "CMAKE_CXX_STANDARD 17"
+    system "cmake", "-S", ".", "build",
                     "-DBUILD_TESTS=OFF",
+                    "-DCMAKE_FIND_PACKAGE_PREFER_CONFIG=ON", # protocolbuffers/protobuf#12292
+                    "-Dprotobuf_MODULE_COMPATIBLE=ON", # protocolbuffers/protobuf#1931
                     "-DBoost_INCLUDE_DIRS=#{Formula["boost"].include}",
-                    "-DProtobuf_INCLUDE_DIR=#{Formula["protobuf@21"].include}",
-                    "-DProtobuf_LIBRARIES=#{Formula["protobuf@21"].lib/shared_library("libprotobuf")}"
-    system "make", "pulsarShared", "pulsarStatic"
-    system "make", "install"
+                    "-DProtobuf_INCLUDE_DIR=#{Formula["protobuf"].include}",
+                    "-DProtobuf_LIBRARIES=#{Formula["protobuf"].lib/shared_library("libprotobuf")}",
+                    *std_cmake_args
+    system "cmake", "--build", "build", "--target", "pulsarShared", "pulsarStatic"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -48,9 +52,7 @@ class Libpulsar < Formula
       }
     EOS
 
-    # Protobuf include can be removed when this depends on unversioned protobuf.
-    system ENV.cxx, "-std=gnu++11", "-I#{Formula["protobuf@21"].opt_include}",
-                    "test.cc", "-L#{lib}", "-lpulsar", "-o", "test"
+    system ENV.cxx, "-std=gnu++11", "test.cc", "-L#{lib}", "-lpulsar", "-o", "test"
     system "./test"
   end
 end
