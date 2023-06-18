@@ -3,9 +3,8 @@ require "language/node"
 class ContentfulCli < Formula
   desc "Contentful command-line tools"
   homepage "https://github.com/contentful/contentful-cli"
-  # contentful-cli should only be updated every 5 releases on multiples of 5
-  url "https://registry.npmjs.org/contentful-cli/-/contentful-cli-2.6.20.tgz"
-  sha256 "f12c2a9ce5b96c29b410d4fc34f0604e2de0da624578005aaa1a40f1b4c96a13"
+  url "https://registry.npmjs.org/contentful-cli/-/contentful-cli-2.6.22.tgz"
+  sha256 "7913b1bc88463145c89cc8d73087e759b39e53f3ab2b9ad33f50c31c74282d87"
   license "MIT"
   head "https://github.com/contentful/contentful-cli.git", branch: "master"
 
