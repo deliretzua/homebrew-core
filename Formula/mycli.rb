@@ -9,14 +9,14 @@ class Mycli < Formula
   revision 1
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any,                 arm64_ventura:  "e749be0d2f72c14d0ee6587100ba897450ff070f388d9d4d8d46503e550053e6"
-    sha256 cellar: :any,                 arm64_monterey: "01217ce9195173ffcd2bfc7787fe57ca72ea6c4c870d52b2e2d1ecf26f468c7b"
-    sha256 cellar: :any,                 arm64_big_sur:  "5b6ae4530094df409fd56246eab6991a8e4de99baa1b1923603e054271a40e6c"
-    sha256 cellar: :any,                 ventura:        "48c9c64905e2fbe572fb26af97808e25650cd7673ba8bd3600f3b03c550b284a"
-    sha256 cellar: :any,                 monterey:       "c3a0e82ac0cb61ca8ebb348e9ab1e8073d7182562ba82be7061b3083f2c98b9f"
-    sha256 cellar: :any,                 big_sur:        "5fec4b3826f08768c14249c323502871ba533c7052d7d06fa686d5cb9d838f89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4b325f9f70bebddad5da2c2189d5a8cb0f424511aff93b00f1644f8fed50443"
+    rebuild 5
+    sha256 cellar: :any,                 arm64_ventura:  "9310b7a9479c4f0add8aa8eec0b7ca2e9ae0adea9a71453e7dceff5e09a12496"
+    sha256 cellar: :any,                 arm64_monterey: "c1084c3c12cbd31cfb15e2b5f2aa4c756fcb3aea7bb11aa686fcd18635373444"
+    sha256 cellar: :any,                 arm64_big_sur:  "23df548c32be9ac9a51e96606dbce8ee47c50063ae4f3bce141be1b27bd1ee1a"
+    sha256 cellar: :any,                 ventura:        "446d4723faa73beef9f7ffb2b5e538ca7e85bea21dc3a1c9fd89e4462f0da85d"
+    sha256 cellar: :any,                 monterey:       "cbdb4cd22319b6518036e469a4ebceeb739794538981afc3e86b1a3d4444c209"
+    sha256 cellar: :any,                 big_sur:        "12f4fe455d2f274f9a61648649c4c026d3edd43da03188fcfb600fac2e0cf17b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0f8f52c55f6ae4107ae304be1369248021a39eaaccac857045f74ba72d2e176"
   end
 
   depends_on "rust" => :build
