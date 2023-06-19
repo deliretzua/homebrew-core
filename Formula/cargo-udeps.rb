@@ -15,8 +15,12 @@ class CargoUdeps < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "40f97acc5f1d9746d17a0e4ddf080876a18823443a1575df6689bd914028ba25"
   end
 
-  depends_on "rust" => [:build, :test]
-  depends_on "openssl@3"
+  depends_on "rust" => :build
+  depends_on "rustup-init" => :test
+  depends_on "libgit2"
+  depends_on "libssh2"
+  # TODO: Upgrade to openssl@3 when libssh2 uses openssl@3 as well.
+  depends_on "openssl@1.1"
 
   uses_from_macos "zlib"
 
@@ -25,10 +29,29 @@ class CargoUdeps < Formula
   end
 
   def install
-    system "cargo", "install", *std_cargo_args
+    ENV["LIBGIT2_SYS_USE_PKG_CONFIG"] = "1"
+    ENV["LIBSSH2_SYS_USE_PKG_CONFIG"] = "1"
+    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+    system "cargo", "install", "--no-default-features", *std_cargo_args
+  end
+
+  def check_binary_linkage(binary, library)
+    binary.dynamically_linked_libraries.any? do |dll|
+      next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
+
+      File.realpath(dll) == File.realpath(library)
+    end
   end
 
   test do
+    # Show that we can use a different toolchain than the one provided by the `rust` formula.
+    # https://github.com/Homebrew/homebrew-core/pull/134074#pullrequestreview-1484979359
+    ENV["RUSTUP_INIT_SKIP_PATH_CHECK"] = "yes"
+    system "#{Formula["rustup-init"].bin}/rustup-init", "-y", "--no-modify-path"
+    ENV.prepend_path "PATH", HOMEBREW_CACHE/"cargo_cache/bin"
+    system "rustup", "default", "beta"
+
     crate = testpath/"demo-crate"
     mkdir crate do
       (crate/"src/main.rs").write "// Dummy file"
@@ -44,6 +67,16 @@ class CargoUdeps < Formula
       output = shell_output("cargo udeps 2>&1", 101)
       # `cargo udeps` can be installed on Rust stable, but only runs with cargo with `cargo +nightly udeps`
       assert_match "error: the option `Z` is only accepted on the nightly compiler", output
+    end
+
+    [
+      Formula["libgit2"].opt_lib/shared_library("libgit2"),
+      Formula["libssh2"].opt_lib/shared_library("libssh2"),
+      Formula["openssl@1.1"].opt_lib/shared_library("libssl"),
+      Formula["openssl@1.1"].opt_lib/shared_library("libcrypto"),
+    ].each do |library|
+      assert check_binary_linkage(bin/"cargo-udeps", library),
+             "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end
 end
