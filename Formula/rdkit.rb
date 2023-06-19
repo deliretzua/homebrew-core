@@ -1,10 +1,9 @@
 class Rdkit < Formula
   desc "Open-source chemoinformatics library"
   homepage "https://rdkit.org/"
-  url "https://github.com/rdkit/rdkit/archive/refs/tags/Release_2023_03_1.tar.gz"
-  sha256 "db346afbd0ba52c843926a2a62f8a38c7b774ffab37eaf382d789a824f21996c"
+  url "https://github.com/rdkit/rdkit/archive/Release_2023_03_2.tar.gz"
+  sha256 "bb43216b075b93b767e6cbaecd5e95d087da887bcdc51afd36d940d8bd9f9819"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/rdkit/rdkit.git", branch: "master"
 
   livecheck do
@@ -32,16 +31,9 @@ class Rdkit < Formula
   depends_on "eigen"
   depends_on "freetype"
   depends_on "numpy"
-  depends_on "postgresql@14"
+  depends_on "postgresql@15"
   depends_on "py3cairo"
   depends_on "python@3.11"
-
-  # Fixes `error: call to undeclared function` in YAeHMOP
-  # Remove in next release
-  patch do
-    url "https://github.com/rdkit/rdkit/commit/181a29c2953a679fc8a6a22722fe667e2823ebad.patch?full_index=1"
-    sha256 "01e3560824931e19420caf21690e0066f553a7ba4fd59b4263db8e2ad8bc1e0c"
-  end
 
   def python
     deps.map(&:to_formula)
@@ -54,11 +46,10 @@ class Rdkit < Formula
   end
 
   def postgresql
-    Formula["postgresql@14"]
+    Formula["postgresql@15"]
   end
 
   def install
-    ENV.cxx11
     ENV.libcxx
     ENV.append "CFLAGS", "-Wno-parentheses -Wno-logical-op-parentheses -Wno-format"
     ENV.append "CXXFLAGS", "-Wno-parentheses -Wno-logical-op-parentheses -Wno-format"
