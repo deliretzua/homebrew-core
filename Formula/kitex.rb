@@ -7,13 +7,13 @@ class Kitex < Formula
   head "https://github.com/cloudwego/kitex.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "67ac33d408b87dd50b1f733c86fcd74880a6aeaa19d7fadd72f6ae264d56afb3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "67ac33d408b87dd50b1f733c86fcd74880a6aeaa19d7fadd72f6ae264d56afb3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "67ac33d408b87dd50b1f733c86fcd74880a6aeaa19d7fadd72f6ae264d56afb3"
-    sha256 cellar: :any_skip_relocation, ventura:        "64161dc2ebcada5debac00cbf8ae14b24797942a0c64777fc2a571d5f1a6cd97"
-    sha256 cellar: :any_skip_relocation, monterey:       "64161dc2ebcada5debac00cbf8ae14b24797942a0c64777fc2a571d5f1a6cd97"
-    sha256 cellar: :any_skip_relocation, big_sur:        "64161dc2ebcada5debac00cbf8ae14b24797942a0c64777fc2a571d5f1a6cd97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b525955920d60acc49e11adcc29437e10d9beec11bc9454522adff162a9681b0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e0b1768e04e267d6f3b0e120766b93e020ecb77e8578ba26b3f11568e305ec76"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e0b1768e04e267d6f3b0e120766b93e020ecb77e8578ba26b3f11568e305ec76"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e0b1768e04e267d6f3b0e120766b93e020ecb77e8578ba26b3f11568e305ec76"
+    sha256 cellar: :any_skip_relocation, ventura:        "0855b776c6c3ea45cd0d9385951e688acface97e297c76bde3469c7de6dfdfd1"
+    sha256 cellar: :any_skip_relocation, monterey:       "0855b776c6c3ea45cd0d9385951e688acface97e297c76bde3469c7de6dfdfd1"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0855b776c6c3ea45cd0d9385951e688acface97e297c76bde3469c7de6dfdfd1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "133bc4177e056083b289d8d8851cbb427c2f58f289a143c15616c5bca08cda99"
   end
 
   depends_on "go" => [:build, :test]
