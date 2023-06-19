@@ -1,8 +1,8 @@
 class CargoOutdated < Formula
   desc "Cargo subcommand for displaying when Rust dependencies are out of date"
   homepage "https://github.com/kbknapp/cargo-outdated"
-  url "https://github.com/kbknapp/cargo-outdated/archive/v0.11.2.tar.gz"
-  sha256 "7e82d1507594d86cb1c2007d58e329a9780a22bdb0f38d5e71d2692a7f1727d9"
+  url "https://github.com/kbknapp/cargo-outdated/archive/v0.13.0.tar.gz"
+  sha256 "2a20592225cd389aeec4eec6e7a410c709d37761e68116c753f55c935b64b8b8"
   license "MIT"
   head "https://github.com/kbknapp/cargo-outdated.git", branch: "master"
 
@@ -26,6 +26,14 @@ class CargoOutdated < Formula
     ENV["OPENSSL_NO_VENDOR"] = "1"
     ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
     system "cargo", "install", *std_cargo_args
+  end
+
+  def check_binary_linkage(binary, library)
+    binary.dynamically_linked_libraries.any? do |dll|
+      next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
+
+      File.realpath(dll) == File.realpath(library)
+    end
   end
 
   test do
@@ -55,6 +63,15 @@ class CargoOutdated < Formula
       output = shell_output("cargo outdated 2>&1")
       # libc 0.1 is outdated
       assert_match "libc", output
+    end
+
+    [
+      Formula["libgit2"].opt_lib/shared_library("libgit2"),
+      Formula["openssl@1.1"].opt_lib/shared_library("libssl"),
+      Formula["openssl@1.1"].opt_lib/shared_library("libcrypto"),
+    ].each do |library|
+      assert check_binary_linkage(bin/"cargo-outdated", library),
+             "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end
 end
