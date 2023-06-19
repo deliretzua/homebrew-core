@@ -7,7 +7,7 @@ class Mvnvm < Formula
   head "https://bitbucket.org/mjensen/mvnvm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e5972158580c13bc554d6ad665334b95d6bd34be8af87416c6b614817d3e7e58"
+    sha256 cellar: :any_skip_relocation, all: "53a0e70d81fe15c525dd0532f31fa39887f27ca649946872d5d02fad928320f8"
   end
 
   depends_on "openjdk"
