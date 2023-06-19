@@ -8,13 +8,13 @@ class Libpulsar < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "1d5954454a678d3b0af7bbcaa76397840de44410d7efdaa863112ddee67d2d99"
-    sha256 cellar: :any,                 arm64_monterey: "4f3ea95040aedcc6da3fa08b643034bdd6816403bc1e4805461a6c5902d5a689"
-    sha256 cellar: :any,                 arm64_big_sur:  "5327d0e1eb17d36b7bf7ce7950852f7eaff9fb58e560e883a7018397165572a4"
-    sha256 cellar: :any,                 ventura:        "3013318354bb7fdb44cebd471b75b586764693f1e2b19cd61be66398bf857fda"
-    sha256 cellar: :any,                 monterey:       "164935fb11d0a181bef72b449c7dc3fed659c7c5d7f386b2cbc4fdc7df635977"
-    sha256 cellar: :any,                 big_sur:        "e2880b265a37eb4f83f3d1191c79eb09e835b244a7ca8b6dc70feeb4cd47410e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0bdba767f277220ec672188041c9fbb1c770e6339286727188ff66727e043c29"
+    sha256 cellar: :any,                 arm64_ventura:  "8aed0f192e8caa52051370b0454ce872653a8938241ecb136f700a247aec58df"
+    sha256 cellar: :any,                 arm64_monterey: "0ad3463e30162b070506c59bbe0ff288e297f8d89831b0444ff9a8d085adfb76"
+    sha256 cellar: :any,                 arm64_big_sur:  "b86c0e9b4c84e559e5182ceb1f720054c9da414532f7a2e0bf0f2fb2fc4938eb"
+    sha256 cellar: :any,                 ventura:        "d4038495856d80b0a6b8c86c6412ec8d20d87816b7a74ecaf4acc9b42b81a295"
+    sha256 cellar: :any,                 monterey:       "a1f7e567a075f2deee16230a6f18e24c48b0507274971e8ee7c2cc8624048070"
+    sha256 cellar: :any,                 big_sur:        "c29ced7b5c01b87521012b160d6e43a289f0c0018800b90e851a7a6abe47f975"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "84b062d0ad14db67d13baed3724f1908313d06e4ce5b5564d650db2586fe2e3d"
   end
 
   depends_on "cmake" => :build
