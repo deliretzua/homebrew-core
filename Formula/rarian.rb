@@ -1,12 +1,12 @@
 class Rarian < Formula
   desc "Documentation metadata library"
   homepage "https://rarian.freedesktop.org/"
-  url "https://rarian.freedesktop.org/Releases/rarian-0.8.1.tar.bz2"
-  sha256 "aafe886d46e467eb3414e91fa9e42955bd4b618c3e19c42c773026b205a84577"
+  url "https://gitlab.freedesktop.org/rarian/rarian/-/releases/0.8.4/downloads/assets/rarian-0.8.4.tar.bz2"
+  sha256 "55624f9001fce8f6c8032d7d57bf2acfe7c150bafb3b1bb715319a1b2eb9b2c5"
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "https://rarian.freedesktop.org/Releases/"
+    url :homepage
     regex(/href=.*?rarian[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
@@ -28,6 +28,8 @@ class Rarian < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
+  depends_on "pkg-config" => :build
+  depends_on "tinyxml"
 
   conflicts_with "scrollkeeper",
     because: "rarian and scrollkeeper install the same binaries"
@@ -41,9 +43,9 @@ class Rarian < Formula
   end
 
   test do
-    seriesid1 = shell_output(bin/"rarian-sk-gen-uuid").strip
+    seriesid1 = shell_output("#{bin}/rarian-sk-gen-uuid").strip
     sleep 5
-    seriesid2 = shell_output(bin/"rarian-sk-gen-uuid").strip
+    seriesid2 = shell_output("#{bin}/rarian-sk-gen-uuid").strip
     assert_match(/^\h+(?:-\h+)+$/, seriesid1)
     assert_match(/^\h+(?:-\h+)+$/, seriesid2)
     refute_equal seriesid1, seriesid2
