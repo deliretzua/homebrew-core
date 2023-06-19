@@ -21,6 +21,7 @@ class CargoDeny < Formula
   depends_on "rust" => :build
   depends_on "rustup-init" => :test
   depends_on "libgit2@1.5"
+  depends_on "libssh2"
   depends_on "openssl@1.1"
 
   def install
@@ -70,6 +71,7 @@ class CargoDeny < Formula
 
     [
       Formula["libgit2@1.5"].opt_lib/shared_library("libgit2"),
+      Formula["libssh2"].opt_lib/shared_library("libssh2"),
       Formula["openssl@1.1"].opt_lib/shared_library("libssl"),
     ].each do |library|
       assert check_binary_linkage(bin/"cargo-deny", library),
