@@ -6,7 +6,7 @@ class Mysql < Formula
   url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.33.tar.gz"
   sha256 "ae31e6368617776b43c82436c3736900067fada1289032f3ac3392f7380bcb58"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
-  revision 2
+  revision 3
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/?tpl=files&os=src"
@@ -29,7 +29,7 @@ class Mysql < Formula
   depends_on "libevent"
   depends_on "libfido2"
   depends_on "lz4"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "protobuf@21" # https://bugs.mysql.com/bug.php?id=111469
   depends_on "zlib" # Zlib 1.2.12+
   depends_on "zstd"
