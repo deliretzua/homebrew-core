@@ -6,7 +6,7 @@ class Cppzmq < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6b673dce7551eb003535d482b5619b37e027e7ca207411183d737cda436e7b31"
+    sha256 cellar: :any_skip_relocation, all: "d454ccf680d7bada36024214a31369dc301c2a0aeeae0852b8d23d97b6457a36"
   end
 
   depends_on "cmake" => :build
