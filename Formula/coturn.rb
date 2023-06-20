@@ -4,6 +4,7 @@ class Coturn < Formula
   url "https://github.com/coturn/coturn/archive/refs/tags/4.6.2.tar.gz"
   sha256 "13f2a38b66cffb73d86b5ed24acba4e1371d738d758a6039e3a18f0c84c176ad"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -24,9 +25,11 @@ class Coturn < Formula
   depends_on "hiredis"
   depends_on "libevent"
   depends_on "libpq"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
+    ENV["SSL_CFLAGS"] = "-I#{Formula["openssl@3"].opt_include}"
+    ENV["SSL_LIBS"] = "-L#{Formula["openssl@3"].opt_lib} -lssl -lcrypto"
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
