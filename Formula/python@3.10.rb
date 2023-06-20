@@ -4,6 +4,7 @@ class PythonAT310 < Formula
   url "https://www.python.org/ftp/python/3.10.12/Python-3.10.12.tgz"
   sha256 "a43cd383f3999a6f4a7db2062b2fc9594fefa73e175b3aedafa295a51a7bb65c"
   license "Python-2.0"
+  revision 1
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -28,7 +29,7 @@ class PythonAT310 < Formula
   depends_on "pkg-config" => :build
   depends_on "gdbm"
   depends_on "mpdecimal"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "readline"
   depends_on "sqlite"
   depends_on "xz"
@@ -130,7 +131,7 @@ class PythonAT310 < Formula
       --datadir=#{share}
       --without-ensurepip
       --enable-loadable-sqlite-extensions
-      --with-openssl=#{Formula["openssl@1.1"].opt_prefix}
+      --with-openssl=#{Formula["openssl@3"].opt_prefix}
       --with-dbmliborder=gdbm:ndbm
       --enable-optimizations
       --with-system-expat
@@ -201,7 +202,7 @@ class PythonAT310 < Formula
     # `brew install enchant && pip install pyenchant`
     inreplace "./Lib/ctypes/macholib/dyld.py" do |f|
       f.gsub! "DEFAULT_LIBRARY_FALLBACK = [",
-              "DEFAULT_LIBRARY_FALLBACK = [ '#{HOMEBREW_PREFIX}/lib', '#{Formula["openssl@1.1"].opt_lib}',"
+              "DEFAULT_LIBRARY_FALLBACK = [ '#{HOMEBREW_PREFIX}/lib', '#{Formula["openssl@3"].opt_lib}',"
       f.gsub! "DEFAULT_FRAMEWORK_FALLBACK = [", "DEFAULT_FRAMEWORK_FALLBACK = [ '#{HOMEBREW_PREFIX}/Frameworks',"
     end
 
