@@ -4,6 +4,7 @@ class Systemd < Formula
   url "https://github.com/systemd/systemd/archive/v253.tar.gz"
   sha256 "acbd86d42ebc2b443722cb469ad215a140f504689c7a9133ecf91b235275a491"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
+  revision 1
   head "https://github.com/systemd/systemd.git", branch: "main"
 
   bottle do
@@ -31,7 +32,7 @@ class Systemd < Formula
   depends_on "libcap"
   depends_on :linux
   depends_on "lz4"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "util-linux" # for libmount
   depends_on "xz"
   depends_on "zstd"
@@ -42,7 +43,7 @@ class Systemd < Formula
     ENV["PYTHONPATH"] = Formula["jinja2-cli"].opt_libexec/Language::Python.site_packages("python3.11")
     ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}/systemd"
 
-    args = std_meson_args + %W[
+    args = %W[
       --sysconfdir=#{etc}
       --localstatedir=#{var}
       -Drootprefix=#{prefix}
@@ -56,7 +57,7 @@ class Systemd < Formula
       -Dgcrypt=false
     ]
 
-    system "meson", "setup", *args, "build"
+    system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build"
     system "meson", "install", "-C", "build"
   end
