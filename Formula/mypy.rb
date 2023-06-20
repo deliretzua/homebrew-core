@@ -3,8 +3,8 @@ class Mypy < Formula
 
   desc "Experimental optional static type checker for Python"
   homepage "http://www.mypy-lang.org/"
-  url "https://files.pythonhosted.org/packages/f9/88/3bfe07521fb9e74b449cbc4367434067ec70bfd8a24c652fa3e0f9597389/mypy-1.3.0.tar.gz"
-  sha256 "e1f4d16e296f5135624b34e8fb741eb0eadedca90862405b1f1fde2040b9bd11"
+  url "https://files.pythonhosted.org/packages/1b/49/c5c7b9445ee563e09e71382e7fb147480fb85fa2356846488114f61549f8/mypy-1.4.0.tar.gz"
+  sha256 "de1e7e68148a213036276d1f5303b3836ad9a774188961eb2684eddff593b042"
   license "MIT"
   head "https://github.com/python/mypy.git", branch: "master"
 
@@ -25,9 +25,10 @@ class Mypy < Formula
     sha256 "75dbf8955dc00442a438fc4d0666508a9a97b6bd41aa2f0ffe9d2f2725af0782"
   end
 
+  # The `python-typing-extensions` formula depends on `mypy`, so we use a resource here instead
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/d3/20/06270dac7316220643c32ae61694e451c98f8caf4c8eab3aa80a2bedf0df/typing_extensions-4.5.0.tar.gz"
-    sha256 "5cb5f4a79139d699607b3ef622a1dedafa84e115ab0024e0d9c044a9479ca7cb"
+    url "https://files.pythonhosted.org/packages/42/56/cfaa7a5281734dadc842f3a22e50447c675a1c5a5b9f6ad8a07b467bffe7/typing_extensions-4.6.3.tar.gz"
+    sha256 "d91d5919357fe7f681a9f2b5b4cb2a5f1ef0a1e9f59c4d8ff0d3491e05c0ffd5"
   end
 
   def install
