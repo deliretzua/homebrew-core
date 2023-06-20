@@ -7,6 +7,16 @@ class Getmail6 < Formula
   sha256 "419dc11184b147ef4daac2ec9f136b1b37e6450e2f44099629a6b7650deb044a"
   license "GPL-2.0-only"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1b78657f43b1b31999bdec34a6919fe344b3287e9c41abed5b8091c3b116f530"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1b78657f43b1b31999bdec34a6919fe344b3287e9c41abed5b8091c3b116f530"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1b78657f43b1b31999bdec34a6919fe344b3287e9c41abed5b8091c3b116f530"
+    sha256 cellar: :any_skip_relocation, ventura:        "ed5dd093960948c844fca55dddc1be98f740e43fa4e84f55f84ab92b6df00265"
+    sha256 cellar: :any_skip_relocation, monterey:       "ed5dd093960948c844fca55dddc1be98f740e43fa4e84f55f84ab92b6df00265"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ed5dd093960948c844fca55dddc1be98f740e43fa4e84f55f84ab92b6df00265"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b78657f43b1b31999bdec34a6919fe344b3287e9c41abed5b8091c3b116f530"
+  end
+
   uses_from_macos "python", since: :catalina
 
   def install
