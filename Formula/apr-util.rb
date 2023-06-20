@@ -5,21 +5,22 @@ class AprUtil < Formula
   mirror "https://archive.apache.org/dist/apr/apr-util-1.6.3.tar.bz2"
   sha256 "a41076e3710746326c3945042994ad9a4fcac0ce0277dd8fea076fec3c9772b5"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 arm64_ventura:  "6934399a13fd918d1b923b0f3c11b147b7f95252fb5346e6c2c1ff0ea469dd47"
-    sha256 arm64_monterey: "b9f49b64bb09ebbacca86db8b043eeae0d4ccbdbbc107387ac62940a0813c8b2"
-    sha256 arm64_big_sur:  "ccb19102ab96bc0ca3575931a34ebfbb8313fddd03c91d6379316f80174a84be"
-    sha256 ventura:        "0ed3fd969da7b5199386e5ad2da2c1585c273c4e9bfc3d601b3cb12984ca298a"
-    sha256 monterey:       "5bcb46d9d71cfbbcd247ead2d3eb47d587397cfd7c2c34ea5f3f855bc06985c5"
-    sha256 big_sur:        "12b7c6a3247bd7fcf1c8f240e7d1b94f1d6303ac065583806a8ac895353ac452"
-    sha256 x86_64_linux:   "8cee1baa7025531d181d2c6a49198f2095b043405ddbb8618ae9e5e36c2713fb"
+    sha256 arm64_ventura:  "5ea1b08457b4f35362a0e8fc04508039da2c75020432b66e879fe2f29ad4f0a0"
+    sha256 arm64_monterey: "a99d5cbb19fb70837640c2815cbd28203a60aac9e43d844e87c32d3a1f5a5882"
+    sha256 arm64_big_sur:  "9ee165f6e45f9942b474ec8ede6daf54f83c8aec0d9e9c94ff5f94ffeded1d88"
+    sha256 ventura:        "77a5ce9d0d7e39f5181a1a05b716c3beef0b9bcf167d9f0ff308a40ad3f3c6da"
+    sha256 monterey:       "e222f66b4f62dd199c2682c945329585d605dadad38f3ce6b4c1bb311825fa8a"
+    sha256 big_sur:        "5881ec4a073714f30439a9019e7d9f51cea1ff0d6e9a7d07f3420c592abec05f"
+    sha256 x86_64_linux:   "495e178eaab5d989721170b12daadad737b4b827e1b7dcd0e3cabe156938fed8"
   end
 
   keg_only :shadowed_by_macos, "Apple's CLT provides apr (but not apr-util)"
 
   depends_on "apr"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "expat"
   uses_from_macos "libxcrypt"
