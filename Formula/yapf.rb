@@ -3,8 +3,8 @@ class Yapf < Formula
 
   desc "Formatter for python code"
   homepage "https://github.com/google/yapf"
-  url "https://files.pythonhosted.org/packages/7a/cb/7675e1d2788ce93246f8c2e0e6ed00019c86853f92dc9226a90e0e1a1e95/yapf-0.40.0.tar.gz"
-  sha256 "7eeb8c404e386f16e24cbd785103dbc573f51cbb68e65a35f4392e0233f3d7bc"
+  url "https://files.pythonhosted.org/packages/e0/7a/9020bfa17d294b5d0d8bf26bb175ad4c90d1e3ad4039001f621ef046cb06/yapf-0.40.1.tar.gz"
+  sha256 "958587eb5c8ec6c860119a9c25d02addf30a44f75aa152a4220d30e56a98037c"
   license "Apache-2.0"
 
   bottle do
@@ -20,13 +20,13 @@ class Yapf < Formula
   depends_on "python@3.11"
 
   resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/0b/1f/9de392c2b939384e08812ef93adf37684ec170b5b6e7ea302d9f163c2ea0/importlib_metadata-6.6.0.tar.gz"
-    sha256 "92501cdf9cc66ebd3e612f1b4f0c0765dfa42f0fa38ffb319b6bd84dd675d705"
+    url "https://files.pythonhosted.org/packages/a3/82/f6e29c8d5c098b6be61460371c2c5591f4a335923639edec43b3830650a4/importlib_metadata-6.7.0.tar.gz"
+    sha256 "1aaf550d4f73e5d6783e7acb77aec43d49da8017410afae93822cc9cca98c4d4"
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/d2/5d/29eed8861e07378ef46e956650615a9677f8f48df7911674f923236ced2b/platformdirs-3.5.3.tar.gz"
-    sha256 "e48fabd87db8f3a7df7150a4a5ea22c546ee8bc39bc2473244730d4b56d2cc4e"
+    url "https://files.pythonhosted.org/packages/05/31/793923615e85deef0c25abf5d044b3f99f1348b620122ab184b7d3f70f21/platformdirs-3.6.0.tar.gz"
+    sha256 "57e28820ca8094678b807ff529196506d7a21e17156cb1cddb3e74cebce54640"
   end
 
   resource "tomli" do
@@ -39,27 +39,8 @@ class Yapf < Formula
     sha256 "112929ad649da941c23de50f356a2b5570c954b65150642bccdd66bf194d224b"
   end
 
-  # upstream patch PR, https://github.com/google/yapf/pull/1108
-  # remove this resource in next release
-  resource "grammar-txt" do
-    url "https://raw.githubusercontent.com/google/yapf/main/third_party/yapf_third_party/_ylib2to3/Grammar.txt"
-    sha256 "b88c46ec8add7a6462f783ad4d4695a16da4b58c8acae5c796e58530cabc01fe"
-  end
-
-  resource "patterngrammar-txt" do
-    url "https://raw.githubusercontent.com/google/yapf/main/third_party/yapf_third_party/_ylib2to3/PatternGrammar.txt"
-    sha256 "ee5ba5db3b6722a0e2fbe2560ebc1c883e72328ef9c3b4da1c7c5d1cc649bce3"
-  end
-
   def install
-    venv = virtualenv_create(libexec, "python3.11")
-    filtered_resources = resources.reject { |r| (r.name == "grammar-txt") || (r.name == "patterngrammar-txt") }
-    venv.pip_install filtered_resources
-    venv.pip_install_and_link buildpath
-
-    site_packages = Language::Python.site_packages("python3.11")
-    (libexec/site_packages/"yapf_third_party/_ylib2to3").install resource("grammar-txt")
-    (libexec/site_packages/"yapf_third_party/_ylib2to3").install resource("patterngrammar-txt")
+    virtualenv_install_with_resources
   end
 
   test do
