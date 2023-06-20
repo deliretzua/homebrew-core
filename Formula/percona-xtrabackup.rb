@@ -5,6 +5,7 @@ class PerconaXtrabackup < Formula
   url "https://downloads.percona.com/downloads/Percona-XtraBackup-LATEST/Percona-XtraBackup-8.0.33-27/source/tarball/percona-xtrabackup-8.0.33-27.tar.gz"
   sha256 "64b3b0ecaab5a5ee50af02ec40f12664bfe4c94f929ff0c189705ae886da0b12"
   license "GPL-2.0-only"
+  revision 1
 
   livecheck do
     url "https://docs.percona.com/percona-xtrabackup/latest/"
@@ -38,7 +39,7 @@ class PerconaXtrabackup < Formula
   depends_on "libgcrypt"
   depends_on "lz4"
   depends_on "mysql"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "protobuf@21"
   depends_on "zstd"
 
@@ -122,7 +123,7 @@ class PerconaXtrabackup < Formula
       -DWITH_LZ4=system
       -DWITH_PROTOBUF=system
       -DWITH_SSL=system
-      -DOPENSSL_ROOT_DIR=#{Formula["openssl@1.1"].opt_prefix}
+      -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
       -DWITH_ZLIB=system
       -DWITH_ZSTD=system
     ]
