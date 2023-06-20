@@ -8,6 +8,7 @@ class Curl < Formula
   mirror "http://fresh-center.net/linux/www/legacy/curl-8.1.2.tar.bz2"
   sha256 "b54974d32fd610acace92e3df1f643144015ac65847f0a041fdc17db6f43f243"
   license "curl"
+  revision 1
 
   livecheck do
     url "https://curl.se/download/"
@@ -40,7 +41,7 @@ class Curl < Formula
   depends_on "libnghttp2"
   depends_on "libssh2"
   depends_on "openldap"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "rtmpdump"
   depends_on "zstd"
 
@@ -55,7 +56,7 @@ class Curl < Formula
       --disable-dependency-tracking
       --disable-silent-rules
       --prefix=#{prefix}
-      --with-ssl=#{Formula["openssl@1.1"].opt_prefix}
+      --with-ssl=#{Formula["openssl@3"].opt_prefix}
       --without-ca-bundle
       --without-ca-path
       --with-ca-fallback
