@@ -8,8 +8,7 @@ class Systemd < Formula
   head "https://github.com/systemd/systemd.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 x86_64_linux: "5b28e9302d9463be40ef8847bfd663a50578d1d6b553dd1f25dc738149262349"
+    sha256 x86_64_linux: "12af7e2fc19098ecb3341fe889f10d741c1936cac8048955a0adf00c4ae5e902"
   end
 
   depends_on "coreutils" => :build
