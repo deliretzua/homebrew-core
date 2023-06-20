@@ -4,6 +4,7 @@ class Libfido2 < Formula
   url "https://github.com/Yubico/libfido2/archive/1.13.0.tar.gz"
   sha256 "51d43727e2a1c4544c7fd0ee47786f443e39f1388ada735a509ad4af0a2459ca"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "7b5d3c0959fed640408631f685d51ec26704455241ef6e04d375514d7b941563"
@@ -19,7 +20,7 @@ class Libfido2 < Formula
   depends_on "mandoc" => :build
   depends_on "pkg-config" => :build
   depends_on "libcbor"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   on_linux do
     depends_on "systemd" # for libudev
@@ -58,7 +59,7 @@ class Libfido2 < Formula
       fido_dev_info_free(&devlist, max_devices);
     }
     EOF
-    system ENV.cc, "test.c", "-I#{include}", "-I#{Formula["openssl@1.1"].include}", "-o", "test",
+    system ENV.cc, "test.c", "-I#{include}", "-I#{Formula["openssl@3"].include}", "-o", "test",
                    "-L#{lib}", "-lfido2"
     system "./test"
   end
