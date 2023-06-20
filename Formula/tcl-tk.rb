@@ -5,7 +5,7 @@ class TclTk < Formula
   mirror "https://fossies.org/linux/misc/tcl8.6.13-src.tar.gz"
   sha256 "43a1fae7412f61ff11de2cfd05d28cfc3a73762f354a417c62370a54e2caf066"
   license "TCL"
-  revision 3
+  revision 4
 
   livecheck do
     url :stable
@@ -23,7 +23,7 @@ class TclTk < Formula
     sha256 x86_64_linux:   "2dc6ae424056b9bcc423c8be83c0115df96cd0aa85d3bc45b82196136e1a57f4"
   end
 
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "zlib"
 
@@ -115,7 +115,7 @@ class TclTk < Formula
 
     resource("tcltls").stage do
       system "./configure", "--with-ssl=openssl",
-                            "--with-openssl-dir=#{Formula["openssl@1.1"].opt_prefix}",
+                            "--with-openssl-dir=#{Formula["openssl@3"].opt_prefix}",
                             "--prefix=#{prefix}",
                             "--mandir=#{man}"
       system "make", "install"
