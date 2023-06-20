@@ -7,6 +7,7 @@ class Afflib < Formula
     "BSD-4-Clause", # AFFLIB 2.0a14 and before
     :public_domain, # contributions after 2.0a14
   ]
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "025c582f57102d59d8db4620a5107ec9f32b9ef260f8ad86ac507e175a240ccc"
@@ -23,7 +24,7 @@ class Afflib < Formula
   depends_on "libcython" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "python@3.11"
 
   uses_from_macos "curl"
