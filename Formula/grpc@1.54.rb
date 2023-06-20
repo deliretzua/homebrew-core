@@ -6,6 +6,7 @@ class GrpcAT154 < Formula
       tag:      "v1.54.2",
       revision: "8871dab19b4ab5389e28474d25cfeea61283265c"
   license "Apache-2.0"
+  revision 1
 
   # The "latest" release on GitHub is sometimes for an older major/minor and
   # there's sometimes a notable gap between when a version is tagged and
@@ -35,7 +36,7 @@ class GrpcAT154 < Formula
   depends_on "pkg-config" => :test
   depends_on "abseil"
   depends_on "c-ares"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "protobuf@21"
   depends_on "re2"
 
@@ -104,7 +105,7 @@ class GrpcAT154 < Formula
     EOS
     ENV.prepend_path "PKG_CONFIG_PATH", lib/"pkgconfig"
     ENV.prepend_path "PKG_CONFIG_PATH", Formula["protobuf@21"].opt_lib/"pkgconfig"
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["openssl@1.1"].opt_lib/"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["openssl@3"].opt_lib/"pkgconfig"
     pkg_config_flags = shell_output("pkg-config --cflags --libs libcares protobuf re2 grpc++").chomp.split
     system ENV.cc, "test.cpp", "-L#{Formula["abseil"].opt_lib}", *pkg_config_flags, "-o", "test"
     system "./test"
