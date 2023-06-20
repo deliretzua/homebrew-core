@@ -4,6 +4,7 @@ class Krb5 < Formula
   url "https://kerberos.org/dist/krb5/1.21/krb5-1.21.tar.gz"
   sha256 "69f8aaff85484832df67a4bbacd99b9259bd95aab8c651fbbe65cdc9620ea93b"
   license :cannot_represent
+  revision 1
 
   livecheck do
     url :homepage
@@ -22,7 +23,7 @@ class Krb5 < Formula
 
   keg_only :provided_by_macos
 
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "bison" => :build
   uses_from_macos "libedit"
