@@ -5,6 +5,7 @@ class Neon < Formula
   mirror "https://fossies.org/linux/www/neon-0.32.5.tar.gz"
   sha256 "4872e12f802572dedd4b02f870065814b2d5141f7dbdaf708eedab826b51a58a"
   license "LGPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url :homepage
@@ -23,7 +24,7 @@ class Neon < Formula
 
   depends_on "pkg-config" => :build
   depends_on "xmlto" => :build
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "libxml2"
 
@@ -38,7 +39,7 @@ class Neon < Formula
                           "--disable-static",
                           "--disable-nls",
                           "--with-ssl=openssl",
-                          "--with-libs=#{Formula["openssl@1.1"].opt_prefix}"
+                          "--with-libs=#{Formula["openssl@3"].opt_prefix}"
     system "make", "install"
   end
 end
