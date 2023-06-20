@@ -4,6 +4,7 @@ class MysqlClient < Formula
   url "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.33.tar.gz"
   sha256 "ae31e6368617776b43c82436c3736900067fada1289032f3ac3392f7380bcb58"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
+  revision 1
 
   livecheck do
     formula "mysql"
@@ -28,7 +29,7 @@ class MysqlClient < Formula
   depends_on "libfido2"
   # GCC is not supported either, so exclude for El Capitan.
   depends_on macos: :sierra if DevelopmentTools.clang_build_version < 900
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "zlib" # Zlib 1.2.12+
   depends_on "zstd"
 
@@ -84,7 +85,7 @@ index 460d87a..36fbd60 100644
 @@ -50,7 +50,7 @@ FUNCTION(FIND_ZLIB_VERSION ZLIB_INCLUDE_DIR)
    MESSAGE(STATUS "ZLIB_INCLUDE_DIR ${ZLIB_INCLUDE_DIR}")
  ENDFUNCTION(FIND_ZLIB_VERSION)
- 
+
 -FUNCTION(FIND_SYSTEM_ZLIB)
 +MACRO(FIND_SYSTEM_ZLIB)
    FIND_PACKAGE(ZLIB)
@@ -96,6 +97,6 @@ index 460d87a..36fbd60 100644
    ENDIF()
 -ENDFUNCTION(FIND_SYSTEM_ZLIB)
 +ENDMACRO(FIND_SYSTEM_ZLIB)
- 
+
  MACRO (RESET_ZLIB_VARIABLES)
    # Reset whatever FIND_PACKAGE may have left behind.
