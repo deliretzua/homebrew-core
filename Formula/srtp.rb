@@ -4,6 +4,7 @@ class Srtp < Formula
   url "https://github.com/cisco/libsrtp/archive/v2.5.0.tar.gz"
   sha256 "8a43ef8e9ae2b665292591af62aa1a4ae41e468b6d98d8258f91478735da4e09"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/cisco/libsrtp.git", branch: "master"
 
   livecheck do
@@ -22,7 +23,7 @@ class Srtp < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
     system "./configure", "--disable-debug", "--prefix=#{prefix}", "--enable-openssl"
