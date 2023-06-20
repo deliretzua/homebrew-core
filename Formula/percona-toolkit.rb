@@ -8,6 +8,7 @@ class PerconaToolkit < Formula
   url "https://www.percona.com/downloads/percona-toolkit/3.5.3/source/tarball/percona-toolkit-3.5.3.tar.gz"
   sha256 "e60e4e8a737c77e836d0cf2bb817ad2336b368111833892818b6dd1f7080879b"
   license any_of: ["GPL-2.0-only", "Artistic-1.0-Perl"]
+  revision 1
   head "lp:percona-toolkit", using: :bzr
 
   livecheck do
@@ -26,7 +27,7 @@ class PerconaToolkit < Formula
   end
 
   depends_on "mysql-client"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "perl"
 
