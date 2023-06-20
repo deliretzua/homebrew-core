@@ -4,6 +4,7 @@ class Libssh < Formula
   url "https://www.libssh.org/files/0.10/libssh-0.10.5.tar.xz"
   sha256 "b60e2ff7f367b9eee2b5634d3a63303ddfede0e6a18dfca88c44a8770e7e4234"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https://git.libssh.org/projects/libssh.git", branch: "master"
 
   bottle do
@@ -17,7 +18,7 @@ class Libssh < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "zlib"
 
