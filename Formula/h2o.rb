@@ -4,7 +4,7 @@ class H2o < Formula
   url "https://github.com/h2o/h2o/archive/v2.2.6.tar.gz"
   sha256 "f8cbc1b530d85ff098f6efc2c3fdbc5e29baffb30614caac59d5c710f7bda201"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
     sha256 arm64_ventura:  "c03e1941f5138d1601fb16511c1a709086fe70d20b49b031e93c93cc581239f2"
@@ -19,7 +19,7 @@ class H2o < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "zlib"
 
@@ -30,7 +30,7 @@ class H2o < Formula
 
     args = std_cmake_args + %W[
       -DWITH_BUNDLED_SSL=OFF
-      -DOPENSSL_ROOT_DIR=#{Formula["openssl@1.1"].opt_prefix}
+      -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
     ]
 
     # Build shared library.
