@@ -2,6 +2,7 @@ class Pulseaudio < Formula
   desc "Sound system for POSIX OSes"
   homepage "https://wiki.freedesktop.org/www/Software/PulseAudio/"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later", "BSD-3-Clause"]
+  revision 1
 
   stable do
     url "https://www.freedesktop.org/software/pulseaudio/releases/pulseaudio-14.2.tar.xz"
@@ -46,7 +47,7 @@ class Pulseaudio < Formula
   depends_on "libsndfile"
   depends_on "libsoxr"
   depends_on "libtool"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "speexdsp"
 
   uses_from_macos "perl" => :build
@@ -102,6 +103,8 @@ class Pulseaudio < Formula
       args << "--with-udev-rules-dir=#{lib}/udev/rules.d"
     end
 
+    # Workaround for Xcode 14.3.
+    ENV.append_to_cflags "-Wno-strict-prototypes" if DevelopmentTools.clang_build_version == 1403
     if build.head?
       # autogen.sh runs bootstrap.sh then ./configure
       system "./autogen.sh", *args
