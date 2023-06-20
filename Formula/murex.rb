@@ -7,13 +7,13 @@ class Murex < Formula
   head "https://github.com/lmorg/murex.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8fd608514cbc98a1aa5063bd8ddd564d4fbefa07501ce99fa596e64f3dd1d705"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bfae2111ae24415043a997e9d3a07a6291360a90e92534738537eeea552f61df"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d89d6ca10d049b2a73c0ecaccf81440dc84f98056034bc16f341706464f27197"
-    sha256 cellar: :any_skip_relocation, ventura:        "53260bad51c7ae274783d08d2a8c70e1a8ee2f32af354b5114fb48e3d59fd401"
-    sha256 cellar: :any_skip_relocation, monterey:       "0b5e7650eabf03c78b18c43106fa6a334f8ec8c87fa13e4788530a1ab22c5e2b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2996846feb21316a7c8ad59dea745bd488906748d65d0949862a81850db789bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "424d78bf3ca6dbc80d5d25e2cd98b2098d611f7631690c607f95cf250b31e75d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6a318891757cdafc3ea9b6e2a11d4c0e3e1df9af892b5fa2c60373014a5b2d9e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f4ac55da1069594a5c6a5b3f122fdc89fed487e25c5fde376a1d5ea5369ef8e7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "897fabd2fb771cb3d341fe2737bb5ef245b03a39684837816e206d1d921b0cfc"
+    sha256 cellar: :any_skip_relocation, ventura:        "3284acc827a2652f8590ea8f428813da0295d799f601b704b39fbeeea28e1d10"
+    sha256 cellar: :any_skip_relocation, monterey:       "3af35b2de5d09f88e308be36861daada90c034fa2f3a8b74d300c003c526ef3f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "351658fb02b336086367060ebf85c6fc606188adc0db4c0db0fdc2c99ff4763a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0fc3ed74bb7e9e64a1ee7f008c1180362db0a3c9f9fe3a5dcf7992c9d97b4e5"
   end
 
   depends_on "go" => :build
