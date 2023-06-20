@@ -5,6 +5,7 @@ class Libshout < Formula
   mirror "https://ftp.osuosl.org/pub/xiph/releases/libshout/libshout-2.4.6.tar.gz"
   sha256 "39cbd4f0efdfddc9755d88217e47f8f2d7108fa767f9d58a2ba26a16d8f7c910"
   license "LGPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url "https://ftp.osuosl.org/pub/xiph/releases/libshout/?C=M&O=D"
@@ -25,12 +26,9 @@ class Libshout < Formula
   depends_on "pkg-config" => :build
   depends_on "libogg"
   depends_on "libvorbis"
+  depends_on "openssl@3"
   depends_on "speex"
   depends_on "theora"
-
-  on_linux do
-    depends_on "openssl@1.1"
-  end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
@@ -39,6 +37,8 @@ class Libshout < Formula
   end
 
   def install
+    # Workaround for Xcode 14.3
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version == 1403
     system "./configure", *std_configure_args
     system "make", "install"
   end
