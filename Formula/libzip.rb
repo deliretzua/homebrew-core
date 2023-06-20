@@ -4,6 +4,7 @@ class Libzip < Formula
   url "https://libzip.org/download/libzip-1.9.2.tar.xz", using: :homebrew_curl
   sha256 "c93e9852b7b2dc931197831438fee5295976ee0ba24f8524a8907be5c2ba5937"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url "https://libzip.org/download/"
@@ -30,7 +31,7 @@ class Libzip < Formula
   uses_from_macos "zlib"
 
   on_linux do
-    depends_on "openssl@1.1"
+    depends_on "openssl@3"
   end
 
   conflicts_with "libtcod", "minizip-ng",
