@@ -4,7 +4,7 @@ class GitSeries < Formula
   url "https://github.com/git-series/git-series/archive/0.9.1.tar.gz"
   sha256 "c0362e19d3fa168a7cb0e260fcdecfe070853b163c9f2dfd2ad8213289bc7e5f"
   license "MIT"
-  revision 8
+  revision 9
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "6f0c466c52a6c4f1e160195c07d2769e397b5c430a7e099c5e83957d15560c5f"
@@ -20,12 +20,12 @@ class GitSeries < Formula
   depends_on "rust" => :build
   depends_on "libgit2"
   depends_on "libssh2"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
     # https://crates.io/crates/openssl#manual-configuration
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     ENV["LIBGIT2_SYS_USE_PKG_CONFIG"] = "1"
@@ -67,9 +67,9 @@ class GitSeries < Formula
     linked_libraries = [
       Formula["libgit2"].opt_lib/shared_library("libgit2"),
       Formula["libssh2"].opt_lib/shared_library("libssh2"),
-      Formula["openssl@1.1"].opt_lib/shared_library("libssl"),
+      Formula["openssl@3"].opt_lib/shared_library("libssl"),
     ]
-    linked_libraries << (Formula["openssl@1.1"].opt_lib/shared_library("libcrypto")) if OS.mac?
+    linked_libraries << (Formula["openssl@3"].opt_lib/shared_library("libcrypto")) if OS.mac?
 
     linked_libraries.each do |library|
       assert check_binary_linkage(bin/"git-series", library),
