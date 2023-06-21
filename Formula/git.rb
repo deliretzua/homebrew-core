@@ -5,6 +5,7 @@ class Git < Formula
   url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.41.0.tar.xz"
   sha256 "e748bafd424cfe80b212cbc6f1bbccc3a47d4862fb1eb7988877750478568040"
   license "GPL-2.0-only"
+  revision 1
   head "https://github.com/git/git.git", branch: "master"
 
   livecheck do
@@ -31,7 +32,7 @@ class Git < Formula
 
   on_linux do
     depends_on "linux-headers@5.15" => :build
-    depends_on "openssl@1.1" # Uses CommonCrypto on macOS
+    depends_on "openssl@3" # Uses CommonCrypto on macOS
   end
 
   resource "html" do
