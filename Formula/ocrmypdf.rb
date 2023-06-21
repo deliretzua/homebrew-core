@@ -6,6 +6,7 @@ class Ocrmypdf < Formula
   url "https://files.pythonhosted.org/packages/f7/1a/d8205c672ac5d3b855a2e7eba2f7780513a7d9ce75164116faac69b33be7/ocrmypdf-14.3.0.tar.gz"
   sha256 "faa221f53771a6679ad541307a0e66e11d298a33a2840cf1908a6a46f8315ede"
   license "MPL-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "0daf0a4ad8d4033e6ddb5f159715af9a15cdc01fbdc740d0603340c504e60b04"
@@ -24,6 +25,7 @@ class Ocrmypdf < Formula
   depends_on "ghostscript"
   depends_on "jbig2enc"
   depends_on "libpng"
+  depends_on "openssl@3"
   depends_on "pillow"
   depends_on "pngquant"
   depends_on "pybind11"
