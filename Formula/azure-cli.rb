@@ -6,6 +6,7 @@ class AzureCli < Formula
   url "https://github.com/Azure/azure-cli/archive/azure-cli-2.49.0.tar.gz"
   sha256 "acac10ca3d9c3e6f507d92859cb805bd14c1f73512be35ebe8041be1d32cb310"
   license "MIT"
+  revision 1
   head "https://github.com/Azure/azure-cli.git", branch: "dev"
 
   livecheck do
@@ -24,8 +25,10 @@ class AzureCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb881c8ae780f52d227bb2e3d11997f0a48709b207ddac3d024e180b667c83df"
   end
 
-  depends_on "rust" => :build # for cryptography
-  depends_on "openssl@1.1"
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
+  depends_on "pkg-config" => :build
+  depends_on "rust" => :build
+  depends_on "openssl@3"
   depends_on "python@3.10"
 
   uses_from_macos "libffi"
@@ -745,6 +748,10 @@ class AzureCli < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     venv = virtualenv_create(libexec, "python3.10", system_site_packages: false)
     venv.pip_install resources
 
