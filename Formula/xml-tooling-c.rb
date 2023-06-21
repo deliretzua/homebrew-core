@@ -12,13 +12,13 @@ class XmlToolingC < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "258729ad7ed89afe48748058f3bfa89919373b4ef5e96f679aa95fe11ce46a17"
-    sha256 cellar: :any,                 arm64_monterey: "4a3f6d4cb0eeac79479e64aa88bc12485d54aadbf48b20cf9c7c19c13c13647b"
-    sha256 cellar: :any,                 arm64_big_sur:  "695842b73a7c76c02aeae2f9785cd213b0cb76dda28a674f659c9b8b5bced15f"
-    sha256 cellar: :any,                 ventura:        "8c27c31db50f3ae90b224554bfc5740f53c9ae9de6ada41b81e757fdf6f013ab"
-    sha256 cellar: :any,                 monterey:       "86084e15e90b6e6c4e5bab77aea90d9eb6f544abd05d6d144d648d6a29fe86ef"
-    sha256 cellar: :any,                 big_sur:        "53716cba38ac454be6691244b174e607e8d129c7e2bc653ad1807839cba842f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f6250765040e8f0eca475cbab10f59f46217cdfb4d2eb0e8a4b87d5d92a35a01"
+    sha256 cellar: :any,                 arm64_ventura:  "70546cd1bdd2b145453140464347a4c415640bf0910d8e475fe3af6cd60c5348"
+    sha256 cellar: :any,                 arm64_monterey: "132f336a4e753c773c04954d345ec2b120da10fd9af2f208d3d4649d51c4b69e"
+    sha256 cellar: :any,                 arm64_big_sur:  "c20e6377af4c3c08178d7b974567cf7edef82114d46f4f172eb60c8a4956d330"
+    sha256 cellar: :any,                 ventura:        "769896be9a616c020f41436711754b804946ff503ca6fcb4bb71607c4b88ec1d"
+    sha256 cellar: :any,                 monterey:       "ffef814bccf24853bc8779e175e2bffe4a4e548d189b3b5d70b531ae3c92579c"
+    sha256 cellar: :any,                 big_sur:        "586a2f170d7e6ebbb2f0fb77506b3de284495e29218165bad243225e2a6d6311"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b42c90c1f870961f42abc3c9d91dafe9ac66012ef11736aa4c61b72e7e87d57"
   end
 
   depends_on "pkg-config" => :build
