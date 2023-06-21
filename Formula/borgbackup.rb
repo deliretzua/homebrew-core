@@ -6,6 +6,7 @@ class Borgbackup < Formula
   url "https://files.pythonhosted.org/packages/6e/9e/e7a116401ef0c6c2766e4e49e5a3aafaa725ba0ea827305f016339c6c496/borgbackup-1.2.4.tar.gz"
   sha256 "a4bd54e9469e81b7a30a6711423115abc818d9cd844ecb1ca0e6104bc5374da8"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "ef1c21082202041276792bcc4bb0f674eff80eeed6a391eaac6c92504a04fbf4"
@@ -20,7 +21,7 @@ class Borgbackup < Formula
   depends_on "pkg-config" => :build
   depends_on "libb2"
   depends_on "lz4"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "python@3.11"
   depends_on "xxhash"
   depends_on "zstd"
@@ -49,7 +50,7 @@ class Borgbackup < Formula
     ENV["BORG_LIBLZ4_PREFIX"] = Formula["lz4"].prefix
     ENV["BORG_LIBXXHASH_PREFIX"] = Formula["xxhash"].prefix
     ENV["BORG_LIBZSTD_PREFIX"] = Formula["zstd"].prefix
-    ENV["BORG_OPENSSL_PREFIX"] = Formula["openssl@1.1"].prefix
+    ENV["BORG_OPENSSL_PREFIX"] = Formula["openssl@3"].prefix
     virtualenv_install_with_resources
 
     man1.install Dir["docs/man/*.1"]
