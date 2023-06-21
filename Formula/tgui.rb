@@ -4,6 +4,7 @@ class Tgui < Formula
   url "https://github.com/texus/TGUI/archive/v0.9.5.tar.gz"
   sha256 "819865bf13661050161bce1e1ad68530a1f234becd3358c96d8701ea4e76bcc1"
   license "Zlib"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "58265fe49f8d2e4aeb31469b53775f020c2d335ccb0499ac423a612b57312328"
@@ -20,7 +21,7 @@ class Tgui < Formula
   depends_on "sfml"
 
   def install
-    args = std_cmake_args + %W[
+    args = %W[
       -DTGUI_MISC_INSTALL_PREFIX=#{pkgshare}
       -DTGUI_BUILD_FRAMEWORK=FALSE
       -DTGUI_BUILD_EXAMPLES=TRUE
@@ -29,8 +30,9 @@ class Tgui < Formula
       -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
 
-    system "cmake", ".", *args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -43,7 +45,7 @@ class Tgui < Formula
         return 0;
       }
     EOS
-    system ENV.cxx, "test.cpp", "-std=c++1y", "-I#{include}",
+    system ENV.cxx, "test.cpp", "-std=c++17", "-I#{include}",
       "-L#{lib}", "-L#{Formula["sfml"].opt_lib}",
       "-ltgui", "-lsfml-graphics", "-lsfml-system", "-lsfml-window",
       "-o", "test"
