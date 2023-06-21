@@ -4,6 +4,7 @@ class RustupInit < Formula
   url "https://github.com/rust-lang/rustup/archive/1.26.0.tar.gz"
   sha256 "6f20ff98f2f1dbde6886f8d133fe0d7aed24bc76c670ea1fca18eb33baadd808"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d5403ee4bd950803e8ed34965dfa3e78c7792ce03d1a337f3d67e48883497030"
