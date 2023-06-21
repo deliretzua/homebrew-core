@@ -6,6 +6,7 @@ class Duplicity < Formula
   url "https://files.pythonhosted.org/packages/e1/b2/ced09654e4a85dbd9f365aa70eda0e5524cd2456701258b55546cf7c8d67/duplicity-1.2.3.tar.gz"
   sha256 "fcbcdea289128d9d0988ed66fa2408196ce940e8029ca5036254bfd2e3f4a568"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
     rebuild 1
@@ -18,13 +19,14 @@ class Duplicity < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce33b83e1e3b90a42bb2f380d2b5de94d3cfe8928de5ddd3d80baf48f9154edf"
   end
 
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "gettext" => :build # for msgfmt
   depends_on "pkg-config" => :build
-  depends_on "rust" => :build # for cryptography
+  depends_on "rust" => :build
   depends_on "cffi"
   depends_on "gnupg"
   depends_on "librsync"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "protobuf"
   depends_on "pycparser"
   depends_on "python-typing-extensions"
