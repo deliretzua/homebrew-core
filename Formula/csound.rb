@@ -5,7 +5,7 @@ class Csound < Formula
       tag:      "6.18.1",
       revision: "a1580f9cdf331c35dceb486f4231871ce0b00266"
   license "LGPL-2.1-or-later"
-  revision 2
+  revision 3
   head "https://github.com/csound/csound.git", branch: "master"
 
   livecheck do
@@ -41,6 +41,7 @@ class Csound < Formula
   depends_on "libwebsockets"
   depends_on "numpy"
   depends_on "openjdk"
+  depends_on "openssl@3"
   depends_on "portaudio"
   depends_on "portmidi"
   depends_on "python@3.11"
