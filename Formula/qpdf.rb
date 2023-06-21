@@ -4,6 +4,7 @@ class Qpdf < Formula
   url "https://github.com/qpdf/qpdf/releases/download/v11.4.0/qpdf-11.4.0.tar.gz"
   sha256 "b0180971cc1b79b2dfe02ffe28e2c88c47f735888a3a2543dd42b9054ef146e1"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "34e2ceaaf019a3fb80a48aecdeab6b48ce435736977693550c39fb27c31c82e5"
@@ -17,7 +18,7 @@ class Qpdf < Formula
 
   depends_on "cmake" => :build
   depends_on "jpeg-turbo"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "zlib"
 
