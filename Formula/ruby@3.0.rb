@@ -4,6 +4,7 @@ class RubyAT30 < Formula
   url "https://cache.ruby-lang.org/pub/ruby/3.0/ruby-3.0.6.tar.xz"
   sha256 "b5cbee93e62d85cfb2a408c49fa30a74231ae8409c2b3858e5f5ea254d7ddbd1"
   license "Ruby"
+  revision 1
 
   livecheck do
     url "https://www.ruby-lang.org/en/downloads/"
@@ -24,7 +25,7 @@ class RubyAT30 < Formula
 
   depends_on "pkg-config" => :build
   depends_on "libyaml"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "readline"
 
   uses_from_macos "libxcrypt"
@@ -36,6 +37,12 @@ class RubyAT30 < Formula
   resource "rubygems" do
     url "https://rubygems.org/rubygems/rubygems-3.4.10.tgz"
     sha256 "55f1c67fa2ae96c9751b81afad5c0f2b3792c5b19cbba6d54d8df9fd821460d3"
+  end
+
+  # Update the bundled openssl gem for compatibility with OpenSSL 3.
+  resource "openssl" do
+    url "https://github.com/ruby/openssl/archive/refs/tags/v3.1.0.tar.gz"
+    sha256 "3f099acd0b3bea791cbdde520f2d332a709bbd9144abcbe22189a20bac12c6de"
   end
 
   def api_version
@@ -50,7 +57,16 @@ class RubyAT30 < Formula
     # otherwise `gem` command breaks
     ENV.delete("SDKROOT")
 
-    paths = %w[libyaml openssl@1.1 readline].map { |f| Formula[f].opt_prefix }
+    resource("openssl").stage do
+      odie "Check if `openssl` resource is still needed!" if version > "3.0.6"
+
+      %w[ext/openssl test/openssl].map { |path| (buildpath/path).rmtree }
+      (buildpath/"ext").install "ext/openssl"
+      (buildpath/"ext/openssl").install "lib", "History.md", "openssl.gemspec"
+      (buildpath/"test").install "test/openssl"
+    end
+
+    paths = %w[libyaml openssl@3 readline].map { |f| Formula[f].opt_prefix }
     args = %W[
       --prefix=#{prefix}
       --enable-shared
