@@ -4,6 +4,7 @@ class Yara < Formula
   url "https://github.com/VirusTotal/yara/archive/refs/tags/v4.3.2.tar.gz"
   sha256 "a9587a813dc00ac8cdcfd6646d7f1c172f730cda8046ce849dfea7d3f6600b15"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/VirusTotal/yara.git", branch: "master"
 
   bottle do
@@ -22,7 +23,7 @@ class Yara < Formula
   depends_on "pkg-config" => :build
   depends_on "jansson"
   depends_on "libmagic"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "protobuf-c"
 
   def install
