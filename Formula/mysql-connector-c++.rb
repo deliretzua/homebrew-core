@@ -4,6 +4,7 @@ class MysqlConnectorCxx < Formula
   url "https://dev.mysql.com/get/Downloads/Connector-C++/mysql-connector-c++-8.0.33-src.tar.gz"
   sha256 "160cf6881fbde9bd46cd11aaf12930b676bc6e27589ac5c7ba49c196b97e053b"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
+  revision 1
 
   livecheck do
     url "https://dev.mysql.com/downloads/connector/cpp/?tpl=files&os=src"
@@ -23,7 +24,7 @@ class MysqlConnectorCxx < Formula
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "mysql-client"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
     system "cmake", "-S", ".", "-B", "build", "-DINSTALL_LIB_DIR=lib", *std_cmake_args
