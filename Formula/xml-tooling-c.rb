@@ -4,6 +4,7 @@ class XmlToolingC < Formula
   url "https://shibboleth.net/downloads/c++-opensaml/3.2.1/xmltooling-3.2.3.tar.bz2"
   sha256 "95b8296ffb1facd86eaa9f24d4a895a7c55a3cd838450b4d20bc1651fdf45132"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url "https://shibboleth.net/downloads/c++-opensaml/latest/"
@@ -23,7 +24,7 @@ class XmlToolingC < Formula
   depends_on "pkg-config" => :build
   depends_on "boost"
   depends_on "log4shib"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "xerces-c"
   depends_on "xml-security-c"
 
@@ -32,7 +33,7 @@ class XmlToolingC < Formula
   def install
     ENV.cxx11
 
-    ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["openssl@1.1"].opt_lib}/pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["openssl@3"].opt_lib}/pkgconfig"
 
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
