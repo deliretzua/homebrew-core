@@ -5,6 +5,7 @@ class AwsSdkCpp < Formula
       tag:      "1.11.103",
       revision: "811936afbb49ca803f7e9a5c5a8e7509a4a022f9"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/aws/aws-sdk-cpp.git", branch: "main"
 
   bottle do
@@ -18,7 +19,6 @@ class AwsSdkCpp < Formula
   end
 
   depends_on "cmake" => :build
-
   uses_from_macos "curl"
 
   fails_with gcc: "5"
@@ -26,7 +26,7 @@ class AwsSdkCpp < Formula
   def install
     ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath}"
     # Avoid OOM failure on Github runner
-    ENV.deparallelize if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+    ENV.deparallelize if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"].present?
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DENABLE_TESTING=OFF"
     system "cmake", "--build", "build"
@@ -45,8 +45,7 @@ class AwsSdkCpp < Formula
           return 0;
       }
     EOS
-    system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-laws-cpp-sdk-core",
-           "-o", "test"
+    system ENV.cxx, "-std=c++11", "test.cpp", "-L#{lib}", "-laws-cpp-sdk-core", "-o", "test"
     system "./test"
   end
 end
