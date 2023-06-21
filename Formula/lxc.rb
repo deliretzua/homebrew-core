@@ -11,13 +11,13 @@ class Lxc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "88bd380161b47739cf88fc289b02573257b3da1591cec551747dcac25281b782"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "88bd380161b47739cf88fc289b02573257b3da1591cec551747dcac25281b782"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "88bd380161b47739cf88fc289b02573257b3da1591cec551747dcac25281b782"
-    sha256 cellar: :any_skip_relocation, ventura:        "ade9f6985affea2a4a41eb55e6d4342d22a668ad1b63413cc9999234ce5776df"
-    sha256 cellar: :any_skip_relocation, monterey:       "ade9f6985affea2a4a41eb55e6d4342d22a668ad1b63413cc9999234ce5776df"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ade9f6985affea2a4a41eb55e6d4342d22a668ad1b63413cc9999234ce5776df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6deaca29dfba2764741996d799704851fc134a4c7733ed5d489b50aa0ede34be"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7149d9ed2e76ddcc15c8633d4d36d0016586e102936fcfe6d8d2fd990b081143"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7149d9ed2e76ddcc15c8633d4d36d0016586e102936fcfe6d8d2fd990b081143"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7149d9ed2e76ddcc15c8633d4d36d0016586e102936fcfe6d8d2fd990b081143"
+    sha256 cellar: :any_skip_relocation, ventura:        "cf1c805671dbf2e4ccd95fe33bbb8d6661573a0c1527e4e24c788e3f57d6ebe2"
+    sha256 cellar: :any_skip_relocation, monterey:       "cf1c805671dbf2e4ccd95fe33bbb8d6661573a0c1527e4e24c788e3f57d6ebe2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "cf1c805671dbf2e4ccd95fe33bbb8d6661573a0c1527e4e24c788e3f57d6ebe2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c775c27013fc5f723cedaefeeaff4bdaa7d6ea2d4bd9b214bbdb767394c8ff66"
   end
 
   depends_on "go" => :build
