@@ -6,6 +6,7 @@ class AwsElasticbeanstalk < Formula
   url "https://files.pythonhosted.org/packages/31/60/5bd0b5df1b02cffaa9b28dcb6feca1538ea6bfa85b39f8ef424a42d4c33b/awsebcli-3.20.6.tar.gz"
   sha256 "f67ea739b62866538a810bd274da872d1afe4650e829f4777e00fb5daf703f33"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     rebuild 2
@@ -18,11 +19,11 @@ class AwsElasticbeanstalk < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "58821e212c067ef0469041ef2e67379080fb86bca1b70e412c44e43c9569f013"
   end
 
-  # `pkg-config`, `rust`, and `openssl@1.1` are for cryptography.
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "python@3.11"
 
   uses_from_macos "libffi"
@@ -189,7 +190,7 @@ class AwsElasticbeanstalk < Formula
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     virtualenv_install_with_resources
