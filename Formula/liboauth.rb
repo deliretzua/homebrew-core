@@ -6,7 +6,7 @@ class Liboauth < Formula
   # if configured with '--enable-gpl' see COPYING.GPL and LICENSE.OpenSSL
   # otherwise read COPYING.MIT
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "9bc314906be04bdada39fec114bf9113b3395fbd94e5166bda71caf76bd0a517"
@@ -22,7 +22,7 @@ class Liboauth < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7d4b6121635263809e6c2294ac2852c0e8a2680cdcc0fec733e01bc83da7ac6a"
   end
 
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   # Patch for compatibility with OpenSSL 1.1
   patch :p0 do
