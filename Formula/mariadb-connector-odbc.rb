@@ -5,6 +5,7 @@ class MariadbConnectorOdbc < Formula
   mirror "https://fossies.org/linux/misc/mariadb-connector-odbc-3.1.18-src.tar.gz/"
   sha256 "a06c11b40cf1edcfe69c206eec32caf58e25fadcf53da63d65fae26437bbad7e"
   license "LGPL-2.1-or-later"
+  revision 1
 
   # https://mariadb.org/download/ sometimes lists an older version as newest,
   # so we check the JSON data used to populate the mariadb.com downloads page
@@ -26,7 +27,7 @@ class MariadbConnectorOdbc < Formula
 
   depends_on "cmake" => :build
   depends_on "mariadb-connector-c"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "unixodbc"
 
   def install
