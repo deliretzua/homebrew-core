@@ -6,6 +6,7 @@ class Awscli < Formula
   url "https://github.com/aws/aws-cli/archive/2.12.1.tar.gz"
   sha256 "f7c1285dda1abea74464e403ff736778109a429bba5d6288e9ae8c1ab442814b"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
   bottle do
@@ -18,13 +19,13 @@ class Awscli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7dd57aaede9e35c59036fda220e290d31def04ff0243a6a8a52979e34d29ce2f"
   end
 
-  # `pkg-config`, `rust`, and `openssl@1.1` are for cryptography.
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
   depends_on "docutils"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "python@3.11"
   depends_on "six"
@@ -96,7 +97,7 @@ class Awscli < Formula
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     # Temporary workaround for Xcode 14's ld causing build failure (without logging a reason):
