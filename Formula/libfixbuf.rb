@@ -4,6 +4,7 @@ class Libfixbuf < Formula
   url "https://tools.netsa.cert.org/releases/libfixbuf-2.4.2.tar.gz"
   sha256 "4286d94224a2d9e21937b50a87ee1e204768f30fd193f48f381a63743944bf08"
   license "LGPL-3.0-only"
+  revision 1
 
   # NOTE: This should be updated to check the main `/fixbuf/download.html`
   # page when it links to a stable version again in the future.
@@ -25,11 +26,11 @@ class Libfixbuf < Formula
   depends_on "pkg-config" => :build
 
   depends_on "glib"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--with-openssl=#{Formula["openssl@1.1"].opt_prefix}",
+                          "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
                           "--prefix=#{prefix}",
                           "--mandir=#{man}"
     system "make"
