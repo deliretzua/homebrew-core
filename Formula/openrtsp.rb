@@ -1,10 +1,10 @@
 class Openrtsp < Formula
   desc "Command-line RTSP client"
   homepage "http://www.live555.com/openRTSP"
-  url "http://www.live555.com/liveMedia/public/live.2023.06.14.tar.gz"
-  mirror "https://download.videolan.org/pub/videolan/testing/contrib/live555/live.2023.06.14.tar.gz"
+  url "http://www.live555.com/liveMedia/public/live.2023.06.20.tar.gz"
+  mirror "https://download.videolan.org/pub/videolan/testing/contrib/live555/live.2023.06.20.tar.gz"
   # Keep a mirror as upstream tarballs are removed after each version
-  sha256 "3da5d2270cfc2f07b381759581af60d92e642be60f491567ae1687ff9513d261"
+  sha256 "4d797e6a5f8cfd57051cd58072b9bc9f6657dea3f1ce26e901efb874d3391bba"
   license "LGPL-3.0-or-later"
 
   livecheck do
@@ -24,8 +24,18 @@ class Openrtsp < Formula
 
   depends_on "openssl@3"
 
+  # Support CXXFLAGS when building on macOS
+  # PR ref: https://github.com/rgaufman/live555/pull/46
+  # TODO: Remove once changes land in a release
+  patch do
+    url "https://github.com/rgaufman/live555/commit/16701af5486bb3a2d25a28edaab07789c8a9ce57.patch?full_index=1"
+    sha256 "2d98a782081028fe3b7daf6b2db19e99c46f0cadab2421745de907146a3595cb"
+  end
+
   def install
-    ENV.cxx11
+    # "test" was added to std::atomic_flag in C++20
+    # See https://github.com/rgaufman/live555/issues/45
+    ENV.append "CXXFLAGS", "-std=c++20"
 
     # Avoid linkage to system OpenSSL
     libs = [
@@ -33,7 +43,7 @@ class Openrtsp < Formula
       Formula["openssl@3"].opt_lib/shared_library("libssl"),
     ]
 
-    os_flag = OS.mac? ? "macosx-no-openssl" : "linux-no-openssl"
+    os_flag = OS.mac? ? "macosx-bigsur" : "linux"
     system "./genMakefiles", os_flag
     system "make", "PREFIX=#{prefix}",
            "LIBS_FOR_CONSOLE_APPLICATION=#{libs.join(" ")}", "install"
