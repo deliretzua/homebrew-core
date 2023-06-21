@@ -4,6 +4,7 @@ class Davix < Formula
   url "https://github.com/cern-fts/davix/releases/download/R_0_8_4/davix-0.8.4.tar.gz"
   sha256 "519d56f746e86ea3fd615bc49e559b520df07e051e1ca3d8c092067958f3b2b7"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https://github.com/cern-fts/davix.git", branch: "devel"
 
   bottle do
@@ -18,7 +19,7 @@ class Davix < Formula
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "python" => :build
   uses_from_macos "curl", since: :monterey # needs CURLE_AUTH_ERROR, available since curl 7.66.0
