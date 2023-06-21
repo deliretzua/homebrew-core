@@ -18,17 +18,15 @@ class CyralGimmeDbToken < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a2b2b9c4896e7d0fdafb0e02cc53aec821ccdc22605191af24266c318129cf0d"
   end
 
-  depends_on "rust" => :build # for cryptography
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
+  depends_on "pkg-config" => :build
+  depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "python@3.11"
   depends_on "six"
 
   uses_from_macos "libffi"
-
-  on_linux do
-    depends_on "pkg-config" => :build
-  end
 
   resource "awscli" do
     url "https://files.pythonhosted.org/packages/88/30/340f473dbdc4ce5e347eb5c5c5c4864cc7a9b14cfa69bafbaebf3917f6cd/awscli-1.27.138.tar.gz"
@@ -119,6 +117,10 @@ class CyralGimmeDbToken < Formula
   patch :DATA
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     virtualenv_install_with_resources
   end
 
