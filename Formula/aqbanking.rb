@@ -4,6 +4,7 @@ class Aqbanking < Formula
   url "https://www.aquamaniac.de/rdm/attachments/download/499/aqbanking-6.5.4.tar.gz"
   sha256 "0d16ceae76f0718e466638f4547a8b14927f1d8d98322079cd6481adde30ac99"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url "https://www.aquamaniac.de/rdm/projects/aqbanking/files"
@@ -27,6 +28,7 @@ class Aqbanking < Formula
   depends_on "libxml2"
   depends_on "libxmlsec1"
   depends_on "libxslt" # Our libxslt links with libgcrypt
+  depends_on "openssl@3"
   depends_on "pkg-config" # aqbanking-config needs pkg-config for execution
 
   def install
