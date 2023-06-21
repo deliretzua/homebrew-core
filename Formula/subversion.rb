@@ -2,7 +2,7 @@ class Subversion < Formula
   desc "Version control system designed to be a better CVS"
   homepage "https://subversion.apache.org/"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   stable do
     url "https://www.apache.org/dyn/closer.lua?path=subversion/subversion-1.14.2.tar.bz2"
@@ -46,7 +46,7 @@ class Subversion < Formula
   # gettext, lz4 and utf8proc for consistency
   depends_on "gettext"
   depends_on "lz4"
-  depends_on "openssl@1.1" # For Serf
+  depends_on "openssl@3" # For Serf
   depends_on "utf8proc"
 
   uses_from_macos "expat"
@@ -108,7 +108,7 @@ class Subversion < Formula
       args = %W[
         PREFIX=#{serf_prefix} GSSAPI=#{krb5} CC=#{ENV.cc}
         CFLAGS=#{ENV.cflags} LINKFLAGS=#{ENV.ldflags}
-        OPENSSL=#{Formula["openssl@1.1"].opt_prefix}
+        OPENSSL=#{Formula["openssl@3"].opt_prefix}
         APR=#{Formula["apr"].opt_prefix}
         APU=#{Formula["apr-util"].opt_prefix}
       ]
@@ -212,7 +212,7 @@ class Subversion < Formula
     system "make", "install-swig-pl-lib"
     cd "subversion/bindings/swig/perl/native" do
       system perl, "Makefile.PL", "PREFIX=#{prefix}", "INSTALLSITEMAN3DIR=#{man3}"
-      system "make", "install"
+      ENV.deparallelize { system "make", "install" }
     end
 
     # This is only created when building against system Perl, but it isn't
