@@ -5,6 +5,7 @@ class Csfml < Formula
   url "https://github.com/SFML/CSFML/archive/2.5.2.tar.gz"
   sha256 "2671f1cd2a4e54e86f7483c4683132466c01a6ca90fa010bc4964a8820c36f06"
   license "Zlib"
+  revision 1
   head "https://github.com/SFML/CSFML.git", branch: "master"
 
   bottle do
