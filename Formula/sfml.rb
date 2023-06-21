@@ -2,10 +2,9 @@ class Sfml < Formula
   # Don't update SFML until there's a corresponding CSFML release
   desc "Multi-media library with bindings for multiple languages"
   homepage "https://www.sfml-dev.org/"
-  url "https://www.sfml-dev.org/files/SFML-2.5.1-sources.zip"
-  sha256 "bf1e0643acb92369b24572b703473af60bac82caf5af61e77c063b779471bb7f"
+  url "https://www.sfml-dev.org/files/SFML-2.6.0-sources.zip"
+  sha256 "dc477fc7266641709046bd38628c909f5748bd2564b388cf6c750a9e20cdfef1"
   license "Zlib"
-  revision 2
   head "https://github.com/SFML/SFML.git", branch: "master"
 
   bottle do
@@ -28,6 +27,7 @@ class Sfml < Formula
 
   on_linux do
     depends_on "libx11"
+    depends_on "libxcursor"
     depends_on "libxrandr"
     depends_on "mesa"
     depends_on "mesa-glu"
@@ -46,7 +46,7 @@ class Sfml < Formula
     # headers that were moved there in https://github.com/SFML/SFML/pull/795
     rm_rf Dir["extlibs/*"] - ["extlibs/headers"]
 
-    args = ["-DCMAKE_INSTALL_RPATH=#{opt_lib}",
+    args = ["-DCMAKE_INSTALL_RPATH=#{lib}",
             "-DSFML_MISC_INSTALL_PREFIX=#{share}/SFML",
             "-DSFML_INSTALL_PKGCONFIG_FILES=TRUE",
             "-DSFML_BUILD_DOC=TRUE"]
