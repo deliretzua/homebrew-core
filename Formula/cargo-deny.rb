@@ -4,6 +4,7 @@ class CargoDeny < Formula
   url "https://github.com/EmbarkStudios/cargo-deny/archive/refs/tags/0.13.9.tar.gz"
   sha256 "b26d8f984e00ddf96766e25781d6b296ff7a571f2c3730a607bfde24062b8adb"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
   head "https://github.com/EmbarkStudios/cargo-deny.git", branch: "main"
 
   bottle do
@@ -22,12 +23,12 @@ class CargoDeny < Formula
   depends_on "rustup-init" => :test
   depends_on "libgit2@1.5"
   depends_on "libssh2"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
     ENV["LIBGIT2_SYS_USE_PKG_CONFIG"] = "1"
     ENV["LIBSSH2_SYS_USE_PKG_CONFIG"] = "1"
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
     system "cargo", "install", "--no-default-features", *std_cargo_args
   end
@@ -72,7 +73,7 @@ class CargoDeny < Formula
     [
       Formula["libgit2@1.5"].opt_lib/shared_library("libgit2"),
       Formula["libssh2"].opt_lib/shared_library("libssh2"),
-      Formula["openssl@1.1"].opt_lib/shared_library("libssl"),
+      Formula["openssl@3"].opt_lib/shared_library("libssl"),
     ].each do |library|
       assert check_binary_linkage(bin/"cargo-deny", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
