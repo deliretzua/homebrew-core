@@ -2,6 +2,7 @@ class Fizz < Formula
   desc "C++14 implementation of the TLS-1.3 standard"
   homepage "https://github.com/facebookincubator/fizz"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/facebookincubator/fizz.git", branch: "main"
 
   # Remove stable block when the patch is no longer needed.
@@ -36,7 +37,7 @@ class Fizz < Formula
   depends_on "libevent"
   depends_on "libsodium"
   depends_on "lz4"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "snappy"
   depends_on "zstd"
 
@@ -64,14 +65,14 @@ class Fizz < Formula
     EOS
     system ENV.cxx, "-std=c++14", "test.cpp", "-o", "test",
                     "-I#{include}",
-                    "-I#{Formula["openssl@1.1"].opt_include}",
+                    "-I#{Formula["openssl@3"].opt_include}",
                     "-L#{lib}", "-lfizz",
                     "-L#{Formula["folly"].opt_lib}", "-lfolly",
                     "-L#{Formula["gflags"].opt_lib}", "-lgflags",
                     "-L#{Formula["glog"].opt_lib}", "-lglog",
                     "-L#{Formula["libevent"].opt_lib}", "-levent",
                     "-L#{Formula["libsodium"].opt_lib}", "-lsodium",
-                    "-L#{Formula["openssl@1.1"].opt_lib}", "-lcrypto", "-lssl"
+                    "-L#{Formula["openssl@3"].opt_lib}", "-lcrypto", "-lssl"
     assert_match "TLS", shell_output("./test")
   end
 end
