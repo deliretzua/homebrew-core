@@ -19,14 +19,11 @@ class Aria2 < Formula
   depends_on "pkg-config" => :build
   depends_on "gettext"
   depends_on "libssh2"
+  depends_on "openssl@3"
   depends_on "sqlite"
 
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
-
-  on_linux do
-    depends_on "openssl@1.1"
-  end
 
   def install
     ENV.cxx11
