@@ -4,6 +4,7 @@ class NetSnmp < Formula
   url "https://downloads.sourceforge.net/project/net-snmp/net-snmp/5.9.3/net-snmp-5.9.3.tar.gz"
   sha256 "2097f29b7e1bf3f1300b4bae52fa2308d0bb8d5d3998dbe02f9462a413a2ef0a"
   license "Net-SNMP"
+  revision 1
   head "https://github.com/net-snmp/net-snmp.git", branch: "master"
 
   livecheck do
@@ -24,7 +25,7 @@ class NetSnmp < Formula
 
   keg_only :provided_by_macos
 
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   on_arm do
     depends_on "autoconf" => :build
@@ -51,7 +52,7 @@ class NetSnmp < Formula
       "--without-kmem-usage",
       "--disable-embedded-perl",
       "--without-perl-modules",
-      "--with-openssl=#{Formula["openssl@1.1"].opt_prefix}",
+      "--with-openssl=#{Formula["openssl@3"].opt_prefix}",
     ]
 
     system "autoreconf", "-fvi" if Hardware::CPU.arm?
