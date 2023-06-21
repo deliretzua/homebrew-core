@@ -4,6 +4,7 @@ class Amber < Formula
   url "https://github.com/amberframework/amber/archive/refs/tags/v1.3.2.tar.gz"
   sha256 "37511d6b4afe308e1943cedeab9114b01d5787d868c23d2c0cc555917a21c830"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 arm64_ventura:  "09874b1c0219b906acb44c2e5e7cc289f7d302fae6c1b6095683535267a07dd0"
@@ -16,6 +17,7 @@ class Amber < Formula
   end
 
   depends_on "crystal"
+  depends_on "openssl@3"
   uses_from_macos "sqlite"
 
   def install
