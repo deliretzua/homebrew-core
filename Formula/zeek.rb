@@ -5,6 +5,7 @@ class Zeek < Formula
       tag:      "v5.2.2",
       revision: "a6f825b81da389bb2deb1cf389dbd7e88efd4a1c"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/zeek/zeek.git", branch: "master"
 
   livecheck do
@@ -29,7 +30,7 @@ class Zeek < Formula
   depends_on "c-ares"
   depends_on "libmaxminddb"
   depends_on macos: :mojave
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "python@3.11"
 
   uses_from_macos "libpcap"
@@ -59,7 +60,7 @@ class Zeek < Formula
                     "-DCARES_ROOT_DIR=#{Formula["c-ares"].opt_prefix}",
                     "-DCARES_LIBRARIES=#{Formula["c-ares"].opt_lib/shared_library("libcares")}",
                     "-DLibMMDB_LIBRARY=#{Formula["libmaxminddb"].opt_lib/shared_library("libmaxminddb")}",
-                    "-DOPENSSL_ROOT_DIR=#{Formula["openssl@1.1"].opt_prefix}",
+                    "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}",
                     "-DPYTHON_EXECUTABLE=#{which("python3.11")}",
                     "-DZEEK_ETC_INSTALL_DIR=#{etc}",
                     "-DZEEK_LOCAL_STATE_DIR=#{var}",
