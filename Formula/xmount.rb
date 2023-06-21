@@ -7,8 +7,7 @@ class Xmount < Formula
   revision 3
 
   bottle do
-    rebuild 1
-    sha256 x86_64_linux: "e33278ea02578921565961c9671d64fe13d5290a0f3bf0db08e636099c382fb8"
+    sha256 x86_64_linux: "c61ddafea43cbd071198031f80f4893a2fc90266a9daf1999e78a1b6211d748a"
   end
 
   depends_on "cmake" => :build
