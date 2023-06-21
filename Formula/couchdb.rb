@@ -5,7 +5,7 @@ class Couchdb < Formula
   mirror "https://archive.apache.org/dist/couchdb/source/3.3.2/apache-couchdb-3.3.2.tar.gz"
   sha256 "3d6823d42d10cf0d4f86c9c4fe59c9932c89d68578fcb6c4b4278dc769308daa"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   livecheck do
     url :homepage
@@ -34,7 +34,7 @@ class Couchdb < Formula
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "icu4c"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   # NOTE: Supported `spidermonkey` versions are hardcoded at
   # https://github.com/apache/couchdb/blob/#{version}/src/couch/rebar.config.script
   depends_on "spidermonkey"
