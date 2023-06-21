@@ -6,7 +6,7 @@ class Dnsviz < Formula
   url "https://files.pythonhosted.org/packages/a5/7c/b38750c866e7e29bc76450c75f61ede6c2560e75cfe36df81e9517612434/dnsviz-0.9.4.tar.gz"
   sha256 "6448d4c6e7c1844aa2a394d60f7cc53721ad985e0e830c30265ef08a74a7aa28"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
     rebuild 1
@@ -24,7 +24,7 @@ class Dnsviz < Formula
   depends_on "swig" => :build
   depends_on "bind" => :test
   depends_on "graphviz"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "python@3.11"
 
   on_linux do
@@ -48,7 +48,7 @@ class Dnsviz < Formula
   end
 
   def install
-    ENV["SWIG_FEATURES"] = "-I#{Formula["openssl@1.1"].opt_include}"
+    ENV["SWIG_FEATURES"] = "-I#{Formula["openssl@3"].opt_include}"
     virtualenv_install_with_resources(link_manpages: true)
   end
 
