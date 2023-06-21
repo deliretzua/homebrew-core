@@ -4,6 +4,7 @@ class Librdkafka < Formula
   url "https://github.com/edenhill/librdkafka/archive/refs/tags/v2.1.1.tar.gz"
   sha256 "7be1fc37ab10ebdc037d5c5a9b35b48931edafffae054b488faaff99e60e0108"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/edenhill/librdkafka.git", branch: "master"
 
   livecheck do
@@ -25,7 +26,7 @@ class Librdkafka < Formula
   depends_on "python@3.11" => :build
   depends_on "lz4"
   depends_on "lzlib"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "zstd"
 
   uses_from_macos "curl"
