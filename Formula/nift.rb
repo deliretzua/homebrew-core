@@ -1,8 +1,8 @@
 class Nift < Formula
   desc "Cross-platform open source framework for managing and generating websites"
   homepage "https://nift.dev/"
-  url "https://github.com/nifty-site-manager/nsm/archive/refs/tags/v3.0.0.tar.gz"
-  sha256 "9e89a6cdfd65d8db582f5d6a60c7265db5fd67dc582ed24deaac4ccca8ca5737"
+  url "https://github.com/nifty-site-manager/nsm/archive/v3.0.1.tar.gz"
+  sha256 "c7dcac1cb56fbc5ff4ddca2eea3fa91bfa5c37a14627bac6fe638b5fde52850a"
   license "MIT"
 
   bottle do
