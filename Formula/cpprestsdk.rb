@@ -6,6 +6,7 @@ class Cpprestsdk < Formula
       tag:      "2.10.18",
       revision: "122d09549201da5383321d870bed45ecb9e168c5"
   license "MIT"
+  revision 1
   head "https://github.com/Microsoft/cpprestsdk.git", branch: "development"
 
   bottle do
@@ -23,13 +24,13 @@ class Cpprestsdk < Formula
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "boost"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "zlib"
 
   def install
     system "cmake", "-DBUILD_SAMPLES=OFF", "-DBUILD_TESTS=OFF",
-                    "-DOPENSSL_ROOT_DIR=#{Formula["openssl@1.1"]}.opt_prefix",
+                    "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"]}.opt_prefix",
                     "Release", *std_cmake_args
     system "make", "install"
   end
@@ -44,8 +45,8 @@ class Cpprestsdk < Formula
       }
     EOS
     system ENV.cxx, "test.cc", "-std=c++11",
-                    "-I#{Formula["boost"].include}", "-I#{Formula["openssl@1.1"].include}", "-I#{include}",
-                    "-L#{Formula["boost"].lib}", "-L#{Formula["openssl@1.1"].lib}", "-L#{lib}",
+                    "-I#{Formula["boost"].include}", "-I#{Formula["openssl@3"].include}", "-I#{include}",
+                    "-L#{Formula["boost"].lib}", "-L#{Formula["openssl@3"].lib}", "-L#{lib}",
                     "-lssl", "-lcrypto", "-lboost_random-mt", "-lboost_chrono-mt", "-lboost_thread-mt",
                     "-lboost_system-mt", "-lboost_filesystem-mt", "-lcpprest",
                     "-o", "test_cpprest"
