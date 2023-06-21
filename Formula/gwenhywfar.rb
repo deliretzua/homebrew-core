@@ -4,6 +4,7 @@ class Gwenhywfar < Formula
   url "https://www.aquamaniac.de/rdm/attachments/download/465/gwenhywfar-5.10.1.tar.gz"
   sha256 "a2f60a9dde5da27e57e0e5ef5f8931f495c1d541ad90a841e2b6231565547160"
   license "LGPL-2.1-or-later"
+  revision 1
 
   livecheck do
     url "https://www.aquamaniac.de/rdm/projects/gwenhywfar/files"
@@ -24,17 +25,20 @@ class Gwenhywfar < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  depends_on "libtool" => :build
   depends_on "cmake" => :test
   depends_on "gettext"
   depends_on "gnutls"
   depends_on "libgcrypt"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pkg-config" # gwenhywfar-config needs pkg-config for execution
   depends_on "qt@5"
 
   fails_with gcc: "5"
 
   def install
+    # Workaround for Xcode 14.3.
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version == 1403
     inreplace "gwenhywfar-config.in.in", "@PKG_CONFIG@", "pkg-config"
     # Fix `-flat_namespace` flag on Big Sur and later.
     system "autoreconf", "--force", "--install", "--verbose"
