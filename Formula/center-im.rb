@@ -4,7 +4,7 @@ class CenterIm < Formula
   url "https://web.archive.org/web/20191105151123/https://www.centerim.org/download/releases/centerim-4.22.10.tar.gz"
   sha256 "93ce15eb9c834a4939b5aa0846d5c6023ec2953214daf8dc26c85ceaa4413f6e"
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
 
   # Modify this to use `url :stable` if/when the formula is updated to use an
   # archive from GitHub in the future.
@@ -30,7 +30,7 @@ class CenterIm < Formula
 
   depends_on "pkg-config" => :build
   depends_on "gettext"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "curl"
 
@@ -44,6 +44,11 @@ class CenterIm < Formula
   end
 
   def install
+    # Workaround for Xcode 14.3
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version == 1403
+    # Uses `auto` as a variable name.
+    ENV.append "CXXFLAGS", "-std=gnu++03"
+
     # Work around for C++ version header picking up VERSION file on
     # case-insensitive systems. Can be removed on next update.
     (buildpath/"intl/VERSION").unlink if OS.mac?
@@ -51,7 +56,7 @@ class CenterIm < Formula
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--disable-msn",
-                          "--with-openssl=#{Formula["openssl@1.1"].opt_prefix}"
+                          "--with-openssl=#{Formula["openssl@3"].opt_prefix}"
     system "make", "install"
 
     # /bin/gawk does not exist on macOS
