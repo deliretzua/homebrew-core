@@ -6,6 +6,7 @@ class Volatility < Formula
   url "https://files.pythonhosted.org/packages/d6/e5/b9a3c053dcca7688477ac004a9d6e700cd1a29272ddee4188f09f1bc0d62/volatility3-2.4.1.tar.gz"
   sha256 "6ba2735a6d77727a8b038286e55a24e7048fc68b1d7a306183938b940d64c029"
   license :cannot_represent
+  revision 1
   version_scheme 1
   head "https://github.com/volatilityfoundation/volatility3.git", branch: "develop"
 
@@ -19,6 +20,7 @@ class Volatility < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "25d5a90d0ca18a4422b5663cf00a6316539c1ce7e58f3aa3280a144b87d17a74"
   end
 
+  depends_on "openssl@3"
   depends_on "python@3.11"
   depends_on "yara"
 
