@@ -8,7 +8,7 @@ class Texlive < Formula
   mirror "https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2023/texlive-20230313-source.tar.xz"
   sha256 "3878aa0e1ed0301c053b0e2ee4e9ad999c441345f4882e79bdd1c8f4ce9e79b9"
   license :public_domain
-  revision 1
+  revision 2
   head "https://github.com/TeX-Live/texlive-source.git", branch: "trunk"
 
   livecheck do
@@ -59,7 +59,7 @@ class Texlive < Formula
   depends_on "luajit"
   depends_on "mpfr"
   depends_on "openjdk"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "perl"
   depends_on "pixman"
   depends_on "potrace"
@@ -339,7 +339,7 @@ class Texlive < Formula
     # Install Perl resources
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
     ENV["PERL_MM_USE_DEFAULT"] = "1"
-    ENV["OPENSSL_PREFIX"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_PREFIX"] = Formula["openssl@3"].opt_prefix
 
     tex_resources = %w[texlive-extra install-tl texlive-texmf]
 
