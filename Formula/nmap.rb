@@ -4,6 +4,7 @@ class Nmap < Formula
   desc "Port scanning utility for large networks"
   homepage "https://nmap.org/"
   license :cannot_represent
+  revision 1
   head "https://svn.nmap.org/nmap/"
 
   # TODO: Remove stable block in next release.
@@ -38,7 +39,7 @@ class Nmap < Formula
   depends_on "libssh2"
   # Check supported Lua version at https://github.com/nmap/nmap/tree/master/liblua.
   depends_on "lua"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pcre"
 
   uses_from_macos "bison" => :build
@@ -54,7 +55,7 @@ class Nmap < Formula
       --prefix=#{prefix}
       --with-liblua=#{Formula["lua"].opt_prefix}
       --with-libpcre=#{Formula["pcre"].opt_prefix}
-      --with-openssl=#{Formula["openssl@1.1"].opt_prefix}
+      --with-openssl=#{Formula["openssl@3"].opt_prefix}
       --without-nmap-update
       --disable-universal
       --without-zenmap
