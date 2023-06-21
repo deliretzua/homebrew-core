@@ -5,6 +5,7 @@ class XmlSecurityC < Formula
   mirror "https://archive.apache.org/dist/santuario/c-library/xml-security-c-2.0.4.tar.bz2"
   sha256 "c83ed1b7c0189cce27a49caa81986938e76807bf35597e6056259af30726beca"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "44e619c0775264474da5fac0a3b7a76c169b9440654e8ce206f77e4a89e22d41"
@@ -17,7 +18,7 @@ class XmlSecurityC < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "xerces-c"
 
   # Fix -flat_namespace being used on Big Sur and later.
@@ -30,7 +31,7 @@ class XmlSecurityC < Formula
     ENV.cxx11
 
     system "./configure", "--prefix=#{prefix}", "--disable-dependency-tracking",
-                          "--with-openssl=#{Formula["openssl@1.1"].opt_prefix}"
+                          "--with-openssl=#{Formula["openssl@3"].opt_prefix}"
     system "make", "install"
   end
 
