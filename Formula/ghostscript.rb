@@ -2,11 +2,10 @@ class Ghostscript < Formula
   desc "Interpreter for PostScript and PDF"
   homepage "https://www.ghostscript.com/"
   license "AGPL-3.0-or-later"
-  revision 1
 
   stable do
-    url "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10011/ghostpdl-10.01.1.tar.xz"
-    sha256 "e6a6c39a36e6b6ffe4960f4e2bfb85420ed157ac14a202ccdd0df4e4e2a7e392"
+    url "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10012/ghostpdl-10.01.2.tar.xz"
+    sha256 "b535600c968f672b4f6750e7eac57623fc7f80eb8c00a0175a46010942cf0e9c"
 
     on_macos do
       # 1. Make sure shared libraries follow platform naming conventions.
