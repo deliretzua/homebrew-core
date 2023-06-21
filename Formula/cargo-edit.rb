@@ -4,6 +4,7 @@ class CargoEdit < Formula
   url "https://github.com/killercup/cargo-edit/archive/v0.12.0.tar.gz"
   sha256 "a8168ea2320c095f55d2b32f8bede8c814dcdc4290c250df36dc8ce0f6fb2095"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "b9a73c04042c12385874a754ed0dc27edd910fa2020106e511ebf85b5444f054"
@@ -19,12 +20,12 @@ class CargoEdit < Formula
   depends_on "rust" => :build
   depends_on "rustup-init" => :test
   depends_on "libgit2"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
-    # Ensure the declared `openssl@1.1` dependency will be picked up.
+    # Ensure the declared `openssl@3` dependency will be picked up.
     # https://docs.rs/openssl/latest/openssl/#manual
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     # Read the default flags from `Cargo.toml` so we can remove the `vendored-libgit2` feature.
@@ -77,8 +78,8 @@ class CargoEdit < Formula
 
     [
       Formula["libgit2"].opt_lib/shared_library("libgit2"),
-      Formula["openssl@1.1"].opt_lib/shared_library("libssl"),
-      Formula["openssl@1.1"].opt_lib/shared_library("libcrypto"),
+      Formula["openssl@3"].opt_lib/shared_library("libssl"),
+      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
     ].each do |library|
       assert check_binary_linkage(bin/"cargo-upgrade", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
