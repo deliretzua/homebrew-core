@@ -5,6 +5,7 @@ class Makepkg < Formula
       tag:      "v6.0.2",
       revision: "c2d4568d35173f92c17b6b93222bc101a63c9928"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://gitlab.archlinux.org/pacman/pacman.git", branch: "master"
 
   bottle do
@@ -24,7 +25,7 @@ class Makepkg < Formula
   depends_on "bash"
   depends_on "fakeroot"
   depends_on "libarchive"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "m4" => :build
   uses_from_macos "python" => :build
