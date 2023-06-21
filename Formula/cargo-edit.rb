@@ -7,13 +7,13 @@ class CargoEdit < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "b9a73c04042c12385874a754ed0dc27edd910fa2020106e511ebf85b5444f054"
-    sha256 cellar: :any,                 arm64_monterey: "391f47c36ef90e3987a34f1caedf4abd375f2f5ff063103c4a756e6b04b675af"
-    sha256 cellar: :any,                 arm64_big_sur:  "850f013bbdcbd4961fe9a46e482e77449f87f1aec4e19020dfb7c4f441f13298"
-    sha256 cellar: :any,                 ventura:        "a88faf0472e1e1e6a6c87fb39fa70f262445e44c64e5d1325225428f2095a9d0"
-    sha256 cellar: :any,                 monterey:       "7f93c359cacbf75c3701687fc66f56e31750b11870b66735357c967852237338"
-    sha256 cellar: :any,                 big_sur:        "3cf320b4d339e51f1cd8c27899bf2f38a3456ab88a829a369774692c2bfe71d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "472cdb9afaa0d0b1024776002026d7deb71d280bbdba3a3856cf9356efbd5bf2"
+    sha256 cellar: :any,                 arm64_ventura:  "fc9733fcc9a17ddec26cf85c6b3d78012d4be90accb077607e45ec22e78349c5"
+    sha256 cellar: :any,                 arm64_monterey: "c3650279b6ee915c9463492908197860208dc426a28e95762fc10cdbc7257fd1"
+    sha256 cellar: :any,                 arm64_big_sur:  "e5ce6bf8ca65178bd4df7bf646b819f7103ddff0c516c242d8ea2fd89585464c"
+    sha256 cellar: :any,                 ventura:        "a79a10921fbfbc69a34c237498265c8e962b16dd9144f0cfa6fdd8235ce41675"
+    sha256 cellar: :any,                 monterey:       "41c7884cfe078e882e04ad2d7b97e7f0b728f0d0f36852ae5bd4bfe003991fad"
+    sha256 cellar: :any,                 big_sur:        "def7d5ad96345c237572ef1fcca6fe7c2570114932ed59c0c99352d511d63c04"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e2674078d811596c0e31ef8ca74c764f3eeef1e2950f70c94656e25ac24de3bd"
   end
 
   depends_on "pkg-config" => :build
