@@ -5,6 +5,7 @@ class MariadbConnectorC < Formula
   mirror "https://fossies.org/linux/misc/mariadb-connector-c-3.3.5-src.tar.gz/"
   sha256 "ca72eb26f6db2befa77e48ff966f71bcd3cb44b33bd8bbb810b65e6d011c1e5c"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https://github.com/mariadb-corporation/mariadb-connector-c.git", branch: "3.3"
 
   # https://mariadb.org/download/ sometimes lists an older version as newest,
@@ -26,7 +27,7 @@ class MariadbConnectorC < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "curl"
   uses_from_macos "zlib"
