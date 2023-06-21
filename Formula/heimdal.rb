@@ -4,6 +4,7 @@ class Heimdal < Formula
   url "https://github.com/heimdal/heimdal/releases/download/heimdal-7.8.0/heimdal-7.8.0.tar.gz"
   sha256 "fd87a207846fa650fd377219adc4b8a8193e55904d8a752c2c3715b4155d8d38"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -28,7 +29,7 @@ class Heimdal < Formula
   depends_on "flex"
   depends_on "lmdb"
   depends_on "openldap"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "libxcrypt"
   uses_from_macos "perl"
@@ -67,7 +68,7 @@ class Heimdal < Formula
       --disable-ndbm-db
       --disable-heimdal-documentation
       --with-openldap=#{Formula["openldap"].opt_prefix}
-      --with-openssl=#{Formula["openssl@1.1"].opt_prefix}
+      --with-openssl=#{Formula["openssl@3"].opt_prefix}
       --with-hcrypto-default-backend=ossl
       --with-berkeley-db
       --with-berkeley-db-include=#{Formula["berkeley-db"].opt_include}
