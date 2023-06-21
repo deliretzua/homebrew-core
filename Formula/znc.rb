@@ -4,7 +4,7 @@ class Znc < Formula
   url "https://znc.in/releases/archive/znc-1.8.2.tar.gz"
   sha256 "ff238aae3f2ae0e44e683c4aee17dc8e4fdd261ca9379d83b48a7d422488de0d"
   license "Apache-2.0"
-  revision 8
+  revision 9
 
   bottle do
     sha256 arm64_ventura:  "16c2edd8071636add21601f3382154a373b3c7b7b50cdda1a91257da87630011"
@@ -25,7 +25,7 @@ class Znc < Formula
 
   depends_on "pkg-config" => :build
   depends_on "icu4c"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "python@3.11"
 
   uses_from_macos "zlib"
@@ -60,7 +60,7 @@ class Znc < Formula
       # Replace dependencies' Cellar paths with opt paths
       inreplace [bin/"znc-buildmod", lib/"pkgconfig/znc.pc"] do |s|
         s.gsub! Formula["icu4c"].prefix.realpath, Formula["icu4c"].opt_prefix
-        s.gsub! Formula["openssl@1.1"].prefix.realpath, Formula["openssl@1.1"].opt_prefix
+        s.gsub! Formula["openssl@3"].prefix.realpath, Formula["openssl@3"].opt_prefix
       end
     end
   end
