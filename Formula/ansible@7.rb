@@ -6,6 +6,7 @@ class AnsibleAT7 < Formula
   url "https://files.pythonhosted.org/packages/e8/88/4309077c4a2ca9b322ae0b5e98c699fc7d871a49260e8aafabcec769dd80/ansible-7.6.0.tar.gz"
   sha256 "4159a266f2caf91adf16daca6a23d132b987ce3acde9c0f2f3089e80d8048f2e"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     rebuild 1
@@ -23,7 +24,7 @@ class AnsibleAT7 < Formula
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -547,6 +548,10 @@ class AnsibleAT7 < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     venv = virtualenv_create(libexec, "python3.11")
     # Install all of the resources declared on the formula into the virtualenv.
     resources.each do |r|
