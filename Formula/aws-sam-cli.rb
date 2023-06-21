@@ -8,14 +8,13 @@ class AwsSamCli < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_ventura:  "13a1eb6263ca0540cc5d48a2217392a582e1e2dfa7f6db43c8bf996f4c73aa48"
-    sha256 cellar: :any,                 arm64_monterey: "a4e35323f70cfc14b5249bcda62a63feca67db5ebd1e46b1e16027450e693b04"
-    sha256 cellar: :any,                 arm64_big_sur:  "a62b5a65a448c17a87bb452d97652a47bd201d1f238e2c17c2e125e3c264daab"
-    sha256 cellar: :any,                 ventura:        "6f5559dc87d7d96acd3b09b5fcec382e6560522d89804673678b3626e6923878"
-    sha256 cellar: :any,                 monterey:       "1b47f5a12f387c3390f6884459a84b00737d6958cf59c93d3017a833faa3ba1c"
-    sha256 cellar: :any,                 big_sur:        "60528eecde17942a8b34162243a6882f662391a5085f7717ff503131baadf47f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "558010f2f85415c9b777239c3b312fa3c76af44b6eba5db0941ddad4f697adbf"
+    sha256 cellar: :any,                 arm64_ventura:  "03d997cfab61b869ea90192a3b202e5b4ae73977c6d1098f4e20cdb57ab17cb3"
+    sha256 cellar: :any,                 arm64_monterey: "3758e9af9ae870e2cb68bd78fa82b281008a33864ab9fba25f86abc4adabda54"
+    sha256 cellar: :any,                 arm64_big_sur:  "9b86611f8865ee9971c4ae500722458fdaa5142411a7451dd5dd2f272ee8a4c6"
+    sha256 cellar: :any,                 ventura:        "a45a24f487a010f04f2c300442cbfdc1f1da560f749a99da2402e0bf6658a246"
+    sha256 cellar: :any,                 monterey:       "f974f31c9383ebb4d1e68a2cf4f082641fa2811b683d5fcee979ea90a4daaaa5"
+    sha256 cellar: :any,                 big_sur:        "4191b46dafb6421d035c872ea8a166d031170a071767ee190251223a4513b918"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6245ef411c7c6901a05500af486c4f609a15162ee62f1dc3294ba453d3d9eb6c"
   end
 
   # `pkg-config`, `rust`, and `openssl@1.1` are for cryptography.
