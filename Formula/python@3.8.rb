@@ -4,6 +4,7 @@ class PythonAT38 < Formula
   url "https://www.python.org/ftp/python/3.8.17/Python-3.8.17.tar.xz"
   sha256 "2e54b0c68191f16552f6de2e97a2396540572a219f6bbb28591a137cecc490a9"
   license "Python-2.0"
+  revision 1
 
   livecheck do
     url "https://www.python.org/ftp/python/"
@@ -27,7 +28,7 @@ class PythonAT38 < Formula
   depends_on "pkg-config" => :build
   depends_on "gdbm"
   depends_on "mpdecimal"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "readline"
   depends_on "sqlite"
   depends_on "tcl-tk"
@@ -111,7 +112,7 @@ class PythonAT38 < Formula
       --datadir=#{share}
       --enable-loadable-sqlite-extensions
       --without-ensurepip
-      --with-openssl=#{Formula["openssl@1.1"].opt_prefix}
+      --with-openssl=#{Formula["openssl@3"].opt_prefix}
       --with-system-libmpdec
     ]
 
@@ -172,7 +173,7 @@ class PythonAT38 < Formula
     # `brew install enchant && pip install pyenchant`
     inreplace "./Lib/ctypes/macholib/dyld.py" do |f|
       f.gsub! "DEFAULT_LIBRARY_FALLBACK = [",
-              "DEFAULT_LIBRARY_FALLBACK = [ '#{HOMEBREW_PREFIX}/lib', '#{Formula["openssl@1.1"].opt_lib}',"
+              "DEFAULT_LIBRARY_FALLBACK = [ '#{HOMEBREW_PREFIX}/lib', '#{Formula["openssl@3"].opt_lib}',"
       f.gsub! "DEFAULT_FRAMEWORK_FALLBACK = [", "DEFAULT_FRAMEWORK_FALLBACK = [ '#{HOMEBREW_PREFIX}/Frameworks',"
     end
 
@@ -320,9 +321,9 @@ class PythonAT38 < Formula
     end
 
     # Help distutils find brewed stuff when building extensions
-    include_dirs = [HOMEBREW_PREFIX/"include", Formula["openssl@1.1"].opt_include,
+    include_dirs = [HOMEBREW_PREFIX/"include", Formula["openssl@3"].opt_include,
                     Formula["sqlite"].opt_include], Formula["tcl-tk"].opt_include/"tcl-tk"
-    library_dirs = [HOMEBREW_PREFIX/"lib", Formula["openssl@1.1"].opt_lib,
+    library_dirs = [HOMEBREW_PREFIX/"lib", Formula["openssl@3"].opt_lib,
                     Formula["sqlite"].opt_lib], Formula["tcl-tk"].opt_lib
 
     cfg = lib_cellar/"distutils/distutils.cfg"
