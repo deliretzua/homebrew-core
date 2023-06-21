@@ -6,6 +6,7 @@ class Buku < Formula
   url "https://github.com/jarun/buku/archive/v4.8.tar.gz"
   sha256 "a0b94210e80e9f9f359e5308323837d41781cf8dba497341099d5c59e27fa52c"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/jarun/buku.git", branch: "master"
 
   bottle do
@@ -19,9 +20,11 @@ class Buku < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b10fa03b0e856f47c3382e3932b00e64ead3e239b562e7a7b7aa1655a8a8135b"
   end
 
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "python@3.11"
   depends_on "six"
@@ -149,6 +152,10 @@ class Buku < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     virtualenv_install_with_resources
     man1.install "buku.1"
     bash_completion.install "auto-completion/bash/buku-completion.bash" => "buku"
