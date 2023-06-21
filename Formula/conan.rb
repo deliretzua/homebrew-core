@@ -3,8 +3,8 @@ class Conan < Formula
 
   desc "Distributed, open source, package manager for C/C++"
   homepage "https://conan.io"
-  url "https://files.pythonhosted.org/packages/de/3a/f9c503859842ef7818b43b8dd1b605c1e055bbc92a71aeafa995623883dd/conan-2.0.6.tar.gz"
-  sha256 "8cb97c3182ca93ab3c67b070288a313516e40a4af24d676eb080ea2f8a3d7029"
+  url "https://files.pythonhosted.org/packages/c8/94/c6f7bb97cea7c32129bae7683527279c3ae749a05eaa502d8fd222b8b3b4/conan-2.0.7.tar.gz"
+  sha256 "90b4039fb32f86ca4e5d564923421bc873c47b7dbe59390630c58a5878e67b38"
   license "MIT"
   head "https://github.com/conan-io/conan.git", branch: "develop"
 
@@ -62,8 +62,8 @@ class Conan < Formula
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/95/7e/68018b70268fb4a2a605e2be44ab7b4dd7ce7808adae6c5ef32e34f4b55a/MarkupSafe-2.1.2.tar.gz"
-    sha256 "abcabc8c2b26036d62d4c746381a6f7cf60aafcc653198ad678306986b09450d"
+    url "https://files.pythonhosted.org/packages/6d/7c/59a3248f411813f8ccba92a55feaac4bf360d29e2ff05ee7d8e1ef2d7dbf/MarkupSafe-2.1.3.tar.gz"
+    sha256 "af598ed32d6ae86f1b747b82783958b1a4ab8f617b06fe68795c7f026abbdcad"
   end
 
   resource "patch-ng" do
