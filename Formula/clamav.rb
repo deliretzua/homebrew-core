@@ -5,6 +5,7 @@ class Clamav < Formula
   mirror "https://fossies.org/linux/misc/clamav-1.1.0.tar.gz"
   sha256 "a30020d99cd467fa5ea0efbd6f4f182efebf62a9fc62fc4a3a7b2cc3f55e6b74"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/Cisco-Talos/clamav-devel.git", branch: "main"
 
   livecheck do
@@ -26,7 +27,7 @@ class Clamav < Formula
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "json-c"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pcre2"
   depends_on "yara"
 
