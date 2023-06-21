@@ -4,7 +4,7 @@ class Opensaml < Formula
   url "https://shibboleth.net/downloads/c++-opensaml/3.2.1/opensaml-3.2.1.tar.bz2"
   sha256 "b402a89a130adcb76869054b256429c1845339fe5c5226ee888686b6a026a337"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://shibboleth.net/downloads/c++-opensaml/latest/"
@@ -23,7 +23,7 @@ class Opensaml < Formula
 
   depends_on "pkg-config" => :build
   depends_on "log4shib"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "xerces-c"
   depends_on "xml-security-c"
   depends_on "xml-tooling-c"
