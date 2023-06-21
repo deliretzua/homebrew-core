@@ -4,6 +4,7 @@ class Got < Formula
   url "https://gameoftrees.org/releases/portable/got-portable-0.89.tar.gz"
   sha256 "27404932c07713400124c15e318417385411b7a1fe7ee534e48f2b9e4f096d8c"
   license "ISC"
+  revision 1
 
   livecheck do
     url "https://gameoftrees.org/releases/portable/"
@@ -24,7 +25,7 @@ class Got < Formula
   depends_on "pkg-config" => :build
   depends_on "libevent"
   depends_on "ncurses"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   uses_from_macos "zlib"
 
   on_linux do
@@ -34,8 +35,7 @@ class Got < Formula
   end
 
   def install
-    # The `configure` script hardcodes our `openssl@3`, but we can't use it due to `libevent`.
-    inreplace "configure", %r{\$\{HOMEBREW_PREFIX?\}/opt/openssl@3}, Formula["openssl@1.1"].opt_prefix
+    inreplace "configure", %r{\$\{HOMEBREW_PREFIX?\}/opt/openssl@\d+(\.\d+)?}, Formula["openssl@3"].opt_prefix
     system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
   end
