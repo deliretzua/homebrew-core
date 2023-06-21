@@ -4,6 +4,7 @@ class CargoRelease < Formula
   url "https://github.com/crate-ci/cargo-release/archive/refs/tags/v0.24.10.tar.gz"
   sha256 "56aa9dbf85dc14b2d6ea6e0922fd0464f45af09e2aa26641c6db84d61e2de543"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
   head "https://github.com/crate-ci/cargo-release.git", branch: "master"
 
   bottle do
@@ -21,12 +22,12 @@ class CargoRelease < Formula
   depends_on "rust" => :build
   depends_on "rustup-init" => :test
   depends_on "libgit2@1.5"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
     ENV["LIBGIT2_SYS_USE_PKG_CONFIG"] = "1"
     ENV["LIBSSH2_SYS_USE_PKG_CONFIG"] = "1"
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
     system "cargo", "install", "--no-default-features", *std_cargo_args
   end
@@ -54,7 +55,7 @@ class CargoRelease < Formula
 
     [
       Formula["libgit2@1.5"].opt_lib/shared_library("libgit2"),
-      Formula["openssl@1.1"].opt_lib/shared_library("libssl"),
+      Formula["openssl@3"].opt_lib/shared_library("libssl"),
     ].each do |library|
       assert check_binary_linkage(bin/"cargo-release", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
