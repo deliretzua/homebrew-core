@@ -7,13 +7,13 @@ class Ipmitool < Formula
   revision 2
 
   bottle do
-    sha256 arm64_ventura:  "a3862eb5a4f8f401f21f61585a6a51fd5c08a6825876122179c3286b68843943"
-    sha256 arm64_monterey: "959def316be5f337341d13fd2225a7ebcafd775749d2fcde8ab23160de83e5c8"
-    sha256 arm64_big_sur:  "3e711528ae7df03c387e4a25093e202d846ec2c11ab26b85f581abf24c20b3c0"
-    sha256 ventura:        "d4b39179c103c299d23ca95a156f2ef009c37d335f9df30457a984b2579220a1"
-    sha256 monterey:       "05de9ad2b49826138bfa4c777358af766bce8d80c4aeef3c59d072d9e8240c4b"
-    sha256 big_sur:        "2e7da2c2ebe7ea60e20dd6aacfec261ac648a1eba952ea91536a0901bb4b6e05"
-    sha256 x86_64_linux:   "a0a993a436ef12c14707d60293d37233dd90e0e80909c461f262c19874951d32"
+    sha256 arm64_ventura:  "9c793c56cdb44aab31470708ab208e9525d4a5782b313f3cf7dd12fad2759275"
+    sha256 arm64_monterey: "c19e86e32583bceb9c38f2232c90726b2a529857d24638e62e355ad47eb8bfdb"
+    sha256 arm64_big_sur:  "d8e13a2e7d3c9bb7cb0f04aaeb559154685ca752247b0ebf45ee9c3e4e85fdfc"
+    sha256 ventura:        "3f390f62eceea1ff43f989033f099f54a0f9f006b915e4f60b044dd6c9473a09"
+    sha256 monterey:       "9977d1fe240ac918fe0f2a2468a4fa451faf3a442b0136dd490cc58d02b2898b"
+    sha256 big_sur:        "18a570a5c08115eada019cd65b3a889e51f950ba9efed6bd1cb82864ff3661f7"
+    sha256 x86_64_linux:   "3642f1f3d4daa7d79df5394683be422345f2c397fc01febd9f4ad75e751c92c8"
   end
 
   depends_on "autoconf" => :build
