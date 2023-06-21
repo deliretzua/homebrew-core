@@ -4,6 +4,7 @@ class MariadbAT109 < Formula
   url "https://downloads.mariadb.com/MariaDB/mariadb-10.9.7/source/mariadb-10.9.7.tar.gz"
   sha256 "59c4b178eb859ead207d5c0a7515263c734dc0622af46e1657ef12cb81bc10f5"
   license "GPL-2.0-only"
+  revision 1
 
   # This uses a placeholder regex to satisfy the `PageMatch` strategy
   # requirement. In the future, this will be updated to use a `Json` strategy
@@ -43,7 +44,7 @@ class MariadbAT109 < Formula
   depends_on "fmt" => :build
   depends_on "pkg-config" => :build
   depends_on "groonga"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pcre2"
   depends_on "zstd"
 
