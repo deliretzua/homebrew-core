@@ -5,6 +5,7 @@ class Metview < Formula
   version "5.19.1"
   sha256 "2cdeeda7579f1465fb6d1f2c3e7424777e34a19f3f72c445874f99b292d49146"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url "https://confluence.ecmwf.int/display/METV/The+Metview+Source+Bundle"
@@ -29,6 +30,7 @@ class Metview < Formula
   depends_on "fftw"
   depends_on "gdbm"
   depends_on "netcdf"
+  depends_on "openssl@3"
   depends_on "pango"
   depends_on "proj"
   depends_on "qt"
@@ -41,21 +43,22 @@ class Metview < Formula
   end
 
   def install
-    ENV["RPC_PATH"] = HOMEBREW_PREFIX
-    cmake_rpc_flags = if OS.linux?
-      "-DCMAKE_CXX_FLAGS=-I#{HOMEBREW_PREFIX}/include/tirpc"
-    else
-      ""
-    end
-
-    args = %w[
+    args = %W[
       -DBUNDLE_SKIP_ECCODES=1
       -DENABLE_MIR_DOWNLOAD_MASKS=OFF
       -DENABLE_BUILD_TOOLS=OFF
       -DENABLE_ECKIT_CMD=OFF
-      -DFFTW_PATH=#{HOMEBREW_PREFIX}
+      -DFFTW_PATH=#{Formula["fftw"].opt_prefix}
     ]
-    system "cmake", "-S", ".", "-B", "build", *args, *cmake_rpc_flags, *std_cmake_args
+
+    if OS.linux?
+      args += [
+        "-DRPC_PATH=#{Formula["libtirpc"].opt_prefix}",
+        "-DRPC_INCLUDE_DIR=#{Formula["libtirpc"].opt_include}/tirpc",
+      ]
+    end
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
