@@ -6,6 +6,7 @@ class Fdroidserver < Formula
   url "https://files.pythonhosted.org/packages/75/72/ea1e1e9d7d0ade051279b8676e6025f8c14dd64a5edeb76f2208e23c7720/fdroidserver-2.2.1.tar.gz"
   sha256 "6dcba0b747bfc9ebe4d441c56cf0c8aeab70a58cd0d1248462892e933a382302"
   license "AGPL-3.0-or-later"
+  revision 1
 
   bottle do
     rebuild 2
@@ -18,13 +19,14 @@ class Fdroidserver < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "122c29f601b78e206d32c82aa79d68daf494e6f404f2a03b92e1d2965491566b"
   end
 
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
   depends_on "fonttools"
   depends_on "ipython"
   depends_on "numpy"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pillow"
   depends_on "pygments"
   depends_on "python-typing-extensions"
@@ -224,6 +226,10 @@ class Fdroidserver < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     venv = virtualenv_create(libexec, "python3.11")
 
     venv.pip_install resource("lxml")
