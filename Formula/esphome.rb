@@ -6,6 +6,7 @@ class Esphome < Formula
   url "https://files.pythonhosted.org/packages/53/70/19a33308db01284581e8c2d905e8bd46389b5bebaa6a255f9229b89f044b/esphome-2023.6.0.tar.gz"
   sha256 "08205491b6e299c29139004173e21d1ea7ff82f41ed27895aeb230e257749ac3"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "9b7c946d24a830c5a63f81db7aed4d74c88fd4c678cc213f2b07f87b12ae810c"
@@ -20,6 +21,7 @@ class Esphome < Formula
   depends_on "pkg-config" => :build
   depends_on "rust" => :build # for cryptography
   depends_on "cffi"
+  depends_on "openssl@3"
   depends_on "protobuf"
   depends_on "pycparser"
   depends_on "python-tabulate"
@@ -228,6 +230,10 @@ class Esphome < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     virtualenv_install_with_resources
   end
 
