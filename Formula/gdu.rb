@@ -30,7 +30,13 @@ class Gdu < Formula
       -X "github.com/dundee/gdu/v#{major}/build.User=#{user}"
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/gdu"
+    system "go", "build", *std_go_args(ldflags: ldflags, output: "#{bin}/gdu-go"), "./cmd/gdu"
+  end
+
+  def caveats
+    <<~EOS
+      To avoid a conflict with `coreutils`, `gdu` has been installed as `gdu-go`.
+    EOS
   end
 
   test do
@@ -38,8 +44,9 @@ class Gdu < Formula
     (testpath/"test_dir"/"file1").write "hello"
     (testpath/"test_dir"/"file2").write "brew"
 
-    assert_match version.to_s, shell_output("#{bin}/gdu -v")
-    assert_match "colorized", shell_output("#{bin}/gdu --help 2>&1")
-    assert_match "4.0 KiB file1", shell_output("#{bin}/gdu --non-interactive --no-progress #{testpath}/test_dir 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/gdu-go -v")
+    assert_match "colorized", shell_output("#{bin}/gdu-go --help 2>&1")
+    output = shell_output("#{bin}/gdu-go --non-interactive --no-progress #{testpath}/test_dir 2>&1")
+    assert_match "4.0 KiB file1", output
   end
 end
