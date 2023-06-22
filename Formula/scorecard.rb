@@ -2,10 +2,18 @@ class Scorecard < Formula
   desc "Security health metrics for Open Source"
   homepage "https://github.com/ossf/scorecard"
   url "https://github.com/ossf/scorecard.git",
-      tag:      "v4.10.5",
-      revision: "27cfe92ed356fdb5a398c919ad480817ea907808"
+      tag:      "v4.11.0",
+      revision: "4edb07802fdad892fa8d10f8fd47666b6ccc27c9"
   license "Apache-2.0"
   head "https://github.com/ossf/scorecard.git", branch: "main"
+
+  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
+  # labeled as "pre-release" on GitHub before the version is released, so it's
+  # necessary to use the `GithubLatest` strategy.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "ac00790290a6611cd7759964ef30fb8c191a477df942888adefa3f8ca72ad075"
