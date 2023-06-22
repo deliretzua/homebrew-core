@@ -6,7 +6,7 @@ class MagicEnum < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ae966c13d8c372ac81655d601563acaf05569e00a67cc0a5b39a79a24fd579b1"
+    sha256 cellar: :any_skip_relocation, all: "d106a548298cae974bd65aded36cc2812bfefaa4d5bd111a50cbb3235dc49336"
   end
 
   depends_on "cmake" => :build
