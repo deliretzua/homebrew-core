@@ -8,13 +8,13 @@ class Jc < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c521587cf38b4d11e7efc7b1a283554ad4366f5861fd04d8c7dd364ad53e1e41"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c521587cf38b4d11e7efc7b1a283554ad4366f5861fd04d8c7dd364ad53e1e41"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c521587cf38b4d11e7efc7b1a283554ad4366f5861fd04d8c7dd364ad53e1e41"
-    sha256 cellar: :any_skip_relocation, ventura:        "46b4c35de5a0e7d05b709d9d1c7bb9f23d58442bef4a319ff0f1c1473dad6028"
-    sha256 cellar: :any_skip_relocation, monterey:       "46b4c35de5a0e7d05b709d9d1c7bb9f23d58442bef4a319ff0f1c1473dad6028"
-    sha256 cellar: :any_skip_relocation, big_sur:        "46b4c35de5a0e7d05b709d9d1c7bb9f23d58442bef4a319ff0f1c1473dad6028"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f9f74da170d35fe7c0daa869cf00a01670dc5ce6800c073498f11dbe3b9a1f1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3c49ca333d54b89e433571f3d4510a6a6c5fd776d3243e1139093faf2b00c2ce"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ab7f870dda5a28fc79077bd4d0fc0431b25c5e7885fb81fef174086dde1c39ff"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "90b48797a2499c7de46d7c65b595a5fc6c848b46561ddcdd771e4750a18c2971"
+    sha256 cellar: :any_skip_relocation, ventura:        "29e5e9c8bcd1ba56145ad5f790038a23937e65e5b102e138bcb49db7570354f8"
+    sha256 cellar: :any_skip_relocation, monterey:       "e0c2e1a45e49afa2e4c197a935d655cc557a4da09b11945d7ae56ffcdfc2960e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "585042d7de0f9cf22f5e87f45a041df4b36da08f0e404fc39965669312bec1e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "95b93e8269b78ea7af43245bbb93e2e6e27fefc0c5728ac5f01c3c52d5ae79f9"
   end
 
   depends_on "pygments"
