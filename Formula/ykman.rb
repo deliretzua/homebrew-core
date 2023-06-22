@@ -6,6 +6,7 @@ class Ykman < Formula
   url "https://files.pythonhosted.org/packages/8e/70/d4c632df03f0c1f45ce26981a356fd10fe3ae49fccc1856769448efe396a/yubikey_manager-5.1.1.tar.gz"
   sha256 "684102affd4a0d29611756da263c22f8e67226e80f65c5460c8c5608f9c0d58d"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/Yubico/yubikey-manager.git", branch: "main"
 
   bottle do
@@ -25,15 +26,12 @@ class Ykman < Formula
   depends_on "swig" => :build
   depends_on "cffi"
   depends_on "keyring"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "python@3.11"
 
   uses_from_macos "libffi"
-
-  on_linux do
-    depends_on "pcsc-lite"
-  end
+  uses_from_macos "pcsc-lite"
 
   resource "click" do
     url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
@@ -77,7 +75,7 @@ class Ykman < Formula
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     # Fixes: smartcard/scard/helpers.c:28:22: fatal error: winscard.h: No such file or directory
@@ -85,9 +83,13 @@ class Ykman < Formula
 
     # Fix `ModuleNotFoundError` issue with `keyring``
     site_packages = Language::Python.site_packages("python3.11")
-    (libexec/site_packages/"homebrew-keyring.pth").write Formula["keyring"].opt_libexec/site_packages
+    keyring_site_packages = Formula["keyring"].opt_libexec/site_packages
+    ENV.prepend_path "PYTHONPATH", keyring_site_packages
+
     virtualenv_install_with_resources
     man1.install "man/ykman.1"
+
+    (libexec/site_packages/"homebrew-keyring.pth").write keyring_site_packages
 
     # Click doesn't support generating completions for Bash versions older than 4.4
     generate_completions_from_executable(bin/"ykman", shells: [:fish, :zsh], shell_parameter_format: :click)
