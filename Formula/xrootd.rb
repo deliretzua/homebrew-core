@@ -5,6 +5,7 @@ class Xrootd < Formula
   mirror "https://xrootd.slac.stanford.edu/download/v5.5.5/xrootd-5.5.5.tar.gz"
   sha256 "0710caae527082e73d3bf8f9d1dffe95808afd3fcaaaa15ab0b937b8b226bc1f"
   license "LGPL-3.0-or-later"
+  revision 1
   head "https://github.com/xrootd/xrootd.git", branch: "master"
 
   livecheck do
@@ -27,7 +28,7 @@ class Xrootd < Formula
   depends_on "python@3.11" => [:build, :test]
   depends_on "davix"
   depends_on "krb5"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "readline"
 
   uses_from_macos "libxcrypt"
