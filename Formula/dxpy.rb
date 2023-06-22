@@ -6,19 +6,22 @@ class Dxpy < Formula
   url "https://files.pythonhosted.org/packages/a5/ee/aa50f3d5452a9c46da233c58b83f38def69828ce3296ad7f1c47df604b91/dxpy-0.349.1.tar.gz"
   sha256 "96fbc8d0c99935a6327f9850e1352bf64d448faaa1036a13a3c00cab90b755cf"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "ed2d1637b311ce2d1cec76c53ba2c1a439c411da9cf3be3308c7612a78651de2"
-    sha256 cellar: :any,                 arm64_monterey: "7d377021f374fdd5cdbc2fc5101a1771d0790d3f855ee2222d3da603b9e73266"
-    sha256 cellar: :any,                 arm64_big_sur:  "4dc1b1ab6bb150e35a109e44df9c016f1844c59ce33d7b7849f79f3b60d36a41"
-    sha256 cellar: :any,                 ventura:        "89f254b0e0e254ba12ac010254f3b4d7a72c9ea15f61efce5905ba2b285d24f7"
-    sha256 cellar: :any,                 monterey:       "ea86b38ef7bc3cb2bb74e98e5cfa04d7b336ea69b851ddd5a87c78866b867d07"
-    sha256 cellar: :any,                 big_sur:        "27ee83e5c187168075b9446bc7941bc11eb73ff04317243608bb4f7aa00d91ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e115c205ee95219aa18b04df1527935fd6213e1048861a384d8b7c4b91b8c85"
+    sha256 cellar: :any,                 arm64_ventura:  "f7d615b6cc8f8ffcbe8e65a44a03e5c0e0307aba01cce63701f7c1a3af1cc6ce"
+    sha256 cellar: :any,                 arm64_monterey: "b1e147bb7d1e9ee6e7174b13aeabd764e112e586370f324d37e33a7405b42f5a"
+    sha256 cellar: :any,                 arm64_big_sur:  "5c2aae9d8059060c0579989387a076e9964a3e651a812869ca43d678eb80d47c"
+    sha256 cellar: :any,                 ventura:        "a2eb6c4f646753b7881dc51e5c3e3a6f873a3bb8518b28d944024632e66241ee"
+    sha256 cellar: :any,                 monterey:       "3d0a6a02d2806b5ffd4bd6ca3c34d5e4be2fda63630d25bf4916f0c9fb672f1b"
+    sha256 cellar: :any,                 big_sur:        "7743cbdad994e8f725adfc0fbfbea79c40f432d48d005ff3950b630c00c79955"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "76fda1ab3c5f6eb09cf7c7a51b7af0c02492b71f367ff0eb32d4856a96cdd7c1"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build # for cryptography
   depends_on "cffi"
+  depends_on "openssl@3"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -26,10 +29,6 @@ class Dxpy < Formula
 
   on_macos do
     depends_on "readline"
-  end
-
-  on_linux do
-    depends_on "pkg-config" => :build
   end
 
   resource "argcomplete" do
@@ -83,6 +82,10 @@ class Dxpy < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     virtualenv_install_with_resources
   end
 
