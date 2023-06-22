@@ -4,6 +4,7 @@ class Stubby < Formula
   url "https://github.com/getdnsapi/stubby/archive/v0.4.3.tar.gz"
   sha256 "99291ab4f09bce3743000ed3ecbf58961648a35ca955889f1c41d36810cc4463"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/getdnsapi/stubby.git", branch: "develop"
 
   bottle do
