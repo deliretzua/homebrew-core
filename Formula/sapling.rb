@@ -5,6 +5,7 @@ class Sapling < Formula
   version "0.2.20230523-092610+f12b7eee"
   sha256 "57a04327052f900d95d0dd3800d8b13a411b08222307bb141109afca1d1d0eaf"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/facebook/sapling.git", branch: "main"
 
   livecheck do
@@ -28,7 +29,7 @@ class Sapling < Formula
   depends_on "yarn" => :build
   depends_on "gh"
   depends_on "node"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "python@3.11"
 
   # `setuptools` 66.0.0+ only supports PEP 440 conforming version strings.
@@ -49,7 +50,7 @@ class Sapling < Formula
   def install
     python3 = "python3.11"
 
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["SAPLING_VERSION"] = modified_version
 
     # Don't allow the build to break our shim configuration.
