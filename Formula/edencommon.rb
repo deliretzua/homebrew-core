@@ -4,6 +4,7 @@ class Edencommon < Formula
   url "https://github.com/facebookexperimental/edencommon/archive/refs/tags/v2023.06.12.00.tar.gz"
   sha256 "8cfd53508ba31a5a830987a7c99ecf2dc25541a76f82e836c260e6c53e4d793b"
   license "MIT"
+  revision 1
   head "https://github.com/facebookexperimental/edencommon.git", branch: "main"
 
   bottle do
@@ -21,6 +22,7 @@ class Edencommon < Formula
   depends_on "folly"
   depends_on "gflags"
   depends_on "glog"
+  depends_on "openssl@3"
 
   def install
     # Fix "Process terminated due to timeout" by allowing a longer timeout.
