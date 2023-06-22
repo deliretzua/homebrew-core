@@ -1,8 +1,8 @@
 class Gitoxide < Formula
   desc "Idiomatic, lean, fast & safe pure Rust implementation of Git"
   homepage "https://github.com/Byron/gitoxide"
-  url "https://github.com/Byron/gitoxide/archive/refs/tags/v0.26.0.tar.gz"
-  sha256 "2d26636cfa9f1b2cecde289cf79cafb216baff16221168015137b55dba2eafc3"
+  url "https://github.com/Byron/gitoxide/archive/refs/tags/v0.27.0.tar.gz"
+  sha256 "5055074b1dca11bb6ed5ca0b04c87393cf955ca6a536071ea702127cc7907d39"
   license "Apache-2.0"
   head "https://github.com/Byron/gitoxide.git", branch: "main"
 
@@ -35,7 +35,7 @@ class Gitoxide < Formula
   end
 
   test do
-    assert_match "gix-plumbing", shell_output("#{bin}/gix --version")
+    assert_match "gix", shell_output("#{bin}/gix --version")
     system "git", "init", "test", "--quiet"
     touch "test/file.txt"
     system "git", "-C", "test", "add", "."
