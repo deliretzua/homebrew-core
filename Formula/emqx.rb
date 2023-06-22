@@ -2,8 +2,9 @@ class Emqx < Formula
   desc "MQTT broker for IoT"
   homepage "https://www.emqx.io/"
   url "https://github.com/emqx/emqx/archive/refs/tags/v5.1.0.tar.gz"
-  sha256 "6fe363125d52eabaf4c830cdf88bdb54d11260aefc61ecd96a610a98985cd447"
+  sha256 "49d517e0cfcaab1ed27931fb0b32fdf1e6d087cd48df3eb3fb512b8570af6234"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/emqx/emqx.git", branch: "master"
 
   bottle do
@@ -24,7 +25,7 @@ class Emqx < Formula
   depends_on "erlang"    => :build
   depends_on "freetds"   => :build
   depends_on "libtool"   => :build
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "curl"  => :build
   uses_from_macos "unzip" => :build
