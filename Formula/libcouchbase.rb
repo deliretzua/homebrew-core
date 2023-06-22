@@ -4,6 +4,7 @@ class Libcouchbase < Formula
   url "https://packages.couchbase.com/clients/c/libcouchbase-3.3.7.tar.gz"
   sha256 "91ff6471351a056c446dc29c283eecea8c18da8f4af83b5db469e65482ded7ab"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/couchbase/libcouchbase.git", branch: "master"
 
   bottle do
@@ -20,7 +21,7 @@ class Libcouchbase < Formula
   depends_on "libev"
   depends_on "libevent"
   depends_on "libuv"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
     system "cmake", "-S", ".", "-B", "build",
