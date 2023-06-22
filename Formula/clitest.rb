@@ -1,8 +1,8 @@
 class Clitest < Formula
   desc "Command-Line Tester"
   homepage "https://github.com/aureliojargas/clitest"
-  url "https://github.com/aureliojargas/clitest/archive/refs/tags/0.4.0.tar.gz"
-  sha256 "e889fb1fdaae44f0911461cc74849ffefb1fef9b200584e1749b355e4f9a3997"
+  url "https://github.com/aureliojargas/clitest/archive/refs/tags/0.5.0.tar.gz"
+  sha256 "4005de0bc27e4676e418ab1e1e64861272aa74af1212c73a1173760fc449b049"
   license "MIT"
   head "https://github.com/aureliojargas/clitest.git", branch: "main"
 
