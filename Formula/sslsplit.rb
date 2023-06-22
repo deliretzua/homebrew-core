@@ -1,11 +1,20 @@
 class Sslsplit < Formula
   desc "Man-in-the-middle attacks against SSL encrypted network connections"
   homepage "https://www.roe.ch/SSLsplit"
-  url "https://github.com/droe/sslsplit/archive/0.5.5.tar.gz"
-  sha256 "3a6b9caa3552c9139ea5c9841d4bf24d47764f14b1b04b7aae7fa2697641080b"
   license "BSD-2-Clause"
-  revision 1
+  revision 2
   head "https://github.com/droe/sslsplit.git", branch: "develop"
+
+  stable do
+    url "https://github.com/droe/sslsplit/archive/0.5.5.tar.gz"
+    sha256 "3a6b9caa3552c9139ea5c9841d4bf24d47764f14b1b04b7aae7fa2697641080b"
+
+    # Patch to add `openssl@3` support
+    patch do
+      url "https://github.com/droe/sslsplit/commit/e17de8454a65d2b9ba432856971405dfcf1e7522.patch?full_index=1"
+      sha256 "88d558dcb21b1a23fe0b97f41251e7a321b11c37afd70dd07ac1a2d6a4788629"
+    end
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "74357200610d41f36a3f2704cf7c877a3ad874ab9d1f032d711f7045f73f4fe8"
@@ -25,7 +34,7 @@ class Sslsplit < Formula
   depends_on "libevent"
   depends_on "libnet"
   depends_on "libpcap"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
     ENV["LIBNET_BASE"] = Formula["libnet"].opt_prefix
