@@ -1,8 +1,8 @@
 class Numcpp < Formula
   desc "C++ implementation of the Python Numpy library"
   homepage "https://dpilger26.github.io/NumCpp"
-  url "https://github.com/dpilger26/NumCpp/archive/Version_2.10.1.tar.gz"
-  sha256 "847382a780bea2a9b804c1835dcc5f9addabd0d1e3eb9c8339cde9422a5008d6"
+  url "https://github.com/dpilger26/NumCpp/archive/Version_2.11.0.tar.gz"
+  sha256 "ea675775c3535589f268224efa31ae6003a68e95a465e92c99496a0c9366bdc2"
   license "MIT"
   head "https://github.com/dpilger26/NumCpp.git", branch: "master"
 
