@@ -1,8 +1,8 @@
 class MysqlClientAT57 < Formula
   desc "Open source relational database management system"
   homepage "https://dev.mysql.com/doc/refman/5.7/en/"
-  url "https://cdn.mysql.com/archives/mysql-5.7/mysql-boost-5.7.34.tar.gz"
-  sha256 "5bc2c7c0bb944b5bb219480dde3c1caeb049e7351b5bba94c3b00ac207929c7b"
+  url "https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-boost-5.7.42.tar.gz"
+  sha256 "7e1a7d45e7ca382eb3a992f63631c380904dd49c89f3382ec950aef01997524f"
 
   bottle do
     sha256 arm64_ventura:  "87d24fa8e0c274b3e6e7ebe850da9e6a30a7c5dc8ff02abdd5fabef452e8bb9b"
@@ -18,10 +18,11 @@ class MysqlClientAT57 < Formula
 
   keg_only :versioned_formula
 
+  # Same deprecation date as OpenSSL 1.1
+  deprecate! date: "2023-09-11", because: :unsupported
+
   depends_on "cmake" => :build
-
   depends_on "openssl@1.1"
-
   uses_from_macos "libedit"
 
   def install
@@ -47,8 +48,9 @@ class MysqlClientAT57 < Formula
       -DWITHOUT_SERVER=ON
     ]
 
-    system "cmake", ".", *std_cmake_args, *args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
