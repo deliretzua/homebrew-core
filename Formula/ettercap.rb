@@ -1,10 +1,21 @@
 class Ettercap < Formula
   desc "Multipurpose sniffer/interceptor/logger for switched LAN"
   homepage "https://ettercap.github.io/ettercap/"
-  url "https://github.com/Ettercap/ettercap/archive/v0.8.3.1.tar.gz"
-  sha256 "d0c3ef88dfc284b61d3d5b64d946c1160fd04276b448519c1ae4438a9cdffaf3"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/Ettercap/ettercap.git", branch: "master"
+
+  stable do
+    url "https://github.com/Ettercap/ettercap/archive/v0.8.3.1.tar.gz"
+    sha256 "d0c3ef88dfc284b61d3d5b64d946c1160fd04276b448519c1ae4438a9cdffaf3"
+
+    # Fix build for curl 8+
+    # https://github.com/Ettercap/ettercap/pull/1221
+    patch do
+      url "https://github.com/Ettercap/ettercap/commit/40534662043b7d831d1f6c70448afa9d374a9b63.patch?full_index=1"
+      sha256 "ac9edbd2f5d2e809835f8b111a7f20000ffab0efca2d6f17f4b199bb325009b1"
+    end
+  end
 
   bottle do
     rebuild 2
@@ -23,11 +34,12 @@ class Ettercap < Formula
   depends_on "gtk+3"
   depends_on "libnet"
   depends_on "ncurses" if DevelopmentTools.clang_build_version >= 1000
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pcre"
 
+  uses_from_macos "bison" => :build
+  uses_from_macos "flex" => :build
   uses_from_macos "curl"
-  uses_from_macos "flex"
   uses_from_macos "libpcap"
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
@@ -37,10 +49,7 @@ class Ettercap < Formula
     # https://gitlab.kitware.com/cmake/cmake/issues/19531
     ENV.append_to_cflags "-I#{Formula["harfbuzz"].opt_include}/harfbuzz"
 
-    # Fix build error on wdg_file.c: fatal error: menu.h: No such file or directory
-    ENV.append_to_cflags "-I#{Formula["ncurses"].opt_include}/ncursesw" if OS.linux?
-
-    args = std_cmake_args + %W[
+    args = %W[
       -DBUNDLED_LIBS=OFF
       -DCMAKE_INSTALL_RPATH=#{rpath}
       -DENABLE_CURSES=ON
@@ -54,12 +63,16 @@ class Ettercap < Formula
       -DINSTALL_DESKTOP=ON
       -DINSTALL_SYSCONFDIR=#{etc}
     ]
-    args << "-DPOLKIT_DIR=#{share}/polkit-1/actions/" if OS.linux?
 
-    mkdir "build" do
-      system "cmake", "..", *args
-      system "make", "install"
+    if OS.linux?
+      # Fix build error on wdg_file.c: fatal error: menu.h: No such file or directory
+      ENV.append_to_cflags "-I#{Formula["ncurses"].opt_include}/ncursesw"
+      args << "-DPOLKIT_DIR=#{share}/polkit-1/actions/"
     end
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
