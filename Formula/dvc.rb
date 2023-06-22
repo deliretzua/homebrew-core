@@ -7,6 +7,7 @@ class Dvc < Formula
   url "https://files.pythonhosted.org/packages/26/c3/ab1581f81b65e13dfd80bac0547656079df1f1b44d70021effa22730a3fd/dvc-3.1.0.tar.gz"
   sha256 "dcd3ec39c731bf818eb09522bb0387683c47ae08b96e7d4492b6513caeea2604"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "ba423c935316a4fc6505382ffb0bd772a76c123e00da00ca757a2011905c9cfb"
@@ -18,13 +19,14 @@ class Dvc < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0565b1e6f13ea9f18f64b66ee6222987649a81e47943f4aa56bbd558e177395"
   end
 
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "openjdk" => :build # for hydra-core
   depends_on "pkg-config" => :build
-  depends_on "rust" => :build # for cryptography (required by azure deps)
+  depends_on "rust" => :build
   depends_on "apache-arrow"
   depends_on "cffi"
   depends_on "numpy"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "protobuf@21"
   depends_on "pycparser"
   depends_on "pygit2"
@@ -764,6 +766,10 @@ class Dvc < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     # NOTE: dvc uses this file [1] to know which package it was installed from,
     # so that it is able to provide appropriate instructions for updates.
     # [1] https://github.com/iterative/dvc/blob/3.0.0/scripts/build.py#L23
