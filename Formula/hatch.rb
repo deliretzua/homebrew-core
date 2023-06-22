@@ -6,6 +6,7 @@ class Hatch < Formula
   url "https://files.pythonhosted.org/packages/5a/ff/d0dc75f39798af1d3d2258c82c5fdeca2817cbfadba7c41e8fb7cf0db984/hatch-1.7.0.tar.gz"
   sha256 "7afc701fd5b33684a6650e1ecab8957e19685f824240ba7458dcacd66f90fb46"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "316be4a2069e29adbbfe3ac32af70fea0c78a91458204e59e2504a776cad0592"
@@ -22,11 +23,11 @@ class Hatch < Formula
   depends_on "virtualenv"
 
   on_linux do
-    # `pkg-config`, `rust`, and `openssl@1.1` are for cryptography.
+    # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
     depends_on "pkg-config" => :build
     depends_on "rust" => :build
     depends_on "cffi"
-    depends_on "openssl@1.1"
+    depends_on "openssl@3"
     depends_on "pycparser"
 
     resource "cryptography" do
@@ -218,7 +219,7 @@ class Hatch < Formula
   def install
     if OS.linux?
       # Ensure that the `openssl` crate picks up the intended library.
-      ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+      ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
       ENV["OPENSSL_NO_VENDOR"] = "1"
     end
 
