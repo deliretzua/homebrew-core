@@ -4,6 +4,7 @@ class Megatools < Formula
   url "https://megatools.megous.com/builds/megatools-1.11.1.20230212.tar.gz"
   sha256 "ecfa2ee4b277c601ebae648287311030aa4ca73ea61ee730bc66bef24ef19a34"
   license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
+  revision 1
 
   livecheck do
     url "https://megatools.megous.com/builds/"
@@ -26,7 +27,7 @@ class Megatools < Formula
   depends_on "curl" # curl >= 7.85.0 is required
   depends_on "glib"
   depends_on "glib-networking"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
     mkdir "build" do
