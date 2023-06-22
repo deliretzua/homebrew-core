@@ -4,6 +4,7 @@ class Neomutt < Formula
   url "https://github.com/neomutt/neomutt/archive/20230517.tar.gz"
   sha256 "4ac277b40e7ed5d67ba516338e2b26cc6810aa37564f6e9a2d45eb15b3a9213e"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/neomutt/neomutt.git", branch: "main"
 
   bottle do
@@ -27,7 +28,7 @@ class Neomutt < Formula
   depends_on "lua"
   depends_on "ncurses"
   depends_on "notmuch"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pcre2"
   depends_on "tokyo-cabinet"
 
@@ -56,7 +57,7 @@ class Neomutt < Formula
       --zlib
       --with-lua=#{Formula["lua"].opt_prefix}
       --with-ncurses=#{Formula["ncurses"].opt_prefix}
-      --with-ssl=#{Formula["openssl@1.1"].opt_prefix}
+      --with-ssl=#{Formula["openssl@3"].opt_prefix}
       --with-sqlite=#{Formula["sqlite"].opt_prefix}
     ]
 
