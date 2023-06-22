@@ -6,6 +6,7 @@ class Keyring < Formula
   url "https://files.pythonhosted.org/packages/31/42/f29907a72907df16326fa425cfd3a144f00d9a613063467f8b58d2ac58a5/keyring-24.0.0.tar.gz"
   sha256 "4e87665a19c514c7edada8b15015cf89bd99b8d7edabc5c43cca77166fa8dfad"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "31562117376109a9202a179c5834b680256d23ab01d7b3e72dae627355cc92c5"
@@ -22,9 +23,10 @@ class Keyring < Formula
   depends_on "python@3.11"
 
   on_linux do
-    depends_on "pkg-config" => :build # for cryptography
-    depends_on "rust" => :build # for cryptography
-    depends_on "openssl@1.1"
+    # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
+    depends_on "pkg-config" => :build
+    depends_on "rust" => :build
+    depends_on "openssl@3"
 
     resource "cryptography" do
       url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
@@ -63,6 +65,12 @@ class Keyring < Formula
   end
 
   def install
+    if OS.linux?
+      # Ensure that the `openssl` crate picks up the intended library.
+      ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+      ENV["OPENSSL_NO_VENDOR"] = "1"
+    end
+
     virtualenv_install_with_resources
   end
 
