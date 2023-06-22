@@ -2,9 +2,10 @@ class Nut < Formula
   desc "Network UPS Tools: Support for various power devices"
   homepage "https://networkupstools.org/"
   license "GPL-2.0-or-later"
+  revision 1
 
   stable do
-    url "https://github.com/networkupstools/nut/releases/download/v2.8.0/nut-2.8.0.tar.gz"
+    url "https://github.com/networkupstools/nut/releases/download/v2.8.0-signed/nut-2.8.0.tar.gz"
     sha256 "c3e5a708da797b7c70b653d37b1206a000fcb503b85519fe4cdf6353f792bfe5"
 
     # fix build failure
@@ -41,7 +42,7 @@ class Nut < Formula
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "libusb-compat"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   conflicts_with "rhino", because: "both install `rhino` binaries"
 
