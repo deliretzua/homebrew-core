@@ -4,7 +4,7 @@ class Monkeysphere < Formula
   url "https://deb.debian.org/debian/pool/main/m/monkeysphere/monkeysphere_0.44.orig.tar.gz"
   sha256 "6ac6979fa1a4a0332cbea39e408b9f981452d092ff2b14ed3549be94918707aa"
   license "GPL-3.0-or-later"
-  revision 5
+  revision 6
 
   livecheck do
     url "https://deb.debian.org/debian/pool/main/m/monkeysphere/"
@@ -23,18 +23,19 @@ class Monkeysphere < Formula
   end
 
   depends_on "gnu-sed" => :build
+  depends_on "pkg-config" => :build
   depends_on "gnupg"
   depends_on "libassuan"
   depends_on "libgcrypt"
   depends_on "libgpg-error"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "perl"
 
   resource "Crypt::OpenSSL::Guess" do
     on_linux do
-      url "https://cpan.metacpan.org/authors/id/A/AK/AKIYM/Crypt-OpenSSL-Guess-0.13.tar.gz"
-      sha256 "87c1dd7f0f80fcd3d1396bce9fd9962e7791e748dc0584802f8d10cc9585e743"
+      url "https://cpan.metacpan.org/authors/id/A/AK/AKIYM/Crypt-OpenSSL-Guess-0.15.tar.gz"
+      sha256 "1c5033381819fdb4c9087dd291b90ec70e7810d31d57eade9b388eccfd70386d"
     end
   end
 
@@ -44,8 +45,8 @@ class Monkeysphere < Formula
   end
 
   resource "Crypt::OpenSSL::RSA" do
-    url "https://cpan.metacpan.org/authors/id/T/TO/TODDR/Crypt-OpenSSL-RSA-0.31.tar.gz"
-    sha256 "4173403ad4cf76732192099f833fbfbf3cd8104e0246b3844187ae384d2c5436"
+    url "https://cpan.metacpan.org/authors/id/T/TO/TODDR/Crypt-OpenSSL-RSA-0.33.tar.gz"
+    sha256 "bdbe630f6d6f540325746ad99977272ac8664ff81bd19f0adaba6d6f45efd864"
   end
 
   def install
