@@ -6,6 +6,7 @@ class Howdoi < Formula
   url "https://files.pythonhosted.org/packages/6d/43/0e8166583575bd500c0f8f1a4ab9429af9466feb6fcdc006e88de8fd23e9/howdoi-2.0.20.tar.gz"
   sha256 "51cd40c53e0c0f8f8da88f480eb7423183be2350ab4f0a4d9d4763ca6ac3e2a9"
   license "MIT"
+  revision 1
 
   bottle do
     rebuild 7
@@ -18,12 +19,12 @@ class Howdoi < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4d063a09c371eb64607b8b997d9bbeba893c89c19f724c5accd71969999b92a"
   end
 
-  # `pkg-config`, `rust`, and `openssl@1.1` are for cryptography.
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pygments"
   depends_on "python@3.11"
   depends_on "six"
@@ -152,7 +153,7 @@ class Howdoi < Formula
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     virtualenv_install_with_resources
