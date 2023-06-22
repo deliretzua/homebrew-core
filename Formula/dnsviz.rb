@@ -9,15 +9,13 @@ class Dnsviz < Formula
   revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "1c3f1960ac66cbc6ef977e948ec914df709f9d4f145a939193641249873432cd"
-    sha256 cellar: :any,                 arm64_monterey: "0808cd92a1f361ccbc4bfcb09d0d6ea592db4394949c297cbcbd4c3bb12cdc0a"
-    sha256 cellar: :any,                 arm64_big_sur:  "6c5c1515579d080c67065d611c38b4148d8c08203a56fc51cce180e3d8996dcc"
-    sha256 cellar: :any,                 ventura:        "9d7221d1793f47410e265ca33840bde8d57aa48b7e634c0e5718d6bba9c3248d"
-    sha256 cellar: :any,                 monterey:       "e07479b69e52e6971e0b533047b4a829dcf35aa027f01450d777735209a28c28"
-    sha256 cellar: :any,                 big_sur:        "b19b4f06152b79120bd471ada33334c04e7c5f5cbd9fe3d5823264416563e77a"
-    sha256 cellar: :any,                 catalina:       "d679a6d054b4084a9d11bd171255c509e1bac86b36b4cb0577475eaaf476fa9e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "850b615e4092887988ff6aa74f9303a5e1b1f43513ed783a6ae7f885bb4b5365"
+    sha256 cellar: :any,                 arm64_ventura:  "5a71a6c91593a90b9ecd76dbfc27afba76500620aaddee7ff88fab78e71b119d"
+    sha256 cellar: :any,                 arm64_monterey: "55b1e30f09a738d831a92555eed6630b694248088e9089deef27d973d114f304"
+    sha256 cellar: :any,                 arm64_big_sur:  "254dc87f29c57a1594c6a3d4ca4fbf8a2e52c9967a6ab970a4c3aef775cd1f31"
+    sha256 cellar: :any,                 ventura:        "77ff1faa9c59f7347af9dfb37d3a6c6cf22c1f0d8b9612ac0858525cc7a981a8"
+    sha256 cellar: :any,                 monterey:       "5bca7af88657cc2d05a7764417a230fd8bdb3d65885333a16f6d897f6d333af4"
+    sha256 cellar: :any,                 big_sur:        "17c5b7efc2b3bce906a472478b509b882317e357e61e2c60b710c318aaf5014c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "546e26d786634c81029b5ded89d12ecd07b75bb8b7f7f594c43c596f9829c057"
   end
 
   depends_on "pkg-config" => :build
