@@ -4,6 +4,7 @@ class CargoUdeps < Formula
   url "https://github.com/est31/cargo-udeps/archive/refs/tags/v0.1.40.tar.gz"
   sha256 "7122f08b9dac152c6dddacd2610aa973807037f2a2f1d9042de4bcf17d344471"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
 
   bottle do
     rebuild 1
@@ -20,8 +21,7 @@ class CargoUdeps < Formula
   depends_on "rustup-init" => :test
   depends_on "libgit2"
   depends_on "libssh2"
-  # TODO: Upgrade to openssl@3 when libssh2 uses openssl@3 as well.
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "zlib"
 
@@ -32,7 +32,7 @@ class CargoUdeps < Formula
   def install
     ENV["LIBGIT2_SYS_USE_PKG_CONFIG"] = "1"
     ENV["LIBSSH2_SYS_USE_PKG_CONFIG"] = "1"
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
     system "cargo", "install", "--no-default-features", *std_cargo_args
   end
@@ -73,8 +73,8 @@ class CargoUdeps < Formula
     [
       Formula["libgit2"].opt_lib/shared_library("libgit2"),
       Formula["libssh2"].opt_lib/shared_library("libssh2"),
-      Formula["openssl@1.1"].opt_lib/shared_library("libssl"),
-      Formula["openssl@1.1"].opt_lib/shared_library("libcrypto"),
+      Formula["openssl@3"].opt_lib/shared_library("libssl"),
+      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
     ].each do |library|
       assert check_binary_linkage(bin/"cargo-udeps", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
