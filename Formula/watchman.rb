@@ -4,6 +4,7 @@ class Watchman < Formula
   url "https://github.com/facebook/watchman/archive/refs/tags/v2023.06.12.00.tar.gz"
   sha256 "a57e8f0b4bbeac51e151e23911916d1eb1f47cef91bff578df66fc5484411613"
   license "MIT"
+  revision 1
   head "https://github.com/facebook/watchman.git", branch: "main"
 
   bottle do
@@ -32,7 +33,7 @@ class Watchman < Formula
   depends_on "gflags"
   depends_on "glog"
   depends_on "libevent"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pcre2"
   depends_on "python@3.11"
 
