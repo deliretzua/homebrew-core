@@ -1,8 +1,8 @@
 class CargoCrev < Formula
   desc "Code review system for the cargo package manager"
   homepage "https://web.crev.dev/rust-reviews/"
-  url "https://github.com/crev-dev/cargo-crev/archive/refs/tags/v0.23.3.tar.gz"
-  sha256 "c66a057df87dda209ecca31d83da7ef04117a923d9bfcc88c0d505b30dabf29b"
+  url "https://github.com/crev-dev/cargo-crev/archive/refs/tags/v0.24.2.tar.gz"
+  sha256 "b65fdcb4c2670121c48b47c26818e0e7af12ebdf69551298d131eee4d0212b7b"
   license "Apache-2.0"
 
   livecheck do
