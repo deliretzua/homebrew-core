@@ -5,6 +5,7 @@ class Retdec < Formula
     tag:      "v5.0",
     revision: "53e55b4b26e9b843787f0e06d867441e32b1604e"
   license all_of: ["MIT", "Zlib"]
+  revision 1
   head "https://github.com/avast/retdec.git", branch: "master"
 
   bottle do
@@ -23,7 +24,7 @@ class Retdec < Formula
   depends_on "cmake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "python@3.11"
 
   on_macos do
