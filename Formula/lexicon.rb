@@ -6,6 +6,7 @@ class Lexicon < Formula
   url "https://files.pythonhosted.org/packages/68/64/2b492a6170ee1d90b3998d3de0f9fbd7eddb914a87ae0e0d511469b5e277/dns_lexicon-3.12.0.tar.gz"
   sha256 "13eec59c2d9364288e88506f7d2dc5c295e9d15f0ddce3137535490669bdb5ff"
   license "MIT"
+  revision 1
   head "https://github.com/AnalogJ/lexicon.git", branch: "master"
 
   bottle do
@@ -18,8 +19,10 @@ class Lexicon < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "299823c8f673c659d2cacbbf524bdf46c7a3bdc02ea1603b790b78e93a9235a8"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build # for cryptography
   depends_on "cffi"
+  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "pygments"
   depends_on "python@3.11"
@@ -220,6 +223,10 @@ class Lexicon < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     virtualenv_install_with_resources
   end
 
