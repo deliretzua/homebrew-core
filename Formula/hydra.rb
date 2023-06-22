@@ -4,6 +4,7 @@ class Hydra < Formula
   url "https://github.com/vanhauser-thc/thc-hydra/archive/v9.5.tar.gz"
   sha256 "9dd193b011fdb3c52a17b0da61a38a4148ffcad731557696819d4721d1bee76b"
   license "AGPL-3.0-only"
+  revision 1
   head "https://github.com/vanhauser-thc/thc-hydra.git", branch: "master"
 
   bottle do
@@ -19,7 +20,7 @@ class Hydra < Formula
   depends_on "pkg-config" => :build
   depends_on "libssh"
   depends_on "mysql-client"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pcre2"
   uses_from_macos "ncurses"
 
@@ -29,10 +30,10 @@ class Hydra < Formula
     inreplace "configure" do |s|
       # Link against our OpenSSL
       # https://github.com/vanhauser-thc/thc-hydra/issues/80
-      s.gsub!(/^SSL_PATH=""$/, "SSL_PATH=#{Formula["openssl@1.1"].opt_lib}")
-      s.gsub!(/^SSL_IPATH=""$/, "SSL_IPATH=#{Formula["openssl@1.1"].opt_include}")
+      s.gsub!(/^SSL_PATH=""$/, "SSL_PATH=#{Formula["openssl@3"].opt_lib}")
+      s.gsub!(/^SSL_IPATH=""$/, "SSL_IPATH=#{Formula["openssl@3"].opt_include}")
       s.gsub!(/^SSLNEW=""$/, "SSLNEW=YES")
-      s.gsub!(/^CRYPTO_PATH=""$/, "CRYPTO_PATH=#{Formula["openssl@1.1"].opt_lib}")
+      s.gsub!(/^CRYPTO_PATH=""$/, "CRYPTO_PATH=#{Formula["openssl@3"].opt_lib}")
       s.gsub!(/^SSH_PATH=""$/, "SSH_PATH=#{Formula["libssh"].opt_lib}")
       s.gsub!(/^SSH_IPATH=""$/, "SSH_IPATH=#{Formula["libssh"].opt_include}")
       s.gsub!(/^MYSQL_PATH=""$/, "MYSQL_PATH=#{Formula["mysql-client"].opt_lib}")
