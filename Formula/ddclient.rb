@@ -51,7 +51,7 @@ class Ddclient < Formula
     if OS.linux?
       ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
       ENV["PERL_MM_USE_DEFAULT"] = "1"
-      ENV["OPENSSL_PREFIX"] = Formula["openssl@1.1"].opt_prefix
+      ENV["OPENSSL_PREFIX"] = Formula["openssl@3"].opt_prefix
 
       resources.each do |r|
         r.stage do
