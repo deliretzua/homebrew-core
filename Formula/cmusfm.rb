@@ -4,6 +4,7 @@ class Cmusfm < Formula
   url "https://github.com/Arkq/cmusfm/archive/v0.4.1.tar.gz"
   sha256 "ff5338d4b473a3e295f3ae4273fb097c0f79c42e3d803eefdf372b51dba606f2"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura: "91b73a874c10d4deeebcee02a451edff2e1034f88da878506f221eb6a7fa4037"
@@ -22,6 +23,10 @@ class Cmusfm < Formula
   depends_on "libfaketime" => :test
 
   uses_from_macos "curl"
+
+  on_linux do
+    depends_on "openssl@3"
+  end
 
   def install
     system "autoreconf", "--install"
