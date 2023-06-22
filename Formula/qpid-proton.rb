@@ -5,6 +5,7 @@ class QpidProton < Formula
   mirror "https://archive.apache.org/dist/qpid/proton/0.39.0/qpid-proton-0.39.0.tar.gz"
   sha256 "41f3a8d910ba96dda79f405a35e943465d9869cd075346650c7d6c0dc33a6459"
   license "Apache-2.0"
+  revision 1
   head "https://gitbox.apache.org/repos/asf/qpid-proton.git", branch: "main"
 
   bottle do
@@ -21,7 +22,7 @@ class QpidProton < Formula
   depends_on "pkg-config" => :build
   depends_on "python@3.11" => :build
   depends_on "libuv"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
     system "cmake", "-S", ".", "-B", "build",
