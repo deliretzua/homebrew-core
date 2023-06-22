@@ -6,6 +6,7 @@ class Dxpy < Formula
   url "https://files.pythonhosted.org/packages/a5/ee/aa50f3d5452a9c46da233c58b83f38def69828ce3296ad7f1c47df604b91/dxpy-0.349.1.tar.gz"
   sha256 "96fbc8d0c99935a6327f9850e1352bf64d448faaa1036a13a3c00cab90b755cf"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "ed2d1637b311ce2d1cec76c53ba2c1a439c411da9cf3be3308c7612a78651de2"
@@ -17,8 +18,10 @@ class Dxpy < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e115c205ee95219aa18b04df1527935fd6213e1048861a384d8b7c4b91b8c85"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build # for cryptography
   depends_on "cffi"
+  depends_on "openssl@3"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -26,10 +29,6 @@ class Dxpy < Formula
 
   on_macos do
     depends_on "readline"
-  end
-
-  on_linux do
-    depends_on "pkg-config" => :build
   end
 
   resource "argcomplete" do
@@ -83,6 +82,10 @@ class Dxpy < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     virtualenv_install_with_resources
   end
 
