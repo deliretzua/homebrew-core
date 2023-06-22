@@ -6,23 +6,23 @@ class Molecule < Formula
   url "https://files.pythonhosted.org/packages/e4/55/66648b26f1ea76127ff976dae906a74eccb6807ac27ff7645c046b78e195/molecule-5.0.1.tar.gz"
   sha256 "15a4c89e82ec1319bb1b36430061a103b91f1eb6d000b54330a161f4c8ee62d7"
   license "MIT"
+  revision 1
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_ventura:  "5535be3d3ac87c1acb4eb8c1d097d497dad22a545b1632aa996548a73ad75e50"
-    sha256 cellar: :any,                 arm64_monterey: "3cf6f9dfa62831454b8793cd9e5d7758775280a9eb2acb1dd5938fabd8e3ca73"
-    sha256 cellar: :any,                 arm64_big_sur:  "9ae75d1c2fc95928a3a66ce4758a39b5be24b43aac3b97dffe0511ed7a9e4258"
-    sha256 cellar: :any,                 ventura:        "1611bf1cc11f70779734741cae1413c0e96bd72cada4309c7c8277bd2759f50d"
-    sha256 cellar: :any,                 monterey:       "819d27b1a6e9beabb15ec964c8965d2400c4102f2c8cfa4e402d898defca4c08"
-    sha256 cellar: :any,                 big_sur:        "65192eb93daeae6f8a46c72ad59afbeff3547d9ff588df9add15234fa96a63c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e56a3388ee3141c03b42150bfd4b192d3761a8d78da227a919a99d3b4337dcda"
+    sha256 cellar: :any,                 arm64_ventura:  "2aa66ee5fea2a2ffe5e467aaa21989c403b84eb4edfb66214f8ca81385ba0b94"
+    sha256 cellar: :any,                 arm64_monterey: "75e034e55c94e3315e3b12f4bf1b5fd3349b3bcd872c8033e7dba690207273e8"
+    sha256 cellar: :any,                 arm64_big_sur:  "ace1ce9e7f93e2f616e0200c538114ba6aac21969a6b06037c276e0e67927c8f"
+    sha256 cellar: :any,                 ventura:        "826db9fd798e5ae7831bfd7be08531d5f1740a6b0a587755cb272f91a60ba15c"
+    sha256 cellar: :any,                 monterey:       "0e7189ac909bead4e39e7ea5ba5d9042890fd07978eadd7f361f795ff84394e4"
+    sha256 cellar: :any,                 big_sur:        "8d549b51ce3d4305ca85786e1b27da10db71871e408060211b2ab9747762dc5b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a828f4b269259f35198d5e0600577bcd16cf7ee3aafa18d992fe8aae5e9dca17"
   end
 
   depends_on "rust" => :build
   depends_on "ansible"
   depends_on "cffi"
   depends_on "cookiecutter"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pygments"
   depends_on "python@3.11"
   depends_on "pyyaml"
