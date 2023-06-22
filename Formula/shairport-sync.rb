@@ -4,6 +4,7 @@ class ShairportSync < Formula
   url "https://github.com/mikebrady/shairport-sync/archive/4.2.tar.gz"
   sha256 "649d95eede8b9284b2e8b9c97d18c1c64cffae0a6c75bc4f03e3ae494a3e25b6"
   license "MIT"
+  revision 1
   head "https://github.com/mikebrady/shairport-sync.git", branch: "master"
 
   livecheck do
@@ -28,7 +29,7 @@ class ShairportSync < Formula
   depends_on "libconfig"
   depends_on "libdaemon"
   depends_on "libsoxr"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "popt"
   depends_on "pulseaudio"
 
