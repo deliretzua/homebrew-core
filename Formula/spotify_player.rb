@@ -4,6 +4,7 @@ class SpotifyPlayer < Formula
   url "https://github.com/aome510/spotify-player/archive/refs/tags/v0.14.1.tar.gz"
   sha256 "bf4c71d7942c2c660e06a95ecebefa312404ef84c36af894eedaef7ec39a7b41"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "92150363d4939204ccf8ea481a484eae52934b24ad63f82e3f687794aad6f6cd"
@@ -16,18 +17,18 @@ class SpotifyPlayer < Formula
   end
 
   depends_on "rust" => :build
-  depends_on "openssl@1.1"
   uses_from_macos "expect" => :test
 
   on_linux do
     depends_on "pkg-config" => :build
     depends_on "alsa-lib"
     depends_on "dbus"
+    depends_on "openssl@3"
   end
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     system "cargo", "install", "--features", "image,lyric-finder,notify", *std_cargo_args(path: "spotify_player")
