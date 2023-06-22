@@ -6,7 +6,7 @@ class KeepkeyAgent < Formula
   url "https://files.pythonhosted.org/packages/65/72/4bf47a7bc8dc93d2ac21672a0db4bc58a78ec5cee3c4bcebd0b4092a9110/keepkey_agent-0.9.0.tar.gz"
   sha256 "47c85de0c2ffb53c5d7bd2f4d2230146a416e82511259fad05119c4ef74be70c"
   license "LGPL-3.0-only"
-  revision 6
+  revision 7
 
   bottle do
     rebuild 4
@@ -19,10 +19,12 @@ class KeepkeyAgent < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6218ae8d8e92b49e620e4ebd58e63a825515c2b7157646654cb7c5c4ce580a2c"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
   depends_on "docutils"
   depends_on "libusb"
+  depends_on "openssl@3"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -117,6 +119,10 @@ class KeepkeyAgent < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     # Help gcc to find libusb headers on Linux.
     ENV.append "CFLAGS", "-I#{Formula["libusb"].opt_include}/libusb-1.0" unless OS.mac?
     virtualenv_install_with_resources
