@@ -6,6 +6,7 @@ class Jrnl < Formula
   url "https://files.pythonhosted.org/packages/04/59/c15befa8f1a6ff159af29d86c1abc50135e4f8768afe5a1621930e21a0d8/jrnl-4.0.1.tar.gz"
   sha256 "f3b17c4b040af44fde053ae501832eb313f2373d1b3b1a82564a8214d223ede8"
   license "GPL-3.0-only"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "3df3921f83fd7621a332223423804723623f8a65395b5c857f4e1ceabf88cae4"
@@ -17,17 +18,15 @@ class Jrnl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ed123ed498a80e11c862f548b4dade916be3bdb0ed38925e61cf5ad3f52e1b6"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
+  depends_on "openssl@3"
   depends_on "pygments"
   depends_on "python@3.11"
   depends_on "six"
 
   uses_from_macos "expect" => :test
-
-  on_linux do
-    depends_on "pkg-config" => :build
-  end
 
   resource "ansiwrap" do
     url "https://files.pythonhosted.org/packages/7c/45/2616341cfcace37d4619d5106a85fcc24f2170d1a161bc5f7fdb81772fbc/ansiwrap-0.8.4.zip"
@@ -134,6 +133,10 @@ class Jrnl < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     virtualenv_install_with_resources
   end
 
