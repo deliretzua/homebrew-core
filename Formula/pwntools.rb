@@ -6,6 +6,7 @@ class Pwntools < Formula
   url "https://files.pythonhosted.org/packages/fa/76/aed9a42988214d6af85aa650a90be6225cfc689ad5f5c3c3b61059668f4b/pwntools-4.10.0.tar.gz"
   sha256 "588e89ea678527c0b5b6caeeee7e76e31352e78e2f1cf3dda7bc9acf526e446d"
   license "MIT"
+  revision 1
   head "https://github.com/Gallopsled/pwntools.git", branch: "dev"
 
   bottle do
@@ -19,9 +20,11 @@ class Pwntools < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c077d29c8db5bd4a2665536e6b0460043f0dea6c25554083536cf1c8f7e8bc6"
   end
 
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "pygments"
   depends_on "python@3.11"
@@ -29,10 +32,6 @@ class Pwntools < Formula
   depends_on "unicorn"
 
   uses_from_macos "libffi"
-
-  on_linux do
-    depends_on "pkg-config" => :build
-  end
 
   conflicts_with "moreutils", because: "both install an `errno` executable"
 
@@ -162,6 +161,10 @@ class Pwntools < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     ENV["LIBUNICORN_PATH"] = Formula["unicorn"].opt_lib
     virtualenv_install_with_resources
     bin.each_child do |f|
