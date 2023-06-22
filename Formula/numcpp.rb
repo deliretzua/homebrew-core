@@ -7,7 +7,7 @@ class Numcpp < Formula
   head "https://github.com/dpilger26/NumCpp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1218ab3600f36cdaac1d09d08d0e8db1fd16a1d40808b33b4643370cd8dd9ff4"
+    sha256 cellar: :any_skip_relocation, all: "d421c5d16d7a8ec7699aa1595f775894027253c1874a79ea14c0ae23a5e70b17"
   end
 
   depends_on "cmake" => :build
