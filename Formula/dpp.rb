@@ -2,8 +2,8 @@ class Dpp < Formula
   desc "Directly include C headers in D source code"
   homepage "https://github.com/atilaneves/dpp"
   url "https://github.com/atilaneves/dpp.git",
-      tag:      "v0.5.3",
-      revision: "52c7e845e1158208847cb299e9f8ad5377429027"
+      tag:      "v0.5.4",
+      revision: "28a52fb2c761aae3a84ab8456c8fba31d92b564d"
   license "BSL-1.0"
 
   bottle do
@@ -24,8 +24,8 @@ class Dpp < Formula
 
   # Match versions from dub.selections.json
   resource "libclang" do
-    url "https://code.dlang.org/packages/libclang/0.3.1.zip"
-    sha256 "ff6c8d5d53e3f59dbb280b8d370d19cb001e63aad6da99c02bdd2b48bfb31449"
+    url "https://code.dlang.org/packages/libclang/0.3.2.zip"
+    sha256 "c54c01b65f2a62c93a2929c4d7acee05ed502d841839bf9f4c212e5d18ded137"
   end
 
   resource "sumtype" do
