@@ -7,13 +7,14 @@ class Gauge < Formula
   head "https://github.com/getgauge/gauge.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cfb274b3d46c40950d523b00094049d621f1f66c45453b9c671565d258e812e7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0551a2c08e8cba8df4dcbc3bd87814b51b7c7c98f02a50e6c622035f29610ed1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8c4ecc257e65dd403b7b533915d392b7f4f87a2ddd864b165880280cda1d0d2f"
-    sha256 cellar: :any_skip_relocation, ventura:        "84f6a3a4d41c527715c17961dcefb1e858cae391ff48f7bc4fd0df51a20d8e61"
-    sha256 cellar: :any_skip_relocation, monterey:       "14f67514f6eaa385cc5261cec702b9fa2fb02cd7db04c61d509f35c3ef43612b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f346c46d9ba31120858b7e79dcd533918671f3ef51cfa03a5f0bc5f17ccf4870"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f0c33312b4b52b77b7f4011b2bc0f39c752f393b2c3d73a8ee91a684e746a11f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b0574318d0c3e5b86f0e48d4c18b2ff5bac3419f208ee66725fd83dd9beb9a7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d5e15f251272b6c5b55eaa09bd89cca9cb8c6f71d85e80d2444e934f4f30f5ea"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "652872f85e66b596e505969a79a3b76c862161a9e70595276e8a1bc974bb2d07"
+    sha256 cellar: :any_skip_relocation, ventura:        "34e3d4b7abb0d2de76c480a59372628e468787f5892826a8b0283f7d6f1e9783"
+    sha256 cellar: :any_skip_relocation, monterey:       "350ae8644977647faf57912cee7f306bfa0b0d3f4efab800ed330ea0b5a4003d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2207b2686f2ae1d35d100e8ff201a386ce54fe34f09e4935a22156534b8b1967"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3c14497317c81b2364229d68636a8115bebd92736bdb8224a47f539990463c9"
   end
 
   depends_on "go" => :build
