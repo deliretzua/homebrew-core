@@ -6,15 +6,16 @@ class Keyring < Formula
   url "https://files.pythonhosted.org/packages/31/42/f29907a72907df16326fa425cfd3a144f00d9a613063467f8b58d2ac58a5/keyring-24.0.0.tar.gz"
   sha256 "4e87665a19c514c7edada8b15015cf89bd99b8d7edabc5c43cca77166fa8dfad"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "31562117376109a9202a179c5834b680256d23ab01d7b3e72dae627355cc92c5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "31da4a42fe530289a1f751828d98a7fa1640be64817bd024a36876c994a9d7cf"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "088c25ef5fbc32368c38e0903554202d28114e069188ea60b39865a457274605"
-    sha256 cellar: :any_skip_relocation, ventura:        "4a3b5397f98a5e99d4802d23c1bb164cebe3ab630454e79ad9826b59ac59338b"
-    sha256 cellar: :any_skip_relocation, monterey:       "7761b35321926e07287967365af2385e8c5a9ddd1b40a6d07a1abc811a7e7813"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1a7722bb519d3eef5cd5b261eb702e9a9e915d422bfc2c8d3bddf1c9be7fd283"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fcb7994e07939f1a929b9cdd39c59a3ff1ac3a7fdaf2761291e88f208c331bdd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6714add9cbf6fea2e8da0b8914c488d48a75637b35b0a7416fb6212f521eff85"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6cf56508398783d7b97c6333ea7c74ff27370468cbb81db7ca4acb553af07a7c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "74b2068657de1c7f7c34f8e3fbbab5e2e95d67e873d46652ee64c83ae0968ba2"
+    sha256 cellar: :any_skip_relocation, ventura:        "96d1c37c9266fd66f9a794730de091a0ecbfecc5659bc0ca970175aa25a6b73d"
+    sha256 cellar: :any_skip_relocation, monterey:       "f1094542d5ba286fb7d58c527dd8ad0d3347b4144bb43a9fcac1d46760491f9c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3371e9571b9bcf187675c2e1c4b1c2d0181b870a2f8ba4481ef690130a345a41"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d1ed467a96d16ce7ffe335a72ea2917aacfca8b6e644d2d8f81d0ec132cdbb03"
   end
 
   depends_on "cffi"
@@ -22,9 +23,10 @@ class Keyring < Formula
   depends_on "python@3.11"
 
   on_linux do
-    depends_on "pkg-config" => :build # for cryptography
-    depends_on "rust" => :build # for cryptography
-    depends_on "openssl@1.1"
+    # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
+    depends_on "pkg-config" => :build
+    depends_on "rust" => :build
+    depends_on "openssl@3"
 
     resource "cryptography" do
       url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
@@ -63,6 +65,12 @@ class Keyring < Formula
   end
 
   def install
+    if OS.linux?
+      # Ensure that the `openssl` crate picks up the intended library.
+      ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+      ENV["OPENSSL_NO_VENDOR"] = "1"
+    end
+
     virtualenv_install_with_resources
   end
 
