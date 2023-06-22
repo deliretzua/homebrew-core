@@ -3,7 +3,7 @@ class Gkrellm < Formula
   homepage "https://billw2.github.io/gkrellm/gkrellm.html"
   url "http://gkrellm.srcbox.net/releases/gkrellm-2.3.11.tar.bz2"
   sha256 "1ee0643ed9ed99f88c1504c89d9ccb20780cf29319c904b68e80a8e7c8678c06"
-  revision 2
+  revision 3
 
   livecheck do
     url "http://gkrellm.srcbox.net/releases/"
@@ -33,7 +33,7 @@ class Gkrellm < Formula
   depends_on "gettext"
   depends_on "glib"
   depends_on "gtk+" # GTK3 issue: https://git.srcbox.net/gkrellm/gkrellm/issues/1
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pango"
 
   on_linux do
