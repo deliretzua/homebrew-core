@@ -2,6 +2,7 @@ class FreeradiusServer < Formula
   desc "High-performance and highly configurable RADIUS server"
   homepage "https://freeradius.org/"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
+  revision 1
   head "https://github.com/FreeRADIUS/freeradius-server.git", branch: "master"
 
   stable do
@@ -31,7 +32,7 @@ class FreeradiusServer < Formula
   end
 
   depends_on "collectd"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "python@3.11"
   depends_on "talloc"
 
@@ -52,8 +53,8 @@ class FreeradiusServer < Formula
       --prefix=#{prefix}
       --sbindir=#{bin}
       --localstatedir=#{var}
-      --with-openssl-includes=#{Formula["openssl@1.1"].opt_include}
-      --with-openssl-libraries=#{Formula["openssl@1.1"].opt_lib}
+      --with-openssl-includes=#{Formula["openssl@3"].opt_include}
+      --with-openssl-libraries=#{Formula["openssl@3"].opt_lib}
       --with-talloc-lib-dir=#{Formula["talloc"].opt_lib}
       --with-talloc-include-dir=#{Formula["talloc"].opt_include}
     ]
