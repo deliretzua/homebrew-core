@@ -8,7 +8,7 @@ class S3Backer < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5c8f5e8a937e4838c0bada7dcbd98727e6e9d73d5558652b75d0a7a1b8657b0c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c68f51b178923e9e4327bd91711ad5c058e8d99ad619c769ddefc2be2cc338b8"
   end
 
   depends_on "pkg-config" => :build
