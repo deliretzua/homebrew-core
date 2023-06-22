@@ -4,6 +4,7 @@ class Snownews < Formula
   url "https://downloads.sourceforge.net/project/snownews/snownews-1.11.tar.gz"
   sha256 "afd4db7c770f461a49e78bc36e97711f3066097b485319227e313ba253902467"
   license "GPL-3.0-only"
+  revision 1
 
   bottle do
     sha256 arm64_ventura:  "7a2a22e0fd4e57c97784498a3cdb5918480cecf33beb5e2d0b660e515804e80c"
@@ -19,7 +20,7 @@ class Snownews < Formula
   depends_on "pkg-config" => :build
   depends_on "gettext"
   depends_on "ncurses"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "curl"
   uses_from_macos "libxml2"
@@ -29,7 +30,7 @@ class Snownews < Formula
 
     # Must supply -lz because configure relies on "xml2-config --libs"
     # for it, which doesn't work on OS X prior to 10.11
-    system "make", "install", "EXTRA_LDFLAGS=#{ENV.ldflags} -L#{Formula["openssl@1.1"].opt_lib} -lz",
+    system "make", "install", "EXTRA_LDFLAGS=#{ENV.ldflags} -L#{Formula["openssl@3"].opt_lib} -lz",
            "CC=#{ENV.cc}", "INSTALL=ginstall"
   end
 
