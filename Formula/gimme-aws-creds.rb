@@ -6,6 +6,7 @@ class GimmeAwsCreds < Formula
   url "https://files.pythonhosted.org/packages/22/d3/a5454142db3bbb936591f2a13955cf589db8c4f6ea29142e80169eb8bb5b/gimme%20aws%20creds-2.6.1.tar.gz"
   sha256 "638eeeff1a8680be5dd33ffb9f0b5e06447002c034473a8b11e2c156272ddcd6"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     rebuild 3
@@ -18,11 +19,11 @@ class GimmeAwsCreds < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ad26e6f8eb0b8eacdffd572fb828591ca370feafe99b25b777049b1ed1d5511"
   end
 
-  # `pkg-config`, `rust`, and `openssl@1.1` are for cryptography.
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -198,7 +199,7 @@ class GimmeAwsCreds < Formula
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     venv = virtualenv_create(libexec, "python3.11")
