@@ -4,7 +4,7 @@ class PostgresqlAT15 < Formula
   url "https://ftp.postgresql.org/pub/source/v15.3/postgresql-15.3.tar.bz2"
   sha256 "ffc7d4891f00ffbf5c3f4eab7fbbced8460b8c0ee63c5a5167133b9e6599d932"
   license "PostgreSQL"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://ftp.postgresql.org/pub/source/"
@@ -35,7 +35,7 @@ class PostgresqlAT15 < Formula
   depends_on "krb5"
 
   depends_on "lz4"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "readline"
 
   uses_from_macos "libxml2"
@@ -50,8 +50,8 @@ class PostgresqlAT15 < Formula
 
   def install
     ENV.delete "PKG_CONFIG_LIBDIR"
-    ENV.prepend "LDFLAGS", "-L#{Formula["openssl@1.1"].opt_lib} -L#{Formula["readline"].opt_lib}"
-    ENV.prepend "CPPFLAGS", "-I#{Formula["openssl@1.1"].opt_include} -I#{Formula["readline"].opt_include}"
+    ENV.prepend "LDFLAGS", "-L#{Formula["openssl@3"].opt_lib} -L#{Formula["readline"].opt_lib}"
+    ENV.prepend "CPPFLAGS", "-I#{Formula["openssl@3"].opt_include} -I#{Formula["readline"].opt_include}"
 
     # Fix 'libintl.h' file not found for extensions
     ENV.prepend "LDFLAGS", "-L#{Formula["gettext"].opt_lib}"
