@@ -18,8 +18,6 @@ class Gdu < Formula
 
   depends_on "go" => :build
 
-  conflicts_with "coreutils", because: "both install `gdu` binaries"
-
   def install
     user = Utils.safe_popen_read("id", "-u", "-n")
     major = version.major
