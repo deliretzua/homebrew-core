@@ -4,7 +4,7 @@ class Sile < Formula
   url "https://github.com/sile-typesetter/sile/releases/download/v0.14.9/sile-0.14.9.tar.xz"
   sha256 "9a719a490a2bb71136d25d665536fb9ff2a17123fc2cee48d05ce418cb404814"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "a9afb9445aeeb8248c022bcf087eb46a3cfd23836e0ca064d8e0ea38951a9383"
@@ -31,7 +31,7 @@ class Sile < Formula
   depends_on "libpng"
   depends_on "lua"
   depends_on "luarocks"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "unzip" => :build
   uses_from_macos "expat"
@@ -162,7 +162,7 @@ class Sile < Formula
     args = %W[
       ZLIB_DIR=#{zlib_dir}
       EXPAT_DIR=#{expat_dir}
-      OPENSSL_DIR=#{Formula["openssl@1.1"].opt_prefix}
+      OPENSSL_DIR=#{Formula["openssl@3"].opt_prefix}
       --tree=#{luapath}
       --lua-dir=#{lua.opt_prefix}
     ]
