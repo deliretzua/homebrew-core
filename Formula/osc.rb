@@ -6,6 +6,7 @@ class Osc < Formula
   url "https://github.com/openSUSE/osc/archive/1.1.4.tar.gz"
   sha256 "8407ccdcaa6089601e3b9f42c03c015d938ba756b1553f65e2eb122ff00b83e5"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/openSUSE/osc.git", branch: "master"
 
   livecheck do
@@ -28,7 +29,7 @@ class Osc < Formula
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "python@3.11"
 
@@ -51,7 +52,7 @@ class Osc < Formula
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     virtualenv_install_with_resources
