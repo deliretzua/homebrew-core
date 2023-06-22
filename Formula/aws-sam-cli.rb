@@ -3,8 +3,8 @@ class AwsSamCli < Formula
 
   desc "CLI tool to build, test, debug, and deploy Serverless applications using AWS SAM"
   homepage "https://aws.amazon.com/serverless/sam/"
-  url "https://files.pythonhosted.org/packages/b6/96/1f20839ff095f45a3d407fc63ba03046a55f353f60d956ade1f5e508653b/aws-sam-cli-1.87.0.tar.gz"
-  sha256 "a0cbb01a17899b30d51bb9833cb0c286c45cd8a8f8f0eed3b5ba6adc294b7124"
+  url "https://files.pythonhosted.org/packages/a1/c1/3c62636b685c57272c98d7e475f74d8096bbcefdc6aaf7545898afcdf86d/aws-sam-cli-1.88.0.tar.gz"
+  sha256 "76ad4a90149d0e1aae1afd674fc04a4673266b2cfa312a18e29c68f812e17dd9"
   license "Apache-2.0"
 
   bottle do
@@ -54,13 +54,13 @@ class AwsSamCli < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/3a/a0/ec678fac7a444c26a76bb2bb88c80057e684f47dec0c514002c5acf24199/boto3-1.26.157.tar.gz"
-    sha256 "7a8117dfe9ba1f203d73b3df32a4ebdb895813189635f126fa256e1dea37ee8d"
+    url "https://files.pythonhosted.org/packages/de/e2/a4dd5b40fadfd97cc6f1a81319a7f0afd742653f8f7b9e7f5bdbd244675a/boto3-1.26.159.tar.gz"
+    sha256 "7694df61bd6d253d6d9db34adbcd218b8efbe7f894a4a51611f7e0587ae33218"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/26/3b/3481a25121ffa730b3070cc048f76073584bcdc8cfd1f709429ac188ab6e/botocore-1.29.157.tar.gz"
-    sha256 "af2a7b6417bf3bbf00ab22aa61a2d7d839a8a8a62e7975c18c80c55c88dc7fcf"
+    url "https://files.pythonhosted.org/packages/ee/28/9417cf3790331c1a55e511cf6afebc26b753a96e3983f5426688c976269c/botocore-1.29.159.tar.gz"
+    sha256 "da1c61757d466b82cc89f379a50662064bcb0beb67cc6efa1fbfc9a341bd08b0"
   end
 
   resource "certifi" do
