@@ -4,6 +4,7 @@ class SyslogNg < Formula
   url "https://github.com/syslog-ng/syslog-ng/releases/download/syslog-ng-4.1.1/syslog-ng-4.1.1.tar.gz"
   sha256 "d7df3cfa32d1a750818d94b8ea582dea54c37226e7b55a88c3d2f3a543d8f20e"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
+  revision 1
 
   bottle do
     sha256 arm64_ventura:  "16bf633f59ad036d6e650158fb59117c550343eb58d466b0d040f882265c8ba8"
@@ -30,7 +31,7 @@ class SyslogNg < Formula
   depends_on "libnet"
   depends_on "librdkafka"
   depends_on "mongo-c-driver"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pcre"
   depends_on "python@3.11"
   depends_on "riemann-client"
