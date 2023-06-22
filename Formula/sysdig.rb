@@ -2,7 +2,7 @@ class Sysdig < Formula
   desc "System-level exploration and troubleshooting tool"
   homepage "https://sysdig.com/"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   stable do
     url "https://github.com/draios/sysdig/archive/refs/tags/0.31.5.tar.gz"
@@ -49,13 +49,12 @@ class Sysdig < Formula
 
   depends_on "cmake" => :build
   depends_on "nlohmann-json" => :build
+  depends_on "valijson" => :build
   depends_on "c-ares"
   depends_on "jsoncpp"
   depends_on "luajit"
-  depends_on "openssl@1.1"
   depends_on "re2"
   depends_on "tbb"
-  depends_on "valijson"
   depends_on "yaml-cpp"
 
   uses_from_macos "curl"
@@ -64,9 +63,11 @@ class Sysdig < Formula
 
   on_linux do
     depends_on "libb64" => :build
+    depends_on "abseil"
     depends_on "elfutils"
     depends_on "grpc@1.54"
     depends_on "jq"
+    depends_on "openssl@3"
     depends_on "protobuf@21"
   end
 
