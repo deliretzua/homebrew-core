@@ -6,6 +6,16 @@ class Gotestsum < Formula
   license "Apache-2.0"
   head "https://github.com/gotestyourself/gotestsum.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7a6a4cb17ec45fdea949a8fbd9f0338544e05ad469a95a5bfb4b99131ec14008"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7a6a4cb17ec45fdea949a8fbd9f0338544e05ad469a95a5bfb4b99131ec14008"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7a6a4cb17ec45fdea949a8fbd9f0338544e05ad469a95a5bfb4b99131ec14008"
+    sha256 cellar: :any_skip_relocation, ventura:        "24a8b945a17c8831987390b15e84b5de1b00e966ca947d7429bbbcf8ff666672"
+    sha256 cellar: :any_skip_relocation, monterey:       "24a8b945a17c8831987390b15e84b5de1b00e966ca947d7429bbbcf8ff666672"
+    sha256 cellar: :any_skip_relocation, big_sur:        "24a8b945a17c8831987390b15e84b5de1b00e966ca947d7429bbbcf8ff666672"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aba097e6dbaaeb528de7c5595eef00766373d4c478d88fb41f1701de34074653"
+  end
+
   depends_on "go" => [:build, :test]
 
   def install
