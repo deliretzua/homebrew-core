@@ -6,6 +6,7 @@ class Cups < Formula
   url "https://github.com/OpenPrinting/cups/releases/download/v2.4.5/cups-2.4.5-source.tar.gz"
   sha256 "9a404de55f74525b0a6851df0cfdebfa1215aec0e7c2f7be6b9b09b6916fb000"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/OpenPrinting/cups.git", branch: "master"
 
   livecheck do
@@ -31,7 +32,7 @@ class Cups < Formula
   uses_from_macos "zlib"
 
   on_linux do
-    depends_on "gnutls"
+    depends_on "openssl@3"
   end
 
   def install
