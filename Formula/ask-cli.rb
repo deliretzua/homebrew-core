@@ -3,8 +3,8 @@ require "language/node"
 class AskCli < Formula
   desc "CLI tool for Alexa Skill Kit"
   homepage "https://github.com/alexa/ask-cli"
-  url "https://registry.npmjs.org/ask-cli/-/ask-cli-2.30.1.tgz"
-  sha256 "2a5cadb60b1976413c16dfaca31ef4af0e5cedfc8fe5c22135583373abb68cc4"
+  url "https://registry.npmjs.org/ask-cli/-/ask-cli-2.30.2.tgz"
+  sha256 "42373b1309183359db79b246b938c1532b7c8ddf30c414cf3545fd3dbcea4dae"
   license "Apache-2.0"
 
   bottle do
@@ -29,6 +29,6 @@ class AskCli < Formula
 
   test do
     output = shell_output("#{bin}/ask deploy 2>&1", 1)
-    assert_match "[Error]: CliFileNotFoundError: File #{testpath}/.ask/cli_config not exists.", output
+    assert_match "File #{testpath}/.ask/cli_config not exists.", output
   end
 end
