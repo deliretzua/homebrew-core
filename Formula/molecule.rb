@@ -6,6 +6,7 @@ class Molecule < Formula
   url "https://files.pythonhosted.org/packages/e4/55/66648b26f1ea76127ff976dae906a74eccb6807ac27ff7645c046b78e195/molecule-5.0.1.tar.gz"
   sha256 "15a4c89e82ec1319bb1b36430061a103b91f1eb6d000b54330a161f4c8ee62d7"
   license "MIT"
+  revision 1
 
   bottle do
     rebuild 2
@@ -22,7 +23,7 @@ class Molecule < Formula
   depends_on "ansible"
   depends_on "cffi"
   depends_on "cookiecutter"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pygments"
   depends_on "python@3.11"
   depends_on "pyyaml"
