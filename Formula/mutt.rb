@@ -13,6 +13,7 @@ class Mutt < Formula
   url "https://bitbucket.org/mutt/mutt/downloads/mutt-2.2.10.tar.gz"
   sha256 "4d773f22422f79096f7b94b57bee45654ad9a25165dbb36463c58295b4cd3d88"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
     sha256 arm64_ventura:  "2d57c5e98a83b23e613e4871845182047ec32a46fbd9847ea50de33631b42f95"
@@ -36,7 +37,7 @@ class Mutt < Formula
   depends_on "automake" => :build
   depends_on "gpgme"
   depends_on "libidn2"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "tokyo-cabinet"
 
   uses_from_macos "bzip2"
@@ -65,7 +66,7 @@ class Mutt < Formula
       --with-gss
       --with-idn2
       --with-sasl
-      --with-ssl=#{Formula["openssl@1.1"].opt_prefix}
+      --with-ssl=#{Formula["openssl@3"].opt_prefix}
       --with-tokyocabinet
     ]
 
