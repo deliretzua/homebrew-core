@@ -6,6 +6,7 @@ class Lanraragi < Formula
   url "https://github.com/Difegue/LANraragi/archive/v.0.8.90.tar.gz"
   sha256 "290bd2299962f14667a279dd8e40a1f93d1e9e338c08342af5830a1ce119c93e"
   license "MIT"
+  revision 1
   head "https://github.com/Difegue/LANraragi.git", branch: "dev"
 
   bottle do
@@ -27,7 +28,7 @@ class Lanraragi < Formula
   depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "node"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "perl"
   depends_on "redis"
   depends_on "zstd"
@@ -57,7 +58,7 @@ class Lanraragi < Formula
       "-I#{Formula["libarchive"].opt_include}"
     end
 
-    ENV["OPENSSL_PREFIX"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_PREFIX"] = Formula["openssl@3"].opt_prefix
 
     imagemagick = Formula["imagemagick"]
     resource("Image::Magick").stage do
