@@ -3,8 +3,8 @@ class Keyring < Formula
 
   desc "Easy way to access the system keyring service from python"
   homepage "https://github.com/jaraco/keyring"
-  url "https://files.pythonhosted.org/packages/31/42/f29907a72907df16326fa425cfd3a144f00d9a613063467f8b58d2ac58a5/keyring-24.0.0.tar.gz"
-  sha256 "4e87665a19c514c7edada8b15015cf89bd99b8d7edabc5c43cca77166fa8dfad"
+  url "https://files.pythonhosted.org/packages/dd/f4/254b3a89f9cef31d75c98d14bd607b4603c77b8fb5fa72a63274fc365cd1/keyring-24.0.1.tar.gz"
+  sha256 "f77da625a448baa77906b099be9feaa29aa90979547506ac1ec422926085cee0"
   license "MIT"
 
   bottle do
