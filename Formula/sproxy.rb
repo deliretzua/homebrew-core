@@ -4,6 +4,7 @@ class Sproxy < Formula
   url "https://download.joedog.org/sproxy/sproxy-1.02.tar.gz"
   sha256 "29b84ba66112382c948dc8c498a441e5e6d07d2cd5ed3077e388da3525526b72"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url "https://download.joedog.org/sproxy/"
@@ -34,7 +35,7 @@ class Sproxy < Formula
   uses_from_macos "perl"
 
   on_linux do
-    depends_on "openssl@1.1"
+    depends_on "openssl@3"
 
     resource "File::Remove" do
       url "https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/File-Remove-1.60.tar.gz"
@@ -102,7 +103,7 @@ class Sproxy < Formula
       ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
       ENV.prepend_create_path "PERL5LIB", lib/"sproxy"
       ENV["PERL_MM_USE_DEFAULT"] = "1"
-      ENV["OPENSSL_PREFIX"] = Formula["openssl@1.1"].opt_prefix
+      ENV["OPENSSL_PREFIX"] = Formula["openssl@3"].opt_prefix
 
       resources.each do |r|
         r.stage do
