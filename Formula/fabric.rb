@@ -6,6 +6,7 @@ class Fabric < Formula
   url "https://files.pythonhosted.org/packages/d8/b0/fc6880fd6e24b60ccb5e3e1b673cec847d56b8176311f77c63f542fe9fd4/fabric-3.1.0.tar.gz"
   sha256 "ea1c5ea3956d196b5990ba720cc8ee457fa1b9c6f265ab3b643ff63b05e8970a"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/fabric/fabric.git", branch: "main"
 
   bottle do
@@ -19,11 +20,11 @@ class Fabric < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "51e888e33e6aebca684acc61fb2e2805a9a3ea114680d98cd1285594d8f75dd9"
   end
 
-  # `pkg-config`, `rust`, and `openssl@1.1` are for cryptography.
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pyinvoke"
   depends_on "python@3.11"
 
@@ -54,7 +55,7 @@ class Fabric < Formula
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     virtualenv_install_with_resources
