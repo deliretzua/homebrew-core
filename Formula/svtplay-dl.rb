@@ -9,13 +9,13 @@ class SvtplayDl < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9a83f4255857dbabbc2f8f36241e617963360ee13720e58b0bccd4fe689b425b"
-    sha256 cellar: :any,                 arm64_monterey: "d8716a5a82e03535e810acfb4262e684d66e1a7d29db12da47471ec311fc8af6"
-    sha256 cellar: :any,                 arm64_big_sur:  "55c66a7a13f1226f83a9973fccaa511d9445863bff2667cdbe3f409ec00b2828"
-    sha256 cellar: :any,                 ventura:        "6cb4bbb77c9cb24ae04a64c305be7f42c06d40dd0d7d85e252adb70018402275"
-    sha256 cellar: :any,                 monterey:       "0b8bbcd80d089c05aea85dedf302a0ca93b31fd29d9867be7f71fd2d9aa6a3cf"
-    sha256 cellar: :any,                 big_sur:        "4ded3911b0393fbb69f2b534ef07b8948f3a1089c9c3f72f69cd190cbb297fe1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8503b11b38757cfa2de0e77e2f1bc30775265f1ac6d4e2ff0f94cd1c470357c0"
+    sha256 cellar: :any,                 arm64_ventura:  "81bc082c6382e6947ee9496e0c4d363e5b26fc013c75dba9db67a5b956fe2879"
+    sha256 cellar: :any,                 arm64_monterey: "4b11aad4fbba7d6b47d9f3921af2931f1489aacb5b8d41455237f5166327d4be"
+    sha256 cellar: :any,                 arm64_big_sur:  "d6a0912e118e7b40109701791b287f81198b14b86d9e04c1a7066d038f29dedf"
+    sha256 cellar: :any,                 ventura:        "8e760c0cec66d46e2a70329088e0e42625f21cfc8804bf8f812ec8072c19d211"
+    sha256 cellar: :any,                 monterey:       "615c07d47e8c9cbebabbcf44e17eb385833c302955d2bad7986369e13d532ab2"
+    sha256 cellar: :any,                 big_sur:        "a6bb2f7d266d8dde41b57990fddc593a4c251db276db811b1ed8bb5ff95245a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b40e1836730b7696e6c2284f3c757e0659ecff27bf5c94880623b3577909e86"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
