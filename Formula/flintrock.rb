@@ -6,7 +6,7 @@ class Flintrock < Formula
   url "https://files.pythonhosted.org/packages/dc/ad/6e3871a510f0d053aa49caee2140a2f64f2d3fa584d3b70408043295fa57/Flintrock-2.0.0.tar.gz"
   sha256 "ccbbc912823772ea733802ca3f9751c98dacda8c67518683a3dc4ec8b1de38dd"
   license "Apache-2.0"
-  revision 5
+  revision 6
 
   bottle do
     rebuild 6
@@ -19,10 +19,11 @@ class Flintrock < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2ae0211babe35f51ba4131d69f935fae5cd69e66c93e5e890d140ad31548917c"
   end
 
-  depends_on "pkg-config" => :build # for `cryptography`
-  depends_on "rust" => :build # for `cryptography`
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
+  depends_on "pkg-config" => :build
+  depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@1.1" # for `cryptography`
+  depends_on "openssl@3"
   depends_on "python@3.11"
   depends_on "six"
 
@@ -88,7 +89,7 @@ class Flintrock < Formula
 
   def install
     ENV["OPENSSL_NO_VENDOR"] = "1"
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     virtualenv_install_with_resources
   end
 
