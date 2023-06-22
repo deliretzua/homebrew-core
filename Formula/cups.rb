@@ -6,6 +6,7 @@ class Cups < Formula
   url "https://github.com/OpenPrinting/cups/releases/download/v2.4.5/cups-2.4.5-source.tar.gz"
   sha256 "9a404de55f74525b0a6851df0cfdebfa1215aec0e7c2f7be6b9b09b6916fb000"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/OpenPrinting/cups.git", branch: "master"
 
   livecheck do
@@ -14,11 +15,11 @@ class Cups < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "a9d75d19c28df2dc0e2e5e73e878811fa71788ee3afac89610796a6e7476b4f2"
-    sha256 arm64_monterey: "c7bc577adcaa64a33280b92047c209ec02c612a5ff9749a4f8382bce591228f8"
-    sha256 ventura:        "ef33fead0baf4c064379cf709b46f6b409ef03a871c4f990ab6d11b6726ab938"
-    sha256 monterey:       "3115cdcf11c881d0fc420da4780c2724280aba4c22eab64513dd562dbda8c547"
-    sha256 x86_64_linux:   "30dba08478c1118cd969ae21c707b5c3be7b45476b3359c6036015834db679de"
+    sha256 arm64_ventura:  "d79c24735130185ba8b6ff3b26d8cce4725db870c3537d181d4d2859124ee3f3"
+    sha256 arm64_monterey: "b11a96a5482dd27da6e6f8f3b6066dee18dad387dbdea8dae301fabff0f4fa5e"
+    sha256 ventura:        "01927756271a3c488ad9c28002f5764d8c41aa8263410a459ad84b979b319102"
+    sha256 monterey:       "7027be2f4370e080c66a92f03a1c994a3780082b858c4798dc5124c93b20ff17"
+    sha256 x86_64_linux:   "d22a7266c73f0b959b8063a83c226089b4323cadad6ecd4f5c15a64116536b30"
   end
 
   keg_only :provided_by_macos
@@ -31,7 +32,7 @@ class Cups < Formula
   uses_from_macos "zlib"
 
   on_linux do
-    depends_on "gnutls"
+    depends_on "openssl@3"
   end
 
   def install
