@@ -1,8 +1,8 @@
 class Kumactl < Formula
   desc "Kuma control plane command-line utility"
   homepage "https://kuma.io/"
-  url "https://github.com/kumahq/kuma/archive/2.2.2.tar.gz"
-  sha256 "5fccd9a046f285a7e8c2de92f4f50c7a821e26aa745496b06603c7b2c46b6181"
+  url "https://github.com/kumahq/kuma/archive/2.3.0.tar.gz"
+  sha256 "893bd6d6e5d70101a8e42e72fdba448e02b6e773a21a32ccdc9a13fdf0ba9e58"
   license "Apache-2.0"
 
   livecheck do
