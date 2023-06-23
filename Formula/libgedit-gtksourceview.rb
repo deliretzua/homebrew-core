@@ -1,8 +1,8 @@
 class LibgeditGtksourceview < Formula
   desc "Text editor widget for code editing"
   homepage "https://gedit-technology.net"
-  url "https://gedit-technology.net/tarballs/libgedit-gtksourceview/libgedit-gtksourceview-299.0.2.tar.xz"
-  sha256 "467fde5fec7fab80638bc10d75739565bf88b9c6f82544b6a6432f1f694a9811"
+  url "https://gedit-technology.net/tarballs/libgedit-gtksourceview/libgedit-gtksourceview-299.0.3.tar.xz"
+  sha256 "d80ec2afe87be45eadfff9396814545be15ac32e16f67fd07480e69c100c8659"
   license "LGPL-2.1-only"
   head "https://github.com/gedit-technology/libgedit-gtksourceview.git", branch: "main"
 
@@ -17,14 +17,16 @@ class LibgeditGtksourceview < Formula
   end
 
   depends_on "gobject-introspection" => :build
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
   depends_on "gtk+3"
   depends_on "libxml2" # Dependent `gedit` uses Homebrew `libxml2`
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules", "--enable-introspection"
-    system "make"
-    system "make", "install"
+    system "meson", "setup", "build", *std_meson_args, "-Dgtk_doc=false"
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do
