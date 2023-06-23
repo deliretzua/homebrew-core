@@ -21,7 +21,6 @@ class Awsume < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d72339357538a9627e59de64b83c6eb22526e4d16847ff4c5b0560ccf863ceb1"
   end
 
-  depends_on "openssl@1.1"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
