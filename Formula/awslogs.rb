@@ -24,10 +24,6 @@ class Awslogs < Formula
 
   uses_from_macos "zlib"
 
-  on_linux do
-    depends_on "openssl@1.1"
-  end
-
   resource "boto3" do
     url "https://files.pythonhosted.org/packages/2d/ae/7a28ce6d8eb6b4e5ae1c7cf302179a6ef78c11f7a54e818df5dd7b237724/boto3-1.26.73.tar.gz"
     sha256 "bd92def38355ea055c6c29bd599832878eecc19cad21dab34ade38280e1b403b"
@@ -64,6 +60,8 @@ class Awslogs < Formula
   end
 
   def install
+    inreplace "setup.py", ">=3.5.*", ">=3.5"
+
     virtualenv_install_with_resources
   end
 
