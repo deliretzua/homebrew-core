@@ -1,13 +1,17 @@
 class Libtrace < Formula
   desc "Library for trace processing supporting multiple inputs"
-  homepage "https://research.wand.net.nz/software/libtrace.php"
-  url "https://research.wand.net.nz/software/libtrace/libtrace-4.0.19.tar.bz2"
-  sha256 "d1a2d756d744c4ffad480f6d4b0bdaca05a9966c87e491992c42007a22317e5a"
+  homepage "https://github.com/LibtraceTeam/libtrace"
+  url "https://github.com/LibtraceTeam/libtrace/archive/refs/tags/4.0.22-1.tar.gz"
+  version "4.0.22"
+  sha256 "5d2c76afef6b882dc8df1a8d73164f2b646068f10187731fb86f2a46df46ff0d"
   license "GPL-3.0-or-later"
 
   livecheck do
-    url :homepage
-    regex(/href=.*?libtrace[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url :stable
+    regex(/^v?(\d+(?:[.-]\d+)+)$/i)
+    strategy :git do |tags, regex|
+      tags.map { |tag| tag[regex, 1]&.gsub(/-1$/, "") }.compact
+    end
   end
 
   bottle do
@@ -19,9 +23,14 @@ class Libtrace < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3dde6596eb8e6501379c201dd115de9e1f106dbc39e5705a56f07055249ed8c2"
   end
 
-  depends_on "openssl@1.1"
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
+  depends_on "pkg-config" => :build
+  depends_on "openssl@3"
   depends_on "wandio"
 
+  uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
   uses_from_macos "libpcap"
 
@@ -30,14 +39,10 @@ class Libtrace < Formula
     sha256 "aa036e997d7bec2fa3d387e3ad669eba461036b9a89b79dcf63017a2c4dac725"
   end
 
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-  end
-
   def install
+    system "./bootstrap.sh"
     system "./configure", *std_configure_args
+    system "make"
     system "make", "install"
   end
 
