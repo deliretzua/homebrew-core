@@ -1,9 +1,9 @@
 class Psqlodbc < Formula
   desc "Official PostgreSQL ODBC driver"
   homepage "https://odbc.postgresql.org"
-  url "https://ftp.postgresql.org/pub/odbc/versions/src/psqlodbc-13.02.0000.tar.gz"
-  sha256 "b39b7e5c41fd6475c551112fa724bf57c4a446175ec4188a90e2844cc1612585"
-  revision 1
+  url "https://ftp.postgresql.org/pub/odbc/versions/src/psqlodbc-15.00.0000.tar.gz"
+  sha256 "ca57d6349532ea7fb4fae17bbfc107abe5a155ca2f43446315f9e23764b3f8ec"
+  license "LGPL-2.0-or-later"
 
   livecheck do
     url "https://ftp.postgresql.org/pub/odbc/versions/src/"
@@ -22,7 +22,7 @@ class Psqlodbc < Formula
   end
 
   head do
-    url "https://git.postgresql.org/git/psqlodbc.git"
+    url "https://git.postgresql.org/git/psqlodbc.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
