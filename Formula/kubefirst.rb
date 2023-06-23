@@ -19,7 +19,7 @@ class Kubefirst < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/kubefirst/runtime/configs.K1Version=#{version}"
+    ldflags = "-s -w -X github.com/kubefirst/runtime/configs.K1Version=v#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
 
     generate_completions_from_executable(bin/"kubefirst", "completion")
@@ -30,6 +30,6 @@ class Kubefirst < Formula
     assert_match "k1-paths:", (testpath/".kubefirst").read
     assert_predicate testpath/".k1/logs", :exist?
 
-    assert_match version.to_s, shell_output("#{bin}/kubefirst version")
+    assert_match "v#{version}", shell_output("#{bin}/kubefirst version")
   end
 end
