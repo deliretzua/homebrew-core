@@ -7,19 +7,20 @@ class Kubefirst < Formula
   head "https://github.com/kubefirst/kubefirst.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f34f5c39b56272cb12cefa85a2c60790b66b0de7358cda99f6ff6a525d91b5f3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "75190dfc3e1d1fe874ea995dc47f2203d09f3b2f5e69dcade4ca0ea681817c1d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "eb913e0bd8ecc920885af1a18e3c43780187f198a9108fc812717c06fd658d65"
-    sha256 cellar: :any_skip_relocation, ventura:        "b40f6864301ebaead59c60370e2bf4c121b41f8710b92b45a33d83306272709a"
-    sha256 cellar: :any_skip_relocation, monterey:       "c63803ee6ca526ca6c7af2e6d8d7cb874a8d06668c836566c7d85de0acc9317f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "84f62dc539a908d62afcda30cf4039d2c0ef3ff5110ca59f6ea51ef2324dca11"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "669dca55b50fb222609d3d6c7dc45dc1f46bc615fc42e363e6416901452dd62a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d9164e2e4d06a8584a6196deb6fb7f57459f9779b7ae8d6a9156a9b4f3dc54fa"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9d105c5baa39535aff1ca7b5f320b8465ef40f9d305ee66aa1fa9c1fe7693d53"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3b67d9baa26a2b5610f2e324c70d005ab596e176b0905c338185d19a4a42e297"
+    sha256 cellar: :any_skip_relocation, ventura:        "a1262fb52295ad17d898db2271e9d5891e6222d51de88c6f44d38c717f370b8b"
+    sha256 cellar: :any_skip_relocation, monterey:       "7c318d9ec757b5fb3128ab765747963fe5074ea1f16c82c639bdba69edd4524a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1aa101601b7d623d38b7a93cb42d11ef0066fee79781c884abfa85430f68429e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2ecf9a9f287bb652df432654ac7230e0c3aee41cf3180c7c9255351b48494510"
   end
 
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/kubefirst/runtime/configs.K1Version=#{version}"
+    ldflags = "-s -w -X github.com/kubefirst/runtime/configs.K1Version=v#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
 
     generate_completions_from_executable(bin/"kubefirst", "completion")
@@ -30,6 +31,6 @@ class Kubefirst < Formula
     assert_match "k1-paths:", (testpath/".kubefirst").read
     assert_predicate testpath/".k1/logs", :exist?
 
-    assert_match version.to_s, shell_output("#{bin}/kubefirst version")
+    assert_match "v#{version}", shell_output("#{bin}/kubefirst version")
   end
 end
