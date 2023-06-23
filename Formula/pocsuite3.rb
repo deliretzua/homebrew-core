@@ -6,6 +6,7 @@ class Pocsuite3 < Formula
   url "https://files.pythonhosted.org/packages/98/9c/ea5c93f0cff8ffbe776ae138569219c2f0c7e43d94c002fe21e607d186e6/pocsuite3-2.0.4.tar.gz"
   sha256 "57dd1e565595bd705667a4e0df72e288321640f938e1fefcc83b02a70dda099d"
   license "GPL-2.0-only"
+  revision 1
   head "https://github.com/knownsec/pocsuite3.git", branch: "master"
 
   bottle do
@@ -19,8 +20,10 @@ class Pocsuite3 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ddd60f5b9824aabc2030aca2a343087b3685f2d82b69d77fe57428a41fdef295"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build # for cryptography
   depends_on "cffi"
+  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "python@3.11"
   depends_on "pyyaml"
@@ -150,6 +153,10 @@ class Pocsuite3 < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     virtualenv_install_with_resources
   end
 
