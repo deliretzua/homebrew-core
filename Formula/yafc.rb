@@ -3,7 +3,7 @@ class Yafc < Formula
   homepage "https://github.com/sebastinas/yafc"
   url "https://deb.debian.org/debian/pool/main/y/yafc/yafc_1.3.7.orig.tar.xz"
   sha256 "4b3ebf62423f21bdaa2449b66d15e8d0bb04215472cb63a31d473c3c3912c1e0"
-  revision 4
+  revision 5
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "e75e54d310d6fba93e9f1099314fbf59cbc368a0dee37c0775199c12091ab0d8"
@@ -20,6 +20,7 @@ class Yafc < Formula
 
   depends_on "pkg-config" => :build
   depends_on "libssh"
+  depends_on "openssl@3"
   depends_on "readline"
 
   on_linux do
