@@ -2,7 +2,7 @@ class Ntopng < Formula
   desc "Next generation version of the original ntop"
   homepage "https://www.ntop.org/products/traffic-analysis/ntop/"
   license "GPL-3.0-only"
-  revision 1
+  revision 2
 
   stable do
     url "https://github.com/ntop/ntopng/archive/5.2.1.tar.gz"
@@ -39,6 +39,7 @@ class Ntopng < Formula
   depends_on "json-c"
   depends_on "libmaxminddb"
   depends_on "mysql-client"
+  depends_on "openssl@3"
   depends_on "redis"
   depends_on "rrdtool"
   depends_on "sqlite" # try to change to uses_from_macos after python is not a dependency
