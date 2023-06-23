@@ -6,6 +6,7 @@ class AwsSamCli < Formula
   url "https://files.pythonhosted.org/packages/a1/c1/3c62636b685c57272c98d7e475f74d8096bbcefdc6aaf7545898afcdf86d/aws-sam-cli-1.88.0.tar.gz"
   sha256 "76ad4a90149d0e1aae1afd674fc04a4673266b2cfa312a18e29c68f812e17dd9"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "9fad29345acf626625a0bd8a56c1de4ef7ab8c21749644b4296156120703fe44"
@@ -17,11 +18,11 @@ class AwsSamCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b33d5801a28ff02f22db2dd7a5ed87858afeee8e2edd29d80ab0599b88bcb190"
   end
 
-  # `pkg-config`, `rust`, and `openssl@1.1` are for cryptography.
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "pygments"
   depends_on "python-typing-extensions"
@@ -334,7 +335,7 @@ class AwsSamCli < Formula
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     virtualenv_install_with_resources
