@@ -5,6 +5,7 @@ class Licensed < Formula
       tag:      "4.4.0",
       revision: "0f5e5a1d289665e8a3d7133cba6c6f3a15359ecb"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any, arm64_ventura:  "6417ed7bde589bce4de644c62e1833e406efbf11ff9ae7a07d0050d5be80380a"
@@ -20,7 +21,12 @@ class Licensed < Formula
   depends_on "pkg-config" => :build
   depends_on "ruby"
   depends_on "xz"
+
   uses_from_macos "libffi"
+
+  on_linux do
+    depends_on "openssl@3"
+  end
 
   # Runtime dependencies of licensed
   # https://rubygems.org/gems/licensed/versions/4.4.0/dependencies
