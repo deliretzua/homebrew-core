@@ -5,7 +5,7 @@ class Freeswitch < Formula
       tag:      "v1.10.9",
       revision: "a615e85afcdc5f3ca438e86fefc7ca21ee6b3a06"
   license "MPL-1.1"
-  revision 1
+  revision 2
   head "https://github.com/signalwire/freeswitch.git", branch: "master"
 
   livecheck do
@@ -36,7 +36,7 @@ class Freeswitch < Formula
   depends_on "libsndfile"
   depends_on "libtiff"
   depends_on "lua"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "opus"
   depends_on "pcre"
   depends_on "sofia-sip"
