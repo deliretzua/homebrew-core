@@ -1,8 +1,8 @@
 class Pypy < Formula
   desc "Highly performant implementation of Python 2 in Python"
   homepage "https://pypy.org/"
-  url "https://downloads.python.org/pypy/pypy2.7-v7.3.11-src.tar.bz2"
-  sha256 "1117afb66831da4ea6f39d8d2084787a74689fd0229de0be301f9ed9b255093c"
+  url "https://downloads.python.org/pypy/pypy2.7-v7.3.12-src.tar.bz2"
+  sha256 "dd61d88da274c2ce2cec77667d4a3df9a652bcc50e26f90991d4dd0af66bccf4"
   license "MIT"
   head "https://foss.heptapod.net/pypy/pypy", using: :hg
 
@@ -23,7 +23,7 @@ class Pypy < Formula
 
   depends_on "pkg-config" => :build
   depends_on "gdbm"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "sqlite"
   depends_on "tcl-tk"
 
@@ -72,7 +72,10 @@ class Pypy < Formula
 
   def install
     # The `tcl-tk` library paths are hardcoded and need to be modified for non-/usr/local prefix
-    inreplace "lib_pypy/_tkinter/tklib_build.py", "/usr/local/opt/tcl-tk/", Formula["tcl-tk"].opt_prefix/""
+    inreplace "lib_pypy/_tkinter/tklib_build.py" do |s|
+      s.gsub! "/usr/local/opt/tcl-tk/", Formula["tcl-tk"].opt_prefix/""
+      s.gsub! "/include'", "/include/tcl-tk'"
+    end
 
     # See https://github.com/Homebrew/homebrew/issues/24364
     ENV["PYTHONPATH"] = ""
