@@ -6,6 +6,7 @@ class OciCli < Formula
   url "https://files.pythonhosted.org/packages/47/6b/48eca9a7b59588b3f6a93e3811e4042ec7f4ea908d473b3505a66ff01f99/oci-cli-3.29.1.tar.gz"
   sha256 "0e9044025b4ef85f28f5beef9472711a7fc03d1341f767ae4f7c1a4ff6a55f6e"
   license any_of: ["UPL-1.0", "Apache-2.0"]
+  revision 1
   head "https://github.com/oracle/oci-cli.git", branch: "master"
 
   bottle do
@@ -18,8 +19,10 @@ class OciCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "74a77d681ec55729205a94f951d772de0a63ec0a0be3d1420ca3b5999ef235c1"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
+  depends_on "openssl@3"
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
@@ -90,6 +93,10 @@ class OciCli < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     virtualenv_install_with_resources
   end
 
