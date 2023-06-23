@@ -6,6 +6,7 @@ class TrezorAgent < Formula
   url "https://files.pythonhosted.org/packages/11/bc/aa2bdee9cd81af9ecde0a9e8b5c6c6594a4a0ee7ade950b51a39d54f9e63/trezor_agent-0.12.0.tar.gz"
   sha256 "e08ca5a54bd7658017164c8518d6cdf623d3b077dfdccfd12f612af5fef05855"
   license "LGPL-3.0-only"
+  revision 1
 
   bottle do
     rebuild 8
@@ -23,6 +24,7 @@ class TrezorAgent < Formula
   depends_on "cffi"
   depends_on "docutils"
   depends_on "libusb"
+  depends_on "openssl@3"
   depends_on "pillow"
   depends_on "pycparser"
   depends_on "python-typing-extensions"
@@ -260,6 +262,10 @@ class TrezorAgent < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     ENV.append "CFLAGS", "-I#{Formula["libusb"].include}/libusb-1.0"
     venv = virtualenv_create(libexec, "python3.11")
     venv.pip_install resources.reject { |r| OS.mac? ? r.name == "dbus-fast" : r.name.start_with?("pyobjc") }
