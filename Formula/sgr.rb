@@ -6,7 +6,7 @@ class Sgr < Formula
   url "https://github.com/splitgraph/sgr/archive/refs/tags/v0.3.12.tar.gz"
   sha256 "e5153944383a0160efe4d56a2c4a6d11f74bb1a04d097df95806ddcbc1ab5618"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
     rebuild 1
@@ -19,9 +19,11 @@ class Sgr < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "90d51ba0c11eaf95cec87f5a8069b2fff71e6288a2442c0a64ad73955da99098"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "poetry" => :build
   depends_on "rust" => :build # for cryptography
   depends_on "libpq" # for psycopg2-binary
+  depends_on "openssl@3"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
@@ -187,6 +189,10 @@ class Sgr < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     venv = virtualenv_create(libexec, "python3.11")
     venv.pip_install resources
     poetry = Formula["poetry"].opt_bin/"poetry"
