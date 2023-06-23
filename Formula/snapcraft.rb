@@ -7,6 +7,7 @@ class Snapcraft < Formula
       tag:      "7.3.1",
       revision: "bef32e264fb1b8061da3370d7435bace9316409e"
   license "GPL-3.0-only"
+  revision 1
 
   livecheck do
     url :stable
@@ -23,10 +24,12 @@ class Snapcraft < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0e4c76c266f500238e20be3eb0c1dd283a9e68e6179b7e28fe9e3c06499a6882"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build # for cryptography
   depends_on "docutils"
   depends_on "libsodium"
   depends_on "lxc"
+  depends_on "openssl@3"
   depends_on "python-tabulate"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
@@ -88,6 +91,12 @@ class Snapcraft < Formula
   end
 
   fails_with gcc: "5" # due to apt on Linux
+
+  # Needs `setuptools<66`
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/a1/29/f2ad3b78b9ebd24afa282eed9add27b47ef52b37291198021154b4b65166/setuptools-65.7.0.tar.gz"
+    sha256 "4d3c92fac8f1118bb77a22181355e29c239cabfe2b9effdaa665c66b711136d7"
+  end
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/21/31/3f468da74c7de4fcf9b25591e682856389b3400b4b62f201e65f15ea3e07/attrs-22.2.0.tar.gz"
@@ -401,6 +410,13 @@ class Snapcraft < Formula
   end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
+    # Workaround for Xcode 14.3
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version == 1403
+
     virtualenv_install_with_resources
   end
 
