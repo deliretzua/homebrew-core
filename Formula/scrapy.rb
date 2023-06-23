@@ -8,6 +8,16 @@ class Scrapy < Formula
   license "BSD-3-Clause"
   head "https://github.com/scrapy/scrapy.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "0cf3cb355efdec7bbce65c705ac9fa9889b72ef3b133e222542e70b908b97891"
+    sha256 cellar: :any,                 arm64_monterey: "41aa188214a64a5d0021b05d548eca9b0cf5e23befec232a5a31f01c3ae5e828"
+    sha256 cellar: :any,                 arm64_big_sur:  "2c47bf9c15b1b40d259d8713fe6779d3038f34285cafb4702f22dc7ec1529285"
+    sha256 cellar: :any,                 ventura:        "c5b9830ce77d81c274414cbff450aefd307af7f627fe2d1fb55ac60a59b50abf"
+    sha256 cellar: :any,                 monterey:       "9ec673983f70a712185c1bd8988f2da8b67c29e8e2dba66165489731b7ac13f0"
+    sha256 cellar: :any,                 big_sur:        "4e5f1ed60d850c5616113ced6c0c8f90d81c962080918752019ffd9b6c9e6ea8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5efe3211301b92e197cb2ba47016eaff0d736f78b49fea84b587e33d8bbe835e"
+  end
+
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
