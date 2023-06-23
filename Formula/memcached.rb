@@ -4,6 +4,7 @@ class Memcached < Formula
   url "https://www.memcached.org/files/memcached-1.6.21.tar.gz"
   sha256 "c788980efc417dd5d93c442b1c8b8769fb2018896c29de3887d22a2f143da2ee"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/memcached/memcached.git", branch: "master"
 
   livecheck do
@@ -22,6 +23,7 @@ class Memcached < Formula
   end
 
   depends_on "libevent"
+  depends_on "openssl@3"
 
   def install
     system "./configure", "--prefix=#{prefix}", "--disable-coverage", "--enable-tls"
