@@ -9,11 +9,11 @@ class OpenaiWhisper < Formula
   head "https://github.com/openai/whisper.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "fa74892b4ef443649f97a020394f5f71417eceaea61b98d5658a8827d3fe8de7"
-    sha256 cellar: :any,                 arm64_monterey: "6e2a0e82fbebb9a15e4e5d4936daf123e8f6b4e5900fd8673799317c9fc81736"
-    sha256 cellar: :any,                 monterey:       "ff0d6c2caf36debca9cfc02d07ae2aea480ef0d49fc2736d715bfaafbf83d7dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "32ec15736151214ca7ae7a19390d8a7a075f0370290c1fdb1d763dff43ed9a99"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_ventura:  "2b50faf647c94306e10382f23edc5e417d1ea2729981adc5794dbeb726e7112c"
+    sha256 cellar: :any,                 arm64_monterey: "e65e96ce611455d093548ebe8470677e9dd5adb7736a670e5658f86a65bc94af"
+    sha256 cellar: :any,                 monterey:       "987fb47740fd27b3501570f99d7f22ce1b5454713d9fbf31ae81c43c0eacfe6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "71780b5c1f8bed96dd915f1a37434831ecca2ac472a444d79e5a44d716292f71"
   end
 
   depends_on "rust" => :build # for tiktoken
