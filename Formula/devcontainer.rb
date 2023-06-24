@@ -3,8 +3,8 @@ require "language/node"
 class Devcontainer < Formula
   desc "Reference implementation for the Development Containers specification"
   homepage "https://containers.dev"
-  url "https://registry.npmjs.org/@devcontainers/cli/-/cli-0.45.0.tgz"
-  sha256 "490f025b0ea5ff567870552f67e19a7342cf214dd5e884ede39d59006df98065"
+  url "https://registry.npmjs.org/@devcontainers/cli/-/cli-0.46.0.tgz"
+  sha256 "acf6fc85bf6facc533f22ea9f5f16ca5b1f73da8f0963fa5490243866ce8d5fb"
   license "MIT"
 
   bottle do
