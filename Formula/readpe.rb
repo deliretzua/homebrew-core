@@ -1,11 +1,11 @@
-class Pev < Formula
+class Readpe < Formula
   desc "PE analysis toolkit"
-  homepage "https://pev.sourceforge.io/"
+  homepage "https://github.com/mentebinaria/readpe"
   url "https://downloads.sourceforge.net/project/pev/pev-0.81/pev-0.81.tar.gz"
   sha256 "4192691c57eec760e752d3d9eca2a1322bfe8003cfc210e5a6b52fca94d5172b"
   license "GPL-2.0-or-later"
   revision 1
-  head "https://github.com/merces/pev.git", branch: "master"
+  head "https://github.com/mentebinaria/readpe.git", branch: "master"
 
   bottle do
     rebuild 1
