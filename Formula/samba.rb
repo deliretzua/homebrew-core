@@ -7,7 +7,7 @@ class Samba < Formula
   url "https://download.samba.org/pub/samba/stable/samba-4.18.3.tar.gz"
   sha256 "c67e1453165a3918ffffad600236ca3966b47bde4798e89ae600ae3903ccc32c"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://www.samba.org/samba/download/"
@@ -45,7 +45,7 @@ class Samba < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on "openssl@1.1"
+    depends_on "openssl@3"
   end
 
   on_linux do
