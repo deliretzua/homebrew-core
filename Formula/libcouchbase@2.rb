@@ -4,6 +4,7 @@ class LibcouchbaseAT2 < Formula
   url "https://packages.couchbase.com/clients/c/libcouchbase-2.10.9.tar.gz"
   sha256 "6f6450121e0208005c17f7f4cdd9258a571bb22183f0bc08f11d75c207d55d0a"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "fac2748e1f4325c592e5ec23957029bd376ba5717b0efff506037aae3aed8570"
@@ -25,7 +26,7 @@ class LibcouchbaseAT2 < Formula
   depends_on "libev"
   depends_on "libevent"
   depends_on "libuv"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
     mkdir "build" do
