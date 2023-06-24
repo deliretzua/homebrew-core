@@ -4,6 +4,7 @@ class Musikcube < Formula
   url "https://github.com/clangen/musikcube/archive/3.0.1.tar.gz"
   sha256 "94fe7e2dba60137bbfee25c037850ac064744cd8c050cc76360580b2b6790632"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/clangen/musikcube.git", branch: "master"
 
   livecheck do
@@ -34,7 +35,7 @@ class Musikcube < Formula
   depends_on "libvorbis"
   depends_on :macos
   depends_on "ncurses"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "taglib"
   uses_from_macos "curl"
 
