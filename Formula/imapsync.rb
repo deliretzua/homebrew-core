@@ -5,7 +5,7 @@ class Imapsync < Formula
   # NOTE: The mirror will return 404 until the version becomes outdated.
   sha256 "553ce6d6535b954987a859fa0c3c74da446df74157d398ab09159c7f8ed8043d"
   license "NLPL"
-  revision 1
+  revision 2
   head "https://github.com/imapsync/imapsync.git", branch: "master"
 
   livecheck do
@@ -29,6 +29,8 @@ class Imapsync < Formula
   uses_from_macos "perl"
 
   on_linux do
+    depends_on "openssl@3"
+
     resource "Digest::HMAC_SHA1" do
       url "https://cpan.metacpan.org/authors/id/G/GA/GAAS/Digest-HMAC-1.03.tar.gz"
       sha256 "3bc72c6d3ff144d73aefb90e9a78d33612d58cf1cd1631ecfb8985ba96da4a59"
