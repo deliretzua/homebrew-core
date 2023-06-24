@@ -2,7 +2,7 @@ class Rtags < Formula
   desc "Source code cross-referencer like ctags with a clang frontend"
   homepage "https://github.com/Andersbakken/rtags"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/Andersbakken/rtags.git", branch: "master"
 
   stable do
@@ -54,7 +54,7 @@ class Rtags < Formula
   depends_on "cmake" => :build
   depends_on "emacs"
   depends_on "llvm"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   fails_with gcc: "5"
 
