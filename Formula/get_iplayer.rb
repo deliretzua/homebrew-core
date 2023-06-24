@@ -4,7 +4,7 @@ class GetIplayer < Formula
   url "https://github.com/get-iplayer/get_iplayer/archive/v3.30.tar.gz"
   sha256 "05a39d5447eecfc2f95a616bf8d4dcf59ca3b3a0ecda1f82882401e6d74e286c"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/get-iplayer/get_iplayer.git", branch: "develop"
 
   bottle do
@@ -25,6 +25,8 @@ class GetIplayer < Formula
   uses_from_macos "perl"
 
   on_linux do
+    depends_on "openssl@3"
+
     resource "Try-Tiny" do
       url "https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.30.tar.gz"
       sha256 "da5bd0d5c903519bbf10bb9ba0cb7bcac0563882bcfe4503aee3fb143eddef6b"
