@@ -4,6 +4,7 @@ class IosWebkitDebugProxy < Formula
   url "https://github.com/google/ios-webkit-debug-proxy/archive/v1.9.0.tar.gz"
   sha256 "ba9bb2feaa976ad999e9e405d8cd8794cdf3546130a79f4785235200ead3c96c"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/google/ios-webkit-debug-proxy.git", branch: "master"
 
   bottle do
@@ -21,7 +22,7 @@ class IosWebkitDebugProxy < Formula
   depends_on "pkg-config" => :build
   depends_on "libimobiledevice"
   depends_on "libplist"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   def install
     system "./autogen.sh"
