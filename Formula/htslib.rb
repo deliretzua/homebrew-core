@@ -4,6 +4,7 @@ class Htslib < Formula
   url "https://github.com/samtools/htslib/releases/download/1.17/htslib-1.17.tar.bz2"
   sha256 "763779288c40f07646ec7ad98b96c378c739171d162ad98398868783b721839f"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -25,6 +26,10 @@ class Htslib < Formula
   uses_from_macos "bzip2"
   uses_from_macos "curl"
   uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "openssl@3"
+  end
 
   def install
     system "./configure", "--prefix=#{prefix}", "--enable-libcurl"
