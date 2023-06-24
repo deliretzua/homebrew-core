@@ -4,6 +4,7 @@ class Libslax < Formula
   url "https://github.com/Juniper/libslax/releases/download/0.22.1/libslax-0.22.1.tar.gz"
   sha256 "4da6fb9886e50d75478d5ecc6868c90dae9d30ba7fc6e6d154fc92e6a48d9a95"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/Juniper/libslax.git", branch: "master"
 
   livecheck do
@@ -27,7 +28,7 @@ class Libslax < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "bison" => :build
   uses_from_macos "curl"
