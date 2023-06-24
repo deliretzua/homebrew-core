@@ -2,11 +2,14 @@ class Libdap < Formula
   desc "Framework for scientific data networking"
   homepage "https://www.opendap.org/"
   license "LGPL-2.1-or-later"
+  revision 1
 
   stable do
+    # TODO: Update deps and `install` method when libtirpc patch on Linux is no longer needed.
     url "https://www.opendap.org/pub/source/libdap-3.20.11.tar.gz"
     sha256 "850debf6ee6991350bf31051308093bee35ddd2121e4002be7e130a319de1415"
 
+    # Fix flat namespace flag on Big Sur+.
     patch do
       url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
       sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
@@ -40,13 +43,26 @@ class Libdap < Formula
   depends_on "bison" => :build
   depends_on "pkg-config" => :build
   depends_on "libxml2"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "flex" => :build
   uses_from_macos "curl"
 
   on_linux do
+    # TODO: `autoconf`, `automake`, and `libtool` are needed for the libtirpc patch.
+    #       Remove when patch is no longer needed.
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+    depends_on "libtirpc"
     depends_on "util-linux"
+
+    # Fix finding libtirpc on Linux.
+    # https://github.com/OPENDAP/libdap4/pull/228
+    patch do
+      url "https://github.com/OPENDAP/libdap4/commit/48b44b96faf1ed1e44f118828c3de903fff0a276.patch?full_index=1"
+      sha256 "b11c233844691b97d2eab208a49d520ad9d78ce6d14ca52bb5fdad29b5db1f37"
+    end
   end
 
   def install
@@ -57,7 +73,8 @@ class Libdap < Formula
       --with-included-regex
     ]
 
-    system "autoreconf", "-fvi" if build.head?
+    # Remove `OS.linux? || ` when Linux libtirpc patch is no longer needed.
+    system "autoreconf", "--force", "--install", "--verbose" if OS.linux? || build.head?
     system "./configure", *args
     system "make"
     system "make", "check"
