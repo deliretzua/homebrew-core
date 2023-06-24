@@ -6,7 +6,7 @@ class Vineyard < Formula
   url "https://github.com/v6d-io/v6d/releases/download/v0.15.0/v6d-0.15.0.tar.gz"
   sha256 "3281afac3f348c4409676adf8328c6de8b73ed35e71539e6dd779d4af5bc16dd"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   bottle do
     sha256                               arm64_ventura:  "77d8b07481a05e924c05c190c9f018a8ac3b10143fccd25405552b7dad680658"
@@ -30,7 +30,7 @@ class Vineyard < Formula
   depends_on "hiredis"
   depends_on "libgrape-lite"
   depends_on "open-mpi"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "redis"
 
   fails_with gcc: "5"
@@ -50,7 +50,7 @@ class Vineyard < Formula
                     "-DBUILD_VINEYARD_TESTS=OFF",
                     "-DUSE_LIBUNWIND=OFF",
                     "-DLIBGRAPELITE_INCLUDE_DIRS=#{Formula["libgrape-lite"].opt_include}",
-                    "-DOPENSSL_ROOT_DIR=#{Formula["openssl@1.1"].opt_prefix}",
+                    "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
