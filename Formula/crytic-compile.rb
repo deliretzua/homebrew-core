@@ -9,13 +9,13 @@ class CryticCompile < Formula
   head "https://github.com/crytic/crytic-compile.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "88992b9fd90213acde94f893560f25301e6df5ec97b214181b373714182506c6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7cc3212149488e40aadecc0c5d069d3ef8cbcfbcc2e9094ef2d717e1a9b3f6af"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "38e4afc309ee1ea55eac6040662721681af43eba8220348373f7ef55c2fd984d"
-    sha256 cellar: :any_skip_relocation, ventura:        "9529b1a4b634d1b9c4edecf8ad255a34c7b2e3a278bfb1659b5fd1e2e4f726f6"
-    sha256 cellar: :any_skip_relocation, monterey:       "06bcb5238e746e4852d0304ce12b0be8f2bd37a97a10ef62c31da3a33cf30518"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e2742aad5f0095f36e6f16d6d085abf67521d1fdafb3b46f1800937bbd8bca06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "66c927e6a01a17bac0f7443261f164993edf7e90bcfeeed04da56eb37ce042dd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "664ecb8f84308e6411fdce66d6205319177cdf08c0904d0b02f0a6faa2bd514d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c7226a156d3f3b0c5411b69c62608ca2c4fbb51bcd69825327434c64a08cc08c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f45dcb9ac6472b8e889f9eac335cc8119bc14015d381bb3293df0ac53e97657c"
+    sha256 cellar: :any_skip_relocation, ventura:        "8fa50086b4860c26aa7678627ffb79816ae9f7bbb6fabb6c26babf327ceffd5d"
+    sha256 cellar: :any_skip_relocation, monterey:       "f0bd65c42ff573cbefd393fd36935306e008b03fd4a20b7ca3005e347f8449dd"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d27724e8b94cdba22f4678ef5aa98dca4b3143cd92ca2c858795091ef9c7600f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac98771cb84963c28b86f44a469b9275f84e787ff712eeed315560faaf99b07a"
   end
 
   depends_on "python@3.11"
