@@ -6,6 +6,7 @@ class Moto < Formula
   url "https://files.pythonhosted.org/packages/59/a4/94e5f7d521bfe916361dfa4a738b40fb496f7cc1f3f8531fc2ee93cd01a5/moto-4.1.11.tar.gz"
   sha256 "f3e966ba1460751e19eab5356545813b29c05478b47eb0da445d688949339be2"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "88c3ebb08dfcab8e05495daa801b50ded40534eaf6c420877bf1fd8b07deb9c9"
@@ -17,13 +18,13 @@ class Moto < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "81606aa920cabfc0063e5fcdd75b671fd06a8d50cb7adc88965e3813b9d819a4"
   end
 
-  # `pkg-config`, `rust`, and `openssl@1.1` are for cryptography.
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
 
   depends_on "cffi"
   depends_on "cfn-lint"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
@@ -322,7 +323,7 @@ class Moto < Formula
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@1.1"].opt_prefix
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     virtualenv_install_with_resources
