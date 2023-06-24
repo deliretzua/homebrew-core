@@ -8,6 +8,16 @@ class Shub < Formula
   license "BSD-3-Clause"
   head "https://github.com/scrapinghub/shub.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "84969078d877da747ce02e80bff1bcd239e8393af526270c18e76344a094bb08"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d3d1b22abbe07eeec58cb2aada60f2380bf040277153756a4a770437978e42c9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a71c1cbbf1ed1ef0409b5181340fda7a84481906b78d6ea4db5d8e04b9846a53"
+    sha256 cellar: :any_skip_relocation, ventura:        "0fc494e16e430839f8d55e31e7d768cac98f1d0d47cdaea618c4695935ec6c5d"
+    sha256 cellar: :any_skip_relocation, monterey:       "a699b5b289b3cf5f33f9997bcd4fdca1f300644e10614a5e65b541b0e414da33"
+    sha256 cellar: :any_skip_relocation, big_sur:        "441cf03ec77aa1ff807d79edde8b3dfe17013e4e0647bfb3013220f5348ac8e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "79789f67e038d086950e01050eb967df4b7753f4b4c92612522c0ef0c4eee438"
+  end
+
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
