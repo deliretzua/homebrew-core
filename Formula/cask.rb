@@ -1,8 +1,8 @@
 class Cask < Formula
   desc "Emacs dependency management"
   homepage "https://cask.readthedocs.io/"
-  url "https://github.com/cask/cask/archive/v0.8.8.tar.gz"
-  sha256 "94f99d4161dedda3024312dc6b929be6319aff593a6d31f1cf4f2845ae6ca5c6"
+  url "https://github.com/cask/cask/archive/v0.9.0.tar.gz"
+  sha256 "5db17efe3a91d36f457e70f097cba5ed5de505971894bf2ec839c38d8c2dd120"
   license "GPL-3.0-or-later"
   head "https://github.com/cask/cask.git", branch: "master"
 
@@ -17,6 +17,7 @@ class Cask < Formula
     bin.install "bin/cask"
     # Lisp files must stay here: https://github.com/cask/cask/issues/305
     prefix.install Dir["*.el"]
+    prefix.install "package-build"
     elisp.install_symlink prefix/"cask.el"
     elisp.install_symlink prefix/"cask-bootstrap.el"
 
