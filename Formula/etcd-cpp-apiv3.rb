@@ -5,7 +5,7 @@ class EtcdCppApiv3 < Formula
   url "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3/archive/refs/tags/v0.14.3.tar.gz"
   sha256 "5faf1ca697f9889c269a2a0cb2237d8121959f72bf6eca4f61dffdcb9c6d9d46"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "72f6a58af9bbba15c9c386cfcfc39420a632a6d6b7d554c33fe7b6906edfa4d2"
@@ -23,7 +23,7 @@ class EtcdCppApiv3 < Formula
   depends_on "boost"
   depends_on "cpprestsdk"
   depends_on "grpc@1.54"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "protobuf@21"
 
   fails_with gcc: "5"
@@ -33,7 +33,7 @@ class EtcdCppApiv3 < Formula
                     "-DCMAKE_CXX_STANDARD=17",
                     "-DCMAKE_CXX_STANDARD_REQUIRED=TRUE",
                     "-DBUILD_ETCD_TESTS=OFF",
-                    "-DOPENSSL_ROOT_DIR=#{Formula["openssl@1.1"].opt_prefix}",
+                    "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
@@ -58,13 +58,13 @@ class EtcdCppApiv3 < Formula
                     "-I#{Formula["boost"].include}",
                     "-I#{Formula["cpprestsdk"].include}",
                     "-I#{Formula["grpc@1.54"].include}",
-                    "-I#{Formula["openssl@1.1"].include}",
+                    "-I#{Formula["openssl@3"].include}",
                     "-I#{Formula["protobuf@21"].include}",
                     "-I#{include}",
                     "-L#{Formula["boost"].lib}",
                     "-L#{Formula["cpprestsdk"].lib}",
                     "-L#{Formula["grpc@1.54"].lib}",
-                    "-L#{Formula["openssl@1.1"].lib}",
+                    "-L#{Formula["openssl@3"].lib}",
                     "-L#{Formula["protobuf@21"].lib}",
                     "-L#{lib}",
                     "-lboost_random-mt",
