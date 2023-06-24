@@ -1,10 +1,9 @@
 class Zmap < Formula
   desc "Network scanner for Internet-wide network studies"
   homepage "https://zmap.io"
-  url "https://github.com/zmap/zmap/archive/v2.1.1.tar.gz"
-  sha256 "29627520c81101de01b0213434adb218a9f1210bfd3f2dcfdfc1f975dbce6399"
+  url "https://github.com/zmap/zmap/archive/v3.0.0.tar.gz"
+  sha256 "e3151cdcdf695ab7581e01a7c6ee78678717d6a62ef09849b34db39682535454"
   license "Apache-2.0"
-  revision 2
   head "https://github.com/zmap/zmap.git", branch: "main"
 
   livecheck do
@@ -31,37 +30,21 @@ class Zmap < Formula
   depends_on "gmp"
   depends_on "json-c"
   depends_on "libdnet"
+  depends_on "libunistring" # for unistr.h
 
   uses_from_macos "flex" => :build
   uses_from_macos "libpcap"
 
-  # fix json-c 0.14 compat
-  # ref PR, https://github.com/zmap/zmap/pull/609
-  patch :DATA
-
   def install
-    inreplace ["conf/zmap.conf", "src/zmap.c", "src/zopt.ggo.in"], "/etc", etc
+    inreplace ["conf/zmap.conf", "src/constants.h", "src/zopt.ggo.in"], "/etc", etc
+    args = %w[-DENABLE_DEVELOPMENT=OFF -DRESPECT_INSTALL_PREFIX_CONFIG=ON]
 
-    system "cmake", ".", *std_cmake_args, "-DENABLE_DEVELOPMENT=OFF",
-                         "-DRESPECT_INSTALL_PREFIX_CONFIG=ON"
-    system "make"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
     system "#{sbin}/zmap", "--version"
   end
 end
-
-__END__
-diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 8bd825f..c70b651 100644
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -72,6 +72,7 @@
-     endif()
-
-     add_definitions("-DJSON")
-+    string(REPLACE ";" " " JSON_CFLAGS "${JSON_CFLAGS}")
-     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${JSON_CFLAGS}")
- endif()
