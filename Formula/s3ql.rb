@@ -9,7 +9,7 @@ class S3ql < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b8cbd4e1467afc2b01ee93e45bed64baca9a0cd9915b57873e647bcf6927a99a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5a9dbc30a57887057a7898f1fe5843b3bba02936698e494c81ecaa2999161d4e"
   end
 
   deprecate! date: "2022-11-07", because: :repo_archived
