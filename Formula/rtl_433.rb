@@ -5,6 +5,7 @@ class Rtl433 < Formula
       tag:      "22.11",
       revision: "c3c58d81e72ec3d80af480a7c2ef7995ef66147f"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/merbanan/rtl_433.git", branch: "master"
 
   bottle do
@@ -22,6 +23,7 @@ class Rtl433 < Formula
   depends_on "pkg-config" => :build
   depends_on "librtlsdr"
   depends_on "libusb"
+  depends_on "openssl@3"
 
   resource("test_cu8") do
     url "https://raw.githubusercontent.com/merbanan/rtl_433_tests/master/tests/oregon_scientific/uvr128/g001_433.92M_250k.cu8"
