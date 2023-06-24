@@ -6,7 +6,7 @@ class Termius < Formula
   url "https://github.com/termius/termius-cli/archive/v1.2.15.tar.gz"
   sha256 "ac1a43e0f485a0a4541cae6385d344e767cc2df239a06b78577a3eb87fe3aecf"
   license "BSD-3-Clause"
-  revision 5
+  revision 6
   head "https://github.com/termius/termius-cli.git", branch: "master"
 
   bottle do
@@ -26,7 +26,7 @@ class Termius < Formula
   deprecate! date: "2023-01-25", because: :unmaintained
 
   depends_on "rust" => :build
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "python@3.10"
   depends_on "pyyaml"
   depends_on "six"
