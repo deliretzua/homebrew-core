@@ -12,16 +12,13 @@ class Cadaver < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_ventura:  "f31ec5eb5056e09d4b8a22a2323fb2bbe3c8c15ea89be69429382c00ec534d3c"
-    sha256 arm64_monterey: "4ffec4d1167cb17f80cb63c4142909b6f208cc653518cee7f46fb7c1f270e192"
-    sha256 arm64_big_sur:  "859215276f7fda671ceee3b7908772d84fccd12873e6bb6cac0f90c50982cbcc"
-    sha256 ventura:        "276617de9ff7b225421e56658cba86766a180a42f6458586b7e0903be7945c2e"
-    sha256 monterey:       "72eea3f287da7f77740b72db463cdf967c355a4044d0730150d637145d6be312"
-    sha256 big_sur:        "240a41ea5b71aa144bea0fdb28b6233130d5368e8a221171eaa7bee24f5075a6"
-    sha256 catalina:       "da94dea10afd90e1d0e41f24d4319ea006bf909381de2c2379c3144374c3feff"
-    sha256 mojave:         "a232491b47135718f6cf65d00954099d92a43f5fcc6b01838a676faa77f2ed13"
-    sha256 x86_64_linux:   "03a8734a293f551585c100ce10389aa2a66222ab711d9c80b7300d139eb8546b"
+    sha256 cellar: :any,                 arm64_ventura:  "c48264ae39d915f8cdb905a8b8807d39205edc892f40163cfc07d09ed8f7be75"
+    sha256 cellar: :any,                 arm64_monterey: "7b80acb805a75e568a23999803cba218418d30fcf686e81226b8922adad0d4be"
+    sha256 cellar: :any,                 arm64_big_sur:  "42fd4197b8eb2bc2e6d6dc3dd0864c497c697bcc497fd4e5994f7a55880f7629"
+    sha256 cellar: :any,                 ventura:        "69364af64cd35d26b327788d6a6851f3bef4adccb62a4ee2de0b2925f2fd03c9"
+    sha256 cellar: :any,                 monterey:       "43eab9ac0dcb4d73e38f20d79989613b30f075af20b2496728362c82a37c82c0"
+    sha256 cellar: :any,                 big_sur:        "d10e0968b5b4402e13db9871b9e26d34fd923f926e1f3d6cd89342dd9ca32fe4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1833b0bdb9598c89320a80dd6c92137c2b3dacae8622e60b60782883d031d32"
   end
 
   depends_on "pkg-config" => :build
