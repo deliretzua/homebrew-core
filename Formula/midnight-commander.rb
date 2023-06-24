@@ -5,7 +5,7 @@ class MidnightCommander < Formula
   mirror "https://ftp.osuosl.org/pub/midnightcommander/mc-4.8.29.tar.xz"
   sha256 "01d8a3b94f58180cca5bf17257b5078d1fd6fd27a9b5c0e970ec767549540ad4"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://ftp.osuosl.org/pub/midnightcommander/"
@@ -33,7 +33,7 @@ class MidnightCommander < Formula
   depends_on "pkg-config" => :build
   depends_on "glib"
   depends_on "libssh2"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "s-lang"
 
   conflicts_with "minio-mc", because: "both install an `mc` binary"
