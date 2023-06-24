@@ -4,6 +4,7 @@ class X3270 < Formula
   url "http://x3270.bgp.nu/download/04.02/suite3270-4.2ga10-src.tgz"
   sha256 "db513225f074144a5a0221d57ede37cca1468c2c2d158ea09981f50012ebdbe7"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url "https://x3270.miraheze.org/wiki/Downloads"
@@ -23,6 +24,10 @@ class X3270 < Formula
   depends_on "readline"
 
   uses_from_macos "tcl-tk"
+
+  on_linux do
+    depends_on "openssl@3"
+  end
 
   def install
     ENV.append "CPPFLAGS", "-I#{Formula["tcl-tk"].opt_include}/tcl-tk" unless OS.mac?
