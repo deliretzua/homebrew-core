@@ -7,14 +7,13 @@ class Jmeter < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "469626a586f678b34806c015702bb700ed837df7b0a1a939d21446e27ea95eed"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "469626a586f678b34806c015702bb700ed837df7b0a1a939d21446e27ea95eed"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "469626a586f678b34806c015702bb700ed837df7b0a1a939d21446e27ea95eed"
-    sha256 cellar: :any_skip_relocation, ventura:        "469626a586f678b34806c015702bb700ed837df7b0a1a939d21446e27ea95eed"
-    sha256 cellar: :any_skip_relocation, monterey:       "469626a586f678b34806c015702bb700ed837df7b0a1a939d21446e27ea95eed"
-    sha256 cellar: :any_skip_relocation, big_sur:        "469626a586f678b34806c015702bb700ed837df7b0a1a939d21446e27ea95eed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca9c9fb73567d2e499f983247d57f955a8a71044626aaffcc4ed4364d59610b8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9d44aae5226facb04a83b4b5548663ed60f67cc0813010571a7bd3cf56ed4674"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9d44aae5226facb04a83b4b5548663ed60f67cc0813010571a7bd3cf56ed4674"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9d44aae5226facb04a83b4b5548663ed60f67cc0813010571a7bd3cf56ed4674"
+    sha256 cellar: :any_skip_relocation, ventura:        "9d44aae5226facb04a83b4b5548663ed60f67cc0813010571a7bd3cf56ed4674"
+    sha256 cellar: :any_skip_relocation, monterey:       "9d44aae5226facb04a83b4b5548663ed60f67cc0813010571a7bd3cf56ed4674"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9d44aae5226facb04a83b4b5548663ed60f67cc0813010571a7bd3cf56ed4674"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d28fe8aad4125bc4bcf68f2c2da465060c8adfa5ba7dfcae9227fb35564a8704"
   end
 
   depends_on "openjdk@17"
