@@ -8,14 +8,13 @@ class GetIplayer < Formula
   head "https://github.com/get-iplayer/get_iplayer.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bb0bf5e440e1c1d58f12ebd3d21e2527bb6c1261966d676ce10f92a2839450e4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bb0bf5e440e1c1d58f12ebd3d21e2527bb6c1261966d676ce10f92a2839450e4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "668a4cf53137a695f95bb8eafbb59e076fd056a7bfebc77ae78a6107b844770e"
-    sha256 cellar: :any_skip_relocation, ventura:        "c31aab2a5580f74314ad0bc73ecb2dc69e77e5cae0893e27b71fe9788444cad3"
-    sha256 cellar: :any_skip_relocation, monterey:       "c31aab2a5580f74314ad0bc73ecb2dc69e77e5cae0893e27b71fe9788444cad3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "881b1fd3b06c54671ae67424f6afd2214a89324d639b2d05cc2e5457a140adb0"
-    sha256 cellar: :any_skip_relocation, catalina:       "4d92de4cd3d8e960450dadce7570a2ed7eae8b7e9eb95d6321370dcfdcc21102"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d5c04640590fd5325a434b8979df9136985f768e9bb6dc4cf24b79c4edb913a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "568e8f2399345c5bf93df88fc1bb5e2d1ef0f88984ffb0d37acbbc329c4bcac5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "568e8f2399345c5bf93df88fc1bb5e2d1ef0f88984ffb0d37acbbc329c4bcac5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c682ca0e14757911b8dbfec3bb3fa1700f03c830a791b7170f19c1ce8d43643e"
+    sha256 cellar: :any_skip_relocation, ventura:        "d71cfd6353b2abc4ab054e79358edb24eba7ea12f44020a4a94e00985554ea9c"
+    sha256 cellar: :any_skip_relocation, monterey:       "d71cfd6353b2abc4ab054e79358edb24eba7ea12f44020a4a94e00985554ea9c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "80d896c2c0c0c9cfe09c1999a1efca481122070fe9795c877be73e138a816b82"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "99ca7d21474420a991e0c80244f0e4dd22893d6b02b2eb5ed099d9003033e503"
   end
 
   depends_on "atomicparsley"
