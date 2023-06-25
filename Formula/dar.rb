@@ -1,8 +1,8 @@
 class Dar < Formula
   desc "Backup directory tree and files"
   homepage "http://dar.linux.free.fr/doc/index.html"
-  url "https://downloads.sourceforge.net/project/dar/dar/2.7.9/dar-2.7.9.tar.gz"
-  sha256 "1c609f691f99e6a868c0a6fcf70d2f5d2adee5dc3c0cbf374e69983129677df5"
+  url "https://downloads.sourceforge.net/project/dar/dar/2.7.10/dar-2.7.10.tar.gz"
+  sha256 "2b091480858d774e3f15f4e8eb69c4e2ccc405f80f25cc073d389a228b3a9623"
   license "GPL-2.0-or-later"
 
   livecheck do
