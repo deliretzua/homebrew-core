@@ -1,8 +1,8 @@
 class AstGrep < Formula
   desc "Code searching, linting, rewriting"
   homepage "https://github.com/ast-grep/ast-grep"
-  url "https://github.com/ast-grep/ast-grep/archive/refs/tags/0.6.7.tar.gz"
-  sha256 "4ab3d9fd522ae20b474b355f7b5e0edce011a904bca3a91f81fd7b4b1d125329"
+  url "https://github.com/ast-grep/ast-grep/archive/refs/tags/0.7.0.tar.gz"
+  sha256 "f8a27dca23850a0c57c7aa3e1005efaccc6d42b427d4e39a9f80e93f72cca72b"
   license "MIT"
 
   bottle do
@@ -22,7 +22,7 @@ class AstGrep < Formula
   end
 
   test do
-    (testpath/"Hello.js").write("console.log('123')")
-    system "#{bin}/sg", "run", "-p console.log", (testpath/"Hello.js")
+    (testpath/"hi.js").write("console.log('it is me')")
+    system "#{bin}/sg", "run", "-l", "js", "-p console.log", (testpath/"hi.js")
   end
 end
