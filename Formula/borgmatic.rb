@@ -8,13 +8,13 @@ class Borgmatic < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c4c80a224c4d2c6763e5b045d6feaff7048d3c27f4be1e427088e08793aa1fc4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a7b561370ca2ccfc1ca79c95b9b80615c1e6a0853297ab9bc9b33ac349ae62df"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e67a4f557231c4c0443d7e0b0cd23c6e456445edcce0d5e1e1655c63278fb0fa"
-    sha256 cellar: :any_skip_relocation, ventura:        "e07b889b81c1bfebd8c5e350bf4b84d5e159be734886e2e9cc2c1ceb1f4dc25e"
-    sha256 cellar: :any_skip_relocation, monterey:       "08d0c289138e71ca6e9494d7d4fe20011aaf74fd370635d06e69946189345e6c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f1f038fcff2c3a05a66f66c9337c9bf9c3652b960915b510102b487e4666fea2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "79102a134c9f71eacf5e02bbd818e6fa4e1abea8e7d262403aeb5982693458e9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f3ce601df8c121fbc1cb2ecb446d9921b7ae0e67d6ec8b2bcb026f85dfdbd306"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "105529fee7f8a2e35f0db0a8bacbd01ad9dd4294ceae178d871b3f6738d91418"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "03addad53da52dbe5ba90a157af225d5fbcf8e3d253ca18b06db4d7983b175cb"
+    sha256 cellar: :any_skip_relocation, ventura:        "effd69a53eee2e0da56bf203292c93ec6219cc8a79427f92203ba970bae91cc3"
+    sha256 cellar: :any_skip_relocation, monterey:       "6d0bc54c287758543eecf62c4f2715d2efb11286a2ace64c19961eef8a3ee2d7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5b12e890dcdaa7d9c5304b87068caf488a92826d1f7a4afc6bcc6563b86e3583"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc3392e7f1b7f6511232da77e74c9d15b1b7241b5575d61a6fa76c3c0cf3f279"
   end
 
   depends_on "python@3.11"
