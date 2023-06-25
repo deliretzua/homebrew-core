@@ -14,16 +14,14 @@ class Xtrans < Formula
   depends_on "xorgproto" => :test
 
   def install
-    args = %W[
-      --prefix=#{prefix}
-      --sysconfdir=#{etc}
-      --localstatedir=#{var}
-      --disable-dependency-tracking
-      --disable-silent-rules
-      --enable-docs=no
-    ]
+    # macOS and Fedora systems do not provide stropts.h
+    inreplace "Xtranslcl.c", "# include <stropts.h>", "# include <sys/ioctl.h>"
 
-    system "./configure", *args
+    system "./configure", *std_configure_args,
+                          "--sysconfdir=#{etc}",
+                          "--localstatedir=#{var}",
+                          "--disable-silent-rules",
+                          "--enable-docs=no"
     system "make", "install"
   end
 
@@ -36,7 +34,7 @@ class Xtrans < Formula
         return 0;
       }
     EOS
-    system ENV.cc, "test.c"
-    assert_equal 0, $CHILD_STATUS.exitstatus
+    system ENV.cc, "./test.c", "-o", "test"
+    system "./test"
   end
 end
