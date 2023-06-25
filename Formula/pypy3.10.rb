@@ -11,6 +11,16 @@ class Pypy310 < Formula
     regex(/href=.*?pypy3(?:\.\d+)*[._-]v?(\d+(?:\.\d+)+)-src\.t/i)
   end
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "6c0c8c9f4a10e56f024f04dba2a2adfbfee156abd5812962943dc50be93bb3f1"
+    sha256 cellar: :any,                 arm64_monterey: "f6cbdc0abe6d342b658aa846c0b24d9bc6700d4b0e54800bb2e5189d10e15c42"
+    sha256 cellar: :any,                 arm64_big_sur:  "e1c4ed4b83906edc359307ffa5deac15d533a903deaa3122b4fa6d2e58d1b8e5"
+    sha256 cellar: :any,                 ventura:        "648a56bfcc84f42be4544b3a456f247053699e67c8dbddeebda8389f4f217386"
+    sha256 cellar: :any,                 monterey:       "33632824363bb9591fd35a3ff21426cdd80d9c790d5eb5c36ec2f9245e4d1f63"
+    sha256 cellar: :any,                 big_sur:        "57caf67c9b2fb8f5aa90760135e0ca75b0b8b8c45815cd700ae2ad23832fb14b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03f719c28f00849ebc5cc511d9896c57df76a125ada2a3ba94f90cecad3ab600"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "pypy" => :build
   depends_on "gdbm"
