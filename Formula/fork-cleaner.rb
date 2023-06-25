@@ -1,8 +1,8 @@
 class ForkCleaner < Formula
   desc "Cleans up old and inactive forks on your GitHub account"
   homepage "https://github.com/caarlos0/fork-cleaner"
-  url "https://github.com/caarlos0/fork-cleaner/archive/v2.2.1.tar.gz"
-  sha256 "24397ec0ad89738aee48b77e80033a2e763941e67e67b673b6ff86ab04367283"
+  url "https://github.com/caarlos0/fork-cleaner/archive/v2.3.0.tar.gz"
+  sha256 "66e19adee6e1120e084ea3e5631842207a7c3177d7292b97cbdc2643c2f284df"
   license "MIT"
 
   bottle do
@@ -20,9 +20,7 @@ class ForkCleaner < Formula
   depends_on "go" => :build
 
   def install
-    system "make"
-    bin.install "fork-cleaner"
-    prefix.install_metafiles
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), "./cmd/fork-cleaner"
   end
 
   test do
