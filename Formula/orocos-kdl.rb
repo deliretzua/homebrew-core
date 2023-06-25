@@ -20,6 +20,16 @@ class OrocosKdl < Formula
   depends_on "cmake" => :build
   depends_on "eigen"
 
+  # $(brew --prefix orocos-kdl)/share/orocos_kdl/cmake/OrocosKDLTargets.cmake does not export the includes
+  # orocos-kdl v1.5.1 was released in September 2021: https://github.com/orocos/orocos_kinematics_dynamics/commit/db25b7e480e068df068232064f2443b8d52a83c7
+  # Issue was solved in October 2021: https://github.com/orocos/orocos_kinematics_dynamics/commit/ef39a4fd5cfb1400b2e6e034b1a99b8ad91192cf
+  # No new release since then, so we should provide a hotfix.
+  # Can be removed with next release.
+  patch do
+    url "https://github.com/orocos/orocos_kinematics_dynamics/commit/ef39a4fd5cfb1400b2e6e034b1a99b8ad91192cf.patch?full_index=1"
+    sha256 "b2ac2ff5d5d3285e7dfb4fbfc81364b1abc808cdd7d22415e446bfbdca189edd"
+  end
+
   def install
     cd "orocos_kdl" do
       system "cmake", ".", "-DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}/eigen3",
