@@ -1,10 +1,9 @@
 class Passwdqc < Formula
   desc "Password/passphrase strength checking and enforcement toolset"
   homepage "https://www.openwall.com/passwdqc/"
-  url "https://www.openwall.com/passwdqc/passwdqc-2.0.2.tar.gz"
-  sha256 "ff1f505764c020f6a4484b1e0cc4fdbf2e3f71b522926d90b4709104ca0604ab"
+  url "https://www.openwall.com/passwdqc/passwdqc-2.0.3.tar.gz"
+  sha256 "53b0f4bc49369f06195e9e13abb6cff352d5acb79e861004ec95973896488cf4"
   license "0BSD"
-  revision 1
 
   livecheck do
     url :homepage
@@ -48,6 +47,10 @@ class Passwdqc < Formula
     else
       "SECUREDIR=#{prefix}/pam"
     end
+
+    # Workaround for Xcode 14.3
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version == 1403
+    args << "CFLAGS=#{ENV.cflags}" if ENV.cflags.present?
 
     system "make", *args
     system "make", "install", *args
