@@ -6,13 +6,13 @@ class Lesspipe < Formula
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c2156478a5b6006415e8d51dfaa6eef48f4f9b65a2166c8a3deace997809e3b2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c2156478a5b6006415e8d51dfaa6eef48f4f9b65a2166c8a3deace997809e3b2"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c2156478a5b6006415e8d51dfaa6eef48f4f9b65a2166c8a3deace997809e3b2"
-    sha256 cellar: :any_skip_relocation, ventura:        "c2156478a5b6006415e8d51dfaa6eef48f4f9b65a2166c8a3deace997809e3b2"
-    sha256 cellar: :any_skip_relocation, monterey:       "c2156478a5b6006415e8d51dfaa6eef48f4f9b65a2166c8a3deace997809e3b2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c2156478a5b6006415e8d51dfaa6eef48f4f9b65a2166c8a3deace997809e3b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ceb4e96042a617340ea075043fa7baa75056229a80270f9dcb9f0e4f411415df"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7d5acbe4e5584844585a9680028b6ca2fff44f32aa6cb9a28eef05c5dfba2b72"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7d5acbe4e5584844585a9680028b6ca2fff44f32aa6cb9a28eef05c5dfba2b72"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7d5acbe4e5584844585a9680028b6ca2fff44f32aa6cb9a28eef05c5dfba2b72"
+    sha256 cellar: :any_skip_relocation, ventura:        "7d5acbe4e5584844585a9680028b6ca2fff44f32aa6cb9a28eef05c5dfba2b72"
+    sha256 cellar: :any_skip_relocation, monterey:       "7d5acbe4e5584844585a9680028b6ca2fff44f32aa6cb9a28eef05c5dfba2b72"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7d5acbe4e5584844585a9680028b6ca2fff44f32aa6cb9a28eef05c5dfba2b72"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3a69bc6598722e59c9fcc261d36d2baf78e90ceb85c190030aeb8aca4ba3ab68"
   end
 
   def install
