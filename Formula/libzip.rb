@@ -4,6 +4,7 @@ class Libzip < Formula
   url "https://libzip.org/download/libzip-1.10.0.tar.xz", using: :homebrew_curl
   sha256 "cd2a7ac9f1fb5bfa6218272d9929955dc7237515bba6e14b5ad0e1d1e2212b43"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url "https://libzip.org/download/"
