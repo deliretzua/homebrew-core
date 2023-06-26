@@ -2,8 +2,8 @@ class Cryptol < Formula
   desc "Domain-specific language for specifying cryptographic algorithms"
   homepage "https://www.cryptol.net/"
   # TODO: Try to switch `ghc@9.2` to `ghc` when cryptol.cabal allows ghc-bignum>=1.3
-  url "https://hackage.haskell.org/package/cryptol-2.13.0/cryptol-2.13.0.tar.gz"
-  sha256 "5c5b7ad0b290c506836dbbad886ae43ce7d690dd86e2f2a9124564c2f5602b83"
+  url "https://hackage.haskell.org/package/cryptol-3.0.0/cryptol-3.0.0.tar.gz"
+  sha256 "844660c6a85170f3765161e15e8719c637d96b9c292f96bd455b4cb18dc5d54f"
   license "BSD-3-Clause"
   head "https://github.com/GaloisInc/cryptol.git", branch: "master"
 
