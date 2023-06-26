@@ -1,11 +1,19 @@
 class Folly < Formula
   desc "Collection of reusable C++ library artifacts developed at Facebook"
   homepage "https://github.com/facebook/folly"
-  url "https://github.com/facebook/folly/archive/refs/tags/v2023.06.12.00.tar.gz"
-  sha256 "cb7d075f5610dcc50084d727ee675daad51733b049f0b07cc112b160e468599d"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/facebook/folly.git", branch: "main"
+
+  stable do
+    url "https://github.com/facebook/folly/archive/refs/tags/v2023.06.26.00.tar.gz"
+    sha256 "e7b58bf4eda24e2069b301e27533deb7c171dac57925cb90fe344595522772f3"
+
+    # Fix build with new fmt. Remove in next release.
+    patch do
+      url "https://github.com/facebook/folly/commit/e74fe5c99dd9d96b80b17f8396ce2568f2becb45.patch?full_index=1"
+      sha256 "3f2ccd2c43ecdd1fa947d4d487b2fb73e260a68a2f3e85f0c4dc61f91f70a628"
+    end
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "0e6c4bb3f37845bbce18c03a23455c97a43e61fd5df8f7c484662cfc45ca6ba4"
