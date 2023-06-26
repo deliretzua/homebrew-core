@@ -8,14 +8,13 @@ class Mytop < Formula
   revision 12
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "0eb04ca2f9d13e1c62bea17ef96e34e01189d5d1b58160105338801f205fa888"
-    sha256 cellar: :any,                 arm64_monterey: "8f02659e8b735fdf311c10368016aaf4b44a6e24c830439bdff91f9bd8ac2f6c"
-    sha256 cellar: :any,                 arm64_big_sur:  "75452c7d92536a9ea9f92a1a22a9271e1db9f180ffc6ac5d3504c092e91f3adc"
-    sha256 cellar: :any,                 ventura:        "52a13013f86290fdd2b52f76097871d9c0c637575385ec28c94b34012b25ba22"
-    sha256 cellar: :any,                 monterey:       "c5b43ff2ce82566006e3fb37f869d65d23fad64004458d2e9b3d895e8b867979"
-    sha256 cellar: :any,                 big_sur:        "1d2309a462b4bbe804c4e944e4e799bafdd2e0f8d5b0095c815ec377e99b1dcd"
-    sha256 cellar: :any,                 catalina:       "f376b1839b64b69043db8abe25c876b617c3d89ec1a2a8a9bc7112aa0b8d6137"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9e6242116e773721a6a5e8beb39c5936d6f986043118f3216a750cd3d777dfc"
+    sha256 cellar: :any,                 arm64_ventura:  "a2e750cd273cfb1d3110dddfd70a4937dd6d7242d2a83d3ee172155d297c550d"
+    sha256 cellar: :any,                 arm64_monterey: "544c937403f18212d99c8835b30fde5736aa4ee3387fc67788a23a4e23deb208"
+    sha256 cellar: :any,                 arm64_big_sur:  "4a09f6e45e3878f24acc90d480520e8b0499bab96ec5226af695b93657fef79e"
+    sha256 cellar: :any,                 ventura:        "e93ba00dce926fef622407103246a0f86e1fe7766512754db65c8e39e8bd41e6"
+    sha256 cellar: :any,                 monterey:       "1e12316b18917e634d08d1edea087b82fa33c8ec1f26cfad09ea69d9404c8407"
+    sha256 cellar: :any,                 big_sur:        "e28bdce153b9d901145a85ec86be714b8d1f63a12354dd6db995e56f509cbf05"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "910aa0172b9f4e1d89c49e24fcafe357d841047bc9fc9cda2307e1c78e54fc3c"
   end
 
   deprecate! date: "2023-06-26", because: :unmaintained
