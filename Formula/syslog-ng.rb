@@ -1,10 +1,11 @@
 class SyslogNg < Formula
+  include Language::Python::Virtualenv
+
   desc "Log daemon with advanced processing pipeline and a wide range of I/O methods"
   homepage "https://www.syslog-ng.com"
-  url "https://github.com/syslog-ng/syslog-ng/releases/download/syslog-ng-4.1.1/syslog-ng-4.1.1.tar.gz"
-  sha256 "d7df3cfa32d1a750818d94b8ea582dea54c37226e7b55a88c3d2f3a543d8f20e"
+  url "https://github.com/syslog-ng/syslog-ng/releases/download/syslog-ng-4.2.0/syslog-ng-4.2.0.tar.gz"
+  sha256 "092bd17fd47002c988aebdf81d0ed3f3cfd0e82b388d2453bcaa5e67934f4dda"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
-  revision 1
 
   bottle do
     sha256 arm64_ventura:  "da1f97b9a2f99cf642a9a0eac40d38c3c9d12caf97caa0ea954ce7067e73c2f8"
@@ -41,16 +42,23 @@ class SyslogNg < Formula
   def install
     sng_python_ver = Formula["python@3.11"].version.major_minor
 
+    venv_path = libexec/"python-venv"
     system "./configure", *std_configure_args,
                           "--disable-silent-rules",
                           "--sysconfdir=#{pkgetc}",
-                          "--localstatedir=#{var}",
+                          "--localstatedir=#{var}/#{name}",
                           "--with-ivykis=system",
                           "--with-python=#{sng_python_ver}",
+                          "--with-python-venv-dir=#{venv_path}",
                           "--disable-afsnmp",
                           "--disable-java",
                           "--disable-java-modules"
     system "make", "install"
+
+    requirements = lib/"syslog-ng/python/requirements.txt"
+    venv = virtualenv_create(venv_path, "python3.11")
+    venv.pip_install requirements.read
+    cp requirements, venv_path
   end
 
   test do
