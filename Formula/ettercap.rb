@@ -18,15 +18,13 @@ class Ettercap < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_ventura:  "87b67c058007a59b34b32c92da3cdfb7294ac7be8923534bceb411d30b227dec"
-    sha256 arm64_monterey: "a8532b43e6d6c1bed08ae62506ad32d75bbd39da7c7fcdfde1cbcf758717b932"
-    sha256 arm64_big_sur:  "581fbb637481f46c59b355f5bbde58a2d25da7e3f22ec9e07edab8f3a6c54999"
-    sha256 ventura:        "8c8de40b7dfad93f90e9212008b9cf282bffc8044a2c2bf47fbdf94a38ed16cf"
-    sha256 monterey:       "46f9eae5abfe8bb43e56cb0d333de5304911229b003e19fd495a5394383ce340"
-    sha256 big_sur:        "bc9dd754581b99d9f86a98e6ac5844fe41ba0ac017cc16086c39168efc2f1859"
-    sha256 catalina:       "a131e2c7a6d1360ce74ed8f91abe43b92f2b1bcf843bfcddca8bef01dea97c6f"
-    sha256 x86_64_linux:   "46e8ef6cfe822480232a0218a1d563086bb6df3cf4f7c71fa1edad9cde0bbf9f"
+    sha256 arm64_ventura:  "d05ff28b40d013049ecd4561053b6109380b3ac508d8569238cd14daf5dc34bb"
+    sha256 arm64_monterey: "1ee92f370378dcbdeba399e2c5dee7505bc99d607adc9bd7a6a60198c688973f"
+    sha256 arm64_big_sur:  "30ca037f9002b6848905612870fd5e1697dfcce1362408c032376c4c0646e957"
+    sha256 ventura:        "37664fbe01b8878e9ea3ebe5eff196e20fe4ab66dff3717c3e1ac60026e9ab8a"
+    sha256 monterey:       "35d3bc9c62448f484d4689845ad5644e752486e70aecba0bc1a40bd63d68a052"
+    sha256 big_sur:        "a9f6669b6a8374a1c2ef82237bb4ca25419550cce6a18098776b355a8223cbbb"
+    sha256 x86_64_linux:   "6e7f045902aadfd09135dfeb6937876c1932b42505baafb7a5c8d9f9f355bb6e"
   end
 
   depends_on "cmake" => :build
