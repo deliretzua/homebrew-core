@@ -1,21 +1,10 @@
 class Fizz < Formula
   desc "C++14 implementation of the TLS-1.3 standard"
   homepage "https://github.com/facebookincubator/fizz"
+  url "https://github.com/facebookincubator/fizz/releases/download/v2023.06.26.00/fizz-v2023.06.26.00.tar.gz"
+  sha256 "e7e53634bfa277b65503bfb21947d09aedde0470124f68ed6782126f943bbdb6"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/facebookincubator/fizz.git", branch: "main"
-
-  # Remove stable block when the patch is no longer needed.
-  stable do
-    url "https://github.com/facebookincubator/fizz/releases/download/v2023.06.12.00/fizz-v2023.06.12.00.tar.gz"
-    sha256 "609f053d3b0cd1d1f1ff83852af29e812de66aff2b488e5697f744e4c6f7040d"
-
-    # Fix build failure. Remove in next release.
-    patch do
-      url "https://github.com/facebookincubator/fizz/commit/0dc415e2e7dade586b445946a939d4f8ff15e8d2.patch?full_index=1"
-      sha256 "8d75a960bd1087ed776842fb539f87ec38ed2bad9d18aaea01231172c2386c45"
-    end
-  end
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "d39bd0bf31b78d11f4234b365ab8f3f3d6f1943d4e0aa7d54f9030dfa8c639b5"
@@ -63,7 +52,7 @@ class Fizz < Formula
         std::cout << toString(context.getSupportedVersions()[0]) << std::endl;
       }
     EOS
-    system ENV.cxx, "-std=c++14", "test.cpp", "-o", "test",
+    system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test",
                     "-I#{include}",
                     "-I#{Formula["openssl@3"].opt_include}",
                     "-L#{lib}", "-lfizz",
