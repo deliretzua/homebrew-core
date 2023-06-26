@@ -1,18 +1,18 @@
 class AstGrep < Formula
   desc "Code searching, linting, rewriting"
   homepage "https://github.com/ast-grep/ast-grep"
-  url "https://github.com/ast-grep/ast-grep/archive/refs/tags/0.6.6.tar.gz"
-  sha256 "af2bb93342190e62fd9279805d42d0fc8938f994cd273080881f14f68aa16fb5"
+  url "https://github.com/ast-grep/ast-grep/archive/refs/tags/0.7.0.tar.gz"
+  sha256 "f8a27dca23850a0c57c7aa3e1005efaccc6d42b427d4e39a9f80e93f72cca72b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4de88ba1ae576ca7807306114cd9ef2928387d990f076dae2bd160fe0bc56c59"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9275bf01fd997d0a4cba3eb12217070ea1b87e55f9cf72eaf4e0b80ca599b4b0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f68f57c7261c1d7c3b86b9909e1233128f11ff91e632d78e12d39a300f0dd566"
-    sha256 cellar: :any_skip_relocation, ventura:        "53f418be5e927cbbfcaa2b373de67c6e50851fada193ae3c2aea4fb395ac7d10"
-    sha256 cellar: :any_skip_relocation, monterey:       "c9af1dac16a13cdb65efa017a971e6fa3e54c8e5a1e966b0a30c93e76d0501d5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "e54fb1af76ffdbaee675fab7c171af8557d2aa423f711752f068d6ffe3a39df8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d68fe25dc9bdcd104463f2c4f1cc9be8c4abd41b08f276dceedf0b7e43129f74"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3334563aa0bdcc18b3a3bc4f4b8c744ff5376340d05cf7029cc2cbad1fd8f0c5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6fa4efb5ad31006ddd5a4050b63a5bf5e779c08bebdb83c7efa2020c33d6ab09"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3b1a43659d64afd88d504b0aad3ce223e392f9014e1248c73454a0f09feda2be"
+    sha256 cellar: :any_skip_relocation, ventura:        "2ccf01c9eed293ac7f51b0faadecfbbd95c25b397e87602f97f8b8f87965c659"
+    sha256 cellar: :any_skip_relocation, monterey:       "1ece1194feb22dfa907a784de7bdb633c7c8f96415f9835b5a1462982a2fc78f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "dad1a62960f670849418d8f3fd8aa40585dd6dfc4501220d95b2486aa89bb5ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9333c88fd1e98cba04b833df880775bf72e04140f1ebdd3d6bd932723b86607"
   end
 
   depends_on "rust" => :build
@@ -22,7 +22,7 @@ class AstGrep < Formula
   end
 
   test do
-    (testpath/"Hello.js").write("console.log('123')")
-    system "#{bin}/sg", "run", "-p console.log", (testpath/"Hello.js")
+    (testpath/"hi.js").write("console.log('it is me')")
+    system "#{bin}/sg", "run", "-l", "js", "-p console.log", (testpath/"hi.js")
   end
 end
