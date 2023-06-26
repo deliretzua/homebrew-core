@@ -12,13 +12,13 @@ class NodeAT18 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "2d1dd84a9cb8e8a48994df242c6e83fececdc2897d5984e018435342c737b4ee"
-    sha256 arm64_monterey: "5344d7b3521761db3b25047534af721e8a9eeaa4cb8eea957e473ae833fdddf1"
-    sha256 arm64_big_sur:  "c3a147771219edf8e4dd3b28efe7f2ce05c23c48638ba3ca7dc820dac40eaaf0"
-    sha256 ventura:        "5a97a1b60332143d18ef46fe35916a56897dabb9e7141dc507a550dbb84048fc"
-    sha256 monterey:       "d614915f41ece7923d4bc3963b6c993d95299fedd223cf6ed0378047cfb7d788"
-    sha256 big_sur:        "038c5344baae390545b123b179837693ab24047114e7ddaa16a835a4b3c5de87"
-    sha256 x86_64_linux:   "62e2106a291b10b7c03ceebe840a4c0e1bc816143efa10d19fc872686e786da2"
+    sha256 arm64_ventura:  "e465d165aae08489b26cf267babd7dd2f023bf3546ed4b34a428c243c7e23134"
+    sha256 arm64_monterey: "582c3ed029d4f30b513418fbe4e9ac30effec30831a843e37a472a5c524398fc"
+    sha256 arm64_big_sur:  "84afd47af3d3119d6289ae6b8565f6ca382dbc99eb40484ed2278e553be70062"
+    sha256 ventura:        "bece174a6e5c8be10c14aab2dcd782d01f72f0208f3b2acbdede226b36458b18"
+    sha256 monterey:       "97fcdd3df0c45c90d96fd5299d12cd10dc9dc4ce70b514b96fe68d7c17c11323"
+    sha256 big_sur:        "71d83129c7ac3591ec2a5fb9ad1a0785f08d2436f059a5259833057a904fb06e"
+    sha256 x86_64_linux:   "15e9c2fb5862f6ed43264b0ebefe21ea3e9994215197a02c78f7fc94e85f1a9e"
   end
 
   keg_only :versioned_formula
