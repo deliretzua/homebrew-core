@@ -1,10 +1,9 @@
 class CargoRelease < Formula
   desc "Cargo subcommand `release`: everything about releasing a rust crate"
   homepage "https://github.com/crate-ci/cargo-release"
-  url "https://github.com/crate-ci/cargo-release/archive/refs/tags/v0.24.10.tar.gz"
-  sha256 "56aa9dbf85dc14b2d6ea6e0922fd0464f45af09e2aa26641c6db84d61e2de543"
+  url "https://github.com/crate-ci/cargo-release/archive/refs/tags/v0.24.11.tar.gz"
+  sha256 "cbbc04f7faadd2202b36401f3ffafc8836fb176062d428d2af195c02a2f9bd58"
   license any_of: ["Apache-2.0", "MIT"]
-  revision 1
   head "https://github.com/crate-ci/cargo-release.git", branch: "master"
 
   bottle do
@@ -20,7 +19,7 @@ class CargoRelease < Formula
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "rustup-init" => :test
-  depends_on "libgit2@1.5"
+  depends_on "libgit2"
   depends_on "openssl@3"
 
   def install
@@ -53,7 +52,7 @@ class CargoRelease < Formula
     end
 
     [
-      Formula["libgit2@1.5"].opt_lib/shared_library("libgit2"),
+      Formula["libgit2"].opt_lib/shared_library("libgit2"),
       Formula["openssl@3"].opt_lib/shared_library("libssl"),
     ].each do |library|
       assert check_binary_linkage(bin/"cargo-release", library),
