@@ -6,16 +6,17 @@ class ApacheArrow < Formula
   mirror "https://archive.apache.org/dist/arrow/arrow-12.0.1/apache-arrow-12.0.1.tar.gz"
   sha256 "3481c411393aa15c75e88d93cf8315faf7f43e180fe0790128d3840d417de858"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/apache/arrow.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "cb8426191e8c2a4fa5fc5a23cdfd68e8e68662584457bdd035d782e6362cdc2a"
-    sha256 cellar: :any, arm64_monterey: "040ca8f64060c435483507913d65f0cb95c4abe57ff4fbacd47b98832fc4a321"
-    sha256 cellar: :any, arm64_big_sur:  "bd6704518b9dc452d6d7778c50be0f95d4429b5e5ba3bb6dafeaf9655e0db9ee"
-    sha256 cellar: :any, ventura:        "75ed725550329cdbd0c535be1884a95d7d99318b84845d327289bfdba9b97942"
-    sha256 cellar: :any, monterey:       "68989c0226c279b5d5c0c47233505de3ba0283876eaba0392d07bf2f76f72d8a"
-    sha256 cellar: :any, big_sur:        "28c8badbc25b6856b2cf26d6f137df2317acf03abd1a351a011c53c8f23e15fb"
-    sha256               x86_64_linux:   "d4b98db8762ced53459a1f5d41737a99e1bf7e5c4b55ae80a4cabfa5c5bdec58"
+    sha256 cellar: :any, arm64_ventura:  "fd5d6cdde79171020a51c609bedead0699f05d3aac908c6c584b8d6a609ebbe8"
+    sha256 cellar: :any, arm64_monterey: "c649523618ed748fd12eb0b1b30a81d04c8939bec8d9593f2ac88c62d5fc456d"
+    sha256 cellar: :any, arm64_big_sur:  "cf28f42ae3d11ebf1c125620991d08ee89f0c5eb293a46d3819a0ec9a4af3a8a"
+    sha256 cellar: :any, ventura:        "79c88892a0ba44229ec62e68acb79a92a3cf6a7ae6024382b53e45f21a2b08d7"
+    sha256 cellar: :any, monterey:       "8c0485177cb2a070b6398148e4853793d37dc2dc75ba3a6885747ca121a55dcd"
+    sha256 cellar: :any, big_sur:        "1bcecb9651061ac128612732bbd83e2a589e2e0e9079838ea970528088c40831"
+    sha256               x86_64_linux:   "f3f9637851a0c708cdbb23a8ac6b5738b1430be5b4290a24eee4405412437a64"
   end
 
   depends_on "boost" => :build
@@ -27,7 +28,7 @@ class ApacheArrow < Formula
   depends_on "glog"
   depends_on "grpc@1.54"
   depends_on "lz4"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "protobuf@21"
   depends_on "rapidjson"
   depends_on "re2"
