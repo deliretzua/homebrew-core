@@ -15,10 +15,10 @@ class Pytorch < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "5d7f8b5a6b68b843e4d378f06edcf04fc4eb3e6a67bd31a30aaff0d22cbbc2a4"
-    sha256 cellar: :any,                 arm64_monterey: "4dcc2fe35ee17d0332467402b41f7e141c4685c6e44adb69923b5d12fac2cb42"
-    sha256 cellar: :any,                 monterey:       "3a6099a1d604fca547bd5c1e83022699d871b878f0c8da55afb56289b8ecff08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ef4ba460cda2220b94ff2a5e327da87cba35c92cb6788353c0ddb42d26cb45c"
+    sha256 cellar: :any,                 arm64_ventura:  "d5da1b67fbf72e1a79a7e0ef1010d6f80a622d9a7f9ebf5c87c162b720502249"
+    sha256 cellar: :any,                 arm64_monterey: "204ff6ed893b56cdcae110ea1cd4694d711a19c11e0c6fd639f7f934a5e597ad"
+    sha256 cellar: :any,                 monterey:       "ef11394e28e6596639ff2643396e7413880e1d7b364a4cd9f2472eb4d6854cfc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "028064b99e2334269e4f7df6a06989cc189299936379ad3ddcb94e09974a1ee8"
   end
 
   depends_on "cmake" => :build
