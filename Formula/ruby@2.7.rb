@@ -12,13 +12,13 @@ class RubyAT27 < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "38f24449e4e31e1fabdaa980a1d0dd21e0a1432ef93410d2c4d3886eedd366e6"
-    sha256 arm64_monterey: "ef5de92ff2a74b341a228afe6b0601ae869b2db94645c10dd78b578a7c7903bb"
-    sha256 arm64_big_sur:  "e1a4f0aded868d1b732b43cf010a78ac92fbbc21b7b01b79697a858ff5986414"
-    sha256 ventura:        "506b92de87465908f9cfd6a13d7ba6a10900fab6f4d38a353076f23fd1120839"
-    sha256 monterey:       "22e90308975956ce14cd906c40e7d25633d09d355522144d093885b9451389bc"
-    sha256 big_sur:        "b34a861f092e5a0a0284315b6229de9feb7c5ad460b238fa60e5c535dcc3be80"
-    sha256 x86_64_linux:   "50cb1843b58aea15f4563f180cc3356290005f3187a6a5707ac347b1691950cd"
+    sha256 arm64_ventura:  "3b37017d8a6c722b6ce8b44361d7893a8458c8696e84f393df01be87e4d67faa"
+    sha256 arm64_monterey: "732ed82a82fed5ceb49de4cd4be5c5c6f4151d02c157df689cbdb1eae668b0f5"
+    sha256 arm64_big_sur:  "7d0763386880e2a4edb83e80151592d9ea074a87cd7091406798c74d3a6b7bea"
+    sha256 ventura:        "34b05f1fce9e839d2039ff581f40f195ae590f803e2b8c5cbdd564130b775716"
+    sha256 monterey:       "f10c957f760ae1b34d12629ad26c958556f9bc84ad0da848f3077a522b0ede5f"
+    sha256 big_sur:        "695d5eaf8dee2c506365e15030a1d139e161c640d455c1eea5ae5d433a0d76de"
+    sha256 x86_64_linux:   "e72683fb67d9a53c863389d2adb94a0f11bfc4f5abe35ce61e68b3ceb453a927"
   end
 
   keg_only :versioned_formula
