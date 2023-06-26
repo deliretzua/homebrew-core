@@ -1,8 +1,8 @@
 class Psalm < Formula
   desc "PHP Static Analysis Tool"
   homepage "https://psalm.dev"
-  url "https://github.com/vimeo/psalm/releases/download/5.12.0/psalm.phar"
-  sha256 "6a305c9df0bd6fed146239671e10fb2f67bd5b75d3ad3f594b523648d167f8c1"
+  url "https://github.com/vimeo/psalm/releases/download/5.13.0/psalm.phar"
+  sha256 "f8650fe2d46ed64df4f826b2c84be5cfeb1aaed7cff9c35f909fb410512d73af"
   license "MIT"
 
   bottle do
@@ -36,7 +36,7 @@ class Psalm < Formula
         "description": "Testing if Psalm has been installed properly.",
         "type": "project",
         "require": {
-          "php": ">=7.1.3"
+          "php": ">=8.1"
         },
         "license": "MIT",
         "autoload": {
@@ -65,6 +65,9 @@ class Psalm < Formula
           $this->email = $email;
         }
 
+        /**
+        * @psalm-suppress PossiblyUnusedMethod
+        */
         public static function fromString(string $email): self
         {
           return new self($email);
