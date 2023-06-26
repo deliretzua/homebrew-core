@@ -11,14 +11,13 @@ class Passwdqc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "90a91647e992ae702359366a4fc4a1d4b67fd3583328cd898552d4fc7e2306b5"
-    sha256 cellar: :any,                 arm64_monterey: "99f35fd4dbbf9d0db3457053c5b6b71ca38e6b92dfdfc638605ee363cb523f76"
-    sha256 cellar: :any,                 arm64_big_sur:  "87c91a50483dfd61f66542a498b5b6ecee337d6a8863c8e106d1609c4ff22770"
-    sha256 cellar: :any,                 ventura:        "d2222921acb97dcdab17d6f2acbaa1d8eb37030b3846214d2ba9217260a0a1e1"
-    sha256 cellar: :any,                 monterey:       "a3ddd06589d1ad2f58c734283893b3584209bf65c78892646f59a49a2ded4bf5"
-    sha256 cellar: :any,                 big_sur:        "2ac0e69fcc86d824ccb4713121f4729bf49964fa27504a00af4bc7ed912063d8"
-    sha256 cellar: :any,                 catalina:       "6d317c9e9f66aee1fb49c921b8e8876b45321099e6cc7be40c8ee1340585a647"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3a1fcb790a85274c58bf098b5d4c5a60f70c3b93dbb069eb1fd6e13c75c1b92"
+    sha256 cellar: :any,                 arm64_ventura:  "d6212417a711c18e45a28eb3a24a775d091665538ed50f678d077fa47e647f7d"
+    sha256 cellar: :any,                 arm64_monterey: "1fa6444ca8237d6bed9e187245dee44ea797f13c8822ab77527df7c47f324c16"
+    sha256 cellar: :any,                 arm64_big_sur:  "e8d4dc476b0ff113653823c425dcbfc89ad57112a89086fa8602f27f0c3c0f41"
+    sha256 cellar: :any,                 ventura:        "40dd6c923246ef225bf9e129e5ae142ed77fe7d111f92654fab0e3edd921f612"
+    sha256 cellar: :any,                 monterey:       "72f01dbc795a98ac1ec65db7c31f62e13182d47c422b116c57f72d34a8fc7c6f"
+    sha256 cellar: :any,                 big_sur:        "7fb7c879feb5562187e03d4d2a1bbc5be855330c1382cac43ef3378818eacb02"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ef0b2b3f545ca92181f77b7fff78992ffe1a6a84d31dd26103ecc3696cb9a3f"
   end
 
   uses_from_macos "libxcrypt"
