@@ -1,8 +1,8 @@
 class Verapdf < Formula
   desc "Open-source industry-supported PDF/A validation"
   homepage "https://verapdf.org/home/"
-  url "https://github.com/veraPDF/veraPDF-apps/archive/refs/tags/v1.25.2.tar.gz"
-  sha256 "45ded5739f9e06796b1188ed3db009487e15bc395ffcf7e794f7eea932fc34b4"
+  url "https://github.com/veraPDF/veraPDF-apps/archive/refs/tags/v1.25.5.tar.gz"
+  sha256 "7503689af40e47cecd45e504f78452d92326a31701b969b663eb12c0027c9db0"
   license any_of: ["GPL-3.0-or-later", "MPL-2.0"]
   head "https://github.com/veraPDF/veraPDF-apps.git", branch: "integration"
 
@@ -23,6 +23,12 @@ class Verapdf < Formula
 
   depends_on "maven" => :build
   depends_on "openjdk@17"
+
+  # fix exit code for parse error, remove when merged and released
+  patch do
+    url "https://github.com/veraPDF/veraPDF-apps/commit/6cc00fca6b183160b482f7aa1e9e1e90fdec54e9.patch?full_index=1"
+    sha256 "67bbe4873b0ae190c97bd29a3fad5d3413b872c4526c480e96272c71a3c15e43"
+  end
 
   def install
     ENV["JAVA_HOME"] = Language::Java.java_home("17")
