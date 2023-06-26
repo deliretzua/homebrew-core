@@ -1,8 +1,8 @@
 class CargoNextest < Formula
   desc "Next-generation test runner for Rust"
   homepage "https://nexte.st"
-  url "https://github.com/nextest-rs/nextest/archive/refs/tags/cargo-nextest-0.9.53.tar.gz"
-  sha256 "29c7c0c78c57fb14aab2d5651575b203efc51ff1255ce83e0eb32807946bf13f"
+  url "https://github.com/nextest-rs/nextest/archive/refs/tags/cargo-nextest-0.9.54.tar.gz"
+  sha256 "69e1e28fd7e3b061fd809a7e17302d5f2a46fa8ebddeeb469225a7f720c7fd8d"
   license "Apache-2.0"
 
   livecheck do
@@ -54,7 +54,7 @@ class CargoNextest < Formula
       EOS
 
       output = shell_output("cargo nextest run 2>&1")
-      assert_match "Starting 1 tests across 1 binaries", output
+      assert_match "Starting 1 test across 1 binary", output
     end
   end
 end
