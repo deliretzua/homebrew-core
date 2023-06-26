@@ -4,6 +4,7 @@ class Teleport < Formula
   url "https://github.com/gravitational/teleport/archive/v13.1.2.tar.gz"
   sha256 "d3fb8502ad82c06ed4605cbfca57cc1cf3da2ede0ac9c6d39b95147bd6e15f58"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/gravitational/teleport.git", branch: "master"
 
   # As of writing, two major versions of `teleport` are being maintained
@@ -28,6 +29,7 @@ class Teleport < Formula
   depends_on "yarn" => :build
   depends_on "libfido2"
   depends_on "node"
+  depends_on "openssl@3"
 
   uses_from_macos "curl" => :test
   uses_from_macos "netcat" => :test
