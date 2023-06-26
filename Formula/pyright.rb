@@ -3,8 +3,8 @@ require "language/node"
 class Pyright < Formula
   desc "Static type checker for Python"
   homepage "https://github.com/microsoft/pyright"
-  url "https://registry.npmjs.org/pyright/-/pyright-1.1.315.tgz"
-  sha256 "e74e5298967e891d74ccb9d720fe194b7da78697ad164e5b118f51a3331c5174"
+  url "https://registry.npmjs.org/pyright/-/pyright-1.1.316.tgz"
+  sha256 "74504aa3c425fd03343e8d02ba3b8ccca9ff89f647a5c9ce06fda26bfc11564b"
   license "MIT"
   head "https://github.com/microsoft/pyright.git", branch: "main"
 
