@@ -6,13 +6,13 @@ class Libx11 < Formula
   license "MIT"
 
   bottle do
-    sha256 arm64_ventura:  "e6df4fc6bb84dd64a2f2c68d474c415de2a0fa0aac85ff4e650a56c0d739463e"
-    sha256 arm64_monterey: "5da752047f0745a2628343aa2f313f4544b13d0643ff796ae079fcc4d3203a63"
-    sha256 arm64_big_sur:  "91e5e9c3b7becc85dd159b7998b35a727ae2317ddc69791e5d4f4e0de9724fe2"
-    sha256 ventura:        "44e791ead3f697bb6fc7bc368b202bf0b72370f65fbef8a35ae7f97bb4057e00"
-    sha256 monterey:       "f8dcffa69f82057a0c93cd570fa0f14a06c0a13b0380cac5b616536f482c67a2"
-    sha256 big_sur:        "858c07647c7acb5fb6a4693b1511968bb933f98a1f58a160a446214df243e177"
-    sha256 x86_64_linux:   "5b47168c3429621d90970b2eb620b20a2dee315655b484b5a914241d9d562740"
+    sha256 arm64_ventura:  "12634191390f2feaad802e2c98dbee1274f688d1348ba7319462340defe2d07d"
+    sha256 arm64_monterey: "4899cff98c20b47226c7817b898132f9c9c68da2cb4b7b5176efc442a0030bde"
+    sha256 arm64_big_sur:  "5411fb6d4c702ee5413af825418e6157ca45f3d855710bcfc644bb0476cd207a"
+    sha256 ventura:        "da763d80a33ebfbac8064a9528d9e7ccde2a4527dc48f80a003166c7dd4021bf"
+    sha256 monterey:       "2c4826ba65ab97f4d201a5624cc675fbefd563a831fab866c8966b32c89f3e17"
+    sha256 big_sur:        "e321aa3d735de0a2f4f7b2d5c6dde6184cc8590c348c3d1dd773fac892db6ecd"
+    sha256 x86_64_linux:   "6b4be1e7e026639d80f2541fc72cf0caf8b15670efdab3abc1cd4b291f486910"
   end
 
   depends_on "pkg-config" => :build
