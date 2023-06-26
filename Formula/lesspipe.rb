@@ -1,10 +1,9 @@
 class Lesspipe < Formula
   desc "Input filter for the pager less"
   homepage "https://www-zeuthen.desy.de/~friebel/unix/lesspipe.html"
-  url "https://github.com/wofr06/lesspipe/archive/v2.07.tar.gz"
-  sha256 "b6a591c053057c3968d0d1fbd32e4a0a8026cd5c27e861023e3542772eda1cba"
+  url "https://github.com/wofr06/lesspipe/archive/v2.08.tar.gz"
+  sha256 "91b1363ba9b5594fa4285717592d712a6c724ae7ee35a9543127b3d64677c0d2"
   license "GPL-2.0-only"
-  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "c2156478a5b6006415e8d51dfaa6eef48f4f9b65a2166c8a3deace997809e3b2"
@@ -14,12 +13,6 @@ class Lesspipe < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "c2156478a5b6006415e8d51dfaa6eef48f4f9b65a2166c8a3deace997809e3b2"
     sha256 cellar: :any_skip_relocation, big_sur:        "c2156478a5b6006415e8d51dfaa6eef48f4f9b65a2166c8a3deace997809e3b2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ceb4e96042a617340ea075043fa7baa75056229a80270f9dcb9f0e4f411415df"
-  end
-
-  # patch for runtime error, remove in next release
-  patch do
-    url "https://github.com/wofr06/lesspipe/commit/ff6ecf9671a417ee85218a99c47a93ce2c0388be.patch?full_index=1"
-    sha256 "4204136f2e1ad0fa8a9b1f42b192ce422799860d073663130e77eefa107260ca"
   end
 
   def install
