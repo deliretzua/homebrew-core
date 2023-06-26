@@ -1,9 +1,9 @@
 class Lpeg < Formula
   desc "Parsing Expression Grammars For Lua"
   homepage "https://www.inf.puc-rio.br/~roberto/lpeg/"
-  url "http://www.inf.puc-rio.br/~roberto/lpeg/lpeg-1.0.2.tar.gz"
-  mirror "https://github.com/neovim/deps/raw/master/opt/lpeg-1.0.2.tar.gz"
-  sha256 "48d66576051b6c78388faad09b70493093264588fcd0f258ddaab1cdd4a15ffe"
+  url "http://www.inf.puc-rio.br/~roberto/lpeg/lpeg-1.1.0.tar.gz"
+  mirror "https://github.com/neovim/deps/raw/master/opt/lpeg-1.1.0.tar.gz"
+  sha256 "4b155d67d2246c1ffa7ad7bc466c1ea899bbc40fef0257cc9c03cecbaed4352a"
   license "MIT"
 
   livecheck do
