@@ -1,8 +1,8 @@
 class GitAnnex < Formula
   desc "Manage files with git without checking in file contents"
   homepage "https://git-annex.branchable.com/"
-  url "https://hackage.haskell.org/package/git-annex-10.20230407/git-annex-10.20230407.tar.gz"
-  sha256 "a001e86eae10bd32f8a896a61fcb2f655e6a678db8d5095282ab57d64704a0a4"
+  url "https://hackage.haskell.org/package/git-annex-10.20230626/git-annex-10.20230626.tar.gz"
+  sha256 "29fdc05dc072794ccbb6ed45ae1fb5d4d81c7a670be00c4e257ea450165526fc"
   license all_of: ["AGPL-3.0-or-later", "BSD-2-Clause", "BSD-3-Clause",
                    "GPL-2.0-only", "GPL-3.0-or-later", "MIT"]
   head "git://git-annex.branchable.com/", branch: "master"
@@ -43,7 +43,11 @@ class GitAnnex < Formula
     EOS
 
     system "cabal", "v2-update"
-    system "cabal", "v2-install", *std_cabal_v2_args, "--flags=+S3"
+    # `warp` 3.3.26 switched `cryptonite` dependency to `cryton` which caused
+    # build issues. `git-annex` dependency tree also has `cryptonite` which may
+    # be mixing APIs. We add a temporary workaround to avoid newer `warp` versions.
+    # TODO: Remove constraint when handled in Cabal file or fixed in new release
+    system "cabal", "v2-install", *std_cabal_v2_args, "--flags=+S3", "--constraint=warp<3.3.26"
     bin.install_symlink "git-annex" => "git-annex-shell"
   end
 
