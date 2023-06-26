@@ -3,10 +3,9 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/53/70/19a33308db01284581e8c2d905e8bd46389b5bebaa6a255f9229b89f044b/esphome-2023.6.0.tar.gz"
-  sha256 "08205491b6e299c29139004173e21d1ea7ff82f41ed27895aeb230e257749ac3"
+  url "https://files.pythonhosted.org/packages/5f/ca/b98441c3e6871b96a2d1006674f91b31cbbfe3d072c9441131985b656863/esphome-2023.6.2.tar.gz"
+  sha256 "9cf986a0090ad5605bdd495bfb01637d4ce150f7ff6965b911aeca36e9147ab6"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "fa39b4cba5750b8120f738c22c0a361d3c344641aa66c2c037c29e259b6b93ba"
@@ -18,8 +17,9 @@ class Esphome < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "be0a5dc0e457dc2359dfc501efba5dfc6251bc738b9318e53da1e6dda1384572"
   end
 
+  # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "pkg-config" => :build
-  depends_on "rust" => :build # for cryptography
+  depends_on "rust" => :build
   depends_on "cffi"
   depends_on "openssl@3"
   depends_on "protobuf"
