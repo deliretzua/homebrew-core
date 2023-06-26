@@ -13,10 +13,10 @@ class Torchvision < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7a548e74f474b3e0abf348d4310e5378d7c94dd9d619ed0e29d1cfdd75b18069"
-    sha256 cellar: :any,                 arm64_monterey: "55abcc4df58d879e5c37e1d93c4477a85f6374146d4f8172bd59c0f252b9dc20"
-    sha256 cellar: :any,                 monterey:       "b008fcf1d9e255b7262731c596caa6de6a0d0101db1592daa7658204c21616d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "761810f80255cee80f2f99e23349104f3b96bf4f6a8ccd936cac024ef6c301da"
+    sha256 cellar: :any,                 arm64_ventura:  "75440708f8608b93654b6b1eddf6e6bd3ec6d0470a3aa74068c5c96c92df4b3e"
+    sha256 cellar: :any,                 arm64_monterey: "10a6de636adbe6f57091bfbe6718fa0cc674b135f413f5e38a97a4c70bb419c9"
+    sha256 cellar: :any,                 monterey:       "12e2137577e16fc6cf6d846833af321e6d37ba66eda44cbc4956bd4636716c2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7dcbbd35107bd23179d27706c716c8d0d3bf256b353aef9add91f92ad50f98ae"
   end
 
   depends_on "cmake" => :build
