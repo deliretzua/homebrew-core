@@ -11,7 +11,7 @@ class Cimg < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "58982aa8e3e4cf95d37cad39ba8444318b46bf9324f25eb337723af30262733c"
+    sha256 cellar: :any_skip_relocation, all: "23129a345905a50a7bed55489a10cea551c0079b78be66b51d95095b31932757"
   end
 
   fails_with gcc: "5" # C++ 17 is required
