@@ -7,10 +7,14 @@ class Teleport < Formula
   head "https://github.com/gravitational/teleport.git", branch: "master"
 
   # As of writing, two major versions of `teleport` are being maintained
-  # side by side and the "latest" release can point to an older major version.
+  # side by side and the "latest" release can point to an older major version,
+  # so we can't use the `GithubLatest` strategy. We use the `GithubReleases`
+  # strategy instead of `Git` because there is often a notable gap (days)
+  # between when a version is tagged and released.
   livecheck do
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_releases
   end
 
   bottle do
