@@ -2,16 +2,15 @@ class Gstreamer < Formula
   desc "Development framework for multimedia applications"
   homepage "https://gstreamer.freedesktop.org/"
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
-  revision 3
 
   stable do
-    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.22.3/gstreamer-1.22.3.tar.gz"
-    sha256 "8f0db72a22a11527c01895b0aec50174f094c7c772369522350e03f24e87455a"
+    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.22.4/gstreamer-1.22.4.tar.gz"
+    sha256 "2badeeaf3fb75f11e7701a3083d412b9775db1f83aa869c779a1af0e0396400a"
 
     # When updating this resource, use the tag that matches the GStreamer version.
     resource "rs" do
-      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.22.3/gst-plugins-rs-gstreamer-1.22.3.tar.gz"
-      sha256 "208f0350471b5e73f1054012732d3609f680ab9d9173dc15b6277560cb224acc"
+      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.22.4/gst-plugins-rs-gstreamer-1.22.4.tar.gz"
+      sha256 "1a06069ee536665447e0ba12e70e6761f3ce8d6198e81ac36fc2407f1c042a92"
     end
   end
 
@@ -240,7 +239,7 @@ index 5977ee3..1b399af 100644
 @@ -3,13 +3,20 @@ install_data(pysources,
      install_dir: pygi_override_dir,
      install_tag: 'python-runtime')
- 
+
 +# avoid overlinking
 +if host_machine.system() == 'windows'
 +    python_ext_dep = python_dep
@@ -256,6 +255,6 @@ index 5977ee3..1b399af 100644
      include_directories : [configinc],
 -    dependencies : [gst_dep, python_dep, pygobject_dep])
 +    dependencies : [gst_dep, python_ext_dep, pygobject_dep])
- 
+
  env = environment()
  env.prepend('_GI_OVERRIDES_PATH', [
