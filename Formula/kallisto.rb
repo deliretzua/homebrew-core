@@ -1,8 +1,8 @@
 class Kallisto < Formula
   desc "Quantify abundances of transcripts from RNA-Seq data"
   homepage "https://pachterlab.github.io/kallisto/"
-  url "https://github.com/pachterlab/kallisto/archive/v0.48.0.tar.gz"
-  sha256 "1797ac4d1f0771e3f1f25dd7972bded735fcb43f853cf52184d3d9353a6269b0"
+  url "https://github.com/pachterlab/kallisto/archive/v0.50.0.tar.gz"
+  sha256 "f9cc0058d08206cb6dde4a4dcaf8a778df5a939a6e021508eea9b00b0d6d5368"
   license "BSD-2-Clause"
 
   bottle do
@@ -16,24 +16,14 @@ class Kallisto < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "20207d99e10ff85645eb4b3ceec5359e74af6772bc51496a48c00807d4a9eabe"
   end
 
-  depends_on "autoconf@2.69" => :build
-  depends_on "automake" => :build
   depends_on "cmake" => :build
   depends_on "hdf5"
 
   def install
-    # Upstream issue 15 Feb 2018 "cmake does not run autoreconf for htslib"
-    # https://github.com/pachterlab/kallisto/issues/159
-    system "autoreconf", "-fiv", "ext/htslib"
+    ENV.deparallelize
 
-    system "cmake", ".", *std_cmake_args
-
-    # Upstream issue 15 Feb 2018 "parallelized build failure"
-    # https://github.com/pachterlab/kallisto/issues/160
-    # Upstream issue 15 Feb 2018 "cannot use system htslib"
-    # https://github.com/pachterlab/kallisto/issues/161
-    system "make", "htslib"
-
+    system "cmake", ".", "-DUSE_HDF5=ON", *std_cmake_args
+    system "make"
     system "make", "install"
   end
 
