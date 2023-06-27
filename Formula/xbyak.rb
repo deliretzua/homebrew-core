@@ -1,8 +1,8 @@
 class Xbyak < Formula
   desc "C++ JIT assembler for x86 (IA32), x64 (AMD64, x86-64)"
   homepage "https://github.com/herumi/xbyak"
-  url "https://github.com/herumi/xbyak/archive/refs/tags/v6.69.1.tar.gz"
-  sha256 "40b41df141000688d7d629cc9f4bc313f3adfa6be0c42c520064608ed11a93fc"
+  url "https://github.com/herumi/xbyak/archive/refs/tags/v6.69.2.tar.gz"
+  sha256 "815f531e75db9aa74470e4e4c3ed404bfe8ade16a9fa03c572bb25daf95850d9"
   license "BSD-3-Clause"
   head "https://github.com/herumi/xbyak.git", branch: "master"
 
