@@ -1,8 +1,8 @@
 class Flank < Formula
   desc "Massively parallel Android and iOS test runner for Firebase Test Lab"
   homepage "https://github.com/Flank/flank"
-  url "https://github.com/Flank/flank/releases/download/v23.06.1/flank.jar"
-  sha256 "c376ba3ddca7ad1f89b81aad1d03e065034ebde8dd03c8c37fee1c3dd8553f14"
+  url "https://github.com/Flank/flank/releases/download/v23.06.2/flank.jar"
+  sha256 "64b69c79ccc44e8bb3c1ab8c442871e3e1b7251f2fdf36343b7375fbe72430b0"
   license "Apache-2.0"
 
   livecheck do
