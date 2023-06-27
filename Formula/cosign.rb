@@ -2,8 +2,8 @@ class Cosign < Formula
   desc "Container Signing"
   homepage "https://github.com/sigstore/cosign"
   url "https://github.com/sigstore/cosign.git",
-      tag:      "v2.1.0",
-      revision: "986848fbabf3de9362ec3f538a04d301dbbd579c"
+      tag:      "v2.1.1",
+      revision: "baf97ccb4926ed09c8f204b537dc0ee77b60d043"
   license "Apache-2.0"
   head "https://github.com/sigstore/cosign.git", branch: "main"
 
