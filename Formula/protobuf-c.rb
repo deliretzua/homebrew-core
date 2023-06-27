@@ -7,13 +7,13 @@ class ProtobufC < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "7faeb770aed57e27102f2376d93ae7e82834d3dc672bdea3eeebe50354d800e9"
-    sha256 cellar: :any,                 arm64_monterey: "0fea195abfb08ff10fc8faf4a0fd286941f0c369d951ba20b7457290ae8f4286"
-    sha256 cellar: :any,                 arm64_big_sur:  "6dbb3f8ed1db69f358fdd832d757c169883263ba5d756d1423ac0c826fa9a49e"
-    sha256 cellar: :any,                 ventura:        "d362d2c2f4aff740a5ac295916fcf8782b2067c9aa293c2ee849e6d1abbd42c2"
-    sha256 cellar: :any,                 monterey:       "8573b374486e464c8da48089d5ace6a0eda71405040acc555dc89b54466263ab"
-    sha256 cellar: :any,                 big_sur:        "8b022f6ff09f41d5ca48781fbe0168ba6420ffe4d24be3bb00d4256ab344f098"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68cbaee2214be0208918ae530369e455627e6f7ffe8cb3f9f662ff78131be7ed"
+    sha256 cellar: :any,                 arm64_ventura:  "82563e1d7f8587b0fdd459e26ec2acd3f793c8d126ba35d34767b2a4f810c97d"
+    sha256 cellar: :any,                 arm64_monterey: "a5ab5bbf11253c4ee20c196ed13411dff9aa60e3f8bff7748b25d4fb52129ce3"
+    sha256 cellar: :any,                 arm64_big_sur:  "41cfec2f4c77c609459bae17cec6ce9911d9fe625f81421f86e57d6ddf286e2a"
+    sha256 cellar: :any,                 ventura:        "fa46afc39a500a07b620579512c01e55652349c8263663ff592ab579a0f86a0a"
+    sha256 cellar: :any,                 monterey:       "4001f21429c8c39bd4157dcece7fd463912fd45f5fdc2facfdcf51eeaa032e72"
+    sha256 cellar: :any,                 big_sur:        "cbffa2432b6f3f6034490020b83139ceb1a957c9ec4286cfee6609676404a129"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6372d245cfdd8fe3e467ce3416c2c3264042e70ca0a341a14d09809dd95c7c64"
   end
 
   head do
