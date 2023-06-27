@@ -23,10 +23,6 @@ class Cups < Formula
 
   keg_only :provided_by_macos
 
-  # https://developer.apple.com/documentation/security/3747134-sectrustcopycertificatechain
-  # `SecTrustCopyCertificateChain` is on available in monterey or newer
-  depends_on macos: :monterey
-
   uses_from_macos "krb5"
   uses_from_macos "zlib"
 
