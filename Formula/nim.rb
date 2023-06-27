@@ -1,8 +1,8 @@
 class Nim < Formula
   desc "Statically typed compiled systems programming language"
   homepage "https://nim-lang.org/"
-  url "https://nim-lang.org/download/nim-1.6.12.tar.xz"
-  sha256 "acef0b0ab773604d4d7394b68519edb74fb30f46912294b28bc27e0c7b4b4dc2"
+  url "https://nim-lang.org/download/nim-1.6.14.tar.xz"
+  sha256 "d070d2f28ae2400df7fe4a49eceb9f45cd539906b107481856a0af7a8fa82dc9"
   license "MIT"
   head "https://github.com/nim-lang/Nim.git", branch: "devel"
 
