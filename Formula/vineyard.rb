@@ -3,10 +3,9 @@ class Vineyard < Formula
 
   desc "In-memory immutable data manager. (Project under CNCF)"
   homepage "https://v6d.io"
-  url "https://github.com/v6d-io/v6d/releases/download/v0.15.0/v6d-0.15.0.tar.gz"
-  sha256 "3281afac3f348c4409676adf8328c6de8b73ed35e71539e6dd779d4af5bc16dd"
+  url "https://github.com/v6d-io/v6d/releases/download/v0.15.2/v6d-0.15.2.tar.gz"
+  sha256 "08e7868cde64a3966510b627c9a37c806eb6438a6fe42f0d7816e6ccf868599f"
   license "Apache-2.0"
-  revision 4
 
   bottle do
     sha256                               arm64_ventura:  "19124f2a095b059101cef3a5150bbe8ba8db764c262a87e3c367b230b0291807"
@@ -37,13 +36,19 @@ class Vineyard < Formula
 
   fails_with gcc: "5"
 
+  # Fix build on macOS. Remove in the next release
+  patch do
+    url "https://github.com/v6d-io/v6d/commit/6b6f46c5c288c0bd6b65166afb13a66b3b9efb40.patch?full_index=1"
+    sha256 "deea245016bf1e016bbefb5d0ce6ee7bb5427b57d6f4f0343795dba1630dde61"
+  end
+
   def install
     python = "python3.11"
     # LLVM is keg-only.
     ENV.prepend_path "PYTHONPATH", Formula["llvm"].opt_prefix/Language::Python.site_packages(python)
 
     system "cmake", "-S", ".", "-B", "build",
-                    "-DCMAKE_CXX_STANDARD=14",
+                    "-DCMAKE_CXX_STANDARD=17",
                     "-DCMAKE_CXX_STANDARD_REQUIRED=TRUE",
                     "-DPYTHON_EXECUTABLE=#{which(python)}",
                     "-DUSE_EXTERNAL_ETCD_LIBS=ON",
