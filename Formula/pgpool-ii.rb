@@ -21,6 +21,7 @@ class PgpoolIi < Formula
     sha256 x86_64_linux:   "917dc27d2774739b6ece0eed30b6a341af9ebf19e4e04067fa5820b23d34b3b1"
   end
 
+  depends_on "libmemcached"
   depends_on "libpq"
 
   uses_from_macos "libxcrypt"
@@ -32,13 +33,35 @@ class PgpoolIi < Formula
   end
 
   def install
-    system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}",
-                          "--sysconfdir=#{etc}"
+    system "./configure", *std_configure_args,
+                          "--sysconfdir=#{etc}",
+                          "--with-memcached=#{Formula["libmemcached"].opt_include}"
     system "make", "install"
+
+    # Install conf file with low enough memory limits for default `memqcache_method = 'shmem'`
+    inreplace etc/"pgpool.conf.sample" do |s|
+      s.gsub! "#pid_file_name = '/var/run/pgpool/pgpool.pid'", "pid_file_name = '#{var}/pgpool-ii/pgpool.pid'"
+      s.gsub! "#logdir = '/tmp'", "logdir = '#{var}/log'"
+      s.gsub! "#memqcache_total_size = 64MB", "memqcache_total_size = 1MB"
+      s.gsub! "#memqcache_max_num_cache = 1000000", "memqcache_max_num_cache = 1000"
+    end
+    etc.install etc/"pgpool.conf.sample" => "pgpool.conf"
+  end
+
+  def post_install
+    (var/"log").mkpath
+    (var/"pgpool-ii").mkpath
+  end
+
+  service do
+    run [opt_bin/"pgpool", "-nf", etc/"pgpool.conf"]
+    keep_alive true
+    log_path var/"log/pgpool-ii.log"
+    error_log_path var/"log/pgpool-ii.log"
   end
 
   test do
-    cp etc/"pgpool.conf.sample", testpath/"pgpool.conf"
+    cp etc/"pgpool.conf", testpath/"pgpool.conf"
     system bin/"pg_md5", "--md5auth", "pool_passwd", "--config-file", "pgpool.conf"
   end
 end
