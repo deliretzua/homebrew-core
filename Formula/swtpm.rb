@@ -4,6 +4,7 @@ class Swtpm < Formula
   url "https://github.com/stefanberger/swtpm/archive/refs/tags/v0.8.0.tar.gz"
   sha256 "ad433f9272fb794aafd550914d24cc0ca33d4652cfd087fa41b911fa9e54be3d"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     sha256 arm64_ventura:  "bc5816c26309d1a2073ccf1ce2cae8d36f1641bc63b2c487c24d013e7d200f41"
@@ -20,6 +21,7 @@ class Swtpm < Formula
   depends_on "automake" => :build
   depends_on "gawk" => :build
   depends_on "libtool" => :build
+  depends_on "pkg-config" => :build
   depends_on "socat" => :build
   depends_on "gnutls"
   depends_on "json-glib"
@@ -35,8 +37,6 @@ class Swtpm < Formula
   end
 
   def install
-    ENV.append "LDFLAGS", "-L#{Formula["openssl@3"].opt_lib}" if OS.linux?
-
     system "./autogen.sh", *std_configure_args, "--with-openssl"
     system "make"
     system "make", "install"
