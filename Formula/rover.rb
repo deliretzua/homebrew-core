@@ -1,8 +1,8 @@
 class Rover < Formula
   desc "CLI for managing and maintaining data graphs with Apollo Studio"
   homepage "https://www.apollographql.com/docs/rover/"
-  url "https://github.com/apollographql/rover/archive/refs/tags/v0.16.0.tar.gz"
-  sha256 "335c848c1b6df2bdb08923ff2282f267ba355bff71b15762af5bc76ec439a506"
+  url "https://github.com/apollographql/rover/archive/refs/tags/v0.16.1.tar.gz"
+  sha256 "1789ae56cecb2913800d372aaf5d7abce13cd78f368e86c80dbf20ca87a3bdd0"
   license "MIT"
   head "https://github.com/apollographql/rover.git", branch: "main"
 
@@ -27,7 +27,7 @@ class Rover < Formula
 
   test do
     output = shell_output("#{bin}/rover graph introspect https://graphqlzero.almansi.me/api")
-    assert_match "directive @cacheControl", output
+    assert_match "directive @specifiedBy", output
 
     assert_match version.to_s, shell_output("#{bin}/rover --version")
   end
