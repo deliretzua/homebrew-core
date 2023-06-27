@@ -695,6 +695,9 @@
   "shub": {
     "exclude_packages": ["pyyaml", "six"]
   },
+  "sickchill": {
+    "exclude_packages": ["cffi", "pycparser", "PyYAML", "six"]
+  },
   "snakefmt": {
     "exclude_packages": [
       "pathspec", "black", "click", "mypy-extensions", "platformdirs"
