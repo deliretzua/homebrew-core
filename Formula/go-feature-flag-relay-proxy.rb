@@ -2,8 +2,8 @@ class GoFeatureFlagRelayProxy < Formula
   desc "Stand alone server to run GO Feature Flag"
   homepage "https://gofeatureflag.org"
   url "https://github.com/thomaspoignant/go-feature-flag.git",
-      tag:      "v1.11.0",
-      revision: "2f9bccf38ff06dd5ca5f6741351eedf8ba659ad0"
+      tag:      "v1.12.0",
+      revision: "f568822455302b4dd61bfa7da63303cbc41080b1"
   license "MIT"
   head "https://github.com/thomaspoignant/go-feature-flag.git", branch: "main"
 
