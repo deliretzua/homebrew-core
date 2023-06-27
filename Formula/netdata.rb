@@ -4,6 +4,7 @@ class Netdata < Formula
   url "https://github.com/netdata/netdata/releases/download/v1.40.0/netdata-v1.40.0.tar.gz"
   sha256 "73b43bada63a793bc27c940af7ef28637d76aba1c014bea01eae8cb77c168175"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -29,6 +30,7 @@ class Netdata < Formula
   depends_on "libyaml"
   depends_on "lz4"
   depends_on "openssl@3"
+  depends_on "protobuf"
   depends_on "protobuf-c"
 
   uses_from_macos "zlib"
@@ -49,6 +51,13 @@ class Netdata < Formula
     sha256 "61befe96c549f1428eeb8773864c36bcb825b21854f36a6433112ea9f80dc91d"
   end
 
+  # Support Protobuf 22+.
+  # https://github.com/netdata/netdata/pull/15266
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/1d37b0b94b7b6b54ac207ad59951b568eb0f9a53/netdata/protobuf-22.patch"
+    sha256 "8074aca24cac248378e6410da434703ed7b2fc9cc54fb34b3e495de66332b8b3"
+  end
+
   def install
     # https://github.com/protocolbuffers/protobuf/issues/9947
     ENV.append_to_cflags "-DNDEBUG"
@@ -63,7 +72,7 @@ class Netdata < Formula
 
       # Parallel build is broken
       ENV.deparallelize do
-        system "make", "-j1", "install"
+        system "make", "install"
       end
     end
 
@@ -71,7 +80,11 @@ class Netdata < Formula
     ENV.append "CFLAGS", "-I#{judyprefix}/include"
     ENV.append "LDFLAGS", "-L#{judyprefix}/lib"
 
-    system "autoreconf", "-ivf"
+    # We need C++17 for protobuf.
+    inreplace "configure.ac", "# AX_CXX_COMPILE_STDCXX(17, noext, optional)",
+                              "AX_CXX_COMPILE_STDCXX(17, noext, mandatory)"
+
+    system "autoreconf", "--force", "--install", "--verbose"
     args = %W[
       --disable-dependency-tracking
       --disable-silent-rules
