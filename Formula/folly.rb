@@ -16,13 +16,13 @@ class Folly < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "0e6c4bb3f37845bbce18c03a23455c97a43e61fd5df8f7c484662cfc45ca6ba4"
-    sha256 cellar: :any,                 arm64_monterey: "0f837f9bcd77b67d3a9fcb4151563d215c33acd5dd4cb62b70efcfe08636bfa9"
-    sha256 cellar: :any,                 arm64_big_sur:  "d65598c0261a2abf7747cb4275929e458ab4ca3dd43ca5acf9a1349f967d1e05"
-    sha256 cellar: :any,                 ventura:        "47ffcfa230e3f502d9190dba4c2e988fced665fa2efd4524bf6db0e50a22a280"
-    sha256 cellar: :any,                 monterey:       "1e0eee17c0590322ad1543c9eaad1fd3f2299d277774181aeca2d799d8e704d8"
-    sha256 cellar: :any,                 big_sur:        "5bd93b31407b09d02ebde1df72901d479508d5ae80c24c01abd7f1f4e6f9845a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0719d36b10019080cdaba4022bdefa954c058a5ac1008f09561641cc950749a1"
+    sha256 cellar: :any,                 arm64_ventura:  "5158abc0ee9afa045850fccf7b48d50515b41119dad1183060193310dad4417d"
+    sha256 cellar: :any,                 arm64_monterey: "4920bda807554cbc304215c07039a377abb408fa6e002801c911d350d4d0814c"
+    sha256 cellar: :any,                 arm64_big_sur:  "fd7be61b5577bfffcde05ceafa110cc1834ee9377394dc590eb1c1a746c1ff7f"
+    sha256 cellar: :any,                 ventura:        "e0ed4400b93d91562f2238ff6f8578062a2e13fdc76ce197123aca80b57c0e69"
+    sha256 cellar: :any,                 monterey:       "da618da566cf04b231c61573be5eff1bcd21cecd1cff4b5e45cb7918534fa5a2"
+    sha256 cellar: :any,                 big_sur:        "f2cde28425db5593dffff3e4d9a4e1b3c654cc4fed0fa33eb97bd3441cb4a8a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ebaaf1aeb9f12f1db5dec5ac82c5c230208b610decc4bb7f14062ad254426cae"
   end
 
   depends_on "cmake" => :build
