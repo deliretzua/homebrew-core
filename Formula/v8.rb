@@ -2,8 +2,8 @@ class V8 < Formula
   desc "Google's JavaScript engine"
   homepage "https://github.com/v8/v8/wiki"
   # Track V8 version from Chrome stable: https://chromiumdash.appspot.com/releases?platform=Mac
-  url "https://github.com/v8/v8/archive/11.4.183.23.tar.gz"
-  sha256 "d9db2ef6016f5c7b0888a76509d1010c02c8c9a91aaafa7bb12e96012d8b9682"
+  url "https://github.com/v8/v8/archive/11.4.183.25.tar.gz"
+  sha256 "4e4902f0e3f4bc1aabbb441b00af72a5297eb40a1efadd7cdf72e776093b0927"
   license "BSD-3-Clause"
 
   livecheck do
