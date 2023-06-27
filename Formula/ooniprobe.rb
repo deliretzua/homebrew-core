@@ -1,8 +1,8 @@
 class Ooniprobe < Formula
   desc "Network interference detection tool"
   homepage "https://ooni.org/"
-  url "https://github.com/ooni/probe-cli/archive/v3.17.5.tar.gz"
-  sha256 "6e0f7c1fb725943c74dacc799389ebe8d042238cde32b3d5b8f1dbfa04b10880"
+  url "https://github.com/ooni/probe-cli/archive/v3.18.0.tar.gz"
+  sha256 "d28c050226c9282d7155da6cabf5547ddd43dc11eecacc485b6c05161c2d1d88"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -20,9 +20,7 @@ class Ooniprobe < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "13f1edd487410a316dc5d372634dc1984b673c60140ea11b77f89fd3e11c8246"
   end
 
-  # Upstream does not support go 1.20 yet and recommends using a specific Go version:
-  # https://github.com/ooni/probe-cli/blob/v#{version}/GOVERSION
-  depends_on "go@1.19" => :build
+  depends_on "go" => :build
   depends_on "tor"
 
   def install
