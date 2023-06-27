@@ -31,11 +31,15 @@ class CodeServer < Formula
   def install
     node = Formula["node@16"]
     system "npm", "install", *Language::Node.local_npm_install_args, "--unsafe-perm", "--omit", "dev"
+
     # @parcel/watcher bundles all binaries for other platforms & architectures
     # This deletes the non-matching architecture otherwise brew audit will complain.
+    arch_string = (Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s)
     prebuilds = buildpath/"lib/vscode/node_modules/@parcel/watcher/prebuilds"
-    (prebuilds/"darwin-x64").rmtree if Hardware::CPU.arm?
-    (prebuilds/"darwin-arm64").rmtree if Hardware::CPU.intel?
+    current_prebuild = prebuilds/"#{OS.kernel_name.downcase}-#{arch_string}"
+    unneeded_prebuilds = prebuilds.glob("*") - [current_prebuild]
+    unneeded_prebuilds.map(&:rmtree)
+
     libexec.install Dir["*"]
     env = { PATH: "#{node.opt_bin}:$PATH" }
     (bin/"code-server").write_env_script "#{libexec}/out/node/entry.js", env
