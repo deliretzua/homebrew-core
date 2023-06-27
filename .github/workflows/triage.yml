@@ -212,5 +212,9 @@ jobs:
               path: Formula/(envoy|freetype|gdbm|libssh2|libxcrypt|libxml2|llvm|openssl@1.1|python@3.11|qt(@5)?|xz|zstd).rb
               keep_if_no_match: true
 
+            - label: large-bottle-upload
+              path: Formula/texlive.rb
+              keep_if_no_match: true
+
             - label: bump-formula-pr
               pr_body_content: Created with `brew bump-formula-pr`
