@@ -6,7 +6,7 @@ class Vineyard < Formula
   url "https://github.com/v6d-io/v6d/releases/download/v0.15.0/v6d-0.15.0.tar.gz"
   sha256 "3281afac3f348c4409676adf8328c6de8b73ed35e71539e6dd779d4af5bc16dd"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   bottle do
     sha256                               arm64_ventura:  "5b016c34b8ede5bf497b15022c5bf99a331d60fecf8b83b1f3675ecd68b7d7d8"
@@ -27,10 +27,12 @@ class Vineyard < Formula
   depends_on "etcd-cpp-apiv3"
   depends_on "gflags"
   depends_on "glog"
+  depends_on "grpc"
   depends_on "hiredis"
   depends_on "libgrape-lite"
   depends_on "open-mpi"
   depends_on "openssl@3"
+  depends_on "protobuf"
   depends_on "redis"
 
   fails_with gcc: "5"
