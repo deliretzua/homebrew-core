@@ -6,6 +6,7 @@ class Cookiecutter < Formula
   url "https://files.pythonhosted.org/packages/96/43/65a3dad94dceaaaa12807ce4d4eff1064db6e91a8c6fb6945e3e61e63552/cookiecutter-2.1.1.tar.gz"
   sha256 "f3982be8d9c53dac1261864013fdec7f83afd2e42ede6f6dd069c5e149c540d5"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/cookiecutter/cookiecutter.git", branch: "master"
 
   bottle do
