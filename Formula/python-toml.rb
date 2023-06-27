@@ -6,6 +6,10 @@ class PythonToml < Formula
   license "MIT"
   head "https://github.com/uiri/toml.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "96e51e41b34e32f8b186368deb71ead8c489d8dddf6e0d13bfbef3ef3fd12b99"
+  end
+
   depends_on "python@3.11"
 
   def python
