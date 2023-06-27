@@ -1,10 +1,15 @@
 class Ntp < Formula
   desc "Network Time Protocol (NTP) Distribution"
-  homepage "https://www.eecis.udel.edu/~mills/ntp/html/"
-  url "https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p16.tar.gz"
-  version "4.2.8p16"
-  sha256 "5225858bfd843b080fb9daa5b7370519130e5e49ac3eb0371e334bdc06c52dd7"
+  homepage "https://www.ntp.org"
+  url "https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p17.tar.gz"
+  version "4.2.8p17"
+  sha256 "103dd272e6a66c5b8df07dce5e9a02555fcd6f1397bdfb782237328e89d3a866"
   license all_of: ["BSD-2-Clause", "NTP"]
+
+  livecheck do
+    url "https://www.ntp.org/downloads.html"
+    regex(/href=.*?ntp[._-]v?(\d+(?:\.\d+)+(?:p\d+)?)\.t/i)
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "7223754b29694eb7fe6014eb532b3de73998bd65fb1a15849f3df71f4bd0302f"
