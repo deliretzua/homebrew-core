@@ -1,9 +1,10 @@
 class PipeRename < Formula
   desc "Rename your files using your favorite text editor"
   homepage "https://github.com/marcusbuffett/pipe-rename"
-  url "https://crates.io/api/v1/crates/pipe-rename/1.6.4/download"
-  sha256 "02043732ad9b47b2c2485599ef7b6e3bb8d23b13ef7362ee4c16ef32e39815d1"
+  url "https://github.com/marcusbuffett/pipe-rename/archive/refs/tags/1.6.5.tar.gz"
+  sha256 "a11c13d14a4b4accf7f54b3b38f367404e85f33854d521d613de0b4b127bcc9d"
   license "MIT"
+  head "https://github.com/marcusbuffett/pipe-rename.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "729b0936daa03d43e53600d92a2dcc6e09e56c9df2b0c375f2ca9556fe8ba5e7"
@@ -18,7 +19,6 @@ class PipeRename < Formula
   depends_on "rust" => :build
 
   def install
-    system "tar", "xvf", "pipe-rename-#{version}.crate", "--strip-components=1"
     system "cargo", "install", *std_cargo_args
   end
 
