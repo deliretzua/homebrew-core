@@ -4,6 +4,7 @@ class Pygments < Formula
   url "https://files.pythonhosted.org/packages/89/6b/2114e54b290824197006e41be3f9bbe1a26e9c39d1f5fa20a6d62945a0b3/Pygments-2.15.1.tar.gz"
   sha256 "8ace4d3c1dd481894b2005f560ead0f9f19ee64fe983366be1a21e171d12775c"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/pygments/pygments.git", branch: "master"
 
   bottle do
@@ -29,11 +30,6 @@ class Pygments < Formula
 
       pyversion = Language::Python.major_minor_version(python_exe)
       bin.install bin/"pygmentize" => "pygmentize-#{pyversion}"
-
-      # Get rid of the `dist-info` directory to ensure uniform checksums across builds.
-      # This directory only contains metadata that aren't useful for us.
-      site_packages = Language::Python.site_packages(python_exe)
-      (prefix/site_packages/"Pygments-#{version}.dist-info").rmtree
 
       next if python != pythons.max_by(&:version)
 
