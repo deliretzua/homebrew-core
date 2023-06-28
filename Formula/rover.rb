@@ -1,8 +1,8 @@
 class Rover < Formula
   desc "CLI for managing and maintaining data graphs with Apollo Studio"
   homepage "https://www.apollographql.com/docs/rover/"
-  url "https://github.com/apollographql/rover/archive/refs/tags/v0.16.1.tar.gz"
-  sha256 "1789ae56cecb2913800d372aaf5d7abce13cd78f368e86c80dbf20ca87a3bdd0"
+  url "https://github.com/apollographql/rover/archive/refs/tags/v0.16.2.tar.gz"
+  sha256 "e46f18e6274a6a769a2bebffa24f9a9d7fd9b7228c9008b1afa2ddc1055f76f6"
   license "MIT"
   head "https://github.com/apollographql/rover.git", branch: "main"
 
@@ -22,6 +22,10 @@ class Rover < Formula
   uses_from_macos "zlib"
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     system "cargo", "install", *std_cargo_args
   end
 
