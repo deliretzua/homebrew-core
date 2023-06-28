@@ -13,13 +13,13 @@ class Homebank < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "8137d3e7f623c9a6a35eeaa4bfe68d23d25da9a9867c2894feda6debcc2b1ebc"
-    sha256 arm64_monterey: "e556fb2203454cedcb4a6a198170ebbfa06f24a966c2644f3238d1cd0bd2a49b"
-    sha256 arm64_big_sur:  "e6d1f0d465c5bb0187ee2df56772577a05a712f75d441ffd8d60b33fea930455"
-    sha256 ventura:        "8110f5df28dd966d24d6a580eea69b244e8cea52b9769cd129e2baa7e3d2e9b6"
-    sha256 monterey:       "84b9065b87f5320daf6b5b2777557330965d187fb2439184d9489463f998f5cb"
-    sha256 big_sur:        "e3f007a111e9c2b0b4e2fe5beee8d7292cc37af57546b9b6f2585b84116f1c46"
-    sha256 x86_64_linux:   "3470b8d8f9d650a3ad8da55830d9ae5de162262dfba3c75dcdafeb800b2aa1a8"
+    sha256 arm64_ventura:  "823c59b268c4ecfbc0ce6f41a6d4e163f220328a9372c55f74600df49091bd75"
+    sha256 arm64_monterey: "863be05486d2cec3a2c26047fecd5a2e18589b8070af8cf10d98273b5f9a4579"
+    sha256 arm64_big_sur:  "2ac06c19e7389bf818594fbfaeb195abbab67532e4f8f15bcf2062ad7e442019"
+    sha256 ventura:        "87a1cad60518869e3ddc82c0a02b32783b8661a04cbf65d65ee4963301ff2316"
+    sha256 monterey:       "b478bd78a5dff976268d7e5fea71a4cc154f9bb128217690bb25f74bc1e0cea8"
+    sha256 big_sur:        "113bd9f7f2061e6f8fd64052187049085115c8bcc9c139d975b4d173a25f6063"
+    sha256 x86_64_linux:   "dffd3f69785c13d21f412db1fa4cec636fe887b0922c080ba2da59176369a589"
   end
 
   depends_on "intltool" => :build
