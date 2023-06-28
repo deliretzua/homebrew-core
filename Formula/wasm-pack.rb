@@ -1,8 +1,8 @@
 class WasmPack < Formula
   desc "Your favorite rust -> wasm workflow tool!"
   homepage "https://rustwasm.github.io/wasm-pack/"
-  url "https://github.com/rustwasm/wasm-pack/archive/v0.12.0.tar.gz"
-  sha256 "684a2fb39691c8231b05e5c9fb0cacf6155f0617e0458cae0cd1b5ec2d8f9600"
+  url "https://github.com/rustwasm/wasm-pack/archive/v0.12.1.tar.gz"
+  sha256 "afa164fec0b119e2c47e38aad9e83351cb414e8ca3c062de292ec8008a45ac09"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/rustwasm/wasm-pack.git", branch: "master"
 
@@ -18,12 +18,6 @@ class WasmPack < Formula
 
   depends_on "rust" => :build
   depends_on "rustup-init"
-
-  # Restore `--version` command, remove in next release
-  patch do
-    url "https://github.com/rustwasm/wasm-pack/commit/91870e497d7212db40fc4ff5453233fc3fa5546d.patch?full_index=1"
-    sha256 "148006151e4fe202287b278d1269bef8ebcf30bdc7c946027cdf25e26c72bfe1"
-  end
 
   def install
     system "cargo", "install", *std_cargo_args
