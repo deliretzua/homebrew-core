@@ -1,10 +1,9 @@
 class Netdata < Formula
   desc "Diagnose infrastructure problems with metrics, visualizations & alarms"
   homepage "https://netdata.cloud/"
-  url "https://github.com/netdata/netdata/releases/download/v1.40.0/netdata-v1.40.0.tar.gz"
-  sha256 "73b43bada63a793bc27c940af7ef28637d76aba1c014bea01eae8cb77c168175"
+  url "https://github.com/netdata/netdata/releases/download/v1.40.1/netdata-v1.40.1.tar.gz"
+  sha256 "cc86172acd5e6ec05bc0fa86a50d967502a264d8adf7f79293923ccd8febb251"
   license "GPL-3.0-or-later"
-  revision 1
 
   livecheck do
     url :stable
@@ -44,18 +43,11 @@ class Netdata < Formula
     sha256 "d2704089f85fdb6f2cd7e77be21170ced4b4375c03ef1ad4cf1075bd414a63eb"
   end
 
-  # Remove when https://github.com/netdata/netdata/pull/15195 is merged and
-  # included in a release.
-  patch do
-    url "https://github.com/netdata/netdata/commit/1189341615b642c27faee459b015059778247a8f.patch?full_index=true"
-    sha256 "61befe96c549f1428eeb8773864c36bcb825b21854f36a6433112ea9f80dc91d"
-  end
-
   # Support Protobuf 22+.
   # https://github.com/netdata/netdata/pull/15266
   patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/1d37b0b94b7b6b54ac207ad59951b568eb0f9a53/netdata/protobuf-22.patch"
-    sha256 "8074aca24cac248378e6410da434703ed7b2fc9cc54fb34b3e495de66332b8b3"
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/5e3398d5a5a67447d86867581ee4a7df3dee98cb/netdata/protobuf-22.patch"
+    sha256 "b8b60037786d77aff0ef1c15bada5c929de01b370f9bae1e52c6f5f707780eb6"
   end
 
   def install
