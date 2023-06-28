@@ -5,7 +5,7 @@ class Mxnet < Formula
   mirror "https://archive.apache.org/dist/incubator/mxnet/1.9.1/apache-mxnet-src-1.9.1-incubating.tar.gz"
   sha256 "11ea61328174d8c29b96f341977e03deb0bf4b0c37ace658f93e38d9eb8c9322"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "f65d788203a541ed82b1dfaa024ff6965e5aee8a84aafc79984d532e9299df79"
