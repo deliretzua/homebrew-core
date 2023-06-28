@@ -3,8 +3,8 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/e9/fc/78513149a8467a208306578bc3edd67e334a07fd1e86361fd865a964d240/snakemake-7.29.0.tar.gz"
-  sha256 "c420a545924b599390efe9e2fa7a07c01d167cceac63d1d06fa6eff5e7b43be0"
+  url "https://files.pythonhosted.org/packages/1c/df/df33223995740da2091842a8a07f248499425cd48488e831d61c68ba3070/snakemake-7.30.0.tar.gz"
+  sha256 "7d91cd20d2fcf67134c295f7f849fda580ea46eed4082f7ebba90e87470d9818"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
@@ -45,8 +45,8 @@ class Snakemake < Formula
   end
 
   resource "configargparse" do
-    url "https://files.pythonhosted.org/packages/16/05/385451bc8d20a3aa1d8934b32bd65847c100849ebba397dbf6c74566b237/ConfigArgParse-1.5.3.tar.gz"
-    sha256 "1b0b3cbf664ab59dada57123c81eff3d9737e0d11d8cf79e3d6eb10823f1739f"
+    url "https://files.pythonhosted.org/packages/3c/fb/bf200c55a1e7014577c37fa9cbfa0148f629762bb3acff56299d8c58cbc3/ConfigArgParse-1.5.5.tar.gz"
+    sha256 "363d80a6d35614bd446e2f2b1b216f3b33741d03ac6d0a92803306f40e555b58"
   end
 
   resource "connection-pool" do
@@ -125,8 +125,8 @@ class Snakemake < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/a1/45/ff5224bbf1a9f23d95f70890659a7c2639a25d594adfe4a5ca9221f6cae5/platformdirs-3.7.0.tar.gz"
-    sha256 "87fbf6473e87c078d536980ba970a472422e94f17b752cfad17024c18876d481"
+    url "https://files.pythonhosted.org/packages/cb/10/e5478cc0c3ee5563f91ab7b9da15d16e21f3737b6286ed3fd9a8fb1a99dd/platformdirs-3.8.0.tar.gz"
+    sha256 "b0cabcb11063d21a0b261d557acb0a9d2126350e63b70cdf7db6347baea456dc"
   end
 
   resource "psutil" do
