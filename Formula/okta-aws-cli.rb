@@ -1,8 +1,8 @@
 class OktaAwsCli < Formula
   desc "Okta federated identity for AWS CLI"
   homepage "https://github.com/okta/okta-aws-cli"
-  url "https://github.com/okta/okta-aws-cli/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "c901b9221556e6ecf64a6ea20f7e6c43a4d629add306d9e4a03cd58c46f71912"
+  url "https://github.com/okta/okta-aws-cli/archive/refs/tags/v1.0.2.tar.gz"
+  sha256 "c778ffa6457084a3b3b224782690db5e05d1c8a797cfff0b12002f80f5ffc3dc"
   license "Apache-2.0"
 
   bottle do
