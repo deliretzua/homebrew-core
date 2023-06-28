@@ -24,6 +24,10 @@ class Gifski < Formula
   fails_with gcc: "5" # rubberband is built with GCC
 
   def install
+    # Delete config.toml to avoid targeting newer CPU. Remove in the next release.
+    # Fixed upstream: https://github.com/ImageOptim/gifski/commit/7e31a4c45def29b9e9c082460ab02a28f0e8730e
+    (buildpath/".cargo/config.toml").unlink
+
     system "cargo", "install", "--features", "video", *std_cargo_args
   end
 
