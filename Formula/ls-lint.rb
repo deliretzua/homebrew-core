@@ -1,8 +1,8 @@
 class LsLint < Formula
   desc "Extremely fast file and directory name linter"
   homepage "https://ls-lint.org/"
-  url "https://github.com/loeffel-io/ls-lint/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "eab9825d11be7662488ac834ca2fac2adeedd868904c5724c05f13780ec744ce"
+  url "https://github.com/loeffel-io/ls-lint/archive/refs/tags/v2.0.1.tar.gz"
+  sha256 "7486a9aca84a8a6877a3c61d735f32cec3d5c89bb29ced67933996560c49c1e8"
   license "MIT"
   head "https://github.com/loeffel-io/ls-lint.git", branch: "master"
 
