@@ -3,19 +3,19 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/1c/df/df33223995740da2091842a8a07f248499425cd48488e831d61c68ba3070/snakemake-7.30.0.tar.gz"
-  sha256 "7d91cd20d2fcf67134c295f7f849fda580ea46eed4082f7ebba90e87470d9818"
+  url "https://files.pythonhosted.org/packages/ef/d7/8173e012d95dc7ea0fae8128e90240b65ac5e24a91a59ef812076a46ac68/snakemake-7.30.1.tar.gz"
+  sha256 "0e907ae6ea18a7e7c8b9f08976ee1874da66f79cbd4ad1b25cc7e7b9a8670f80"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8a59be90d5650468840696fece88fec1afe73faac8f12a693903d0471b638388"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "174870447ba1a78b394d3e829e52a459138630f687b393a9f4a9dc3ed0b3ce78"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ef9515c714697111d755383309820668b9264ab2f515a022000fcae3c2ac7f9f"
-    sha256 cellar: :any_skip_relocation, ventura:        "713a177bca2ebeba5fd2d41e930d57f4baf017d5dc376ccb40f004ac4173e5cf"
-    sha256 cellar: :any_skip_relocation, monterey:       "3d1e3b18f75768edf107e34a2c7ff6b6ee11c1d61e0c22038649438394fd364c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0ea5d01e242ba0f2c2cb7a2b9542fdc9584227eac83448fbbdfd92015d31d2ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2036ba163572c6105ad0a28fc4e138d721b2eecae07136252e188f44b8698ce8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "064b29466bac94d7dab8b64a84b20890f578708f191282620ecede680e66655f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3e918207d01dafd6c15c03dbe2bb340c15a1491f48b63ca7a04357a1809ba764"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "74c89675eec2c0bc29f9e52ae8f6fa71f0223419759f82d5281091ca57102e8c"
+    sha256 cellar: :any_skip_relocation, ventura:        "4a5adeb448ec580b78031c1b9f3dccdb844cd43e8d385033e367c0b55963c5b4"
+    sha256 cellar: :any_skip_relocation, monterey:       "f8234c40b28ec8f0c7c16fb34feef573954ec31d3f54b64b22909863e4e34fb2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "436bae8881a9c4e426f199b26380695b1325a5b72a20d46a925dc25d13d9af3d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "477fe7d99462e4f57b0794c2295418998be7197d516810802ff2b44c01db5227"
   end
 
   depends_on "cbc"
