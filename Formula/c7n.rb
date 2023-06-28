@@ -3,8 +3,8 @@ class C7n < Formula
 
   desc "Rules engine for cloud security, cost optimization, and governance"
   homepage "https://github.com/cloud-custodian/cloud-custodian"
-  url "https://github.com/cloud-custodian/cloud-custodian/archive/0.9.27.0.tar.gz"
-  sha256 "20550a51768fb755f49d5bc74cf6d40565d27bbc2f363519ba5dd68ab12e1ce6"
+  url "https://github.com/cloud-custodian/cloud-custodian/archive/0.9.28.0.tar.gz"
+  sha256 "1ee99192e578fa18b41c64e72d975abb0afc31d32e339b8a3ad8c27a13c24617"
   license "Apache-2.0"
 
   livecheck do
@@ -28,8 +28,8 @@ class C7n < Formula
   depends_on "six"
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/42/cd/fdb872d826b76b65b23147e83b1ca4c033445bbff59f8836a118657dd050/argcomplete-3.0.8.tar.gz"
-    sha256 "b9ca96448e14fa459d7450a4ab5a22bbf9cee4ba7adddf03e65c398b5daeea28"
+    url "https://files.pythonhosted.org/packages/54/c9/41c4dfde7623e053cbc37ac8bc7ca03b28093748340871d4e7f1630780c4/argcomplete-3.1.1.tar.gz"
+    sha256 "6c4c563f14f01440aaffa3eae13441c5db2357b5eec639abe7c0b15334627dff"
   end
 
   resource "attrs" do
@@ -38,13 +38,13 @@ class C7n < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/0c/6c/a4753af51bce46f3d172e08b009ba089b11ec7ddea9fcdd0fec461ecabf8/boto3-1.26.140.tar.gz"
-    sha256 "b36d223231dd8bd22a690dc10cd0f133266389ef116b82b7edec568275804938"
+    url "https://files.pythonhosted.org/packages/0e/f9/4cfa3ac6d50e9b8bbe9f499aef0a6949a989b6305e47fafa858a5fdb00f8/boto3-1.26.163.tar.gz"
+    sha256 "341ad62c53f9717cfe5fb2ae33e34f2dd3ee930abaa0fc864a10c018c0c78783"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/07/19/ea6e61c24f853471c5a5223a74d25992cdaf1db48e822b53573a27471dac/botocore-1.29.140.tar.gz"
-    sha256 "a52ced1a0311178849e332c2c85c5b702adb30b68c5de66a5fd59488d19de65a"
+    url "https://files.pythonhosted.org/packages/59/0f/f322112e298a1c3344d18468f2b76f9ce9cb025bca1b1dac94c2dd38f723/botocore-1.29.163.tar.gz"
+    sha256 "f374bea656bf9025ad685f47e7b8ff9e20b1a2584823855ba1c4c58957768612"
   end
 
   resource "docutils" do
