@@ -9,13 +9,13 @@ class Snakemake < Formula
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d8425d11bf6f26192ac61e3147a62788faf4658e58c77f297f2dadd0242f9da6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "31e6c460cc38592adcc91cdd0db12adeaea1ef5a6fde5a6c0aca0fd085934b17"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a30a79122033834c189c725966339dc7abfd9e3c050f56483bc1b375b4a15959"
-    sha256 cellar: :any_skip_relocation, ventura:        "d589dda3f1ec330555172a6ff9e85d884c923a80427cc0159e678174b2ea8f7d"
-    sha256 cellar: :any_skip_relocation, monterey:       "78aa4144fb4f8a09dd6ed75d500465c0d2a39f54b2813b7ee02d06f9daf9cc62"
-    sha256 cellar: :any_skip_relocation, big_sur:        "64210b6e6cb5be036cd0a3663414a14f49ac6e62d74f18067b7e0b8b8238c9a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "31b00d8f46925ee7f7632e35184a0cf2a09548e4a31e9ec56c508934899dff01"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8a59be90d5650468840696fece88fec1afe73faac8f12a693903d0471b638388"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "174870447ba1a78b394d3e829e52a459138630f687b393a9f4a9dc3ed0b3ce78"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ef9515c714697111d755383309820668b9264ab2f515a022000fcae3c2ac7f9f"
+    sha256 cellar: :any_skip_relocation, ventura:        "713a177bca2ebeba5fd2d41e930d57f4baf017d5dc376ccb40f004ac4173e5cf"
+    sha256 cellar: :any_skip_relocation, monterey:       "3d1e3b18f75768edf107e34a2c7ff6b6ee11c1d61e0c22038649438394fd364c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0ea5d01e242ba0f2c2cb7a2b9542fdc9584227eac83448fbbdfd92015d31d2ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2036ba163572c6105ad0a28fc4e138d721b2eecae07136252e188f44b8698ce8"
   end
 
   depends_on "cbc"
