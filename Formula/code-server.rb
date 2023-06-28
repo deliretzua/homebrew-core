@@ -37,6 +37,8 @@ class CodeServer < Formula
     # This deletes the non-matching architecture otherwise brew audit will complain.
     arch_string = (Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s)
     prebuilds = buildpath/"lib/vscode/node_modules/@parcel/watcher/prebuilds"
+    # Homebrew only supports glibc-based Linuxes, avoid missing linkage to musl libc
+    (prebuilds/"linux-x64/node.napi.musl.node").unlink
     current_prebuild = prebuilds/"#{OS.kernel_name.downcase}-#{arch_string}"
     unneeded_prebuilds = prebuilds.glob("*") - [current_prebuild]
     unneeded_prebuilds.map(&:rmtree)
