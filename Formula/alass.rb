@@ -5,6 +5,16 @@ class Alass < Formula
   sha256 "ce88f92c7a427b623edcabb1b64e80be70cca2777f3da4b96702820a6cdf1e26"
   license "GPL-3.0-or-later"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "93ea3d2535b7d2f339a736efbbf28f952abf06fdcb8186a72b1f706a77c9c3c1"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c20460b0e920c4165d4f2e0fda02055564277562ca0707d7417279f3c1a70a4f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "89d96baa88517ace085a0a467f08928fff9fc15966edd7061ebf614133eb5e98"
+    sha256 cellar: :any_skip_relocation, ventura:        "1b6e4cc531bc410f1c4792f5e8709230fa1312425499c7179712714ecbfbc593"
+    sha256 cellar: :any_skip_relocation, monterey:       "3b60c7670145e819679d32671912305e150b55164de74e39b4ea788586651696"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8aa09d2f899a21272a4703e587a036e475b4ce060bdb9ef0d214b449157126fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "499c4ee6c9cefa90b135dbfb668879f8a56fd5da4ab20dfd077ae1047b34f0f1"
+  end
+
   depends_on "rust" => :build
 
   def install
