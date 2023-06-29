@@ -1,8 +1,8 @@
 class Helmfile < Formula
   desc "Deploy Kubernetes Helm Charts"
   homepage "https://github.com/helmfile/helmfile"
-  url "https://github.com/helmfile/helmfile/archive/v0.154.0.tar.gz"
-  sha256 "0f9c3ff65d226c11b1fab9b8c94ffe5e4a8a0605d317cea855469e683a217a42"
+  url "https://github.com/helmfile/helmfile/archive/v0.155.0.tar.gz"
+  sha256 "4bcb0b7d051c8d9bf91c0c3c6420c18ceb8556190a31451f64555acbd769a7c1"
   license "MIT"
   version_scheme 1
 
