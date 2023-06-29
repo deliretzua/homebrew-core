@@ -3,10 +3,9 @@ class GraphTool < Formula
 
   desc "Efficient network analysis for Python 3"
   homepage "https://graph-tool.skewed.de/"
-  url "https://downloads.skewed.de/graph-tool/graph-tool-2.56.tar.bz2"
-  sha256 "a4979e4b84ca84d2c41adb8b03aad6730ee2739e228d55e32321d9c6b4d7b7e4"
+  url "https://downloads.skewed.de/graph-tool/graph-tool-2.57.tar.bz2"
+  sha256 "a20a0e73b78e78f233e960c6ba89d1969f457221b03b66947c71d3044affbb72"
   license "LGPL-3.0-or-later"
-  revision 1
 
   livecheck do
     url "https://downloads.skewed.de/graph-tool/"
@@ -72,6 +71,9 @@ class GraphTool < Formula
   resource "matplotlib" do
     url "https://files.pythonhosted.org/packages/b7/65/d6e00376dbdb6c227d79a2d6ec32f66cfb163f0cd924090e3133a4f85a11/matplotlib-3.7.1.tar.gz"
     sha256 "7b73305f25eab4541bd7ee0b96d87e53ae9c9f1823be5659b806cd85786fe882"
+
+    # fix numpy build issue, https://github.com/matplotlib/matplotlib/issues/26246
+    patch :DATA
   end
 
   resource "packaging" do
@@ -80,8 +82,8 @@ class GraphTool < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/71/22/207523d16464c40a0310d2d4d8926daffa00ac1f5b1576170a32db749636/pyparsing-3.0.9.tar.gz"
-    sha256 "2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb"
+    url "https://files.pythonhosted.org/packages/4f/13/28e88033cab976721512e7741000fb0635fa078045e530a91abb25aea0c0/pyparsing-3.1.0.tar.gz"
+    sha256 "edb662d6fe322d6e990b1594b5feaeadf806803359e3d4d42f11e295e588f0ea"
   end
 
   resource "python-dateutil" do
@@ -143,3 +145,18 @@ class GraphTool < Formula
     system python3, "test.py"
   end
 end
+
+__END__
+diff --git a/pyproject.toml b/pyproject.toml
+index 907b05a..81e3d80 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -2,7 +2,7 @@
+ build-backend = "setuptools.build_meta"
+ requires = [
+     "certifi>=2020.06.20",
+-    "oldest-supported-numpy",
++    "numpy",
+     "pybind11>=2.6",
+     "setuptools_scm>=7",
+ ]
