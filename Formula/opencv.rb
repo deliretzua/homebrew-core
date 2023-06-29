@@ -35,6 +35,7 @@ class Opencv < Formula
   depends_on "openblas"
   depends_on "openexr"
   depends_on "openjpeg"
+  depends_on "openvino"
   depends_on "protobuf"
   depends_on "python@3.11"
   depends_on "tbb"
@@ -48,6 +49,13 @@ class Opencv < Formula
   resource "contrib" do
     url "https://github.com/opencv/opencv_contrib/archive/refs/tags/4.8.0.tar.gz"
     sha256 "b4aef0f25a22edcd7305df830fa926ca304ea9db65de6ccd02f6cfa5f3357dbb"
+  end
+
+  # Fix static build with OpenVINO (https://github.com/opencv/opencv/pull/23963)
+  # Remove patch when available in release.
+  patch do
+    url "https://github.com/opencv/opencv/commit/ef9d14f181ad8cca71443beaf3874de3197d4e47.patch?full_index=1"
+    sha256 "efdf5534479af2e246c162215d5cbc2ae49e962ca58ccd9fef610fa40ee4a4ed"
   end
 
   def python3
@@ -98,6 +106,7 @@ class Opencv < Formula
       -DWITH_JASPER=OFF
       -DWITH_OPENEXR=ON
       -DWITH_OPENGL=OFF
+      -DWITH_OPENVINO=ON
       -DWITH_QT=OFF
       -DWITH_TBB=ON
       -DWITH_VTK=ON
