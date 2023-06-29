@@ -1,8 +1,8 @@
 class Ktlint < Formula
   desc "Anti-bikeshedding Kotlin linter with built-in formatter"
   homepage "https://ktlint.github.io/"
-  url "https://github.com/pinterest/ktlint/releases/download/0.49.1/ktlint"
-  sha256 "4044dcb054a0c124cccf37f078acaca14799efd48f611cf5ba94f8c049301bd7"
+  url "https://github.com/pinterest/ktlint/releases/download/0.50.0/ktlint-0.50.0.zip"
+  sha256 "5674e08be591daf6b9248feed2e4aaf4626225be89430fd9f9fd0cf70ede51c7"
   license "MIT"
 
   bottle do
@@ -12,7 +12,7 @@ class Ktlint < Formula
   depends_on "openjdk"
 
   def install
-    libexec.install "ktlint"
+    libexec.install "bin/ktlint"
     (libexec/"ktlint").chmod 0755
     (bin/"ktlint").write_env_script libexec/"ktlint", Language::Java.java_home_env
   end
