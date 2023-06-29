@@ -1,8 +1,8 @@
 class Goose < Formula
   desc "Go Language's command-line interface for database migrations"
   homepage "https://pressly.github.io/goose/"
-  url "https://github.com/pressly/goose/archive/v3.11.2.tar.gz"
-  sha256 "5122148b9d482f5ec5811d1e98489150582e8db405cc92d2132d54c024a83a28"
+  url "https://github.com/pressly/goose/archive/v3.13.0.tar.gz"
+  sha256 "5c5d7ce17a5436a1878ad864d2d961391f388494b012756bfc2104ac02070ab7"
   license "MIT"
 
   bottle do
@@ -22,8 +22,9 @@ class Goose < Formula
   end
 
   test do
-    output = shell_output("#{bin}/goose sqlite3 foo.db status create 2>&1")
-    assert_match "Migration", output
-    assert_predicate testpath/"foo.db", :exist?, "Failed to create foo.db!"
+    output = shell_output("#{bin}/goose sqlite3 foo.db status create 2>&1", 1)
+    assert_match "goose run: failed to collect migrations", output
+
+    assert_match version.to_s, shell_output("#{bin}/goose --version")
   end
 end
