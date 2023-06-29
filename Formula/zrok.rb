@@ -3,8 +3,8 @@ require "language/node"
 class Zrok < Formula
   desc "Geo-scale, next-generation sharing platform built on top of OpenZiti"
   homepage "https://zrok.io"
-  url "https://github.com/openziti/zrok/archive/refs/tags/v0.3.6.tar.gz"
-  sha256 "2543bffb999428abf20ce0f2dec3d63e32ffb624a51255bcc3e76356905b4135"
+  url "https://github.com/openziti/zrok/archive/v0.4.2.tar.gz"
+  sha256 "35c3630912bb21c655dcdb4d4be4f63c14e7ceaa80736f57cf41fd3db25b893f"
   license "Apache-2.0"
   head "https://github.com/openziti/zrok.git", branch: "main"
 
@@ -33,7 +33,7 @@ class Zrok < Formula
 
   test do
     (testpath/"ctrl.yml").write <<~EOS
-      v: 2
+      v: 3
       maintenance:
         registration:
           expiration_timeout: 24h
