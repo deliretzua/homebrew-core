@@ -3,8 +3,8 @@ class OscCli < Formula
 
   desc "Official Outscale CLI providing connectors to Outscale API"
   homepage "https://github.com/outscale/osc-cli"
-  url "https://files.pythonhosted.org/packages/b0/60/cd6582d56188c841bd58ce004b67c0a64b8ad855175ea574f01b0158271d/osc-sdk-1.9.0.tar.gz"
-  sha256 "b6cc9b06500493ec445c073458c32b18709c6a5dd842410c3bd141efd81c7ff7"
+  url "https://files.pythonhosted.org/packages/02/cd/f1b796f5e7a301f6a3c0b910be07188cbfd329d2758e036d24ef26b4ee96/osc-sdk-1.11.0.tar.gz"
+  sha256 "d3b71b326b0698da1b9a503cd511a992fe578375fd01b30bdec0d63d8328af66"
   license "BSD-3-Clause"
 
   bottle do
@@ -58,8 +58,8 @@ class OscCli < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/fb/c0/1abba1a1233b81cf2e36f56e05194f5e8a0cec8c03c244cab56cc9dfb5bd/urllib3-2.0.2.tar.gz"
-    sha256 "61717a1095d7e155cdb737ac7bb2f4324a858a1e2e6466f6d03ff630ca68d3cc"
+    url "https://files.pythonhosted.org/packages/d6/af/3b4cfedd46b3addab52e84a71ab26518272c23c77116de3c61ead54af903/urllib3-2.0.3.tar.gz"
+    sha256 "bee28b5e56addb8226c96f7f13ac28cb4c301dd5ea8a6ca179c0b9835e032825"
   end
 
   resource "xmltodict" do
