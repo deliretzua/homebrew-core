@@ -1,10 +1,19 @@
 class Phoneinfoga < Formula
   desc "Information gathering framework for phone numbers"
   homepage "https://sundowndev.github.io/phoneinfoga/"
-  url "https://github.com/sundowndev/phoneinfoga/archive/v2.10.5.tar.gz"
-  sha256 "b26b514a947088a4dcdfaf80d40650c857158698bbb186f79c07ffbf39717476"
   license "GPL-3.0-only"
   head "https://github.com/sundowndev/phoneinfoga.git", branch: "master"
+
+  stable do
+    url "https://github.com/sundowndev/phoneinfoga/archive/v2.10.7.tar.gz"
+    sha256 "14dc41ec4a2c3f8a97e4ea7bf99736e94a94b2e04b36075171f482a6f0873127"
+
+    # patch to build with node v20, remove in next release
+    patch do
+      url "https://github.com/sundowndev/phoneinfoga/commit/ad3a393192963b53318e5cb749ce85d7e651caca.patch?full_index=1"
+      sha256 "f8fcd2fed13e5faab0aaa4e94d69bfbd33131e86b9cfa66368bbe2d43a6035cd"
+    end
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "2ee2752bc0b93e1d38dfc435ad74d0c6bb721fc299f80f49a36413178b8f0cd2"
