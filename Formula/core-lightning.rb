@@ -2,10 +2,9 @@ class CoreLightning < Formula
   desc "Lightning Network implementation focusing on spec compliance and performance"
   homepage "https://github.com/ElementsProject/lightning"
   url "https://github.com/ElementsProject/lightning.git",
-      tag:      "v23.05.1",
-      revision: "484d4476256815056e5d82991d677553c74315c1"
+      tag:      "v23.05.2",
+      revision: "e512f918fcaef276163b185cd712b89335424afd"
   license "MIT"
-  revision 1
 
   livecheck do
     url :stable
