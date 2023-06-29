@@ -1,8 +1,8 @@
 class PetscComplex < Formula
   desc "Portable, Extensible Toolkit for Scientific Computation (complex)"
   homepage "https://petsc.org/"
-  url "https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.19.2.tar.gz"
-  sha256 "114f363f779bb16839b25c0e70f8b0ae0d947d50e72f7c6cddcb11b001079b16"
+  url "https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.19.3.tar.gz"
+  sha256 "008239c016b869693ec8e81368a0b7638462e667d07f7d50ed5f9b75ccc58d17"
   license "BSD-2-Clause"
 
   livecheck do
@@ -46,7 +46,7 @@ class PetscComplex < Formula
 
     # Avoid references to Homebrew shims (perform replacement before running `make`, or else the shim
     # paths will still end up in compiled code)
-    inreplace "arch-#{OS.kernel_name.downcase}-c-opt/include/petscconf.h", "#{Superenv.shims_path}/", "" if OS.mac?
+    inreplace "arch-#{OS.kernel_name.downcase}-c-opt/include/petscconf.h", "#{Superenv.shims_path}/", ""
 
     system "make", "all"
     system "make", "install"
