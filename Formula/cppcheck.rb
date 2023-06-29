@@ -1,8 +1,8 @@
 class Cppcheck < Formula
   desc "Static analysis of C and C++ code"
   homepage "https://sourceforge.net/projects/cppcheck/"
-  url "https://github.com/danmar/cppcheck/archive/2.10.3.tar.gz"
-  sha256 "8aae5e116daeaaf5d19f3efa61b91c06f161cb97412a1d1af6e1e20686e48967"
+  url "https://github.com/danmar/cppcheck/archive/2.11.1.tar.gz"
+  sha256 "fef6ef868d562d49136f158e1d0f7a38237e7e1c0a91d9189bdd465f1fe54316"
   license "GPL-3.0-or-later"
   head "https://github.com/danmar/cppcheck.git", branch: "main"
 
@@ -90,7 +90,7 @@ class Cppcheck < Formula
     # check the correct number of detected tokens and function names.
     addons_dir = pkgshare/"addons"
     cppcheck_module = "#{name}data"
-    expect_token_count = 55
+    expect_token_count = 51
     expect_function_names = "main,GetNumber,Example"
     assert_parse_message = "Error: sampleaddon.py: failed: can't parse the #{name} dump."
 
