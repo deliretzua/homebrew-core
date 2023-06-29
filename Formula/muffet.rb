@@ -1,8 +1,8 @@
 class Muffet < Formula
   desc "Fast website link checker in Go"
   homepage "https://github.com/raviqqe/muffet"
-  url "https://github.com/raviqqe/muffet/archive/v2.8.1.tar.gz"
-  sha256 "a6d32da2cdbaa05c73c30320c7833ea2629085d8df6e67a4ab915909e7ac4966"
+  url "https://github.com/raviqqe/muffet/archive/v2.9.2.tar.gz"
+  sha256 "771c85fe44ad6e89a457e72d399f81146e48d2abb8ac555653bf4cb49941aa42"
   license "MIT"
   head "https://github.com/raviqqe/muffet.git", branch: "master"
 
@@ -26,7 +26,7 @@ class Muffet < Formula
     assert_match(/failed to fetch root page: lookup does\.not\.exist.*: no such host/,
                  shell_output("#{bin}/muffet https://does.not.exist 2>&1", 1))
 
-    assert_match "https://httpbin.org/",
-                 shell_output("#{bin}/muffet https://httpbin.org 2>&1", 1)
+    assert_match "https://example.com/",
+                 shell_output("#{bin}/muffet https://example.com 2>&1", 1)
   end
 end
