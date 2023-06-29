@@ -1,9 +1,9 @@
 class Chkrootkit < Formula
   desc "Rootkit detector"
   homepage "https://www.chkrootkit.org/"
-  url "ftp://ftp.chkrootkit.org/pub/seg/pac/chkrootkit-0.57.tar.gz"
-  mirror "https://fossies.org/linux/misc/chkrootkit-0.57.tar.gz"
-  sha256 "06d1faee151aa3e3c0f91ac807ca92e60b75ed1c18268ccef2c45117156d253c"
+  url "ftp://ftp.chkrootkit.org/pub/seg/pac/chkrootkit-0.58.tar.gz"
+  mirror "https://fossies.org/linux/misc/chkrootkit-0.58.tar.gz"
+  sha256 "0325cd19ace8928ca036aa956ec8cd9a3d9fe02965e30a4720e9baf34ed56a42"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -22,6 +22,11 @@ class Chkrootkit < Formula
   end
 
   def install
+    ENV.deparallelize
+
+    # Workaround for Xcode 14.3
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
     system "make", "CC=#{ENV.cc}", "CFLAGS=#{ENV.cflags}",
                    "STATIC=", "sense", "all"
 
