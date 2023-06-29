@@ -66,7 +66,8 @@ jobs:
       - name: Fetch detected formulae bottles
         if: >
           github.event_name == 'merge_group' ||
-          contains(github.event.pull_request.labels.*.name, 'CI-published-bottle-commits')
+          (contains(github.event.pull_request.labels.*.name, 'CI-published-bottle-commits') &&
+           github.base_ref != 'master')
         env:
           TESTING_FORMULAE: ${{ steps.formulae-detect.outputs.testing_formulae }}
         run: brew test-bot --only-bottles-fetch --testing-formulae="$TESTING_FORMULAE"
