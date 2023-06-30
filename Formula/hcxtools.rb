@@ -1,8 +1,8 @@
 class Hcxtools < Formula
   desc "Utils for conversion of cap/pcap/pcapng WiFi dump files"
   homepage "https://github.com/ZerBea/hcxtools"
-  url "https://github.com/ZerBea/hcxtools/archive/6.3.0.tar.gz"
-  sha256 "cb691b3d6b3f2ec7b63c79697b9a977338394b90c8f93ba596525d601134452f"
+  url "https://github.com/ZerBea/hcxtools/archive/6.3.1.tar.gz"
+  sha256 "3570f88448a5c65273fdaf4e9d764f2b9d87c300dafa645a3e54394130db71a1"
   license "MIT"
   head "https://github.com/ZerBea/hcxtools.git", branch: "master"
 
@@ -42,7 +42,7 @@ class Hcxtools < Formula
     newhash = testpath/"new.22000"
     system "#{bin}/hcxpcapngtool", "-o", newhash, testcap
 
-    # Diff old and new hash file to check if they are identical
-    system "diff", newhash, testhash
+    expected = "WPA*01*4d4fe7aac3a2cecab195321ceb99a7d0*fc690c158264*f4747f87f9f4*686173686361742d6573736964***01"
+    assert_equal expected, newhash.read.chomp
   end
 end
