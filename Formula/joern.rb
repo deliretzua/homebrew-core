@@ -2,8 +2,8 @@ class Joern < Formula
   desc "Open-source code analysis platform based on code property graphs"
   homepage "https://joern.io/"
   # joern should only be updated every 10 releases on multiples of 10
-  url "https://github.com/joernio/joern/archive/refs/tags/v1.2.30.tar.gz"
-  sha256 "c23172e6e188be05136da81d4eb51a2f5f9981c32f826e4e47fd65f1ec69d0e1"
+  url "https://github.com/joernio/joern/archive/refs/tags/v1.2.40.tar.gz"
+  sha256 "cda8601e1f9da00a22d9ca0c352d54a1d6c26b9a8c24e532ac6befc7899e91a4"
   license "Apache-2.0"
 
   livecheck do
@@ -33,6 +33,14 @@ class Joern < Formula
     cd "joern-cli/target/universal/stage" do
       rm_f Dir["**/*.bat"]
       libexec.install Pathname.pwd.children
+    end
+
+    # Remove incompatible pre-built binaries
+    os = OS.mac? ? "macos" : OS.kernel_name.downcase
+    arch = Hardware::CPU.arch.to_s
+    goastgen_name = Hardware::CPU.intel? ? "goastgen-#{os}" : "goastgen-#{os}-#{arch}"
+    (libexec/"frontends/gosrc2cpg/bin/goastgen").glob("goastgen-*").each do |f|
+      rm f if f.basename.to_s != goastgen_name
     end
 
     libexec.children.select { |f| f.file? && f.executable? }.each do |f|
