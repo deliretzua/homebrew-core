@@ -1,8 +1,8 @@
 class Juliaup < Formula
   desc "Julia installer and version multiplexer"
   homepage "https://github.com/JuliaLang/juliaup"
-  url "https://github.com/JuliaLang/juliaup/archive/v1.8.16.tar.gz"
-  sha256 "99b0d62b589c8a330fffaa2252b8e4251124bfd59077f0789a6a456d3b1ae81a"
+  url "https://github.com/JuliaLang/juliaup/archive/v1.11.15.tar.gz"
+  sha256 "026f8712a20ab972607668f7f030fc86a15ee307f2fa7521f0edfaac0dcde1f2"
   license "MIT"
   head "https://github.com/JuliaLang/juliaup.git", branch: "master"
 
@@ -27,7 +27,7 @@ class Juliaup < Formula
 
   def install
     system "cargo", "install", "--bin", "juliaup", *std_cargo_args
-    system "cargo", "install", "--bin", "julialauncher", *std_cargo_args
+    system "cargo", "install", "--bin", "julialauncher", "--features", "binjulialauncher", *std_cargo_args
 
     bin.install_symlink "julialauncher" => "julia"
   end
