@@ -1,8 +1,8 @@
 class Cascadia < Formula
   desc "Go cascadia package command-line CSS selector"
   homepage "https://github.com/suntong/cascadia"
-  url "https://github.com/suntong/cascadia/archive/refs/tags/v1.2.7.tar.gz"
-  sha256 "ff314144fdab70a7347b0c1a27b5e6628abe72827947e3cb571cebd385fd61df"
+  url "https://github.com/suntong/cascadia/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "1ee285d683aa3956dbeb28cd9ee2c60f0ab3a5da8e66a98ca3fb718d3214b775"
   license "MIT"
   head "https://github.com/suntong/cascadia.git", branch: "master"
 
