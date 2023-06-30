@@ -17,13 +17,12 @@ class Cdktf < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd75d95e3f98e05f154fe0f0429f8bcf228b0edd20fae50ff0ac5f282f03a39b"
   end
 
-  depends_on "node@18"
+  depends_on "node"
   depends_on "terraform"
 
   def install
-    node = Formula["node@18"]
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    (bin/"cdktf").write_env_script "#{libexec}/bin/cdktf", { PATH: "#{node.opt_bin}:$PATH" }
+    bin.install_symlink Dir["#{libexec}/bin/*"]
 
     # remove non-native architecture pre-built binaries
     os = OS.kernel_name.downcase
