@@ -1,8 +1,8 @@
 class SuiteSparse < Formula
   desc "Suite of Sparse Matrix Software"
   homepage "https://people.engr.tamu.edu/davis/suitesparse.html"
-  url "https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/v7.0.1.tar.gz"
-  sha256 "dc2f8d5c2657c120b30cce942f634ec08fc3a4b0b10e19d3eef7790b2bec8d1e"
+  url "https://github.com/DrTimothyAldenDavis/SuiteSparse/archive/v7.1.0.tar.gz"
+  sha256 "4cd3d161f9aa4f98ec5fa725ee5dc27bca960a3714a707a7d12b3d0abb504679"
   license all_of: [
     "BSD-3-Clause",
     "LGPL-2.1-or-later",
@@ -36,6 +36,12 @@ class SuiteSparse < Formula
   conflicts_with "mongoose", because: "suite-sparse vendors libmongoose.dylib"
 
   def install
+    # Force cmake to use our compiler shims
+    if OS.mac?
+      inreplace "GraphBLAS/cmake_modules/GraphBLAS_JIT_configure.cmake",
+          "GB_C_COMPILER  \"${CMAKE_C_COMPILER}\"", "GB_C_COMPILER \"#{ENV.cc}\""
+    end
+
     cmake_args = *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
     args = [
       "INSTALL=#{prefix}",
