@@ -1,17 +1,9 @@
 [
   "abricate",
-  "cppcms",
   "dafny",
-  "dasht",
   "hive",
   "mariadb@10.4",
-  "mikutter",
   "mysql@5.7",
-  "opendht",
-  "qca",
   "root",
-  "sslyze",
-  "synergy-core",
-  "tomcat-native",
-  "whatmp3"
+  "sslyze"
 ]
