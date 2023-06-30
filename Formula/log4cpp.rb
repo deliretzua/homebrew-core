@@ -1,8 +1,8 @@
 class Log4cpp < Formula
   desc "Configurable logging for C++"
   homepage "https://log4cpp.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/log4cpp/log4cpp-1.1.x%20%28new%29/log4cpp-1.1/log4cpp-1.1.3.tar.gz"
-  sha256 "2cbbea55a5d6895c9f0116a9a9ce3afb86df383cd05c9d6c1a4238e5e5c8f51d"
+  url "https://downloads.sourceforge.net/project/log4cpp/log4cpp-1.1.x%20%28new%29/log4cpp-1.1/log4cpp-1.1.4.tar.gz"
+  sha256 "696113659e426540625274a8b251052cc04306d8ee5c42a0c7639f39ca90c9d6"
   license "LGPL-2.1"
 
   livecheck do
@@ -27,13 +27,45 @@ class Log4cpp < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-pre-0.4.2.418-big_sur.diff"
-    sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   def install
+    ENV.cxx11
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
+  end
+
+  test do
+    (testpath/"log4cpp.cpp").write <<~EOS
+      #include <log4cpp/Category.hh>
+      #include <log4cpp/PropertyConfigurator.hh>
+      #include <log4cpp/OstreamAppender.hh>
+      #include <log4cpp/Priority.hh>
+      #include <log4cpp/BasicLayout.hh>
+      #include <iostream>
+      #include <memory>
+
+      int main(int argc, char* argv[]) {
+        log4cpp::OstreamAppender* osAppender = new log4cpp::OstreamAppender("osAppender", &std::cout);
+        osAppender->setLayout(new log4cpp::BasicLayout());
+
+        log4cpp::Category& root = log4cpp::Category::getRoot();
+        root.addAppender(osAppender);
+        root.setPriority(log4cpp::Priority::INFO);
+
+        root.info("This is an informational log message");
+
+        // Clean up
+        root.removeAllAppenders();
+        log4cpp::Category::shutdown();
+
+        return 0;
+      }
+    EOS
+    system ENV.cxx, "log4cpp.cpp", "-L#{lib}", "-llog4cpp", "-o", "log4cpp"
+    system "./log4cpp"
   end
 end
