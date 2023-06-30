@@ -5,8 +5,8 @@ class Vault < Formula
   desc "Secures, stores, and tightly controls access to secrets"
   homepage "https://vaultproject.io/"
   url "https://github.com/hashicorp/vault.git",
-      tag:      "v1.13.3",
-      revision: "3bedf816cbf851656ae9e6bd65dd4a67a9ddff5e"
+      tag:      "v1.14.0",
+      revision: "13a649f860186dffe3f3a4459814d87191efc321"
   license "MPL-2.0"
   head "https://github.com/hashicorp/vault.git", branch: "main"
 
@@ -27,15 +27,13 @@ class Vault < Formula
   end
 
   depends_on "go" => :build
-  depends_on "node@18" => :build
-  depends_on "python@3.11" => :build
+  depends_on "node" => :build
   depends_on "yarn" => :build
 
+  uses_from_macos "curl" => :test
+
   def install
-    # Needs both `npm` and `python` in PATH
-    ENV.prepend_path "PATH", Formula["node@18"].opt_libexec/"bin"
-    ENV.prepend_path "PATH", "#{ENV["GOPATH"]}/bin"
-    ENV["PYTHON"] = "python3.11"
+    ENV.prepend_path "PATH", Formula["node"].opt_libexec/"bin" # for npm
     system "make", "bootstrap", "static-dist", "dev-ui"
     bin.install "bin/vault"
   end
@@ -49,13 +47,15 @@ class Vault < Formula
   end
 
   test do
-    port = free_port
-    ENV["VAULT_DEV_LISTEN_ADDRESS"] = "127.0.0.1:#{port}"
-    ENV["VAULT_ADDR"] = "http://127.0.0.1:#{port}"
+    addr = "127.0.0.1:#{free_port}"
+    ENV["VAULT_DEV_LISTEN_ADDRESS"] = addr
+    ENV["VAULT_ADDR"] = "http://#{addr}"
 
     pid = fork { exec bin/"vault", "server", "-dev" }
     sleep 5
     system bin/"vault", "status"
+    # Check the ui was properly embedded
+    assert_match "User-agent", shell_output("curl #{addr}/robots.txt")
     Process.kill("TERM", pid)
   end
 end
