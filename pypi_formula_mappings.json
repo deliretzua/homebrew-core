@@ -89,6 +89,9 @@
   "bandit": {
     "exclude_packages": ["PyYAML", "pygments"]
   },
+  "bbot": {
+    "exclude_packages": ["cffi", "docutils", "pycparser", "pyyaml", "six", "typing-extensions"]
+  },
   "beancount": {
     "exclude_packages": ["six"]
   },
