@@ -17,7 +17,7 @@ class Autorest < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "64a4b7d5f30ccc95df61c4681c900f10ff2a07e70ee223981e9a8f0fc9d10dde"
   end
 
-  depends_on "node@18"
+  depends_on "node"
 
   resource "homebrew-petstore" do
     url "https://raw.githubusercontent.com/Azure/autorest/5c170a02c009d032e10aa9f5ab7841e637b3d53b/Samples/1b-code-generation-multilang/petstore.yaml"
@@ -25,9 +25,8 @@ class Autorest < Formula
   end
 
   def install
-    node = Formula["node@18"]
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    (bin/"autorest").write_env_script "#{libexec}/bin/autorest", { PATH: "#{node.opt_bin}:$PATH" }
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
