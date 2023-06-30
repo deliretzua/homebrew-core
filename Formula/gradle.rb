@@ -1,8 +1,8 @@
 class Gradle < Formula
   desc "Open-source build automation tool based on the Groovy and Kotlin DSL"
   homepage "https://www.gradle.org/"
-  url "https://services.gradle.org/distributions/gradle-8.1.1-all.zip"
-  sha256 "5625a0ae20fe000d9225d000b36909c7a0e0e8dda61c19b12da769add847c975"
+  url "https://services.gradle.org/distributions/gradle-8.2-all.zip"
+  sha256 "5022b0b25fe182b0e50867e77f484501dba44feeea88f5c1f13b6b4660463640"
   license "Apache-2.0"
 
   livecheck do
@@ -20,14 +20,12 @@ class Gradle < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5fcce570e18961f14e5b01fda3fd537f6f03ea7f12baed460ed657f5fd2ce59b"
   end
 
-  # TODO: Switch to `openjdk` on 8.2 release. 8.0 and 8.1 series cannot be run
-  # on Java 20: https://github.com/gradle/gradle/issues/23488.
-  depends_on "openjdk@17"
+  depends_on "openjdk"
 
   def install
     rm_f Dir["bin/*.bat"]
     libexec.install %w[bin docs lib src]
-    env = Language::Java.overridable_java_home_env("17")
+    env = Language::Java.overridable_java_home_env
     (bin/"gradle").write_env_script libexec/"bin/gradle", env
   end
 
