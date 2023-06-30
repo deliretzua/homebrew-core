@@ -5,6 +5,7 @@ class OathToolkit < Formula
   mirror "https://fossies.org/linux/privat/oath-toolkit-2.6.7.tar.gz"
   sha256 "36eddfce8f2f36347fb257dbf878ba0303a2eaafe24eaa071d5cd302261046a9"
   license all_of: ["GPL-3.0-or-later", "LGPL-2.1-or-later"]
+  revision 1
   head "https://gitlab.com/oath-toolkit/oath-toolkit.git", branch: "master"
 
   livecheck do
@@ -29,6 +30,7 @@ class OathToolkit < Formula
   depends_on "libtool"  => :build
   depends_on "pkg-config" => :build
   depends_on "libxmlsec1"
+  depends_on "openssl@3"
 
   # pam_oath: Provide fallback pam_modutil_getpwnam implementation.
   # Remove on next release.
