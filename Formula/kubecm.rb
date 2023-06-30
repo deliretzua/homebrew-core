@@ -1,8 +1,8 @@
 class Kubecm < Formula
   desc "KubeConfig Manager"
   homepage "https://kubecm.cloud"
-  url "https://github.com/sunny0826/kubecm/archive/v0.23.0.tar.gz"
-  sha256 "dac22e2492e61ef45077fbc45bd43a1a9fbaa6da76c32684cb48145e474d79fd"
+  url "https://github.com/sunny0826/kubecm/archive/v0.24.0.tar.gz"
+  sha256 "18bf359e5dabecd010207ca10c39a05bfe7ed1000414d1e6138ec02639dbbdf4"
   license "Apache-2.0"
 
   bottle do
