@@ -7,6 +7,16 @@ class Sickchill < Formula
   sha256 "be49f0d6c01f479cb0f066e88582c4971b683a11d50149ffe81b1bdc4447c2ab"
   license "GPL-3.0-or-later"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "850a6787b110c15af3e9bcc1bcb8833ea263e8c877ed650bc7aa70889151fbe4"
+    sha256 cellar: :any,                 arm64_monterey: "ad73e2114d02fd2be9c65ba1c378b2d2911a24d99b78fef9713a3281d09c8b0b"
+    sha256 cellar: :any,                 arm64_big_sur:  "e274f861c881976a85a2ed98b0fe054da2878da05c19753fb0b39927dfea8bce"
+    sha256 cellar: :any,                 ventura:        "d8526feb794110341180d7b87364b4c4db7bf110d3843b75455e3278bfad6de4"
+    sha256 cellar: :any,                 monterey:       "9f41c80d0af4003095680bf788bbae1aeded75ca4f9cdb2e563fc9e5d6688901"
+    sha256 cellar: :any,                 big_sur:        "a64f5267c3c34eaa86f22f1949fefdb1b233bcc4c570361026d0c6a5de0f0507"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "507775650927284a754b0454d32cab863128dc19848a661badcee65508a811ea"
+  end
+
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
