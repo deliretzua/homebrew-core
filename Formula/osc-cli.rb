@@ -8,14 +8,13 @@ class OscCli < Formula
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c4fbf4141200eb086e43820ebb1f33fc8d80471f084d64137c6965ad9f946721"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cc8053d641f5dd650ec598a197d7094945c4282fdf104689fc742db4183bf4e1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "70a22ebd659b01a1cc8ad08b1ce8c66c012e86b46fdb1dc8a29b0f5b68074ecf"
-    sha256 cellar: :any_skip_relocation, ventura:        "6b327c152baf7df98a570937d5ea8268d0a7e5167e7ca1172a6ffca5cb558f3e"
-    sha256 cellar: :any_skip_relocation, monterey:       "a73661803788450f99739566686b11b2593f22b326c9ce1a076cd388f4329ab1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0571b584182c23e849662c290dcdbe5d9289cadf35a7f5278421e78c34779a41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a9264fcfdb36cd51e7b7e150a6f4ef0bedd8a6457e5bb32df38d44e30174c4bc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "15aff098f26a9371892c19d1f943154bdf58dfcad2ed793c89b3ba5ee2bd2d44"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a54431abd7d8b76cf841a6442187119deae46ef0ddea16fd268bb24b656d0b5a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "966cad5bb7d39af2f302f78e04ed6e3405a16c992d8edbda1426d018597e885e"
+    sha256 cellar: :any_skip_relocation, ventura:        "c9480133a2bdc7957342acc3ed7616f864a05d8995afebc95003867b2d312775"
+    sha256 cellar: :any_skip_relocation, monterey:       "af7b1b0c55f4d2518054f13c05da67252330b87be38c474abc11808140aa9fb6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9c5ce7edb589536f5234f9ed278d52766e265fc36380c00f4a31bce894bbf73a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "db09b46692f3d46e81da9e7502c778faa22d1da08b76210a68a48cea6d0ab987"
   end
 
   depends_on "python-typing-extensions"
