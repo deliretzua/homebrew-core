@@ -3,18 +3,18 @@ require "language/node"
 class SqlLanguageServer < Formula
   desc "Language Server for SQL"
   homepage "https://github.com/joe-re/sql-language-server"
-  url "https://registry.npmjs.org/sql-language-server/-/sql-language-server-1.5.1.tgz"
-  sha256 "c0424d11bba8f3842d3ddc731385e54cbab3b910d78113f709a109b92476ec88"
+  url "https://registry.npmjs.org/sql-language-server/-/sql-language-server-1.5.2.tgz"
+  sha256 "428392c2be8dd14c046bcadeb9be8daa603e802bd62224ec6b9a41f37280104f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a7de6942466febb0bee5f52c3603822eaa3f37e3684955e63a886feafaffdb51"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f4d54951974e9b65b9cdb7c2d65bd38de864b34a2f3f3b5f56c1460baabe7bcd"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ebe68c14cf5bca96dcb483273e4a578e82208edf6361cf2a4954150bc2d1c978"
-    sha256 cellar: :any_skip_relocation, ventura:        "9e67311887c4bdfca06c7675b0f0470570996915998900a2f1d254fd51b9908a"
-    sha256 cellar: :any_skip_relocation, monterey:       "8c038f156c31beef4a22ed0c6f8f394c78bf0593ff526db2494481c742ac653e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "68dd9c4e84854d28fde02f2d15de42fac98d37b87037871da750fede182042cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac48539e66883c4cf8f7a6004b47f0954f52ddcdad040e9656418a229c390388"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c0d7f64916ba29684e66abd182803a968173727c5cde235181e5fe552cd2141b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "41f34e5f4d50676ef2e2df1c0e0361184f1eb9ca4eaeea0c9b8f1680ef28cd12"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b3887b24d9b2f2550484e52c0c4b7ce1605844fae5e67d7634d4a612e743d7aa"
+    sha256 cellar: :any_skip_relocation, ventura:        "995ea55fedcf87ab5e4c02320c1af65a5765507e5abbac73782c3785b020935c"
+    sha256 cellar: :any_skip_relocation, monterey:       "c037154380ca3d81e5d8a6053ca0b86c804a38f7bd22bb56ca5cd13af9db8731"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0fe81205302b16b29e6e6f3254e260b057c87af45b3ec2604aabe81e1b901516"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "125a38f3b07222b729d7778000e84feffe7b2347bfa2c6c5481fd1ac81439a36"
   end
 
   depends_on "node"
