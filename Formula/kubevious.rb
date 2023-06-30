@@ -17,11 +17,11 @@ class Kubevious < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ccd4d9b6208de4cdda642feadcccb70f6938b8cdf962bd815fa0f32135d4739e"
   end
 
-  depends_on "node@18"
+  depends_on "node"
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
-    (bin/"kubevious").write_env_script libexec/"bin/kubevious", PATH: "#{Formula["node@18"].opt_bin}:$PATH"
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
