@@ -3,10 +3,9 @@ class Erlang < Formula
   homepage "https://www.erlang.org/"
   # Download tarball from GitHub; it is served faster than the official tarball.
   # Don't forget to update the documentation resource along with the url!
-  url "https://github.com/erlang/otp/releases/download/OTP-25.3.2.2/otp_src_25.3.2.2.tar.gz"
-  sha256 "83a36f3d90deef36adb615bbfb46cd327f0b76b7668e1f7f253fd66b4ae24518"
+  url "https://github.com/erlang/otp/releases/download/OTP-26.0.2/otp_src_26.0.2.tar.gz"
+  sha256 "47853ea9230643a0a31004433f07a71c1b92d6e0094534f629e3b75dbc62f193"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url :stable
@@ -38,9 +37,9 @@ class Erlang < Formula
   uses_from_macos "libxslt" => :build
 
   resource "html" do
-    url "https://github.com/erlang/otp/releases/download/OTP-25.3.2.2/otp_doc_html_25.3.2.2.tar.gz"
-    mirror "https://fossies.org/linux/misc/otp_doc_html_25.3.2.2.tar.gz"
-    sha256 "29412cd7d490aeee51a5386faceee357fe134ba10fdeed44c224242a2e0a66d4"
+    url "https://github.com/erlang/otp/releases/download/OTP-26.0.2/otp_doc_html_26.0.2.tar.gz"
+    mirror "https://fossies.org/linux/misc/otp_doc_html_26.0.2.tar.gz"
+    sha256 "f071d8af459a5294fdafc379f36e40f37d05fbea06a676a4913549a25f799f64"
   end
 
   def install
