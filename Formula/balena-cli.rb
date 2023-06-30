@@ -22,7 +22,7 @@ class BalenaCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "60a943af33bafd19f7713aed0f000a2fb5850242b09cc51536d9ea909ce02238"
   end
 
-  depends_on "node@16"
+  depends_on "node"
 
   on_macos do
     depends_on "macos-term-size"
@@ -36,8 +36,8 @@ class BalenaCli < Formula
 
   def install
     ENV.deparallelize
-    system Formula["node@16"].opt_bin/"npm", "install", *Language::Node.std_npm_install_args(libexec)
-    (bin/"balena").write_env_script libexec/"bin/balena", PATH: "#{Formula["node@16"].opt_bin}:${PATH}"
+    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    bin.install_symlink Dir["#{libexec}/bin/*"]
 
     # Remove incompatible pre-built binaries
     os = OS.kernel_name.downcase
