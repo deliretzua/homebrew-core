@@ -6,7 +6,7 @@ class Openssh < Formula
   version "9.3p1"
   sha256 "e9baba7701a76a51f3d85a62c383a3c9dcd97fa900b859bc7db114c1868af8a8"
   license "SSH-OpenSSH"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/"
@@ -71,7 +71,10 @@ class Openssh < Formula
 
       # FIXME: `ssh-keygen` errors out when this is built with optimisation.
       # Reported upstream at https://bugzilla.mindrot.org/show_bug.cgi?id=3584
-      ENV.O0 if Hardware::CPU.intel? && MacOS.version == :ventura && version == Version.new("9.3p1")
+      # Also can segfault at runtime: https://github.com/Homebrew/homebrew-core/issues/135200
+      if Hardware::CPU.intel? && DevelopmentTools.clang_build_version == 1403
+        inreplace "configure", "-fzero-call-used-regs=all", "-fzero-call-used-regs=used"
+      end
     end
 
     args = *std_configure_args + %W[
