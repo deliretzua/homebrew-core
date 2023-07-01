@@ -7,6 +7,16 @@ class Bbot < Formula
   sha256 "5ec660a711afbafb4a1626b1a28ecc1b05bad9e40c1c997e76cb511cd9da1fb7"
   license "GPL-3.0-or-later"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "b180ec9ae47e6b55d5a25036653cd0409fb1afc2ea0973afffbfe440b453fdee"
+    sha256 cellar: :any,                 arm64_monterey: "a96b02ff0560ca74f78c51eba9376b16ae5d41520f5d27554c4a2777ee70d4b0"
+    sha256 cellar: :any,                 arm64_big_sur:  "e63d97b3c96cf118fe25dc884a3a618a03d98108646065d6b41d2fb32606aecc"
+    sha256 cellar: :any,                 ventura:        "647160f879dfe66fe78f532ef04e171339462dbb6012cfd9fb3d207f283b6b8d"
+    sha256 cellar: :any,                 monterey:       "da105dfa85dfd6a0459f8dce4de5123c0e62531aef15813ecac0915d858a59f5"
+    sha256 cellar: :any,                 big_sur:        "43814fb542c3b5716a341f024ccd5c32d9e199031416c9f489eea98ae62567e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f05438015d3ceeaa7f7e47170496ab90e2a9575e775fe48df6069855e92f4499"
+  end
+
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "cmake" => :build
   depends_on "openjdk" => :build
