@@ -1,11 +1,10 @@
 class Xrootd < Formula
   desc "High performance, scalable, fault-tolerant access to data"
   homepage "https://xrootd.slac.stanford.edu/"
-  url "https://github.com/xrootd/xrootd/releases/download/v5.5.5/xrootd-5.5.5.tar.gz"
-  mirror "https://xrootd.slac.stanford.edu/download/v5.5.5/xrootd-5.5.5.tar.gz"
-  sha256 "0710caae527082e73d3bf8f9d1dffe95808afd3fcaaaa15ab0b937b8b226bc1f"
+  url "https://github.com/xrootd/xrootd/releases/download/v5.6.0/xrootd-5.6.0.tar.gz"
+  mirror "https://xrootd.slac.stanford.edu/download/v5.6.0/xrootd-5.6.0.tar.gz"
+  sha256 "cda0d32d29f94220be9b6627a80386eb33fac2dcc25c8104569eaa4ea3563009"
   license "LGPL-3.0-or-later"
-  revision 1
   head "https://github.com/xrootd/xrootd.git", branch: "master"
 
   livecheck do
@@ -25,20 +24,17 @@ class Xrootd < Formula
 
   depends_on "cmake" => :build
   depends_on "libcython" => :build
+  depends_on "pkg-config" => :build
   depends_on "python@3.11" => [:build, :test]
   depends_on "davix"
   depends_on "krb5"
   depends_on "openssl@3"
   depends_on "readline"
+  depends_on "util-linux" # for libuuid
 
   uses_from_macos "libxcrypt"
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
-
-  on_linux do
-    depends_on "pkg-config" => :build
-    depends_on "util-linux"
-  end
 
   def install
     args = std_cmake_args + %W[
