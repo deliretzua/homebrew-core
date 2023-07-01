@@ -12,13 +12,13 @@ class Libuv < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "f5bd687771b1a8c5cad69eab1bdef215f9be9c51c85f3c9e3c31225180d5180c"
-    sha256 cellar: :any,                 arm64_monterey: "709825ec0bbacec911059d28498ba06c580be5b027bb0e2140980877fcd022e2"
-    sha256 cellar: :any,                 arm64_big_sur:  "29236605f4c053ccebdcc0157375150d7d90ceae25f520a34c3e0872740c919d"
-    sha256 cellar: :any,                 ventura:        "ec3005a9949d42bdccb0fb020ee2fdc5e4f2b56964fdbe6c48d11249ff342d41"
-    sha256 cellar: :any,                 monterey:       "25122240d73275db0db7131351164d0ebd4770c1201ea8e02566983de7c4c270"
-    sha256 cellar: :any,                 big_sur:        "302e6168804f837f243dff0348f01e57aaff5fb194d8b658bf4c1c8d707e7367"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "570a5b1191067938dbbfb8b38fc924492e5bc4ded8fe0ace8be2cb2241b492d7"
+    sha256 cellar: :any,                 arm64_ventura:  "8c3beb4d11ed0d45cf0b7e07d280ff815eab9f9c138eec90a2f824168aed039e"
+    sha256 cellar: :any,                 arm64_monterey: "bfaeee8ea65a26b881951c90d5ec1f4000039f228a4198735c015309307c47d9"
+    sha256 cellar: :any,                 arm64_big_sur:  "1f1c49121e9a4df9eb520aceac58781a3ee61364370f04096ddc043842c8beda"
+    sha256 cellar: :any,                 ventura:        "68085c874a3df5a9dc0a6a86bbce91ef370373523602fcbb31a63d37f259e025"
+    sha256 cellar: :any,                 monterey:       "38513d0917c18b294afadbca1ad005d73c450f3a06a5afcd2396398f428157ad"
+    sha256 cellar: :any,                 big_sur:        "f75b27c39a13b279554a2c6f5c0451d54af1c9f7abc312e6c5e50ae3f346599d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad3f4af550bc5b9256f9d2c73bce18e335adf185052d9dec5dd44c1c142f961c"
   end
 
   depends_on "autoconf" => :build
