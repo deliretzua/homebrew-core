@@ -8,13 +8,13 @@ class Ntfy < Formula
   head "https://github.com/binwiederhier/ntfy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4b6eeb544f8fb13471a8c38c9cd861eb99744ad158fe1c0a9345332ed0bff4c7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4b6eeb544f8fb13471a8c38c9cd861eb99744ad158fe1c0a9345332ed0bff4c7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4b6eeb544f8fb13471a8c38c9cd861eb99744ad158fe1c0a9345332ed0bff4c7"
-    sha256 cellar: :any_skip_relocation, ventura:        "856d87568a9c52991ed923fae2567f607c47871424f0f421fdba1ec60fb07414"
-    sha256 cellar: :any_skip_relocation, monterey:       "856d87568a9c52991ed923fae2567f607c47871424f0f421fdba1ec60fb07414"
-    sha256 cellar: :any_skip_relocation, big_sur:        "856d87568a9c52991ed923fae2567f607c47871424f0f421fdba1ec60fb07414"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c38fedb6d53571fc9c898bfd254523d2f8a1ff9308627c9f19070ed18c5e8629"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7637a8a1858601b4d2ea5bac9d0109b54743d1bc258be30b1cc03b8c7e777623"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7637a8a1858601b4d2ea5bac9d0109b54743d1bc258be30b1cc03b8c7e777623"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7637a8a1858601b4d2ea5bac9d0109b54743d1bc258be30b1cc03b8c7e777623"
+    sha256 cellar: :any_skip_relocation, ventura:        "dae163181db62cd42c5ed486632cc5daab1e9446a8b9c7758c42359657e77d8d"
+    sha256 cellar: :any_skip_relocation, monterey:       "dae163181db62cd42c5ed486632cc5daab1e9446a8b9c7758c42359657e77d8d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "dae163181db62cd42c5ed486632cc5daab1e9446a8b9c7758c42359657e77d8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c372874817d5a7142720e96bb3f9fc1679b95b8e3555122d58d3c2ccbbb9b11"
   end
 
   depends_on "go" => :build
