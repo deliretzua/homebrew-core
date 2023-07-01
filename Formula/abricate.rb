@@ -8,11 +8,11 @@ class Abricate < Formula
   head "https://github.com/tseemann/abricate.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "b984059bb2be49d00ce2315ddf88b8a3b8db14f05b61fb25acf2a924b4a473a2"
-    sha256 cellar: :any_skip_relocation, monterey:      "d44ec888720ff6c8482b715719659ad157660a470bc4678de2f9a9eb5d2c97e8"
-    sha256 cellar: :any_skip_relocation, big_sur:       "09ccff359b51bd0514ad4bc6e18af2514834157f34fe0dc24d1d787ee88e4aad"
-    sha256 cellar: :any_skip_relocation, catalina:      "a59617da9f47e29ce7b10d1f004388cdcae345b1e1acb35b87b02b22776239f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "796c80bfb1a72148b9990823f1232434a0a2c01b1c652a6177d019d3ea273da4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "20bfb72d3f3e5888db151b87faa3b19a570496c164e4a88d1b1a826ef460fe23"
+    sha256 cellar: :any_skip_relocation, monterey:      "9af68aea3abc83447b1399866d25687869d443750e737a87ec17cec44af506c3"
+    sha256 cellar: :any_skip_relocation, big_sur:       "d0a18cc2245bd70d282b95749bdb7e20b018d1f4ab972e43ac14d465a12a98cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "308ec7b38b1aeb25a26ead0df73dfac165dd5e72024ae117c4d9dbec51d96e51"
   end
 
   depends_on "bioperl"
