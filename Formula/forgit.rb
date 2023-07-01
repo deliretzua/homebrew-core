@@ -6,7 +6,7 @@ class Forgit < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3d09d4e31010fc1846f356a5422044a24f769114ee2a7237fc2ebcba4ae3eda4"
+    sha256 cellar: :any_skip_relocation, all: "e3bdbdf309091eaec6d3053ad31da773234bad78eef3de0000f41799a35f6a26"
   end
 
   depends_on "fzf"
