@@ -8,13 +8,14 @@ class Kubevious < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ccd4d9b6208de4cdda642feadcccb70f6938b8cdf962bd815fa0f32135d4739e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ccd4d9b6208de4cdda642feadcccb70f6938b8cdf962bd815fa0f32135d4739e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ccd4d9b6208de4cdda642feadcccb70f6938b8cdf962bd815fa0f32135d4739e"
-    sha256 cellar: :any_skip_relocation, ventura:        "b41858e2fbb9f453a50efeb51b20051920dcca7dd6c9c1c2a275b0486a201066"
-    sha256 cellar: :any_skip_relocation, monterey:       "b41858e2fbb9f453a50efeb51b20051920dcca7dd6c9c1c2a275b0486a201066"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b41858e2fbb9f453a50efeb51b20051920dcca7dd6c9c1c2a275b0486a201066"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ccd4d9b6208de4cdda642feadcccb70f6938b8cdf962bd815fa0f32135d4739e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d5b735b8ac7cc099a47f32e103624b2f7b4cf38b549117827f3aa83dc867cd77"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d5b735b8ac7cc099a47f32e103624b2f7b4cf38b549117827f3aa83dc867cd77"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d5b735b8ac7cc099a47f32e103624b2f7b4cf38b549117827f3aa83dc867cd77"
+    sha256 cellar: :any_skip_relocation, ventura:        "c06ee99ad24dbf8bb1bbfda8e031fd6f378416df5605839049e894903bb3864c"
+    sha256 cellar: :any_skip_relocation, monterey:       "c06ee99ad24dbf8bb1bbfda8e031fd6f378416df5605839049e894903bb3864c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c06ee99ad24dbf8bb1bbfda8e031fd6f378416df5605839049e894903bb3864c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d5b735b8ac7cc099a47f32e103624b2f7b4cf38b549117827f3aa83dc867cd77"
   end
 
   depends_on "node"
