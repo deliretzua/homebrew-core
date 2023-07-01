@@ -158,7 +158,7 @@
     "exclude_packages": ["six", "typing-extensions"]
   },
   "charm-tools": {
-    "exclude_packages": ["six"],
+    "exclude_packages": ["six", "cffi", "pycparser"],
     "extra_packages": ["wheel"]
   },
   "chatblade": {
