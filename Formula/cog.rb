@@ -2,7 +2,7 @@ class Cog < Formula
   desc "Containers for machine learning"
   homepage "https://github.com/replicate/cog"
   url "https://github.com/replicate/cog/archive/refs/tags/v0.7.2.tar.gz"
-  sha256 "75e7fc14d08a747fb497ae12e0879f2e39fe7bcd369d4c4814b7b58dd28c44f5"
+  sha256 "bce8bcedefafdd7ebd498b9f94eead6d2c9586ae36cf6e8c1dcaab8d15927505"
   license "Apache-2.0"
   head "https://github.com/replicate/cog.git", branch: "main"
 
@@ -17,18 +17,13 @@ class Cog < Formula
   end
 
   depends_on "go" => :build
-  depends_on "python@3.11" => :build
   depends_on "redis"
 
+  uses_from_macos "python" => :build
+
   def install
-    args = %W[
-      COG_VERSION=#{version}
-      PYTHON=python3
-    ]
-
-    system "make", *args
+    system "make", "COG_VERSION=#{version}", "PYTHON=python3"
     bin.install "cog"
-
     generate_completions_from_executable(bin/"cog", "completion")
   end
 
