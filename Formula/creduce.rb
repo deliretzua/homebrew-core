@@ -1,6 +1,6 @@
 class Creduce < Formula
   desc "Reduce a C/C++ program while keeping a property of interest"
-  homepage "https://embed.cs.utah.edu/creduce/"
+  homepage "https://github.com/csmith-project/creduce"
   license "BSD-3-Clause"
   revision 4
   head "https://github.com/csmith-project/creduce.git", branch: "master"
@@ -31,8 +31,8 @@ class Creduce < Formula
   end
 
   livecheck do
-    url :homepage
-    regex(/href=.*?creduce[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url :stable
+    regex(/^(?:creduce[._-])?v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
