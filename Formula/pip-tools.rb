@@ -3,8 +3,8 @@ class PipTools < Formula
 
   desc "Locking and sync for Pip requirements files"
   homepage "https://pip-tools.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/c1/3f/f121e3a05e46ba07055b3b81d3325f712c22bc0624872b83a73c9f6e2bc1/pip-tools-6.13.0.tar.gz"
-  sha256 "61d46bd2eb8016ed4a924e196e6e5b0a268cd3babd79e593048720db23522bb1"
+  url "https://files.pythonhosted.org/packages/b0/5e/4f1beeaec03f726829d1c32e379d441ecd80f11f6afb0ea0fff75ce1e776/pip-tools-6.14.0.tar.gz"
+  sha256 "06366be0e08d86b416407333e998b4d305d5bd925151b08942ed149380ba3e47"
   license "BSD-3-Clause"
 
   bottle do
@@ -30,11 +30,11 @@ class PipTools < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/47/d5/aca8ff6f49aa5565df1c826e7bf5e85a6df852ee063600c1efa5b932968c/packaging-23.0.tar.gz"
-    sha256 "b6ad297f8907de0fa2fe1ccbd26fdaf387f5f47c7275fedf8cce89f99446cf97"
+    url "https://files.pythonhosted.org/packages/b9/6c/7c6658d258d7971c5eb0d9b69fa9265879ec9a9158031206d47800ae2213/packaging-23.1.tar.gz"
+    sha256 "a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"
   end
 
-  resource "pyproject_hooks" do
+  resource "pyproject-hooks" do
     url "https://files.pythonhosted.org/packages/25/c1/374304b8407d3818f7025457b7366c8e07768377ce12edfe2aa58aa0f64c/pyproject_hooks-1.0.0.tar.gz"
     sha256 "f271b298b97f5955d53fb12b72c1fb1948c22c1a6b70b315c54cedaca0264ef5"
   end
