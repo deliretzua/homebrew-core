@@ -1,10 +1,8 @@
 class Sdl2Sound < Formula
   desc "Abstract soundfile decoder for SDL"
   homepage "https://icculus.org/SDL_sound/"
-  # Includes fixes for CMake, just ahead of the release tag
-  url "https://github.com/icculus/SDL_sound/archive/06c8946983ca9b9ed084648f417f60f21c0697f1.tar.gz"
-  version "2.0.1"
-  sha256 "41f4d779192dea82086c8da8b8cbd47ba99b52cd45fdf39c96b63f75f51293e1"
+  url "https://github.com/icculus/SDL_sound/releases/download/v2.0.2/SDL2_sound-2.0.2.tar.gz"
+  sha256 "465a81d6004af731768b881b2f50383150cc58a8d346653bad85e2375829cc3a"
   license all_of: [
     "Zlib",
     any_of: ["Artistic-1.0-Perl", "LGPL-2.1-or-later"], # timidity
