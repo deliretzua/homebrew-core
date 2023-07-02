@@ -1,8 +1,8 @@
 class Elixir < Formula
   desc "Functional metaprogramming aware language built on Erlang VM"
   homepage "https://elixir-lang.org/"
-  url "https://github.com/elixir-lang/elixir/archive/v1.15.1.tar.gz"
-  sha256 "cf89434f4cf7477b929c56e16ae22bf08e64101a144911d2834a2f3c9b3ae40f"
+  url "https://github.com/elixir-lang/elixir/archive/v1.15.2.tar.gz"
+  sha256 "3cfadca57c3092ccbd3ec3f17e5eab529bbd2946f50e4941a903c55c39e3c5f5"
   license "Apache-2.0"
   head "https://github.com/elixir-lang/elixir.git", branch: "main"
 
@@ -31,6 +31,6 @@ class Elixir < Formula
   end
 
   test do
-    assert_match(%r{(compiled with Erlang/OTP 25)}, shell_output("#{bin}/elixir -v"))
+    assert_match(%r{(compiled with Erlang/OTP 26)}, shell_output("#{bin}/elixir -v"))
   end
 end
