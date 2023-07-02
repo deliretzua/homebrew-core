@@ -1,8 +1,8 @@
 class Partio < Formula
   desc "Particle library for 3D graphics"
   homepage "https://github.com/wdas/partio"
-  url "https://github.com/wdas/partio/archive/v1.14.6.tar.gz"
-  sha256 "53a5754d6b2fc3e184953d985c233118ef0ab87169f34e3aec4a7e6d20cd9bd4"
+  url "https://github.com/wdas/partio/archive/v1.17.0.tar.gz"
+  sha256 "8f72db005e7ddf1bab54ee504692c0cdfc62080f31e4f3689c99ad7531531239"
   license "BSD-3-Clause"
 
   bottle do
