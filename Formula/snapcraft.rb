@@ -417,7 +417,11 @@ class Snapcraft < Formula
     # Workaround for Xcode 14.3
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version == 1403
 
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3.11")
+    system libexec/"bin/pip", "uninstall", "--yes", "setuptools"
+    venv.pip_install resource("setuptools")
+    venv.pip_install resources.reject { |r| r.name == "setuptools" }
+    venv.pip_install_and_link buildpath
   end
 
   test do
