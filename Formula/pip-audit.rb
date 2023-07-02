@@ -9,13 +9,13 @@ class PipAudit < Formula
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e4387d84d529793b57189b617f2b3773ca9cde98d1692549cc4df461e72168a9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ea88febc586b2154bf109e5f8bfdb16e2e6386948e959380b2aae1cc1d868e26"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0e03758b7cc8759c42cd2029b481f9146b7c1ba81636955fec0bf45aa3412161"
-    sha256 cellar: :any_skip_relocation, ventura:        "1c6bcaf3f3837f1b97ce2076f745e69e01f7df8c1b1acb17ab259e4682ecafdc"
-    sha256 cellar: :any_skip_relocation, monterey:       "6cae1c03c6f068d3420a5555c16066c0818f55dc9d0c64188c336cca297fcc18"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2df71561ffc75e13e477479e0f165907d2374f1ccf1303f2677a02c1527ea141"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc633820dff9a1e69c82cb21d63cd96d1e28aca0126dca48a6e6a687724094ce"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b506f4d543b47e8b0ed98a527ac91f7bcde6abe1c67ca46f2eec54499e2e2cc0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e7314403e027a3ef1f61536c485c730b5eaf1ce8c2c0242eb99d03b0049070e4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b7369fd7be5dc0a843029d13473044c1ce2ba410b50a8f3553c2bda01c79aa70"
+    sha256 cellar: :any_skip_relocation, ventura:        "e514973eba576a16c09660c228619a9690540beeb30a636693ef2ef819573aa3"
+    sha256 cellar: :any_skip_relocation, monterey:       "01af6a1a7448dbabbd39364f111b958e2c2726e9785410962c08dec62550c369"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6af339dc887bc371f265bb8161716c772c558e61d9a12ff140f77ff1b09522be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b380bc1de67f88717f7b7e3a4ac33e32534b0916b9fc0cbeb60470d65f649414"
   end
 
   depends_on "pygments"
