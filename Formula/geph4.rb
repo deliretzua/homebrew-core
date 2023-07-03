@@ -1,8 +1,8 @@
 class Geph4 < Formula
   desc "Modular Internet censorship circumvention system to deal with national filtering"
   homepage "https://geph.io/"
-  url "https://github.com/geph-official/geph4-client/archive/refs/tags/v4.8.8.tar.gz"
-  sha256 "30f67f1bcffaed1e68d24a489b195faed8f4242bc6cfc488f5232fbf16376596"
+  url "https://github.com/geph-official/geph4-client/archive/refs/tags/v4.8.9.tar.gz"
+  sha256 "4add89de7e432842e27976995002e4f39b75b0f34a3569044f223e3b38c6bbcd"
   license "GPL-3.0-only"
   head "https://github.com/geph-official/geph4-client.git", branch: "master"
 
@@ -18,7 +18,16 @@ class Geph4 < Formula
 
   depends_on "rust" => :build
 
+  on_linux do
+    depends_on "pkg-config" => :build
+    depends_on "openssl@3"
+  end
+
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     (buildpath/".cargo").rmtree
     system "cargo", "install", *std_cargo_args
   end
