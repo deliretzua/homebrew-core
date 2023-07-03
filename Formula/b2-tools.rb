@@ -101,12 +101,14 @@ class B2Tools < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(bin/"b2", "install-autocomplete", shell_parameter_format: :arg,
-                                                                           shells:                 [:bash])
+    system bin/"b2", "install-autocomplete", "--shell", "bash"
+    bash_completion.install "#{Dir.home}/.bash_completion.d/b2"
     pkgshare.install (buildpath/"contrib").children
   end
 
   test do
+    assert_match "-F _python_argcomplete b2",
+                 shell_output("bash -c \"source #{bash_completion}/b2 && complete -p b2\"")
     ENV["LC_ALL"] = "en_US.UTF-8"
     cmd = "#{bin}/b2 authorize_account BOGUSACCTID BOGUSAPPKEY 2>&1"
     assert_match "unable to authorize account", shell_output(cmd, 1)
