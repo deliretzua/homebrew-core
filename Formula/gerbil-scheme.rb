@@ -31,6 +31,14 @@ class GerbilScheme < Formula
   uses_from_macos "libxml2"
   uses_from_macos "sqlite"
 
+  on_macos do
+    depends_on "gcc"
+  end
+
+  fails_with :clang do
+    cause "gambit-scheme is built with GCC"
+  end
+
   def install
     cd "src" do
       system "./configure", "--prefix=#{prefix}",
