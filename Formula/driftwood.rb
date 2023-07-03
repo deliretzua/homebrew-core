@@ -6,6 +6,16 @@ class Driftwood < Formula
   license "Apache-2.0"
   head "https://github.com/trufflesecurity/driftwood.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bedf93a308a393359152d89abfd3a7abe810ad639e70f76291997b846e85dd24"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bedf93a308a393359152d89abfd3a7abe810ad639e70f76291997b846e85dd24"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bedf93a308a393359152d89abfd3a7abe810ad639e70f76291997b846e85dd24"
+    sha256 cellar: :any_skip_relocation, ventura:        "45bd8ae86b45b33f711d1408048742ba539a0e5246b1328b6bcc1797f81b2413"
+    sha256 cellar: :any_skip_relocation, monterey:       "45bd8ae86b45b33f711d1408048742ba539a0e5246b1328b6bcc1797f81b2413"
+    sha256 cellar: :any_skip_relocation, big_sur:        "45bd8ae86b45b33f711d1408048742ba539a0e5246b1328b6bcc1797f81b2413"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f23e0f3345fb5ee170a3572e9c02243b531c471ff5691ca9e6121454f93594b2"
+  end
+
   depends_on "go" => :build
 
   def install
