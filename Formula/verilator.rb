@@ -1,8 +1,8 @@
 class Verilator < Formula
   desc "Verilog simulator"
   homepage "https://www.veripool.org/wiki/verilator"
-  url "https://github.com/verilator/verilator/archive/refs/tags/v5.006.tar.gz"
-  sha256 "eb4ca4157ba854bc78c86173c58e8bd13311984e964006803dd45dc289450cfe"
+  url "https://github.com/verilator/verilator/archive/refs/tags/v5.012.tar.gz"
+  sha256 "db19a7d7615b37d9108654e757427e4c3f44e6e973ed40dd5e0e80cc6beb8467"
   license any_of: ["LGPL-3.0-only", "Artistic-2.0"]
   head "https://github.com/verilator/verilator.git", branch: "master"
 
@@ -26,12 +26,25 @@ class Verilator < Formula
   uses_from_macos "perl"
   uses_from_macos "python", since: :catalina
 
+  on_macos do
+    depends_on "gcc"
+  end
+
   skip_clean "bin" # Allows perl scripts to keep their executable flag
 
   # error: specialization of 'template<class _Tp> struct std::hash' in different namespace
   fails_with gcc: "5"
 
+  # Build hangs when using Clang
+  # https://github.com/Homebrew/homebrew-core/pull/124827
+  # https://github.com/Homebrew/homebrew-core/pull/130893
+  # https://github.com/Homebrew/homebrew-core/pull/133912
+  fails_with :clang
+
   def install
+    # V3Lexer_pregen.yy.cpp:369:10: fatal error: FlexLexer.h: No such file or directory
+    ENV.append_to_cflags "-isystem /Library/Developer/CommandLineTools/usr/include" if OS.mac?
+
     system "autoconf"
     system "./configure", "--prefix=#{prefix}"
     # `make` and `make install` need to be separate for parallel builds
@@ -39,9 +52,11 @@ class Verilator < Formula
     system "make", "install"
 
     # Avoid hardcoding build-time references that may not be valid at runtime.
+    gcc = Formula["gcc"]
+    cxx = OS.mac? ? gcc.opt_bin/"g++-#{gcc.any_installed_version.major}" : "c++"
     inreplace pkgshare/"include/verilated.mk" do |s|
-      s.change_make_var! "CXX", "c++"
-      s.change_make_var! "LINK", "c++"
+      s.change_make_var! "CXX", cxx
+      s.change_make_var! "LINK", cxx
       s.change_make_var! "PERL", "perl"
       s.change_make_var! "PYTHON3", "python3"
     end
