@@ -1,9 +1,9 @@
 class Hadoop < Formula
   desc "Framework for distributed processing of large data sets"
   homepage "https://hadoop.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=hadoop/common/hadoop-3.3.4/hadoop-3.3.4.tar.gz"
-  mirror "https://archive.apache.org/dist/hadoop/common/hadoop-3.3.4/hadoop-3.3.4.tar.gz"
-  sha256 "6a483d1a0b123490ebd8df3f71b64eb39f333f78b95f090aeb58e433cbc2416d"
+  url "https://www.apache.org/dyn/closer.lua?path=hadoop/common/hadoop-3.3.6/hadoop-3.3.6.tar.gz"
+  mirror "https://archive.apache.org/dist/hadoop/common/hadoop-3.3.6/hadoop-3.3.6.tar.gz"
+  sha256 "f5195059c0d4102adaa7fff17f7b2a85df906bcb6e19948716319f9978641a04"
   license "Apache-2.0"
 
   bottle do
@@ -25,6 +25,7 @@ class Hadoop < Formula
 
   def install
     rm_f Dir["bin/*.cmd", "sbin/*.cmd", "libexec/*.cmd", "etc/hadoop/*.cmd"]
+    rm ["bin/container-executor", "bin/oom-listener", "bin/test-container-executor"]
     libexec.install %w[bin sbin libexec share etc]
 
     hadoop_env = Language::Java.overridable_java_home_env("11")
