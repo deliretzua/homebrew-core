@@ -3,10 +3,9 @@ class Vineyard < Formula
 
   desc "In-memory immutable data manager. (Project under CNCF)"
   homepage "https://v6d.io"
-  url "https://github.com/v6d-io/v6d/releases/download/v0.15.2/v6d-0.15.2.tar.gz"
-  sha256 "08e7868cde64a3966510b627c9a37c806eb6438a6fe42f0d7816e6ccf868599f"
+  url "https://github.com/v6d-io/v6d/releases/download/v0.15.3/v6d-0.15.3.tar.gz"
+  sha256 "1e4de9b9840b5b3955c27f7126b75a049312ffb6f377381dcba787d5eb257456"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     sha256                               arm64_ventura:  "b34767942e03993907f5604f2c4a8c8c130c08a81f52fbf942ebccda09e720d7"
@@ -36,12 +35,6 @@ class Vineyard < Formula
   depends_on "redis"
 
   fails_with gcc: "5"
-
-  # Fix build on macOS. Remove in the next release
-  patch do
-    url "https://github.com/v6d-io/v6d/commit/6b6f46c5c288c0bd6b65166afb13a66b3b9efb40.patch?full_index=1"
-    sha256 "deea245016bf1e016bbefb5d0ce6ee7bb5427b57d6f4f0343795dba1630dde61"
-  end
 
   def install
     python = "python3.11"
