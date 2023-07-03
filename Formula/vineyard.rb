@@ -3,19 +3,18 @@ class Vineyard < Formula
 
   desc "In-memory immutable data manager. (Project under CNCF)"
   homepage "https://v6d.io"
-  url "https://github.com/v6d-io/v6d/releases/download/v0.15.2/v6d-0.15.2.tar.gz"
-  sha256 "08e7868cde64a3966510b627c9a37c806eb6438a6fe42f0d7816e6ccf868599f"
+  url "https://github.com/v6d-io/v6d/releases/download/v0.15.3/v6d-0.15.3.tar.gz"
+  sha256 "1e4de9b9840b5b3955c27f7126b75a049312ffb6f377381dcba787d5eb257456"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256                               arm64_ventura:  "b34767942e03993907f5604f2c4a8c8c130c08a81f52fbf942ebccda09e720d7"
-    sha256                               arm64_monterey: "8e59d20d4da6fa309be1299b62edaec521abc7cf839190fabaab733b93b7502a"
-    sha256                               arm64_big_sur:  "7cfab5f5476e5185f87876228c7d12dc5b28b8de78beb83dc2f5ea0544dd42e6"
-    sha256                               ventura:        "736252be5f75c2651303e836354ce7095fc4c85665fffc79fc0a89687e20e2f0"
-    sha256                               monterey:       "cb0e702f749af0c8277838c343e9031bdec6343bf5c6b03e4daef4dda61a309f"
-    sha256                               big_sur:        "7a8d69bc10e61a6217d02a72a4ba8baf5c50e70905bf0f0eaff704e29356e682"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3455821d8ff1a322fb1457adddcfcd7c4de1add524b67a73aaa1b32856c22b4f"
+    sha256                               arm64_ventura:  "e8ed230b6320986cf8323ba9b33003af953ae6eb2193e5d01327074c34233458"
+    sha256                               arm64_monterey: "d7fc98c93801d38bd8ce83fb9d493efc5466471d2aad1a3a4bf388483537e327"
+    sha256                               arm64_big_sur:  "d095d5fb5edfc80fa0f2a034f0e720d9d261cbc68852f9f415e1783fadab3f25"
+    sha256                               ventura:        "86a6e1bbd11cf27e0fd5ba1d25cd1fad7773bd15eb35ca63834f5230e73becad"
+    sha256                               monterey:       "9d47de9adcd1adb065c50b5ed7e685622685cec480746950c1a2c1a3fbdad6ed"
+    sha256                               big_sur:        "19625162f5bd7ded3efde6397a770673538e211c76e7501640b459f923d01fa1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "51103db9544a7bacbc7fd672c9e9a7a27f74ed21727a7009a9f1fc9a599929db"
   end
 
   depends_on "cmake" => :build
@@ -36,12 +35,6 @@ class Vineyard < Formula
   depends_on "redis"
 
   fails_with gcc: "5"
-
-  # Fix build on macOS. Remove in the next release
-  patch do
-    url "https://github.com/v6d-io/v6d/commit/6b6f46c5c288c0bd6b65166afb13a66b3b9efb40.patch?full_index=1"
-    sha256 "deea245016bf1e016bbefb5d0ce6ee7bb5427b57d6f4f0343795dba1630dde61"
-  end
 
   def install
     python = "python3.11"
