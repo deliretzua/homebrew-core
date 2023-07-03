@@ -24,6 +24,14 @@ class Ne < Formula
     depends_on "coreutils" => :build
   end
 
+  # Fixes info2src.pl [364]: $commands{SYNTAX}->{"abbr"} undefined.
+  # https://github.com/vigna/ne/issues/109#issuecomment-1355675699
+  # Remove in next release
+  patch do
+    url "https://github.com/vigna/ne/commit/90ae494711a06944f0027224cf6a4b4a812d1e95.patch?full_index=1"
+    sha256 "6ea1dbe3a133e2af896640a8cfe4e3e2f412e5fa521de181781cfa8c640d796a"
+  end
+
   def install
     # Use newer env on Linux that supports -S option.
     unless OS.mac?
