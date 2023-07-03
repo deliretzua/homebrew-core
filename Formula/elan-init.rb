@@ -1,8 +1,8 @@
 class ElanInit < Formula
   desc "Lean Theorem Prover installer and version manager"
   homepage "https://github.com/leanprover/elan"
-  url "https://github.com/leanprover/elan/archive/v1.4.6.tar.gz"
-  sha256 "0f8c736f67071e7b680d0b7e57e1c614696824c6ecc8e636aea47ba26b72f523"
+  url "https://github.com/leanprover/elan/archive/v2.0.0.tar.gz"
+  sha256 "defa9272887312038e4154aea0ab7e6864eb08ac10aa815616aa06569d1b32a1"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/leanprover/elan.git", branch: "master"
 
@@ -20,7 +20,12 @@ class ElanInit < Formula
   depends_on "coreutils"
   depends_on "gmp"
 
+  uses_from_macos "curl"
   uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "pkg-config" => :build
+  end
 
   conflicts_with "lean", because: "`lean` and `elan-init` install the same binaries"
 
