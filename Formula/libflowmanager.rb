@@ -1,13 +1,14 @@
 class Libflowmanager < Formula
   desc "Flow-based measurement tasks with packet-based inputs"
-  homepage "https://research.wand.net.nz/software/libflowmanager.php"
-  url "https://research.wand.net.nz/software/libflowmanager/libflowmanager-3.0.0.tar.gz"
-  sha256 "0866adfcdc223426ba17d6133a657d94928b4f8e12392533a27387b982178373"
+  homepage "https://github.com/LibtraceTeam/libflowmanager"
+  url "https://github.com/LibtraceTeam/libflowmanager/archive/refs/tags/v3.0.0.tar.gz"
+  sha256 "ab60c9c9611488e51c14b6e3870f91a191236dced12f0ed16a58cdd2c08ee74f"
+  license "LGPL-3.0-or-later"
   revision 2
 
   livecheck do
-    url :homepage
-    regex(/href=.*?libflowmanager[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -20,15 +21,20 @@ class Libflowmanager < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5ee9bff7bfd92e6794746f74634273457b92fbb7c94934cea4c07d3f0d9c08e7"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
   depends_on "libtrace"
 
-  # Fix -flat_namespace being used on Big Sur and later.
+  # Fix: tcp_reorder.c:74:30: error: ‘UINT32_MAX’ undeclared (first use in this function)
+  # Remove in the next release
   patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
+    url "https://github.com/LibtraceTeam/libflowmanager/commit/a60a04a3b4a12faf48854b34908f9db0c4f080b0.patch?full_index=1"
+    sha256 "15d93f863374eff428c69e6e1733bdc861c831714f8d7d7c1323ebf1b9ba9a4c"
   end
 
   def install
+    system "autoreconf", "-ivf"
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make", "install"
