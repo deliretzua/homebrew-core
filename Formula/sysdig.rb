@@ -2,25 +2,16 @@ class Sysdig < Formula
   desc "System-level exploration and troubleshooting tool"
   homepage "https://sysdig.com/"
   license "Apache-2.0"
-  revision 4
 
   stable do
-    url "https://github.com/draios/sysdig/archive/refs/tags/0.31.5.tar.gz"
-    sha256 "9af98cae7c38273f7429ba0df628c9745bd92c949f444e180b9dd800af14c6dd"
+    url "https://github.com/draios/sysdig/archive/refs/tags/0.32.0.tar.gz"
+    sha256 "478c5667b0936af827b87357a785069350514fd503e3eea55e9092be7bd22853"
 
     # Update to value of FALCOSECURITY_LIBS_VERSION found in
     # https://github.com/draios/sysdig/blob/#{version}/cmake/modules/falcosecurity-libs.cmake
     resource "falcosecurity-libs" do
-      url "https://github.com/falcosecurity/libs/archive/refs/tags/0.10.5.tar.gz"
-      sha256 "2a4b37c08bec4ba81326314831f341385aff267062e8d4483437958689662936"
-
-      # Fix 'file INSTALL cannot make directory "/sysdig/userspace/libscap"'.
-      # Reported upstream at https://github.com/falcosecurity/libs/issues/995.
-      # Remove when `falcosecurity-libs` is upgraded to 0.11.0 or newer.
-      patch do
-        url "https://github.com/falcosecurity/libs/commit/73020ac4fdd1ba84b53f431e1c069049828480e9.patch?full_index=1"
-        sha256 "97fde5e4aa8e20e91ffaaca4020b7a38751d1ad95d69db02bf10c82588c6595b"
-      end
+      url "https://github.com/falcosecurity/libs/archive/refs/tags/0.11.3.tar.gz"
+      sha256 "b4f9dc8c1612f4b14207d107bce323a0684dce0dbf018e5b846177992569367b"
     end
   end
 
@@ -81,17 +72,6 @@ class Sysdig < Formula
 
   def install
     (buildpath/"falcosecurity-libs").install resource("falcosecurity-libs")
-
-    # FIXME: Workaround Apple ARM loader error due to packing.
-    # ld: warning: pointer not aligned at address 0x10017E21D
-    #   (_g_event_info + 527453 from ../../libscap/libscap.a(event_table.c.o))
-    # ld: unaligned pointer(s) for architecture arm64
-    inreplace "falcosecurity-libs/driver/ppm_events_public.h", " __attribute__((packed))", "" if Hardware::CPU.arm?
-
-    # Override hardcoded C++ standard settings.
-    inreplace %w[CMakeLists.txt falcosecurity-libs/cmake/modules/CompilerFlags.cmake],
-              /set\(CMAKE_CXX_FLAGS "(.*) -std=c\+\+0x"\)/,
-              'set(CMAKE_CXX_FLAGS "\\1")'
 
     # Keep C++ standard in sync with `abseil.rb`.
     args = %W[
