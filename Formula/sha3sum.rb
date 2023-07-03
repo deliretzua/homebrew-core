@@ -1,8 +1,8 @@
 class Sha3sum < Formula
   desc "Keccak, SHA-3, SHAKE, and RawSHAKE checksum utilities"
   homepage "https://codeberg.org/maandree/sha3sum"
-  url "https://codeberg.org/maandree/sha3sum/archive/1.2.2.tar.gz"
-  sha256 "3169789c996f9958026aba228e51431c712db02f1e2e29aba12c7a4f574f4747"
+  url "https://codeberg.org/maandree/sha3sum/archive/1.2.3.tar.gz"
+  sha256 "507140ec7d558db70861057d7099819201a866b4c5824f80963e62c10a0081b4"
   license "ISC"
 
   bottle do
@@ -18,8 +18,18 @@ class Sha3sum < Formula
 
   depends_on "libkeccak"
 
+  on_macos do
+    depends_on "gnu-sed" => :build
+  end
+
   def install
-    system "make", "install", "PREFIX=#{prefix}"
+    # Makefile requires GNU sed as of version 1.2.3
+    # See https://codeberg.org/maandree/sha3sum/issues/1
+    ENV.prepend_path "PATH", Formula["gnu-sed"].libexec/"gnubin" if OS.mac?
+
+    # GNU make builtin rules specify link flags in the wrong order
+    # See https://codeberg.org/maandree/sha3sum/issues/2
+    system "make", "--no-builtin-rules", "install", "PREFIX=#{prefix}"
     inreplace "test", "./", "#{bin}/"
     pkgshare.install "test"
   end
