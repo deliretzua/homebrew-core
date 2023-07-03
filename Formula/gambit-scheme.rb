@@ -26,6 +26,13 @@ class GambitScheme < Formula
 
   depends_on "openssl@3"
 
+  on_macos do
+    depends_on "gcc"
+  end
+
+  # Clang is slower both for compiling and for running output binaries
+  fails_with :clang
+
   def install
     args = %W[
       --prefix=#{prefix}
@@ -34,6 +41,7 @@ class GambitScheme < Formula
       --enable-single-host
       --enable-default-runtime-options=f8,-8,t8
       --enable-openssl
+      --enable-gcc-opts
     ]
 
     system "./configure", *args
