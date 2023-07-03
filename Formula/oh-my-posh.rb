@@ -4,6 +4,7 @@ class OhMyPosh < Formula
   url "https://github.com/JanDeDobbeleer/oh-my-posh/archive/v17.6.0.tar.gz"
   sha256 "7304f38b72e14ecbcceaafd42b05c160ee2efc2508424de71b1cc00177c3339e"
   license "MIT"
+  revision 1
   head "https://github.com/JanDeDobbeleer/oh-my-posh.git", branch: "main"
 
   bottle do
@@ -21,7 +22,8 @@ class OhMyPosh < Formula
   def install
     ldflags = %W[
       -s -w
-      -X main.Version=#{version}
+      -X github.com/jandedobbeleer/oh-my-posh/src/build.Version=#{version}
+      -X github.com/jandedobbeleer/oh-my-posh/src/build.Date=#{time.iso8601}
     ]
     cd "src" do
       system "go", "build", *std_go_args(ldflags: ldflags)
@@ -33,5 +35,6 @@ class OhMyPosh < Formula
 
   test do
     assert_match "oh-my-posh", shell_output("#{bin}/oh-my-posh --init --shell bash")
+    assert_match version.to_s, shell_output("#{bin}/oh-my-posh --version")
   end
 end
