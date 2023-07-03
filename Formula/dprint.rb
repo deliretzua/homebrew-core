@@ -7,13 +7,13 @@ class Dprint < Formula
   head "https://github.com/dprint/dprint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "07d72517ef360111bdb1620f1debce03bf317dbb4816c75c49de1c85fceec912"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8fe6eb40442508039fc30c5672a0102d5307c8d982cd49c7b56f8ce818dc1537"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bd03cba1befff88cc451d984864d240bb2390bfc4e9b6777869bdb4d281307c1"
-    sha256 cellar: :any_skip_relocation, ventura:        "f802268ee2c2bba2a0325b1bf385a2b5c8148993294eac0693b63c5443b4b2bd"
-    sha256 cellar: :any_skip_relocation, monterey:       "d7a7e292ad5369e8608c5efa059fdfcc7f5dca5147e77a9df4db8ba8c7379def"
-    sha256 cellar: :any_skip_relocation, big_sur:        "14b8e7d2df405c632169584dfe7a50b02bfddf8d9957f7232bca80975e8462f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6f10c1adbd1dbd356ef325e9b37c88e5cdb8acd4491213da5a543d53f6a2987f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0eb1ba9ca0b3376114abfc1518c8fcadc55a46d06a60113145eec7aba101b699"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9c619e981a18e522537ce850d3c37b0478717c1a0512b595720859b0418bc2cc"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b4d562c3cefc13f35bc322947bce8fb68fe00efc6cebb410ce8554ca3421d968"
+    sha256 cellar: :any_skip_relocation, ventura:        "3d8128134f334231c5ddba6cccba00d493424d62b2fa312f5e11a84e36e2698a"
+    sha256 cellar: :any_skip_relocation, monterey:       "e3fbda45cbf177a2e1040e90e3e582a91a1d643cb05d81560001f703882bd8ca"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f67afe63f79963e94701e0057091dbb76c108ec870ec1cbd9cf3c7740859086a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "40c9989996bbf2acbbfadb8319c7a78fca572e52365ba726c0506d5f55a92e11"
   end
 
   depends_on "rust" => :build
