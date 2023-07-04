@@ -193,8 +193,8 @@ jobs:
           gh workflow run create-replacement-pr.yml \
             --ref "$GITHUB_REF_NAME" \
             --field pull_request="$PR" \
-            --field autosquash='${{ inputs.autosquash }}' \
-            --field upload='${{ !inputs.autosquash }}' \
+            --field autosquash=${{ inputs.autosquash }} \
+            --field upload=${{ !inputs.autosquash }} \
             --field warn_on_upload_failure=false \
             --field message="$INPUT_MESSAGE"
 
