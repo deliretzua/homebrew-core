@@ -6,6 +6,16 @@ class Proxygen < Formula
   license "BSD-3-Clause"
   head "https://github.com/facebook/proxygen.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "9250a18b47fa85134a11362f73b6fec19c7113fb471a64f10331724c9300ca89"
+    sha256 cellar: :any,                 arm64_monterey: "3c45a205332845c51a3463531134cc6678aa0c3d89b3443939c99f846ce8ab0a"
+    sha256 cellar: :any,                 arm64_big_sur:  "379497875b0a9c6bcdf640344ac2ad0d879c381f973b9544981940710e73fb86"
+    sha256 cellar: :any,                 ventura:        "e86937f9edbb869fcf3f51cd3339e43f4ff5fb9b67f7bfe02d9b09f6731fa29b"
+    sha256 cellar: :any,                 monterey:       "7bf156272badf30933f94cf478caa7a541306ea3519c1a1d1c92e4ef9a96df41"
+    sha256 cellar: :any,                 big_sur:        "0a057eb37bbcf72c55e4f66e99200e11f07c04388b1ba7b954412c05ebcf21e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "06d20ff81f873b58fa1dacb0d2ec5c87b804d65fea2cedaec7177cb5a174c38f"
+  end
+
   depends_on "cmake" => :build
   depends_on "boost"
   depends_on "fizz"
