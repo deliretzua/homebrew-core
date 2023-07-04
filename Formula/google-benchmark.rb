@@ -1,8 +1,8 @@
 class GoogleBenchmark < Formula
   desc "C++ microbenchmark support library"
   homepage "https://github.com/google/benchmark"
-  url "https://github.com/google/benchmark/archive/v1.8.0.tar.gz"
-  sha256 "ea2e94c24ddf6594d15c711c06ccd4486434d9cf3eca954e2af8a20c88f9f172"
+  url "https://github.com/google/benchmark/archive/v1.8.1.tar.gz"
+  sha256 "e9ff65cecfed4f60c893a1e8a1ba94221fad3b27075f2f80f47eb424b0f8c9bd"
   license "Apache-2.0"
   head "https://github.com/google/benchmark.git", branch: "main"
 
@@ -19,9 +19,13 @@ class GoogleBenchmark < Formula
   depends_on "cmake" => :build
 
   def install
-    ENV.cxx11
-    system "cmake", "-DBENCHMARK_ENABLE_GTEST_TESTS=OFF", *std_cmake_args
-    system "make", "install"
+    args = %w[-DBENCHMARK_ENABLE_GTEST_TESTS=OFF]
+    # Workaround for the build misdetecting our compiler features because of superenv.
+    args << "-DHAVE_CXX_FLAG_WTHREAD_SAFETY=OFF" if OS.linux?
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
