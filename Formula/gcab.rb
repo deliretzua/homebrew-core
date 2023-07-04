@@ -1,8 +1,8 @@
 class Gcab < Formula
   desc "Windows installer (.MSI) tool"
   homepage "https://wiki.gnome.org/msitools"
-  url "https://download.gnome.org/sources/gcab/1.5/gcab-1.5.tar.xz"
-  sha256 "46bf7442491faa4148242b9ec2a0786a5f6e9effb1b0566e5290e8cc86f00f0c"
+  url "https://download.gnome.org/sources/gcab/1.6/gcab-1.6.tar.xz"
+  sha256 "2f0c9615577c4126909e251f9de0626c3ee7a152376c15b5544df10fc87e560b"
   license "LGPL-2.1-or-later"
 
   # We use a common regex because gcab doesn't use GNOME's "even-numbered minor
@@ -30,12 +30,6 @@ class Gcab < Formula
   depends_on "pkg-config" => :build
   depends_on "vala" => :build
   depends_on "glib"
-
-  # build patch for git version check, remove in next version
-  patch do
-    url "https://github.com/GNOME/gcab/commit/ad0baea50359c1978a9224ee60bf98d97bfb991f.patch?full_index=1"
-    sha256 "e25a2f6651c7096c553c9e57a086140e666169a6520a55f7d67ccabd1c0190be"
-  end
 
   def install
     system "meson", "setup", "build", "-Ddocs=false", "-Dtests=false", *std_meson_args
