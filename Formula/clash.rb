@@ -19,7 +19,12 @@ class Clash < Formula
   depends_on "shadowsocks-libev" => :test
 
   def install
-    system "go", "build", *std_go_args
+    ldflags = %W[
+      -s -w -buildid=
+      -X "github.com/Dreamacro/clash/constant.Version=#{version}"
+      -X "github.com/Dreamacro/clash/constant.BuildTime=#{time.iso8601}"
+    ]
+    system "go", "build", *std_go_args(ldflags: ldflags)
   end
 
   service do
@@ -30,6 +35,8 @@ class Clash < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/clash -v")
+
     ss_port = free_port
     (testpath/"shadowsocks-libev.json").write <<~EOS
       {
