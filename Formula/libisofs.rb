@@ -1,9 +1,15 @@
 class Libisofs < Formula
   desc "Library to create an ISO-9660 filesystem with various extensions"
   homepage "https://dev.lovelyhq.com/libburnia/libisofs"
-  url "http://files.libburnia-project.org/releases/libisofs-1.5.4.tar.gz"
-  sha256 "aaa0ed80a7501979316f505b0b017f29cba0ea5463b751143bad2c360215a88e"
+  url "https://files.libburnia-project.org/releases/libisofs-1.5.6.pl01.tar.gz"
+  version "1.5.6"
+  sha256 "ac1fd338d641744ca1fb1567917188b79bc8c2506832dd56885fec98656b9f25"
   license "GPL-2.0-or-later"
+
+  livecheck do
+    url "https://files.libburnia-project.org/releases/"
+    regex(/href=.*?libisofs[._-]v?(\d+(?:\.\d+)+)(?:[._-]pl\d+)?\.t/i)
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "860314162c48e96a989ba3fb787d2049ca42cfbfbf0b5300efe1dc0fd78868a9"
