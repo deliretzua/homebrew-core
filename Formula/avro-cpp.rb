@@ -1,11 +1,10 @@
 class AvroCpp < Formula
   desc "Data serialization system"
   homepage "https://avro.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=avro/avro-1.11.0/cpp/avro-cpp-1.11.0.tar.gz"
-  mirror "https://archive.apache.org/dist/avro/avro-1.11.0/cpp/avro-cpp-1.11.0.tar.gz"
-  sha256 "ef70ca8a1cfeed7017dcb2c0ed591374deab161b86be6ca4b312bc24cada9c56"
+  url "https://www.apache.org/dyn/closer.lua?path=avro/avro-1.11.2/cpp/avro-cpp-1.11.2.tar.gz"
+  mirror "https://archive.apache.org/dist/avro/avro-1.11.2/cpp/avro-cpp-1.11.2.tar.gz"
+  sha256 "4abf733b886e9469aace111573904b0d7d15b38b245adce29d5dfc4666a3c90c"
   license "Apache-2.0"
-  revision 4
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "d28e6e8ad94ce88d639e2bf47c8380ca870bafb12765c8c8864574ad7327f3f6"
@@ -22,8 +21,9 @@ class AvroCpp < Formula
   depends_on "boost"
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
