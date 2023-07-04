@@ -1,8 +1,8 @@
 class Cjson < Formula
   desc "Ultralightweight JSON parser in ANSI C"
   homepage "https://github.com/DaveGamble/cJSON"
-  url "https://github.com/DaveGamble/cJSON/archive/v1.7.15.tar.gz"
-  sha256 "5308fd4bd90cef7aa060558514de6a1a4a0819974a26e6ed13973c5f624c24b2"
+  url "https://github.com/DaveGamble/cJSON/archive/v1.7.16.tar.gz"
+  sha256 "b0ca16e9f4c22b54482a3bfc14b64b50d8f2e305ee6014b0b3d3d9e700934f8d"
   license "MIT"
 
   bottle do
@@ -20,10 +20,14 @@ class Cjson < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-DENABLE_CJSON_UTILS=On", "-DENABLE_CJSON_TEST=Off",
-                    "-DBUILD_SHARED_AND_STATIC_LIBS=On", ".",
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DENABLE_CJSON_UTILS=ON",
+                    "-DENABLE_CJSON_TEST=Off",
+                    "-DBUILD_SHARED_AND_STATIC_LIBS=ON",
+                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
                     *std_cmake_args
-    system "make", "install"
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
