@@ -1,8 +1,8 @@
 class Openvino < Formula
   desc "Open Visual Inference And Optimization toolkit for AI inference"
   homepage "https://docs.openvino.ai"
-  url "https://github.com/openvinotoolkit/openvino/archive/refs/tags/2023.0.0.tar.gz"
-  sha256 "f2787851d9012813b2bbc888b5bb01c5f6f0ab222783acfb8e1e55ea41d0026b"
+  url "https://github.com/openvinotoolkit/openvino/archive/refs/tags/2023.0.1.tar.gz"
+  sha256 "c14cb22f5191a75ea15659c62baceb71333dc9ecf62139ce513f3e81e4544651"
   license "Apache-2.0"
   head "https://github.com/openvinotoolkit/openvino.git", branch: "master"
 
@@ -24,8 +24,9 @@ class Openvino < Formula
   depends_on "cmake" => [:build, :test]
   depends_on "flatbuffers" => :build
   depends_on "pkg-config" => [:build, :test]
-  depends_on "protobuf" => :build
+  depends_on "protobuf@21" => :build
   depends_on "python@3.11" => :build
+  depends_on "xbyak" => :build
   depends_on "pugixml"
   depends_on "snappy"
   depends_on "tbb"
@@ -55,16 +56,6 @@ class Openvino < Formula
     sha256 "c316680efbb5dd3ac4e10bb8cea345cf26a6a25ebc22418f8f0b8ca931a550e9"
   end
 
-  resource "ittapi" do
-    url "https://github.com/intel/ittapi/archive/refs/tags/v3.24.0.tar.gz"
-    sha256 "36c42d3f2446ddfaa2d7dfa02dfaa79615933f1a68a72d7e4f1d70de7b56e2c9"
-  end
-
-  resource "xbyak" do
-    url "https://github.com/herumi/xbyak/archive/refs/tags/v6.69.tar.gz"
-    sha256 "7eb64e2c18527824402b16f26c6118ba82f40f57fe6e3ab05c6e2883246a04f1"
-  end
-
   resource "onednn_cpu" do
     url "https://github.com/openvinotoolkit/oneDNN/archive/1c7bfabf1b26e6fb95fea1613e1d3d2bef1f6b54.tar.gz"
     sha256 "52921b3efab33d1710971c67318e8c00ee102b6369e4e9cea8fdf91a1d68e38e"
@@ -77,16 +68,17 @@ class Openvino < Formula
 
   def install
     # Remove git cloned 3rd party to make sure formula dependencies are used
-    dependencies = %w[thirdparty/ade thirdparty/ittapi
-                      thirdparty/xbyak thirdparty/onnx/onnx
+    dependencies = %w[thirdparty/ade thirdparty/ocl
+                      thirdparty/xbyak thirdparty/gflags
+                      thirdparty/ittapi thirdparty/snappy
+                      thirdparty/pugixml thirdparty/protobuf
+                      thirdparty/onnx/onnx thirdparty/flatbuffers
                       src/plugins/intel_cpu/thirdparty/onednn
                       src/plugins/intel_gpu/thirdparty/onednn_gpu
                       src/plugins/intel_cpu/thirdparty/ComputeLibrary]
     dependencies.each { |d| (buildpath/d).rmtree }
 
     resource("ade").stage buildpath/"thirdparty/ade"
-    resource("ittapi").stage buildpath/"thirdparty/ittapi/ittapi"
-    resource("xbyak").stage buildpath/"thirdparty/xbyak"
     resource("onnx").stage buildpath/"thirdparty/onnx/onnx"
     resource("onednn_cpu").stage buildpath/"src/plugins/intel_cpu/thirdparty/onednn"
 
