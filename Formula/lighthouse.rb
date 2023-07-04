@@ -1,8 +1,8 @@
 class Lighthouse < Formula
   desc "Rust Ethereum 2.0 Client"
   homepage "https://github.com/sigp/lighthouse"
-  url "https://github.com/sigp/lighthouse/archive/refs/tags/v4.2.0.tar.gz"
-  sha256 "280871ad806a210755e6f4dac36a0ca4e5e1cee4612de08c3b472667ab91ecdf"
+  url "https://github.com/sigp/lighthouse/archive/refs/tags/v4.3.0.tar.gz"
+  sha256 "ffb7260e737b32adb4ca61fa6067da741b5b4bae7c7221057983407b424ab09b"
   license "Apache-2.0"
 
   livecheck do
@@ -27,8 +27,17 @@ class Lighthouse < Formula
   uses_from_macos "llvm" => :build
   uses_from_macos "zlib"
 
+  on_linux do
+    depends_on "pkg-config" => :build
+    depends_on "openssl@3"
+  end
+
   def install
     ENV["PROTOC_NO_VENDOR"] = "1"
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     system "cargo", "install", "--no-default-features", *std_cargo_args(path: "./lighthouse")
   end
 
