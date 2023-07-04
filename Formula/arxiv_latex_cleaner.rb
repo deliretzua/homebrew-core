@@ -9,14 +9,13 @@ class ArxivLatexCleaner < Formula
   head "https://github.com/google-research/arxiv-latex-cleaner.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "13d4bc2fb0b6417dd149e8dc2bb053ba0846d67d959aae6f8c9287321368543c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "024da2f783e05aa704cba94f75160ad86253194cdf87f738a849aa375df907d8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "22e05dffefb48066a17e4ed6fb63436f454341b5fcc50b33fc37bde2126639d7"
-    sha256 cellar: :any_skip_relocation, ventura:        "0891d0f0ea62f286f90890310d3c1b8c4d10af0fc07daf9e5e1bf269e72aaf57"
-    sha256 cellar: :any_skip_relocation, monterey:       "93c637a795f3605087dc3fc5f968f2f026560628660221f51e715da240c85b3e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5be54dbb295f50ee167f2f200b1a50b9a52ed91c09b365ed42efea1258b18938"
-    sha256 cellar: :any_skip_relocation, catalina:       "cad55a024117b20d31f8ea334f2c2c8260be8c95d31732731edce3c08062ccb3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52f9f057e82c56d4a251cd4d61485becb83e4a0ae4317fbfaf3bdfe46fe420b5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "59e1f7f2b1fd4a108cd90d8f37e4f25df256f1497d33a06ac7dd1816feca76ea"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "443cd9aa0aa89848be97e53875f750350038a51ab823054eb4d2e2d045564388"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e553bbb1f502cd3af77fc1f47f74e12f346d8c13bfc498a7b5dad91ec4d5cd9f"
+    sha256 cellar: :any_skip_relocation, ventura:        "e2c836ed2b9e98abf78c749bb7063f4b7d82f70aa894a4a3fc7e127ccbb75f22"
+    sha256 cellar: :any_skip_relocation, monterey:       "ec7d1e9001dc717e0e675251fcea6dc279e76c0ab33bb6cc49e05bf5f2021ce7"
+    sha256 cellar: :any_skip_relocation, big_sur:        "f3e4be0d6ce58369194aadbd41d7b7b01499fefc0cd96ecf5cb0953074152b23"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f1d41f50ae1732dbbaf453074307d963e5cc787a7716d50d6469b524b2e4c07"
   end
 
   depends_on "pillow"
