@@ -1,9 +1,9 @@
 class AvroC < Formula
   desc "Data serialization system"
   homepage "https://avro.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=avro/avro-1.11.0/c/avro-c-1.11.0.tar.gz"
-  mirror "https://archive.apache.org/dist/avro/avro-1.11.0/c/avro-c-1.11.0.tar.gz"
-  sha256 "0652590a54ad8e4aa58a2b9ff1f4ce71a64a41b0a05c4529d1c518c61e760643"
+  url "https://www.apache.org/dyn/closer.lua?path=avro/avro-1.11.2/c/avro-c-1.11.2.tar.gz"
+  mirror "https://archive.apache.org/dist/avro/avro-1.11.2/c/avro-c-1.11.2.tar.gz"
+  sha256 "9f1f99a97b26712d2d43fe7e724f19d7dbdd5cef35478bae46a1920df20457f5"
   license "Apache-2.0"
 
   bottle do
@@ -26,12 +26,19 @@ class AvroC < Formula
   uses_from_macos "zlib"
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make", "install"
-    pkgshare.install "tests/test_avro_1087"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
-    assert shell_output("#{pkgshare}/test_avro_1087")
+    resource "homebrew-example" do
+      url "https://raw.githubusercontent.com/apache/avro/88538e9f1d6be236ce69ea2e0bdd6eed352c503e/lang/c/examples/quickstop.c"
+      sha256 "8108fda370afb0e7be4e213d4e339bd2aabc1801dcd0b600380d81c09e5ff94f"
+    end
+
+    testpath.install resource("homebrew-example")
+    system ENV.cc, "quickstop.c", "-o", "test", "-I#{include}", "-L#{lib}", "-lavro"
+    system "./test", ">> /dev/null"
   end
 end
