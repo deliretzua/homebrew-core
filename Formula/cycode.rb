@@ -7,6 +7,16 @@ class Cycode < Formula
   sha256 "d6e3978afe0494079a049c87523024b50aa8b06ea43e5faaae7b81fd4a3b1f78"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "094a89acbd54b2aa552c3ff598fb9c70ae6d020c05dfb1344ff1611ba6f1ad3b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6c5e18ae56452925a545329219f04fea5603c033f7a6131a1e8a12a2158fafa7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "80cf68c5ed63b387072fb0f7b82d944b8f4e42ac3889688275b0ae9b3ccbfdb7"
+    sha256 cellar: :any_skip_relocation, ventura:        "e25e1e4cdcf115cb6b69bf3a782b9e00a555f6ed4e7e43be27b639ce012a01ca"
+    sha256 cellar: :any_skip_relocation, monterey:       "1fbb040276061ac5a222a4c5324e21d09d3de291c85cb1b0b1a6929ceac34ba8"
+    sha256 cellar: :any_skip_relocation, big_sur:        "36915cdfdf58d5459f1cf40c25a2182381e0ebaf3683d996779db5340f019b4d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a16b7194cb855d219e8a41e161f5ccbee8e5baf62aacb372f44fceba62d22710"
+  end
+
   depends_on "python@3.11"
   depends_on "pyyaml"
   depends_on "six"
