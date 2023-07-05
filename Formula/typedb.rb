@@ -6,7 +6,7 @@ class Typedb < Formula
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0745558065baab647d8088660dcd4d60e2a9a01000847459a252fc87a60665f5"
+    sha256 cellar: :any_skip_relocation, all: "1fcf643c8a4cfb17f345dba9aa7ba13afe78da67b372e7da8b0dff89c71de5d8"
   end
 
   depends_on "openjdk"
