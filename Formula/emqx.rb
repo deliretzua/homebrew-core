@@ -1,10 +1,10 @@
 class Emqx < Formula
   desc "MQTT broker for IoT"
   homepage "https://www.emqx.io/"
-  url "https://github.com/emqx/emqx/archive/refs/tags/v5.1.0.tar.gz"
-  sha256 "49d517e0cfcaab1ed27931fb0b32fdf1e6d087cd48df3eb3fb512b8570af6234"
+  # TODO: Check if we can use unversioned `erlang` at version bump
+  url "https://github.com/emqx/emqx/archive/refs/tags/v5.1.1.tar.gz"
+  sha256 "c77baede35ced8e5bc59ea5e4cd63878f4a5c19b3e31f67f51fbe7bf00815f76"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/emqx/emqx.git", branch: "master"
 
   bottle do
@@ -22,7 +22,7 @@ class Emqx < Formula
   depends_on "ccache"    => :build
   depends_on "cmake"     => :build
   depends_on "coreutils" => :build
-  depends_on "erlang"    => :build
+  depends_on "erlang@25" => :build
   depends_on "freetds"   => :build
   depends_on "libtool"   => :build
   depends_on "openssl@3"
