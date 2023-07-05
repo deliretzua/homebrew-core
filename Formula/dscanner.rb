@@ -8,13 +8,13 @@ class Dscanner < Formula
   head "https://github.com/dlang-community/D-Scanner.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b103273d63236f1b0248e4ae49cc8222d20aaa0a1caea7868b9fc534c6ebb88d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6aa9de194ec0c6fc7eeaebc1b248246d2b6a277a90a90a750d15286b304696dc"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e29961bc77ba4286bf0639b6d5820c1e6f2eaceed7acb8d33c1d745281ac20b7"
-    sha256 cellar: :any_skip_relocation, ventura:        "42ef416a861cc5c3417280a2e9a174443f1e6d7f8b3643b10239d86417f33289"
-    sha256 cellar: :any_skip_relocation, monterey:       "f536efe9c19e9487d576cd25a2c6327c5aacf2fb88e003941e5487b130b48448"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1cdfbe7edce737e08e428c5cb8617c44b5a8ec433a51406654f0c4865a1f9a56"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f621b9b86043c107ff01833bc027bfa6e1a5f160fd987696dc85de4ca80441ce"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4859c5a899702bec8b2e529a658df33c4753e291661ac3ac5ae10f97ae570c53"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "b87d68e91e9450a2b2fafd051ad2928750f76aaed96a33c734f881658d1ce343"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9d9ac2f2c3dd601f634aa3e346b4f915c89b100fc2599aa3067e20bdba209c1f"
+    sha256 cellar: :any_skip_relocation, ventura:        "d1a223d1bb4ad2ee8efb859225190a26dcf4f337ded8267369950794eb78b443"
+    sha256 cellar: :any_skip_relocation, monterey:       "5b2d4dd7320c59fc87846a54279fd5600ef38551f9fe1ec1fbedfb6dc4cb782c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "66bcc4f5b3a0fb8a4a7816a400e71e08be559133502b57626c28f6d4a34766a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e374516d88766b4073fb17a78eb0ca48c105698e5061376f9ff2bbcf6a9ca21"
   end
 
   on_arm do
