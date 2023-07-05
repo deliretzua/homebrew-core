@@ -11,18 +11,13 @@ class Log4cpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "4249d830f5c4e58d77d76a7cdf0eb84cd02a3c1150606e7795022ca8ba4b7abd"
-    sha256 cellar: :any,                 arm64_monterey: "7ef34de1a9e3603252d924f37dc222b427287b26843603ca329bc395d3a0c4d2"
-    sha256 cellar: :any,                 arm64_big_sur:  "6d5fcedb4afd7681c3ed5e6e65b300487527789144183e854d846a335c26b545"
-    sha256 cellar: :any,                 ventura:        "60b1a66382660e797f3bb510043edc25dcab2b3512f1c9d11d2042d0980ae319"
-    sha256 cellar: :any,                 monterey:       "8a710781fbbb6e0bf127e73411aefc490e63f2e17830f269039e0d865601974c"
-    sha256 cellar: :any,                 big_sur:        "ff54331ebc21d9e5bcc75faf5af6750ce944485bd6cac293bd879c04c762dc7c"
-    sha256 cellar: :any,                 catalina:       "3e08cff5384ae60222e67b63aadfda07534daa4d962b66167c5ffd8c1a55edf7"
-    sha256 cellar: :any,                 mojave:         "0e0950a9b99a406b035e13c8acae673ce190a436920940d8150abe0c90cf1e84"
-    sha256 cellar: :any,                 high_sierra:    "a80304325ab0f551054b169320c6f726f1c8a78d56eb56e7f14793c0f8cc8836"
-    sha256 cellar: :any,                 sierra:         "db55c3b9dff2f2248d96c71672cb6032efc16a4803ce12dd52c278bd14b9abc8"
-    sha256 cellar: :any,                 el_capitan:     "dee0bf8b96b1d0de3beb5f2d23cf1e868e6dfd3ec9814e2c4c5eab21432d73e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa93ce1f4cce44107a131667b2350814eb79a762c63c8bd4f35d283f21a25a10"
+    sha256 cellar: :any,                 arm64_ventura:  "f742bcb2025862fa184116e5c431aab3da949bad797a8d4f9192549c154277a2"
+    sha256 cellar: :any,                 arm64_monterey: "2e2b6848ed9ffa3265133841967798d4ffd0d7ef8c0d19ebcbdc92c828c00749"
+    sha256 cellar: :any,                 arm64_big_sur:  "0aeb4d8a835632b533aae93a869073f981e236484cf6de0d909e12c72bd6fcd0"
+    sha256 cellar: :any,                 ventura:        "a91172e8e2ce71ce7f02272721f010923fbaa860922b516e5f5ab27ea6a7e6a7"
+    sha256 cellar: :any,                 monterey:       "68f55e83feff7de8701a8f995c33468cc267b238808b195c4929a32430e1fa35"
+    sha256 cellar: :any,                 big_sur:        "70a13ba2b47676203ab6affca7cecd19df2568c59df1bf6886d94bedc2d57a75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cce5ef111899b449de8806d1ba7a63ad3f841219c7b0d8734e94a18ee67e8983"
   end
 
   # Fix -flat_namespace being used on Big Sur and later.
