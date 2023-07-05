@@ -3,8 +3,8 @@ class Dstack < Formula
 
   desc "ML workflow orchestration system designed for reproducibility and collaboration"
   homepage "https://docs.dstack.ai/"
-  url "https://files.pythonhosted.org/packages/25/1b/7a6bc016ddacad309a6dbbea02a9b77c75accfd7ffe1988ea15dab13faaf/dstack-0.10.2.tar.gz"
-  sha256 "e78920d6af418edd72554341f7f7fc0aef1c8f9ea17c908f61c2676593d888ee"
+  url "https://files.pythonhosted.org/packages/c1/e1/b453b27a25e377d66382c81b0385689d823820bf178fa8ceebd5ed756ecd/dstack-0.10.3.tar.gz"
+  sha256 "ca29b7fc9fe95ba41ab0594d8833d7a18d5e2f7641f0b693cdecae056e9b3945"
   license "MPL-2.0"
 
   bottle do
@@ -163,13 +163,13 @@ class Dstack < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/ad/1d/f52ca279c90b1846fdcf1485d8cb82fe2109c71569827257a227cfe34354/boto3-1.26.164.tar.gz"
-    sha256 "17c58a9e1ba4e9aea1267d6bafc87057687458c3a4f1ef297f67b84dcb463233"
+    url "https://files.pythonhosted.org/packages/8b/0d/60483004c7ef78aba8784a169813f4f84252e5056574b193f4522ab6af76/boto3-1.27.0.tar.gz"
+    sha256 "908f9c277325d68963dfcfce963a05336f0eb19505fc239c0ab9d01f4cba0296"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/2f/44/acf71302e99632e43f4b032e41e997dc9aaa03dd6cd3160a2bfbf344890c/botocore-1.29.164.tar.gz"
-    sha256 "6d23d9448953390b621a9e34169ff1d78ddd7e10921a2dcaa738f84ca2172a36"
+    url "https://files.pythonhosted.org/packages/a9/88/1793af4c5a347bece3de5f8d63237e88428c0c535b488d8820724b1b3a37/botocore-1.30.0.tar.gz"
+    sha256 "b9cb5b78a289f0615a48d85066f01869029aa41b95993f2c0c55003df037c23f"
   end
 
   resource "cachetools" do
@@ -203,8 +203,8 @@ class Dstack < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/eb/e4/35797cc07d279206e6b61ff77333b4a50637204c77141f89c829d7318fac/fastapi-0.98.0.tar.gz"
-    sha256 "0d3c18886f652038262b5898fec6b09f4ca92ee23e9d9b1d1d24e429f84bf27b"
+    url "https://files.pythonhosted.org/packages/22/93/42b9998a6e28eaee90724db439e27a66b7dc6a5b9e85499add1e042141e2/fastapi-0.99.1.tar.gz"
+    sha256 "ac78f717cd80d657bd183f94d33b9bda84aa376a46a9dab513586b8eef1dc6fc"
   end
 
   resource "file-read-backwards" do
@@ -443,8 +443,8 @@ class Dstack < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/eb/84/9b0a0e2d931fc9bdb32e6905076714f9592f9b20de03c90fd0f65b3ab063/pydantic-1.10.10.tar.gz"
-    sha256 "3b8d5bd97886f9eb59260594207c9f57dce14a6f869c6ceea90188715d29921a"
+    url "https://files.pythonhosted.org/packages/cf/01/e8a380dc6e92a76113f034c58c9ffdbd115753e9b944ddf5d2dbe862f248/pydantic-1.10.11.tar.gz"
+    sha256 "f66d479cf7eb331372c470614be6511eae96f1f120344c25f3f9bb59fb1b5528"
   end
 
   resource "pygtail" do
@@ -498,8 +498,8 @@ class Dstack < Formula
   end
 
   resource "rich-argparse" do
-    url "https://files.pythonhosted.org/packages/88/53/bd5de3cedaed38e6aa67f1941bda97489f2b9f88b50e6419420e71dc0feb/rich_argparse-1.1.1.tar.gz"
-    sha256 "7bf0064213a2222b7068270a8892f5dccde89eb5be9a0d8ae67bb2ebbbfafbbc"
+    url "https://files.pythonhosted.org/packages/91/ac/789c1a81ac85f70cf17711e0fda2e0d27674d30b8addbfb36e92188a4f41/rich_argparse-1.2.0.tar.gz"
+    sha256 "bf17fe00603ad90dbb94cd3a6a27a3a0051df6b3363fb1b46300398bb83740ea"
   end
 
   resource "rsa" do
