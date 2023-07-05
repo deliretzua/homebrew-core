@@ -29,9 +29,8 @@ class Inadyn < Formula
   def install
     mkdir_p buildpath/"inadyn/m4"
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system "./configure", "--disable-dependency-tracking",
+    system "./configure", *std_configure_args,
                           "--disable-silent-rules",
-                          "--prefix=#{prefix}",
                           "--sysconfdir=#{etc}",
                           "--localstatedir=#{var}"
     system "make", "install"
