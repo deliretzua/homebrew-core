@@ -28,6 +28,7 @@ class GoogleAuthenticatorLibpam < Formula
   end
 
   def install
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{Formula["qrencode"].lib}"
     system "./bootstrap.sh"
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
