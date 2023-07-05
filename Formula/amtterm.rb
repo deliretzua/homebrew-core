@@ -1,8 +1,8 @@
 class Amtterm < Formula
   desc "Serial-over-LAN (sol) client for Intel AMT"
   homepage "https://www.kraxel.org/blog/linux/amtterm/"
-  url "https://www.kraxel.org/releases/amtterm/amtterm-1.6.tar.gz"
-  sha256 "1242cea467827aa1e2e91b41846229ca0a5b3f3e09260b0df9d78dc875075590"
+  url "https://www.kraxel.org/releases/amtterm/amtterm-1.7.tar.gz"
+  sha256 "8c58b76b3237504d751bf3588fef25117248a0569523f0d86deaf696d14294d4"
   license "GPL-2.0-or-later"
   head "https://git.kraxel.org/git/amtterm/", branch: "master", using: :git
 
@@ -25,14 +25,13 @@ class Amtterm < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8508f3178996f322def37aa3bdce2573379e73682c5393fb6e952f18fdfbc22c"
   end
 
-  on_linux do
-    depends_on "gtk+3"
-    depends_on "vte3"
-  end
+  depends_on "gtk+3"
+  depends_on :linux
+  depends_on "vte3"
 
   resource "SOAP::Lite" do
-    url "https://cpan.metacpan.org/authors/id/P/PH/PHRED/SOAP-Lite-1.11.tar.gz"
-    sha256 "e4dee589ef7d66314b3dc956569b2541e0b917e834974e078c256571b6011efe"
+    url "https://cpan.metacpan.org/authors/id/P/PH/PHRED/SOAP-Lite-1.27.tar.gz"
+    sha256 "e359106bab1a45a16044a4c2f8049fad034e5ded1517990bc9b5f8d86dddd301"
   end
 
   def install
@@ -44,15 +43,17 @@ class Amtterm < Formula
       system "make", "install"
     end
 
-    # On Linux, @echo -e accidentally prepends "-e" to the beginning of Make.config
+    # @echo -e accidentally prepends "-e" to the beginning of Make.config
     # which causes the build to fail with an "empty variable" error.
-    inreplace "mk/Autoconf.mk", "@echo -e", "@echo" unless OS.mac?
+    inreplace "mk/Autoconf.mk", "@echo -e", "@echo"
 
     system "make", "prefix=#{prefix}", "install"
     bin.env_script_all_files(libexec+"bin", PERL5LIB: ENV["PERL5LIB"])
   end
 
   test do
-    system "#{bin}/amtterm", "-h"
+    assert_match "Connection refused", shell_output("#{bin}/amtterm 127.0.0.1 -u brew -p brew 2>&1", 1)
+
+    assert_match version.to_s, shell_output("#{bin}/amtterm -v 2>&1", 1)
   end
 end
