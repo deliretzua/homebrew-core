@@ -3,8 +3,8 @@ require "language/node"
 class Appium < Formula
   desc "Automation for Apps"
   homepage "https://appium.io/"
-  url "https://registry.npmjs.org/appium/-/appium-1.22.3.tgz"
-  sha256 "74d9fbac66e08d9c3b0fde7f4deaa42e1f070167f0508e2891fad28558147fd6"
+  url "https://registry.npmjs.org/appium/-/appium-2.0.0.tgz"
+  sha256 "15147867e18d47ed61e605ec4f62bd937bc9d6a43608fc67f0953cd02fb6cd61"
   license "Apache-2.0"
   head "https://github.com/appium/appium.git", branch: "master"
 
@@ -20,6 +20,10 @@ class Appium < Formula
   end
 
   depends_on "node"
+
+  on_linux do
+    depends_on "vips"
+  end
 
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec), "--chromedriver-skip-install"
@@ -42,8 +46,7 @@ class Appium < Formula
   end
 
   test do
-    output = shell_output("#{bin}/appium --show-config 2>&1")
-    assert_match version.to_str, output
+    assert_match version.to_s, shell_output("#{bin}/appium --version")
 
     port = free_port
     begin
