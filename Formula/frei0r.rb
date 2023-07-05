@@ -1,14 +1,9 @@
 class Frei0r < Formula
   desc "Minimalistic plugin API for video effects"
   homepage "https://frei0r.dyne.org/"
-  url "https://files.dyne.org/frei0r/releases/frei0r-plugins-1.8.0.tar.gz"
-  sha256 "45a28655caf057227b442b800ca3899e93490515c81e212d219fdf4a7613f5c4"
+  url "https://github.com/dyne/frei0r/archive/refs/tags/v2.3.0.tar.gz"
+  sha256 "00aa65a887445c806b2a467abc3ccc4b0855f7eaf38ed2011a1ff41e74844fa0"
   license "GPL-2.0-or-later"
-
-  livecheck do
-    url "https://files.dyne.org/frei0r/releases/"
-    regex(/href=.*?frei0r-plugins[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "40373a9832b28d15c8ffaa880b775882c25b0ab93ab31ae19ec2f2a27799731b"
@@ -26,12 +21,15 @@ class Frei0r < Formula
   def install
     # Disable opportunistic linking against Cairo
     inreplace "CMakeLists.txt", "find_package (Cairo)", ""
-    cmake_args = std_cmake_args + %w[
+
+    args = %w[
       -DWITHOUT_OPENCV=ON
       -DWITHOUT_GAVL=ON
     ]
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
