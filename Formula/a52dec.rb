@@ -1,13 +1,13 @@
 class A52dec < Formula
   desc "Library for decoding ATSC A/52 streams (AKA 'AC-3')"
-  homepage "https://liba52.sourceforge.io/"
-  url "https://liba52.sourceforge.io/files/a52dec-0.7.4.tar.gz"
-  sha256 "a21d724ab3b3933330194353687df82c475b5dfb997513eef4c25de6c865ec33"
+  homepage "https://git.adelielinux.org/community/a52dec/"
+  url "https://distfiles.adelielinux.org/source/a52dec/a52dec-0.8.0.tar.gz"
+  sha256 "03c181ce9c3fe0d2f5130de18dab9bd8bc63c354071515aa56983c74a9cffcc9"
   license "GPL-2.0-or-later"
 
   livecheck do
-    url "https://liba52.sourceforge.io/downloads.html"
-    regex(/href=.*?a52dec[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https://pkg.adelielinux.org/current/a52dec"
+    regex(/version\sv?(\d+(?:\.\d+)+)/i)
   end
 
   bottle do
@@ -33,9 +33,7 @@ class A52dec < Formula
       ENV.append_to_cflags "-std=gnu89"
     end
 
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
+    system "./configure", *std_configure_args,
                           "--enable-shared",
                           "--mandir=#{man}"
     system "make", "install"
