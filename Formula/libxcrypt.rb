@@ -1,8 +1,8 @@
 class Libxcrypt < Formula
   desc "Extended crypt library for descrypt, md5crypt, bcrypt, and others"
   homepage "https://github.com/besser82/libxcrypt"
-  url "https://github.com/besser82/libxcrypt/releases/download/v4.4.35/libxcrypt-4.4.35.tar.xz"
-  sha256 "a8c935505b55f1df0d17f8bfd59468c7c6709a1d31831b0f8e3e045ab8fd455d"
+  url "https://github.com/besser82/libxcrypt/releases/download/v4.4.36/libxcrypt-4.4.36.tar.xz"
+  sha256 "e5e1f4caee0a01de2aee26e3138807d6d3ca2b8e67287966d1fefd65e1fd8943"
   license "LGPL-2.1-or-later"
 
   bottle do
