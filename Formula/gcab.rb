@@ -13,14 +13,13 @@ class Gcab < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "1d0df9fc71f98941abf94db41da7453d3c110f1ad1d9d68531562236c248c31b"
-    sha256 arm64_monterey: "e49e15cd9661987efd99db61dc29b244a8f9459a3bcaeba342b37c04ab31a555"
-    sha256 arm64_big_sur:  "731d488b6e811c7c98feae0dd58956ae982710ab839be34a2d875adeb8b17218"
-    sha256 ventura:        "28ba70d27ac7f93e0a26daf48e1b58a4305b4c4ba250145d774590e0fd5867bc"
-    sha256 monterey:       "bc78f61070ee0ad6a4397db82e661d89b76b17f8217401dbdc82e76742f7deee"
-    sha256 big_sur:        "e0ddb5aee18997830d3b55772a1deaaf93a8b6a488a5bc68b4188a69dedbc5ea"
-    sha256 catalina:       "431ec9816bf99b859a17367933fa11e2c43498078dc423d4b759575ee1a2cbc3"
-    sha256 x86_64_linux:   "d31fd6fd578719a656cc13e05570257bfc9dd0ecb057cf1a003561a5c202443b"
+    sha256 arm64_ventura:  "1bba0eb507e8f2d7b64ad8c1a28c12dc74a785747a4683baa60437c2a4b015a6"
+    sha256 arm64_monterey: "6bb87009bd9a5f53529273af07389d8cf4a3aae0c55a9dd51c617b598d5f7fc6"
+    sha256 arm64_big_sur:  "abeac675d359f49d72372bb3e829a4abae65dddb5e2e92087cf0db14596b8040"
+    sha256 ventura:        "d8cdcdfd05260f7ea32808b2b58f6711b2d1288bdd57b003dae112c99bc67a7d"
+    sha256 monterey:       "3ccbb8269e8171382a3e9a3de7805a96f7c64e402eed4a0a277eb57978485c22"
+    sha256 big_sur:        "2f7491f5f92549e9f9d23e42091f4dc24e36a921284a540a79665c6073e663f4"
+    sha256 x86_64_linux:   "88ce4ede127ca2477d6939b9053f9474bb8c23c3cee2cf53c6a4f003d2b8ea63"
   end
 
   depends_on "gettext" => :build
