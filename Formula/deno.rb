@@ -1,8 +1,8 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https://deno.land/"
-  url "https://github.com/denoland/deno/releases/download/v1.34.3/deno_src.tar.gz"
-  sha256 "0e236aa5aa7e56e6e0119df5f2ab8cce603659ea9243cc25d88d28b3ed443d86"
+  url "https://github.com/denoland/deno/releases/download/v1.35.0/deno_src.tar.gz"
+  sha256 "8e3f2a31e05156be4ad57559ad1de1feb4c6261fb7f7e3510ba3adb50925c987"
   license "MIT"
   head "https://github.com/denoland/deno.git", branch: "main"
 
@@ -38,18 +38,18 @@ class Deno < Formula
   # We use the crate as GitHub tarball lacks submodules and this allows us to avoid git overhead.
   # TODO: Remove this and `v8` resource when https://github.com/denoland/rusty_v8/issues/1065 is resolved
   resource "rusty-v8" do
-    url "https://static.crates.io/crates/v8/v8-0.73.0.crate"
-    sha256 "e1bd3f04ba5065795dae6e3db668ff0b628920fbd2e39c1755e9b62d93660c3c"
+    url "https://static.crates.io/crates/v8/v8-0.74.1.crate"
+    sha256 "1202e0bd078112bf8d521491560645e1fd6955c4afd975c75b05596a7e7e4eea"
   end
 
   # Use the latest tag in https://github.com/denoland/v8/tags.
   resource "v8" do
-    url "https://github.com/denoland/v8/archive/refs/tags/11.5.150.9-denoland-fdc3bc4b606c4de667be.tar.gz"
-    sha256 "5f05a056536679462eaf170e02ea87e0836de20405616d499d194b2931feed14"
+    url "https://github.com/denoland/v8/archive/refs/tags/11.6.189.8-denoland-3be3301cbe4b641b6d66.tar.gz"
+    sha256 "1407490371b4cef4c8d0c21c888c5cbc617e9e61593398b70ac975c9bba0fc3a"
   end
 
   # To find the version of gn used:
-  # 1. Find v8 version: https://github.com/denoland/deno/blob/v#{version}/Cargo.toml#L44
+  # 1. Find v8 version: https://github.com/denoland/deno/blob/v#{version}/Cargo.toml#L41
   #    1.1. Update `rusty-v8` resource to use this version.
   # 2. Find ninja_gn_binaries tag: https://github.com/denoland/rusty_v8/blob/v#{v8_version}/tools/ninja_gn_binaries.py#L21
   # 3. Find short gn commit hash from commit message: https://github.com/denoland/ninja_gn_binaries/tree/#{ninja_gn_binaries_tag}
