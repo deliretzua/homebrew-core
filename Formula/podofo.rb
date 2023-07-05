@@ -1,11 +1,15 @@
 class Podofo < Formula
   desc "Library to work with the PDF file format"
-  homepage "https://podofo.sourceforge.io"
-  url "https://downloads.sourceforge.net/project/podofo/podofo/0.9.8/podofo-0.9.8.tar.gz"
-  sha256 "5de607e15f192b8ad90738300759d88dea0f5ccdce3bf00048a0c932bc645154"
+  homepage "https://github.com/podofo/podofo"
+  url "https://github.com/podofo/podofo/archive/refs/tags/0.10.1.tar.gz"
+  sha256 "9b2bb5d54185a547e440413ca2e9ec3ea9c522fec81dfeb9a23dbc3d65fbaa55"
   license all_of: ["LGPL-2.0-only", "GPL-2.0-only"]
-  revision 2
-  head "svn://svn.code.sf.net/p/podofo/code/podofo/trunk"
+  head "https://github.com/podofo/podofo.git", branch: "master"
+
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "258755f90e2bf304ecebf1d75222565b7f459bf54fff21257fce8f0e3d878145"
@@ -26,24 +30,19 @@ class Podofo < Formula
   depends_on "libtiff"
   depends_on "openssl@3"
 
+  uses_from_macos "libxml2"
+
   def install
-    args = std_cmake_args + %W[
+    args = %W[
       -DCMAKE_INSTALL_NAME_DIR=#{opt_lib}
       -DCMAKE_BUILD_WITH_INSTALL_NAME_DIR=ON
       -DCMAKE_DISABLE_FIND_PACKAGE_CppUnit=ON
       -DCMAKE_DISABLE_FIND_PACKAGE_LUA=ON
-      -DPODOFO_BUILD_SHARED:BOOL=ON
+      -DPODOFO_BUILD_TOOLS=TRUE
       -DFREETYPE_INCLUDE_DIR_FT2BUILD=#{Formula["freetype"].opt_include}/freetype2
       -DFREETYPE_INCLUDE_DIR_FTHEADER=#{Formula["freetype"].opt_include}/freetype2/config/
     ]
-    # C++ standard settings may be implemented upstream in which case the below will not be necessary.
-    # See https://sourceforge.net/p/podofo/tickets/121/
-    args += %w[
-      -DCMAKE_CXX_STANDARD=11
-      -DCMAKE_CXX_STANDARD_REQUIRED=ON
-    ]
-
-    system "cmake", "-S", ".", "-B", "build", *args
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
