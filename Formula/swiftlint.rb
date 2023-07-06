@@ -2,8 +2,8 @@ class Swiftlint < Formula
   desc "Tool to enforce Swift style and conventions"
   homepage "https://github.com/realm/SwiftLint"
   url "https://github.com/realm/SwiftLint.git",
-      tag:      "0.52.3",
-      revision: "117405ce36cf364ece2c7aaf9ee7afed7efbabcc"
+      tag:      "0.52.4",
+      revision: "9eaecbedce469a51bd8487effbd4ab46ec8384ae"
   license "MIT"
   head "https://github.com/realm/SwiftLint.git", branch: "main"
 
