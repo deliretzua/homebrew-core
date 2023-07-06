@@ -1,8 +1,8 @@
 class Lux < Formula
   desc "Fast and simple video downloader"
   homepage "https://github.com/iawia002/lux"
-  url "https://github.com/iawia002/lux/archive/v0.18.0.tar.gz"
-  sha256 "e25f2f8f446948902129f23b75a66309628c51aace1589757bc9a3cf42734c8d"
+  url "https://github.com/iawia002/lux/archive/v0.19.0.tar.gz"
+  sha256 "901cb34542c1de1b0c847063c6c0e6e847cdb1582c7cd48a3598e050388c31f0"
   license "MIT"
   head "https://github.com/iawia002/lux.git", branch: "master"
 
