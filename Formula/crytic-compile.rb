@@ -3,8 +3,8 @@ class CryticCompile < Formula
 
   desc "Abstraction layer for smart contract build systems"
   homepage "https://github.com/crytic/crytic-compile"
-  url "https://files.pythonhosted.org/packages/be/46/f39df1262c9a465c740373314572002650358661c568aaaefa6d81adf1ef/crytic-compile-0.3.2.tar.gz"
-  sha256 "adb580d1c79eb6241723a6f1d0f2c6b0d2714b65f07771116b727bed95b48065"
+  url "https://files.pythonhosted.org/packages/9f/45/dd3278e1f16bd9ff110b9ecb061ce073b51143ca2bfa891cad71aa567da9/crytic-compile-0.3.3.tar.gz"
+  sha256 "b0461ecff11e4be40013e4267a8e20221ebe25c3226e446e60e7c103baf7efaf"
   license "AGPL-3.0-only"
   head "https://github.com/crytic/crytic-compile.git", branch: "master"
 
