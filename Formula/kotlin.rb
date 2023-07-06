@@ -13,7 +13,7 @@ class Kotlin < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6781d78be37478473baa3f5458f505dbb8606a8d00e7e949d10bb41f0ae94abc"
+    sha256 cellar: :any_skip_relocation, all: "e26f08cd848eb236218d939664efd489f2b0ca2816add0a792fd5b8d1760b242"
   end
 
   depends_on "openjdk"
