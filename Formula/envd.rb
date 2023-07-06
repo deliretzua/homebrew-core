@@ -1,8 +1,8 @@
 class Envd < Formula
   desc "Reproducible development environment for AI/ML"
   homepage "https://envd.tensorchord.ai"
-  url "https://github.com/tensorchord/envd/archive/v0.3.31.tar.gz"
-  sha256 "057a48ef6e478cdfa7c8644acaa660c5b6bb5db7d5883f4d3f70fbc3459c7a5f"
+  url "https://github.com/tensorchord/envd/archive/v0.3.33.tar.gz"
+  sha256 "d1b0cdf03c1bf79c96da909e05a982792d7be670b4799a27a9281abcd774860d"
   license "Apache-2.0"
   head "https://github.com/tensorchord/envd.git", branch: "main"
 
@@ -19,19 +19,18 @@ class Envd < Formula
   depends_on "go" => :build
 
   def install
-    ENV["CGO_ENABLED"] = "0"
     ldflags = %W[
       -s -w
       -X github.com/tensorchord/envd/pkg/version.buildDate=#{time.iso8601}
       -X github.com/tensorchord/envd/pkg/version.version=#{version}
       -X github.com/tensorchord/envd/pkg/version.gitTag=v#{version}
-      -X github.com/tensorchord/envd/pkg/version.gitCommit=#{version}-#{tap.user}
+      -X github.com/tensorchord/envd/pkg/version.gitCommit=#{tap.user}
       -X github.com/tensorchord/envd/pkg/version.gitTreeState=clean
     ]
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/envd"
     generate_completions_from_executable(bin/"envd", "completion", "--no-install",
                                          shell_parameter_format: "--shell=",
-                                         shells:                 [:bash, :zsh])
+                                         shells:                 [:bash, :zsh, :fish])
   end
 
   test do
