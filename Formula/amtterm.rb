@@ -12,17 +12,7 @@ class Amtterm < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "48558be96b4a9b8e93d2df1bf55c3b525692ae0a6cec72f22bb222c5debf5073"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3a59e80adf7dd88384f4020c67177de6876f431769b7bd3274759b29bda7204b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7130d5cc879edc7425791e096234f76891e742ebcfcc5c9a7043ebad0fbf8afd"
-    sha256 cellar: :any_skip_relocation, ventura:        "ef2e287abf3b6674d877ea82dd465c47e536e0f0d6ae7c0c69d991647da8290a"
-    sha256 cellar: :any_skip_relocation, monterey:       "c4380ecc8551ea99925203823a63706e8ecdd23b010459528b7a3efc8acb8169"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3de2c8131b610bcf1d4d9cf1bb537d2a66b19dbc49e76f26e0ca280e48c1827c"
-    sha256 cellar: :any_skip_relocation, catalina:       "ed7067b9e98f43c6a13bd5dc43b5467508e33f209399b4e276da21091ae74907"
-    sha256 cellar: :any_skip_relocation, mojave:         "aab6ab711f9b407ef0df77a386b005cc8d10f7c0fb3c9c581659fea65e0edd00"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "29180333af292e440f077a00a958ceb6f0035bcee9945233bc33177d0b3549f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8508f3178996f322def37aa3bdce2573379e73682c5393fb6e952f18fdfbc22c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "51e227741242bb67cb8b195667372ec40a4010f167bc82010ae3fdbcfa44bb9d"
   end
 
   depends_on "gtk+3"
