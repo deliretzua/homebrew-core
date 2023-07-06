@@ -9,15 +9,13 @@ class GitPlus < Formula
   head "https://github.com/tkrajina/git-plus.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f1df39b9bfc960ca8745fae4a881b5d976b4056b6381440c2979ede17795cd0b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f1df39b9bfc960ca8745fae4a881b5d976b4056b6381440c2979ede17795cd0b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f1df39b9bfc960ca8745fae4a881b5d976b4056b6381440c2979ede17795cd0b"
-    sha256 cellar: :any_skip_relocation, ventura:        "f84a2bb9606908c30040db300734c023394660e0ffb6229939be0c4ccbeb02a7"
-    sha256 cellar: :any_skip_relocation, monterey:       "f84a2bb9606908c30040db300734c023394660e0ffb6229939be0c4ccbeb02a7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f84a2bb9606908c30040db300734c023394660e0ffb6229939be0c4ccbeb02a7"
-    sha256 cellar: :any_skip_relocation, catalina:       "f84a2bb9606908c30040db300734c023394660e0ffb6229939be0c4ccbeb02a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c9200ae7d572a148f00ffbbb30cd1ce12c56f2f01a4b3026b107aef52765337"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a5993edd0f14bcf89323609395296369bf8c7c74697f421cf1324ed22246d295"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a5993edd0f14bcf89323609395296369bf8c7c74697f421cf1324ed22246d295"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a5993edd0f14bcf89323609395296369bf8c7c74697f421cf1324ed22246d295"
+    sha256 cellar: :any_skip_relocation, ventura:        "9bdce13d800f40dc51edcb780600d7cf7775624173f54521e4b6544619adcd63"
+    sha256 cellar: :any_skip_relocation, monterey:       "9bdce13d800f40dc51edcb780600d7cf7775624173f54521e4b6544619adcd63"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9bdce13d800f40dc51edcb780600d7cf7775624173f54521e4b6544619adcd63"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "58dd04bb2b4161b60ace6be84dce6a355d093c4a0312a03010b7d39b20e7ab0d"
   end
 
   depends_on "python@3.11"
