@@ -3,10 +3,9 @@ class Prowler < Formula
 
   desc "Open Source Security tool to perform Cloud Security best practices"
   homepage "https://prowler.pro/"
-  url "https://files.pythonhosted.org/packages/70/31/2765ed128a01511753179ed0f0c3619dd39b6221c0cb654343b95571af42/prowler-3.6.1.tar.gz"
-  sha256 "03f0985e1546536a3b54683d009a85642c31c8b08bcf0fa93f638fef91cd05ab"
+  url "https://files.pythonhosted.org/packages/7c/74/a75679e65dd6aee140819affe955a6a6e6576c0bc727ba11ad44abe21b44/prowler-3.7.0.tar.gz"
+  sha256 "8cf2ef7d91d914e0e2d3955b645ec63728cdb03122d778eb8776699d19b687fd"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "dee7fa9acbccfd7f7ed0a411ac04b218f04a289a5582060fc88268f580de2cda"
@@ -116,8 +115,8 @@ class Prowler < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
-    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
+    url "https://files.pythonhosted.org/packages/77/88/b0cc5fe95c31c301e9823ea9b028f669c0dcfa205ff71111037a5ed4892c/click-8.1.4.tar.gz"
+    sha256 "b97d0c74955da062a7d4ef92fadb583806a585b2ea81958a81bd72726cbb8e37"
   end
 
   resource "click-plugins" do
@@ -156,8 +155,8 @@ class Prowler < Formula
   end
 
   resource "google-auth" do
-    url "https://files.pythonhosted.org/packages/4b/e0/d2c96098280f17eb626d4da0b7e553b8e5648d57514c8cefec851c16920c/google-auth-2.20.0.tar.gz"
-    sha256 "030af34138909ccde0fbce611afc178f1d65d32fbff281f25738b1fe1c6f3eaa"
+    url "https://files.pythonhosted.org/packages/e6/76/2217d47be6a03dfd5f6bfe7432f87a5aa5ab6d85525a4dc546df9895f053/google-auth-2.21.0.tar.gz"
+    sha256 "b28e8048e57727e7cf0e5bd8e7276b212aef476654a09511354aa82753b45c66"
   end
 
   resource "google-auth-httplib2" do
@@ -251,8 +250,8 @@ class Prowler < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/71/22/207523d16464c40a0310d2d4d8926daffa00ac1f5b1576170a32db749636/pyparsing-3.0.9.tar.gz"
-    sha256 "2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb"
+    url "https://files.pythonhosted.org/packages/4f/13/28e88033cab976721512e7741000fb0635fa078045e530a91abb25aea0c0/pyparsing-3.1.0.tar.gz"
+    sha256 "edb662d6fe322d6e990b1594b5feaeadf806803359e3d4d42f11e295e588f0ea"
   end
 
   resource "python-dateutil" do
