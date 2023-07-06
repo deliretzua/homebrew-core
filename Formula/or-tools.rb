@@ -4,7 +4,7 @@ class OrTools < Formula
   url "https://github.com/google/or-tools/archive/v9.6.tar.gz"
   sha256 "bc4b07dc9c23f0cca43b1f5c889f08a59c8f2515836b03d4cc7e0f8f2c879234"
   license "Apache-2.0"
-  revision 3
+  revision 4
   head "https://github.com/google/or-tools.git", branch: "stable"
 
   livecheck do
@@ -96,7 +96,7 @@ index 7f570f9..183b3a4 100644
 @@ -52,6 +52,7 @@ enum LogSeverity {
  };
  }  // namespace google
- 
+
 +#if GOOGLE_PROTOBUF_VERSION <= 3021012
  // Implementation of the `AbslStringify` interface. This adds `DebugString()`
  // to the sink. Do not rely on exact format.
@@ -106,5 +106,5 @@ index 7f570f9..183b3a4 100644
  }  // namespace protobuf
  }  // namespace google
 +#endif
- 
+
  #endif  // OR_TOOLS_BASE_LOGGING_H_
