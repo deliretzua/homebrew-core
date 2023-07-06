@@ -28,6 +28,13 @@ class EcflowUi < Formula
   # requires C++17 compiler to build with Qt
   fails_with gcc: "5"
 
+  # Fixes a typo in upstream's code. Remove once merged and released.
+  # PR ref: https://github.com/ecmwf/ecflow/pull/35
+  patch do
+    url "https://github.com/ecmwf/ecflow/commit/5bf5f8490f3ba0a39c9119ba03f8a9b349f6c3ec.patch?full_index=1"
+    sha256 "747e7d8bfb84e3e60c7775a58607bdbf666d83b9c3cc544dc79bbf9ff3e2922b"
+  end
+
   def install
     mkdir "build" do
       system "cmake", "..",
@@ -54,6 +61,6 @@ class EcflowUi < Formula
     help_out = shell_output("#{bin}/ecflow_ui -h")
     assert_match "ecFlowUI", help_out
     assert_match "fontsize", help_out
-    assert_match "start with the specified configuraton directory", help_out
+    assert_match "start with the specified configuration directory", help_out
   end
 end
