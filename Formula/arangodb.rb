@@ -6,11 +6,6 @@ class Arangodb < Formula
   license "Apache-2.0"
   head "https://github.com/arangodb/arangodb.git", branch: "devel"
 
-  livecheck do
-    url "https://www.arangodb.com/download-major/source/"
-    regex(/href=.*?ArangoDB[._-]v?(\d+(?:\.\d+)+)(-\d+)?\.t/i)
-  end
-
   bottle do
     sha256 arm64_ventura:  "53afa49b9a2e4848ca33ea0933a521b50a43b36849d2c5fea08443034dd8d778"
     sha256 arm64_monterey: "7cd65f1950e1f3a469a0978fec85f76ff2de404b17abca40d55945806e7de59d"
