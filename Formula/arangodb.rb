@@ -21,6 +21,10 @@ class Arangodb < Formula
     sha256 x86_64_linux:   "7c80cd9f061e99a34be19691bb039015a10c231892c3e13e6af7e0d2377c0fa6"
   end
 
+  # Vendors deps, has a low download count, build always breaks
+  # https://github.com/Homebrew/homebrew-core/pull/135487#issuecomment-1616018628
+  deprecate! date: "2023-07-05", because: :does_not_build
+
   depends_on "cmake" => :build
   depends_on "go" => :build
   depends_on "python@3.11" => :build
