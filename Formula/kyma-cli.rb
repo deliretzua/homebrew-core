@@ -1,8 +1,8 @@
 class KymaCli < Formula
   desc "Kyma command-line interface"
   homepage "https://kyma-project.io"
-  url "https://github.com/kyma-project/cli/archive/2.15.1.tar.gz"
-  sha256 "b5a4a310b413d2db6dabdce8445c88db9f90cbf14e9b75568b0f0bc17d498741"
+  url "https://github.com/kyma-project/cli/archive/2.16.0.tar.gz"
+  sha256 "bad2564b86addad90131f045cefdffcb8b9f481d528537d8b9557b82f38bd9cd"
   license "Apache-2.0"
   head "https://github.com/kyma-project/cli.git", branch: "main"
 
@@ -32,6 +32,8 @@ class KymaCli < Formula
   test do
     touch testpath/"kubeconfig"
     assert_match "invalid configuration",
-      shell_output("#{bin}/kyma deploy --kubeconfig ./kubeconfig 2>&1", 1)
+      shell_output("#{bin}/kyma deploy --kubeconfig ./kubeconfig 2>&1", 2)
+
+    assert_match "Kyma CLI version: #{version}", shell_output("#{bin}/kyma version 2>&1", 2)
   end
 end
