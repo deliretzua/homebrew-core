@@ -9,15 +9,13 @@ class Parliament < Formula
   head "https://github.com/duo-labs/parliament.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2d1a007e440c4a05547d8e71e9b0784150c8f1ff423b097812535deb0f98c2c2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "084335ad41b5c41f03d257666820cd8a4df31f67ab54e7629215a928286aeeab"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "99df83d72b24d57320e75dad3de07a6787fc9e7b4292899c3da93715d6687b11"
-    sha256 cellar: :any_skip_relocation, ventura:        "34079d2c687af4a481712cad543e52f6d18ecd60a19d9bab117be228560e4c5a"
-    sha256 cellar: :any_skip_relocation, monterey:       "f14798318df7aee9f382e0f495aa19023eb8f68d59df1f0a887aaf8d09e0d237"
-    sha256 cellar: :any_skip_relocation, big_sur:        "26ebb19e82b2d7fb5baaf77743e972a15a473d924def8001b60673e969a5ebe5"
-    sha256 cellar: :any_skip_relocation, catalina:       "0efbf4eeeb931fb3c3b003f47706301ceee50bb3076f68eb5e44035dca8d2bbd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff77db0608241abe9505b4c7fdc9f76beb547948828184b3e9e725b242585fa8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "793aaf3ec629b551aef846cf197c6eed1333b11bdf77b87849f665daa4ece393"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "deebfe54315a56ed439cf8c65b3b1adae33aa1fbf3c4f39b4cf14caf5313401f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "249f3257fbc3aa941a84be43b1c6feaede1eb6a47eed1005c958bd7c4409f4a0"
+    sha256 cellar: :any_skip_relocation, ventura:        "3d62c6315016bfce9e2b866b8668d275bab7fe1d6c5fb57eaac49e836af5a971"
+    sha256 cellar: :any_skip_relocation, monterey:       "67a3074ef1ab056322eb9c205fe698dbc0fcecdb79d787c6e6565f8de30d0403"
+    sha256 cellar: :any_skip_relocation, big_sur:        "530a75b7270e1132fed8dab200c248b05b523acf274dd9e0f283804c413552b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e5aa8d443888fe5c664cc1e2859877c9cba2b60bb13fd5641f872799c4760fd"
   end
 
   depends_on "python@3.11"
