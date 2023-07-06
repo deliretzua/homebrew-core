@@ -25,6 +25,13 @@ class Bnfc < Formula
   depends_on "flex" => :test
   depends_on "openjdk" => :test
 
+  # Fixes typos in upstream's code. Remove once merged and released.
+  # PR ref: https://github.com/BNFC/bnfc/pull/448
+  patch do
+    url "https://github.com/BNFC/bnfc/commit/5940164bdffe59924e253318c346865c94b46453.patch?full_index=1"
+    sha256 "5c828e85a704d02450c11adbf13dd6855a8bfc4ad25f8ec288203528bd0abc73"
+  end
+
   def install
     cd "source" do
       system "cabal", "v2-update"
@@ -95,7 +102,7 @@ class Bnfc < Formula
     EOS
     check_out_java = <<~EOS
 
-      Parse Succesful!
+      Parse Successful!
 
       [Abstract Syntax]
 
