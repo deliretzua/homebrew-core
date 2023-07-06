@@ -1,8 +1,8 @@
 class Phpstan < Formula
   desc "PHP Static Analysis Tool"
   homepage "https://github.com/phpstan/phpstan"
-  url "https://github.com/phpstan/phpstan/releases/download/1.10.24/phpstan.phar"
-  sha256 "78686f6682873d131ed7e97de49f3cde2c28e78e0082ddb568c4e35d246f4007"
+  url "https://github.com/phpstan/phpstan/releases/download/1.10.25/phpstan.phar"
+  sha256 "c3bc0e6651ca38fc7d3e697f711e10df212fb3d2732529e111082152dadb7168"
   license "MIT"
 
   bottle do
