@@ -3,8 +3,8 @@ class Platformio < Formula
 
   desc "Professional collaborative platform for embedded development"
   homepage "https://platformio.org/"
-  url "https://files.pythonhosted.org/packages/9d/06/a9b437294b4e16e549d8347cf8f3da28b2d61f09201522d6b7d3f4e8c583/platformio-6.1.8.tar.gz"
-  sha256 "2b41d55da4197c1276b3af64f50d26274d8226cb716919fc47314c91958c717b"
+  url "https://files.pythonhosted.org/packages/ed/bd/6c2e44afcb77eebd0f1edace2f67968bb0062f37d50d0e90c2667950a77a/platformio-6.1.9.tar.gz"
+  sha256 "1994484dfb87b321cd0a1632f91d7018c94f3c305bbf377eb9d6df592c005635"
   license "Apache-2.0"
   head "https://github.com/platformio/platformio-core.git", branch: "develop"
 
@@ -32,8 +32,8 @@ class Platformio < Formula
   end
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/c6/b3/fefbf7e78ab3b805dec67d698dc18dd505af7a18a8dd08868c9b4fa736b5/anyio-3.7.0.tar.gz"
-    sha256 "275d9973793619a5374e1c89a4f4ad3f4b0a5510a2b5b939444bee8f4c4d37ce"
+    url "https://files.pythonhosted.org/packages/28/99/2dfd53fd55ce9838e6ff2d4dac20ce58263798bd1a0dbe18b3a9af3fcfce/anyio-3.7.1.tar.gz"
+    sha256 "44a3c9aba0f5defa43261a8b3efb97891f2bd7d804e0e1f56419befa1adfc780"
   end
 
   resource "bottle" do
