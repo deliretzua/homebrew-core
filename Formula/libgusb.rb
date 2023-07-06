@@ -3,15 +3,10 @@ class Libgusb < Formula
 
   desc "GObject wrappers for libusb1"
   homepage "https://github.com/hughsie/libgusb"
-  url "https://people.freedesktop.org/~hughsient/releases/libgusb-0.4.2.tar.xz"
-  sha256 "02d3a992a0cd16c46a346439334417617cd7cd5b2ccc5fe0fe998e9ffb8d5d8a"
+  url "https://github.com/hughsie/libgusb/archive/refs/tags/0.4.6.tar.gz"
+  sha256 "0ad7e9f68b3e188149c583f411878db418d6f9600fd1b78e96fea11a8399ad0a"
   license "LGPL-2.1-only"
   head "https://github.com/hughsie/libgusb.git", branch: "main"
-
-  livecheck do
-    url "https://people.freedesktop.org/~hughsient/releases/"
-    regex(/href=.*?libgusb[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
 
   bottle do
     sha256 arm64_ventura:  "26b94eb0f0b0e11f546e77604e38b030f699c0f7c496a07080b5439bd102b9a3"
