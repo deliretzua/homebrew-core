@@ -8,12 +8,12 @@ class Julia < Formula
   head "https://github.com/JuliaLang/julia.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_ventura:  "7400ec27ec7cb699f8c4593b482b836fa719fa9fb5ddc43bc7a85df5e1faff0d"
-    sha256 cellar: :any, arm64_monterey: "b9a4ac358305ce58a611b8a16b48c5f91d6ca38452506be8d2b6071655bb57db"
-    sha256 cellar: :any, arm64_big_sur:  "dd66cd13a011bc55310030ce05697d9893935a0301a9307b78c5c23ca5023c66"
-    sha256 cellar: :any, ventura:        "6484d4cf411d1b575a9e92eefed35552fd1662c61bb55706325447d9bc7626d5"
-    sha256 cellar: :any, monterey:       "a63c749a460d9ecbe351b2f04795079fd267492af85660b83d494186af04a67e"
-    sha256 cellar: :any, big_sur:        "64956829acc5251f422d01a11109e93c13d42c14939e9c777012c83c4da22a2b"
+    sha256 cellar: :any, arm64_ventura:  "3d4a662573e8c06a66d95bce038d3a86eea1b0337b8f95d106421c5600d39a1f"
+    sha256 cellar: :any, arm64_monterey: "10b8cf4dd372cab60809820c33e001c9aaa6d4e1a5acb44cb9e830d91ce1294d"
+    sha256 cellar: :any, arm64_big_sur:  "602d9be1e4ebcf824c34ed658b891b7ee68a5bebddb542c77e8f6d852425b2fd"
+    sha256 cellar: :any, ventura:        "ed2b30a2d7b21a03bdbee64b58f02d3a56e4710af8792c192f884717b4d778a3"
+    sha256 cellar: :any, monterey:       "626ad40e2ffedccb71083c848f9d714e2069b263be0b74f8ebd83c4e4480a42e"
+    sha256 cellar: :any, big_sur:        "d3e8ea8bac4c548bd7cb885659a755ca9bf354148c152add3a62116cba46250a"
   end
 
   depends_on "cmake" => :build # Needed to build LLVM
