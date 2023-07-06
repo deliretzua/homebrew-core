@@ -30,9 +30,8 @@ class GoogleAuthenticatorLibpam < Formula
   def install
     ENV.append "LDFLAGS", "-Wl,-rpath,#{Formula["qrencode"].lib}"
     system "./bootstrap.sh"
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args,
+                          "--disable-silent-rules"
     system "make", "install"
   end
 
@@ -51,7 +50,7 @@ class GoogleAuthenticatorLibpam < Formula
   end
 
   test do
-    system "#{bin}/google-authenticator", "--force", "--time-based",
+    system bin/"google-authenticator", "--force", "--time-based",
            "--disallow-reuse", "--rate-limit=3", "--rate-time=30",
            "--window-size=3", "--no-confirm"
   end
