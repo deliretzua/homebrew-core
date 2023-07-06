@@ -19,23 +19,28 @@ class Ciphey < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6bda45c4b064f6b6bc38f8423a7a1c2b49ad11fb613e36df33f186637ce528b5"
   end
 
+  # Replaced by ares: https://github.com/Ciphey/Ciphey/issues/764
+  deprecate! date: "2023-07-05", because: :deprecated_upstream
+
   depends_on "boost" => :build
   depends_on "cmake" => :build
-  depends_on "poetry" => :build
   depends_on "swig" => :build
   depends_on "libyaml"
   depends_on "python@3.11"
   depends_on "six"
-
-  on_linux do
-    depends_on "rust" => :build
-  end
 
   fails_with gcc: "5"
 
   resource "cipheycore" do
     url "https://github.com/Ciphey/CipheyCore/archive/v0.3.2.tar.gz"
     sha256 "d05b4c15077b56121e96c1b934ae2d49f14004834a9b8fbc1bdc76782cd66253"
+
+    # Switch build-system to poetry-core to avoid rust dependency on Linux.
+    # Remove when merged/released: https://github.com/Ciphey/CipheyCore/pull/23
+    patch do
+      url "https://github.com/Ciphey/CipheyCore/commit/b55f321eec4f915ab276419c7cf285390c87246b.patch?full_index=1"
+      sha256 "79368e94a85fe08b93dfd9cb385515ab44615de93b91185eeed3b0d00afa5ad0"
+    end
   end
 
   resource "appdirs" do
@@ -84,8 +89,8 @@ class Ciphey < Formula
   end
 
   resource "isort" do
-    url "https://files.pythonhosted.org/packages/b7/8b/7c2200599c22b4ef6f3688f93c4f44065926bc05cbd38c31247b1348f9a3/isort-5.9.1.tar.gz"
-    sha256 "83510593e07e433b77bd5bff0f6f607dbafa06d1a89022616f02d8b699cfcd56"
+    url "https://files.pythonhosted.org/packages/a9/c4/dc00e42c158fc4dda2afebe57d2e948805c06d5169007f1724f0683010a9/isort-5.12.0.tar.gz"
+    sha256 "8bef7dde241278824a6d83f44a544709b065191b95b6e50894bdc722fcba0504"
   end
 
   resource "langdetect" do
@@ -168,6 +173,12 @@ class Ciphey < Formula
     sha256 "b62ffa81fb85f4332a4f609cab4ac40709470da05643a082ec1eb88e6d9b97d7"
   end
 
+  # Switch build-system to poetry-core to avoid rust dependency on Linux.
+  patch do
+    url "https://github.com/Ciphey/Ciphey/commit/2315cfa4396ffccb72042e6e4950818f60466e3c.patch?full_index=1"
+    sha256 "c181dfb1df29d2ee6abc5eb65a7f819be06df885618c2ebd349ce9a44d49b6f1"
+  end
+
   def python3
     "python3.11"
   end
@@ -190,16 +201,10 @@ class Ciphey < Formula
       system "cmake", "--build", "build", "-t", "ciphey_core"
       system "cmake", "--build", "build", "-t", "ciphey_core_py", "--config", "Release"
 
-      cd "build" do
-        system "poetry", "build", "-f", "sdist", "--verbose"
-        venv.pip_install Dir["dist/cipheycore-*.tar.gz"].first
-      end
+      venv.pip_install "./build"
     end
 
-    res = resources.to_set(&:name) - ["cipheycore"]
-    res.each do |r|
-      venv.pip_install resource(r)
-    end
+    venv.pip_install resources.reject { |r| r.name == "cipheycore" }
     venv.pip_install_and_link buildpath
 
     site_packages = Language::Python.site_packages(python3)
