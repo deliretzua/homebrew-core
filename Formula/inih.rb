@@ -1,8 +1,8 @@
 class Inih < Formula
   desc "Simple .INI file parser in C"
   homepage "https://github.com/benhoyt/inih"
-  url "https://github.com/benhoyt/inih/archive/refs/tags/r56.tar.gz"
-  sha256 "4f2ba6bd122d30281a8c7a4d5723b7af90b56aa828c0e88256d7fceda03a491a"
+  url "https://github.com/benhoyt/inih/archive/refs/tags/r57.tar.gz"
+  sha256 "f03f98ca35c3adb56b2358573c8d3eda319ccd5287243d691e724b7eafa970b3"
   license "BSD-3-Clause"
 
   bottle do
@@ -20,11 +20,9 @@ class Inih < Formula
   depends_on "ninja" => :build
 
   def install
-    mkdir "build" do
-      system "meson", *std_meson_args, ".."
-      system "ninja", "-v"
-      system "ninja", "install", "-v"
-    end
+    system "meson", "setup", "build", "-Dcpp_std=c++11", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do
