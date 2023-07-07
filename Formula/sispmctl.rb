@@ -1,8 +1,8 @@
 class Sispmctl < Formula
   desc "Control Gembird SIS-PM programmable power outlet strips"
   homepage "https://sispmctl.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/sispmctl/sispmctl/sispmctl-4.10/sispmctl-4.10.tar.gz"
-  sha256 "e648b6e87584330a0a693e7b521ebbc863608d6c97ef929063542b459d16bc6f"
+  url "https://downloads.sourceforge.net/project/sispmctl/sispmctl/sispmctl-4.11/sispmctl-4.11.tar.gz"
+  sha256 "74b94a3710046b15070c7311f0cacb81554c86b4227719cc2733cb96c7052578"
   license "GPL-2.0-or-later"
 
   bottle do
