@@ -1,9 +1,9 @@
 class GccAT10 < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
-  url "https://ftp.gnu.org/gnu/gcc/gcc-10.4.0/gcc-10.4.0.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gcc/gcc-10.4.0/gcc-10.4.0.tar.xz"
-  sha256 "c9297d5bcd7cb43f3dfc2fed5389e948c9312fd962ef6a4ce455cff963ebe4f1"
+  url "https://ftp.gnu.org/gnu/gcc/gcc-10.5.0/gcc-10.5.0.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gcc/gcc-10.5.0/gcc-10.5.0.tar.xz"
+  sha256 "25109543fdf46f397c347b5d8b7a2c7e5694a5a51cce4b9c6e1ea8a71ca307c1"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
 
   livecheck do
@@ -40,13 +40,6 @@ class GccAT10 < Formula
 
   # GCC bootstraps itself, so it is OK to have an incompatible C++ stdlib
   cxxstdlib_check :skip
-
-  # Fix for build against macOS 13 SDK
-  # https://github.com/iains/gcc-10-branch/issues/8
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/d52cefd45a18ea9df3e3cd8cac5dcf6755f94edd/gcc/gcc-10.3-ventura.diff"
-    sha256 "26f45ae2ad69d9ba16f3ac2e9384a5a2e56f2a18722c91759f871d53fba43cce"
-  end
 
   def version_suffix
     version.major.to_s
