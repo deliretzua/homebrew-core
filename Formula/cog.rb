@@ -1,8 +1,8 @@
 class Cog < Formula
   desc "Containers for machine learning"
   homepage "https://github.com/replicate/cog"
-  url "https://github.com/replicate/cog/archive/refs/tags/v0.7.2.tar.gz"
-  sha256 "bce8bcedefafdd7ebd498b9f94eead6d2c9586ae36cf6e8c1dcaab8d15927505"
+  url "https://github.com/replicate/cog/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "d143f50bf601f04cbeca0693e436eeb9e7c706c6423a5e4647dba480a2ecd3d2"
   license "Apache-2.0"
   head "https://github.com/replicate/cog.git", branch: "main"
 
@@ -23,6 +23,7 @@ class Cog < Formula
   uses_from_macos "python" => :build
 
   def install
+    ENV["SETUPTOOLS_SCM_PRETEND_VERSION"] = version.to_s
     system "make", "COG_VERSION=#{version}", "PYTHON=python3"
     bin.install "cog"
     generate_completions_from_executable(bin/"cog", "completion")
