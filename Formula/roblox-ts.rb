@@ -3,8 +3,8 @@ require "language/node"
 class RobloxTs < Formula
   desc "TypeScript-to-Luau Compiler for Roblox"
   homepage "https://roblox-ts.com/"
-  url "https://registry.npmjs.org/roblox-ts/-/roblox-ts-2.1.0.tgz"
-  sha256 "cfe33e88a9973fe39543b01f945533bc392df9771915422265f9164b3d42f860"
+  url "https://registry.npmjs.org/roblox-ts/-/roblox-ts-2.1.1.tgz"
+  sha256 "e7a96200b32c2cb718e81b34b3b41f2357133bff6eb37d68951dfb5d468c57d3"
   license "MIT"
 
   bottle do
