@@ -1,8 +1,8 @@
 class Rye < Formula
   desc "Experimental Package Management Solution for Python"
   homepage "https://rye-up.com/"
-  url "https://github.com/mitsuhiko/rye/archive/refs/tags/0.9.0.tar.gz"
-  sha256 "1c10ed82fa4c0ecc4df40bedc45c7d3de790caadcdb1907b6e17742ae0c68175"
+  url "https://github.com/mitsuhiko/rye/archive/refs/tags/0.10.0.tar.gz"
+  sha256 "bcc7abbdacd4e7cf98f396fe5e199e3305be8e564ad50fe2592bd320fda70c8c"
   license "MIT"
 
   bottle do
@@ -18,6 +18,11 @@ class Rye < Formula
   depends_on "rust" => :build
 
   uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "pkg-config" => :build
+    depends_on "openssl@3"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "rye")
