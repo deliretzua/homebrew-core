@@ -1,8 +1,8 @@
 class CppHttplib < Formula
   desc "C++ header-only HTTP/HTTPS server and client library"
   homepage "https://github.com/yhirose/cpp-httplib"
-  url "https://github.com/yhirose/cpp-httplib/archive/refs/tags/v0.12.6.tar.gz"
-  sha256 "24bc594a9efcc08a5a6f3928e848d046d411a88b07bcd6f7f3851227a1f0133e"
+  url "https://github.com/yhirose/cpp-httplib/archive/refs/tags/v0.13.0.tar.gz"
+  sha256 "7881452f3c13b6d43172ba8941a59f3ae093dc7e0a952ba89d6f635f166c5a53"
   license "MIT"
 
   bottle do
@@ -12,9 +12,18 @@ class CppHttplib < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
 
+  fails_with :clang do
+    build 1300
+    cause <<~EOS
+      include/httplib.h:5278:19: error: no viable overloaded '='
+      request.matches = {};
+      ~~~~~~~~~~~~~~~ ^ ~~
+    EOS
+  end
+
   def install
-    system "meson", "build", *std_meson_args
-    system "meson", "compile", "-C", "build"
+    system "meson", "setup", "build", *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
 
