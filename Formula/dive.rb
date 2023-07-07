@@ -2,8 +2,8 @@ class Dive < Formula
   desc "Tool for exploring each layer in a docker image"
   homepage "https://github.com/wagoodman/dive"
   url "https://github.com/wagoodman/dive.git",
-      tag:      "v0.10.0",
-      revision: "64880972b0726ec2ff2b005b0cc97801067c1bb5"
+      tag:      "v0.11.0",
+      revision: "800398060434ce8dfda6b4d182b72e2a9724e9f6"
   license "MIT"
 
   bottle do
