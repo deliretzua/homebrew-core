@@ -1,8 +1,8 @@
 class Lmod < Formula
   desc "Lua-based environment modules system to modify PATH variable"
   homepage "https://lmod.readthedocs.io"
-  url "https://github.com/TACC/Lmod/archive/8.7.27.tar.gz"
-  sha256 "8ad238f363be6a8c0947ccace6d1c58e35cb1c3f51f7e39c3d4ec2b644b22ec1"
+  url "https://github.com/TACC/Lmod/archive/8.7.28.tar.gz"
+  sha256 "e489b71990010ee072ccbace610a899033412f6e11e261440240ff9732f478f1"
   license "MIT"
 
   bottle do
@@ -29,8 +29,8 @@ class Lmod < Formula
   end
 
   resource "luaposix" do
-    url "https://github.com/luaposix/luaposix/archive/refs/tags/v36.1.tar.gz"
-    sha256 "e680ba9b9c7ae28c0598942cb00df7c7fbc70b82863bb55f028ea7dc101e39ac"
+    url "https://github.com/luaposix/luaposix/archive/refs/tags/v36.2.1.tar.gz"
+    sha256 "44e5087cd3c47058f9934b90c0017e4cf870b71619f99707dd433074622debb1"
   end
 
   def install
@@ -38,8 +38,8 @@ class Lmod < Formula
     luapath = libexec/"vendor"
     ENV["LUA_PATH"] = "?.lua;" \
                       "#{luapath}/share/lua/#{luaversion}/?.lua;" \
-                      "#{luapath}/share/lua/#{luaversion}/?/init.lua"
-    ENV["LUA_CPATH"] = "#{luapath}/lib/lua/#{luaversion}/?.so"
+                      "#{luapath}/share/lua/#{luaversion}/?/init.lua;;"
+    ENV["LUA_CPATH"] = "#{luapath}/lib/lua/#{luaversion}/?.so;;"
 
     resources.each do |r|
       r.stage do
