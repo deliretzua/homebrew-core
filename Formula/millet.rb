@@ -7,13 +7,13 @@ class Millet < Formula
   head "https://github.com/azdavis/millet.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "359ba501fd70a9434a4bd618b327bfd72fd26c08dd81d15dde859912b28ab3ba"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6d7501b6354dd4a41409f507c2495ef04475cc7cfe284cddd77ee2923ba0bb2a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "61437393e23c3dff7fcb65881e64e6b5883081179a50b2f9bbc9aa4361ebd945"
-    sha256 cellar: :any_skip_relocation, ventura:        "06748690e7d88c518ec6b107a2ec40e5e256ce41a586fa04521941df76be3592"
-    sha256 cellar: :any_skip_relocation, monterey:       "5316a094d891c161bdf400e9d477ddc541f1fa86fcb1ec25ca578ab7016f3ce6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "63dccb0bc56a0f3f7ad536e9bdb7ff17eb25cc0ddcaa81fcaa72ef6f6127e220"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9afee75c238c441fcb43f97d6be4f1b6d1d63d60654a1aaf1a10c296d6803fd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3cbdb6ea4124217e751f0991dc97021adbbf05dbfa83324ccf148611a86e93d4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4b2676182a908dc0e4c62832f39a4cbd68655ad3e680c9def23af099fb96c7cb"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2ac0e24f0ded415ff48f1da8b9f15b0b8437da8dc4a0d30c3e221b9c668cc0eb"
+    sha256 cellar: :any_skip_relocation, ventura:        "37e8cf66f91d3f8cfaf7e0a100fc26d263257a93cf1f9a545c0293898488788a"
+    sha256 cellar: :any_skip_relocation, monterey:       "cc86aca21818840173c10cd09511ff8f6451b878312b7d991fc3179a5424e39b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7e8d2d5900ecf73359cd053195d77866a013461b780f2c0dadbd1480c501700b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c49224e4e710385f6e65bc27c8beeea8af3bc547d8f830d76234a06729cb5bd"
   end
 
   depends_on "rust" => :build
