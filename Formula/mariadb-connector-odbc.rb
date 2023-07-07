@@ -1,11 +1,10 @@
 class MariadbConnectorOdbc < Formula
   desc "Database driver using the industry standard ODBC API"
   homepage "https://mariadb.org/download/?tab=connector&prod=connector-odbc"
-  url "https://downloads.mariadb.com/Connectors/odbc/connector-odbc-3.1.18/mariadb-connector-odbc-3.1.18-src.tar.gz"
-  mirror "https://fossies.org/linux/misc/mariadb-connector-odbc-3.1.18-src.tar.gz/"
-  sha256 "a06c11b40cf1edcfe69c206eec32caf58e25fadcf53da63d65fae26437bbad7e"
+  url "https://downloads.mariadb.com/Connectors/odbc/connector-odbc-3.1.19/mariadb-connector-odbc-3.1.19-src.tar.gz"
+  mirror "https://fossies.org/linux/misc/mariadb-connector-odbc-3.1.19-src.tar.gz/"
+  sha256 "26420dac7d6d630fc34fb2fe77fdc9fc2a7e8e896d274d3c052db9ecd06bd48f"
   license "LGPL-2.1-or-later"
-  revision 1
 
   # https://mariadb.org/download/ sometimes lists an older version as newest,
   # so we check the JSON data used to populate the mariadb.com downloads page
