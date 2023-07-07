@@ -11,7 +11,7 @@ class Wtf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "262b7e62df201d7f6a3eca887b9a3cb5c4dd6fca5f8110d661c9420e708e56b9"
+    sha256 cellar: :any_skip_relocation, all: "5a9a3648a67666e5f3fa34d8bfb3825637dfc8b8a5b52928d2430c8e7ab93d4c"
   end
 
   def install
