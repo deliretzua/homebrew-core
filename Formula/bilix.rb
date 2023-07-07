@@ -7,6 +7,16 @@ class Bilix < Formula
   sha256 "149cfda40d605d88a7687508e843f664ebb8078742f9ede6ae94c87fbd662187"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "69ec9cf31d6db0e52e9b6bbb288717b7c39f377b69863640a10d80c223825dcd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "17ca24ddb7935329967112c7cac5ff7fb318a714e3ab1f0045e67c83354dc537"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "30d20a144b87e499b0f29c919bd3f9fa20213ba5582391cdbe3bf608be21b9af"
+    sha256 cellar: :any_skip_relocation, ventura:        "b89a0f18fa9b46b06a67b987bbdb988336d05629b97e1e5478f2a90d00d19a6b"
+    sha256 cellar: :any_skip_relocation, monterey:       "3805347d591acf41495f7fe9d0b2a7ca9e89f6053fe7e49590d27d6871134d69"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d412d109be3913fa8ba7c47df0d6d8c87ab52787fc3a166403f5891b8efb9120"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f14bf537a4adae64b7089476c64a38ed4cccc7694146111be07b266cd03b017"
+  end
+
   depends_on "python@3.11"
 
   resource "aiofiles" do
