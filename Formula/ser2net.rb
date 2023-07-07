@@ -1,8 +1,8 @@
 class Ser2net < Formula
   desc "Allow network connections to serial ports"
   homepage "https://ser2net.sourceforge.io"
-  url "https://downloads.sourceforge.net/project/ser2net/ser2net/ser2net-4.3.12.tar.gz"
-  sha256 "6101bdf937716be9b019c721b28b45d21efddd1ec19ac935aad351c55bd6f83d"
+  url "https://downloads.sourceforge.net/project/ser2net/ser2net/ser2net-4.3.13.tar.gz"
+  sha256 "ed8b98448d535111d9a593b067601a8b53e2874814d706b2421a9490a660d265"
   license "GPL-2.0-only"
 
   livecheck do
@@ -22,6 +22,7 @@ class Ser2net < Formula
 
   depends_on "libyaml"
 
+  # pin to use gensio 2.4.1 due to arm build issue with 2.6.7
   resource "gensio" do
     url "https://downloads.sourceforge.net/project/ser2net/ser2net/gensio-2.4.1.tar.gz"
     sha256 "949438b558bdca142555ec482db6092eca87447d23a4fb60c1836e9e16b23ead"
