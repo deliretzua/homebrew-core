@@ -3,8 +3,8 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://github.com/aws/aws-cli/archive/2.12.7.tar.gz"
-  sha256 "475657706883dc5fe92b3fbcf0c9579332862729641bc3795d4b6b37884bcac6"
+  url "https://github.com/aws/aws-cli/archive/2.13.0.tar.gz"
+  sha256 "85a7efe8786db2c459aba6b58e4dc49506f6a0982262be7726c277b64e66ba74"
   license "Apache-2.0"
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
@@ -30,10 +30,6 @@ class Awscli < Formula
   depends_on "six"
 
   uses_from_macos "mandoc"
-
-  # Python resources should be updated based on setup.cfg. One possible way is:
-  # 1. Run `pipgrip 'awscli @ #{url}' --sort`
-  # 2. Ignore `docutils` and `six`. Update all other PyPI packages
 
   resource "awscrt" do
     url "https://files.pythonhosted.org/packages/24/73/d656729a61eceabbbf4fcee3b51bf298c5edbb0a5578542121150e957ee0/awscrt-0.16.16.tar.gz"
