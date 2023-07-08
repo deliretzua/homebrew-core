@@ -2,9 +2,9 @@ class Odin < Formula
   desc "Programming language with focus on simplicity, performance and modern systems"
   homepage "https://odin-lang.org/"
   url "https://github.com/odin-lang/Odin.git",
-      tag:      "dev-2023-05",
-      revision: "0c3522133d60870e123b7d0e2aacb15c38e377f8"
-  version "2023-05"
+      tag:      "dev-2023-07",
+      revision: "3072479c3c3c4818b0a41dc2aed288e8b3ec0582"
+  version "2023-07"
   license "BSD-3-Clause"
   head "https://github.com/odin-lang/Odin.git", branch: "master"
 
@@ -51,6 +51,6 @@ class Odin < Formula
       }
     EOS
     system "#{bin}/odin", "build", "hellope.odin", "-file"
-    assert_equal "Hellope!\n", shell_output("./hellope.bin")
+    assert_equal "Hellope!\n", shell_output("./hellope")
   end
 end
