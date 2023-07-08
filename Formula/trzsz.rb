@@ -8,13 +8,13 @@ class Trzsz < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "76660eb076b8dfcfdd44b0d75c890df839c6d16f2ceaad329fdc95cec35b1e78"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2121245d8531a88d2217c27dc57167d2cd742a7d8c35c210401149fde31d956e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d5426432b5c1d5908e35aea907d84fee26f6751b02873664526a018e904aa882"
-    sha256 cellar: :any_skip_relocation, ventura:        "9ba16263135208082786ad514b610c3885ed1e182fcd00cea92a2b9a5217e0bf"
-    sha256 cellar: :any_skip_relocation, monterey:       "c356460dba20cd46ab39c3f84badb3f2ec20ee7a9351b8d75257b73e879cebdb"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1d70c0ddddb92fb0865667724f020213cc3e98f2533acd5faedfe1b101b359ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2577c4d9b51bed22a190a2d1a3682791f2fe7baf04ebfc71b78b1c77c142722c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "23f1f3bbcb09a8fd40f8aa2b3bccf7ccffbed8499fcbfe39010808262b75db00"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0cfd5f8c76416c5621dcfcd9601118e4f355b2efc363dd4f0e343610f4c59dae"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8d7d38c446d62110bc2d5083530a856446d763dd3cac57078b01c073898676be"
+    sha256 cellar: :any_skip_relocation, ventura:        "ecfa341ac34e13d455cc79b641cca9897fd48f8838de639cf1abb7a3527b1d0e"
+    sha256 cellar: :any_skip_relocation, monterey:       "3c142278be05fd16fecbb6d88498ff47ad36b493ebe9df24069806ff84b3bd41"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1b23e8d8628a69bf4646ea779a9b4459dd3d92d93b696c20dc31ec70bbe571a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e0d119728b028fc04da77460caa7b93059a5ce3a75c00a13416dd53044a8003"
   end
 
   depends_on "protobuf"
