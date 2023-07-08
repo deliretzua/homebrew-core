@@ -1,10 +1,9 @@
 class DfuProgrammer < Formula
   desc "Device firmware update based USB programmer for Atmel chips"
   homepage "https://github.com/dfu-programmer/dfu-programmer"
-  url "https://github.com/dfu-programmer/dfu-programmer/releases/download/v1.0.0/dfu-programmer-1.0.0.tar.gz"
-  sha256 "867eaf0a8cd10123715491807ab99cecb54dc6f09dddade4b2a42b0b0ef9e6b0"
+  url "https://github.com/dfu-programmer/dfu-programmer/releases/download/v1.1.0/dfu-programmer-1.1.0.tar.gz"
+  sha256 "844e469be559657bc52c9d9d03c30846acd11ffbb1ddd42438fa8af1d2b8587d"
   license "GPL-2.0-or-later"
-  head "https://github.com/dfu-programmer/dfu-programmer.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "0ee3ca7e532f5126a3057d13a2939e1f0232d7b6cff2af0672f53d6144e8f6e2"
@@ -16,18 +15,24 @@ class DfuProgrammer < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "78a9f9e411887f156b843a85b6c29a251ef4addbec348b117de927e976b2bd9b"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
+  head do
+    url "https://github.com/dfu-programmer/dfu-programmer.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+  end
+
   depends_on "libusb-compat"
 
   def install
-    system "./bootstrap.sh"
+    system "./bootstrap.sh" if build.head?
     system "./configure", *std_configure_args,
                           "--disable-libusb_1_0"
     system "make", "install"
   end
 
   test do
-    system bin/"dfu-programmer", "--targets"
+    assert_match "8051 based controllers", shell_output("#{bin}/dfu-programmer --targets")
+    assert_match version.to_s, shell_output("#{bin}/dfu-programmer --version 2>&1")
   end
 end
