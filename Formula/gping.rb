@@ -25,23 +25,26 @@ class Gping < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b33ac75760676ed00898c30b790a6005dcacbf32259cc801d0ea7e29e758433d"
   end
 
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
+
+  on_macos do
+    depends_on "libgit2"
+  end
 
   on_linux do
     depends_on "iputils"
   end
 
   def install
-    cd "gping" do
-      system "cargo", "install", *std_cargo_args
-    end
+    system "cargo", "install", *std_cargo_args(path: "gping")
   end
 
   test do
     require "pty"
     require "io/console"
 
-    r, w, pid = PTY.spawn("#{bin}/gping google.com")
+    r, w, = PTY.spawn("#{bin}/gping google.com")
     r.winsize = [80, 130]
     sleep 1
     w.write "q"
@@ -59,7 +62,14 @@ class Gping < Formula
     rescue Errno::EIO
       # GNU/Linux raises EIO when read is done on closed pty
     end
-  ensure
-    Process.kill("TERM", pid)
+
+    return unless OS.mac?
+
+    linkage_with_libgit2 = (bin/"gping").dynamically_linked_libraries.any? do |dll|
+      next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
+
+      File.realpath(dll) == (Formula["libgit2"].opt_lib/shared_library("libgit2")).realpath.to_s
+    end
+    assert linkage_with_libgit2, "No linkage with libgit2! Cargo is likely using a vendored version."
   end
 end
