@@ -3,6 +3,7 @@ class Sox < Formula
   homepage "https://sox.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/sox/sox/14.4.2/sox-14.4.2.tar.gz"
   sha256 "b45f598643ffbd8e363ff24d61166ccec4836fea6d3888881b8df53e3bb55f6c"
+  license all_of: ["LGPL-2.0-only", "GPL-2.0-only"]
   revision 5
 
   bottle do
@@ -24,6 +25,9 @@ class Sox < Formula
   depends_on "libvorbis"
   depends_on "mad"
   depends_on "opusfile"
+  on_linux do
+    depends_on "alsa-lib"
+  end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
@@ -41,9 +45,11 @@ class Sox < Formula
   end
 
   def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    args = std_configure_args
+
+    args << "--with-alsa" if OS.linux?
+
+    system "./configure", *args
     system "make", "install"
   end
 
