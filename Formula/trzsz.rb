@@ -3,11 +3,9 @@ class Trzsz < Formula
 
   desc "Simple file transfer tools, similar to lrzsz (rz/sz), and compatible with tmux"
   homepage "https://trzsz.github.io"
-  # TODO: Check if we can use unversioned `protobuf` at version bump
-  url "https://files.pythonhosted.org/packages/0c/e5/00c95527d18445cbd3b3b2c5c28a383c94c9ac5291e886796004727b25aa/trzsz-1.1.2.tar.gz"
-  sha256 "dfc9606fb7ae76490c8559ec297b307a788688351ab57108f6a733105b206052"
+  url "https://files.pythonhosted.org/packages/33/14/5b54b20f4027f23c4dab039a3ac2c73df2b79039c449ebbe2903c98c20e4/trzsz-1.1.3.tar.gz"
+  sha256 "4d38e35c128ef86a350bead31cc754c7bbf33ea323d8050ea7ef7d81caf9595e"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "76660eb076b8dfcfdd44b0d75c890df839c6d16f2ceaad329fdc95cec35b1e78"
@@ -19,7 +17,7 @@ class Trzsz < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2577c4d9b51bed22a190a2d1a3682791f2fe7baf04ebfc71b78b1c77c142722c"
   end
 
-  depends_on "protobuf@21"
+  depends_on "protobuf"
   depends_on "python@3.11"
 
   resource "iterm2" do
@@ -28,23 +26,23 @@ class Trzsz < Formula
   end
 
   resource "trzsz-iterm2" do
-    url "https://files.pythonhosted.org/packages/ea/f8/2d26c13f511116d8dea8f4bb4610144e4a85afee1b7ddfc96f4abfbead10/trzsz-iterm2-1.1.2.tar.gz"
-    sha256 "5ba2600c9beff4a3e45d79341c944482c163a93ae418630884b212e5a09bb3bb"
+    url "https://files.pythonhosted.org/packages/2d/e2/ef11908cb52c1a66b751c7615c7a62aeaa2ca1c13594fcb8bac4403ce4e5/trzsz-iterm2-1.1.3.tar.gz"
+    sha256 "6910e413e65efc14a938a04df7fde5d8c5090f343e572c71e00ff32335fc326f"
   end
 
   resource "trzsz-libs" do
-    url "https://files.pythonhosted.org/packages/21/6b/fb791246cc8968dde9f35fa2f5cd404dc17faf698991150eb1cd7a858f18/trzsz-libs-1.1.2.tar.gz"
-    sha256 "3ae44d4cb8ce20448712ca9269eb213c59b62b203531e2fb886f14caaba338fb"
+    url "https://files.pythonhosted.org/packages/9d/7e/59ccff82d9fc525d29721e3e0acd4d3bb0adc9c56e6e56a506009800cba1/trzsz-libs-1.1.3.tar.gz"
+    sha256 "dc64e9cfcfeb23ca406932c89755e1141d443c54795eed0d15cec5581de2fc9f"
   end
 
   resource "trzsz-svr" do
-    url "https://files.pythonhosted.org/packages/a2/ef/2740a48fe69e2086ad6119e0cee51ac56f217faec3de54ca4aa03bb1efff/trzsz-svr-1.1.2.tar.gz"
-    sha256 "299440a5b3284a86ae9256b8d0cf9ac3e5ad9b23068319794c62963871a37e53"
+    url "https://files.pythonhosted.org/packages/65/ca/febf965d861a7766fd93349d91f73892abd78b28b30d8ad97b540d1ba07c/trzsz-svr-1.1.3.tar.gz"
+    sha256 "e994511688a62b16ce8c1b28f7abf782bccfd8a41728456ba58b5e7fef970c79"
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/85/dc/549a807a53c13fd4a8dac286f117a7a71260defea9ec0c05d6027f2ae273/websockets-10.4.tar.gz"
-    sha256 "eef610b23933c54d5d921c92578ae5f89813438fded840c2e9809d378dc765d3"
+    url "https://files.pythonhosted.org/packages/d8/3b/2ed38e52eed4cf277f9df5f0463a99199a04d9e29c9e227cfafa57bd3993/websockets-11.0.3.tar.gz"
+    sha256 "88fc51d9a26b10fc331be344f1781224a375b78488fc343620184e95a4b27016"
   end
 
   def install
@@ -52,13 +50,6 @@ class Trzsz < Formula
     bin.install_symlink libexec/"bin/trz"
     bin.install_symlink libexec/"bin/tsz"
     bin.install_symlink libexec/"bin/trzsz-iterm2"
-
-    # Remove the lines below when we depend on unversioned protobuf.
-    # This is needed because protobuf@21 is keg-only.
-    odie "`.pth` file writing can be removed!" if deps.none? { |d| d.name.start_with?("protobuf@") }
-    site_packages = Language::Python.site_packages("python3")
-    protobuf = Formula["protobuf@21"].opt_prefix
-    (libexec/site_packages/"homebrew-protobuf.pth").write protobuf/site_packages
   end
 
   test do
