@@ -1,10 +1,10 @@
 class Timg < Formula
   desc "Terminal image and video viewer"
   homepage "https://timg.sh/"
-  url "https://github.com/hzeller/timg/archive/refs/tags/v1.4.5.tar.gz"
-  sha256 "3c96476ce4ba2af4b9f639c5b59ded77ce1a4511551a04555ded105f14398e01"
+  url "https://github.com/hzeller/timg/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "aa457f401b0517ba814efc62ededa3ab3f4edc1f40fb6048c58d52f01dfd9ba2"
   license "GPL-2.0-only"
-  revision 1
+  head "https://github.com/hzeller/timg.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "98de11a20c1dbe896286ee35fc9ec12c266650c63d7a0e57df66476683e26959"
@@ -16,19 +16,15 @@ class Timg < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e343a40d3196e3500255ddec01cc22f83104911359b1d3772c9ac7a5b18146f5"
   end
 
-  head do
-    url "https://github.com/hzeller/timg.git", branch: "main"
-
-    depends_on "libdeflate"
-  end
-
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "ffmpeg"
   depends_on "graphicsmagick"
   depends_on "jpeg-turbo"
+  depends_on "libdeflate"
   depends_on "libexif"
   depends_on "libpng"
+  depends_on "libsixel"
   depends_on "openslide"
   depends_on "webp"
 
