@@ -9,15 +9,13 @@ class Remarshal < Formula
   head "https://github.com/dbohdan/remarshal.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c36beb1cd7fb1ef865ec2aa9b3fcf7e9616b9b541acb2190c359e809c373963f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "281c90e07cdb5699d117daeb35bb2610d32d8f9acfd92e751a3e5555f22c0f4e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d169ea5d55078749f1234d20327e8e9784840edc4f7d42e9791c95af0b03430d"
-    sha256 cellar: :any_skip_relocation, ventura:        "0111dc0cf3723ae11d2209a840dc3392af776008b8fddf7755726b6d018e2143"
-    sha256 cellar: :any_skip_relocation, monterey:       "b991e129653532f96e7f2a91322bd21ded8941181fb4a4e1e09d64dcbd9e87d4"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2715ea7cf3d0e83b5a418b7faae7e2b2074f56c30f0251302f8a98f8bf22fb68"
-    sha256 cellar: :any_skip_relocation, catalina:       "eb5b30cc63466ed94f6ecb486e4bbfc09876b69d26c2e37456363b3f81131db4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "42e99b958e0e3af16a50b7387a5d2abea0c5a412f6cafe2d71138ff1dc2e5e95"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c7a42a620818ea11310bf99fa8d944a8165178277a6e9303e3d807fe8484a178"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4c5e3688aef5c25d1682306bf5cb5f1572dd72aa0ba4f69728a4e19d658bef6b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4268d0d3f8bd385868123b230b1586c3cdc9e8519576d25a05f0ed92e8f8846a"
+    sha256 cellar: :any_skip_relocation, ventura:        "5a69ffca4d945487ad63ca0ed8ba0fb522b8e5ba0ff10b9c156dce824ea12e91"
+    sha256 cellar: :any_skip_relocation, monterey:       "67e252cdba802d8717c7c0930528422cf4702fb030112b4d60c887eb9c81bf3e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "881a88775131a7e866bf66a2cec35e13ae9099fb40ed43f6098f0c4f0b6786c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "21d5ac16f5d767ad77b9f7172a66bee6056a129ff24b872e78ef4be93d87b4b9"
   end
 
   depends_on "python@3.11"
