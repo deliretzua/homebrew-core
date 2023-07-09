@@ -1,8 +1,8 @@
 class Gotestsum < Formula
   desc "Human friendly `go test` runner"
   homepage "https://github.com/gotestyourself/gotestsum"
-  url "https://github.com/gotestyourself/gotestsum/archive/refs/tags/v1.10.0.tar.gz"
-  sha256 "6c84141464b1927ea32098a13b6e470921c5a3fe7d5b62e54be643a941f83c1a"
+  url "https://github.com/gotestyourself/gotestsum/archive/refs/tags/v1.10.1.tar.gz"
+  sha256 "8a7c1fd85cf3b5399b4ce59454d1f10fbd6b82e55e63ff8390446cec9af9f43f"
   license "Apache-2.0"
   head "https://github.com/gotestyourself/gotestsum.git", branch: "main"
 
