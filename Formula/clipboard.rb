@@ -1,8 +1,8 @@
 class Clipboard < Formula
   desc "Cut, copy, and paste anything, anywhere, all from the terminal"
   homepage "https://getclipboard.app"
-  url "https://github.com/Slackadays/Clipboard/archive/refs/tags/0.8.0.tar.gz"
-  sha256 "d3fa16ee7fab364f9755d2a5991aaf06f7b6d703df7994486e7c424bfe1d97d2"
+  url "https://github.com/Slackadays/Clipboard/archive/refs/tags/0.8.1.tar.gz"
+  sha256 "f7ceb2dbb76bc094ac8afbef97bdef0f1a9451ca7dd1a4a181f3b2a859a2f094"
   license "GPL-3.0-or-later"
   head "https://github.com/Slackadays/Clipboard.git", branch: "main"
 
@@ -25,6 +25,7 @@ class Clipboard < Formula
   on_linux do
     depends_on "pkg-config" => :build
     depends_on "wayland-protocols" => :build
+    depends_on "alsa-lib"
     depends_on "libx11"
     depends_on "wayland"
   end
