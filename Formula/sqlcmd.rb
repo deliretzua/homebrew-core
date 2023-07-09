@@ -11,13 +11,13 @@ class Sqlcmd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "70366f618ac8d05ad78027a4463b0a8918a7e3cfbe6c654b3f3e24bbf2249071"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "70366f618ac8d05ad78027a4463b0a8918a7e3cfbe6c654b3f3e24bbf2249071"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "70366f618ac8d05ad78027a4463b0a8918a7e3cfbe6c654b3f3e24bbf2249071"
-    sha256 cellar: :any_skip_relocation, ventura:        "ad5110ada1b1f971eb03adcac5e6e6a3b27cb26a79ae87eb304d6919329ad184"
-    sha256 cellar: :any_skip_relocation, monterey:       "ad5110ada1b1f971eb03adcac5e6e6a3b27cb26a79ae87eb304d6919329ad184"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ad5110ada1b1f971eb03adcac5e6e6a3b27cb26a79ae87eb304d6919329ad184"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "385dc7f6e88c685a6179e497f7b909725e888f6747dab23c75c124cd327176a7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9edca5c1ed47c84b704625048b5b9d7138066a45b40e5fb7152a2ab79e8b19d7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9edca5c1ed47c84b704625048b5b9d7138066a45b40e5fb7152a2ab79e8b19d7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9edca5c1ed47c84b704625048b5b9d7138066a45b40e5fb7152a2ab79e8b19d7"
+    sha256 cellar: :any_skip_relocation, ventura:        "6d3bbfc633a381236d1c2b51051d55f17c9f1a092cf8dccbe2d9e202dbeeaf31"
+    sha256 cellar: :any_skip_relocation, monterey:       "6d3bbfc633a381236d1c2b51051d55f17c9f1a092cf8dccbe2d9e202dbeeaf31"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6d3bbfc633a381236d1c2b51051d55f17c9f1a092cf8dccbe2d9e202dbeeaf31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c489c52bcc2bc5cb98799d995129015c586487b8b2eee89e086591632eb25cb9"
   end
 
   depends_on "go" => :build
