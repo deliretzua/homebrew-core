@@ -4,7 +4,7 @@ class Arrayfire < Formula
   url "https://github.com/arrayfire/arrayfire/releases/download/v3.8.3/arrayfire-full-3.8.3.tar.bz2"
   sha256 "331e28f133d39bc4bdbc531db400ba5d9834ed2d41578a0b8e68b73ee4ee423c"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "09c3e828667c6c77ee1bc5748d74f7e26d232f4349c7057366bb759d10164d63"
