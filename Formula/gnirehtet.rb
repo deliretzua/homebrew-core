@@ -1,21 +1,10 @@
 class Gnirehtet < Formula
   desc "Reverse tethering tool for Android"
   homepage "https://github.com/Genymobile/gnirehtet"
+  url "https://github.com/Genymobile/gnirehtet/archive/v2.5.1.tar.gz"
+  sha256 "0d41361b9ac8b3b7fa4f4a0aff933472a72886556bd3fc4659be299b546274e6"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/Genymobile/gnirehtet.git", branch: "master"
-
-  stable do
-    url "https://github.com/Genymobile/gnirehtet/archive/v2.5.tar.gz"
-    sha256 "2b55b56e1b21d1b609a0899fe85d1f311120bb12b04761ec586187338daf6ec5"
-
-    # Fix compilation issue with rust 1.64.0+
-    # upstream PR reference, https://github.com/Genymobile/gnirehtet/pull/478
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/d62149f/gnirehtet/2.5-rust-1.64.0.patch"
-      sha256 "bdda0abc50344b14227d880d8257189f49eb586722b6e5fa07f3cb70b442b7a0"
-    end
-  end
 
   bottle do
     rebuild 1
@@ -32,8 +21,8 @@ class Gnirehtet < Formula
   depends_on "socat" => :test
 
   resource "java_bundle" do
-    url "https://github.com/Genymobile/gnirehtet/releases/download/v2.5/gnirehtet-java-v2.5.zip"
-    sha256 "c65fc1a35e6b169ab6aa45e695c043e933f6fd650363aea7c2add0ecb0db27ca"
+    url "https://github.com/Genymobile/gnirehtet/releases/download/v2.5.1/gnirehtet-java-v2.5.1.zip"
+    sha256 "816748078fa6a304600a294a13338a06ac778bcc0e57b62d88328c7968ad2d3a"
   end
 
   def install
