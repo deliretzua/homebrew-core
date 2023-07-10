@@ -2,8 +2,8 @@ class StellarCore < Formula
   desc "Backbone of the Stellar (XLM) network"
   homepage "https://www.stellar.org/"
   url "https://github.com/stellar/stellar-core.git",
-      tag:      "v19.11.0",
-      revision: "7fb6d5e8858fed6ea365f8717b0266635f578477"
+      tag:      "v19.12.0",
+      revision: "2109a168a895349f87b502ae3d182380b378fa47"
   license "Apache-2.0"
   head "https://github.com/stellar/stellar-core.git", branch: "master"
 
