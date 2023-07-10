@@ -8,6 +8,7 @@ class Bazarr < Formula
   url "https://github.com/morpheus65535/bazarr/releases/download/v1.2.3/bazarr.zip"
   sha256 "eb22d7b1dc37c1dc6b0aa36c36b6dc8ea7ea81147536ecb2c70ea8b18425f2e6"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/morpheus65535/bazarr.git", branch: "master"
 
   bottle do
@@ -67,17 +68,25 @@ class Bazarr < Formula
       PATH:       "#{Formula["ffmpeg"].opt_bin}:#{HOMEBREW_PREFIX/"bin"}:$PATH",
       PYTHONPATH: ENV["PYTHONPATH"]
 
-    (libexec/"data").install_symlink pkgetc => "config"
+    pkgvar = var/"bazarr"
+
+    pkgvar.mkpath
+    pkgvar.install_symlink pkgetc => "config"
+
+    pkgetc.mkpath
+    cp Dir[libexec/"data/config/*"], pkgetc
+
+    libexec.install_symlink pkgvar => "data"
   end
 
   def post_install
-    pkgetc.mkpath
+    pkgvar = var/"bazarr"
 
     config_file = pkgetc/"config.ini"
     unless config_file.exist?
       config_file.write <<~EOS
         [backup]
-        folder = #{opt_libexec}/data/backup
+        folder = #{pkgvar}/backup
       EOS
     end
   end
