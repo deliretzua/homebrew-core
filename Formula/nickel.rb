@@ -1,8 +1,8 @@
 class Nickel < Formula
   desc "Better configuration for less"
   homepage "https://github.com/tweag/nickel"
-  url "https://github.com/tweag/nickel/archive/refs/tags/1.0.0.tar.gz"
-  sha256 "d844aa7168534cf328dc553cd9fbfe58bd19dee920f630240ff1545d7c20b4e9"
+  url "https://github.com/tweag/nickel/archive/refs/tags/1.1.1.tar.gz"
+  sha256 "48f709d5c21c9961bfaaf7a1abc766fc62909afd249e8cd104f72d2a68df601e"
   license "MIT"
   head "https://github.com/tweag/nickel.git", branch: "master"
 
@@ -19,7 +19,7 @@ class Nickel < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "cli")
   end
 
   test do
