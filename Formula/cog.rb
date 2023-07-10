@@ -17,7 +17,6 @@ class Cog < Formula
   end
 
   depends_on "go" => :build
-  depends_on "redis"
 
   uses_from_macos "python" => :build
 
