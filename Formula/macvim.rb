@@ -2,9 +2,9 @@
 class Macvim < Formula
   desc "GUI for vim, made for macOS"
   homepage "https://github.com/macvim-dev/macvim"
-  url "https://github.com/macvim-dev/macvim/archive/refs/tags/release-176.tar.gz"
-  version "9.0.1276"
-  sha256 "e729964b4979f42fd2701236adb9bea35c6cf3981aa02ae7790a240fb92cf39e"
+  url "https://github.com/macvim-dev/macvim/archive/refs/tags/release-177.tar.gz"
+  version "9.0.1677"
+  sha256 "f0c7ce7bc81b1cecb9e9c3c39c35b9a02a3ea1f08f9131a6032f9c8bff6aa8d7"
   license "Vim"
   head "https://github.com/macvim-dev/macvim.git", branch: "master"
 
@@ -68,8 +68,6 @@ class Macvim < Formula
     system "make"
 
     prefix.install "src/MacVim/build/Release/MacVim.app"
-    # Remove autoupdating universal binaries
-    (prefix/"MacVim.app/Contents/Frameworks/Sparkle.framework").rmtree
     bin.install_symlink prefix/"MacVim.app/Contents/bin/mvim"
 
     # Create MacVim vimdiff, view, ex equivalents
