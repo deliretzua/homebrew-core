@@ -11,13 +11,13 @@ class Gradle < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6e147cd2d5fa3704c8e24381be4d605929e3377e07ecf0407bc2e8b43f414e40"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6e147cd2d5fa3704c8e24381be4d605929e3377e07ecf0407bc2e8b43f414e40"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6e147cd2d5fa3704c8e24381be4d605929e3377e07ecf0407bc2e8b43f414e40"
-    sha256 cellar: :any_skip_relocation, ventura:        "f774055fd89619e06353a4e3b955812ce0dfdddac6a159d6402daea7ac532796"
-    sha256 cellar: :any_skip_relocation, monterey:       "f774055fd89619e06353a4e3b955812ce0dfdddac6a159d6402daea7ac532796"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f774055fd89619e06353a4e3b955812ce0dfdddac6a159d6402daea7ac532796"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e147cd2d5fa3704c8e24381be4d605929e3377e07ecf0407bc2e8b43f414e40"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cb845ba56cfb528ebd2c35f4b7e93ac5a7017a48c5e17df6deceed93fc30f028"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cb845ba56cfb528ebd2c35f4b7e93ac5a7017a48c5e17df6deceed93fc30f028"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cb845ba56cfb528ebd2c35f4b7e93ac5a7017a48c5e17df6deceed93fc30f028"
+    sha256 cellar: :any_skip_relocation, ventura:        "0827979f8a88ab5d214ccf22f4627f4d173140ec16f3c09f7a0ad7689bb45f5e"
+    sha256 cellar: :any_skip_relocation, monterey:       "0827979f8a88ab5d214ccf22f4627f4d173140ec16f3c09f7a0ad7689bb45f5e"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0827979f8a88ab5d214ccf22f4627f4d173140ec16f3c09f7a0ad7689bb45f5e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb845ba56cfb528ebd2c35f4b7e93ac5a7017a48c5e17df6deceed93fc30f028"
   end
 
   depends_on "openjdk"
