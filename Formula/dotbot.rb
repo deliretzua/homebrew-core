@@ -3,8 +3,8 @@ class Dotbot < Formula
 
   desc "Tool that bootstraps your dotfiles"
   homepage "https://github.com/anishathalye/dotbot"
-  url "https://files.pythonhosted.org/packages/7c/40/5af5a63afb366e825998d7e618c9331661582e9366da2c21c1e1973e90c3/dotbot-1.19.1.tar.gz"
-  sha256 "17a770bfbf72deaddd5c054d26a8c2353ad145ed61c8de9d898134b825696e6b"
+  url "https://files.pythonhosted.org/packages/17/dd/e63106d944dfac3d2092ec5935c69f73ac806138586df719b3ce72027066/dotbot-1.19.2.tar.gz"
+  sha256 "ae4e232fd47085a647826589d1c5bf2bf426c04f777365dc7e1e0626cdac2f01"
   license "MIT"
 
   bottle do
@@ -19,7 +19,7 @@ class Dotbot < Formula
 
   depends_on "python@3.11"
 
-  resource "PyYAML" do
+  resource "pyyaml" do
     url "https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz"
     sha256 "607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"
   end
