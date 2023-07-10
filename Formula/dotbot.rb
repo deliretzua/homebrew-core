@@ -8,13 +8,13 @@ class Dotbot < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "82a87ef5c38c91a4329bbafc6b6d4c0856e512e1334c8d39529d4964273d4a51"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7d406769d6bb49ca919e1db2e271d7a6e20aef5320e07ed4f1d55755f31d10a1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0d335163a7b3b68aaaf187ceba945a71f10067ee7bf2cbaa36e6611783f85ffa"
-    sha256 cellar: :any_skip_relocation, ventura:        "ca7ab372224f4b7ec9d1f165bf2d2d6a8f3e71d59e092818cd491545657f1d3a"
-    sha256 cellar: :any_skip_relocation, monterey:       "b62202266d5a89356facd76dbc1f12af470f3226f3a4cf08d2ef31b0aac52877"
-    sha256 cellar: :any_skip_relocation, big_sur:        "18a39de29f61831836bc9290694da93812b6b20f6bbd851dabc3643a6219137a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "44acb56ce1e862e7ee29874f32e6c0318a38d4abc54988a21557c2e35bb6580b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "79006ccdd696063ce2cbee6ec1dd4a91d842409cadc108d28092321e75dee875"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8bdffd6a5bca42d174eeb3e7841022197c97afa037409c27983a97f30f9e7282"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c25024e47dbd3e1d884f404610ebf53c084e2185c7f07c88797458809b2ebcb2"
+    sha256 cellar: :any_skip_relocation, ventura:        "b2407dc6cd7f2c311447a8b103493268e02b5e42150332deb65151d2a9994224"
+    sha256 cellar: :any_skip_relocation, monterey:       "27406050db0bf0d3066eca4467c981b2a7cc452cfa0d2af50d43295c29e8a16d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7c2d3062329b363a839f6a5dd923a58c08f8867271ab622d425b20fb01881d99"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "23cf6f11a376a3a0e37e9a906d76e90469fd974d9c3def1f3a3a4532db79709a"
   end
 
   depends_on "python@3.11"
