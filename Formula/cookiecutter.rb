@@ -3,8 +3,8 @@ class Cookiecutter < Formula
 
   desc "Utility that creates projects from templates"
   homepage "https://github.com/cookiecutter/cookiecutter"
-  url "https://files.pythonhosted.org/packages/2a/89/aeecd1fcbb95ced583519aebccf02451f8900f7d9b55a368e131f8110f2e/cookiecutter-2.2.0.tar.gz"
-  sha256 "b3437f49d04d359a200b03b63fb9e51be9eb0e751372c318a712a868d72c4f82"
+  url "https://files.pythonhosted.org/packages/4f/19/6a371bbc955dc12dad03f79108c8fe8c6ae90c2bc1fe772124aad25b160c/cookiecutter-2.2.2.tar.gz"
+  sha256 "3b475d17573a7785b4a22fab693be249840e235a92c93c0fa088b39e9193f194"
   license "BSD-3-Clause"
   head "https://github.com/cookiecutter/cookiecutter.git", branch: "master"
 
@@ -43,8 +43,8 @@ class Cookiecutter < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "click" do
