@@ -5,7 +5,7 @@ class Git < Formula
   url "https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.41.0.tar.xz"
   sha256 "e748bafd424cfe80b212cbc6f1bbccc3a47d4862fb1eb7988877750478568040"
   license "GPL-2.0-only"
-  revision 1
+  revision 2
   head "https://github.com/git/git.git", branch: "master"
 
   livecheck do
@@ -54,7 +54,7 @@ class Git < Formula
     # If these things are installed, tell Git build system not to use them
     ENV["NO_FINK"] = "1"
     ENV["NO_DARWIN_PORTS"] = "1"
-    ENV["PYTHON_PATH"] = which("python")
+    ENV["PYTHON_PATH"] = which("python3")
     ENV["PERL_PATH"] = which("perl")
     ENV["USE_LIBPCRE2"] = "1"
     ENV["INSTALL_SYMLINKS"] = "1"
