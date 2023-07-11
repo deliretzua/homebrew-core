@@ -8,13 +8,13 @@ class Sickchill < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "850a6787b110c15af3e9bcc1bcb8833ea263e8c877ed650bc7aa70889151fbe4"
-    sha256 cellar: :any,                 arm64_monterey: "ad73e2114d02fd2be9c65ba1c378b2d2911a24d99b78fef9713a3281d09c8b0b"
-    sha256 cellar: :any,                 arm64_big_sur:  "e274f861c881976a85a2ed98b0fe054da2878da05c19753fb0b39927dfea8bce"
-    sha256 cellar: :any,                 ventura:        "d8526feb794110341180d7b87364b4c4db7bf110d3843b75455e3278bfad6de4"
-    sha256 cellar: :any,                 monterey:       "9f41c80d0af4003095680bf788bbae1aeded75ca4f9cdb2e563fc9e5d6688901"
-    sha256 cellar: :any,                 big_sur:        "a64f5267c3c34eaa86f22f1949fefdb1b233bcc4c570361026d0c6a5de0f0507"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "507775650927284a754b0454d32cab863128dc19848a661badcee65508a811ea"
+    sha256 cellar: :any,                 arm64_ventura:  "a2fd1c6ff2bab51e823acb7c40a6796b098bc1d151d3b6f06bf922eded7d80a3"
+    sha256 cellar: :any,                 arm64_monterey: "52cf053295796b4fb9ba6d77dc01b7d4e48e0d1bbd5e3ba9e12e669b4f00d2f6"
+    sha256 cellar: :any,                 arm64_big_sur:  "90fc81f2da3e53117636c69efb982d96b63d414aa0ec563fcf34c63e656b7850"
+    sha256 cellar: :any,                 ventura:        "02b638e081a10def1382ac1919b7aa3c9f4e7833ec6f442f6aaf55f2911b7e28"
+    sha256 cellar: :any,                 monterey:       "39c1c3d28e1306add1c6a95ec75c016b784d273f3394207e5c5151f2f0f578a9"
+    sha256 cellar: :any,                 big_sur:        "3e5f4fee0821aa54c7c22f444ef74701711a9aa78735505d48f0b3a73392c16a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8c3000c16300cc5ece4b06885869b9b05189c12d7d2ec14a6c6a3aec1d1f84b"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
