@@ -1,9 +1,10 @@
 class Aptos < Formula
   desc "Layer 1 blockchain built to support fair access to decentralized assets for all"
   homepage "https://aptoslabs.com/"
-  url "https://github.com/aptos-labs/aptos-core/archive/refs/tags/aptos-cli-v2.0.1.tar.gz"
-  sha256 "86c7795d91ef90984cbdf249fc0616dfcae168c3a01a8edc6cefd82a9e0841ef"
+  url "https://github.com/aptos-labs/aptos-core/archive/refs/tags/aptos-cli-v2.0.2.tar.gz"
+  sha256 "3487775e93a0b9b04239372f7e150a1c83b46f0f6e64ff8a5f6ee00f8f510e12"
   license "Apache-2.0"
+  head "https://github.com/aptos-labs/aptos-core.git"
 
   livecheck do
     url :stable
@@ -33,9 +34,10 @@ class Aptos < Formula
 
   def install
     system "#{Formula["rustup-init"].bin}/rustup-init",
-      "-qy", "--no-modify-path", "--default-toolchain", "1.64"
+      "-qy", "--no-modify-path", "--default-toolchain", "1.70"
     ENV.prepend_path "PATH", HOMEBREW_CACHE/"cargo_cache/bin"
-    system "./scripts/cli/build_cli_release.sh", "homebrew"
+    system "RUSTFLAGS='--cfg tokio_unstable -C force-frame-pointers=yes -C force-unwind-tables=yes' \
+           cargo build -p aptos --profile cli"
     bin.install "target/cli/aptos"
   end
 
