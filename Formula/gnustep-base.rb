@@ -17,13 +17,13 @@ class GnustepBase < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9b9c44a7b2c574388b1137624abca0fb7b840184f3d20de09e44b46370b0a31f"
-    sha256 cellar: :any,                 arm64_monterey: "b9e9859e4b4f45972f7a4ad3bac1e5186239d7cc28bc956ff384d06c4967c299"
-    sha256 cellar: :any,                 arm64_big_sur:  "733a9754a371902290f84f8aa395aefd08c3fd4c760fbb66ba891002bd78aa8c"
-    sha256 cellar: :any,                 ventura:        "eb5ccca2b5dba081540bc1422d071fa9899d19935c7b3565d4dc9fac424f2c46"
-    sha256 cellar: :any,                 monterey:       "150d627aafdb6c08033e39864b78c7971ea7b2d66cba7ff1bf27a10816d1add1"
-    sha256 cellar: :any,                 big_sur:        "48e2dde1f3b57c87f5a8af140873487f51139b2363540845fc66ca03b15b3869"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0fc6e0c758b95f480b7504410f77bdf3b33db270baf0f57cedcf174ca1cad760"
+    sha256 cellar: :any,                 arm64_ventura:  "f7b268cf13fbe24b2471b778c42c38c2000e05d08113e7a7aa28d34385a85a26"
+    sha256 cellar: :any,                 arm64_monterey: "ef39d1e12dcce4df899511dbc8bef26420873c8ff067a645e2f3771d4ffba68c"
+    sha256 cellar: :any,                 arm64_big_sur:  "80743312a107c370f518900583f95c359599b8a164cd995b8ec5694a8835be98"
+    sha256 cellar: :any,                 ventura:        "b2af7e946b32130040a310ba179cc18b4e71a084928585e165077556edd3fe48"
+    sha256 cellar: :any,                 monterey:       "9f1293102d1932e18e70d2fb7c49d2b768a98f94c9c9147b4384a61bbf0a90a6"
+    sha256 cellar: :any,                 big_sur:        "c5635161e124a5bad33bb9acfc47abc3bc66b3a32d0f571296e468ffe73f92f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "403e69d3d5ab1ed07a7e36e6254af6420c5fed69d386faa033ffa51a2c41939b"
   end
 
   depends_on "gnustep-make" => :build
