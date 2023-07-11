@@ -4,6 +4,7 @@ class Fizz < Formula
   url "https://github.com/facebookincubator/fizz/releases/download/v2023.07.10.00/fizz-v2023.07.10.00.tar.gz"
   sha256 "00e54d68ed1589507bc511cae29b706740cb2c201819186e62399208b58c0dd1"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/facebookincubator/fizz.git", branch: "main"
 
   bottle do
