@@ -1,8 +1,8 @@
 class CiliumCli < Formula
   desc "CLI to install, manage & troubleshoot Kubernetes clusters running Cilium"
   homepage "https://cilium.io"
-  url "https://github.com/cilium/cilium-cli/archive/refs/tags/v0.15.0.tar.gz"
-  sha256 "cde0db85769feae595c5bd83467c85cc067923287adaf5782ec22cc9229464a3"
+  url "https://github.com/cilium/cilium-cli/archive/refs/tags/v0.15.1.tar.gz"
+  sha256 "8f6bf170b7757fbc8731aac52b8332e2851bd9c2739bcc54f33bfc5a68da568d"
   license "Apache-2.0"
 
   bottle do
@@ -26,7 +26,7 @@ class CiliumCli < Formula
 
   test do
     assert_match("cilium-cli: v#{version}", shell_output("#{bin}/cilium version 2>&1"))
-    assert_match('Cluster name "" is not valid', shell_output("#{bin}/cilium install 2>&1", 1))
+    assert_match("Kubernetes cluster unreachable", shell_output("#{bin}/cilium install 2>&1", 1))
     assert_match("Error: Unable to enable Hubble", shell_output("#{bin}/cilium hubble enable 2>&1", 1))
   end
 end
