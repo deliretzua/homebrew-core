@@ -7,6 +7,16 @@ class RuffLsp < Formula
   sha256 "49e2ce87b266c162056e65f121457f193956a6299360a87e45de623b5f697a09"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e6d958e83118ba75b9bcce40615f0bfab778a7af306ecc7499ce62722208015d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "338884417c6175e2ec556661ad72b3afa6d6bb47187398c197961a3f70f44794"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ee11619b033915e4a472bd17c05e119d3beffabbe7be4b386e216d9e54d4733d"
+    sha256 cellar: :any_skip_relocation, ventura:        "0b2f0620f7625e4bff86140aa9216ad923ec8f244200caa11e3c2bc2c7342088"
+    sha256 cellar: :any_skip_relocation, monterey:       "bcf8667fa668cf1f954c28634d0d58e7365277d0ec64f8b56f8bc4801717ee32"
+    sha256 cellar: :any_skip_relocation, big_sur:        "21705992cc225f284d5f01502f9ca105f0bf65670890c0da1aa634e40a94e560"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "78b62008ccb994e459d8bd1a5a45131038837ba7326d60cf460411c0dc561091"
+  end
+
   depends_on "python-typing-extensions"
   depends_on "python@3.11"
   depends_on "ruff"
