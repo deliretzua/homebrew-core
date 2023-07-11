@@ -1,8 +1,8 @@
 class Libnftnl < Formula
   desc "Netfilter library providing interface to the nf_tables subsystem"
   homepage "https://netfilter.org/projects/libnftnl/"
-  url "https://www.netfilter.org/pub/libnftnl/libnftnl-1.2.5.tar.xz"
-  sha256 "966de0a8120c8a53db859889749368bfb2cba0c4f0b4c1a30d264eccc45f1226"
+  url "https://www.netfilter.org/pub/libnftnl/libnftnl-1.2.6.tar.xz"
+  sha256 "ceeaea2cd92147da19f13a35a7f1a4bc2767ff897e838e4b479cf54b59c777f4"
   license "GPL-2.0-or-later"
 
   livecheck do
