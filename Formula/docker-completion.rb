@@ -21,8 +21,10 @@ class DockerCompletion < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c0bbb6a169fb6c51779930dd7fa725609155da8dd427ea1c0e7008fd2c132a2"
   end
 
-  conflicts_with "docker",
-    because: "docker already includes these completion scripts"
+  # These used to also be provided by the `docker` formula.
+  link_overwrite "etc/bash_completion.d/docker"
+  link_overwrite "share/fish/vendor_completions.d/docker.fish"
+  link_overwrite "share/zsh/site-functions/_docker"
 
   def install
     bash_completion.install "contrib/completion/bash/docker"
