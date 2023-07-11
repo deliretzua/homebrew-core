@@ -1,8 +1,8 @@
 class Micromamba < Formula
   desc "Fast Cross-Platform Package Manager"
   homepage "https://github.com/mamba-org/mamba"
-  url "https://github.com/mamba-org/mamba/archive/refs/tags/micromamba-1.4.7.tar.gz"
-  sha256 "f09914215f626564da516b676a5cf64d8e3c4c8202c5524983cae3a03ce36689"
+  url "https://github.com/mamba-org/mamba/archive/refs/tags/micromamba-1.4.8.tar.gz"
+  sha256 "daf5a770d745dfc562348a8fea3114b5c8fdfdd9683e4bf86552733e0cc2cf38"
   license "BSD-3-Clause"
   head "https://github.com/mamba-org/mamba.git", branch: "main"
 
