@@ -1,9 +1,9 @@
 class Jmeter < Formula
   desc "Load testing and performance measurement application"
   homepage "https://jmeter.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=jmeter/binaries/apache-jmeter-5.6.tgz"
-  mirror "https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.6.tgz"
-  sha256 "019690e2f352077e35f1f2715cb3c05f8ef6967b3204c098065b5d16ac123f9e"
+  url "https://www.apache.org/dyn/closer.lua?path=jmeter/binaries/apache-jmeter-5.6.1.tgz"
+  mirror "https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.6.1.tgz"
+  sha256 "3f1dbe7a35afb96e2ba4e3672be1ffef713f002118450709c33b806575d6a07d"
   license "Apache-2.0"
 
   bottle do
