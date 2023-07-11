@@ -24,8 +24,7 @@ class Docker < Formula
 
   depends_on "go" => :build
   depends_on "go-md2man" => :build
-
-  conflicts_with "docker-completion", because: "docker already includes these completion scripts"
+  depends_on "docker-completion"
 
   def install
     ENV["GOPATH"] = buildpath
@@ -44,10 +43,6 @@ class Docker < Formula
       (man/"man#{section}").mkpath
       system "go-md2man", "-in=#{md}", "-out=#{man}/man#{section}/#{md.stem}"
     end
-
-    bash_completion.install "contrib/completion/bash/docker"
-    fish_completion.install "contrib/completion/fish/docker.fish"
-    zsh_completion.install "contrib/completion/zsh/_docker"
   end
 
   test do
