@@ -4,6 +4,7 @@ class Folly < Formula
   url "https://github.com/facebook/folly/archive/refs/tags/v2023.07.10.00.tar.gz"
   sha256 "ee4346f6dc9288bbcd8b016294669fe16cac36132c33ef039286962f85229250"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/facebook/folly.git", branch: "main"
 
   bottle do
@@ -24,6 +25,7 @@ class Folly < Formula
   depends_on "gflags"
   depends_on "glog"
   depends_on "libevent"
+  depends_on "libsodium"
   depends_on "lz4"
   depends_on "openssl@3"
   depends_on "snappy"
@@ -48,7 +50,7 @@ class Folly < Formula
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
 
-    args = std_cmake_args + %W[
+    args = %W[
       -DCMAKE_LIBRARY_ARCHITECTURE=#{Hardware::CPU.arch}
       -DFOLLY_USE_JEMALLOC=OFF
     ]
@@ -56,13 +58,13 @@ class Folly < Formula
     system "cmake", "-S", ".", "-B", "build/shared",
                     "-DBUILD_SHARED_LIBS=ON",
                     "-DCMAKE_INSTALL_RPATH=#{rpath}",
-                    *args
+                    *args, *std_cmake_args
     system "cmake", "--build", "build/shared"
     system "cmake", "--install", "build/shared"
 
     system "cmake", "-S", ".", "-B", "build/static",
                     "-DBUILD_SHARED_LIBS=OFF",
-                    *args
+                    *args, *std_cmake_args
     system "cmake", "--build", "build/static"
     lib.install "build/static/libfolly.a", "build/static/folly/libfollybenchmark.a"
   end
