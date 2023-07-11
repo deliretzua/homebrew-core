@@ -6,6 +6,16 @@ class GoFeatureFlag < Formula
   license "MIT"
   head "https://github.com/thomaspoignant/go-feature-flag.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fc680d6ee16022391dc99cbc4cb1fdf938af3038660856edc155ef5e3cc541a5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fc680d6ee16022391dc99cbc4cb1fdf938af3038660856edc155ef5e3cc541a5"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fc680d6ee16022391dc99cbc4cb1fdf938af3038660856edc155ef5e3cc541a5"
+    sha256 cellar: :any_skip_relocation, ventura:        "1179dda8f6b391cc30fa4d2f3da3526d8e67aee448ea66c5903f42c0c34fb631"
+    sha256 cellar: :any_skip_relocation, monterey:       "1179dda8f6b391cc30fa4d2f3da3526d8e67aee448ea66c5903f42c0c34fb631"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1179dda8f6b391cc30fa4d2f3da3526d8e67aee448ea66c5903f42c0c34fb631"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a1d1773d831384dae77c0908fa075474c34ee1b6e860000181951e066147b37"
+  end
+
   depends_on "go" => :build
 
   def install
