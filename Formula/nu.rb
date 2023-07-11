@@ -4,7 +4,7 @@ class Nu < Formula
   url "https://github.com/programming-nu/nu/archive/v2.3.0.tar.gz"
   sha256 "1a6839c1f45aff10797dd4ce5498edaf2f04c415b3c28cd06a7e0697d6133342"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/programming-nu/nu.git", branch: "master"
 
   bottle do
@@ -47,6 +47,15 @@ class Nu < Formula
   patch do
     url "https://github.com/programming-nu/nu/commit/0a837a407f9e9b8f7861b0dd2736f54c04729642.patch?full_index=1"
     sha256 "6c8567f0c2681f652dc087f6ef4b713bcc598e99729099a910984f9134f6a72c"
+  end
+
+  # Fix missing <readline/history.h> include in objc/NuParser.m
+  # Build failure details: https://github.com/Homebrew/homebrew-core/pull/126905#issuecomment-1487877021
+  # PR ref: https://github.com/programming-nu/nu/pull/103
+  # TODO: Remove if upstream PR is merged and in a release.
+  patch do
+    url "https://github.com/programming-nu/nu/commit/fdd7cfb3eaf4c456a2d8c1406526f02861c3f877.patch?full_index=1"
+    sha256 "d00afd41b68b9f67fd698f0651f38dd9da56517724753f8b4dc6c85d048ff88b"
   end
 
   def install
