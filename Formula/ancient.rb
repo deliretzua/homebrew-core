@@ -1,8 +1,8 @@
 class Ancient < Formula
   desc "Decompression routines for ancient formats"
   homepage "https://github.com/temisu/ancient"
-  url "https://github.com/temisu/ancient/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "9c6b31e4d968ec3adb25596a0b30405d1080d3de0546f1485ecb0ac2eca6261d"
+  url "https://github.com/temisu/ancient/archive/refs/tags/v2.1.0.tar.gz"
+  sha256 "7fde64be49e52ce5abc8804d3df13ba1475db0c0bb0513ae50d518e25e76373a"
   license "BSD-2-Clause"
 
   bottle do
@@ -40,7 +40,5 @@ class Ancient < Formula
 
     system ENV.cxx, "-std=c++17", "test.cpp", "-I#{include}", "-L#{lib}", "-lancient", "-o", "test"
     system "./test"
-
-    system bin/"ancient", "scan", testpath, testpath
   end
 end
