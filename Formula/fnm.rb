@@ -1,8 +1,8 @@
 class Fnm < Formula
   desc "Fast and simple Node.js version manager"
   homepage "https://github.com/Schniz/fnm"
-  url "https://github.com/Schniz/fnm/archive/v1.34.0.tar.gz"
-  sha256 "6ee954538e0af38b53004ea8834e8fec6b36d22711b67132888d1cbdbb06a09d"
+  url "https://github.com/Schniz/fnm/archive/v1.35.0.tar.gz"
+  sha256 "31b29e4534f17240ae576c9b726498bf551f1c14b3a0fb3ecc9f4aa95843d27a"
   license "GPL-3.0-only"
   head "https://github.com/Schniz/fnm.git", branch: "master"
 
@@ -24,6 +24,13 @@ class Fnm < Formula
   depends_on "rust" => :build
 
   uses_from_macos "zlib"
+
+  # Patch the completion generation per clap v4 upgrade
+  # upstream PR ref, https://github.com/Schniz/fnm/pull/1010
+  patch do
+    url "https://github.com/Schniz/fnm/commit/85625e64d596c6fc5d1ff20d4af54d43c2561b4b.patch?full_index=1"
+    sha256 "30c30985ea14f6c7124e7035cb193b4280a9537a7627ea45f3efd2b0baf327b2"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args
