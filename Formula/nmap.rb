@@ -1,6 +1,4 @@
 class Nmap < Formula
-  include Language::Python::Shebang
-
   desc "Port scanning utility for large networks"
   homepage "https://nmap.org/"
   license :cannot_represent
@@ -67,13 +65,16 @@ class Nmap < Formula
     bin.glob("uninstall_*").map(&:unlink) # Users should use brew uninstall.
     return unless (bin/"ndiff").exist? # Needs Python
 
-    rewrite_shebang detected_python_shebang(use_python_from_path: true), bin/"ndiff"
+    # We can't use `rewrite_shebang` here because `detected_python_shebang` only works
+    # for shebangs that start with `/usr/bin`, but the shebang we want to replace
+    # might start with `/Applications` (for the `python3` inside Xcode.app).
+    inreplace bin/"ndiff", %r{\A#!.*/python(\d+(\.\d+)?)?$}, "#!/usr/bin/env python3"
   end
 
   def caveats
     on_macos do
       <<~EOS
-        To use `ndiff`, you must do:
+        If using `ndiff` returns an error about not being able to import the ndiff module, try:
           chmod go-w #{HOMEBREW_CELLAR}
       EOS
     end
