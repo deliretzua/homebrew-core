@@ -21,10 +21,10 @@ class Blink < Formula
   uses_from_macos "zlib"
 
   def install
-    ENV.prepend_path "PATH", Formula["make"].opt_libexec/"gnubin"
     system "./configure", "--prefix=#{prefix}", "--enable-vfs"
-    system "make"
-    system "make", "install"
+    # Call `make` as `gmake` to use Homebrew `make`.
+    system "gmake" # must be separate steps.
+    system "gmake", "install"
   end
 
   test do
