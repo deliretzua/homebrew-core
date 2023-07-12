@@ -91,11 +91,8 @@ class Newsboat < Formula
     ENV.prepend_path "PKG_CONFIG_PATH", libexec/"lib/pkgconfig"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{libexec}/lib"
 
-    if OS.mac?
-      system Formula["make"].opt_bin/"gmake", "install", "prefix=#{prefix}"
-    else
-      system "make", "install", "prefix=#{prefix}"
-    end
+    # Call `make` as `gmake` to use Homebrew `make`.
+    system "gmake", "install", "prefix=#{prefix}"
   end
 
   test do
