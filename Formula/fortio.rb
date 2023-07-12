@@ -2,13 +2,16 @@ class Fortio < Formula
   desc "HTTP and gRPC load testing and visualization tool and server"
   homepage "https://fortio.org/"
   url "https://github.com/fortio/fortio.git",
-      tag:      "v1.57.0",
-      revision: "6a72267d153989a169e2d86ba901ade26cddf950"
+      tag:      "v1.57.3",
+      revision: "c1c5e58906de3bb19779c1545d3a70bd649b3e63"
   license "Apache-2.0"
 
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_latest
   end
 
   bottle do
