@@ -78,21 +78,20 @@ class Podman < Formula
   def install
     if OS.mac?
       ENV["CGO_ENABLED"] = "1"
-      ENV.prepend_path "PATH", Formula["make"].opt_libexec/"gnubin"
 
-      system "make", "podman-remote"
+      system "gmake", "podman-remote"
       bin.install "bin/darwin/podman" => "podman-remote"
       bin.install_symlink bin/"podman-remote" => "podman"
 
-      system "make", "podman-mac-helper"
+      system "gmake", "podman-mac-helper"
       bin.install "bin/darwin/podman-mac-helper" => "podman-mac-helper"
 
       resource("gvproxy").stage do
-        system "make", "gvproxy"
+        system "gmake", "gvproxy"
         (libexec/"podman").install "bin/gvproxy"
       end
 
-      system "make", "podman-remote-darwin-docs"
+      system "gmake", "podman-remote-darwin-docs"
       man1.install Dir["docs/build/remote/darwin/*.1"]
 
       bash_completion.install "completions/bash/podman"
