@@ -23,13 +23,14 @@ class Nmap < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "1fb5366d5ff0a6dff4aca4854b35138eefe8f447b89e63cd6bacf709747cb7b9"
-    sha256 arm64_monterey: "fcbded0558154451e4d2bf9dc0526b1e6eafbfd00cfee631071b875058c8ff05"
-    sha256 arm64_big_sur:  "bb0cddc6143f47f80f51cc055da7fea7124ba56c06c541bb166d98806d611904"
-    sha256 ventura:        "5b384ad6e81ff105b5530aaee7ddf2b8f75dd171d5601c4b58e9951a28b6c19d"
-    sha256 monterey:       "28593488b9872c097b031b1ee7d4be30935a61068e5c26fd55e664008674874b"
-    sha256 big_sur:        "1fcfff20b13972811c7d3cc33cd6e3a6dd01f1a4fad0fed3ebb4432dbeb5b765"
-    sha256 x86_64_linux:   "8be3c481551f967c24ad48945f33d1da0b305ab78a8d09d45142ba73c3b9ae93"
+    rebuild 1
+    sha256 arm64_ventura:  "83d8ed27f97a962bc7c291d62f58fc256842fbc362ec864842ca95c7d33d30f2"
+    sha256 arm64_monterey: "330b30825ed94ab28251a49f4bf7c29b787a9e110874d62bdadb7bbed3e7e5ad"
+    sha256 arm64_big_sur:  "cda65073fe14ec68918386c3e59e0eda28118c24a36f935f714a4b281f4aacd1"
+    sha256 ventura:        "769500f197813a9f2314106dde778efe0169d074655ce7ff7d16e210cffd0db2"
+    sha256 monterey:       "83003d39656e8a11fe33d73acaa73711b31517de04420ab1f76070e5c5557242"
+    sha256 big_sur:        "f8d1270f7cf1ff7c0fff44cbc1dd18757bb3fb930e89c94df4a3eab5b82b4090"
+    sha256 x86_64_linux:   "dc5baca48d808491591083b6978fb3b94801fcca148f4360ced4799b5303b13a"
   end
 
   depends_on "liblinear"
