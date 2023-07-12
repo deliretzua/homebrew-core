@@ -24,6 +24,10 @@ class Tt < Formula
   uses_from_macos "unzip"
   uses_from_macos "zip"
 
+  on_macos do
+    depends_on "bash-completion"
+  end
+
   def install
     ENV["TT_CLI_BUILD_SSL"] = "shared"
     system "mage", "build"
