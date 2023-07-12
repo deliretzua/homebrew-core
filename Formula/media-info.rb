@@ -1,8 +1,8 @@
 class MediaInfo < Formula
   desc "Unified display of technical and tag data for audio/video"
   homepage "https://mediaarea.net/"
-  url "https://mediaarea.net/download/binary/mediainfo/23.06/MediaInfo_CLI_23.06_GNU_FromSource.tar.bz2"
-  sha256 "6d29ca46627681680cd52807c221111074bad0cb4ebe18c78b19c2ad24ee882d"
+  url "https://mediaarea.net/download/binary/mediainfo/23.07/MediaInfo_CLI_23.07_GNU_FromSource.tar.bz2"
+  sha256 "306f1df347eacc377f6a5f5a9dca97f932eb799705cf440d0be490737e7a038b"
   license "BSD-2-Clause"
   head "https://github.com/MediaArea/MediaInfo.git", branch: "master"
 
@@ -29,8 +29,7 @@ class MediaInfo < Formula
 
   def install
     cd "MediaInfo/Project/GNU/CLI" do
-      system "./configure", "--disable-debug", "--disable-dependency-tracking",
-                            "--prefix=#{prefix}"
+      system "./configure", *std_configure_args
       system "make", "install"
     end
   end
