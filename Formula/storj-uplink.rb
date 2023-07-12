@@ -1,8 +1,8 @@
 class StorjUplink < Formula
   desc "Uplink CLI for the Storj network"
   homepage "https://storj.io"
-  url "https://github.com/storj/storj/archive/refs/tags/v1.80.10.tar.gz"
-  sha256 "5ffbb768f5e4cf35d2e3ff0668ad22f4139f2d42ab48df525aebe9d9c6e6f20a"
+  url "https://github.com/storj/storj/archive/refs/tags/v1.81.3.tar.gz"
+  sha256 "f1c22ac526c7b324379bc517d386746aa4fafb880b574d5c0bf4795355b2f753"
   license "AGPL-3.0-only"
 
   livecheck do
@@ -20,10 +20,7 @@ class StorjUplink < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d46e6c2ab427342314c2393a5a8024d13bd752954cb08c234ad2f3380899cdb1"
   end
 
-  # Support for go 1.20 is merged upstream but not yet landed in a tag:
-  # https://github.com/storj/storj/commit/873a2025307ef85a1ff2f6bab37513ce3a0e0b4c
-  # Remove on next release.
-  depends_on "go@1.19" => :build
+  depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(output: bin/"uplink"), "./cmd/uplink"
