@@ -29,9 +29,8 @@ class UutilsCoreutils < Formula
   def install
     man1.mkpath
 
-    ENV.prepend_path "PATH", Formula["make"].opt_libexec/"gnubin"
-
-    system "make", "install",
+    # Call `make` as `gmake` to use Homebrew `make`.
+    system "gmake", "install",
            "PROG_PREFIX=u",
            "PREFIX=#{prefix}",
            "SPHINXBUILD=#{Formula["sphinx-doc"].opt_bin}/sphinx-build"
