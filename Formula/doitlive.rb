@@ -66,11 +66,10 @@ class Doitlive < Formula
   def install
     virtualenv_install_with_resources
 
-    generate_completions_from_executable(libexec/"bin/doitlive", "completion",
-                                         shells: [:bash, :zsh], shell_parameter_format: :none)
+    generate_completions_from_executable(bin/"doitlive", "completion", shell_parameter_format: :none)
   end
 
   test do
-    system "#{bin}/doitlive", "themes", "--preview"
+    system bin/"doitlive", "themes", "--preview"
   end
 end
