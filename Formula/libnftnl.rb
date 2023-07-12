@@ -11,7 +11,7 @@ class Libnftnl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4f3d2a56a6f6c1c131e9502fa424e6e89d16d580d163f28b05f33a3582b7bbca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "785bbe57269cdf996d7f156874c1b2ed1bafef79d337ed9d370529b2c0fc294b"
   end
 
   depends_on "pkg-config" => [:build, :test]
