@@ -4,14 +4,14 @@ class Rust < Formula
   license any_of: ["Apache-2.0", "MIT"]
 
   stable do
-    url "https://static.rust-lang.org/dist/rustc-1.70.0-src.tar.gz"
-    sha256 "b2bfae000b7a5040e4ec4bbc50a09f21548190cb7570b0ed77358368413bd27c"
+    url "https://static.rust-lang.org/dist/rustc-1.71.0-src.tar.gz"
+    sha256 "a667e4abdc5588ebfea35c381e319d840ffbf8d2dbfb79771730573642034c96"
 
     # From https://github.com/rust-lang/rust/tree/#{version}/src/tools
     resource "cargo" do
       url "https://github.com/rust-lang/cargo.git",
-          tag:      "0.71.0",
-          revision: "ec8a8a0cabb0e0cadef58902470f6c7ee7868bdc"
+          tag:      "0.72.0",
+          revision: "cfd3bbd8fe4fd92074dfad04b7eb9a923646839f"
     end
   end
 
@@ -46,24 +46,24 @@ class Rust < Formula
     on_macos do
       # From https://github.com/rust-lang/rust/blob/#{version}/src/stage0.json
       on_arm do
-        url "https://static.rust-lang.org/dist/2023-04-20/cargo-1.69.0-aarch64-apple-darwin.tar.gz"
-        sha256 "b185ea41a0ad76ac23b08744732c51e4811528291f7193d612a42e3e54ecd535"
+        url "https://static.rust-lang.org/dist/2023-06-01/cargo-1.70.0-aarch64-apple-darwin.tar.xz"
+        sha256 "faa0c57eab1846f4220e0833a167b845799bfc2d43aee819db7e9f5fe7d5a031"
       end
       on_intel do
-        url "https://static.rust-lang.org/dist/2023-04-20/cargo-1.69.0-x86_64-apple-darwin.tar.gz"
-        sha256 "3ed0b5eaaf7e908f196b4882aad757cb2a623ca3c8e8e74471422df5e93ebfb0"
+        url "https://static.rust-lang.org/dist/2023-06-01/cargo-1.70.0-x86_64-apple-darwin.tar.xz"
+        sha256 "0aa4661564be110614874812891d29b327eb343d2eb1eaf9862438aa2436f6b5"
       end
     end
 
     on_linux do
       # From: https://github.com/rust-lang/rust/blob/#{version}/src/stage0.json
       on_arm do
-        url "https://static.rust-lang.org/dist/2023-04-20/cargo-1.69.0-aarch64-unknown-linux-gnu.tar.gz"
-        sha256 "6ba6e4a9295b03d01b7dac94b7941d71c029343dc3abfd6cc4733a99fc3c7976"
+        url "https://static.rust-lang.org/dist/2023-06-01/cargo-1.70.0-aarch64-unknown-linux-gnu.tar.xz"
+        sha256 "8fd2d9806f0601feab1485f79e46d1441af2158c68abf56788ff355d5c6b4ab5"
       end
       on_intel do
-        url "https://static.rust-lang.org/dist/2023-04-20/cargo-1.69.0-x86_64-unknown-linux-gnu.tar.gz"
-        sha256 "7ee899206f592a86687478465970aa6b57772ccbe9a1f1b7695aa1237c2325a6"
+        url "https://static.rust-lang.org/dist/2023-06-01/cargo-1.70.0-x86_64-unknown-linux-gnu.tar.xz"
+        sha256 "650e7a890a52869cd14e2305652bff775aec7fc2cf47fc62cf4a89ff07242333"
       end
     end
   end
@@ -75,7 +75,7 @@ class Rust < Formula
     # https://crates.io/crates/openssl#manual-configuration
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
 
-    if OS.mac? && MacOS.version <= :sierra
+    if OS.mac?
       # Requires the CLT to be the active developer directory if Xcode is installed
       ENV["SDKROOT"] = MacOS.sdk_path
       # Fix build failure for compiler_builtins "error: invalid deployment target
@@ -102,7 +102,7 @@ class Rust < Formula
 
     resource("cargo").stage do
       ENV["RUSTC"] = bin/"rustc"
-      args = %W[--root #{prefix} --path .]
+      args = %W[--root #{prefix} --path . --force]
       args += %w[--features curl-sys/force-system-lib-on-osx] if OS.mac?
       system "cargo", "install", *args
       man1.install Dir["src/etc/man/*.1"]
