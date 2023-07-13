@@ -11,18 +11,13 @@ class Librevenge < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "02082db928080285104a380cf205938ef06c106bc2a2bbd0c32d58146c35617d"
-    sha256 cellar: :any,                 arm64_monterey: "eef439971cbe16f67f670c7e1946de49eda50e9842961d6469ffae004041bb4f"
-    sha256 cellar: :any,                 arm64_big_sur:  "12c1a58e87956b8c15090873bb46f21b6124e8728ba897f2442fc4b2167bea4f"
-    sha256 cellar: :any,                 ventura:        "a9f9d83fd6b20307aa6ed51d9679009b6192ecd33d61605616b96298995e3376"
-    sha256 cellar: :any,                 monterey:       "3849e2f6b167bb98f29923ae7bfadad06a63346a790aad3c9edf56fcf26a7622"
-    sha256 cellar: :any,                 big_sur:        "dcd836b2e1e671b9f072e0ea4ef910b3e84f91ce5c77b36d06a405f797fe6207"
-    sha256 cellar: :any,                 catalina:       "42b53d00d39a37a0173cf227f8a72915b8ae15c90d527ed87344800f63ba865b"
-    sha256 cellar: :any,                 mojave:         "8621d9448ed04170c2990e1e002822a5d609310a968701684cb17204f4db643c"
-    sha256 cellar: :any,                 high_sierra:    "807378d354736300cb44c4e5105b0fc0bff09a4fe14fcb3a0cae40c7bf167fee"
-    sha256 cellar: :any,                 sierra:         "2f8a2a371c35b578d181d1ce8d45084a2f699bbed95cabd10f5cd75977249542"
-    sha256 cellar: :any,                 el_capitan:     "827a37488cc92f16ba8f4d7343e7944c7faed4b8cf9d930f49d93e4104784c94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "465e18ffccb273c5d2b3ab0922f2b6bfae6122c915e1ad8c0c85cb59289c0634"
+    sha256 cellar: :any,                 arm64_ventura:  "113a4ee5774cf6c3a58e4ea202b3ff39ef2d25f0500236b202d0d164b302dc8c"
+    sha256 cellar: :any,                 arm64_monterey: "39b114185ac16a714309ebfbeb02264016a9b72b75d1a1da33bdd0cba42d8ba6"
+    sha256 cellar: :any,                 arm64_big_sur:  "e46e76a7ca6022277a6d8be2d267ff2496434992b91c149dd59e70a79b31c9cc"
+    sha256 cellar: :any,                 ventura:        "cf1a9383368a1c4a7c54c978815fcef64a1e2c64e66183a45e12be72ad8f3ab4"
+    sha256 cellar: :any,                 monterey:       "636e3e8ce0e3e775e9ccfaec62c22cd1987db4c50f56e5671cc3eb4bcb002b23"
+    sha256 cellar: :any,                 big_sur:        "64e6213d3ef01f6ace0b4e4f46e9b4098ddabe735eafb07a213a21454c47bca9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "11fd00b1110acb46392ccc91a6fbb54261834a53e256e3d48d6c268e71d7c4b5"
   end
 
   depends_on "pkg-config" => :build
