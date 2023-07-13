@@ -27,7 +27,7 @@ class Pixi < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin/"pixi", "completion", "-s", shells: [:bash, :zsh])
+    generate_completions_from_executable(bin/"pixi", "completion", "-s")
   end
 
   test do
