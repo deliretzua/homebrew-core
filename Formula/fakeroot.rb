@@ -1,8 +1,8 @@
 class Fakeroot < Formula
   desc "Provide a fake root environment"
   homepage "https://tracker.debian.org/pkg/fakeroot"
-  url "https://deb.debian.org/debian/pool/main/f/fakeroot/fakeroot_1.32.orig.tar.gz"
-  sha256 "a54f460202c65a4b5fbb8cd5540451972ebb89ca64d5da3541f7ba57cf3dacd9"
+  url "https://deb.debian.org/debian/pool/main/f/fakeroot/fakeroot_1.32.1.orig.tar.gz"
+  sha256 "c072b0f65bafc4cc5b6112f7c61185f5170ce4cb0c410d1681c1af4a183e94e6"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -34,13 +34,6 @@ class Fakeroot < Formula
     # The MR has a typo, so we use MacPorts' version.
     url "https://raw.githubusercontent.com/macports/macports-ports/0ffd857cab7b021f9dbf2cbc876d8025b6aefeff/sysutils/fakeroot/files/patch-message.h.diff"
     sha256 "6540eef1c31ffb4ed636c1f4750ee668d2effdfe308d975d835aa518731c72dc"
-  end
-
-  # Fix missing #include
-  # https://salsa.debian.org/clint/fakeroot/-/merge_requests/27
-  patch do
-    url "https://salsa.debian.org/clint/fakeroot/-/commit/6a78f80150fbc22cb54062c49c7211193444b6da.diff"
-    sha256 "81ee7caff364a754c07f2a65d82aad48773ecc2dd933ef4d54bfd90e2b15b262"
   end
 
   def install
