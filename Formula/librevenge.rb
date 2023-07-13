@@ -1,13 +1,13 @@
 class Librevenge < Formula
   desc "Base library for writing document import filters"
   homepage "https://sourceforge.net/p/libwpd/wiki/librevenge/"
-  url "https://dev-www.libreoffice.org/src/librevenge-0.0.4.tar.bz2"
-  mirror "https://downloads.sourceforge.net/project/libwpd/librevenge/librevenge-0.0.4/librevenge-0.0.4.tar.bz2"
-  sha256 "c51601cd08320b75702812c64aae0653409164da7825fd0f451ac2c5dbe77cbf"
+  url "https://downloads.sourceforge.net/project/libwpd/librevenge/librevenge-0.0.5/librevenge-0.0.5.tar.xz"
+  sha256 "106d0c44bb6408b1348b9e0465666fa83b816177665a22cd017e886c1aaeeb34"
+  license any_of: ["LGPL-2.1-or-later", "MPL-2.0"]
 
   livecheck do
-    url "https://dev-www.libreoffice.org/src/"
-    regex(/href=["']?librevenge[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https://sourceforge.net/projects/libwpd/rss?path=/librevenge"
+    regex(%r{url=.*?/librevenge[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
@@ -29,12 +29,11 @@ class Librevenge < Formula
   depends_on "boost"
 
   def install
-    system "./configure", "--without-docs",
-                          "--disable-dependency-tracking",
+    system "./configure", *std_configure_args,
+                          "--without-docs",
                           "--enable-static=no",
                           "--disable-werror",
-                          "--disable-tests",
-                          "--prefix=#{prefix}"
+                          "--disable-tests"
     system "make", "install"
   end
 
