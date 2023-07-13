@@ -3,8 +3,8 @@ class Dxpy < Formula
 
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
   homepage "https://github.com/dnanexus/dx-toolkit"
-  url "https://files.pythonhosted.org/packages/37/28/e5e50c53ee00841aabedab8358b05fc9c7cda7f4743bab16d31009c328bc/dxpy-0.351.0.tar.gz"
-  sha256 "35b33ab8db2b397da41c498705010570589f629a106e6ea46323cbb5abea7320"
+  url "https://files.pythonhosted.org/packages/6f/86/db1b2b24a98d7b741d55e03c4efd0fc2c84f1932a81318f3f406323ecfc2/dxpy-0.352.1.tar.gz"
+  sha256 "2d252f78e2b57a8b82d8c5f6952c3ca7379acf8de7d187abde1329c6e3d461cf"
   license "Apache-2.0"
 
   bottle do
@@ -41,8 +41,8 @@ class Dxpy < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "cryptography" do
