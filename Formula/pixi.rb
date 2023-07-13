@@ -7,13 +7,14 @@ class Pixi < Formula
   head "https://github.com/prefix-dev/pixi.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "94b80a7236389763490e620986a8f63344cbcbd550e3af2e9575a8525e15ab0f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c3d69c524493bd8b63440933602ee7aa5acf1168e6895201c2356fe21b63c7b0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0cb1144b447b6ed8f0a8f85deaec4b8fc9cb267d3d2f969892002033d19ad942"
-    sha256 cellar: :any_skip_relocation, ventura:        "e751f9d372e01e1f72532da8abdae7974464f0fa4f2476803fa824183210434b"
-    sha256 cellar: :any_skip_relocation, monterey:       "fa1f1866678242ce036ebfd59039394e23d097664c669e4d7e88031b0c4ebbba"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c709067fd9efe5e87005e799409e91c76849896067ba7552472b0afc9dd64bd9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b783706de66e061c48be91925077efc58bf40034e1bf3f22d87913965b8054d9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d4f3304a341628289cebfd37b08e9fcfce5e2bb324359fd5dfaa9324728682fe"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "0ba983170ca108f86a6bfcbd31edd0a82dbbf90665ee1461a9fcf768ffe525aa"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "db3fe6e7cbe96e5a6a8e854bbee6b1efbecad9092770926a41745fadbeebbba9"
+    sha256 cellar: :any_skip_relocation, ventura:        "fea6630b2e66322a9b00a2c448249db2b1f45b66292949ee8c680ac65d60f127"
+    sha256 cellar: :any_skip_relocation, monterey:       "91b56203302c6d6b79423da6b86e76c41c35d94d8d2cf8c77a25b0c0c5562f33"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b6bb76ebc6af9311afba2e683ff1a7631005c4a035ddd0902fe0247e2bb567a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d83eb43c32fa314176ed221d31848bc952bfa6aa9ff0b8acb909195b17ad07b9"
   end
 
   depends_on "cmake" => :build
@@ -27,7 +28,7 @@ class Pixi < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin/"pixi", "completion", "-s", shells: [:bash, :zsh])
+    generate_completions_from_executable(bin/"pixi", "completion", "-s")
   end
 
   test do
