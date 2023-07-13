@@ -1,8 +1,8 @@
 class DockerSlim < Formula
   desc "Minify and secure Docker images"
   homepage "https://slimtoolkit.org/"
-  url "https://github.com/slimtoolkit/slim/archive/refs/tags/1.40.2.tar.gz"
-  sha256 "df63ec982a32dde80a002d0f66dc110f05c969cabe1b2dc544ea3388e1cb2b9b"
+  url "https://github.com/slimtoolkit/slim/archive/refs/tags/1.40.3.tar.gz"
+  sha256 "7b72b423ba3d031cbd5113ad35bf2ef1e8f2088f7dbb37e348ca5cd8292af1bc"
   license "Apache-2.0"
 
   livecheck do
@@ -25,7 +25,7 @@ class DockerSlim < Formula
   skip_clean "bin/slim-sensor"
 
   def install
-    ENV["CGO_ENABLED"] = "0"
+    system "go", "generate", "./pkg/appbom"
     ldflags = "-s -w -X github.com/docker-slim/docker-slim/pkg/version.appVersionTag=#{version}"
     system "go", "build",
                  *std_go_args(output: bin/"slim", ldflags: ldflags),
@@ -43,5 +43,14 @@ class DockerSlim < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/slim --version")
     system "test", "-x", bin/"slim-sensor"
+
+    (testpath/"Dockerfile").write <<~EOS
+      FROM alpine
+      RUN apk add --no-cache curl
+    EOS
+
+    output = shell_output("#{bin}/slim lint #{testpath}/Dockerfile")
+    assert_match "id='ID.10001' name='Missing .dockerignore'", output
+    assert_match "id='ID.20006' name='Stage from latest tag'", output
   end
 end
