@@ -3,8 +3,8 @@ class Remarshal < Formula
 
   desc "Convert between TOML, YAML and JSON"
   homepage "https://github.com/dbohdan/remarshal"
-  url "https://files.pythonhosted.org/packages/a8/9e/0efb80bed30d43c88499c7a5d53178f74664df055d6091cb4501beef5f90/remarshal-0.15.0.tar.gz"
-  sha256 "466b7f5044b35fe9ff52e9b9609b20f8a3530ed75fbf25d860bbaa72ac46a90e"
+  url "https://files.pythonhosted.org/packages/1a/7e/d0a6fcf1ebce08975b742416e97d79ce8ea5a338280a930980ee61f4b75f/remarshal-0.15.1.tar.gz"
+  sha256 "d35d7300d1d690c7c3754fb5456ca1efcb4749dc3568933a252f9cde3cb7f9d0"
   license "MIT"
   head "https://github.com/dbohdan/remarshal.git", branch: "master"
 
