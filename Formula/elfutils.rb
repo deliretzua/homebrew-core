@@ -19,16 +19,19 @@ class Elfutils < Formula
   depends_on :linux
   depends_on "xz"
   depends_on "zlib"
+  depends_on "zstd"
 
   def install
     system "./configure",
-           "--disable-debug",
-           "--disable-dependency-tracking",
+           *std_configure_args,
            "--disable-silent-rules",
            "--disable-libdebuginfod",
            "--disable-debuginfod",
            "--program-prefix=elfutils-",
-           "--prefix=#{prefix}"
+           "--with-bzlib",
+           "--with-lzma",
+           "--with-zlib",
+           "--with-zstd"
     system "make"
     system "make", "install"
   end
