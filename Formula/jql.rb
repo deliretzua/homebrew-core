@@ -1,8 +1,8 @@
 class Jql < Formula
   desc "JSON query language CLI tool"
   homepage "https://github.com/yamafaktory/jql"
-  url "https://github.com/yamafaktory/jql/archive/refs/tags/jql-v7.0.0.tar.gz"
-  sha256 "550ba37591dbca47024b25c482dd478e5a544030600d547ce61e754b579d6816"
+  url "https://github.com/yamafaktory/jql/archive/refs/tags/jql-v7.0.1.tar.gz"
+  sha256 "f274bdbf918d3b3e889cc3589a161ec2931b7fd1668b1fb4550356185b9fc4d3"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/yamafaktory/jql.git", branch: "main"
 
