@@ -4,6 +4,7 @@ class Clipboard < Formula
   url "https://github.com/Slackadays/Clipboard/archive/refs/tags/0.8.1.tar.gz"
   sha256 "f7ceb2dbb76bc094ac8afbef97bdef0f1a9451ca7dd1a4a181f3b2a859a2f094"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/Slackadays/Clipboard.git", branch: "main"
 
   livecheck do
@@ -20,7 +21,10 @@ class Clipboard < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on macos: :monterey
+
+  on_macos do
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1300
+  end
 
   on_linux do
     depends_on "pkg-config" => :build
@@ -36,6 +40,12 @@ class Clipboard < Formula
   end
 
   def install
+    ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1300
+
+    # Workaround for:
+    #   https://github.com/Homebrew/homebrew-core/issues/136551
+    #   https://github.com/Slackadays/Clipboard/issues/147
+    ENV["HOMEBREW_OPTIMIZATION_LEVEL"] = "O2"
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
