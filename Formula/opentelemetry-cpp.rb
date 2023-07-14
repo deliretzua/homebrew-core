@@ -2,8 +2,8 @@ class OpentelemetryCpp < Formula
   desc "OpenTelemetry C++ Client"
   homepage "https://opentelemetry.io/"
   # TODO: Check if we can use unversioned `grpc` and `protobuf` at version bump.
-  url "https://github.com/open-telemetry/opentelemetry-cpp/archive/refs/tags/v1.9.1.tar.gz"
-  sha256 "668de24f81c8d36d75092ad9dcb02a97cd41473adbe72485ece05e336db48249"
+  url "https://github.com/open-telemetry/opentelemetry-cpp/archive/refs/tags/v1.10.0.tar.gz"
+  sha256 "19e8ade04a674c8cf7f0dc6da1f7b0583a27d2cf4dbc03df87894a16a4547834"
   license "Apache-2.0"
   head "https://github.com/open-telemetry/opentelemetry-cpp.git", branch: "main"
 
@@ -36,7 +36,6 @@ class OpentelemetryCpp < Formula
                     "-DWITH_JAEGER=OFF", # deprecated, needs older `thrift`
                     "-DWITH_LOGS_PREVIEW=ON",
                     "-DWITH_METRICS_PREVIEW=ON",
-                    "-DWITH_OTLP=ON",
                     "-DWITH_OTLP_GRPC=ON",
                     "-DWITH_OTLP_HTTP=ON",
                     "-DWITH_PROMETHEUS=ON",
@@ -69,7 +68,7 @@ class OpentelemetryCpp < Formula
         // Set the global trace provider
         trace_api::Provider::SetTracerProvider(provider);
 
-        auto tracer = provider->GetTracer("library", OPENTELEMETRY_SDK_VERSION);
+        auto tracer = provider->GetTracer("foo_library", "1.0.0");
         auto scoped_span = trace_api::Scope(tracer->StartSpan("test"));
       }
     EOS
