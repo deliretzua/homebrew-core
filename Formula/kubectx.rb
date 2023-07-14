@@ -7,7 +7,7 @@ class Kubectx < Formula
   head "https://github.com/ahmetb/kubectx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "56fca18baee3ff65f4e6ca1491b515f46bcb61c3d184bc68c77c1b06e2e32cfb"
+    sha256 cellar: :any_skip_relocation, all: "41069e2e7ae9d4d36a5a4ec659641239d02d60ad8102c140126a2bae0c46c29e"
   end
 
   depends_on "kubernetes-cli"
