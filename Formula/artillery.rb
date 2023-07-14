@@ -3,8 +3,8 @@ require "language/node"
 class Artillery < Formula
   desc "Cloud-native performance & reliability testing for developers and SREs"
   homepage "https://artillery.io/"
-  url "https://registry.npmjs.org/artillery/-/artillery-2.0.0-34.tgz"
-  sha256 "34a30972e97ceecb5f846efaa866ecbd2ff8dd4cec08a24cf836938ae43d3b01"
+  url "https://registry.npmjs.org/artillery/-/artillery-2.0.0-35.tgz"
+  sha256 "655d789d87b53318f63e43be1cd4b88e79a70f868a034d78a01f1ae772585171"
   license "MPL-2.0"
 
   livecheck do
@@ -31,19 +31,6 @@ class Artillery < Formula
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     bin.install_symlink Dir["#{libexec}/bin/*"]
-
-    term_size_vendor_dir = libexec/"lib/node_modules/artillery/node_modules/term-size/vendor"
-    term_size_vendor_dir.rmtree # remove pre-built binaries
-
-    if OS.mac?
-      macos_dir = term_size_vendor_dir/"macos"
-      macos_dir.mkpath
-      # Replace the vendored pre-built term-size with one we build ourselves
-      ln_sf (Formula["macos-term-size"].opt_bin/"term-size").relative_path_from(macos_dir), macos_dir
-    end
-
-    # Replace universal binaries with native slices.
-    deuniversalize_machos
   end
 
   test do
