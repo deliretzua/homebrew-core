@@ -469,6 +469,9 @@
     "package_name": "moto[all,server]",
     "exclude_packages": ["cffi", "cfn-lint", "pycparser", "PyYAML", "six", "typing-extensions"]
   },
+  "mvt": {
+    "exclude_packages": ["cffi", "pycparser", "pygments", "pyyaml"]
+  },
   "mycli": {
     "exclude_packages": ["six", "tabulate", "Pygments", "cffi", "pycparser"]
   },
