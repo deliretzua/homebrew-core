@@ -1,8 +1,8 @@
 class Rio < Formula
   desc "Hardware-accelerated GPU terminal emulator powered by WebGPU"
   homepage "https://raphamorim.io/rio/"
-  url "https://github.com/raphamorim/rio/archive/refs/tags/v0.0.8.tar.gz"
-  sha256 "995ad62ba79e1190d15a6e7e353e04750808ccf3d504b5c7d8790cf0e2d999c9"
+  url "https://github.com/raphamorim/rio/archive/refs/tags/v0.0.9.tar.gz"
+  sha256 "ff9388460fbaea1f63fc47b478ccdd1a09941e7a96cea6c70ffa24b8d88f1e8d"
   license "MIT"
   head "https://github.com/raphamorim/rio.git", branch: "main"
 
@@ -35,6 +35,8 @@ class Rio < Formula
 
     # This test does pass locally for x86 but it fails for containers
     # which is the case of x86 in the CI
-    system bin/"rio", "-e", "echo 1; exit"
+
+    system bin/"rio", "-e", "touch", testpath/"testfile"
+    assert_predicate testpath/"testfile", :exist?
   end
 end
