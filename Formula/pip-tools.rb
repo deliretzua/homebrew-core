@@ -3,8 +3,8 @@ class PipTools < Formula
 
   desc "Locking and sync for Pip requirements files"
   homepage "https://pip-tools.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/b0/5e/4f1beeaec03f726829d1c32e379d441ecd80f11f6afb0ea0fff75ce1e776/pip-tools-6.14.0.tar.gz"
-  sha256 "06366be0e08d86b416407333e998b4d305d5bd925151b08942ed149380ba3e47"
+  url "https://files.pythonhosted.org/packages/dd/08/76a220d1a5804bf0ad950ef3fd4894606281fc1fe674893deff795be7d91/pip-tools-7.0.0.tar.gz"
+  sha256 "6a2308712727c86cc8a6cedc0e6ba01232a337c706d63926d3789462ad083d06"
   license "BSD-3-Clause"
 
   bottle do
@@ -25,8 +25,8 @@ class PipTools < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
-    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
+    url "https://files.pythonhosted.org/packages/7e/ad/7a6a96fab480fb2fbf52f782b2deb3abe1d2c81eca3ef68a575b5a6a4f2e/click-8.1.5.tar.gz"
+    sha256 "4be4b1af8d665c6d942909916d31a213a106800c47d0eeba73d34da3cbc11367"
   end
 
   resource "packaging" do
