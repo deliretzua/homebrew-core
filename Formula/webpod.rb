@@ -7,6 +7,10 @@ class Webpod < Formula
   sha256 "99b123e8d9f49b06d2dd0b886b81d2c2c64e510ba50eac2ba229e60b36719a7e"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, all: "711340b7e1ecf3cdf3f1b38d05abc4b2ab17831b172839bb9b5a9c5d0e6ff5fe"
+  end
+
   depends_on "node"
 
   def install
