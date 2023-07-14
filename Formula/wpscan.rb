@@ -6,6 +6,16 @@ class Wpscan < Formula
   license :cannot_represent # Source is public, commercial use requires a paid license
   head "https://github.com/wpscanteam/wpscan.git", branch: "master"
 
+  bottle do
+    sha256                               arm64_ventura:  "061486585f55e99314f0c9c780c292068dcaec8e8a57a709219622a41df26597"
+    sha256                               arm64_monterey: "d7af224790e97fbe5501ca63348316b419dc5ab477e17a3417f64ad428fc54d5"
+    sha256                               arm64_big_sur:  "f9a53bdbe66814ba0fd7bd0f03c824fc32f7a55b0f6d7f51d425025d1a47029c"
+    sha256                               ventura:        "f5580ce4710e99c3a10417bffe467df192378957c614f23910c17e8c266accc6"
+    sha256                               monterey:       "05bcd7784f5edfa8c2e4f73f70cb27d05eda9e2977efe496a75553e2f8323382"
+    sha256                               big_sur:        "f137dee75e90db661cf3ba9ad4c6e510484723c0a1dad17369c45c356895ccc0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fee7317717fc3e11acab6c721aca52977b06f991f11e52ee2a5746f52f500a70"
+  end
+
   depends_on "xz" # for liblzma
 
   uses_from_macos "ruby"
