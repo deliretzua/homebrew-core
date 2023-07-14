@@ -2,8 +2,8 @@ class Xcbeautify < Formula
   desc "Little beautifier tool for xcodebuild"
   homepage "https://github.com/tuist/xcbeautify"
   url "https://github.com/tuist/xcbeautify.git",
-      tag:      "0.20.0",
-      revision: "2850da9d0e1fa28cfb17709ec66bc87bb07f83eb"
+      tag:      "0.21.0",
+      revision: "566e8fe7f739750e5b938182f583fc2c1f916373"
   license "MIT"
   head "https://github.com/tuist/xcbeautify.git", branch: "master"
 
@@ -17,9 +17,16 @@ class Xcbeautify < Formula
     sha256                               x86_64_linux:   "fbc4a2aef5fe553e4873b035460586a873c8cd99602dd00724984be07ea08a12"
   end
 
-  depends_on xcode: ["11.4", :build]
+  # needs Swift tools version 5.7.0
+  depends_on xcode: ["14.0", :build]
 
   uses_from_macos "swift"
+
+  # patch version info, upstream PR ref, https://github.com/tuist/xcbeautify/pull/137
+  patch do
+    url "https://github.com/tuist/xcbeautify/commit/b18c87653ed0d744be565609be709a84eac2e7dd.patch?full_index=1"
+    sha256 "75a13bc9632f9008b7506bc3d2f6f0f23c8dbc302c10fa086d60ec78bb3a2a6e"
+  end
 
   def install
     system "swift", "build", "--disable-sandbox", "--configuration", "release"
