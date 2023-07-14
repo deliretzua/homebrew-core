@@ -8,6 +8,16 @@ class Mvt < Formula
   license :cannot_represent # Adaptation of MPL-2.0
   head "https://github.com/mvt-project/mvt.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "f2d27d0b241f3214d1fdcf5f69aeeae777eb613af030fccf0272a7960de7055e"
+    sha256 cellar: :any,                 arm64_monterey: "5a6a0cd206a5d98aef26a14430288ec05378c8ef5d59561457bbc97a43ffdf68"
+    sha256 cellar: :any,                 arm64_big_sur:  "5742731ded291389999d02505cf3f7d95ef7ca75562781a34641fb00d487e213"
+    sha256 cellar: :any,                 ventura:        "6fe0b8a8f51c51795ab08db9b8c20cb627f2d30a98a286f1b439101147944a5d"
+    sha256 cellar: :any,                 monterey:       "7f3a821171af3fa860d81cd2f82bc87b4a50dfba933bd0d663df06921d1f7ecc"
+    sha256 cellar: :any,                 big_sur:        "b6fc7ae406ca2dec6c24ba1409a1c513196e248ef1bacba815766efb8bf488b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c39f886e609117cbe85c73caa1f998d00476c677cb8b40e3d8a7f0ea5ce7ed4"
+  end
+
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
