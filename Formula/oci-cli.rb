@@ -6,6 +6,7 @@ class OciCli < Formula
   url "https://files.pythonhosted.org/packages/a0/2c/09c57cfe035aabbf656763428f0d61b1e2d1ab6f6bf95af82bdc22485062/oci-cli-3.29.3.tar.gz"
   sha256 "6cace99cdf96c27c3bc06f5a1724cf0fffdc08e35298043ebd586e7d4b143dd7"
   license any_of: ["UPL-1.0", "Apache-2.0"]
+  revision 1
   head "https://github.com/oracle/oci-cli.git", branch: "master"
 
   bottle do
@@ -47,8 +48,8 @@ class OciCli < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/fa/f3/f4b8c175ea9a1de650b0085858059050b7953a93d66c97ed89b93b232996/cryptography-39.0.2.tar.gz"
-    sha256 "bc5b871e977c8ee5a1bbc42fa8d19bcc08baf0c51cbf1586b0e87a2694dde42f"
+    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
+    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "jmespath" do
@@ -57,8 +58,8 @@ class OciCli < Formula
   end
 
   resource "oci" do
-    url "https://files.pythonhosted.org/packages/16/96/8e7a459ea4988ddb34ba4f50b6d69eee1e1a6849325440272735468e0f79/oci-2.105.0.tar.gz"
-    sha256 "67f0e8928de91c8b094144b52e580047460cca13735d6dd61b1bcfb2baaeda94"
+    url "https://files.pythonhosted.org/packages/94/ad/40a47462c0e8f23bf987d9e17b6ead165853ac455b2061b4b14de83f6233/oci-2.106.0.tar.gz"
+    sha256 "1dae425d05e81055f75723c897431327076016d4faed1670a6f267d3c59a24f4"
   end
 
   resource "prompt-toolkit" do
