@@ -1,22 +1,10 @@
 class Augeas < Formula
   desc "Configuration editing tool and API"
   homepage "https://augeas.net/"
+  url "https://github.com/hercules-team/augeas/releases/download/release-1.14.1/augeas-1.14.1.tar.gz"
+  sha256 "368bfdd782e4b9c7163baadd621359c82b162734864b667051ff6bcb57b9edff"
   license "LGPL-2.1-or-later"
-  revision 1
   head "https://github.com/hercules-team/augeas.git", branch: "master"
-
-  # Remove stable block when patch is no longer needed.
-  stable do
-    url "https://github.com/hercules-team/augeas/releases/download/release-1.14.0/augeas-1.14.0.tar.gz"
-    sha256 "8c101759ca3d504bd1d805e70e2f615fa686af189dd7cf0529f71d855c087df1"
-
-    # Remove `#include <malloc.h>`, add `#include <libgen.h>`.
-    # Remove on next release.
-    patch do
-      url "https://github.com/hercules-team/augeas/commit/7b26cbb74ed634d886ed842e3d5495361d8fd9b1.patch?full_index=1"
-      sha256 "4f5c383bea873dd401b865d4c63c2660647f45c042bcd92d48ae2e8dee78c842"
-    end
-  end
 
   livecheck do
     url :stable
@@ -44,6 +32,9 @@ class Augeas < Formula
   uses_from_macos "libxml2"
 
   def install
+    # Workaround for Xcode 14.3
+    ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+
     if build.head?
       system "./autogen.sh", *std_configure_args
     else
