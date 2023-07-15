@@ -6,6 +6,16 @@ class StripNondeterminism < Formula
   license "GPL-3.0-or-later"
   head "https://salsa.debian.org/reproducible-builds/strip-nondeterminism.git", branch: "master"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ba3ad2c20a564c08f0e2baa695747714899aa45ea7aee3e756c6de29342f6823"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ba3ad2c20a564c08f0e2baa695747714899aa45ea7aee3e756c6de29342f6823"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "263c7feef3a16a8a8fd3acdb6040c471691781cca9a86d93d8d3171e15f970f8"
+    sha256 cellar: :any_skip_relocation, ventura:        "dbd497072b9febd8b80a6c891f3f3b50127ab8f768acd30f87b96dd293a19a91"
+    sha256 cellar: :any_skip_relocation, monterey:       "dbd497072b9febd8b80a6c891f3f3b50127ab8f768acd30f87b96dd293a19a91"
+    sha256 cellar: :any_skip_relocation, big_sur:        "00d0414ef922ed84f8a40a4441d3b4144de61fcb98d4472a6ee1990464a135d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c947310bc8a8cbef77f88c6b73ce650fbadf05f27950ccd170436e034edfac8d"
+  end
+
   uses_from_macos "file-formula" => :test
   uses_from_macos "perl"
 
