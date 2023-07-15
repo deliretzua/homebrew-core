@@ -1,10 +1,9 @@
 class EtcdCppApiv3 < Formula
   desc "C++ implementation for etcd's v3 client API, i.e., ETCDCTL_API=3"
   homepage "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3"
-  url "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3/archive/refs/tags/v0.15.0.tar.gz"
-  sha256 "28412a3b64345b55bce4c4fe29444e4ffde3d1d0ec0ecfa78d86343d7fc61b6a"
+  url "https://github.com/etcd-cpp-apiv3/etcd-cpp-apiv3/archive/refs/tags/v0.15.1.tar.gz"
+  sha256 "93e06f62ed0f2a52ca16d7bb54a0a26184a14d2e479a1d394687604dbe479f3c"
   license "BSD-3-Clause"
-  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "c8145f9778e49c76488585859e116e86e43799d8d9311b8ad39c8741292281b9"
