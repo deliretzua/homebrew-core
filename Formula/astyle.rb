@@ -1,14 +1,14 @@
 class Astyle < Formula
   desc "Source code beautifier for C, C++, C#, and Java"
   homepage "https://astyle.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/astyle/astyle/astyle%203.1/astyle_3.1_linux.tar.gz"
-  sha256 "cbcc4cf996294534bb56f025d6f199ebfde81aa4c271ccbd5ee1c1a3192745d7"
+  url "https://downloads.sourceforge.net/project/astyle/astyle/astyle%203.4/astyle-3.4.tar.bz2"
+  sha256 "2bac07a46197da962bf3fb8313373242e2190b7739e4203a703eb89b603aaa07"
   license "MIT"
   head "https://svn.code.sf.net/p/astyle/code/trunk/AStyle"
 
   livecheck do
     url :stable
-    regex(%r{url=.*?/astyle[._-]v?(\d+(?:\.\d+)+)_}i)
+    regex(%r{url=.*?/astyle[._-]v?(\d+(?:\.\d+)+)(?:[._-]linux)?\.t}i)
   end
 
   bottle do
