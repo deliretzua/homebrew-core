@@ -6,7 +6,7 @@ class SvtplayDl < Formula
   url "https://files.pythonhosted.org/packages/0e/3e/351134e0a496836425a5e83820e594af623c1ac70cbd84a25aa8988e86ac/svtplay-dl-4.24.tar.gz"
   sha256 "03d161b990772ecbd6272653af967da9c1eb463d4a2ee85db7610851a812561e"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "81bc082c6382e6947ee9496e0c4d363e5b26fc013c75dba9db67a5b956fe2879"
@@ -33,13 +33,13 @@ class SvtplayDl < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/ff/d7/8d757f8bd45be079d76309248845a04f09619a7b17d6dfc8c9ff6433cac2/charset-normalizer-3.1.0.tar.gz"
-    sha256 "34e0a2f9c370eb95597aae63bf85eb5e96826d81e3dcf88b8886012906f509b5"
+    url "https://files.pythonhosted.org/packages/2a/53/cf0a48de1bdcf6ff6e1c9a023f5f523dfe303e4024f216feac64b6eb7f67/charset-normalizer-3.2.0.tar.gz"
+    sha256 "3bb3d25a8e6c0aedd251753a79ae98a093c7e7b471faa3aa9a93a81431987ace"
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/19/8c/47f061de65d1571210dc46436c14a0a4c260fd0f3eaf61ce9b9d445ce12f/cryptography-41.0.1.tar.gz"
-    sha256 "d34579085401d3f49762d2f7d6634d6b6c2ae1242202e860f4d26b046e3a1006"
+    url "https://files.pythonhosted.org/packages/93/b7/b6b3420a2f027c1067f712eb3aea8653f8ca7490f183f9917879c447139b/cryptography-41.0.2.tar.gz"
+    sha256 "7d230bf856164de164ecb615ccc14c7fc6de6906ddd5b491f3af90d3514c925c"
   end
 
   resource "idna" do
@@ -74,8 +74,8 @@ class SvtplayDl < Formula
   end
 
   test do
-    url = "https://tv.aftonbladet.se/abtv/articles/244248"
-    match = "https://amd-ab.akamaized.net/ab/vod/2018/02/cdaefe0533c2561f00a41c52a2d790bd/1280_720_pkg.m3u8"
+    url = "https://tv.aftonbladet.se/video/357803"
+    match = "https://amd-ab.akamaized.net/ab/vod/2023/07/64b249d222f325d618162f76/720_3500_pkg.m3u8"
     assert_match match, shell_output("#{bin}/svtplay-dl -g #{url}")
   end
 end
