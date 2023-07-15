@@ -1,25 +1,10 @@
 class Avrdude < Formula
   desc "Atmel AVR MCU programmer"
   homepage "https://www.nongnu.org/avrdude/"
+  url "https://github.com/avrdudes/avrdude/archive/refs/tags/v7.1.tar.gz"
+  sha256 "016a5c95746fadc169cfb3009f6aa306ccdea2ff279fdb6fddcbe7526d84e5eb"
   license "GPL-2.0-or-later"
-  revision 2
-
-  stable do
-    url "https://download.savannah.gnu.org/releases/avrdude/avrdude-7.0.tar.gz"
-    mirror "https://download-mirror.savannah.gnu.org/releases/avrdude/avrdude-7.0.tar.gz"
-    sha256 "c0ef65d98d6040ca0b4f2b700d51463c2a1f94665441f39d15d97442dbb79b54"
-
-    # Fix -flat_namespace being used on Big Sur and later.
-    patch do
-      url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-      sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-    end
-  end
-
-  livecheck do
-    url "https://download.savannah.gnu.org/releases/avrdude/"
-    regex(/href=.*?avrdude[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
+  head "https://github.com/avrdudes/avrdude.git", branch: "main"
 
   bottle do
     sha256 arm64_ventura:  "50c20fe810d534c1c4cea3209ca812d35167c4b51e140f7154d96563d9e397e0"
@@ -32,11 +17,7 @@ class Avrdude < Formula
     sha256 x86_64_linux:   "1c317e35642426bce04e756295230de6cfd0d69689aed14c0520d8d4d190097e"
   end
 
-  head do
-    url "https://github.com/avrdudes/avrdude.git", branch: "main"
-    depends_on "cmake" => :build
-  end
-
+  depends_on "cmake" => :build
   depends_on "hidapi"
   depends_on "libftdi"
   depends_on "libusb"
@@ -55,23 +36,17 @@ class Avrdude < Formula
   end
 
   def install
-    if build.head?
-      args = std_cmake_args + ["-DCMAKE_INSTALL_SYSCONFDIR=#{etc}"]
-      shared_args = ["-DBUILD_SHARED_LIBS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}"]
-      shared_args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-undefined,dynamic_lookup" if OS.mac?
+    args = std_cmake_args + ["-DCMAKE_INSTALL_SYSCONFDIR=#{etc}"]
+    shared_args = ["-DBUILD_SHARED_LIBS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}"]
+    shared_args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-undefined,dynamic_lookup" if OS.mac?
 
-      system "cmake", "-S", ".", "-B", "build/shared", *args, *shared_args
-      system "cmake", "--build", "build/shared"
-      system "cmake", "--install", "build/shared"
+    system "cmake", "-S", ".", "-B", "build/shared", *args, *shared_args
+    system "cmake", "--build", "build/shared"
+    system "cmake", "--install", "build/shared"
 
-      system "cmake", "-S", ".", "-B", "build/static", *args
-      system "cmake", "--build", "build/static"
-      lib.install "build/static/src/libavrdude.a"
-    else
-      system "./configure", *std_configure_args, "--sysconfdir=#{etc}"
-      system "make"
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build/static", *args
+    system "cmake", "--build", "build/static"
+    lib.install "build/static/src/libavrdude.a"
   end
 
   test do
