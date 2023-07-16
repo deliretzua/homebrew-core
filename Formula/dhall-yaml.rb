@@ -1,12 +1,10 @@
 class DhallYaml < Formula
   desc "Convert between Dhall and YAML"
-  homepage "https://github.com/dhall-lang/dhall-haskell/tree/master/dhall-yaml"
-  # TODO: Switch `ghc@9.2` to `ghc` once cborg has a new release that supports
-  # ghc-prim 0.9.0. PR ref: https://github.com/well-typed/cborg/pull/304
-  url "https://hackage.haskell.org/package/dhall-yaml-1.2.11/dhall-yaml-1.2.11.tar.gz"
-  sha256 "90ba0e61caeb1f1b671dd5d21ced247d5c761fb9b1c3d7b467c907fbe24b16c7"
+  homepage "https://github.com/dhall-lang/dhall-haskell/tree/main/dhall-yaml"
+  url "https://hackage.haskell.org/package/dhall-yaml-1.2.12/dhall-yaml-1.2.12.tar.gz"
+  sha256 "e288091b568cfba756eb458716fb84745eb2599a848326b3eb3b45a5aa0008ea"
   license "BSD-3-Clause"
-  head "https://github.com/dhall-lang/dhall-haskell.git", branch: "master"
+  head "https://github.com/dhall-lang/dhall-haskell.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "cb2c9c1940c7a49d41b1fd1c6dba3861910547c879c9e28e7123c6adf9700d42"
@@ -20,7 +18,7 @@ class DhallYaml < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.2" => :build
+  depends_on "ghc" => :build
 
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
