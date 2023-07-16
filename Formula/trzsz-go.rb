@@ -1,8 +1,8 @@
 class TrzszGo < Formula
   desc "Simple file transfer tools, similar to lrzsz (rz/sz), and compatible with tmux"
   homepage "https://trzsz.github.io"
-  url "https://github.com/trzsz/trzsz-go/archive/refs/tags/v1.1.3.tar.gz"
-  sha256 "ac52d4e468c983e03ddb76483789a95cbaf1426450fd65da79a9972882300f72"
+  url "https://github.com/trzsz/trzsz-go/archive/refs/tags/v1.1.4.tar.gz"
+  sha256 "4acf9e7f10b49a7f6a9d56f441bcb3f1029a19207682db37b0cbd4adcc283d43"
   license "MIT"
 
   bottle do
@@ -25,10 +25,10 @@ class TrzszGo < Formula
 
   test do
     assert_match "trzsz go #{version}", shell_output("#{bin}/trzsz --version")
-    assert_match "trz (trzsz) go #{version}", shell_output("#{bin}/trz --version")
-    assert_match "tsz (trzsz) go #{version}", shell_output("#{bin}/tsz --version")
+    assert_match "trz (trzsz) go #{version}", shell_output("#{bin}/trz --version 2>&1")
+    assert_match "tsz (trzsz) go #{version}", shell_output("#{bin}/tsz --version 2>&1")
 
-    assert_match "executable file not found", shell_output("#{bin}/trzsz cmd_not_exists 2>&1", 255)
+    assert_match "spawn pty failed: &exec.Error", shell_output("#{bin}/trzsz cmd_not_exists 2>&1", 255)
     touch "tmpfile"
     assert_match "Not a directory", shell_output("#{bin}/trz tmpfile 2>&1", 254)
     rm "tmpfile"
