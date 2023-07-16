@@ -6,13 +6,13 @@ class TrzszGo < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "51750f222071c15a3cac1fb2cf91cffa47aef9ed362774ad1333a0383f7cf1d3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "51750f222071c15a3cac1fb2cf91cffa47aef9ed362774ad1333a0383f7cf1d3"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "51750f222071c15a3cac1fb2cf91cffa47aef9ed362774ad1333a0383f7cf1d3"
-    sha256 cellar: :any_skip_relocation, ventura:        "3a3acc0054598ecf3c8a60be5d5e8204d73a10ec3c2f7746ec4227f91858975d"
-    sha256 cellar: :any_skip_relocation, monterey:       "3a3acc0054598ecf3c8a60be5d5e8204d73a10ec3c2f7746ec4227f91858975d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3a3acc0054598ecf3c8a60be5d5e8204d73a10ec3c2f7746ec4227f91858975d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "40d7d72d12f30999740a570e19d9e4882786e6fc54d71b0fcdf70ec887612348"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6b39b8defce1cffa13bca3fd036117638413a3a7856b682b0b9e328b8a16ea1d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6b39b8defce1cffa13bca3fd036117638413a3a7856b682b0b9e328b8a16ea1d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6b39b8defce1cffa13bca3fd036117638413a3a7856b682b0b9e328b8a16ea1d"
+    sha256 cellar: :any_skip_relocation, ventura:        "3806df97659cbc9c942657f4c5691205a8331ef2f65f0ac44b9e698aaeac6cec"
+    sha256 cellar: :any_skip_relocation, monterey:       "3806df97659cbc9c942657f4c5691205a8331ef2f65f0ac44b9e698aaeac6cec"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3806df97659cbc9c942657f4c5691205a8331ef2f65f0ac44b9e698aaeac6cec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "016dcb58be0ad50928b31ddc5f2e47da10e5545ad5e09711c83a231f3df77fb5"
   end
 
   depends_on "go" => :build
