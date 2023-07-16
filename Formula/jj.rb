@@ -1,8 +1,8 @@
 class Jj < Formula
   desc "Git-compatible distributed version control system"
   homepage "https://github.com/martinvonz/jj"
-  url "https://github.com/martinvonz/jj/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "85e73cde738a2b92aeb253ee3a29f113589c19ad11d4244a14e2d0ca5fbfb3c7"
+  url "https://github.com/martinvonz/jj/archive/refs/tags/v0.8.0.tar.gz"
+  sha256 "636661cb4eb8248ae98c443bd72464de9b6a150175388559ccb321f2461011f1"
   license "Apache-2.0"
   head "https://github.com/martinvonz/jj.git", branch: "main"
 
@@ -27,7 +27,8 @@ class Jj < Formula
 
   def install
     system "cargo", "install", "--no-default-features", "--bin", "jj", *std_cargo_args
-    generate_completions_from_executable(bin/"jj", "debug", "completion", shell_parameter_format: :flag)
+    generate_completions_from_executable(bin/"jj", "util", "completion", shell_parameter_format: :flag)
+    (man1/"jj.1").write Utils.safe_popen_read(bin/"jj", "util", "mangen")
   end
 
   test do
