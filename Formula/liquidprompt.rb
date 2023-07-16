@@ -11,7 +11,6 @@ class Liquidprompt < Formula
   end
 
   def install
-    share.install "liquidpromptrc-dist"
     share.install "liquidprompt"
   end
 
@@ -23,8 +22,6 @@ class Liquidprompt < Formula
         fi
 
       If you'd like to reconfigure options, you may do so in ~/.liquidpromptrc.
-      A sample file you may copy and modify has been installed to
-        #{HOMEBREW_PREFIX}/share/liquidpromptrc-dist
     EOS
   end
 
