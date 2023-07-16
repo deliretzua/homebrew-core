@@ -1,8 +1,8 @@
 class ImapBackup < Formula
   desc "Backup GMail (or other IMAP) accounts to disk"
   homepage "https://github.com/joeyates/imap-backup"
-  url "https://github.com/joeyates/imap-backup/archive/refs/tags/v9.3.1.tar.gz"
-  sha256 "64785003142d6a52be15c6cbc9ed93c89a27435821f3352b8ffc0cbb96c63f09"
+  url "https://github.com/joeyates/imap-backup/archive/refs/tags/v10.0.1.tar.gz"
+  sha256 "bbfcfdc8ad72f666175154ac7ff3c52ecb3779efe8d438756bc0d48a5b7312b4"
   license "MIT"
 
   livecheck do
@@ -32,6 +32,7 @@ class ImapBackup < Formula
   end
 
   test do
-    assert_match "Choose an action:", pipe_output(bin/"imap-backup setup", "3\n")
+    assert_match "Choose an action:", pipe_output(bin/"imap-backup setup", "2\n")
+    assert_match version.to_s, shell_output("#{bin}/imap-backup version")
   end
 end
