@@ -1,8 +1,8 @@
 class Broot < Formula
   desc "New way to see and navigate directory trees"
   homepage "https://dystroy.org/broot/"
-  url "https://github.com/Canop/broot/archive/v1.24.0.tar.gz"
-  sha256 "5f2649bbb92bdf5edcaf4367841cb95ba283f7b325f9c12754d8490817d24a2b"
+  url "https://github.com/Canop/broot/archive/v1.24.1.tar.gz"
+  sha256 "24196f010ef2dc33e0dd419d66e5e1afc52ae508b5ee6d933aed0cc5334d15df"
   license "MIT"
   head "https://github.com/Canop/broot.git", branch: "master"
 
@@ -46,7 +46,10 @@ class Broot < Formula
   test do
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    assert_match "A tree explorer and a customizable launcher", shell_output("#{bin}/broot --help 2>&1")
+    output = shell_output("#{bin}/broot --help")
+    assert_match "lets you explore file hierarchies with a tree-like view", output
+
+    assert_match version.to_s, shell_output("#{bin}/broot --version")
 
     require "pty"
     require "io/console"
