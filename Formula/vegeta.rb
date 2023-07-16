@@ -1,8 +1,8 @@
 class Vegeta < Formula
   desc "HTTP load testing tool and library"
   homepage "https://github.com/tsenart/vegeta"
-  url "https://github.com/tsenart/vegeta/archive/v12.9.0.tar.gz"
-  sha256 "26e8a072ca89b7ee059fb7ac87122374c316acbeabe66dce31a48d401922bbf7"
+  url "https://github.com/tsenart/vegeta/archive/v12.10.0.tar.gz"
+  sha256 "4ea951258d041887a2cbdd0b87bf87023c304033d804eca1bfa0a1091b3124c6"
   license "MIT"
 
   bottle do
@@ -28,7 +28,7 @@ class Vegeta < Formula
   end
 
   test do
-    input = "GET https://google.com"
+    input = "GET https://example.com"
     output = pipe_output("#{bin}/vegeta attack -duration=1s -rate=1", input, 0)
     report = pipe_output("#{bin}/vegeta report", output, 0)
     assert_match(/Success +\[ratio\] +100.00%/, report)
