@@ -5,6 +5,7 @@ class Texinfo < Formula
   mirror "https://ftpmirror.gnu.org/texinfo/texinfo-7.0.3.tar.xz"
   sha256 "74b420d09d7f528e84f97aa330f0dd69a98a6053e7a4e01767eed115038807bf"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     sha256 arm64_ventura:  "203015ceba1fbf1093a5c011e19fbabe6b1dca05ad045e19758e11c6a7e9877c"
@@ -18,11 +19,6 @@ class Texinfo < Formula
 
   uses_from_macos "ncurses"
   uses_from_macos "perl"
-
-  # texinfo has been removed from macOS Ventura.
-  on_monterey :or_older do
-    keg_only :provided_by_macos
-  end
 
   on_system :linux, macos: :high_sierra_or_older do
     depends_on "gettext"
