@@ -1,10 +1,9 @@
 class Fbthrift < Formula
   desc "Facebook's branch of Apache Thrift, including a new C++ server"
   homepage "https://github.com/facebook/fbthrift"
-  url "https://github.com/facebook/fbthrift/archive/refs/tags/v2023.07.10.00.tar.gz"
-  sha256 "8e05cb9a337222aecd15d6c12a2242510213e3446c8e56b3b5411a390521b434"
+  url "https://github.com/facebook/fbthrift/archive/refs/tags/v2023.07.17.00.tar.gz"
+  sha256 "4c02e0eb377428e3069e7fbad8d0cd808f43e9f52fea7c2e6b5cce2730708eb9"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/facebook/fbthrift.git", branch: "main"
 
   bottle do
@@ -19,6 +18,7 @@ class Fbthrift < Formula
 
   depends_on "bison" => :build # Needs Bison 3.1+
   depends_on "cmake" => :build
+  depends_on "mvfst" => :build
   depends_on "boost"
   depends_on "fizz"
   depends_on "fmt"
@@ -47,6 +47,7 @@ class Fbthrift < Formula
 
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
+    ENV["OPENSSL_ROOT_DIR"] = Formula["openssl@3"].opt_prefix
 
     # The static libraries are a bit annoying to build. If modifying this formula
     # to include them, make sure `bin/thrift1` links with the dynamic libraries
