@@ -6,7 +6,13 @@ class Apktool < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0dc361a605644f6b294e767fe30b7c47812222b344e8e6b1a9780f3251170291"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a4b0afa7dba8a33808ccc5be2d637548bd68e0f9597587b966325f8e4d0de3f8"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a4b0afa7dba8a33808ccc5be2d637548bd68e0f9597587b966325f8e4d0de3f8"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a4b0afa7dba8a33808ccc5be2d637548bd68e0f9597587b966325f8e4d0de3f8"
+    sha256 cellar: :any_skip_relocation, ventura:        "a4b0afa7dba8a33808ccc5be2d637548bd68e0f9597587b966325f8e4d0de3f8"
+    sha256 cellar: :any_skip_relocation, monterey:       "a4b0afa7dba8a33808ccc5be2d637548bd68e0f9597587b966325f8e4d0de3f8"
+    sha256 cellar: :any_skip_relocation, big_sur:        "a4b0afa7dba8a33808ccc5be2d637548bd68e0f9597587b966325f8e4d0de3f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33c3905b48bc2325fa570b910bb8a4459e82ac0e8496ad7785629b514435d6bf"
   end
 
   depends_on "openjdk"
