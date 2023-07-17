@@ -1,8 +1,8 @@
 class Grype < Formula
   desc "Vulnerability scanner for container images and filesystems"
   homepage "https://github.com/anchore/grype"
-  url "https://github.com/anchore/grype/archive/refs/tags/v0.64.0.tar.gz"
-  sha256 "5faca9e5f51c5a580af6d73d1dbe4acf31e6804a1b194bc3f25b4be34e660717"
+  url "https://github.com/anchore/grype/archive/refs/tags/v0.64.1.tar.gz"
+  sha256 "3b7a7ddf893cc02787248801f9f857141264372e38fb51dfbb5e397732063517"
   license "Apache-2.0"
   head "https://github.com/anchore/grype.git", branch: "main"
 
@@ -26,7 +26,7 @@ class Grype < Formula
       -X github.com/anchore/grype/internal/version.buildDate=#{time.iso8601}
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags)
+    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/grype"
 
     generate_completions_from_executable(bin/"grype", "completion")
   end
