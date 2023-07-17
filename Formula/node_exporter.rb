@@ -1,8 +1,8 @@
 class NodeExporter < Formula
   desc "Prometheus exporter for machine metrics"
   homepage "https://prometheus.io/"
-  url "https://github.com/prometheus/node_exporter/archive/v1.6.0.tar.gz"
-  sha256 "4e3e1f3f2f9a1d78c12752e055a0d0c809dcebf25c71325302fca1c759648eda"
+  url "https://github.com/prometheus/node_exporter/archive/v1.6.1.tar.gz"
+  sha256 "933d191d46be31da3fd608b97506115ab63a641a3b20c3931fd63faceb89222f"
   license "Apache-2.0"
   head "https://github.com/prometheus/node_exporter.git", branch: "master"
 
