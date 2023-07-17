@@ -2,8 +2,8 @@ class Kubeseal < Formula
   desc "Kubernetes controller and tool for one-way encrypted Secrets"
   homepage "https://github.com/bitnami-labs/sealed-secrets"
   url "https://github.com/bitnami-labs/sealed-secrets.git",
-      tag:      "v0.22.0",
-      revision: "96575962d7c2f3e5165f72f97c82b242ecc344af"
+      tag:      "v0.23.0",
+      revision: "ad430d5c2bb7cf8ac53024b49930ddd0ef34390f"
   license "Apache-2.0"
 
   livecheck do
