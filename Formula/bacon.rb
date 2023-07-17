@@ -6,6 +6,16 @@ class Bacon < Formula
   license "AGPL-3.0-or-later"
   head "https://github.com/Canop/bacon.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "93a93ae0beecbe5defc577d1932dffa9072eb518eb01e67082cc65e425d212b3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bb6be4f79d16e653e30d4385c613b2800645e3d4f237a2e3c5908fc4bf6cb04b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9270160a86b94d2ace308521fb7adae424c0b918f8e6a43ebb882bab82a587f3"
+    sha256 cellar: :any_skip_relocation, ventura:        "06c4373dde68072da7cd97233ba0d3c0c7e7f5a31d51bf73fcf3d0ab5fed1a65"
+    sha256 cellar: :any_skip_relocation, monterey:       "f08c4c76b3b45b2c00adbb9d3735f4ea16313c9333e69f5a9af95e9a6451408a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ff1c56a4fd52dc3a07fc8cbd3ee97e5e191f2c16c95cef6585595333b86202c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dda0840f6cc4e76c45838b68dca9d1ef97362b48d20350c4abe03f681f0186f6"
+  end
+
   depends_on "rust" => :build
   depends_on "rustup-init" => :test
 
