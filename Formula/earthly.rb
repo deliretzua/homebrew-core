@@ -8,13 +8,13 @@ class Earthly < Formula
   head "https://github.com/earthly/earthly.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ea9fa8dd9fe9ebf25a11da4407ddef37ce688f6d12387f6261c3eeb61f36d814"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ea9fa8dd9fe9ebf25a11da4407ddef37ce688f6d12387f6261c3eeb61f36d814"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ea9fa8dd9fe9ebf25a11da4407ddef37ce688f6d12387f6261c3eeb61f36d814"
-    sha256 cellar: :any_skip_relocation, ventura:        "8fe32f530b3909d7f4d416ed208e078799052a9343c680f49e62089a2be31ba5"
-    sha256 cellar: :any_skip_relocation, monterey:       "8fe32f530b3909d7f4d416ed208e078799052a9343c680f49e62089a2be31ba5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8fe32f530b3909d7f4d416ed208e078799052a9343c680f49e62089a2be31ba5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d9f5dfd75f677c97ddffb4b0c7f8134ec656322ff7ab7122da9c9a4c4dd6405"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e55006be7cc6e0b418546d0e2149d8b1350acec1d0cd4d10ea636d7f84189c8d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e55006be7cc6e0b418546d0e2149d8b1350acec1d0cd4d10ea636d7f84189c8d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e55006be7cc6e0b418546d0e2149d8b1350acec1d0cd4d10ea636d7f84189c8d"
+    sha256 cellar: :any_skip_relocation, ventura:        "01b2b70e19fb6c70b40d9738905e3939bd6fc4965d9da6e57ee934ed6506785a"
+    sha256 cellar: :any_skip_relocation, monterey:       "01b2b70e19fb6c70b40d9738905e3939bd6fc4965d9da6e57ee934ed6506785a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "01b2b70e19fb6c70b40d9738905e3939bd6fc4965d9da6e57ee934ed6506785a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d6f2005521857e3682ce2d60d79060c04dfbfddcdb4cc68ba3c2982356062a6"
   end
 
   depends_on "go" => :build
