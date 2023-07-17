@@ -1,8 +1,8 @@
 class ZshViMode < Formula
   desc "Better and friendly vi(vim) mode plugin for ZSH"
   homepage "https://github.com/jeffreytse/zsh-vi-mode"
-  url "https://github.com/jeffreytse/zsh-vi-mode/archive/refs/tags/v0.9.0.tar.gz"
-  sha256 "e6a5c56fd4b594035916057d3def799eeffcaadd2e5eda26299d724ad692693d"
+  url "https://github.com/jeffreytse/zsh-vi-mode/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "fbb8f9d96cff3ff874b4ef8e5fcda10045bd75c28fc2c4edb480fca6b8c39e71"
   license "MIT"
   head "https://github.com/jeffreytse/zsh-vi-mode.git", branch: "master"
 
