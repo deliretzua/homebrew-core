@@ -6,6 +6,10 @@ class Dysk < Formula
   license "MIT"
   head "https://github.com/Canop/dysk.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a5790eae48a6b66dd811301e209f694246612ecbff94e39857a1b5f73c8a3771"
+  end
+
   depends_on "rust" => :build
   depends_on :linux
 
