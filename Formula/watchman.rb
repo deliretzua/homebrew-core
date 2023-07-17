@@ -1,10 +1,9 @@
 class Watchman < Formula
   desc "Watch files and take action when they change"
   homepage "https://github.com/facebook/watchman"
-  url "https://github.com/facebook/watchman/archive/refs/tags/v2023.07.10.00.tar.gz"
-  sha256 "3fc4e3a39d6c948e5ca175d1313551010282a8020a9363b50d3d1e70c76ccca8"
+  url "https://github.com/facebook/watchman/archive/refs/tags/v2023.07.17.00.tar.gz"
+  sha256 "877fc1c88028134c6c1541f797a8c25a0d333088b292c914ce7f589339ddf0fd"
   license "MIT"
-  revision 1
   head "https://github.com/facebook/watchman.git", branch: "main"
 
   bottle do
@@ -23,6 +22,7 @@ class Watchman < Formula
   depends_on "cmake" => :build
   depends_on "cpptoml" => :build
   depends_on "googletest" => :build
+  depends_on "mvfst" => :build
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "boost"
