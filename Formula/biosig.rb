@@ -1,8 +1,8 @@
 class Biosig < Formula
   desc "Tools for biomedical signal processing and data conversion"
   homepage "https://biosig.sourceforge.io"
-  url "https://downloads.sourceforge.net/project/biosig/BioSig%20for%20C_C%2B%2B/src/biosig-2.5.1.src.tar.xz"
-  sha256 "4b939aac113efcdf68060d0d39d3eb9228e8f6a4304a319b7fc3ccaff4dcbb66"
+  url "https://downloads.sourceforge.net/project/biosig/BioSig%20for%20C_C%2B%2B/src/biosig-2.5.2.src.tar.xz"
+  sha256 "3c87fa4ae6d69e1a75477f85451b6f16480418a0018d59e1586a2e3e8954ec47"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,21 +11,17 @@ class Biosig < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "f0bd981bb79917bd27d3a06cf7167f8d7180f44e83bc037fc557c999cfc8accb"
-    sha256 cellar: :any,                 arm64_monterey: "72d900c9d76841fbb2fbceeee1cea8f1dddfc9d6ab2e440d22c75a061475bb0d"
-    sha256 cellar: :any,                 arm64_big_sur:  "5207db84833ea2f7a2c11d360b966dbe4370b86d60128af49db07ddf8be67f8e"
-    sha256 cellar: :any,                 ventura:        "f54f1e2db3e45c2e43a28e038151a43d5c4ef16a87c5365607f6ec91627fa7ae"
-    sha256 cellar: :any,                 monterey:       "635e79f53148290193825cfb5253cdb2e0c4c68a1cbaa5dc137d47a1a4b1fd5d"
-    sha256 cellar: :any,                 big_sur:        "ad514146a01962d4cfe11f1836a8cd40d3fc96fcfa736f4a19c8bbbd7c7b75fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ebce4271d7f9f27c5dfb08dcc6355a4bf9d539800f3d4b2f8945ea6c123ec470"
+    sha256 cellar: :any,                 arm64_ventura:  "83d191f0a0ac811bcf64c0c5112eed21d6a259f05d0b34be1e796e76a758d7f4"
+    sha256 cellar: :any,                 arm64_monterey: "a4f03b4dd7ed99343a9c38635a032b18062d7987994a0771f366b365a3198665"
+    sha256 cellar: :any,                 arm64_big_sur:  "08a1fd1b2ed45e852c449dec1fa31acfba84647102b686aa7dd80b2fc011dfd3"
+    sha256 cellar: :any,                 ventura:        "2f62a6de7d6d95332d5786db95bd128a4f1e622588eb2484059ec11016cae52d"
+    sha256 cellar: :any,                 monterey:       "16b28c2c2d7a6c51a5d36f2213cfb64fcbbfe0255aedfa98ff77c260dad8e107"
+    sha256 cellar: :any,                 big_sur:        "ad212b7f5f76da51d0ef8b33c8b9d8a2e47e015f0cc218056d753e023fe0d267"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a39f2773b2ddf64ffa46b897c77cb09e2ba38ba93b274c2b4e49ba9d5ed4c20"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
   depends_on "gawk" => :build
   depends_on "libarchive" => :build
-  depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
   depends_on "dcmtk"
   depends_on "libb64"
   depends_on "numpy"
@@ -36,8 +32,6 @@ class Biosig < Formula
     # Workaround for Xcode 14.3
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
-    # regenerate configure due to `cannot find required auxiliary files: config.guess` issue
-    system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make"
     system "make", "install"
