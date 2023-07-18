@@ -6,6 +6,7 @@ class SyslogNg < Formula
   url "https://github.com/syslog-ng/syslog-ng/releases/download/syslog-ng-4.2.0/syslog-ng-4.2.0.tar.gz"
   sha256 "092bd17fd47002c988aebdf81d0ed3f3cfd0e82b388d2453bcaa5e67934f4dda"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
+  revision 1
 
   bottle do
     sha256 arm64_ventura:  "04b7082d340dd4533abeaf0e1dca10f1d22a0d5152cf68e5345b4685746a1073"
@@ -38,6 +39,13 @@ class SyslogNg < Formula
   depends_on "riemann-client"
 
   uses_from_macos "curl"
+
+  # patch pyyaml build, remove in next release
+  # relates to https://github.com/yaml/pyyaml/pull/702
+  patch do
+    url "https://github.com/syslog-ng/syslog-ng/commit/246dc5c8425b15a0a1ab0229e44e52f5c0aebe2c.patch?full_index=1"
+    sha256 "7e75103fdeb54c185342d1dce2dc7a215c2d6812be15c5199ce480a62e2a05bf"
+  end
 
   def install
     sng_python_ver = Formula["python@3.11"].version.major_minor
