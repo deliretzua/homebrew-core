@@ -7,15 +7,13 @@ class GnuTar < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "828558d1246976fe4ea4f2d5e7395b2e768c7b1874e42c959a4416f424dfc991"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d30acbafc1fafafd0e20b926fae992e246c8eb7f833ef349b9af330ca1c104f6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "984b478a4567b7435d3e5ccda4adecea05b076f7d906a5e38a2941b125cf9182"
-    sha256 cellar: :any_skip_relocation, ventura:        "35530248d44c4d449cd1945e94db2a659455927a41ee40628b92e19e5908b8ac"
-    sha256 cellar: :any_skip_relocation, monterey:       "50e95002e10bc01900248602282baf407d2984ee0037bce5ae7aa179c052e393"
-    sha256 cellar: :any_skip_relocation, big_sur:        "2c70eed37ee410279978ea44a4444e8116ddb303626c592545ebf50fd65ae423"
-    sha256 cellar: :any_skip_relocation, catalina:       "1db42ebdaa7724d0fb55e861a4e2ac59b0736f9c4d183bd628c658b70c395e92"
-    sha256                               x86_64_linux:   "f23b93a35c0a48f57fd6e2f8eb6edb7688b6e13ab7d8124d6053422738a16229"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b5debb34f53626f09c119c96ab75e46dfcc9c816ca5ccbf4ce1b051251c3752"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "78bbae315786562366b35a1c1d25c391824281aab63421e4243ec927dbe647b1"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "98ce20547135be57ef9ee9b6e85df5081ba8b907f113c6d19b3e4a296b3930fc"
+    sha256 cellar: :any_skip_relocation, ventura:        "5078709c3c1643d2ac42da4fc354baee127d06e4a4f8b04c9770867ec5166188"
+    sha256 cellar: :any_skip_relocation, monterey:       "b083b4ca16eea4b23615ce1b90b7e1a3ee52dd90cd5a4275567cb0ea55339ee4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d7947a84f5bd5458a1faf9854a90d788c7661a6aba37b7ff7f8fba1e9d04ac24"
+    sha256                               x86_64_linux:   "5209eb2c2693093b26bc232c09df1caf0b5254f9a2003aa88b81a7c7f9f2391a"
   end
 
   head do
