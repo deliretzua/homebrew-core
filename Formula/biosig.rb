@@ -1,8 +1,8 @@
 class Biosig < Formula
   desc "Tools for biomedical signal processing and data conversion"
   homepage "https://biosig.sourceforge.io"
-  url "https://downloads.sourceforge.net/project/biosig/BioSig%20for%20C_C%2B%2B/src/biosig-2.5.1.src.tar.xz"
-  sha256 "4b939aac113efcdf68060d0d39d3eb9228e8f6a4304a319b7fc3ccaff4dcbb66"
+  url "https://downloads.sourceforge.net/project/biosig/BioSig%20for%20C_C%2B%2B/src/biosig-2.5.2.src.tar.xz"
+  sha256 "3c87fa4ae6d69e1a75477f85451b6f16480418a0018d59e1586a2e3e8954ec47"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -20,12 +20,8 @@ class Biosig < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ebce4271d7f9f27c5dfb08dcc6355a4bf9d539800f3d4b2f8945ea6c123ec470"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
   depends_on "gawk" => :build
   depends_on "libarchive" => :build
-  depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
   depends_on "dcmtk"
   depends_on "libb64"
   depends_on "numpy"
@@ -36,8 +32,6 @@ class Biosig < Formula
     # Workaround for Xcode 14.3
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
-    # regenerate configure due to `cannot find required auxiliary files: config.guess` issue
-    system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make"
     system "make", "install"
