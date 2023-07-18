@@ -16,8 +16,10 @@ class Hiredis < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ab8246b1ea0825094a91de9209dc554a9a735c3fb3cb5c63b5475826ec941078"
   end
 
+  depends_on "openssl@3"
+
   def install
-    system "make", "install", "PREFIX=#{prefix}"
+    system "make", "install", "PREFIX=#{prefix}", "USE_SSL=1"
     pkgshare.install "examples"
   end
 
