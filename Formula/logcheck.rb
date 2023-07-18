@@ -11,7 +11,13 @@ class Logcheck < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "80c5420361fea2b961a749a213e5a4c769d6784f8034528eecae7365b9fd252e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6ecd94f7128daaac16cb1dc0d371259d177878e6d727cb189fe93d017d175de2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6ecd94f7128daaac16cb1dc0d371259d177878e6d727cb189fe93d017d175de2"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6ecd94f7128daaac16cb1dc0d371259d177878e6d727cb189fe93d017d175de2"
+    sha256 cellar: :any_skip_relocation, ventura:        "6ecd94f7128daaac16cb1dc0d371259d177878e6d727cb189fe93d017d175de2"
+    sha256 cellar: :any_skip_relocation, monterey:       "6ecd94f7128daaac16cb1dc0d371259d177878e6d727cb189fe93d017d175de2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6ecd94f7128daaac16cb1dc0d371259d177878e6d727cb189fe93d017d175de2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c228270104abb0e7f124a9e278a94e3863a8e17ca9739f83c097e38cde56377a"
   end
 
   on_macos do
