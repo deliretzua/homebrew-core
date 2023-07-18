@@ -1,8 +1,8 @@
 class Suricata < Formula
   desc "Network IDS, IPS, and security monitoring engine"
   homepage "https://suricata.io"
-  url "https://www.openinfosecfoundation.org/download/suricata-6.0.13.tar.gz"
-  sha256 "e09f2f800d0e0cd2f97f21c505950ccc3dbb9ce5cfe808df9567b6d849a31055"
+  url "https://www.openinfosecfoundation.org/download/suricata-7.0.0.tar.gz"
+  sha256 "7bcd1313118366451465dc3f8385a3f6aadd084ffe44dd257dda8105863bb769"
   license "GPL-2.0-only"
 
   livecheck do
@@ -28,18 +28,11 @@ class Suricata < Formula
   depends_on "lz4"
   depends_on "nspr"
   depends_on "nss"
-  depends_on "pcre"
+  depends_on "pcre2"
   depends_on "python@3.11"
   depends_on "pyyaml"
 
   uses_from_macos "libpcap"
-
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-    directory "libhtp"
-  end
 
   def install
     jansson = Formula["jansson"]
