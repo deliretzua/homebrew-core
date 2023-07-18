@@ -7,7 +7,7 @@ class Mpfr < Formula
     url "https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.0.tar.xz"
     mirror "https://ftpmirror.gnu.org/mpfr/mpfr-4.2.0.tar.xz"
     sha256 "06a378df13501248c1b2db5aa977a2c8126ae849a9d9b7be2546fb4a9c26d993"
-    version "4.2.0-p9"
+    version "4.2.0-p12"
 
     # Upstream patches, list at https://www.mpfr.org/mpfr-current/#fixed
     %w[
@@ -20,6 +20,9 @@ class Mpfr < Formula
       07 472386aa5f8c51fbdf60154c19268ce2212be03e1c2f9004c1673b6c270508f6
       08 6ecd3bd2edf178f4ede4be612964d1b2d0a0bb10ad6f8c51d1a8011fff87d5ea
       09 3e9aed5bcea95d34d0bd179a61cd7acb712c89c9a745535f18f0ef619833ba3b
+      10 1c546e78d754f6961e1c7130d5487a1372a765c0f58dcdefc3d001fe9dba7d07
+      11 3de9dbe1091f16d782cbce6253475b3fcdfee6a1cf82a211598d10b4f274811e
+      12 a8fe9449ba89262be8f7feecb4aba61d7526cec7f3b6acda5bf90950ac4d726c
     ].each_slice(2) do |p, checksum|
       patch do
         url "https://www.mpfr.org/mpfr-4.2.0/patch#{p}"
