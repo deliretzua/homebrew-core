@@ -1,8 +1,8 @@
 class TotpCli < Formula
   desc "Authy/Google Authenticator like TOTP CLI tool written in Go"
   homepage "https://yitsushi.github.io/totp-cli/"
-  url "https://github.com/yitsushi/totp-cli/archive/v1.3.3.tar.gz"
-  sha256 "089e8e5cf8666a52e1318cc640d8885910593840d8965bd3d445ff7bede6be8c"
+  url "https://github.com/yitsushi/totp-cli/archive/v1.4.0.tar.gz"
+  sha256 "5a3d6bf849cf392499c8c14e73a3ca3476724293a4d64a8ee8b3fc7dbddec556"
   license "MIT"
   head "https://github.com/yitsushi/totp-cli.git", branch: "main"
 
