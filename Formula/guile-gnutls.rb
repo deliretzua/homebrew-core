@@ -7,13 +7,13 @@ class GuileGnutls < Formula
   head "https://gitlab.com/gnutls/guile.git", branch: "master"
 
   bottle do
-    sha256 arm64_ventura:  "76be86539dd101e571939d85f367753cf5b9feffd8715ddbacfa143d94111765"
-    sha256 arm64_monterey: "ccfbe1ae554ba7f66c516136a9e20a913508bb8682dc168aee2715c55fb5bd8f"
-    sha256 arm64_big_sur:  "e1cbf1d1781e4c7943850015a31ea4ef3d68575c1752bf9ebffb112f1e92d470"
-    sha256 ventura:        "e500ac41113618a01c642a717636d67caa91886dc5d7c9b55309a883c2a7d626"
-    sha256 monterey:       "e7cf8cb70219f51bd3842c7c5d8e16e4167c087427eb2cc6932906b697508078"
-    sha256 big_sur:        "f3223f2e41070c82d040edf761da2efb2bff7a92e6c6b2b00fd3d3c8f93e917a"
-    sha256 x86_64_linux:   "67d4876372fd6c76eed08ebce6df6dac0f571b586e1d07b091f64d34ad575b37"
+    sha256 arm64_ventura:  "053c4f9b3e601dfcf4357af82e85345136228ad96e73cb69450d7ddcbfa07fcf"
+    sha256 arm64_monterey: "abf49ca8d3a53732089f5729a9062d18b0dbb9243fcf2fa0fd2de2f23615fa55"
+    sha256 arm64_big_sur:  "3cdf6b48937902bcd21d697fa1d37e869e135fbf004465478a4eeb8d85172c02"
+    sha256 ventura:        "b9d5099477ffe00f62e2c651dd1279b69c3077de9c9bf4bad2b954b0cdf7ce63"
+    sha256 monterey:       "683ad47beeb12a6848c2016bf6096b371a9e401e597f83b6dd4eac4de3473a91"
+    sha256 big_sur:        "1f880bb6c08d3f3d9ec74dbb07e2e67f5fa0ea003989e6f3738f8ae84aee2637"
+    sha256 x86_64_linux:   "57eb4e1644cdab8bd6a15997cafbc2f85b6c2a0639cd52264e9e7599f5c2fec7"
   end
 
   depends_on "gnutls"
