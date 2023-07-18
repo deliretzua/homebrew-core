@@ -4,6 +4,7 @@ class Cloudflared < Formula
   url "https://github.com/cloudflare/cloudflared/archive/refs/tags/2023.7.1.tar.gz"
   sha256 "0863eadade6c6ac5838510d8fb514ec2332bb79bf54edc34e90cc79652b6c816"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/cloudflare/cloudflared.git", branch: "master"
 
   bottle do
@@ -16,8 +17,7 @@ class Cloudflared < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d20b1f99495ed99fe62f45663333b493ce2b5adc3e84521abf1eacadb90ad27"
   end
 
-  # https://github.com/cloudflare/cloudflared/issues/888
-  depends_on "go@1.19" => :build
+  depends_on "go" => :build
 
   def install
     system "make", "install",
