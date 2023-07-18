@@ -5,6 +5,16 @@ class Pop < Formula
   sha256 "d5cedd18327131df4e3857ddbc0d98326cab619630eb89f7ce2f2d03a3f4e723"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bca42bc3e76cf9252753557f2c422a27548f83b1f63f1f200be7e769c0a77591"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "bca42bc3e76cf9252753557f2c422a27548f83b1f63f1f200be7e769c0a77591"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "bca42bc3e76cf9252753557f2c422a27548f83b1f63f1f200be7e769c0a77591"
+    sha256 cellar: :any_skip_relocation, ventura:        "e17ee0449fb0463193f8ac28bf000977e16aff41c2f4e55e804659302c7c9d68"
+    sha256 cellar: :any_skip_relocation, monterey:       "e17ee0449fb0463193f8ac28bf000977e16aff41c2f4e55e804659302c7c9d68"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e17ee0449fb0463193f8ac28bf000977e16aff41c2f4e55e804659302c7c9d68"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7b7a91d27becd83aad04f8ccbf56945d52358c29546a481fac725c249d039a8"
+  end
+
   depends_on "go" => :build
 
   def install
