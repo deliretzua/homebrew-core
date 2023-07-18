@@ -1,8 +1,8 @@
 class GuileGnutls < Formula
   desc "Guile bindings for the GnuTLS library"
   homepage "https://gitlab.com/gnutls/guile"
-  url "https://gitlab.com/gnutls/guile/uploads/3fe12c208bdc6155c5116cf5eac7a2ad/guile-gnutls-3.7.12.tar.gz"
-  sha256 "5d3af11573093de59f258415872e2c5b14cca9dd251a8b2ec1643d6e97fee336"
+  url "https://gitlab.com/gnutls/guile/uploads/21cfbd0d55627751a902333d2c592fd7/guile-gnutls-3.7.13.tar.gz"
+  sha256 "9a8556d691123a75e8b86b105bc48b115337a0a94355fcd086cbe438cc801510"
   license "LGPL-2.1-or-later"
   head "https://gitlab.com/gnutls/guile.git", branch: "master"
 
@@ -20,12 +20,10 @@ class GuileGnutls < Formula
   depends_on "guile"
 
   def install
-    # configure: WARNING: unrecognized options: --disable-debug
-    system "./configure", "--prefix=#{prefix}",
+    system "./configure", *std_configure_args.reject { |s| s["--disable-debug"] },
                           "--with-guile-site-dir=#{share}/guile/site/3.0",
                           "--with-guile-site-ccache-dir=#{lib}/guile/3.0/site-ccache",
                           "--with-guile-extension-dir=#{lib}/guile/3.0/extensions",
-                          "--disable-dependency-tracking",
                           "--disable-silent-rules"
     system "make", "install"
   end
