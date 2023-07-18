@@ -1,8 +1,8 @@
 class RiemannClient < Formula
   desc "C client library for the Riemann monitoring system"
   homepage "https://git.madhouse-project.org/algernon/riemann-c-client"
-  url "https://git.madhouse-project.org/algernon/riemann-c-client/archive/riemann-c-client-2.1.0.tar.gz"
-  sha256 "e1a4439ee23f4557d7563a88c67044d50c384641cf160d95114480404c547085"
+  url "https://git.madhouse-project.org/algernon/riemann-c-client/archive/riemann-c-client-2.1.1.tar.gz"
+  sha256 "097e710096dc2e901ae95108277eff1acb6d0383f04137cdea4ce55257c08e10"
   license "LGPL-3.0-or-later"
   head "https://git.madhouse-project.org/algernon/riemann-c-client.git", branch: "main"
 
@@ -23,11 +23,12 @@ class RiemannClient < Formula
   depends_on "pkg-config" => :build
 
   depends_on "json-c"
+  depends_on "openssl@3"
   depends_on "protobuf-c"
 
   def install
-    system "autoreconf", "-i"
-    system "./configure", "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system "./configure", "--prefix=#{prefix}", "--with-tls=openssl"
     system "make"
     system "make", "check"
     system "make", "install"
