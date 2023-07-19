@@ -3,8 +3,8 @@ require "language/node"
 class Pyright < Formula
   desc "Static type checker for Python"
   homepage "https://github.com/microsoft/pyright"
-  url "https://registry.npmjs.org/pyright/-/pyright-1.1.317.tgz"
-  sha256 "68f2ddcb49093dfbb538a32ad580453e87cce4f6cfdd45cdfe037f65a9da06a2"
+  url "https://registry.npmjs.org/pyright/-/pyright-1.1.318.tgz"
+  sha256 "68bdba8071d234d0852155fa83310d1ef89d5d75b9a373526ab56eade5a79c3e"
   license "MIT"
   head "https://github.com/microsoft/pyright.git", branch: "main"
 
@@ -23,6 +23,8 @@ class Pyright < Formula
   def install
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
     bin.install_symlink Dir["#{libexec}/bin/*"]
+    # Replace universal binaries with native slices
+    deuniversalize_machos
   end
 
   test do
