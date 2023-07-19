@@ -1,10 +1,9 @@
 class GitInteractiveRebaseTool < Formula
   desc "Native sequence editor for Git interactive rebase"
   homepage "https://gitrebasetool.mitmaro.ca/"
-  url "https://github.com/MitMaro/git-interactive-rebase-tool/archive/2.2.1.tar.gz"
-  sha256 "86f262e6607ac0bf5cee22ca1b333cf9f827e09d3257658d525a518aa785ca7c"
+  url "https://github.com/MitMaro/git-interactive-rebase-tool/archive/2.3.0.tar.gz"
+  sha256 "4af63703b3504370ef298693abc5061fe5bf215536e6d45952afda33a92f8101"
   license "GPL-3.0-or-later"
-  revision 1
 
   livecheck do
     url :stable
@@ -23,7 +22,8 @@ class GitInteractiveRebaseTool < Formula
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
-  depends_on "libgit2"
+
+  uses_from_macos "zlib"
 
   def install
     system "cargo", "install", *std_cargo_args
@@ -54,13 +54,5 @@ class GitInteractiveRebaseTool < Formula
 
     assert_equal 0, $CHILD_STATUS.exitstatus
     assert_equal expected_git_rebase_todo, todo_file.read
-
-    linkage_with_libgit2 = executable.dynamically_linked_libraries.any? do |dll|
-      next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
-
-      File.realpath(dll) == (Formula["libgit2"].opt_lib/shared_library("libgit2")).realpath.to_s
-    end
-
-    assert linkage_with_libgit2, "No linkage with libgit2! Cargo is likely using a vendored version."
   end
 end
