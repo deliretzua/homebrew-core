@@ -13,7 +13,13 @@ class SshCopyId < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0d7f8567b1b50c40ecc5a1f48c5e5e654779ea653c536b33361cf4dd9c6f75bc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "60a7ec7c0f14767470994a0db0fc9659378b26023501c55ec1023855e8adf510"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "60a7ec7c0f14767470994a0db0fc9659378b26023501c55ec1023855e8adf510"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "60a7ec7c0f14767470994a0db0fc9659378b26023501c55ec1023855e8adf510"
+    sha256 cellar: :any_skip_relocation, ventura:        "60a7ec7c0f14767470994a0db0fc9659378b26023501c55ec1023855e8adf510"
+    sha256 cellar: :any_skip_relocation, monterey:       "60a7ec7c0f14767470994a0db0fc9659378b26023501c55ec1023855e8adf510"
+    sha256 cellar: :any_skip_relocation, big_sur:        "60a7ec7c0f14767470994a0db0fc9659378b26023501c55ec1023855e8adf510"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec6084b543f1df21a8bf3879dee06a4d382c572d76cd9ac7db9ee4fe11133bcf"
   end
 
   keg_only :provided_by_macos
