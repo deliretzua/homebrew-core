@@ -5,6 +5,16 @@ class Pgrok < Formula
   sha256 "15bac3b6c0a100e411eee39c044218869078c2f221b59c3a911d52040412ee72"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6c3b7f4af2988b16e770e16894d7e3e4db091457d9c63cfe2d89a06d468bc672"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6c3b7f4af2988b16e770e16894d7e3e4db091457d9c63cfe2d89a06d468bc672"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6c3b7f4af2988b16e770e16894d7e3e4db091457d9c63cfe2d89a06d468bc672"
+    sha256 cellar: :any_skip_relocation, ventura:        "97b803912d2a71d555ca5a412d4654ca10cfea3248bbaf229f4b32f193976129"
+    sha256 cellar: :any_skip_relocation, monterey:       "97b803912d2a71d555ca5a412d4654ca10cfea3248bbaf229f4b32f193976129"
+    sha256 cellar: :any_skip_relocation, big_sur:        "97b803912d2a71d555ca5a412d4654ca10cfea3248bbaf229f4b32f193976129"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "31618cd25c95613caa4ff45812281e1aa033ef7e2a173fc61a4e98759d820cf8"
+  end
+
   depends_on "go" => :build
 
   def install
