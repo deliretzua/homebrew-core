@@ -7,13 +7,13 @@ class Gobackup < Formula
   head "https://github.com/gobackup/gobackup.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "474ac102c077e8e592a52688190cd7d471c73e382fc5e99597cb194add1ae515"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "474ac102c077e8e592a52688190cd7d471c73e382fc5e99597cb194add1ae515"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "474ac102c077e8e592a52688190cd7d471c73e382fc5e99597cb194add1ae515"
-    sha256 cellar: :any_skip_relocation, ventura:        "0a1605f05066c72f172ce92053dd48c1d5bff9172733adeb71a02ec04cade662"
-    sha256 cellar: :any_skip_relocation, monterey:       "0a1605f05066c72f172ce92053dd48c1d5bff9172733adeb71a02ec04cade662"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0a1605f05066c72f172ce92053dd48c1d5bff9172733adeb71a02ec04cade662"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9176a74ad0fcdc97fee1e8495d25e39a66945b68a0e2ae46c3e25a89e2f54a21"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "112e089ce2e4f16d8deb16f23c414445f85982fed0fff4e11625782175599fe2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "112e089ce2e4f16d8deb16f23c414445f85982fed0fff4e11625782175599fe2"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "112e089ce2e4f16d8deb16f23c414445f85982fed0fff4e11625782175599fe2"
+    sha256 cellar: :any_skip_relocation, ventura:        "895870132677e24d8be174ab188b52767f9444844b14b09e1dfd2adbdd11c7ee"
+    sha256 cellar: :any_skip_relocation, monterey:       "895870132677e24d8be174ab188b52767f9444844b14b09e1dfd2adbdd11c7ee"
+    sha256 cellar: :any_skip_relocation, big_sur:        "895870132677e24d8be174ab188b52767f9444844b14b09e1dfd2adbdd11c7ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "05378f8a158b4727372e5a6f970c26a51391f50d53a14f32477f2dad7c3dd8e4"
   end
 
   depends_on "go" => :build
