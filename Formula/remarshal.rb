@@ -3,8 +3,8 @@ class Remarshal < Formula
 
   desc "Convert between TOML, YAML and JSON"
   homepage "https://github.com/dbohdan/remarshal"
-  url "https://files.pythonhosted.org/packages/1a/7e/d0a6fcf1ebce08975b742416e97d79ce8ea5a338280a930980ee61f4b75f/remarshal-0.15.1.tar.gz"
-  sha256 "d35d7300d1d690c7c3754fb5456ca1efcb4749dc3568933a252f9cde3cb7f9d0"
+  url "https://files.pythonhosted.org/packages/00/98/7a96aa68e5130eaa2ac4080935ffed801d73a012eb33c6f6cfead5409818/remarshal-0.16.0.tar.gz"
+  sha256 "2e49816e752b8739424593bb21b175ccec69beaaa15500ceea35988730c2eda5"
   license "MIT"
   head "https://github.com/dbohdan/remarshal.git", branch: "master"
 
@@ -70,7 +70,10 @@ class Remarshal < Formula
 
   test do
     json = <<~EOS.chomp
-      {"foo.bar":"baz","qux":1}
+      {
+      "foo.bar":"baz",
+      "qux":1
+      }
     EOS
     yaml = <<~EOS.chomp
       foo.bar: baz
@@ -90,5 +93,7 @@ class Remarshal < Formula
     assert_equal json, pipe_output("#{bin}/toml2json", toml).chomp
     assert_equal pipe_output("#{bin}/remarshal -if=yaml -of=msgpack", yaml),
       pipe_output("#{bin}/remarshal -if=json -of=msgpack", json)
+
+    assert_match version.to_s, shell_output("#{bin}/remarshal --version")
   end
 end
