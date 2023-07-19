@@ -6,6 +6,11 @@ class Quictls < Formula
   sha256 "7b76b0968642a3929fabc96acd28302f631d339a90a91fd434cde425a3ec6838"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    regex(/^openssl[._-]v?(\d(?:\.\d)+[+._-]quic\d*)$/i)
+  end
+
   bottle do
     sha256 arm64_ventura:  "057574a2bf46e393ae38042b6af0dcfa2d37afca1d47bb8d3120ee6926bebed1"
     sha256 arm64_monterey: "d908386843e4e08542de776a8bedc11089b8704457e9b79069c2fb628ab54f7b"
