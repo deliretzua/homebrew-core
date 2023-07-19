@@ -1,8 +1,8 @@
 class TotpCli < Formula
   desc "Authy/Google Authenticator like TOTP CLI tool written in Go"
   homepage "https://yitsushi.github.io/totp-cli/"
-  url "https://github.com/yitsushi/totp-cli/archive/v1.4.0.tar.gz"
-  sha256 "5a3d6bf849cf392499c8c14e73a3ca3476724293a4d64a8ee8b3fc7dbddec556"
+  url "https://github.com/yitsushi/totp-cli/archive/v1.5.0.tar.gz"
+  sha256 "6d41bf991d28124f1a1f424e8ab9df0f22bfe8699257eb39d1bc2d293c52aa47"
   license "MIT"
   head "https://github.com/yitsushi/totp-cli.git", branch: "main"
 
@@ -21,7 +21,8 @@ class TotpCli < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
 
-    zsh_completion.install "_totp-cli"
+    bash_completion.install "autocomplete/bash_autocomplete" => "totp-cli"
+    zsh_completion.install "autocomplete/zsh_autocomplete" => "_totp-cli"
   end
 
   test do
