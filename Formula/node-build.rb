@@ -12,7 +12,13 @@ class NodeBuild < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "606cb8a2181abf34ac1e627b5a5383ccb25c5ac034b6116cfe4b638da3dc76bb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8e6f701319fec1377b7b0058d1783eebf2a31a0a0c22ed7ae4fc54c5a461310f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8e6f701319fec1377b7b0058d1783eebf2a31a0a0c22ed7ae4fc54c5a461310f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8e6f701319fec1377b7b0058d1783eebf2a31a0a0c22ed7ae4fc54c5a461310f"
+    sha256 cellar: :any_skip_relocation, ventura:        "8e6f701319fec1377b7b0058d1783eebf2a31a0a0c22ed7ae4fc54c5a461310f"
+    sha256 cellar: :any_skip_relocation, monterey:       "8e6f701319fec1377b7b0058d1783eebf2a31a0a0c22ed7ae4fc54c5a461310f"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8e6f701319fec1377b7b0058d1783eebf2a31a0a0c22ed7ae4fc54c5a461310f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "217aa45826134a682b6347e1fff900172d064b5a18c496d57aeebce71f844a46"
   end
 
   depends_on "autoconf"
