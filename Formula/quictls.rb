@@ -6,6 +6,16 @@ class Quictls < Formula
   sha256 "7b76b0968642a3929fabc96acd28302f631d339a90a91fd434cde425a3ec6838"
   license "Apache-2.0"
 
+  bottle do
+    sha256 arm64_ventura:  "057574a2bf46e393ae38042b6af0dcfa2d37afca1d47bb8d3120ee6926bebed1"
+    sha256 arm64_monterey: "d908386843e4e08542de776a8bedc11089b8704457e9b79069c2fb628ab54f7b"
+    sha256 arm64_big_sur:  "dcb0c51ddd58428494f7b009590bd9bba1e076d5701714f2c7f48df24182fbe6"
+    sha256 ventura:        "f2a3a0f85201ebc53ca7bcd6f88bbfb501ce74c628555a2ef0af53d3b61ba191"
+    sha256 monterey:       "b55a237526dfad87ea53b50675ba644302210b59c1d5bb74079ad6a0ef8f5d79"
+    sha256 big_sur:        "6d7f1bcbb4a58042b62cf210b5b04ad30c23de7c82b11766933da8f062a831b9"
+    sha256 x86_64_linux:   "b34a6abdf6e0d96b2ed93d036ff241bcd1f9541b61262652d9581c8f565346a1"
+  end
+
   keg_only "it conflicts with OpenSSL"
 
   depends_on "ca-certificates"
