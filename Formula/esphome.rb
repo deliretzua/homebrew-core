@@ -3,10 +3,9 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32/ESP8266 super easy"
   homepage "https://github.com/esphome/esphome"
-  url "https://files.pythonhosted.org/packages/48/cd/dc2b0591dee0ebb32d26d95b969d28a63955eeef3b8c2abbeadfeec017c8/esphome-2023.6.5.tar.gz"
-  sha256 "0055ec580f6ec044db7c1abbc04a823e889baa212a22b6eb1ecab165fc840d96"
+  url "https://files.pythonhosted.org/packages/67/b9/620eff2543f5266aef97e5addce015e4f0126aa7f6ac102eb027021ad0da/esphome-2023.7.0.tar.gz"
+  sha256 "2fed4aedf6c3ca03c4d4a906a10edb64d9f624021483fd9c0679413ab525bf80"
   license "MIT"
-  revision 1
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "a9cfaffcb6379a79aadcbbe9e40670d9611615074278f5392e51c4bc67a0b167"
@@ -31,8 +30,8 @@ class Esphome < Formula
   depends_on "six"
 
   resource "aioesphomeapi" do
-    url "https://files.pythonhosted.org/packages/09/b8/04fbc4af51b8c01db9dc3d99e33f781a6547e4820a22175f37f40a4c112a/aioesphomeapi-14.0.0.tar.gz"
-    sha256 "a2689a8bbc29fff4631e010400a6d32018d94ee2c592b497ec74c0a4afd0d35a"
+    url "https://files.pythonhosted.org/packages/00/64/6c1907e7cfbc720587719caf91f8993b092a6abbef77e3b6fa999ab80ecb/aioesphomeapi-15.0.0.tar.gz"
+    sha256 "118abdd81b4de4970979fad6eaa3a62bdc3c04d87ac57f0cae2413aabb0faf3b"
   end
 
   resource "aiofiles" do
@@ -96,13 +95,13 @@ class Esphome < Formula
   end
 
   resource "esphome-dashboard" do
-    url "https://files.pythonhosted.org/packages/3c/14/570b72f7d572dc8c9fd0d830c0606b0a71e574f76fc15add27a0ba112b62/esphome-dashboard-20230621.0.tar.gz"
-    sha256 "7b99c086d33961cd8a3661fa6b4e35a3a8ba4a75426da38dba505ed59085d3ec"
+    url "https://files.pythonhosted.org/packages/62/b7/3eea1906209f826420b47b093afe7ff361c91506362b9f49c588fd379feb/esphome-dashboard-20230711.0.tar.gz"
+    sha256 "d3425e9ce706b6dac30ef2082bf88445ba2246beddb20da26db340981e0b22d5"
   end
 
   resource "esptool" do
-    url "https://files.pythonhosted.org/packages/ec/b1/83b39e12696f49c594e2a70d6868424e816594c7e68abe49c72fb71d3ff6/esptool-4.6.tar.gz"
-    sha256 "df52b38f6c28970c1a1c0e3e2145125bc3b86762fa7cfc519952b663937cdb0e"
+    url "https://files.pythonhosted.org/packages/a3/63/c757f50b606996a7e676f000b40626f65be63b3a10030563929c968e431c/esptool-4.6.2.tar.gz"
+    sha256 "549ef93eef42ee7e9462ce5a53c16df7a0c71d91b3f77e19ec15749804cdf300"
   end
 
   resource "h11" do
@@ -226,8 +225,8 @@ class Esphome < Formula
   end
 
   resource "zeroconf" do
-    url "https://files.pythonhosted.org/packages/46/64/f3f55dc5dba216ce9d20062b6fe5862e49a63b7ecce1c941388618f89224/zeroconf-0.63.0.tar.gz"
-    sha256 "2643b1c9c6ffdfaa1313cf3d12ea0099482fcb3da77929a08be87fc8354d0b3d"
+    url "https://files.pythonhosted.org/packages/6d/b3/1288ce4c7069e344cc6825dd896b4c0fe5e7950aff9ea98415275a302d15/zeroconf-0.69.0.tar.gz"
+    sha256 "c6520f39f718e6bd16a87e0a7711ff65acfbb11bbc9fabb6283506833e0c3c0f"
   end
 
   def install
