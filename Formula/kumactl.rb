@@ -33,6 +33,11 @@ class Kumactl < Formula
     system "go", "build", *std_go_args(ldflags: ldflags), "./app/kumactl"
 
     generate_completions_from_executable(bin/"kumactl", "completion")
+
+    ENV["DESTDIR"] = buildpath
+    ENV["FORMAT"] = "man"
+    system "go", "run", "tools/docs/generate.go"
+    man1.install Dir["kumactl/*.1"]
   end
 
   test do
