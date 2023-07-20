@@ -8,7 +8,7 @@ class Cryfs < Formula
   license "LGPL-3.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5d9a718de861fd9737a09356e4e9184824e107de3a5b720ff48b7afcaa331475"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b4dcdb310929123fa966efa07d4206e24b36293e63bbc8f947f2d63cf0fb8ee0"
   end
 
   head do
