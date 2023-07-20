@@ -1,10 +1,9 @@
 class Garble < Formula
   desc "Obfuscate Go builds"
   homepage "https://github.com/burrowers/garble"
-  url "https://github.com/burrowers/garble/archive/refs/tags/v0.9.3.tar.gz"
-  sha256 "26e001eb469c9357c2a5212ee295da3c588b7f36b1ce0b7e7b92b8e6d44f0cd1"
+  url "https://github.com/burrowers/garble/archive/refs/tags/v0.10.1.tar.gz"
+  sha256 "11c038cb5fb6b21a2160305beec939c69b0712e39f52f0a0b6d977fa68d5b6db"
   license "BSD-3-Clause"
-  revision 4
   head "https://github.com/burrowers/garble.git", branch: "master"
 
   bottle do
@@ -18,8 +17,10 @@ class Garble < Formula
   end
 
   depends_on "go" => [:build, :test]
+  depends_on "git"
 
   def install
+    inreplace "internal/linker/linker.go", "\"git\"", "\"#{Formula["git"].opt_bin}/git\""
     system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
