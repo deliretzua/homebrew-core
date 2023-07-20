@@ -4,13 +4,13 @@ class Gstreamer < Formula
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
 
   stable do
-    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.22.4/gstreamer-1.22.4.tar.gz"
-    sha256 "2badeeaf3fb75f11e7701a3083d412b9775db1f83aa869c779a1af0e0396400a"
+    url "https://gitlab.freedesktop.org/gstreamer/gstreamer/-/archive/1.22.5/gstreamer-1.22.5.tar.gz"
+    sha256 "4da4bd28c41768035509f6d57dca989cdc29262d0b327b9fb5e6c45fccceacf5"
 
     # When updating this resource, use the tag that matches the GStreamer version.
     resource "rs" do
-      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.22.4/gst-plugins-rs-gstreamer-1.22.4.tar.gz"
-      sha256 "1a06069ee536665447e0ba12e70e6761f3ce8d6198e81ac36fc2407f1c042a92"
+      url "https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/gstreamer-1.22.5/gst-plugins-rs-gstreamer-1.22.5.tar.gz"
+      sha256 "8eeb17a80d986d48075b4d75bc2bf51fa3f3f90ee2e2781684b485e52e9a6756"
     end
   end
 
