@@ -739,7 +739,7 @@
     "exclude_packages": ["six"]
   },
   "streamlink": {
-    "exclude_packages": ["six"]
+    "exclude_packages": ["six", "typing-extensions"]
   },
   "svtplay-dl": {
     "exclude_packages": ["cffi", "pycparser", "PyYAML"]
