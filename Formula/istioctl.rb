@@ -1,9 +1,8 @@
 class Istioctl < Formula
   desc "Istio configuration command-line utility"
   homepage "https://istio.io/"
-  url "https://github.com/istio/istio.git",
-      tag:      "1.17.3",
-      revision: "61a081630d1bcc705e22b674e7f2fab7be3f16df"
+  url "https://github.com/istio/istio/archive/refs/tags/1.18.1.tar.gz"
+  sha256 "3ca4370fa94df4704ed4350e998c177abe83aff24eabbcf9d9bb6619961bcace"
   license "Apache-2.0"
   head "https://github.com/istio/istio.git", branch: "master"
 
@@ -18,26 +17,20 @@ class Istioctl < Formula
   end
 
   depends_on "go" => :build
-  depends_on "go-bindata" => :build
-
-  uses_from_macos "curl" => :build
 
   def install
-    ENV["VERSION"] = version.to_s
-    ENV["TAG"] = version.to_s
-    ENV["ISTIO_VERSION"] = version.to_s
-    ENV["HUB"] = "docker.io/istio"
-    ENV["BUILD_WITH_CONTAINER"] = "0"
-
-    os = OS.kernel_name.downcase
-    arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s
-
-    ENV.prepend_path "PATH", Formula["curl"].opt_bin if OS.linux?
-
-    system "make", "istioctl"
-    bin.install "out/#{os}_#{arch}/istioctl"
+    ldflags = %W[
+      -s -w
+      -X istio.io/pkg/version.buildVersion=#{version}
+      -X istio.io/pkg/version.buildStatus=#{tap.user}
+      -X istio.io/pkg/version.buildTag=#{version}
+      -X istio.io/pkg/version.buildHub=docker.io/istio
+    ]
+    system "go", "build", *std_go_args(ldflags: ldflags), "./istioctl/cmd/istioctl"
 
     generate_completions_from_executable(bin/"istioctl", "completion")
+    system bin/"istioctl", "collateral", "--man"
+    man1.install Dir["*.1"]
   end
 
   test do
