@@ -9,14 +9,13 @@ class Streamlink < Formula
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "3d3cdd49eb93971f04799d5aeae75ec18639191f258c85652306c1b333b27180"
-    sha256 cellar: :any,                 arm64_monterey: "38c56c6e6bd7942980358e62db18edc74838568e611cad528a7c98fbd8a350eb"
-    sha256 cellar: :any,                 arm64_big_sur:  "b556b591ce5744828d67c245df312ad9b03990cc2e16a363bc697cbc618d78b8"
-    sha256 cellar: :any,                 ventura:        "4fb9e068099bd4ae29f1d2b357693e269ee2ace2f115db8df805d230b2f32925"
-    sha256 cellar: :any,                 monterey:       "9bf5c8b5fb38eac3d9096be54f5a57f6b08f9b72bc82610c62838249696e5ecf"
-    sha256 cellar: :any,                 big_sur:        "2527e3649c0d43662360572256efc2ec51a7e8ab8d472893dd52027857cd166d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ed34de0bc1e212c670440933e175500de68f36f1bb0a1dfa0341c1c25d036ac"
+    sha256 cellar: :any,                 arm64_ventura:  "3242fce520ffbe3ca14b03e2582f88f6afa07eb3e32e19bca7f69b4b6de75780"
+    sha256 cellar: :any,                 arm64_monterey: "85560a441fd9a56c777fa2c5169cb0ee8bac559e3d700ba0d7fce43a4d53bbdf"
+    sha256 cellar: :any,                 arm64_big_sur:  "82873b13786338389d2fc130733b1cbbbcca26c0bb595fa9de49f341de81ca8e"
+    sha256 cellar: :any,                 ventura:        "9961e8bea1dc96025937e8fc6fc2e0745db9a8ce50aed4f1602c3f5d4e17ed3f"
+    sha256 cellar: :any,                 monterey:       "2d0d32bff5aa437d85277a85d8ca2df57549ec2e2e31bb730a38f34a4e747240"
+    sha256 cellar: :any,                 big_sur:        "62bbfa4ef0883f9660dea164adeb9cefa829f4752a2845e9e72a60d8076da137"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8eb5d417e590937d5c6fa1543087d9f1c444af422878f22b66c072fdcd319b12"
   end
 
   depends_on "libxml2" # https://github.com/Homebrew/homebrew-core/issues/98468
