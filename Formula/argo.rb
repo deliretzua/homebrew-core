@@ -2,8 +2,8 @@ class Argo < Formula
   desc "Get stuff done with container-native workflows for Kubernetes"
   homepage "https://argoproj.io"
   url "https://github.com/argoproj/argo-workflows.git",
-      tag:      "v3.4.8",
-      revision: "9e27baee4b3be78bb662ffa5e3a06f8a6c28fb53"
+      tag:      "v3.4.9",
+      revision: "b76329f3a2dedf4c76a9cac5ed9603ada289c8d0"
   license "Apache-2.0"
 
   bottle do
@@ -19,6 +19,10 @@ class Argo < Formula
   depends_on "go" => :build
   depends_on "node" => :build
   depends_on "yarn" => :build
+
+  # patch to fix `Error: error:0308010C:digital envelope routines::unsupported`
+  # upstream PR ref, https://github.com/argoproj/argo-workflows/pull/11410
+  patch :DATA
 
   def install
     # this needs to be remove to prevent multiple 'operation not permitted' errors
@@ -40,3 +44,18 @@ class Argo < Formula
       shell_output("#{bin}/argo lint --kubeconfig ./kubeconfig ./kubeconfig 2>&1", 1)
   end
 end
+
+__END__
+diff --git a/ui/package.json b/ui/package.json
+index 2ecd358b1..aa27d9c14 100644
+--- a/ui/package.json
++++ b/ui/package.json
+@@ -6,7 +6,7 @@
+         "src"
+     ],
+     "scripts": {
+-        "build": "rm -Rf dist && NODE_OPTIONS='' NODE_ENV=production webpack --mode production --config ./src/app/webpack.config.js",
++        "build": "rm -Rf dist && NODE_OPTIONS='--openssl-legacy-provider' NODE_ENV=production webpack --mode production --config ./src/app/webpack.config.js",
+         "start": "NODE_OPTIONS='--no-experimental-fetch' webpack-dev-server --config ./src/app/webpack.config.js",
+         "lint": "tslint --fix -p ./src/app",
+         "test": "jest"
