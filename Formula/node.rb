@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v20.4.0/node-v20.4.0.tar.xz"
-  sha256 "09bd0b73c526b63c029d5ddfd885d10962e7ad87c975b94583c1f8ce90ee5348"
+  url "https://nodejs.org/dist/v20.5.0/node-v20.5.0.tar.xz"
+  sha256 "cb32756958def1c04e069a79b71b52ca61ed1590c17f2cfa1ee3af641f72e058"
   license "MIT"
   head "https://github.com/nodejs/node.git", branch: "main"
 
@@ -49,8 +49,8 @@ class Node < Formula
   # We track major/minor from upstream Node releases.
   # We will accept *important* npm patch releases when necessary.
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-9.7.2.tgz"
-    sha256 "d34dcbd0e4f2de422cb3402bdfdd89ff69b6d906dcd848b5de002eaff88ac7ca"
+    url "https://registry.npmjs.org/npm/-/npm-9.8.0.tgz"
+    sha256 "da8e338ed36797be4008091c092efb0ca62f6106102b4a34e9670a68d1ef2bf8"
   end
 
   def install
