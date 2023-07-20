@@ -11,13 +11,13 @@ class Talloc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "9cc6716b82a3f101df6f96a1248c30e353f9b6e54aa96c713203fd26331d2d1e"
-    sha256 cellar: :any,                 arm64_monterey: "66385ab5aea6e0860a78afba0447446c6d05bfa8f96ca28228d7c0c888f6416a"
-    sha256 cellar: :any,                 arm64_big_sur:  "10399fed3af67859742c6a3ce0a9ba55df42a6cc6010c9985106bbbe96892c5e"
-    sha256 cellar: :any,                 ventura:        "badda6ecc2492672bc46e8f7f9b2fa76353b2c6dfba643c92872849c808a6424"
-    sha256 cellar: :any,                 monterey:       "9500982d196651f13d84d646f27b38cdaf933d556db6876d6fa9be0b4d1526f4"
-    sha256 cellar: :any,                 big_sur:        "509abd7a4b2933eb6a13aaaa050ca656a928969ca59f73f948ac2b4283bbd9dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "064f0103e484260a1a6b625ebe907079d61c508a61dea97ef65e7de02bc79982"
+    sha256 cellar: :any,                 arm64_ventura:  "952aa12ad0725f13b71cfaf0d42b7457d47ec4037e3b50092cdd1eb7c5b5e686"
+    sha256 cellar: :any,                 arm64_monterey: "b51c384b3070f37e6a50bf40aa3d2a755d0869033f1f2814bc3a0fa7199281ef"
+    sha256 cellar: :any,                 arm64_big_sur:  "2b73d1af4819ca1e387c3ab3f76f78809345e0fa265aef68ab19a8d824facbbe"
+    sha256 cellar: :any,                 ventura:        "978093e8517ddb0173f7b873074ab75fd7ea546e49dd569656c95c4f8e168e7a"
+    sha256 cellar: :any,                 monterey:       "51ac64aee168610e03ab61376b2ab304127faa8cd8361b33d4eff7eabfcca112"
+    sha256 cellar: :any,                 big_sur:        "a3c4522b4d6df6ad9a23280aaa22cb03f6e3b029603a04e87e26ee876ffcee9a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "556a15c067dac92a37dfe597841e711c18c3e65be2e5dd0f0086f28739df31b3"
   end
 
   uses_from_macos "python" => :build
