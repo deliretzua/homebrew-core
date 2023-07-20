@@ -27,6 +27,13 @@ class Mailpit < Formula
     system "go", "build", *std_go_args(ldflags: ldflags)
   end
 
+  service do
+    run opt_bin/"mailpit"
+    keep_alive true
+    log_path var/"log/mailpit.log"
+    error_log_path var/"log/mailpit.log"
+  end
+
   test do
     (testpath/"test_email.txt").write "wrong format message"
 
