@@ -1,8 +1,8 @@
 class Re2c < Formula
   desc "Generate C-based recognizers from regular expressions"
   homepage "https://re2c.org"
-  url "https://github.com/skvadrik/re2c/releases/download/3.0/re2c-3.0.tar.xz"
-  sha256 "b3babbbb1461e13fe22c630a40c43885efcfbbbb585830c6f4c0d791cf82ba0b"
+  url "https://github.com/skvadrik/re2c/releases/download/3.1/re2c-3.1.tar.xz"
+  sha256 "0ac299ad359e3f512b06a99397d025cfff81d3be34464ded0656f8a96676c029"
   license :public_domain
 
   bottle do
@@ -15,6 +15,8 @@ class Re2c < Formula
     sha256 catalina:       "6b25dc91a91de111fe0b033770d8ddc095cf5fc6c81a4c67ad4e43cf57fe8758"
     sha256 x86_64_linux:   "096ce665489902beba1c057fb899494c21915e28b5309069123cdd7ee426caa5"
   end
+
+  uses_from_macos "python" => :build
 
   def install
     system "./configure", "--disable-dependency-tracking",
