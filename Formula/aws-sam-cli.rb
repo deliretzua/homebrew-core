@@ -3,8 +3,8 @@ class AwsSamCli < Formula
 
   desc "CLI tool to build, test, debug, and deploy Serverless applications using AWS SAM"
   homepage "https://aws.amazon.com/serverless/sam/"
-  url "https://files.pythonhosted.org/packages/a1/81/e8258296e9e84dee6a3308454d386e86c98cba9c6d6f3c6fdaa30e9e4341/aws-sam-cli-1.91.0.tar.gz"
-  sha256 "0cae221a23e3e82c0094a8805345fed814b080bd076f7242383f42b1e6a38657"
+  url "https://files.pythonhosted.org/packages/49/72/6fcc852ded772f47e17dd4905c6f3fd3781b65e9be2efef5847630523926/aws-sam-cli-1.92.0.tar.gz"
+  sha256 "6e489dccd52961d2b15c5a0ed0cf8cf7ef039c66e7b8dcf2ca64dc5b02712437"
   license "Apache-2.0"
 
   bottle do
@@ -21,6 +21,7 @@ class AwsSamCli < Formula
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
+  depends_on "cfn-lint"
   depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "pygments"
@@ -40,8 +41,8 @@ class AwsSamCli < Formula
   end
 
   resource "aws-lambda-builders" do
-    url "https://files.pythonhosted.org/packages/bb/22/f1062f5493a1611b710e3bffcdae7a48769e178f34bfa06acc35f35dfc77/aws_lambda_builders-1.34.0.tar.gz"
-    sha256 "0790f7e9b7ee7286b96fbcf49450c5be0341bb7cb852ca7d74beae190139eb48"
+    url "https://files.pythonhosted.org/packages/be/14/2d7fcf9bf0a9541efc403634f54b7f11ddd5c00e48ab75edfb1982392196/aws_lambda_builders-1.35.0.tar.gz"
+    sha256 "419d766e60ac2a7303a23889b354d108a4244ce8d467dcf9dc71a62461895780"
   end
 
   resource "aws-sam-translator" do
@@ -55,23 +56,18 @@ class AwsSamCli < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/6d/af/0e13f06db6effbbe197a05a406992126fe62e5d04af089babf6c20e4b917/boto3-1.28.5.tar.gz"
-    sha256 "2c76db4a1208b8d09814261fc5e530fc36b3b952ef807312495e6869fa6eaad5"
+    url "https://files.pythonhosted.org/packages/83/55/46669bec24ee173e9b2dae3b9e556f12f8f441e959fb6d0b3683576ebc1a/boto3-1.28.6.tar.gz"
+    sha256 "a1711097e80e10c0c33f62695c663a8a303d61289791b8d874ba9a30f78f1de1"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/4d/f4/f1a76f0212cfa34ab8a172ef5d69d9ad0b433e0d62d695d6f0e6f59c7ee3/botocore-1.31.5.tar.gz"
-    sha256 "b35114dae9c451895a11fef13d76881e2bb5428e5de8a702cc8589a28fb34c7a"
+    url "https://files.pythonhosted.org/packages/bd/93/0701c27690c16558d0ee0fa361b33f928129be28d0206e82740417cb1ebe/botocore-1.31.6.tar.gz"
+    sha256 "1d724d542c9031195dd24e66b09b24ee654266e4cf0c2bc24679036f786158a3"
   end
 
   resource "certifi" do
     url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
     sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
-  end
-
-  resource "cfn-lint" do
-    url "https://files.pythonhosted.org/packages/88/fe/a801aff2bbde1af164a1757e4e4c2712fcc887842a5cc4e04857345200f2/cfn-lint-0.78.1.tar.gz"
-    sha256 "46118362b2e13b79ba3ae6b3c28b7df5fcd437c06f5bcc3384d13a2defdb7d06"
   end
 
   resource "chardet" do
