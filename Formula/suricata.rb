@@ -26,8 +26,6 @@ class Suricata < Formula
   depends_on "libmagic"
   depends_on "libnet"
   depends_on "lz4"
-  depends_on "nspr"
-  depends_on "nss"
   depends_on "pcre2"
   depends_on "python@3.11"
   depends_on "pyyaml"
