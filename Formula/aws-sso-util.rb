@@ -3,10 +3,9 @@ class AwsSsoUtil < Formula
 
   desc "Smooth out the rough edges of AWS SSO (temporarily, until AWS makes it better)"
   homepage "https://github.com/benkehoe/aws-sso-util"
-  url "https://files.pythonhosted.org/packages/7d/59/d7717183d187a700298e65f7b416b693af56ca9e70229529c648601bc303/aws_sso_util-4.31.0.tar.gz"
-  sha256 "a816ca64f4adb3fd9262963fb1c3a8f3741848e85689626af42d55686a66aa4a"
+  url "https://files.pythonhosted.org/packages/6e/93/90d3753ac7ea3148c41c43929cace11d8fc1331c629497ab24a91a6c3724/aws_sso_util-4.32.0.tar.gz"
+  sha256 "2649dcf3c594851a0c55ed6ebf2df70205d1debd6e58e263738430d4703890ec"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/benkehoe/aws-sso-util.git", branch: "master"
 
   bottle do
@@ -39,13 +38,13 @@ class AwsSsoUtil < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/6d/af/0e13f06db6effbbe197a05a406992126fe62e5d04af089babf6c20e4b917/boto3-1.28.5.tar.gz"
-    sha256 "2c76db4a1208b8d09814261fc5e530fc36b3b952ef807312495e6869fa6eaad5"
+    url "https://files.pythonhosted.org/packages/83/55/46669bec24ee173e9b2dae3b9e556f12f8f441e959fb6d0b3683576ebc1a/boto3-1.28.6.tar.gz"
+    sha256 "a1711097e80e10c0c33f62695c663a8a303d61289791b8d874ba9a30f78f1de1"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/4d/f4/f1a76f0212cfa34ab8a172ef5d69d9ad0b433e0d62d695d6f0e6f59c7ee3/botocore-1.31.5.tar.gz"
-    sha256 "b35114dae9c451895a11fef13d76881e2bb5428e5de8a702cc8589a28fb34c7a"
+    url "https://files.pythonhosted.org/packages/bd/93/0701c27690c16558d0ee0fa361b33f928129be28d0206e82740417cb1ebe/botocore-1.31.6.tar.gz"
+    sha256 "1d724d542c9031195dd24e66b09b24ee654266e4cf0c2bc24679036f786158a3"
   end
 
   resource "certifi" do
