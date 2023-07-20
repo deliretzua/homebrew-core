@@ -1,8 +1,8 @@
 class Millet < Formula
   desc "Language server for Standard ML (SML)"
   homepage "https://github.com/azdavis/millet"
-  url "https://github.com/azdavis/millet/archive/refs/tags/v0.12.6.tar.gz"
-  sha256 "edb7535a00c273829c2aee91b3585a72d1bffdf73a97dc3d1365c8b7f7902fa3"
+  url "https://github.com/azdavis/millet/archive/refs/tags/v0.12.7.tar.gz"
+  sha256 "c81a7b966019dbf18321e5f268a055dbb6453f9f6649f80b066434503d6bccd7"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/azdavis/millet.git", branch: "main"
 
