@@ -2,8 +2,8 @@ class Runme < Formula
   desc "Execute commands inside your runbooks, docs, and READMEs"
   homepage "https://runme.dev/"
   url "https://github.com/stateful/runme.git",
-      tag:      "v1.5.0",
-      revision: "b648529bc35b6ac10bb4c79c8f7149412c9bd101"
+      tag:      "v1.5.1",
+      revision: "0220b989396b97bd2b144d15bb1913a6cb7077a2"
   license "Apache-2.0"
   head "https://github.com/stateful/runme.git", branch: "main"
 
