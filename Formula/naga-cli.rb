@@ -1,8 +1,8 @@
 class NagaCli < Formula
   desc "Shader translation command-line tool"
   homepage "https://github.com/gfx-rs/naga"
-  url "https://github.com/gfx-rs/naga/archive/refs/tags/v0.12.2.tar.gz"
-  sha256 "4e1373e92b8e4dd3ff70ace98c2f06e9b312dc21f416ddec0f91956ef978ff71"
+  url "https://github.com/gfx-rs/naga/archive/refs/tags/v0.13.0.tar.gz"
+  sha256 "126393320084c6bb5aa3916f9edc8de80824e9eb169db805432226eef4a56b15"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/gfx-rs/naga.git", branch: "master"
 
@@ -99,7 +99,6 @@ class NagaCli < Formula
       }
     EOF
     assert_equal test_out_hlsl.read, <<~EOF
-
       struct FragmentInput_derivatives {
           float4 foo_1 : SV_Position;
       };
