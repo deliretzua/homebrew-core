@@ -16,13 +16,13 @@ class HomeassistantCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5d6e5a9a5d5631e67c2d35de1b389eb1fb9dfa6eabe2e498841131c0604fb8da"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "203038c06a54acec3fa86207116713451332e7c4d1693017e517d33071e492a1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "845d00b53356276f8f0ffc36753b3510f404ed4057b9ef617fdb305889a900da"
-    sha256 cellar: :any_skip_relocation, ventura:        "cd09686b9d44012a10f59c252f7910d39dc8cba2470c21c4f984669a894796fe"
-    sha256 cellar: :any_skip_relocation, monterey:       "7220af689447185089567b9c879f90761c687e70e3a13233b8048825a0e583db"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5bd690c30dbc6483fbb513c1720dc81bd65a1585fe0254ab07957091af3dc62a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "503ea14143a4a79957247e31bc042c02471192563a8e6c19b26c977083e34892"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e44f3002c33af2fdb8086b0fdf6318f5b11ebbcc1cb90660c3c45980d2f3c397"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cf366659dc37653a9aae83078e50e5ca204be92167f67bed8b5d4edab9ae80ea"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "36ea29638e973d0f471ba005328e292c4f5798a9a170af057cb6ad7df561679f"
+    sha256 cellar: :any_skip_relocation, ventura:        "ba8af86a6e6b15d5c0d427526b6ec412b75da866ed3ac3fea5f410da7df487b8"
+    sha256 cellar: :any_skip_relocation, monterey:       "d6616e1d9e0aea66f542854f41e9ce0f4a8c56766efa5403198c24545ee3f055"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b2830a9f30f5ec2f7f837561e96c643165f02370a35c3107a23f42824682bbd1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ade7e4f00a42eec3ef357cd76a46214bf700989649ba655d9975e05b4a93060d"
   end
 
   depends_on "python-tabulate"
