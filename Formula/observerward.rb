@@ -1,8 +1,8 @@
 class Observerward < Formula
   desc "Cross platform community web fingerprint identification tool"
   homepage "https://0x727.github.io/ObserverWard/"
-  url "https://github.com/0x727/ObserverWard/archive/refs/tags/v2023.6.20.tar.gz"
-  sha256 "3d14e27ad75980f2637e9e7ddebc3563e2fc400a56c5514e8971b4b1ee4ff75f"
+  url "https://github.com/0x727/ObserverWard/archive/refs/tags/v2023.7.21.tar.gz"
+  sha256 "f7a35e2269e78f274e229b229e9c3a4ffd79bc305ac737613a5dda179066dec9"
   license "MIT"
 
   bottle do
@@ -16,13 +16,34 @@ class Observerward < Formula
   end
 
   depends_on "rust" => :build
+  depends_on "openssl@3"
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     system "cargo", "install", *std_cargo_args
+  end
+
+  def check_binary_linkage(binary, library)
+    binary.dynamically_linked_libraries.any? do |dll|
+      next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
+
+      File.realpath(dll) == File.realpath(library)
+    end
   end
 
   test do
     system bin/"observer_ward", "-u"
     assert_match "0example", shell_output("#{bin}/observer_ward -t https://www.example.com/")
+
+    [
+      Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
+      Formula["openssl@3"].opt_lib/shared_library("libssl"),
+    ].each do |library|
+      assert check_binary_linkage(bin/"observer_ward", library),
+             "No linkage with #{library.basename}! Cargo is likely using a vendored version."
+    end
   end
 end
