@@ -1,8 +1,8 @@
 class Mmv < Formula
   desc "Move, copy, append, and link multiple files"
   homepage "https://github.com/rrthomas/mmv"
-  url "https://github.com/rrthomas/mmv/releases/download/v2.4/mmv-2.4.tar.gz"
-  sha256 "5a328bea0259c9fb7eaaab6e5f4bb1b056daccd30879ff102dc00db482f2f6a1"
+  url "https://github.com/rrthomas/mmv/releases/download/v2.5/mmv-2.5.tar.gz"
+  sha256 "866d98cc87851c514a2459362cea233cf751e173136bcff61c15b39ca8a2f464"
   license "GPL-3.0-or-later"
 
   bottle do
