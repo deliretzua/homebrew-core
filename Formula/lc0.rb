@@ -2,8 +2,8 @@ class Lc0 < Formula
   desc "Open source neural network based chess engine"
   homepage "https://lczero.org/"
   url "https://github.com/LeelaChessZero/lc0.git",
-      tag:      "v0.29.0",
-      revision: "afdd67c2186f1f29893d495750661a871f7aa9ac"
+      tag:      "v0.30.0",
+      revision: "ee6866911663485d94c1e7ff99e607c15f2110be"
   license "GPL-3.0-or-later"
 
   bottle do
