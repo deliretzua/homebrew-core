@@ -19,10 +19,16 @@ class DockerMachineParallels < Formula
     sha256 cellar: :any_skip_relocation, mojave:         "cce66a6fcdea79b33095c2ae7c49c93a9f730353d92738534fdbe03b3488ee43"
   end
 
-  # Bump to 1.20 on the next release, if possible.
-  depends_on "go@1.19" => :build
+  depends_on "go" => :build
   depends_on "docker-machine"
   depends_on :macos
+
+  # Fix build on Go >= 1.20 by removing obsolete build flag:
+  # https://github.com/Parallels/docker-machine-parallels/pull/113
+  patch do
+    url "https://github.com/Parallels/docker-machine-parallels/commit/154f1906924900c948ea8759c711ba43cd236656.patch?full_index=1"
+    sha256 "ea6eb1a1f713f6e30bafbae19995915327c8400901e3350c60e40b50d43dd2a8"
+  end
 
   def install
     system "make", "build"
