@@ -7,13 +7,13 @@ class Lxc < Formula
   head "https://github.com/canonical/lxd.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7149d9ed2e76ddcc15c8633d4d36d0016586e102936fcfe6d8d2fd990b081143"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7149d9ed2e76ddcc15c8633d4d36d0016586e102936fcfe6d8d2fd990b081143"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7149d9ed2e76ddcc15c8633d4d36d0016586e102936fcfe6d8d2fd990b081143"
-    sha256 cellar: :any_skip_relocation, ventura:        "cf1c805671dbf2e4ccd95fe33bbb8d6661573a0c1527e4e24c788e3f57d6ebe2"
-    sha256 cellar: :any_skip_relocation, monterey:       "cf1c805671dbf2e4ccd95fe33bbb8d6661573a0c1527e4e24c788e3f57d6ebe2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cf1c805671dbf2e4ccd95fe33bbb8d6661573a0c1527e4e24c788e3f57d6ebe2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c775c27013fc5f723cedaefeeaff4bdaa7d6ea2d4bd9b214bbdb767394c8ff66"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "41f0027ffceb1d75d337166141910a6058bbb60cef1ccd5c1c513b42308ea242"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "41f0027ffceb1d75d337166141910a6058bbb60cef1ccd5c1c513b42308ea242"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "41f0027ffceb1d75d337166141910a6058bbb60cef1ccd5c1c513b42308ea242"
+    sha256 cellar: :any_skip_relocation, ventura:        "54984e0c5a22ac9c3c17a38937e4e96de8204bfbaa650d91fef3e19e39d70618"
+    sha256 cellar: :any_skip_relocation, monterey:       "54984e0c5a22ac9c3c17a38937e4e96de8204bfbaa650d91fef3e19e39d70618"
+    sha256 cellar: :any_skip_relocation, big_sur:        "54984e0c5a22ac9c3c17a38937e4e96de8204bfbaa650d91fef3e19e39d70618"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f7cc3a4506549ac36748d036c3a985918438c02d8aa126c335eeb29a77aa6f8"
   end
 
   depends_on "go" => :build
