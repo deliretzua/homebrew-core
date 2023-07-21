@@ -3,8 +3,8 @@ class AwsSamCli < Formula
 
   desc "CLI tool to build, test, debug, and deploy Serverless applications using AWS SAM"
   homepage "https://aws.amazon.com/serverless/sam/"
-  url "https://files.pythonhosted.org/packages/49/72/6fcc852ded772f47e17dd4905c6f3fd3781b65e9be2efef5847630523926/aws-sam-cli-1.92.0.tar.gz"
-  sha256 "6e489dccd52961d2b15c5a0ed0cf8cf7ef039c66e7b8dcf2ca64dc5b02712437"
+  url "https://files.pythonhosted.org/packages/0f/f7/a04fbb764f421b359314bf1eb3e3006e48e4651ae2c2df3838ac3b8c8a9e/aws-sam-cli-1.93.0.tar.gz"
+  sha256 "7b634d947a88958126ca2838a23972df6e26571a14accfb959e6c310f0689315"
   license "Apache-2.0"
 
   bottle do
@@ -56,13 +56,13 @@ class AwsSamCli < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/83/55/46669bec24ee173e9b2dae3b9e556f12f8f441e959fb6d0b3683576ebc1a/boto3-1.28.6.tar.gz"
-    sha256 "a1711097e80e10c0c33f62695c663a8a303d61289791b8d874ba9a30f78f1de1"
+    url "https://files.pythonhosted.org/packages/7f/c4/a1c823a0c7425b4a352601156e8be7998d966c84c6b7aeb5de4d6415a6db/boto3-1.28.8.tar.gz"
+    sha256 "cf88309d9b8cd9a2fb0c8049cb4b217b4e9dcb55bf670d6054b0bbe2eef25e57"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/bd/93/0701c27690c16558d0ee0fa361b33f928129be28d0206e82740417cb1ebe/botocore-1.31.6.tar.gz"
-    sha256 "1d724d542c9031195dd24e66b09b24ee654266e4cf0c2bc24679036f786158a3"
+    url "https://files.pythonhosted.org/packages/51/cb/fdbc87199900625dc7c9a15312f72fa5fdfe216d149492702d95a0d14113/botocore-1.31.8.tar.gz"
+    sha256 "092baa2168ae78080b0c28011527bfc11d8debd3767aa1e9a4ce8a91fd9943a2"
   end
 
   resource "certifi" do
@@ -268,11 +268,6 @@ class AwsSamCli < Formula
   resource "sarif-om" do
     url "https://files.pythonhosted.org/packages/ba/de/bbdd93fe456d4011500784657c5e4a31e3f4fcbb276255d4db1213aed78c/sarif_om-1.0.4.tar.gz"
     sha256 "cd5f416b3083e00d402a92e449a7ff67af46f11241073eea0461802a3b5aef98"
-  end
-
-  resource "serverlessrepo" do
-    url "https://files.pythonhosted.org/packages/30/99/c19bb97609a2f8089082f7f882c90393fb2e99027d8c2094e8cc4ac3d83b/serverlessrepo-0.1.10.tar.gz"
-    sha256 "671f48038123f121437b717ed51f253a55775590f00fbab6fbc6a01f8d05c017"
   end
 
   resource "sympy" do
