@@ -6,7 +6,13 @@ class StructurizrCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f559a6553ba7dd2322058493a53aedd7edbbc828fd76f8b37366c613538602dc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9c5fe625762548c5287184a857a6c6dd88391c742039e43aa3ad9f64d9676fff"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9c5fe625762548c5287184a857a6c6dd88391c742039e43aa3ad9f64d9676fff"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9c5fe625762548c5287184a857a6c6dd88391c742039e43aa3ad9f64d9676fff"
+    sha256 cellar: :any_skip_relocation, ventura:        "9c5fe625762548c5287184a857a6c6dd88391c742039e43aa3ad9f64d9676fff"
+    sha256 cellar: :any_skip_relocation, monterey:       "9c5fe625762548c5287184a857a6c6dd88391c742039e43aa3ad9f64d9676fff"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9c5fe625762548c5287184a857a6c6dd88391c742039e43aa3ad9f64d9676fff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e724c6f830be835a9f725be61f4575a71c2d8ae0c88ed773b5fff098a0caf353"
   end
 
   depends_on "openjdk"
