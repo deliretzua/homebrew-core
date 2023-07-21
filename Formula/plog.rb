@@ -5,6 +5,16 @@ class Plog < Formula
   sha256 "058315b9ec9611b659337d4333519ab4783fad3f2f23b1cc7bb84d977ea38055"
   license "MIT"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9493fc71b411fffb88f8541aa19209ea9a75df89f71370cd1655144fbef8ab78"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9493fc71b411fffb88f8541aa19209ea9a75df89f71370cd1655144fbef8ab78"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9493fc71b411fffb88f8541aa19209ea9a75df89f71370cd1655144fbef8ab78"
+    sha256 cellar: :any_skip_relocation, ventura:        "9493fc71b411fffb88f8541aa19209ea9a75df89f71370cd1655144fbef8ab78"
+    sha256 cellar: :any_skip_relocation, monterey:       "9493fc71b411fffb88f8541aa19209ea9a75df89f71370cd1655144fbef8ab78"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9493fc71b411fffb88f8541aa19209ea9a75df89f71370cd1655144fbef8ab78"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "add968eb36e5f301923bc3d3cf3ff85c502137840b5a5016b167722a9ac7df30"
+  end
+
   depends_on "cmake" => [:build, :test]
 
   def install
