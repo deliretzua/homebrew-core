@@ -8,13 +8,13 @@ class OnlykeyAgent < Formula
   license "LGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "71650d90b695ad9f8b0e7137a4b6d458e5f5b7013c7ce14fb04c219d8e6010d1"
-    sha256 cellar: :any,                 arm64_monterey: "2d121c908b74dcc212ab54127169f92af35032c0e769acf61c4b3fab88b86819"
-    sha256 cellar: :any,                 arm64_big_sur:  "91b660553a05fff7aed300f22d577dd34910e8645732ec75e5c20068531c2594"
-    sha256 cellar: :any,                 ventura:        "4a34161217f307a2975ddfefff2e2adc5ee20cbd9a1c5971e4b2e3f2bb6187e8"
-    sha256 cellar: :any,                 monterey:       "c736f6d83d8c05ec115c9bc28bad09f7e2da11487ff1633f732c58702e854870"
-    sha256 cellar: :any,                 big_sur:        "2cd5ea07f20d2d936636acbd5dba6f3c3aed8a16e2ff6808c8af46a852375294"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "66a0b9afbb73bf491b0137f1aca5b1b5228df2d6951f239f0af2a8558baa04c4"
+    sha256 cellar: :any,                 arm64_ventura:  "40cefa92f0d5c4731e68f3644ed709866812c183f918a38fca4942d4c94ad9b2"
+    sha256 cellar: :any,                 arm64_monterey: "01b73aa8e25376582594d4608f3df654a205c6a031e23f473983c50a0bf2ac91"
+    sha256 cellar: :any,                 arm64_big_sur:  "d24c00449096e9bcbd0697886351764cef17ebad83434c105b30275030ddb36d"
+    sha256 cellar: :any,                 ventura:        "a63443d6312052864fedd6442f0fe3d635cc717ac240e2b8ee9ceec9287eb46b"
+    sha256 cellar: :any,                 monterey:       "e33a66c8ddb49421e02750bd37aed93d4432b04d0207032fc0ec5ca3161d3059"
+    sha256 cellar: :any,                 big_sur:        "cad154b6b2d1f8535d61ad9f86e4e90e14a618b47ef031f7777a3f73851c9299"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4fa6463dc8d9ea868c623543a0b6d545bdc4ed2eb1d2621ed481ec1313a5175d"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
