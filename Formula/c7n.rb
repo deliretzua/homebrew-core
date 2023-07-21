@@ -13,13 +13,13 @@ class C7n < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7f635044e15e866ccefb32ac66975f123b61656dffa087b3e19249a602d694b1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "64184d06645cb0519cd2bae3dfa1c29768996d8f6cb689ec74179c51e95e5857"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "644535acd0290d3746499db60ad002f6421cae4175c8d5784ca62e399242f799"
-    sha256 cellar: :any_skip_relocation, ventura:        "69d3c04b56b42dd6fdb8f69ed5e1a067b6c34a0f4ce2a1b0924faec232ea0bf3"
-    sha256 cellar: :any_skip_relocation, monterey:       "3e4b35d00a7b151490338b7f137840bfe6b5104ead0d5f758ed9938caf22c99c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "cc3c4df15f15ee23703c3204f31d7bad7d418364b511543e50692552db44b2e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f582aef94944452c9d5aa30422b3e91c2e31c4537221544b6f2e27add4d65f57"
+    sha256 cellar: :any,                 arm64_ventura:  "df1526df640c743464697d22c694950904e02b5a887524db0aab9e8ba6176025"
+    sha256 cellar: :any,                 arm64_monterey: "1e66e5686ed550c8378a5f1265c39146da7142ca757c356939f17ee719ce2b50"
+    sha256 cellar: :any,                 arm64_big_sur:  "ed2ee91a288ffb74b84931b293a3d190d1c682accf14f057375c2def6dd2e1e2"
+    sha256 cellar: :any,                 ventura:        "bda0a47de7ed7f9455905a4ee44a40e6b887727e0ad97e4680c2db9103d03323"
+    sha256 cellar: :any,                 monterey:       "6f32674b1520682f9f4e974372c900d9777b6ec938471cfaf202c3b3eb1d9104"
+    sha256 cellar: :any,                 big_sur:        "347a0450438530ab70b81b7a4aa2a132fd550601813f60340e0a4b656031cfc8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4d1bd1a49b4230cd78e18c6dbfab8e40cf817ededb7041364f19b5214b149d7"
   end
 
   depends_on "rust" => :build # for rpds-py
