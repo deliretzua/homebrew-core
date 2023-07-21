@@ -1,8 +1,8 @@
 class Lazygit < Formula
   desc "Simple terminal UI for git commands"
   homepage "https://github.com/jesseduffield/lazygit/"
-  url "https://github.com/jesseduffield/lazygit/archive/v0.39.1.tar.gz"
-  sha256 "c8aa39536287aeca3e31e049405fd217940d2656cfb84968df516b43cba06977"
+  url "https://github.com/jesseduffield/lazygit/archive/v0.39.2.tar.gz"
+  sha256 "3f8f6324d6e47e1366c7c4149dafb0c059d3b130e0a2326bd302ba9a61893e2b"
   license "MIT"
   head "https://github.com/jesseduffield/lazygit.git", branch: "master"
 
