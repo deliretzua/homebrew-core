@@ -2,8 +2,8 @@ class Podman < Formula
   desc "Tool for managing OCI containers and pods"
   homepage "https://podman.io/"
   url "https://github.com/containers/podman.git",
-      tag:      "v4.5.1",
-      revision: "9eef30051c83f62816a1772a743e5f1271b196d7"
+      tag:      "v4.6.0",
+      revision: "38e6fab9664c6e59b66e73523b307a56130316ae"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
   head "https://github.com/containers/podman.git", branch: "main"
 
@@ -44,8 +44,8 @@ class Podman < Formula
 
   resource "gvproxy" do
     on_macos do
-      url "https://github.com/containers/gvisor-tap-vsock/archive/refs/tags/v0.6.1.tar.gz"
-      sha256 "3be16fd732724f7b65f3629cdc4cdad3e069b3f137f9a1c4bb40105082bc5740"
+      url "https://github.com/containers/gvisor-tap-vsock/archive/refs/tags/v0.6.2.tar.gz"
+      sha256 "64de2a0223c2219a85d66ebb200c3d8b3501276754d7b0267435e81f40215e7d"
     end
   end
 
@@ -64,15 +64,15 @@ class Podman < Formula
 
   resource "netavark" do
     on_linux do
-      url "https://github.com/containers/netavark/archive/refs/tags/v1.6.0.tar.gz"
-      sha256 "3bec9e9b0f3f8f857370900010fb2125ead462d43998ad8f43e4387a5b06f9d6"
+      url "https://github.com/containers/netavark/archive/refs/tags/v1.7.0.tar.gz"
+      sha256 "b0ed7d80fd96ef2af88e7a001d91024919125e5842d9772de94648044630e116"
     end
   end
 
   resource "aardvark-dns" do
     on_linux do
-      url "https://github.com/containers/aardvark-dns/archive/refs/tags/v1.6.0.tar.gz"
-      sha256 "f3a2ff2d7baf07d8bf2785b6f1c9618db8aa188bd738b7f5cf1b0a31848232f5"
+      url "https://github.com/containers/aardvark-dns/archive/refs/tags/v1.7.0.tar.gz"
+      sha256 "6ee7dfa8bab8040b917959a2f57f25496ad036a2d933c6225114e2c1e68bab0b"
     end
   end
 
@@ -178,6 +178,7 @@ class Podman < Formula
       assert_equal %W[
         #{bin}/podman
         #{bin}/podman-remote
+        #{bin}/podmansh
       ].sort, Dir[bin/"*"].sort
       assert_equal %W[
         #{libexec}/podman/catatonit
