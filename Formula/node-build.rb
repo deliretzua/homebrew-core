@@ -12,13 +12,13 @@ class NodeBuild < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8e6f701319fec1377b7b0058d1783eebf2a31a0a0c22ed7ae4fc54c5a461310f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8e6f701319fec1377b7b0058d1783eebf2a31a0a0c22ed7ae4fc54c5a461310f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8e6f701319fec1377b7b0058d1783eebf2a31a0a0c22ed7ae4fc54c5a461310f"
-    sha256 cellar: :any_skip_relocation, ventura:        "8e6f701319fec1377b7b0058d1783eebf2a31a0a0c22ed7ae4fc54c5a461310f"
-    sha256 cellar: :any_skip_relocation, monterey:       "8e6f701319fec1377b7b0058d1783eebf2a31a0a0c22ed7ae4fc54c5a461310f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8e6f701319fec1377b7b0058d1783eebf2a31a0a0c22ed7ae4fc54c5a461310f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "217aa45826134a682b6347e1fff900172d064b5a18c496d57aeebce71f844a46"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e81bcf30ecbdaf63aca5a428104167d506bcb670c3251454eee825f82d3e33a6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e81bcf30ecbdaf63aca5a428104167d506bcb670c3251454eee825f82d3e33a6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e81bcf30ecbdaf63aca5a428104167d506bcb670c3251454eee825f82d3e33a6"
+    sha256 cellar: :any_skip_relocation, ventura:        "e81bcf30ecbdaf63aca5a428104167d506bcb670c3251454eee825f82d3e33a6"
+    sha256 cellar: :any_skip_relocation, monterey:       "e81bcf30ecbdaf63aca5a428104167d506bcb670c3251454eee825f82d3e33a6"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e81bcf30ecbdaf63aca5a428104167d506bcb670c3251454eee825f82d3e33a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4f460b87c0762e26dbf0f74ce87091f5a7264e25847a3251e50fe4114d365a0"
   end
 
   depends_on "autoconf"
