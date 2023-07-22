@@ -1,8 +1,8 @@
 class Alp < Formula
   desc "Access Log Profiler"
   homepage "https://github.com/tkuchiki/alp"
-  url "https://github.com/tkuchiki/alp/archive/v1.0.12.tar.gz"
-  sha256 "68a0066381673c8857adbf55b18fc472f861e39f33571ad130bde59698f2d043"
+  url "https://github.com/tkuchiki/alp/archive/v1.0.14.tar.gz"
+  sha256 "67f34c71f8cb10e3491bd0b9467cd7ff6673ddf4e26341b59d7dbe03fe44af24"
   license "MIT"
   head "https://github.com/tkuchiki/alp.git", branch: "main"
 
@@ -20,7 +20,10 @@ class Alp < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cli/alp"
+    ldflags = "-s -w -X main.version=#{version}"
+    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/alp"
+
+    generate_completions_from_executable(bin/"alp", "completion")
   end
 
   test do
