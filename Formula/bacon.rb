@@ -7,13 +7,13 @@ class Bacon < Formula
   head "https://github.com/Canop/bacon.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f609f11ec1414b340ef077f1acb99f0cdb3ed0f5402daed0f6cfc285b5e341b3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a425685fe0f4cd70791a2847d2e77ab5a7434633d65b16be52778eff5f464b97"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d6160d8e241d308af0dcbcd3f9fe73d051d1894120e0a6f6359e4007dc6a072a"
-    sha256 cellar: :any_skip_relocation, ventura:        "7cee6991e82c59faa5bf00dca0d944ebd43cfd84ce02c6d5f8d6efc68622a7fb"
-    sha256 cellar: :any_skip_relocation, monterey:       "43d2f063ef46ade5785e1ddf71a2b2a83f0c53a393a09b977133499e289aeb13"
-    sha256 cellar: :any_skip_relocation, big_sur:        "83cefe67c4d4085fccbd810ac6b725ec8e5d4927219c1b29864609040e18a469"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d6c3c7a14c61579d766fd1ae798b9b1230cde9c84ab602d97620d8d2d0eb239"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "86243a5622f42e605edcdcab86044bcd75ea920dc5e393bf7b20ff6032f9a4b0"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3694e7ab83855e798c38fd7528cdc564b3219582755b6836b3d0adf6e672901b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "63fc357eb8c947cb33589da1a7a0780a0d8566c23fcc7b3176014402dfbb22e2"
+    sha256 cellar: :any_skip_relocation, ventura:        "6d565a1b96e0f9b154adcc0da5856a45c143e56aec12c3d5802c26c38bc48fd3"
+    sha256 cellar: :any_skip_relocation, monterey:       "31c709cbafebfecd804d707740f3350d712407c1368930150638d5929157fb04"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0b5ed2335c041176bfab66c4eb06d6107fb8cee0b12f0798caa54ffb9535e503"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d28ff8efa4996801e8dc5fb435a27c45b93042f492b7fa0a092dad0cfc6ca0a"
   end
 
   depends_on "rust" => :build
