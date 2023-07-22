@@ -1,8 +1,8 @@
 class AstGrep < Formula
   desc "Code searching, linting, rewriting"
   homepage "https://github.com/ast-grep/ast-grep"
-  url "https://github.com/ast-grep/ast-grep/archive/refs/tags/0.9.1.tar.gz"
-  sha256 "23d0a29846ba19ee06b51b31acba26d2693e6ee7b08d55814464df1fcc0b2dc4"
+  url "https://github.com/ast-grep/ast-grep/archive/refs/tags/0.9.2.tar.gz"
+  sha256 "b02ea7667fc5fb1779afb805731ba005cb04a2590c37c1ac140d5912a3c651d8"
   license "MIT"
 
   bottle do
