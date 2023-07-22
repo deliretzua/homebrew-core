@@ -3,8 +3,8 @@ class Remarshal < Formula
 
   desc "Convert between TOML, YAML and JSON"
   homepage "https://github.com/dbohdan/remarshal"
-  url "https://files.pythonhosted.org/packages/00/98/7a96aa68e5130eaa2ac4080935ffed801d73a012eb33c6f6cfead5409818/remarshal-0.16.0.tar.gz"
-  sha256 "2e49816e752b8739424593bb21b175ccec69beaaa15500ceea35988730c2eda5"
+  url "https://files.pythonhosted.org/packages/27/5e/656891ef4e7cb007ec69a648986d5e22e89ff82267e3afb414b8ddec613a/remarshal-0.16.1.tar.gz"
+  sha256 "1cb2d4de31763bbac175f0e493e195568f956318caa70ac3359ff794932628cf"
   license "MIT"
   head "https://github.com/dbohdan/remarshal.git", branch: "master"
 
@@ -69,12 +69,7 @@ class Remarshal < Formula
   end
 
   test do
-    json = <<~EOS.chomp
-      {
-      "foo.bar":"baz",
-      "qux":1
-      }
-    EOS
+    json = "{\"foo.bar\":\"baz\",\"qux\":1}"
     yaml = <<~EOS.chomp
       foo.bar: baz
       qux: 1
