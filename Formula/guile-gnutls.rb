@@ -1,8 +1,8 @@
 class GuileGnutls < Formula
   desc "Guile bindings for the GnuTLS library"
   homepage "https://gitlab.com/gnutls/guile"
-  url "https://gitlab.com/gnutls/guile/uploads/21cfbd0d55627751a902333d2c592fd7/guile-gnutls-3.7.13.tar.gz"
-  sha256 "9a8556d691123a75e8b86b105bc48b115337a0a94355fcd086cbe438cc801510"
+  url "https://gitlab.com/gnutls/guile/uploads/1fdc941351d54cd7affda1bb912b9ca5/guile-gnutls-3.7.14.tar.gz"
+  sha256 "de2bfcd4fd93d669e85f83c48a53470390fed60987158e9a14c9ff8e0beeb651"
   license "LGPL-2.1-or-later"
   head "https://gitlab.com/gnutls/guile.git", branch: "master"
 
