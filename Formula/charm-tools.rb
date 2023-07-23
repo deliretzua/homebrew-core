@@ -25,6 +25,7 @@ class CharmTools < Formula
   depends_on "libyaml"
   depends_on "openssl@3"
   depends_on "python@3.11"
+  depends_on "pyyaml"
   depends_on "six"
 
   on_linux do
@@ -167,11 +168,6 @@ class CharmTools < Formula
     sha256 "f87ca4fcff7d2b0f81c6a748a77973d7af0f4d526f98f308477c3c436c74d528"
   end
 
-  resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz"
-    sha256 "607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"
-  end
-
   resource "referencing" do
     url "https://files.pythonhosted.org/packages/20/93/45213b5b6e3eeab03e3f6eb82cc516a81fbf257586a25f9eb1d21af96e1b/referencing-0.29.1.tar.gz"
     sha256 "90cb53782d550ba28d2166ef3f55731f38397def8832baac5d45235f1995e35e"
@@ -245,6 +241,12 @@ class CharmTools < Formula
   resource "zipp" do
     url "https://files.pythonhosted.org/packages/e2/45/f3b987ad5bf9e08095c1ebe6352238be36f25dd106fde424a160061dce6d/zipp-3.16.2.tar.gz"
     sha256 "ebc15946aa78bd63458992fc81ec3b6f7b1e92d51c35e6de1c3804e73b799147"
+  end
+
+  # Add cython 3+ patch for pyyaml
+  patch do
+    url "https://github.com/juju/charm-tools/commit/1a2009adff40067e555435ca58936509b9781764.patch?full_index=1"
+    sha256 "cb060c8a7825c1ada309b1b663744dfb5b22f6349f52043d04d751dae63c6871"
   end
 
   def install
