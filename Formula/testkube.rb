@@ -1,9 +1,8 @@
 class Testkube < Formula
   desc "Kubernetes-native framework for test definition and execution"
   homepage "https://testkube.io"
-  # testkube should only be updated every 5 releases on multiples of 5
-  url "https://github.com/kubeshop/testkube/archive/v1.13.0.tar.gz"
-  sha256 "aca81bdf2a6375d3094e6f109e69cde14e06cfd1f4ad7b81b92e716165b34e6c"
+  url "https://github.com/kubeshop/testkube/archive/v1.13.3.tar.gz"
+  sha256 "a49d953a8b15203b4ecb76802c15e385e0d9440e8263f35c05c2c55d1cacd2c7"
   license "MIT"
   head "https://github.com/kubeshop/testkube.git", branch: "main"
 
@@ -27,7 +26,6 @@ class Testkube < Formula
   depends_on "kubernetes-cli"
 
   def install
-    ENV["CGO_ENABLED"] = "0"
     ldflags = %W[
       -s -w
       -X main.version=#{version}
