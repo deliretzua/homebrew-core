@@ -59,8 +59,8 @@ class SlitherAnalyzer < Formula
   end
 
   resource "cytoolz" do
-    url "https://files.pythonhosted.org/packages/da/89/66bac516a236af8375dd7af2b3032a210e222395670758da4b2439b37e40/cytoolz-0.12.1.tar.gz"
-    sha256 "fc33909397481c90de3cec831bfb88d97e220dc91939d996920202f184b4648e"
+    url "https://files.pythonhosted.org/packages/a0/61/c27e1e7007e3cc6989053956dfe078db84e164f22c7000b2ad1efc5b93b7/cytoolz-0.12.2.tar.gz"
+    sha256 "31d4b0455d72d914645f803d917daf4f314d115c70de0578d3820deb8b101f66"
   end
 
   resource "eth-abi" do
