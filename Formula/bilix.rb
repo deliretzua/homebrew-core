@@ -17,6 +17,8 @@ class Bilix < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f14bf537a4adae64b7089476c64a38ed4cccc7694146111be07b266cd03b017"
   end
 
+  depends_on "pygments"
+  depends_on "python-typing-extensions"
   depends_on "python@3.11"
 
   resource "aiofiles" do
@@ -149,11 +151,6 @@ class Bilix < Formula
     sha256 "95c70da2cd3b6ddf3b9645ecaa8d98f3d80c606624b6d245558d202cd23ea3be"
   end
 
-  resource "pygments" do
-    url "https://files.pythonhosted.org/packages/89/6b/2114e54b290824197006e41be3f9bbe1a26e9c39d1f5fa20a6d62945a0b3/Pygments-2.15.1.tar.gz"
-    sha256 "8ace4d3c1dd481894b2005f560ead0f9f19ee64fe983366be1a21e171d12775c"
-  end
-
   resource "pymp4" do
     url "https://files.pythonhosted.org/packages/a5/46/dfb3f5363fc71adaf419147fdcb93341029ca638634a5cc6f7e7446416b2/pymp4-1.4.0.tar.gz"
     sha256 "bc9e77732a8a143d34c38aa862a54180716246938e4bf3e07585d19252b77bb5"
@@ -172,11 +169,6 @@ class Bilix < Formula
   resource "soupsieve" do
     url "https://files.pythonhosted.org/packages/47/9e/780779233a615777fbdf75a4dee2af7a345f4bf74b42d4a5f836800b9d91/soupsieve-2.4.1.tar.gz"
     sha256 "89d12b2d5dfcd2c9e8c22326da9d9aa9cb3dfab0a83a024f05704076ee8d35ea"
-  end
-
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/57/e3/b37a6b1ce6c1b2b75d05997ec24f73c794bc05a587e0f30a532d0ab13cb2/typing_extensions-4.7.0.tar.gz"
-    sha256 "935ccf31549830cda708b42289d44b6f74084d616a00be651601a4f968e77c82"
   end
 
   def install
