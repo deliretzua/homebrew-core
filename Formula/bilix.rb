@@ -8,13 +8,14 @@ class Bilix < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "69ec9cf31d6db0e52e9b6bbb288717b7c39f377b69863640a10d80c223825dcd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "17ca24ddb7935329967112c7cac5ff7fb318a714e3ab1f0045e67c83354dc537"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "30d20a144b87e499b0f29c919bd3f9fa20213ba5582391cdbe3bf608be21b9af"
-    sha256 cellar: :any_skip_relocation, ventura:        "b89a0f18fa9b46b06a67b987bbdb988336d05629b97e1e5478f2a90d00d19a6b"
-    sha256 cellar: :any_skip_relocation, monterey:       "3805347d591acf41495f7fe9d0b2a7ca9e89f6053fe7e49590d27d6871134d69"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d412d109be3913fa8ba7c47df0d6d8c87ab52787fc3a166403f5891b8efb9120"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f14bf537a4adae64b7089476c64a38ed4cccc7694146111be07b266cd03b017"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "049fb550e4de31a8174eb1b5dcff2ffe50ad42feb8cb3deb73bd836c31cc2616"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "8a91dccb39902a2e3901a5c044a662f0892210c1dcc1b965659ffd87ec3130b4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b3641752837567ec705173616d5cdb640338bc5ca8fb21691577edec28b1c41c"
+    sha256 cellar: :any_skip_relocation, ventura:        "356d40c8509a56c81399a889f5818fa700dccdfbd10e942fddb95cb9c654fd6d"
+    sha256 cellar: :any_skip_relocation, monterey:       "1a7f93bb005f613d9f2beda52f9dfd43cb899e17554ca9aa7c224f2b716b0981"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d4b63ad3b484f3d5b05f672cc60d3e0edf16bb3e8511c53f2bb56e4bbf627b7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74f659f45c745d3b0b4d2d9a606020f8a26be89b0fd83f617c7d119d48f09220"
   end
 
   depends_on "pygments"
