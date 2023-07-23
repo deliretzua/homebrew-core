@@ -4,6 +4,5 @@
   "checkov": 15,
   "joern": 10,
   "renovate": 10,
-  "testkube": 5,
   "vim": 50
 }
