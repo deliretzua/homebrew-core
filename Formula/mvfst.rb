@@ -9,6 +9,16 @@ class Mvfst < Formula
   license "MIT"
   head "https://github.com/facebookincubator/mvfst.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "65c6989f16ea97ed13ca448b171e37ada657c2f442d00bea5570eba0bb2770a4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a0c800342be7e59275e945d96c2f2c0e55c2bd34a74978c05fda83185101bc83"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a0ddafea903ea39992fc59853ebefa1464d9ddba6550e697fc369a426ee446fb"
+    sha256 cellar: :any_skip_relocation, ventura:        "aab6753287475f5c2961b4b61ba8296f88d38972d1ef31c1dbed79be92d6b5c5"
+    sha256 cellar: :any_skip_relocation, monterey:       "633055e166f77550f309390ab86dca7b6c7b1f58060a11413b7a9c5ce9a8181b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "6daa382c6ef68ec0962eecb5eed305d05e9b8763d73e4d6018db1282ad9a306e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ad8a2cfe8260f3012715b286dab13c29b9e79927e9dbd779142a5a5fa2f5b0d9"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "googletest" => :test
   depends_on "boost"
