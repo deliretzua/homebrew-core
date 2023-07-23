@@ -6,13 +6,13 @@ class Apktool < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a4b0afa7dba8a33808ccc5be2d637548bd68e0f9597587b966325f8e4d0de3f8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a4b0afa7dba8a33808ccc5be2d637548bd68e0f9597587b966325f8e4d0de3f8"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a4b0afa7dba8a33808ccc5be2d637548bd68e0f9597587b966325f8e4d0de3f8"
-    sha256 cellar: :any_skip_relocation, ventura:        "a4b0afa7dba8a33808ccc5be2d637548bd68e0f9597587b966325f8e4d0de3f8"
-    sha256 cellar: :any_skip_relocation, monterey:       "a4b0afa7dba8a33808ccc5be2d637548bd68e0f9597587b966325f8e4d0de3f8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a4b0afa7dba8a33808ccc5be2d637548bd68e0f9597587b966325f8e4d0de3f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33c3905b48bc2325fa570b910bb8a4459e82ac0e8496ad7785629b514435d6bf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "602be1a15bab5d61bd0723ca657dada6d1fad0e0049ef555072ae2e896f48fa2"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "602be1a15bab5d61bd0723ca657dada6d1fad0e0049ef555072ae2e896f48fa2"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "602be1a15bab5d61bd0723ca657dada6d1fad0e0049ef555072ae2e896f48fa2"
+    sha256 cellar: :any_skip_relocation, ventura:        "602be1a15bab5d61bd0723ca657dada6d1fad0e0049ef555072ae2e896f48fa2"
+    sha256 cellar: :any_skip_relocation, monterey:       "602be1a15bab5d61bd0723ca657dada6d1fad0e0049ef555072ae2e896f48fa2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "602be1a15bab5d61bd0723ca657dada6d1fad0e0049ef555072ae2e896f48fa2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "75ad278e46b40ea2f7b08e262d30520b7f04ede9d3760291ae5a674454f46ed7"
   end
 
   depends_on "openjdk"
