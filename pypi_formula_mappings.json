@@ -98,6 +98,9 @@
   "beancount": {
     "exclude_packages": ["six"]
   },
+  "bilix": {
+    "exclude_packages": ["typing-extensions", "pygments"]
+  },
   "black": "black[d]",
   "borgmatic": {
     "extra_packages": ["ruamel.yaml.clib"]
