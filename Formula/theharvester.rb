@@ -9,13 +9,13 @@ class Theharvester < Formula
   head "https://github.com/laramies/theHarvester.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1a0e2046e8a9254ca8c7116bc8f22a78f7ff96cf6faef24d49df353d9878c25e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "89722b5f522614a2bf17b8b408d11b5be67bf9feca891f5b9ade4e260bebe865"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e5d9bb2eb9a8c9d5fd5b3105a4b6da2a168a03946c3a0821f2b8b8dce1f3c17d"
-    sha256 cellar: :any_skip_relocation, ventura:        "080bb7fee9dfaa5f929767b9eb2951b4856aca7a39f25c1012a93590cfe57dfa"
-    sha256 cellar: :any_skip_relocation, monterey:       "25ea8e749c67bdbc31cdc2ea88ada0d7b1d2d8f669b04865a1b73adeb78e04de"
-    sha256 cellar: :any_skip_relocation, big_sur:        "247b034b4e54bba4c3fd0bfb980f85e092adc22479ecb3e3f2e442e41604e5fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "623a47ea88133436987d71fc41c0c11ca7ee26e1c06f3a38338ba0de7f7c1fca"
+    sha256 cellar: :any,                 arm64_ventura:  "d525057f990d88afef7002cc1b2a867e30c8430552623716b75e2baee5676968"
+    sha256 cellar: :any,                 arm64_monterey: "34d20c6242547b4d6f5cc66a793b19992c8f1a267ca96808bfeedd9cd178cfd6"
+    sha256 cellar: :any,                 arm64_big_sur:  "8c3c8031bff5cbf547e28628f04b63fad9e15a87b0a6a0358f7ee77badf3aa5e"
+    sha256 cellar: :any,                 ventura:        "0a8d5261c54c7b6d53a303e67899ea4f8f7217ab8a5d28e370732cc49ba81e7d"
+    sha256 cellar: :any,                 monterey:       "49dd8a82d0ff3ef7ade21476451d0eaae5f4be186830e9d3e4489953bdd5ad41"
+    sha256 cellar: :any,                 big_sur:        "d4443a11eb14cf0aa5ad053896b530c1b8d441bb71d25efc63c50b24140b3ef8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "39497f6b83803e58339dea8876d75c81abf6f56844d884046bf503a11919736c"
   end
 
   depends_on "rust" => :build # for pydantic_core
