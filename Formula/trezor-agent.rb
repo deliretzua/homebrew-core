@@ -98,6 +98,12 @@ class TrezorAgent < Formula
   resource "hidapi" do
     url "https://files.pythonhosted.org/packages/95/0e/c106800c94219ec3e6b483210e91623117bfafcf1decaff3c422e18af349/hidapi-0.14.0.tar.gz"
     sha256 "a7cb029286ced5426a381286526d9501846409701a29c2538615c3d1a612b8be"
+
+    # patch to build with Cython 3+, remove in next release
+    patch do
+      url "https://github.com/trezor/cython-hidapi/commit/749da6931f57c4c30596de678125648ccfd6e1cd.patch?full_index=1"
+      sha256 "e3d70eb9850c7be0fdb0c31bf575b33be5c5848def904760a6ca9f4c3824f000"
+    end
   end
 
   resource "idna" do
