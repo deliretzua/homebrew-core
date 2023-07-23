@@ -1,8 +1,8 @@
 class UutilsFindutils < Formula
   desc "Cross-platform Rust rewrite of the GNU findutils"
   homepage "https://github.com/uutils/findutils"
-  url "https://github.com/uutils/findutils/archive/refs/tags/0.4.1.tar.gz"
-  sha256 "575cbd0be440c25ba5d8a65020d5076a07c57ecc07265f33d41d95050a3e999e"
+  url "https://github.com/uutils/findutils/archive/refs/tags/0.4.2.tar.gz"
+  sha256 "b02fce9219393b47384229b397c7fbe479435ae8ccf8947f4b6cf7ac159d80f9"
   license "MIT"
   head "https://github.com/uutils/findutils.git", branch: "main"
 
