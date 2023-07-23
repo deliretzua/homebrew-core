@@ -615,6 +615,10 @@
   "pyqt-builder": {
     "exclude_packages": ["packaging", "pyparsing", "sip", "toml"]
   },
+  "python-cryptography": {
+    "exclude_packages": ["cffi", "pycparser", "typing-extensions"],
+    "extra_packages": ["semantic-version", "setuptools-rust"]
+  },
   "python-yq": {
     "exclude_packages": ["PyYAML"]
   },
