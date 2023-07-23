@@ -3,10 +3,17 @@ class AzureCli < Formula
 
   desc "Microsoft Azure CLI 2.0"
   homepage "https://docs.microsoft.com/cli/azure/overview"
-  url "https://github.com/Azure/azure-cli/archive/azure-cli-2.50.0.tar.gz"
-  sha256 "eca7d1a6ecfb45b24b5499db141617258b79b8c01db7be6b75c9f1e225ad3623"
   license "MIT"
+  revision 1
   head "https://github.com/Azure/azure-cli.git", branch: "dev"
+
+  stable do
+    url "https://github.com/Azure/azure-cli/archive/azure-cli-2.50.0.tar.gz"
+    sha256 "eca7d1a6ecfb45b24b5499db141617258b79b8c01db7be6b75c9f1e225ad3623"
+
+    # patch to build with pyyaml6, remove in next release
+    patch :DATA
+  end
 
   livecheck do
     url :stable
@@ -682,8 +689,8 @@ class AzureCli < Formula
   end
 
   resource "PyYAML" do
-    url "https://files.pythonhosted.org/packages/36/2b/61d51a2c4f25ef062ae3f74576b01638bebad5e045f747ff12643df63844/PyYAML-6.0.tar.gz"
-    sha256 "68fb519c14306fec9720a2a5b45bc9f0c8d1b9c72adf45c37baedfcd949c35a2"
+    url "https://files.pythonhosted.org/packages/cd/e5/af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0/PyYAML-6.0.1.tar.gz"
+    sha256 "bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"
   end
 
   resource "requests" do
@@ -784,3 +791,18 @@ class AzureCli < Formula
     assert_equal azure_cloud["endpoints"]["resourceManager"], "https://management.azure.com/"
   end
 end
+
+__END__
+diff --git a/tools/setup.py b/tools/setup.py
+index 2ff3976..356f5b8 100644
+--- a/tools/setup.py
++++ b/tools/setup.py
+@@ -27,7 +27,7 @@ DEPENDENCIES = [
+     'nose>=1.3.7',
+     'readme_renderer>=17.2',
+     'requests',
+-    'pyyaml~=5.2',
++    'pyyaml',
+     'knack',
+     'tabulate>=0.7.7',
+     'colorama>=0.3.7'
