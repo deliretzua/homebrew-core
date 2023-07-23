@@ -7,8 +7,13 @@ class Solr < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "95ad367dfd98503a52dc38af2d86ce9539d1b67af764890adcc32779219574fc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ebcf2f867f5cd0d82917888941764a3fc9ee39f76e6a8d76f3dc357b09741f51"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ebcf2f867f5cd0d82917888941764a3fc9ee39f76e6a8d76f3dc357b09741f51"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ebcf2f867f5cd0d82917888941764a3fc9ee39f76e6a8d76f3dc357b09741f51"
+    sha256 cellar: :any_skip_relocation, ventura:        "ebcf2f867f5cd0d82917888941764a3fc9ee39f76e6a8d76f3dc357b09741f51"
+    sha256 cellar: :any_skip_relocation, monterey:       "ebcf2f867f5cd0d82917888941764a3fc9ee39f76e6a8d76f3dc357b09741f51"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ebcf2f867f5cd0d82917888941764a3fc9ee39f76e6a8d76f3dc357b09741f51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a2d708a2c93ad59b9b7899896db6024c4127a63fa32b9363ee0d5c5d98fd19d"
   end
 
   # `solr` fails to start on macOS with `openjdk` 20.
