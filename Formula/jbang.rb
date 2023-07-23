@@ -6,7 +6,13 @@ class Jbang < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "487ef7128b3a7ac2416ffbf62144d9c94c4feefd4efc5c57a9bcfb533c19eb92"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "50782f3cf7fc385a6fcb916ded33bc0aa353e15fcfd456151769921bebb4bd5b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "50782f3cf7fc385a6fcb916ded33bc0aa353e15fcfd456151769921bebb4bd5b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "50782f3cf7fc385a6fcb916ded33bc0aa353e15fcfd456151769921bebb4bd5b"
+    sha256 cellar: :any_skip_relocation, ventura:        "50782f3cf7fc385a6fcb916ded33bc0aa353e15fcfd456151769921bebb4bd5b"
+    sha256 cellar: :any_skip_relocation, monterey:       "50782f3cf7fc385a6fcb916ded33bc0aa353e15fcfd456151769921bebb4bd5b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "50782f3cf7fc385a6fcb916ded33bc0aa353e15fcfd456151769921bebb4bd5b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f446acd0dbbb647bc95c09615f342eb7af51591fce191c88a00f54ff5ece4d6f"
   end
 
   depends_on "openjdk"
