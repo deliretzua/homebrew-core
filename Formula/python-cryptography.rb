@@ -6,6 +6,16 @@ class PythonCryptography < Formula
   license any_of: ["Apache-2.0", "BSD-3-Clause"]
   head "https://github.com/pyca/cryptography.git", branch: "main"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "f7f4997ab8e77bb21394a8bc86fcf6e29bf48f01146555c4f383604d7920e8fe"
+    sha256 cellar: :any,                 arm64_monterey: "d9c6a23812f25ece20735ebcdbafb0640ccebfa6cbc4c0b9a1d7d123d9a72923"
+    sha256 cellar: :any,                 arm64_big_sur:  "775947d20b660d3d0eec72b25d2de9bbcb28207c265bff9340bcab6266c44c72"
+    sha256 cellar: :any,                 ventura:        "5c11f6db7ef7d8f7742ef58e7ad2049b0c847068d586c0c17654d0a78f910b82"
+    sha256 cellar: :any,                 monterey:       "4e9b08d79f8e5c197a3daf40679789166a21351d6cf45c607df94332ed283f5b"
+    sha256 cellar: :any,                 big_sur:        "a1ee306291c54fdf2cf716d8372daafb8d3e5387d24d969f22f3792973aafc20"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5da02e83e60b94faa3a157e510ec4603c30eaf46cfde3552b8d4ad6d6f33fa35"
+  end
+
   depends_on "rust" => :build
   depends_on "cffi"
   depends_on "openssl@3"
