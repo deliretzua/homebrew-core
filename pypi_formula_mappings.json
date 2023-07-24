@@ -289,7 +289,7 @@
     "extra_packages": ["wheel"]
   },
   "flintrock": {
-    "exclude_packages": ["six", "cffi", "pycparser"]
+    "exclude_packages": ["cffi", "pycparser", "PyYAML", "six"]
   },
   "flit": {
     "exclude_packages": ["docutils"]
