@@ -35,7 +35,8 @@ class Cbc < Formula
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
-                          "--includedir=#{include}/cbc"
+                          "--includedir=#{include}/cbc",
+                          "--enable-cbc-parallel"
     system "make"
     system "make", "install"
     pkgshare.install "Cbc/examples"
