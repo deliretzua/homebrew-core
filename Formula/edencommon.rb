@@ -1,8 +1,8 @@
 class Edencommon < Formula
   desc "Shared library for Watchman and Eden projects"
   homepage "https://github.com/facebookexperimental/edencommon"
-  url "https://github.com/facebookexperimental/edencommon/archive/refs/tags/v2023.07.17.00.tar.gz"
-  sha256 "938169430f709a057eeec524debf9c248db7a36b0ebc849b2f975edea27998ea"
+  url "https://github.com/facebookexperimental/edencommon/archive/refs/tags/v2023.07.24.00.tar.gz"
+  sha256 "4f6cc05da0be60825421c76d2d669d5d8ed2c2f37887ce26c8f89f77bd26fd3d"
   license "MIT"
   head "https://github.com/facebookexperimental/edencommon.git", branch: "main"
 
@@ -23,11 +23,18 @@ class Edencommon < Formula
   depends_on "glog"
   depends_on "openssl@3"
 
+  # Fix linkage against folly
+  # https://github.com/facebookexperimental/edencommon/pull/10
+  patch do
+    url "https://github.com/facebookexperimental/edencommon/commit/b162c1b8d94b4ed49835da6d03b4d0a550082b47.patch?full_index=1"
+    sha256 "99c299fa6df887d1e72aed3d60a8ca32eb2eda1897715482af8ddfa4702fe24c"
+  end
+
   def install
     # Fix "Process terminated due to timeout" by allowing a longer timeout.
     inreplace "eden/common/utils/test/CMakeLists.txt",
               /gtest_discover_tests\((.*)\)/,
-              "gtest_discover_tests(\\1 DISCOVERY_TIMEOUT 30)"
+              "gtest_discover_tests(\\1 DISCOVERY_TIMEOUT 60)"
 
     system "cmake", "-S", ".", "-B", "_build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
     system "cmake", "--build", "_build"
