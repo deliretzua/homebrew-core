@@ -1,8 +1,8 @@
 class Watchman < Formula
   desc "Watch files and take action when they change"
   homepage "https://github.com/facebook/watchman"
-  url "https://github.com/facebook/watchman/archive/refs/tags/v2023.07.17.00.tar.gz"
-  sha256 "877fc1c88028134c6c1541f797a8c25a0d333088b292c914ce7f589339ddf0fd"
+  url "https://github.com/facebook/watchman/archive/refs/tags/v2023.07.24.00.tar.gz"
+  sha256 "abef7859e6412a30f92941d811a0ef7e595a0ef8bfebb674f909743fdc3f5a46"
   license "MIT"
   head "https://github.com/facebook/watchman.git", branch: "main"
 
@@ -50,7 +50,7 @@ class Watchman < Formula
     # Fix "Process terminated due to timeout" by allowing a longer timeout.
     inreplace "CMakeLists.txt",
               /gtest_discover_tests\((.*)\)/,
-              "gtest_discover_tests(\\1 DISCOVERY_TIMEOUT 30)"
+              "gtest_discover_tests(\\1 DISCOVERY_TIMEOUT 60)"
 
     # NOTE: Setting `BUILD_SHARED_LIBS=ON` will generate DSOs for Eden libraries.
     #       These libraries are not part of any install targets and have the wrong
