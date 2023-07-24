@@ -1,9 +1,8 @@
 class Kamel < Formula
   desc "Apache Camel K CLI"
   homepage "https://camel.apache.org/"
-  url "https://github.com/apache/camel-k.git",
-      tag:      "v1.12.1",
-      revision: "f2543a9f6269aad3cc24de3061b130c0e7590c09"
+  url "https://github.com/apache/camel-k/archive/refs/tags/v2.0.0.tar.gz"
+  sha256 "74ae95ef3e21d0241ffd54024780b913aad08b10c41a2af94f017c38a5c68220"
   license "Apache-2.0"
   head "https://github.com/apache/camel-k.git", branch: "main"
 
@@ -23,13 +22,10 @@ class Kamel < Formula
   end
 
   depends_on "go" => :build
-  depends_on "openjdk@11" => :build
-  depends_on "kubernetes-cli"
 
   def install
-    ENV["JAVA_HOME"] = Language::Java.java_home("11")
-    system "make", "build-kamel"
-    bin.install "kamel"
+    ldflags = "-s -w -X github.com/apache/camel-k/v2/pkg/util/defaults.GitCommit=#{tap.user}-#{version}"
+    system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/kamel"
 
     generate_completions_from_executable(bin/"kamel", "completion", shells: [:bash, :zsh])
   end
