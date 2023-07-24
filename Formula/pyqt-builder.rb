@@ -7,7 +7,13 @@ class PyqtBuilder < Formula
   head "https://www.riverbankcomputing.com/hg/PyQt-builder", using: :hg
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "7eaab02f463e5c18d8cd01f1fb9192b6077ca823d35cef3158138c25af2b512a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ab7230d3b7df9b43b8f3a12716db58f0cb3b5a550548617bb3b403c416b37be3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ab7230d3b7df9b43b8f3a12716db58f0cb3b5a550548617bb3b403c416b37be3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ab7230d3b7df9b43b8f3a12716db58f0cb3b5a550548617bb3b403c416b37be3"
+    sha256 cellar: :any_skip_relocation, ventura:        "ab7230d3b7df9b43b8f3a12716db58f0cb3b5a550548617bb3b403c416b37be3"
+    sha256 cellar: :any_skip_relocation, monterey:       "ab7230d3b7df9b43b8f3a12716db58f0cb3b5a550548617bb3b403c416b37be3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ab7230d3b7df9b43b8f3a12716db58f0cb3b5a550548617bb3b403c416b37be3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fbef68c7e68dbefe9ae0fad92ecd31488ceb64077e7aee1a67426a5afc91a83e"
   end
 
   depends_on "python@3.11"
