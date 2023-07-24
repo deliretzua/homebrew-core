@@ -16,16 +16,12 @@ class PythonCryptography < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5da02e83e60b94faa3a157e510ec4603c30eaf46cfde3552b8d4ad6d6f33fa35"
   end
 
+  depends_on "pkg-config" => :build
+  depends_on "python-typing-extensions" => :build
   depends_on "rust" => :build
   depends_on "cffi"
   depends_on "openssl@3"
-  depends_on "pycparser"
-  depends_on "python-typing-extensions"
   depends_on "python@3.11"
-
-  on_linux do
-    depends_on "pkg-config" => :build
-  end
 
   resource "semantic-version" do
     url "https://files.pythonhosted.org/packages/7d/31/f2289ce78b9b473d582568c234e104d2a342fd658cc288a7553d83bb8595/semantic_version-2.10.0.tar.gz"
@@ -42,12 +38,12 @@ class PythonCryptography < Formula
   end
 
   def install
-    site_packages = prefix/Language::Python.site_packages(python3)
+    site_packages = buildpath/Language::Python.site_packages(python3)
     ENV.append_path "PYTHONPATH", site_packages
 
     resources.each do |r|
       r.stage do
-        system python3, "-m", "pip", "install", "--prefix=#{prefix}", "--no-deps", "--no-build-isolation", "."
+        system python3, "-m", "pip", "install", "--prefix=#{buildpath}", "--no-deps", "--no-build-isolation", "."
       end
     end
 
