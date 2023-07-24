@@ -4,20 +4,19 @@ class Cassandra < Formula
 
   desc "Eventually consistent, distributed key-value store"
   homepage "https://cassandra.apache.org"
-  url "https://www.apache.org/dyn/closer.lua?path=cassandra/4.1.2/apache-cassandra-4.1.2-bin.tar.gz"
-  mirror "https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-bin.tar.gz"
-  sha256 "856b2401ee4c5c147ad46a1b4297a03fdd36b48799107e710274645750027700"
+  url "https://www.apache.org/dyn/closer.lua?path=cassandra/4.1.3/apache-cassandra-4.1.3-bin.tar.gz"
+  mirror "https://archive.apache.org/dist/cassandra/4.1.3/apache-cassandra-4.1.3-bin.tar.gz"
+  sha256 "da014999723f4e1e2c15775dac6aaa9ff69a48f6df6465740fcd52ca9d19ea88"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b012f5d71b9fc2c7f16368d154e7041c87a06680f82ce6bfb5fae944a278ecc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "215d166ef9f452ba489f2e308cecf88ba397441754950ccc3ac2baf62314daba"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "07c2391a2dbdcaefa39ad5f3b430142c997db6a3d590653f4c014126e348cbd9"
-    sha256 cellar: :any_skip_relocation, ventura:        "50f16014aaf08aa2eb5edf520bd07d356aafd7a1e5051d7c28c698e95b7b0758"
-    sha256 cellar: :any_skip_relocation, monterey:       "d2242ba79bc2b8dd99b8444a17fee39b1169e196976f41b93cfbf1e99ea080c3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bffc579a3d0948e77d744acd57dc70a231a49a18036fe9bf3bff69b025faa3dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "75dad73109101069465c04f8b5b4476720199220e42fac8085f0219357745f60"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0610b55b05846c59f1d3f6d44bd7c80738de3d4cffac733774dd927c48b9845d"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "3db0db93085264e252aa354c945b215cc8b3b8e8add5be2cee7520349dc7e02a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b12b02aef016ae17586982fbb679adb98f1568c3d4eb3214c8a060d1075610a9"
+    sha256 cellar: :any_skip_relocation, ventura:        "51d3199282a83aceea9988699a9ce57f0155e472f22a1a93f51e35ffb30e2989"
+    sha256 cellar: :any_skip_relocation, monterey:       "809072721b7ba47f772821081247e219dc0541a9779cdaa71b2ecaac08f6045c"
+    sha256 cellar: :any_skip_relocation, big_sur:        "590831ccddc447c276fe39fd248e40d4aa4d108f953aefbf51987c6b1e825b63"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca731177a00a9bfc4227ebb1502972648dd0221ced0cffd8deb42d7e9e287699"
   end
 
   depends_on "libcython" => :build
@@ -26,18 +25,18 @@ class Cassandra < Formula
   depends_on "six"
 
   resource "cassandra-driver" do
-    url "https://files.pythonhosted.org/packages/af/aa/3d3a6dae349d4f9b69d37e6f3f8b8ef286a06005aa312f0a3dc7af0eb556/cassandra-driver-3.25.0.tar.gz"
-    sha256 "8ad7d7c090eb1cac6110b3bfc1fd2d334ac62f415aac09350ebb8d241b7aa7ee"
+    url "https://files.pythonhosted.org/packages/f5/ab/417dc6c1bfea24042c97e381036b02864db8d918d3f65926e1884b98f086/cassandra-driver-3.28.0.tar.gz"
+    sha256 "64ff130d19f994b80997c14343a8306be52a0e7ab92520a534eed944c88d70df"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
-    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
+    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
+    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
   end
 
   resource "geomet" do
-    url "https://files.pythonhosted.org/packages/be/9c/dc5a874b12bbab2981edf92d7d03b9d37de6261655b57590a166c890b148/geomet-0.3.0.tar.gz"
-    sha256 "cb52411978ee01ff104ab48f108d7333b14423ae7a15a65fee25b7d29bda2e1b"
+    url "https://files.pythonhosted.org/packages/7a/27/f6fc66e0629cfdcd301ebcb737b55041c238742420dce7728f208d75731c/geomet-1.0.0.tar.gz"
+    sha256 "0020a4426469934fb58f541cdc23f27c0c0fbbb3d003ee2cb76bb7ffa96a7506"
   end
 
   def install
