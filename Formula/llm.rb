@@ -7,6 +7,16 @@ class Llm < Formula
   sha256 "6226bcbb4c79affd85870a69a09a5b47aec6bc549c65b620f086253424e3410a"
   license "Apache-2.0"
 
+  bottle do
+    sha256 cellar: :any,                 arm64_ventura:  "01f14e8a673f8f7684ccacd6140038ae49f9a53d65f526bf583bf1470c9e6ff3"
+    sha256 cellar: :any,                 arm64_monterey: "01c10de806e89c0c365fe60a6995ca4e014e164ce8a1688252c1ba21f194ef6a"
+    sha256 cellar: :any,                 arm64_big_sur:  "539693dad5fd1811a88fcbd2377aa13d17dd027dc3e1ada9acb07651e5d4da14"
+    sha256 cellar: :any,                 ventura:        "920b891a21f8c5d9bcbccaf575702ba9b5fa384c186db27b9244a63d4710d7e1"
+    sha256 cellar: :any,                 monterey:       "a72e19e9d7f0eb2554f75a862812a2df219066e9e2ab8d105d6b03f43035ef43"
+    sha256 cellar: :any,                 big_sur:        "a54e0fa47dc2e0eeaa493d63aa9dd48ea0b86404420f927e392f3b99720142ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb618391999bf7fff85704350347c35348d2403ff218abbae2b3217f4f9213de"
+  end
+
   depends_on "rust" => :build
   depends_on "pygments"
   depends_on "python-tabulate"
