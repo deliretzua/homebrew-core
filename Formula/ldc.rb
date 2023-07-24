@@ -1,8 +1,8 @@
 class Ldc < Formula
   desc "Portable D programming language compiler"
   homepage "https://wiki.dlang.org/LDC"
-  url "https://github.com/ldc-developers/ldc/releases/download/v1.32.2/ldc-1.32.2-src.tar.gz"
-  sha256 "bfa4aaee74320a1268843c88e229f339b2df0953a4bcb4fced52ebe0dda1cd95"
+  url "https://github.com/ldc-developers/ldc/releases/download/v1.33.0/ldc-1.33.0-src.tar.gz"
+  sha256 "834c1b08c5f5b3a98f9efbaf8632f0d377d17dac1c1710e483c9ee684658c3a8"
   license "BSD-3-Clause"
   head "https://github.com/ldc-developers/ldc.git", branch: "master"
 
@@ -61,20 +61,17 @@ class Ldc < Formula
 
   def install
     ENV.cxx11
+    # Fix ldc-bootstrap/bin/ldmd2: error while loading shared libraries: libxml2.so.2
+    ENV.prepend_path "LD_LIBRARY_PATH", Formula["libxml2"].opt_lib if OS.linux?
+
     (buildpath/"ldc-bootstrap").install resource("ldc-bootstrap")
 
     args = %W[
       -DLLVM_ROOT_DIR=#{llvm.opt_prefix}
       -DINCLUDE_INSTALL_DIR=#{include}/dlang/ldc
       -DD_COMPILER=#{buildpath}/ldc-bootstrap/bin/ldmd2
+      -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
-
-    args += if OS.mac?
-      ["-DCMAKE_INSTALL_RPATH=#{rpath};#{rpath(source: lib, target: llvm.opt_lib)}"]
-    else
-      # Fix ldc-bootstrap/bin/ldmd2: error while loading shared libraries: libxml2.so.2
-      ENV.prepend_path "LD_LIBRARY_PATH", Formula["libxml2"].opt_lib
-    end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
