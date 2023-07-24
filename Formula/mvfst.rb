@@ -1,11 +1,8 @@
 class Mvfst < Formula
   desc "QUIC transport protocol implementation"
   homepage "https://github.com/facebookincubator/mvfst"
-  # TODO: Upstream has no tags yet. They will next week. Use the tag instead of a commit hash then.
-  #       https://github.com/facebookincubator/mvfst/issues/301
-  url "https://github.com/facebookincubator/mvfst/archive/403b412e57a00f79f3c36f3dbbf2aaf9fc9baa4b.tar.gz"
-  version "2023.07.17.00"
-  sha256 "de3e68e3081f5d56fc574f8b0e270ffc6dea932fa4839c4120c544da64f5c4c9"
+  url "https://github.com/facebookincubator/mvfst/archive/refs/tags/v2023.07.24.00.tar.gz"
+  sha256 "ec841fb5da4fc701b52c17f2abba24827e8f9a2682ec755bd8a1f226fb1e78d1"
   license "MIT"
   head "https://github.com/facebookincubator/mvfst.git", branch: "main"
 
