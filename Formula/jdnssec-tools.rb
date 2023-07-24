@@ -12,16 +12,13 @@ class JdnssecTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3e8de754897fd352966a4978f775205a0c8144406cd6ae5be56ef96f1afdd96d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "069e93f9f47a8553de4bcbe13dbc64082905b2e4e625093a0cb6456a6743ecee"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "24738bb6c20a997b7cf23b1dd63e559d339fd1765998c5d65974b9f21775b5d7"
-    sha256 cellar: :any_skip_relocation, ventura:        "3e8de754897fd352966a4978f775205a0c8144406cd6ae5be56ef96f1afdd96d"
-    sha256 cellar: :any_skip_relocation, monterey:       "3e8de754897fd352966a4978f775205a0c8144406cd6ae5be56ef96f1afdd96d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4341a864f01748c3009213510cc983ef29e354c0e486f14c3fd453ad55ac6802"
-    sha256 cellar: :any_skip_relocation, catalina:       "c12eafadb12264e88ef14fe4e93cdb41f0afccbb24b8cff892e8747d8ad2d73b"
-    sha256 cellar: :any_skip_relocation, mojave:         "c12eafadb12264e88ef14fe4e93cdb41f0afccbb24b8cff892e8747d8ad2d73b"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "c12eafadb12264e88ef14fe4e93cdb41f0afccbb24b8cff892e8747d8ad2d73b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "069e93f9f47a8553de4bcbe13dbc64082905b2e4e625093a0cb6456a6743ecee"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9cdfb19fee503d97618bc2987e71eb669405fe7bee91f5e911721300319a6b28"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "9cdfb19fee503d97618bc2987e71eb669405fe7bee91f5e911721300319a6b28"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9cdfb19fee503d97618bc2987e71eb669405fe7bee91f5e911721300319a6b28"
+    sha256 cellar: :any_skip_relocation, ventura:        "9cdfb19fee503d97618bc2987e71eb669405fe7bee91f5e911721300319a6b28"
+    sha256 cellar: :any_skip_relocation, monterey:       "9cdfb19fee503d97618bc2987e71eb669405fe7bee91f5e911721300319a6b28"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9cdfb19fee503d97618bc2987e71eb669405fe7bee91f5e911721300319a6b28"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9924bbccc4783e0490e07259de930f8618cc6da78dcf08fcef664844a8a6c60d"
   end
 
   depends_on "openjdk"
