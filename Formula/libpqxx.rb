@@ -1,8 +1,9 @@
 class Libpqxx < Formula
   desc "C++ connector for PostgreSQL"
   homepage "https://pqxx.org/development/libpqxx/"
-  url "https://github.com/jtv/libpqxx/archive/7.7.5.tar.gz"
-  sha256 "c7dc3e8fa2eee656f2b6a8179d72f15db10e97a80dc4f173f806e615ea990973"
+  # remove autoreconf setup in next release
+  url "https://github.com/jtv/libpqxx/archive/7.8.0.tar.gz"
+  sha256 "bc471d8d34588f820f38e19e1cc217f399212eef900416cf12f90fab293628af"
   license "BSD-3-Clause"
 
   bottle do
@@ -15,6 +16,9 @@ class Libpqxx < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1eff7ca00f049cc932262893bb2f8ba8729e654322a93a1430ac9a21498a62a3"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "python@3.11" => :build
   depends_on "xmlto" => :build
@@ -28,6 +32,9 @@ class Libpqxx < Formula
     ENV.prepend_path "PATH", Formula["python@3.11"].opt_libexec/"bin"
     ENV["PG_CONFIG"] = Formula["libpq"].opt_bin/"pg_config"
 
+    # regenerate configure script
+    # upstream build patch, https://github.com/jtv/libpqxx/commit/5934bbd, remove in next release
+    system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--prefix=#{prefix}", "--enable-shared"
     system "make", "install"
   end
