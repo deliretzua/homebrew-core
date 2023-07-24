@@ -4,9 +4,9 @@ class Cassandra < Formula
 
   desc "Eventually consistent, distributed key-value store"
   homepage "https://cassandra.apache.org"
-  url "https://www.apache.org/dyn/closer.lua?path=cassandra/4.1.2/apache-cassandra-4.1.2-bin.tar.gz"
-  mirror "https://archive.apache.org/dist/cassandra/4.1.2/apache-cassandra-4.1.2-bin.tar.gz"
-  sha256 "856b2401ee4c5c147ad46a1b4297a03fdd36b48799107e710274645750027700"
+  url "https://www.apache.org/dyn/closer.lua?path=cassandra/4.1.3/apache-cassandra-4.1.3-bin.tar.gz"
+  mirror "https://archive.apache.org/dist/cassandra/4.1.3/apache-cassandra-4.1.3-bin.tar.gz"
+  sha256 "da014999723f4e1e2c15775dac6aaa9ff69a48f6df6465740fcd52ca9d19ea88"
   license "Apache-2.0"
 
   bottle do
@@ -26,18 +26,18 @@ class Cassandra < Formula
   depends_on "six"
 
   resource "cassandra-driver" do
-    url "https://files.pythonhosted.org/packages/af/aa/3d3a6dae349d4f9b69d37e6f3f8b8ef286a06005aa312f0a3dc7af0eb556/cassandra-driver-3.25.0.tar.gz"
-    sha256 "8ad7d7c090eb1cac6110b3bfc1fd2d334ac62f415aac09350ebb8d241b7aa7ee"
+    url "https://files.pythonhosted.org/packages/f5/ab/417dc6c1bfea24042c97e381036b02864db8d918d3f65926e1884b98f086/cassandra-driver-3.28.0.tar.gz"
+    sha256 "64ff130d19f994b80997c14343a8306be52a0e7ab92520a534eed944c88d70df"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
-    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
+    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
+    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
   end
 
   resource "geomet" do
-    url "https://files.pythonhosted.org/packages/be/9c/dc5a874b12bbab2981edf92d7d03b9d37de6261655b57590a166c890b148/geomet-0.3.0.tar.gz"
-    sha256 "cb52411978ee01ff104ab48f108d7333b14423ae7a15a65fee25b7d29bda2e1b"
+    url "https://files.pythonhosted.org/packages/7a/27/f6fc66e0629cfdcd301ebcb737b55041c238742420dce7728f208d75731c/geomet-1.0.0.tar.gz"
+    sha256 "0020a4426469934fb58f541cdc23f27c0c0fbbb3d003ee2cb76bb7ffa96a7506"
   end
 
   def install
