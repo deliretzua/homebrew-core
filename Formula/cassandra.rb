@@ -10,29 +10,20 @@ class Cassandra < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "449a38b44dafd3a5592e13ac2046058d749d29531303c55ec2a723d4b70de2de"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "918407347e62071b984e134a137e4fbbc5f4899d9d12856e291f1f9a5a9296de"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b5c4dd4bd153873dc1509af96ad1bb37b412e6701089fc5b9850b5eb68ddcbd2"
-    sha256 cellar: :any_skip_relocation, ventura:        "14d23cc21826b188a893197efe2300e964eebb993fed687213cafc55c2e854e5"
-    sha256 cellar: :any_skip_relocation, monterey:       "55a56308b41a8bb3dd8a492e74ad988989c9f3b57bbf3318e470bc095b21cf46"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8e821d1f129d6ce500e639a6b663890643bf32de6ed771e7965307b9c1fbc109"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f4c89bae3499c87d2fc9970fe30b959dfda080a382e5d82302b95bc287f9de4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b012f5d71b9fc2c7f16368d154e7041c87a06680f82ce6bfb5fae944a278ecc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "215d166ef9f452ba489f2e308cecf88ba397441754950ccc3ac2baf62314daba"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "07c2391a2dbdcaefa39ad5f3b430142c997db6a3d590653f4c014126e348cbd9"
+    sha256 cellar: :any_skip_relocation, ventura:        "50f16014aaf08aa2eb5edf520bd07d356aafd7a1e5051d7c28c698e95b7b0758"
+    sha256 cellar: :any_skip_relocation, monterey:       "d2242ba79bc2b8dd99b8444a17fee39b1169e196976f41b93cfbf1e99ea080c3"
+    sha256 cellar: :any_skip_relocation, big_sur:        "bffc579a3d0948e77d744acd57dc70a231a49a18036fe9bf3bff69b025faa3dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "75dad73109101069465c04f8b5b4476720199220e42fac8085f0219357745f60"
   end
 
   depends_on "libcython" => :build
   depends_on "openjdk@11"
   depends_on "python@3.11"
   depends_on "six"
-
-  resource "thrift" do
-    url "https://files.pythonhosted.org/packages/e4/23/dd951c9883cb49a73b750bdfe91e39d78e8a3f1f7175608634f381a197d5/thrift-0.16.0.tar.gz"
-    sha256 "2b5b6488fcded21f9d312aa23c9ff6a0195d0f6ae26ddbd5ad9e3e25dfc14408"
-  end
-
-  resource "cql" do
-    url "https://files.pythonhosted.org/packages/0b/15/523f6008d32f05dd3c6a2e7c2f21505f0a785b6dc8949cad325306858afc/cql-1.4.0.tar.gz"
-    sha256 "7857c16d8aab7b736ab677d1016ef8513dedb64097214ad3a50a6c550cb7d6e0"
-  end
 
   resource "cassandra-driver" do
     url "https://files.pythonhosted.org/packages/af/aa/3d3a6dae349d4f9b69d37e6f3f8b8ef286a06005aa312f0a3dc7af0eb556/cassandra-driver-3.25.0.tar.gz"
