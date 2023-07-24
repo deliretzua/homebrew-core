@@ -426,6 +426,9 @@
   "litecli": {
     "exclude_packages": ["six", "tabulate", "Pygments"]
   },
+  "llm": {
+    "exclude_packages": ["PyYAML", "Pygments", "six", "tabulate", "typing-extensions"]
+  },
   "localstack": {
     "exclude_packages": ["cffi", "six", "tabulate", "pycparser", "PyYAML", "Pygments"]
   },
