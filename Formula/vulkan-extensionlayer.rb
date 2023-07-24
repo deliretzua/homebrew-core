@@ -1,8 +1,8 @@
 class VulkanExtensionlayer < Formula
   desc "Layer providing Vulkan features when native support is unavailable"
   homepage "https://github.com/KhronosGroup/Vulkan-ExtensionLayer"
-  url "https://github.com/KhronosGroup/Vulkan-ExtensionLayer/archive/refs/tags/v1.3.257.tar.gz"
-  sha256 "27227d904072228b44fea3e2b766fffb03fb0acc0864ac3c917ce399b0516676"
+  url "https://github.com/KhronosGroup/Vulkan-ExtensionLayer/archive/refs/tags/v1.3.259.tar.gz"
+  sha256 "7f12ddf2c6d4a26c354844bbad3ab7037b647aab5540fe87c8c34663d0d3b1f8"
   license "Apache-2.0"
   head "https://github.com/KhronosGroup/Vulkan-ExtensionLayer.git", branch: "main"
 
