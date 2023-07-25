@@ -209,6 +209,9 @@
   "csvkit": {
     "exclude_packages": ["six"]
   },
+  "cycode": {
+    "exclude_packages": ["PyYAML", "six"]
+  },
   "cyral-gimme-db-token": {
     "exclude_packages": ["cffi", "pycparser", "PyYAML", "six"]
   },
