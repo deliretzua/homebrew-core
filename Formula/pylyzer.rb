@@ -1,8 +1,8 @@
 class Pylyzer < Formula
   desc "Fast static code analyzer & language server for Python"
   homepage "https://github.com/mtshiba/pylyzer"
-  url "https://github.com/mtshiba/pylyzer/archive/refs/tags/v0.0.37.tar.gz"
-  sha256 "e085e07e41115ab2eaa894c04ed6cbacfc9665dbcd9c61426fd8147e802a0f90"
+  url "https://github.com/mtshiba/pylyzer/archive/refs/tags/v0.0.38.tar.gz"
+  sha256 "ec905d1b6590a250e7478e700bffa82c9787e46a6c7fa617013be19b993882d4"
   license "MIT"
 
   bottle do
