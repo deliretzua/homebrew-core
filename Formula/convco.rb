@@ -1,8 +1,8 @@
 class Convco < Formula
   desc "Conventional commits, changelog, versioning, validation"
   homepage "https://convco.github.io"
-  url "https://github.com/convco/convco/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "88c92b175163c8847da7dd201d32106c51ff85e2c992c2a3ff67e29ecbe57abb"
+  url "https://github.com/convco/convco/archive/refs/tags/v0.4.1.tar.gz"
+  sha256 "bbee100a10db98adfa2a0913583136d91ceec915a0c7758ec22f1072419fa541"
   license "MIT"
   head "https://github.com/convco/convco.git", branch: "master"
 
@@ -18,12 +18,10 @@ class Convco < Formula
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
-  depends_on "libgit2@1.5"
+  depends_on "libgit2"
 
   def install
-    # Link with a shared library instead of building a vendored version
-    inreplace "Cargo.toml", ', features = [ "zlib-ng-compat" ]', ""
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", "--no-default-features", *std_cargo_args
 
     bash_completion.install "target/completions/convco.bash" => "convco"
     zsh_completion.install  "target/completions/_convco" => "_convco"
@@ -40,7 +38,7 @@ class Convco < Formula
     linkage_with_libgit2 = (bin/"convco").dynamically_linked_libraries.any? do |dll|
       next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
 
-      File.realpath(dll) == (Formula["libgit2@1.5"].opt_lib/shared_library("libgit2")).realpath.to_s
+      File.realpath(dll) == (Formula["libgit2"].opt_lib/shared_library("libgit2")).realpath.to_s
     end
     assert linkage_with_libgit2, "No linkage with libgit2! Cargo is likely using a vendored version."
   end
