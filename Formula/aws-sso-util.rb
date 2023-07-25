@@ -6,6 +6,7 @@ class AwsSsoUtil < Formula
   url "https://files.pythonhosted.org/packages/6e/93/90d3753ac7ea3148c41c43929cace11d8fc1331c629497ab24a91a6c3724/aws_sso_util-4.32.0.tar.gz"
   sha256 "2649dcf3c594851a0c55ed6ebf2df70205d1debd6e58e263738430d4703890ec"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/benkehoe/aws-sso-util.git", branch: "master"
 
   bottle do
@@ -38,18 +39,18 @@ class AwsSsoUtil < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/83/55/46669bec24ee173e9b2dae3b9e556f12f8f441e959fb6d0b3683576ebc1a/boto3-1.28.6.tar.gz"
-    sha256 "a1711097e80e10c0c33f62695c663a8a303d61289791b8d874ba9a30f78f1de1"
+    url "https://files.pythonhosted.org/packages/ea/e9/a0419a48465ace125bf55473416ba465aa26fba58b05f14b1122ce98737d/boto3-1.28.10.tar.gz"
+    sha256 "cb8af03f553f1c7db7137bc897785baeeaa97b8fde483eb1cdb1f1ef3cec9cb7"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/bd/93/0701c27690c16558d0ee0fa361b33f928129be28d0206e82740417cb1ebe/botocore-1.31.6.tar.gz"
-    sha256 "1d724d542c9031195dd24e66b09b24ee654266e4cf0c2bc24679036f786158a3"
+    url "https://files.pythonhosted.org/packages/8f/6f/f0eb30793d6582d0ade2d98cc2de5cbf59eb9bc1c57e44d8a9741b3523e3/botocore-1.31.10.tar.gz"
+    sha256 "736a9412f405d6985570c4a87b533c2396dd8d4042d8c7a0ca14e73d4f1bcf9d"
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
