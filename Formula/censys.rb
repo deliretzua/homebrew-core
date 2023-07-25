@@ -9,13 +9,13 @@ class Censys < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cd690941c5a56e78c7a6d4f71a5d191e9cc87a42b8c1f3c33cbf509d5bb15fed"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c990c3489803e86d2eb6abc6c20ccdfcff541ccb34f67a070b6c980aed9f43c7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b7d4b6fc1031b3a879ca29030d4cc46314e330a41213ba47bbe9a4e44e89751d"
-    sha256 cellar: :any_skip_relocation, ventura:        "fcc19713d9c2914cb97bdb084f6ee83d5c61c99926a20a7199fe79b67b3425fd"
-    sha256 cellar: :any_skip_relocation, monterey:       "21f030b3c2dacce598ac3f6e6907471c682d10956105ffb59a10bc2812d18916"
-    sha256 cellar: :any_skip_relocation, big_sur:        "587b00451629947c704ca2b1ffe48aa5b481941c8fc0c0ffe81f2d6869e1e334"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9698413060f2be0463b68c9a22634522d62f62d05e69faf9db0666af286b10e5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c8b7850b79b4da9f8af67c5d6b756cd348eafc3c81fea748d0351e8e1bf3b461"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "e824e2ebfb8fd9efdce7bf2161df5075eafeb4e865c09dc873b50fc97b768b44"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "214883893b5f6c5c386f0c6d9c0843f4bb38e64f324a83ed8c912ccbad2a8a03"
+    sha256 cellar: :any_skip_relocation, ventura:        "04b0906afa31e3c1677ffe55ab53da680c3f6d80b2861462600a2e9809d57b7e"
+    sha256 cellar: :any_skip_relocation, monterey:       "03c2544a15a4d4d144599e2ffafe9afb8a32e43ab34adf166a95a0fd3eacaa70"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5906850a3efb6591ee96a94530fc189a21158e5b53efdffd7f443218417e6960"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf5a40c2299965d3e7f2552dfac7a83fb56b59eabf574a91cb8db4d048d680ed"
   end
 
   depends_on "pygments"
