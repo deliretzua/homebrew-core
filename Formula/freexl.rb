@@ -1,8 +1,8 @@
 class Freexl < Formula
   desc "Library to extract data from Excel .xls files"
   homepage "https://www.gaia-gis.it/fossil/freexl/index"
-  url "https://www.gaia-gis.it/gaia-sins/freexl-sources/freexl-1.0.6.tar.gz"
-  sha256 "3de8b57a3d130cb2881ea52d3aa9ce1feedb1b57b7daa4eb37f751404f90fc22"
+  url "https://www.gaia-gis.it/gaia-sins/freexl-sources/freexl-2.0.0.tar.gz"
+  sha256 "176705f1de58ab7c1eebbf5c6de46ab76fcd8b856508dbd28f5648f7c6e1a7f0"
 
   livecheck do
     url :homepage
@@ -23,6 +23,9 @@ class Freexl < Formula
   end
 
   depends_on "doxygen" => :build
+  depends_on "minizip"
+
+  uses_from_macos "expat"
 
   def install
     system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}",
