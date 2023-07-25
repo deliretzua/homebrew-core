@@ -6,7 +6,7 @@ class Awscurl < Formula
   url "https://files.pythonhosted.org/packages/80/f4/95935ad7041ba008221ce81b698963c8be0c5c97e6fcfd86e0e2009ebacd/awscurl-0.29.tar.gz"
   sha256 "5e1ecd0ab7b014de697a1e161fa483c2263d16c3e156a81bdc8b9a9c2d0ba3f3"
   license "MIT"
-  revision 2
+  revision 3
   head "https://github.com/okigan/awscurl.git", branch: "master"
 
   bottle do
@@ -30,8 +30,8 @@ class Awscurl < Formula
   uses_from_macos "libffi"
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
@@ -40,8 +40,8 @@ class Awscurl < Formula
   end
 
   resource "configargparse" do
-    url "https://files.pythonhosted.org/packages/3c/fb/bf200c55a1e7014577c37fa9cbfa0148f629762bb3acff56299d8c58cbc3/ConfigArgParse-1.5.5.tar.gz"
-    sha256 "363d80a6d35614bd446e2f2b1b216f3b33741d03ac6d0a92803306f40e555b58"
+    url "https://files.pythonhosted.org/packages/70/8a/73f1008adfad01cb923255b924b1528727b8270e67cb4ef41eabdc7d783e/ConfigArgParse-1.7.tar.gz"
+    sha256 "e7067471884de5478c58a511e529f0f9bd1c66bfef1dea90935438d6c23306d1"
   end
 
   resource "configparser" do
@@ -70,8 +70,8 @@ class Awscurl < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/d6/af/3b4cfedd46b3addab52e84a71ab26518272c23c77116de3c61ead54af903/urllib3-2.0.3.tar.gz"
-    sha256 "bee28b5e56addb8226c96f7f13ac28cb4c301dd5ea8a6ca179c0b9835e032825"
+    url "https://files.pythonhosted.org/packages/31/ab/46bec149bbd71a4467a3063ac22f4486ecd2ceb70ae8c70d5d8e4c2a7946/urllib3-2.0.4.tar.gz"
+    sha256 "8d22f86aae8ef5e410d4f539fde9ce6b2113a001bb4d189e0aed70642d602b11"
   end
 
   resource "urllib3-secure-extra" do
