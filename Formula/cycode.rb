@@ -9,13 +9,13 @@ class Cycode < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "094a89acbd54b2aa552c3ff598fb9c70ae6d020c05dfb1344ff1611ba6f1ad3b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6c5e18ae56452925a545329219f04fea5603c033f7a6131a1e8a12a2158fafa7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "80cf68c5ed63b387072fb0f7b82d944b8f4e42ac3889688275b0ae9b3ccbfdb7"
-    sha256 cellar: :any_skip_relocation, ventura:        "e25e1e4cdcf115cb6b69bf3a782b9e00a555f6ed4e7e43be27b639ce012a01ca"
-    sha256 cellar: :any_skip_relocation, monterey:       "1fbb040276061ac5a222a4c5324e21d09d3de291c85cb1b0b1a6929ceac34ba8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "36915cdfdf58d5459f1cf40c25a2182381e0ebaf3683d996779db5340f019b4d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a16b7194cb855d219e8a41e161f5ccbee8e5baf62aacb372f44fceba62d22710"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4caa861d7fa4add47abd5afd5885a2e28ea021ebd6424171a6d7118441caf49a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f9f092bc893e671d7ebcdb4bf39aefcfe44b00b6dcb4056107f8be1c0e538b47"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1090598cc45476e3816c3a2adecf7964d4d9df371bee7a2dd162947f94df9e1c"
+    sha256 cellar: :any_skip_relocation, ventura:        "d4c8cf996c7578188d704e1d1cae79936fc348691ec88e6f79e992786c29672c"
+    sha256 cellar: :any_skip_relocation, monterey:       "f33a304ad66578c98a4d49eced60d008b7b526b7740fc28b95002ba4c853fb85"
+    sha256 cellar: :any_skip_relocation, big_sur:        "28405331b5c1576bed10ffe3f961f1e47b49e21f3889d9bc3a7678caa639fa45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "63b79960b3499f7ab4b218b932d6cfef7b592c1060ad34400c2c034369705289"
   end
 
   depends_on "python@3.11"
