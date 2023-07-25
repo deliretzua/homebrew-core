@@ -11,7 +11,13 @@ class Allure < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9888f640a789b8d06012a8faa45ea29b1685ecd679475bd8ea9db3c1cb9b1291"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c9f7b30d7c2fdc6ca76ba172e7b2d684a8681a7e5f97a3665ad967bcf6f0f614"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "c9f7b30d7c2fdc6ca76ba172e7b2d684a8681a7e5f97a3665ad967bcf6f0f614"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c9f7b30d7c2fdc6ca76ba172e7b2d684a8681a7e5f97a3665ad967bcf6f0f614"
+    sha256 cellar: :any_skip_relocation, ventura:        "c9f7b30d7c2fdc6ca76ba172e7b2d684a8681a7e5f97a3665ad967bcf6f0f614"
+    sha256 cellar: :any_skip_relocation, monterey:       "c9f7b30d7c2fdc6ca76ba172e7b2d684a8681a7e5f97a3665ad967bcf6f0f614"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c9f7b30d7c2fdc6ca76ba172e7b2d684a8681a7e5f97a3665ad967bcf6f0f614"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa62088c68d7cfa0929ab137634a72666fa074c9d59fc8299ed52b86e6296b3a"
   end
 
   depends_on "openjdk"
