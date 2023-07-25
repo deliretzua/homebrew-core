@@ -10,14 +10,13 @@ class Bpython < Formula
   head "https://github.com/bpython/bpython.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "766a85def164a1f66d9aa72c38c1635f5070c3a124a1ce356f0bb249c3f304a5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8edea73c0ea8e083506fa8ffeb4e963693e2d54cb8a5f8be67b279f7c45e7ccf"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "62e9ef64868b43c508a3ca8cb5642c0b59f7ccd7da3688450ff2add1a90e31cc"
-    sha256 cellar: :any_skip_relocation, ventura:        "c1381d11f1a50c08f4e7dc7a1d6b2c2959a03acdf0ff6b2e3c9644c6cccfea90"
-    sha256 cellar: :any_skip_relocation, monterey:       "1bc8affee068301ecaf724ca7c5584a639ef892d1b00108c9935504b4d0913e2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "39e4c726ccc15183cd1c719b989b2218ead5b07a86f0d1824320d4d81abfba5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "696b43fdf524b7bc906cdbe72a873d383b8eae611d0d53dee532c27da70d7846"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cd5c5c19ada447d20da042dc4f47193e61c974622b42c1929ae8b80898393567"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "1ed20df4af72a6ac636dd8a6e39b2de6089cd75982c989df62fb07d95811fb7e"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0a44ce47a1f8f2127da333cca9d3538693b3046085deeb9ee1ef15ac42a5fcb6"
+    sha256 cellar: :any_skip_relocation, ventura:        "a319ae7ff5c84d37b7c73cfc644a2e5e0824e65838b23f28b3bd6a7168fdc5e7"
+    sha256 cellar: :any_skip_relocation, monterey:       "1ee8444ed309fb137baf6f17bfade0f07a763e0552ef261e18f2a73c462dfb73"
+    sha256 cellar: :any_skip_relocation, big_sur:        "2168421be4127be211ce8cbcca7bec24df8ff2bf76228fd0a736bc1905084d67"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "12ee3a84865eb60acd7685237122df35f8e24636684c5ffd31d8d33428ca9d2f"
   end
 
   depends_on "pygments"
