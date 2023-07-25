@@ -30,7 +30,7 @@ class LibbitcoinExplorer < Formula
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
-                          "--with-boost-libdir=#{Formula["boost"].opt_lib}"
+                          "--with-boost-libdir=#{Formula["boost@1.76"].opt_lib}"
     system "make", "install"
 
     bash_completion.install "data/bx"
