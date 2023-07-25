@@ -1,8 +1,8 @@
 class Tinysearch < Formula
   desc "Tiny, full-text search engine for static websites built with Rust and Wasm"
   homepage "https://github.com/tinysearch/tinysearch"
-  url "https://github.com/tinysearch/tinysearch/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "3330a8b91a83d9e452f71ba065778bc0eb2be0504f7707bd11b729bf501395e5"
+  url "https://github.com/tinysearch/tinysearch/archive/refs/tags/v0.8.2.tar.gz"
+  sha256 "103214d77f0624bbb7e396667136156fdb8c8c7abeb6860adb231bf2a00b256d"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/tinysearch/tinysearch.git", branch: "master"
 
@@ -22,7 +22,7 @@ class Tinysearch < Formula
   depends_on "wasm-pack"
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "bin")
+    system "cargo", "install", "--features", "bin", *std_cargo_args
     pkgshare.install "fixtures"
   end
 
