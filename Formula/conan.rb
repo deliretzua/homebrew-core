@@ -6,6 +6,7 @@ class Conan < Formula
   url "https://files.pythonhosted.org/packages/9a/ec/325a14043fb447e16122b6595df88e4af72681388ba11516fa20712c8e66/conan-2.0.9.tar.gz"
   sha256 "c54fde1f0629c2eb51de8636c5272fc919f9e70994c579df04620bca0a479bb4"
   license "MIT"
+  revision 1
   head "https://github.com/conan-io/conan.git", branch: "develop"
 
   bottle do
@@ -26,8 +27,8 @@ class Conan < Formula
   depends_on "six"
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
