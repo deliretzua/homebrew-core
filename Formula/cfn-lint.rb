@@ -3,8 +3,8 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https://github.com/aws-cloudformation/cfn-lint/"
-  url "https://files.pythonhosted.org/packages/92/2c/e6ac940326e00872bd00f5ebb3c925ca1a9ab064917aa3bcf8e668e0ea83/cfn-lint-0.78.2.tar.gz"
-  sha256 "363787653b71cd5dc4e2de30aaab835afd48b64e2257fe1b4b78efac01635e8c"
+  url "https://files.pythonhosted.org/packages/85/27/5e18fe57e26e89e7acf57c32315ea1e40f2214f0e7c2bd48a73fee53ff08/cfn-lint-0.79.1.tar.gz"
+  sha256 "9f6306b15e00f324f43e999bbaca1345d4bc9d846741194e9cdb3b8fc6c5b886"
   license "MIT-0"
 
   bottle do
@@ -34,13 +34,13 @@ class CfnLint < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/7f/c4/a1c823a0c7425b4a352601156e8be7998d966c84c6b7aeb5de4d6415a6db/boto3-1.28.8.tar.gz"
-    sha256 "cf88309d9b8cd9a2fb0c8049cb4b217b4e9dcb55bf670d6054b0bbe2eef25e57"
+    url "https://files.pythonhosted.org/packages/be/d5/d22151869ac5a87a583f96b8de2414a8813094143e783d8494e4f359ba9b/boto3-1.28.11.tar.gz"
+    sha256 "0fe7a35cf0041145c8eefebd3ae2ddf41baed62d7c963e5042b8ed8c297f648f"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/51/cb/fdbc87199900625dc7c9a15312f72fa5fdfe216d149492702d95a0d14113/botocore-1.31.8.tar.gz"
-    sha256 "092baa2168ae78080b0c28011527bfc11d8debd3767aa1e9a4ce8a91fd9943a2"
+    url "https://files.pythonhosted.org/packages/d1/26/d503d445a8ae7efc737abc2349f2e97a17b1009e7e26d1257800b6982fd5/botocore-1.31.11.tar.gz"
+    sha256 "b17ff973bb70b02b227928c2abe4992f1cfc46d13aee0228516c8f32572b88c6"
   end
 
   resource "jmespath" do
@@ -94,8 +94,8 @@ class CfnLint < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/cf/01/e8a380dc6e92a76113f034c58c9ffdbd115753e9b944ddf5d2dbe862f248/pydantic-1.10.11.tar.gz"
-    sha256 "f66d479cf7eb331372c470614be6511eae96f1f120344c25f3f9bb59fb1b5528"
+    url "https://files.pythonhosted.org/packages/3b/9b/a7631bf35e55326fd74654fe6bd896478f47d65e97ca69e60ddb1b3823ee/pydantic-1.10.12.tar.gz"
+    sha256 "0fe8a415cea8f340e7a9af9c54fc71a649b43e8ca3cc732986116b3cb135d303"
   end
 
   resource "pyrsistent" do
