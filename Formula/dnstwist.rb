@@ -6,7 +6,7 @@ class Dnstwist < Formula
   url "https://files.pythonhosted.org/packages/dc/7e/e473c19e6a885cdebfd6c6d18fcdb4c1f00d9caf17d72112a366023628e9/dnstwist-20230509.tar.gz"
   sha256 "153f1f833d456dff8a70b622f13a5699af392782415d69fc38dd26f98eb4740c"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a6e0cefd7c48353747dc63d2e6177d3c56791cd944d1c1310e4a504e5b14c01d"
@@ -54,8 +54,8 @@ class Dnstwist < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
