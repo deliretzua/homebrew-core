@@ -3,8 +3,8 @@ class Theharvester < Formula
 
   desc "Gather materials from public sources (for pen testers)"
   homepage "http://www.edge-security.com/theharvester.php"
-  url "https://github.com/laramies/theHarvester/archive/4.4.0.tar.gz"
-  sha256 "9c545a47e44efc6fbec3f02458d894d8e333cf340ee3d8ae01aa4b5590a6c8a9"
+  url "https://github.com/laramies/theHarvester/archive/4.4.1.tar.gz"
+  sha256 "ac353067b25838a4c66c636dd82f4e563a744d22f30a5f9788a77bbef8c10524"
   license "GPL-2.0-only"
   head "https://github.com/laramies/theHarvester.git", branch: "master"
 
@@ -112,8 +112,8 @@ class Theharvester < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
@@ -222,13 +222,13 @@ class Theharvester < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/11/07/106b00ae62297bb3c89b6fbeb571feaf7cbbf6b2ada0e513d756daafd4ce/pydantic-2.0.3.tar.gz"
-    sha256 "94f13e0dcf139a5125e88283fc999788d894e14ed90cf478bcc2ee50bd4fc630"
+    url "https://files.pythonhosted.org/packages/0f/46/12689d28731c709890361af3414a9d0d04328043beb7c9fc4e4caa580b5c/pydantic-2.1.1.tar.gz"
+    sha256 "22d63db5ce4831afd16e7c58b3192d3faf8f79154980d9397d9867254310ba4b"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/57/ea/edff47ad42857534f3abcc87472802b3181041f4e4fbeac988a5ecfcffae/pydantic_core-2.3.0.tar.gz"
-    sha256 "5cfb5ac4e82c47d5dc25b209dd4c3989e284b80109f9e08b33c895080c424b4f"
+    url "https://files.pythonhosted.org/packages/8a/6a/2609fb28f3c289eacb2a2ddaceb7ad0d327b4b4678146573295d98f012b8/pydantic_core-2.4.0.tar.gz"
+    sha256 "ec3473c9789cc00c7260d840c3db2c16dbfc816ca70ec87a00cddfa3e1a1cdd5"
   end
 
   resource "pyee" do
