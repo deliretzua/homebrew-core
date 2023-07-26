@@ -9,14 +9,13 @@ class Locust < Formula
   revision 1
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aeae31e2386864ddff65f787d9dcdbb32de9719b3184786c36e46bebe9e62471"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "44685510ece712e723b31f2fc3109339a924dd7b47f620ef7299efc1fb5f541e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "11cc0a4c139f1abb14c584948d0dc170107cdfc9decf40ccd3ee5edc337a75c8"
-    sha256 cellar: :any_skip_relocation, ventura:        "74f7f4ad734920a2253f1e56ee4038ade6ba21c34fe195341ac23482fdb25d03"
-    sha256 cellar: :any_skip_relocation, monterey:       "3813d5022964e22781cee962a4443421705f7fcd7d4da18746a28cc646f82dd1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "80355abe92bd97754fdec1de8df76a63271fc0e14cc53da5fba5f41bbf9f201a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e4451d202536956e22d4ccf12ceda385576d0853db932c7a870736da73b574c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "dcbbe0725527070eff38decb6993edf3aef653615ae337ba4aafbf1892c7538c"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "6f935b0852966267cfa545644b4e1045bc51e8d6145032cb47f254b4e6c9293c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1208792fcf80e5c557e97d3037758245fbc2acf06388cabf3c387b4d5c517259"
+    sha256 cellar: :any_skip_relocation, ventura:        "040afc2a31f132e682e35a6d2d721dd604ca12d5a15e6bfd81cc8ff2d07864c4"
+    sha256 cellar: :any_skip_relocation, monterey:       "8a5368e084a89e8ad23d38d8f27aa0b748dc9bde80b205e505f58c5b3c4b2313"
+    sha256 cellar: :any_skip_relocation, big_sur:        "862f97bcda97432b5ba4a68a19f0cf5b4ce035273e146211171a3a43b5db0457"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b94ce7ab92e29574f8d2a1cbee4e9ca7858f83ada839330edcecf759308987f"
   end
 
   depends_on "python-typing-extensions"
