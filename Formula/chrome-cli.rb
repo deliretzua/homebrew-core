@@ -1,8 +1,8 @@
 class ChromeCli < Formula
   desc "Control Google Chrome from the command-line"
   homepage "https://github.com/prasmussen/chrome-cli"
-  url "https://github.com/prasmussen/chrome-cli/archive/1.9.1.tar.gz"
-  sha256 "1758f0b9b1e81f8ae2fb3b79231c0020211ddd6cc715a38f30b0bfe1643bc733"
+  url "https://github.com/prasmussen/chrome-cli/archive/1.9.3.tar.gz"
+  sha256 "cc213ebd087bafd6f1faaaeb4cc1fae4da2a7e1c484ee9265cf113f6ce108376"
   license "MIT"
   head "https://github.com/prasmussen/chrome-cli.git", branch: "master"
 
@@ -20,7 +20,7 @@ class ChromeCli < Formula
 
   def install
     # Release builds
-    xcodebuild "-arch", Hardware::CPU.arch, "SYMROOT=build"
+    xcodebuild "-arch", Hardware::CPU.arch.to_s, "SYMROOT=build"
     bin.install "build/Release/chrome-cli"
 
     # Install wrapper scripts for chrome compatible browsers
