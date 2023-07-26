@@ -10,13 +10,13 @@ class Checkov < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "0115d88331cf6b21734f73abf0708e08f5cf137614938d5e3c98a56cf7be3215"
-    sha256 cellar: :any,                 arm64_monterey: "d6d2f0f8fd09d25855b686fec4f31890ac79bc8380f43cd1c08d5e702f3f007d"
-    sha256 cellar: :any,                 arm64_big_sur:  "d64d96d97665802aa55e8991495439dbf60238e0016ce5ff6bd912d0ed647e48"
-    sha256 cellar: :any,                 ventura:        "ad58378cfae4971c1ce40f5fd669473aa440a16d5aff93f14704bd8fe4f35734"
-    sha256 cellar: :any,                 monterey:       "664b2c620538c8d3e23e68901d5d44fedd724efc6cf18eb2e131e2954f064352"
-    sha256 cellar: :any,                 big_sur:        "a027b8a5825a5693455bc4bef7ddec33587a68fd177e089c20c038b50e771308"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0c78e0c397be46b6103eecdc06fae2a8c76b1f7fff380d19de85bd0d0877b047"
+    sha256 cellar: :any,                 arm64_ventura:  "4807d2b2c5d90ecb4ba47c27b2a64f8d12b7a035ff63d9217b13a96db903d8db"
+    sha256 cellar: :any,                 arm64_monterey: "15a4005a3606351d4ae1151092e74d7013835763efa2c8b083c56dab496c52fc"
+    sha256 cellar: :any,                 arm64_big_sur:  "dec922970787f878f5e22478ce27cc03e8cbc9a077b0c998f5d4e68f5f3dd600"
+    sha256 cellar: :any,                 ventura:        "6c8459b53cb107265f4252df3c2f0de389b195d26ad0c0483a9313fad4a645ab"
+    sha256 cellar: :any,                 monterey:       "d09ac765dd5117afec2e4517469a7d4cd05f2992beedf13918823fe34e8020d6"
+    sha256 cellar: :any,                 big_sur:        "51b735078f35cf0171a8d7303deea3c5940517d5dda4371e9d8abeff7eb09861"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "557cd953cbba0c47f87a3bbdd89cf6161832785950233152df08fffe86f4ebf5"
   end
 
   depends_on "cmake" => :build # for igraph
