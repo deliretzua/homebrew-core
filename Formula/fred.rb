@@ -9,14 +9,13 @@ class Fred < Formula
   revision 1
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b3f36d4c497653085a0f88e542f33a7d3ebabf99adfae8dc309c6d163ba7de0e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5b8e1944a1bc922e64375abbeac2145779af2a8691ffa7167ebbcbbc9861f6d0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7a630bd6b53d0a546174a39692ee745f37f07fb162903289dc9afd64922d92a5"
-    sha256 cellar: :any_skip_relocation, ventura:        "c07764ba04eb212838e4a0de55defe2dbf9dee16547979f9e652394aa7c361a4"
-    sha256 cellar: :any_skip_relocation, monterey:       "e4e45c40bfe45aae3fb00137258e4cade406bbb2b382992c86bb5ec38a60f735"
-    sha256 cellar: :any_skip_relocation, big_sur:        "dd40f63b88752a31cae4fcefc1c268b320043e42d8fc616a8861652d2f9a96cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2315d1074ee72c9243bc216047c2d017334e7351099c27a150158403453ae50"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8089f9a6cdcd59750673d84ad88aa811639e88f036704f1107f3e48a40491eca"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f168772e0d637f443c555e0fa6445098706341e56e9d7c52f2771cbc5caef120"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ece532d86ad5fdd6bce5476c120970ef1c4e7f7fd477ee429125b980d2fd5fea"
+    sha256 cellar: :any_skip_relocation, ventura:        "d5cbe4a72d8e0ca0f81f580e111dc19aa3f43fa09ed3c93b4fcefb919c41a694"
+    sha256 cellar: :any_skip_relocation, monterey:       "f203b834fd464b8bc395cbc3a6d6890cbe9400ed42b6b6b50591872a9c128f2b"
+    sha256 cellar: :any_skip_relocation, big_sur:        "01e13403a725b96211a3fd12b2bed0f25c875e933ca47ed4318c2e2505418dd8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dcc9466ca6f4685a141923f807395397b11593814b2ac01c0295bc76c99bcde6"
   end
 
   depends_on "python@3.11"
