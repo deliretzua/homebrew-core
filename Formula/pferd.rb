@@ -6,7 +6,7 @@ class Pferd < Formula
   url "https://files.pythonhosted.org/packages/f4/67/72c34ac306296b5aee22f8894d1e45be95b88174398b01c1b19961d5acc8/pferd-3.4.3.tar.gz"
   sha256 "ca5b26f45edff90a2dd4ef384599775ceb7caf35c4cb2e17da1fbe1f46bf5eca"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "425abda8fb86d7ddb56df43bb428e8b80f1d450ba118dd1188d2a27d6ae54146"
@@ -47,8 +47,8 @@ class Pferd < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
@@ -92,8 +92,8 @@ class Pferd < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/2e/d0/bea165535891bd1dcb5152263603e902c0ec1f4c9a2e152cc4adff6b3a38/more-itertools-9.1.0.tar.gz"
-    sha256 "cabaa341ad0389ea83c17a94566a53ae4c9d07349861ecb14dc6d0345cf9ac5d"
+    url "https://files.pythonhosted.org/packages/b7/56/7daf104a9cb6af39c00127aee6904b01040dbb12cf1ceedd6a087c097055/more-itertools-10.0.0.tar.gz"
+    sha256 "cd65437d7c4b615ab81c0640c0480bc29a550ea032891977681efd28344d51e1"
   end
 
   resource "multidict" do
