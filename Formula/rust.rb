@@ -43,6 +43,7 @@ class Rust < Formula
   uses_from_macos "zlib"
 
   conflicts_with "rust-analyzer", because: "both install `rust-analyzer` binary"
+  conflicts_with "rustfmt", because: "both install `cargo-fmt` and `rustfmt` binaries"
 
   resource "cargobootstrap" do
     on_macos do
