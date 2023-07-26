@@ -9,14 +9,13 @@ class Goolabs < Formula
   revision 6
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "687e077ba9a88d2cc337d117c73983aa52eba1f74e1a70ce8eed5e4c257682ab"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ce92832e501841a0047e37925789d48ef2d01748cf9530d6bf6f97fca81fa555"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0b71cccba9bd028e2491025264b9316d6d676ccd3356be799a81fdf379afdab9"
-    sha256 cellar: :any_skip_relocation, ventura:        "a6740d2f4f7ee02c00b0cebe378e1441fcbc6f2d841212fd0d62f886431d404f"
-    sha256 cellar: :any_skip_relocation, monterey:       "37dcb53e2cd1886c7d519ac99b2320ad4a3f9bc9cdb41c8908ed77be068232f2"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bb5a896d144cf1031293a477f2ac0f4a0e58afbc2219a8bb1818757022dca95c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8f949c309cad72a04621998ea1946297f3593b7e2ca2804d983d62cd10a47c84"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "07491c55a405e103578678ab43f4925febea8624fa3f64675a3606e6a60845c6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ca23a9f545848b5de84257b55b5eee4e039a2d702364c218a5258ad38979c6ab"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "a29d8eb9dd0259f96e74bae26c5d07c86693949027e294d3cdeb4af2cf536ac5"
+    sha256 cellar: :any_skip_relocation, ventura:        "2af708e99bd66dc651915f81bc107a1389c87bc085746f721dffd0afdecfb4b9"
+    sha256 cellar: :any_skip_relocation, monterey:       "448faf5dd61a9634e912decebf9941b1bfdbc4ff8a2c0edc0da0b51eca6e79bd"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5e23739c6303b72cd28449f05bd83a2bc33c894d3c3b0022c91f11d9f2416fb4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c31baa603f9fe53dbb80734be888d049b89b14ca3c8b4a60fd35d725fdfc6dd9"
   end
 
   depends_on "python@3.11"
