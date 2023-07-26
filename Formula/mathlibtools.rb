@@ -9,13 +9,13 @@ class Mathlibtools < Formula
   revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "27315e08d5f676736608ee2ddb26ed85a9c5af6c1a7e674fcacbea0b49fb1db9"
-    sha256 cellar: :any,                 arm64_monterey: "3d00815766fc2c5e54e0bd475320e6b2621f7abdf2fd654b0c2a753294baec22"
-    sha256 cellar: :any,                 arm64_big_sur:  "68221e99bb56065953b8ba51d9baf9fc5f14c7f41ec6c9e4fc03316c64d651a0"
-    sha256 cellar: :any,                 ventura:        "b7ce3b980f4c8c8585d2e4f0f0491edca6ef62b1a40c8c92c98d72dc3ba30c71"
-    sha256 cellar: :any,                 monterey:       "e6d85ce803f09425f0a791a32fe2bb49ebb1cf71f94a69f4ca4fb227a6200234"
-    sha256 cellar: :any,                 big_sur:        "1c5b197d78632b4368aa6fdeaca72b132ae74216c11ed2c4e27545dc5d1be712"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d727f097b72e531058142cebc0f925ddd947a1697f898ef3521846da4481a45"
+    sha256 cellar: :any,                 arm64_ventura:  "4886dd48fbcec4731e407ad2c899150ce2078dc06ca41790716cba6342c08958"
+    sha256 cellar: :any,                 arm64_monterey: "6026ec4e75212ff30f1ad1cf556ba37e15ee28bc50cdf812608a1d78b811c901"
+    sha256 cellar: :any,                 arm64_big_sur:  "8f1c0e57fd57b1b0d51318ac15074803a68c070e171ce8b442966ea2cb36e727"
+    sha256 cellar: :any,                 ventura:        "f84b77512c7743ca62c5c586aa4612ae42c9ed761953ff935e928dcf0154d3ec"
+    sha256 cellar: :any,                 monterey:       "b1a0a6ae7ef313651b03a4fa604ad3fcc477acf345e50077b6b8570a8515bee3"
+    sha256 cellar: :any,                 big_sur:        "391fa1fdde496e991f53f3f5fa8ae956b3bc592b1e6e285ca95736f1f0bc0f5a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bc5008b8bb01452528439b06707376f1e6723d530222c9642ffc80d5f1b4bca4"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
