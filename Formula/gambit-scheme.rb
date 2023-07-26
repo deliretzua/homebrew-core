@@ -1,8 +1,8 @@
 class GambitScheme < Formula
   desc "Implementation of the Scheme Language"
   homepage "https://github.com/gambit/gambit"
-  url "https://github.com/gambit/gambit/archive/v4.9.4.tar.gz"
-  sha256 "19fb44a65b669234f6c0467cdc3dbe2e2c95a442f38e4638e7d89c90e247bd08"
+  url "https://github.com/gambit/gambit/archive/v4.9.5.tar.gz"
+  sha256 "758da7b4afe6411e9c4fed14b0cc5ada39b5f1393c1edd4d3dd9c9a06127c310"
   license "Apache-2.0"
 
   livecheck do
@@ -39,7 +39,6 @@ class GambitScheme < Formula
       --enable-single-host
       --enable-default-runtime-options=f8,-8,t8
       --enable-openssl
-      --enable-gcc-opts
     ]
 
     system "./configure", *args
