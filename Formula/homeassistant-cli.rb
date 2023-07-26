@@ -7,7 +7,7 @@ class HomeassistantCli < Formula
   url "https://github.com/home-assistant-ecosystem/home-assistant-cli/archive/refs/tags/0.9.6.tar.gz"
   sha256 "f971ac78a74922f4555ee7f77e327d8008819a8a83db1ad8037c0601e74a40ba"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/home-assistant-ecosystem/home-assistant-cli.git", branch: "dev"
 
   livecheck do
@@ -50,8 +50,8 @@ class HomeassistantCli < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
@@ -170,8 +170,8 @@ class HomeassistantCli < Formula
   end
 
   resource "zeroconf" do
-    url "https://files.pythonhosted.org/packages/f8/72/85cf7d09881c1a83b69b430efb4446d770ee59fda0a5e09e18eced0143af/zeroconf-0.71.0.tar.gz"
-    sha256 "c3040b3ad60f77fd29ca90b013c99aa7a0266eab9e4953106fc6f5fc8ba5641a"
+    url "https://files.pythonhosted.org/packages/93/0c/e92bd4dde67aaa44e2c5180776978803f1c2cf20ba81707c38c9f0e63147/zeroconf-0.71.4.tar.gz"
+    sha256 "b988425f6bd0d4f11f05fa258a6c49d9f9956777e9af00ca98c4ed3f743bd677"
   end
 
   def install
