@@ -9,13 +9,13 @@ class Sceptre < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3d03bf15adfa5392694f3e91efad7852af54b5bba22d97ecdd4975804e1b728c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "59f0ec542301d68d629035e5e4c903ef31d3225c76fa9a34c5ec37fbd771e777"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "aa97efce0edf298ebad9c0d496179ffe2595ea98d316a238e89f5e1965595f3f"
-    sha256 cellar: :any_skip_relocation, ventura:        "b9f2a439c2caeb4f805e489fe997b76250fabb346fa584c54b3b21a584381493"
-    sha256 cellar: :any_skip_relocation, monterey:       "eb569d035e60bb9b0a762b642c8180be608fbf4c98fdabc0b37f6a42e5ffab11"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8bb5aa4d1fe2b442d40d537668ccb97fa86c4b4a55115d678ae9c7f37fa6ecdf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "418960907a1ba8368b15f108150d7bdc0b185f9dbae1b6216523df2fbb97d72e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2cb3fd6cd7659050996bfc0ff60644a01511ebd14d42c716355ddbcadb14efc5"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "468fb7bf5460be0561f3e07bc8d0edba6f95496535478df44f1b6884c58a9e8b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b75285d92ab1ccdc43db0e1c8fa7d3a083cfd809bbc739ba26c50242e621f73c"
+    sha256 cellar: :any_skip_relocation, ventura:        "2cf5b62421dc131736f1d72a4305ada87430e8222e6feeede1ab5c19b53958d8"
+    sha256 cellar: :any_skip_relocation, monterey:       "bb68d560b1e7738a627fc24ca415f73c7605ca3a33f71fc663832e64e2b52b44"
+    sha256 cellar: :any_skip_relocation, big_sur:        "7a4a286965b182c12a6ea5b0a85828408d01216cadf64fb1dfab93e084fe86fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8f27019b8feb91c07e0ddd6a3d40620df84043301907ebb0033aabb2234f7fa3"
   end
 
   depends_on "libyaml"
