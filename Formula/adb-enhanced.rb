@@ -3,8 +3,8 @@ class AdbEnhanced < Formula
 
   desc "Swiss-army knife for Android testing and development"
   homepage "https://ashishb.net/tech/introducing-adb-enhanced-a-swiss-army-knife-for-android-development/"
-  url "https://files.pythonhosted.org/packages/0b/87/b1375ade9b02c67d4a8fe760d9d8cc4250c37e1db19d0ba1343a3bc79d9c/adb-enhanced-2.5.21.tar.gz"
-  sha256 "976db27d1334782965592d7cd2202d4de803eecb1360f2c710ad07dcc2af3539"
+  url "https://files.pythonhosted.org/packages/82/11/1228620ea0c9204d6d908d8485005141ab3d71d3db71a152080439fa927d/adb-enhanced-2.5.22.tar.gz"
+  sha256 "b829dcb4c9a9422735d416a62820de679bed8b08dfbff2014d46a525c39bc7d0"
   license "Apache-2.0"
 
   bottle do
