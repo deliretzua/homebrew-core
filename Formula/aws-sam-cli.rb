@@ -6,7 +6,7 @@ class AwsSamCli < Formula
   url "https://files.pythonhosted.org/packages/0f/f7/a04fbb764f421b359314bf1eb3e3006e48e4651ae2c2df3838ac3b8c8a9e/aws-sam-cli-1.93.0.tar.gz"
   sha256 "7b634d947a88958126ca2838a23972df6e26571a14accfb959e6c310f0689315"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "1cd2bec6a91efdb18369fe17c8ff8354e705ee9034b438e2a9387847e0229334"
@@ -22,7 +22,6 @@ class AwsSamCli < Formula
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "cffi"
-  depends_on "cfn-lint"
   depends_on "openssl@3"
   depends_on "pycparser"
   depends_on "pygments"
@@ -57,18 +56,23 @@ class AwsSamCli < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/ea/e9/a0419a48465ace125bf55473416ba465aa26fba58b05f14b1122ce98737d/boto3-1.28.10.tar.gz"
-    sha256 "cb8af03f553f1c7db7137bc897785baeeaa97b8fde483eb1cdb1f1ef3cec9cb7"
+    url "https://files.pythonhosted.org/packages/be/d5/d22151869ac5a87a583f96b8de2414a8813094143e783d8494e4f359ba9b/boto3-1.28.11.tar.gz"
+    sha256 "0fe7a35cf0041145c8eefebd3ae2ddf41baed62d7c963e5042b8ed8c297f648f"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/8f/6f/f0eb30793d6582d0ade2d98cc2de5cbf59eb9bc1c57e44d8a9741b3523e3/botocore-1.31.10.tar.gz"
-    sha256 "736a9412f405d6985570c4a87b533c2396dd8d4042d8c7a0ca14e73d4f1bcf9d"
+    url "https://files.pythonhosted.org/packages/d1/26/d503d445a8ae7efc737abc2349f2e97a17b1009e7e26d1257800b6982fd5/botocore-1.31.11.tar.gz"
+    sha256 "b17ff973bb70b02b227928c2abe4992f1cfc46d13aee0228516c8f32572b88c6"
   end
 
   resource "certifi" do
     url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
     sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
+  end
+
+  resource "cfn-lint" do
+    url "https://files.pythonhosted.org/packages/92/2c/e6ac940326e00872bd00f5ebb3c925ca1a9ab064917aa3bcf8e668e0ea83/cfn-lint-0.78.2.tar.gz"
+    sha256 "363787653b71cd5dc4e2de30aaab835afd48b64e2257fe1b4b78efac01635e8c"
   end
 
   resource "chardet" do
