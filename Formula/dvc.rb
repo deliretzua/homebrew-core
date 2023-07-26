@@ -3,8 +3,8 @@ class Dvc < Formula
 
   desc "Git for data science projects"
   homepage "https://dvc.org"
-  url "https://files.pythonhosted.org/packages/aa/e2/48eeaf495e04cb4509e139f1c9421a526eeb0d00cdd3e8d01bf5f80affd2/dvc-3.7.0.tar.gz"
-  sha256 "acf8563d91c321cbd232a727ebbb7e52fc899589fa8e49833d47146736591063"
+  url "https://files.pythonhosted.org/packages/1c/6f/08b2d6254d39ea8c940c22ccfa8b2241214bf6193f04016e62b4527f63f8/dvc-3.8.1.tar.gz"
+  sha256 "1185c7fac30076b1f183bfcc60d9865c4203b78d8ab687d51165e2539c642ecb"
   license "Apache-2.0"
 
   bottle do
@@ -174,8 +174,8 @@ class Dvc < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "charset-normalizer" do
@@ -379,8 +379,8 @@ class Dvc < Formula
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/a8/b4/c30aea47e146c7243bf72e4b9d93a677d8ca947697fd208d074829587f79/google-api-python-client-2.94.0.tar.gz"
-    sha256 "4ff598b7b83d5c0c5582927e74947286070b5b21a13e1bb64409fd92e45bfb26"
+    url "https://files.pythonhosted.org/packages/d2/e8/8cbc3186a98b38332db85b4537cce71f0df170a35e5cd88c1dd3be4a0aca/google-api-python-client-2.95.0.tar.gz"
+    sha256 "d2731ede12f79e53fbe11fdb913dfe986440b44c0a28431c78a8ec275f4c1541"
   end
 
   resource "google-auth" do
@@ -494,8 +494,8 @@ class Dvc < Formula
   end
 
   resource "msal" do
-    url "https://files.pythonhosted.org/packages/10/b1/a648bdd3116d0028685987fb4120a37bb91d268509e09dfbafd6ae8bed87/msal-1.22.0.tar.gz"
-    sha256 "8a82f5375642c1625c89058018430294c109440dce42ea667d466c2cab520acd"
+    url "https://files.pythonhosted.org/packages/85/9b/cf94ca59e4d88afe1852962d2b7e0cd9cee752dddf7cd6e30382cdc3f7ed/msal-1.23.0.tar.gz"
+    sha256 "25c9a33acf84301f93d1fdbe9f1a9c60cd38af0d5fffdbfa378138fc7bc1e86b"
   end
 
   resource "msal-extensions" do
@@ -669,8 +669,8 @@ class Dvc < Formula
   end
 
   resource "scmrepo" do
-    url "https://files.pythonhosted.org/packages/7e/cf/015e2bcbec0ecc29571642decc372cd8869367604ad773c5b4ef69e07801/scmrepo-1.0.4.tar.gz"
-    sha256 "d03278d6a86caa5c7f1e85918bc28ef69040a5e5fd04c97cc0eea611ea8be13c"
+    url "https://files.pythonhosted.org/packages/f7/ca/14f435bf82cfa2f72761fdd4c072d9c6e9452e34e241142190a1c0b009bd/scmrepo-1.1.0.tar.gz"
+    sha256 "e29dc3fd1055de3cc5c8be71d0f20c7d44d909c9ca9e8cd4670f3815e1e0c774"
   end
 
   resource "shortuuid" do
@@ -679,8 +679,8 @@ class Dvc < Formula
   end
 
   resource "shtab" do
-    url "https://files.pythonhosted.org/packages/16/8a/df4f14c0eeeb9bc1b025ef21f6525ea35dfd3e68fe5d42268545307a97d9/shtab-1.6.2.tar.gz"
-    sha256 "425d3b3e5d1b4ac59119fab5d40dfb01d4462676698e82dc404c707c6fdcd32c"
+    url "https://files.pythonhosted.org/packages/ed/34/19dce6683a45403e7b268838ee2b037b679fa5b2048b59bfbd17753f714b/shtab-1.6.3.tar.gz"
+    sha256 "00bfb8c2b02f503298a6774fb40503c0dbf9621205f721725f8ef40bd4f32027"
   end
 
   resource "smmap" do
