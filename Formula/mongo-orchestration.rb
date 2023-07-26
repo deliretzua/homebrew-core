@@ -10,14 +10,13 @@ class MongoOrchestration < Formula
   head "https://github.com/10gen/mongo-orchestration.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f16d073e369954fea787793427f7d275f53de6c61cab8b9ff11c543d53a5113d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a5aef7d76fdc8fe592d27255770edbbe7d60f3c73d4130cdf3316f1a18042ffa"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0970950f69d47605d27b48b7c611647aa08d46a7a77243c4948274f2f612beca"
-    sha256 cellar: :any_skip_relocation, ventura:        "6a14d664ce333410d529b828f9506981a4443306b81e3554687c06dfab02981a"
-    sha256 cellar: :any_skip_relocation, monterey:       "19da7dd531706ffa6a2209e9b1d456d3bd6e19eed67d7470df8bb67750e3f0ff"
-    sha256 cellar: :any_skip_relocation, big_sur:        "48985212df08b1a39281c14db97390b66f37b31c2dd1bb89a832d3051e556aaa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5e41489d711b280e40020148693b7ae3dbc4b8e8e049cc06ebeeaec8d532df4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2e682f686d8913ffd020dca714292d862ec60546d8ea558a20cbe6dcb3ece18b"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "324717f8fdc3cf7c599f5d83fcc282c1a9db3aa398aba4524ee96daaa6348023"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1197e6420cea0144959e21946b6f076de7efa2edfe9cdcb60940cf18a17bbbbd"
+    sha256 cellar: :any_skip_relocation, ventura:        "f05d185ecb16dc64963aae765e14ba8852ec35f207ed957fb835733b5ab3e550"
+    sha256 cellar: :any_skip_relocation, monterey:       "1d470eaa25c039a31e1885aac5bc728367bffd8fc214d75868c8b2a769495868"
+    sha256 cellar: :any_skip_relocation, big_sur:        "37e4fe27b430630871f5556c337cda29dd0ef147c0613467d99439ba9934a845"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0010e31ffc78f978e04b684b021504691e2900d453866e583cc7fa8b664fa5e8"
   end
 
   depends_on "python@3.11"
