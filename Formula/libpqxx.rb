@@ -1,20 +1,24 @@
 class Libpqxx < Formula
   desc "C++ connector for PostgreSQL"
   homepage "https://pqxx.org/development/libpqxx/"
-  url "https://github.com/jtv/libpqxx/archive/7.7.5.tar.gz"
-  sha256 "c7dc3e8fa2eee656f2b6a8179d72f15db10e97a80dc4f173f806e615ea990973"
+  # remove autoreconf setup in next release
+  url "https://github.com/jtv/libpqxx/archive/7.8.0.tar.gz"
+  sha256 "bc471d8d34588f820f38e19e1cc217f399212eef900416cf12f90fab293628af"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "d1af84c6b2644a232082d8753c8d0e13f67222a378bff90a7c96081d62a8cd9a"
-    sha256 cellar: :any,                 arm64_monterey: "12682ca4dd9bce5d732fc0e6c05685c8384db504b074d5ca8d3dec0a9a940dab"
-    sha256 cellar: :any,                 arm64_big_sur:  "67a616dfc0035740be1dfaf7555c3a63e5c0c0faadc44ad6d4aff8e2bc37d69e"
-    sha256 cellar: :any,                 ventura:        "842a9f48fd496ac4e30f930b7f5920d4df24173eb2ad05789e3d4454b4513a35"
-    sha256 cellar: :any,                 monterey:       "daa4547eb65fe6b8a452d0b4dba7c917256303b8227020fd1c38bc443b28770c"
-    sha256 cellar: :any,                 big_sur:        "0ee77de3211cec7de1019e5cbc223a091161e7a5ca1f4ce969d02006c3978ea9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1eff7ca00f049cc932262893bb2f8ba8729e654322a93a1430ac9a21498a62a3"
+    sha256 cellar: :any,                 arm64_ventura:  "11a89d08364bbe60b61875e4130eb7506b1dc6a607c757b7ecb9958c9321d0d7"
+    sha256 cellar: :any,                 arm64_monterey: "02e3154d3969f68f60c391f5665e26555c1219aac09181f4f3e2196d5bdb31f5"
+    sha256 cellar: :any,                 arm64_big_sur:  "439caa115a18279d5bc3246415c0e1f3fefcd5b9e1552ffe0c4528742c6d3434"
+    sha256 cellar: :any,                 ventura:        "b3fa5df4c2fbedebc3b56e1379d39a6916a1a588387eeb536257cb54f59f6e6b"
+    sha256 cellar: :any,                 monterey:       "8772d16243dc809a33a80c9a7f575c0455811c0a43d1a5917a4f7947a4ac6e60"
+    sha256 cellar: :any,                 big_sur:        "8ecc0a102b2025bd5df425081ef06427dccc1b8525c1b28ee65853f6e0976822"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f1da92ca90d9087a6161e7d5a3b3a6db481fb5217947f09ce1e962fcd40c9b2"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "python@3.11" => :build
   depends_on "xmlto" => :build
@@ -28,6 +32,9 @@ class Libpqxx < Formula
     ENV.prepend_path "PATH", Formula["python@3.11"].opt_libexec/"bin"
     ENV["PG_CONFIG"] = Formula["libpq"].opt_bin/"pg_config"
 
+    # regenerate configure script
+    # upstream build patch, https://github.com/jtv/libpqxx/commit/5934bbd, remove in next release
+    system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--prefix=#{prefix}", "--enable-shared"
     system "make", "install"
   end
