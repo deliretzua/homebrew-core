@@ -9,13 +9,13 @@ class Enex2notion < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "98f9eeaa461c7ae28bf6872bdf6d663b9260f96bd12c23f064d9ebc383b5f640"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "38eecbe057c1f85c40cc65ad54d66240d1f3682cccee3ee10665886f72731607"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "68b9147470e634305f0f8eb56859e10d64a55ab386fb5cc859f0e90926b03ae9"
-    sha256 cellar: :any_skip_relocation, ventura:        "1f6c504d11a4c90cb00fcc9daac206ea5aefb2bec9bfb12ac90e6888edfae484"
-    sha256 cellar: :any_skip_relocation, monterey:       "c88326430c66bb3e8757610e6cd4ea249c41d50104c8735028d99c00cf6bd5cb"
-    sha256 cellar: :any_skip_relocation, big_sur:        "31e74a418bda6b700968bacc315c990e4ac4d1bf7be4c41cc4afd3bb889d63a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6646e7ec0e69e0970dd45f18c54bcc89662f683c0795b278767ff855c745ec18"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3bda151f0a9e7a7874a4748dce564a99a7fb12a3832d73ae008d54f46ac02ce4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "f0937efba7a88db1c00fdfbe95890858f20c6cc7a9c4478bd7fc71514239452b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f7665cd9f35815d5b4f3e60cb8b9107ca48b7392597a53d98ba72482de669e41"
+    sha256 cellar: :any_skip_relocation, ventura:        "a0a1d6e8e353ee386f0a08b37ec1a513c2b8bdacb5743882c4647f35fe39bc98"
+    sha256 cellar: :any_skip_relocation, monterey:       "253dcc3c48b25fe9f2c19a18a616d4b4085ef9c2c6c64f6685e28ef7899eb4f5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "aec7e954571182ccdf99262ecd16d96b3bbc3eca6d72cc2825c2f33073b84818"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "54b1c3925f8deaec5b35064e0387949ac897add60a1d293ea4a7cff993cd5402"
   end
 
   depends_on "pymupdf"
