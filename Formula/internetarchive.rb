@@ -9,14 +9,13 @@ class Internetarchive < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6979a8df04c2b96c717645c1d91bb05474df7c29ddd58895728dd3285de215a8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "11035230c4642dab1260f9a0022afda655231254fbacfd20afd038ba3871471e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0b0148792c427b8a7a2f4a0f509c8ecc34f8ac20778e7a124054af66ca80bb75"
-    sha256 cellar: :any_skip_relocation, ventura:        "a1eb62ac62ddc76be53668850be62b2c4a51cfdf4a1cda7d7f6abe66bd832b20"
-    sha256 cellar: :any_skip_relocation, monterey:       "2b481ac7d22167236b8120fd7b1b8e656294aea7148e43b5d44f8fc6d15c7fe9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "061070cf622192c81f1944aee5fcd0509e6b7ecd5c9a68556a23b57816214c3a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7504f713f18bae737c47a262eaf15f3ed4f9cd8847df676ad221b4a041afa0a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ff6490e3193adcc92ec02e792e7afbac568af328e0d5bbf4d234370ddc700de7"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "37c988c54f139998c0ff58aadc280e7580bbda40ef0bf0a4a03f139dc9605435"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "819193bed034eeba98111bcdc930f3c407bd1c7c4e08c9888e0f1bdb1e9e1803"
+    sha256 cellar: :any_skip_relocation, ventura:        "272bc32532c8a4b0d5479300282d112a7cd4d34754a489f86e236173a483e9bc"
+    sha256 cellar: :any_skip_relocation, monterey:       "07c4c113ba50de73af346c9aaa832274930242b0c3cddc866848401eb9e3c32a"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b47b250bb9a507a6384d9474d1fd9da02491c7db41a4606bd799e78775324d6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d93591e650c8c684f5beba8bfe7bf834d99666001420b66789313e727bc0965"
   end
 
   depends_on "python@3.11"
