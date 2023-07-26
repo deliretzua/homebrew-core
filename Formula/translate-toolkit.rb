@@ -3,8 +3,8 @@ class TranslateToolkit < Formula
 
   desc "Toolkit for localization engineers"
   homepage "https://toolkit.translatehouse.org/"
-  url "https://files.pythonhosted.org/packages/1b/b6/8552b915b1bf2f0e08b96cbbecd4a78c1b4a62d9c473785c11e24abde83e/translate-toolkit-3.9.2.tar.gz"
-  sha256 "cd0430f061b135e46ec5eec9350fa8a7745d337826a90f5b6ac2c3b1b0123476"
+  url "https://files.pythonhosted.org/packages/9e/4d/eb097ebdaec2944420c463eeae47fc20d3a27eecd677b5286f424b97de6a/translate-toolkit-3.10.0.tar.gz"
+  sha256 "e3690caeef90dab491e6a8426c1d920aab265ef5f5bc7fe004a04e73560c4a3b"
   license "GPL-2.0-or-later"
   head "https://github.com/translate/translate.git", branch: "master"
 
@@ -24,8 +24,8 @@ class TranslateToolkit < Formula
   uses_from_macos "libxslt"
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/06/5a/e11cad7b79f2cf3dd2ff8f81fa8ca667e7591d3d8451768589996b65dec1/lxml-4.9.2.tar.gz"
-    sha256 "2455cfaeb7ac70338b3257f41e21f0724f4b5b0c0e7702da67ee6c3640835b67"
+    url "https://files.pythonhosted.org/packages/30/39/7305428d1c4f28282a4f5bdbef24e0f905d351f34cf351ceb131f5cddf78/lxml-4.9.3.tar.gz"
+    sha256 "48628bd53a426c9eb9bc066a923acaa0878d1e86129fd5359aee99285f4eed9c"
   end
 
   def install
