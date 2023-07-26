@@ -9,14 +9,13 @@ class DockerSquash < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7c2ebf1e29641a705509921e98bfc3aae0af095059c69433a1142658c6c7546a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6141b6c9198aec3ff13f63fe30961463ff90dc62dc836b2e787e6c9062995689"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ef478f4f7e31dcc4cd22c1c6e900881deb076aa8d92e5a2ca63e67b3a0a8d6ee"
-    sha256 cellar: :any_skip_relocation, ventura:        "b6f5004341b3aa418cd9340f989391587421e0cc6fdd2ddda00ea472cde753b6"
-    sha256 cellar: :any_skip_relocation, monterey:       "ff93c1fe09d47aa2bbed8d55e51f3c243e808f1944f88d19ac39cc9aa0a19a71"
-    sha256 cellar: :any_skip_relocation, big_sur:        "f65419f05f08cbac7eaea7cde12987393afeacce7a7883c005c9df6508b205d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "44a284c1ff1bf3a221bd5a48e31bc3660aef1c7a6e183805d3596e348a3eff91"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e7c1c3347cdebaf02244594cde21f6772cd8375ba7a9d2c01866459f1762643a"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d6b94463cc31a8e210af0321c54f92cad19b7af25da699541c5eb41fbb875bc6"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "970f0cd4021518ba3bd1757f326c1bb4d2c356cd107df68aa4f4c4226db74c28"
+    sha256 cellar: :any_skip_relocation, ventura:        "a27c4324468082c09855c5a5e88e47ec3f59df2c5c5e43b76fb92f2ab7c3cc3a"
+    sha256 cellar: :any_skip_relocation, monterey:       "ad5db159a9ac50f80a98c685936bc8d14d5aac23f02091ddf95e42b13938ff17"
+    sha256 cellar: :any_skip_relocation, big_sur:        "e3700a5ba571d5bc6ee75e9db4976c532d05aa4f4bce1bc31585dde9bf0acd26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "679338ebc90ce407f6511041797a83b07b7fbc39d17f0e2b0cba6d510ebb5890"
   end
 
   depends_on "python@3.11"
