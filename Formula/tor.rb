@@ -19,13 +19,13 @@ class Tor < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "6c9a74d4b68b89cb2d38990d9ccece504e6850449e5f5c63dbc9d32160db73fc"
-    sha256 arm64_monterey: "e5ad8cdc670fcde5068bcb4cea55e6d67d0d91a0d9410df85739b2da879505e5"
-    sha256 arm64_big_sur:  "8ec634a8d1c1ae5b624c9c61a82c2998b2363f4c1eb752b9a18b5c2f8495673d"
-    sha256 ventura:        "9579051e421477496c152189f2e12d745c2f733d601829e8f102c47ecf7a0c28"
-    sha256 monterey:       "b27824ccd356e196e05d9e2b86b51cbe7da7bad1590642b5fc089c1cca40771a"
-    sha256 big_sur:        "3ef4e57343bc77e5c0ee90d462a530af990e733b549fe364a8d23efd17816bef"
-    sha256 x86_64_linux:   "def66394b80ea1d4090c7d9c373eff46238bcec9f79a3ea033bc3ecc3ad4f89b"
+    sha256 arm64_ventura:  "eecb3e82d97ae71ffaae574dc68dd81af96cf3e099c1df22c9edc7c9a29f7152"
+    sha256 arm64_monterey: "3e49f41b47a1ee0e49f1cd0df77d41024e296c836cf0fbb87a3b839ffbda5744"
+    sha256 arm64_big_sur:  "9e843727fc006d8d551e6ee39f2595843e33d44334dcd66838ff26c1c26c164c"
+    sha256 ventura:        "4127674d3e5c1330dfe5ea7a0bece305a02a5f17ea5c9485888b46c4a9c3b8bf"
+    sha256 monterey:       "f04a656da073f65e17642a134610b2e68eb25fe4a4c24f94532d1162f3917b2b"
+    sha256 big_sur:        "07a92f3a4186943d70093b0eb46b8f7e8bee40cef5d7116f933c35af8052677e"
+    sha256 x86_64_linux:   "90d989022f9a6d73c85dd67f6dd891a4b1f7db7d74ff8372a6e89a61cbe67e84"
   end
 
   depends_on "pkg-config" => :build
