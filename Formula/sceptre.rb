@@ -6,6 +6,7 @@ class Sceptre < Formula
   url "https://files.pythonhosted.org/packages/05/cc/2ac3c8dd9323701b5ec61a58cc639a65cbada0ee539c837b4e78ccf54809/sceptre-4.2.2.tar.gz"
   sha256 "1fd5267854afc81ad1a315bbc82febb976ba6f490cb7f1e10f57f05030c7a04f"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "3d03bf15adfa5392694f3e91efad7852af54b5bba22d97ecdd4975804e1b728c"
@@ -28,18 +29,18 @@ class Sceptre < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/b6/90/d7a89b2f3528336a802c8fc496ebfda6ee444e20d5f149b50afefd708a9f/boto3-1.28.4.tar.gz"
-    sha256 "92c0631ab91b4c5aa0e18a90b4d12df361723c6df1ef7e346db71f2ad0803ab3"
+    url "https://files.pythonhosted.org/packages/be/d5/d22151869ac5a87a583f96b8de2414a8813094143e783d8494e4f359ba9b/boto3-1.28.11.tar.gz"
+    sha256 "0fe7a35cf0041145c8eefebd3ae2ddf41baed62d7c963e5042b8ed8c297f648f"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/bf/95/7c0a8bd20ac28092a0ecee8771bfaf9df5d31e309c55cde221436f9f0aad/botocore-1.31.4.tar.gz"
-    sha256 "f9738a23b03c55c2958ebdee65273afeda80deaeefebe595887fc3251e48293a"
+    url "https://files.pythonhosted.org/packages/d1/26/d503d445a8ae7efc737abc2349f2e97a17b1009e7e26d1257800b6982fd5/botocore-1.31.11.tar.gz"
+    sha256 "b17ff973bb70b02b227928c2abe4992f1cfc46d13aee0228516c8f32572b88c6"
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/93/71/752f7a4dd4c20d6b12341ed1732368546bc0ca9866139fe812f6009d9ac7/certifi-2023.5.7.tar.gz"
-    sha256 "0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"
+    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
+    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
   end
 
   resource "cfn-flip" do
@@ -53,8 +54,8 @@ class Sceptre < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/7e/ad/7a6a96fab480fb2fbf52f782b2deb3abe1d2c81eca3ef68a575b5a6a4f2e/click-8.1.5.tar.gz"
-    sha256 "4be4b1af8d665c6d942909916d31a213a106800c47d0eeba73d34da3cbc11367"
+    url "https://files.pythonhosted.org/packages/72/bd/fedc277e7351917b6c4e0ac751853a97af261278a4c7808babafa8ef2120/click-8.1.6.tar.gz"
+    sha256 "48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"
   end
 
   resource "colorama" do
