@@ -7,7 +7,13 @@ class SonarScanner < Formula
   head "https://github.com/SonarSource/sonar-scanner-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2afdbf58216d9c6e1dc8138fbaae51ac5945bc9e86f8520d70acf710df97e536"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5710f7fd39d850b2a93e726a3b4f04bb98be8aa6cce882a06adca5c5c3ff37ff"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5710f7fd39d850b2a93e726a3b4f04bb98be8aa6cce882a06adca5c5c3ff37ff"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5710f7fd39d850b2a93e726a3b4f04bb98be8aa6cce882a06adca5c5c3ff37ff"
+    sha256 cellar: :any_skip_relocation, ventura:        "5710f7fd39d850b2a93e726a3b4f04bb98be8aa6cce882a06adca5c5c3ff37ff"
+    sha256 cellar: :any_skip_relocation, monterey:       "5710f7fd39d850b2a93e726a3b4f04bb98be8aa6cce882a06adca5c5c3ff37ff"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5710f7fd39d850b2a93e726a3b4f04bb98be8aa6cce882a06adca5c5c3ff37ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "28d18dfd58026db06df33087e46d7d0418b7e264bef2f12b3e75feb28119e201"
   end
 
   depends_on "openjdk"
