@@ -1,8 +1,8 @@
 class Envoy < Formula
   desc "Cloud-native high-performance edge/middle/service proxy"
   homepage "https://www.envoyproxy.io/index.html"
-  url "https://github.com/envoyproxy/envoy/archive/refs/tags/v1.26.3.tar.gz"
-  sha256 "e86245011c7d36e0ffbd08d1b584944e2faa03e2ef516dddbab5091650960a63"
+  url "https://github.com/envoyproxy/envoy/archive/refs/tags/v1.26.4.tar.gz"
+  sha256 "b945468b00091965137549e221a040c048180fa89a7a8de48be28adf78581def"
   license "Apache-2.0"
   head "https://github.com/envoyproxy/envoy.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Envoy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6bb69bb06f0e710501fc692c74a04692c4e1bd7fdb0c26747bf11f74fcccaf9b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e3e1eda156daeab58dbac91397ad71c1126207a0cac2a34b71add6f5a5b4f2c1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "187be248a06f082e13f76446efd95e3cdae077156cb950fa588e82ced4c76bf0"
-    sha256 cellar: :any_skip_relocation, ventura:        "ad3b3d40274e3b4ea98b8f347f444aadebdc0708a0499f8e686230edb9eeae8e"
-    sha256 cellar: :any_skip_relocation, monterey:       "6c067281105c83477b8c9eb6246ee0626759b885141947c47c7b8a4a072d64cd"
-    sha256 cellar: :any_skip_relocation, big_sur:        "a4c0858494229e950d0cadf1b460bf6c84eb580fc0a14ca09b6fcf9b66cf3e69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "296e849baa6e01d838d7d4dccc41eef0045e720190138f695f1720ff210ca52d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "30b234294134bf7d9ca6bb1dbe57abaf66438cf434df586649e3e1abc0939d52"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "909dabadae3638cf566f1aa37900eb42a28fa649b4e95ecbc3c487b2701102a3"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "94f402e725cc319061fdb4522653dc71a6de22435c806bf9c5a9cdd6c1a792ce"
+    sha256 cellar: :any_skip_relocation, ventura:        "e3978e8ce1047138edcf7f5267e7741cb1a1c7ed894851f5dd6de94962730cdd"
+    sha256 cellar: :any_skip_relocation, monterey:       "522f68ac2e42f52eaa0523522f2bd5344795beb42adfddfcd5d3c305f6a733bd"
+    sha256 cellar: :any_skip_relocation, big_sur:        "47989780111c3c6a953815adeb5949caada8a65463c02d07c4a580be53d72cb0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b4eb77de3c27dfa10f83c76ba739d0bf87c9adfa222a8ce2ed4e45cd9a49ccc"
   end
 
   depends_on "automake" => :build
