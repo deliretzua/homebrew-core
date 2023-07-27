@@ -1,8 +1,8 @@
 class Nco < Formula
   desc "Command-line operators for netCDF and HDF files"
   homepage "https://nco.sourceforge.io/"
-  url "https://github.com/nco/nco/archive/5.1.6.tar.gz"
-  sha256 "6b217156cb14f670c80d5de5c5b88905cdb281f6e239e83397f14eaf3d0b390b"
+  url "https://github.com/nco/nco/archive/5.1.7.tar.gz"
+  sha256 "2b068558a605e30a465870166747e1d37726849814a5cfe41a000764b30e2ba1"
   license "BSD-3-Clause"
 
   bottle do
@@ -29,11 +29,6 @@ class Nco < Formula
   depends_on "udunits"
 
   uses_from_macos "flex" => :build
-
-  resource "homebrew-example_nc" do
-    url "https://www.unidata.ucar.edu/software/netcdf/examples/WMI_Lear.nc"
-    sha256 "e37527146376716ef335d01d68efc8d0142bdebf8d9d7f4e8cbe6f880807bdef"
-  end
 
   resource "antlr2" do
     url "https://github.com/nco/antlr2/archive/refs/tags/antlr2-2.7.7-1.tar.gz"
@@ -70,6 +65,11 @@ class Nco < Formula
   end
 
   test do
+    resource "homebrew-example_nc" do
+      url "https://www.unidata.ucar.edu/software/netcdf/examples/WMI_Lear.nc"
+      sha256 "e37527146376716ef335d01d68efc8d0142bdebf8d9d7f4e8cbe6f880807bdef"
+    end
+
     testpath.install resource("homebrew-example_nc")
     output = shell_output("#{bin}/ncks --json -M WMI_Lear.nc")
     assert_match "\"time\": 180", output
