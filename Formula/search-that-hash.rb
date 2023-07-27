@@ -10,14 +10,13 @@ class SearchThatHash < Formula
   head "https://github.com/HashPals/Search-That-Hash.git", branch: "main"
 
   bottle do
-    rebuild 5
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ec6c0fc1d85dfe2234c38c3c39618a4d7890599b360d8edbeee1fd44085f5e68"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8fd666806eb1a5b74437f65764c9aa39584d46becce1a7d1d6ebec5274c09bce"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "317d5a8cdfee0448315579871ec1327488ddeb5ee706d4297eb7640e41531d6c"
-    sha256 cellar: :any_skip_relocation, ventura:        "596a2c54bc502310a4f43dce0d9536602b46887e443f052ff95e010106da01b2"
-    sha256 cellar: :any_skip_relocation, monterey:       "51c89bf635f814059271179c8cc67a03a4011b5be2833ed58b48349597c8624d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6fc622f5565aec69a7d2f2d774cfa74fe5afeb98bacfd2eaa680ef1ffe87a6cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3bb722eb95a98b0634c991d98dd9a2b22d461232dafa3424d2fa660c8c19db7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8ea5896a06d70c1732cfdc431318671fcec6c65cbbb04cfa02d8f9336ce2232e"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "378f0e16454fdcc10cd924ac37a5463c42ad1b3a6c7b8857908df3cbeeca9b88"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "04a4e3e96186302635e689bab44eb08dbf89367056e264a664cb32662eb0cde4"
+    sha256 cellar: :any_skip_relocation, ventura:        "615113d1e0495c23864586428ce92c927796b9d799cfbbf587214af345cf0fa2"
+    sha256 cellar: :any_skip_relocation, monterey:       "ea42f4db7b191ef2c9f6e92c58bf934357bc51c8cb9a1d9174eb36908edf7130"
+    sha256 cellar: :any_skip_relocation, big_sur:        "c903a7ce8cb387ae7333c71bfaf8e6a5632b073601c2beb0c4b21c8e2eeb01b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "03db95ba19b1ef9feb71d74cccc998da3b93789ff192b879ff62fa4243b6a410"
   end
 
   depends_on "name-that-hash"
