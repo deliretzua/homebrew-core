@@ -10,14 +10,13 @@ class Scrapy < Formula
   head "https://github.com/scrapy/scrapy.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura:  "8a9c7c70ec099205f175ed835eb8475a738f901810fb221979fb8e1cfed1272d"
-    sha256 cellar: :any,                 arm64_monterey: "ed96de4c91bdb6be08a66d62c6e238a77c3f71640763d1cf7d30a6a6f1a9c2f9"
-    sha256 cellar: :any,                 arm64_big_sur:  "1b9f8686d0a367abcea29e4e28c79ec207611dd76c7bead8ba1e50523627f730"
-    sha256 cellar: :any,                 ventura:        "547966cb605d21cbac193b86d9e4babd3bb891ae89e3833f6f0da916d7f91d86"
-    sha256 cellar: :any,                 monterey:       "49a7e03137ff088e1e5168740ae13683c8ecdfa8a085e24af14853c98eec6c14"
-    sha256 cellar: :any,                 big_sur:        "4062c1047f60f1a023c4b74cfe9f845b544f15101bb584ed96cdaebfdf75673d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ffe5fb46159d741f4a039cbd63e3981293e114df3eeedc8a9a03ae17d0c615ee"
+    sha256 cellar: :any,                 arm64_ventura:  "7f99c0cb850278525b94221a387b27d64935d3908cdf65fbe121e88714076f00"
+    sha256 cellar: :any,                 arm64_monterey: "01576e95c4476d104a96ad0884e9b5e3f63047691cf8995aa477358705b6f4bb"
+    sha256 cellar: :any,                 arm64_big_sur:  "9e8f341d147376a86d8c7aad6ee47f122d5e0ba7195039f0da7793dd1f90a9c9"
+    sha256 cellar: :any,                 ventura:        "f3d600b92a26ebc9f1041124e3f41653792771665073efcc8a6c718eb5eef08d"
+    sha256 cellar: :any,                 monterey:       "f51e36a1c9aa5778fe9827c2011c6f6b16ac3b48f8a5667efe77a3634ccaace6"
+    sha256 cellar: :any,                 big_sur:        "799ee2e0ace7bf8693a17cc6f68caad24579f48a5ec9135d7d1fe007e69e097f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e5976b7cf4d8a636a3e5fc157cf67fcee23a133c3e270632bc8d194efd3aa0f"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
