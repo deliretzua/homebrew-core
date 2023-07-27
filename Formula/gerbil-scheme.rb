@@ -4,7 +4,7 @@ class GerbilScheme < Formula
   url "https://github.com/vyzo/gerbil/archive/v0.17.tar.gz"
   sha256 "1e81265aba7e9022432649eb26b2e5c85a2bb631a315e4fa840b14cf336b2483"
   license any_of: ["LGPL-2.1-or-later", "Apache-2.0"]
-  revision 2
+  revision 3
 
   livecheck do
     url "https://github.com/vyzo/gerbil.git"
