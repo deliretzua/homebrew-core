@@ -1,8 +1,8 @@
 class Ser2net < Formula
   desc "Allow network connections to serial ports"
   homepage "https://ser2net.sourceforge.io"
-  url "https://downloads.sourceforge.net/project/ser2net/ser2net/ser2net-4.3.13.tar.gz"
-  sha256 "ed8b98448d535111d9a593b067601a8b53e2874814d706b2421a9490a660d265"
+  url "https://downloads.sourceforge.net/project/ser2net/ser2net/ser2net-4.4.0.tar.gz"
+  sha256 "2abef00ee6481b072bdc290422983b2374cee1ccb5a565e9b378ce7428b074dd"
   license "GPL-2.0-only"
 
   livecheck do
@@ -75,6 +75,6 @@ class Ser2net < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{sbin}/ser2net -v")
+    assert_match version.to_s, shell_output("#{sbin}/ser2net -v", 1)
   end
 end
