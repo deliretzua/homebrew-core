@@ -11,13 +11,13 @@ class Gwenhywfar < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "dbe12c37f9775b4ba2a779257be4b57dded51c4aee433fe4b3665929430db9c5"
-    sha256 arm64_monterey: "090b514a0757752cfc3a1a3a6a4b73f0a2f28a275c22b2ae62f13be5cd507710"
-    sha256 arm64_big_sur:  "f2b97500a509936e740b32332ff80f42dbe99f75fd238996a07003e2273c3825"
-    sha256 ventura:        "0d783f3b2ff8dac5a1d5d913fb5150b8eda6827b83b00623bc39a7f3f90d4c17"
-    sha256 monterey:       "120195030139f081b5e356303154bdfebde752512ddd6575f2821e46478b0062"
-    sha256 big_sur:        "45a44e84dae31250c41e0123a22b8eedbd17762390daf51c14aaaf150c186e17"
-    sha256 x86_64_linux:   "880d3c424d5aaedd1d64bc59aaad0b836d9f676454979f82707e4dabca075cba"
+    sha256 arm64_ventura:  "8dd914e47edf5ed454e4cace3c2aa4cf3fc1a05f20bea019a8c018032cf2b8ab"
+    sha256 arm64_monterey: "040d7ecc2deb34655f6c56912114c515e7243a53e291d3a751290bf725bd8a68"
+    sha256 arm64_big_sur:  "13670a1756bac7a4e8cecc363321d1609103164636ac198b952dfbc26b2a2cdf"
+    sha256 ventura:        "6f4f5f09ad7cc1bba9112c0e1198ee7728985f2d403d40608e51d158dab4cb1a"
+    sha256 monterey:       "72979aefc21e5c22c33401d21d232396b9026c57cab53438c0935b3ff74b1adc"
+    sha256 big_sur:        "8f583511d6309b20d9722259b6e17bb3b49b09646bbce022b496af4f260f4f24"
+    sha256 x86_64_linux:   "771e98641328a98fbf0a789d12c6a0bb59a1f083c7142e2b25807505f58ce7cc"
   end
 
   depends_on "autoconf" => :build
