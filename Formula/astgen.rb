@@ -8,7 +8,13 @@ class Astgen < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ff724e23493d94b13bbb72dbc9d49b91a8366d3df73b6e812fa72d3b7ab8b48a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "745ca1dfe7840ace17f24165c652376b9097428c4e6f9c3a535c4eb195478da4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "745ca1dfe7840ace17f24165c652376b9097428c4e6f9c3a535c4eb195478da4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "745ca1dfe7840ace17f24165c652376b9097428c4e6f9c3a535c4eb195478da4"
+    sha256 cellar: :any_skip_relocation, ventura:        "745ca1dfe7840ace17f24165c652376b9097428c4e6f9c3a535c4eb195478da4"
+    sha256 cellar: :any_skip_relocation, monterey:       "745ca1dfe7840ace17f24165c652376b9097428c4e6f9c3a535c4eb195478da4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "745ca1dfe7840ace17f24165c652376b9097428c4e6f9c3a535c4eb195478da4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dd60603fc6d722fe83e7e6658d8bdbc1902fd286df5b136ce3278607995c76c5"
   end
 
   depends_on "node"
