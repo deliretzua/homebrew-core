@@ -10,13 +10,13 @@ class Lexicon < Formula
   head "https://github.com/AnalogJ/lexicon.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "5962718d16b86d0eb07290d1e31323b9c330b06a68789dd759f618cb1deb2b33"
-    sha256 cellar: :any,                 arm64_monterey: "b5be5a4ba81b50862ce2cc655afb04173b379a419f77883c4cdb4034a13b12d2"
-    sha256 cellar: :any,                 arm64_big_sur:  "88025130b8c087fd8e64e9372caeb68f7c63a181f8fb7934f0428fc62f585881"
-    sha256 cellar: :any,                 ventura:        "2b16116e142e17231f94da1061d65d4c7f58505d2c2e2dda27c6655ecb6e4320"
-    sha256 cellar: :any,                 monterey:       "ef3fd91cdd38acd84199dc81f6ffc79dfb1a45c27256ce1d295b062698f86659"
-    sha256 cellar: :any,                 big_sur:        "82591625086d8d9446aa9c21f1d66ddc58d74f3abfaf18c0447254c443c42144"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52a50a0d7270c8bb5af335b7eae179c5d9d8b11309065774cf0ec5e5fd2f1551"
+    sha256 cellar: :any,                 arm64_ventura:  "5898ce7e9b8dbe6fa7daed9a1e1f004004490084e6b816d8670b91d6032c9dfc"
+    sha256 cellar: :any,                 arm64_monterey: "bed3de60e89d918d492fc32c806e52106dd765976ed4f7b7512857aa32799a83"
+    sha256 cellar: :any,                 arm64_big_sur:  "eba57fbd6b2af725dd66c66e839f50db4101cd9c9918435f58589ad8fe26fea1"
+    sha256 cellar: :any,                 ventura:        "7de5fe10b8a43c8f0137254765094d5799d56b9c5aedd99b876c6a0f0927ee0b"
+    sha256 cellar: :any,                 monterey:       "62589e05748c7e2b71a40db2f75982c62f93dbab27daa1c33ec65a472287cf7c"
+    sha256 cellar: :any,                 big_sur:        "cec85724b0a6789b79afa805c2f6aa29bc1b172056af1a02040d2c5772edd32f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a9961dfeb37c9f129826d2c75b5d59061963f19659f101eab38178cd1e01006b"
   end
 
   depends_on "pkg-config" => :build
