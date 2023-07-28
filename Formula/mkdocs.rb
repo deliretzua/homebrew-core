@@ -3,8 +3,8 @@ class Mkdocs < Formula
 
   desc "Project documentation with Markdown"
   homepage "https://www.mkdocs.org/"
-  url "https://files.pythonhosted.org/packages/25/5e/7d964ebde9937a965d457f5656e443165b42ff53c6ae5c2afde650b0f338/mkdocs-1.5.0.tar.gz"
-  sha256 "ff54eac0b74bf39a2e91f179e2ac16ef36f0294b9ab161c22f564382b30a31ae"
+  url "https://files.pythonhosted.org/packages/40/fa/3d68128bad167f063ac2842a68a407247c02491e87fe4beb77d9cd1fb71b/mkdocs-1.5.1.tar.gz"
+  sha256 "f2f323c62fffdf1b71b84849e39aef56d6852b3f0a5571552bca32cefc650209"
   license "BSD-2-Clause"
 
   bottle do
