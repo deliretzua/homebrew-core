@@ -11,13 +11,13 @@ class Aarch64ElfGcc < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "ad3c875bea1f7cbc40b7774a3d93a7c00c81cbad5fa480d589e634f14c795c8c"
-    sha256 arm64_monterey: "f13ee9cbde2459869640a33ab7b63f35556fb4debdc9b80ae6609a9d69b5483e"
-    sha256 arm64_big_sur:  "c3cf7306a688ce198eb77010f037c5f41f0f54122273556ef91e3143fa6db4d0"
-    sha256 ventura:        "214edfc4918da716282d650ca5a3dfbd19cc202d727852e3ecf9d28a1c8cd362"
-    sha256 monterey:       "047730755fc4980766e83b50f89ab10879d318a831dac18bbd6a3e649e392421"
-    sha256 big_sur:        "2680038ad36aa28cb6e6136bf737076726a71ccaac2bc69d99680c4c8bbd8b02"
-    sha256 x86_64_linux:   "f734e296fc9c68be83c662c9dc242eafcd6a1d35a9ad66d4c938cb03b201071d"
+    sha256 arm64_ventura:  "52fbab7e246024b0ab64be29079ab0d9acc2293963a9d8cb236260afc4df9179"
+    sha256 arm64_monterey: "1edf222b87033c0ba5e5e5eb6a37a4a02cfdd2eaebb16fd59d530672d9743b8f"
+    sha256 arm64_big_sur:  "335fd71e860fbed870ada71c893e520901530ba04743de7d57fe321c901efd27"
+    sha256 ventura:        "3f0f2a063e451533e86db1ffcebf5cbee33348e684ed4ca03c2f6154377496ed"
+    sha256 monterey:       "b9c9ec0616f365523345ec8317f2a53f2a0de2069f83082d96e0bfe801adcca4"
+    sha256 big_sur:        "60f1e4b14e7b7c5e85f6fe0aa7cb9e63ad102993f6e9b3f75eaf4018067058ea"
+    sha256 x86_64_linux:   "92db41fba79e8f057480e9223ff53cea160a6d0256d96752d5ff3a8fa2e42a58"
   end
 
   depends_on "aarch64-elf-binutils"
