@@ -6,13 +6,13 @@ class VulkanHeaders < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d93bc966ddeea3d25420141ed40c3b43665868b0ac1c933cc56f609a73b3bfd0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d93bc966ddeea3d25420141ed40c3b43665868b0ac1c933cc56f609a73b3bfd0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d93bc966ddeea3d25420141ed40c3b43665868b0ac1c933cc56f609a73b3bfd0"
-    sha256 cellar: :any_skip_relocation, ventura:        "d93bc966ddeea3d25420141ed40c3b43665868b0ac1c933cc56f609a73b3bfd0"
-    sha256 cellar: :any_skip_relocation, monterey:       "d93bc966ddeea3d25420141ed40c3b43665868b0ac1c933cc56f609a73b3bfd0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d93bc966ddeea3d25420141ed40c3b43665868b0ac1c933cc56f609a73b3bfd0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6d230a2dc71f02514d30c3ee2cf032ab90f0c25c3188951fbb520f9fb9b3682"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d648b7a47d65ea5323395d4cbcf8260bcf3beec99a67e586c3e60a6354c277f4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d648b7a47d65ea5323395d4cbcf8260bcf3beec99a67e586c3e60a6354c277f4"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d648b7a47d65ea5323395d4cbcf8260bcf3beec99a67e586c3e60a6354c277f4"
+    sha256 cellar: :any_skip_relocation, ventura:        "d648b7a47d65ea5323395d4cbcf8260bcf3beec99a67e586c3e60a6354c277f4"
+    sha256 cellar: :any_skip_relocation, monterey:       "d648b7a47d65ea5323395d4cbcf8260bcf3beec99a67e586c3e60a6354c277f4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "d648b7a47d65ea5323395d4cbcf8260bcf3beec99a67e586c3e60a6354c277f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4e0a1d787894c5b9b6de548959b3bb1835b096b0d37b9d2dc5d123571a94c2e"
   end
 
   depends_on "cmake" => :build
