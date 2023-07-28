@@ -9,13 +9,13 @@ class Charmcraft < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "ce03109303698eedddc19a8337554024b5eca247a249a28b492cfc2477575df7"
-    sha256 cellar: :any,                 arm64_monterey: "43c9a40a8d51f761ff1be3502621ae6d46484bb78402f5d98f9ba65d7a9c665b"
-    sha256 cellar: :any,                 arm64_big_sur:  "15c7e88f2c00c35555c03a38a965bd667b29fd8453b146a942ca4fa29c671113"
-    sha256 cellar: :any,                 ventura:        "291603cbb0d295f33b3bcc45a2185c53cf50346b72e7ba9f0152c595c0ae46a6"
-    sha256 cellar: :any,                 monterey:       "2232f78f8037f3a0f1d79c008fcbe03707f241f3a033a8e7aaf22549f3e6fcc0"
-    sha256 cellar: :any,                 big_sur:        "bfd9acb60b93cf49cdcc039e18279eb65bb61d57b1147249adda1d779fc0786b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "284ef1a161c637ce66f3781e6f7d352ee417d7faca0f4fce8997ae26f9758030"
+    sha256 cellar: :any,                 arm64_ventura:  "acde381ca087837b10acb81b2498e2d8dfa706ff6f3e8ecaa8cac2c4714c9d82"
+    sha256 cellar: :any,                 arm64_monterey: "2608bd8e5bf31b8262f0591f0d3ba009cf725290569deeae07d142cafd679c03"
+    sha256 cellar: :any,                 arm64_big_sur:  "705f5fd8791c851667ff6e951f8d23572833be8347dbdf6cf3a90aee5e48b614"
+    sha256 cellar: :any,                 ventura:        "b259b202576e574d7c9965c4bd8c6f926374001998b6459272447c2d925dfe7c"
+    sha256 cellar: :any,                 monterey:       "84cee01d52941c6bc60e1d3e1e95c71bbdf126182ab88e867c3cf29732ede9c3"
+    sha256 cellar: :any,                 big_sur:        "77dd6fca22b60bd4e4c2bd0676ad9e216b3297289ea4514c451322af01c6ada6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "674407cb9d856f4a826638db31bff531d51d61587e4009b715260c87ee108ca5"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
