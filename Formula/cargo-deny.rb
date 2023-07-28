@@ -1,10 +1,9 @@
 class CargoDeny < Formula
   desc "Cargo plugin for linting your dependencies"
   homepage "https://github.com/EmbarkStudios/cargo-deny"
-  url "https://github.com/EmbarkStudios/cargo-deny/archive/refs/tags/0.13.9.tar.gz"
-  sha256 "b26d8f984e00ddf96766e25781d6b296ff7a571f2c3730a607bfde24062b8adb"
+  url "https://github.com/EmbarkStudios/cargo-deny/archive/refs/tags/0.14.0.tar.gz"
+  sha256 "b100e36c5eb4405067ee2350aea7b5089e9e72f787603fdc3929f6586a69b0f4"
   license any_of: ["Apache-2.0", "MIT"]
-  revision 1
   head "https://github.com/EmbarkStudios/cargo-deny.git", branch: "main"
 
   bottle do
@@ -20,24 +19,9 @@ class CargoDeny < Formula
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "rustup-init" => :test
-  depends_on "libgit2@1.5"
-  depends_on "libssh2"
-  depends_on "openssl@3"
 
   def install
-    ENV["LIBGIT2_SYS_USE_PKG_CONFIG"] = "1"
-    ENV["LIBSSH2_SYS_USE_PKG_CONFIG"] = "1"
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-    system "cargo", "install", "--no-default-features", *std_cargo_args
-  end
-
-  def check_binary_linkage(binary, library)
-    binary.dynamically_linked_libraries.any? do |dll|
-      next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
-
-      File.realpath(dll) == File.realpath(library)
-    end
+    system "cargo", "install", *std_cargo_args
   end
 
   test do
@@ -67,15 +51,6 @@ class CargoDeny < Formula
 
       output = shell_output("cargo deny check 2>&1", 1)
       assert_match "advisories ok, bans ok, licenses FAILED, sources ok", output
-    end
-
-    [
-      Formula["libgit2@1.5"].opt_lib/shared_library("libgit2"),
-      Formula["libssh2"].opt_lib/shared_library("libssh2"),
-      Formula["openssl@3"].opt_lib/shared_library("libssl"),
-    ].each do |library|
-      assert check_binary_linkage(bin/"cargo-deny", library),
-             "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end
 end
