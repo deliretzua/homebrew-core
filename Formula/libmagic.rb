@@ -1,8 +1,8 @@
 class Libmagic < Formula
   desc "Implementation of the file(1) command"
   homepage "https://www.darwinsys.com/file/"
-  url "https://astron.com/pub/file/file-5.44.tar.gz"
-  sha256 "3751c7fba8dbc831cb8d7cc8aff21035459b8ce5155ef8b0880a27d028475f3b"
+  url "https://astron.com/pub/file/file-5.45.tar.gz"
+  sha256 "fc97f51029bb0e2c9f4e3bffefdaf678f0e039ee872b9de5c002a6d09c784d82"
   # libmagic has a BSD-2-Clause-like license
   license :cannot_represent
 
@@ -23,13 +23,6 @@ class Libmagic < Formula
 
   depends_on "pkg-config" => :test
   uses_from_macos "zlib"
-
-  # Upstream patch for missing pkg-config stanza (https://bugs.astron.com/view.php?id=419)
-  # Remove on next release
-  patch do
-    url "https://github.com/file/file/commit/8bc37a45bad67bc4604471c64f0c9f3372b55d2c.patch?full_index=1"
-    sha256 "104f1854c93924dd1590049bf653b0cb9b57b269e7bf54d6a219a44c09011961"
-  end
 
   def install
     system "./configure", "--disable-dependency-tracking",
