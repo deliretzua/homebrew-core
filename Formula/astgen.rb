@@ -3,8 +3,8 @@ require "language/node"
 class Astgen < Formula
   desc "Generate AST in json format for JS/TS"
   homepage "https://github.com/joernio/astgen"
-  url "https://github.com/joernio/astgen/archive/refs/tags/v3.1.0.tar.gz"
-  sha256 "d958c8934e488df41f82786f5eab6448c3c08b51a27c5d170898d0e37773e002"
+  url "https://github.com/joernio/astgen/archive/refs/tags/v3.2.0.tar.gz"
+  sha256 "414afa102fb62ef8d4b2085e53e3b466c1e330188c392fbd616fba900b3548ea"
   license "Apache-2.0"
 
   bottle do
