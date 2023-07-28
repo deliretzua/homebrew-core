@@ -9,13 +9,13 @@ class Bbot < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "c25db032f464eedc286353d4045580243a503b532f972e2070cfc346fdeb7c79"
-    sha256 cellar: :any,                 arm64_monterey: "a2d73c930df146697db47a4d5fb19d1abe25adfc7ea6b89bc56f4f7b961c20fc"
-    sha256 cellar: :any,                 arm64_big_sur:  "1309d106568ab6d99454d4075e776f5c590b8eef85bd4622e28f6896d8da8a02"
-    sha256 cellar: :any,                 ventura:        "02a4269fd31d85e48a5a0fd5ba070ff234b5611523f180e27c70a7b827a6f3d1"
-    sha256 cellar: :any,                 monterey:       "1cc9c1bf2614d2ed41298cf0d840b09471dcdce41486689477ecd2837ada6e7e"
-    sha256 cellar: :any,                 big_sur:        "e5cd7b72537857cf62cfe9b132b9e19bc878eda1fe723e21ff9bfc322c9cfaad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae4785965febcf092fbfb075b9fdb5baf0ed42790cdd27ad13a99e454908c936"
+    sha256 cellar: :any,                 arm64_ventura:  "1289cfda2128547292dec52f91cb22a5ce2b1f2985d54725d1b59085b899858f"
+    sha256 cellar: :any,                 arm64_monterey: "7575bc78977c5d8900a6c6f9218f88176a2b29800a6127c2f8236075298cafdb"
+    sha256 cellar: :any,                 arm64_big_sur:  "f28d5a7e4773375d17b91ac5c62818a20794e218821a12cf0afa2f0cf83582c7"
+    sha256 cellar: :any,                 ventura:        "3f0b47df3ec20cbc6ce8b4b33c15453780402f855263e9c1b7c80cd10c62d24c"
+    sha256 cellar: :any,                 monterey:       "e4c1d0675bef9ed028d1a29a4173a8daf8ecf5bf204173f18a728184bf64592e"
+    sha256 cellar: :any,                 big_sur:        "e74608037042ecabcb8c49182ffe57510a6858135f76fb8dc8b1e33564bbc130"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "76a2faf4096ccaf6321f26a591b0ac23f0eeb5d6842b1d0922be6bb89e132de6"
   end
 
   # `pkg-config`, `rust`, and `openssl@3` are for cryptography.
