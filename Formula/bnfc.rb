@@ -7,14 +7,13 @@ class Bnfc < Formula
   head "https://github.com/BNFC/bnfc.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "02dd838e55e80032735ad079b0b698dfc2cfc27847589cd4475fed982a5aa325"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "35d33f766e0069b6809a0af8787378974278824f54a11b8d898971ffa6589c2d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "afe8ac12cb9fd69615fe2a1c03b645293d864e5aa7d7492c69338d856530da43"
-    sha256 cellar: :any_skip_relocation, ventura:        "e7243b584f8966d37edf6e9f4bea688d0008079227162e4f86834d814e468228"
-    sha256 cellar: :any_skip_relocation, monterey:       "f5f6ea64908a9e737216437245f8214db0d3002b9b0fe004ae4851d39ec1cfb3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "778d506a5b438d32aebf65a8746480a8da4573e377a65e18005544f639ccf2ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "114e007a3c2506f434edb5cdc5df9f8ef6702f84403593a038af6931fd932d95"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "86455ba8a49c6ad2542941c61df7d2613ae24b680de09b6807e70acd33d5bfdd"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "24ac4b832b20fe0784592cf12cc9a31216bc888da2eb768b663c9596563c1e76"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e5a7ff964b499eefcdc1e90b01ab03fe4d4758d005fd1e602a13dc713962021e"
+    sha256 cellar: :any_skip_relocation, ventura:        "635de57c74c25986bffcdfb07eff97fc2a1ca984d7374b2d5c52e61ccec6ce5f"
+    sha256 cellar: :any_skip_relocation, monterey:       "be862b5fde9501ed14cca11ae5befee4a6e0d76d9a679d44c8eddbaafd31d6bc"
+    sha256 cellar: :any_skip_relocation, big_sur:        "14e52b14ede5eeeb6042bc0387279e9aa252170b6d7f33a92686f49ae2909e3d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b475af14f574da226f75aca8daf26aaaac264059c10d02a46ddfc6162a986b1"
   end
 
   depends_on "cabal-install" => [:build, :test]
