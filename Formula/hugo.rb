@@ -1,8 +1,9 @@
 class Hugo < Formula
   desc "Configurable static site generator"
   homepage "https://gohugo.io/"
-  url "https://github.com/gohugoio/hugo/archive/v0.115.4.tar.gz"
-  sha256 "1d8ce49578c37a9a902158834841a9bf276b35abe1f67b7b6b03953e7050998a"
+  url "https://github.com/gohugoio/hugo.git",
+      tag:      "v0.115.4",
+      revision: "dc9524521270f81d1c038ebbb200f0cfa3427cc5"
   license "Apache-2.0"
   head "https://github.com/gohugoio/hugo.git", branch: "master"
 
@@ -19,7 +20,13 @@ class Hugo < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "-tags", "extended"
+    ldflags = %W[
+      -s -w
+      -X github.com/gohugoio/hugo/common/hugo.commitHash=#{Utils.git_head}
+      -X github.com/gohugoio/hugo/common/hugo.buildDate=#{time.iso8601}
+      -X github.com/gohugoio/hugo/common/hugo.vendorInfo=brew
+    ]
+    system "go", "build", *std_go_args(ldflags: ldflags), "-tags", "extended"
 
     generate_completions_from_executable(bin/"hugo", "completion")
     system bin/"hugo", "gen", "man", "--dir", man1
