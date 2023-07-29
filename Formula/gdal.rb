@@ -1,10 +1,9 @@
 class Gdal < Formula
   desc "Geospatial Data Abstraction Library"
   homepage "https://www.gdal.org/"
-  url "http://download.osgeo.org/gdal/3.6.4/gdal-3.6.4.tar.xz"
-  sha256 "889894cfff348c04ac65b462f629d03efc53ea56cf04de7662fbe81a364e3df1"
+  url "https://github.com/OSGeo/gdal/releases/download/v3.7.1/gdal-3.7.1.tar.gz"
+  sha256 "c131a39d0f7c2a76f02dd648f2906179ddb38958673461eee1da4f9c9a166e76"
   license "MIT"
-  revision 8
 
   livecheck do
     url "https://download.osgeo.org/gdal/CURRENT/"
@@ -12,13 +11,13 @@ class Gdal < Formula
   end
 
   bottle do
-    sha256 arm64_ventura:  "5cc915870a91c32fd0a37b7866f32c389d80834c522ba6481f1622159a2d7d36"
-    sha256 arm64_monterey: "e6c65fd4eecc8e3af639c13f43573f2d588ac0b6c930b4f2f32fe100f773add8"
-    sha256 arm64_big_sur:  "63f40f5a750e33410883b2c2edfd6076f339f814f0f7ba259e130d0e3bd777aa"
-    sha256 ventura:        "1b44026911bd796b089e65fccaeca99e928c16a31af39a6e41b9b4731da8d0ef"
-    sha256 monterey:       "b4ace46ad093529a0cae8aba6fa485cee4ef33ead1656998b4f28800b94bb9e3"
-    sha256 big_sur:        "ffc6a88a90e78cf5e8d76a23308d2212a21e687192d0d7c4c77212b611952c0c"
-    sha256 x86_64_linux:   "deaf63da0265d370f11f7b2d03d254b12a01f1771ba11364f2787bc5cc78436e"
+    sha256 arm64_ventura:  "8fca92bf7db6082a3fa88a07df193e8fcad14d95e8970be32169803e1449fa82"
+    sha256 arm64_monterey: "2464d7bbc5ff15bb0c342e77ca161e11f73cae7ee860545736eddbde2c5680dd"
+    sha256 arm64_big_sur:  "7a30f9be6e8255b943a170beb2d7a7a5755faf0db5d764a59b3c7dd514bb1737"
+    sha256 ventura:        "05ff7329a0fbce913bbe144679dcfd37faca76f49bba35349c8af78e311d9b54"
+    sha256 monterey:       "88bad606175cf3c53e3d497e2502000dbc97d80cf362b55ad3f16c9fe5b5ad3a"
+    sha256 big_sur:        "92b216cfcfb4870954a13b9e2cb3155ff20409075c3c58cfd7372e80e20e30e4"
+    sha256 x86_64_linux:   "7981b1a93ddb6d9896802120a7540938af0ad404a479b2b83ad837905c056a30"
   end
 
   head do
@@ -29,6 +28,7 @@ class Gdal < Formula
   depends_on "boost" => :build  # for `libkml`
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
+  depends_on "swig" => :build
   depends_on "apache-arrow"
   depends_on "cfitsio"
   depends_on "epsilon"
@@ -40,6 +40,7 @@ class Gdal < Formula
   depends_on "jpeg-turbo"
   depends_on "jpeg-xl"
   depends_on "json-c"
+  depends_on "libarchive"
   depends_on "libgeotiff"
   depends_on "libheif"
   depends_on "libkml"

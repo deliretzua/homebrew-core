@@ -4,16 +4,16 @@ class Osmcoastline < Formula
   url "https://github.com/osmcode/osmcoastline/archive/v2.4.0.tar.gz"
   sha256 "2c1a28313ed19d6e2fb1cb01cde8f4f44ece378393993b0059f447c5fce11f50"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1f5235873b915bdaad8f414f39ff9352c12f8b0c69632bf89aae880af43589b5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f0de16062ceb978f4499a6b1163ba3bc99d99757568aa216e3df7f3ffe3b73b0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "56d298a761c8e8f66b8867249e4adb10e568080abf1fab0b9bdadd3d17af9c7a"
-    sha256 cellar: :any_skip_relocation, ventura:        "fd3193426214796466b3c9e701c014fe4849d2059ed2090451b70021be4bc59b"
-    sha256 cellar: :any_skip_relocation, monterey:       "66952ff987318af4f2c41ebc2cc2e461cd5e248182adc7a4568487f4f3f23d29"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ea490875b3ebf828d3ec214aad5e234847506d4643a8253443e56387a5a2b313"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "151e40991e564cba6634a5629cfeba677a1889cbe0072c320e738cd08aacd59c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bbd332274b375390b84ade56b4fb44cd7a5c0896ebafbf6ef5764944114fd3c9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "87a0953864bc90e8971ccc8ff258255cebb77d677ddb946d1f4806529573ea1c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "495472ea1b183dfc23f49e2b78d75c77a5afa9a5d45277dac595da44c43c2157"
+    sha256 cellar: :any_skip_relocation, ventura:        "6360a644a0079631b9e6da6540f12973b973c7de6f85f1633f502e122e7fef92"
+    sha256 cellar: :any_skip_relocation, monterey:       "4b616a360a35c5c6dcaa25ec8e9a56b8d95cfdc570f3c3fd30e031e2fbc753db"
+    sha256 cellar: :any_skip_relocation, big_sur:        "8099f8d01ff005e1a43d5f67afcac3f9e2474d4a1d7c56bb8e61110ed7cd4d23"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "44531dd7f1c5cc978fd5b6c5b27871fff3de9106acd525fbf7818556892d1092"
   end
 
   depends_on "cmake" => :build
@@ -27,6 +27,12 @@ class Osmcoastline < Formula
   uses_from_macos "zlib"
 
   fails_with gcc: "5"
+
+  # To fix gdal-3.7.0
+  patch do
+    url "https://github.com/osmcode/osmcoastline/commit/67cc33161069f65e315acae952492ab5ee07af15.patch?full_index=1"
+    sha256 "31b89e33b22ccdfe289a5da67480f9791bdd4f410c6a7831f0c1e007c4258e68"
+  end
 
   def install
     protozero = Formula["libosmium"].opt_libexec/"include"
