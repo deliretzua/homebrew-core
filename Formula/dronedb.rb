@@ -9,13 +9,13 @@ class Dronedb < Formula
   head "https://github.com/DroneDB/DroneDB.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_ventura:  "2fef614a4bdd8f9adfc3f7ac1187ce7a4ba37eec53f401468f7eb05d592e0c44"
-    sha256 cellar: :any,                 arm64_monterey: "edd22966d7a62c2b8b65a54876a597360003d83408dbbb8b76f9556d5cf7ff9c"
-    sha256 cellar: :any,                 arm64_big_sur:  "f65259fdd921171ad579f4da450f4e74600c1b1abe4b953fcc5871432cd894cc"
-    sha256 cellar: :any,                 ventura:        "1868a493701c0b4b30cfb517abc6408fb278c88c4e5019bf1141d725b8c3b13a"
-    sha256 cellar: :any,                 monterey:       "2afe4dd4f029621045cf7c5a7ae6952d2b10d895c3b605117f46fd227becdc79"
-    sha256 cellar: :any,                 big_sur:        "6229a39e1fa119aba0d529fcca44ddaae02e91fbbf9761e23a98773ad624373d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d112218dfb122e57372c11f3b32f976d1f436eda2e2531ae4e85303fe56d316"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "385b7e014cd01ebe975194e62fb6917e2ea2bf614dd9ee1ce1aedea622e3ea04"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "ac9330dba84fc9e964b452c0e5d6e727a4971388d9544025b375d8b0885aa9f7"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6ec8db84047c7f5817ad708e5f3f503434465bc5636c10249c6d9ddf8eb1f592"
+    sha256 cellar: :any_skip_relocation, ventura:        "e29ad9a4f3cdd424ac6e1ec360c2fe3a4e606181c3b99630521a01bf5ee7bbff"
+    sha256 cellar: :any_skip_relocation, monterey:       "999b528b1001e8a400150710f0a7882cf0d63c7d81dcbb0151f89fcb13fd2548"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9028df07246bb802017bf86661a82f6cfc5f6454c981e12faf0918265010b7bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "64be7d6adfb69874626657d344136d7ce373485db45ec72d459abfe9d0aa925c"
   end
 
   depends_on "cmake" => :build
