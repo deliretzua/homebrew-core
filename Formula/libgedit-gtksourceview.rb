@@ -1,8 +1,8 @@
 class LibgeditGtksourceview < Formula
   desc "Text editor widget for code editing"
   homepage "https://gedit-technology.net"
-  url "https://gedit-technology.net/tarballs/libgedit-gtksourceview/libgedit-gtksourceview-299.0.3.tar.xz"
-  sha256 "d80ec2afe87be45eadfff9396814545be15ac32e16f67fd07480e69c100c8659"
+  url "https://gedit-technology.net/tarballs/libgedit-gtksourceview/libgedit-gtksourceview-299.0.4.tar.xz"
+  sha256 "7453a1cce2f6d58871644d2203ecdbbb043050886170ebea376c1cf6e27f86d8"
   license "LGPL-2.1-only"
   head "https://github.com/gedit-technology/libgedit-gtksourceview.git", branch: "main"
 
