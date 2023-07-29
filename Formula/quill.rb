@@ -1,8 +1,8 @@
 class Quill < Formula
   desc "C++17 Asynchronous Low Latency Logging Library"
   homepage "https://github.com/odygrd/quill"
-  url "https://github.com/odygrd/quill/archive/refs/tags/v3.2.0.tar.gz"
-  sha256 "9745ad83b285bbd0481bd14c1b866b7e6121a981dd211b914f5d55955040fd00"
+  url "https://github.com/odygrd/quill/archive/refs/tags/v3.3.0.tar.gz"
+  sha256 "2bf6a870960e002b2fbf322d0b1c6b547af92858454fa96adfc374d545c66a36"
   license "MIT"
   head "https://github.com/odygrd/quill.git", branch: "master"
 
@@ -33,7 +33,11 @@ class Quill < Formula
       int main()
       {
         quill::start();
-        std::shared_ptr< quill::Handler > file_handler = quill::file_handler("#{testpath}/basic-log.txt", "w");
+
+        quill::FileHandlerConfig file_handler_cfg;
+        file_handler_cfg.set_open_mode('w');
+
+        std::shared_ptr< quill::Handler > file_handler = quill::file_handler("#{testpath}/basic-log.txt", file_handler_cfg);
         quill::Logger* logger = quill::create_logger("logger_bar", std::move(file_handler));
         LOG_INFO(logger, "Test");
       }
