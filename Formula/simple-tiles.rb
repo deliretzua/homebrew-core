@@ -16,14 +16,15 @@ class SimpleTiles < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "176d49ea6c093e741b3fa44b90d90b82573748678a4e38338960d8d43d9ac469"
   end
 
-  depends_on "pkg-config" => :build
-  depends_on "python@3.11" => :build
+  depends_on "pkg-config" => [:build, :test]
   depends_on "cairo"
   depends_on "gdal"
   depends_on "pango"
 
+  uses_from_macos "python" => :build
+
   def install
-    system "./configure", "--prefix=#{prefix}"
+    system "python3", "./waf", "configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
@@ -37,14 +38,8 @@ class SimpleTiles < Formula
         return 0;
       }
     EOS
-    system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lsimple-tiles",
-           "-I#{Formula["cairo"].opt_include}/cairo",
-           "-I#{Formula["gdal"].opt_include}",
-           "-I#{Formula["glib"].opt_include}/glib-2.0",
-           "-I#{Formula["glib"].opt_lib}/glib-2.0/include",
-           "-I#{Formula["harfbuzz"].opt_include}/harfbuzz",
-           "-I#{Formula["pango"].opt_include}/pango-1.0",
-           "-o", "test"
-    system testpath/"test"
+    cflags = shell_output("pkg-config --cflags simple-tiles").chomp.split
+    system ENV.cc, "test.c", *cflags, "-L#{lib}", "-lsimple-tiles", "-o", "test"
+    system "./test"
   end
 end
