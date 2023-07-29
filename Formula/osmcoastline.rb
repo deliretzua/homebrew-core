@@ -4,7 +4,7 @@ class Osmcoastline < Formula
   url "https://github.com/osmcode/osmcoastline/archive/v2.4.0.tar.gz"
   sha256 "2c1a28313ed19d6e2fb1cb01cde8f4f44ece378393993b0059f447c5fce11f50"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "1f5235873b915bdaad8f414f39ff9352c12f8b0c69632bf89aae880af43589b5"
@@ -27,6 +27,12 @@ class Osmcoastline < Formula
   uses_from_macos "zlib"
 
   fails_with gcc: "5"
+
+  # To fix gdal-3.7.0
+  patch do
+    url "https://github.com/osmcode/osmcoastline/commit/67cc33161069f65e315acae952492ab5ee07af15.patch?full_index=1"
+    sha256 "31b89e33b22ccdfe289a5da67480f9791bdd4f410c6a7831f0c1e007c4258e68"
+  end
 
   def install
     protozero = Formula["libosmium"].opt_libexec/"include"
