@@ -1,8 +1,8 @@
 class Bnfc < Formula
   desc "BNF Converter"
   homepage "https://bnfc.digitalgrammars.com/"
-  url "https://github.com/BNFC/bnfc/archive/v2.9.4.1.tar.gz"
-  sha256 "4f70f7d73302d8580c5fd12d3b40df471a8a1be92e31a4d0a8f3c330b124ce71"
+  url "https://github.com/BNFC/bnfc/archive/v2.9.5.tar.gz"
+  sha256 "32a6293b95e10cf1192f348ec79f3c125b52a56350caa4f67087feb3642eef77"
   license "BSD-3-Clause"
   head "https://github.com/BNFC/bnfc.git", branch: "master"
 
@@ -25,13 +25,6 @@ class Bnfc < Formula
   depends_on "bison" => :test
   depends_on "flex" => :test
   depends_on "openjdk" => :test
-
-  # Fixes typos in upstream's code. Remove once merged and released.
-  # PR ref: https://github.com/BNFC/bnfc/pull/448
-  patch do
-    url "https://github.com/BNFC/bnfc/commit/5940164bdffe59924e253318c346865c94b46453.patch?full_index=1"
-    sha256 "5c828e85a704d02450c11adbf13dd6855a8bfc4ad25f8ec288203528bd0abc73"
-  end
 
   def install
     cd "source" do
@@ -142,17 +135,18 @@ class Bnfc < Formula
       assert_equal check_out_agda, test_out
     end
 
-    mktemp "java-test" do
-      ENV.deparallelize # only the Java test needs this
-      jdk_dir = Formula["openjdk"].bin
-      antlr_bin = Formula["antlr"].bin/"antlr"
-      antlr_jar = Dir[Formula["antlr"].prefix/"antlr-*-complete.jar"][0]
-      ENV["CLASSPATH"] = ".:#{antlr_jar}"
-      system bin/"bnfc", "-m", "-o.", "--java", "--antlr4", testpath/"calc.cf"
-      system "make", "JAVAC=#{jdk_dir/"javac"}", "JAVA=#{jdk_dir/"java"}",
-             "LEXER=#{antlr_bin}", "PARSER=#{antlr_bin}"
-      test_out = shell_output("#{jdk_dir}/java calc.Test #{testpath}/test.calc")
-      assert_equal check_out_java, test_out
+    ENV.deparallelize do # only the Java test needs this
+      mktemp "java-test" do
+        jdk_dir = Formula["openjdk"].bin
+        antlr_bin = Formula["antlr"].bin/"antlr"
+        antlr_jar = Dir[Formula["antlr"].prefix/"antlr-*-complete.jar"][0]
+        ENV["CLASSPATH"] = ".:#{antlr_jar}"
+        system bin/"bnfc", "-m", "-o.", "--java", "--antlr4", testpath/"calc.cf"
+        system "make", "JAVAC=#{jdk_dir/"javac"}", "JAVA=#{jdk_dir/"java"}",
+               "LEXER=#{antlr_bin}", "PARSER=#{antlr_bin}"
+        test_out = shell_output("#{jdk_dir}/java calc.Test #{testpath}/test.calc")
+        assert_equal check_out_java, test_out
+      end
     end
   end
 end
